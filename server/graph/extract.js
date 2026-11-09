@@ -46,12 +46,12 @@ function fromCalendar(b, docs, people) {
       const name = title.replace(/\s*[-–:(]?\s*(OOO|out of office|vacation|PTO)\b.*$/i, '').trim() || (d.author || '').replace(/@.*$/, '').replace(/[._]/g, ' ');
       if (!name) continue;
       const person = people.byName(name) || people.add(name.replace(/\b\w/g, c => c.toUpperCase()));
-      b.node(person.id, 'person', person.label).attrs.ooo = [...(b.nodes.get(person.id).attrs.ooo || []), {start: day, end: end || day, evidence: d.id}];
+      b.node(person.id, 'person', person.label).attrs.ooo = [...(b.nodes.get(person.id).attrs.ooo || []), {start: day, end: exclusiveEnd(d), evidence: d.id}];
       continue;
     }
     const part = partIn(title);
     if (cats.includes('BOOKING') || (part && /book/i.test(title))) {
-      if (part) b.node(`part:${part}`, 'part', catalogLabel(part), {catalogId: part, date: day, end, tentative: /tentative/i.test(title) || d.attrs?.status === 'TENTATIVE', evidence: d.id});
+      if (part) b.node(`part:${part}`, 'part', catalogLabel(part), {catalogId: part, date: day, end: exclusiveEnd(d), tentative: /tentative/i.test(title) || d.attrs?.status === 'TENTATIVE', evidence: d.id});
       continue;
     }
     if (cats.includes('MILESTONE') || MILESTONE_WORDS.some(w => new RegExp(`\\b${w}\\b`, 'i').test(title))) {
@@ -60,6 +60,16 @@ function fromCalendar(b, docs, people) {
   }
 }
 
+// Windows are [start, end) in days. All-day DTEND is already exclusive; a timed event
+// (even 9-5 on one day) covers every day it touches, so its end is the following day.
+const nextDay = iso => new Date(Date.parse(iso + 'T00:00:00Z') + 86400000).toISOString().slice(0, 10);
+function exclusiveEnd(d) {
+  const start = d.at.slice(0, 10);
+  if (!d.end) return nextDay(start);
+  if (d.end.length === 10) return d.end > start ? d.end : nextDay(start);
+  const endDay = d.end.slice(0, 10);
+  return /T00:00(:00)?(\.000)?Z$/.test(d.end) && endDay > start ? endDay : nextDay(endDay);
+}
 const catalogLabel = id => decisions.find(d => d.id === id)?.part.replace(/\s*[×x]\s*\d+.*$/, '') || id;
 function partIn(text) {
   const t = text.toLowerCase();
@@ -139,8 +149,10 @@ function rules(b, docs, people) {
       }
       if ((m = s.match(/^(?<w>.+?) takes about (?<n>\d+) days?(?: once (?:the )?(?<y>.+?) (?:is|are) (?:built|done|ready|populated|in))?/i))) {
         const w = b.nodes.get(resolve(m.groups.w, {asWork: true}));
-        w.attrs.durationDays = Number(m.groups.n); w.attrs.evidence = d.id;
-        if (m.groups.y) b.edge(resolve(m.groups.y), w.id, 'blocks', ev, .75, 'rule');
+        if (w) {
+          w.attrs.durationDays = Number(m.groups.n); w.attrs.evidence = d.id;
+          if (m.groups.y) b.edge(resolve(m.groups.y), w.id, 'blocks', ev, .75, 'rule');
+        }
       } else if ((m = s.match(/\bneed about (?<n>\d+) days?\b/i)) && subject && b.nodes.get(subject)?.kind === 'work') {
         b.nodes.get(subject).attrs.durationDays = Number(m.groups.n);
       }
@@ -191,17 +203,26 @@ async function withClaude(b, docs, client) {
   const text = response.content.find(c => c.type === 'text')?.text;
   const out = JSON.parse(text);
   const valid = new Set(docs.map(d => d.id));
+  // Resolve a key without creating anything; nodes are only created for accepted edges.
   const key = k => {
-    if (/^part:/.test(k)) { const id = k.slice(5); return PART_ALIASES[id] ? b.node(k, 'part', catalogLabel(id), {catalogId: id}).id : null; }
-    if (/^(milestone|person):/.test(k)) return b.nodes.get(k) ? k : null;
-    if (/^work:/.test(k)) return b.node(`work:${slug(k.slice(5))}`, 'work', cap(k.slice(5).trim())).id;
+    if (typeof k !== 'string') return null;
+    if (/^part:/.test(k)) { const id = k.slice(5); return PART_ALIASES[id] ? () => b.node(k, 'part', catalogLabel(id), {catalogId: id}).id : null; }
+    if (/^(milestone|person):/.test(k)) return b.nodes.get(k) ? () => k : null;
+    if (/^work:/.test(k) && k.slice(5).trim() && k.length <= 80) { const label = k.slice(5).trim(); return () => b.node(`work:${slug(label)}`, 'work', cap(label)).id; }
     return null;
   };
-  for (const w of out.work) {
-    const n = b.node(`work:${slug(w.label)}`, 'work', cap(w.label.trim()));
-    if (w.durationDays) { n.attrs.durationDays = w.durationDays; n.attrs.evidence = w.evidence.find(id => valid.has(id)); }
+  const cited = ids => (Array.isArray(ids) ? ids : []).filter(id => valid.has(id));
+  for (const e of out.edges) {
+    const from = key(e.from), to = key(e.to), evidence = cited(e.evidence);
+    if (!from || !to || !evidence.length || !['blocks', 'assigned', 'due'].includes(e.kind)) continue;
+    b.edge(from(), to(), e.kind, evidence, Math.min(1, Math.max(0, Number(e.confidence) || 0)), 'llm');
   }
-  for (const e of out.edges) b.edge(key(e.from), key(e.to), e.kind, e.evidence.filter(id => valid.has(id)), Math.min(1, Math.max(0, e.confidence)), 'llm');
+  // Durations only for work that exists, with a cited message, within a sane range.
+  for (const w of out.work) {
+    const n = b.nodes.get(`work:${slug(String(w.label || ''))}`);
+    const evidence = cited(w.evidence);
+    if (n && evidence.length && Number.isInteger(w.durationDays) && w.durationDays > 0 && w.durationDays <= 60) { n.attrs.durationDays = w.durationDays; n.attrs.evidence = evidence[0]; }
+  }
 }
 
 function hasCredentials() { return !!(process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_AUTH_TOKEN || process.env.ANTHROPIC_PROFILE); }

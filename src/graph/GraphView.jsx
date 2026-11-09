@@ -13,6 +13,8 @@ export function useWidth(ref, fallback = 960) {
   const [width, setWidth] = React.useState(fallback);
   React.useLayoutEffect(() => {
     if (!ref.current) return;
+    // Measure before first paint so the first frame isn't laid out at the fallback width and animated.
+    setWidth(Math.round(ref.current.getBoundingClientRect().width) || fallback);
     const ro = new ResizeObserver(([e]) => setWidth(Math.round(e.contentRect.width)));
     ro.observe(ref.current); return () => ro.disconnect();
   }, [ref]);
@@ -66,7 +68,7 @@ export default function GraphView({graph, analysis, today, selected, onSelect, c
             {s.end != null && <rect x={geo.x(s.start) - geo.x(s.finish)} y={y - bh / 2} height={bh} rx={4}
               width={Math.max(4, (s.end - s.start) * geo.pxPerDay)} fill="none" stroke={conflict ? G.critical : G.muted} strokeDasharray="3 2"/>}
             <circle cx={0} cy={y} r={compact ? 4.5 : 6} fill={hot ? G.ink : '#fff'} stroke={G.ink} strokeWidth={2}/>
-            {!compact && <text x={10} y={y + 4} fontSize={11} fill={G.muted}>{s.end != null ? `booked ${day(s.start)}–${day(s.end)}` : `arrives ${day(s.finish)}`}</text>}
+            {!compact && <text x={10} y={y + 4} fontSize={11} fill={G.muted}>{s.end != null ? `booked ${day(s.start)}–${day(s.end - 1)}` : `arrives ${day(s.finish)}`}</text>}
           </g>}
           {node.kind === 'work' && <g style={{transform: `translateX(${geo.x(s.start)}px)`, transition: MOVE}}>
             <rect x={0} y={y - bh / 2} height={bh} rx={4} width={Math.max(6, (s.finish - s.start) * geo.pxPerDay - 2)}
@@ -98,9 +100,9 @@ function Tooltip({row, at, geo, people, conflict}) {
   const lines = n.kind === 'milestone'
     ? [`Planned ${day(s.planned)}`, s.slip ? `Now ${day(s.finish)} · slips ${s.slip} days` : 'On time']
     : n.kind === 'part'
-      ? [s.end != null ? `Booked ${day(s.start)} – ${day(s.end)}` : `Arrives ${day(s.finish)}`]
+      ? [s.end != null ? `Booked ${day(s.start)} – ${day(s.end - 1)}` : `Arrives ${day(s.finish)}`]
       : [`${day(s.start)} → ${day(s.finish)} · ${s.finish - s.start}d`, people.length ? people.join(', ') : 'Nobody assigned'];
-  if (conflict) lines.push(conflict.kind === 'booking_missed' ? `Booking ends ${day(Date.parse(conflict.bookingEnd) / 86400000)}, work can't start until ${day(Date.parse(conflict.workStart) / 86400000)}` : conflict.kind);
+  if (conflict) lines.push(conflict.kind === 'booking_missed' ? `Booking ends ${day(Date.parse(conflict.bookingEnd) / 86400000 - 1)}, work can't start until ${day(Date.parse(conflict.workStart) / 86400000)}` : conflict.kind);
   const left = Math.min(geo.width - 240, Math.max(0, (n.kind === 'work' ? geo.x(s.start) : geo.x(s.finish)) - 20));
   return <div role="tooltip" style={{position: 'absolute', left, top: row.y + geo.rowHeight / 2 + 2, pointerEvents: 'none', background: '#fff', border: `1px solid ${G.line}`, borderRadius: 8, padding: '8px 10px', fontSize: 12, lineHeight: 1.45, boxShadow: '0 4px 14px rgba(28,27,23,.08)', zIndex: 2, minWidth: 180}}>
     <div style={{color: G.ink, fontWeight: 500}}>{n.label}</div>

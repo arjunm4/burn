@@ -7,6 +7,8 @@ import GraphView, {G} from './graph/GraphView.jsx';
 
 const money = n => '$' + Math.round(n).toLocaleString('en-US');
 const day = iso => new Date(iso + 'T00:00:00Z').toLocaleDateString('en-US', {month: 'short', day: 'numeric', timeZone: 'UTC'});
+// Windows end exclusively; show the last day actually covered.
+const lastDay = iso => new Date(Date.parse(iso + 'T00:00:00Z') - 86400000).toISOString().slice(0, 10);
 const eyebrow = {fontSize: 11, letterSpacing: '.1em', textTransform: 'uppercase', color: G.muted};
 const EXTRACTOR = {claude: 'Extracted by Claude', rules: 'Rule-based extraction · no model call'};
 
@@ -33,6 +35,8 @@ export default function Graph() {
   }
 
   const graph = data?.graph;
+  // A deep link or a re-sync can leave the selection pointing at a node that no longer exists.
+  React.useEffect(() => { if (graph && selected && !graph.nodes.some(n => n.id === selected)) setSelected(null); }, [graph, selected]);
   const model = React.useMemo(() => {
     if (!graph || !choices) return null;
     const baseline = analyzeGraph(graph, {orderDate: ORDER_DATE, arrivals: arrivalsFor(graph, requests, {}, {fastest: true})});
@@ -117,7 +121,7 @@ function Summary({graph, analysis, idle}) {
   return <div style={{display: 'flex', gap: 12, flexWrap: 'wrap'}}>
     {milestones.map(m => { const s = analysis.at[m.id]; return tile(m.label, s.slip ? `▲ slips ${s.slip}d` : 'On time', s.slip ? `${day(s.planned)} → ${day(s.finish)}` : day(s.planned), s.slip > 0); })}
     {tile('Idle engineering', `${idle.engineerDays} eng-days`, idle.cost ? `≈ ${money(idle.cost)} at ${money(COST)}/day vs fastest shipping` : 'Nobody waits longer than necessary', idle.cost > 0)}
-    {analysis.conflicts.map((c, i) => tile('Conflict', 'Rebook', `${graph.nodes.find(n => n.id === c.node)?.label} ends ${day(c.bookingEnd)}; ${graph.nodes.find(n => n.id === c.work)?.label} starts ${day(c.workStart)}`, true))}
+    {analysis.conflicts.map((c, i) => tile('Conflict', 'Rebook', `${graph.nodes.find(n => n.id === c.node)?.label} ends ${day(lastDay(c.bookingEnd))}; ${graph.nodes.find(n => n.id === c.work)?.label} starts ${day(c.workStart)}`, true))}
   </div>;
 }
 
@@ -150,6 +154,7 @@ function ScheduleTable({graph, analysis, people, onSelect}) {
 
 function Evidence({graph, analysis, id, evidence, people, onClose}) {
   const n = graph.nodes.find(x => x.id === id); const s = analysis.at[id];
+  if (!n) return null;
   const label = x => graph.nodes.find(y => y.id === x)?.label || x;
   const VERB = {blocks: 'blocks', due: 'is due before', assigned: 'works on'};
   const touching = graph.edges.filter(e => e.from === id || e.to === id);
@@ -160,7 +165,7 @@ function Evidence({graph, analysis, id, evidence, people, onClose}) {
       <button onClick={onClose} aria-label="Close" style={{marginLeft: 'auto', border: 0, background: 'transparent', cursor: 'pointer', color: G.muted, fontSize: 16}}>×</button>
     </div>
     {s && <div style={{color: G.muted}}>{n.kind === 'milestone' ? (s.slip ? `Planned ${day(s.planned)}, now ${day(s.finish)} (+${s.slip}d)` : `${day(s.planned)}, on time`) : n.kind === 'work' ? `${day(s.start)} → ${day(s.finish)}` : n.kind === 'part' ? `Arrives ${day(s.finish)}` : ''}</div>}
-    {n.attrs?.ooo?.length > 0 && <div style={{color: G.muted}}>Out {n.attrs.ooo.map(w => `${day(w.start)}–${day(w.end)}`).join(', ')}</div>}
+    {n.attrs?.ooo?.length > 0 && <div style={{color: G.muted}}>Out {n.attrs.ooo.map(w => `${day(w.start)}–${day(lastDay(w.end))}`).join(', ')}</div>}
     {touching.length > 0 && <div style={{display: 'flex', flexDirection: 'column', gap: 4}}>
       <span style={eyebrow}>Dependencies</span>
       {touching.map(e => <div key={e.id} style={{display: 'flex', gap: 6, alignItems: 'baseline', flexWrap: 'wrap'}}>

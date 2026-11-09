@@ -113,6 +113,8 @@ function criticalPath(graph, ix, at) {
       if (!prev) break;
       const edge = ix.preds.get(id).find(e => e.from === prev) || graph.edges.find(e => e.kind === 'assigned' && e.from === prev && e.to === id);
       if (edge) edges.add(edge.id);
+      // A person's out-of-office window can drive a start; people aren't scheduled, so stop there.
+      if (!at[prev]) { nodes.add(prev); break; }
       id = prev;
     }
   }
