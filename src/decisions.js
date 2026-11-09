@@ -1,4 +1,6 @@
 export const COST = 1100;
+export const ORDER_DATE = '2026-11-09';
+export const arrivalDate = days => new Date(Date.parse(ORDER_DATE+'T00:00:00Z') + days * 86400000).toISOString().slice(0,10);
 export const decisions = [
       { id: 'sens', pr: 'PR-2291', part: 'ACS37002 sensors × 40', project: 'Rev C power board', who: 'Dana Okafor', asked: 2, blocked: 4, milestone: 'EVT build · Nov 14', slack: 0, chain: ["Firmware validation","Thermal & EMC"], chain0: "Lee, Marco", chain1: "Anya, Sam",
         tiers: [{ name: 'Standard', price: 300, days: 12 }, { name: 'Priority', price: 650, days: 7 }, { name: 'Expedited', price: 1200, days: 5 }],
@@ -23,7 +25,7 @@ export const decisions = [
         basis: 'Bench stock', link: 'Spend history', unknown: null },
     ];
 export function deriveDecisions(raw = decisions, approved = {}, limit = 500) { return raw.map(d => { const fastest = Math.min(...d.tiers.map(t => t.days));
-      const tiers = d.tiers.map((t, i) => { const late = Math.max(0, t.days - fastest - d.slack); const delay = late * d.blocked * COST; return { ...t, i, late, delay, total: t.price + delay }; });
+      const tiers = d.tiers.map((t, i) => { const late = Math.max(0, t.days - fastest - d.slack); const delay = late * d.blocked * COST; return { ...t, i, late, delay, arrivesOn: arrivalDate(t.days), total: t.price + delay }; });
       const rec = tiers.reduce((a, b) => (b.total < a.total ? b : a));
       const cheapest = tiers.reduce((a, b) => (b.price < a.price ? b : a));
       const premium = rec.price - cheapest.price, avoided = cheapest.delay - rec.delay;
