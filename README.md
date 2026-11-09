@@ -38,6 +38,8 @@ SQLite defaults to `data/purchasing.sqlite` (ignored by Git). Set `PURCHASING_DB
 | Method | Path | Purpose |
 | --- | --- | --- |
 | GET | `/api/requests` | Shared request snapshot, approvals and resolved dependencies |
+| POST | `/api/requests` | Create a Rev C demo request with `{text, requester?}` |
+| GET | `/api/requests/:id` | Request details and audit events |
 | POST | `/api/requests/:id/run` | NDJSON tool execution stream |
 | POST | `/api/requests/:id/answer` | `{answer: "yes" or "no", revision}` |
 | POST | `/api/requests/:id/select` | `{tier: integer, revision}` |
@@ -51,7 +53,7 @@ Every mutation returns `{request}`. Errors return `{error}`; stale revisions ret
 
 The tool adapters in `server/tools.js` execute against seeded project data. No Slack, calendar, vendor, or LLM credentials have been supplied. The UI is a guided conversation for the sample sensor request, not arbitrary free-text purchasing. Purchase orders are local drafts; no vendor purchase is placed. Identity is the reference demo identity, not authenticated access control. Evidence links and the reference Ask button still need actual source/conversation integrations. Run locally for the demo; add authentication before shared hosting.
 
-Next milestones: agree live integration choices with Claude, add request creation, connect project/vendor sources and an agent reasoning loop, then integrate purchasing and authenticated approvers.
+Request creation is available through the API with explicit Rev C demo context. Next milestones: connect Claude’s agent loop and request input UI, then project/vendor sources, purchasing and authenticated approvers.
 
 ## Collaboration and Git conventions
 
@@ -66,7 +68,7 @@ git worktree add .worktrees/frontend -b feat/shared-request-ui
 
 Commit messages use Conventional Commits: `feat(server): persist request lifecycle`, `feat(ui): connect engineer and approval views`, `test(server): cover approvals and stale writes`, `docs: document demo workflow`. Keep README updates with their feature. Review and merge finished branches from the main checkout.
 
-During this implementation session `.git` is read-only, so worktree/commit creation is blocked. Source edits are present in the main checkout; no feature commits are claimed. Claude acknowledged the mailbox, but the local CLI is not authenticated, so joint architecture review is pending.
+During this implementation session `.git` is read-only, so worktree/commit creation is blocked. Source edits are present in the main checkout; no feature commits are claimed. Claude is active through the mailbox and has agreed to SQLite, deterministic cost math, price/override approval rules and an agent with a deterministic fallback. Claude owns the agent integration and subsequent UI work in its worktree. Git integration is delegated to Claude while this session has read-only Git metadata access.
 
 ## Validation
 

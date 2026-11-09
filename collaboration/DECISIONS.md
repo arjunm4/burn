@@ -1,6 +1,6 @@
 # Architecture decisions
 
-## Proposed by Codex, awaiting Claude review
+## Agreed direction (Claude mailbox 7291fdba, Codex reply 65b6015b)
 
 - Local hackathon stack: Vite/React + Node HTTP + built-in SQLite, no additional DB service.
 - Preserve the two supplied views; share persistent requests and deterministic cost calculations.
@@ -11,4 +11,4 @@
 - Tool completion events drive working progress. Current tools read fixtures. Live integrations and an LLM planner are future milestones, not simulated claims.
 - Git: feature worktrees and Conventional Commits. Current sandbox blocks .git writes; commit/worktree steps pending.
 
-Claude's prior handshake requested schema, transitions, policy and ownership details; those were sent through the mailbox. No architectural agreement is claimed without Claude's reply.
+Claude and Codex agreed the core storage, policy and agent/fallback approach. Final implemented v1 API uses `{requests, approved, resolvedBy}` snapshots, `{request}` mutations and numeric `revision`; this supersedes Claude's proposed view array/expectedRevision contract. Integration confirmation is pending. Claude owns `server/agent/` and subsequent UI work; Codex owns backend core, shared decisions, protocol and README outside Agent/UI sections.
