@@ -28,7 +28,8 @@ The queue also contains the six original example decisions. Both screens refresh
 - Shared decision records and deterministic shipping + delay cost derivation in `src/decisions.js`.
 - SQLite-backed requests and immutable audit entries in `server/store.js`.
 - Revision checks reject stale writes and prevent duplicate approval/order creation.
-- NDJSON tool execution events from the Node backend.
+- NDJSON tool execution events from the Node backend, invoking Claude’s agent module. Completed analysis is persisted with parsed identity, catalog match, question and planner mode. Reopening a completed run returns the saved result without fabricated tool progress.
+- Unmatched catalog requests become `unsupported` and cannot create purchase orders. Matched parts use trusted fixture shipping prices and dependency facts, regardless of model output.
 - Persisted approval tiers, draft purchase orders, dependency release/reset, validation and visible request failures.
 
 SQLite defaults to `data/purchasing.sqlite` (ignored by Git). Set `PURCHASING_DB` to override its path. Stop the app and remove the database plus its `-wal`/`-shm` siblings to reseed all demo data.
@@ -47,13 +48,13 @@ SQLite defaults to `data/purchasing.sqlite` (ignored by Git). Set `PURCHASING_DB
 | POST | `/api/requests/sens/reset` | `{revision}` |
 | GET | `/api/requests/:id/audit` | Persisted transition audit |
 
-Every mutation returns `{request}`. Errors return `{error}`; stale revisions return HTTP 409. The server remains the authority for transitions, tier validity and approval rules.
+Every mutation except the tool stream returns `{request}`. `/run` persists analysis and increments the revision before sending `run.completed {request}`; use that revision for the next answer. It also accepts `choiceId: "revb_yes"` or `"revb_no"` as an alternative to `answer`. Errors return `{error}`; stale revisions return HTTP 409. The server remains the authority for transitions, tier validity and approval rules.
 
 ## Current boundaries
 
-The tool adapters in `server/tools.js` execute against seeded project data. No Slack, calendar, vendor, or LLM credentials have been supplied. The UI is a guided conversation for the sample sensor request, not arbitrary free-text purchasing. Purchase orders are local drafts; no vendor purchase is placed. Identity is the reference demo identity, not authenticated access control. Evidence links and the reference Ask button still need actual source/conversation integrations. Run locally for the demo; add authentication before shared hosting.
+The agent tool adapters in `server/agent/tools.js` execute against seeded project data. The legacy `server/tools.js` helper is retained only for its original unit test. No live Slack, calendar or vendor credentials have been supplied. Claude’s agent uses its deterministic fallback without model credentials; live model execution remains unverified in this session. The UI is a guided conversation for the sample sensor request, not arbitrary free-text purchasing. Purchase orders are local drafts; no vendor purchase is placed. Identity is the reference demo identity, not authenticated access control. Evidence links and the reference Ask button still need actual source/conversation integrations. Run locally for the demo; add authentication before shared hosting.
 
-Request creation is available through the API with explicit Rev C demo context. Next milestones: connect Claude’s agent loop and request input UI, then project/vendor sources, purchasing and authenticated approvers.
+Request creation is available through the API with explicit Rev C demo context. The agent loop is connected on the Codex integration branch. Claude is adding the request input UI, event-derived working labels and catalog-aware conversation; next come project/vendor sources, purchasing and authenticated approvers.
 
 ## Collaboration and Git conventions
 
@@ -62,8 +63,8 @@ Claude and Codex coordinate via `collaboration/PROTOCOL.md`, `CLAUDE.md`, `AGENT
 Use one worktree per task:
 
 ```bash
-git worktree add .worktrees/backend -b feat/request-lifecycle
-git worktree add .worktrees/frontend -b feat/shared-request-ui
+git worktree add .worktrees/codex-agent-run -b codex/agent-run
+git worktree add .worktrees/claude-ui -b claude/ui
 ```
 
 Commit messages use Conventional Commits: `feat(server): persist request lifecycle`, `feat(ui): connect engineer and approval views`, `test(server): cover approvals and stale writes`, `docs: document demo workflow`. Keep README updates with their feature. Review and merge finished branches from the main checkout.
@@ -72,4 +73,6 @@ During this implementation session `.git` is read-only, so worktree/commit creat
 
 ## Validation
 
-`npm test` checks cost derivation, tool events, persistent approval overrides, duplicate prevention, invalid inputs, dependency invalidation and API handlers. API handler tests run in-process because the build session cannot bind local sockets. `npm run build` verifies the React production bundle. Browser end-to-end verification remains pending in a session that can start the local server.
+`npm test` checks cost derivation, tool events, persistent approval overrides, duplicate prevention, invalid inputs, dependency invalidation and API handlers. Agent integration tests also cover matching, unsupported parts, question choice aliases, and revision conflicts after analysis. API handler tests run in-process because the build session cannot bind local sockets. `npm run build` verifies the React production bundle. Browser end-to-end verification remains pending in a session that can start the local server.
+
+Catalog matching uses seeded shipping and project context. Parsed quantities appear consistently in the approval description and draft purchase order, which also saves the vendor and exact shipping quote. A new purchase can fulfill the seeded project dependency only when it matches the catalog part and project and covers at least the catalog quantity; a partial purchase leaves that dependency waiting. This is demo fulfillment logic, not a live inventory allocation system.

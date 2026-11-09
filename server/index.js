@@ -2,7 +2,7 @@ import http from 'node:http';
 import {readFile} from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {runTools} from './tools.js';
+import {analyze} from './agent/index.js';
 import {createStore,AppError} from './store.js';
 async function body(req){let text='';for await(const chunk of req){text+=chunk;if(text.length>16384)throw new AppError('Request too large',413);}try{return JSON.parse(text||'{}');}catch{throw new AppError('Invalid JSON');}}
 export function server(vite,store=createStore()) { return http.createServer(async (req,res) => {
@@ -23,7 +23,16 @@ export function server(vite,store=createStore()) { return http.createServer(asyn
       if(req.headers.origin&&req.headers.origin!==`http://${req.headers.host}`)throw new AppError('Origin not allowed',403);
       if(action==='run'){
         res.writeHead(200,{'Content-Type':'application/x-ndjson','Cache-Control':'no-cache'});
-        await runTools(event=>{if(!res.destroyed)res.write(JSON.stringify(event)+'\n');},request);res.end();return;
+        const emit=event=>{if(!res.destroyed)res.write(JSON.stringify(event)+'\n');};
+        try {
+          let current=request;
+          if(!request.analysis&&request.status==='needs_answer') {
+            const result=await analyze({text:request.text||'ACS37002 × 40 from Digi-Key, standard shipping.',requester:request.who},emit);
+            current=store.finishAnalysis(id,request.revision,result);
+          }
+          emit({type:'run.completed',question:current.question,parsed:current.analysis?.parsed,planner:current.analysis?.planner,request:current});
+        } catch(error){emit({type:'run.failed',error:error.message});}
+        res.end();return;
       }
       return json({request:store.mutate(id,action,await body(req))});
     }
