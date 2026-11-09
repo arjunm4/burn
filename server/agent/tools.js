@@ -4,13 +4,13 @@
 import {decisions} from '../../src/decisions.js';
 
 const ALIASES = {
-  sens: ['acs37002', 'current sensor', 'sensor'],
+  sens: ['acs37002', 'current sensor'],
   harn: ['harness', 'cable'],
   fpga: ['fpga', 'dev kit'],
   cham: ['thermal chamber', 'chamber'],
   mold: ['mold', 't1 sample'],
   load: ['load cell'],
-  probe: ['scope probe', 'probe'],
+  probe: ['scope probe'],
 };
 const CHANNELS = {
   'Rev C power board': {channel: '#rev-c-bringup', items: [
@@ -37,7 +37,8 @@ export const tools = [
     input_schema: {type: 'object', properties: {query: {type: 'string', description: 'Part name or number, e.g. "ACS37002"'}}, required: ['query'], additionalProperties: false},
     run: input => {
       const q = need(input, 'query').toLowerCase();
-      const hit = decisions.find(d => ALIASES[d.id].some(a => q.includes(a) || a.includes(q)) || d.part.toLowerCase().includes(q));
+      // Whole-word alias matches only: a fragment like "s" must never match a part.
+      const hit = decisions.find(d => ALIASES[d.id].some(a => new RegExp(`(^|[^a-z0-9])${a.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}s?($|[^a-z0-9])`).test(q)));
       if (!hit) return {found: false};
       return {found: true, decisionId: hit.id, pr: hit.pr, part: hit.part, project: hit.project, tiers: hit.tiers.map((t, i) => ({index: i, ...t}))};
     },

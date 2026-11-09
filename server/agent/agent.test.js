@@ -28,3 +28,11 @@ test('asked tier matches tier names', () => {
   assert.equal(parseRequest('expedite it', [{name: 'Standard'}, {name: 'Expedited'}]).askedTier, 0);
   assert.equal(parseRequest('expedited please', [{name: 'Standard'}, {name: 'Expedited'}]).askedTier, 1);
 });
+
+test('short or partial text never matches a part', async () => {
+  for (const text of ['s x2', 'sens', 'acs', 'probe-ish thing', 'chamberlain']) {
+    const out = await analyze({text});
+    assert.equal(out.parsed.decisionId, null, text);
+  }
+  assert.equal((await analyze({text: 'Need a thermal chamber for a week'})).parsed.decisionId, 'cham');
+});
