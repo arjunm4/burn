@@ -1,7 +1,14 @@
 import {mkdir, readFile, readdir, writeFile, rename} from 'node:fs/promises';
 import {randomUUID} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
-const root = fileURLToPath(new URL('../collaboration/', import.meta.url));
+import {execFileSync} from 'node:child_process';
+import path from 'node:path';
+let projectRoot = fileURLToPath(new URL('../', import.meta.url));
+try {
+  const common = execFileSync('git', ['rev-parse','--path-format=absolute','--git-common-dir'], {cwd:projectRoot,encoding:'utf8',stdio:['ignore','pipe','ignore']}).trim();
+  if (path.basename(common) === '.git') projectRoot = path.dirname(common);
+} catch {}
+const root = path.join(projectRoot,'collaboration') + path.sep;
 const [command, actor, target, ...words] = process.argv.slice(2);
 const valid = value => { if (!/^[a-z0-9_-]+$/.test(value || '')) throw Error('Use a lowercase agent name'); return value; };
 await mkdir(root+'messages',{recursive:true}); await mkdir(root+'status',{recursive:true});
