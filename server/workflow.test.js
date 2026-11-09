@@ -31,3 +31,22 @@ test('new request crosses agent, engineer, approver, conversation and audit APIs
   assert.equal((await http(endpoint+'/approve',{revision:request.revision,tier:1})).status,409);
  }finally{store.close();}
 });
+
+test('two tabs join one in-flight analysis without stale revision failures',async()=>{
+ const store=createStore(':memory:');let calls=0,release;
+ const gate=new Promise(resolve=>{release=resolve;});
+ const analyzer=async()=>{calls++;await gate;return {parsed:{decisionId:'sens',qty:40,vendor:'Digi-Key',askedTier:0},question:null,planner:'fallback'};};
+ const app=server(null,store,analyzer);
+ const run=()=>new Promise(resolve=>{
+  const req=Readable.from([]);Object.assign(req,{url:'/api/requests/sens/run',method:'POST',headers:{}});
+  const chunks=[];const res={headersSent:false,destroyed:false,writeHead(){this.headersSent=true;},write(chunk){chunks.push(chunk);},end(){resolve(chunks.join('').trim().split('\n').map(JSON.parse));}};
+  app.emit('request',req,res);
+ });
+ try{
+  const first=run(),second=run();assert.equal(calls,1);release();
+  const results=await Promise.all([first,second]);
+  assert.ok(results.every(events=>events.at(-1).type==='run.completed'));
+  assert.equal(results[0].at(-1).request.revision,1);assert.equal(results[1].at(-1).request.revision,1);
+  assert.equal(store.audit('sens').filter(e=>e.action==='analysis_completed').length,1);
+ }finally{store.close();}
+});
