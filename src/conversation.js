@@ -39,10 +39,11 @@ export function buildConversation(request, {tools = [], running = false, request
   const ai = (text, extra = {}) => ({from: 'ai', text, ...extra});
   const [d] = deriveDecisions([request]);
   const persisted = request.analysis?.tools?.map((t, index) => ({index, done: true, ...t}));
-  const work = running || tools.length ? tools : persisted || Object.values(LEGACY_TOOLS).map(([label], index) => ({index, label, summary: '', done: true}));
+  const sensor = (request.catalogId || request.id) === 'sens';
+  const work = running || tools.length ? tools : persisted || (sensor ? Object.values(LEGACY_TOOLS).map(([label], index) => ({index, label, summary: '', done: true})) : []);
   const planner = request.analysis?.planner;
   const plannerNote = planner === 'fallback' ? 'Offline planner · no model call' : planner === 'claude' ? 'Planned by Claude' : null;
-  const msgs = [me(request.text || DEFAULT_TEXT), ai(null, {work: running && !work.length ? [{index: 0, label: 'Reading the request', summary: '', done: false}] : work, ...(plannerNote && !running ? {meta: plannerNote} : {})})];
+  const msgs = [me(request.text || (sensor ? DEFAULT_TEXT : request.part)), ai(null, {work: running && !work.length ? [{index: 0, label: 'Reading the request', summary: '', done: false}] : work, ...(plannerNote && !running ? {meta: plannerNote} : {})})];
   if (running || request.status === 'analyzing') return msgs;
 
   if (request.status === 'unsupported') {
@@ -51,7 +52,8 @@ export function buildConversation(request, {tools = [], running = false, request
   }
 
   // Only the original sensor demo, before any analysis is stored, falls back to the scripted question.
-  const question = request.question || (!request.analysis && (request.catalogId || request.id) === 'sens' ? LEGACY_QUESTION : null);
+  // The store clears the question once answered; the sensor demo's answer still needs its question shown.
+  const question = request.question || (sensor && (!request.analysis || request.answer) ? LEGACY_QUESTION : null);
   const answered = !!request.answer;
   if (question) {
     msgs.push(ai(question.text, answered || request.status !== 'needs_answer' ? {} : {

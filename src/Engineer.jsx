@@ -27,39 +27,44 @@ export default class Engineer extends React.Component {
   go(id) { history.pushState(null, '', id ? `/request/${encodeURIComponent(id)}` : '/request'); this.onRoute(); }
 
   load = async () => {
-    const request = await this.refresh();
+    // A shared fetch started for the previous route resolves null; fetch again for this one.
+    const request = (await this.refresh()) ?? (this.state.id ? await this.fetchState() : null);
     if (request && needsRun(request)) this.runAgent();
   };
-  refresh = async () => {
-    if (this.refreshing || !this.mounted) return;
-    this.refreshing = true;
+  // Concurrent callers share one in-flight fetch so load() always sees a result.
+  refresh = () => {
+    if (!this.mounted) return Promise.resolve(null);
+    if (!this.refreshing) this.refreshing = this.fetchState().finally(() => { this.refreshing = null; });
+    return this.refreshing;
+  };
+  fetchState = async () => {
     try {
       const id = this.state.id;
       const {requests} = await api('/requests');
       // The route may have changed while this request was in flight.
       if (!this.mounted || this.state.id !== id) return null;
       const recent = requests.filter(r => r.text || r.id === 'sens').reverse();
-      if (!id) { this.setState({recent, requests}); return null; }
+      if (!id) { this.setState(s => ({recent, requests, ...(s.pollError ? {error: null, pollError: false} : {})})); return null; }
       const request = requests.find(r => r.id === id);
       if (!request) throw new Error('That request was not found.');
-      await new Promise(resolve => this.setState(s => ({recent, requests, request: s.request?.id === id && request.revision < s.request.revision ? s.request : request}), resolve));
+      await new Promise(resolve => this.setState(s => ({recent, requests, ...(s.pollError ? {error: null, pollError: false} : {}), request: s.request?.id === id && request.revision < s.request.revision ? s.request : request}), resolve));
       return request;
-    } catch (error) { if (this.mounted) this.setState({error: error.message}); return null; }
-    finally { this.refreshing = false; }
+    } catch (error) { if (this.mounted) this.setState({error: error.message, pollError: true}); return null; }
   };
 
   async runAgent() {
     const id = this.state.id;
     if (this.state.running || !id) return;
-    this.controller = new AbortController();
+    const controller = this.controller = new AbortController();
+    const current = () => this.mounted && this.controller === controller && this.state.id === id;
     this.setState({running: true, tools: [], error: null});
     try {
-      await streamRun(id, this.controller.signal, event => {
-        if (!this.mounted || this.state.id !== id) return;
-        this.setState(s => ({tools: applyToolEvent(s.tools, event), ...(event.request ? {request: event.request} : {})}));
+      await streamRun(id, controller.signal, event => {
+        if (!current()) return;
+        this.setState(s => ({tools: applyToolEvent(s.tools, event), ...(event.request?.id === id ? {request: event.request} : {})}));
       });
-    } catch (error) { if (this.mounted && error.name !== 'AbortError') this.setState({error: error.message}); }
-    if (!this.mounted || this.state.id !== id) return;
+    } catch (error) { if (current() && error.name !== 'AbortError') this.setState({error: error.message}); }
+    if (!current()) return;
     this.setState({running: false});
     await this.refresh();
   }

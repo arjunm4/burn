@@ -3,7 +3,8 @@ export async function api(path, {body, ...options} = {}) {
     ...options,
     ...(body !== undefined ? {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body)} : {}),
   });
-  const data = await response.json();
+  let data;
+  try { data = await response.json(); } catch { data = {}; }
   if (!response.ok) {
     const error = new Error(data.error || 'The request could not be completed.');
     error.status = response.status;

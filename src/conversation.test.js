@@ -76,3 +76,12 @@ test('matched request without a question goes straight to actionable options', (
   assert.match(last.text, /Nobody waits on these, so standard is fine/);
   assert.ok(last.rows.every(r => r.action?.type === 'select'));
 }));
+
+test('seeded requests speak as their own part, and only the sensor demo shows scripted tools', () => flow(store => {
+  const harn = store.get('harn');
+  const msgs = buildConversation(harn);
+  assert.equal(msgs[0].text, harn.part);
+  assert.deepEqual(msgs[1].work, []);
+  const sens = store.mutate('sens', 'answer', {answer: 'no', revision: 0});
+  assert.ok(texts(buildConversation({...sens, question: null, analysis: {planner: 'fallback'}})).some(t => /Rev B boards/.test(t)));
+}));
