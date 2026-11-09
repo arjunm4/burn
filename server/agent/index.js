@@ -78,8 +78,7 @@ async function fallback(request, emit) {
   return {parsed: {decisionId: part.decisionId, ...parseRequest(request.text, part.tiers)}, question, planner: 'fallback'};
 }
 
-async function withClaude(request, emit) {
-  const client = new Anthropic();
+async function withClaude(request, emit, client = new Anthropic()) {
   const run = makeRunner(emit);
   const toolDefs = [...tools.map(({name, description, input_schema}) => ({name, description, input_schema})), FINISH];
   const messages = [{role: 'user', content: `Requester: ${request.requester || 'unknown'}\nRequest: ${request.text}`}];
@@ -94,11 +93,16 @@ async function withClaude(request, emit) {
     if (!calls.length) throw Error('model ended without finish_analysis');
     messages.push({role: 'assistant', content: response.content});
     const finish = calls.find(c => c.name === 'finish_analysis');
-    if (finish) return finalize(finish.input, run.facts, request);
     const results = [];
     for (const c of calls) {
+      if (c === finish) continue;
       const result = toolByName[c.name] ? await run.call(c.name, c.input) : {error: `unknown tool ${c.name}`};
       results.push({type: 'tool_result', tool_use_id: c.id, content: JSON.stringify(result), ...(result.error ? {is_error: true} : {})});
+    }
+    if (finish) {
+      // A skipped find_part would discard a valid match, so verify the model's pick ourselves.
+      if (!run.facts.find_part) await run.call('find_part', {query: request.text});
+      return finalize(finish.input, run.facts, request);
     }
     messages.push({role: 'user', content: results});
   }
@@ -121,9 +125,9 @@ function finalize(out, facts, request) {
  * analyze({text, requester}, emit) -> {parsed:{decisionId, qty, vendor, askedTier}, question|null, planner}
  * emit receives tool.started / tool.completed / agent.fallback events.
  */
-export async function analyze(request, emit = () => {}) {
-  if (!hasCredentials() || process.env.AGENT_OFFLINE === '1') return fallback(request, emit);
-  try { return await withClaude(request, emit); }
+export async function analyze(request, emit = () => {}, {client} = {}) {
+  if (!client && (!hasCredentials() || process.env.AGENT_OFFLINE === '1')) return fallback(request, emit);
+  try { return await withClaude(request, emit, client); }
   catch (error) {
     emit({type: 'agent.fallback', error: error instanceof Anthropic.APIError ? `API ${error.status}` : error.message});
     return fallback(request, emit);

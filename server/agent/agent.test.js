@@ -36,3 +36,28 @@ test('short or partial text never matches a part', async () => {
   }
   assert.equal((await analyze({text: 'Need a thermal chamber for a week'})).parsed.decisionId, 'cham');
 });
+
+// Minimal stand-in for the SDK client: replays scripted assistant turns.
+const scripted = turns => ({beta: {messages: {create: async () => turns.shift()}}});
+const use = (id, name, input) => ({type: 'tool_use', id, name, input});
+
+test('Claude path runs same-turn tools and verifies a skipped find_part', async () => {
+  const events = [];
+  const out = await analyze({text: 'ACS37002 × 40 from Digi-Key, standard'}, e => events.push(e), {client: scripted([
+    {stop_reason: 'tool_use', content: [use('a', 'check_policy', {}),
+      use('b', 'finish_analysis', {decisionId: 'sens', qty: 40, vendor: 'Digi-Key', askedTier: 0, question: {text: 'Can firmware start on Rev B?', choiceIds: ['revb_yes', 'revb_no']}})]},
+  ])});
+  assert.equal(out.planner, 'claude');
+  assert.equal(out.parsed.decisionId, 'sens');
+  assert.equal(out.question.text, 'Can firmware start on Rev B?');
+  assert.deepEqual(out.question.choices.map(c => c.id), ['revb_yes', 'revb_no']);
+  assert.deepEqual(events.filter(e => e.type === 'tool.completed').map(e => e.name), ['check_policy', 'find_part']);
+});
+
+test('Claude path falls back when the model misbehaves', async () => {
+  const events = [];
+  const out = await analyze({text: 'Scope probes x 3'}, e => events.push(e), {client: scripted([{stop_reason: 'end_turn', content: [{type: 'text', text: 'done'}]}])});
+  assert.equal(out.planner, 'fallback');
+  assert.equal(out.parsed.decisionId, 'probe');
+  assert.ok(events.some(e => e.type === 'agent.fallback'));
+});
