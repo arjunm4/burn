@@ -32,7 +32,8 @@ test('HTTP API validates mutations and streams completed tool results',async()=>
  });
  try {
   assert.equal((await (await request('/api/requests')).json()).requests.length,7);
-  const stream=await request('/api/requests/sens/run',{method:'POST'});const events=(await stream.text()).trim().split('\n').map(JSON.parse);assert.equal(events.at(-1).type,'run.completed');assert.equal(events.filter(e=>e.type==='tool.completed').length,5);
+  const stream=await request('/api/requests/sens/run',{method:'POST'});const events=(await stream.text()).trim().split('\n').map(JSON.parse);assert.equal(events.at(-1).type,'run.completed');assert.equal(events.filter(e=>e.type==='tool.completed').length,5);assert.equal(events.at(-1).request.analysis.tools.length,5);
+  const replay=await request('/api/requests/sens/run',{method:'POST'});const replayEvents=(await replay.text()).trim().split('\n').map(JSON.parse);assert.equal(replayEvents.length,1);assert.equal(replayEvents[0].request.revision,1);
   const mutate=data=>request('/api/requests/sens/answer',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
   assert.equal((await mutate({answer:'no'})).status,409);
   assert.equal((await mutate({answer:'no',revision:1})).status,200);

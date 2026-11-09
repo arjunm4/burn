@@ -27,7 +27,10 @@ export function server(vite,store=createStore()) { return http.createServer(asyn
         try {
           let current=request;
           if(!request.analysis&&request.status==='needs_answer') {
-            const result=await analyze({text:request.text||'ACS37002 × 40 from Digi-Key, standard shipping.',requester:request.who},emit);
+            let tools=[];
+            const track=event=>{if(event.type==='agent.fallback')tools=[];if(event.type==='tool.completed')tools.push({index:event.index,label:event.label,summary:event.summary,name:event.name});emit(event);};
+            const result=await analyze({text:request.text||'ACS37002 × 40 from Digi-Key, standard shipping.',requester:request.who},track);
+            result.tools=tools;
             current=store.finishAnalysis(id,request.revision,result);
           }
           emit({type:'run.completed',question:current.question,parsed:current.analysis?.parsed,planner:current.analysis?.planner,request:current});

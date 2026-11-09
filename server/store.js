@@ -35,7 +35,7 @@ export function createStore(filename=process.env.PURCHASING_DB || 'data/purchasi
       if(r.revision!==revision)throw new AppError('Request changed during analysis. Refresh and try again.',409);
       if(r.status!=='needs_answer')throw new AppError('Request is not awaiting analysis',409);
       const match=decisions.find(d=>d.id===result.parsed?.decisionId);
-      r.analysis={planner:result.planner,parsed:result.parsed};
+      r.analysis={planner:result.planner,parsed:result.parsed,tools:result.tools||[]};
       if(!match){r.status='unsupported';r.question=null;r.analysis.note='No matching part in the demo catalog. No purchase order can be created.';}
       else {
         const identity={id:r.id,pr:r.pr,who:r.who,text:r.text};
