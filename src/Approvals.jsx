@@ -1,26 +1,59 @@
 import React from 'react';
-import {decisions, deriveDecisions} from './decisions.js';
+import {deriveDecisions} from './decisions.js';
+import {api} from './api.js';
 export default class Approvals extends React.Component {
 
-  state = { sel: 'sens', tier: {}, approved: {}, resolvedBy: {} };
-  COST = 1100;
-  // Every decision carries the same fields. Nothing is prose.
-  data() { return decisions; }
+  state = {sel:'sens', tier:{}, approved:{}, resolvedBy:{}, requests:null, pending:false, error:null};
+  mounted = false;
+  componentDidMount() {
+    this.mounted = true;
+    this.refresh();
+    this.poll = setInterval(this.refresh, 2000);
+    window.addEventListener('focus', this.refresh);
+  }
+  componentWillUnmount() {
+    this.mounted = false;
+    clearInterval(this.poll);
+    window.removeEventListener('focus', this.refresh);
+  }
+  refresh = async () => {
+    if (this.refreshing) return;
+    this.refreshing = true;
+    try {
+      const data = await api('/requests');
+      if (this.mounted) this.setState(state => ({requests:data.requests.map(request => { const previous = state.requests?.find(r => r.id === request.id); return previous && previous.revision > request.revision ? previous : request; }), approved:data.approved, resolvedBy:data.resolvedBy}));
+    } catch(error) { if (this.mounted) this.setState({error:error.message}); }
+    finally { this.refreshing = false; }
+  };
+  async approve(request, tier) {
+    if (this.state.pending) return;
+    this.setState({pending:true, error:null});
+    try {
+      const {request: updated} = await api(`/requests/${encodeURIComponent(request.id)}/approve`, {body:{tier,revision:request.revision}});
+      if (this.mounted) this.setState(state => ({requests:state.requests.map(r => r.id === updated.id ? updated : r)}));
+      await this.refresh();
+    } catch(error) {
+      if (error.status === 409) await this.refresh();
+      if (this.mounted) this.setState({error:error.message});
+    } finally { if (this.mounted) this.setState({pending:false}); }
+  }
   renderVals() {
     const st = this.state, fmt = n => '$' + Math.round(n).toLocaleString('en-US');
     const limit = this.props.autoApproveLimit ?? 500;
     const showHandled = this.props.showHandled ?? true;
-    const raw = this.data();
-    const list = deriveDecisions(raw, st.approved, limit);
+    const raw = st.requests;
+    const list = deriveDecisions(raw, st.approved, limit).map(d => ({...d,
+      kind: d.status === 'ordered' ? 'done' : ['needs_answer','choosing','waiting'].includes(d.status) ? 'wait' : d.status === 'pending_approval' ? 'need' : d.kind,
+    }));
     const sel = list.find(d => d.id === st.sel) || list[0];
-    const selTier = sel.tiers[st.tier[sel.id] ?? sel.rec.i];
+    const selTier = sel.tiers[sel.status === 'ordered' ? (sel.approvedTier ?? sel.selectedTier ?? sel.rec.i) : (st.tier[sel.id] ?? sel.selectedTier ?? sel.rec.i)];
     const asked = sel.tiers[sel.asked];
     const need = list.filter(d => d.kind === 'need'), wait = list.filter(d => d.kind === 'wait'), handled = list.filter(d => d.kind === 'auto' || d.kind === 'done');
     const row = d => ({
       part: d.part,
-      line: d.kind === 'wait' ? `${d.project} · after ${d.waitingOn.part}` : `${d.project} · ${d.blocked ? d.blocked + ' waiting' : 'nobody waiting'}`,
-      amt: d.kind === 'wait' ? '—' : `${d.rec.name} · +${fmt(d.premium)}`,
-      amt2: d.kind === 'done' ? 'approved' : d.kind === 'wait' ? 'no recommendation yet' : st.resolvedBy[d.id] ? `resolved by ${st.resolvedBy[d.id]}` : d.avoided > 0 ? `avoids ${fmt(d.avoided)}${d.unknown ? ' · unverified' : ''}` : d.tiers[d.asked].i !== d.rec.i ? `asked ${d.tiers[d.asked].name.toLowerCase()}` : 'auto',
+      line: d.kind === 'wait' ? `${d.project} · ${d.waitingOn ? 'after ' + d.waitingOn.part : 'awaiting engineer'}` : `${d.project} · ${d.blocked ? d.blocked + ' waiting' : 'nobody waiting'}`,
+      amt: d.kind === 'wait' ? '—' : d.kind === 'done' ? `${d.tiers[d.approvedTier ?? d.selectedTier ?? d.rec.i].name}` : `${d.rec.name} · +${fmt(d.premium)}`,
+      amt2: d.kind === 'done' ? 'draft PO created' : d.kind === 'wait' ? 'no recommendation yet' : st.resolvedBy[d.id] ? `resolved by ${st.resolvedBy[d.id]}` : d.avoided > 0 ? `avoids ${fmt(d.avoided)}${d.unknown ? ' · unverified' : ''}` : d.tiers[d.asked].i !== d.rec.i ? `asked ${d.tiers[d.asked].name.toLowerCase()}` : 'auto',
       amt2Color: st.resolvedBy[d.id] ? '#1C1B17' : '#7A766F',
       edge: d.id === sel.id ? '#1C1B17' : 'transparent', bg: d.id === sel.id ? '#fff' : 'transparent', select: () => this.setState({ sel: d.id }),
     });
@@ -38,29 +71,24 @@ export default class Approvals extends React.Component {
       { k: 'Basis', v: sel.basis, hasLink: true, link: sel.link },
       ...(sel.unknown ? [{ k: 'Unverified', v: sel.unknown }] : []),
     ];
-    const tiers = sel.tiers.map(t => ({ name: t.name, tag: t.i === sel.rec.i && t.i === sel.asked ? 'rec · requested' : t.i === sel.rec.i ? 'rec' : t.i === sel.asked ? 'requested' : '', arrives: t.late ? `${t.late}d late` : 'on time', lateColor: t.late ? '#1C1B17' : '#7A766F', total: fmt(t.total), bg: t.i === selTier.i ? '#F4F2F0' : 'transparent', select: () => this.setState({ tier: { ...st.tier, [sel.id]: t.i } }) }));
-    const approveIds = ids => {
-      const resolved = { ...st.resolvedBy };
-      raw.forEach(d => { if (d.dep && ids.includes(d.dep) && !st.approved[d.id]) resolved[d.id] = raw.find(x => x.id === d.dep).pr; });
-      this.setState({ approved: { ...st.approved, ...Object.fromEntries(ids.map(i => [i, true])) }, resolvedBy: resolved });
-    };
+    const tiers = sel.tiers.map(t => ({ name: t.name, tag: t.i === sel.rec.i && t.i === sel.asked ? 'rec · requested' : t.i === sel.rec.i ? 'rec' : t.i === sel.asked ? 'requested' : '', arrives: t.late ? `${t.late}d late` : 'on time', lateColor: t.late ? '#1C1B17' : '#7A766F', total: fmt(t.total), bg: t.i === selTier.i ? '#F4F2F0' : 'transparent', select: () => { if (!st.pending && sel.kind === 'need') this.setState({tier:{...st.tier,[sel.id]:t.i}}); } }));
     const node = (label, sub, hit, kind) => ({ label, sub, arrow: true, bg: hit ? '#1C1B17' : kind === 'part' ? '#F4F2F0' : '#fff', color: hit ? '#F4F2F0' : '#1C1B17', border: hit || kind !== 'work' ? '#1C1B17' : '#E2DFDA' });
     const trace = [{ ...node(sel.part, selTier.late ? `${selTier.late}d late` : 'on time', false, 'part'), arrow: false },
       ...sel.chain.map(c => node(c, sel.blocked ? `${c === sel.chain[0] ? sel.chain0 : sel.chain1}` : 'no one', selTier.late > 0, 'work')),
       node(sel.milestone, selTier.late ? `slips ${selTier.late}d` : 'holds', selTier.late > 0, 'ms')];
     const VERB = { Expedited: 'Expedite', Priority: 'Ship priority', Standard: 'Ship standard', 'Current vendor': 'Keep current vendor', 'Second vendor': 'Switch to second vendor' };
     const verb = t => VERB[t] || `Book ${t.toLowerCase()}`;
-    const status = sel.kind === 'done' ? `Approved · ${selTier.name}` : sel.kind === 'auto' ? `Auto-approved · under ${fmt(limit)} and matches request` : sel.kind === 'wait' ? `Recommendation follows ${sel.waitingOn.part}` : selTier.i !== sel.rec.i ? 'Overrides recommendation' : '';
+    const status = sel.kind === 'done' ? `Approved · ${selTier.name} · Draft PO ${sel.order?.id || 'created'}` : sel.kind === 'auto' ? `Auto-approved · under ${fmt(limit)} and matches request` : sel.kind === 'wait' ? sel.waitingOn ? `Recommendation follows ${sel.waitingOn.part}` : 'Waiting for the engineer’s answer and shipping selection' : selTier.i !== sel.rec.i ? 'Overrides recommendation' : '';
     return {
       needCount: need.length,
       hasTrace: sel.kind !== 'wait' && sel.chain.length > 0, traceTier: `if ${selTier.name.toLowerCase()}`, trace,
       groups,
       eyebrow: `${sel.pr} · ${sel.project}`, headline: sel.kind === 'wait' ? `Hold ${sel.part}` : `${verb(sel.rec.name)} · ${sel.part}`,
       facts, hasTiers: sel.tiers.length > 1 && sel.kind !== 'wait', tiers,
-      showApprove: sel.kind === 'need', approve: () => approveIds([sel.id]), approveLabel: `Approve ${selTier.name.toLowerCase()} · ${fmt(selTier.price)}`, requester: sel.who.split(' ')[0], status,
+      showApprove: sel.kind === 'need', approve: () => this.approve(sel, selTier.i), approveLabel: `Approve ${selTier.name.toLowerCase()} · ${fmt(selTier.price)}`, requester: sel.who.split(' ')[0], status,
     };
   }
- render() { const {needCount, hasTrace, traceTier, trace, groups, eyebrow, headline, facts, hasTiers, tiers, showApprove, approve, approveLabel, requester, status} = this.renderVals(); return <>{this.state.error && <div role="alert">{this.state.error} <button onClick={() => this.runWork()}>Retry</button></div>}
+ render() { if (!this.state.requests?.length) return <main style={{padding:'40px 24px',fontSize:13}}>{this.state.error ? <div role="alert">{this.state.error} <button onClick={this.refresh}>Retry</button></div> : 'Loading approvals…'}</main>; const {needCount, hasTrace, traceTier, trace, groups, eyebrow, headline, facts, hasTiers, tiers, showApprove, approve, approveLabel, requester, status} = this.renderVals(); return <>{this.state.error && <div role="alert">{this.state.error} <button onClick={this.refresh}>Retry</button></div>}
 
 <div data-q-root="1" style={{"minHeight":"100vh","fontSize":"13px","display":"flex","flexDirection":"column"}}>
   <header style={{"display":"flex","alignItems":"center","gap":"18px","padding":"14px 24px","borderBottom":"1px solid #E2DFDA"}}>
@@ -114,7 +142,7 @@ export default class Approvals extends React.Component {
       <div style={{"display":"flex","flexDirection":"column","maxWidth":"560px"}}>
         <div style={{"display":"grid","gridTemplateColumns":"minmax(0,1fr) 110px 110px","fontSize":"11px","letterSpacing":".1em","textTransform":"uppercase","color":"#7A766F","paddingBottom":"6px","borderBottom":"1px solid #E2DFDA"}}><span>Option</span><span style={{"textAlign":"right"}}>Arrives</span><span style={{"textAlign":"right"}}>Total cost</span></div>
         {tiers.map((t, index) => <React.Fragment key={index}>
-          <div onClick={t.select} style={{"display":"grid","gridTemplateColumns":"minmax(0,1fr) 110px 110px","alignItems":"baseline","padding":"9px 8px","margin":"0 -8px","borderBottom":"1px solid #EFECE8","cursor":"pointer","background":t.bg,"borderRadius":"6px"}}>
+          <div role="button" tabIndex={this.state.pending ? -1 : 0} onKeyDown={event => { if (event.key === 'Enter') t.select(); }} aria-disabled={this.state.pending || undefined} onClick={t.select} style={{"display":"grid","gridTemplateColumns":"minmax(0,1fr) 110px 110px","alignItems":"baseline","padding":"9px 8px","margin":"0 -8px","borderBottom":"1px solid #EFECE8","cursor":"pointer","background":t.bg,"borderRadius":"6px"}}>
             <span style={{"display":"flex","gap":"8px","alignItems":"center"}}><span>{t.name}</span><span style={{"color":"#7A766F","fontSize":"12px"}}>{t.tag}</span></span>
             <span style={{"textAlign":"right","color":t.lateColor}}>{t.arrives}</span>
             <span style={{"textAlign":"right"}}>{t.total}</span>
@@ -125,8 +153,8 @@ export default class Approvals extends React.Component {
 
       <div style={{"display":"flex","gap":"10px","alignItems":"center","flexWrap":"wrap"}}>
         {showApprove && <>
-          <button onClick={approve} style={{"background":"#E4F222","border":"1px solid #E4F222","borderRadius":"6px","padding":"10px 16px","fontSize":"14px","cursor":"pointer","color":"#1C1B17"}}>{approveLabel}</button>
-          <button style={{"background":"#fff","border":"1px solid #E2DFDA","borderRadius":"6px","padding":"10px 14px","fontSize":"13px","cursor":"pointer","color":"#1C1B17"}}>Ask {requester}</button>
+          <button disabled={this.state.pending} onClick={approve} style={{"background":"#E4F222","border":"1px solid #E4F222","borderRadius":"6px","padding":"10px 16px","fontSize":"14px","cursor":"pointer","color":"#1C1B17"}}>{approveLabel}</button>
+          <a href="/request" style={{"background":"#fff","border":"1px solid #E2DFDA","borderRadius":"6px","padding":"10px 14px","fontSize":"13px","cursor":"pointer","color":"#1C1B17","textDecoration":"none"}}>Open engineer chat</a>
         </>}
         <span style={{"color":"#7A766F","fontSize":"12px"}}>{status}</span>
       </div>
