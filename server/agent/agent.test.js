@@ -61,3 +61,22 @@ test('Claude path falls back when the model misbehaves', async () => {
   assert.equal(out.parsed.decisionId, 'probe');
   assert.ok(events.some(e => e.type === 'agent.fallback'));
 });
+
+test('with an active ingest, tools read ingested Slack and the graph', async () => {
+  const {createIngest, sourcesFromEnv} = await import('../ingest/index.js');
+  const {setActiveIngest} = await import('../ingest/active.js');
+  const {buildGraph} = await import('../graph/extract.js');
+  const ingest = createIngest({filename: ':memory:', sources: sourcesFromEnv({}), build: docs => buildGraph(docs, {offline: true})});
+  await ingest.sync(); setActiveIngest(ingest);
+  try {
+    const events = [];
+    await analyze({text: 'ACS37002 × 40 from Digi-Key, standard shipping.'}, e => events.push(e));
+    const done = Object.fromEntries(events.filter(e => e.type === 'tool.completed').map(e => [e.name, e]));
+    assert.equal(done.read_project_channel.result.channel, '#rev-c-bringup');
+    assert.ok(done.read_project_channel.result.items.some(i => /blocked until the ACS37002/.test(i.text)));
+    assert.equal(done.check_hardware_calendar.summary, 'EVT build · Nov 14');
+    assert.equal(done.map_dependencies.result.source, 'graph');
+    assert.deepEqual(done.map_dependencies.result.people.sort(), ['Anya Petrov', 'Lee Tan', 'Marco Ruiz', 'Sam Oyelaran']);
+    assert.equal(done.map_dependencies.summary, '4 engineers');
+  } finally { setActiveIngest(null); ingest.close(); }
+});

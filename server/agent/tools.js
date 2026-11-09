@@ -2,6 +2,15 @@
 // a UI label for the "working" list, and a one-line summary of its result.
 // Swap `run` for real Slack / calendar / dependency / policy integrations.
 import {decisions} from '../../src/decisions.js';
+import {activeIngest} from '../ingest/active.js';
+import {blockedPeople, downstream} from '../../src/graph/engine.js';
+
+// Ingested graph + documents when the server is running with ingestion; null otherwise.
+function live() {
+  const g = activeIngest()?.latestGraph();
+  return g ? {graph: g.graph, docs: activeIngest().listDocuments()} : null;
+}
+const nodeLabel = (graph, id) => graph.nodes.find(n => n.id === id)?.label || id;
 
 const ALIASES = {
   sens: ['acs37002', 'current sensor'],
@@ -47,15 +56,34 @@ export const tools = [
   {
     name: 'read_project_channel', label: (input, r) => `Reading ${r?.channel || 'project channel'}`,
     description: 'Read recent work items from the project Slack channel.',
-    input_schema: {type: 'object', properties: {project: {type: 'string'}}, required: ['project'], additionalProperties: false},
-    run: input => CHANNELS[need(input, 'project')] || {channel: null, items: []},
-    summarize: r => `${r.items.length} work item${r.items.length === 1 ? '' : 's'}`,
+    input_schema: {type: 'object', properties: {project: {type: 'string'}, decisionId: {type: 'string', description: 'decisionId from find_part, to read messages about this part'}}, required: ['project'], additionalProperties: false},
+    run: input => {
+      const project = need(input, 'project'); const data = live();
+      if (!data || !input.decisionId) return CHANNELS[project] || {channel: null, items: []};
+      // Messages that mention the part or the work waiting on it, newest last.
+      const terms = [...(ALIASES[input.decisionId] || []), ...downstream(data.graph, `part:${input.decisionId}`).map(id => nodeLabel(data.graph, id).toLowerCase())];
+      const hits = data.docs.filter(d => d.source === 'slack' && terms.some(t => d.text.toLowerCase().includes(t)));
+      const counts = {}; for (const d of hits) counts[d.channel] = (counts[d.channel] || 0) + 1;
+      const channel = Object.entries(counts).sort((a, b) => b[1] - a[1])[0]?.[0] || null;
+      // Messages about the part itself first, then about the work waiting on it; shown in time order.
+      const direct = hits.filter(d => (ALIASES[input.decisionId] || []).some(a => d.text.toLowerCase().includes(a)));
+      const picked = [...direct, ...hits.filter(d => !direct.includes(d))].slice(0, 8).sort((a, b) => a.at.localeCompare(b.at));
+      return {channel, items: picked.map(d => ({from: d.author, text: d.text, at: d.at, source: d.id}))};
+    },
+    summarize: r => r.items[0]?.source ? `${r.items.length} related message${r.items.length === 1 ? '' : 's'}` : `${r.items.length} work item${r.items.length === 1 ? '' : 's'}`,
   },
   {
     name: 'check_hardware_calendar', label: () => 'Checking hardware calendar',
     description: 'Look up the next hardware milestone and slack for a request.',
     input_schema: {type: 'object', properties: {decisionId: {type: 'string'}}, required: ['decisionId'], additionalProperties: false},
-    run: input => { const d = byId(need(input, 'decisionId')); return d ? {milestone: d.milestone, slackDays: d.slack} : {error: 'unknown decisionId'}; },
+    run: input => {
+      const id = need(input, 'decisionId'); const d = byId(id); if (!d) return {error: 'unknown decisionId'};
+      const data = live();
+      const milestones = data ? downstream(data.graph, `part:${id}`).map(m => data.graph.nodes.find(n => n.id === m)).filter(n => n?.kind === 'milestone' && n.attrs?.date).sort((a, b) => a.attrs.date.localeCompare(b.attrs.date)) : [];
+      if (!milestones.length) return {milestone: d.milestone, slackDays: d.slack};
+      const day = iso => new Date(iso + 'T00:00:00Z').toLocaleDateString('en-US', {month: 'short', day: 'numeric', timeZone: 'UTC'});
+      return {milestone: `${milestones[0].label.replace(/\s*\(.*\)$/, '')} · ${day(milestones[0].attrs.date)}`, milestones: milestones.map(m => ({label: m.label, date: m.attrs.date}))};
+    },
     summarize: r => r.milestone || 'no milestone',
   },
   {
@@ -64,6 +92,12 @@ export const tools = [
     input_schema: {type: 'object', properties: {decisionId: {type: 'string'}}, required: ['decisionId'], additionalProperties: false},
     run: input => {
       const d = byId(need(input, 'decisionId')); if (!d) return {error: 'unknown decisionId'};
+      const data = live(); const part = `part:${d.id}`;
+      if (data?.graph.nodes.some(n => n.id === part)) {
+        const work = downstream(data.graph, part).filter(id => data.graph.nodes.find(n => n.id === id)?.kind === 'work');
+        const people = blockedPeople(data.graph, part);
+        return {waitingWork: work.map(id => nodeLabel(data.graph, id)), engineersBlocked: people.length, people: people.map(id => nodeLabel(data.graph, id)), dependsOn: d.dep || null, openQuestion: OPEN_QUESTIONS[d.id] || null, source: 'graph'};
+      }
       return {waitingWork: d.chain, engineersBlocked: d.blocked, dependsOn: d.dep || null, openQuestion: OPEN_QUESTIONS[d.id] || null};
     },
     summarize: r => r.engineersBlocked ? `${r.engineersBlocked} engineers` : 'nobody waiting',

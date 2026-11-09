@@ -69,11 +69,11 @@ async function fallback(request, emit) {
   const query = request.text.split(/\s+(?:[×x]\s*\d|from\b|,)/i)[0];
   const part = await run.call('find_part', {query});
   if (!part.found) { await run.call('check_policy', {}); return {parsed: {decisionId: null, ...parseRequest(request.text)}, question: null, planner: 'fallback'}; }
-  await run.call('read_project_channel', {project: part.project});
+  await run.call('read_project_channel', {project: part.project, decisionId: part.decisionId});
   await run.call('check_hardware_calendar', {decisionId: part.decisionId});
   const deps = await run.call('map_dependencies', {decisionId: part.decisionId});
   await run.call('check_policy', {});
-  const waiting = deps.waitingWork?.join(' and ');
+  const waiting = new Intl.ListFormat('en', {type: 'conjunction'}).format(deps.waitingWork || []);
   const question = deps.openQuestion ? questionFrom(part.decisionId, `${waiting} wait${deps.waitingWork.length === 1 ? 's' : ''} on these. ${deps.openQuestion.ask}`) : null;
   return {parsed: {decisionId: part.decisionId, ...parseRequest(request.text, part.tiers)}, question, planner: 'fallback'};
 }
