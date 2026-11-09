@@ -50,6 +50,23 @@ SQLite defaults to `data/purchasing.sqlite` (ignored by Git). Set `PURCHASING_DB
 
 Every mutation except the tool stream returns `{request}`. `/run` persists analysis and increments the revision before sending `run.completed {request}`; use that revision for the next answer. It also accepts `choiceId: "revb_yes"` or `"revb_no"` as an alternative to `answer`. Errors return `{error}`; stale revisions return HTTP 409. The server remains the authority for transitions, tier validity and approval rules.
 
+## Agent
+
+`server/agent/index.js` exports `analyze({text, requester}, emit)`. It turns a free-text request ("ACS37002 × 40 from Digi-Key, standard") into a matched request, the context the recommendation depends on, and at most one question for the engineer.
+
+- **With credentials** (`ANTHROPIC_API_KEY`, `ANTHROPIC_AUTH_TOKEN` or an `ant auth login` profile) it runs a Claude tool-use loop on `claude-opus-5` (override with `AGENT_MODEL`). Server-side refusal fallbacks are enabled.
+- **Without credentials**, with `AGENT_OFFLINE=1`, or if the API call fails, a deterministic planner calls the same tools in the same order. The demo and tests never need a key.
+- The tools in `server/agent/tools.js` are read-only and fixture-backed: `find_part`, `read_project_channel`, `check_hardware_calendar`, `map_dependencies`, `check_policy`. Replace their `run` functions with real Slack, calendar, PLM and policy integrations.
+- The model never does arithmetic. Shipping and delay costs come from `src/decisions.js`. The model's ids are re-checked against the facts its tools returned; only its phrasing is trusted.
+- It emits `tool.started` / `tool.completed` events with `{index, name, label, summary}`, which drive the engineer's "working" list, plus `agent.fallback` when it switches planners.
+
+## UI
+
+- `/request` starts a new request: a free-text composer plus your recent requests. Submitting creates the request (`POST /api/requests`) and opens `/request/:id`.
+- `/request/:id` is the conversation. The working list comes from live agent events. The agent's question comes from `request.question`. Shipping options show arrival dates from `ORDER_DATE`, days late against the milestone, and an estimated total (shipping + waiting engineers × $1,100/day). Options are equal-weight buttons, with the recommendation tagged. When a choice needs approval, the conversation says why (over $500, or differs from the recommendation) and shows a "Waiting on Priya" status until it's approved.
+- `/approvals` is Priya's queue. It links each decision back to the engineer's conversation and explains why it needs approval.
+- The conversation logic lives in `src/conversation.js`: pure functions, unit-tested in `src/conversation.test.js`. `src/Engineer.jsx` only renders it.
+
 ## Current boundaries
 
 The agent tool adapters in `server/agent/tools.js` execute against seeded project data. The legacy `server/tools.js` helper is retained only for its original unit test. No live Slack, calendar or vendor credentials have been supplied. Claude’s agent uses its deterministic fallback without model credentials; live model execution remains unverified in this session. The UI is a guided conversation for the sample sensor request, not arbitrary free-text purchasing. Purchase orders are local drafts; no vendor purchase is placed. Identity is the reference demo identity, not authenticated access control. Evidence links and the reference Ask button still need actual source/conversation integrations. Run locally for the demo; add authentication before shared hosting.
