@@ -42,8 +42,10 @@ function fromCalendar(b, docs, people) {
     const day = d.at.slice(0, 10), end = d.end ? d.end.slice(0, 10) : null;
     const ooo = cats.includes('OOO') || /\bOOO\b|out of office|vacation|\bPTO\b/i.test(title);
     if (ooo) {
-      const name = title.replace(/\s*[-–:(]?\s*(OOO|out of office|vacation|PTO)\b.*$/i, '').trim();
-      const person = people.byName(name) || people.add(name);
+      // "Marco Ruiz OOO" names the person; Google's bare "Out of office" only has the organizer.
+      const name = title.replace(/\s*[-–:(]?\s*(OOO|out of office|vacation|PTO)\b.*$/i, '').trim() || (d.author || '').replace(/@.*$/, '').replace(/[._]/g, ' ');
+      if (!name) continue;
+      const person = people.byName(name) || people.add(name.replace(/\b\w/g, c => c.toUpperCase()));
       b.node(person.id, 'person', person.label).attrs.ooo = [...(b.nodes.get(person.id).attrs.ooo || []), {start: day, end: end || day, evidence: d.id}];
       continue;
     }
