@@ -52,10 +52,12 @@ export function plainText(text, names = {}) {
 }
 
 /**
- * fetchSlack({call, channels, oldest, threads}) -> {documents, cursor}
- * oldest: Slack ts to resume from (exclusive). cursor: newest ts seen, for the next sync.
+ * fetchSlack({call, channels, cursors, since, threads, activeThreads}) -> {documents, cursors}
+ * cursors: {channelId: newest ts already stored}; channels without one start at `since`.
+ * activeThreads: [{channel, ts}] parents whose replies are re-read even if the parent is old.
+ * A channel whose history was cut off by maxPages keeps its old cursor, so nothing is skipped.
  */
-export async function fetchSlack({call, channels, oldest, threads = true, maxPages = 20}) {
+export async function fetchSlack({call, channels, cursors = {}, since = '0', oldest, threads = true, activeThreads = [], maxPages = 20}) {
   const auth = await call('auth.test');
   const base = (auth.url || '').replace(/\/$/, '');
   const names = {};
@@ -67,23 +69,28 @@ export async function fetchSlack({call, channels, oldest, threads = true, maxPag
     }
     return names[id];
   };
-  const documents = []; let cursor = oldest || '0';
+  const documents = []; const nextCursors = {...cursors};
   for (const channel of channels) {
+    const from = cursors[channel] || oldest || since;
     const info = (await call('conversations.info', {channel})).channel || {id: channel, name: channel};
-    const messages = []; let page = 0, next;
+    const messages = []; let page = 0, next, truncated = false;
     do {
-      const body = await call('conversations.history', {channel, oldest, limit: 200, cursor: next});
+      const body = await call('conversations.history', {channel, oldest: from, limit: 200, cursor: next});
       messages.push(...body.messages);
       next = body.response_metadata?.next_cursor;
+      if (next && page + 1 >= maxPages) truncated = true;
     } while (next && ++page < maxPages);
-    for (const m of messages) {
-      if (m.subtype && SKIP_SUBTYPES.has(m.subtype)) continue;
-      const group = [m];
-      if (threads && m.reply_count > 0) {
-        const {messages: replies} = await call('conversations.replies', {channel, ts: m.ts, oldest});
-        group.push(...replies.filter(r => r.ts !== m.ts));
-      }
-      for (const msg of group) {
+    // Parents in this page plus older parents still collecting replies.
+    const parents = new Map(messages.filter(m => threads && m.reply_count > 0).map(m => [m.ts, m]));
+    for (const t of activeThreads) if (t.channel === channel && !parents.has(t.ts)) parents.set(t.ts, null);
+    const replies = [];
+    for (const ts of parents.keys()) {
+      const {messages: thread} = await call('conversations.replies', {channel, ts, oldest: from});
+      replies.push(...thread.filter(r => r.ts !== ts));
+    }
+    let newest = from;
+    for (const msg of [...messages, ...replies]) {
+      {
         if (msg.subtype && SKIP_SUBTYPES.has(msg.subtype)) continue;
         for (const id of msg.text?.match(/<@([A-Z0-9]+)/g)?.map(s => s.slice(2)) || []) await nameOf(id);
         documents.push({
@@ -93,9 +100,10 @@ export async function fetchSlack({call, channels, oldest, threads = true, maxPag
           url: base ? `${base}/archives/${channel}/p${msg.ts.replace('.', '')}${msg.thread_ts && msg.thread_ts !== msg.ts ? `?thread_ts=${msg.thread_ts}&cid=${channel}` : ''}` : null,
           attrs: {threadTs: msg.thread_ts || null, replyCount: msg.reply_count || 0},
         });
-        if (Number(msg.ts) > Number(cursor)) cursor = msg.ts;
+        if (Number(msg.ts) > Number(newest)) newest = msg.ts;
       }
     }
+    if (!truncated) nextCursors[channel] = newest;
   }
-  return {documents: documents.sort((a, b) => a.at.localeCompare(b.at)), cursor};
+  return {documents: documents.sort((a, b) => a.at.localeCompare(b.at)), cursors: nextCursors};
 }

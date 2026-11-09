@@ -27,7 +27,9 @@ export function parseCalendar(text, {from, to, calendar} = {}) {
     };
     if (event.isRecurring()) {
       const it = event.iterator();
-      for (let next = it.next(), n = 0; next && n < 500; next = it.next(), n++) {
+      // Old series (a daily standup since 2019) need many steps to reach the window,
+      // so bound the walk generously and cap what is emitted instead.
+      for (let next = it.next(), steps = 0, emitted = docs.length; next && steps < 20000 && docs.length - emitted < 500; next = it.next(), steps++) {
         if (end && next.compare(end) > 0) break;
         const occ = event.getOccurrenceDetails(next);
         emit(occ.startDate, occ.endDate, occ.item);
@@ -65,7 +67,10 @@ export async function fetchCalendar({url, file, from, to, calendar, fetchImpl = 
   let text;
   if (file) text = await readFile(file, 'utf8');
   else {
-    const response = await fetchImpl(url.replace(/^webcal:/i, 'https:'), {headers: {Accept: 'text/calendar'}, redirect: 'follow', signal: AbortSignal.timeout(20000)});
+    // Errors from fetch can echo the URL, which is a secret: never pass them through.
+    let response;
+    try { response = await fetchImpl(String(url).replace(/^webcal:/i, 'https:'), {headers: {Accept: 'text/calendar'}, redirect: 'follow', signal: AbortSignal.timeout(20000)}); }
+    catch (error) { throw new Error(error?.name === 'TimeoutError' ? 'Calendar fetch timed out' : 'Calendar fetch failed: check CALENDAR_ICS_URL'); }
     if (!response.ok) throw new Error(`Calendar fetch failed: HTTP ${response.status}`);
     text = await response.text();
     if (!/BEGIN:VCALENDAR/.test(text)) throw new Error('Calendar URL did not return iCalendar data');

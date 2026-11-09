@@ -39,23 +39,31 @@ export function createIngest({filename = process.env.INGEST_DB || 'data/ingest.s
   async function pull(source) {
     const prev = sourceRow(source.id);
     // Switching between fixture and live data starts that source over.
-    if (prev && prev.mode !== source.mode) db.prepare('DELETE FROM documents WHERE source=?').run(source.kind);
-    const cursor = prev && prev.mode === source.mode ? prev.cursor : null;
-    let documents, next = cursor;
+    const restart = prev && prev.mode !== source.mode;
+    let cursors = {};
+    try { cursors = !restart && prev?.cursor ? JSON.parse(prev.cursor) : {}; } catch { cursors = {}; }
+    if (typeof cursors !== 'object' || !cursors) cursors = {};
+    const reference = Date.parse(source.mode === 'fixture' ? ORDER_DATE : now().toISOString());
+    let documents, next = cursors, replace = restart;
     if (source.kind === 'slack') {
       if (!source.channels.length) throw new Error('Set SLACK_CHANNEL_IDS to the channels the bot was added to');
-      const oldest = cursor || String((Date.parse(source.mode === 'fixture' ? ORDER_DATE : now().toISOString()) - 45 * 86400000) / 1000);
-      ({documents, cursor: next} = await fetchSlack({call: source.call, channels: source.channels, oldest}));
+      // Threads started in the last 14 days keep getting their new replies.
+      const activeThreads = restart ? [] : db.prepare("SELECT external_id ts, attrs FROM documents WHERE source='slack' AND at >= ?").all(new Date(reference - 14 * 86400000).toISOString())
+        .filter(r => JSON.parse(r.attrs || '{}').replyCount > 0).map(r => ({ts: r.ts, channel: null}));
+      const channelOf = db.prepare("SELECT id FROM documents WHERE source='slack' AND external_id=?");
+      for (const t of activeThreads) t.channel = channelOf.get(t.ts)?.id.split(':')[1];
+      ({documents, cursors: next} = await fetchSlack({call: source.call, channels: source.channels, cursors, since: String((reference - 45 * 86400000) / 1000), activeThreads}));
     } else {
       // Calendars are small: re-read the whole window each sync and replace.
-      documents = await fetchCalendar({url: source.url, file: source.file, ...windowAround(source.mode === 'fixture' ? ORDER_DATE : now().toISOString())});
-      db.prepare('DELETE FROM documents WHERE source=?').run('calendar');
+      documents = await fetchCalendar({url: source.url, file: source.file, ...windowAround(new Date(reference).toISOString())});
+      replace = true;
     }
     db.exec('BEGIN');
     try {
+      if (replace) db.prepare('DELETE FROM documents WHERE source=?').run(source.kind);
       for (const d of documents) upsert.run(d.id, d.source, d.kind, d.externalId, d.channel, d.author, d.at, d.end, d.text, d.url, JSON.stringify(d.attrs || {}));
       const count = db.prepare('SELECT COUNT(*) n FROM documents WHERE source=?').get(source.kind).n;
-      db.prepare('INSERT OR REPLACE INTO sources VALUES (?,?,?,?,?,?,?,?)').run(source.id, source.kind, source.label, source.mode, next || null, now().toISOString(), null, count);
+      db.prepare('INSERT OR REPLACE INTO sources VALUES (?,?,?,?,?,?,?,?)').run(source.id, source.kind, source.label, source.mode, JSON.stringify(next || {}), now().toISOString(), null, count);
       db.exec('COMMIT');
     } catch (error) { db.exec('ROLLBACK'); throw error; }
     return documents.length;
@@ -68,7 +76,8 @@ export function createIngest({filename = process.env.INGEST_DB || 'data/ingest.s
       catch (error) {
         // A failing source keeps its previous documents; the error is shown, never the secret.
         const prev = sourceRow(source.id);
-        db.prepare('INSERT OR REPLACE INTO sources VALUES (?,?,?,?,?,?,?,?)').run(source.id, source.kind, source.label, source.mode, prev?.cursor || null, prev?.last_synced_at || null, error.message, prev?.documents || 0);
+        // Keep the previous mode with its cursor so a failed switch doesn't pair one mode's cursor with another's data.
+        db.prepare('INSERT OR REPLACE INTO sources VALUES (?,?,?,?,?,?,?,?)').run(source.id, source.kind, source.label, prev?.mode || source.mode, prev?.cursor || null, prev?.last_synced_at || null, error.message, prev?.documents || 0);
         results.push({id: source.id, error: error.message});
       }
     }
