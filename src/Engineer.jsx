@@ -1,137 +1,173 @@
 import React from 'react';
-import {deriveDecisions} from './decisions.js';
 import {api, streamRun} from './api.js';
-export default class Engineer extends React.Component {
+import {DEFAULT_TEXT, applyToolEvent, buildConversation, needsRun} from './conversation.js';
 
-  state = { request: null, step: 0, working: true, pending: false, error: null };
+const C = {ink: '#1C1B17', paper: '#F4F2F0', muted: '#7A766F', line: '#E2DFDA', hair: '#EFECE8'};
+const requestIdFromPath = () => decodeURIComponent(location.pathname.match(/^\/request\/([^/]+)/)?.[1] || '');
+
+export default class Engineer extends React.Component {
+  state = {id: requestIdFromPath(), request: null, recent: [], tools: [], running: false, pending: false, error: null, draft: DEFAULT_TEXT};
   mounted = false;
-  async componentDidMount() {
+
+  componentDidMount() {
     this.mounted = true;
+    window.addEventListener('popstate', this.onRoute);
     window.addEventListener('focus', this.refresh);
     this.poll = setInterval(this.refresh, 2000);
-    await this.initialize();
+    this.load();
   }
-  initialize = async () => {
-    const request = await this.refresh();
-    if (!this.mounted || !request) return;
-    if (request.status === 'needs_answer') this.runWork();
-    else this.setState({working:false, step:4});
-  };
   componentWillUnmount() {
     this.mounted = false;
     clearInterval(this.poll);
+    window.removeEventListener('popstate', this.onRoute);
     window.removeEventListener('focus', this.refresh);
     this.controller?.abort();
   }
+  onRoute = () => { this.controller?.abort(); this.setState({id: requestIdFromPath(), request: null, tools: [], running: false, error: null}, this.load); };
+  go(id) { history.pushState(null, '', id ? `/request/${encodeURIComponent(id)}` : '/request'); this.onRoute(); }
+
+  load = async () => {
+    const request = await this.refresh();
+    if (request && needsRun(request)) this.runAgent();
+  };
   refresh = async () => {
-    if (this.refreshing) return;
+    if (this.refreshing || !this.mounted) return;
     this.refreshing = true;
     try {
-      const data = await api('/requests');
-      const request = data.requests.find(r => r.id === 'sens');
-      if (!request) throw new Error('The sensor request was not found.');
-      if (this.mounted) await new Promise(resolve => this.setState(state => ({request: !state.request || request.revision >= state.request.revision ? request : state.request}), resolve));
+      const {requests} = await api('/requests');
+      const recent = requests.filter(r => r.text || r.id === 'sens').reverse();
+      if (!this.state.id) { this.mounted && this.setState({recent}); return null; }
+      const request = requests.find(r => r.id === this.state.id);
+      if (!request) throw new Error('That request was not found.');
+      if (this.mounted) await new Promise(resolve => this.setState(s => ({recent, request: !s.request || request.revision >= s.request.revision ? request : s.request}), resolve));
       return request;
-    } catch (error) { if (this.mounted) this.setState({error: error.message}); }
+    } catch (error) { if (this.mounted) this.setState({error: error.message}); return null; }
     finally { this.refreshing = false; }
   };
-  async runWork() {
-    if (this.running || !this.state.request) return;
-    this.running = true;
+
+  async runAgent() {
+    if (this.state.running || !this.state.id) return;
     this.controller = new AbortController();
-    this.setState({working: true, step: 0, error: null});
+    this.setState({running: true, tools: [], error: null});
     try {
-      await streamRun('sens', this.controller.signal, event => {
+      await streamRun(this.state.id, this.controller.signal, event => {
         if (!this.mounted) return;
-        if (event.type === 'tool.completed') this.setState({step: event.index + 1});
-        if (event.type === 'run.completed') this.setState({working: false});
+        this.setState(s => ({tools: applyToolEvent(s.tools, event), ...(event.request ? {request: event.request} : {})}));
       });
-      await this.refresh();
     } catch (error) { if (this.mounted && error.name !== 'AbortError') this.setState({error: error.message}); }
-    finally { this.running = false; }
+    if (this.mounted) this.setState({running: false});
+    await this.refresh();
   }
-  async mutate(action, body = {}) {
-    if (this.state.pending || !this.state.request) return;
+
+  async create(event) {
+    event.preventDefault();
+    const text = this.state.draft.trim();
+    if (!text || this.state.pending) return;
     this.setState({pending: true, error: null});
     try {
-      const {request} = await api(`/requests/sens/${action}`, {body: {...body, revision: this.state.request.revision}});
-      if (this.mounted) await new Promise(resolve => this.setState({request}, resolve));
-      if (action === 'reset' && this.mounted) await this.runWork();
+      const {request} = await api('/requests', {body: {text}});
+      this.go(request.id);
+    } catch (error) { this.setState({error: error.message}); }
+    finally { if (this.mounted) this.setState({pending: false}); }
+  }
+
+  async dispatch(action) {
+    const {request} = this.state;
+    if (!action || this.state.pending || !request) return;
+    this.setState({pending: true, error: null});
+    try {
+      const {request: next} = await api(`/requests/${encodeURIComponent(request.id)}/${action.type}`, {body: {...action.body, revision: request.revision}});
+      if (this.mounted) this.setState({request: next});
+      if (action.type === 'reset' && this.mounted) { this.setState({tools: []}); await this.runAgent(); }
     } catch (error) {
       if (error.status === 409) await this.refresh();
       if (this.mounted) this.setState({error: error.message});
     } finally { if (this.mounted) this.setState({pending: false}); }
   }
-  renderVals() {
-    const {request, step, working, pending} = this.state;
-    const answer = request.answer;
-    const phase = working && request.status === 'needs_answer' ? 'work' : ({needs_answer:'ask', choosing:'rec', pending_approval:'sent', ordered:'ordered'}[request.status] || 'work');
-    const tier = request.selectedTier;
-    const typing = pending;
-    const me = text => ({ align: 'flex-end', hasText: true, text, bg: '#1C1B17', color: '#F4F2F0', border: '#1C1B17' });
-    const ai = (text, o = {}) => ({ align: 'flex-start', hasText: !!text, text, bg: '#fff', color: '#1C1B17', border: '#E2DFDA', hasWork: !!o.work, work: o.work || [], hasRows: !!o.rows, rows: o.rows || [], hasChoices: !!o.choices, choices: o.choices || [], hasMeta: !!o.meta, meta: o.meta });
-    const row = (k, v, o = {}) => ({ k, v, tag: o.tag || '', vColor: o.muted ? '#7A766F' : '#1C1B17', bg: o.sel ? '#F4F2F0' : '#fff', cursor: o.pick ? 'pointer' : 'default', pick: o.pick || (() => {}) });
-    const W = [['Reading #rev-c-bringup', '2 work items'], ['Checking hardware calendar', 'EVT build · Nov 14'], ['Mapping dependencies', '4 engineers'], ['Checking policy', '> $500 needs approval']];
-    const work = W.slice(0, Math.max(1, step + (phase === 'work' ? 1 : 0))).slice(0, 4).map(([t, r], i) => { const done = i < step; return { t, r: done ? r : '', op: done ? 1 : .4, anim: done ? 'none' : 'pulse 1s infinite' }; });
-    const sensor = deriveDecisions([request], request.status === 'ordered' ? {sens:true} : {})[0];
-    const option = i => { const t = sensor.tiers[i]; return '$' + t.price.toLocaleString('en-US') + ' · ' + (t.late ? t.late + 'd late' : 'on time') + ' · $' + t.total.toLocaleString('en-US'); };
-    const msgs = [me('ACS37002 × 40 from Digi-Key, standard shipping.'), ai(null, { work })];
-    if (phase !== 'work') {
-      msgs.push(ai('Firmware validation and Thermal & EMC wait on these. Can firmware start on your Rev B boards?', phase === 'ask' ? { choices: [{ label: 'Yes', pick: () => this.mutate('answer', {answer:'yes'}) }, { label: 'No, needs Rev C', pick: () => this.mutate('answer', {answer:'no'}) }] } : {}));
-    }
-    if (answer) msgs.push(me(answer === 'yes' ? 'Yes, Rev B works.' : 'No, needs Rev C.'));
-    if (answer === 'yes' && phase === 'ordered') msgs.push(ai('Then EVT’s slack covers it. Created a draft purchase order for standard shipping.', { rows: [row('Standard', '$300 · Nov 17', { tag: 'draft PO' })], meta: `No approval needed · ${request.order?.id || 'Draft order'}` }));
-    if (answer === 'no' && ['rec', 'sent', 'ordered'].includes(phase)) msgs.push(ai('Then standard puts 4 engineers 7 days behind.', {
-      rows: [
-        row('Standard', option(0), { muted: true, sel: tier === 0, pick: phase === 'rec' ? () => this.mutate('select', {tier:0}) : null }),
-        row('Priority', option(1), { muted: true, sel: tier === 1, pick: phase === 'rec' ? () => this.mutate('select', {tier:1}) : null }),
-        row('Expedited', option(2), { tag: 'rec', sel: tier === 2, pick: phase === 'rec' ? () => this.mutate('select', {tier:2}) : null }),
-      ], meta: 'Total = shipping + 4 engineers × $1,100/day',
-    }));
-    if (phase === 'sent') msgs.push(ai(tier === 2 ? 'Sent to Priya. I’ll create the draft purchase order when she approves.' : `Sent to Priya with the ${tier === 1 ? '2' : '7'}-day slip flagged. I’ll create the draft purchase order when she approves.`, { meta: tier === 2 ? 'Over $500 policy' : 'Deviates from recommendation' }));
-    if (answer === 'no' && phase === 'ordered') msgs.push(ai(`Priya approved ${request.tiers[request.approvedTier ?? tier].name.toLowerCase()}. Draft purchase order created.`, {meta: request.order?.id || 'Draft order'}));
-    return {msgs, typing, canReset: !pending && ['ordered', 'sent'].includes(phase), reset: () => this.mutate('reset')};
-  }
- render() { if (!this.state.request) return <main style={{padding:'40px 24px',fontSize:13}}>{this.state.error ? <div role="alert">{this.state.error} <button onClick={this.initialize}>Retry</button></div> : 'Loading request…'}</main>; const {msgs, typing, canReset, reset} = this.renderVals(); return <>{this.state.error && <div role="alert">{this.state.error} <button onClick={() => this.state.request.status === 'needs_answer' ? this.runWork() : this.refresh()}>Retry</button></div>}
 
-<div style={{"minHeight":"100vh","fontSize":"13px","display":"flex","flexDirection":"column"}}>
-  <header style={{"display":"flex","alignItems":"center","gap":"18px","padding":"14px 24px","borderBottom":"1px solid #E2DFDA"}}>
-    <span style={{"fontSize":"16px","letterSpacing":".04em"}}>ramp</span>
-    <span style={{"color":"#7A766F"}}>Procurement</span><span style={{"color":"#C9C5BE"}}>/</span><span>PR-2291</span>
-    <a href="/approvals" style={{"marginLeft":"auto","color":"#7A766F","fontSize":"12px"}}>Approver →</a>
-  </header>
-  <main style={{"flex":"1","display":"grid","placeItems":"start center","padding":"40px 24px 60px"}}>
-    <div style={{"width":"100%","maxWidth":"520px","display":"flex","flexDirection":"column","gap":"12px"}}>
-      {msgs.map((m, index) => <React.Fragment key={index}>
-        <div style={{"display":"flex","flexDirection":"column","gap":"6px","alignItems":m.align}}>
-          {m.hasText && <><div style={{"maxWidth":"82%","padding":"10px 14px","borderRadius":"14px","background":m.bg,"color":m.color,"border":`1px solid ${m.border}`,"lineHeight":"1.45","textWrap":"pretty"}}>{m.text}</div></>}
-          {m.hasWork && <>
-            <div style={{"display":"flex","flexDirection":"column","gap":"5px","padding":"4px 14px","fontSize":"12px","color":"#7A766F"}}>
-              {m.work.map((w, index) => <React.Fragment key={index}><div style={{"display":"flex","gap":"10px","alignItems":"center"}}><span style={{"width":"6px","height":"6px","borderRadius":"50%","background":"#1C1B17","opacity":w.op,"animation":w.anim}}></span><span>{w.t}</span><span style={{"color":"#1C1B17"}}>{w.r}</span></div></React.Fragment>)}
-            </div>
-          </>}
-          {m.hasRows && <>
-            <div style={{"width":"82%","border":"1px solid #E2DFDA","borderRadius":"12px","background":"#fff","overflow":"hidden"}}>
-              {m.rows.map((r, index) => <React.Fragment key={index}>
-                <div role={r.cursor === 'pointer' ? 'button' : undefined} tabIndex={r.cursor === 'pointer' && !this.state.pending ? 0 : undefined} onKeyDown={event => { if (event.key === 'Enter' && !this.state.pending) r.pick(); }} aria-disabled={this.state.pending || undefined} onClick={this.state.pending ? undefined : r.pick} style={{"display":"grid","gridTemplateColumns":"minmax(0,1fr) auto","gap":"12px","padding":"9px 14px","borderTop":"1px solid #EFECE8","background":r.bg,"cursor":r.cursor}}>
-                  <span style={{"display":"flex","gap":"8px","alignItems":"baseline"}}><span>{r.k}</span><span style={{"fontSize":"10px","letterSpacing":".06em","textTransform":"uppercase","color":"#7A766F"}}>{r.tag}</span></span>
-                  <span style={{"textAlign":"right","color":r.vColor}}>{r.v}</span>
-                </div>
-              </React.Fragment>)}
-            </div>
-          </>}
-          {m.hasChoices && <>
-            <div style={{"display":"flex","gap":"8px","flexWrap":"wrap"}}>
-              {m.choices.map((c, index) => <React.Fragment key={index}><button disabled={this.state.pending} onClick={c.pick} style={{"background":"#fff","border":"1px solid #1C1B17","borderRadius":"20px","padding":"7px 14px","fontSize":"13px","cursor":"pointer","color":"#1C1B17"}}>{c.label}</button></React.Fragment>)}
-            </div>
-          </>}
-          {m.hasMeta && <><span style={{"fontSize":"11px","color":"#7A766F","padding":"0 4px"}}>{m.meta}</span></>}
-        </div>
-      </React.Fragment>)}
-      {typing && <><div style={{"alignSelf":"flex-start","padding":"10px 14px","borderRadius":"14px","border":"1px solid #E2DFDA","background":"#fff","color":"#7A766F","letterSpacing":".2em"}}>···</div></>}
-      {canReset && <><button onClick={reset} style={{"alignSelf":"center","marginTop":"20px","background":"transparent","border":"0","color":"#7A766F","fontSize":"12px","cursor":"pointer","textDecoration":"underline","textUnderlineOffset":"3px"}}>Restart demo</button></>}
-    </div>
-  </main>
-</div>
-</>; }
+  renderComposer(compact) {
+    const {draft, pending} = this.state;
+    return <form onSubmit={e => this.create(e)} style={{display: 'flex', gap: 8, alignItems: 'flex-end', width: '100%'}}>
+      <label style={{flex: 1, display: 'flex', flexDirection: 'column', gap: 6}}>
+        {!compact && <span style={{color: C.muted, fontSize: 12}}>What do you need? Part, quantity, vendor and shipping.</span>}
+        <textarea value={draft} rows={compact ? 1 : 2} maxLength={2000} onChange={e => this.setState({draft: e.target.value})}
+          onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey) this.create(e); }}
+          style={{font: 'inherit', fontSize: 13, resize: 'none', padding: '10px 14px', borderRadius: 14, border: `1px solid ${C.line}`, background: '#fff', color: C.ink}}/>
+      </label>
+      <button type="submit" disabled={pending || !draft.trim()} style={{background: C.ink, color: C.paper, border: `1px solid ${C.ink}`, borderRadius: 20, padding: '9px 16px', fontSize: 13, cursor: 'pointer'}}>Send</button>
+    </form>;
+  }
+
+  renderStart() {
+    const {recent} = this.state;
+    const STATUS = {needs_answer: 'needs your answer', choosing: 'pick shipping', pending_approval: 'with Priya', ordered: 'draft PO', unsupported: 'no match', analyzing: 'working'};
+    return <div style={{width: '100%', maxWidth: 520, display: 'flex', flexDirection: 'column', gap: 24}}>
+      <div style={{fontSize: 20, letterSpacing: '-.02em'}}>New purchase request</div>
+      {this.renderComposer(false)}
+      {recent.length > 0 && <div style={{display: 'flex', flexDirection: 'column'}}>
+        <div style={{fontSize: 11, letterSpacing: '.1em', textTransform: 'uppercase', color: C.muted, paddingBottom: 6}}>Your requests</div>
+        {recent.map(r => <a key={r.id} href={`/request/${encodeURIComponent(r.id)}`} onClick={e => { e.preventDefault(); this.go(r.id); }}
+          style={{display: 'flex', justifyContent: 'space-between', gap: 12, padding: '9px 0', borderTop: `1px solid ${C.hair}`}}>
+          <span style={{overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'}}>{r.text || DEFAULT_TEXT}</span>
+          <span style={{color: C.muted, whiteSpace: 'nowrap'}}>{r.pr} · {STATUS[r.status] || r.status}</span>
+        </a>)}
+      </div>}
+    </div>;
+  }
+
+  renderConversation() {
+    const {request, tools, running, pending} = this.state;
+    const msgs = buildConversation(request, {tools, running});
+    return <div style={{width: '100%', maxWidth: 520, display: 'flex', flexDirection: 'column', gap: 12}}>
+      {msgs.map((m, i) => <div key={i} style={{display: 'flex', flexDirection: 'column', gap: 6, alignItems: m.from === 'me' ? 'flex-end' : 'flex-start'}}>
+        {m.text && <div style={{maxWidth: '82%', padding: '10px 14px', borderRadius: 14, lineHeight: 1.45, textWrap: 'pretty', ...(m.from === 'me' ? {background: C.ink, color: C.paper, border: `1px solid ${C.ink}`} : {background: '#fff', color: C.ink, border: `1px solid ${C.line}`})}}>{m.text}</div>}
+        {m.work && <div aria-live="polite" style={{display: 'flex', flexDirection: 'column', gap: 5, padding: '4px 14px', fontSize: 12, color: C.muted}}>
+          {m.work.map(w => <div key={w.index} style={{display: 'flex', gap: 10, alignItems: 'center'}}>
+            <span style={{width: 6, height: 6, borderRadius: '50%', background: C.ink, opacity: w.done ? 1 : .4, animation: w.done ? 'none' : 'pulse 1s infinite'}}/>
+            <span>{w.label}</span><span style={{color: C.ink}}>{w.summary}</span>
+          </div>)}
+        </div>}
+        {m.rows && <div style={{width: '82%', border: `1px solid ${C.line}`, borderRadius: 12, background: '#fff', overflow: 'hidden'}}>
+          {m.rows.map((r, j) => {
+            const Tag = r.action ? 'button' : 'div';
+            return <Tag key={j} {...(r.action ? {type: 'button', disabled: pending, onClick: () => this.dispatch(r.action), 'data-option': ''} : {})}
+              style={{display: 'grid', gridTemplateColumns: 'minmax(0,1fr) auto', gap: 12, width: '100%', textAlign: 'left', font: 'inherit', fontSize: 13, color: C.ink, padding: '9px 14px', border: 0, borderTop: j ? `1px solid ${C.hair}` : 0, background: r.selected ? C.paper : '#fff', cursor: r.action ? 'pointer' : 'default'}}>
+              <span style={{display: 'flex', flexDirection: 'column', gap: 1}}>
+                <span style={{display: 'flex', gap: 8, alignItems: 'baseline'}}><span>{r.name}</span>{r.tag && <span style={{fontSize: 10, letterSpacing: '.06em', textTransform: 'uppercase', color: C.muted}}>{r.tag}</span>}</span>
+                <span style={{color: C.muted, fontSize: 12}}>{r.detail}</span>
+              </span>
+              <span style={{textAlign: 'right', alignSelf: 'center'}}>{r.total}{r.action && <span style={{color: C.muted, marginLeft: 10}}>Choose →</span>}</span>
+            </Tag>;
+          })}
+        </div>}
+        {m.choices && <div style={{display: 'flex', gap: 8, flexWrap: 'wrap'}}>
+          {m.choices.map(c => <button key={c.label} disabled={pending} onClick={() => this.dispatch(c.action)} style={{background: '#fff', border: `1px solid ${C.ink}`, borderRadius: 20, padding: '7px 14px', fontSize: 13, cursor: 'pointer', color: C.ink}}>{c.label}</button>)}
+        </div>}
+        {(m.meta || m.status) && <span style={{fontSize: 11, color: C.muted, padding: '0 4px', display: 'flex', gap: 8, alignItems: 'center'}}>
+          {m.status && <span style={{border: `1px solid ${C.ink}`, color: C.ink, borderRadius: 10, padding: '1px 7px'}}>{m.status}</span>}{m.meta}
+        </span>}
+        {m.compose && <div style={{width: '100%'}}>{this.renderComposer(true)}</div>}
+      </div>)}
+      {pending && <div style={{alignSelf: 'flex-start', padding: '10px 14px', borderRadius: 14, border: `1px solid ${C.line}`, background: '#fff', color: C.muted, letterSpacing: '.2em'}}>···</div>}
+      {!running && !pending && <div style={{display: 'flex', justifyContent: 'center', gap: 20, marginTop: 20}}>
+        <a href="/request" onClick={e => { e.preventDefault(); this.setState({draft: DEFAULT_TEXT}); this.go(''); }} style={{color: C.muted, fontSize: 12}}>New request</a>
+        {request.id === 'sens' && ['ordered', 'pending_approval'].includes(request.status) && <button onClick={() => this.dispatch({type: 'reset', body: {}})} style={{background: 'transparent', border: 0, color: C.muted, fontSize: 12, cursor: 'pointer', textDecoration: 'underline', textUnderlineOffset: 3}}>Restart demo</button>}
+      </div>}
+    </div>;
+  }
+
+  render() {
+    const {id, request, error, running} = this.state;
+    return <div style={{minHeight: '100vh', fontSize: 13, display: 'flex', flexDirection: 'column'}}>
+      <header style={{display: 'flex', alignItems: 'center', gap: 18, padding: '14px 24px', borderBottom: `1px solid ${C.line}`}}>
+        <span style={{fontSize: 16, letterSpacing: '.04em'}}>ramp</span>
+        <span style={{color: C.muted}}>Procurement</span><span style={{color: '#C9C5BE'}}>/</span><span>{id ? request?.pr || '…' : 'New request'}</span>
+        <a href="/approvals" style={{marginLeft: 'auto', color: C.muted, fontSize: 12}}>Approver →</a>
+      </header>
+      <main style={{flex: 1, display: 'grid', placeItems: 'start center', padding: '40px 24px 60px'}}>
+        {error && <div role="alert" style={{width: '100%', maxWidth: 520, marginBottom: 16, color: C.ink}}>{error} <button onClick={() => (request && needsRun(request) && !running ? this.runAgent() : this.load())}>Retry</button></div>}
+        {!id ? this.renderStart() : request ? this.renderConversation() : !error && <span style={{color: C.muted}}>Loading request…</span>}
+      </main>
+    </div>;
+  }
 }
