@@ -41,7 +41,8 @@ export default class Approvals extends React.Component {
     const st = this.state, fmt = n => '$' + Math.round(n).toLocaleString('en-US');
     const limit = this.props.autoApproveLimit ?? 500;
     const showHandled = this.props.showHandled ?? true;
-    const raw = st.requests;
+    // Unmatched requests have nothing for an approver to decide.
+    const raw = st.requests.filter(r => r.status !== 'unsupported');
     const list = deriveDecisions(raw, st.approved, limit).map(d => ({...d,
       kind: d.status === 'ordered' ? 'done' : ['analyzing','needs_answer','choosing','waiting','unsupported'].includes(d.status) ? 'wait' : d.status === 'pending_approval' ? 'need' : d.kind,
     }));
@@ -65,6 +66,7 @@ export default class Approvals extends React.Component {
     ];
     const facts = [
       { k: 'Requested', v: `${asked.name} · ${sel.who}` },
+      ...(sel.text ? [{ k: 'Asked as', v: `“${sel.text}”` }] : []),
       { k: 'Recommended', v: sel.kind === 'wait' ? '—' : `${sel.rec.name} · +${fmt(sel.premium)} over cheapest` },
       { k: 'Waiting', v: sel.blocked ? `${sel.blocked} engineers · ${sel.milestone}` : `Nobody · ${sel.milestone}` },
       { k: 'If cheapest', v: sel.cheapest.late ? `${sel.cheapest.late} days late · ${fmt(sel.cheapest.delay)} delay cost` : 'On time' },
