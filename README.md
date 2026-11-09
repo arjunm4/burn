@@ -15,11 +15,11 @@ Open http://localhost:5173/request and http://localhost:5173/approvals in separa
 
 ## Demo workflow
 
-1. Open the engineer route. Its working steps follow completed backend tool executions over NDJSON.
+1. Open `/request`, submit “ACS37002 × 40 from Digi-Key, standard shipping.”, and watch the working steps follow backend tool executions over NDJSON.
 2. Answer whether Rev B boards can substitute. Yes creates a standard-shipping draft purchase order. No presents the three shipping options and their delay costs.
 3. Select an option. Shipping above $500 or an option that differs from the recommendation goes to Priya's queue.
 4. Open approvals, select a tier and approve. The exact approved tier is saved with a draft purchase order. The engineer view refreshes to show it, and the dependent thermal chamber decision is released.
-5. Reload either page or restart the server: the request state survives. Restart demo resets the sensor request and invalidates its dependent booking.
+5. Reload either page or restart the server: request state survives. The original `/request/sens` example also has a Restart demo action that invalidates its dependent booking.
 
 The queue also contains the six original example decisions. Both screens refresh shared state periodically and when focused. Working-step progress uses actual tool events; it has no simulated step timers.
 
@@ -69,9 +69,9 @@ Every mutation except the tool stream returns `{request}`. `/run` persists analy
 
 ## Current boundaries
 
-The agent tool adapters in `server/agent/tools.js` execute against seeded project data. The legacy `server/tools.js` helper is retained only for its original unit test. No live Slack, calendar or vendor credentials have been supplied. Claude’s agent uses its deterministic fallback without model credentials; live model execution remains unverified in this session. The UI is a guided conversation for the sample sensor request, not arbitrary free-text purchasing. Purchase orders are local drafts; no vendor purchase is placed. Identity is the reference demo identity, not authenticated access control. Evidence links and the reference Ask button still need actual source/conversation integrations. Run locally for the demo; add authentication before shared hosting.
+The agent tool adapters in `server/agent/tools.js` execute against seeded project data. The legacy `server/tools.js` helper is retained only for its original unit test. No live Slack, calendar or vendor credentials have been supplied. Claude’s agent uses its deterministic fallback without model credentials; live model execution remains unverified in this session. Free text is matched against seven fixture parts; unmatched requests cannot create orders. Purchase orders are local drafts; no vendor purchase is placed. Identity is the reference demo identity, not authenticated access control. Evidence links and the reference Ask button still need actual source/conversation integrations. Run locally for the demo; add authentication before shared hosting.
 
-Request creation is available through the API with explicit Rev C demo context. The agent loop is connected on the Codex integration branch. Claude is adding the request input UI, event-derived working labels and catalog-aware conversation; next come project/vendor sources, purchasing and authenticated approvers.
+Request entry, agent analysis, shipping selection, approval, and draft purchase orders are integrated on `main`. Live project/vendor sources, actual purchasing and authenticated approvers remain future integrations.
 
 ## Collaboration and Git conventions
 
@@ -84,12 +84,12 @@ git worktree add .worktrees/codex-agent-run -b codex/agent-run
 git worktree add .worktrees/claude-ui -b claude/ui
 ```
 
-Commit messages use Conventional Commits: `feat(server): persist request lifecycle`, `feat(ui): connect engineer and approval views`, `test(server): cover approvals and stale writes`, `docs: document demo workflow`. Keep README updates with their feature. Review and merge finished branches from the main checkout.
+Commit messages use Conventional Commits: `feat(api): persist request lifecycle`, `feat(ui-engineer): connect engineer conversation`, `test(api): cover approvals and stale writes`, `docs: document demo workflow`. Keep README updates with their feature. Review and merge finished branches from the main checkout.
 
-During this implementation session `.git` is read-only, so worktree/commit creation is blocked. Source edits are present in the main checkout; no feature commits are claimed. Claude is active through the mailbox and has agreed to SQLite, deterministic cost math, price/override approval rules and an agent with a deterministic fallback. Claude owns the agent integration and subsequent UI work in its worktree. Git integration is delegated to Claude while this session has read-only Git metadata access.
+Each agent works in its own worktree under `.worktrees/` (`codex/<topic>`, `claude/<topic>`), rebases on `main`, and fast-forward merges after `npm test` and `npm run build` pass. Scopes: `db`, `api`, `agent`, `ui-engineer`, `ui-approvals`, `docs`, `collab`, `deps`, `test`. Claude and Codex have exchanged architectural reviews through the shared mailbox and native cmux messages. Runtime mailbox files are ignored by Git; durable decisions live in `collaboration/DECISIONS.md`.
 
 ## Validation
 
-`npm test` checks cost derivation, tool events, persistent approval overrides, duplicate prevention, invalid inputs, dependency invalidation and API handlers. Agent integration tests also cover matching, unsupported parts, question choice aliases, and revision conflicts after analysis. API handler tests run in-process because the build session cannot bind local sockets. `npm run build` verifies the React production bundle. Browser end-to-end verification remains pending in a session that can start the local server.
+`npm test` checks cost derivation, tool events, persistent approval overrides, duplicate prevention, invalid inputs, dependency invalidation and API handlers. Agent integration tests also cover matching, unsupported parts, question choice aliases, and revision conflicts after analysis. API handler tests run in-process for deterministic isolation. The workflow test crosses request creation, agent tools, engineer answers, shipping selection, approver overrides, draft identity, dependency release and audit APIs. `npm run build` verifies the React production bundle. Chrome verification on an isolated preview passed sensor request creation, Rev C answer, Standard selection, Priority approval override, and matching draft PO in both routes. The preview uses a scratch database; the user’s normal dev database is separate. Model-backed execution is still unverified without credentials.
 
 Catalog matching uses seeded shipping and project context. Parsed quantities appear consistently in the approval description and draft purchase order, which also saves the vendor and exact shipping quote. A new purchase can fulfill the seeded project dependency only when it matches the catalog part and project and covers at least the catalog quantity; a partial purchase leaves that dependency waiting. This is demo fulfillment logic, not a live inventory allocation system.

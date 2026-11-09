@@ -34,6 +34,10 @@ Discover and verify the project and agent before addressing a surface. Do not as
 
 Use native agent messages, which use recipient hooks, instead of injecting keystrokes. Delivery depends on recipient hooks; verify status and acknowledgment. Do not silently install global hooks or override permissions. `cmux new-split right` creates a terminal, not an agent by itself. Claude's own subagents and Codex's own subagents can serve as messengers, but are not interchangeable model runtimes.
 
-## Current limitation
+## Verified transport and worktrees
 
-The setup session cannot connect to the cmux Unix socket: Operation not permitted. No live Claude handshake has been verified. Start Claude in this project and tell it to read CLAUDE.md and acknowledge the codex message in the mailbox. Once both agents are active they can coordinate at task checkpoints without human copy/paste.
+Native cmux messages were successfully queued to Claude and a reply was received. Socket access required the session’s approved escalation path. Re-discover surface references each session; do not reuse the example refs from chat history. The shared mailbox remains a durable fallback and carries schema reviews, ownership handoffs, test results and checkpoints.
+
+Feature worktrees live under `.worktrees/`, with branches `codex/<topic>` and `claude/<topic>`. The mailbox script resolves the main checkout using `git rev-parse --git-common-dir`, so worktrees share one mailbox. Messages/status are local runtime files ignored by Git. Record lasting agreements in DECISIONS.md and keep README current with feature changes.
+
+Use Conventional Commits (`type(scope): imperative summary`). Before integration, run relevant tests and the production build, rebase on main, and fast-forward merge from the main checkout. Announce merge hashes and remaining owned files. Do not push unless requested.
