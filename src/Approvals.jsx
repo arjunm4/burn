@@ -1,6 +1,7 @@
 import React from 'react';
 import {deriveDecisions} from './decisions.js';
 import {api} from './api.js';
+import MiniGraph from './graph/MiniGraph.jsx';
 export default class Approvals extends React.Component {
 
   state = {sel:'sens', tier:{}, approved:{}, resolvedBy:{}, requests:null, pending:false, error:null};
@@ -8,6 +9,8 @@ export default class Approvals extends React.Component {
   componentDidMount() {
     this.mounted = true;
     this.refresh();
+    // The graph is optional: without it the approval view keeps its fixture trace.
+    api('/graph').then(data => this.mounted && this.setState({graph: data.graph}), () => {});
     this.poll = setInterval(this.refresh, 2000);
     window.addEventListener('focus', this.refresh);
   }
@@ -83,6 +86,7 @@ export default class Approvals extends React.Component {
     const status = sel.kind === 'done' ? `Approved · ${selTier.name} · Draft PO ${sel.order?.id || 'created'}` : sel.kind === 'auto' ? `Auto-approved · under ${fmt(limit)} and matches request` : sel.kind === 'wait' ? sel.waitingOn ? `Recommendation follows ${sel.waitingOn.part}` : 'Waiting for the engineer’s answer and shipping selection' : selTier.i !== sel.rec.i ? 'Overrides recommendation' : sel.approvalReasons?.length ? `Needs approval · ${sel.approvalReasons.map(r => ({over_limit: 'over $500', off_recommendation: 'requester picked another option'}[r] || r)).join(' · ')}` : '';
     return {
       needCount: need.length,
+      catalogId: sel.catalogId || sel.id, selTierIndex: selTier.i, selTierName: selTier.name,
       hasTrace: sel.kind !== 'wait' && sel.chain.length > 0, traceTier: `if ${selTier.name.toLowerCase()}`, trace,
       groups,
       eyebrow: `${sel.pr} · ${sel.project}`, headline: sel.kind === 'wait' ? `Hold ${sel.part}` : `${verb(sel.rec.name)} · ${sel.part}`,
@@ -90,7 +94,7 @@ export default class Approvals extends React.Component {
       showApprove: sel.kind === 'need', approve: () => this.approve(sel, selTier.i), approveLabel: `Approve ${selTier.name.toLowerCase()} · ${fmt(selTier.price)}`, requester: sel.who.split(' ')[0], status, engineerHref: `/request/${encodeURIComponent(sel.id)}`,
     };
   }
- render() { if (!this.state.requests?.length) return <main style={{padding:'40px 24px',fontSize:13}}>{this.state.error ? <div role="alert">{this.state.error} <button onClick={this.refresh}>Retry</button></div> : 'Loading approvals…'}</main>; const {needCount, hasTrace, traceTier, trace, groups, eyebrow, headline, facts, hasTiers, tiers, showApprove, approve, approveLabel, requester, status, engineerHref} = this.renderVals(); return <>{this.state.error && <div role="alert">{this.state.error} <button onClick={this.refresh}>Retry</button></div>}
+ render() { if (!this.state.requests?.length) return <main style={{padding:'40px 24px',fontSize:13}}>{this.state.error ? <div role="alert">{this.state.error} <button onClick={this.refresh}>Retry</button></div> : 'Loading approvals…'}</main>; const {needCount, hasTrace, traceTier, trace, groups, eyebrow, headline, facts, hasTiers, tiers, showApprove, approve, approveLabel, requester, status, engineerHref, catalogId, selTierIndex, selTierName} = this.renderVals(); const graphReady = this.state.graph?.nodes.some(n => n.id === `part:${catalogId}`); return <>{this.state.error && <div role="alert">{this.state.error} <button onClick={this.refresh}>Retry</button></div>}
 
 <div data-q-root="1" style={{"minHeight":"100vh","fontSize":"13px","display":"flex","flexDirection":"column"}}>
   <header style={{"display":"flex","alignItems":"center","gap":"18px","padding":"14px 24px","borderBottom":"1px solid #E2DFDA"}}>
@@ -126,7 +130,8 @@ export default class Approvals extends React.Component {
         </React.Fragment>)}
       </div>
 
-      {hasTrace && <>
+      {graphReady && <MiniGraph graph={this.state.graph} requests={this.state.requests} catalogId={catalogId} tier={selTierIndex} tierName={selTierName}/>}
+      {hasTrace && !graphReady && <>
       <div style={{"display":"flex","flexDirection":"column","gap":"10px","maxWidth":"560px"}}>
         <div style={{"display":"flex","justifyContent":"space-between","fontSize":"11px","letterSpacing":".1em","textTransform":"uppercase","color":"#7A766F"}}><span>Trace</span><span>{traceTier}</span></div>
         <div style={{"display":"flex","alignItems":"center","overflowX":"auto","paddingBottom":"4px"}}>
