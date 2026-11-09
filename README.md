@@ -67,9 +67,38 @@ Every mutation except the tool stream returns `{request}`. `/run` persists analy
 - `/approvals` is Priya's queue. It links each decision back to the engineer's conversation and explains why it needs approval.
 - The conversation logic lives in `src/conversation.js`: pure functions, unit-tested in `src/conversation.test.js`. `src/Engineer.jsx` only renders it.
 
+## Integrations: Slack and calendar
+
+The server ingests Slack messages and calendar events, extracts a dependency graph from them, and the agent, `/graph` and `/approvals` all read that graph. With no credentials it runs on seeded fixtures (`fixtures/slack/*.json` are saved Slack API responses and `fixtures/calendar.ics` is a calendar), so the demo works offline.
+
+Live setup: copy `.env.example` to `.env` (gitignored) and fill in:
+
+1. **Slack.** Go to https://api.slack.com/apps → *Create New App* → *From scratch*. Under *OAuth & Permissions*, add these bot token scopes: `channels:history`, `channels:read` and `users:read`. Add `groups:history` and `groups:read` too if you want private channels. Install the app to the workspace and copy the *Bot User OAuth Token* (`xoxb-…`) into `SLACK_BOT_TOKEN`. In each channel to read, run `/invite @your-app`. Then put the channel IDs (channel details → bottom of the *About* tab, `C0…`) into `SLACK_CHANNEL_IDS`, comma-separated.
+2. **Calendar.** In Google Calendar go to *Settings* → the calendar → *Integrate calendar* → *Secret address in iCal format*. In Outlook, *Publish calendar* → ICS link. Paste the link into `CALENDAR_ICS_URL`; `webcal://` links work too.
+3. Optionally set `ANTHROPIC_API_KEY` so Claude does the graph extraction and planning instead of the rules.
+
+Run `npm run dev` (it loads `.env`). Ingestion starts with the server; **Sync sources** on `/graph` or `POST /api/sync` pulls new data. Slack syncs incrementally from the newest message seen. The calendar window (30 days back, 90 ahead) is re-read each time. Tokens and the calendar URL stay on the server: they're never logged, stored in the database, or returned by the API. A source that fails keeps its previous documents and reports the error in `GET /api/sources`.
+
+| Method | Path | Purpose |
+| --- | --- | --- |
+| POST | `/api/sync` | Pull from every source, rebuild the graph, return a summary |
+| GET | `/api/sources` | Per-source mode (live/fixture), last sync, document count, last error |
+| GET | `/api/graph` | Latest graph version with cited evidence documents (builds on first call) |
+| GET | `/api/documents/:id` | One ingested message or event |
+
+Code: `server/connectors/{slack,ics}.js` are the connectors. `server/ingest/` holds sources, documents and graph versions in SQLite (`INGEST_DB`, default `data/ingest.sqlite`).
+
+## Dependency graph
+
+- **Extraction** (`server/graph/extract.js`). Calendar events become milestones (`CATEGORIES:MILESTONE` or titles with EVT/DVT/freeze…), out-of-office windows and time-boxed bookings. Messages yield parts (matched to the request catalog), work items, people, and three edge kinds: `A blocks B` (B can't start until A is done), `person assigned work`, and `work due milestone`. Claude structured output does the message extraction when a key is set; message text is wrapped as untrusted data, and only known keys and real evidence ids survive. Without a key, rules tuned for common phrasing ("X is blocked until…", "can only start after…", "needs…", "I'm on X with Y", "takes about N days") do it. **Every edge cites the messages or events it came from.**
+- **Scheduling** (`src/graph/engine.js`, which runs in both the server and the browser). Parts arrive on the date of the chosen shipping tier. Work starts once its blockers are done and its people are back from OOO. Milestones slip when their due work or parts are late. The engine reports the critical path (what determined each start), missed bookings, and idle engineer-days against the fastest-shipping baseline at $1,100/day. On the seeded data, standard sensors produce the same $30,800 the request totals use, now derived from Slack and the calendar. The engine also finds that the slow harness vendor is a hidden EVT bottleneck.
+- **`/graph`** is a calendar timeline. Parts are dots, work is bars and milestones are diamonds; the critical path is in ink, and slips are red with a "slips Nd" label. Shipping toggles for each open request re-run the schedule live, and nodes animate to their new dates. There are milestone and idle-cost tiles, a booking-conflict warning, and a table view. Clicking a node shows its dependencies with the quoted Slack messages and calendar events behind them; `?focus=<node id>` deep-links to one.
+- **`/approvals`** shows a compact graph of everything waiting on the selected request, scheduled with the tier being approved. It names the real cause when a milestone would still slip, e.g. "EVT build still slips 4d with this option: Cable harness arrives Nov 18, not this order."
+- **The agent** reads ingested messages, calendar milestones and graph dependencies when the server is running.
+
 ## Current boundaries
 
-The agent tool adapters in `server/agent/tools.js` execute against seeded project data. The legacy `server/tools.js` helper is retained only for its original unit test. No live Slack, calendar or vendor credentials have been supplied. Claude’s agent uses its deterministic fallback without model credentials; live model execution remains unverified in this session. Free text is matched against seven fixture parts; unmatched requests cannot create orders. Purchase orders are local drafts; no vendor purchase is placed. Identity is the reference demo identity, not authenticated access control. Evidence links and the reference Ask button still need actual source/conversation integrations. Run locally for the demo; add authentication before shared hosting.
+Slack and calendar connectors are implemented but have only been exercised against recorded API responses and fixture files here. No live Slack token or calendar URL has been supplied yet; add them to `.env` (see Integrations). The legacy `server/tools.js` helper is retained only for its original unit test. Vendor and purchasing integrations don't exist yet. Approval costs in `/approvals` facts and the engineer chat still come from `src/decisions.js`; the graph views compute theirs from ingested data. Claude’s agent uses its deterministic fallback without model credentials; live model execution remains unverified in this session. Free text is matched against seven fixture parts; unmatched requests cannot create orders. Purchase orders are local drafts; no vendor purchase is placed. Identity is the reference demo identity, not authenticated access control. Evidence links and the reference Ask button still need actual source/conversation integrations. Run locally for the demo; add authentication before shared hosting.
 
 Request entry, agent analysis, shipping selection, approval, and draft purchase orders are integrated on `main`. Live project/vendor sources, actual purchasing and authenticated approvers remain future integrations.
 
