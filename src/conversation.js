@@ -34,7 +34,7 @@ export function needsRun(request) {
   return request.status === 'analyzing' || (request.status === 'needs_answer' && !request.question && !request.analysis);
 }
 
-export function buildConversation(request, {tools = [], running = false} = {}) {
+export function buildConversation(request, {tools = [], running = false, requests = []} = {}) {
   const me = text => ({from: 'me', text});
   const ai = (text, extra = {}) => ({from: 'ai', text, ...extra});
   const [d] = deriveDecisions([request]);
@@ -50,13 +50,16 @@ export function buildConversation(request, {tools = [], running = false} = {}) {
     return msgs;
   }
 
-  const question = request.question || LEGACY_QUESTION;
+  // Only the original sensor demo, before any analysis is stored, falls back to the scripted question.
+  const question = request.question || (!request.analysis && (request.catalogId || request.id) === 'sens' ? LEGACY_QUESTION : null);
   const answered = !!request.answer;
-  msgs.push(ai(question.text, answered || request.status !== 'needs_answer' ? {} : {
-    choices: question.choices.map(c => ({label: c.label, action: {type: 'answer', body: {answer: answerOf(c.id), choiceId: c.id}}})),
-  }));
-  if (!answered) return msgs;
-  msgs.push(me(request.answer === 'yes' ? 'Yes, Rev B works.' : 'No, needs Rev C.'));
+  if (question) {
+    msgs.push(ai(question.text, answered || request.status !== 'needs_answer' ? {} : {
+      choices: question.choices.map(c => ({label: c.label, action: {type: 'answer', body: {answer: answerOf(c.id), choiceId: c.id}}})),
+    }));
+    if (!answered) return msgs;
+    msgs.push(me(request.answer === 'yes' ? 'Yes, Rev B works.' : 'No, needs Rev C.'));
+  }
 
   const pickedIndex = request.approvedTier ?? request.selectedTier;
   if (request.answer === 'yes') {
@@ -67,12 +70,17 @@ export function buildConversation(request, {tools = [], running = false} = {}) {
     }));
     return msgs;
   }
+  if (request.status === 'waiting') {
+    const dep = requests.find(r => r.id === request.dep);
+    msgs.push(ai(`This depends on ${dep ? `${dep.part} (${dep.pr})` : 'another decision'}. I’ll recommend an option once that’s decided.`, {status: 'Waiting'}));
+    return msgs;
+  }
 
   const cheapest = d.cheapest;
   const choosing = request.status === 'choosing';
   msgs.push(ai(cheapest.late
-    ? `Then ${cheapest.name.toLowerCase()} lands ${day(cheapest.arrivesOn)}, ${cheapest.late} days after ${request.neededBy ? day(request.neededBy) : 'the milestone'}, with ${request.blocked} engineers waiting.`
-    : `Every option lands in time for ${request.milestone}.`, {
+    ? `${question ? 'Then ' : ''}${question ? cheapest.name.toLowerCase() : cheapest.name} lands ${day(cheapest.arrivesOn)}, ${cheapest.late} days after ${request.neededBy ? day(request.neededBy) : 'the milestone'}, with ${request.blocked} engineers waiting.`
+    : `${request.blocked ? 'Every option lands in time' : 'Nobody waits on these'}${request.milestone && request.milestone !== 'None' ? ` for ${request.milestone}` : ''}, so ${d.rec.name.toLowerCase()} is fine.`, {
     rows: d.tiers.map(t => ({
       name: t.name,
       detail: `${money(t.price)} · ${day(t.arrivesOn)}${t.late ? ` · ${t.late}d late` : ' · on time'}`,

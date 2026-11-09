@@ -6,7 +6,7 @@ const C = {ink: '#1C1B17', paper: '#F4F2F0', muted: '#7A766F', line: '#E2DFDA', 
 const requestIdFromPath = () => decodeURIComponent(location.pathname.match(/^\/request\/([^/]+)/)?.[1] || '');
 
 export default class Engineer extends React.Component {
-  state = {id: requestIdFromPath(), request: null, recent: [], tools: [], running: false, pending: false, error: null, draft: DEFAULT_TEXT};
+  state = {id: requestIdFromPath(), request: null, requests: [], recent: [], tools: [], running: false, pending: false, error: null, draft: DEFAULT_TEXT};
   mounted = false;
 
   componentDidMount() {
@@ -34,28 +34,33 @@ export default class Engineer extends React.Component {
     if (this.refreshing || !this.mounted) return;
     this.refreshing = true;
     try {
+      const id = this.state.id;
       const {requests} = await api('/requests');
+      // The route may have changed while this request was in flight.
+      if (!this.mounted || this.state.id !== id) return null;
       const recent = requests.filter(r => r.text || r.id === 'sens').reverse();
-      if (!this.state.id) { this.mounted && this.setState({recent}); return null; }
-      const request = requests.find(r => r.id === this.state.id);
+      if (!id) { this.setState({recent, requests}); return null; }
+      const request = requests.find(r => r.id === id);
       if (!request) throw new Error('That request was not found.');
-      if (this.mounted) await new Promise(resolve => this.setState(s => ({recent, request: !s.request || request.revision >= s.request.revision ? request : s.request}), resolve));
+      await new Promise(resolve => this.setState(s => ({recent, requests, request: s.request?.id === id && request.revision < s.request.revision ? s.request : request}), resolve));
       return request;
     } catch (error) { if (this.mounted) this.setState({error: error.message}); return null; }
     finally { this.refreshing = false; }
   };
 
   async runAgent() {
-    if (this.state.running || !this.state.id) return;
+    const id = this.state.id;
+    if (this.state.running || !id) return;
     this.controller = new AbortController();
     this.setState({running: true, tools: [], error: null});
     try {
-      await streamRun(this.state.id, this.controller.signal, event => {
-        if (!this.mounted) return;
+      await streamRun(id, this.controller.signal, event => {
+        if (!this.mounted || this.state.id !== id) return;
         this.setState(s => ({tools: applyToolEvent(s.tools, event), ...(event.request ? {request: event.request} : {})}));
       });
     } catch (error) { if (this.mounted && error.name !== 'AbortError') this.setState({error: error.message}); }
-    if (this.mounted) this.setState({running: false});
+    if (!this.mounted || this.state.id !== id) return;
+    this.setState({running: false});
     await this.refresh();
   }
 
@@ -117,7 +122,7 @@ export default class Engineer extends React.Component {
 
   renderConversation() {
     const {request, tools, running, pending} = this.state;
-    const msgs = buildConversation(request, {tools, running});
+    const msgs = buildConversation(request, {tools, running, requests: this.state.requests});
     return <div style={{width: '100%', maxWidth: 520, display: 'flex', flexDirection: 'column', gap: 12}}>
       {msgs.map((m, i) => <div key={i} style={{display: 'flex', flexDirection: 'column', gap: 6, alignItems: m.from === 'me' ? 'flex-end' : 'flex-start'}}>
         {m.text && <div style={{maxWidth: '82%', padding: '10px 14px', borderRadius: 14, lineHeight: 1.45, textWrap: 'pretty', ...(m.from === 'me' ? {background: C.ink, color: C.paper, border: `1px solid ${C.ink}`} : {background: '#fff', color: C.ink, border: `1px solid ${C.line}`})}}>{m.text}</div>}

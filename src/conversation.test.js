@@ -60,3 +60,19 @@ test('planner is labelled so an offline run is never mistaken for the model', ()
   assert.equal(buildConversation({...base, analysis: {planner: 'fallback'}})[1].meta, 'Offline planner · no model call');
   assert.equal(buildConversation({...base, analysis: {planner: 'claude'}})[1].meta, 'Planned by Claude');
 });
+
+test('every seeded request renders its own state without the Rev B question', () => flow(store => {
+  for (const r of store.snapshot().requests) {
+    const msgs = buildConversation(r);
+    if (r.id !== 'sens') assert.ok(!texts(msgs).some(t => /Rev B/.test(t)), r.id + ' shows the Rev B question');
+    if (['choosing', 'pending_approval', 'ordered'].includes(r.status) && r.id !== 'sens') assert.ok(msgs.some(m => m.rows), r.id + ' has no options');
+    if (r.status === 'waiting') assert.match(buildConversation(r, {requests: store.snapshot().requests}).at(-1).text, /depends on ACS37002 sensors × 40 \(PR-2291\)/);
+  }
+}));
+
+test('matched request without a question goes straight to actionable options', () => flow(store => {
+  const probe = {...store.get('probe'), status: 'choosing', answer: null, question: null, analysis: {planner: 'fallback'}, selectedTier: null, approvedTier: null, order: null};
+  const last = buildConversation(probe).at(-1);
+  assert.match(last.text, /Nobody waits on these, so standard is fine/);
+  assert.ok(last.rows.every(r => r.action?.type === 'select'));
+}));
