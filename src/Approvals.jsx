@@ -43,7 +43,7 @@ export default class Approvals extends React.Component {
     const showHandled = this.props.showHandled ?? true;
     const raw = st.requests;
     const list = deriveDecisions(raw, st.approved, limit).map(d => ({...d,
-      kind: d.status === 'ordered' ? 'done' : ['needs_answer','choosing','waiting'].includes(d.status) ? 'wait' : d.status === 'pending_approval' ? 'need' : d.kind,
+      kind: d.status === 'ordered' ? 'done' : ['analyzing','needs_answer','choosing','waiting','unsupported'].includes(d.status) ? 'wait' : d.status === 'pending_approval' ? 'need' : d.kind,
     }));
     const sel = list.find(d => d.id === st.sel) || list[0];
     const selTier = sel.tiers[sel.status === 'ordered' ? (sel.approvedTier ?? sel.selectedTier ?? sel.rec.i) : (st.tier[sel.id] ?? sel.selectedTier ?? sel.rec.i)];
@@ -78,23 +78,23 @@ export default class Approvals extends React.Component {
       node(sel.milestone, selTier.late ? `slips ${selTier.late}d` : 'holds', selTier.late > 0, 'ms')];
     const VERB = { Expedited: 'Expedite', Priority: 'Ship priority', Standard: 'Ship standard', 'Current vendor': 'Keep current vendor', 'Second vendor': 'Switch to second vendor' };
     const verb = t => VERB[t] || `Book ${t.toLowerCase()}`;
-    const status = sel.kind === 'done' ? `Approved · ${selTier.name} · Draft PO ${sel.order?.id || 'created'}` : sel.kind === 'auto' ? `Auto-approved · under ${fmt(limit)} and matches request` : sel.kind === 'wait' ? sel.waitingOn ? `Recommendation follows ${sel.waitingOn.part}` : 'Waiting for the engineer’s answer and shipping selection' : selTier.i !== sel.rec.i ? 'Overrides recommendation' : '';
+    const status = sel.kind === 'done' ? `Approved · ${selTier.name} · Draft PO ${sel.order?.id || 'created'}` : sel.kind === 'auto' ? `Auto-approved · under ${fmt(limit)} and matches request` : sel.kind === 'wait' ? sel.waitingOn ? `Recommendation follows ${sel.waitingOn.part}` : 'Waiting for the engineer’s answer and shipping selection' : selTier.i !== sel.rec.i ? 'Overrides recommendation' : sel.approvalReasons?.length ? `Needs approval · ${sel.approvalReasons.map(r => ({over_limit: 'over $500', off_recommendation: 'requester picked another option'}[r] || r)).join(' · ')}` : '';
     return {
       needCount: need.length,
       hasTrace: sel.kind !== 'wait' && sel.chain.length > 0, traceTier: `if ${selTier.name.toLowerCase()}`, trace,
       groups,
       eyebrow: `${sel.pr} · ${sel.project}`, headline: sel.kind === 'wait' ? `Hold ${sel.part}` : `${verb(sel.rec.name)} · ${sel.part}`,
       facts, hasTiers: sel.tiers.length > 1 && sel.kind !== 'wait', tiers,
-      showApprove: sel.kind === 'need', approve: () => this.approve(sel, selTier.i), approveLabel: `Approve ${selTier.name.toLowerCase()} · ${fmt(selTier.price)}`, requester: sel.who.split(' ')[0], status,
+      showApprove: sel.kind === 'need', approve: () => this.approve(sel, selTier.i), approveLabel: `Approve ${selTier.name.toLowerCase()} · ${fmt(selTier.price)}`, requester: sel.who.split(' ')[0], status, engineerHref: `/request/${encodeURIComponent(sel.id)}`,
     };
   }
- render() { if (!this.state.requests?.length) return <main style={{padding:'40px 24px',fontSize:13}}>{this.state.error ? <div role="alert">{this.state.error} <button onClick={this.refresh}>Retry</button></div> : 'Loading approvals…'}</main>; const {needCount, hasTrace, traceTier, trace, groups, eyebrow, headline, facts, hasTiers, tiers, showApprove, approve, approveLabel, requester, status} = this.renderVals(); return <>{this.state.error && <div role="alert">{this.state.error} <button onClick={this.refresh}>Retry</button></div>}
+ render() { if (!this.state.requests?.length) return <main style={{padding:'40px 24px',fontSize:13}}>{this.state.error ? <div role="alert">{this.state.error} <button onClick={this.refresh}>Retry</button></div> : 'Loading approvals…'}</main>; const {needCount, hasTrace, traceTier, trace, groups, eyebrow, headline, facts, hasTiers, tiers, showApprove, approve, approveLabel, requester, status, engineerHref} = this.renderVals(); return <>{this.state.error && <div role="alert">{this.state.error} <button onClick={this.refresh}>Retry</button></div>}
 
 <div data-q-root="1" style={{"minHeight":"100vh","fontSize":"13px","display":"flex","flexDirection":"column"}}>
   <header style={{"display":"flex","alignItems":"center","gap":"18px","padding":"14px 24px","borderBottom":"1px solid #E2DFDA"}}>
     <span style={{"fontSize":"16px","letterSpacing":".04em"}}>ramp</span>
     <span style={{"color":"#7A766F"}}>Procurement</span><span style={{"color":"#C9C5BE"}}>/</span><span>Decisions</span>
-    <a href="/request" style={{"marginLeft":"auto","color":"#7A766F","fontSize":"12px","textDecoration":"none"}}>Engineer side →</a>
+    <a href={engineerHref} style={{"marginLeft":"auto","color":"#7A766F","fontSize":"12px","textDecoration":"none"}}>Engineer side →</a>
     <span style={{"color":"#7A766F","fontSize":"12px"}}>Priya Nair</span>
   </header>
   <main data-q-main="1" style={{"display":"grid","gridTemplateColumns":"minmax(300px,400px) minmax(0,1fr)","flex":"1"}}>
@@ -154,7 +154,7 @@ export default class Approvals extends React.Component {
       <div style={{"display":"flex","gap":"10px","alignItems":"center","flexWrap":"wrap"}}>
         {showApprove && <>
           <button disabled={this.state.pending} onClick={approve} style={{"background":"#E4F222","border":"1px solid #E4F222","borderRadius":"6px","padding":"10px 16px","fontSize":"14px","cursor":"pointer","color":"#1C1B17"}}>{approveLabel}</button>
-          <a href="/request" style={{"background":"#fff","border":"1px solid #E2DFDA","borderRadius":"6px","padding":"10px 14px","fontSize":"13px","cursor":"pointer","color":"#1C1B17","textDecoration":"none"}}>Open engineer chat</a>
+          <a href={engineerHref} style={{"background":"#fff","border":"1px solid #E2DFDA","borderRadius":"6px","padding":"10px 14px","fontSize":"13px","cursor":"pointer","color":"#1C1B17","textDecoration":"none"}}>Open engineer chat</a>
         </>}
         <span style={{"color":"#7A766F","fontSize":"12px"}}>{status}</span>
       </div>
