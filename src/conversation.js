@@ -40,7 +40,9 @@ export function buildConversation(request, {tools = [], running = false} = {}) {
   const [d] = deriveDecisions([request]);
   const persisted = request.analysis?.tools?.map((t, index) => ({index, done: true, ...t}));
   const work = running || tools.length ? tools : persisted || Object.values(LEGACY_TOOLS).map(([label], index) => ({index, label, summary: '', done: true}));
-  const msgs = [me(request.text || DEFAULT_TEXT), ai(null, {work: running && !work.length ? [{index: 0, label: 'Reading the request', summary: '', done: false}] : work})];
+  const planner = request.analysis?.planner;
+  const plannerNote = planner === 'fallback' ? 'Offline planner · no model call' : planner === 'claude' ? 'Planned by Claude' : null;
+  const msgs = [me(request.text || DEFAULT_TEXT), ai(null, {work: running && !work.length ? [{index: 0, label: 'Reading the request', summary: '', done: false}] : work, ...(plannerNote && !running ? {meta: plannerNote} : {})})];
   if (running || request.status === 'analyzing') return msgs;
 
   if (request.status === 'unsupported') {

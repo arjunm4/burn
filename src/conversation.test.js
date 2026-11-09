@@ -54,3 +54,9 @@ test('agent question, unsupported and run detection', () => {
   assert.equal(needsRun({...base, question: q}), false);
   assert.equal(day('2026-11-14'), 'Nov 14');
 });
+
+test('planner is labelled so an offline run is never mistaken for the model', () => {
+  const base = flow(store => store.get('sens'));
+  assert.equal(buildConversation({...base, analysis: {planner: 'fallback'}})[1].meta, 'Offline planner · no model call');
+  assert.equal(buildConversation({...base, analysis: {planner: 'claude'}})[1].meta, 'Planned by Claude');
+});
