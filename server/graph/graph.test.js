@@ -81,3 +81,21 @@ test('a failing model call falls back to rules', async () => {
   assert.equal(g.error, 'boom');
   assert.ok(g.edges.length > 10);
 });
+
+test('scenario defaults reflect requests and the approver focus keeps sibling blockers', async () => {
+  const {createStore} = await import('../store.js');
+  const {arrivalsFor, defaultChoices} = await import('../../src/graph/scenario.js');
+  const {focusGraph, layout} = await import('../../src/graph/layout.js');
+  const store = createStore(':memory:');
+  try {
+    const {requests} = store.snapshot();
+    assert.equal(defaultChoices(requests).sens, 0, 'sensors default to the standard shipping Dana asked for');
+    const a = analyzeGraph(graph, {orderDate: ORDER_DATE, arrivals: arrivalsFor(graph, requests, {sens: 2, harn: 0})});
+    assert.equal(a.at['milestone:evt-build'].slip, 4);
+    const sub = focusGraph(graph, 'part:sens');
+    assert.ok(sub.nodes.some(n => n.id === 'part:harn'), 'harness explains the remaining EVT slip');
+    assert.ok(!sub.nodes.some(n => n.id === 'part:fpga'), 'unrelated chains are left out');
+    const geo = layout(sub, a, {width: 800});
+    assert.ok(geo.rows.length >= 6 && geo.edges.every(e => e.path.startsWith('M ')));
+  } finally { store.close(); }
+});

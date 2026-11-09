@@ -96,7 +96,9 @@ export function analyzeGraph(graph, {orderDate, arrivals = {}} = {}) {
 function criticalPath(graph, ix, at) {
   const milestones = graph.nodes.filter(n => n.kind === 'milestone' && at[n.id]);
   const slipped = milestones.filter(m => at[m.id].slip > 0);
-  const targets = slipped.length ? slipped : milestones.sort((a, b) => at[b.id].finish - at[a.id].finish).slice(0, 1);
+  // Nothing slips: follow the milestone with the least slack, the one that would slip first.
+  const ready = m => Math.max(-Infinity, ...ix.preds.get(m.id).filter(e => at[e.from]).map(e => at[e.from].finish));
+  const targets = slipped.length ? slipped : milestones.filter(m => ready(m) > -Infinity).sort((a, b) => (at[a.id].planned - ready(a)) - (at[b.id].planned - ready(b))).slice(0, 1);
   const nodes = new Set(), edges = new Set();
   for (const m of targets) {
     let id = m.id;
