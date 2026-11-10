@@ -1,12 +1,12 @@
 # Burn: expedite-decision architecture (joint Claude + Codex)
 
-Status: **Jointly reviewed and approved by Claude and Codex (v5); proposed for Arjun and Owen.** v5 incorporates Arjun and Owen's second conversation (quote-page entry, disagreement, learning, assembly readiness). Architecture only; no implementation authorized. Product inputs only Arjun and Owen can provide stay open questions (§16).
+Status: **v6 draft (Claude), pending Codex review.** v6 drops the BOM as a required input (Owen's decision; see §2.3). v5 was jointly reviewed and approved by Claude and Codex. v5 incorporates Arjun and Owen's second conversation (quote-page entry, disagreement, learning, assembly readiness). Architecture only; no implementation authorized. Product inputs only Arjun and Owen can provide stay open questions (§16).
 Inputs: Arjun + Owen design conversation (`data/design/transcript-arjun-owen.md`, local only); independent positions (`claude-position.md`, `codex-position.md`); critiques and settlement (`claude-critique.md`, `codex-review-r2.md`, `codex-settlement-r3.md`); worked example (`worked-decision-example.md`); conversation 2 (`transcript-2-arjun-owen.md`) and its review (`codex-review-round2.md`).
 
 ## At a glance
 
 ### Problem
-When an engineer orders a custom machined part on a site like Xometry, they fill in the file, material and quantity. Then they hit the one field they can't answer: which **production and shipping tier** (e.g. Standard 10 days for $3,000, Expedited 5 days for $3,900). Someone has to decide whether the faster option is worth it. Today that's a gut call. The facts that should drive it are scattered across the parts list (BOM), Slack threads, meeting notes, calendars and people's heads:
+When an engineer orders a custom machined part on a site like Xometry, they fill in the file, material and quantity. Then they hit the one field they can't answer: which **production and shipping tier** (e.g. Standard 10 days for $3,000, Expedited 5 days for $3,900). Someone has to decide whether the faster option is worth it. Today that's a gut call. The facts that should drive it are scattered across Slack threads, meeting notes, calendars and people's heads:
 - what the part is for
 - whether the engineer's own subsystem is ahead or behind its milestone
 - what else that work is waiting on
@@ -35,7 +35,7 @@ Burn isn't meant to be omniscient. It turns a gut call into one with traceable r
 
 ```
  ┌─────────── Sources ───────────┐
- │ BOM · quote page · Slack · mtg│
+ │ quote page · Slack · mtg      │
  │ notes · calendar · past orders│
  │ · owner's $/day policy        │
  └───────────────┬───────────────┘
@@ -67,7 +67,7 @@ Burn isn't meant to be omniscient. It turns a gut call into one with traceable r
 
 ### Data flow, in one example
 1. Owen configures the bracket on the quote page and reaches the tier choice: Standard (day 10, $3,000) or Expedited (day 5, $3,900).
-2. Burn captures the quote snapshot (every tier shown) and matches the part to the BOM: it's the hip-actuator bracket.
+2. Burn captures the quote snapshot (every tier shown) and identifies the demand: Slack says the new bracket is for the hip-actuator spin test, and Owen confirms with one tap.
 3. From Slack and meeting notes it learns the bracket is needed for the actuator spin test, which also needs Arjun's motor (ready day 8). The test takes 3 days.
 4. It computes the test's finish date for each option: Standard finishes day 13, Expedited day 11. Expedited is 2 days sooner for $900, so the break-even is $450/day.
 5. The spin-test owner's policy says a day is worth $600, so it recommends Expedited (+$300 net) and states the assumption: the motor is ready by day 8.
@@ -99,7 +99,7 @@ Each decision is listed with the alternative we rejected and why.
 
 1. **Part-first, reverse computation.** A concrete quote starts the work. We walk from that part to the work and milestone it feeds. *Rejected:* an agent that ingests everything and decides what to buy (unbounded context, untestable).
 2. **One shared evidence store and planning model, with bounded jobs.** *Rejected:* one persistent agent per project (divergent memories, and cross-project edges become negotiations between agents). Records own state. Models propose over snapshots and never approve their own output.
-3. **The BOM anchors identity, not dependency truth.** PDM/BOM supplies part identity, revision, quantity, release state and structural membership, and automatically links an unambiguous quote to its BOM item. Process, test and use dependencies form a separate dependency graph, built from accepted claims plus the engineer: which test needs the part, partial-test feasibility, substitutes, inspection, fixtures. *Rejected:* "every part is in the BOM, so the existence problem is solved". Fixtures, tooling and unreleased variants can sit outside it, and membership doesn't say *when* or *for what* a part is needed. Without a BOM, Burn can still make one bounded decision from an explicitly scoped requirement, but it can't claim company-wide gap detection.
+3. **The demand anchors the decision; no BOM.** *Revised in v6.* The anchor is the **Demand**: this part (from the quote: file, revision, quantity), for this use or test, by this date, owned by this person. Burn proposes the demand from accepted context (e.g. "need the new bracket for the spin test") and the engineer confirms it with one tap; otherwise the engineer answers one "what's this for?" field with autocomplete over known tests, assemblies and milestones. Process, test and use dependencies form the dependency graph, built from accepted claims plus the engineer. *Rejected (v5):* the BOM as identity anchor. The parts most often expedited (fixtures, test adapters, tooling, prototype iterations, rush revisions) are usually outside it, and early teams often have no reliable BOM. *Cost accepted:* no product-wide gap detection ("a part feeding a milestone with no order"); gaps are detected only against declared tests, assemblies and milestones (§8).
 4. **Evidence and accepted planning facts are separate layers.** Extracted claims stay assertions until accepted into the planning view. *Rejected:* latest-claim-wins (later messages can be tentative, about another revision, or from someone without authority).
 5. **Marginal, same-world comparison.** Every admissible action is compared with the others in the *same* scenario. Quotes, the baseline and every other assumption stay fixed across actions. *Rejected:* "downstream people × slip" and all-fastest baselines, which count reachability as impact.
 6. **A dollar valuation is needed only for a genuine price/time trade-off.** Burn always shows the break-even $/day. It decides in this order:
@@ -138,9 +138,9 @@ Each decision is listed with the alternative we rejected and why.
 Actors: the **engineer** (owns the part and its demand), **supply chain** (places the order), the **approver** (a lead or a policy threshold), and the **milestone owner** (owns the value-of-time policy).
 
 1. On the quote page the engineer completes specification, material, quantity and supplier, then reaches the tier choice. Burn captures a **quote snapshot**: every tier shown, with completeness flags, capture time and the vendor configuration revision.
-2. Burn resolves the part against the BOM.
-   - An exact revision match is accepted under the source policy and shown, cancellable.
-   - The engineer is asked only about an ambiguous identity, an incompatible revision or use, an unresolved quantity allocation, or a material contradiction.
+2. Burn identifies the **demand** the quote serves.
+   - A demand proposed from accepted context is shown for one-tap confirmation; otherwise the engineer picks it in one "what's this for?" field.
+   - Part identity, revision and quantity come from the quote. The engineer is asked only about an ambiguous use, an incompatible revision, an unresolved quantity allocation, or a material contradiction.
 3. Burn retrieves evidence the participants are allowed to see and builds the planning view for the affected subgraph.
 4. Burn computes the admissible actions and their outcomes per scenario.
 5. If a decision-critical gap remains, Burn asks its owner **one question at a time** (gates first, if trusted evidence can't settle them), then re-solves. If the interruption budget runs out, the decision ends in an explicit *unresolved / escalated* state, never with defaulted facts.
@@ -191,8 +191,8 @@ Engineer steps added: none in the common case **once the quote-page integration 
 ## 5. Core objects
 
 ```
-Part(number, revision, release state) · Assembly(BOM node) ◄─ membership (BOM)
-Demand(part rev, qty, use/test, assembly, usable-by, owner)        ◄─ what a quote satisfies
+Demand(part rev, qty, use/test, assembly, usable-by, owner, source: context|engineer) ◄─ the anchor
+Part(number or file, revision; from the quote) · Assembly(declared name, milestone)
 QuoteSnapshot(vendor, configuration revision, captured-at, capture source, completeness,
               quantity, currency, price inclusions, valid-until, cutoff, time zone)
   └ QuoteOption(tier, total price, mfg days @shop calendar, ship promise @carrier, source)
@@ -229,15 +229,14 @@ Meeting noise is handled by extracting only **supported, decision-relevant typed
 
 ## 6. Pipeline
 
-1. **Ingest** document revisions. The demo bundle has four inputs, all replaceable adapters, so no live PDM, Ramp or meeting connector is needed for the architecture proof:
-   1. a scoped BOM/assembly manifest
-   2. a revision- and quantity-specific tiered quote set
-   3. source messages, selected meeting transcripts and the milestone/calendar plan
-   4. **owner-approved valuation and approval policy**
+1. **Ingest** document revisions. The demo bundle has three inputs, all replaceable adapters, so no live PDM, Ramp or meeting connector is needed for the architecture proof:
+   1. a revision- and quantity-specific tiered quote set
+   2. source messages, selected meeting transcripts and the milestone/calendar plan, including declared tests and assemblies
+   3. **owner-approved valuation and approval policy**
 
    A small order/delivery event history illustrates the facts layer and existing allocations. Slack and the calendar can also be read live, as already built. Each decision's full quote set, snapshot and outcome is logged prospectively from the first run.
 2. **Extract** typed claims, with spans, from messages and transcripts. Model text is untrusted data.
-3. **Resolve** mentions against a closed candidate set: BOM numbers exact, names fuzzy, the model as tie-breaker. A failed resolution stays unresolved; it is never guessed. A name similarity never authorizes a revision substitution.
+3. **Resolve** mentions against a closed candidate set of declared parts, tests, assemblies and milestones: part numbers exact, names fuzzy, the model as tie-breaker. A failed resolution stays unresolved; it is never guessed. A name similarity never authorizes a revision substitution.
 4. **Accept** claims into the planning view. A later assertion supersedes an earlier one only when it is authorized and applicable (same subject, revision and use, within its validity). A timestamp or model confidence alone never settles a conflict. Validity is fact-specific: quote expiry, release, deadline. Material conflicts stay **unresolved**, so they become gaps.
 5. **Decide.** The orchestrator owns scheduling, retries and the question loop. The model extracts and explains. It can't invent costs, redefine demand or approve.
 
@@ -306,11 +305,11 @@ Owen's released hip-actuator bracket (a fixed revision and quantity; supplier an
 
 ## 8. Questions and the existence problem
 
-We can't detect knowledge that exists only in someone's head in general. We *can* detect **decision-critical gaps against a declared coverage boundary**: the BOM plus declared extras such as fixtures, test plans and milestones.
+We can't detect knowledge that exists only in someone's head in general. We *can* detect **decision-critical gaps against a declared coverage boundary**: the declared tests, assemblies, fixtures and milestones, plus confirmed demands.
 
 | Gap | Detected as |
 |---|---|
-| **Structural** | A demand with no usable-by; a BOM item feeding a milestone with no order or ETA; an assembly with no milestone; a mention that resolves to nothing |
+| **Structural** | A demand with no usable-by; a declared test or milestone input with no order or ETA; an assembly with no milestone; a mention that resolves to nothing |
 | **Validity** | An expired quote, a superseded revision, a deadline past its validity |
 | **Conflict** | Unresolved contradictory candidate claims |
 | **Shadow of tacit knowledge** | Behavior the model can't explain, e.g. an expedite request where the schedule shows slack. This prompts a typed question ("Is there an earlier need, e.g. a test slot?") rather than an assumption |
@@ -415,7 +414,7 @@ The existing `/graph` and approvals views evolve into this.
 21. The habit data is sparse, or conflicts with authorized policy: abstain or show the advisory difference; policy governs. Post-decision information and Burn's own influence are never treated as independent pre-decision features.
 22. A revised quote changes the price or the selected tier after one approval: the approval requirements and decision revision are revalidated before placement.
 
-**Synthetic worlds.** A simulator diagnostic: a robot program with BOM, Slack, meetings, calendar and order/delivery events, with planted gaps and hidden true durations. All numbers are reported as "in this simulator, under these assumptions".
+**Synthetic worlds.** A simulator diagnostic: a robot program with Slack, meetings, calendar and order/delivery events, with planted gaps and hidden true durations. All numbers are reported as "in this simulator, under these assumptions".
 - Fitting and evaluation are split by time and project.
 - The test worlds include model-mismatched worlds, correlated delays, missing alternatives, resource constraints, stale or conflicting evidence, uncertain durations and changing owner preferences.
 - Generating the model and its test data from the same assumptions proves nothing.
@@ -456,8 +455,8 @@ We make **no production ROI claims** from synthetic data, and no claim of recall
 
 | Area | Keep | Change | Known defects to fix |
 |---|---|---|---|
-| Ingestion (`server/connectors`, `server/ingest`) | Slack/ICS connectors, versioned graph, per-channel cursors | File imports (BOM, quotes, transcripts, order/delivery events, value policy); immutable, access-scoped document revisions | — |
-| Extraction (`server/graph/extract.js`) | Cited edges, closed key set for model output | Typed claims with spans and status; BOM-anchored resolution; rules only as fallback | Edges go straight into the plan without an acceptance step |
+| Ingestion (`server/connectors`, `server/ingest`) | Slack/ICS connectors, versioned graph, per-channel cursors | File imports (quotes, transcripts, order/delivery events, value policy); immutable, access-scoped document revisions | — |
+| Extraction (`server/graph/extract.js`) | Cited edges, closed key set for model output | Typed claims with spans and status; demand-anchored resolution; rules only as fallback | Edges go straight into the plan without an acceptance step |
 | Engine (`src/graph/engine.js`) | DAG scheduling, OOO windows, booking conflicts, critical path | Time semantics and calendars; explicit methods for alternatives; same-world admissible comparison; scenarios; dominance and break-even | Unknown duration defaults to 1 day; cycles are reported but scheduling continues; `idleCost` uses an all-fastest baseline and prices people-days |
 | Money (`src/decisions.js`) | Approval policy shape | Remove the hardcoded `blocked`, `slack` and `chain`; use owner value policies and break-even | $1,100 × people × days presented as a cost |
 | Requests/approvals (`server/store.js`) | Lifecycle, revisions, audit, draft POs | Decision states and revisions with frozen snapshots; quote expiry; invalidation; override reason | — |
@@ -468,7 +467,7 @@ We make **no production ROI claims** from synthetic data, and no claim of recall
 
 | Topic | Claude R1 | Codex R1 | Settled |
 |---|---|---|---|
-| Dependency truth | The BOM solves existence for parts | The engineer links each order | BOM auto-resolution is primary and anchors identity; a separate process/test graph; no completeness guarantee |
+| Dependency truth | The BOM solves existence for parts | The engineer links each order | BOM auto-resolution anchors identity (v5; superseded in v6, see BOM row); a separate process/test graph; no completeness guarantee |
 | Valuation | Gated people × loaded cost × gating fraction | Break-even or Pareto only | Admissibility → dominance → owner policy → owner value curve, else break-even and a question; no gating fraction |
 | History | Past choices → cost-of-delay inequalities | Receipts can't identify preferences | Facts layer first; implied preference only from prospective logs, advisory until authorized |
 | Uncertainty | Monte Carlo + EVPI | Scenarios + thresholds | Scenarios and ranges by default; minimax only as owner policy; Monte Carlo only with sourced distributions |
@@ -476,6 +475,7 @@ We make **no production ROI claims** from synthetic data, and no claim of recall
 | Questions | At most one | Only if decision-changing | One at a time, re-solve, never confident while a gate remains |
 | Scope | Mechanism-general (incl. PCB) | CNC | CNC product and demo; mechanism-general schema internally |
 | Evaluation | Synthetic ground-truth metrics | Acceptance counterexamples | Both; synthetic results labelled as simulator diagnostics, per-stage metrics |
+| BOM (v6) | Identity anchor (v5) | — | Dropped by Owen: demand is the anchor; product-wide gap detection given up |
 | Worked example | Calendar dates (contained a weekend error) | Integer working days | Codex's working-day example, cases A–E |
 | Agents | One graph | No per-project agents | Agreed from the start |
 | Entry point (conv. 2) | Quote page; pasted link for the demo | Quote page; a link isn't promised until the adapter validates tiers | Extension as the desired surface; a deliberate snapshot import for the demo; Slack for approvals |
@@ -486,7 +486,7 @@ We make **no production ROI claims** from synthetic data, and no claim of recall
 
 ## 16. Open questions for Arjun and Owen
 
-1. Do target startups run PDM (Onshape, SolidWorks PDM), or a BOM spreadsheet? This determines the first import.
+1. Of a team's recent machined orders, how many are fixtures, prototypes or rush revisions, and which were expedited? Can engineers reliably say what each part is for?
 2. Who approves today: the ME lead, supply chain, or a $ threshold? Who would own a milestone's value policy, and would they set it?
 3. Do purchase requests carry a need-by date or the intended test today?
 4. Which meeting recorder, and do we get full transcripts or only summaries? Who may see which channels and transcripts (access scope)?
