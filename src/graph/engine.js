@@ -3,7 +3,10 @@
 //
 // Edge semantics: A -blocks-> B means B cannot start until A is done; A -due-> M means
 // milestone M cannot happen before A is done; person -assigned-> work. Dates are ISO days.
-import {COST} from '../decisions.js';
+//
+// Unknowns stay unknown: work without a stated duration has an unknown finish, and anything
+// that waits on an unknown finish is unknown too. Nodes on or after a dependency cycle are
+// blocked, not scheduled. The engine never prices time; valuation lives elsewhere.
 
 const DAY = 86400000;
 export const toDay = iso => Math.round(Date.parse(iso.slice(0, 10) + 'T00:00:00Z') / DAY);
@@ -23,7 +26,7 @@ function index(graph) {
   return {nodes, preds, succs, people};
 }
 
-// Kahn's algorithm; edges that would close a cycle are reported and ignored.
+// Kahn's algorithm. Nodes left over sit on a cycle (or wait on one) and can't be scheduled.
 function order(graph, {nodes, preds, succs}) {
   const indegree = new Map([...nodes.keys()].map(id => [id, preds.get(id).length]));
   const queue = [...nodes.keys()].filter(id => !indegree.get(id));
@@ -32,8 +35,8 @@ function order(graph, {nodes, preds, succs}) {
     const id = queue.shift(); sorted.push(id);
     for (const e of succs.get(id)) { indegree.set(e.to, indegree.get(e.to) - 1); if (!indegree.get(e.to)) queue.push(e.to); }
   }
-  const cyclic = [...nodes.keys()].filter(id => !sorted.includes(id));
-  return {sorted: [...sorted, ...cyclic], cyclic};
+  const done = new Set(sorted);
+  return {sorted, cyclic: [...nodes.keys()].filter(id => !done.has(id))};
 }
 
 // Pushes a start day past any out-of-office window of the assigned people.
@@ -59,9 +62,16 @@ export function analyzeGraph(graph, {orderDate, arrivals = {}} = {}) {
   const origin = toDay(orderDate || new Date().toISOString());
   const at = {};
   const conflicts = [];
+  const unknown = [];
   for (const id of sorted) {
     const n = ix.nodes.get(id);
     const incoming = ix.preds.get(id).filter(e => at[e.from]);
+    // Waiting on an unknown finish makes this node's timing unknown as well.
+    const unknownInput = incoming.find(e => at[e.from].finish == null);
+    if (unknownInput && n.kind !== 'part') {
+      at[id] = {start: null, finish: null, unknown: true, drivenBy: unknownInput.from, ...(n.kind === 'milestone' && n.attrs?.date ? {planned: toDay(n.attrs.date), slip: null} : {})};
+      unknown.push(id); continue;
+    }
     let latest = null;
     for (const e of incoming) if (!latest || at[e.from].finish > at[latest.from].finish) latest = e;
     const ready = latest ? at[latest.from].finish : origin;
@@ -76,8 +86,9 @@ export function analyzeGraph(graph, {orderDate, arrivals = {}} = {}) {
     } else if (n.kind === 'work') {
       const assignees = ix.people.get(id);
       const {day, by} = available(Math.max(origin, ready), assignees);
-      const duration = Math.max(1, n.attrs?.durationDays || 1);
-      at[id] = {start: day, finish: day + duration, drivenBy: by && day > ready ? by : latest?.from || null, people: assignees.map(p => p.id)};
+      const duration = Number.isFinite(n.attrs?.durationDays) && n.attrs.durationDays > 0 ? n.attrs.durationDays : null;
+      at[id] = {start: day, finish: duration == null ? null : day + duration, ...(duration == null ? {unknown: true} : {}), drivenBy: by && day > ready ? by : latest?.from || null, people: assignees.map(p => p.id)};
+      if (duration == null) unknown.push(id);
       // A time-boxed booking (e.g. a test chamber) is useless if the work starts after it ends.
       for (const e of incoming) {
         const b = at[e.from];
@@ -85,26 +96,28 @@ export function analyzeGraph(graph, {orderDate, arrivals = {}} = {}) {
       }
     }
   }
+  const day = d => (d == null ? null : toIso(d));
   const iso = Object.fromEntries(Object.entries(at).map(([id, s]) => [id, {
-    ...s, start: toIso(s.start), finish: toIso(s.finish), ...(s.planned != null ? {planned: toIso(s.planned)} : {}), ...(s.end != null ? {end: toIso(s.end)} : {}),
+    ...s, start: day(s.start), finish: day(s.finish), ...(s.planned != null ? {planned: day(s.planned)} : {}), ...(s.end != null ? {end: day(s.end)} : {}),
   }]));
-  return {at: iso, days: at, critical: criticalPath(graph, ix, at), conflicts, cyclic};
+  // A cycle blocks every node on it or downstream of it: the result is qualified, never guessed.
+  return {at: iso, days: at, critical: criticalPath(graph, ix, at), conflicts, cyclic, unknown, blocked: cyclic};
 }
 
 // Walks back from each slipped milestone (or the latest milestone if none slip) through
 // whatever determined each start, so the highlighted chain is the one to shorten.
 function criticalPath(graph, ix, at) {
-  const milestones = graph.nodes.filter(n => n.kind === 'milestone' && at[n.id]);
+  const milestones = graph.nodes.filter(n => n.kind === 'milestone' && at[n.id] && at[n.id].finish != null);
   const slipped = milestones.filter(m => at[m.id].slip > 0);
   // Nothing slips: follow the milestone with the least slack, the one that would slip first.
-  const ready = m => Math.max(-Infinity, ...ix.preds.get(m.id).filter(e => at[e.from]).map(e => at[e.from].finish));
+  const ready = m => Math.max(-Infinity, ...ix.preds.get(m.id).filter(e => at[e.from]?.finish != null).map(e => at[e.from].finish));
   const targets = slipped.length ? slipped : milestones.filter(m => ready(m) > -Infinity).sort((a, b) => (at[a.id].planned - ready(a)) - (at[b.id].planned - ready(b))).slice(0, 1);
   const nodes = new Set(), edges = new Set();
   for (const m of targets) {
     let id = m.id;
     if (!slipped.length) {
       // Nothing slips: show the chain with the least slack into the latest milestone.
-      const pred = ix.preds.get(id).filter(e => at[e.from]).sort((a, b) => at[b.from].finish - at[a.from].finish)[0];
+      const pred = ix.preds.get(id).filter(e => at[e.from]?.finish != null).sort((a, b) => at[b.from].finish - at[a.from].finish)[0];
       nodes.add(id); if (!pred) continue; edges.add(pred.id); id = pred.from;
     }
     while (id && !nodes.has(id)) {
@@ -119,21 +132,6 @@ function criticalPath(graph, ix, at) {
     }
   }
   return {nodes: [...nodes], edges: [...edges]};
-}
-
-/**
- * Idle engineer-days a scenario causes relative to a baseline, priced at COST per day.
- * Work that starts later than it could have leaves its assigned people waiting.
- */
-export function idleCost(graph, baseline, scenario) {
-  const work = graph.nodes.filter(n => n.kind === 'work');
-  const items = work.map(n => {
-    const delay = Math.max(0, (scenario.days[n.id]?.start ?? 0) - (baseline.days[n.id]?.start ?? 0));
-    const people = scenario.days[n.id]?.people?.length || 0;
-    return {work: n.id, delay, people, engineerDays: delay * people};
-  }).filter(i => i.engineerDays > 0);
-  const engineerDays = items.reduce((a, i) => a + i.engineerDays, 0);
-  return {items, engineerDays, cost: engineerDays * COST};
 }
 
 // Nodes downstream of a node along blocks/due edges (what waits on it).
