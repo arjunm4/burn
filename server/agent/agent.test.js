@@ -10,7 +10,7 @@ test('fallback parses the sensor request and asks the Rev B question', async () 
   assert.deepEqual(out.parsed, {decisionId: 'sens', qty: 40, vendor: 'Digi-Key', askedTier: 0});
   assert.deepEqual(out.question.choices.map(c => c.id), ['revb_yes', 'revb_no']);
   assert.match(out.question.text, /Firmware validation and Thermal & EMC wait on these/);
-  assert.deepEqual(events.filter(e => e.type === 'tool.completed').map(e => e.summary), ['PR-2291', '2 work items', 'EVT build · Nov 14', '4 engineers', '> $500 needs approval']);
+  assert.deepEqual(events.filter(e => e.type === 'tool.completed').map(e => e.summary), ['PR-2291', 'no messages', 'EVT build · Nov 14', '4 engineers', '> $500 needs approval']);
 });
 
 test('requests without an open question get none', async () => {
