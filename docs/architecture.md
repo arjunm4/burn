@@ -1,6 +1,6 @@
 # Burn: expedite-decision architecture (joint Claude + Codex)
 
-Status: **v6 draft (Claude), pending Codex review.** v6 drops the BOM as a required input (Owen's decision; see §2.3) and makes the engineer's manager the approver (Owen's decision; see §2.14). v5 was jointly reviewed and approved by Claude and Codex. v5 incorporates Arjun and Owen's second conversation (quote-page entry, disagreement, learning, assembly readiness). Architecture only; no implementation authorized. Product inputs only Arjun and Owen can provide stay open questions (§16).
+Status: **v6 draft (Claude), pending Codex review.** v6 drops the BOM as a required input (Owen's decision; see §2.3) and makes the engineer's manager the approver, with an optional auto-approval setting (Owen's decisions; see §2.14). v5 was jointly reviewed and approved by Claude and Codex. v5 incorporates Arjun and Owen's second conversation (quote-page entry, disagreement, learning, assembly readiness). Architecture only; no implementation authorized. Product inputs only Arjun and Owen can provide stay open questions (§16).
 Inputs: Arjun + Owen design conversation (`data/design/transcript-arjun-owen.md`, local only); independent positions (`claude-position.md`, `codex-position.md`); critiques and settlement (`claude-critique.md`, `codex-review-r2.md`, `codex-settlement-r3.md`); worked example (`worked-decision-example.md`); conversation 2 (`transcript-2-arjun-owen.md`) and its review (`codex-review-round2.md`).
 
 ## At a glance
@@ -132,7 +132,7 @@ Each decision is listed with the alternative we rejected and why.
     4. advisory comparison with house habit
 
     Buffer status is derived from the schedule, not added as a second charge.
-14. **The engineer's manager is the approver.** *Added in v6 (Owen's decision).* The manager judges whether speed is worth paying for and approves in Slack; supply chain receives the approved order and places it. *Rejected (v5):* supply chain as approver for small orders, with a manager added above a threshold.
+14. **The engineer's manager is the approver.** *Added in v6 (Owen's decision).* The manager judges whether speed is worth paying for and approves in Slack; supply chain receives the approved order and places it. **Auto-approval is a setting**, off by default, that the manager turns on and scopes: when the engineer's choice follows Burn's recommendation, the order is under the manager's dollar limit, and no decision-critical gap or unresolved disagreement remains, Burn approves on the manager's behalf, records it as `auto-approved (manager setting vN)` and notifies the manager. Anything else goes to the manager. *Rejected (v5):* supply chain as approver for small orders, with a manager added above a threshold.
 
 ## 3. Workflow
 
@@ -152,7 +152,7 @@ Actors: the **engineer** (owns the part and its demand), **supply chain** (recei
    - the switching condition
    - any open assumptions
 7. The engineer **accepts or argues**. Supported new context is accepted and Burn re-solves; everything else is kept as typed, unresolved disagreement. The engineer's chosen tier becomes an **engineer proposal**, which isn't an approval.
-8. The proposal, recommendation and a concise disagreement summary go to the Slack approval thread. The **approver is the engineer's manager**. Supply chain is notified and places the order once approved. Whether small orders can be auto-approved, and whether large ones need an extra sign-off, are still to be decided.
+8. The proposal, recommendation and a concise disagreement summary go to the Slack approval thread. The **approver is the engineer's manager**. Supply chain is notified and places the order once approved. If the manager has turned on **auto-approval** (§2.14) and the proposal meets its conditions, Burn approves it under that setting and notifies the manager instead. Whether large orders need an extra sign-off is still to be decided.
 9. Approvers approve or override with a reason. The order is then placed with the vendor and acknowledged. A quote is not a PO: captured quote → engineer proposal → approvals → placed order → vendor acknowledgement are separate steps.
 10. If the quote configuration, tier prices or evidence change, Burn creates a new snapshot and decision revision. A *material* change invalidates the affected pending sign-offs. Approved commitments are never rewritten; they are revalidated before placement.
 
@@ -385,6 +385,7 @@ Logging Burn's own recommendation matters. Without it, a learned habit becomes a
   - the decisive dependency path with scenario toggles; this highlights the path that decides the outcome, not every downstream person
   - assembly readiness and slack for the affected assembly (no company-wide league table)
   - value-policy settings for milestone owners
+  - approval settings for managers: auto-approval on/off, dollar limit, and scope (e.g. only when Burn's recommendation is followed)
   - decision revision history and audit
 
 The existing `/graph` and approvals views evolve into this.
@@ -477,7 +478,7 @@ We make **no production ROI claims** from synthetic data, and no claim of recall
 | Scope | Mechanism-general (incl. PCB) | CNC | CNC product and demo; mechanism-general schema internally |
 | Evaluation | Synthetic ground-truth metrics | Acceptance counterexamples | Both; synthetic results labelled as simulator diagnostics, per-stage metrics |
 | BOM (v6) | Identity anchor (v5) | — | Dropped by Owen: demand is the anchor; product-wide gap detection given up |
-| Approver (v6) | — | — | Owen: the engineer's manager approves; supply chain places |
+| Approver (v6) | — | — | Owen: the engineer's manager approves; supply chain places; optional manager-set auto-approval |
 | Worked example | Calendar dates (contained a weekend error) | Integer working days | Codex's working-day example, cases A–E |
 | Agents | One graph | No per-project agents | Agreed from the start |
 | Entry point (conv. 2) | Quote page; pasted link for the demo | Quote page; a link isn't promised until the adapter validates tiers | Extension as the desired surface; a deliberate snapshot import for the demo; Slack for approvals |
@@ -495,7 +496,7 @@ We make **no production ROI claims** from synthetic data, and no claim of recall
 5. Do Ramp exports include promised dates or the quote's unchosen tiers? Does anything record delivery and inspection separately from payment?
 6. For the demo: is the hip-actuator program the right story, and which three worked cases (A–E) do we show live?
 7. Which supplier and capture surface first (Xometry? an extension vs. a manual quote-snapshot import), and can we get complete, stable access to every tier and its expiry?
-8. Are there auto-approval or extra-sign-off thresholds around the manager's approval, and exceptions, e.g. off-recommendation choices?
+8. What default auto-approval limit would managers accept, and do large orders need an extra sign-off?
 9. What authoritative signal shows a part was *used* (a Jira transition, an assembly log, an inspection sign-off)? And does anyone maintain an accepted plan baseline for buffer tracking?
 10. Do intermediate subsystem milestones get their own value, or only the program milestone?
 11. How much company history is enough before the house-habit view is shown at all?
