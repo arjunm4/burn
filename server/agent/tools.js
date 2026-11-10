@@ -1,4 +1,4 @@
-// Read-only fixture tools the agent can call. Each tool has a Claude tool definition,
+// Read-only tools the agent can call. Each tool has a Claude tool definition,
 // a UI label for the "working" list, and a one-line summary of its result.
 // Swap `run` for real Slack / calendar / dependency / policy integrations.
 import {decisions} from '../../src/decisions.js';
@@ -20,15 +20,6 @@ const ALIASES = {
   mold: ['mold', 't1 sample'],
   load: ['load cell'],
   probe: ['scope probe'],
-};
-const CHANNELS = {
-  'Rev C power board': {channel: '#rev-c-bringup', items: [
-    {from: 'Lee Tan', text: 'Firmware validation is blocked until the Rev C current sensors land.'},
-    {from: 'Anya Petrov', text: 'Thermal & EMC runs on the same Rev C boards, so we start after firmware.'},
-  ]},
-  'Motor-control firmware': {channel: '#motor-fw', items: [{from: 'Marco Ruiz', text: 'OOO until Nov 12.'}]},
-  'Enclosure tooling': {channel: '#enclosure', items: [{from: 'Sam Oyelaran', text: 'Fit check needs T1 samples before DVT.'}]},
-  'Calibration rig': {channel: '#cal-rig', items: [{from: 'Ines Okafor', text: 'Rig waits on two EVT units.'}]},
 };
 // The one fact per request that changes the recommendation, if it is unknown.
 const OPEN_QUESTIONS = {
@@ -59,7 +50,8 @@ export const tools = [
     input_schema: {type: 'object', properties: {project: {type: 'string'}, decisionId: {type: 'string', description: 'decisionId from find_part, to read messages about this part'}}, required: ['project'], additionalProperties: false},
     run: input => {
       const project = need(input, 'project'); const data = live();
-      if (!data || !input.decisionId) return CHANNELS[project] || {channel: null, items: []};
+      // Only real ingested messages: no hardcoded channel content.
+      if (!data || !input.decisionId) return {channel: null, items: [], note: 'no ingested messages for this project'};
       // Messages that mention the part or the work waiting on it, newest last.
       const terms = [...(ALIASES[input.decisionId] || []), ...downstream(data.graph, `part:${input.decisionId}`).map(id => nodeLabel(data.graph, id).toLowerCase())];
       const hits = data.docs.filter(d => d.source === 'slack' && terms.some(t => d.text.toLowerCase().includes(t)));
@@ -70,7 +62,7 @@ export const tools = [
       const picked = [...direct, ...hits.filter(d => !direct.includes(d))].slice(0, 8).sort((a, b) => a.at.localeCompare(b.at));
       return {channel, items: picked.map(d => ({from: d.author, text: d.text, at: d.at, source: d.id}))};
     },
-    summarize: r => r.items[0]?.source ? `${r.items.length} related message${r.items.length === 1 ? '' : 's'}` : `${r.items.length} work item${r.items.length === 1 ? '' : 's'}`,
+    summarize: r => (r.items.length ? `${r.items.length} related message${r.items.length === 1 ? '' : 's'}` : 'no messages'),
   },
   {
     name: 'check_hardware_calendar', label: () => 'Checking hardware calendar',
