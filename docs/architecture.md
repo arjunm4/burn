@@ -1,6 +1,6 @@
 # Burn: expedite-decision architecture (joint Claude + Codex)
 
-Status: **APPROVED: jointly reviewed by Claude and Codex (v4).** This approves the design; it does not authorize implementation. Architecture only.
+Status: **Jointly reviewed and approved by Claude and Codex (v4); proposed for Arjun and Owen.** This approves the architecture only; it does not authorize implementation. The product inputs only Arjun and Owen can provide stay open questions (§16), not hidden assumptions. Architecture only.
 Inputs: Arjun + Owen design conversation (`data/design/transcript-arjun-owen.md`, local only); independent positions (`claude-position.md`, `codex-position.md`); critiques and settlement (`claude-critique.md`, `codex-review-r2.md`, `codex-settlement-r3.md`); worked example (`worked-decision-example.md`).
 
 ## 1. Problem and scope
@@ -84,7 +84,7 @@ Engineer steps added: none in the common case; occasionally one tap or one sente
 **Runtime contracts:**
 - Sync and extraction jobs run independently of decisions. A decision always reads a frozen snapshot hash.
 - Progress shown in the UI comes from real backend run and tool events, never simulated timers.
-- **Access scope** is carried through retrieval, question routing, explanations **and the Slack card itself**. A source record in the store doesn't mean every approver may read its raw private text. Cards and explanations reveal only what their audience is allowed to see; where needed they state a conclusion without quoting the restricted evidence.
+- **Access scope** is carried through retrieval, question routing, explanations **and the Slack card itself**. A source record in the store doesn't mean every approver may read its raw private text. Cards and explanations reveal only what their audience is allowed to see. **That includes derived conclusions**: leaving out a private quote doesn't permit disclosing its substance. When a decision depends on evidence the audience can't see, the card says so and routes the matter to someone with access.
 - Secrets stay server-side. Document text is data: it can't trigger tools or change policy.
 
 ## 5. Core objects
