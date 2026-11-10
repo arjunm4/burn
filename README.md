@@ -2,6 +2,8 @@
 
 A hackathon procurement assistant with an engineer conversation at `/request` and an approver queue at `/approvals`. The visual design follows Purchasing Agent Engineer and Purchasing Agent v2 HTML references.
 
+**Next architecture:** [`docs/architecture.md`](docs/architecture.md) is the jointly approved (Claude + Codex) design for the expedite decision on custom CNC parts. It covers the decision core, evidence layer, questions, proactive ordering, learning, validation and the gap list against the current code. It is a design only; the code below predates it.
+
 ## Run locally
 
 Requires Node.js 24.2+ (built-in SQLite) and npm.
