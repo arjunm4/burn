@@ -95,10 +95,12 @@ Burn moves from advising at the vendor's quote page to running the order from th
  5. Freeze order spec     every field value + CAD hash + quote ID + tier + price → spec hash
  6. Route                 auto-approval on and conditions met → skip manager
                           otherwise → manager approves the spec hash (one tap)
- 7. Supply chain queue    approved requests; supply chain clicks Order once
- 8. Extension checks out  reopens the same vendor quote in supply chain's session,
-                          verifies every field against the spec, attaches supply
-                          chain's payment method, and clicks Place order
+ 7. Place trigger         no supply chain role → the approval itself triggers placement
+                          supply chain role → their queue; one click (or their auto-place)
+ 8. Extension checks out  in the placing user's own browser, in a background tab that
+                          exists only for the seconds after the trigger: reopens the
+                          same shared vendor quote, verifies every field against the
+                          spec, attaches the company payment method, clicks Place order
  9. Confirm and return    reads the vendor confirmation, verifies it against the spec,
                           writes order no., promised date, approval and payment back
                           to the engineer's order record
@@ -107,7 +109,15 @@ Burn moves from advising at the vendor's quote page to running the order from th
 
 **What the engineer does:** describe the part, attach the CAD, click Okay. No vendor forms, no card, no re-sending quotes, no second check.
 
-**Auto-approval** (§2.14) only skips the manager. It never skips supply chain: every order passes through the supply-chain queue and its one click.
+**Auto-approval** (§2.14) only skips the manager.
+
+**Supply chain is an optional role** (§2.18). Every human step must either add judgment (the manager decides whether speed is worth paying for) or own something (supply chain owns payment, vendors, batching, compliance, receiving). On a team without supply chain, the manager's approval is the purchase authorization and Burn places the order with the company payment method from settings. On a team with supply chain, their queue shows batching opportunities (several orders to one vendor), payment and coding, and exceptions (price change, compliance, unapproved vendor); supply chain can enable **auto-place** so routine approved orders go straight through and they see only exceptions.
+
+**Vendor integration (research, Nov 2026).** No CNC or sheet-metal vendor checked (Xometry, Protolabs, Hubs, Fictiv, SendCutSend, OSH Cut, RapidDirect, Jiga) has a public buyer API; Xometry's developer API is supplier-side only. Xometry and Fictiv offer cXML punchout into Coupa/Ariba/SAP via enterprise sales. PCBWay and JLCPCB/JLC3DP document quote → order → status APIs for approved partners (PCB, SMT, stencil, 3D printing; no CNC). Almost every vendor supports **team accounts with quote sharing** (Xometry Teamspace, Fictiv Teams, Hubs team accounts, SendCutSend Organizations, OSH Cut "Send As Quote"). Therefore:
+- **v1 requires the company to use the vendor's team account**, so the quote the engineer's extension creates is the same quote checked out at placement. The vendor holds the configuration; Burn's field-by-field read-back is the backstop.
+- Checkout runs in the placing user's own browser, triggered only by their click (or the approval/auto-place event while their browser is open); never in the engineer's browser, never at random times.
+- *Rejected:* a server-side bot driving vendor websites (no official support; terms of service unverified; credentials on our servers).
+- Later adapters: vendor APIs where they exist (PCBWay, JLC for PCB), punchout for customers on Coupa/Ariba, and a buyer API if Xometry offers one on request.
 
 **The final click is automated (step 8), guarded by the frozen order spec:**
 - The manager approves the spec hash, not a description. Supply chain's Order click authorizes buying exactly that spec.
@@ -125,7 +135,7 @@ Burn moves from advising at the vendor's quote page to running the order from th
 
 **Data captured with both time keys (§10):** where each field came from (context, CAD, question) and the age of each context fact; every tier shown and what Burn preselected; the engineer's edits; approval path and time; every verification result and auto-repair; price drift between quote and order; the placed order; then delivery and first use.
 
-**Not yet verified:** whether Xometry quotes can be shared between the engineer's and supply chain's accounts (otherwise the re-fill path is used); vendor terms for automated checkout; CAD access control (which vendors received which file).
+**Not yet verified:** Xometry's terms for extension-driven checkout (its terms page could not be fetched); whether Teamspace sharing works for every quote type (otherwise the re-fill path is used); placement when no one's browser is open on the auto-place path; CAD access control (which vendors received which file).
 
 ## 1. Problem and scope
 
@@ -184,7 +194,8 @@ Each decision is listed with the alternative we rejected and why.
 14. **The engineer's manager is the approver.** *Added in v6 (Owen's decision).* The manager judges whether speed is worth paying for and approves in Slack; supply chain receives the approved order and places it. **Auto-approval is a setting**, off by default, that the manager turns on and scopes: when the engineer's choice follows Burn's recommendation, the order is under the manager's dollar limit, and no decision-critical gap or unresolved disagreement remains, Burn approves on the manager's behalf, records it as `auto-approved (manager setting vN)` and notifies the manager. Anything else goes to the manager. Auto-approval skips only the manager, never supply chain (§0). *Rejected (v5):* supply chain as approver for small orders, with a manager added above a threshold.
 15. **Burn runs the order through a browser extension.** *Added in v7.* The extension works in the user's own logged-in session: it fills the vendor page for the engineer and checks out for supply chain. *Rejected:* a server-side bot (bot detection, credentials, terms-of-service risk). Vendor APIs replace the extension per vendor when available.
 16. **One frozen order spec, verified by read-back.** *Added in v7.* The engineer's Okay freezes the spec; approval binds to its hash; checkout proceeds only if every field read back from the vendor page matches it. This is the guarantee that supply chain buys what the engineer configured, with no second check by the engineer.
-17. **Supply chain's one click is the purchase authorization; Burn performs the final vendor click.** *Added in v7 (Owen's decision).* Reverses v5's "no automatic purchasing". Guarded by spec verification, a spend cap, idempotency and per-order cards (§0).
+17. **A human authorization (manager approval, or supply chain's click where that role exists) triggers placement; Burn performs the final vendor click.** *Added in v7 (Owen's decision).* Reverses v5's "no automatic purchasing". Guarded by spec verification, a spend cap, idempotency and per-order cards (§0).
+18. **Supply chain is an optional role.** *Added in v7 (Owen's decision).* A human step must add judgment or own something. Without a supply-chain role, approval triggers placement; with one, supply chain owns payment, batching, vendor and compliance exceptions, and may enable auto-place.
 
 ## 3. Workflow
 
@@ -531,7 +542,7 @@ We make **no production ROI claims** from synthetic data, and no claim of recall
 | Evaluation | Synthetic ground-truth metrics | Acceptance counterexamples | Both; synthetic results labelled as simulator diagnostics, per-stage metrics |
 | BOM (v6) | Identity anchor (v5) | — | Dropped by Owen: demand is the anchor; product-wide gap detection given up |
 | Approver (v6) | — | — | Owen: the engineer's manager approves; supply chain places; optional manager-set auto-approval |
-| Ordering (v7) | Advise only; no automatic purchasing (v5) | — | Owen: extension fills vendor page; frozen spec; supply chain one click; Burn places the order |
+| Ordering (v7) | Advise only; no automatic purchasing (v5) | — | Owen: extension fills vendor page; frozen spec on a shared vendor team quote; supply chain optional; Burn places the order |
 | Worked example | Calendar dates (contained a weekend error) | Integer working days | Codex's working-day example, cases A–E |
 | Agents | One graph | No per-project agents | Agreed from the start |
 | Entry point (conv. 2) | Quote page; pasted link for the demo | Quote page; a link isn't promised until the adapter validates tiers | Extension as the desired surface; a deliberate snapshot import for the demo; Slack for approvals |
