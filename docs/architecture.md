@@ -1,33 +1,41 @@
 # Burn: expedite-decision architecture (joint Claude + Codex)
 
-Status: **Jointly reviewed and approved by Claude and Codex (v4); proposed for Arjun and Owen.** This approves the architecture only; it does not authorize implementation. The product inputs only Arjun and Owen can provide stay open questions (§16), not hidden assumptions. Architecture only.
-Inputs: Arjun + Owen design conversation (`data/design/transcript-arjun-owen.md`, local only); independent positions (`claude-position.md`, `codex-position.md`); critiques and settlement (`claude-critique.md`, `codex-review-r2.md`, `codex-settlement-r3.md`); worked example (`worked-decision-example.md`).
+Status: **Jointly reviewed and approved by Claude and Codex (v5); proposed for Arjun and Owen.** v5 incorporates Arjun and Owen's second conversation (quote-page entry, disagreement, learning, assembly readiness). Architecture only; no implementation authorized. Product inputs only Arjun and Owen can provide stay open questions (§16).
+Inputs: Arjun + Owen design conversation (`data/design/transcript-arjun-owen.md`, local only); independent positions (`claude-position.md`, `codex-position.md`); critiques and settlement (`claude-critique.md`, `codex-review-r2.md`, `codex-settlement-r3.md`); worked example (`worked-decision-example.md`); conversation 2 (`transcript-2-arjun-owen.md`) and its review (`codex-review-round2.md`).
 
 ## At a glance
 
 ### Problem
-When an engineer needs a custom machined part, the shop offers several speeds (e.g. Standard 10 days for $3,000, Expedited 5 days for $3,900). Someone has to decide whether the faster option is worth it. Today that's a gut call. The facts that should drive it are scattered across the parts list (BOM), Slack threads, meeting notes, calendars and people's heads:
+When an engineer orders a custom machined part on a site like Xometry, they fill in the file, material and quantity. Then they hit the one field they can't answer: which **production and shipping tier** (e.g. Standard 10 days for $3,000, Expedited 5 days for $3,900). Someone has to decide whether the faster option is worth it. Today that's a gut call. The facts that should drive it are scattered across the parts list (BOM), Slack threads, meeting notes, calendars and people's heads:
 - what the part is for
+- whether the engineer's own subsystem is ahead or behind its milestone
 - what else that work is waiting on
-- what deadline it serves
 - what a day of delay is actually worth
 
 So teams overpay to expedite parts that wouldn't have sped anything up, and underpay on the ones that would.
 
 ### Product
-**Burn is a Slack assistant that tells you which shipping speed to buy, and when to order, for a custom part, and shows why.**
+**Burn helps the engineer pick the production and shipping tier right on the quote page, and sends supply chain the quote with its justification.**
 
-When an engineer posts a quote in the purchasing thread, Burn works out what the part feeds and what else that work is waiting on. It then compares the options:
+At the moment the engineer reaches the tier choice, Burn works out what the part feeds, whether that assembly is on pace for its milestone, and what else it's waiting on. It then compares the options:
 
 > "Expedited gets the spin test done 2 days sooner for +$900. Worth it if a day is worth more than $450 (your policy says $600). If the motor slips to day 10, Standard is just as fast."
 
-Burn picks the cheaper option outright when paying more buys no time. When the answer hinges on a fact it doesn't have, it asks the one person who knows. It never invents a dollar value for time; that comes from whoever owns the deadline. The engineer picks the supplier; Burn only advises on speed and timing.
+What happens next:
+- **The engineer can disagree.** They can argue with Burn on the spot, and the exchange travels with the quote.
+- **Approval follows policy.** Supply chain approves small orders; a manager also signs off on larger ones.
+- **Burn picks the cheaper option outright** when paying more buys no time.
+- **When the answer hinges on a missing fact**, Burn asks the one person who knows.
+- **It never invents a dollar value for time**; that comes from whoever owns the deadline.
+- **The engineer chooses the supplier**; Burn only advises on the tier and timing.
+
+Burn isn't meant to be omniscient. It turns a gut call into one with traceable reasons.
 
 ### Architecture
 
 ```
  ┌─────────── Sources ───────────┐
- │ BOM · quote · Slack · meeting │
+ │ BOM · quote page · Slack · mtg│
  │ notes · calendar · past orders│
  │ · owner's $/day policy        │
  └───────────────┬───────────────┘
@@ -48,19 +56,25 @@ Burn picks the cheaper option outright when paying more buys no time. When the a
                  ▼
  6. Ask          if one missing fact could change the answer, ask its owner, re-run
                  ▼
- 7. Recommend    Slack card with dates, cost, break-even, assumptions → approve/override
+ 7. Recommend    on the quote page: dates, cost, break-even, assumptions;
+                 engineer accepts or argues (exchange kept with the quote)
                  ▼
- 8. Record       freeze the decision snapshot; log it to learn vendor reliability
+ 8. Approve      quote + justification → Slack → supply chain / manager per policy
+                 ▼
+ 9. Record       freeze the decision; log what Burn showed, what was chosen and why,
+                 then observe delivery and first use (learning signals)
 ```
 
 ### Data flow, in one example
-1. Owen posts the bracket quote in #purchasing: Standard (day 10, $3,000) or Expedited (day 5, $3,900).
-2. Burn matches the part to the BOM: it's the hip-actuator bracket.
+1. Owen configures the bracket on the quote page and reaches the tier choice: Standard (day 10, $3,000) or Expedited (day 5, $3,900).
+2. Burn captures the quote snapshot (every tier shown) and matches the part to the BOM: it's the hip-actuator bracket.
 3. From Slack and meeting notes it learns the bracket is needed for the actuator spin test, which also needs Arjun's motor (ready day 8). The test takes 3 days.
 4. It computes the test's finish date for each option: Standard finishes day 13, Expedited day 11. Expedited is 2 days sooner for $900, so the break-even is $450/day.
 5. The spin-test owner's policy says a day is worth $600, so it recommends Expedited (+$300 net) and states the assumption: the motor is ready by day 8.
 6. If the motor date were uncertain, it would first ask Arjun "ready by day 8?", because that answer flips the decision.
-7. The approver taps Approve, and the decision and its evidence are frozen for audit.
+7. Owen agrees, or argues ("the bench is booked until day 12 anyway"). A supported correction is accepted and Burn re-solves.
+8. The quote, recommendation and exchange go to Slack. The order is over the threshold, so supply chain and Owen's manager approve it there.
+9. The decision is frozen. Later, delivery and first use are observed and logged as learning signals, not as verdicts.
 
 The sections below are the detailed design.
 
@@ -74,7 +88,7 @@ The proposal borrows one idea from software workflows: linked issues with owners
 |---|---|
 | Custom **CNC-machined** parts with tiered instant quotes (Xometry-style) | Off-the-shelf parts; PCB and sheet metal (a later, separately proposed expansion with its own calendars and constraints) |
 | Choosing among valid quoted options; ordering now vs. a guaranteed later option | Choosing the supplier or region (US vs. China, quality): **the engineer's judgment, deliberately deferred** |
-| Explaining the schedule effect and economics; routing questions one at a time; approval audit | CAD understanding or geometry; uploading CAD to vendor sites; automatic purchasing |
+| Recommending the tier on the quote page; explaining the schedule effect and economics; logging disagreement; routing questions one at a time; policy-based approval and audit | CAD understanding or geometry; uploading CAD to vendor sites; automatic purchasing |
 | Latest-order windows for confirmed demands | Inventing demand from chat; company-wide scheduling or optimization; budget creation |
 
 The data model uses a general *supplier-fixed, made-to-order tiered quote* schema internally. Shared arithmetic doesn't imply we've evaluated other part types.
@@ -97,30 +111,51 @@ Each decision is listed with the alternative we rejected and why.
    With none of these, Burn shows the options and the break-even and asks the milestone owner. Preferences inferred from history are advisory until an owner authorizes their use. *Rejected:* summing salaries of downstream people, and a default "gating fraction". Both invent a valuation and double-count serial work. A capacity-based estimate is an opt-in, separately labelled method needing real allocatable person-time; it is never a default and is never added to a milestone curve.
 7. **Scenarios and switching conditions by default; probabilities only with a source.** Monte Carlo is an optional mode, used only with empirical or explicitly elicited distributions. *Rejected:* treating extraction confidence as probability; calling sensitivity checks EVPI; a default minimax rule the model picks for itself.
 8. **Questions earn their interruption, one at a time.** We ask when a plausible answer changes the action or its justification and can arrive before it matters. We re-solve after each answer. Retrieval from trusted evidence comes first.
-9. **Learning starts with measurable facts.** Vendor quoted-vs-actual ready-to-use time, approval lag and inspection time come first. Implied preferences come later, only from decisions *we logged prospectively*, and stay advisory. *Rejected:* training on Ramp receipts. Receipts lack the unchosen options and context, and a payment isn't proof of delivery.
-10. **Slack-first surface, with a web view for explanation and audit.** *Rejected:* browser extension first (per-user install, brittle per-site scrapers, and the approver often isn't the person browsing). It remains a possible later capture adapter for quote options.
+9. **Learning starts with measurable facts.** Vendor quoted-vs-actual ready-to-use time, approval lag and inspection time come first. A descriptive "house habit" model comes later, from prospective logs, and stays **advisory** (§10). *Rejected:* training on Ramp receipts. Receipts lack the unchosen options and context, and a payment isn't proof of delivery.
+10. **Entry at the quote page; Slack for approval and conversation; web for evidence and audit.**
+    - The engineer gets the recommendation where the tier is chosen.
+    - The proposal, justification and any disagreement go to Slack for policy-required approvals.
+    - **The desired surface is a browser extension.** The demo adapter is a deliberately invoked quote-snapshot import. A pasted link is only promised once the adapter can actually fetch and validate every tier, expiry and configuration.
+    - *Revised:* v4 had "Slack-first, extension later". Conversation 2 placed the decision at the quote page.
+11. **Disagreement is first-class.**
+    - The engineer can argue before approval. Supported new context is accepted through the normal claim process and the decision is re-solved.
+    - The exchange is kept with the quote, typed as *factual correction / policy disagreement / preference / unresolved*, and access-scoped.
+    - An argument doesn't silently become a planning fact or a training label, and an override isn't proof the recommendation was wrong.
+12. **Assembly readiness, not "who is blocked".** The lead question is: *does faster delivery improve this assembly's readiness and the milestone it serves?* An engineer's own subsystem is a legitimate affected outcome even when nobody else waits.
+    - Readiness comes from the actual remaining work, dependencies and constraints, never from the fraction of parts received.
+    - Burn scores neither people nor assemblies in a league table.
+    - "Behind schedule" alone never justifies spend unless the option changes the outcome.
+13. **The decision is a decomposition, not an additive urgency score** (§7):
+    1. eligibility and policy
+    2. schedule and uncertainty: vendor reliability enters the arrival scenarios here
+    3. choice basis: dominance → policy → owner economics
+    4. advisory comparison with house habit
+
+    Buffer status is derived from the schedule, not added as a second charge.
 
 ## 3. Workflow
 
 Actors: the **engineer** (owns the part and its demand), **supply chain** (places the order), the **approver** (a lead or a policy threshold), and the **milestone owner** (owns the value-of-time policy).
 
-1. The engineer posts in the supply-chain thread as today: part, revision, quantity, quote link or PDF.
-2. Burn captures the **QuoteSet** and resolves the part against the BOM.
+1. On the quote page the engineer completes specification, material, quantity and supplier, then reaches the tier choice. Burn captures a **quote snapshot**: every tier shown, with completeness flags, capture time and the vendor configuration revision.
+2. Burn resolves the part against the BOM.
    - An exact revision match is accepted under the source policy and shown, cancellable.
    - The engineer is asked only about an ambiguous identity, an incompatible revision or use, an unresolved quantity allocation, or a material contradiction.
 3. Burn retrieves evidence the participants are allowed to see and builds the planning view for the affected subgraph.
 4. Burn computes the admissible actions and their outcomes per scenario.
 5. If a decision-critical gap remains, Burn asks its owner **one question at a time** (gates first, if trusted evidence can't settle them), then re-solves. If the interruption budget runs out, the decision ends in an explicit *unresolved / escalated* state, never with defaulted facts.
-6. Burn posts a **recommendation card** in the thread with:
-   - each option's ready-to-use date and the milestone effect
+6. Burn shows its **recommendation on the quote page**:
+   - each option's ready-to-use date and its effect on the assembly and milestone
    - spend and the break-even $/day
    - the decision basis: dominance, policy or valuation, with its source
    - the switching condition
    - any open assumptions
-7. The approver approves or overrides in Slack, giving a reason on override. The decision revision is frozen.
-8. If a quote or evidence changes, Burn proposes a new decision revision. A *material* change invalidates a pending approval. Approved commitments are never rewritten; they are revalidated before execution.
+7. The engineer **accepts or argues**. Supported new context is accepted and Burn re-solves; everything else is kept as typed, unresolved disagreement. The engineer's chosen tier becomes an **engineer proposal**, which isn't an approval.
+8. The proposal, recommendation and a concise disagreement summary go to the Slack approval thread. The **required approval set** comes from policy: supply chain alone below a threshold, a manager as well above it. Thresholds and exceptions are configurable and still to be decided.
+9. Approvers approve or override with a reason. The order is then placed with the vendor and acknowledged. A quote is not a PO: captured quote → engineer proposal → approvals → placed order → vendor acknowledgement are separate steps.
+10. If the quote configuration, tier prices or evidence change, Burn creates a new snapshot and decision revision. A *material* change invalidates the affected pending sign-offs. Approved commitments are never rewritten; they are revalidated before placement.
 
-Engineer steps added: none in the common case; occasionally one tap or one sentence. Milestone owners set their policy once per milestone.
+Engineer steps added: none in the common case **once the quote-page integration exists**; with the demo's manual snapshot import, one deliberate import. Occasionally one tap or one sentence. Milestone owners set their policy once per milestone.
 
 ## 4. Runtime and lifecycle
 
@@ -130,33 +165,43 @@ Engineer steps added: none in the common case; occasionally one tap or one sente
                                           ▼
                                  Extraction jobs ──► Claims (proposed) ──► Acceptance ──► PlanningView
                                                                                             │
- Slack request ──► Decision orchestrator (per decision) ◄───────────── snapshot ───────────┘
-                     │  admissible actions × scenarios → schedule → outcomes → basis
-                     │  question loop (one at a time, re-solve)
-                     ▼
-                DecisionRevision ──► Slack card / web explanation ──► Approval ──► PO placement
+ quote page ──► QuoteSnapshot ──► Decision orchestrator (per decision) ◄──── snapshot ────┘
+ (extension /                        │  admissible actions × scenarios → schedule → outcomes → basis
+  snapshot import)                   │  question loop (one at a time, re-solve)
+                                     ▼
+          DecisionRevision ──► quote-page recommendation ──► engineer proposal (+ exchange)
+                                     ──► Slack approval set (policy) ──► placed order ──► vendor ack
+                                     ──► observed delivery / inspection / first use (learning signals)
 ```
 
 **Decision states:**
 - `captured` → `resolving` → `needs_answer` ⇄ `resolving`
-- `resolving` → `recommended` → `approved` | `overridden` → `placed`
+- `resolving` → `recommended` → `proposed` (engineer's tier, possibly disputed) → `awaiting_approvals` → `approved` → `placed` → `acknowledged`
+- **An override is a changed proposal**, not an authorization state. An approver choosing a different option creates a new proposal and decision revision, which needs its own required approval set.
+- **Placement** requires *all* required approvals on the same current quote snapshot, configuration, option and decision revision.
+- **No-placement exits:** `rejected` (an approver declines), `cancelled` (the engineer or supply chain withdraws)
 - side exits: `unresolved` (escalated), `superseded` (a new revision), `invalidated` (a material change before approval)
 
 **Runtime contracts:**
 - Sync and extraction jobs run independently of decisions. A decision always reads a frozen snapshot hash.
 - Progress shown in the UI comes from real backend run and tool events, never simulated timers.
 - **Access scope** is carried through retrieval, question routing, explanations **and the Slack card itself**. A source record in the store doesn't mean every approver may read its raw private text. Cards and explanations reveal only what their audience is allowed to see. **That includes derived conclusions**: leaving out a private quote doesn't permit disclosing its substance. When a decision depends on evidence the audience can't see, the card says so and routes the matter to someone with access.
-- Secrets stay server-side. Document text is data: it can't trigger tools or change policy.
+- Secrets stay server-side. Document text **and vendor page content** are data: they can't trigger tools, approvals, ordering or policy changes.
 
 ## 5. Core objects
 
 ```
 Part(number, revision, release state) · Assembly(BOM node) ◄─ membership (BOM)
 Demand(part rev, qty, use/test, assembly, usable-by, owner)        ◄─ what a quote satisfies
-QuoteSet(vendor, quote revision, valid-until, cutoff, time zone)
+QuoteSnapshot(vendor, configuration revision, captured-at, capture source, completeness,
+              quantity, currency, price inclusions, valid-until, cutoff, time zone)
   └ QuoteOption(tier, total price, mfg days @shop calendar, ship promise @carrier, source)
+Proposal(decision rev, engineer-selected option, rationale) · Exchange(statements typed:
+         factual correction | policy disagreement | preference | unresolved; access scope)
+ApprovalRequirement(policy rule, role, threshold) → Approval(approver, choice, rationale, at)
 Order(requested-at, approved-at, placed-at, acknowledged-at) · Shipment(dispatched-at, delivered-at)
 Inspection(received-at, ready-to-use-at @site calendar) · Allocation(qty → Demand)
+UseEvent(demand/qty, first confirmed use, evidence, recorded-at) · Baseline(plan, revision)
 Milestone(target, owner, hard|soft, ValuePolicy: curve | range | none)
 Method(requires-all inputs | alternative method with fit/quality/qty/permission filters)
 WorkItem(duration: known | range | unknown, assignees, calendar) · Resource/Booking(slots)
@@ -166,7 +211,8 @@ DocumentRevision(source, access scope, immutable spans)
 PlanningView(snapshot hash: accepted facts + named assumptions + open gaps)
 Scenario(world assumptions) × Action(option, placement time, confirmed method) → Outcome
 Question(kind: gate|elective, owner, response deadline, sensitivity, why it matters)
-DecisionRevision(snapshot hash, admissible set, outcomes, basis, approval, override reason)
+DecisionRevision(snapshot hash, admissible set, outcomes, basis, what Burn displayed,
+                 proposal, approvals, override reason)
 ```
 
 **Typed claim kinds** (extraction schema):
@@ -216,9 +262,17 @@ Manufacturing runs on the shop calendar (with cutoffs and time zone), shipping o
 - The result is labelled a **lower bound** only where known durations and constraints support one. An unbounded unknown duration makes the outcome **unknown**, never an optimistic substitute.
 - A cycle or contradiction blocks or qualifies the result; it is never dropped.
 
+**Assembly readiness (the lead view).**
+- For the affected assembly, show its forecast readiness range, its need-by date, the known remaining work and constraints, the **forecast slack in days** (negative shown explicitly) and the effect of each option.
+- Readiness is driven by known remaining work and dependencies: serial vs. parallel structure, hard remaining items, resource capacity and booking windows. It is never the fraction of parts received or percent of effort alone. Unknown remaining effort stays unknown.
+- Intermediate milestones (e.g. "transfer subsystem functional") can carry their own owner-defined value, never double-counted against the program milestone they feed.
+- **Optional buffer view.** A critical-chain style buffer-consumption chart appears only when there is an accepted baseline, a defined protected chain and feeding point, a defined buffer and an auditable progress measure. A zero or undefined buffer has no percentage. Buffer status is a diagnostic, never a dollar penalty or an automatic expedite.
+- Baselines change only through an explicit, recorded replan, so moving goalposts can't make progress look better.
+
 **Comparison.**
 - **Milestone effect** ΔT_m(a, s) = T_m(cheapest admissible, s) − T_m(a, s).
-- **Break-even** = extra spend / ΔT_m when ΔT_m > 0. If ΔT_m = 0, there is no schedule justification ("another input dominates").
+- **Break-even** = extra spend / ΔT_m when ΔT_m > 0. ΔT_m = 0 means no acceleration of *that* outcome ("another input dominates it").
+- **Dominance is judged across every independently valued outcome** (assembly readiness, intermediate and program milestones) and every declared scenario. An unchanged program date doesn't cancel an independently valued subsystem benefit.
 - **Dominance and policy first.** Then, with an owner value curve V_m: loss(a, s) = spend(a) + V_m(T_m(a, s)). Use one explicit economic outcome model with deduplicated cost components. Independent, non-overlapping outcomes can add (e.g. two distinct contractual penalties); overlapping valuations of the same loss or project value never do. A cliff (missed launch, missed test slot) is part of V_m or of the slot model, not a linear rate.
 
 **Across scenarios**, without probabilities, report:
@@ -226,6 +280,8 @@ Manufacturing runs on the shop calendar (with cutoffs and time zone), shipping o
 - outcome and loss **ranges**
 - the **switching condition**
 - tie-breaks, and how sensitive the result is to which scenarios were included
+
+**Vendor reliability** (quoted vs. actual lateness) shapes the arrival scenarios upstream. It is never a post-hoc adjustment that counts lateness twice.
 
 A worst-case or minimax-regret rule is used only if an owner adopts it as explicit policy (regret needs a loss model too); otherwise Burn shows the Pareto options. **Optional Monte Carlo** runs only with empirical (vendor lateness) or explicitly elicited distributions, using shared latent draws across actions and preserving supplier, customs and resource correlations.
 
@@ -278,15 +334,56 @@ Burn never creates demand from a chat mention. An unreleased or churning revisio
 
 ## 10. Learning
 
-- **Now (facts).** Quoted vs. actual ready-to-use time per vendor and option, approval lag and inspection time, from order, ship, delivery and inspection events. **A payment receipt is not proof of delivery or inspection**; each observed outcome carries its own source and time semantics. These feed scenario ranges and, once the sample is large enough, empirical distributions.
-- **Later (preferences).** From prospectively logged decisions (quote set + snapshot + choice + override reason), infer bounds on the value of time a team acts on. Show it as an *assumption-bound implied preference* next to the owner's stated policy ("your choices imply ≥ $300/day; your policy says $150/day"). It is **advisory until the owner authorizes its use**: never measured causal cost of delay, never learned from records without the option set.
+**What gets logged from the first decision (prospectively):**
+- the full quote snapshot, including its completeness
+- the context **as known at decision time**, recorded with both its effective time and its available-at time, so later messages never leak into a past decision
+- what Burn displayed and recommended
+- the engineer's proposal and exchange
+- approvals and overrides with reasons
+- the placed order
+- later: delivery, inspection and first use
+
+Logging Burn's own recommendation matters. Without it, a learned habit becomes a loop of Burn imitating itself.
+
+**Limits we state up front:**
+- Full captured menus improve evidence but **do not identify** the company's true urgency valuation or the causal benefit of a choice. Omitted and private constraints, approver policy, quote availability and which requests get logged at all remain confounders.
+- Slack and Jira activity only *proposes* use assertions; it isn't confirmed use telemetry.
+- Retrospective replay of other options against what actually happened is conditional analysis, subject to hindsight bias. The world itself may have changed because of the action taken.
+
+**Phase 1: facts.** Quoted vs. actual ready-to-use time per vendor and option, approval lag and inspection time, from order, ship, delivery and inspection events. **A payment receipt is not proof of delivery or inspection.** These feed the arrival scenarios.
+
+**Phase 1b: descriptive house habit.**
+- A model of which option the company tends to pick, conditioned on **context**, compared **within each admissible menu** rather than as a raw tier label:
+  - the price and ready-to-use differences
+  - the schedule effect
+  - milestone proximity
+  - remaining work and slack
+  - uncertainty
+  - authorized policy
+- Part geometry isn't a learned predictor. Revision, quantity, inspection, substitutability and reliability still matter operationally, so "the part doesn't matter" is too strong. Staffing counts only through an evidenced capacity constraint or policy, never as an urgency multiplier.
+- This answers Owen's point that gut feel hides real signals. The model makes the habit visible and auditable, but learning *weights* is still learning from choices. It's shown as **advisory**, with its sample support, and it abstains when data is sparse.
+- Its coefficients are not presented as causal importance or a discovered value of time.
+- A habit becomes policy only through an owner-authorized, versioned policy change.
+
+**Phase 2: questioning the habit.** Owen's "maybe they weren't making the right decisions" is the stronger pitch.
+- **Already possible without outcomes:** a habit can contradict an explicit owner policy, or favor an option that is dominated on its declared outcomes.
+- **Outcome signals:** delivery, inspection and the **ready-to-use → first-use gap**, used allocation-aware and recorded with when each fact became known. These are **diagnostics, not verdicts**:
+  - A part shelved for two weeks may reflect a blocker that appeared after approval, deliberate readiness insurance, a spare, or an unrecorded use.
+  - A part used immediately may simply have arrived on time.
+  - Expedited ready day 5, used day 8, Standard ready day 10: three days on the shelf, yet expediting may still be justified. It avoided two days of waiting, if the use and valuation support it. Timing alone can't prove the premium was worth it.
+  - No observed use is censored or unknown, not infinite shelf time.
+- **Three outputs are kept separate:** (1) the observed timing and outcome, (2) a model-based retrospective comparison under stated assumptions (hindsight caveats), and (3) an estimated causal improvement, only when an evaluation design supports it.
+- Decisions are judged against the information available at the time as well as on outcomes. A bad outcome doesn't mean a bad decision.
+- Phase 2 surfaces **review candidates** for an authorized owner to revise policy. Automatic optimization is out of scope.
 
 ## 11. Surfaces
 
-- **Slack bot (primary):** capture, recommendation card, one question at a time, approval and override buttons, revalidation notices.
-- **Web (secondary):**
+- **Quote page (entry):** the recommendation at the tier choice, the "why" panel, accept or argue. Desired as a browser extension; the demo uses a quote-snapshot import.
+- **Slack (approval and conversation):** the proposal with its justification and disagreement summary, one question at a time, the policy-required approval buttons, revalidation notices.
+- **Web (evidence and audit):**
   - the evidence trail per claim, limited to the reader's access
   - the decisive dependency path with scenario toggles; this highlights the path that decides the outcome, not every downstream person
+  - assembly readiness and slack for the affected assembly (no company-wide league table)
   - value-policy settings for milestone owners
   - decision revision history and audit
 
@@ -308,6 +405,15 @@ The existing `/graph` and approvals views evolve into this.
 11. A sibling input dominates (the harness case): "faster changes nothing", naming the dominating input.
 12. Tacit-need shadow: an expedite request when the schedule shows slack triggers a need-earlier question.
 13. Two decision-critical gaps: questions are asked in sequence; there is no confident card after the first answer.
+14. The engineer's own subsystem is delayed, nobody else is directly waiting, and earlier delivery improves its valued readiness: the justified speed choice is shown.
+15. A behind-schedule assembly also has a later lab or resource blocker: expediting changes nothing, so "behind" alone justifies no spend.
+16. Two assemblies with different fractions of parts received and different hard remaining work: readiness follows the actual plan; no part-count or person ranking.
+17. The engineer supplies a supported earlier-use requirement while disagreeing with Burn: the exchange is kept, the evidence accepted, the decision re-solved, and the revised tier routed for the required approvals.
+18. The quote capture omits tiers, or the configuration changes mid-capture: the incomplete or inconsistent set is disclosed; no optimal-tier claim and no learning comparison.
+19. Expedited is ready on day 5 and first used on day 8, while Standard would have been ready on day 10: three days on the shelf doesn't mean a wasted premium. Two weeks on the shelf because a blocker changed after approval: no automatic bad-decision label.
+20. Standard is used immediately with no waiting or deadline loss: no under-expedite label. Missing or partial use evidence stays unknown.
+21. The habit data is sparse, or conflicts with authorized policy: abstain or show the advisory difference; policy governs. Post-decision information and Burn's own influence are never treated as independent pre-decision features.
+22. A revised quote changes the price or the selected tier after one approval: the approval requirements and decision revision are revalidated before placement.
 
 **Synthetic worlds.** A simulator diagnostic: a robot program with BOM, Slack, meetings, calendar and order/delivery events, with planted gaps and hidden true durations. All numbers are reported as "in this simulator, under these assumptions".
 - Fitting and evaluation are split by time and project.
@@ -326,10 +432,24 @@ We make **no production ROI claims** from synthetic data, and no claim of recall
 
 ## 13. Phased design plan (design phases, not build tickets)
 
-1. **Decision core.** Records (Demand, QuoteSet, Milestone and its policy, DecisionRevision), time semantics, admissibility, same-world schedule comparison, dominance and break-even. The worked example's cases A–C and scenarios 1, 2, 11.
+1. **Decision core.** Records (Demand, QuoteSnapshot, Milestone and its policy, DecisionRevision), time semantics, admissibility, same-world schedule comparison, dominance and break-even. The worked example's cases A–C and scenarios 1, 2, 11.
 2. **Evidence layer.** Access-scoped document revisions, typed claims, an acceptance/supersession policy, conflicts as gaps. Scenarios 5, 6, 12.
-3. **Questions and surfaces.** The question loop and gates, the Slack card and approval, revisions, invalidation and revalidation. Cases D and E; scenarios 8, 9, 13.
-4. **Proactive and learning.** Latest-placement windows, the facts layer from delivery and inspection events, prospective decision logging. Scenarios 3, 4, 7, 10.
+3. **Questions and surfaces.**
+   - the question loop and gates
+   - the quote-snapshot capture and the quote-page recommendation
+   - disagreement exchange, engineer proposal and the policy-based Slack approval set
+   - revisions, invalidation and revalidation
+
+   Cases D and E; scenarios 8, 9, 13, 17, 18, 22.
+4. **Readiness, proactive and learning.**
+   - assembly readiness and slack, with the optional buffer view
+   - latest-placement windows
+   - the facts layer
+   - prospective logging (what Burn displayed, proposal, approvals, use events)
+   - the descriptive house habit (advisory)
+   - Phase 2 review candidates
+
+   Scenarios 3, 4, 7, 10, 14–16, 19–21.
 5. **Simulator evaluation.** Mismatched and correlated worlds, per-stage metrics.
 
 ## 14. Current repo vs. this architecture
@@ -341,7 +461,7 @@ We make **no production ROI claims** from synthetic data, and no claim of recall
 | Engine (`src/graph/engine.js`) | DAG scheduling, OOO windows, booking conflicts, critical path | Time semantics and calendars; explicit methods for alternatives; same-world admissible comparison; scenarios; dominance and break-even | Unknown duration defaults to 1 day; cycles are reported but scheduling continues; `idleCost` uses an all-fastest baseline and prices people-days |
 | Money (`src/decisions.js`) | Approval policy shape | Remove the hardcoded `blocked`, `slack` and `chain`; use owner value policies and break-even | $1,100 × people × days presented as a cost |
 | Requests/approvals (`server/store.js`) | Lifecycle, revisions, audit, draft POs | Decision states and revisions with frozen snapshots; quote expiry; invalidation; override reason | — |
-| UI (`/request`, `/approvals`, `/graph`) | Graph visual, evidence panel, approvals, real run events | The engineer surface becomes a Slack thread (web chat kept as a demo fallback); the card shows the decision basis, break-even and assumptions | "Idle engineering $" tile implies cash savings |
+| UI (`/request`, `/approvals`, `/graph`) | Graph visual, evidence panel, approvals, real run events | The engineer surface becomes the quote-page recommendation (a snapshot import for the demo) with accept/argue; Slack carries approvals; the card shows the decision basis, break-even and assumptions | "Idle engineering $" tile implies cash savings; the engineer chat doesn't separate a proposal from an approval |
 | Agent (`server/agent`) | Tool loop, offline fallback | Becomes the extractor/explainer behind the orchestrator; no free-form recommendation | — |
 
 ## 15. Disagreement log (how we got here)
@@ -358,6 +478,11 @@ We make **no production ROI claims** from synthetic data, and no claim of recall
 | Evaluation | Synthetic ground-truth metrics | Acceptance counterexamples | Both; synthetic results labelled as simulator diagnostics, per-stage metrics |
 | Worked example | Calendar dates (contained a weekend error) | Integer working days | Codex's working-day example, cases A–E |
 | Agents | One graph | No per-project agents | Agreed from the start |
+| Entry point (conv. 2) | Quote page; pasted link for the demo | Quote page; a link isn't promised until the adapter validates tiers | Extension as the desired surface; a deliberate snapshot import for the demo; Slack for approvals |
+| Learning (conv. 2) | Full option sets satisfy identifiability; only outcomes can show habits are wrong | Option sets improve evidence, not causal identification; policy and dominance can challenge habits already | Log what Burn displayed and freeze as-known context; habit is advisory; outcome signals are diagnostics with three separate outputs |
+| Shelf gap (conv. 2) | Arrival-to-use gap as the outcome label | A diagnostic, censored when unknown | A diagnostic, never a wasted-premium label |
+| Progress (conv. 2) | Fever chart per assembly, normalized by effort | Forecast slack by default; buffer view only with a baseline | Assembly readiness and slack by default; optional buffer view; never ranking |
+| Factors (conv. 2) | Decide/adjust factor table | A decomposition, not an additive score | Eligibility → schedule (reliability upstream) → basis → advisory habit |
 
 ## 16. Open questions for Arjun and Owen
 
@@ -367,3 +492,8 @@ We make **no production ROI claims** from synthetic data, and no claim of recall
 4. Which meeting recorder, and do we get full transcripts or only summaries? Who may see which channels and transcripts (access scope)?
 5. Do Ramp exports include promised dates or the quote's unchosen tiers? Does anything record delivery and inspection separately from payment?
 6. For the demo: is the hip-actuator program the right story, and which three worked cases (A–E) do we show live?
+7. Which supplier and capture surface first (Xometry? an extension vs. a manual quote-snapshot import), and can we get complete, stable access to every tier and its expiry?
+8. What are the approval thresholds and sequence (supply chain vs. manager), and the exceptions, e.g. off-recommendation choices?
+9. What authoritative signal shows a part was *used* (a Jira transition, an assembly log, an inspection sign-off)? And does anyone maintain an accepted plan baseline for buffer tracking?
+10. Do intermediate subsystem milestones get their own value, or only the program milestone?
+11. How much company history is enough before the house-habit view is shown at all?
