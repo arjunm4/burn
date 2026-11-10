@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {buildGraph} from './extract.js';
-import {analyzeGraph, idleCost, blockedPeople} from '../../src/graph/engine.js';
+import {analyzeGraph, blockedPeople} from '../../src/graph/engine.js';
 import {arrivalDate, ORDER_DATE} from '../../src/decisions.js';
 import {fixtureDocuments} from './fixture-docs.test-helper.js';
 
@@ -26,23 +26,22 @@ test('rules recover the Rev C dependency chain from Slack and the calendar', () 
   assert.equal(graph.nodes.find(n => n.id === 'work:firmware-validation').attrs.durationDays, 4);
 });
 
-test('fastest shipping holds EVT and DVT; the stale chamber booking is flagged', () => {
+test('fastest shipping holds EVT; DVT is unknown because fit check has no stated duration', () => {
   const best = run(5, 5);
   assert.equal(best.at['milestone:evt-build'].slip, 0);
   assert.deepEqual([best.at['work:firmware-validation'].start, best.at['work:thermal-and-emc'].finish], ['2026-11-14', '2026-11-21']);
-  assert.equal(best.at['milestone:dvt-kickoff'].slip, 0);
+  // Fit check feeds DVT but nobody stated how long it takes: DVT can't be dated, not "on time".
+  assert.equal(best.at['work:fit-check'].finish, null);
+  assert.deepEqual([best.at['milestone:dvt-kickoff'].finish, best.at['milestone:dvt-kickoff'].slip], [null, null]);
+  assert.ok(best.unknown.includes('milestone:dvt-kickoff'));
   assert.deepEqual(best.conflicts.map(c => [c.node, c.work]), [['part:cham', 'work:thermal-and-emc']]);
 });
 
-test('standard sensors slip EVT a week and idle four engineers ($30,800, matching the request totals)', () => {
+test('standard sensors slip EVT a week and push the stated work by the same amount; no salary pricing', () => {
   const best = run(5, 5), standard = run(12, 5);
   assert.equal(standard.at['milestone:evt-build'].slip, 7);
-  assert.equal(standard.at['milestone:dvt-kickoff'].slip, 4);
+  assert.equal(standard.days['work:thermal-and-emc'].finish - best.days['work:thermal-and-emc'].finish, 7);
   assert.ok(standard.critical.nodes.includes('part:sens'));
-  assert.deepEqual(idleCost(graph, best, standard), {items: [
-    {work: 'work:firmware-validation', delay: 7, people: 2, engineerDays: 14}, {work: 'work:thermal-and-emc', delay: 7, people: 2, engineerDays: 14},
-    {work: 'work:calibration-rig', delay: 7, people: 0, engineerDays: 0},
-  ].filter(i => i.engineerDays), engineerDays: 28, cost: 30800});
   assert.deepEqual(blockedPeople(graph, 'part:sens').sort(), ['person:anya-petrov', 'person:lee-tan', 'person:marco-ruiz', 'person:sam-oyelaran']);
 });
 
@@ -53,10 +52,25 @@ test('with the current harness vendor, the harness becomes the critical path', (
   assert.ok(!expedited.critical.nodes.includes('part:sens'));
 });
 
-test('cycles are reported instead of hanging', () => {
-  const g = {nodes: [{id: 'a', kind: 'work', label: 'A', attrs: {}}, {id: 'b', kind: 'work', label: 'B', attrs: {}}],
-    edges: [{id: '1', from: 'a', to: 'b', kind: 'blocks', evidence: ['x']}, {id: '2', from: 'b', to: 'a', kind: 'blocks', evidence: ['x']}]};
-  assert.deepEqual(analyzeGraph(g, {orderDate: ORDER_DATE}).cyclic.sort(), ['a', 'b']);
+test('a cycle blocks its nodes and everything after it instead of scheduling them', () => {
+  const w = (id, d) => ({id, kind: 'work', label: id, attrs: {durationDays: d}});
+  const g = {nodes: [w('a', 2), w('b', 2), w('c', 1), w('free', 3)],
+    edges: [{id: '1', from: 'a', to: 'b', kind: 'blocks', evidence: ['x']}, {id: '2', from: 'b', to: 'a', kind: 'blocks', evidence: ['x']}, {id: '3', from: 'b', to: 'c', kind: 'blocks', evidence: ['x']}]};
+  const r = analyzeGraph(g, {orderDate: ORDER_DATE});
+  assert.deepEqual(r.blocked.sort(), ['a', 'b', 'c']);
+  assert.ok(!r.at.a && !r.at.c, 'blocked nodes get no dates');
+  assert.equal(r.at.free.finish, '2026-11-12');
+});
+
+test('unknown durations stay unknown and propagate; known ones still schedule', () => {
+  const g = {nodes: [{id: 'p', kind: 'part', label: 'P', attrs: {}}, {id: 'w', kind: 'work', label: 'W', attrs: {}}, {id: 'm', kind: 'milestone', label: 'M', attrs: {date: '2026-11-20'}}],
+    edges: [{id: '1', from: 'p', to: 'w', kind: 'blocks', evidence: ['x']}, {id: '2', from: 'w', to: 'm', kind: 'due', evidence: ['x']}]};
+  const r = analyzeGraph(g, {orderDate: ORDER_DATE, arrivals: {p: '2026-11-12'}});
+  assert.deepEqual([r.at.w.start, r.at.w.finish, r.at.m.finish, r.at.m.slip], ['2026-11-12', null, null, null]);
+  assert.deepEqual(r.unknown.sort(), ['m', 'w']);
+  assert.deepEqual(r.critical.nodes, [], 'no critical path through unknown dates');
+  g.nodes[1].attrs.durationDays = 10;
+  assert.equal(analyzeGraph(g, {orderDate: ORDER_DATE, arrivals: {p: '2026-11-12'}}).at.m.slip, 2);
 });
 
 test('Claude extraction keeps only edges with real evidence and known keys', async () => {

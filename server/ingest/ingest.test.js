@@ -136,7 +136,9 @@ test('review fixes: long-running series, same-day OOO, OOO-driven critical path,
   const a = analyzeGraph(g, {orderDate: '2026-11-14'});
   assert.equal(a.at['work:firmware-validation'].start, '2026-11-15');
   assert.ok(a.critical.nodes.includes('person:lee-tan') || a.critical.nodes.length >= 0, 'critical path walk does not crash on an OOO-driven start');
-  const ms = {nodes: [...g.nodes, {id: 'milestone:m', kind: 'milestone', label: 'M', attrs: {date: '2026-11-14'}}], edges: [...g.edges, {id: 'd', from: 'work:firmware-validation', to: 'milestone:m', kind: 'due', evidence: ['s1']}]};
+  // Durations are never defaulted any more, so state one for the work this check routes through.
+  const nodes = g.nodes.map(n => (n.id === 'work:firmware-validation' ? {...n, attrs: {...n.attrs, durationDays: 3}} : n));
+  const ms = {nodes: [...nodes, {id: 'milestone:m', kind: 'milestone', label: 'M', attrs: {date: '2026-11-14'}}], edges: [...g.edges, {id: 'd', from: 'work:firmware-validation', to: 'milestone:m', kind: 'due', evidence: ['s1']}]};
   assert.ok(analyzeGraph(ms, {orderDate: '2026-11-14'}).critical.nodes.includes('person:lee-tan'));
   const client = {messages: {create: async () => ({stop_reason: 'end_turn', content: [{type: 'text', text: JSON.stringify({
     work: [{label: 'Firmware validation', durationDays: 300, evidence: ['s1']}, {label: 'Injected', durationDays: 5, evidence: ['fake']}],
