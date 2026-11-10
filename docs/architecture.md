@@ -3,6 +3,67 @@
 Status: **Jointly reviewed and approved by Claude and Codex (v4); proposed for Arjun and Owen.** This approves the architecture only; it does not authorize implementation. The product inputs only Arjun and Owen can provide stay open questions (§16), not hidden assumptions. Architecture only.
 Inputs: Arjun + Owen design conversation (`data/design/transcript-arjun-owen.md`, local only); independent positions (`claude-position.md`, `codex-position.md`); critiques and settlement (`claude-critique.md`, `codex-review-r2.md`, `codex-settlement-r3.md`); worked example (`worked-decision-example.md`).
 
+## At a glance
+
+### Problem
+When an engineer needs a custom machined part, the shop offers several speeds (e.g. Standard 10 days for $3,000, Expedited 5 days for $3,900). Someone has to decide whether the faster option is worth it. Today that's a gut call. The facts that should drive it are scattered across the parts list (BOM), Slack threads, meeting notes, calendars and people's heads:
+- what the part is for
+- what else that work is waiting on
+- what deadline it serves
+- what a day of delay is actually worth
+
+So teams overpay to expedite parts that wouldn't have sped anything up, and underpay on the ones that would.
+
+### Product
+**Burn is a Slack assistant that tells you which shipping speed to buy, and when to order, for a custom part, and shows why.**
+
+When an engineer posts a quote in the purchasing thread, Burn works out what the part feeds and what else that work is waiting on. It then compares the options:
+
+> "Expedited gets the spin test done 2 days sooner for +$900. Worth it if a day is worth more than $450 (your policy says $600). If the motor slips to day 10, Standard is just as fast."
+
+Burn picks the cheaper option outright when paying more buys no time. When the answer hinges on a fact it doesn't have, it asks the one person who knows. It never invents a dollar value for time; that comes from whoever owns the deadline. The engineer picks the supplier; Burn only advises on speed and timing.
+
+### Architecture
+
+```
+ ┌─────────── Sources ───────────┐
+ │ BOM · quote · Slack · meeting │
+ │ notes · calendar · past orders│
+ │ · owner's $/day policy        │
+ └───────────────┬───────────────┘
+                 ▼
+ 1. Ingest       store every document version (never edited, permission-tagged)
+                 ▼
+ 2. Extract      pull out typed facts with their source:
+                 "bracket needed for spin test", "motor ready day 8", ...
+                 ▼
+ 3. Accept       keep only facts that are current, authoritative and consistent;
+                 conflicts and gaps are flagged, not guessed
+                 ▼
+ 4. Plan         dependency graph: part → work/test → milestone
+                 ▼
+ 5. Decide       for each quote option: when the milestone lands
+                 → drop invalid options → pick dominant one
+                 → else apply the owner's $/day → else show break-even
+                 ▼
+ 6. Ask          if one missing fact could change the answer, ask its owner, re-run
+                 ▼
+ 7. Recommend    Slack card with dates, cost, break-even, assumptions → approve/override
+                 ▼
+ 8. Record       freeze the decision snapshot; log it to learn vendor reliability
+```
+
+### Data flow, in one example
+1. Owen posts the bracket quote in #purchasing: Standard (day 10, $3,000) or Expedited (day 5, $3,900).
+2. Burn matches the part to the BOM: it's the hip-actuator bracket.
+3. From Slack and meeting notes it learns the bracket is needed for the actuator spin test, which also needs Arjun's motor (ready day 8). The test takes 3 days.
+4. It computes the test's finish date for each option: Standard finishes day 13, Expedited day 11. Expedited is 2 days sooner for $900, so the break-even is $450/day.
+5. The spin-test owner's policy says a day is worth $600, so it recommends Expedited (+$300 net) and states the assumption: the motor is ready by day 8.
+6. If the motor date were uncertain, it would first ask Arjun "ready by day 8?", because that answer flips the decision.
+7. The approver taps Approve, and the decision and its evidence are frozen for audit.
+
+The sections below are the detailed design.
+
 ## 1. Problem and scope
 
 The proposal borrows one idea from software workflows: linked issues with owners and history, so you can see what depends on what. It applies that idea to a hardware-specific timing problem: supplier production, transport and inspection time for custom parts. Today, a team's knowledge of what a custom part feeds is spread across Slack, DMs, meetings, a partial Jira, the CAD/PDM tree, and people's heads. Whether to pay for faster manufacturing is usually an engineer's judgment call, relayed to supply chain.
