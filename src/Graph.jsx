@@ -1,12 +1,12 @@
 import React from 'react';
 import {api} from './api.js';
-import {ORDER_DATE, COST} from './decisions.js';
-import {analyzeGraph, idleCost, toDay} from './graph/engine.js';
+import {ORDER_DATE} from './decisions.js';
+import {analyzeGraph, toDay} from './graph/engine.js';
 import {arrivalsFor, defaultChoices, requestsByPart} from './graph/scenario.js';
 import GraphView, {G} from './graph/GraphView.jsx';
 
 const money = n => '$' + Math.round(n).toLocaleString('en-US');
-const day = iso => new Date(iso + 'T00:00:00Z').toLocaleDateString('en-US', {month: 'short', day: 'numeric', timeZone: 'UTC'});
+const day = iso => (iso == null ? 'unknown' : new Date(iso + 'T00:00:00Z')).toLocaleDateString('en-US', {month: 'short', day: 'numeric', timeZone: 'UTC'});
 // Windows end exclusively; show the last day actually covered.
 const lastDay = iso => new Date(Date.parse(iso + 'T00:00:00Z') - 86400000).toISOString().slice(0, 10);
 const eyebrow = {fontSize: 11, letterSpacing: '.1em', textTransform: 'uppercase', color: G.muted};
@@ -39,9 +39,8 @@ export default function Graph() {
   React.useEffect(() => { if (graph && selected && !graph.nodes.some(n => n.id === selected)) setSelected(null); }, [graph, selected]);
   const model = React.useMemo(() => {
     if (!graph || !choices) return null;
-    const baseline = analyzeGraph(graph, {orderDate: ORDER_DATE, arrivals: arrivalsFor(graph, requests, {}, {fastest: true})});
     const analysis = analyzeGraph(graph, {orderDate: ORDER_DATE, arrivals: arrivalsFor(graph, requests, choices)});
-    return {analysis, idle: idleCost(graph, baseline, analysis)};
+    return {analysis};
   }, [graph, requests, choices]);
 
   const people = graph ? Object.fromEntries(graph.nodes.filter(n => n.kind === 'person').map(n => [n.id, n.label])) : {};
@@ -73,7 +72,7 @@ export default function Graph() {
       {!graph && !error && <span style={{color: G.muted}}>Loading graph…</span>}
 
       {model && <>
-        <Summary graph={graph} analysis={model.analysis} idle={model.idle}/>
+        <Summary graph={graph} analysis={model.analysis}/>
         {parts.length > 0 && <div style={{display: 'flex', gap: 20, flexWrap: 'wrap', alignItems: 'flex-start'}}>
           {parts.map(p => {
             const r = byPart[p.attrs.catalogId];
@@ -111,7 +110,7 @@ function sourceLine(data) {
   return s.map(x => `${x.label || x.kind}${x.mode === 'fixture' ? ' (seeded)' : ''}`).join(' + ');
 }
 
-function Summary({graph, analysis, idle}) {
+function Summary({graph, analysis}) {
   const milestones = graph.nodes.filter(n => n.kind === 'milestone' && analysis.at[n.id]).sort((a, b) => analysis.at[a.id].planned.localeCompare(analysis.at[b.id].planned));
   const tile = (k, v, sub, hot) => <div key={k} style={{background: '#fff', border: `1px solid ${G.line}`, borderRadius: 10, padding: '12px 14px', minWidth: 160, display: 'flex', flexDirection: 'column', gap: 2}}>
     <span style={eyebrow}>{k}</span>
@@ -119,8 +118,10 @@ function Summary({graph, analysis, idle}) {
     <span style={{color: G.muted, fontSize: 12}}>{sub}</span>
   </div>;
   return <div style={{display: 'flex', gap: 12, flexWrap: 'wrap'}}>
-    {milestones.map(m => { const s = analysis.at[m.id]; return tile(m.label, s.slip ? `▲ slips ${s.slip}d` : 'On time', s.slip ? `${day(s.planned)} → ${day(s.finish)}` : day(s.planned), s.slip > 0); })}
-    {tile('Idle engineering', `${idle.engineerDays} eng-days`, idle.cost ? `≈ ${money(idle.cost)} at ${money(COST)}/day vs fastest shipping` : 'Nobody waits longer than necessary', idle.cost > 0)}
+    {milestones.map(m => { const s = analysis.at[m.id];
+      // An undated input makes the milestone unknown; say what's missing rather than "on time".
+      if (s.finish == null) return tile(m.label, 'Unknown', `waits on ${graph.nodes.find(n => n.id === s.drivenBy)?.label || 'an undated input'}`, false);
+      return tile(m.label, s.slip ? `▲ slips ${s.slip}d` : 'On time', s.slip ? `${day(s.planned)} → ${day(s.finish)}` : day(s.planned), s.slip > 0); })}
     {analysis.conflicts.map((c, i) => tile('Conflict', 'Rebook', `${graph.nodes.find(n => n.id === c.node)?.label} ends ${day(lastDay(c.bookingEnd))}; ${graph.nodes.find(n => n.id === c.work)?.label} starts ${day(c.workStart)}`, true))}
   </div>;
 }
@@ -146,7 +147,7 @@ function ScheduleTable({graph, analysis, people, onSelect}) {
     <tbody>{rows.map(n => { const s = analysis.at[n.id]; return <tr key={n.id} onClick={() => onSelect(n.id)} style={{cursor: 'pointer'}}>
       <td style={{...cell, fontWeight: critical.has(n.id) ? 500 : 400}}>{n.label}{critical.has(n.id) ? ' · critical' : ''}</td>
       <td style={{...cell, color: G.muted}}>{n.kind}</td><td style={cell}>{day(s.start)}</td><td style={cell}>{day(s.finish)}</td>
-      <td style={{...cell, color: s.slip ? G.critical : G.muted}}>{s.slip ? `+${s.slip}d` : '—'}</td>
+      <td style={{...cell, color: s.slip ? G.critical : G.muted}}>{s.finish == null ? 'unknown' : s.slip ? `+${s.slip}d` : '—'}</td>
       <td style={{...cell, color: G.muted}}>{graph.edges.filter(e => e.kind === 'assigned' && e.to === n.id).map(e => people[e.from]).join(', ')}</td>
     </tr>; })}</tbody>
   </table>;
@@ -164,7 +165,7 @@ function Evidence({graph, analysis, id, evidence, people, onClose}) {
       <div style={{display: 'flex', flexDirection: 'column', gap: 2}}><span style={eyebrow}>{n.kind}</span><span style={{fontSize: 17}}>{n.label}</span></div>
       <button onClick={onClose} aria-label="Close" style={{marginLeft: 'auto', border: 0, background: 'transparent', cursor: 'pointer', color: G.muted, fontSize: 16}}>×</button>
     </div>
-    {s && <div style={{color: G.muted}}>{n.kind === 'milestone' ? (s.slip ? `Planned ${day(s.planned)}, now ${day(s.finish)} (+${s.slip}d)` : `${day(s.planned)}, on time`) : n.kind === 'work' ? `${day(s.start)} → ${day(s.finish)}` : n.kind === 'part' ? `Arrives ${day(s.finish)}` : ''}</div>}
+    {s && <div style={{color: G.muted}}>{n.kind === 'milestone' ? (s.finish == null ? `Planned ${day(s.planned)}; actual date unknown (an input has no stated duration)` : s.slip ? `Planned ${day(s.planned)}, now ${day(s.finish)} (+${s.slip}d)` : `${day(s.planned)}, on time`) : n.kind === 'work' ? (s.finish == null ? (s.start == null ? 'Start and finish unknown' : `Starts ${day(s.start)}; duration not stated`) : `${day(s.start)} → ${day(s.finish)}`) : n.kind === 'part' ? `Arrives ${day(s.finish)}` : ''}</div>}
     {n.attrs?.ooo?.length > 0 && <div style={{color: G.muted}}>Out {n.attrs.ooo.map(w => `${day(w.start)}–${day(lastDay(w.end))}`).join(', ')}</div>}
     {touching.length > 0 && <div style={{display: 'flex', flexDirection: 'column', gap: 4}}>
       <span style={eyebrow}>Dependencies</span>
