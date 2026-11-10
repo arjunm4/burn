@@ -48,14 +48,15 @@ export function layout(graph, analysis, {width = 960, rowHeight = 34, labelWidth
   const nodes = new Map(graph.nodes.map(n => [n.id, n]));
   const depth = depths(graph);
   const groups = chains(graph).filter(g => g.some(id => at[id]));
-  const firstDay = g => Math.min(...g.map(id => at[id]?.start ?? Infinity));
+  const known = v => (v == null ? Infinity : v);
+  const firstDay = g => Math.min(...g.map(id => known(at[id]?.start)));
   // Biggest chains first: the story is in the chain with the most dependencies.
   groups.sort((a, b) => b.length - a.length || firstDay(a) - firstDay(b));
 
   const rows = [];
   let y = pad;
   for (const g of groups) {
-    g.sort((a, b) => depth[a] - depth[b] || at[a].start - at[b].start || nodes.get(a).label.localeCompare(nodes.get(b).label));
+    g.sort((a, b) => depth[a] - depth[b] || known(at[a]?.start) - known(at[b]?.start) || nodes.get(a).label.localeCompare(nodes.get(b).label));
     for (const id of g) { rows.push({id, node: nodes.get(id), y: y + rowHeight / 2}); y += rowHeight; }
     y += gap;
   }
@@ -76,8 +77,10 @@ export function layout(graph, analysis, {width = 960, rowHeight = 34, labelWidth
   }
 
   // Edges leave a node where it finishes and enter where its successor starts.
-  const exit = id => { const s = at[id], n = nodes.get(id); return n.kind === 'milestone' ? x(s.finish) + 7 : x(s.finish); };
-  const entry = id => { const s = at[id], n = nodes.get(id); return n.kind === 'milestone' ? x(s.finish) - 7 : x(s.start); };
+  // Unknown dates have no position: edges into or out of them are drawn from the nearest known point.
+  const pos = s => s.finish ?? s.start ?? s.planned ?? lo;
+  const exit = id => { const s = at[id], n = nodes.get(id); return n.kind === 'milestone' ? x(pos(s)) + 7 : x(pos(s)); };
+  const entry = id => { const s = at[id], n = nodes.get(id); return n.kind === 'milestone' ? x(pos(s)) - 7 : x(s.start ?? pos(s)); };
   const critical = new Set(analysis.critical.edges);
   const edges = graph.edges.filter(e => e.kind !== 'assigned' && rowOf[e.from] && rowOf[e.to]).map(e => {
     const x1 = exit(e.from), y1 = rowOf[e.from].y, x2 = entry(e.to), y2 = rowOf[e.to].y;
