@@ -115,9 +115,6 @@ export default function Order({id}) {
       {ctx.related?.length > 0 && <Fold title={`Sources · ${ctx.related.length}`}>
         <div style={{display: 'flex', flexDirection: 'column', gap: 8}}>{ctx.related.map(r => <Quote key={r.id} r={r}/>)}</div>
       </Fold>}
-      {!!order.exchange?.length && <Section title="Discussion">
-        {order.exchange.map((s, i) => <div key={i} style={{lineHeight: 1.45, ...(s.by === 'Burn' ? {paddingLeft: 10, borderLeft: `2px solid ${C.accent}`} : {})}}><span style={{color: C.muted}}>{s.by}: </span>{s.text}</div>)}
-      </Section>}
     </aside>
   </Page>;
 }
@@ -228,6 +225,12 @@ function Decision({order, act, busy}) {
         </div>}
       </div>
     </Fold>
+    {!!order.exchange?.length && <div style={{display: 'flex', flexDirection: 'column', gap: 8, fontSize: 13, lineHeight: 1.5}}>
+      {order.exchange.slice(-4).map((s, i) => <div key={i} style={{display: 'flex', gap: 10}}>
+        <span style={{color: C.muted, flexShrink: 0, width: 48, textAlign: 'right'}}>{s.by === 'Burn' ? 'Burn' : 'You'}</span>
+        <span style={{...(s.by === 'Burn' ? {paddingLeft: 10, borderLeft: `2px solid ${C.accent}`} : {})}}>{s.text}</span>
+      </div>)}
+    </div>}
     {open && <form onSubmit={e => { e.preventDefault(); act(`/orders/${order.id}/argue`, {text: argument}); setArgument(''); }} style={{display: 'flex', gap: 8}}>
       <input value={argument} onChange={e => setArgument(e.target.value)} placeholder="Something changed? Tell Burn" style={input}/>
       <Button disabled={busy || !argument.trim()}>Send</Button>

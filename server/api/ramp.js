@@ -38,7 +38,7 @@ export function rampRoutes({ramp, orchestrator}) {
           lineItems: li.map(l => ({description: l.description, amountCents: l.amount?.amount ?? null, kind: l.kind || 'base'})),
           verdict: {verdict: f.verdict ?? null, daysGained: f.days_gained ?? null, breakEvenCentsPerDay: f.break_even_cents_per_day ?? null, cheapestTier: f.cheapest_tier ?? null, chosenTier: f.chosen_tier ?? null, recommendedTier: f.recommended_tier ?? null,
             dominatingInput: f.dominating_input ?? null, milestone: f.milestone ?? null, policy: {valuePerDayCents: f.value_per_day_cents ?? null, owner: f.policy_owner ?? null, version: f.policy_version ?? null, hash: f.policy_hash ?? null},
-            cutoff: f.cutoff ?? null, assumptions: f.assumptions || []},
+            cutoff: f.cutoff ?? null, assumptions: f.assumptions || [], riskNote: f.risk_note ?? null},
           specHash: r.specHash, decisionRevision: r.decisionRevision, createdAt: r.created_at, approvedAt: r.approvedAt || null, order};
       })}), true;
     }
