@@ -1,14 +1,14 @@
 # Burn: high-level design (one page)
 
-Burn is a purchasing agent for hardware teams that order custom machined parts. It plugs into Ramp. The engineer describes the part; Burn works out how fast it's worth buying, gets it approved in Ramp, buys it, and books it.
+Burn is a purchasing agent for hardware teams that order custom machined parts. It plugs into Ramp. **Burn makes every expedite request in Ramp prove whether the extra money buys any time**: the engineer describes the part; Burn reads the team's own records to find what the part is for and what else that work waits on, gets the quote, works out which lead time is worth paying for, gets it approved in Ramp, buys it, and books it with the premium as a fact in the ledger.
 
-The full design is in [`architecture.md`](architecture.md) (v9). This page is the map. Status: proposed design; the build has not started.
+The full design is in [`architecture.md`](architecture.md) (v9). Status: v9; the flow runs end to end on simulated services (README, Status). This page was refined on 2026-11-11 by a seven-role design review (Ramp product, staff engineer, the engineer who orders, the controller, product, the architecture's author, the demo); the points still disputed are marked †.
 
 ## Who does what
 
 | Engineer | Burn | Ramp | Xometry (vendor) |
 |---|---|---|---|
-| Types the part name, a one-line note, attaches the CAD file. Confirms the spec. Clicks Okay. | Finds the context, gets the quote, decides the speed, explains it, buys and books. | Approval, the card, the receipt and bookkeeping. | Makes the part. |
+| Types the part name and a note, attaches the CAD, or reorders by part number. Confirms what is missing. Clicks Okay. | Finds the context, gets the quote, decides the speed, explains it, buys and books. | Approval rules routed on Burn's verdict; the vendor-locked card for the full total; the vendor's receipt; the premium as its own line; the value-of-time policy. | Makes the part. |
 
 ## The flow
 
@@ -18,56 +18,48 @@ engineer ──► 1 part entry ──► 2 context ──► 3 spec ──► 4
       11 booked ◄── 10 charge ◄── 9 place ◄── 8 card ◄── 7 approve ◄── Ramp request ◄┘
 ```
 
-1. **Part entry.** Name, note, CAD file.
-2. **Context.** Burn searches Slack, meeting notes, Jira and the calendar for what the part is for, what else that work waits on, and the deadline. Every fact keeps its source, author and age; only claims from someone with authority over that fact are accepted.
+1. **Part entry.** Name, note, CAD file; or a part number from a previous order, whose fields become authorized defaults.
+2. **Context.** Burn finds the part in the **company dependency graph** (built continuously from Slack, meeting notes, Jira and the calendar) and walks to the work it feeds, the milestone, and the other inputs that work waits on. Rules and the agent both write **cited claims** into that one graph; code accepts them by the author's authority over the fact. Every fact keeps its source, author and age. No per-order graph.
 3. **Spec.** Material, finish, tolerances, quantity, revision, inspection and ship-to come from the engineer or an authorized default. Missing or conflicting ones are asked, never guessed from chatter.
-4. **Quote.** Burn's own headless browser (on Burn's server, company Xometry account) uploads the CAD, fills the form and reads back every production/shipping tier. Nothing opens on anyone's machine.
-5. **Recommend.** For each tier: when does the part's assembly actually finish, and does paying for speed change that? Burn shows the break-even ("worth it above $450/day") and preselects a tier only when it can justify one.
-6. **Okay.** The engineer sees the technical fields with their source, the tiers and the reasoning; accepts, edits, or talks it through with Burn. Okay freezes the exact order (every field, CAD hash, quote, tier, price).
-7. **Approve.** Burn creates the Ramp purchase request, bound to that exact order and decision, with the explanation and the vendor cutoff attached. The manager approves in Ramp; Ramp's rules auto-approve small orders.
-8. **Card.** Ramp issues a virtual card for the approved amount, usable only at Xometry.
-9. **Place.** On approval, Burn re-checks everything first: the approval is current and not superseded, the card is ready, the quote hasn't expired, the cutoff hasn't passed, and nothing in the context has changed enough to need re-approval. It notifies the engineer, then its browser reopens the quote, checks every field against the frozen order, and places it. Any mismatch stops it.
-10. **Charge.** The Xometry charge appears in Ramp and is matched to the order.
-11. **Booked.** Burn attaches the receipt, the explanation and the project code. Later: delivery and first use.
+4. **Quote.** The Xometry provider uploads the CAD, sets every field, and reads back every tier **with tax and shipping**. Demo adapter: Burn's headless browser against a simulated Xometry site. Production: cXML punchout through Ramp's vendor request; a browser on xometry.com only with Xometry's written permission (its terms forbid bots).
+5. **Recommend.** For each tier: when does the work actually finish, in working days, and does paying for speed change that? The card shows the limiting fact with its source quote, author and age; the break-even ("worth it above $450/day"); the **latest date each tier can still be ordered** and make the milestone; and preselects a tier only when it can justify one.
+6. **Okay.** The engineer accepts, corrects a date on an assumption, or chooses another tier. Okay freezes the exact order: every field, CAD hash, quote, tier, price, the total with tax and shipping read back, and an authorized variance.
+7. **Approve.** Burn creates the Ramp purchase request bound to the spec hash, decision revision and policy version, as **two line items** (cheapest admissible tier, expedite premium) with structured fields: verdict, days gained, break-even, cheapest tier, dominating input, assumptions with ages, vendor cutoff; the explanation renders those fields. **Ramp's rules route on the verdict**: dominated, or within policy, auto-approves; a real trade-off or an open question goes to the manager.
+8. **Card.** Ramp issues a virtual card for the approved total plus the variance, usable only at Xometry; terminated when the order is invalidated, rejected or its placement is unresolved. No open card outlives its order.
+9. **Place.** On approval Burn re-checks everything on the same reading the decision used: approval current and not superseded, card ready, quote unexpired, cutoff not passed, decision unchanged. Then the provider reopens the quote, reads back every field against the frozen order, pays with the card and places. Okay was the engineer's last click; Xometry orders cannot be cancelled, so nothing is promised after it. †
+10. **Charge.** The Xometry charge appears in Ramp and is matched to the order; a charge above the approved total goes to review.
+11. **Booked.** Burn attaches the vendor's confirmation as the receipt, a structured memo (order number, tier, milestone, days gained) and the project code; the premium is coded on its own line, so "premiums that bought no time" is a Ramp report. Later: delivery and first use record whether the premium bought time; a slip re-checks every placed order on its path and tells the engineer only when the premium no longer buys time.
+
+Next, not in v1: a no-quote path for catalog vendors (McMaster, Digi-Key) through the same request → approval → card → booking pipeline.
 
 ## How the recommendation is made
 
 1. **Only valid options:** unexpired quote, right revision and quantity, allowed by policy.
-2. **Every option is compared in the same world:** same assumptions, same calendars, each plausible scenario declared.
-3. **If a cheaper option gets the work done just as soon, in every scenario and for every outcome that matters, pick it.** No dollar value needed. ("Faster changes nothing: the motor arrives later anyway.")
-4. **Otherwise it's a real trade-off:** show the break-even $/day and the condition that would flip the answer; recommend only if the milestone's owner has set what a day is worth. Burn never invents that number.
-5. **If one missing fact would flip the answer, ask the one person who knows,** one question at a time. Until it's answered, nothing is preselected: the card shows the options, the break-even and the open gap.
+2. **Every option is compared in the same world:** same assumptions, same working-day calendar, each plausible scenario declared (a range stated by the source, a stale date, never an invented probability).
+3. **If a cheaper option gets the work done just as soon, in every scenario, pick it.** No dollar value needed. ("Faster changes nothing: the motor arrives later anyway.")
+4. **Otherwise it's a real trade-off:** show the break-even $/day and the condition that would flip the answer; recommend on economics only under a **versioned value-of-time policy** (owner, effective date, hash) set by the milestone's owner; the hash travels on the request. A missing policy never blocks Okay; it removes the recommendation.
+5. **If one missing fact would flip the answer, ask the one person who knows,** one question at a time. Until it's answered, nothing is preselected.
 
-## The parts of the system (planned demo implementation)
+## The parts of the system
 
-| Component | What it does | Today | In the demo |
-|---|---|---|---|
-| Ingestion | Pulls Slack, calendar, meeting notes, Jira into a versioned, permission-tagged store | Exists (Slack, calendar) | Real code; seeded demo world |
-| Context + extraction | Finds documents related to a part; extracts typed facts with their source | Exists; needs typed claims | Real (Claude, with an offline fallback) |
-| Schedule engine | Works out finish dates per option; unknowns stay unknown | Exists; 3 known bugs | Real |
-| Decision core | Valid options → same-world comparison → dominance → policy → break-even; the question loop | Planned | Real, unit-tested against the worked cases A–E |
-| Order store | One record per order through its states; frozen spec and hash; placement attempts; audit log | Planned | Real, tested against misbehaving fake providers |
-| Ramp client | Request, approval events, card, charge matching, receipt/memo/coding | Planned | Mock with Ramp's real field names and typed outcomes; sandbox when granted |
-| Xometry provider | Upload → tiers → place → status, via headless browser; declares what it can verify | Planned | Local fake Xometry site; real tier read-back as a stretch |
-| Engineer UI | Part entry, spec confirmation, live progress, comparison card, chat, order status | Exists; to be reworked | Real |
-| Learning | Advisory model of the team's habits, from past orders and their context | Not started | Slide only, labelled simulated |
-
-Each external system sits behind one interface with swappable backends (`mock` / `sandbox` / `real`) and declares its capabilities, so an unsupported one (e.g. a card control) is a blocked path or a declared simulation, never an assumption. The demo exercises the shared orchestration and decision core through simulated adapters; the adapters are tested on behaviour (duplicate and out-of-order events, restarts, timeouts), not just matching field names.
+| Component | What it does | Today |
+|---|---|---|
+| Connectors | Slack, calendar, Jira, meeting notes; read-only; replay recorded exports when no credentials | Built |
+| Graph + extraction | Rules extract cited claims; the agent (Claude, with tools) proposes further cited claims; code accepts by authority; one company graph | Rules graph + per-order agent read built; merging them into the one graph is the next change |
+| Decision core | Valid options → same-world comparison → dominance → policy → break-even → latest-placement window; the question loop | Built, tested on the worked cases |
+| Agent writing | Card text and justification from the computed numbers, checked back; replies to the engineer | Built; behind a flag, default template text † |
+| Order store | One record per order; frozen spec and hash; placement attempts; audit | Built, tested against misbehaving providers |
+| Ramp client | Request, approval events, card, charge matching, receipt/memo/coding | Mock with Ramp's field names; sandbox when granted |
+| Xometry provider | Upload → tiers → place → status, verified field by field | Simulated site + headless demo adapter; punchout for production |
+| People's side | The engineer's order page, the approver's view, each person's notifications | Built (simulated Ramp view) |
+| Learning | The habit model was removed (56% vs a 60% never-expedite baseline, n = 45). Next: a retro-score of past expedites, and the owner's revealed value of time proposed as a policy version the owner signs | Not shown |
 
 ## Guardrails
 
-- **The order placed is the order approved:** frozen spec, verified field by field before the final click; the Ramp request carries the spec hash and decision revision. Mismatch or stale approval → nothing is bought.
-- **No double orders.** Intent is saved before the click. If the vendor's answer is lost (timeout, crash), the order goes to *placement unknown* and is reconciled against Xometry's order history before anything else happens. Never an automatic retry. An order has its own identity: two orders can share a spec.
-- **The card only works at Xometry, for the approved amount** (stated with or without tax and shipping). Payment, purchase and bookkeeping are tracked separately, so a failed receipt upload is retried without touching the purchase.
-- **Separate powers:** reading context, preparing the quote, handling the card number and placing the order are separate capabilities. The model never sees card details and never has authority to place. Browser recordings are redacted; which vendors received which CAD file is recorded.
-- Secrets live on the server. Slack messages and vendor pages are data, never instructions. Permissions follow a fact all the way into the Ramp request text.
-- No invented dollar values, no fake probabilities. Unknown stays unknown.
+- **The order placed is the order approved:** frozen spec, verified field by field before the final click; the request carries the spec hash, decision revision and policy hash. Mismatch or stale approval → nothing is bought.
+- **No double orders.** Intent is saved before the click. A lost vendor answer goes to *placement unknown* and is reconciled against the vendor's order history; never an automatic retry.
+- **The card only works at Xometry, for the approved total including tax, shipping and the stated variance; no open card outlives its order.** Payment, purchase and bookkeeping are tracked separately.
+- **Separate powers:** the model reads and writes words; code computes dates and money and places orders. The model never sees card details, never prices, never approves, never places.
+- Secrets live on the server. Slack messages and vendor pages are data, never instructions. Every expedite premium is a line in Ramp with its days gained, break-even and policy version.
 
-## Demo vs. production
-
-| | Demo | Production |
-|---|---|---|
-| Ramp | Mock, or sandbox if granted | Ramp API (purchase requests are early access; Vault cards need Ramp review) |
-| Xometry | Fake site; never a real checkout | Punchout or written permission from Xometry (its terms forbid bots today) |
-| Browser | Playwright on the laptop | Hosted browser (e.g. Browserbase) |
-| Data | Seeded demo company | The team's own Slack, calendar, Jira |
+† Still disputed: whether placement is automatic on approval or a prepared checkout the engineer confirms until a sanctioned vendor path exists (staff engineer); whether the agent should write the card and justification at all (controller) or only behind a flag.
