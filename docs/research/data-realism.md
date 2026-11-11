@@ -6,25 +6,25 @@ Date: 2026-11-10. Compiled from four research passes: Slack messages, tickets, m
 
 Related: [`../architecture.md`](../architecture.md) §12 (world script and data layout), [`startup-purchasing.md`](startup-purchasing.md).
 
-## Rescaled for Flintlock (60 people, California, Xometry US) — use these numbers
+## Flintlock numbers (60 people, California, Xometry US)
 
-Researched 2026-11-10 after the company was set to ~60 people in California ordering from Xometry's US site. **Where these differ from the sections below (sized for 15–40 people), these take precedence.** Mostly judgement (J); evidence (E) linked.
+Researched 2026-11-10 for Flintlock (~60 people, California, Xometry US). Mostly judgement (J); evidence (E) linked.
 
 **Org (sums to 60, J):** Leadership 3 (CEO, CTO, VP Hardware) · Mechanical 15 (actuators 5, legs 4, arms and hands 3, torso/structures/battery 3) · Electrical 6 · Firmware 5 · Controls/locomotion 5 · ML/autonomy 5 · Software infra/sim 3 · Test and reliability 4 (dyno, life test, fixtures owner) · Technicians/build 4 · Manufacturing/NPI 2 · Supply chain 3 (Head of Supply Chain, Senior NPI Buyer, Buyer/Planner) · Program (TPM) 2 · Ops/finance/people 3. Manager span 4–7. E: humanoid postings show a "Hands Team" ([1X](https://1x.tech/open-positions/staff-mechanical-engineer-hands-team-2)), an actuation group ([Apptronik](https://job-boards.greenhouse.io/apptronik/jobs/5739881004)), "Senior NPI Buyer" ([Apptronik](https://builtin.com/job/npi-buyer/9140500)) and a mechanical supply manager covering CNC ([Figure](https://job-boards.greenhouse.io/figureai/jobs/4323471006)).
 
-**CNC orders (J; scale with mech + test headcount, ~6 → ~20):**
-| Metric | 15–40 people | Flintlock (60) |
-|---|---|---|
-| Orders/week baseline | 2–4 | 8–14 |
-| Burst (3 weeks before EVT/DVT) | 2–3× | 20–30/week |
-| Quiet/holiday weeks | 0–1 | 3–5 |
-| Total over ~39 weeks | ~100–150 | 400–550 |
-| Lines per order | 1–2 | 1–6, median 2 |
-| Orderers | 4–8 | 16–22; two buyers place ~40%; 3–4 heavy engineers |
-| Tier mix Exp/Std/Econ | 15–25/55–65/15–25% | 20–30/50–60/15–20%; expedite 40–50% in burst weeks |
-| Revisions | 25–30% | 30–40% |
-| Median order; tail | $250–400; $2–4k | $600–900; $8–15k |
-| 9-month spend | $45–90k | $400–700k |
+**Xometry CNC orders (J; scale with mech + test headcount):**
+| Metric | Flintlock |
+|---|---|
+| Orders/week baseline | 8–14 |
+| Burst (3 weeks before EVT/DVT) | 20–30/week |
+| Quiet/holiday weeks | 3–5 |
+| Total over ~39 weeks | 400–550 |
+| Lines per order | 1–6, median 2 |
+| Orderers | 16–22; two buyers place ~40%; 3–4 heavy engineers |
+| Tier mix Exp/Std/Econ | 20–30/50–60/15–20%; expedite 40–50% in burst weeks |
+| Revisions | 30–40% |
+| Median order; tail | $600–900; $8–15k |
+| 9-month spend | $400–700k |
 
 With buyers in place, large orders may go on PO/net-30 rather than card (unverified how that shows in Ramp).
 
@@ -96,7 +96,7 @@ With buyers in place, large orders may go on PO/net-30 rather than card (unverif
 | Slips | ~30% of due dates edited (usually +1–2 weeks); some past due and open; ~15% of open tickets stale 30+ days |
 | Links | blocks / is blocked by ~15%; relates to ~10%; quote tickets linked to build or test tickets |
 | Comments | 0 on ~45%, 1–3 on ~40%, 4+ on ~15%; fragments ("waiting on Xometry quote", "pushed to Fri, vendor slipped") |
-| Volume | 60–150 new tickets/month for 15–30 people; median ~6 days to close, long tail |
+| Volume | See Flintlock numbers above; median ~6 days to close, long tail |
 | Titles | Mixed case and verb/noun order, abbreviations, part numbers, typos ("recieve"), "??", "- urgent" |
 
 **Format (J, check against [Jira REST v3](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/)):** `id`, `key` (`HIP-212`), `fields{summary, issuetype, project, status{name,statusCategory}, priority, assignee|null, reporter, created/updated ("2026-10-12T14:03:22.123-0700"), duedate ("2026-11-14"|null), labels, components, parent, issuelinks[], description, comment{comments[],total}}`, `changelog.histories[]{author, created, items[{field, fromString, toString}]}` (status and duedate edits). v3 descriptions are ADF; v2 is plain text. Pick one.
@@ -137,7 +137,7 @@ With buyers in place, large orders may go on PO/net-30 rather than card (unverif
 
 Economy ~10–20% below Standard; the expedite premium is proportionally higher on small lots; unit price drops ~30–60% from qty 1 to 10–25.
 
-**Cadence (J):** 2–4 orders/week baseline with clumping; 2–3× in the 3 weeks before EVT/DVT; quiet weeks of 0–1; tier mix Expedite 15–25% (in bursts), Standard 55–65%, Economy 15–25%; ~25–30% are revisions (Rev B/C); 2–4% cancelled; 3–5% short-shipped or re-quoted after DFM; 1–3% remade; 4–8 orderers, 1–2 heavy. Median order ~$250–400, tail to $2–4k; ~$45–90k over 9 months.
+**Cadence:** see Flintlock numbers above.
 
 **Fields (J, from the UI):** quote ID (`Q-1234567-1` style), order number, file name and revision, material ("Aluminum 6061-T6"), process (CNC milling 3- or 5-axis, turning), finish, quantity, tolerance class, certifications (CoC, material cert, FAI), unit price, subtotal, shipping, tax, total, tier, ship and delivery estimates, carrier and tracking. Status: Quote → Order placed → DFM review (sometimes "action required") → In production → Quality inspection → Shipped → Delivered; branches Cancelled, Refunded.
 

@@ -2,7 +2,7 @@
 
 Owner: Owen. Spec: [`../architecture.md`](../architecture.md) §12; realism rules: [`../research/data-realism.md`](../research/data-realism.md).
 
-**Company:** Flintlock Robotics, fictional humanoid robotics startup, ~60 people, in California (Pacific time), ordering from Xometry's US site, at a stage of its robot generation heavy in custom CNC parts. Every order Burn handles is a custom CNC part on Xometry; other purchases appear only as background conversation.
+**Company:** Flintlock Robotics, fictional humanoid robotics startup, ~60 people, in California (Pacific time), ordering from Xometry's US site, at a stage of its robot generation heavy in custom CNC parts. The order history covers **all** purchasing across vendors (fasteners, electronics, PCBs, motors, tools, raw stock, other custom parts) so the context is realistic; Burn acts only on custom CNC orders on Xometry, and the demo uses those.
 
 **Principle:** the world script is the single source of truth. Code decides facts and timestamps; LLMs only write text.
 
@@ -24,7 +24,7 @@ Writes the structure of `fixtures/world/world.json` and `fixtures/world/answers.
 | Agent | Builds | Reads |
 |---|---|---|
 | A. Company and program | ~60 people and roles, assemblies (only partly working: a leg, a hip actuator, a hand…), tests on those pieces and the test hardware each needs, milestones on a 9-month calendar ending on demo day, tests, resources, recurring meetings | schema |
-| B. Order planner | Past custom CNC orders (many are test infrastructure: fixture hooks, lift hooks, stands, jigs, adapters) following the researched cadence (bursts before builds), catalog parts, prices and tiers in range, tier chosen and hidden reason; plus the bracket demo order | A, data-realism.md |
+| B. Order planner | Past orders across all vendors at realistic volume; the Xometry custom CNC orders (many are test infrastructure: fixture hooks, lift hooks, stands, jigs, adapters) follow the researched cadence (bursts before builds), catalog parts, prices and tiers in range, tier chosen and hidden reason; plus the bracket demo order | A, data-realism.md |
 | C. Story planner | Per order, the crumbs (need-by, sibling slip, test moved, material switch) with time and source; background events (engineering trade-offs, off-topic) outnumber crumbs | A, B |
 
 ## Phase 2: render each source (parallel, ~1.5 h)
