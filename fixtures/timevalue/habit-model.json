@@ -4,84 +4,84 @@
   "advisory": true,
   "weights": {
     "messages": [
-      0.0033,
-      0.0058,
-      0.0135,
-      0.0302,
-      0.0037
+      0.0017,
+      0.0038,
+      0.0017,
+      0.0076,
+      0.0043
     ],
     "pressure": [
-      0.0274,
-      -0.0169,
-      -0.0016,
-      0.0166,
-      0.0027
+      0.0015,
+      -0.0019,
+      0.0077,
+      0.0021,
+      0.0092
     ],
     "deadline_talk": [
-      -0.0084,
-      0.0133,
-      -0.0012,
-      0.0203,
-      -0.0048
+      0.0007,
+      0.0059,
+      -0.003,
+      0.0055,
+      0.0021
     ],
     "waiting_talk": [
-      0.0177,
-      0.008,
-      -0.0069,
-      0.0142,
-      -0.004
+      0.0043,
+      -0.0001,
+      0.0023,
+      0.0097,
+      0.0071
     ],
     "slips": [
-      -0.0102,
-      0.0109,
-      0.0115,
-      -0.0218,
+      0.004,
+      0.0019,
+      0.0034,
+      0.0006,
       0
     ],
     "people": [
-      0.0063,
-      0.0034,
-      0.0058,
-      0.0348,
-      0.0065
+      0.0022,
+      0.004,
+      0.0004,
+      0.0096,
+      0.0053
     ],
     "manager": [
-      0.0043,
-      0.0142,
-      0.0095,
-      0.0234,
+      -0.0003,
+      -0.0009,
+      0.0037,
+      0.0077,
       0.0051
     ],
     "meetings": [
-      0.0012,
-      -0.0142,
-      0.0249,
-      0.0275,
-      0.0071
+      0.0005,
+      -0.0044,
+      0.0047,
+      0.0118,
+      0.0021
     ],
     "progress_rank": [
-      0.01,
-      0.0082,
-      0.0088,
-      0.0108,
-      0.0154
+      0.0002,
+      0.0001,
+      0.0009,
+      0.0006,
+      0.0021
     ],
     "id_share": [
-      -0.0176,
-      0.0078,
-      -0.003,
-      -0.024,
-      0.0093
+      -0.0046,
+      -0.0025,
+      -0.0011,
+      -0.0086,
+      -0.0031
     ]
   },
   "extra": {
-    "requester_expedite_rate": 0.2864,
-    "extra_usd_expedite": -0.2574,
-    "stated_need_gap": -0.7841,
-    "no_context": -0.2496
+    "requester_expedite_rate": 0.2297,
+    "extra_usd_expedite": -0.1904,
+    "stated_need_gap": -0.54,
+    "no_context": -0.162
   },
-  "bias": -0.3904,
-  "lambda": 3,
+  "bias": -0.3489,
+  "lambda": 10,
   "bands": [
     "b14_30",
     "b7_14",
@@ -101,19 +101,19 @@
   "usable_from": "2026-09-16",
   "n_labels": 482,
   "n_unlinked_charges": 0,
-  "n_no_context": 4,
+  "n_no_context": 3,
   "expedite_rate_train": 0.4231,
   "split": {
     "train_until": "2026-10-21T09:58:02-07:00",
     "test_from": "2026-10-21T10:29:31-07:00"
   },
-  "accuracy": 0.6222,
+  "accuracy": 0.5556,
   "accuracy_ci95": [
-    0.4763,
-    0.7489
+    0.4118,
+    0.6906
   ],
   "baseline_never_expedite": 0.6,
-  "accuracy_train": 0.7212,
+  "accuracy_train": 0.6731,
   "rows_used": [
     "messages",
     "pressure",
@@ -127,257 +127,257 @@
     "id_share"
   ],
   "row_coverage": {
-    "messages": 0.9732,
-    "pressure": 0.9732,
-    "deadline_talk": 0.953,
-    "waiting_talk": 0.6107,
-    "slips": 0.1946,
-    "people": 0.9732,
-    "manager": 0.8523,
-    "meetings": 0.2886,
-    "progress_rank": 0.5705,
-    "id_share": 0.8591
+    "messages": 0.9799,
+    "pressure": 0.9799,
+    "deadline_talk": 0.9664,
+    "waiting_talk": 0.5369,
+    "slips": 0.1074,
+    "people": 0.9799,
+    "manager": 0.8658,
+    "meetings": 0.349,
+    "progress_rank": 0.5839,
+    "id_share": 0.906
   },
   "cv": [
     {
       "alpha": 0.1,
       "lambda": 0.01,
-      "logloss": 1.1,
-      "accuracy": 0.6154
+      "logloss": 1.3387,
+      "accuracy": 0.5673
     },
     {
       "alpha": 0.1,
       "lambda": 0.03,
-      "logloss": 0.9222,
-      "accuracy": 0.6058
+      "logloss": 0.991,
+      "accuracy": 0.5865
     },
     {
       "alpha": 0.1,
       "lambda": 0.1,
-      "logloss": 0.7853,
+      "logloss": 0.786,
       "accuracy": 0.5865
     },
     {
       "alpha": 0.1,
       "lambda": 0.3,
-      "logloss": 0.7058,
-      "accuracy": 0.5865
+      "logloss": 0.7013,
+      "accuracy": 0.5769
     },
     {
       "alpha": 0.1,
       "lambda": 1,
-      "logloss": 0.6613,
-      "accuracy": 0.5962
+      "logloss": 0.6642,
+      "accuracy": 0.6058
     },
     {
       "alpha": 0.1,
       "lambda": 3,
-      "logloss": 0.6479,
+      "logloss": 0.651,
       "accuracy": 0.6058
     },
     {
       "alpha": 0.1,
       "lambda": 10,
-      "logloss": 0.649,
+      "logloss": 0.6484,
       "accuracy": 0.6154
     },
     {
       "alpha": 0.1,
       "lambda": 30,
-      "logloss": 0.6606,
-      "accuracy": 0.5962
+      "logloss": 0.6589,
+      "accuracy": 0.6058
     },
     {
       "alpha": 0.1,
       "lambda": 100,
-      "logloss": 0.677,
-      "accuracy": 0.5865
+      "logloss": 0.6759,
+      "accuracy": 0.5962
     },
     {
       "alpha": 0.1,
       "lambda": 300,
-      "logloss": 0.6864,
+      "logloss": 0.686,
       "accuracy": 0.5769
     },
     {
       "alpha": 0.25,
       "lambda": 0.01,
-      "logloss": 1.6387,
-      "accuracy": 0.6154
+      "logloss": 2.4297,
+      "accuracy": 0.5577
     },
     {
       "alpha": 0.25,
       "lambda": 0.03,
-      "logloss": 1.2579,
-      "accuracy": 0.5962
+      "logloss": 1.682,
+      "accuracy": 0.5673
     },
     {
       "alpha": 0.25,
       "lambda": 0.1,
-      "logloss": 1.0077,
-      "accuracy": 0.5769
+      "logloss": 1.161,
+      "accuracy": 0.5673
     },
     {
       "alpha": 0.25,
       "lambda": 0.3,
-      "logloss": 0.8527,
-      "accuracy": 0.6058
+      "logloss": 0.8858,
+      "accuracy": 0.5865
     },
     {
       "alpha": 0.25,
       "lambda": 1,
-      "logloss": 0.7355,
+      "logloss": 0.7309,
       "accuracy": 0.5962
     },
     {
       "alpha": 0.25,
       "lambda": 3,
-      "logloss": 0.6732,
-      "accuracy": 0.5769
+      "logloss": 0.6699,
+      "accuracy": 0.5865
     },
     {
       "alpha": 0.25,
       "lambda": 10,
       "logloss": 0.6505,
-      "accuracy": 0.5962
-    },
-    {
-      "alpha": 0.25,
-      "lambda": 30,
-      "logloss": 0.6591,
       "accuracy": 0.5865
     },
     {
       "alpha": 0.25,
+      "lambda": 30,
+      "logloss": 0.6584,
+      "accuracy": 0.6058
+    },
+    {
+      "alpha": 0.25,
       "lambda": 100,
-      "logloss": 0.6763,
-      "accuracy": 0.5962
+      "logloss": 0.6755,
+      "accuracy": 0.6058
     },
     {
       "alpha": 0.25,
       "lambda": 300,
-      "logloss": 0.6862,
+      "logloss": 0.6858,
       "accuracy": 0.5769
     },
     {
       "alpha": 0.5,
       "lambda": 0.01,
-      "logloss": 2.31,
-      "accuracy": 0.6346
+      "logloss": 3.8508,
+      "accuracy": 0.5577
     },
     {
       "alpha": 0.5,
       "lambda": 0.03,
-      "logloss": 1.7402,
-      "accuracy": 0.6154
+      "logloss": 2.6507,
+      "accuracy": 0.5577
     },
     {
       "alpha": 0.5,
       "lambda": 0.1,
-      "logloss": 1.2835,
-      "accuracy": 0.5962
+      "logloss": 1.7641,
+      "accuracy": 0.5673
     },
     {
       "alpha": 0.5,
       "lambda": 0.3,
-      "logloss": 1.0345,
-      "accuracy": 0.5962
+      "logloss": 1.2435,
+      "accuracy": 0.5577
     },
     {
       "alpha": 0.5,
       "lambda": 1,
-      "logloss": 0.8557,
-      "accuracy": 0.5962
+      "logloss": 0.9048,
+      "accuracy": 0.5673
     },
     {
       "alpha": 0.5,
       "lambda": 3,
-      "logloss": 0.7454,
-      "accuracy": 0.5769
+      "logloss": 0.7438,
+      "accuracy": 0.5865
     },
     {
       "alpha": 0.5,
       "lambda": 10,
-      "logloss": 0.6806,
-      "accuracy": 0.5769
+      "logloss": 0.673,
+      "accuracy": 0.5385
     },
     {
       "alpha": 0.5,
       "lambda": 30,
-      "logloss": 0.6664,
-      "accuracy": 0.5769
+      "logloss": 0.6634,
+      "accuracy": 0.5577
     },
     {
       "alpha": 0.5,
       "lambda": 100,
-      "logloss": 0.6762,
-      "accuracy": 0.5865
+      "logloss": 0.6754,
+      "accuracy": 0.6154
     },
     {
       "alpha": 0.5,
       "lambda": 300,
-      "logloss": 0.6856,
-      "accuracy": 0.5673
-    },
-    {
-      "alpha": 1,
-      "lambda": 0.01,
-      "logloss": 2.9677,
-      "accuracy": 0.6538
-    },
-    {
-      "alpha": 1,
-      "lambda": 0.03,
-      "logloss": 2.382,
-      "accuracy": 0.6538
-    },
-    {
-      "alpha": 1,
-      "lambda": 0.1,
-      "logloss": 1.7542,
-      "accuracy": 0.6346
-    },
-    {
-      "alpha": 1,
-      "lambda": 0.3,
-      "logloss": 1.3117,
-      "accuracy": 0.6154
-    },
-    {
-      "alpha": 1,
-      "lambda": 1,
-      "logloss": 1.0253,
+      "logloss": 0.6853,
       "accuracy": 0.5865
     },
     {
       "alpha": 1,
-      "lambda": 3,
-      "logloss": 0.8717,
+      "lambda": 0.01,
+      "logloss": 5.704,
+      "accuracy": 0.5288
+    },
+    {
+      "alpha": 1,
+      "lambda": 0.03,
+      "logloss": 4.0976,
+      "accuracy": 0.5385
+    },
+    {
+      "alpha": 1,
+      "lambda": 0.1,
+      "logloss": 2.7273,
+      "accuracy": 0.5577
+    },
+    {
+      "alpha": 1,
+      "lambda": 0.3,
+      "logloss": 1.8767,
+      "accuracy": 0.5673
+    },
+    {
+      "alpha": 1,
+      "lambda": 1,
+      "logloss": 1.2708,
       "accuracy": 0.5481
     },
     {
       "alpha": 1,
+      "lambda": 3,
+      "logloss": 0.942,
+      "accuracy": 0.5673
+    },
+    {
+      "alpha": 1,
       "lambda": 10,
-      "logloss": 0.7649,
-      "accuracy": 0.5769
+      "logloss": 0.7585,
+      "accuracy": 0.5673
     },
     {
       "alpha": 1,
       "lambda": 30,
-      "logloss": 0.7116,
-      "accuracy": 0.5673
+      "logloss": 0.6962,
+      "accuracy": 0.5385
     },
     {
       "alpha": 1,
       "lambda": 100,
-      "logloss": 0.6886,
-      "accuracy": 0.5673
+      "logloss": 0.6826,
+      "accuracy": 0.5865
     },
     {
       "alpha": 1,
       "lambda": 300,
-      "logloss": 0.6868,
-      "accuracy": 0.5962
+      "logloss": 0.6856,
+      "accuracy": 0.6058
     }
   ],
   "scaler": {
@@ -438,148 +438,148 @@
       "no_context"
     ],
     "mean": [
-      0.4496,
-      0.6214,
-      0.9417,
-      1.1505,
-      1.5728,
-      0.0087,
-      -0.0088,
-      -0.0115,
-      -0.0096,
-      0.0128,
-      0.193,
-      0.2372,
-      0.6141,
-      0.6845,
-      1.1553,
-      0.0686,
-      0.0929,
+      0.4126,
+      0.6311,
+      0.9515,
+      1.4029,
+      2.1456,
+      0.0028,
+      -0.0093,
+      0.0009,
+      -0.0014,
+      -0.0071,
+      0.1917,
+      0.2982,
+      0.6602,
+      0.9029,
+      1.233,
+      0.0546,
+      0.0818,
       0.051,
       0.0485,
-      0.0583,
-      0.0067,
-      0.018,
-      0.0194,
+      0.0874,
+      0.0036,
+      0.0055,
+      0.0073,
       0.0097,
       0,
-      0.2367,
-      0.4105,
-      0.6165,
-      0.8107,
-      1.2621,
-      0.1359,
-      0.1803,
-      0.2524,
-      0.3447,
-      0.4078,
-      0.0273,
-      0.0055,
-      0.0801,
-      0.068,
-      0.0971,
-      2.2414,
-      2.4167,
-      2.55,
-      2.5645,
-      2.5484,
-      0.1736,
-      0.2202,
-      0.3022,
-      0.3025,
-      0.3977,
+      0.2227,
+      0.4036,
+      0.6262,
+      0.9029,
+      1.6408,
+      0.1335,
+      0.1872,
+      0.3107,
+      0.4563,
+      0.466,
+      0.0255,
+      0.025,
+      0.0995,
+      0.1117,
+      0.1165,
+      1.8571,
+      2.0952,
+      2.254,
+      2.3333,
+      2.3016,
+      0.2184,
+      0.289,
+      0.3424,
+      0.2929,
+      0.4375,
       0.2348,
       6.1102,
-      2.128,
+      1.763,
       0.0096
     ],
     "sd": [
-      0.5733,
-      0.6505,
-      1.11,
-      1.407,
-      2.0555,
-      0.0879,
-      0.0878,
-      0.0973,
-      0.0823,
-      0.087,
-      0.2801,
-      0.3244,
-      0.8366,
-      0.9927,
-      1.9397,
-      0.1117,
-      0.1674,
-      0.1273,
-      0.148,
-      0.2342,
-      0.0274,
-      0.0619,
-      0.0966,
+      0.5266,
+      0.7418,
+      1.0861,
+      1.7363,
+      2.6122,
+      0.0889,
+      0.076,
+      0.1051,
+      0.0701,
+      0.0611,
+      0.2717,
+      0.3835,
+      0.707,
+      1.2426,
+      1.7471,
+      0.0969,
+      0.1754,
+      0.1493,
+      0.1636,
+      0.3149,
+      0.017,
+      0.0276,
+      0.0546,
       0.069,
       1,
-      0.2357,
-      0.3717,
-      0.6042,
-      0.8953,
-      1.5262,
-      0.1911,
-      0.2633,
-      0.3964,
-      0.631,
-      0.756,
-      0.0782,
-      0.056,
-      0.2493,
-      0.3417,
-      0.5663,
-      1.0877,
-      1.1444,
-      1.2169,
-      1.2394,
-      1.2139,
-      0.2031,
-      0.283,
-      0.3355,
-      0.3248,
-      0.3546,
+      0.2216,
+      0.4139,
+      0.5952,
+      1.0265,
+      1.7946,
+      0.2101,
+      0.3019,
+      0.4858,
+      0.8335,
+      0.8793,
+      0.0796,
+      0.1004,
+      0.2983,
+      0.4347,
+      0.6869,
+      1.0519,
+      1.1086,
+      1.0979,
+      1.1127,
+      1.0784,
+      0.2221,
+      0.2837,
+      0.3442,
+      0.3037,
+      0.3702,
       0.1114,
       0.7523,
-      11.0415,
+      10.6747,
       0.0976
     ]
   },
   "demo": {
     "id": "pt-hip-bracket",
     "T": "2026-11-10T11:30:00-08:00",
-    "p_expedite": 0.5324,
+    "p_expedite": 0.5019,
     "n_train": 104,
     "top": [
       {
         "row": "stated_need_gap",
         "band": null,
-        "contribution": 0.4189
+        "contribution": 0.2799
       },
       {
         "row": "requester_expedite_rate",
         "band": null,
-        "contribution": 0.3059
+        "contribution": 0.2454
       },
       {
         "row": "extra_usd_expedite",
         "band": null,
-        "contribution": -0.2372
+        "contribution": -0.1755
       },
       {
-        "row": "pressure",
-        "band": "b7_14",
-        "contribution": -0.0345
+        "row": "no_context",
+        "band": null,
+        "contribution": 0.0159
       },
       {
-        "row": "pressure",
+        "row": "id_share",
         "band": "b1_3",
-        "contribution": 0.0253
+        "contribution": 0.0083
       }
     ]
   }

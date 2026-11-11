@@ -227,6 +227,7 @@ export function extractClaims(doc, resolve, opts = {}) { // opts: {people, recen
     const etaM = low.match(/\b(?:new eta|eta|on track for|on track|now expected|expected|now|realistic date|arriv\w*|ship(?:s|ping)?|land(?:s|ing)?|slipp?(?:ed|ing)?|pushed|moved|moves|delivery|deliver\w*|promised|commit\w*|between|due|should be (?:here|in)|starting|starts?|start(?:s|ing)? on|scheduled(?: for)?|kicks? off|booked)\b/);
     if (etaM) {
       const subj = refs.find((r) => r.kind === 'deliverable') || refs.find((r) => r.kind === 'part') || refs.find((r) => r.kind === 'test' || r.kind === 'milestone' || r.kind === 'work');
+      if (!subj) continue; // only rigs or unknown kinds named: no ETA subject
       const tail = s.slice(Math.max(0, Math.min(etaM.index, subj.end)));
       let value = null;
       const rng = tail.match(new RegExp(`(?:between|from)\\s+(${DATE_SRC})\\s+(?:and|to|-|–)\\s+(${DATE_SRC})|(${DATE_SRC})\\s*(?:-|–|to)\\s*(${DATE_SRC})`, 'i'));

@@ -27,7 +27,7 @@
           "name": "Hip actuator DVT spin test",
           "owner": "Arjun Venkatesan",
           "duration_days": 3,
-          "planned_start": "2026-11-16"
+          "planned_start": "2026-11-23"
         },
         "milestone": {
           "id": "m-hip-spin-test",
@@ -51,7 +51,7 @@
             "said_by": "Arjun Venkatesan",
             "said_at": "2026-11-09T09:40:00-08:00",
             "said_ago": "yesterday",
-            "doc_id": "slack:C07FLK0ACTU:1794246000.702810"
+            "doc_id": "slack:C07FLK0ACTU:1794246000.565944"
           }
         ],
         "tiers": [
@@ -104,17 +104,17 @@
             "status": "pass",
             "text": "standard done Tue Dec 1; expedite done Wed Nov 25",
             "sources": [
-              "settings:tests",
-              "slack:C07FLK0SUPC:1793991900.056003"
+              "cal:cal-bk-00001",
+              "slack:C07FLK0SUPC:1793991900.864420"
             ]
           },
           {
             "n": 3,
             "label": "What sets the date",
             "status": "info",
-            "text": "The test is waiting on the DVT hip frameless motor.",
+            "text": "The test is the planned start date.",
             "sources": [
-              "slack:C07FLK0ACTU:1794246000.702810"
+              "slack:C07FLK0ACTU:1794246000.565944"
             ]
           },
           {
@@ -141,7 +141,7 @@
           },
           {
             "rule": "no fact after now",
-            "ok": false
+            "ok": true
           },
           {
             "rule": "every fact has a source",
@@ -152,43 +152,43 @@
             "ok": true
           }
         ],
-        "blocked": true,
+        "blocked": false,
         "habit": {
-          "p_expedite": 0.5143,
+          "p_expedite": 0.5003,
           "n_train": 104,
           "top": [
             {
               "row": "stated_need_gap",
               "band": null,
-              "contribution": 0.4159
+              "contribution": 0.2778
             },
             {
               "row": "requester_expedite_rate",
               "band": null,
-              "contribution": 0.3059
+              "contribution": 0.2454
             },
             {
               "row": "extra_usd_expedite",
               "band": null,
-              "contribution": -0.2372
-            },
-            {
-              "row": "pressure",
-              "band": "b7_14",
-              "contribution": -0.0318
+              "contribution": -0.1755
             },
             {
               "row": "no_context",
               "band": null,
-              "contribution": 0.0246
+              "contribution": 0.0159
+            },
+            {
+              "row": "id_share",
+              "band": "b1_3",
+              "contribution": 0.0083
             }
           ],
-          "accuracy": 0.6222,
+          "accuracy": 0.5556,
           "accuracy_ci95": [
-            0.4763,
-            0.7489
+            0.4118,
+            0.6906
           ],
-          "text": "Teams like yours expedite this 51% of the time (n = 104 past orders). Advisory only; the schedule decides."
+          "text": "Teams like yours expedite this 50% of the time (n = 104 past orders). Advisory only; the schedule decides."
         }
       },
       "heatmap": {
@@ -196,30 +196,30 @@
         "T": "2026-11-10T10:30:00-08:00",
         "cells": {
           "messages": [
-            0.4375,
+            0.625,
             0.5714,
-            0.75,
+            1.75,
             0.5,
             0
           ],
           "pressure": [
-            -0.0171,
-            0.1564,
-            -0.0391,
-            0.1071,
+            -0.0542,
+            0.2589,
+            0.0183,
+            0.0091,
             0
           ],
           "deadline_talk": [
             0.375,
             0,
-            0.75,
+            0.25,
             0.5,
             0
           ],
           "waiting_talk": [
             0,
             0.1429,
-            0,
+            0.5,
             0,
             0
           ],
@@ -231,16 +231,16 @@
             0
           ],
           "people": [
-            0.25,
+            0.375,
             0.5714,
-            0.75,
+            1,
             0.5,
             0
           ],
           "manager": [
-            0.1875,
-            0.2857,
             0.25,
+            0.2857,
+            0.75,
             0,
             0
           ],
@@ -261,7 +261,7 @@
           "id_share": [
             0,
             0,
-            0.3333,
+            0.1429,
             0,
             null
           ]
@@ -277,28 +277,35 @@
         "linked": [
           "meeting:2026-10-16-0845-test-lab-build-standup:15",
           "meeting:2026-10-16-0845-test-lab-build-standup:16",
-          "meeting:2026-10-16-0845-test-lab-build-standup:17",
           "meeting:2026-10-19-0845-test-lab-build-standup:15",
           "meeting:2026-10-19-0845-test-lab-build-standup:16",
           "meeting:2026-10-19-0845-test-lab-build-standup:17",
-          "slack:C07FLK0ACTU:1793309470.318011",
-          "slack:C07FLK0ACTU:1793312490.605408",
-          "slack:C07FLK0ACTU:1793317567.127787",
-          "slack:C07FLK0ACTU:1793648364.591649",
-          "slack:C07FLK0ACTU:1793820000.055532",
-          "slack:C07FLK0ACTU:1793990820.479335",
-          "slack:C07FLK0ACTU:1794244500.541815",
-          "slack:C07FLK0LEGS:1792534689.580023",
-          "slack:C07FLK0SUPC:1793869140.335972"
+          "meeting:2026-10-19-0845-test-lab-build-standup:18",
+          "slack:C07FLK0ACTU:1793309470.170816",
+          "slack:C07FLK0ACTU:1793310850.632905",
+          "slack:C07FLK0ACTU:1793311252.967341",
+          "slack:C07FLK0ACTU:1793648364.420873",
+          "slack:C07FLK0ACTU:1793773570.410123",
+          "slack:C07FLK0ACTU:1793820000.376706",
+          "slack:C07FLK0ACTU:1793990820.801855",
+          "slack:C07FLK0ACTU:1793995266.608948",
+          "slack:C07FLK0ACTU:1793997520.699682",
+          "slack:C07FLK0ACTU:1794000298.467016",
+          "slack:C07FLK0ACTU:1794244500.540385",
+          "slack:C07FLK0LEGS:1792534689.622871",
+          "slack:C07FLK0LEGS:1792537227.163821",
+          "slack:C07FLK0LEGS:1792539072.520833",
+          "slack:C07FLK0LEGS:1792542558.487529",
+          "slack:C07FLK0SUPC:1793869140.159509"
         ]
       },
       "sources": [
+        "cal:cal-bk-00001",
         "demo/part-entry.json",
         "demo/policy.json",
         "demo/quote.json",
-        "settings:tests",
-        "slack:C07FLK0ACTU:1794246000.702810",
-        "slack:C07FLK0SUPC:1793991900.056003"
+        "slack:C07FLK0ACTU:1794246000.565944",
+        "slack:C07FLK0SUPC:1793991900.864420"
       ],
       "engine": {
         "settings": "settings.json",
@@ -342,7 +349,7 @@
           "name": "Hip actuator DVT spin test",
           "owner": "Arjun Venkatesan",
           "duration_days": 3,
-          "planned_start": "2026-11-16"
+          "planned_start": "2026-11-23"
         },
         "milestone": {
           "id": "m-hip-spin-test",
@@ -418,8 +425,8 @@
             "status": "pass",
             "text": "standard done Thu Dec 3; expedite done Thu Dec 3",
             "sources": [
-              "settings:tests",
-              "slack:C07FLK0SUPC:1793991900.056003"
+              "cal:cal-bk-00001",
+              "slack:C07FLK0SUPC:1793991900.864420"
             ]
           },
           {
@@ -455,7 +462,7 @@
           },
           {
             "rule": "no fact after now",
-            "ok": false
+            "ok": true
           },
           {
             "rule": "every fact has a source",
@@ -466,43 +473,43 @@
             "ok": true
           }
         ],
-        "blocked": true,
+        "blocked": false,
         "habit": {
-          "p_expedite": 0.5145,
+          "p_expedite": 0.5004,
           "n_train": 104,
           "top": [
             {
               "row": "stated_need_gap",
               "band": null,
-              "contribution": 0.4167
+              "contribution": 0.2784
             },
             {
               "row": "requester_expedite_rate",
               "band": null,
-              "contribution": 0.3059
+              "contribution": 0.2454
             },
             {
               "row": "extra_usd_expedite",
               "band": null,
-              "contribution": -0.2372
-            },
-            {
-              "row": "pressure",
-              "band": "b7_14",
-              "contribution": -0.0318
+              "contribution": -0.1755
             },
             {
               "row": "no_context",
               "band": null,
-              "contribution": 0.0246
+              "contribution": 0.0159
+            },
+            {
+              "row": "id_share",
+              "band": "b1_3",
+              "contribution": 0.0083
             }
           ],
-          "accuracy": 0.6222,
+          "accuracy": 0.5556,
           "accuracy_ci95": [
-            0.4763,
-            0.7489
+            0.4118,
+            0.6906
           ],
-          "text": "Teams like yours expedite this 51% of the time (n = 104 past orders). Advisory only; the schedule decides."
+          "text": "Teams like yours expedite this 50% of the time (n = 104 past orders). Advisory only; the schedule decides."
         }
       },
       "heatmap": {
@@ -510,30 +517,30 @@
         "T": "2026-11-10T10:45:00-08:00",
         "cells": {
           "messages": [
-            0.4375,
+            0.625,
             0.5714,
-            0.75,
+            1.75,
             0.5,
             0
           ],
           "pressure": [
-            -0.0171,
-            0.1564,
-            -0.0391,
-            0.1071,
+            -0.0542,
+            0.2589,
+            0.0183,
+            0.0091,
             0
           ],
           "deadline_talk": [
             0.375,
             0,
-            0.75,
+            0.25,
             0.5,
             0
           ],
           "waiting_talk": [
             0,
             0.1429,
-            0,
+            0.5,
             0,
             0
           ],
@@ -545,16 +552,16 @@
             0
           ],
           "people": [
-            0.25,
+            0.375,
             0.5714,
-            0.75,
+            1,
             0.5,
             0
           ],
           "manager": [
-            0.1875,
-            0.2857,
             0.25,
+            0.2857,
+            0.75,
             0,
             0
           ],
@@ -575,7 +582,7 @@
           "id_share": [
             0,
             0,
-            0.3333,
+            0.1429,
             0,
             null
           ]
@@ -591,28 +598,35 @@
         "linked": [
           "meeting:2026-10-16-0845-test-lab-build-standup:15",
           "meeting:2026-10-16-0845-test-lab-build-standup:16",
-          "meeting:2026-10-16-0845-test-lab-build-standup:17",
           "meeting:2026-10-19-0845-test-lab-build-standup:15",
           "meeting:2026-10-19-0845-test-lab-build-standup:16",
           "meeting:2026-10-19-0845-test-lab-build-standup:17",
-          "slack:C07FLK0ACTU:1793309470.318011",
-          "slack:C07FLK0ACTU:1793312490.605408",
-          "slack:C07FLK0ACTU:1793317567.127787",
-          "slack:C07FLK0ACTU:1793648364.591649",
-          "slack:C07FLK0ACTU:1793820000.055532",
-          "slack:C07FLK0ACTU:1793990820.479335",
-          "slack:C07FLK0ACTU:1794244500.541815",
-          "slack:C07FLK0LEGS:1792534689.580023",
-          "slack:C07FLK0SUPC:1793869140.335972"
+          "meeting:2026-10-19-0845-test-lab-build-standup:18",
+          "slack:C07FLK0ACTU:1793309470.170816",
+          "slack:C07FLK0ACTU:1793310850.632905",
+          "slack:C07FLK0ACTU:1793311252.967341",
+          "slack:C07FLK0ACTU:1793648364.420873",
+          "slack:C07FLK0ACTU:1793773570.410123",
+          "slack:C07FLK0ACTU:1793820000.376706",
+          "slack:C07FLK0ACTU:1793990820.801855",
+          "slack:C07FLK0ACTU:1793995266.608948",
+          "slack:C07FLK0ACTU:1793997520.699682",
+          "slack:C07FLK0ACTU:1794000298.467016",
+          "slack:C07FLK0ACTU:1794244500.540385",
+          "slack:C07FLK0LEGS:1792534689.622871",
+          "slack:C07FLK0LEGS:1792537227.163821",
+          "slack:C07FLK0LEGS:1792539072.520833",
+          "slack:C07FLK0LEGS:1792542558.487529",
+          "slack:C07FLK0SUPC:1793869140.159509"
         ]
       },
       "sources": [
+        "cal:cal-bk-00001",
         "demo/part-entry.json",
         "demo/policy.json",
         "demo/quote.json",
-        "settings:tests",
         "slack:C07FLK0ACTU:1794336300.000000",
-        "slack:C07FLK0SUPC:1793991900.056003"
+        "slack:C07FLK0SUPC:1793991900.864420"
       ],
       "engine": {
         "settings": "settings.json",
@@ -656,7 +670,7 @@
           "name": "Hip actuator DVT spin test",
           "owner": "Arjun Venkatesan",
           "duration_days": 3,
-          "planned_start": "2026-11-16"
+          "planned_start": "2026-11-23"
         },
         "milestone": {
           "id": "m-hip-spin-test",
@@ -708,7 +722,7 @@
             "ready": "2026-11-17",
             "lead_days": 5,
             "finish": {
-              "min": "2026-11-24",
+              "min": "2026-11-25",
               "max": "2026-12-03"
             },
             "days_saved": null,
@@ -746,10 +760,10 @@
             "n": 2,
             "label": "Schedule solved",
             "status": "pass",
-            "text": "standard done Tue Dec 1 / Tue Dec 1 / Thu Dec 3; expedite done Tue Nov 24 / Wed Nov 25 / Thu Dec 3",
+            "text": "standard done Tue Dec 1 / Tue Dec 1 / Thu Dec 3; expedite done Wed Nov 25 / Wed Nov 25 / Thu Dec 3",
             "sources": [
-              "settings:tests",
-              "slack:C07FLK0SUPC:1793991900.056003"
+              "cal:cal-bk-00001",
+              "slack:C07FLK0SUPC:1793991900.864420"
             ]
           },
           {
@@ -785,7 +799,7 @@
           },
           {
             "rule": "no fact after now",
-            "ok": false
+            "ok": true
           },
           {
             "rule": "every fact has a source",
@@ -796,43 +810,43 @@
             "ok": true
           }
         ],
-        "blocked": true,
+        "blocked": false,
         "habit": {
-          "p_expedite": 0.5145,
+          "p_expedite": 0.5004,
           "n_train": 104,
           "top": [
             {
               "row": "stated_need_gap",
               "band": null,
-              "contribution": 0.4167
+              "contribution": 0.2784
             },
             {
               "row": "requester_expedite_rate",
               "band": null,
-              "contribution": 0.3059
+              "contribution": 0.2454
             },
             {
               "row": "extra_usd_expedite",
               "band": null,
-              "contribution": -0.2372
-            },
-            {
-              "row": "pressure",
-              "band": "b7_14",
-              "contribution": -0.0318
+              "contribution": -0.1755
             },
             {
               "row": "no_context",
               "band": null,
-              "contribution": 0.0246
+              "contribution": 0.0159
+            },
+            {
+              "row": "id_share",
+              "band": "b1_3",
+              "contribution": 0.0083
             }
           ],
-          "accuracy": 0.6222,
+          "accuracy": 0.5556,
           "accuracy_ci95": [
-            0.4763,
-            0.7489
+            0.4118,
+            0.6906
           ],
-          "text": "Teams like yours expedite this 51% of the time (n = 104 past orders). Advisory only; the schedule decides."
+          "text": "Teams like yours expedite this 50% of the time (n = 104 past orders). Advisory only; the schedule decides."
         }
       },
       "heatmap": {
@@ -840,30 +854,30 @@
         "T": "2026-11-10T10:45:00-08:00",
         "cells": {
           "messages": [
-            0.4375,
+            0.625,
             0.5714,
-            0.75,
+            1.75,
             0.5,
             0
           ],
           "pressure": [
-            -0.0171,
-            0.1564,
-            -0.0391,
-            0.1071,
+            -0.0542,
+            0.2589,
+            0.0183,
+            0.0091,
             0
           ],
           "deadline_talk": [
             0.375,
             0,
-            0.75,
+            0.25,
             0.5,
             0
           ],
           "waiting_talk": [
             0,
             0.1429,
-            0,
+            0.5,
             0,
             0
           ],
@@ -875,16 +889,16 @@
             0
           ],
           "people": [
-            0.25,
+            0.375,
             0.5714,
-            0.75,
+            1,
             0.5,
             0
           ],
           "manager": [
-            0.1875,
-            0.2857,
             0.25,
+            0.2857,
+            0.75,
             0,
             0
           ],
@@ -905,7 +919,7 @@
           "id_share": [
             0,
             0,
-            0.3333,
+            0.1429,
             0,
             null
           ]
@@ -921,28 +935,35 @@
         "linked": [
           "meeting:2026-10-16-0845-test-lab-build-standup:15",
           "meeting:2026-10-16-0845-test-lab-build-standup:16",
-          "meeting:2026-10-16-0845-test-lab-build-standup:17",
           "meeting:2026-10-19-0845-test-lab-build-standup:15",
           "meeting:2026-10-19-0845-test-lab-build-standup:16",
           "meeting:2026-10-19-0845-test-lab-build-standup:17",
-          "slack:C07FLK0ACTU:1793309470.318011",
-          "slack:C07FLK0ACTU:1793312490.605408",
-          "slack:C07FLK0ACTU:1793317567.127787",
-          "slack:C07FLK0ACTU:1793648364.591649",
-          "slack:C07FLK0ACTU:1793820000.055532",
-          "slack:C07FLK0ACTU:1793990820.479335",
-          "slack:C07FLK0ACTU:1794244500.541815",
-          "slack:C07FLK0LEGS:1792534689.580023",
-          "slack:C07FLK0SUPC:1793869140.335972"
+          "meeting:2026-10-19-0845-test-lab-build-standup:18",
+          "slack:C07FLK0ACTU:1793309470.170816",
+          "slack:C07FLK0ACTU:1793310850.632905",
+          "slack:C07FLK0ACTU:1793311252.967341",
+          "slack:C07FLK0ACTU:1793648364.420873",
+          "slack:C07FLK0ACTU:1793773570.410123",
+          "slack:C07FLK0ACTU:1793820000.376706",
+          "slack:C07FLK0ACTU:1793990820.801855",
+          "slack:C07FLK0ACTU:1793995266.608948",
+          "slack:C07FLK0ACTU:1793997520.699682",
+          "slack:C07FLK0ACTU:1794000298.467016",
+          "slack:C07FLK0ACTU:1794244500.540385",
+          "slack:C07FLK0LEGS:1792534689.622871",
+          "slack:C07FLK0LEGS:1792537227.163821",
+          "slack:C07FLK0LEGS:1792539072.520833",
+          "slack:C07FLK0LEGS:1792542558.487529",
+          "slack:C07FLK0SUPC:1793869140.159509"
         ]
       },
       "sources": [
+        "cal:cal-bk-00001",
         "demo/part-entry.json",
         "demo/policy.json",
         "demo/quote.json",
-        "settings:tests",
         "slack:C07FLK0ACTU:1794336300.000000",
-        "slack:C07FLK0SUPC:1793991900.056003"
+        "slack:C07FLK0SUPC:1793991900.864420"
       ],
       "engine": {
         "settings": "settings.json",
@@ -976,90 +997,90 @@
     ],
     "weights": {
       "messages": [
-        0.0033,
-        0.0058,
-        0.0135,
-        0.0302,
-        0.0037
+        0.0017,
+        0.0038,
+        0.0017,
+        0.0076,
+        0.0043
       ],
       "pressure": [
-        0.0274,
-        -0.0169,
-        -0.0016,
-        0.0166,
-        0.0027
+        0.0015,
+        -0.0019,
+        0.0077,
+        0.0021,
+        0.0092
       ],
       "deadline_talk": [
-        -0.0084,
-        0.0133,
-        -0.0012,
-        0.0203,
-        -0.0048
+        0.0007,
+        0.0059,
+        -0.003,
+        0.0055,
+        0.0021
       ],
       "waiting_talk": [
-        0.0177,
-        0.008,
-        -0.0069,
-        0.0142,
-        -0.004
+        0.0043,
+        -0.0001,
+        0.0023,
+        0.0097,
+        0.0071
       ],
       "slips": [
-        -0.0102,
-        0.0109,
-        0.0115,
-        -0.0218,
+        0.004,
+        0.0019,
+        0.0034,
+        0.0006,
         0
       ],
       "people": [
-        0.0063,
-        0.0034,
-        0.0058,
-        0.0348,
-        0.0065
+        0.0022,
+        0.004,
+        0.0004,
+        0.0096,
+        0.0053
       ],
       "manager": [
-        0.0043,
-        0.0142,
-        0.0095,
-        0.0234,
+        -0.0003,
+        -0.0009,
+        0.0037,
+        0.0077,
         0.0051
       ],
       "meetings": [
-        0.0012,
-        -0.0142,
-        0.0249,
-        0.0275,
-        0.0071
+        0.0005,
+        -0.0044,
+        0.0047,
+        0.0118,
+        0.0021
       ],
       "progress_rank": [
-        0.01,
-        0.0082,
-        0.0088,
-        0.0108,
-        0.0154
+        0.0002,
+        0.0001,
+        0.0009,
+        0.0006,
+        0.0021
       ],
       "id_share": [
-        -0.0176,
-        0.0078,
-        -0.003,
-        -0.024,
-        0.0093
+        -0.0046,
+        -0.0025,
+        -0.0011,
+        -0.0086,
+        -0.0031
       ]
     },
     "extra": {
-      "requester_expedite_rate": 0.2864,
-      "extra_usd_expedite": -0.2574,
-      "stated_need_gap": -0.7841,
-      "no_context": -0.2496
+      "requester_expedite_rate": 0.2297,
+      "extra_usd_expedite": -0.1904,
+      "stated_need_gap": -0.54,
+      "no_context": -0.162
     },
-    "bias": -0.3904,
-    "lambda": 3,
+    "bias": -0.3489,
+    "lambda": 10,
     "n_train": 104,
     "n_test": 45,
-    "accuracy": 0.6222,
+    "accuracy": 0.5556,
     "accuracy_ci95": [
-      0.4763,
-      0.7489
+      0.4118,
+      0.6906
     ],
     "baseline_never_expedite": 0.6
   }

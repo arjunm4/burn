@@ -366,17 +366,17 @@
   },
   "habit": {
     "available": true,
-    "accuracy": 0.622,
+    "accuracy": 0.556,
     "n_train": 104,
     "n_test": 45,
     "ci95": [
-      0.4763,
-      0.7489
+      0.4118,
+      0.6906
     ],
-    "lambda": 3,
+    "lambda": 10,
     "model_baseline_never_expedite": 0.6,
-    "vs_never_expedite": 0.022,
-    "vs_need_by_rule": -0.134,
+    "vs_never_expedite": -0.044,
+    "vs_need_by_rule": -0.2,
     "baselines": {
       "test_set": "newest 30% of 149 usable orders (T >= 2026-09-16)",
       "n_test_set": 45,
@@ -1046,11 +1046,7 @@
         {
           "order": "ord-x-00303",
           "premium_usd": 379.01,
-          "result": "missed",
-          "outcome": "blocked",
-          "reason": "cannot schedule: input wk:fixture-install-and-shakedown-for-hip-actuator-dyno-efficiency-sweep-hip-cycloid-disc-spacer unknown",
-          "test": "test-hip-dyno",
-          "expedite_days_saved": null
+          "result": "no_test_found"
         },
         {
           "order": "ord-x-00310",
@@ -1155,11 +1151,7 @@
         {
           "order": "ord-x-00415",
           "premium_usd": 142.46,
-          "result": "missed",
-          "outcome": "blocked",
-          "reason": "cannot schedule: input wk:fixture-install-and-shakedown-for-hip-actuator-dyno-efficiency-sweep-hip-cycloid-disc-spacer unknown",
-          "test": "test-hip-dyno",
-          "expedite_days_saved": null
+          "result": "no_test_found"
         },
         {
           "order": "ord-x-00418",
@@ -1199,11 +1191,7 @@
         {
           "order": "ord-x-00443",
           "premium_usd": 592.43,
-          "result": "missed",
-          "outcome": "blocked",
-          "reason": "cannot schedule: input wk:fixture-install-and-shakedown-for-hip-actuator-dyno-efficiency-sweep-hip-cycloid-disc-spacer unknown",
-          "test": "test-hip-dyno",
-          "expedite_days_saved": null
+          "result": "no_test_found"
         },
         {
           "order": "ord-x-00446",
@@ -1254,42 +1242,42 @@
   },
   "graph_recall": {
     "available": true,
-    "recall": 0.301,
+    "recall": 0.28,
     "by_reveal": {
       "revealed": {
-        "n": 768,
-        "found": 375,
-        "accepted": 367,
-        "n_in_text": 403,
-        "found_in_text": 363,
-        "recall": 0.488,
-        "recall_accepted": 0.478,
-        "recall_in_text": 0.901
+        "n": 769,
+        "found": 338,
+        "accepted": 330,
+        "n_in_text": 407,
+        "found_in_text": 326,
+        "recall": 0.44,
+        "recall_accepted": 0.429,
+        "recall_in_text": 0.801
       },
       "hinted": {
-        "n": 304,
-        "found": 26,
-        "accepted": 21,
-        "n_in_text": 158,
-        "found_in_text": 24,
-        "recall": 0.086,
-        "recall_accepted": 0.069,
-        "recall_in_text": 0.152
+        "n": 350,
+        "found": 35,
+        "accepted": 34,
+        "n_in_text": 175,
+        "found_in_text": 33,
+        "recall": 0.1,
+        "recall_accepted": 0.097,
+        "recall_in_text": 0.189
       },
       "never": {
-        "n": 302,
-        "found": 13,
-        "accepted": 12,
+        "n": 255,
+        "found": 12,
+        "accepted": 11,
         "n_in_text": 0,
         "found_in_text": 0,
-        "recall": 0.043,
-        "recall_accepted": 0.04,
+        "recall": 0.047,
+        "recall_accepted": 0.043,
         "recall_in_text": null
       }
     },
-    "precision": 0.982,
-    "graph_edges": 1403,
-    "compared_edges": 385,
+    "precision": 0.944,
+    "graph_edges": 1426,
+    "compared_edges": 408,
     "true_edges": 1374
   },
   "links": {
@@ -1302,5 +1290,5 @@
     "coverage_of_xometry_orders": 1,
     "true_xometry_charges": 482
   },
-  "runtime_s": 1.28
+  "runtime_s": 1.38
 }
