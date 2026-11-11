@@ -41,8 +41,9 @@ So teams overpay to expedite parts that wouldn't have sped anything up, underpay
  7. Ramp request    Burn creates it with justification + quote PDF
  8. Approve         manager approves in Ramp (or Ramp auto-approves)
  9. Card            Ramp virtual card: exact amount, Xometry only, lock date
-10. Place           engineer's one click ("ready to place"); extension verifies every
-                    field against the spec, pays with the Ramp card, places the order
+10. Place           Burn places automatically on approval; it alerts the engineer
+                    before the extension opens Xometry, then verifies every field
+                    against the spec, pays with the Ramp card, places the order
 11. Book            Burn sends receipt, memo, project/GL to Ramp when the charge clears
 12. After           tracking, slip re-checks, delivery (Ramp item receipt), first use, learning log
 ```
@@ -88,7 +89,7 @@ Each lists what we rejected and why.
 13. **Supply chain is a context source, not a purchase step.** Every human step must add judgment or own something; with Ramp approving and paying, a supply-chain click only adds delay. Their Slack messages (sibling ETAs, stock, cutoffs, vendor rules) are trusted for those topics.
 14. **Xometry through a browser extension, behind a provider interface.** The extension works in the user's own logged-in session. The interface is upload CAD → quote tiers → place order → status. *Rejected:* a server-side bot (no official support, unverified terms, credentials on our servers). No CNC vendor has a usable buyer API today (§0.4).
 15. **One frozen order spec, verified by read-back.** The engineer's Okay freezes every field, the CAD hash, quote ID, tier and price; the Ramp request carries its hash; checkout proceeds only if every field read back from Xometry matches. The engineer never re-checks.
-16. **Burn performs the final vendor click** after the engineer's one "place" click on an approved order. Guarded by spec verification, the Ramp card's exact limit and vendor lock, and idempotency.
+16. **Burn places the order automatically once Ramp approval and the card are ready** (Owen's decision). It never opens a browser tab without alerting the engineer first. Guarded by spec verification, the Ramp card's exact limit and vendor lock, and idempotency.
 17. **Learning is on the synthesized context, not the part.** One example is one Xometry purchase in Ramp at time T; inputs are attributes of the context available before T; the label is the tier chosen (§10). The model is advisory.
 
 ## 0. Detailed flow
@@ -119,7 +120,7 @@ Each lists what we rejected and why.
 Demo: Ramp sandbox (demo.ramp.com; ⌘J simulates transactions). Access is requested through a form; apply early.
 
 ### 0.4 Placement
-- When approval and the card are ready, the engineer gets a **"ready to place"** notice; one click starts checkout. (A slow approval may outlive the engineer's browser session, so placement waits for this click rather than running at a random time.)
+- When approval and the card are ready, **Burn places the order automatically** (Owen's decision). **The engineer is alerted before the extension opens Xometry**; a browser tab never opens without that alert.
 - The extension reopens the **same Xometry quote** (company Teamspace, so the configuration is held by Xometry) or re-fills from the spec, **reads back every field**, and compares it with the frozen spec.
 - All match → the extension enters the Ramp card and clicks Place order. Any mismatch → nothing is placed:
 
@@ -164,7 +165,7 @@ Engineer steps: part entry, Okay, place. Occasionally one tap or one sentence to
                               ──► verified placement ──► booking ──► tracking ──► delivery ──► first use
 ```
 
-**Order states:** `entered` → `resolving` ⇄ `needs_answer` → `recommended` → `specified` (Okay) → `requested` (in Ramp) → `approved` → `ready_to_place` → `placed` → `booked` → `delivered` → `in_use`. Exits: `rejected` (in Ramp), `cancelled`, `unresolved` (escalated), `superseded` (new revision), `invalidated` (material change before placement).
+**Order states:** `entered` → `resolving` ⇄ `needs_answer` → `recommended` → `specified` (Okay) → `requested` (in Ramp) → `approved` → `placing` → `placed` → `booked` → `delivered` → `in_use`. Exits: `rejected` (in Ramp), `cancelled`, `unresolved` (escalated), `superseded` (new revision), `invalidated` (material change before placement).
 
 **Runtime contracts:**
 - A decision reads a frozen snapshot hash; sync and extraction run independently.
@@ -300,7 +301,7 @@ label:    the tier chosen, from the matching Xometry order (Ramp's amount alone 
 
 ## 11. Surfaces
 
-- **Burn purchasing interface (engineer):** part entry, questions, the comparison card, Okay / edit / argue, "ready to place", order status.
+- **Burn purchasing interface (engineer):** part entry, questions, the comparison card, Okay / edit / argue, the alert before automatic placement, order status.
 - **Browser extension:** fills Xometry, reads back tiers, verifies and places.
 - **Ramp:** request, approval, card, booking, item receipt (Ramp's own UI).
 - **Slack:** questions to the person who knows; slip alerts; supply-chain visibility.
