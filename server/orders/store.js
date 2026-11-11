@@ -88,7 +88,7 @@ export function createOrderStore({filename = 'data/orders.sqlite'} = {}) {
       const required = ['material', 'finish', 'tolerance', 'quantity', 'revision', 'inspection', 'shipTo'];
       for (const key of required) {
         const field = order.spec.find(item => item.key === key);
-        if (!field?.provenance || field.value === null || field.value === '' || field.value !== frozen.fields[key]) fail(`Unconfirmed specification: ${key}`, 400);
+        if (!field?.provenance || !['string', 'number'].includes(typeof field.value) || field.value === '' || (typeof field.value === 'number' && !Number.isFinite(field.value)) || field.value !== frozen.fields[key]) fail(`Unconfirmed specification: ${key}`, 400);
       }
       if (!Number.isSafeInteger(frozen.fields.quantity) || frozen.fields.quantity <= 0) fail('Invalid quantity', 400);
       const option = order.quote?.options.find(item => item.tier === frozen.tier);
@@ -140,6 +140,9 @@ export function createOrderStore({filename = 'data/orders.sqlite'} = {}) {
       if (paymentState && !PAYMENT_STATES.includes(paymentState) || bookingState && !BOOKING_STATES.includes(bookingState)) fail('Invalid accounting state', 400);
       if (ramp.approvalStatus && !['PENDING', 'APPROVED', 'REJECTED', 'CANCELLED'].includes(ramp.approvalStatus)) fail('Invalid approval status', 400);
       if (ramp.approvalStatus === 'APPROVED' && !['requested', 'approved'].includes(order.state)) fail('Cannot approve superseded or inactive order');
+      if (ramp.approvalStatus === 'PENDING' && order.ramp.approvalStatus && order.ramp.approvalStatus !== 'PENDING') fail('Stale approval status');
+      if (paymentState && order.paymentState === 'charged' && paymentState !== 'charged') fail('Stale payment status');
+      if (bookingState && order.bookingState === 'coded' && bookingState !== 'coded') fail('Stale booking status');
       if (order.ramp.requestId && ramp.requestId && order.ramp.requestId !== ramp.requestId) fail('Request identity cannot change');
       if (order.ramp.cardId && ramp.cardId && order.ramp.cardId !== ramp.cardId) fail('Card identity cannot change');
       if (ramp.transactionIds && (!Array.isArray(ramp.transactionIds) || !ramp.transactionIds.every(nonempty))) fail('Invalid transaction IDs', 400);
