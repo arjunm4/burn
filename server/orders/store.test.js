@@ -53,6 +53,17 @@ test('superseded request cannot approve, even with a later-arriving event',()=>{
   const s=createOrderStore({filename:':memory:'});
   try {let o=ready(s,false);o=s.update(o.id,o.revision,{state:'superseded'});conflict(()=>s.recordRamp(o.id,o.revision,{approvalStatus:'APPROVED'}));}finally{s.close();}
 });
+test('out-of-order pending approval and issued-card events cannot regress terminal facts',()=>{
+  const s=createOrderStore({filename:':memory:'});
+  try {
+    let o=ready(s);
+    conflict(()=>s.recordRamp(o.id,o.revision,{approvalStatus:'PENDING'}));
+    o=s.recordRamp(o.id,o.revision,{paymentState:'charged',transactionIds:['t1']});
+    conflict(()=>s.recordRamp(o.id,o.revision,{paymentState:'issued'}));
+    assert.equal(s.get(o.id).paymentState,'charged');
+    assert.equal(s.get(o.id).ramp.approvalStatus,'APPROVED');
+  }finally{s.close();}
+});
 test('unknown result blocks another checkout and requires reconciliation',()=>{
   const s=createOrderStore({filename:':memory:'});
   try {
