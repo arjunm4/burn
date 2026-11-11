@@ -25,7 +25,7 @@ Not needed for the demo: every external service is mocked (architecture §2.18).
 |---|---|---|
 | B1 | What fraction of past Ramp charges can be linked confidently to Slack context and a Xometry order? | Measure on synthetic data first; report the link rate |
 | B3 | What is the first-use signal: an engineer tap, or something already recorded (Jira, an assembly log)? | Engineer tap for v1 |
-| B5 | Who builds which pieces (extension, Ramp client/mock, decision core, training data)? | Open |
+| B5 | Who builds the remaining pieces: part-entry screen and recommendation card, automatic placement and bookkeeping, training and heat map? | Open (see Answered for what's assigned) |
 
 ## Answered
 
@@ -38,6 +38,7 @@ Not needed for the demo: every external service is mocked (architecture §2.18).
 | Use the Claude–Codex collaboration workflow? | No; dropped | CLAUDE.md |
 | Real Ramp sandbox or mocks? | Mock everything: Ramp, Xometry, Slack, Jira, meetings, calendar | architecture §2.18 |
 | Example company for the demo data? | Flintlock Robotics, a fictional humanoid robotics startup | architecture §12 |
+| Who builds what (so far)? | Owen: world script and its generator. Arjun: the other mock services (Ramp, Xometry, Slack, Jira, meetings, calendar). Cost of delay: Owen and Arjun together. Rest: unassigned (B5) | — |
 | Which vendor first? | Xometry only, via the browser extension | architecture §2.14 |
 | Does Xometry have a test mode or buyer API? | No; demo stops at a dummy checkout page | architecture §0.4 |
 | Ramp MCP / Agent Cards instead of REST? | No; REST with app credentials; MCP is a stretch check | research/ramp-integration.md §2 |
