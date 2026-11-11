@@ -1,6 +1,6 @@
 # Burn: architecture
 
-Status: **v8 draft.** This version consolidates Owen's decisions of 2026-11-10 into one consistent document and removes superseded material; the history is in §15. v5 was the last version jointly approved by Claude and Codex. Architecture only; no implementation authorized. Open questions are tracked in [`open-questions.md`](open-questions.md).
+Status: **v9 draft.** v8 consolidated Owen's decisions of 2026-11-10; v9 replaces per-order retrieval with a company-wide dependency graph (Owen's decision); the history is in §15. v5 was the last version jointly approved by Claude and Codex. Architecture only; no implementation authorized. Open questions are tracked in [`open-questions.md`](open-questions.md).
 
 ## At a glance
 
@@ -33,7 +33,8 @@ So teams overpay to expedite parts that wouldn't have sped anything up, underpay
 
 ```
  1. Part entry      engineer: part name + short summary + CAD file
- 2. Context         Burn retrieves related Slack, meetings, Jira, calendar → context record
+ 2. Context         Burn finds the part in the company dependency graph and walks to its
+                    tests, milestones and their other inputs, with the evidence for each link
  3. Form            Burn fills the order fields; asks only for gaps
  4. Quote           extension fills Xometry in the engineer's browser; reads back every tier
  5. Recommend       schedule effect, break-even, basis; best tier preselected
@@ -64,17 +65,17 @@ So teams overpay to expedite parts that wouldn't have sped anything up, underpay
 | In scope (v1) | Out of scope (v1) |
 |---|---|
 | Custom **CNC-machined** parts on **Xometry** | Other vendors (later adapters); PCB, sheet metal, off-the-shelf parts |
-| Part entry, context retrieval, form fill, CAD upload, tier recommendation | Choosing the vendor; CAD geometry understanding |
+| Part entry, company-wide dependency graph, form fill, CAD upload, tier recommendation | Choosing the vendor; CAD geometry understanding |
 | Ramp request, approval, card, booking and item receipt | Approval logic of our own (Ramp's rules govern) |
 | Verified checkout via the browser extension | Server-side bots driving vendor sites |
 | Tracking, slip re-checks, first-use check | Vendor-reliability learning (deferred) |
-| A context-attribute model trained on past Ramp purchases (advisory) | Company-wide scheduling; budget creation; inventing demand from chat |
+| A context-attribute model trained on past Ramp purchases (advisory) | Assigning or rescheduling people's work; budget creation; inventing demand from chat |
 
 ## 2. Settled decisions
 
 Each lists what we rejected and why.
 
-1. **Part-first.** The engineer's part entry starts the work; Burn walks from that part to the work and milestone it feeds. *Rejected:* an agent that ingests everything and decides what to buy.
+1. **Part-first decisions over a company-wide graph** (Owen's decision, v9). Burn continuously maintains one dependency graph of the whole company from every source (§6.1). The engineer's part entry still starts every order: Burn finds the part's node and walks from it to the work, tests and milestones it feeds. *Rejected:* per-order search that builds a throwaway context record (inconsistent between orders, and a slip can't reach the orders it affects); an agent that decides what to buy from what it ingests.
 2. **One shared evidence store and planning model, with bounded jobs.** Records own state; models propose over snapshots and never approve their own output. *Rejected:* one persistent agent per project.
 3. **The demand anchors the decision; no BOM.** The demand is: this part, for this use or test, by this date, owned by this person. It comes from the engineer's entry plus accepted context, confirmed by the engineer. *Rejected:* the BOM as anchor; fixtures, test adapters, prototypes and rush revisions (the parts most often expedited) are usually outside it, and early teams often have no reliable BOM. *Cost:* no product-wide gap detection.
 4. **Evidence and accepted facts are separate layers.** Extracted claims stay assertions until accepted. *Rejected:* latest-claim-wins.
@@ -83,7 +84,7 @@ Each lists what we rejected and why.
 7. **Scenarios and switching conditions by default; probabilities only with a source.** *Rejected:* model confidence as probability.
 8. **Questions earn their interruption, one at a time,** and only when the answer could change the action. Trusted evidence is checked first.
 9. **Disagreement is first-class.** The engineer can argue; supported new context is accepted and Burn re-solves; the exchange is kept, typed and access-scoped. An argument never silently becomes a fact or a training label.
-10. **Two dependency tracks** (Owen's decision). (1) A **progress ranking**: each assembly or module working toward the same calendar milestone is ranked by progress relative to the others, measured from tickets done plus progress implied in the conversation; this gives general urgency without a full graph. (2) A **dependency graph that may be incomplete**: part → work or test → milestone, built from the context; missing links stay unknown. Where the graph is good enough it drives the cost-of-delay maths (§7); the ranking supplies urgency everywhere. *Replaces (v5):* "no league table of assemblies".
+10. **Two dependency tracks** (Owen's decision). (1) A **progress ranking**: each assembly or module working toward the same calendar milestone is ranked by progress relative to the others, measured from tickets done plus progress implied in the conversation; this gives general urgency without a full graph. (2) A **company-wide dependency graph that may be incomplete** (§6.1): part → work or test → milestone, kept up to date from every source; missing links stay unknown. Where the graph is good enough it drives the cost-of-delay maths (§7); the ranking supplies urgency everywhere. *Replaces (v5):* "no league table of assemblies".
 11. **The decision is a decomposition, not an additive urgency score:** eligibility → schedule → basis (dominance → policy → economics) → advisory comparison with the learned habit.
 12. **Ramp owns the money.** Purchase request, approval (the engineer's manager), auto-approval of small orders, card, booking and item receipt are Ramp's. *Rejected:* Burn's own approval settings and a supply-chain purchase queue.
 13. **Supply chain is a context source, not a purchase step.** Every human step must add judgment or own something; with Ramp approving and paying, a supply-chain click only adds delay. Their Slack messages (sibling ETAs, stock, cutoffs, vendor rules) are trusted for those topics.
@@ -99,7 +100,7 @@ Each lists what we rejected and why.
 
 ### 0.1 Part entry and context
 - The engineer enters the **part name and a short summary** in their own words (what it is, what it's for, anything urgent) and attaches the CAD file.
-- The entry is the **retrieval query**: Burn finds related Slack threads, meeting notes, Jira tickets and calendar items and synthesizes the part's **context record** (§5, §6).
+- The entry **resolves to the part's node** in the dependency graph (§6.1) by part number, file name, alias or description. A new part becomes a proposed node the engineer confirms. The node's neighbourhood (its tests, milestones, the other inputs they wait on, and the evidence behind each link) is the part's context.
 - Burn fills the order fields from the entry plus the context and asks only for gaps.
 - The entry is stored verbatim with its time; it is itself a training input.
 
@@ -156,9 +157,9 @@ Engineer steps: part entry, Okay, place. Occasionally one tap or one sentence to
  Slack, meetings, Jira, calendar ──► sync ──► DocumentRevision store (immutable, access-scoped)
                                                  │
                                                  ▼
-                                     extraction ──► Claims ──► acceptance ──► PlanningView
+                                     extraction ──► Claims ──► acceptance ──► Graph ──► PlanningView
                                                                                  │
- part entry ──► context record ──► form ──► QuoteSnapshot ──► decision ◄─ snapshot ┘
+ part entry ──► graph node + path ──► form ──► QuoteSnapshot ──► decision ◄─ snapshot ┘
                                                  │  options × scenarios → outcomes → basis
                                                  │  question loop (one at a time)
                                                  ▼
@@ -178,7 +179,9 @@ Engineer steps: part entry, Okay, place. Occasionally one tap or one sentence to
 
 ```
 PartEntry(name, summary, CAD file + hash, engineer, entered-at)
-ContextRecord(part entry, linked document spans, synthesized summary, built-at)
+GraphNode(kind: part|order|test|resource|work|deliverable|assembly|milestone|person, aliases)
+GraphEdge(from, to, kind, requires-all|alternative, supporting and contradicting claims,
+          status: accepted|proposed|disputed, effective, available-at)
 Demand(part, qty, use/test, assembly, usable-by, owner, source: entry|context|engineer)
 QuoteSnapshot(vendor=Xometry, quote id, configuration, captured-at, completeness,
               qty, currency, valid-until, cutoff, time zone)
@@ -207,12 +210,27 @@ DecisionRevision(snapshot hash, options, outcomes, basis, what Burn displayed, p
 
 ## 6. Pipeline
 
+Steps 1–5 run continuously as documents arrive, not per order.
+
 1. **Ingest** document revisions from Slack, meetings, Jira and calendar (live Slack and calendar connectors exist; others are file imports).
-2. **Retrieve** the documents related to a part entry: the entry text is the query; links by part name, file name, Xometry quote/order number, people and test names.
-3. **Extract** typed claims with spans. Model text is untrusted data.
-4. **Resolve** mentions against declared parts, tests, assemblies and milestones. A failed resolution stays unresolved.
-5. **Accept** claims: a later assertion supersedes an earlier one only when authorized and applicable. Conflicts stay unresolved and become gaps.
-6. **Decide.** The orchestrator owns scheduling and the question loop; the model extracts and explains, and cannot invent costs, redefine demand or approve.
+2. **Extract** typed claims with spans. Model text is untrusted data.
+3. **Resolve** mentions (part number, file name, alias, Xometry quote or order number, people, test names) to graph nodes. A failed resolution stays unresolved.
+4. **Accept** claims: a later assertion supersedes an earlier one only when authorized and applicable. Conflicts stay unresolved and become gaps.
+5. **Update the graph** (§6.1) from the claims.
+6. **Decide** (per order). The part entry resolves to its node; Burn walks the graph and freezes a snapshot as the PlanningView. The orchestrator owns scheduling and the question loop; the model extracts and explains, and cannot invent costs, redefine demand or approve.
+
+### 6.1 Company dependency graph
+
+One graph for the whole company (Owen's decision, v9), kept up to date by the pipeline above. Burn's context for any order is a walk through it.
+
+- **Nodes:** parts (with aliases and revisions), orders, tests, test rigs and other bookable resources, work items, deliverables (motors, PCBs, firmware), assemblies, milestones, people.
+- **Edges:** requires (requires-all or alternative), gates (test → milestone), blocked-by, owned-by, ordered-as (part → order), booked-on (test → resource slot).
+- **Every edge carries its evidence:** the supporting and contradicting claims, their spans and speakers, authority, both time keys, age, and a status. Only accepted claims make an edge accepted; proposed and disputed edges are shown as such. A link nobody stated is **unknown**, never inferred.
+- **History:** the graph is append-only. It can be read as known at any time T, for decision snapshots, replays and training (a fact available after T never appears).
+- **Navigation:** from a part, down to its tests and milestones and across to the other inputs those wait on and their ETAs; from a milestone, up to everything feeding it and the decisive path. Each step opens its evidence.
+- **Propagation:** when an edge or an ETA changes (the motor slips), every open order whose path includes it is re-solved, and its engineer is alerted only if the right decision changed (§0.5).
+- **Still no invented demand:** the graph can show a test input with no order or ETA as a gap; Burn never orders from that alone.
+- **Graded against the world model:** Burn's edges are compared with the true `edges` in the synthetic world, split by how each link was revealed (stated, hinted, never written down).
 
 **Staleness.** Each claim kind has a re-confirmation horizon. A stale fact stays in the plan but becomes a gap that can trigger a question if it could flip the decision. The card shows the age of every assumption it relies on. Age changes what Burn asks and shows, never how much a fact counts.
 
@@ -274,7 +292,7 @@ For a confirmed demand, Burn schedules backwards to a **latest-placement window*
 anchor:   a Xometry charge in Ramp at time T
 text:     the engineer's part entry (or, for history, a reconstruction from the
           Xometry order line, file name and nearest messages, marked reconstructed)
-window:   context related to the part, available before T, over ~30 days,
+window:   the part's graph neighbourhood and its evidence as known before T, over ~30 days,
           bucketed into bands before T: 0–1, 1–3, 3–7, 7–14, 14–30 days (the heat map)
 inputs:   attributes of that context (below)
 label:    the tier chosen, from the matching Xometry order (Ramp's amount alone doesn't give it)
@@ -310,7 +328,7 @@ label:    the tier chosen, from the matching Xometry order (Ramp's amount alone 
 - **Browser extension:** fills Xometry, reads back tiers, verifies and places.
 - **Ramp:** request, approval, card, booking, item receipt (Ramp's own UI).
 - **Slack:** questions to the person who knows; slip alerts; supply-chain visibility.
-- **Web (evidence and audit):** evidence per claim (access-scoped), the decisive dependency path, assembly readiness and slack, milestone value-policy settings, order history and audit.
+- **Web (evidence and audit):** the navigable company dependency graph, evidence per edge and claim (access-scoped), the decisive dependency path, assembly readiness and slack, milestone value-policy settings, order history and audit.
 
 ## 12. Validation and synthetic data
 
@@ -331,6 +349,8 @@ label:    the tier chosen, from the matching Xometry order (Ramp's amount alone 
 14. Training: a fact that became available after T never appears in that example's inputs.
 15. Training: a Ramp charge with no confident link to context is excluded and counted in the link rate.
 16. Habit data sparse or contrary to policy: abstain or show the difference; policy governs.
+17. Graph: a slip in one input re-solves every open order whose path includes it; only orders whose right decision changed raise an alert.
+18. Graph: a link that was never written down stays unknown, and is reported as missed when scored against the world model's true edges.
 
 **Synthetic data for the demo and training.** All context except Slack and the live Ramp order is generated:
 - **Example company:** **Flintlock Robotics**, a fictional humanoid robotics startup of **~60 people** in **California** (Pacific time), ordering from **Xometry's US site** (Owen's decisions). It is at a stage of its robot generation where custom CNC parts dominate (actuator housings, brackets, shafts, fixtures), since Burn handles only custom CNC parts on Xometry. The hip actuator, spin test and EVT/DVT builds are part of its humanoid program. The order history covers all of Flintlock's purchasing across vendors (fasteners, electronics, PCBs, motors, tools, raw stock, other custom parts) so the context is realistic; Burn acts only on the custom CNC orders on Xometry, and the demo uses those.
@@ -364,7 +384,7 @@ Slack is mock data shaped like Slack API responses, read by the existing connect
 ## 13. Phased plan (design phases, not build tickets)
 
 1. **Decision core:** demand, quote snapshot, milestone policy, time semantics, same-world comparison, dominance, break-even. Cases A–C.
-2. **Context:** part entry, retrieval, typed claims, acceptance, staleness, gaps and the question loop. Cases D–E.
+2. **Context:** company dependency graph (continuous extraction, resolution, acceptance, history, navigation, propagation), part entry to node, staleness, gaps and the question loop. Cases D–E.
 3. **Ordering:** Xometry extension (fill, read back, verify, place), frozen spec, Ramp request / approval / card / booking.
 4. **After placement:** tracking, slip re-check, delivery and first-use taps, Ramp item receipt.
 5. **Learning and synthetic data:** world-script generator, backfill, context-attribute model, link-rate reporting.
@@ -374,7 +394,7 @@ Slack is mock data shaped like Slack API responses, read by the existing connect
 | Area | Keep | Change | Known defects |
 |---|---|---|---|
 | Ingestion (`server/connectors`, `server/ingest`) | Slack/ICS connectors, per-channel cursors | Add Jira, meeting-note and Xometry/Ramp history imports; immutable, access-scoped revisions | — |
-| Extraction (`server/graph/extract.js`) | Cited edges, closed key set | Typed claims with both time keys; retrieval anchored on the part entry | Edges go into the plan without acceptance |
+| Extraction (`server/graph/extract.js`) | Cited edges, closed key set | Typed claims with both time keys; a persistent company-wide graph built continuously (§6.1) | Edges go into the plan without acceptance |
 | Engine (`src/graph/engine.js`) | DAG scheduling, OOO windows, bookings, critical path | Calendars; same-world comparison; dominance and break-even | Unknown duration defaults to 1 day; cycles don't block; `idleCost` prices people-days |
 | Money (`src/decisions.js`) | — | Replace hardcoded `blocked`/`slack`/`chain` and the $500 approval policy with owner value policies and Ramp approval | $1,100 × people × days presented as a cost |
 | Requests (`server/store.js`) | Lifecycle, revisions, audit | Order states (§4), frozen spec, Ramp links | Draft POs are superseded by Ramp |
@@ -391,6 +411,7 @@ Slack is mock data shaped like Slack API responses, read by the existing connect
 | v6 | The engineer's manager is the approver | Owen |
 | v7 | Burn runs the order: extension fills the vendor page, frozen spec verified by read-back, Burn places the order | Owen |
 | v8 | Xometry only; part entry kicks off every order; Ramp owns approval, card and booking; supply chain is a context source; learning on context attributes with a time-band heat map; synthetic world script | Owen |
+| v9 | Company-wide dependency graph built continuously from every source; orders navigate it instead of a per-order search and context record | Owen |
 
 Superseded and removed in v8: the quote-page-only entry; Slack approval cards; Burn's own auto-approval settings; supply chain as approver or placer; vendor-reliability learning as phase 1; the BOM. Settled joint positions that remain: valuation order and no gating fraction; scenarios before probabilities; authority-based claim acceptance; one question at a time; working-day worked example; no per-project agents; habit is advisory; outcome signals are diagnostics.
 

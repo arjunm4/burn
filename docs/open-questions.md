@@ -25,12 +25,13 @@ Not needed for the demo: every external service is mocked (architecture §2.18).
 |---|---|---|
 | B1 | What fraction of past Ramp charges can be linked confidently to Slack context and a Xometry order? | Measure on synthetic data first; report the link rate |
 | B3 | What is the first-use signal: an engineer tap, or something already recorded (Jira, an assembly log)? | Engineer tap for v1 |
-| B5 | Who builds the remaining pieces: part-entry screen and recommendation card, automatic placement and bookkeeping, training and heat map? | Open (see Answered for what's assigned) |
+| B5 | Who builds the remaining pieces: the company dependency graph (tonight), part-entry screen and recommendation card, automatic placement and bookkeeping, training and heat map? | Open (see Answered for what's assigned) |
 
 ## Answered
 
 | Question | Answer | Where |
 |---|---|---|
+| Per-order search, or a persistent graph? | One company-wide dependency graph, built continuously from every source; orders navigate it. Built tonight | architecture §2.1, §6.1 |
 | Do we need a BOM? | No; the demand anchors the decision | architecture §2.3 |
 | Who approves? | The engineer's manager, in Ramp | architecture §2.12 |
 | Is supply chain in the purchase? | No; a context source and tracking | architecture §2.13 |
