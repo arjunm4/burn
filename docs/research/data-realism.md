@@ -6,6 +6,48 @@ Date: 2026-11-10. Compiled from four research passes: Slack messages, tickets, m
 
 Related: [`../architecture.md`](../architecture.md) §12 (world script and data layout), [`startup-purchasing.md`](startup-purchasing.md).
 
+## Rescaled for Flintlock (60 people, California, Xometry US) — use these numbers
+
+Researched 2026-11-10 after the company was set to ~60 people in California ordering from Xometry's US site. **Where these differ from the sections below (sized for 15–40 people), these take precedence.** Mostly judgement (J); evidence (E) linked.
+
+**Org (sums to 60, J):** Leadership 3 (CEO, CTO, VP Hardware) · Mechanical 15 (actuators 5, legs 4, arms and hands 3, torso/structures/battery 3) · Electrical 6 · Firmware 5 · Controls/locomotion 5 · ML/autonomy 5 · Software infra/sim 3 · Test and reliability 4 (dyno, life test, fixtures owner) · Technicians/build 4 · Manufacturing/NPI 2 · Supply chain 3 (Head of Supply Chain, Senior NPI Buyer, Buyer/Planner) · Program (TPM) 2 · Ops/finance/people 3. Manager span 4–7. E: humanoid postings show a "Hands Team" ([1X](https://1x.tech/open-positions/staff-mechanical-engineer-hands-team-2)), an actuation group ([Apptronik](https://job-boards.greenhouse.io/apptronik/jobs/5739881004)), "Senior NPI Buyer" ([Apptronik](https://builtin.com/job/npi-buyer/9140500)) and a mechanical supply manager covering CNC ([Figure](https://job-boards.greenhouse.io/figureai/jobs/4323471006)).
+
+**CNC orders (J; scale with mech + test headcount, ~6 → ~20):**
+| Metric | 15–40 people | Flintlock (60) |
+|---|---|---|
+| Orders/week baseline | 2–4 | 8–14 |
+| Burst (3 weeks before EVT/DVT) | 2–3× | 20–30/week |
+| Quiet/holiday weeks | 0–1 | 3–5 |
+| Total over ~39 weeks | ~100–150 | 400–550 |
+| Lines per order | 1–2 | 1–6, median 2 |
+| Orderers | 4–8 | 16–22; two buyers place ~40%; 3–4 heavy engineers |
+| Tier mix Exp/Std/Econ | 15–25/55–65/15–25% | 20–30/50–60/15–20%; expedite 40–50% in burst weeks |
+| Revisions | 25–30% | 30–40% |
+| Median order; tail | $250–400; $2–4k | $600–900; $8–15k |
+| 9-month spend | $45–90k | $400–700k |
+
+With buyers in place, large orders may go on PO/net-30 rather than card (unverified how that shows in Ramp).
+
+**Communication (J):** Slack 1,800–3,000 messages/day including DMs (30–50/person); public channels 700–1,100/day; 70–110 channels, 35–45 active weekly; #mech 60–120/day, #supply-chain/#procurement 25–50, per-subsystem channels 15–40, #build-evt 40–150 in build weeks; top 20% of people write ~60%, 15–20% lurk. Generating only the 8–12 purchasing-relevant channels: ~150–300/day, ~30–55k over 9 months. Jira: 250–400 new tickets/month across 6–8 projects.
+
+**Meetings per week (J):** team standups 25–35 (mostly unrecorded); supply-chain sync 1; supply chain + mech 1–2 (daily in build weeks); program review 1; design reviews 2–4; vendor calls 2–4; leadership 1; all-hands every two weeks. ≈12–18 recorded meetings/week (450–700 over the window) plus 2–3 gate reviews.
+
+**Xometry US:**
+| Topic | Finding |
+|---|---|
+| Expedite CNC | 3–4 business days (E, [FAQ](https://www.xometry.com/resources/blog/answers-to-most-frequently-asked-questions/)) |
+| Standard CNC | ~3–7 business days per a search summary of the help article (unconfirmed); use 5–9 for housings (J) |
+| Economy (domestic) | Not published; use 10–15 business days, 10–20% cheaper (J) |
+| International Economy | Cheapest and longest, not for ITAR, duties may apply (E, [blog](https://www.xometry.com/resources/blog/lead-time-options/)); 15–25 business days (J) |
+| Tier scope | Order-level: Expedite applies to every part (E, via search summary) |
+| Shipping | Free ground on Standard/Economy CNC, usually FedEx; transit to California 1–5 business days (J) |
+| Sales tax | Added separately to prices (E, [help](https://community.xometry.com/kb/articles/644)); California taxes machining as fabrication labour (E, [CDTFA Pub 108](https://cdtfa.ca.gov/formspubs/pub108/taxable-labor.htm)). Show ~9.1–10.25% tax on parts, shipping untaxed (rates unverified) |
+| Quote/order IDs | Format not found publicly (unverified) |
+
+**California/Pacific:** America/Los_Angeles; PST (-0800) until 8 Mar 2026, PDT (-0700) until 1 Nov, then PST. Core hours 09:00–18:30 PT; supplier and Xometry emails often 05:00–15:00 PT. Holidays in the window: Presidents' Day 16 Feb (often worked), Memorial Day 25 May, Juneteenth 19 Jun (mixed), Independence Day observed Fri 3 Jul (quiet week), Labor Day 7 Sep; orders clump on the Thu/Fri before. Xometry, Inc. is in North Bethesda MD ([10-K](https://capedge.com/filing/1657573/0000950170-25-026655/10K-2024FY)); use descriptor variants like `XOMETRY INC`, `XOMETRY.COM` with `NORTH BETHESDA MD` or `DERWOOD MD` (J). Ramp: `currency_code: "USD"`, tax included in the charge.
+
+**Still unverified:** Standard/Economy day counts, ID formats, card descriptor and MCC, whether Xometry collects CA tax on every order, Bay Area tax rates, all volume numbers, the org split. One real Xometry quote PDF and one card statement line would settle the Xometry items.
+
 ## Principles across all sources (J)
 
 - **Inconsistency is realism.** Sources disagree (Slack says 7075, the meeting decides 6061; a ticket's due date is stale). Dates move, and corrections arrive late.
