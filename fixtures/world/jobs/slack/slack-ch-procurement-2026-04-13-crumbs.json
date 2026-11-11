@@ -1,0 +1,348 @@
+{
+  "job_id": "slack-ch-procurement-2026-04-13-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 61,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-04-13",
+    "end": "2026-04-19"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-rachel",
+      "name": "Rachel Goldberg",
+      "display_name": "rachel",
+      "slack_id": "U07FLK0RACH",
+      "title": "Accounting and Finance Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno. This week: Andre: EVT hip hits the 120 C winding limit after ~4 min at 60 Nm, spec says 10 min.",
+    "Ongoing: Absolute encoder on the knee output glitches when the motor runs above 8 A",
+    "Ongoing: Getting dyno and gantry logs into one place with consistent timestamps"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1776099414.438266",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-000702"
+      ],
+      "brief": "Quote Q-2459796-1 for FL-BAT-1685: standard $596.50, 9 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-04-30",
+          "quote_id": "Q-2459796-1",
+          "price_usd": 596.5,
+          "lead_days": 9
+        }
+      },
+      "must_mention": [
+        "Q-2459796-1",
+        "FL-BAT-1685",
+        "4/30"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Q-2459796-1 for FL-BAT-1685, standard $596.50, 9 BD, need it by 4/30"
+    },
+    {
+      "ts": "1776109527.755300",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-000734"
+      ],
+      "brief": "1225: need 4 by 2026-06-02",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 4,
+          "by": "2026-06-02"
+        }
+      },
+      "must_mention": [
+        "1225",
+        "6/2"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "1225 need 4 by 6/2"
+    },
+    {
+      "ts": "1776185753.611653",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-000718"
+      ],
+      "brief": "Quote Q-2461210-1 for FL-HIP-1065: standard $371.06, 9 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-05-04",
+          "quote_id": "Q-2461210-1",
+          "price_usd": 371.06,
+          "lead_days": 9
+        }
+      },
+      "must_mention": [
+        "Q-2461210-1",
+        "FL-HIP-1065",
+        "mon the 4th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Q-2461210-1 for FL-HIP-1065 back, standard $371.06 9 BD, need 12 by mon the 4th 😬"
+    },
+    {
+      "ts": "1776190612.103615",
+      "user": "p-talia",
+      "thread_ts": "1776185753.611653",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "yeah that works for me 🙏"
+    },
+    {
+      "ts": "1776195157.667974",
+      "user": "p-carlos",
+      "thread_ts": "1776185753.611653",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "price is same as last time btw"
+    },
+    {
+      "ts": "1776200150.175870",
+      "user": "p-samir",
+      "thread_ts": "1776185753.611653",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "agreed"
+    },
+    {
+      "ts": "1776284307.146403",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-000749"
+      ],
+      "brief": "Quote Q-2463658-1 for FL-TST-2554: standard $393.54, 9 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-05-01",
+          "quote_id": "Q-2463658-1",
+          "price_usd": 393.54,
+          "lead_days": 9
+        }
+      },
+      "must_mention": [
+        "Q-2463658-1",
+        "FL-TST-2554",
+        "fri the 1st"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Q-2463658-1 for FL-TST-2554, standard $393.54, 9 BD. need 1 by fri the 1st"
+    },
+    {
+      "ts": "1776284753.592460",
+      "user": "p-rachel",
+      "thread_ts": "1776284307.146403",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "is that the one with the anodize or bare"
+    },
+    {
+      "ts": "1776366804.408107",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-000760"
+      ],
+      "brief": "Quote Q-2464705-1 for FL-TST-2878: standard $1046.67, 9 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-05-05",
+          "quote_id": "Q-2464705-1",
+          "price_usd": 1046.67,
+          "lead_days": 9
+        }
+      },
+      "must_mention": [
+        "Q-2464705-1",
+        "FL-TST-2878",
+        "5/5"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Q-2464705-1 for FL-TST-2878, standard $1046.67, 9 BD, qty 3 needed by 5/5"
+    },
+    {
+      "ts": "1776369352.560182",
+      "user": "p-andre",
+      "thread_ts": "1776366804.408107",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "last jig order we got from them took about as long as quoted, maybe a day over"
+    }
+  ]
+}

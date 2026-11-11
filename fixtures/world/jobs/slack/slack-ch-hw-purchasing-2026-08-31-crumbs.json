@@ -38,6 +38,63 @@
       }
     },
     {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
       "id": "p-jade",
       "name": "Jade Thompson",
       "display_name": "jade.t",
@@ -52,25 +109,6 @@
         "hedging": "low",
         "quirks": [
           "no capitals or end punctuation ever"
-        ]
-      }
-    },
-    {
-      "id": "p-luis",
-      "name": "Luis Navarro",
-      "display_name": "luis.n",
-      "slack_id": "U07FLK0LUIS",
-      "title": "Mechanical Technician",
-      "style": {
-        "case": "lower",
-        "punctuation": "light",
-        "typos": "lots",
-        "emoji": "some",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": [
-          "fixes typos with *word",
-          "double-sends instead of editing"
         ]
       }
     },
@@ -90,6 +128,25 @@
         "quirks": [
           "fixes typos with *word",
           "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
         ]
       }
     },
@@ -148,13 +205,36 @@
   ],
   "messages": [
     {
-      "ts": "1788366781.566637",
+      "ts": "1788366781.310398",
       "user": "p-nadia",
       "thread_ts": null,
       "events": [
-        "ev-001644"
+        "ev-001864"
       ],
-      "brief": "port plate: need 5 by 2026-09-25",
+      "brief": "port plate: need 5 by 2026-09-30",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 5,
+          "by": "2026-09-30"
+        }
+      },
+      "must_mention": [
+        "port plate",
+        "9/30"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "port plate need 5 by 9/30"
+    },
+    {
+      "ts": "1788445261.963145",
+      "user": "p-nadia",
+      "thread_ts": "1788366781.310398",
+      "events": [
+        "ev-003530"
+      ],
+      "brief": "Correction: port plate: need 5 by 2026-09-25",
       "claim": {
         "kind": "needs",
         "value": {
@@ -164,20 +244,54 @@
       },
       "must_mention": [
         "port plate",
-        "fri 9/25"
+        "fri the 25th"
       ],
       "pressure": "high",
-      "length": "short",
-      "text": "need 5 port plate by fri 9/25, can someone get a quote going asap?"
+      "length": "medium",
+      "text": "correction*, port plate need 5 by fri the 25th. sorry"
     },
     {
-      "ts": "1788459877.830435",
+      "ts": "1788448882.428643",
+      "user": "p-priya",
+      "thread_ts": "1788366781.310398",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I had to double-check which month you meant."
+    },
+    {
+      "ts": "1788459877.561391",
       "user": "p-jade",
       "thread_ts": null,
       "events": [
-        "ev-001652"
+        "ev-001872"
       ],
-      "brief": "load cell plate: need 6 by 2026-10-23 for Fixture install and shakedown: Grip load cell plate",
+      "brief": "FL-TST-2443: need 6 by 2026-10-27 for Fixture install and shakedown: Grip load cell plate",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-10-27"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2443",
+        "Fixture install and shakedown: Grip load cell plate",
+        "10/27"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "FL-TST-2443 need 6 by 10/27 for Fixture install and shakedown: Grip load cell plate"
+    },
+    {
+      "ts": "1788462817.473901",
+      "user": "p-jade",
+      "thread_ts": "1788459877.561391",
+      "events": [
+        "ev-003595"
+      ],
+      "brief": "Correction: FL-TST-2443: need 6 by 2026-10-23 for Fixture install and shakedown: Grip load cell plate",
       "claim": {
         "kind": "needs",
         "value": {
@@ -186,40 +300,40 @@
         }
       },
       "must_mention": [
-        "load cell plate",
+        "FL-TST-2443",
         "Fixture install and shakedown: Grip load cell plate",
         "10/23"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "load cell plate for Fixture install and shakedown: Grip load cell plate, need 6 by 10/23"
+      "length": "short",
+      "text": "FL-TST-2443 need 6 by 10/23 for Fixture install and shakedown: Grip load cell plate, fixed"
     },
     {
-      "ts": "1788464498.338435",
-      "user": "p-luis",
-      "thread_ts": "1788459877.830435",
+      "ts": "1788465762.492571",
+      "user": "p-callum",
+      "thread_ts": "1788459877.561391",
       "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@zoe.c this is your fixture right"
+    },
+    {
+      "ts": "1788468831.204658",
+      "user": "p-carlos",
+      "thread_ts": "1788459877.561391",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
       "must_mention": [],
       "length": "one_word",
-      "text": "hm not sure thats enough time tbh"
+      "text": "Yep, makes sense."
     },
     {
-      "ts": "1788465736.075819",
-      "user": "p-arjun",
-      "thread_ts": "1788459877.830435",
-      "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "i dont think we need all of them that early, lets see what the fixture really needs first"
-    },
-    {
-      "ts": "1788484410.138841",
+      "ts": "1788484410.877605",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-001713"
+        "ev-001935"
       ],
       "brief": "FL-STR-1566: need 8 by 2026-09-29 for Design iteration bench trial for Leg DVT build: Spine tube end fitting",
       "claim": {
@@ -237,20 +351,43 @@
         "FL-STR-1554",
         "FL-STR-1582",
         "FL-STR-1514",
-        "tues the 29th"
+        "9/29"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "FL-STR-1566 x8 for Design iteration bench trial for Leg DVT build: Spine tube end fitting, need by tues the 29th. same order as FL-STR-1560 FL-STR-1507 FL-STR-1554 FL-STR-1582 FL-STR-1514"
+      "length": "medium",
+      "text": "FL-STR-1566 need 8 by 9/29 for Design iteration bench trial for Leg DVT build: Spine tube end fitting. same batch as FL-STR-1560 FL-STR-1507 FL-STR-1554 FL-STR-1582 FL-STR-1514 i think"
     },
     {
-      "ts": "1788535167.844033",
+      "ts": "1788535167.204928",
       "user": "p-wei",
       "thread_ts": null,
       "events": [
-        "ev-001756"
+        "ev-001983"
       ],
-      "brief": "the part: need 12 by 2026-10-06",
+      "brief": "the part: need 12 by 2026-10-02",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-02"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "10/2"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "the part, need 12 by 10/2"
+    },
+    {
+      "ts": "1788537447.650028",
+      "user": "p-wei",
+      "thread_ts": "1788535167.204928",
+      "events": [
+        "ev-003531"
+      ],
+      "brief": "Correction: the part: need 12 by 2026-10-06",
       "claim": {
         "kind": "needs",
         "value": {
@@ -260,11 +397,44 @@
       },
       "must_mention": [
         "the part",
-        "10/6"
+        "tues the 6th"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "the part, need 12 by 10/6. pls expedite if it makes sense"
+      "text": "Correction: the part, need 12 by tues the 6th."
+    },
+    {
+      "ts": "1788542589.343347",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-001908"
+      ],
+      "brief": "1153: need 6 by 2026-09-25",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-09-25"
+        }
+      },
+      "must_mention": [
+        "1153",
+        "9/25"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "1153 need 6 by 9/25"
+    },
+    {
+      "ts": "1788546271.081086",
+      "user": "p-idris",
+      "thread_ts": "1788542589.343347",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "is that the same 6 from last week or new ones"
     }
   ]
 }

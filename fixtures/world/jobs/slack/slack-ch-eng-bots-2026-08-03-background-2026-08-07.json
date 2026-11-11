@@ -1,0 +1,326 @@
+{
+  "job_id": "slack-ch-eng-bots-2026-08-03-background-2026-08-07",
+  "source": "slack",
+  "status": "blank",
+  "priority": 30,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-eng-bots",
+    "name": "eng-bots",
+    "slack_id": "C07FLK0BOTS",
+    "purpose": "GitHub, Jira and CI notifications"
+  },
+  "week": {
+    "start": "2026-08-03",
+    "end": "2026-08-09"
+  },
+  "people": [
+    {
+      "id": "p-aisha",
+      "name": "Aisha Rahman",
+      "display_name": "aisha",
+      "slack_id": "U07FLK0AISH",
+      "title": "ML Engineer, perception",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-elena",
+      "name": "Elena Petrova",
+      "display_name": "elena",
+      "slack_id": "U07FLK0ELEN",
+      "title": "Software Infrastructure Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-felix",
+      "name": "Felix Wagner",
+      "display_name": "felix",
+      "slack_id": "U07FLK0FELI",
+      "title": "Software Engineer, simulation",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-gabriel",
+      "name": "Gabriel Moreau",
+      "display_name": "gabriel.m",
+      "slack_id": "U07FLK0GABR",
+      "title": "Controls Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-marcus",
+      "name": "Marcus Adeyemi",
+      "display_name": "marcus",
+      "slack_id": "U07FLK0MARC",
+      "title": "CTO",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-mateo",
+      "name": "Mateo Silva",
+      "display_name": "mateo",
+      "slack_id": "U07FLK0MATE",
+      "title": "Embedded Software Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators. This week: Jonas starts FOC v2: 20 kHz current loop, thermal model from Nadia.",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Farah: bend radius at the knee is 8 mm, cable rated for 7.5x OD dynamic, we are at 3x.",
+    "Ongoing: Gait controller tuning for the investor demo on the gait gantry. This week: Ten consecutive steps at 0.3 m/s; ankle oscillates at heel strike.",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1786116685.553275",
+      "user": "p-gabriel",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786116784.869411",
+      "user": "p-felix",
+      "thread_ts": "1786116685.553275",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786120797.356519",
+      "user": "p-mateo",
+      "thread_ts": "1786116685.553275",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786121959.890162",
+      "user": "p-farah",
+      "thread_ts": "1786116685.553275",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786125935.619552",
+      "user": "p-elena",
+      "thread_ts": "1786116685.553275",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786130681.154431",
+      "user": "p-mei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about this: Ingrid warns the leg drop campaign slipped; demo date is hard.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786135431.164864",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Bao sees 30 V overshoot on the phase node at 48 V bus; MOSFETs rated 80 V.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786145241.910778",
+      "user": "p-aisha",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786147519.048734",
+      "user": "p-marcus",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: Rev 4 layout tightens the power loop; Farah approves for DVT.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786152034.263248",
+      "user": "p-gabriel",
+      "thread_ts": "1786147519.048734",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Rev 4 layout tightens the power loop; Farah approves for DVT.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786155164.530051",
+      "user": "p-felix",
+      "thread_ts": "1786147519.048734",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Rev 4 layout tightens the power loop; Farah approves for DVT.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786168138.403850",
+      "user": "p-jonas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    }
+  ]
+}

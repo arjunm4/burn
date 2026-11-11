@@ -57,25 +57,6 @@
       }
     },
     {
-      "id": "p-destiny",
-      "name": "Destiny Brooks",
-      "display_name": "destiny",
-      "slack_id": "U07FLK0DEST",
-      "title": "Assembly Technician",
-      "style": {
-        "case": "mixed",
-        "punctuation": "light",
-        "typos": "rare",
-        "emoji": "lots",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": [
-          "reacts with 🙏 and 😬",
-          "ends messages with an emoji"
-        ]
-      }
-    },
-    {
       "id": "p-diego",
       "name": "Diego Salcedo",
       "display_name": "diego",
@@ -111,6 +92,22 @@
       }
     },
     {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
       "id": "p-jade",
       "name": "Jade Thompson",
       "display_name": "jade.t",
@@ -125,25 +122,6 @@
         "hedging": "low",
         "quirks": [
           "no capitals or end punctuation ever"
-        ]
-      }
-    },
-    {
-      "id": "p-luis",
-      "name": "Luis Navarro",
-      "display_name": "luis.n",
-      "slack_id": "U07FLK0LUIS",
-      "title": "Mechanical Technician",
-      "style": {
-        "case": "lower",
-        "punctuation": "light",
-        "typos": "lots",
-        "emoji": "some",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": [
-          "fixes typos with *word",
-          "double-sends instead of editing"
         ]
       }
     },
@@ -167,24 +145,6 @@
       }
     },
     {
-      "id": "p-omar",
-      "name": "Omar Farouk",
-      "display_name": "omar.f",
-      "slack_id": "U07FLK0OMAR",
-      "title": "Technical Program Manager",
-      "style": {
-        "case": "mixed",
-        "punctuation": "light",
-        "typos": "rare",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "high",
-        "quirks": [
-          "\"i think\", \"probably\", \"not 100% sure but\""
-        ]
-      }
-    },
-    {
       "id": "p-owen",
       "name": "Owen Halloran",
       "display_name": "owen",
@@ -200,22 +160,6 @@
         "quirks": [
           "no capitals or end punctuation ever"
         ]
-      }
-    },
-    {
-      "id": "p-renee",
-      "name": "Renee Dubois",
-      "display_name": "renee",
-      "slack_id": "U07FLK0RENE",
-      "title": "Mechanical Engineer",
-      "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": []
       }
     },
     {
@@ -238,25 +182,6 @@
       }
     },
     {
-      "id": "p-talia",
-      "name": "Talia Rosen",
-      "display_name": "talia",
-      "slack_id": "U07FLK0TALI",
-      "title": "Buyer/Planner",
-      "style": {
-        "case": "mixed",
-        "punctuation": "light",
-        "typos": "rare",
-        "emoji": "lots",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": [
-          "reacts with 🙏 and 😬",
-          "ends messages with an emoji"
-        ]
-      }
-    },
-    {
       "id": "p-tomas",
       "name": "Tomas Ferreira",
       "display_name": "tomas",
@@ -271,6 +196,25 @@
         "hedging": "high",
         "quirks": [
           "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
         ]
       }
     }
@@ -288,11 +232,32 @@
   ],
   "messages": [
     {
-      "ts": "1790713920.728638",
+      "ts": "1790617778.646602",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-002186"
+      ],
+      "brief": "Order XO-5520478 placed, promised 2026-10-09",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-10-09"
+      },
+      "must_mention": [
+        "XO-5520478",
+        "knee cover",
+        "10/9"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "XO-5520478 is placed for the knee cover, promised 10/9. we need it, so keep an eye on it"
+    },
+    {
+      "ts": "1790713920.110577",
       "user": "p-samir",
       "thread_ts": null,
       "events": [
-        "ev-001940"
+        "ev-002182"
       ],
       "brief": "Order XO-5523362 placed, promised 2026-10-22",
       "claim": {
@@ -302,88 +267,68 @@
       "must_mention": [
         "XO-5523362",
         "that adapter plate",
-        "10/22"
+        "thurs the 22nd"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "XO-5523362 placed for that adapter plate, promised 10/22"
+      "length": "short",
+      "text": "XO-5523362 placed for that adapter plate, promised thurs the 22nd"
     },
     {
-      "ts": "1790718808.218257",
-      "user": "p-talia",
-      "thread_ts": "1790713920.728638",
+      "ts": "1790714751.528349",
+      "user": "p-beth",
+      "thread_ts": "1790713920.110577",
       "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "brief": "reply (answers) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "is that the std lead or did they quote expedite? 🙏"
+      "text": "Thanks, I'll flag it to the team and ask for status mid week."
     },
     {
-      "ts": "1790723499.765564",
-      "user": "p-nora",
-      "thread_ts": "1790713920.728638",
+      "ts": "1790717028.303873",
+      "user": "p-ingrid",
+      "thread_ts": "1790713920.110577",
       "events": [],
       "brief": "reply (agrees) in the thread about: the message above",
       "must_mention": [],
-      "length": "short",
-      "text": "Good, that gives us a little room before the hip build."
+      "length": "one_word",
+      "text": "Good."
     },
     {
-      "ts": "1790724433.390976",
-      "user": "p-jade",
-      "thread_ts": "1790713920.728638",
+      "ts": "1790717727.616818",
+      "user": "p-samir",
+      "thread_ts": "1790713920.110577",
       "events": [],
-      "brief": "reply (tags someone else) in the thread about: the message above",
+      "brief": "reply (jokes) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "@carlos will need a spot on the shelf for it"
+      "text": "i'll believe it when it's on the dock"
     },
     {
-      "ts": "1790726401.897300",
-      "user": "p-luis",
+      "ts": "1790721693.023454",
+      "user": "p-jade",
       "thread_ts": null,
       "events": [
-        "ev-001684"
+        "ev-002054"
       ],
-      "brief": "knee dyno coupling arrived",
+      "brief": "clamp ring arrived (12)",
       "claim": {
         "kind": "stock",
-        "value": 11
+        "value": 12
       },
       "must_mention": [
-        "knee dyno coupling",
-        "11"
+        "clamp ring",
+        "12"
       ],
-      "pressure": "elevated",
-      "length": "medium",
-      "text": "knee dyno coupling arrived, 11 in the box"
-    },
-    {
-      "ts": "1790760661.728998",
-      "user": "p-luis",
-      "thread_ts": "1790726401.897300",
-      "events": [
-        "ev-003234"
-      ],
-      "brief": "Correction: knee dyno coupling arrived (10)",
-      "claim": {
-        "kind": "stock",
-        "value": 10
-      },
-      "must_mention": [
-        "knee dyno coupling",
-        "10"
-      ],
-      "pressure": "elevated",
+      "pressure": "high",
       "length": "short",
-      "text": "*knee dyno coupling arrived (10) not 11, miscounted the bag"
+      "text": "clamp ring arrived 12 on the shelf"
     },
     {
-      "ts": "1790778480.546843",
+      "ts": "1790778480.273594",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-001629"
+        "ev-001849"
       ],
       "brief": "dyno coupling in use",
       "claim": {
@@ -395,15 +340,45 @@
         "9/29"
       ],
       "pressure": "elevated",
-      "length": "medium",
-      "text": "dyno coupling is on the rig now, done 9/29 🙏"
+      "length": "short",
+      "text": "dyno coupling in use as of 9/29 🙏"
     },
     {
-      "ts": "1790789739.509929",
+      "ts": "1790782443.439277",
+      "user": "p-nora",
+      "thread_ts": "1790778480.273594",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I thought the coupling was still on the bench for realignment, can you double check?"
+    },
+    {
+      "ts": "1790784949.555294",
+      "user": "p-gwen",
+      "thread_ts": "1790778480.273594",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Same here, it was on the bench last I saw."
+    },
+    {
+      "ts": "1790787836.332173",
+      "user": "p-beth",
+      "thread_ts": "1790778480.273594",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Will look at the log."
+    },
+    {
+      "ts": "1790789739.183843",
       "user": "p-carlos",
       "thread_ts": null,
       "events": [
-        "ev-001899"
+        "ev-002138"
       ],
       "brief": "1146 arrived (12)",
       "claim": {
@@ -415,65 +390,15 @@
         "12"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "1146 arrived, 12 of them!!"
-    },
-    {
-      "ts": "1790790767.288051",
-      "user": "p-talia",
-      "thread_ts": "1790789739.509929",
-      "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
-      "must_mention": [],
       "length": "short",
-      "text": "are they the right rev? last batch wasnt 😬"
+      "text": "1146 ARRIVED, 12 of them!!"
     },
     {
-      "ts": "1790790784.290983",
-      "user": "p-destiny",
-      "thread_ts": null,
-      "events": [
-        "ev-001752"
-      ],
-      "brief": "2259 arrived (3)",
-      "claim": {
-        "kind": "stock",
-        "value": 3
-      },
-      "must_mention": [
-        "2259",
-        "3"
-      ],
-      "pressure": "low",
-      "length": "medium",
-      "text": "2259 arrived (3), putting them on the shelf"
-    },
-    {
-      "ts": "1790793029.753163",
-      "user": "p-beth",
-      "thread_ts": "1790789739.509929",
-      "events": [],
-      "brief": "reply (tags someone else) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "@jade.t can you confirm the rev on the tag?"
-    },
-    {
-      "ts": "1790796194.710878",
-      "user": "p-jade",
-      "thread_ts": "1790789739.509929",
-      "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "tag says the new rev, checked at the dock"
-    },
-    {
-      "ts": "1790800424.943401",
+      "ts": "1790800424.049097",
       "user": "p-jade",
       "thread_ts": null,
       "events": [
-        "ev-001835"
+        "ev-002070"
       ],
       "brief": "hip cable clamp arrived (5)",
       "claim": {
@@ -486,44 +411,14 @@
       ],
       "pressure": "high",
       "length": "medium",
-      "text": "hip cable clamp arrived (5), 5 in the bag with the packing slip"
+      "text": "hip cable clamp arrived, 5 in the box, put them in the kitting bin"
     },
     {
-      "ts": "1790801938.458429",
-      "user": "p-nora",
-      "thread_ts": "1790800424.943401",
-      "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Thank you Jade, I will let the leg team know they are here."
-    },
-    {
-      "ts": "1790805427.310446",
-      "user": "p-omar",
-      "thread_ts": "1790800424.943401",
-      "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "i think the packing slip also had a note about the finish, probably worth a look before anyone uses them"
-    },
-    {
-      "ts": "1790810171.642959",
-      "user": "p-jade",
-      "thread_ts": "1790800424.943401",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "what note"
-    },
-    {
-      "ts": "1790889056.584831",
+      "ts": "1790889056.536416",
       "user": "p-owen",
       "thread_ts": null,
       "events": [
-        "ev-001694"
+        "ev-001919"
       ],
       "brief": "2103 arrived (24)",
       "claim": {
@@ -536,7 +431,7 @@
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "2103 arrived (24)"
+      "text": "2103 arrived 24"
     },
     {
       "ts": "1790890258.314460",
@@ -555,14 +450,24 @@
         "thurs the 15th"
       ],
       "length": "short",
-      "text": "Encoder kit for hand and wrist (wrist clamp) moved out again, now thurs the 15th"
+      "text": "Encoder kit for hand and wrist (wrist clamp) moved out to thurs the 15th, vendor slipped it"
     },
     {
-      "ts": "1790965500.365997",
+      "ts": "1790893428.218703",
+      "user": "p-samir",
+      "thread_ts": "1790889056.536416",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "i'd count those in the cage first, last time the box count was off"
+    },
+    {
+      "ts": "1790965500.047570",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-001836"
+        "ev-002071"
       ],
       "brief": "hip cable clamp in use",
       "claim": {
@@ -576,14 +481,14 @@
       ],
       "pressure": "high",
       "length": "short",
-      "text": "hip cable clamp in use for the build, done 10/2"
+      "text": "hip cable clamp is in use for the build now, as of 10/2, i think"
     },
     {
-      "ts": "1790987129.858309",
+      "ts": "1790987129.664136",
       "user": "p-carlos",
       "thread_ts": null,
       "events": [
-        "ev-001816"
+        "ev-002045"
       ],
       "brief": "2869 arrived (2)",
       "claim": {
@@ -595,59 +500,8 @@
         "2"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "2869 ARRIVED (2), both on the shelf!!"
-    },
-    {
-      "ts": "1790990459.070476",
-      "user": "p-beth",
-      "thread_ts": "1790987129.858309",
-      "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
       "length": "short",
-      "text": "Two is not enough for the build, as far as I understand it. We would need to check the BOM quantity again before we call this complete."
-    },
-    {
-      "ts": "1790991205.765496",
-      "user": "p-beth",
-      "thread_ts": "1790987129.858309",
-      "events": [],
-      "brief": "reply (will check later) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "I'll check the count in the morning."
-    },
-    {
-      "ts": "1790992697.203696",
-      "user": "p-renee",
-      "thread_ts": null,
-      "events": [
-        "ev-002074"
-      ],
-      "brief": "Order XO-5531401 placed, promised 2026-10-13",
-      "claim": {
-        "kind": "eta",
-        "value": "2026-10-13"
-      },
-      "must_mention": [
-        "XO-5531401",
-        "port plate",
-        "10/13"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "XO-5531401 placed for the port plate, promised 10/13"
-    },
-    {
-      "ts": "1790993535.524854",
-      "user": "p-gwen",
-      "thread_ts": "1790987129.858309",
-      "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Let's not assume the BOM is wrong. Receiving counted correctly and nobody has shown the demand number yet."
+      "text": "2869 ARRIVED, 2 total!!"
     }
   ]
 }

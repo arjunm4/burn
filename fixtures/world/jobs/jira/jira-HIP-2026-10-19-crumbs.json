@@ -52,6 +52,59 @@
           "no capitals or end punctuation ever"
         ]
       }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
     }
   ],
   "forbidden": [
@@ -62,47 +115,60 @@
   ],
   "tickets": [
     {
-      "key": "HIP-503",
+      "key": "HIP-501",
       "type": "Task",
-      "status": "Done",
-      "reporter": "p-nadia",
-      "assignee": "p-nadia",
+      "status": "In Progress",
+      "reporter": "p-tomas",
+      "assignee": "p-talia",
       "labels": [
         "procurement"
       ],
       "priority": "Medium",
-      "created": "2026-10-19T16:44:09-07:00",
-      "due_date": "2026-11-03",
-      "events": [],
-      "brief": "Order 2x Knee rear cover",
-      "must_mention": [],
-      "description_length": "long",
-      "summary": "Knee rear cover x2",
-      "description": "two covers for the knee, machined from the same stock as the front ones. need to confirm the screw bosses clear the wiring pass-through before we cut anything. wei is checking the wall thickness near the cable exit since that area looked thin on the last review. finish is whatever the other covers got so they match. no special inspection needed beyond a visual and the mounting hole check.",
+      "created": "2026-10-19T13:46:48-07:00",
+      "due_date": "2026-11-18",
+      "events": [
+        "ev-002683"
+      ],
+      "brief": "Order 3x Dyno chamber shaft feedthrough, 5x Dyno coupling, knee actuator / FL-TST-2145: need 3 by 2026-11-18",
+      "must_mention": [
+        "FL-TST-2145",
+        "wed the 18th"
+      ],
+      "description_length": "one_line",
+      "summary": "Order Dyno chamber shaft feedthrough x3, Dyno coupling knee actuator x5",
+      "description": "FL-TST-2145 need 3 by wed the 18th",
       "comments": [
         {
-          "id": "HIP-503-c1",
-          "by": "p-nadia",
-          "at": "2026-11-10T08:48:00-08:00",
-          "events": [
-            "ev-002242"
-          ],
-          "brief": "1146 in use",
-          "claim": {
-            "kind": "done",
-            "value": "2026-11-09"
-          },
-          "must_mention": [
-            "1146",
-            "the build",
-            "11/9"
-          ],
-          "body": "1146 in use for the build as of 11/9"
+          "id": "HIP-501-c1",
+          "by": "p-talia",
+          "at": "2026-10-20T11:58:04-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "Gentle push on this one 🙏"
+        },
+        {
+          "id": "HIP-501-c2",
+          "by": "p-wei",
+          "at": "2026-10-26T13:22:51-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "Still working it with the vendor, will post here when I have something."
+        },
+        {
+          "id": "HIP-501-c3",
+          "by": "p-talia",
+          "at": "2026-11-02T12:19:33-08:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "photos are in slack 🙏"
         }
       ]
     },
     {
-      "key": "HIP-506",
+      "key": "HIP-503",
       "type": "Task",
       "status": "Done",
       "reporter": "p-nadia",
@@ -114,48 +180,20 @@
       "created": "2026-10-20T15:17:50-07:00",
       "due_date": null,
       "events": [
-        "ev-002330"
+        "ev-002615"
       ],
       "brief": "Order 6x Knee flexspline clamp ring / flexspline clamp: need 6 by 2026-11-09",
       "must_mention": [
         "flexspline clamp",
-        "mon 11/9"
+        "11/9"
       ],
-      "description_length": "one_line",
-      "summary": "knee flexspline clamp ring x6",
-      "description": "need 6 flexspline clamp by mon 11/9",
-      "comments": [
-        {
-          "id": "HIP-506-c1",
-          "by": "p-nadia",
-          "at": "2026-10-26T10:58:19-07:00",
-          "events": [],
-          "brief": "background: any update?",
-          "must_mention": [],
-          "body": "any update?"
-        },
-        {
-          "id": "HIP-506-c2",
-          "by": "p-nadia",
-          "at": "2026-10-30T13:14:41-07:00",
-          "events": [],
-          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
-          "must_mention": [],
-          "body": "waiting on vendor"
-        },
-        {
-          "id": "HIP-506-c3",
-          "by": "p-nadia",
-          "at": "2026-11-03T16:38:12-08:00",
-          "events": [],
-          "brief": "background: question to the assignee",
-          "must_mention": [],
-          "body": "@nadia did the rings ship yet"
-        }
-      ]
+      "description_length": "medium",
+      "summary": "Order Knee flexspline clamp ring x6",
+      "description": "flexspline clamp need 6 by 11/9, i think same style as last time",
+      "comments": []
     },
     {
-      "key": "HIP-508",
+      "key": "HIP-505",
       "type": "Task",
       "status": "In Progress",
       "reporter": "p-owen",
@@ -167,7 +205,7 @@
       "created": "2026-10-21T12:10:08-07:00",
       "due_date": null,
       "events": [
-        "ev-002325"
+        "ev-002610"
       ],
       "brief": "Order 3x Dyno chamber shaft feedthrough, 1x Dyno shaft alignment jig, 8x Spin-test brake disc adapter / the part: need 3 by 2026-11-02 for the fit check",
       "must_mention": [
@@ -175,13 +213,23 @@
         "the fit check",
         "mon the 2nd"
       ],
-      "description_length": "medium",
-      "summary": "dyno feedthrough x3 + alignment jig + brake disc adapters",
-      "description": "3 chamber shaft feedthrough, 1 shaft alignment jig, 8 spin-test brake disc adapters. need 3 of the part by mon the 2nd for the fit check",
-      "comments": []
+      "description_length": "one_line",
+      "summary": "order dyno chamber shaft feedthrough, alignment jig, spin-test brake disc adapter",
+      "description": "the part need 3 by mon the 2nd for the fit check",
+      "comments": [
+        {
+          "id": "HIP-505-c1",
+          "by": "p-owen",
+          "at": "2026-11-03T17:03:56-08:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "pics in slack"
+        }
+      ]
     },
     {
-      "key": "HIP-514",
+      "key": "HIP-511",
       "type": "Task",
       "status": "In Progress",
       "reporter": "p-nadia",
@@ -193,28 +241,18 @@
       "created": "2026-10-23T11:53:47-07:00",
       "due_date": null,
       "events": [
-        "ev-002414"
+        "ev-002708"
       ],
-      "brief": "Order 11x Knee wave generator hub / FL-KNE-1119: need 11 by 2026-11-17 for Fit check: Knee wave generator hub",
+      "brief": "Order 11x Knee wave generator hub / FL-KNE-1119: need 11 by 2026-11-12 for Fit check: Knee wave generator hub",
       "must_mention": [
         "FL-KNE-1119",
         "Fit check: Knee wave generator hub",
-        "tues the 17th"
+        "thurs the 12th"
       ],
-      "description_length": "one_line",
-      "summary": "knee wave generator hub x11",
-      "description": "FL-KNE-1119 need 11 by tues the 17th for Fit check: Knee wave generator hub",
-      "comments": [
-        {
-          "id": "HIP-514-c1",
-          "by": "p-nadia",
-          "at": "2026-10-23T16:56:01-07:00",
-          "events": [],
-          "brief": "background: pushes it a bit, no new date given",
-          "must_mention": [],
-          "body": "hmm this might slip a little"
-        }
-      ]
+      "description_length": "short",
+      "summary": "Order Knee wave generator hub x11 ??",
+      "description": "FL-KNE-1119 need 11 by thurs the 12th, Fit check: Knee wave generator hub",
+      "comments": []
     }
   ]
 }

@@ -1,0 +1,261 @@
+{
+  "job_id": "jira-LEG-2026-07-20-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 33,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "LEG",
+    "name": "Legs and ankle"
+  },
+  "week": {
+    "start": "2026-07-20",
+    "end": "2026-07-26"
+  },
+  "people": [
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "LEG-220",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-zoe",
+      "assignee": "p-zoe",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-07-20T10:05:54-07:00",
+      "due_date": "2026-08-31",
+      "events": [
+        "ev-001497"
+      ],
+      "brief": "Order 12x Torso load pad, 1x Grip fixture base plate / FL-TST-2270: need 12 by 2026-08-31",
+      "must_mention": [
+        "FL-TST-2270",
+        "mon the 31st"
+      ],
+      "description_length": "short",
+      "summary": "Torso load pads + grip fixture base",
+      "description": "FL-TST-2270 need 12 by mon the 31st",
+      "comments": [
+        {
+          "id": "LEG-220-c1",
+          "by": "p-zoe",
+          "at": "2026-07-20T10:45:34-07:00",
+          "events": [
+            "ev-001499"
+          ],
+          "brief": "2270: need 12 by 2026-08-31",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-08-31"
+            }
+          },
+          "must_mention": [
+            "2270",
+            "8/31"
+          ],
+          "body": "2270 need 12 by 8/31"
+        },
+        {
+          "id": "LEG-220-c2",
+          "by": "p-zoe",
+          "at": "2026-07-20T11:08:05-07:00",
+          "events": [
+            "ev-001500"
+          ],
+          "brief": "FL-TST-2270: need 12 by 2026-08-26; asks whether expediting is worth it",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-08-26"
+            }
+          },
+          "must_mention": [
+            "FL-TST-2270",
+            "wed 8/26"
+          ],
+          "body": "FL-TST-2270 need 12 by wed 8/26, worth expediting?"
+        },
+        {
+          "id": "LEG-220-c3",
+          "by": "p-zoe",
+          "at": "2026-07-21T12:33:05-07:00",
+          "events": [
+            "ev-003641"
+          ],
+          "brief": "Correction: FL-TST-2270: need 12 by 2026-08-31",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-08-31"
+            }
+          },
+          "must_mention": [
+            "FL-TST-2270",
+            "8/31"
+          ],
+          "body": "Correction: FL-TST-2270 need 12 by 8/31, 26th was a typo"
+        },
+        {
+          "id": "LEG-220-c4",
+          "by": "p-luis",
+          "at": "2026-08-10T12:18:28-07:00",
+          "events": [
+            "ev-001501"
+          ],
+          "brief": "pads arrived (12)",
+          "claim": {
+            "kind": "stock",
+            "value": 12
+          },
+          "must_mention": [
+            "pads",
+            "12"
+          ],
+          "body": "pads arrived (12)"
+        }
+      ]
+    },
+    {
+      "key": "LEG-223",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-lin",
+      "assignee": "p-lin",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-07-20T12:54:30-07:00",
+      "due_date": "2026-07-31",
+      "events": [
+        "ev-001618"
+      ],
+      "brief": "Order 12x Tilt stand stop bushing / that order: need 12 by 2026-07-31",
+      "must_mention": [
+        "that order",
+        "fri 7/31"
+      ],
+      "description_length": "short",
+      "summary": "Tilt stand stop bushings",
+      "description": "that order, need 12 by fri 7/31",
+      "comments": [
+        {
+          "id": "LEG-223-c1",
+          "by": "p-diego",
+          "at": "2026-07-28T12:52:55-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "can we get this moved up a bit"
+        },
+        {
+          "id": "LEG-223-c2",
+          "by": "p-lin",
+          "at": "2026-08-10T12:52:03-07:00",
+          "events": [
+            "ev-001620"
+          ],
+          "brief": "stop bushing arrived (12)",
+          "claim": {
+            "kind": "stock",
+            "value": 12
+          },
+          "must_mention": [
+            "stop bushing",
+            "12"
+          ],
+          "body": "stop bushing arrived (12)"
+        }
+      ]
+    }
+  ]
+}

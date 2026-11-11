@@ -92,19 +92,22 @@
       }
     },
     {
-      "id": "p-lin",
-      "name": "Lin Zhao",
-      "display_name": "lin.z",
-      "slack_id": "U07FLK0LIN0",
-      "title": "Test Engineer, life test",
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
       "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "rare",
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
         "length": "medium",
         "hedging": "low",
-        "quirks": []
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
       }
     },
     {
@@ -122,6 +125,24 @@
         "hedging": "low",
         "quirks": [
           "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
         ]
       }
     },
@@ -230,13 +251,13 @@
   ],
   "messages": [
     {
-      "ts": "1793046458.467367",
+      "ts": "1793046458.077791",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-002392"
+        "ev-002678"
       ],
-      "brief": "1679: need 10 by 2026-12-21",
+      "brief": "FL-BAT-1679: need 10 by 2026-12-21",
       "claim": {
         "kind": "needs",
         "value": {
@@ -245,19 +266,62 @@
         }
       },
       "must_mention": [
-        "1679",
-        "mon the 21st"
+        "FL-BAT-1679",
+        "12/21"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "1679 need 10 by mon the 21st"
+      "text": "FL-BAT-1679 we need 10 by 12/21, can someone confirm that works"
     },
     {
-      "ts": "1793123183.153956",
+      "ts": "1793072347.766068",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-002679"
+      ],
+      "brief": "that order: need 10 by 2026-12-21",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-12-21"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "mon 12/21"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "that order, still need 10 by mon 12/21"
+    },
+    {
+      "ts": "1793121039.512847",
+      "user": "p-luis",
+      "thread_ts": null,
+      "events": [
+        "ev-002536"
+      ],
+      "brief": "floor plate arrived (7)",
+      "claim": {
+        "kind": "stock",
+        "value": 7
+      },
+      "must_mention": [
+        "floor plate",
+        "7"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "floor plate arrived, 7 in the box"
+    },
+    {
+      "ts": "1793123183.411276",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-002950"
+        "ev-003339"
       ],
       "brief": "FL-BAT-1643 rev B released: hole pattern moved",
       "claim": {
@@ -267,15 +331,25 @@
       "must_mention": [
         "FL-BAT-1643"
       ],
-      "length": "short",
-      "text": "FL-BAT-1643 rev B released, hole pattern moved"
+      "length": "medium",
+      "text": "FL-BAT-1643 rev B is out, moved the hole pattern so the old drill jig wont line up"
     },
     {
-      "ts": "1793125371.973909",
+      "ts": "1793125206.702227",
+      "user": "p-carlos",
+      "thread_ts": "1793121039.512847",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "7 isnt enough for the fixture. WE NEED MORE!!"
+    },
+    {
+      "ts": "1793125371.784055",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-002848"
+        "ev-003234"
       ],
       "brief": "Leg DVT build waits on Battery enclosure thermal runaway containment",
       "claim": {
@@ -284,38 +358,38 @@
       },
       "must_mention": [
         "Battery enclosure thermal runaway containment",
-        "the build"
+        "Leg DVT build"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "the build, Leg DVT build waits on Battery enclosure thermal runaway containment"
+      "text": "Leg DVT build is sitting on Battery enclosure thermal runaway containment right now."
     },
     {
-      "ts": "1793127872.246671",
-      "user": "p-talia",
-      "thread_ts": "1793123183.153956",
-      "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "thanks idris 🙏"
-    },
-    {
-      "ts": "1793131013.949948",
+      "ts": "1793129635.801453",
       "user": "p-valeria",
-      "thread_ts": "1793123183.153956",
+      "thread_ts": "1793121039.512847",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "if we stare at the box long enough maybe the other plates show up"
+    },
+    {
+      "ts": "1793131984.532705",
+      "user": "p-talia",
+      "thread_ts": "1793121039.512847",
       "events": [],
       "brief": "reply (pushes back) in the thread about: the message above",
       "must_mention": [],
-      "length": "one_word",
-      "text": "did the standoffs move too?"
+      "length": "medium",
+      "text": "Nope, not buying that one 😬 the 7 was what the supplier shipped, not what I asked for 🙏"
     },
     {
-      "ts": "1793131424.938143",
+      "ts": "1793134604.424045",
       "user": "p-talia",
       "thread_ts": null,
       "events": [
-        "ev-002394"
+        "ev-002681"
       ],
       "brief": "Order XO-5569014 placed, promised 2026-11-19",
       "claim": {
@@ -325,58 +399,58 @@
       "must_mention": [
         "XO-5569014",
         "latch block",
-        "thurs the 19th"
+        "thurs 11/19"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "Order XO-5569014 placed for the latch block, promised thurs the 19th 🙏"
-    },
-    {
-      "ts": "1793133433.461776",
-      "user": "p-talia",
-      "thread_ts": "1793131424.938143",
-      "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
-      "must_mention": [],
       "length": "short",
-      "text": "vendor confirmed over the phone, will update if it moves 😬"
+      "text": "XO-5569014 latch block placed, promised thurs 11/19 🙏"
     },
     {
-      "ts": "1793138730.519242",
+      "ts": "1793138730.926721",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-002263"
+        "ev-002540"
       ],
-      "brief": "cell spacer arrived",
+      "brief": "cell spacer arrived (6)",
       "claim": {
         "kind": "stock",
-        "value": 5
+        "value": 6
       },
       "must_mention": [
         "cell spacer",
-        "5"
+        "6"
       ],
       "pressure": "high",
       "length": "short",
-      "text": "cell spacer arrived, 5 in the bag"
+      "text": "cell spacer arrived, 6 of them"
     },
     {
-      "ts": "1793139334.073529",
-      "user": "p-ingrid",
-      "thread_ts": "1793138730.519242",
+      "ts": "1793141315.646653",
+      "user": "p-lukas",
+      "thread_ts": "1793138730.926721",
       "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "brief": "reply (will check later) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "we got a short count on spacers last time, worth counting twice"
+      "text": "will check later"
     },
     {
-      "ts": "1793143552.154046",
+      "ts": "1793141424.519151",
+      "user": "p-talia",
+      "thread_ts": "1793138730.926721",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "did they ship the rest separately or is that it? 🙏"
+    },
+    {
+      "ts": "1793143552.847625",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-002938"
+        "ev-003327"
       ],
       "brief": "FL-BAT-1689 rev C released: clearance for harness",
       "claim": {
@@ -386,15 +460,15 @@
       "must_mention": [
         "FL-BAT-1689"
       ],
-      "length": "short",
-      "text": "FL-BAT-1689 rev C released, clearance for harness"
+      "length": "medium",
+      "text": "FL-BAT-1689 rev C released, opened up clearance for the harness routing"
     },
     {
-      "ts": "1793144114.097495",
+      "ts": "1793144114.880504",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-003440"
+        "ev-004041"
       ],
       "brief": "BMS standoff: still quoting rev B",
       "claim": {
@@ -405,55 +479,34 @@
         "BMS standoff"
       ],
       "length": "short",
-      "text": "BMS standoff still quoting rev B"
+      "text": "BMS standoff still quoting rev B fyi"
     },
     {
-      "ts": "1793206894.228194",
-      "user": "p-renee",
-      "thread_ts": null,
-      "events": [
-        "ev-002391"
-      ],
-      "brief": "Order XO-5572693 placed, promised 2026-11-09",
-      "claim": {
-        "kind": "eta",
-        "value": "2026-11-09"
-      },
-      "must_mention": [
-        "XO-5572693",
-        "height gauge",
-        "mon 11/9"
-      ],
-      "pressure": "low",
-      "length": "short",
-      "text": "Order XO-5572693 placed for the height gauge, promised mon 11/9"
-    },
-    {
-      "ts": "1793208082.912196",
-      "user": "p-idris",
-      "thread_ts": "1793206894.228194",
+      "ts": "1793147017.193424",
+      "user": "p-valeria",
+      "thread_ts": "1793144114.880504",
       "events": [],
       "brief": "reply (tags someone else) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "@lukas you wanted to know about this one"
+      "text": "@idris can you ping the vendor? i think that one is yours"
     },
     {
-      "ts": "1793211309.469281",
-      "user": "p-lukas",
-      "thread_ts": "1793206894.228194",
+      "ts": "1793147189.699233",
+      "user": "p-valeria",
+      "thread_ts": "1793144114.880504",
       "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
+      "brief": "reply (shares a related experience) in the thread about: the message above",
       "must_mention": [],
       "length": "one_word",
-      "text": "got it"
+      "text": "had the same thing on the last pack, took a week to get it fixed"
     },
     {
-      "ts": "1793212987.085045",
+      "ts": "1793212987.865447",
       "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-002840"
+        "ev-003224"
       ],
       "brief": "Fit check: Battery enclosure lid waits on Leg drop-test gantry",
       "claim": {
@@ -466,24 +519,14 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Fit check: Battery enclosure lid waits on Leg drop-test gantry"
+      "text": "Fit check: Battery enclosure lid is waiting on the Leg drop-test gantry"
     },
     {
-      "ts": "1793213991.983165",
-      "user": "p-lukas",
-      "thread_ts": "1793206894.228194",
-      "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "thanks renee"
-    },
-    {
-      "ts": "1793216193.166732",
+      "ts": "1793216193.003910",
       "user": "p-renee",
       "thread_ts": null,
       "events": [
-        "ev-002838"
+        "ev-003222"
       ],
       "brief": "Rig setup: Drop height gauge block waits on Bearing set for torso and pelvis structure (height gauge)",
       "claim": {
@@ -492,38 +535,18 @@
       },
       "must_mention": [
         "Bearing set for torso and pelvis structure (height gauge)",
-        "the block"
+        "Rig setup: Drop height gauge block"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Rig setup: Drop height gauge block waits on Bearing set for torso and pelvis structure (height gauge), so the block sits for now"
+      "text": "Rig setup: Drop height gauge block waits on Bearing set for torso and pelvis structure (height gauge), no way around it."
     },
     {
-      "ts": "1793216361.128344",
-      "user": "p-carlos",
-      "thread_ts": "1793216193.166732",
-      "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "same thing happened on the old rig, took a week to unstick"
-    },
-    {
-      "ts": "1793218877.599871",
-      "user": "p-carlos",
-      "thread_ts": "1793216193.166732",
-      "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "ok thanks"
-    },
-    {
-      "ts": "1793228973.995886",
+      "ts": "1793228973.054358",
       "user": "p-renee",
       "thread_ts": null,
       "events": [
-        "ev-003415"
+        "ev-003973"
       ],
       "brief": "21700 cells for test packs: still quoting 2026-10-26",
       "claim": {
@@ -532,27 +555,17 @@
       },
       "must_mention": [
         "21700 cells for test packs",
-        "mon the 26th"
+        "mon 10/26"
       ],
-      "length": "medium",
-      "text": "21700 cells for test packs still quoting mon the 26th, has anyone heard from them since"
-    },
-    {
-      "ts": "1793229813.328569",
-      "user": "p-lukas",
-      "thread_ts": "1793228973.995886",
-      "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
-      "must_mention": [],
       "length": "short",
-      "text": "nothing yet, i'll chase tmrw"
+      "text": "21700 cells for test packs still quoting mon 10/26"
     },
     {
-      "ts": "1793231206.893586",
+      "ts": "1793231206.902160",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-002948"
+        "ev-003337"
       ],
       "brief": "FL-BAT-1679 rev B released: clearance for harness",
       "claim": {
@@ -562,36 +575,84 @@
       "must_mention": [
         "FL-BAT-1679"
       ],
-      "length": "medium",
-      "text": "FL-BAT-1679 rev B released, clearance for harness again"
+      "length": "short",
+      "text": "FL-BAT-1679 rev B released, clearance for the harness again"
     },
     {
-      "ts": "1793235780.979620",
-      "user": "p-zoe",
+      "ts": "1793234588.992643",
+      "user": "p-ingrid",
+      "thread_ts": "1793231206.902160",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "revision count is going up faster than the headcount"
+    },
+    {
+      "ts": "1793237585.134422",
+      "user": "p-carlos",
+      "thread_ts": "1793231206.902160",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "AGAIN?? WHO SIGNED OFF ON REV A!!"
+    },
+    {
+      "ts": "1793241660.830002",
+      "user": "p-lukas",
+      "thread_ts": "1793231206.902160",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "rev A had the harness fouling the second cell row, thats why it moved"
+    },
+    {
+      "ts": "1793302040.992045",
+      "user": "p-talia",
       "thread_ts": null,
       "events": [
-        "ev-002259"
+        "ev-004154"
       ],
-      "brief": "2216 in use",
+      "brief": "vent plate: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "vent plate"
+      ],
+      "length": "medium",
+      "text": "vent plate is still quoting rev A, i flagged it with the supplier 😬"
+    },
+    {
+      "ts": "1793303880.716386",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-002366"
+      ],
+      "brief": "1679 in use",
       "claim": {
         "kind": "done",
         "value": "2026-10-28"
       },
       "must_mention": [
-        "2216",
+        "1679",
         "the build",
-        "10/28"
+        "wed 10/28"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "2216 in use, the build took it 10/28"
+      "text": "1679 in use, the build wrapped wed 10/28"
     },
     {
-      "ts": "1793307562.087927",
+      "ts": "1793307562.183499",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-002785"
+        "ev-003157"
       ],
       "brief": "Battery enclosure thermal runaway containment waits on Battery vent plate",
       "claim": {
@@ -607,31 +668,41 @@
       "text": "Battery enclosure thermal runaway containment waits on Battery vent plate"
     },
     {
-      "ts": "1793310654.735198",
+      "ts": "1793310654.852564",
       "user": "p-renee",
       "thread_ts": null,
       "events": [
-        "ev-002302"
+        "ev-002585"
       ],
-      "brief": "2789 arrived",
+      "brief": "2789 arrived (2)",
       "claim": {
         "kind": "stock",
-        "value": 1
+        "value": 2
       },
       "must_mention": [
         "2789",
-        "1"
+        "2"
       ],
       "pressure": "elevated",
-      "length": "medium",
-      "text": "2789 arrived (1), the other ones aren't here yet"
+      "length": "short",
+      "text": "2789 arrived, only 2 so far"
     },
     {
-      "ts": "1793322604.437253",
+      "ts": "1793312097.648989",
+      "user": "p-omar",
+      "thread_ts": "1793310654.852564",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "are the other ones coming in a separate box?"
+    },
+    {
+      "ts": "1793322604.159663",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-002446"
+        "ev-002745"
       ],
       "brief": "Battery enclosure thermal runaway containment waits on Test stand rework for Battery enclosure thermal runaway containment: Battery clevis 10",
       "claim": {
@@ -643,36 +714,15 @@
         "Battery enclosure thermal runaway containment"
       ],
       "pressure": "low",
-      "length": "short",
-      "text": "Battery enclosure thermal runaway containment waits on Test stand rework for Battery enclosure thermal runaway containment: Battery clevis 10"
+      "length": "medium",
+      "text": "Battery enclosure thermal runaway containment still waits on Test stand rework for Battery enclosure thermal runaway containment: Battery clevis 10, no update from the shop"
     },
     {
-      "ts": "1793334300.457235",
-      "user": "p-lin",
-      "thread_ts": null,
-      "events": [
-        "ev-002293"
-      ],
-      "brief": "rail in use",
-      "claim": {
-        "kind": "done",
-        "value": "2026-10-29"
-      },
-      "must_mention": [
-        "rail",
-        "the build",
-        "thurs 10/29"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "rail in use, the build has it as of thurs 10/29"
-    },
-    {
-      "ts": "1793390311.198944",
+      "ts": "1793390311.302510",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-003559"
+        "ev-004051"
       ],
       "brief": "vent plate: still quoting rev A",
       "claim": {
@@ -683,25 +733,47 @@
         "vent plate"
       ],
       "length": "short",
-      "text": "vent plate still quoting rev A"
+      "text": "vent plate is still quoting rev A, anyone heard back"
     },
     {
-      "ts": "1793394359.010858",
-      "user": "p-idris",
+      "ts": "1793394136.861244",
+      "user": "p-ingrid",
+      "thread_ts": "1793390311.302510",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "at this point rev A is vintage"
+    },
+    {
+      "ts": "1793396133.401423",
+      "user": "p-valeria",
+      "thread_ts": "1793390311.302510",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "yeah same, nothing on my side either"
+    },
+    {
+      "ts": "1793404026.860696",
+      "user": "p-lukas",
       "thread_ts": null,
       "events": [
-        "ev-003641"
+        "ev-004329"
       ],
-      "brief": "latch block: still quoting rev A",
+      "brief": "Rig setup: Drop strike plate mount done",
       "claim": {
-        "kind": "substitute",
-        "value": "rev A"
+        "kind": "done",
+        "value": "2026-10-30"
       },
       "must_mention": [
-        "latch block"
+        "Rig setup: Drop strike plate mount",
+        "10/30"
       ],
-      "length": "short",
-      "text": "latch block still quoting rev A"
+      "pressure": "low",
+      "length": "medium",
+      "text": "Rig setup: Drop strike plate mount done 10/30"
     }
   ]
 }

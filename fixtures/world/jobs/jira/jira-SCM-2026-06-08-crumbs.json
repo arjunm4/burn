@@ -1,0 +1,375 @@
+{
+  "job_id": "jira-SCM-2026-06-08-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 45,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "SCM",
+    "name": "Supply chain and procurement"
+  },
+  "week": {
+    "start": "2026-06-08",
+    "end": "2026-06-14"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "SCM-185",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-arjun",
+      "assignee": "p-owen",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-06-08T16:09:49-07:00",
+      "due_date": "2026-06-29",
+      "events": [
+        "ev-001255"
+      ],
+      "brief": "Order 2x Knee output flange, 4x Knee circular spline housing / the flange: need 2 by 2026-06-29",
+      "must_mention": [
+        "the flange",
+        "6/29"
+      ],
+      "description_length": "one_line",
+      "summary": "Knee output flange + circ spline housing",
+      "description": "the flange, need 2 by 6/29",
+      "comments": [
+        {
+          "id": "SCM-185-c1",
+          "by": "p-owen",
+          "at": "2026-06-10T11:51:09-07:00",
+          "events": [
+            "ev-001257"
+          ],
+          "brief": "Order XO-5419964 placed, promised 2026-06-24",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-06-24"
+          },
+          "must_mention": [
+            "XO-5419964",
+            "knee flange",
+            "6/24"
+          ],
+          "body": "XO-5419964 placed, knee flange promised 6/24"
+        },
+        {
+          "id": "SCM-185-c2",
+          "by": "p-owen",
+          "at": "2026-06-22T10:11:10-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "@samir.k is the housing in the same shipment"
+        }
+      ]
+    },
+    {
+      "key": "SCM-191",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-ingrid",
+      "assignee": "p-renee",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-06-11T21:12:40-07:00",
+      "due_date": "2026-07-02",
+      "events": [
+        "ev-001307"
+      ],
+      "brief": "Order 9x Hip cable exit clamp, 6x Hip cycloid disc spacer, 8x Hip stator mount plate, 3x Hip cycloid ring-pin housing / that order: need 9 by 2026-06-30 for Prototype fit-up for Actuator DVT build: Hip cable exit clamp",
+      "must_mention": [
+        "that order",
+        "Prototype fit-up for Actuator DVT build: Hip cable exit clamp",
+        "6/30"
+      ],
+      "description_length": "one_line",
+      "summary": "Hip cable clamp, disc spacer, stator mount, ring-pin housing",
+      "description": "that order, need 9 by 6/30 for Prototype fit-up for Actuator DVT build: Hip cable exit clamp",
+      "comments": [
+        {
+          "id": "SCM-191-c1",
+          "by": "p-ingrid",
+          "at": "2026-06-11T21:41:40-07:00",
+          "events": [
+            "ev-003528"
+          ],
+          "brief": "Correction: that order: need 9 by 2026-07-02 for Prototype fit-up for Actuator DVT build: Hip cable exit clamp",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 9,
+              "by": "2026-07-02"
+            }
+          },
+          "must_mention": [
+            "that order",
+            "Prototype fit-up for Actuator DVT build: Hip cable exit clamp",
+            "7/2"
+          ],
+          "body": "Correction: that order is needed 7/2 for Prototype fit-up for Actuator DVT build: Hip cable exit clamp."
+        },
+        {
+          "id": "SCM-191-c2",
+          "by": "p-renee",
+          "at": "2026-06-15T17:21:00-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "Waiting on vendor to confirm the finish spec."
+        },
+        {
+          "id": "SCM-191-c3",
+          "by": "p-samir",
+          "at": "2026-06-22T16:04:13-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "any update on the vendor confirmation?"
+        },
+        {
+          "id": "SCM-191-c4",
+          "by": "p-gwen",
+          "at": "2026-07-02T09:40:52-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "Following up. Where does this stand?"
+        },
+        {
+          "id": "SCM-191-c5",
+          "by": "p-renee",
+          "at": "2026-07-02T14:23:52-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "Still waiting on the vendor. Will update when I hear."
+        }
+      ]
+    },
+    {
+      "key": "SCM-192",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-hana",
+      "assignee": "p-hana",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-06-12T11:58:11-07:00",
+      "due_date": "2026-07-31",
+      "events": [
+        "ev-001323"
+      ],
+      "brief": "Order 3x Ankle pushrod clevis / the clevis: need 3 by 2026-07-31",
+      "must_mention": [
+        "the clevis",
+        "7/31"
+      ],
+      "description_length": "short",
+      "summary": "Ankle pushrod clevis x3",
+      "description": "the clevis need 3 by 7/31",
+      "comments": [
+        {
+          "id": "SCM-192-c1",
+          "by": "p-hana",
+          "at": "2026-06-15T15:08:00-07:00",
+          "events": [
+            "ev-001325"
+          ],
+          "brief": "the part: need 3 by 2026-08-03",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 3,
+              "by": "2026-08-03"
+            }
+          },
+          "must_mention": [
+            "the part",
+            "mon the 3rd"
+          ],
+          "body": "the part, need 3 by mon the 3rd i think"
+        },
+        {
+          "id": "SCM-192-c2",
+          "by": "p-hana",
+          "at": "2026-06-15T22:36:34-07:00",
+          "events": [
+            "ev-001326"
+          ],
+          "brief": "the part: need 3 by 2026-07-31",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 3,
+              "by": "2026-07-31"
+            }
+          },
+          "must_mention": [
+            "the part",
+            "fri the 31st"
+          ],
+          "body": "the part needs to be fri the 31st actually, not mon the 3rd"
+        },
+        {
+          "id": "SCM-192-c3",
+          "by": "p-hana",
+          "at": "2026-07-11T10:25:00-07:00",
+          "events": [
+            "ev-001328"
+          ],
+          "brief": "1295 in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-07-10"
+          },
+          "must_mention": [
+            "1295",
+            "7/10"
+          ],
+          "body": "1295 in use as of 7/10"
+        }
+      ]
+    }
+  ]
+}

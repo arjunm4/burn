@@ -1,0 +1,353 @@
+{
+  "job_id": "meeting-mtg-00711",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 45,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00711",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-06-10T08:45:00-07:00",
+    "actual_min": 12,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-andre",
+      "p-lin",
+      "p-carlos",
+      "p-luis",
+      "p-destiny"
+    ],
+    "late_joiners": [
+      "p-luis"
+    ]
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-001301",
+      "speaker": "p-dmitri",
+      "at_min": [
+        8,
+        12
+      ],
+      "brief": "Dmitri says: We need 1113 by 7/7.",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-knee-thermistor-clip",
+        "value": {
+          "qty": 6,
+          "by": "2026-07-07"
+        }
+      },
+      "must_mention": [
+        "1113",
+        "7/7"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-dmitri",
+      "text": "Okay, morning. Quick one today. Zoe, where are we on the fixture?"
+    },
+    {
+      "start_s": 14,
+      "speaker": "p-zoe",
+      "text": "uh, fixture is clamped up, i still need to re-torque the base bolts, i think they backed off over the weekend"
+    },
+    {
+      "start_s": 38,
+      "speaker": "p-dmitri",
+      "text": "Backed off again? That's twice."
+    },
+    {
+      "start_s": 46,
+      "speaker": "p-zoe",
+      "text": "yeah, might need loctite or a different washer, i'll try the washer first"
+    },
+    {
+      "start_s": 70,
+      "speaker": "p-andre",
+      "text": "dyno side, i got the encoder reading clean after swaping the cable, no more dropouts"
+    },
+    {
+      "start_s": 95,
+      "speaker": "p-dmitri",
+      "text": "Good. Did the noise come from the shield?"
+    },
+    {
+      "start_s": 103,
+      "speaker": "p-andre",
+      "text": "yep shield wasnt grounded, one end was floating"
+    },
+    {
+      "start_s": 130,
+      "speaker": "p-lin",
+      "text": "Life test: the two rigs are cycling fine overnight. One tripped on a thermal limit around three, restarted itself."
+    },
+    {
+      "start_s": 160,
+      "speaker": "p-dmitri",
+      "text": "Was that the same rig as last week?"
+    },
+    {
+      "start_s": 168,
+      "speaker": "p-lin",
+      "text": "No, the other one. I'll look at the fan on it."
+    },
+    {
+      "start_s": 200,
+      "speaker": "p-carlos",
+      "text": "Build bench is clear. Harness for the next unit is half done, waiting on a crimp tool that is in calibration."
+    },
+    {
+      "start_s": 235,
+      "speaker": "p-dmitri",
+      "text": "When is the crimp tool back?"
+    },
+    {
+      "start_s": 243,
+      "speaker": "p-carlos",
+      "text": "Tomorrow, supposedly."
+    },
+    {
+      "start_s": 280,
+      "speaker": "p-destiny",
+      "text": "I finished the sub-assembly torque checks, all in range 🙏"
+    },
+    {
+      "start_s": 310,
+      "speaker": "p-dmitri",
+      "text": "Nice. Any marks on the threads?"
+    },
+    {
+      "start_s": 320,
+      "speaker": "p-destiny",
+      "text": "A little scoring on one, i set it aside 😬"
+    },
+    {
+      "start_s": 360,
+      "speaker": "p-luis",
+      "text": "sorry im late, uh, whats the plan for the cal jig"
+    },
+    {
+      "start_s": 378,
+      "speaker": "p-dmitri",
+      "text": "We covered it, Zoe will send you the notes. Luis, can you grab the spare bearings from the cabinet?"
+    },
+    {
+      "start_s": 402,
+      "speaker": "p-luis",
+      "text": "yep on it"
+    },
+    {
+      "start_s": 440,
+      "speaker": "p-andre",
+      "text": "also the coffee machine in the lab is broken again lol"
+    },
+    {
+      "start_s": 460,
+      "speaker": "p-dmitri",
+      "text": "Not my department!!"
+    },
+    {
+      "start_s": 495,
+      "speaker": "p-dmitri",
+      "text": "One more thing. We need 1113 by 7/7. Six of them. Zoe, make sure that is on the list."
+    },
+    {
+      "start_s": 520,
+      "speaker": "p-zoe",
+      "text": "got it, i'll add it to the request today"
+    },
+    {
+      "start_s": 555,
+      "speaker": "p-dmitri",
+      "text": "Okay. Anything blocking anyone?"
+    },
+    {
+      "start_s": 565,
+      "speaker": "p-lin",
+      "text": "No, nothing."
+    },
+    {
+      "start_s": 585,
+      "speaker": "p-carlos",
+      "text": "Just the crimp tool."
+    },
+    {
+      "start_s": 600,
+      "speaker": "p-dmitri",
+      "text": "Alright, that's it. Thanks everyone."
+    }
+  ],
+  "summary": {
+    "overview": "Short test lab and build standup. Fixture bolts backing off, encoder noise fixed, life test rigs running, crimp tool still out for calibration.",
+    "shorthand_bullet": [
+      "fixture base bolts backed off again, try washer first",
+      "encoder dropouts fixed - shield was floating",
+      "life test: 1 rig thermal trip overnight, check fan",
+      "harness waiting on crimp tool",
+      "sub-assy torque checks OK, 1 scored thread set aside",
+      "need 1113 by 7/7, qty 6"
+    ],
+    "action_items": [
+      "Zoe - re-torque fixture base, add 1113 to request",
+      "Lin - check fan on tripped rig",
+      "Luis - spare bearings",
+      "someone follow up on crimp tool"
+    ],
+    "keywords": [
+      "fixture",
+      "encoder",
+      "life test",
+      "crimp tool",
+      "1113"
+    ]
+  }
+}

@@ -7,8 +7,8 @@
 
 ## Overview
 
-We need FL-LEG-1383 by 10/8 (the test).
+We need FL-LEG-1383 by 10/8 (Leg gait-gantry walking test).
 
 ## Discussion
 
-- Dmitri: We need FL-LEG-1383 by 10/8 (the test).
+- Dmitri: We need FL-LEG-1383 by 10/8 (Leg gait-gantry walking test).

@@ -1,0 +1,907 @@
+{
+  "job_id": "slack-ch-actuators-2026-07-13-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 35,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-actuators",
+    "name": "actuators",
+    "slack_id": "C07FLK0ACTU",
+    "purpose": "Hip and knee actuators"
+  },
+  "week": {
+    "start": "2026-07-13",
+    "end": "2026-07-19"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-bao",
+      "name": "Bao Nguyen",
+      "display_name": "bao.n",
+      "slack_id": "U07FLK0BAO0",
+      "title": "Electrical Engineer, motor drives",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-yusuf",
+      "name": "Yusuf Demir",
+      "display_name": "yusuf",
+      "slack_id": "U07FLK0YUSU",
+      "title": "Firmware Engineer, motor control",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hip actuator.",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver. This week: Gate resistor bump slows edges, but switching losses rise 9%.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting. This week: Nora: casting tooling quote is $38k and 9 weeks; Lukas wants machined plates for DVT."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1783953532.031583",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-001455"
+      ],
+      "brief": "FL-HIP-1065: need 24 by 2026-08-04 for Tolerance stack check for Actuator DVT build: Hip output shaft (2)",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-08-04"
+        }
+      },
+      "must_mention": [
+        "FL-HIP-1065",
+        "Tolerance stack check for Actuator DVT build: Hip output shaft (2)",
+        "FL-HIP-1033",
+        "FL-HIP-1056",
+        "8/4"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-HIP-1065 is the long pole, Tolerance stack check for Actuator DVT build: Hip output shaft (2) needs 24 and FL-HIP-1033 and FL-HIP-1056 both wait on it. 8/4 is the date i'm working to"
+    },
+    {
+      "ts": "1783955962.495719",
+      "user": "p-yusuf",
+      "thread_ts": "1783953532.031583",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "tolerance stack is just a fancy word for hoping nothing's too fat"
+    },
+    {
+      "ts": "1783959679.737879",
+      "user": "p-wei",
+      "thread_ts": null,
+      "events": [
+        "ev-001559"
+      ],
+      "brief": "FL-HIP-1028: need 20 by 2026-08-13 for Assemble build unit for Actuator DVT build: Hip stator heat spreader",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 20,
+          "by": "2026-08-13"
+        }
+      },
+      "must_mention": [
+        "FL-HIP-1028",
+        "Assemble build unit for Actuator DVT build: Hip stator heat spreader",
+        "FL-HIP-1065",
+        "thurs 8/13"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-HIP-1028 for Assemble build unit for Actuator DVT build: Hip stator heat spreader, need 20 by thurs 8/13, behind FL-HIP-1065"
+    },
+    {
+      "ts": "1783960912.688349",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-001589"
+      ],
+      "brief": "FL-HIP-1056: need 9 by 2026-08-06 for Instrumentation fit-up for Hip actuator dyno efficiency sweep: Hip cycloid ring-pin housing",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 9,
+          "by": "2026-08-06"
+        }
+      },
+      "must_mention": [
+        "FL-HIP-1056",
+        "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Hip cycloid ring-pin housing",
+        "FL-HIP-1065",
+        "FL-HIP-1041",
+        "8/6"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "FL-HIP-1056 is gating Instrumentation fit-up for Hip actuator dyno efficiency sweep: Hip cycloid ring-pin housing, need 9 by 8/6. also sits behind FL-HIP-1065 and FL-HIP-1041"
+    },
+    {
+      "ts": "1783961733.676228",
+      "user": "p-owen",
+      "thread_ts": "1783960912.688349",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "yeah same here, nobody's got slack on that one"
+    },
+    {
+      "ts": "1783971905.647100",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-001512"
+      ],
+      "brief": "1190: need 2 by 2026-07-23 for Design iteration bench trial for Actuator DVT build: Knee to thigh flange",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-07-23"
+        }
+      },
+      "must_mention": [
+        "1190",
+        "Design iteration bench trial for Actuator DVT build: Knee to thigh flange",
+        "1146",
+        "thurs the 23rd"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "1190 for Design iteration bench trial for Actuator DVT build: Knee to thigh flange, 2 pcs by thurs the 23rd. 1146 has to land first"
+    },
+    {
+      "ts": "1783985179.360193",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-003455"
+      ],
+      "brief": "FL-KNE-1189 rev C released: journal OD ground to h6",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev C"
+      },
+      "must_mention": [
+        "FL-KNE-1189"
+      ],
+      "length": "medium",
+      "text": "FL-KNE-1189 rev C is out, journal OD now ground to h6"
+    },
+    {
+      "ts": "1783988028.458371",
+      "user": "p-beth",
+      "thread_ts": "1783985179.360193",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Does that tolerance change what we told the dyno team last week? I'd like to confirm before anyone reorders."
+    },
+    {
+      "ts": "1783990850.246028",
+      "user": "p-arjun",
+      "thread_ts": "1783985179.360193",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "hm not sure h6 is the right call there, can we look at it again tmrw"
+    },
+    {
+      "ts": "1784053939.869277",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-003016"
+      ],
+      "brief": "Test stand rework for Hip actuator dyno efficiency sweep: Spin-test adapter, knee actuator waits on Bearing set for hip actuator (knee spin adapter)",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-gen-0056"
+      },
+      "must_mention": [
+        "Bearing set for hip actuator (knee spin adapter)",
+        "Test stand rework for Hip actuator dyno efficiency sweep: Spin-test adapter, knee actuator"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Test stand rework for Hip actuator dyno efficiency sweep: Spin-test adapter, knee actuator is stuck, waiting on Bearing set for hip actuator (knee spin adapter)"
+    },
+    {
+      "ts": "1784085300.772944",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-003570"
+      ],
+      "brief": "Correction: the retainer: need 24 by 2026-08-05",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-08-05"
+        }
+      },
+      "must_mention": [
+        "the retainer",
+        "8/5"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Correction: the retainer, 24 needed by 8/5 not what i said earlier"
+    },
+    {
+      "ts": "1784127201.362808",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-004272"
+      ],
+      "brief": "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno absorber motor adapter done by thurs",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-07-16"
+      },
+      "must_mention": [
+        "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno absorber motor adapter",
+        "7/16"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno absorber motor adapter done by thurs, 7/16"
+    },
+    {
+      "ts": "1784129826.614240",
+      "user": "p-wei",
+      "thread_ts": "1784127201.362808",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "does the absorber adapter come with a warranty or is it the usual rattle and pray"
+    },
+    {
+      "ts": "1784132850.697060",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-001466"
+      ],
+      "brief": "alignment jig: need 2 by 2026-07-31",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-07-31"
+        }
+      },
+      "must_mention": [
+        "alignment jig",
+        "fri the 31st"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "alignment jig, need 2 by fri the 31st"
+    },
+    {
+      "ts": "1784135085.095114",
+      "user": "p-tomas",
+      "thread_ts": "1784085300.772944",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "i think thats right but check the rev on the drawing first"
+    },
+    {
+      "ts": "1784137580.777333",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-003412"
+      ],
+      "brief": "FL-HIP-1042 rev B released: thicker flange after FEA",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-HIP-1042"
+      ],
+      "length": "short",
+      "text": "FL-HIP-1042 rev B released, flange is thicker after the fea"
+    },
+    {
+      "ts": "1784142744.243092",
+      "user": "p-arjun",
+      "thread_ts": "1784137580.777333",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "nice, that was overdue"
+    },
+    {
+      "ts": "1784145641.109018",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-001459"
+      ],
+      "brief": "Order XO-5437488 placed, promised 2026-08-05",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-08-05"
+      },
+      "must_mention": [
+        "XO-5437488",
+        "hip shaft",
+        "8/5"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "XO-5437488 placed for the hip shaft, promised 8/5"
+    },
+    {
+      "ts": "1784172536.631396",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-003937"
+      ],
+      "brief": "hip bracket: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "hip bracket"
+      ],
+      "length": "short",
+      "text": "hip bracket still quoting rev A, need to ask them to fix it"
+    },
+    {
+      "ts": "1784232670.751623",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-001470"
+      ],
+      "brief": "1141: need 24 by 2026-08-05",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-08-05"
+        }
+      },
+      "must_mention": [
+        "1141",
+        "wed the 5th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "1141, 24 needed by wed the 5th"
+    },
+    {
+      "ts": "1784244788.114921",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-004252"
+      ],
+      "brief": "Install and torque for Actuator DVT build: Hip output bearing spacer done",
+      "claim": {
+        "kind": "done",
+        "value": "2026-07-16"
+      },
+      "must_mention": [
+        "Install and torque for Actuator DVT build: Hip output bearing spacer",
+        "thurs 7/16"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Install and torque for Actuator DVT build: Hip output bearing spacer done thurs 7/16, torque values were in spec"
+    },
+    {
+      "ts": "1784244941.883634",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-001471"
+      ],
+      "brief": "Order XO-5439832 placed, promised 2026-07-29",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-07-29"
+      },
+      "must_mention": [
+        "XO-5439832",
+        "1141",
+        "wed the 29th"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "XO-5439832 placed for 1141, promised wed the 29th"
+    },
+    {
+      "ts": "1784248873.072462",
+      "user": "p-carlos",
+      "thread_ts": "1784244788.114921",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Not sure that's how we did it last time, torque wrench was out for cal I think"
+    },
+    {
+      "ts": "1784251138.165176",
+      "user": "p-beth",
+      "thread_ts": "1784244788.114921",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Please attach the torque log to the ticket. Not having it makes the next review harder."
+    },
+    {
+      "ts": "1784256149.261820",
+      "user": "p-ingrid",
+      "thread_ts": "1784244788.114921",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "torque wrench in cal again? that thing has more stamps than my passport"
+    },
+    {
+      "ts": "1784302095.699470",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-003964"
+      ],
+      "brief": "knee shaft: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "knee shaft"
+      ],
+      "length": "short",
+      "text": "knee shaft, they're still quoting rev B"
+    },
+    {
+      "ts": "1784303700.192570",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-003626"
+      ],
+      "brief": "Correction: FL-HIP-1028: need 20 by 2026-08-11",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 20,
+          "by": "2026-08-11"
+        }
+      },
+      "must_mention": [
+        "FL-HIP-1028",
+        "tues 8/11"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Correction: FL-HIP-1028 need 20 by tues 8/11!!"
+    },
+    {
+      "ts": "1784303978.483616",
+      "user": "p-jonas",
+      "thread_ts": "1784302095.699470",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "@carlos can you ping them on that"
+    },
+    {
+      "ts": "1784306159.979278",
+      "user": "p-tomas",
+      "thread_ts": "1784303700.192570",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ok that works for me"
+    },
+    {
+      "ts": "1784308384.072360",
+      "user": "p-owen",
+      "thread_ts": "1784303700.192570",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "thanks dmitri"
+    },
+    {
+      "ts": "1784308901.720191",
+      "user": "p-andre",
+      "thread_ts": "1784244941.883634",
+      "events": [
+        "ev-003668"
+      ],
+      "brief": "Correction: Order XO-5439832 placed, promised 2026-08-03",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-08-03"
+      },
+      "must_mention": [
+        "XO-5439832",
+        "1141",
+        "mon the 3rd"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Correction: XO-5439832 for 1141 is promised mon the 3rd, not the 29th"
+    },
+    {
+      "ts": "1784311795.277353",
+      "user": "p-yusuf",
+      "thread_ts": "1784303700.192570",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "does that mean the stand slips too"
+    },
+    {
+      "ts": "1784332094.850324",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-004242"
+      ],
+      "brief": "Fit check for Actuator DVT build: Hip output bearing spacer done",
+      "claim": {
+        "kind": "done",
+        "value": "2026-07-17"
+      },
+      "must_mention": [
+        "Fit check for Actuator DVT build: Hip output bearing spacer",
+        "7/17"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Fit check for Actuator DVT build: Hip output bearing spacer done 7/17"
+    },
+    {
+      "ts": "1784332203.098539",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-003856"
+      ],
+      "brief": "knee shaft: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "knee shaft"
+      ],
+      "length": "medium",
+      "text": "knee shaft still quoting rev B, same as tomas said"
+    },
+    {
+      "ts": "1784336451.733954",
+      "user": "p-bao",
+      "thread_ts": "1784332094.850324",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "fit check passed, which means i get to be wrong about something else now"
+    },
+    {
+      "ts": "1784337548.264577",
+      "user": "p-yusuf",
+      "thread_ts": "1784332203.098539",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@nadia can you send them the updated drawing"
+    },
+    {
+      "ts": "1784340874.345084",
+      "user": "p-jonas",
+      "thread_ts": "1784332094.850324",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "will look monday"
+    }
+  ]
+}

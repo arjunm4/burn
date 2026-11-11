@@ -1,0 +1,516 @@
+{
+  "job_id": "slack-ch-actuators-2026-07-06-background-2026-07-08",
+  "source": "slack",
+  "status": "blank",
+  "priority": 38,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-actuators",
+    "name": "actuators",
+    "slack_id": "C07FLK0ACTU",
+    "purpose": "Hip and knee actuators"
+  },
+  "week": {
+    "start": "2026-07-06",
+    "end": "2026-07-12"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-yusuf",
+      "name": "Yusuf Demir",
+      "display_name": "yusuf",
+      "slack_id": "U07FLK0YUSU",
+      "title": "Firmware Engineer, motor control",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hip actuator.",
+    "Ongoing: Capacitive tactile array crosstalk and flex cable routing through the finger. This week: Rev 2 ordered from the fab; tactile bracket moved 1 mm for the new connector.",
+    "Ongoing: Crossed-roller preload drops after thermal cycling; bore tolerance and preload ring design. This week: Rev B bracket and housing released with the new bearing; preload holds after 20 cycles.",
+    "Ongoing: What to show investors when no full humanoid exists. This week: Ingrid warns the leg drop campaign slipped; demo date is hard.",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver. This week: Bao sees 30 V overshoot on the phase node at 48 V bus; MOSFETs rated 80 V."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1783525423.520529",
+      "user": "p-jonas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about tolerance question on the knee housing",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783526387.053338",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about inspection of the eccentric shaft",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783529640.718714",
+      "user": "p-carlos",
+      "thread_ts": "1783526387.053338",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: inspection of the eccentric shaft",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1783529695.877417",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-004561"
+      ],
+      "brief": "background: Rev B bracket and housing released with the new bearing; preload holds after 20 cycles.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783529804.085420",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about cleanup of the knee shaft",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1783530893.364532",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about cleanup of the knee shaft",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1783531152.553168",
+      "user": "p-beth",
+      "thread_ts": "1783526387.053338",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: inspection of the eccentric shaft",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783532875.191268",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-004559"
+      ],
+      "brief": "background: Rev B bracket and housing released with the new bearing; preload holds after 20 cycles.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783534047.634166",
+      "user": "p-owen",
+      "thread_ts": "1783526387.053338",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: inspection of the eccentric shaft",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783534397.079027",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to bench notes on the heat spreader",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783535098.734734",
+      "user": "p-carlos",
+      "thread_ts": "1783526387.053338",
+      "events": [],
+      "brief": "reply (answers) in the thread about: inspection of the eccentric shaft",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1783536598.188345",
+      "user": "p-carlos",
+      "thread_ts": "1783526387.053338",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: inspection of the eccentric shaft",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1783539179.675585",
+      "user": "p-jonas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about measurement of the preload ring",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783542022.041166",
+      "user": "p-jonas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about the ongoing gate driver ringing and current sense offset on the motor driver",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783542441.946154",
+      "user": "p-jonas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about setup for the hip bracket",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1783542591.796312",
+      "user": "p-arjun",
+      "thread_ts": "1783542022.041166",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the ongoing gate driver ringing and current sense offset on the motor driver",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783543453.626801",
+      "user": "p-arjun",
+      "thread_ts": "1783542022.041166",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the ongoing gate driver ringing and current sense offset on the motor driver",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1783544337.813977",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to inspection of the eccentric shaft",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1783544840.806637",
+      "user": "p-jonas",
+      "thread_ts": "1783542022.041166",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the ongoing gate driver ringing and current sense offset on the motor driver",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783546277.841600",
+      "user": "p-tomas",
+      "thread_ts": "1783542441.946154",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: setup for the hip bracket",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783547192.572295",
+      "user": "p-jonas",
+      "thread_ts": "1783544337.813977",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: inspection of the eccentric shaft",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783547559.542654",
+      "user": "p-owen",
+      "thread_ts": "1783542441.946154",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: setup for the hip bracket",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783547566.923702",
+      "user": "p-wei",
+      "thread_ts": "1783542022.041166",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the ongoing gate driver ringing and current sense offset on the motor driver",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783548248.004919",
+      "user": "p-carlos",
+      "thread_ts": "1783542441.946154",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: setup for the hip bracket",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783550409.995601",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Farah: ground pour missing under the electrode layer, crosstalk from the flex.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783552173.500721",
+      "user": "p-beth",
+      "thread_ts": "1783544337.813977",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: inspection of the eccentric shaft",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783555476.350096",
+      "user": "p-yusuf",
+      "thread_ts": "1783544337.813977",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: inspection of the eccentric shaft",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1783559306.701810",
+      "user": "p-carlos",
+      "thread_ts": "1783544337.813977",
+      "events": [],
+      "brief": "reply (answers) in the thread about: inspection of the eccentric shaft",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783571256.564731",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-004562"
+      ],
+      "brief": "background: Rev B bracket and housing released with the new bearing; preload holds after 20 cycles.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    }
+  ]
+}

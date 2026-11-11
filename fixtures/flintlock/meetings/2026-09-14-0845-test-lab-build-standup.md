@@ -8,9 +8,8 @@
 
 ## Overview
 
-We need 2211 by 10/2. We need the part by 10/5 (the test).
+We need 2211 by 9/29.
 
 ## Discussion
 
-- Dmitri: We need 2211 by 10/2.
-- Dmitri: We need the part by 10/5 (the test).
+- Dmitri: We need 2211 by 9/29.

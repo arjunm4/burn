@@ -1,0 +1,339 @@
+{
+  "job_id": "jira-TEST-2026-05-18-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 52,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "TEST",
+    "name": "Test, rigs and fixtures"
+  },
+  "week": {
+    "start": "2026-05-18",
+    "end": "2026-05-24"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "TEST-84",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-zoe",
+      "assignee": "p-dmitri",
+      "labels": [],
+      "priority": "Highest",
+      "created": "2026-05-18T09:45:04-07:00",
+      "due_date": "2026-06-09",
+      "events": [],
+      "brief": "Document test procedure",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "TEST-85",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-lin",
+      "assignee": "p-andre",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-05-18T10:27:59-07:00",
+      "due_date": "2026-06-01",
+      "events": [],
+      "brief": "Rework fixture clamp",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "TEST-86",
+      "type": "Bug",
+      "status": "In Progress",
+      "reporter": "p-dmitri",
+      "assignee": "p-dmitri",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-05-18T13:50:13-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Tolerance stack review",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "TEST-87",
+      "type": "Sub-task",
+      "status": "Done",
+      "reporter": "p-andre",
+      "assignee": null,
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-05-19T09:28:36-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Update assembly work instructions",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "TEST-88",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-lin",
+      "assignee": "p-andre",
+      "labels": [
+        "tech-debt"
+      ],
+      "priority": "High",
+      "created": "2026-05-21T11:19:35-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Rework fixture clamp",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "TEST-88-c1",
+          "by": "p-andre",
+          "at": "2026-05-25T11:38:45-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-88-c2",
+          "by": "p-andre",
+          "at": "2026-06-08T14:51:30-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "TEST-89",
+      "type": "Bug",
+      "status": "In Progress",
+      "reporter": "p-lin",
+      "assignee": "p-dmitri",
+      "labels": [
+        "docs"
+      ],
+      "priority": "Medium",
+      "created": "2026-05-21T13:45:02-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Capture lessons learned",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "TEST-90",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-dmitri",
+      "assignee": "p-andre",
+      "labels": [
+        "tech-debt"
+      ],
+      "priority": "Medium",
+      "created": "2026-05-21T14:30:56-07:00",
+      "due_date": "2026-06-15",
+      "events": [],
+      "brief": "Update drawing and BOM",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "TEST-90-c1",
+          "by": "p-andre",
+          "at": "2026-05-22T06:44:56-07:00",
+          "events": [],
+          "brief": "background: short note on why the due date moved (no date)",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "TEST-91",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-andre",
+      "assignee": "p-zoe",
+      "labels": [
+        "dfm"
+      ],
+      "priority": "Highest",
+      "created": "2026-05-21T16:32:31-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Update drawing and BOM",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "TEST-91-c1",
+          "by": "p-zoe",
+          "at": "2026-06-01T15:05:30-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-91-c2",
+          "by": "p-zoe",
+          "at": "2026-06-03T12:08:56-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-91-c3",
+          "by": "p-andre",
+          "at": "2026-06-08T09:11:12-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-91-c4",
+          "by": "p-zoe",
+          "at": "2026-06-15T15:56:02-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "TEST-92",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-zoe",
+      "assignee": "p-andre",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-05-22T09:34:57-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Document test procedure",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    }
+  ]
+}

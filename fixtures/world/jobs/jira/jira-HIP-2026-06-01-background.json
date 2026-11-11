@@ -1,0 +1,417 @@
+{
+  "job_id": "jira-HIP-2026-06-01-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 48,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HIP",
+    "name": "Actuators (hip and knee)"
+  },
+  "week": {
+    "start": "2026-06-01",
+    "end": "2026-06-07"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "HIP-251",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": "p-owen",
+      "labels": [
+        "dfm"
+      ],
+      "priority": "High",
+      "created": "2026-06-01T09:15:24-07:00",
+      "due_date": "2026-06-17",
+      "events": [],
+      "brief": "Capture lessons learned (hip actuator)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-251-c1",
+          "by": "p-owen",
+          "at": "2026-06-05T14:38:47-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-252",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": "p-owen",
+      "labels": [
+        "evt"
+      ],
+      "priority": "Medium",
+      "created": "2026-06-01T10:00:00-07:00",
+      "due_date": "2026-07-23",
+      "events": [],
+      "brief": "Build sub-assembly for Actuator DVT build: Knee output flange",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HIP-254",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-arjun",
+      "assignee": "p-arjun",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-06-02T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Design iteration bench trial for Actuator DVT build: Hip output shaft",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-254-c1",
+          "by": "p-arjun",
+          "at": "2026-06-15T09:41:31-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-255",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-tomas",
+      "assignee": "p-tomas",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-06-02T10:00:00-07:00",
+      "due_date": "2026-07-14",
+      "events": [],
+      "brief": "Fit check for Actuator DVT build: Knee winding thermistor clip",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-255-c1",
+          "by": "p-nadia",
+          "at": "2026-06-29T09:28:49-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-255-c2",
+          "by": "p-owen",
+          "at": "2026-06-30T14:54:49-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-256",
+      "type": "Sub-task",
+      "status": "In Progress",
+      "reporter": "p-renee",
+      "assignee": "p-renee",
+      "labels": [
+        "rig"
+      ],
+      "priority": "High",
+      "created": "2026-06-02T10:00:00-07:00",
+      "due_date": "2026-07-15",
+      "events": [],
+      "brief": "Prototype fit-up for Actuator DVT build: Hip cable exit clamp",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HIP-258",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-nadia",
+      "assignee": "p-nadia",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-06-03T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Test stand rework for Hip actuator dyno efficiency sweep: Spin-test adapter, knee actuator",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-258-c1",
+          "by": "p-nadia",
+          "at": "2026-06-10T12:32:06-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-258-c2",
+          "by": "p-nadia",
+          "at": "2026-07-20T16:06:46-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-258-c3",
+          "by": "p-wei",
+          "at": "2026-07-20T16:37:45-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-258-c4",
+          "by": "p-nadia",
+          "at": "2026-07-20T18:01:41-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-258-c5",
+          "by": "p-arjun",
+          "at": "2026-07-20T18:14:48-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-259",
+      "type": "Story",
+      "status": "In Progress",
+      "reporter": "p-arjun",
+      "assignee": "p-arjun",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-06-04T10:00:00-07:00",
+      "due_date": "2026-08-10",
+      "events": [],
+      "brief": "Design iteration bench trial for Actuator DVT build: Hip cycloid disc spacer",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HIP-260",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": "p-arjun",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-06-05T16:38:23-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Firmware flag for bench mode (knee actuator)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-260-c1",
+          "by": "p-arjun",
+          "at": "2026-06-12T16:24:18-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-260-c2",
+          "by": "p-tomas",
+          "at": "2026-06-22T13:32:16-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-260-c3",
+          "by": "p-arjun",
+          "at": "2026-07-06T10:30:58-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-261",
+      "type": "Task",
+      "status": "Blocked",
+      "reporter": "p-owen",
+      "assignee": "p-wei",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-06-05T16:51:47-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Torque spec audit (hip actuator)",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": []
+    }
+  ]
+}

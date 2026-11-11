@@ -1,0 +1,901 @@
+{
+  "job_id": "slack-ch-hw-purchasing-2026-05-18-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 51,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hw-purchasing",
+    "name": "hw-purchasing",
+    "slack_id": "C07FLK0HWPR",
+    "purpose": "Hardware buys: Xometry quotes, McMaster, Digi-Key, lead times"
+  },
+  "week": {
+    "start": "2026-05-18",
+    "end": "2026-05-24"
+  },
+  "people": [
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-ishaan",
+      "name": "Ishaan Mehta",
+      "display_name": "ishaan.m",
+      "slack_id": "U07FLK0ISHA",
+      "title": "Electrical Engineer, sensors",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-valeria",
+      "name": "Valeria Ortiz",
+      "display_name": "valeria.o",
+      "slack_id": "U07FLK0VALE",
+      "title": "Electrical Engineer, battery systems",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Pushrod clevis bends at 1.6x body weight in the tilt stand. This week: Callum wants a double-shear clevis; Hana worries about foot clearance.",
+    "Ongoing: Bus-off events at 1 Mbps when all leg actuators stream. This week: Mei: leg drops to bus-off twice a day during gait runs.",
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno. This week: Arjun accepts heat spreader for DVT, fins deferred; firmware derate at 105 C as a backstop.",
+    "Ongoing: Ratcheting risk at peak torque from loose wave generator fit. This week: Tomas: rated ratcheting torque is 110 Nm; suspects WG hub to motor shaft slip lowering it.",
+    "Ongoing: Orders sitting in DFM review because of tolerance callouts. This week: Owen argues the quote tool hides the hold until a day later; Gwen asks for a checklist."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1779110687.965027",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-001039"
+      ],
+      "brief": "FL-HIP-1050: need 24 by 2026-06-11 for Build sub-assembly for Actuator DVT build: Hip holding-brake bracket",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-06-11"
+        }
+      },
+      "must_mention": [
+        "FL-HIP-1050",
+        "Build sub-assembly for Actuator DVT build: Hip holding-brake bracket",
+        "FL-HIP-1028",
+        "thurs 6/11"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-HIP-1050 x24 thurs 6/11, Build sub-assembly for Actuator DVT build: Hip holding-brake bracket. FL-HIP-1028 is the mating one i think"
+    },
+    {
+      "ts": "1779117485.026538",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-001037"
+      ],
+      "brief": "spacer set: need 12 by 2026-06-22",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-06-22"
+        }
+      },
+      "must_mention": [
+        "spacer set",
+        "6/22"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "spacer set need 12 by 6/22"
+    },
+    {
+      "ts": "1779120304.150685",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-001024"
+      ],
+      "brief": "FL-TST-2135: need 12 by 2026-05-22",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-05-22"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2135",
+        "5/22"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "FL-TST-2135 need 12 by 5/22"
+    },
+    {
+      "ts": "1779121739.509633",
+      "user": "p-kenji",
+      "thread_ts": "1779120304.150685",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "@samir.k can you take it"
+    },
+    {
+      "ts": "1779123792.827636",
+      "user": "p-hana",
+      "thread_ts": "1779120304.150685",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Hmm i think lead time on that is longer than a week, probably worth checking first"
+    },
+    {
+      "ts": "1779128437.700942",
+      "user": "p-talia",
+      "thread_ts": "1779120304.150685",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "we had the same thing with a bracket last month, ended up expediting 😬"
+    },
+    {
+      "ts": "1779128772.130072",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-001041"
+      ],
+      "brief": "FL-HIP-1050: need 24 by 2026-06-10 for next week",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-06-10"
+        }
+      },
+      "must_mention": [
+        "FL-HIP-1050",
+        "next week",
+        "6/10"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-HIP-1050 need 24 for next week, 6/10 latest"
+    },
+    {
+      "ts": "1779130277.588913",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-001139"
+      ],
+      "brief": "FL-LEG-1331: need 6 by 2026-06-01 for Design iteration bench trial for Leg DVT build: Knee cable strain-relief clamp",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-06-01"
+        }
+      },
+      "must_mention": [
+        "FL-LEG-1331",
+        "Design iteration bench trial for Leg DVT build: Knee cable strain-relief clamp",
+        "FL-LEG-1396",
+        "FL-LEG-1327",
+        "mon the 1st"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "FL-LEG-1331 need 6 by mon the 1st, Design iteration bench trial for Leg DVT build: Knee cable strain-relief clamp. NOT FL-LEG-1396 or FL-LEG-1327!!"
+    },
+    {
+      "ts": "1779133340.701903",
+      "user": "p-carlos",
+      "thread_ts": "1779128772.130072",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Hm, not sure that's the way to go. Wait for the quote."
+    },
+    {
+      "ts": "1779135510.112475",
+      "user": "p-wei",
+      "thread_ts": null,
+      "events": [
+        "ev-001174"
+      ],
+      "brief": "pin carrier: need 1 by 2026-06-11",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-06-11"
+        }
+      },
+      "must_mention": [
+        "pin carrier",
+        "6/11"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Need 1 pin carrier by 6/11, just the one."
+    },
+    {
+      "ts": "1779135860.543201",
+      "user": "p-lukas",
+      "thread_ts": "1779128772.130072",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "lol good luck"
+    },
+    {
+      "ts": "1779136353.381872",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-001014"
+      ],
+      "brief": "FL-LEG-1339: need 12 by 2026-07-01",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-07-01"
+        }
+      },
+      "must_mention": [
+        "FL-LEG-1339",
+        "wed the 1st"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "FL-LEG-1339 need 12 wed the 1st"
+    },
+    {
+      "ts": "1779138130.835420",
+      "user": "p-kenji",
+      "thread_ts": "1779128772.130072",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ask talia"
+    },
+    {
+      "ts": "1779139307.923041",
+      "user": "p-gwen",
+      "thread_ts": "1779135510.112475",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I would hold off on that until we see the drawing."
+    },
+    {
+      "ts": "1779141648.269567",
+      "user": "p-carlos",
+      "thread_ts": "1779135510.112475",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Thanks! That helps. Will let you know if anything changes."
+    },
+    {
+      "ts": "1779149959.927845",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-001080"
+      ],
+      "brief": "pin carrier: need 2 by 2026-07-14 for Assemble build unit for Actuator DVT build: Hip cycloidal carrier (2)",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-07-14"
+        }
+      },
+      "must_mention": [
+        "pin carrier",
+        "Assemble build unit for Actuator DVT build: Hip cycloidal carrier (2)",
+        "7/14"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "pin carrier need 2 by 7/14 for Assemble build unit for Actuator DVT build: Hip cycloidal carrier (2)"
+    },
+    {
+      "ts": "1779158093.688722",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-001101"
+      ],
+      "brief": "the housing: need 2 by 2026-07-13",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-07-13"
+        }
+      },
+      "must_mention": [
+        "the housing",
+        "7/13"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "the housing, need 2 by 7/13. anyone seen a quote on it?"
+    },
+    {
+      "ts": "1779161889.793108",
+      "user": "p-nora",
+      "thread_ts": "1779158093.688722",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "I'll check later today."
+    },
+    {
+      "ts": "1779164079.414600",
+      "user": "p-wei",
+      "thread_ts": "1779158093.688722",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "I don't think so, the print isn't final."
+    },
+    {
+      "ts": "1779166534.777690",
+      "user": "p-luis",
+      "thread_ts": "1779158093.688722",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "agree w wei, wouldnt order yet"
+    },
+    {
+      "ts": "1779210453.460517",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-001104"
+      ],
+      "brief": "FL-TST-2272: need 2 by 2026-06-12 for Instrumentation fit-up for Leg first steps on the gait gantry: Leg fixture hook, shank end",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-06-12"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2272",
+        "Instrumentation fit-up for Leg first steps on the gait gantry: Leg fixture hook, shank end",
+        "FL-TST-2956",
+        "FL-TST-2223",
+        "FL-TST-2216",
+        "fri the 12th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2272 need 2 by fri the 12th, Instrumentation fit-up for Leg first steps on the gait gantry: Leg fixture hook, shank end. not FL-TST-2956, FL-TST-2223 or FL-TST-2216"
+    },
+    {
+      "ts": "1779211307.278251",
+      "user": "p-valeria",
+      "thread_ts": "1779210453.460517",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Thanks Hana"
+    },
+    {
+      "ts": "1779215963.545968",
+      "user": "p-samir",
+      "thread_ts": "1779210453.460517",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "had a hook walk off the line once, never found it"
+    },
+    {
+      "ts": "1779218908.204845",
+      "user": "p-talia",
+      "thread_ts": "1779210453.460517",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Not sure that's quite right, the hooks usually take longer 🙏"
+    },
+    {
+      "ts": "1779295989.747279",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-001178"
+      ],
+      "brief": "FL-TST-2017: need 6 by 2026-06-09 for Leg drop test",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-06-09"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2017",
+        "Leg drop test",
+        "FL-TST-2232",
+        "6/9"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2017 need 6 by 6/9 for the Leg drop test. FL-TST-2232 is the other one, dont mix up"
+    },
+    {
+      "ts": "1779321927.523767",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-001144"
+      ],
+      "brief": "knee clamp: need 6 by 2026-05-29",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-05-29"
+        }
+      },
+      "must_mention": [
+        "knee clamp",
+        "fri the 29th"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "knee clamp: need 6 by fri the 29th!!"
+    },
+    {
+      "ts": "1779327308.982789",
+      "user": "p-lukas",
+      "thread_ts": "1779321927.523767",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "no we dont have time for that"
+    },
+    {
+      "ts": "1779330663.823865",
+      "user": "p-gwen",
+      "thread_ts": "1779321927.523767",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Understood. I'll look at what's open with the vendor and come back to you."
+    },
+    {
+      "ts": "1779410254.473505",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-001165"
+      ],
+      "brief": "1141: need 12 by 2026-06-10 for Fit check for Actuator DVT build: Knee cross-roller retainer",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-06-10"
+        }
+      },
+      "must_mention": [
+        "1141",
+        "Fit check for Actuator DVT build: Knee cross-roller retainer",
+        "6/10"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "1141 need 12 by 6/10, Fit check for Actuator DVT build: Knee cross-roller retainer"
+    },
+    {
+      "ts": "1779410369.779957",
+      "user": "p-valeria",
+      "thread_ts": "1779410254.473505",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Got it, i think that matches what i saw on the schedule earlier"
+    },
+    {
+      "ts": "1779490168.397881",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-001236"
+      ],
+      "brief": "hip dyno coupling: need 18 by 2026-06-22",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 18,
+          "by": "2026-06-22"
+        }
+      },
+      "must_mention": [
+        "hip dyno coupling",
+        "6/22"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "hip dyno coupling need 18 by 6/22"
+    },
+    {
+      "ts": "1779491834.108169",
+      "user": "p-priya",
+      "thread_ts": "1779490168.397881",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Thanks, I'll pass that along to the rest of the legs team."
+    },
+    {
+      "ts": "1779492122.941573",
+      "user": "p-tomas",
+      "thread_ts": "1779490168.397881",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "i think thats too many for the first batch, not 100% sure but worth a look"
+    },
+    {
+      "ts": "1779493653.022844",
+      "user": "p-ishaan",
+      "thread_ts": "1779490168.397881",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "does that include the spares? 😬"
+    }
+  ]
+}

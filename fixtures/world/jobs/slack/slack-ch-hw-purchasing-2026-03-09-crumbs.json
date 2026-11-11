@@ -1,0 +1,227 @@
+{
+  "job_id": "slack-ch-hw-purchasing-2026-03-09-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 71,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hw-purchasing",
+    "name": "hw-purchasing",
+    "slack_id": "C07FLK0HWPR",
+    "purpose": "Hardware buys: Xometry quotes, McMaster, Digi-Key, lead times"
+  },
+  "week": {
+    "start": "2026-03-09",
+    "end": "2026-03-15"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Building the first three hip and knee actuators. This week: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+    "Ongoing: Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT",
+    "Ongoing: Coupling misalignment corrupting efficiency numbers on the dyno. This week: Dial indicator shows 0.15 mm parallel offset; adapter plate dowels are loose fit."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1773174667.684354",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-000368"
+      ],
+      "brief": "FL-TST-2146: need 12 by 2026-04-03",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-04-03"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2146",
+        "4/3"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Need 12 of FL-TST-2146 by 4/3."
+    },
+    {
+      "ts": "1773250776.714703",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-000502"
+      ],
+      "brief": "the part: need 2 by 2026-04-06",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-04-06"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "mon the 6th"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "need 2 of the part by mon the 6th, can someone put it in"
+    },
+    {
+      "ts": "1773256731.842033",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-000370"
+      ],
+      "brief": "2146: need 12 by 2026-04-07",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-04-07"
+        }
+      },
+      "must_mention": [
+        "2146",
+        "4/7"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Need 12 of 2146 by 4/7."
+    },
+    {
+      "ts": "1773375591.198498",
+      "user": "p-renee",
+      "thread_ts": "1773256731.842033",
+      "events": [
+        "ev-003589"
+      ],
+      "brief": "Correction: 2146: need 12 by 2026-04-03",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-04-03"
+        }
+      },
+      "must_mention": [
+        "2146",
+        "4/3"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Correction: 2146 is 4/3, not the later date."
+    },
+    {
+      "ts": "1773435910.786796",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-000374"
+      ],
+      "brief": "coupling hub: need 12 by 2026-04-03",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-04-03"
+        }
+      },
+      "must_mention": [
+        "coupling hub",
+        "fri 4/3"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "coupling hub, need 12 by fri 4/3. Same ask as the others."
+    },
+    {
+      "ts": "1773451745.671990",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-000470"
+      ],
+      "brief": "base riser: need 2 by 2026-03-23",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-03-23"
+        }
+      },
+      "must_mention": [
+        "base riser",
+        "mon the 23rd"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "base riser needed mon the 23rd, need 2!!"
+    }
+  ]
+}

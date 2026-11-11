@@ -1,0 +1,114 @@
+{
+  "job_id": "slack-ch-structures-2026-07-20-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 33,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-structures",
+    "name": "structures-battery",
+    "slack_id": "C07FLK0STRC",
+    "purpose": "Torso, pelvis and battery enclosure"
+  },
+  "week": {
+    "start": "2026-07-20",
+    "end": "2026-07-26"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "context": [
+    "Channel for Torso and pelvis structure.",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting. This week: Renee: machined plates are 1.4 kg heavier and ~$1.1k each on Xometry."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1784594879.349669",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-001549"
+      ],
+      "brief": "FL-BAT-1685: need 1 by 2026-07-29",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-07-29"
+        }
+      },
+      "must_mention": [
+        "FL-BAT-1685",
+        "7/29"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-BAT-1685 need 1 by 7/29, still no quote"
+    },
+    {
+      "ts": "1784767749.321008",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-001568"
+      ],
+      "brief": "Order XO-5451047 placed, promised 2026-07-29",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-07-29"
+      },
+      "must_mention": [
+        "XO-5451047",
+        "lower hook",
+        "7/29"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "XO-5451047 lower hook placed, promised 7/29"
+    }
+  ]
+}

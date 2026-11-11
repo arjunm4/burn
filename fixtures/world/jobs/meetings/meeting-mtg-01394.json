@@ -162,7 +162,7 @@
   ],
   "background": [
     {
-      "event": "ev-004734",
+      "event": "ev-005194",
       "speaker": "p-diego",
       "brief": "Test fixture design review: round of updates"
     }
@@ -176,168 +176,216 @@
     {
       "start_s": 0,
       "speaker": "p-zoe",
-      "text": "ok can everyone see the screen? i'm sharing the fixture model"
+      "text": "ok so, can everyone see the screen? that's the gantry fixture, rev two"
     },
     {
-      "start_s": 12,
-      "speaker": "p-diego",
-      "text": "I can see it 🙏 a little small though"
-    },
-    {
-      "start_s": 20,
-      "speaker": "p-zoe",
-      "text": "zooming in. uh, so this is rev B of the shaker base, the main change is the plate is thicker around the mounting pattern"
-    },
-    {
-      "start_s": 62,
-      "speaker": "p-kenji",
-      "text": "how much thicker"
-    },
-    {
-      "start_s": 68,
-      "speaker": "p-zoe",
-      "text": "couple mm, i'd have to check the sheet"
-    },
-    {
-      "start_s": 95,
-      "speaker": "p-diego",
-      "text": "Did you run a modal check on it? I'm worried about a resonance close to the test band 😬"
-    },
-    {
-      "start_s": 130,
-      "speaker": "p-zoe",
-      "text": "ran it yesterday, first mode is above the band, but not by a lot. um, maybe 15 percent margin? not great"
-    },
-    {
-      "start_s": 175,
+      "start_s": 185,
       "speaker": "p-dmitri",
-      "text": "15 percent isn't great. What happens if the payload is heavier than we planned?"
+      "text": "I see it. Walk us through the changes since last review."
     },
     {
-      "start_s": 205,
+      "start_s": 277,
       "speaker": "p-zoe",
-      "text": "then the margin shrinks. i'd want a rib, or stiffen the web"
+      "text": "so the big one is the side rails, we went from the extrusion to a bent plate, uh, because the extrusion was flexing under the ankle load"
     },
     {
-      "start_s": 245,
-      "speaker": "p-kenji",
-      "text": "rib is easy on the machined version, harder if we go welded"
-    },
-    {
-      "start_s": 280,
+      "start_s": 369,
       "speaker": "p-carlos",
-      "text": "From the floor side, welded would be a pain. Distortion on a plate that size is going to be a problem. Machined is better, even if it's slower!!"
+      "text": "How much flex are we talking?"
     },
     {
-      "start_s": 340,
-      "speaker": "p-luis",
-      "text": "also how do we get the fixture on the shaker, the bolt pattern i mean, can i actually reach the back bolts w/ a torque wrench"
-    },
-    {
-      "start_s": 385,
-      "speaker": "p-diego",
-      "text": "Good catch 😬 In the model, you can't, not with a standard wrench. We'd need a crow's foot or move the bolts."
-    },
-    {
-      "start_s": 430,
+      "start_s": 462,
       "speaker": "p-zoe",
-      "text": "ok, yeah, adding that to the list"
+      "text": "like a millimeter at full load, which blows up the angle measurement"
     },
     {
-      "start_s": 470,
+      "start_s": 554,
       "speaker": "p-dmitri",
-      "text": "I'd rather move the bolts. Crow's feet change the torque you actually apply."
+      "text": "Okay, that's too much."
     },
     {
-      "start_s": 510,
+      "start_s": 646,
+      "speaker": "p-diego",
+      "text": "Yeah, plus the harness routing, I moved the pass-through 40 mm toward the back 🙏 so the cable stops rubbing the shank"
+    },
+    {
+      "start_s": 738,
+      "speaker": "p-luis",
+      "text": "do we have the bend radius for the plate, i dont want to crack it"
+    },
+    {
+      "start_s": 831,
+      "speaker": "p-zoe",
+      "text": "it's on the drawing, i'll send you the link. i think it's fine for the thickness we picked"
+    },
+    {
+      "start_s": 923,
+      "speaker": "p-luis",
+      "text": "ok ty *thx"
+    },
+    {
+      "start_s": 1015,
       "speaker": "p-kenji",
-      "text": "agreed"
+      "text": "whats the load path on the pelvis mount"
     },
     {
-      "start_s": 560,
-      "speaker": "p-diego",
-      "text": "Moving on, cable management, what's the plan for the accelerometer leads? 🙏"
-    },
-    {
-      "start_s": 600,
+      "start_s": 1108,
       "speaker": "p-zoe",
-      "text": "clips along the rib, strain relief at the sensor end, i think that works"
+      "text": "it goes through the two m10 bolts into the base plate, then to the floor anchors"
     },
     {
-      "start_s": 650,
-      "speaker": "p-luis",
-      "text": "the leads on the last one got pinched under the plate, *pinched"
+      "start_s": 1200,
+      "speaker": "p-kenji",
+      "text": "and the anchors are rated for that"
     },
     {
-      "start_s": 690,
+      "start_s": 1292,
       "speaker": "p-zoe",
-      "text": "yeah, noted, i'll route them on top"
+      "text": "carlos knows better than me"
     },
     {
-      "start_s": 740,
-      "speaker": "p-dmitri",
-      "text": "Fine. Anything on the schedule?"
-    },
-    {
-      "start_s": 2260,
-      "speaker": "p-zoe",
-      "text": "yeah, uh, battery enclosure thermal runaway containment moved. Battery enclosure thermal runaway containment was 10/7, it's now 11/4. so that one slips"
-    },
-    {
-      "start_s": 2320,
-      "speaker": "p-dmitri",
-      "text": "OK. Noted. Do we have a workaround for the test lab until then?"
-    },
-    {
-      "start_s": 2350,
-      "speaker": "p-zoe",
-      "text": "we can run the small packs in the existing bay. nothing bigger, uh, until it lands"
-    },
-    {
-      "start_s": 2410,
+      "start_s": 1385,
       "speaker": "p-carlos",
-      "text": "I'll make sure nobody's testing bigger ones. Cell packs are in the cage."
+      "text": "The anchors are fine. We pulled test on them last spring. I'd double the washers though."
     },
     {
-      "start_s": 2480,
-      "speaker": "p-diego",
-      "text": "Thanks 🙏 and let's finish the fixture comments, we're running over 😬"
-    },
-    {
-      "start_s": 2600,
+      "start_s": 1477,
       "speaker": "p-dmitri",
-      "text": "OK. Zoe, send the revised model by eow. We'll review again."
+      "text": "Put that in the notes. Washers."
     },
     {
-      "start_s": 2680,
+      "start_s": 1569,
+      "speaker": "p-diego",
+      "text": "Round of updates from my side: the foot plate drawing is released, the ankle adapter is being cut, and I'm still waiting on the cable carrier drawing from the vendor 😬"
+    },
+    {
+      "start_s": 1662,
+      "speaker": "p-dmitri",
+      "text": "Who's the vendor on that?"
+    },
+    {
+      "start_s": 1754,
+      "speaker": "p-diego",
+      "text": "The usual one, I'll dig up the thread after this"
+    },
+    {
+      "start_s": 1846,
       "speaker": "p-zoe",
-      "text": "yep"
+      "text": "ok next the load cells. we have two on the fixture now, one in the foot, one at the hip. the hip one drifts with temp, uh, like a lot"
+    },
+    {
+      "start_s": 1938,
+      "speaker": "p-dmitri",
+      "text": "Does it need a thermal compensation, or do we just warm it up?"
+    },
+    {
+      "start_s": 2031,
+      "speaker": "p-zoe",
+      "text": "warming up for ten minutes gets most of it. the sensor guy said, uh, don't trust the first run of the day"
+    },
+    {
+      "start_s": 2123,
+      "speaker": "p-carlos",
+      "text": "That's true for the dyno too."
+    },
+    {
+      "start_s": 2215,
+      "speaker": "p-kenji",
+      "text": "could we log temp next to it"
+    },
+    {
+      "start_s": 2308,
+      "speaker": "p-zoe",
+      "text": "yeah, thermocouple's cheap, i'll add one"
+    },
+    {
+      "start_s": 2400,
+      "speaker": "p-zoe",
+      "text": "oh also, Battery enclosure thermal runaway containment, that moved from the 7th to 11/4"
+    },
+    {
+      "start_s": 2439,
+      "speaker": "p-dmitri",
+      "text": "Okay. Noted."
+    },
+    {
+      "start_s": 2477,
+      "speaker": "p-diego",
+      "text": "Noted 🙏"
+    },
+    {
+      "start_s": 2516,
+      "speaker": "p-dmitri",
+      "text": "Let's talk safety. E-stop on the gantry, where is it now?"
+    },
+    {
+      "start_s": 2554,
+      "speaker": "p-zoe",
+      "text": "right side, at hip height. carlos wants a second one at the rear"
+    },
+    {
+      "start_s": 2593,
+      "speaker": "p-carlos",
+      "text": "Yes, YES. Two E-stops, one each side. Not negotiable!!"
+    },
+    {
+      "start_s": 2632,
+      "speaker": "p-dmitri",
+      "text": "Agreed. Add a second one."
+    },
+    {
+      "start_s": 2670,
+      "speaker": "p-luis",
+      "text": "ill add it to the build list"
+    },
+    {
+      "start_s": 2709,
+      "speaker": "p-kenji",
+      "text": "what about the cable tray"
+    },
+    {
+      "start_s": 2748,
+      "speaker": "p-zoe",
+      "text": "that's the thing we said we'd deal with last. nxt wk probably"
+    },
+    {
+      "start_s": 2786,
+      "speaker": "p-dmitri",
+      "text": "Okay, I think we're done. Zoe, send the updated drawings out by EOW."
+    },
+    {
+      "start_s": 2825,
+      "speaker": "p-zoe",
+      "text": "ok, thurs or fri, one of them"
+    },
+    {
+      "start_s": 2863,
+      "speaker": "p-dmitri",
+      "text": "Thanks, everyone."
     }
   ],
   "summary": {
-    "overview": "Test fixture design review for the shaker base, rev B. Discussed plate stiffness and modal margin, machined versus welded construction, bolt access for torque, and accelerometer lead routing. Schedule slip on battery enclosure noted.",
+    "overview": "Review of the gantry test fixture, rev two. Changes were rails, harness pass-through, load cells, safety.",
     "shorthand_bullet": [
-      "rev B shaker base: thicker plate around mounting pattern",
-      "first mode above test band, margin thin (~15%), heavier payload shrinks it",
-      "add rib or stiffen web; machined preferred over welded (distortion)",
-      "back bolts unreachable with torque wrench: move bolts, not crow's foot",
-      "accelerometer leads: clips along rib, strain relief at sensor, route on top",
-      "Battery enclosure thermal runaway containment: was 10/7, now 11/4",
-      "small packs only in existing bay until it lands"
+      "side rails changed from extrusion to bent plate, extrusion flexed about 1 mm at full load",
+      "harness pass-through moved toward the back",
+      "pelvis mount load path through two M10 bolts, double washers suggested",
+      "hip load cell drifts with temp, warm up ten min, add thermocouple",
+      "Battery enclosure thermal runaway containment moved to 11/4",
+      "second E-stop to be added at rear",
+      "cable carrier drawing still pending from vendor"
     ],
     "action_items": [
-      "Zoe send revised model by eow",
-      "Zoe add bolt access to the list",
-      "move bolt pattern",
-      "Carlos keep larger packs out of testing",
-      "reschedule review"
+      "zoe to send updated drawings by EOW",
+      "luis to add second E-stop to build list",
+      "zoe to add thermocouple at hip load cell",
+      "diego to chase cable carrier drawing"
     ],
     "keywords": [
-      "shaker base",
-      "modal",
-      "rib",
-      "torque access",
-      "battery enclosure",
+      "gantry fixture",
+      "rails",
+      "load cell",
+      "E-stop",
       "thermal runaway containment"
     ]
   }

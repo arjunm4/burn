@@ -38,6 +38,25 @@
       }
     },
     {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
       "id": "p-diego",
       "name": "Diego Salcedo",
       "display_name": "diego",
@@ -53,6 +72,40 @@
         "quirks": [
           "reacts with 🙏 and 😬",
           "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
         ]
       }
     },
@@ -75,6 +128,22 @@
       }
     },
     {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
       "id": "p-talia",
       "name": "Talia Rosen",
       "display_name": "talia",
@@ -92,6 +161,24 @@
           "ends messages with an emoji"
         ]
       }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
     }
   ],
   "context": [
@@ -107,11 +194,11 @@
   ],
   "messages": [
     {
-      "ts": "1793034640.697099",
+      "ts": "1793034640.067920",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-002382"
+        "ev-002665"
       ],
       "brief": "Quote Q-2632111-1 for FL-LEG-1372: standard $929.85, 8 BD",
       "claim": {
@@ -127,18 +214,18 @@
       "must_mention": [
         "Q-2632111-1",
         "FL-LEG-1372",
-        "11/16"
+        "mon 11/16"
       ],
       "pressure": "elevated",
-      "length": "medium",
-      "text": "Quote Q-2632111-1 for FL-LEG-1372 is in, $929.85 each, 8 BD lead. need 10 by 11/16"
+      "length": "short",
+      "text": "Q-2632111-1 for FL-LEG-1372 is $929.85, 8 BD, need qty 10 by mon 11/16, pressure is elevated"
     },
     {
-      "ts": "1793051721.483391",
+      "ts": "1793051721.436553",
       "user": "p-owen",
       "thread_ts": null,
       "events": [
-        "ev-002348"
+        "ev-002630"
       ],
       "brief": "grip pucks: need 12 by 2026-11-12",
       "claim": {
@@ -153,15 +240,139 @@
         "thurs the 12th"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "need 12 grip pucks by thurs the 12th, can someone raise the PR"
+      "length": "short",
+      "text": "grip pucks need 12 by thurs the 12th"
     },
     {
-      "ts": "1793220299.606150",
+      "ts": "1793053455.665807",
+      "user": "p-gwen",
+      "thread_ts": "1793051721.436553",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "we ordered grip pucks once before and half had the wrong durometer, worth checking the spec on the quote"
+    },
+    {
+      "ts": "1793058621.917061",
+      "user": "p-tomas",
+      "thread_ts": "1793051721.436553",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "not sure that date works with the vendor, usually slower than that"
+    },
+    {
+      "ts": "1793119999.423382",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-002675"
+      ],
+      "brief": "height gauge: need 9 by 2026-11-10",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 9,
+          "by": "2026-11-10"
+        }
+      },
+      "must_mention": [
+        "height gauge",
+        "tues the 10th"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "height gauge: need 9 by tues the 10th, can someone put the order in?"
+    },
+    {
+      "ts": "1793124104.851862",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-002680"
+      ],
+      "brief": "Quote Q-2634095-1 for FL-BAT-1679: standard $2430.53, 10 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-12-21",
+          "quote_id": "Q-2634095-1",
+          "price_usd": 2430.53,
+          "lead_days": 10
+        }
+      },
+      "must_mention": [
+        "Q-2634095-1",
+        "FL-BAT-1679",
+        "mon 12/21"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Q-2634095-1 for FL-BAT-1679, $2430.53, 10 BD, need 10 by mon 12/21"
+    },
+    {
+      "ts": "1793207887.757648",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-002688"
+      ],
+      "brief": "Quote Q-2637161-1 for FL-HND-1458: standard $1426.32, 10 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 7,
+          "by": "2026-11-05",
+          "quote_id": "Q-2637161-1",
+          "price_usd": 1426.32,
+          "lead_days": 10
+        }
+      },
+      "must_mention": [
+        "Q-2637161-1",
+        "FL-HND-1458",
+        "thurs 11/5"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "Q-2637161-1 for FL-HND-1458 came back at $1426.32, 10 BD. need 7 by thurs 11/5 and the pressure is high"
+    },
+    {
+      "ts": "1793212312.203927",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-002694"
+      ],
+      "brief": "Quote Q-2637462-1 for FL-BAT-1632: standard $1334.64, 10 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 15,
+          "by": "2026-12-10",
+          "quote_id": "Q-2637462-1",
+          "price_usd": 1334.64,
+          "lead_days": 10
+        }
+      },
+      "must_mention": [
+        "Q-2637462-1",
+        "FL-BAT-1632",
+        "12/10"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Q-2637462-1 for FL-BAT-1632 is $1334.64, 10 BD, need 15 by 12/10"
+    },
+    {
+      "ts": "1793220299.360033",
       "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-002413"
+        "ev-002705"
       ],
       "brief": "Quote Q-2637845-1 for FL-BAT-1674: standard $947.25, 10 BD",
       "claim": {
@@ -177,18 +388,28 @@
       "must_mention": [
         "Q-2637845-1",
         "FL-BAT-1674",
-        "mon 11/9"
+        "11/9"
       ],
       "pressure": "elevated",
-      "length": "medium",
-      "text": "Quote Q-2637845-1 for FL-BAT-1674 came back, $947.25 and 10 BD. need 10 by mon 11/9"
+      "length": "short",
+      "text": "Q-2637845-1 FL-BAT-1674 $947.25 10 BD, need 10 by 11/9, elevated pressure"
     },
     {
-      "ts": "1793285183.546180",
+      "ts": "1793221078.322052",
+      "user": "p-beth",
+      "thread_ts": "1793220299.360033",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "yes approved on my side"
+    },
+    {
+      "ts": "1793285183.965648",
       "user": "p-talia",
       "thread_ts": null,
       "events": [
-        "ev-002429"
+        "ev-002723"
       ],
       "brief": "Quote Q-2638229-1 for FL-TST-2480: standard $237.31, 9 BD",
       "claim": {
@@ -208,14 +429,41 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Q-2638229-1 for FL-TST-2480, $237.31, 9 BD, need 12 by tues the 17th"
+      "text": "Q-2638229-1 for FL-TST-2480: $237.31, 9 BD, need 12 by tues the 17th"
     },
     {
-      "ts": "1793308449.788039",
+      "ts": "1793294901.854308",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-002738"
+      ],
+      "brief": "Quote Q-2639408-1 for FL-TST-2878: standard $488.12, 8 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-11-03",
+          "quote_id": "Q-2639408-1",
+          "price_usd": 488.12,
+          "lead_days": 8
+        }
+      },
+      "must_mention": [
+        "Q-2639408-1",
+        "FL-TST-2878",
+        "tues the 3rd"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "Q-2639408-1 for FL-TST-2878 $488.12, 8 BD, need 3 by tues the 3rd. high pressure"
+    },
+    {
+      "ts": "1793308449.115127",
       "user": "p-talia",
       "thread_ts": null,
       "events": [
-        "ev-002407"
+        "ev-002699"
       ],
       "brief": "Quote Q-2640089-1 for FL-KNE-1120: standard $384.82, 8 BD",
       "claim": {
@@ -231,11 +479,11 @@
       "must_mention": [
         "Q-2640089-1",
         "FL-KNE-1120",
-        "tues the 17th"
+        "tues 11/17"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "Q-2640089-1 for FL-KNE-1120 is $384.82 with 8 BD lead, need 12 by tues the 17th 🙏"
+      "length": "short",
+      "text": "Q-2640089-1 for FL-KNE-1120, $384.82, 8 BD, need 12 by tues 11/17"
     }
   ]
 }

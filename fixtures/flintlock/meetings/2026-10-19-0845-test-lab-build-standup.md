@@ -8,11 +8,8 @@
 
 ## Overview
 
-We need FL-TST-2216 by 10/23. We need FL-TST-2051 by 11/3. We need the bracket by 10/29. We need that order by 10/29 (the fit check).
+We need FL-TST-2051 by 11/4.
 
 ## Discussion
 
-- Dmitri: We need FL-TST-2216 by 10/23.
-- Andre: We need FL-TST-2051 by 11/3.
-- Zoe: We need the bracket by 10/29.
-- Dmitri: We need that order by 10/29 (the fit check).
+- Andre: We need FL-TST-2051 by 11/4.

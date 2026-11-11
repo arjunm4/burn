@@ -1,0 +1,121 @@
+{
+  "job_id": "jira-HND-2026-10-26-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 5,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HND",
+    "name": "Hands and arms"
+  },
+  "week": {
+    "start": "2026-10-26",
+    "end": "2026-11-01"
+  },
+  "people": [
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HND-269",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-kenji",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-10-27T12:08:01-07:00",
+      "due_date": "2026-11-05",
+      "events": [
+        "ev-002686"
+      ],
+      "brief": "Order 7x Finger middle link, 3x Thumb base, 9x Palm frame, 12x Tendon idler pulley / FL-HND-1458: need 7 by 2026-11-05",
+      "must_mention": [
+        "FL-HND-1458",
+        "thurs 11/5"
+      ],
+      "description_length": "medium",
+      "summary": "Order Finger middle link, thumb base, palm frame, tendon idler pulley",
+      "description": "1. FL-HND-1458 needed by thurs 11/5, 7 pcs.\n2. Quantities per the order list: 7 middle link, 3 thumb base, 9 palm frame, 12 idler pulley.\n3. Please confirm once it is placed.",
+      "comments": [
+        {
+          "id": "HND-269-c1",
+          "by": "p-kenji",
+          "at": "2026-10-27T15:51:48-07:00",
+          "events": [
+            "ev-002687"
+          ],
+          "brief": "the part: need 7 by 2026-11-05",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 7,
+              "by": "2026-11-05"
+            }
+          },
+          "must_mention": [
+            "the part",
+            "11/5"
+          ],
+          "body": "the part need 7 by 11/5"
+        },
+        {
+          "id": "HND-269-c2",
+          "by": "p-kenji",
+          "at": "2026-11-02T11:19:19-08:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "is this still open on your side"
+        }
+      ]
+    }
+  ]
+}

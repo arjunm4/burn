@@ -1,0 +1,308 @@
+{
+  "job_id": "slack-ch-mech-2026-05-11-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 53,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-mech",
+    "name": "mech",
+    "slack_id": "C07FLK0MECH",
+    "purpose": "Mechanical engineering: design, DFM, vendors, drawings"
+  },
+  "week": {
+    "start": "2026-05-11",
+    "end": "2026-05-17"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Pushrod clevis bends at 1.6x body weight in the tilt stand. This week: Hana: buckling, not yield; the clevis ear is 4 mm thick with a 6 mm hole.",
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno",
+    "Ongoing: Ratcheting risk at peak torque from loose wave generator fit. This week: Andre: knee ratcheted once at 95 Nm during the torque sweep, loud click, no damage.",
+    "Ongoing: Orders sitting in DFM review because of tolerance callouts. This week: Samir pushes engineers to put tolerances on the drawing, not just the STEP."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1778601694.610272",
+      "user": "p-lukas",
+      "thread_ts": null,
+      "events": [
+        "ev-003836"
+      ],
+      "brief": "brake adapter: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "brake adapter"
+      ],
+      "length": "short",
+      "text": "brake adapter: still quoting rev A"
+    },
+    {
+      "ts": "1778605546.782938",
+      "user": "p-lin",
+      "thread_ts": "1778601694.610272",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "will check later"
+    },
+    {
+      "ts": "1778616246.666020",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-003335"
+      ],
+      "brief": "FL-BAT-1685 rev F released: clearance for harness",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev F"
+      },
+      "must_mention": [
+        "FL-BAT-1685"
+      ],
+      "length": "short",
+      "text": "FL-BAT-1685 rev F released, moved the harness clearance"
+    },
+    {
+      "ts": "1778622973.557303",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-003428"
+      ],
+      "brief": "FL-HIP-1065 rev C released: hole pattern moved",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev C"
+      },
+      "must_mention": [
+        "FL-HIP-1065"
+      ],
+      "length": "medium",
+      "text": "FL-HIP-1065 rev C is out, hole pattern moved so recheck your mating bore"
+    },
+    {
+      "ts": "1778697400.062480",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-003340"
+      ],
+      "brief": "FL-TST-2879 rev B released: added gusset after it yielded in proof load",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-TST-2879"
+      ],
+      "length": "medium",
+      "text": "FL-TST-2879 rev B released. added a gusset after it yielded in proof load!!"
+    },
+    {
+      "ts": "1778701742.503908",
+      "user": "p-sofia",
+      "thread_ts": "1778697400.062480",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "We had something similar on the pelvis bracket last year, ribs fixed it for us."
+    },
+    {
+      "ts": "1778721596.513365",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-003371"
+      ],
+      "brief": "FL-TST-2145 rev B released: clearance cut for cable strain relief",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-TST-2145"
+      ],
+      "length": "short",
+      "text": "FL-TST-2145 rev B released, cut a clearance for the cable strain relief."
+    },
+    {
+      "ts": "1778863115.695639",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-003861"
+      ],
+      "brief": "press jig: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "press jig"
+      ],
+      "length": "medium",
+      "text": "Heads up, press jig is still quoting rev A."
+    },
+    {
+      "ts": "1778893530.572242",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-003871"
+      ],
+      "brief": "alignment jig: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "alignment jig"
+      ],
+      "length": "short",
+      "text": "alignment jig: still quoting REV A!!"
+    }
+  ]
+}

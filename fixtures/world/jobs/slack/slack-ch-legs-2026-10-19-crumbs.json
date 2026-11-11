@@ -19,25 +19,6 @@
   },
   "people": [
     {
-      "id": "p-andre",
-      "name": "Andre Baptiste",
-      "display_name": "andre",
-      "slack_id": "U07FLK0ANDR",
-      "title": "Test Engineer, dyno",
-      "style": {
-        "case": "lower",
-        "punctuation": "light",
-        "typos": "lots",
-        "emoji": "some",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": [
-          "fixes typos with *word",
-          "double-sends instead of editing"
-        ]
-      }
-    },
-    {
       "id": "p-beth",
       "name": "Beth Kowalski",
       "display_name": "beth",
@@ -129,20 +110,21 @@
       }
     },
     {
-      "id": "p-jun",
-      "name": "Jun Park",
-      "display_name": "jun",
-      "slack_id": "U07FLK0JUN0",
-      "title": "Research Engineer, learned locomotion",
+      "id": "p-leilani",
+      "name": "Leilani Kahale",
+      "display_name": "leilani.k",
+      "slack_id": "U07FLK0LEIL",
+      "title": "Locomotion Engineer",
       "style": {
-        "case": "lower",
-        "punctuation": "none",
-        "typos": "some",
-        "emoji": "rare",
-        "length": "terse",
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
         "hedging": "low",
         "quirks": [
-          "no capitals or end punctuation ever"
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
         ]
       }
     },
@@ -275,11 +257,11 @@
   ],
   "messages": [
     {
-      "ts": "1792442370.067597",
+      "ts": "1792442370.332401",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-002804"
+        "ev-003180"
       ],
       "brief": "Fit check: Knee joint spacer waits on Sensor breakout PCB for leg (left, hip to foot) (knee spacer)",
       "claim": {
@@ -291,86 +273,46 @@
         "Fit check: Knee joint spacer"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "Status on the knee: Fit check: Knee joint spacer is blocked until the Sensor breakout PCB for leg (left, hip to foot) (knee spacer) shows up. Nothing we can do on the mech side until then."
-    },
-    {
-      "ts": "1792443246.708970",
-      "user": "p-diego",
-      "thread_ts": "1792442370.067597",
-      "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
       "length": "medium",
-      "text": "Hmm, can't we fit check with the old board? The footprint hasn't moved as far as I know 🙏"
+      "text": "Fit check: Knee joint spacer is waiting on Sensor breakout PCB for leg (left, hip to foot) (knee spacer). Not much we can do until the boards come in."
     },
     {
-      "ts": "1792447771.401426",
-      "user": "p-mei",
-      "thread_ts": "1792442370.067597",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "Is the footprint actually the same? If the connector moved even a few mm the spacer clearance changes and we would be redoing the fit check anyway. Who has the latest layout?"
-    },
-    {
-      "ts": "1792450891.616526",
+      "ts": "1792450891.925007",
       "user": "p-samir",
       "thread_ts": null,
       "events": [
-        "ev-002215"
+        "ev-002490"
       ],
-      "brief": "Order XO-5544788 placed, promised 2026-10-22",
+      "brief": "Order XO-5544788 placed, promised 2026-10-27",
       "claim": {
         "kind": "eta",
-        "value": "2026-10-22"
+        "value": "2026-10-27"
       },
       "must_mention": [
         "XO-5544788",
         "the cradle",
-        "thurs the 22nd"
+        "10/27"
       ],
       "pressure": "high",
       "length": "short",
-      "text": "XO-5544788 is placed for the cradle, promised thurs the 22nd"
+      "text": "XO-5544788 is in, promised 10/27. that's the cradle"
     },
     {
-      "ts": "1792451693.398390",
-      "user": "p-callum",
-      "thread_ts": "1792442370.067597",
-      "events": [],
-      "brief": "reply (tags someone else) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "@hana might know whats on the layout"
-    },
-    {
-      "ts": "1792452084.294220",
-      "user": "p-callum",
-      "thread_ts": "1792450891.616526",
-      "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "ok so that lands before the leg goes back on the stand"
-    },
-    {
-      "ts": "1792453967.276651",
+      "ts": "1792451685.586342",
       "user": "p-beth",
-      "thread_ts": "1792450891.616526",
+      "thread_ts": "1792450891.925007",
       "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "brief": "reply (ack) in the thread about: the message above",
       "must_mention": [],
-      "length": "medium",
-      "text": "Last build we had a cradle show up two days after the promise date and it held up the whole rig setup, so I'd keep a spare plan."
+      "length": "short",
+      "text": "Thanks Samir."
     },
     {
-      "ts": "1792454478.824713",
+      "ts": "1792454478.791083",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-003861"
+        "ev-004317"
       ],
       "brief": "Assemble build unit: Thigh cable guide done",
       "claim": {
@@ -379,48 +321,18 @@
       },
       "must_mention": [
         "Assemble build unit: Thigh cable guide",
-        "mon 10/19"
+        "10/19"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Assemble build unit: Thigh cable guide is done as of mon 10/19."
+      "text": "Assemble build unit: Thigh cable guide done 10/19, moving to the next unit."
     },
     {
-      "ts": "1792454681.542019",
-      "user": "p-zoe",
-      "thread_ts": "1792454478.824713",
-      "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "nice, did the cables route ok or still rubbing at the bend"
-    },
-    {
-      "ts": "1792454779.855529",
-      "user": "p-diego",
-      "thread_ts": "1792450891.616526",
-      "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "cradle: if it's late again we're holding the leg by hand 😂"
-    },
-    {
-      "ts": "1792457760.526490",
-      "user": "p-beth",
-      "thread_ts": "1792454478.824713",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Which unit does that one go on? I want to make sure the tracker matches what is on the stand."
-    },
-    {
-      "ts": "1792458122.743130",
+      "ts": "1792458122.142320",
       "user": "p-hana",
       "thread_ts": null,
       "events": [
-        "ev-002321"
+        "ev-002604"
       ],
       "brief": "FL-TST-2535: need 1 by 2026-11-06 for Rig setup: Tilt stand weight hanger",
       "claim": {
@@ -435,30 +347,20 @@
         "Rig setup: Tilt stand weight hanger",
         "FL-TST-2554",
         "FL-TST-2567",
-        "fri 11/6"
+        "fri the 6th"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "FL-TST-2535 x1 for Rig setup: Tilt stand weight hanger, along with FL-TST-2554 and FL-TST-2567, need it by fri 11/6"
+      "length": "medium",
+      "text": "FL-TST-2535 need 1 by fri the 6th for Rig setup: Tilt stand weight hanger. Also FL-TST-2554 and FL-TST-2567 are in the same bucket, not 100% sure on counts"
     },
     {
-      "ts": "1792461363.573122",
-      "user": "p-mei",
-      "thread_ts": "1792458122.743130",
-      "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Are we sure the hanger is the long pole? I thought the tilt stand frame was the slow part."
-    },
-    {
-      "ts": "1792464674.680987",
+      "ts": "1792464674.111971",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-002340"
+        "ev-002625"
       ],
-      "brief": "FL-ANK-1253: need 9 by 2026-11-02 for the build",
+      "brief": "FL-ANK-1253: need 9 by 2026-11-02 for Fit check: Ankle roll link (2)",
       "claim": {
         "kind": "needs",
         "value": {
@@ -468,45 +370,42 @@
       },
       "must_mention": [
         "FL-ANK-1253",
-        "the build",
+        "Fit check: Ankle roll link (2)",
         "FL-ANK-1268",
         "FL-ANK-1291",
         "FL-ANK-1290",
         "11/2"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "FL-ANK-1253 x9 has to be in hand for the build. also need FL-ANK-1268, FL-ANK-1291 and FL-ANK-1290, all by 11/2"
-    },
-    {
-      "ts": "1792487340.014639",
-      "user": "p-andre",
-      "thread_ts": null,
-      "events": [
-        "ev-003232"
-      ],
-      "brief": "Correction: FL-TST-2051: need 2 by 2026-11-04",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 2,
-          "by": "2026-11-04"
-        }
-      },
-      "must_mention": [
-        "FL-TST-2051",
-        "11/4"
-      ],
-      "pressure": "high",
       "length": "short",
-      "text": "*FL-TST-2051 need 2 by 11/4 not the earlier date"
+      "text": "FL-ANK-1253 need 9 by 11/2 for Fit check: Ankle roll link (2). Same for FL-ANK-1268, FL-ANK-1291 and FL-ANK-1290 🙏"
     },
     {
-      "ts": "1792509370.352964",
+      "ts": "1792468210.948163",
+      "user": "p-beth",
+      "thread_ts": "1792464674.111971",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I added the three to the tracker, shipping paperwork is attached there."
+    },
+    {
+      "ts": "1792471027.218717",
+      "user": "p-zoe",
+      "thread_ts": "1792464674.111971",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "will check later, in the cell rn"
+    },
+    {
+      "ts": "1792509370.522054",
       "user": "p-talia",
       "thread_ts": null,
       "events": [
-        "ev-002234"
+        "ev-002509"
       ],
       "brief": "the clevis: need 3 by 2026-10-26 for the build",
       "claim": {
@@ -519,61 +418,41 @@
       "must_mention": [
         "the clevis",
         "the build",
-        "10/26"
+        "mon the 26th"
       ],
       "pressure": "high",
       "length": "short",
-      "text": "need 3 of the clevis for the build, 10/26 if possible 🙏"
+      "text": "the clevis, need 3 by mon the 26th for the build 🙏"
     },
     {
-      "ts": "1792511257.867433",
-      "user": "p-luis",
-      "thread_ts": "1792509370.352964",
-      "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "ok"
-    },
-    {
-      "ts": "1792512117.417068",
+      "ts": "1792512117.889857",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-002228"
+        "ev-002503"
       ],
-      "brief": "FL-ANK-1290: need 6 by 2026-10-20",
+      "brief": "FL-ANK-1290: need 6 by 2026-10-23",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 6,
-          "by": "2026-10-20"
+          "by": "2026-10-23"
         }
       },
       "must_mention": [
         "FL-ANK-1290",
-        "10/20"
+        "fri the 23rd"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "FL-ANK-1290 x6 needed 10/20, who can chase"
+      "length": "short",
+      "text": "FL-ANK-1290 need 6 by fri the 23rd 😬"
     },
     {
-      "ts": "1792516382.274209",
-      "user": "p-luis",
-      "thread_ts": "1792509370.352964",
-      "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "idk that's gonna work"
-    },
-    {
-      "ts": "1792518325.949800",
+      "ts": "1792518325.341232",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-002309"
+        "ev-002592"
       ],
       "brief": "1276: need 8 by 2026-11-02",
       "claim": {
@@ -588,25 +467,25 @@
         "11/2"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "1276 needs 8 by 11/2, flagging early."
+      "length": "short",
+      "text": "1276 need 8 by 11/2"
     },
     {
-      "ts": "1792520907.406430",
-      "user": "p-zoe",
-      "thread_ts": "1792509370.352964",
+      "ts": "1792519644.082433",
+      "user": "p-callum",
+      "thread_ts": "1792518325.341232",
       "events": [],
       "brief": "reply (tags someone else) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "@samir.k can you confirm w the vendor"
+      "text": "@diego thats the ankle one right?"
     },
     {
-      "ts": "1792521911.028548",
+      "ts": "1792521911.277089",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-002366"
+        "ev-002648"
       ],
       "brief": "the hook: need 2 by 2026-10-29",
       "claim": {
@@ -618,38 +497,38 @@
       },
       "must_mention": [
         "the hook",
-        "thurs 10/29"
+        "thurs the 29th"
       ],
       "pressure": "high",
       "length": "short",
-      "text": "need the hook x2 by thurs 10/29"
+      "text": "the hook, need 2 by thurs the 29th 🙏"
     },
     {
-      "ts": "1792523416.558215",
-      "user": "p-ingrid",
-      "thread_ts": "1792518325.949800",
+      "ts": "1792522380.201815",
+      "user": "p-mei",
+      "thread_ts": "1792518325.341232",
       "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "No."
-    },
-    {
-      "ts": "1792526518.428196",
-      "user": "p-diego",
-      "thread_ts": "1792518325.949800",
-      "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "brief": "reply (thanks) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "same thing happened w the toe plate last month, took forever to show up"
+      "text": "Thanks for flagging."
     },
     {
-      "ts": "1792526757.799898",
+      "ts": "1792525989.242531",
+      "user": "p-leilani",
+      "thread_ts": "1792518325.341232",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "yep same page 🙏"
+    },
+    {
+      "ts": "1792526757.540226",
       "user": "p-talia",
       "thread_ts": null,
       "events": [
-        "ev-002230"
+        "ev-002505"
       ],
       "brief": "Order XO-5547916 placed, promised 2026-10-26",
       "claim": {
@@ -659,38 +538,61 @@
       "must_mention": [
         "XO-5547916",
         "ankle bushing",
-        "mon 10/26"
+        "10/26"
       ],
       "pressure": "high",
       "length": "short",
-      "text": "XO-5547916 is placed for ankle bushing, promised mon 10/26 🙏"
+      "text": "XO-5547916 ankle bushing placed, promised 10/26 🙏"
     },
     {
-      "ts": "1792530971.925296",
-      "user": "p-zoe",
-      "thread_ts": "1792526757.799898",
+      "ts": "1792528198.214475",
+      "user": "p-mei",
+      "thread_ts": "1792526757.540226",
       "events": [],
       "brief": "reply (will check later) in the thread about: the message above",
       "must_mention": [],
       "length": "medium",
-      "text": "will look at it after lunch"
+      "text": "Thanks Talia. I will check with the team later today on whether that date works for the build."
     },
     {
-      "ts": "1792533440.095930",
-      "user": "p-luis",
-      "thread_ts": "1792526757.799898",
+      "ts": "1792531915.585445",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-003795"
+      ],
+      "brief": "FL-ANK-1276: need 8 by 2026-11-02",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-11-02"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1276",
+        "mon the 2nd"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "FL-ANK-1276 need 8 by mon the 2nd"
+    },
+    {
+      "ts": "1792532764.428260",
+      "user": "p-leilani",
+      "thread_ts": "1792526757.540226",
       "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "brief": "reply (tags someone else) in the thread about: the message above",
       "must_mention": [],
       "length": "medium",
-      "text": "hmm i dont think the bushing fits that spec, check the drawing"
+      "text": "@samir.k do you have the contact on that one? 🙏"
     },
     {
-      "ts": "1792534689.622871",
+      "ts": "1792534689.152003",
       "user": "p-luis",
       "thread_ts": null,
       "events": [
-        "ev-002091"
+        "ev-002352"
       ],
       "brief": "hip bracket arrived (3)",
       "claim": {
@@ -702,45 +604,55 @@
         "3"
       ],
       "pressure": "elevated",
-      "length": "medium",
-      "text": "hip bracket arrived, 3 of them, in receiving bin"
+      "length": "short",
+      "text": "hip bracket arrived, 3 in the box"
     },
     {
-      "ts": "1792537227.163821",
+      "ts": "1792536133.975708",
+      "user": "p-hana",
+      "thread_ts": "1792526757.540226",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "is that the full order or just the first batch? 🙏"
+    },
+    {
+      "ts": "1792536735.890322",
       "user": "p-zoe",
-      "thread_ts": "1792534689.622871",
-      "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "are they the rev with the extra tab or the old one"
-    },
-    {
-      "ts": "1792539072.520833",
-      "user": "p-ingrid",
-      "thread_ts": "1792534689.622871",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "Good. Please make sure they get logged today."
-    },
-    {
-      "ts": "1792542558.487529",
-      "user": "p-mei",
-      "thread_ts": "1792534689.622871",
+      "thread_ts": "1792534689.152003",
       "events": [],
       "brief": "reply (adds a detail) in the thread about: the message above",
       "must_mention": [],
-      "length": "short",
-      "text": "one has a scratch on the mating face fyi"
+      "length": "one_word",
+      "text": "one had a scuffed face, put it on the side"
     },
     {
-      "ts": "1792542644.361610",
+      "ts": "1792538939.732608",
+      "user": "p-talia",
+      "thread_ts": "1792534689.152003",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "thanks zoe 🙏"
+    },
+    {
+      "ts": "1792539630.477997",
+      "user": "p-ingrid",
+      "thread_ts": "1792534689.152003",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "If the scuffed one is cosmetic only, please still log it so we have the record of what came in."
+    },
+    {
+      "ts": "1792542644.262018",
       "user": "p-ingrid",
       "thread_ts": null,
       "events": [
-        "ev-002310"
+        "ev-002593"
       ],
       "brief": "FL-ANK-1276: need 8 by 2026-11-02; asks whether expediting is worth it",
       "claim": {
@@ -752,19 +664,19 @@
       },
       "must_mention": [
         "FL-ANK-1276",
-        "mon 11/2"
+        "11/2"
       ],
       "pressure": "high",
       "asks_expedite": true,
       "length": "short",
-      "text": "FL-ANK-1276 need 8 by mon 11/2. is expediting worth it?"
+      "text": "FL-ANK-1276: we need 8 by 11/2. Is expediting worth it?"
     },
     {
-      "ts": "1792542777.354019",
+      "ts": "1792542777.426146",
       "user": "p-talia",
       "thread_ts": null,
       "events": [
-        "ev-002236"
+        "ev-002511"
       ],
       "brief": "Order XO-5551475 placed, promised 2026-10-30",
       "claim": {
@@ -774,64 +686,28 @@
       "must_mention": [
         "XO-5551475",
         "1295",
-        "10/30"
+        "fri the 30th"
       ],
       "pressure": "high",
+      "length": "medium",
+      "text": "XO-5551475 placed, promised fri the 30th. 1295 is on the same order 🙏"
+    },
+    {
+      "ts": "1792544806.953451",
+      "user": "p-diego",
+      "thread_ts": "1792542777.426146",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
       "length": "short",
-      "text": "XO-5551475 placed for 1295, promised 10/30 🙏"
+      "text": "same vendor was a day early on mine last month 🙏"
     },
     {
-      "ts": "1792575477.777830",
-      "user": "p-diego",
-      "thread_ts": "1792512117.417068",
-      "events": [
-        "ev-003238"
-      ],
-      "brief": "Correction: FL-ANK-1290: need 6 by 2026-10-23",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 6,
-          "by": "2026-10-23"
-        }
-      },
-      "must_mention": [
-        "FL-ANK-1290",
-        "fri 10/23"
-      ],
-      "pressure": "high",
-      "length": "medium",
-      "text": "*FL-ANK-1290 6 needed fri 10/23 not tues"
-    },
-    {
-      "ts": "1792587984.914824",
-      "user": "p-diego",
-      "thread_ts": null,
-      "events": [
-        "ev-002341"
-      ],
-      "brief": "FL-ANK-1253: need 9 by 2026-11-02",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 9,
-          "by": "2026-11-02"
-        }
-      },
-      "must_mention": [
-        "FL-ANK-1253",
-        "mon 11/2"
-      ],
-      "pressure": "high",
-      "length": "medium",
-      "text": "FL-ANK-1253 x9 by mon 11/2 still. nothing has changed on that"
-    },
-    {
-      "ts": "1792594748.095797",
+      "ts": "1792594748.762408",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-002367"
+        "ev-002649"
       ],
       "brief": "FL-TST-2017: need 2 by 2026-10-29",
       "claim": {
@@ -843,102 +719,66 @@
       },
       "must_mention": [
         "FL-TST-2017",
-        "thurs the 29th"
+        "10/29"
       ],
       "pressure": "high",
-      "length": "short",
-      "text": "FL-TST-2017 need 2 by thurs the 29th"
+      "length": "medium",
+      "text": "FL-TST-2017 need 2 by 10/29. Without those we can't start the drop test setup, so please tell me soon if that slips"
     },
     {
-      "ts": "1792598830.276494",
-      "user": "p-luis",
-      "thread_ts": "1792587984.914824",
-      "events": [],
-      "brief": "reply (will check later) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "will check the bin when i'm down there"
-    },
-    {
-      "ts": "1792602074.923178",
-      "user": "p-talia",
-      "thread_ts": "1792512117.417068",
-      "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "i think that one's already on order tho 😬"
-    },
-    {
-      "ts": "1792602621.258369",
-      "user": "p-jun",
-      "thread_ts": "1792587984.914824",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "yep"
-    },
-    {
-      "ts": "1792604637.395275",
+      "ts": "1792604637.830399",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-002368"
+        "ev-002650"
       ],
-      "brief": "FL-TST-2017: need 2 by 2026-10-28 for the build",
+      "brief": "FL-TST-2017: need 2 by 2026-10-29 for the build",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 2,
-          "by": "2026-10-28"
+          "by": "2026-10-29"
         }
       },
       "must_mention": [
         "FL-TST-2017",
         "the build",
-        "10/28"
+        "10/29"
       ],
       "pressure": "elevated",
-      "length": "medium",
-      "text": "FL-TST-2017 x2 for the build, 10/28 is the real one"
-    },
-    {
-      "ts": "1792605014.281843",
-      "user": "p-callum",
-      "thread_ts": "1792587984.914824",
-      "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
-      "must_mention": [],
       "length": "short",
-      "text": "got it"
+      "text": "FL-TST-2017 need 2 by 10/29 for the build"
     },
     {
-      "ts": "1792605505.733804",
-      "user": "p-callum",
-      "thread_ts": "1792512117.417068",
-      "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "that doesnt match what i saw on the sheet"
-    },
-    {
-      "ts": "1792607449.167223",
-      "user": "p-hana",
-      "thread_ts": "1792512117.417068",
-      "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "I think the sheet might be stale, not 100% sure but worth a recheck"
-    },
-    {
-      "ts": "1792629910.310896",
+      "ts": "1792608951.492127",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-003706"
+        "ev-003808"
+      ],
+      "brief": "stator jig: need 3 by 2026-11-03 for Fixture install and shakedown: Stator insertion jig",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-11-03"
+        }
+      },
+      "must_mention": [
+        "stator jig",
+        "Fixture install and shakedown: Stator insertion jig",
+        "tues 11/3"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "stator jig, need 3 by tues 11/3 for Fixture install and shakedown: Stator insertion jig 🙏"
+    },
+    {
+      "ts": "1792629910.598658",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-004169"
       ],
       "brief": "Rebuild leg with rev C shank and DVT knee done",
       "claim": {
@@ -947,28 +787,18 @@
       },
       "must_mention": [
         "Rebuild leg with rev C shank and DVT knee",
-        "10/21"
+        "wed 10/21"
       ],
       "pressure": "low",
-      "length": "short",
-      "text": "Rebuild leg with rev C shank and DVT knee done 10/21 🙏"
+      "length": "medium",
+      "text": "Rebuild leg with rev C shank and DVT knee done wed 10/21 🙏"
     },
     {
-      "ts": "1792632699.972886",
-      "user": "p-talia",
-      "thread_ts": "1792629910.310896",
-      "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "👍"
-    },
-    {
-      "ts": "1792669860.203206",
+      "ts": "1792669860.042879",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-001994"
+        "ev-002244"
       ],
       "brief": "knee pulley in use",
       "claim": {
@@ -978,63 +808,43 @@
       "must_mention": [
         "knee pulley",
         "the build",
-        "10/21"
+        "wed the 21st"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "knee pulley in use since 10/21, need it for the build 🙏"
+      "length": "short",
+      "text": "knee pulley in use for the build, done wed the 21st 😬"
     },
     {
-      "ts": "1792687110.924899",
-      "user": "p-mei",
-      "thread_ts": "1792669860.203206",
-      "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "Thanks, Diego. Does that pulley change the cable preload we set up last week, or is it a straight swap?"
-    },
-    {
-      "ts": "1792687778.666673",
-      "user": "p-beth",
-      "thread_ts": "1792669860.203206",
-      "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "Not convinced, the pulley has been tight before."
-    },
-    {
-      "ts": "1792689233.723464",
+      "ts": "1792689233.675473",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-002370"
+        "ev-002652"
       ],
-      "brief": "1253: need 6 by 2026-11-17 for next week",
+      "brief": "1253: need 6 by 2026-11-19 for Fit check: Ankle roll link",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 6,
-          "by": "2026-11-17"
+          "by": "2026-11-19"
         }
       },
       "must_mention": [
         "1253",
-        "next week",
+        "Fit check: Ankle roll link (3)",
         "toe",
-        "tues 11/17"
+        "thurs the 19th"
       ],
-      "pressure": "elevated",
+      "pressure": "high",
       "length": "short",
-      "text": "1253 x6 for the toe, next week, tues 11/17 😬"
+      "text": "1253 need 6 by thurs the 19th for Fit check: Ankle roll link (3), toe side 🙏"
     },
     {
-      "ts": "1792697394.150316",
+      "ts": "1792697394.838815",
       "user": "p-talia",
       "thread_ts": null,
       "events": [
-        "ev-002280"
+        "ev-002558"
       ],
       "brief": "Order XO-5561086 placed, promised 2026-10-30",
       "claim": {
@@ -1044,18 +854,18 @@
       "must_mention": [
         "XO-5561086",
         "pivot pin",
-        "10/30"
+        "fri 10/30"
       ],
       "pressure": "high",
       "length": "short",
-      "text": "XO-5561086 placed for pivot pin, promised 10/30 🙏"
+      "text": "XO-5561086 pivot pin placed, promised fri 10/30 🙏"
     },
     {
-      "ts": "1792702821.834498",
+      "ts": "1792702821.802520",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-002829"
+        "ev-003212"
       ],
       "brief": "Kit and assemble: Ankle pivot bushing waits on Driver PCBA respin for ankle and foot (ankle bushing)",
       "claim": {
@@ -1064,54 +874,54 @@
       },
       "must_mention": [
         "Driver PCBA respin for ankle and foot (ankle bushing)",
-        "the bushing"
+        "Kit and assemble: Ankle pivot bushing"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "Kit and assemble: Ankle pivot bushing is waiting on Driver PCBA respin for ankle and foot (ankle bushing), so the bushing sits in the kit tray 😬"
+      "text": "Kit and assemble: Ankle pivot bushing is waiting on Driver PCBA respin for ankle and foot (ankle bushing) 😬"
     },
     {
-      "ts": "1792705485.226494",
+      "ts": "1792708063.942901",
       "user": "p-beth",
-      "thread_ts": "1792702821.834498",
+      "thread_ts": "1792702821.802520",
       "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "brief": "reply (agrees) in the thread about: the message above",
       "must_mention": [],
-      "length": "medium",
-      "text": "Same thing bit us on the last ankle, we ended up kitting around the board and finishing the stack later."
+      "length": "short",
+      "text": "Yes, agreed. That's the gating item on the ankle."
     },
     {
-      "ts": "1792775470.067320",
+      "ts": "1792775470.850291",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-002378"
+        "ev-002661"
       ],
-      "brief": "FL-LEG-1372: need 10 by 2026-11-16 for next week",
+      "brief": "FL-LEG-1372: need 10 by 2026-11-19 for Kit and assemble: Shank to ankle adapter",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 10,
-          "by": "2026-11-16"
+          "by": "2026-11-19"
         }
       },
       "must_mention": [
         "FL-LEG-1372",
-        "next week",
+        "Kit and assemble: Shank to ankle adapter",
         "FL-LEG-1392",
         "FL-LEG-1343",
-        "mon the 16th"
+        "11/19"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "FL-LEG-1372 x10 plus FL-LEG-1392 and FL-LEG-1343, next week, mon the 16th 🙏"
+      "length": "medium",
+      "text": "FL-LEG-1372 need 10 by 11/19 for Kit and assemble: Shank to ankle adapter, with FL-LEG-1392 and FL-LEG-1343 on the same list 🙏"
     },
     {
-      "ts": "1792784002.331212",
+      "ts": "1792784002.477496",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-003090"
+        "ev-003479"
       ],
       "brief": "FL-LEG-1372 rev C released: material change",
       "claim": {
@@ -1121,15 +931,45 @@
       "must_mention": [
         "FL-LEG-1372"
       ],
-      "length": "short",
-      "text": "FL-LEG-1372 rev C is released, material change on this one."
+      "length": "medium",
+      "text": "FL-LEG-1372 rev C is out, material change. Drawing is updated in the PLM, please check before you cut anything."
     },
     {
-      "ts": "1792802977.285253",
+      "ts": "1792786652.809206",
+      "user": "p-priya",
+      "thread_ts": "1792784002.477496",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Will check later and report back."
+    },
+    {
+      "ts": "1792791447.166726",
+      "user": "p-mei",
+      "thread_ts": "1792784002.477496",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Is the material change driven by the fatigue results, or by supply? The new stock only affects the surface finish callout as far as I can tell."
+    },
+    {
+      "ts": "1792796501.921033",
+      "user": "p-callum",
+      "thread_ts": "1792784002.477496",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "idk, i think the old stock would have been fine"
+    },
+    {
+      "ts": "1792802977.943585",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-002380"
+        "ev-002663"
       ],
       "brief": "FL-LEG-1372: need 10 by 2026-11-16",
       "claim": {
@@ -1141,11 +981,21 @@
       },
       "must_mention": [
         "FL-LEG-1372",
-        "mon the 16th"
+        "11/16"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "FL-LEG-1372 x10 still needed mon the 16th."
+      "text": "FL-LEG-1372 need 10 by 11/16"
+    },
+    {
+      "ts": "1792805374.025036",
+      "user": "p-callum",
+      "thread_ts": "1792802977.943585",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "will check later"
     }
   ]
 }

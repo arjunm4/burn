@@ -1,0 +1,344 @@
+{
+  "job_id": "slack-ch-electrical-2026-04-27-background-2026-04-30",
+  "source": "slack",
+  "status": "blank",
+  "priority": 58,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-electrical",
+    "name": "electrical",
+    "slack_id": "C07FLK0ELEC",
+    "purpose": "Electrical and firmware: boards, harnesses, bring-up"
+  },
+  "week": {
+    "start": "2026-04-27",
+    "end": "2026-05-03"
+  },
+  "people": [
+    {
+      "id": "p-anika",
+      "name": "Anika Joshi",
+      "display_name": "anika",
+      "slack_id": "U07FLK0ANIK",
+      "title": "Firmware Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-kwame",
+      "name": "Kwame Asante",
+      "display_name": "kwame",
+      "slack_id": "U07FLK0KWAM",
+      "title": "Senior Electrical Engineer, power",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-marcus",
+      "name": "Marcus Adeyemi",
+      "display_name": "marcus",
+      "slack_id": "U07FLK0MARC",
+      "title": "CTO",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-valeria",
+      "name": "Valeria Ortiz",
+      "display_name": "valeria.o",
+      "slack_id": "U07FLK0VALE",
+      "title": "Electrical Engineer, battery systems",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-yusuf",
+      "name": "Yusuf Demir",
+      "display_name": "yusuf",
+      "slack_id": "U07FLK0YUSU",
+      "title": "Firmware Engineer, motor control",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1777563114.916270",
+      "user": "p-yusuf",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on this: Andre: EVT hip hits the 120 C winding limit after ~4 min at 60 Nm, spec says 10 min.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1777566488.959973",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about off-topic: standing desks",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1777569370.820157",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about this: Nadia suspects poor stator-to-housing contact; thermal pad is 0.5 mm and compresses unevenly.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1777571285.912642",
+      "user": "p-anika",
+      "thread_ts": "1777569370.820157",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: Nadia suspects poor stator-to-housing contact; thermal pad is 0.5 mm and compresses unevenly.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1777573353.313328",
+      "user": "p-kwame",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Nadia suspects poor stator-to-housing contact; thermal pad is 0.5 mm and compresses unevenly.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1777573669.205528",
+      "user": "p-idris",
+      "thread_ts": "1777569370.820157",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Nadia suspects poor stator-to-housing contact; thermal pad is 0.5 mm and compresses unevenly.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1777574502.448293",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about this: Bao notes current ripple at 20 kHz PWM adds copper loss; asks to try 40 kHz on the driver.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1777576074.943296",
+      "user": "p-jonas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Andre: EVT hip hits the 120 C winding limit after ~4 min at 60 Nm, spec says 10 min.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1777577185.887029",
+      "user": "p-marcus",
+      "thread_ts": "1777569370.820157",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: Nadia suspects poor stator-to-housing contact; thermal pad is 0.5 mm and compresses unevenly.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1777581276.841956",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about off-topic: a teardown video",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1777585818.033254",
+      "user": "p-jonas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about the ongoing hip winding hits 120 c after 4 min at 60 nm continuous on the dyno",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1777589137.099312",
+      "user": "p-valeria",
+      "thread_ts": "1777585818.033254",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the ongoing hip winding hits 120 c after 4 min at 60 nm continuous on the dyno",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1777589234.156307",
+      "user": "p-jonas",
+      "thread_ts": "1777585818.033254",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the ongoing hip winding hits 120 c after 4 min at 60 nm continuous on the dyno",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1777591403.672584",
+      "user": "p-valeria",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to the ongoing hip winding hits 120 c after 4 min at 60 nm continuous on the dyno",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1777593759.455164",
+      "user": "p-farah",
+      "thread_ts": "1777585818.033254",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the ongoing hip winding hits 120 c after 4 min at 60 nm continuous on the dyno",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

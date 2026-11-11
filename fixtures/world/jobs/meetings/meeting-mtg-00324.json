@@ -1,0 +1,303 @@
+{
+  "job_id": "meeting-mtg-00324",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 63,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00324",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-04-06T08:45:00-07:00",
+    "actual_min": 16,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-andre",
+      "p-lin",
+      "p-jade",
+      "p-luis",
+      "p-nora"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-000685",
+      "speaker": "p-dmitri",
+      "at_min": [
+        10,
+        16
+      ],
+      "brief": "FL-KNE-1118: need 12 by 2026-04-28",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-knee-flexspline-clamp",
+        "value": {
+          "qty": 12,
+          "by": "2026-04-28"
+        }
+      },
+      "must_mention": [
+        "FL-KNE-1118",
+        "4/28"
+      ]
+    },
+    {
+      "event": "ev-000667",
+      "speaker": "p-zoe",
+      "at_min": [
+        12,
+        16
+      ],
+      "brief": "FL-KNE-1166: need 7 by 2026-04-15 for Kit and assemble for Actuator DVT build: Knee actuator housing",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-knee-housing",
+        "value": {
+          "qty": 7,
+          "by": "2026-04-15"
+        }
+      },
+      "must_mention": [
+        "FL-KNE-1166",
+        "Kit and assemble for Actuator DVT build: Knee actuator housing",
+        "4/15"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-dmitri",
+      "text": "Morning. Nora is joining us today for the build side. Dyno first?"
+    },
+    {
+      "start_s": 8,
+      "speaker": "p-andre",
+      "text": "sweep ran overnight, no trips. data on the drive"
+    },
+    {
+      "start_s": 18,
+      "speaker": "p-dmitri",
+      "text": "Good. Lin?"
+    },
+    {
+      "start_s": 20,
+      "speaker": "p-lin",
+      "text": "Life test is fine. Cycle count is on track."
+    },
+    {
+      "start_s": 30,
+      "speaker": "p-nora",
+      "text": "From the build side, 1. DVT knee units are on schedule, 2. we are waiting on one housing kit, 3. I'd like a clearer list of what test needs from me."
+    },
+    {
+      "start_s": 56,
+      "speaker": "p-dmitri",
+      "text": "Right. Okay, FL-KNE-1118, need 12 by 4/28."
+    },
+    {
+      "start_s": 66,
+      "speaker": "p-nora",
+      "text": "FL-KNE-1118, 12, 4/28. I will check the PO."
+    },
+    {
+      "start_s": 76,
+      "speaker": "p-luis",
+      "text": "shin stand is ready i think, just need the torque wrench *wrench"
+    },
+    {
+      "start_s": 90,
+      "speaker": "p-jade",
+      "text": "got one box in from the machine shop, its on the shelf"
+    },
+    {
+      "start_s": 100,
+      "speaker": "p-zoe",
+      "text": "ok. also FL-KNE-1166, I need 7 by 4/15 for Kit and assemble for Actuator DVT build: Knee actuator housing"
+    },
+    {
+      "start_s": 116,
+      "speaker": "p-dmitri",
+      "text": "Is that the one Nora just mentioned?"
+    },
+    {
+      "start_s": 120,
+      "speaker": "p-nora",
+      "text": "I think that is the housing kit, yes. I will check on it."
+    },
+    {
+      "start_s": 130,
+      "speaker": "p-zoe",
+      "text": "ok thanks"
+    },
+    {
+      "start_s": 134,
+      "speaker": "p-dmitri",
+      "text": "Anything else? Go."
+    }
+  ],
+  "summary": {
+    "overview": "Test lab standup with Nora from build. Dyno sweep, life test, build status. Two parts needed: FL-KNE-1118 and FL-KNE-1166.",
+    "shorthand_bullet": [
+      "FL-KNE-1118, need 12 by 4/28",
+      "FL-KNE-1166, need 7 by 4/15 for Kit and assemble for Actuator DVT build: Knee actuator housing",
+      "Dyno overnight sweep no trips",
+      "DVT knee units on schedule, one housing kit pending"
+    ],
+    "action_items": [
+      "Nora to check PO for FL-KNE-1118 and housing kit",
+      "Zoe to follow up FL-KNE-1166"
+    ],
+    "keywords": [
+      "FL-KNE-1118",
+      "FL-KNE-1166",
+      "dyno",
+      "build",
+      "knee"
+    ]
+  }
+}

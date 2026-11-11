@@ -1,0 +1,301 @@
+{
+  "job_id": "meeting-mtg-00641",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 49,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00641",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-05-29T08:45:00-07:00",
+    "actual_min": 14,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-lin",
+      "p-jade",
+      "p-destiny"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-001202",
+      "speaker": "p-dmitri",
+      "at_min": [
+        0,
+        5
+      ],
+      "brief": "the jig: need 2 by 2026-06-18",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-dyno-alignment-jig",
+        "value": {
+          "qty": 2,
+          "by": "2026-06-18"
+        }
+      },
+      "must_mention": [
+        "the jig",
+        "6/18"
+      ]
+    },
+    {
+      "event": "ev-001219",
+      "speaker": "p-dmitri",
+      "at_min": [
+        10,
+        14
+      ],
+      "brief": "actuator saddle: need 7 by 2026-06-19",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-leg-actuator-saddle",
+        "value": {
+          "qty": 7,
+          "by": "2026-06-19"
+        }
+      },
+      "must_mention": [
+        "actuator saddle",
+        "6/19"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-dmitri",
+      "text": "Okay, Friday. Short one. Before we start, we need the jig by 6/18. Two of them. Zoe, you've got that?"
+    },
+    {
+      "start_s": 20,
+      "speaker": "p-zoe",
+      "text": "yep, the jig by the 18th, two. i'll fix that, 6/18, sorry"
+    },
+    {
+      "start_s": 45,
+      "speaker": "p-dmitri",
+      "text": "Good. Lin, life test."
+    },
+    {
+      "start_s": 52,
+      "speaker": "p-lin",
+      "text": "Both rigs ran through the night with no faults. I'm pulling the data this morning to check for drift in the torque sensor."
+    },
+    {
+      "start_s": 110,
+      "speaker": "p-dmitri",
+      "text": "What's your drift threshold?"
+    },
+    {
+      "start_s": 116,
+      "speaker": "p-lin",
+      "text": "Whatever the spec sheet says, I'll check it against that."
+    },
+    {
+      "start_s": 165,
+      "speaker": "p-jade",
+      "text": "receiving, one box from the machine shop yesterday, parts check out, putting them in the bins"
+    },
+    {
+      "start_s": 200,
+      "speaker": "p-dmitri",
+      "text": "Any damage on the packaging?"
+    },
+    {
+      "start_s": 205,
+      "speaker": "p-jade",
+      "text": "nope"
+    },
+    {
+      "start_s": 250,
+      "speaker": "p-destiny",
+      "text": "Assembly, I finished the gearbox sub-assembly and it spins smooth! Tiny bit of drag at one position though 😬"
+    },
+    {
+      "start_s": 310,
+      "speaker": "p-dmitri",
+      "text": "Is it the bearing preload?"
+    },
+    {
+      "start_s": 318,
+      "speaker": "p-destiny",
+      "text": "I think so, I'll back it off a little and recheck 🙏"
+    },
+    {
+      "start_s": 380,
+      "speaker": "p-zoe",
+      "text": "fixtures, tilt stand is ready for first test, uh, just waiting on the sensor bracket"
+    },
+    {
+      "start_s": 430,
+      "speaker": "p-dmitri",
+      "text": "Okay, thanks."
+    },
+    {
+      "start_s": 470,
+      "speaker": "p-lin",
+      "text": "Does anyone know if the thermal chamber is booked next week?"
+    },
+    {
+      "start_s": 480,
+      "speaker": "p-zoe",
+      "text": "i think its open till wed"
+    },
+    {
+      "start_s": 560,
+      "speaker": "p-jade",
+      "text": "i'll go check the calendar"
+    },
+    {
+      "start_s": 620,
+      "speaker": "p-dmitri",
+      "text": "Fine. Last thing."
+    },
+    {
+      "start_s": 650,
+      "speaker": "p-dmitri",
+      "text": "Also actuator saddle, need seven of them by 6/19. Same list as the jig."
+    },
+    {
+      "start_s": 675,
+      "speaker": "p-zoe",
+      "text": "ok, seven saddles, 6/19"
+    },
+    {
+      "start_s": 700,
+      "speaker": "p-dmitri",
+      "text": "Good. Thanks everyone, that's it."
+    }
+  ],
+  "summary": {
+    "overview": "Friday test lab standup. Life test rigs ran clean overnight, gearbox sub-assembly done with slight drag, tilt stand waiting on sensor bracket.",
+    "shorthand_bullet": [
+      "need the jig by 6/18, qty 2",
+      "life test: no faults, checking torque sensor drift",
+      "receiving: machine shop box OK",
+      "gearbox sub-assy spins, slight drag - back off preload",
+      "tilt stand ready, waiting on bracket",
+      "actuator saddle: need 7 by 6/19"
+    ],
+    "action_items": [
+      "Zoe - add jig and actuator saddle to request",
+      "Lin - drift check",
+      "Destiny - recheck preload",
+      "Jade - check chamber calendar"
+    ],
+    "keywords": [
+      "life test",
+      "gearbox",
+      "tilt stand",
+      "the jig",
+      "actuator saddle"
+    ]
+  }
+}

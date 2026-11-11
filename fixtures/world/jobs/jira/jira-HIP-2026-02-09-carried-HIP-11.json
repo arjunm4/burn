@@ -1,0 +1,148 @@
+{
+  "job_id": "jira-HIP-2026-02-09-carried-HIP-11",
+  "source": "jira",
+  "status": "blank",
+  "priority": 79,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HIP",
+    "name": "Actuators (hip and knee)"
+  },
+  "week": {
+    "start": "2026-02-09",
+    "end": "2026-02-15"
+  },
+  "people": [
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HIP-11",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": "p-tomas",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-02-11T09:31:06-08:00",
+      "due_date": "2026-03-12",
+      "events": [
+        "ev-000176"
+      ],
+      "brief": "Order 2x Knee circular spline housing / FL-KNE-1176: need 2 by 2026-03-12 for Tolerance stack check for Actuator DVT build: Knee circular spline housing",
+      "must_mention": [
+        "FL-KNE-1176",
+        "Tolerance stack check for Actuator DVT build: Knee circular spline housing",
+        "3/12"
+      ],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-11-c1",
+          "by": "p-tomas",
+          "at": "2026-02-12T11:41:28-08:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-11-c2",
+          "by": "p-tomas",
+          "at": "2026-02-19T09:35:01-08:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-11-c3",
+          "by": "p-tomas",
+          "at": "2026-02-19T11:31:22-08:00",
+          "events": [
+            "ev-000181"
+          ],
+          "brief": "spline housing: need 2 by 2026-03-12",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 2,
+              "by": "2026-03-12"
+            }
+          },
+          "must_mention": [
+            "spline housing",
+            "3/12"
+          ],
+          "body": null
+        },
+        {
+          "id": "HIP-11-c4",
+          "by": "p-owen",
+          "at": "2026-02-23T14:10:12-08:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-11-c5",
+          "by": "p-tomas",
+          "at": "2026-03-13T10:32:26-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "job_id": "slack-ch-actuators-2026-05-11-background-2026-05-13",
+  "source": "slack",
+  "status": "blank",
+  "priority": 54,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-actuators",
+    "name": "actuators",
+    "slack_id": "C07FLK0ACTU",
+    "purpose": "Hip and knee actuators"
+  },
+  "week": {
+    "start": "2026-05-11",
+    "end": "2026-05-17"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-yusuf",
+      "name": "Yusuf Demir",
+      "display_name": "yusuf",
+      "slack_id": "U07FLK0YUSU",
+      "title": "Firmware Engineer, motor control",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hip actuator.",
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno",
+    "Ongoing: Ratcheting risk at peak torque from loose wave generator fit. This week: Andre: knee ratcheted once at 95 Nm during the torque sweep, loud click, no damage.",
+    "Ongoing: Orders sitting in DFM review because of tolerance callouts. This week: Samir pushes engineers to put tolerances on the drawing, not just the STEP."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1778711952.779232",
+      "user": "p-wei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778712259.989026",
+      "user": "p-wei",
+      "thread_ts": "1778711952.779232",
+      "events": [],
+      "brief": "reply (answers) in the thread about: setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778712848.551701",
+      "user": "p-yusuf",
+      "thread_ts": "1778711952.779232",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1778718032.174624",
+      "user": "p-beth",
+      "thread_ts": "1778711952.779232",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778718990.273201",
+      "user": "p-carlos",
+      "thread_ts": "1778711952.779232",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1778722270.419670",
+      "user": "p-owen",
+      "thread_ts": "1778711952.779232",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778724992.735408",
+      "user": "p-arjun",
+      "thread_ts": "1778711952.779232",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1778730360.323202",
+      "user": "p-tomas",
+      "thread_ts": "1778711952.779232",
+      "events": [],
+      "brief": "reply (answers) in the thread about: setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778730930.506173",
+      "user": "p-nadia",
+      "thread_ts": "1778711952.779232",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1778731791.899553",
+      "user": "p-jonas",
+      "thread_ts": "1778711952.779232",
+      "events": [],
+      "brief": "reply (answers) in the thread about: setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1778733809.993933",
+      "user": "p-ingrid",
+      "thread_ts": "1778711952.779232",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    }
+  ]
+}

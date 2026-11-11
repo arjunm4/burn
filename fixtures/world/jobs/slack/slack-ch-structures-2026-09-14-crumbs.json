@@ -19,6 +19,25 @@
   },
   "people": [
     {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
       "id": "p-carlos",
       "name": "Carlos Mendoza",
       "display_name": "carlos",
@@ -89,20 +108,20 @@
       }
     },
     {
-      "id": "p-omar",
-      "name": "Omar Farouk",
-      "display_name": "omar.f",
-      "slack_id": "U07FLK0OMAR",
-      "title": "Technical Program Manager",
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
       "style": {
-        "case": "mixed",
-        "punctuation": "light",
+        "case": "lower",
+        "punctuation": "none",
         "typos": "rare",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "high",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
         "quirks": [
-          "\"i think\", \"probably\", \"not 100% sure but\""
+          "one-word acks: ok, ty, yep"
         ]
       }
     },
@@ -120,6 +139,25 @@
         "length": "medium",
         "hedging": "low",
         "quirks": []
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
       }
     },
     {
@@ -174,11 +212,11 @@
   ],
   "messages": [
     {
-      "ts": "1789420540.066037",
+      "ts": "1789420540.043501",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-001901"
+        "ev-002140"
       ],
       "brief": "pelvis plate: need 5 by 2026-10-13 for the fit check",
       "claim": {
@@ -195,14 +233,37 @@
       ],
       "pressure": "elevated",
       "length": "medium",
-      "text": "need 5 pelvis plate for the fit check, tues 10/13"
+      "text": "pelvis plate x5 needed for the fit check, tues 10/13. can we get a quote moving"
     },
     {
-      "ts": "1789421929.352642",
+      "ts": "1789421914.550311",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-001974"
+      ],
+      "brief": "release clevis: need 3 by 2026-10-01",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-10-01"
+        }
+      },
+      "must_mention": [
+        "release clevis",
+        "10/1"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "release clevis x3 by 10/1"
+    },
+    {
+      "ts": "1789421929.593637",
       "user": "p-renee",
       "thread_ts": null,
       "events": [
-        "ev-002707"
+        "ev-003064"
       ],
       "brief": "Torso and pelvis static load test waits on Rig setup for Torso and pelvis static load test: Leg fixture hook, shank end",
       "claim": {
@@ -215,44 +276,44 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Torso and pelvis static load test is blocked on Rig setup for Torso and pelvis static load test: Leg fixture hook, shank end"
+      "text": "Torso and pelvis static load test waits on Rig setup for Torso and pelvis static load test: Leg fixture hook, shank end. nothing on it yet."
     },
     {
-      "ts": "1789426853.110885",
-      "user": "p-valeria",
-      "thread_ts": "1789421929.352642",
+      "ts": "1789425337.358259",
+      "user": "p-carlos",
+      "thread_ts": "1789420540.043501",
       "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
+      "brief": "reply (thanks) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "so the hook is the whole schedule now, great"
+      "text": "Thanks!"
     },
     {
-      "ts": "1789430669.082019",
-      "user": "p-talia",
-      "thread_ts": "1789421929.352642",
+      "ts": "1789426014.743698",
+      "user": "p-carlos",
+      "thread_ts": "1789420540.043501",
       "events": [],
-      "brief": "reply (tags someone else) in the thread about: the message above",
+      "brief": "reply (answers) in the thread about: the message above",
       "must_mention": [],
       "length": "one_word",
-      "text": "@carlos might know where the old hooks went 🙏"
+      "text": "Yep."
     },
     {
-      "ts": "1789435769.726907",
-      "user": "p-valeria",
-      "thread_ts": "1789421929.352642",
+      "ts": "1789427590.812761",
+      "user": "p-carlos",
+      "thread_ts": "1789420540.043501",
       "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
+      "brief": "reply (will check later) in the thread about: the message above",
       "must_mention": [],
-      "length": "short",
-      "text": "i think the old ones were bent, probably not reusable"
+      "length": "one_word",
+      "text": "Will check later today."
     },
     {
-      "ts": "1789448972.974319",
+      "ts": "1789448972.325092",
       "user": "p-renee",
       "thread_ts": null,
       "events": [
-        "ev-001765"
+        "ev-001992"
       ],
       "brief": "torso yoke: need 1 by 2026-10-02",
       "claim": {
@@ -267,15 +328,81 @@
         "fri 10/2"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "Need 1 torso yoke by fri 10/2."
+      "length": "short",
+      "text": "torso yoke, need 1 by fri 10/2."
     },
     {
-      "ts": "1789490303.709707",
+      "ts": "1789449453.327191",
+      "user": "p-kwame",
+      "thread_ts": "1789448972.325092",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Same envelope as the old one, as far as I know."
+    },
+    {
+      "ts": "1789487861.455138",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-001818"
+        "ev-001977"
+      ],
+      "brief": "the clevis: need 3 by 2026-10-01",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-10-01"
+        }
+      },
+      "must_mention": [
+        "the clevis",
+        "10/1"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "the clevis again, 3 pcs by 10/1. someone said it already got ordered? cant find the po"
+    },
+    {
+      "ts": "1789488445.417245",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-001978"
+      ],
+      "brief": "the clevis: need 3 by 2026-10-01",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-10-01"
+        }
+      },
+      "must_mention": [
+        "the clevis",
+        "thurs 10/1"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "the clevis x3 thurs 10/1"
+    },
+    {
+      "ts": "1789488898.026719",
+      "user": "p-kwame",
+      "thread_ts": "1789488445.417245",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "we had one of those walk off the bench last build, check the cage"
+    },
+    {
+      "ts": "1789490303.802121",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-002047"
       ],
       "brief": "FL-TST-2789: need 2 by 2026-10-05 for Battery enclosure thermal runaway containment",
       "claim": {
@@ -292,15 +419,35 @@
         "mon 10/5"
       ],
       "pressure": "elevated",
-      "length": "medium",
-      "text": "FL-TST-2789 x2 for Battery enclosure thermal runaway containment, mon 10/5. FL-BAT-1643 goes with it"
+      "length": "short",
+      "text": "FL-TST-2789 x2 by mon 10/5 for Battery enclosure thermal runaway containment, also touches FL-BAT-1643"
     },
     {
-      "ts": "1789490666.627421",
+      "ts": "1789490438.881037",
+      "user": "p-ingrid",
+      "thread_ts": "1789448972.325092",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@lukas can you take this?"
+    },
+    {
+      "ts": "1789490490.682343",
+      "user": "p-valeria",
+      "thread_ts": "1789490303.802121",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "i think that fits the cell spacing we have now, probably, not 100% sure"
+    },
+    {
+      "ts": "1789490666.602705",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-002755"
+        "ev-003120"
       ],
       "brief": "Test stand rework for Hip actuator thermal derate at continuous torque: Chamber thermocouple tree bracket waits on Gait gantry and treadmill",
       "claim": {
@@ -309,28 +456,58 @@
       },
       "must_mention": [
         "Gait gantry and treadmill",
-        "the bracket"
+        "Test stand rework for Hip actuator thermal derate at continuous torque: Chamber thermocouple tree bracket"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "the bracket is stuck behind Gait gantry and treadmill, Test stand rework for Hip actuator thermal derate at continuous torque: Chamber thermocouple tree bracket"
+      "length": "short",
+      "text": "Test stand rework for Hip actuator thermal derate at continuous torque: Chamber thermocouple tree bracket is stuck behind Gait gantry and treadmill"
     },
     {
-      "ts": "1789495078.888034",
+      "ts": "1789491087.307210",
       "user": "p-talia",
-      "thread_ts": "1789448972.974319",
+      "thread_ts": "1789488445.417245",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "not sure thats right, check the drawing again 😬"
+    },
+    {
+      "ts": "1789492794.966432",
+      "user": "p-ingrid",
+      "thread_ts": "1789490303.802121",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "I think the vent area is still too tight for that, respectfully."
+    },
+    {
+      "ts": "1789493970.177337",
+      "user": "p-idris",
+      "thread_ts": "1789448972.325092",
       "events": [],
       "brief": "reply (adds a detail) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "does that one have a rev letter on it? 🙏"
+      "text": "also the rev is on the print, just fyi"
     },
     {
-      "ts": "1789496723.345931",
+      "ts": "1789495249.397099",
+      "user": "p-lukas",
+      "thread_ts": "1789490303.802121",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "agree with kwame, enclosure side is fine"
+    },
+    {
+      "ts": "1789496723.069890",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-003586"
+        "ev-003987"
       ],
       "brief": "BMS standoff: still quoting rev A",
       "claim": {
@@ -340,55 +517,58 @@
       "must_mention": [
         "BMS standoff"
       ],
-      "length": "short",
-      "text": "BMS standoff still quoting rev A, ill ask them"
-    },
-    {
-      "ts": "1789498473.987683",
-      "user": "p-carlos",
-      "thread_ts": "1789496723.345931",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "UGH. same thing happened last time!!"
-    },
-    {
-      "ts": "1789499797.963212",
-      "user": "p-omar",
-      "thread_ts": "1789448972.974319",
-      "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "i think thats one yoke too many, probably should check the layup first"
-    },
-    {
-      "ts": "1789502002.538929",
-      "user": "p-kwame",
-      "thread_ts": "1789496723.345931",
-      "events": [],
-      "brief": "reply (tags someone else) in the thread about: the message above",
-      "must_mention": [],
       "length": "medium",
-      "text": "Valeria, can you check whether the BMS board outline changed? That would affect the standoff spacing."
+      "text": "BMS standoff: vendor is still quoting rev A, need to chase them to confirm they have the new print"
     },
     {
-      "ts": "1789504691.036914",
-      "user": "p-omar",
-      "thread_ts": "1789496723.345931",
-      "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
-      "must_mention": [],
+      "ts": "1789580460.537323",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-001552"
+      ],
+      "brief": "the clevis in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-09-15"
+      },
+      "must_mention": [
+        "the clevis",
+        "9/15"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "the clevis is in use as of 9/15, so dont grab it for another job"
+    },
+    {
+      "ts": "1789651232.569438",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-003731"
+      ],
+      "brief": "2211: need 1 by 2026-10-02",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-10-02"
+        }
+      },
+      "must_mention": [
+        "2211",
+        "10/2"
+      ],
+      "pressure": "elevated",
       "length": "short",
-      "text": "rev A forever, a classic"
+      "text": "2211 needed 10/2 for 1 pc, checking where it stands"
     },
     {
-      "ts": "1789663473.673659",
+      "ts": "1789663473.953447",
       "user": "p-ingrid",
       "thread_ts": null,
       "events": [
-        "ev-001810"
+        "ev-002039"
       ],
       "brief": "FL-TST-2211: need 1 by 2026-10-02",
       "claim": {
@@ -400,18 +580,28 @@
       },
       "must_mention": [
         "FL-TST-2211",
-        "fri the 2nd"
+        "10/2"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "FL-TST-2211 x1 needed fri the 2nd."
+      "length": "medium",
+      "text": "Need FL-TST-2211 by 10/2, quantity one. Please confirm where this stands."
     },
     {
-      "ts": "1789675044.051143",
+      "ts": "1789664754.067685",
+      "user": "p-lukas",
+      "thread_ts": "1789663473.953447",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "yep"
+    },
+    {
+      "ts": "1789675044.737637",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-002939"
+        "ev-003328"
       ],
       "brief": "FL-BAT-1622 rev B released: added relief for connector backshell",
       "claim": {
@@ -422,14 +612,14 @@
         "FL-BAT-1622"
       ],
       "length": "medium",
-      "text": "FL-BAT-1622 rev B released, added relief for connector backshell"
+      "text": "FL-BAT-1622 rev B released, added a relief for the connector backshell. update your cad"
     },
     {
-      "ts": "1789756026.837386",
+      "ts": "1789756026.534124",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-001904"
+        "ev-002143"
       ],
       "brief": "1591: need 5 by 2026-10-13",
       "claim": {
@@ -445,14 +635,14 @@
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "1591 x5 needed 10/13"
+      "text": "1591 x5 by 10/13"
     },
     {
-      "ts": "1789765119.497305",
+      "ts": "1789765119.537626",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-001906"
+        "ev-002145"
       ],
       "brief": "FL-STR-1591: need 5 by 2026-10-13",
       "claim": {
@@ -464,11 +654,61 @@
       },
       "must_mention": [
         "FL-STR-1591",
-        "tues the 13th"
+        "10/13"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "FL-STR-1591 x5, tues the 13th"
+      "length": "short",
+      "text": "FL-STR-1591 x5, 10/13, same one as before"
+    },
+    {
+      "ts": "1789769335.591297",
+      "user": "p-idris",
+      "thread_ts": "1789765119.537626",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "nah that doesnt match what i saw"
+    },
+    {
+      "ts": "1789770121.290616",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-003142"
+      ],
+      "brief": "Torso and pelvis static load test waits on Torso static load yoke",
+      "claim": {
+        "kind": "blocked",
+        "value": "pt-torso-load-yoke"
+      },
+      "must_mention": [
+        "Torso static load yoke",
+        "the test"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Torso and pelvis static load test is on hold until the Torso static load yoke shows up. cant start the test without it."
+    },
+    {
+      "ts": "1789770867.507123",
+      "user": "p-kwame",
+      "thread_ts": "1789765119.537626",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Disagree, I would check the yoke drawing first."
+    },
+    {
+      "ts": "1789773106.729221",
+      "user": "p-carlos",
+      "thread_ts": "1789765119.537626",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Thanks!"
     }
   ]
 }

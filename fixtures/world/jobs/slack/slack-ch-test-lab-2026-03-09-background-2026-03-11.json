@@ -1,0 +1,576 @@
+{
+  "job_id": "slack-ch-test-lab-2026-03-09-background-2026-03-11",
+  "source": "slack",
+  "status": "blank",
+  "priority": 72,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-test-lab",
+    "name": "test-lab",
+    "slack_id": "C07FLK0TLAB",
+    "purpose": "Test lab: rigs, bookings, results, fixtures"
+  },
+  "week": {
+    "start": "2026-03-09",
+    "end": "2026-03-15"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Building the first three hip and knee actuators. This week: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+    "Ongoing: Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT",
+    "Ongoing: Coupling misalignment corrupting efficiency numbers on the dyno. This week: Dial indicator shows 0.15 mm parallel offset; adapter plate dowels are loose fit."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1773242881.587011",
+      "user": "p-mei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about fit-up of the gait gantry and treadmill",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773245573.266157",
+      "user": "p-dmitri",
+      "thread_ts": "1773242881.587011",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: fit-up of the gait gantry and treadmill",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773245800.084431",
+      "user": "p-beth",
+      "thread_ts": "1773242881.587011",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: fit-up of the gait gantry and treadmill",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773250480.106794",
+      "user": "p-mei",
+      "thread_ts": "1773242881.587011",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: fit-up of the gait gantry and treadmill",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773252079.381880",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about the ongoing whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for dvt",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773254165.320537",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on bench notes on the spin-test stand",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1773256414.024777",
+      "user": "p-priya",
+      "thread_ts": "1773254165.320537",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: bench notes on the spin-test stand",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1773258141.650593",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on setup for the leg drop-test gantry",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773260154.745523",
+      "user": "p-luis",
+      "thread_ts": "1773254165.320537",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: bench notes on the spin-test stand",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773260738.879838",
+      "user": "p-andre",
+      "thread_ts": "1773254165.320537",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: bench notes on the spin-test stand",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773261936.549012",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on bench notes on the ankle tilt and load stand",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773263121.932640",
+      "user": "p-diego",
+      "thread_ts": "1773254165.320537",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: bench notes on the spin-test stand",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773267379.206954",
+      "user": "p-nora",
+      "thread_ts": "1773254165.320537",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: bench notes on the spin-test stand",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773268362.382757",
+      "user": "p-lukas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on off-topic: a pet photo",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1773269167.079422",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-004831"
+      ],
+      "brief": "background: Dial indicator shows 0.15 mm parallel offset; adapter plate dowels are loose fit.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773269729.100908",
+      "user": "p-jade",
+      "thread_ts": "1773268362.382757",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: off-topic: a pet photo",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773271192.849852",
+      "user": "p-zoe",
+      "thread_ts": "1773268362.382757",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: off-topic: a pet photo",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773271638.424765",
+      "user": "p-arjun",
+      "thread_ts": "1773269167.079422",
+      "events": [],
+      "brief": "reply (answers) in the thread about: Dial indicator shows 0.15 mm parallel offset; adapter plate dowels are loose fit.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773273409.394771",
+      "user": "p-mei",
+      "thread_ts": "1773269167.079422",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: Dial indicator shows 0.15 mm parallel offset; adapter plate dowels are loose fit.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773274886.851086",
+      "user": "p-idris",
+      "thread_ts": "1773268362.382757",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: off-topic: a pet photo",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773277167.567246",
+      "user": "p-hana",
+      "thread_ts": "1773268362.382757",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: off-topic: a pet photo",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773278522.422923",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about drawing review of the hand grip-cycle fixture",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773281489.925254",
+      "user": "p-jade",
+      "thread_ts": "1773268362.382757",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: off-topic: a pet photo",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773281774.041109",
+      "user": "p-lukas",
+      "thread_ts": "1773278522.422923",
+      "events": [],
+      "brief": "reply (ack) in the thread about: drawing review of the hand grip-cycle fixture",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1773282119.016529",
+      "user": "p-lin",
+      "thread_ts": "1773278522.422923",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: drawing review of the hand grip-cycle fixture",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773332022.490895",
+      "user": "p-zoe",
+      "thread_ts": "1773278522.422923",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: drawing review of the hand grip-cycle fixture",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

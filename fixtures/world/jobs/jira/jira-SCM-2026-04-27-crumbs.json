@@ -1,0 +1,289 @@
+{
+  "job_id": "jira-SCM-2026-04-27-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 57,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "SCM",
+    "name": "Supply chain and procurement"
+  },
+  "week": {
+    "start": "2026-04-27",
+    "end": "2026-05-03"
+  },
+  "people": [
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "SCM-121",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-kenji",
+      "assignee": "p-kenji",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-04-29T12:57:35-07:00",
+      "due_date": null,
+      "events": [
+        "ev-000883"
+      ],
+      "brief": "Order 24x Hip encoder read-head bracket / FL-HIP-1041: need 24 by 2026-06-12 for Test stand rework for Hip actuator dyno efficiency sweep: Hip encoder read-head bracket",
+      "must_mention": [
+        "FL-HIP-1041",
+        "Test stand rework for Hip actuator dyno efficiency sweep: Hip encoder read-head bracket",
+        "6/12"
+      ],
+      "description_length": "one_line",
+      "summary": "Hip encoder read-head bracket x24",
+      "description": "FL-HIP-1041 need 24 by 6/12 for Test stand rework for Hip actuator dyno efficiency sweep: Hip encoder read-head bracket",
+      "comments": [
+        {
+          "id": "SCM-121-c1",
+          "by": "p-kenji",
+          "at": "2026-06-26T00:47:00-07:00",
+          "events": [
+            "ev-000888"
+          ],
+          "brief": "encoder bracket in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-06-25"
+          },
+          "must_mention": [
+            "encoder bracket",
+            "the build",
+            "thurs the 25th"
+          ],
+          "body": "encoder bracket in use for the build, done thurs the 25th"
+        }
+      ]
+    },
+    {
+      "key": "SCM-122",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-owen",
+      "assignee": "p-owen",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-04-30T11:21:38-07:00",
+      "due_date": "2026-06-16",
+      "events": [
+        "ev-000874"
+      ],
+      "brief": "Order 6x Knee flexspline clamp ring, 22x Knee wave generator hub / 1118: need 6 by 2026-06-16 for the fit check",
+      "must_mention": [
+        "1118",
+        "the fit check",
+        "6/16"
+      ],
+      "description_length": "one_line",
+      "summary": "knee flexspline clamp ring x6, wave generator hub x22",
+      "description": "1118 need 6 by 6/16 for the fit check",
+      "comments": [
+        {
+          "id": "SCM-122-c1",
+          "by": "p-owen",
+          "at": "2026-05-25T10:04:50-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "checking with vendor"
+        },
+        {
+          "id": "SCM-122-c2",
+          "by": "p-owen",
+          "at": "2026-06-27T00:29:00-07:00",
+          "events": [
+            "ev-000877"
+          ],
+          "brief": "flexspline clamp in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-06-25"
+          },
+          "must_mention": [
+            "flexspline clamp",
+            "the build",
+            "6/25"
+          ],
+          "body": "flexspline clamp in use for the build, done 6/25"
+        }
+      ]
+    },
+    {
+      "key": "SCM-123",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-zoe",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-05-01T17:09:20-07:00",
+      "due_date": null,
+      "events": [
+        "ev-000903"
+      ],
+      "brief": "Order 4x Hip cycloidal carrier, 9x Hip cable exit clamp / the carrier: need 4 by 2026-05-26",
+      "must_mention": [
+        "the carrier",
+        "5/26"
+      ],
+      "description_length": "one_line",
+      "summary": "Hip cycloidal carrier x4, cable exit clamp x9",
+      "description": "the carrier need 4 by 5/26 🙏",
+      "comments": [
+        {
+          "id": "SCM-123-c1",
+          "by": "p-talia",
+          "at": "2026-05-05T16:55:41-07:00",
+          "events": [
+            "ev-003776"
+          ],
+          "brief": "FL-HIP-1094: need 4 by 2026-05-27 for Instrumentation fit-up for Hip actuator dyno efficiency sweep: Hip cycloidal carrier",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 4,
+              "by": "2026-05-27"
+            }
+          },
+          "must_mention": [
+            "FL-HIP-1094",
+            "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Hip cycloidal carrier (2)",
+            "FL-HIP-1091",
+            "wed the 27th"
+          ],
+          "body": "FL-HIP-1094 need 4 by wed the 27th for Instrumentation fit-up for Hip actuator dyno efficiency sweep: Hip cycloidal carrier (2). goes with FL-HIP-1091 🙏"
+        },
+        {
+          "id": "SCM-123-c2",
+          "by": "p-destiny",
+          "at": "2026-06-01T11:50:00-07:00",
+          "events": [
+            "ev-000909"
+          ],
+          "brief": "1094 arrived (4)",
+          "claim": {
+            "kind": "stock",
+            "value": 4
+          },
+          "must_mention": [
+            "1094",
+            "4"
+          ],
+          "body": "1094 arrived, 4 of them 🙏"
+        }
+      ]
+    }
+  ]
+}

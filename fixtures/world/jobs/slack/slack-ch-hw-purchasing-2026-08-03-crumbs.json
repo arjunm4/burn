@@ -1,0 +1,270 @@
+{
+  "job_id": "slack-ch-hw-purchasing-2026-08-03-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 29,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hw-purchasing",
+    "name": "hw-purchasing",
+    "slack_id": "C07FLK0HWPR",
+    "purpose": "Hardware buys: Xometry quotes, McMaster, Digi-Key, lead times"
+  },
+  "week": {
+    "start": "2026-08-03",
+    "end": "2026-08-09"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators. This week: Jonas starts FOC v2: 20 kHz current loop, thermal model from Nadia.",
+    "Ongoing: Tendons fray at the proximal pulley after 40k grip cycles. This week: Pulley groove re-cut with R0.3 edge and Delrin bushing; test restarted.",
+    "Ongoing: Type III anodize adds ~0.025 mm per surface and kills the bearing press fit. This week: Drawing note added: mask bearing bores, anodize after machining; reorder of the batch debated.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Farah: bend radius at the knee is 8 mm, cable rated for 7.5x OD dynamic, we are at 3x.",
+    "Ongoing: Gait controller tuning for the investor demo on the gait gantry. This week: Ten consecutive steps at 0.3 m/s; ankle oscillates at heel strike.",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver",
+    "Ongoing: Too many life tests for one grip fixture and one dyno. This week: Dmitri proposes a second grip fixture, ~$4k in machined parts.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1785793289.468875",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-001655"
+      ],
+      "brief": "FL-ANK-1276: need 8 by 2026-08-21",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-08-21"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1276",
+        "8/21"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-ANK-1276 need 8 by 8/21 😬"
+    },
+    {
+      "ts": "1785798701.339683",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-001665"
+      ],
+      "brief": "the clevis: need 1 by 2026-09-18",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-09-18"
+        }
+      },
+      "must_mention": [
+        "the clevis",
+        "fri the 18th"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "the clevis, need 1 by fri the 18th 🙏"
+    },
+    {
+      "ts": "1785878392.302605",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-003708"
+      ],
+      "brief": "bearing cap arrived",
+      "claim": {
+        "kind": "stock",
+        "value": 8
+      },
+      "must_mention": [
+        "bearing cap",
+        "8"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "bearing cap arrived, 8 of them"
+    },
+    {
+      "ts": "1785884609.166024",
+      "user": "p-diego",
+      "thread_ts": "1785793289.468875",
+      "events": [
+        "ev-003541"
+      ],
+      "brief": "Correction: FL-ANK-1276: need 8 by 2026-08-24",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-08-24"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1276",
+        "8/24"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Correction, FL-ANK-1276 is 8/24 not the earlier one 🙏"
+    },
+    {
+      "ts": "1785991653.942532",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-001672"
+      ],
+      "brief": "FL-TST-2674: need 12 by 2026-08-28",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-08-28"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2674",
+        "8/28"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "FL-TST-2674: need 12 by 8/28, i think thats the count but not 100% sure"
+    },
+    {
+      "ts": "1786127945.027576",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-001701"
+      ],
+      "brief": "FL-TST-2160: need 3 by 2026-08-28",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-08-28"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2160",
+        "8/28"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2160 need 3 by 8/28"
+    }
+  ]
+}

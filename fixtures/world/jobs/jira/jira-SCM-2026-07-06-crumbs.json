@@ -1,0 +1,243 @@
+{
+  "job_id": "jira-SCM-2026-07-06-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 37,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "SCM",
+    "name": "Supply chain and procurement"
+  },
+  "week": {
+    "start": "2026-07-06",
+    "end": "2026-07-12"
+  },
+  "people": [
+    {
+      "id": "p-amara",
+      "name": "Amara Nwosu",
+      "display_name": "amara",
+      "slack_id": "U07FLK0AMAR",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "SCM-207",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-amara",
+      "assignee": "p-amara",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-07-06T06:33:39-07:00",
+      "due_date": "2026-08-21",
+      "events": [
+        "ev-001430"
+      ],
+      "brief": "Order 24x Tendon idler pulley, 3x Thumb base, 12x Tactile board bracket, 12x Knuckle pin / FL-HND-1454: need 24 by 2026-08-21 for Prototype fit-up: Tendon idler pulley",
+      "must_mention": [
+        "FL-HND-1454",
+        "Prototype fit-up: Tendon idler pulley",
+        "FL-HND-1473",
+        "FL-HND-1487",
+        "FL-HND-1490",
+        "fri 8/21"
+      ],
+      "description_length": "short",
+      "summary": "PO: 24x Tendon idler pulley, 3x Thumb base, 12x Tactile board bracket, 12x Knuckle pin",
+      "description": "24 FL-HND-1454 needed fri 8/21 for Prototype fit-up: Tendon idler pulley (also FL-HND-1473, FL-HND-1487, FL-HND-1490)",
+      "comments": [
+        {
+          "id": "SCM-207-c1",
+          "by": "p-amara",
+          "at": "2026-07-07T18:16:50-07:00",
+          "events": [
+            "ev-001433"
+          ],
+          "brief": "the pulley: need 24 by 2026-08-21",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 24,
+              "by": "2026-08-21"
+            }
+          },
+          "must_mention": [
+            "the pulley",
+            "8/21"
+          ],
+          "body": "the pulley: need 24 by 8/21"
+        },
+        {
+          "id": "SCM-207-c2",
+          "by": "p-amara",
+          "at": "2026-07-08T22:21:09-07:00",
+          "events": [
+            "ev-001434"
+          ],
+          "brief": "1454: need 24 by 2026-08-21",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 24,
+              "by": "2026-08-21"
+            }
+          },
+          "must_mention": [
+            "1454",
+            "fri 8/21"
+          ],
+          "body": "Need 24 of 1454 by fri 8/21"
+        },
+        {
+          "id": "SCM-207-c3",
+          "by": "p-amara",
+          "at": "2026-07-09T18:32:23-07:00",
+          "events": [
+            "ev-001436"
+          ],
+          "brief": "Order XO-5436107 placed, promised 2026-08-06",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-08-06"
+          },
+          "must_mention": [
+            "XO-5436107",
+            "1454",
+            "8/6"
+          ],
+          "body": "Order XO-5436107 is in (1454), promised 8/6"
+        },
+        {
+          "id": "SCM-207-c4",
+          "by": "p-amara",
+          "at": "2026-07-10T09:31:23-07:00",
+          "events": [
+            "ev-003659"
+          ],
+          "brief": "Correction: Order XO-5436107 placed, promised 2026-08-04",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-08-04"
+          },
+          "must_mention": [
+            "XO-5436107",
+            "1454",
+            "tues 8/4"
+          ],
+          "body": "Correction: order XO-5436107 is in (1454), promised tues 8/4"
+        }
+      ]
+    },
+    {
+      "key": "SCM-212",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-priya",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-07-09T08:33:50-07:00",
+      "due_date": "2026-07-30",
+      "events": [
+        "ev-001426"
+      ],
+      "brief": "Order 4x Toe plate, 8x Ankle drive crank, 24x Ankle pivot pin / the plate: need 4 by 2026-08-04 for Prototype fit-up for Leg DVT build: Toe plate",
+      "must_mention": [
+        "the plate",
+        "Prototype fit-up for Leg DVT build: Toe plate",
+        "tues 8/4"
+      ],
+      "description_length": "short",
+      "summary": "PO: 4x Toe plate, 8x Ankle drive crank, 24x Ankle pivot pin.",
+      "description": "4 the plate needed tues 8/4 for Prototype fit-up for Leg DVT build: Toe plate.",
+      "comments": [
+        {
+          "id": "SCM-212-c1",
+          "by": "p-priya",
+          "at": "2026-07-09T09:21:50-07:00",
+          "events": [
+            "ev-003524"
+          ],
+          "brief": "Correction: the plate: need 4 by 2026-07-30 for Prototype fit-up for Leg DVT build: Toe plate",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 4,
+              "by": "2026-07-30"
+            }
+          },
+          "must_mention": [
+            "the plate",
+            "Prototype fit-up for Leg DVT build: Toe plate",
+            "7/30"
+          ],
+          "body": "Oops, the plate x4, needed 7/30 for Prototype fit-up for Leg DVT build: Toe plate."
+        },
+        {
+          "id": "SCM-212-c2",
+          "by": "p-priya",
+          "at": "2026-08-08T02:27:00-07:00",
+          "events": [
+            "ev-001429"
+          ],
+          "brief": "toe in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-08-07"
+          },
+          "must_mention": [
+            "toe",
+            "the build",
+            "fri 8/7"
+          ],
+          "body": "toe in use for the build as of fri 8/7."
+        }
+      ]
+    }
+  ]
+}

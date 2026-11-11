@@ -1,0 +1,122 @@
+{
+  "job_id": "slack-ch-hw-purchasing-2026-07-06-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 37,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hw-purchasing",
+    "name": "hw-purchasing",
+    "slack_id": "C07FLK0HWPR",
+    "purpose": "Hardware buys: Xometry quotes, McMaster, Digi-Key, lead times"
+  },
+  "week": {
+    "start": "2026-07-06",
+    "end": "2026-07-12"
+  },
+  "people": [
+    {
+      "id": "p-amara",
+      "name": "Amara Nwosu",
+      "display_name": "amara",
+      "slack_id": "U07FLK0AMAR",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Six-axis sensor drifts with temperature and bolt preload. This week: Ravi fits a temperature model; Mei prefers fixing the plate first.",
+    "Ongoing: Tendons fray at the proximal pulley after 40k grip cycles. This week: Lin starts the grip-cycle life test, target 100k cycles.",
+    "Ongoing: Capacitive tactile array crosstalk and flex cable routing through the finger. This week: Rev 2 ordered from the fab; tactile bracket moved 1 mm for the new connector.",
+    "Ongoing: Crossed-roller preload drops after thermal cycling; bore tolerance and preload ring design. This week: Rev B bracket and housing released with the new bearing; preload holds after 20 cycles.",
+    "Ongoing: Drop from 30 cm cracks the shank link at the knee clevis. This week: Rev B shank: fillet to R2 and wall 3 to 4 mm; release Monday.",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver. This week: Bao sees 30 V overshoot on the phase node at 48 V bus; MOSFETs rated 80 V."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1783378691.316886",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-001431"
+      ],
+      "brief": "that order: need 24 by 2026-08-21 for the fit check",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-08-21"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "the fit check",
+        "8/21"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "that order, 24 needed by 8/21 for the fit check"
+    },
+    {
+      "ts": "1783626721.912174",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-001442"
+      ],
+      "brief": "thigh cap: need 8 by 2026-09-03",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-09-03"
+        }
+      },
+      "must_mention": [
+        "thigh cap",
+        "thurs 9/3"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "thigh cap, need 8 by thurs 9/3!!"
+    }
+  ]
+}

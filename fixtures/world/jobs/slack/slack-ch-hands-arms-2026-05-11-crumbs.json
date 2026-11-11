@@ -1,0 +1,155 @@
+{
+  "job_id": "slack-ch-hands-arms-2026-05-11-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 53,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hands-arms",
+    "name": "hands-arms",
+    "slack_id": "C07FLK0HAND",
+    "purpose": "Arms, wrist and hand"
+  },
+  "week": {
+    "start": "2026-05-11",
+    "end": "2026-05-17"
+  },
+  "people": [
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hand and wrist.",
+    "Ongoing: Orders sitting in DFM review because of tolerance callouts. This week: Samir pushes engineers to put tolerances on the drawing, not just the STEP."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1778616116.263391",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-001051"
+      ],
+      "brief": "spacer set: need 12 by 2026-06-08",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-06-08"
+        }
+      },
+      "must_mention": [
+        "spacer set",
+        "6/8"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "spacer set need 12 by 6/8"
+    },
+    {
+      "ts": "1778730476.867398",
+      "user": "p-kenji",
+      "thread_ts": "1778616116.263391",
+      "events": [
+        "ev-003568"
+      ],
+      "brief": "Correction: spacer set: need 12 by 2026-06-09",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-06-09"
+        }
+      },
+      "must_mention": [
+        "spacer set",
+        "tues 6/9"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "correction, spacer set need 12 by tues 6/9"
+    },
+    {
+      "ts": "1778732386.670594",
+      "user": "p-omar",
+      "thread_ts": "1778616116.263391",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "i think i can look at it later, probably tmrw"
+    },
+    {
+      "ts": "1778735510.579498",
+      "user": "p-talia",
+      "thread_ts": "1778616116.263391",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "classic 😬"
+    }
+  ]
+}

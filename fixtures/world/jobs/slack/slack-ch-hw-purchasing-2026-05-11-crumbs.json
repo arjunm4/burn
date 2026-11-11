@@ -1,0 +1,203 @@
+{
+  "job_id": "slack-ch-hw-purchasing-2026-05-11-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 53,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hw-purchasing",
+    "name": "hw-purchasing",
+    "slack_id": "C07FLK0HWPR",
+    "purpose": "Hardware buys: Xometry quotes, McMaster, Digi-Key, lead times"
+  },
+  "week": {
+    "start": "2026-05-11",
+    "end": "2026-05-17"
+  },
+  "people": [
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Pushrod clevis bends at 1.6x body weight in the tilt stand. This week: Hana: buckling, not yield; the clevis ear is 4 mm thick with a 6 mm hole.",
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno",
+    "Ongoing: Ratcheting risk at peak torque from loose wave generator fit. This week: Andre: knee ratcheted once at 95 Nm during the torque sweep, loud click, no damage.",
+    "Ongoing: Orders sitting in DFM review because of tolerance callouts. This week: Samir pushes engineers to put tolerances on the drawing, not just the STEP."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1778538775.228193",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-001050"
+      ],
+      "brief": "FL-TST-2139: need 12 by 2026-06-09",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-06-09"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2139",
+        "tues 6/9"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2139 need 12 by tues 6/9"
+    },
+    {
+      "ts": "1778622265.737278",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-000978"
+      ],
+      "brief": "the part: need 1 by 2026-05-20",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-05-20"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "wed 5/20"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "the part, need 1 by wed 5/20"
+    },
+    {
+      "ts": "1778802627.374465",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-000986"
+      ],
+      "brief": "FL-TST-2916: need 2 by 2026-05-22",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-05-22"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2916",
+        "fri 5/22"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "FL-TST-2916 need 2 by fri 5/22 😬"
+    },
+    {
+      "ts": "1778867126.553302",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-001034"
+      ],
+      "brief": "spacer set: need 12 by 2026-06-22",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-06-22"
+        }
+      },
+      "must_mention": [
+        "spacer set",
+        "6/22"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "spacer set need 12 by 6/22"
+    }
+  ]
+}

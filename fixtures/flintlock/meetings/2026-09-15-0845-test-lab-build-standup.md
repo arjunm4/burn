@@ -8,9 +8,9 @@
 
 ## Overview
 
-We need FL-ANK-1283 by 9/25. We need the part by 9/22.
+We need quick release clevis by 10/1. We need the part by 9/22.
 
 ## Discussion
 
-- Dmitri: We need FL-ANK-1283 by 9/25.
+- Dmitri: We need quick release clevis by 10/1.
 - Dmitri: We need the part by 9/22.

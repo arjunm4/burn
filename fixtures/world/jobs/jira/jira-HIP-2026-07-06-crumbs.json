@@ -1,0 +1,204 @@
+{
+  "job_id": "jira-HIP-2026-07-06-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 37,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HIP",
+    "name": "Actuators (hip and knee)"
+  },
+  "week": {
+    "start": "2026-07-06",
+    "end": "2026-07-12"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HIP-299",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-andre",
+      "assignee": "p-andre",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-07-08T14:27:04-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001468"
+      ],
+      "brief": "Order 24x Knee cross-roller retainer, 6x Knee motor mount plate / 1141: need 24 by 2026-08-05 for Prototype fit-up for Actuator DVT build: Knee cross-roller retainer",
+      "must_mention": [
+        "1141",
+        "Prototype fit-up for Actuator DVT build: Knee cross-roller retainer",
+        "motor plate",
+        "wed the 5th"
+      ],
+      "description_length": "medium",
+      "summary": "po: 24x knee cross-roller retainer, 6x knee motor mount plate",
+      "description": "24 1141 needed wed the 5th for Prototype fit-up for Actuator DVT build: Knee cross-roller retainer (also motor plate)\nwill update when quote is back",
+      "comments": [
+        {
+          "id": "HIP-299-c1",
+          "by": "p-andre",
+          "at": "2026-07-15T15:07:44-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "vnedor slipped a little, no date yet"
+        },
+        {
+          "id": "HIP-299-c2",
+          "by": "p-andre",
+          "at": "2026-07-29T09:12:09-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "update?"
+        },
+        {
+          "id": "HIP-299-c3",
+          "by": "p-andre",
+          "at": "2026-07-30T15:38:57-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "posetd pics in the channel"
+        },
+        {
+          "id": "HIP-299-c4",
+          "by": "p-andre",
+          "at": "2026-08-04T13:08:10-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "whree are we on this one? 👍"
+        },
+        {
+          "id": "HIP-299-c5",
+          "by": "p-andre",
+          "at": "2026-08-19T03:19:00-07:00",
+          "events": [
+            "ev-001472"
+          ],
+          "brief": "1141 in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-08-18"
+          },
+          "must_mention": [
+            "1141",
+            "the build",
+            "tues the 18th"
+          ],
+          "body": "1141 in use for the build as of tues the 18th"
+        }
+      ]
+    },
+    {
+      "key": "HIP-302",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-zoe",
+      "assignee": "p-zoe",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-07-09T10:41:24-07:00",
+      "due_date": "2026-07-31",
+      "events": [
+        "ev-001465"
+      ],
+      "brief": "Order 2x Dyno shaft alignment jig, 21x Dyno mounting plate, hip actuator / the jig: need 2 by 2026-07-31 for Rig setup for Hip actuator dyno efficiency sweep: Dyno shaft alignment jig",
+      "must_mention": [
+        "the jig",
+        "Rig setup for Hip actuator dyno efficiency sweep: Dyno shaft alignment jig",
+        "that adapter plate",
+        "7/31"
+      ],
+      "description_length": "medium",
+      "summary": "po: 2x dyno shaft alignment jig, 21x dyno mounting plate, hip actuator",
+      "description": "the jig x2, nedeed 7/31 for Rig setup for Hip actuator dyno efficiency sweep: Dyno shaft alignment jig (also that adapter plate)\nwill update when quote is back",
+      "comments": [
+        {
+          "id": "HIP-302-c1",
+          "by": "p-zoe",
+          "at": "2026-07-20T16:14:22-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "still waiting on this?"
+        },
+        {
+          "id": "HIP-302-c2",
+          "by": "p-zoe",
+          "at": "2026-07-29T17:42:34-07:00",
+          "events": [
+            "ev-001467"
+          ],
+          "brief": "alignment jig arrived (2)",
+          "claim": {
+            "kind": "stock",
+            "value": 2
+          },
+          "must_mention": [
+            "alignment jig",
+            "2"
+          ],
+          "body": "alignment jig arrived, 2 in hand"
+        }
+      ]
+    }
+  ]
+}

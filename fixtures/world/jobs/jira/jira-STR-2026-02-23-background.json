@@ -1,0 +1,102 @@
+{
+  "job_id": "jira-STR-2026-02-23-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 76,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "STR",
+    "name": "Torso, structures and battery"
+  },
+  "week": {
+    "start": "2026-02-23",
+    "end": "2026-03-01"
+  },
+  "people": [
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "STR-19",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-renee",
+      "assignee": null,
+      "labels": [],
+      "priority": "Highest",
+      "created": "2026-02-24T10:04:42-08:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Update assembly work instructions (battery enclosure)",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "STR-20",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-lukas",
+      "assignee": "p-renee",
+      "labels": [
+        "docs"
+      ],
+      "priority": "Medium",
+      "created": "2026-02-25T18:08:36-08:00",
+      "due_date": "2026-03-05",
+      "events": [],
+      "brief": "Capture lessons learned (torso and pelvis structure)",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": []
+    }
+  ]
+}

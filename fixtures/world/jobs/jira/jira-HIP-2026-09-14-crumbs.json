@@ -55,6 +55,24 @@
       }
     },
     {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
       "id": "p-samir",
       "name": "Samir Khoury",
       "display_name": "samir.k",
@@ -92,22 +110,6 @@
       }
     },
     {
-      "id": "p-wei",
-      "name": "Wei Huang",
-      "display_name": "wei",
-      "slack_id": "U07FLK0WEI0",
-      "title": "Mechanical Engineer, housings and shafts",
-      "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": []
-      }
-    },
-    {
       "id": "p-zoe",
       "name": "Zoe Castellanos",
       "display_name": "zoe.c",
@@ -135,7 +137,7 @@
   ],
   "tickets": [
     {
-      "key": "HIP-393",
+      "key": "HIP-390",
       "type": "Task",
       "status": "Done",
       "reporter": "p-nadia",
@@ -147,47 +149,56 @@
       "created": "2026-09-14T08:49:39-07:00",
       "due_date": "2026-09-22",
       "events": [
-        "ev-001802"
+        "ev-002031"
       ],
       "brief": "Order 20x Hip stator heat spreader, 12x Hip eccentric input shaft / FL-HIP-1028: need 20 by 2026-09-22 for Build sub-assembly: Hip stator heat spreader",
       "must_mention": [
         "FL-HIP-1028",
         "Build sub-assembly: Hip stator heat spreader",
         "FL-HIP-1053",
-        "tues the 22nd"
+        "9/22"
       ],
       "description_length": "one_line",
-      "summary": "Hip stator heat spreaders FL-HIP-1028",
-      "description": "20 by tues the 22nd for Build sub-assembly: Hip stator heat spreader. shafts FL-HIP-1053",
+      "summary": "Order 20x Hip stator heat spreader, 12x Hip eccentric input shaft",
+      "description": "FL-HIP-1028: need 20 by 9/22 for Build sub-assembly: Hip stator heat spreader, also FL-HIP-1053 on the shafts",
       "comments": [
         {
-          "id": "HIP-393-c1",
+          "id": "HIP-390-c1",
           "by": "p-nadia",
           "at": "2026-09-14T10:55:01-07:00",
           "events": [
-            "ev-001804"
+            "ev-002033"
           ],
-          "brief": "FL-HIP-1028: need 20 by 2026-09-22 for next week",
+          "brief": "FL-HIP-1028: need 20 by 2026-09-21 for next week",
           "claim": {
             "kind": "needs",
             "value": {
               "qty": 20,
-              "by": "2026-09-22"
+              "by": "2026-09-21"
             }
           },
           "must_mention": [
             "FL-HIP-1028",
             "next week",
-            "tues 9/22"
+            "mon the 21st"
           ],
-          "body": "FL-HIP-1028 need 20 by tues 9/22, for next week"
+          "body": "FL-HIP-1028: need 20 by mon the 21st, so next week"
         },
         {
-          "id": "HIP-393-c2",
+          "id": "HIP-390-c2",
+          "by": "p-samir",
+          "at": "2026-09-21T09:24:10-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "@nadia did the date change again?"
+        },
+        {
+          "id": "HIP-390-c3",
           "by": "p-nadia",
           "at": "2026-10-01T07:06:00-07:00",
           "events": [
-            "ev-001807"
+            "ev-002036"
           ],
           "brief": "thermal plate in use",
           "claim": {
@@ -204,7 +215,7 @@
       ]
     },
     {
-      "key": "HIP-412",
+      "key": "HIP-409",
       "type": "Task",
       "status": "Done",
       "reporter": "p-zoe",
@@ -216,43 +227,45 @@
       "created": "2026-09-16T10:23:47-07:00",
       "due_date": null,
       "events": [
-        "ev-001941"
+        "ev-002183"
       ],
-      "brief": "Order 4x Knee rear cover, 12x Knee bearing shim, 24x Knee output encoder bracket / 1146: need 4 by 2026-10-15 for next week",
+      "brief": "Order 4x Knee rear cover, 12x Knee bearing shim, 24x Knee output encoder bracket / FL-KNE-1146: need 4 by 2026-10-12 for Tolerance stack check: Knee rear cover",
       "must_mention": [
-        "1146",
-        "next week",
-        "knee shims",
-        "encoder bracket",
-        "thurs 10/15"
+        "FL-KNE-1146",
+        "Tolerance stack check: Knee rear cover",
+        "FL-KNE-1124",
+        "FL-KNE-1120",
+        "mon the 12th"
       ],
       "description_length": "one_line",
-      "summary": "knee covers/shims/enc bracket 1146",
-      "description": "4 covers, knee shims and encoder bracket too, thurs 10/15 for next week",
+      "summary": "Order 4x Knee rear cover, 12x Knee bearing shim, 24x Knee output encoder bracket",
+      "description": "FL-KNE-1146: need 4 by mon the 12th for Tolerance stack check: Knee rear cover. shim FL-KNE-1124, bracket FL-KNE-1120",
       "comments": [
         {
-          "id": "HIP-412-c1",
+          "id": "HIP-409-c1",
           "by": "p-zoe",
-          "at": "2026-09-28T11:12:38-07:00",
+          "at": "2026-09-22T15:24:36-07:00",
           "events": [
-            "ev-001943"
+            "ev-002185"
           ],
-          "brief": "Order XO-5520478 placed, promised 2026-10-09",
+          "brief": "FL-KNE-1146: need 4 by 2026-10-12",
           "claim": {
-            "kind": "eta",
-            "value": "2026-10-09"
+            "kind": "needs",
+            "value": {
+              "qty": 4,
+              "by": "2026-10-12"
+            }
           },
           "must_mention": [
-            "XO-5520478",
-            "knee cover",
-            "fri the 9th"
+            "FL-KNE-1146",
+            "mon 10/12"
           ],
-          "body": "Order XO-5520478 placed, knee cover promised fri the 9th"
+          "body": "FL-KNE-1146: need 4 by mon 10/12"
         }
       ]
     },
     {
-      "key": "HIP-413",
+      "key": "HIP-410",
       "type": "Task",
       "status": "Done",
       "reporter": "p-arjun",
@@ -264,65 +277,24 @@
       "created": "2026-09-16T11:01:21-07:00",
       "due_date": "2026-10-01",
       "events": [
-        "ev-001873"
+        "ev-002112"
       ],
-      "brief": "Order 10x Hip stator heat spreader / heat spreader: need 10 by 2026-10-06 for the test",
+      "brief": "Order 10x Hip stator heat spreader / heat spreader: need 10 by 2026-10-01 for the test",
       "must_mention": [
         "heat spreader",
         "the test",
-        "tues the 6th"
+        "thurs 10/1"
       ],
       "description_length": "one_line",
-      "summary": "heat spreaders x10",
-      "description": "heat spreader tues the 6th for the test",
+      "summary": "Order 10x Hip stator heat spreader",
+      "description": "heat spreader: need 10 by thurs 10/1 for the test",
       "comments": [
         {
-          "id": "HIP-413-c1",
-          "by": "p-arjun",
-          "at": "2026-09-16T18:01:21-07:00",
-          "events": [
-            "ev-003143"
-          ],
-          "brief": "Correction: heat spreader: need 10 by 2026-10-01 for the test",
-          "claim": {
-            "kind": "needs",
-            "value": {
-              "qty": 10,
-              "by": "2026-10-01"
-            }
-          },
-          "must_mention": [
-            "heat spreader",
-            "the test",
-            "10/1"
-          ],
-          "body": "Correction: heat spreader need 10 by 10/1 for the test"
-        },
-        {
-          "id": "HIP-413-c2",
-          "by": "p-arjun",
-          "at": "2026-09-24T09:12:38-07:00",
-          "events": [
-            "ev-003366"
-          ],
-          "brief": "Order XO-5513311 placed, promised 2026-10-01",
-          "claim": {
-            "kind": "eta",
-            "value": "2026-10-01"
-          },
-          "must_mention": [
-            "XO-5513311",
-            "thermal plate",
-            "10/1"
-          ],
-          "body": "Order XO-5513311 placed, thermal plate promised 10/1"
-        },
-        {
-          "id": "HIP-413-c3",
+          "id": "HIP-410-c1",
           "by": "p-nadia",
           "at": "2026-10-01T14:45:05-07:00",
           "events": [
-            "ev-001876"
+            "ev-002115"
           ],
           "brief": "thermal plate arrived (10)",
           "claim": {
@@ -333,21 +305,12 @@
             "thermal plate",
             "10"
           ],
-          "body": "thermal plate arrived, 10 in"
-        },
-        {
-          "id": "HIP-413-c4",
-          "by": "p-wei",
-          "at": "2026-10-05T15:41:32-07:00",
-          "events": [],
-          "brief": "background: any update?",
-          "must_mention": [],
-          "body": "any update"
+          "body": "thermal plate arrived (10)"
         }
       ]
     },
     {
-      "key": "HIP-418",
+      "key": "HIP-415",
       "type": "Task",
       "status": "In Progress",
       "reporter": "p-tomas",
@@ -359,7 +322,7 @@
       "created": "2026-09-17T09:28:46-07:00",
       "due_date": "2026-10-01",
       "events": [
-        "ev-001834"
+        "ev-002069"
       ],
       "brief": "Order 5x Hip cable exit clamp / strain relief clamp: need 5 by 2026-10-01 for Design iteration bench trial: Hip cable exit clamp",
       "must_mention": [
@@ -367,10 +330,94 @@
         "Design iteration bench trial: Hip cable exit clamp",
         "thurs 10/1"
       ],
-      "description_length": "short",
-      "summary": "strain relief clamp x5",
-      "description": "need 5 strain relief clamp by thurs 10/1 for Design iteration bench trial: Hip cable exit clamp",
-      "comments": []
+      "description_length": "one_line",
+      "summary": "Order 5x Hip cable exit clamp",
+      "description": "strain relief clamp: need 5 by thurs 10/1 for Design iteration bench trial: Hip cable exit clamp",
+      "comments": [
+        {
+          "id": "HIP-415-c1",
+          "by": "p-tomas",
+          "at": "2026-10-05T11:49:43-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "vendor sending a sample first, will update"
+        }
+      ]
+    },
+    {
+      "key": "HIP-423",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-arjun",
+      "assignee": "p-owen",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-18T14:22:01-07:00",
+      "due_date": null,
+      "events": [
+        "ev-002093"
+      ],
+      "brief": "Order 6x Hip holding-brake bracket / the part: need 6 by 2026-10-29",
+      "must_mention": [
+        "the part",
+        "10/29"
+      ],
+      "description_length": "one_line",
+      "summary": "Order 6x Hip holding-brake bracket",
+      "description": "the part: need 6 by 10/29",
+      "comments": [
+        {
+          "id": "HIP-423-c1",
+          "by": "p-owen",
+          "at": "2026-09-21T11:19:47-07:00",
+          "events": [
+            "ev-002094"
+          ],
+          "brief": "brake mount: need 6 by 2026-10-29",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 6,
+              "by": "2026-10-29"
+            }
+          },
+          "must_mention": [
+            "brake mount",
+            "10/29"
+          ],
+          "body": "brake mount: need 6 by 10/29"
+        },
+        {
+          "id": "HIP-423-c2",
+          "by": "p-nadia",
+          "at": "2026-09-24T18:20:12-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "drawing is attached, same as last time"
+        },
+        {
+          "id": "HIP-423-c3",
+          "by": "p-owen",
+          "at": "2026-10-02T17:58:24-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "any ETA yet?"
+        },
+        {
+          "id": "HIP-423-c4",
+          "by": "p-owen",
+          "at": "2026-10-12T10:49:48-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "still waiting on vendor"
+        }
+      ]
     }
   ]
 }

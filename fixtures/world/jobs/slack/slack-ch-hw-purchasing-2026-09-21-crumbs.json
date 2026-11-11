@@ -38,6 +38,25 @@
       }
     },
     {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
       "id": "p-diego",
       "name": "Diego Salcedo",
       "display_name": "diego",
@@ -57,21 +76,21 @@
       }
     },
     {
-      "id": "p-dmitri",
-      "name": "Dmitri Sokolov",
-      "display_name": "dmitri",
-      "slack_id": "U07FLK0DMIT",
-      "title": "Test and Reliability Lead",
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
       "style": {
-        "case": "mixed",
+        "case": "proper",
         "punctuation": "full",
-        "typos": "some",
-        "emoji": "some",
-        "length": "terse",
-        "hedging": "low",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
         "quirks": [
-          "ALL CAPS for part numbers and deadlines",
-          "uses !!"
+          "numbered lists in status updates",
+          "restates the question before answering"
         ]
       }
     },
@@ -92,19 +111,39 @@
       }
     },
     {
-      "id": "p-ingrid",
-      "name": "Ingrid Solberg",
-      "display_name": "ingrid.s",
-      "slack_id": "U07FLK0INGR",
-      "title": "VP Hardware",
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
       "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
         "emoji": "rare",
-        "length": "medium",
+        "length": "terse",
         "hedging": "low",
-        "quirks": []
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
       }
     },
     {
@@ -180,46 +219,29 @@
       }
     },
     {
-      "id": "p-samir",
-      "name": "Samir Khoury",
-      "display_name": "samir.k",
-      "slack_id": "U07FLK0SAMI",
-      "title": "Senior NPI Buyer",
-      "style": {
-        "case": "lower",
-        "punctuation": "light",
-        "typos": "some",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "medium",
-        "quirks": [
-          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
-          "corrects own dates"
-        ]
-      }
-    },
-    {
-      "id": "p-sofia",
-      "name": "Sofia Lindqvist",
-      "display_name": "sofia.l",
-      "slack_id": "U07FLK0SOFI",
-      "title": "Arms and Hands Lead",
-      "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": []
-      }
-    },
-    {
       "id": "p-tomas",
       "name": "Tomas Ferreira",
       "display_name": "tomas",
       "slack_id": "U07FLK0TOMA",
       "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-valeria",
+      "name": "Valeria Ortiz",
+      "display_name": "valeria.o",
+      "slack_id": "U07FLK0VALE",
+      "title": "Electrical Engineer, battery systems",
       "style": {
         "case": "mixed",
         "punctuation": "light",
@@ -269,37 +291,91 @@
   ],
   "messages": [
     {
-      "ts": "1790015815.761734",
+      "ts": "1790010878.105695",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-003726"
+      ],
+      "brief": "FL-LEG-1348: need 5 by 2026-10-02 for Design iteration bench trial: Knee belt pulley",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 5,
+          "by": "2026-10-02"
+        }
+      },
+      "must_mention": [
+        "FL-LEG-1348",
+        "Design iteration bench trial: Knee belt pulley",
+        "10/2"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "FL-LEG-1348 Design iteration bench trial: Knee belt pulley, need 5 by 10/2 🙏"
+    },
+    {
+      "ts": "1790015815.228814",
       "user": "p-owen",
       "thread_ts": null,
       "events": [
-        "ev-001884"
+        "ev-002123"
       ],
-      "brief": "FL-TST-2136: need 2 by 2026-09-30 for Instrumentation fit-up: Dyno base plate",
+      "brief": "FL-TST-2136: need 2 by 2026-09-25 for Instrumentation fit-up: Dyno base plate",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 2,
-          "by": "2026-09-30"
+          "by": "2026-09-25"
         }
       },
       "must_mention": [
         "FL-TST-2136",
         "Instrumentation fit-up: Dyno base plate",
-        "wed 9/30"
+        "9/25"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "FL-TST-2136 need 2 by wed 9/30 for Instrumentation fit-up: Dyno base plate, can we push it through today"
+      "length": "short",
+      "text": "FL-TST-2136 Instrumentation fit-up: Dyno base plate need 2 by 9/25"
     },
     {
-      "ts": "1790028953.565765",
+      "ts": "1790019601.280228",
+      "user": "p-valeria",
+      "thread_ts": "1790015815.228814",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "will check later"
+    },
+    {
+      "ts": "1790021216.142548",
+      "user": "p-farah",
+      "thread_ts": "1790015815.228814",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Tagging @jade.t, she handles the receiving side of this, so she may know if it is already on the shelf."
+    },
+    {
+      "ts": "1790023746.142739",
+      "user": "p-zoe",
+      "thread_ts": "1790015815.228814",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ill look after lunch"
+    },
+    {
+      "ts": "1790028953.651138",
       "user": "p-nadia",
       "thread_ts": null,
       "events": [
-        "ev-001976"
+        "ev-002223"
       ],
-      "brief": "shim: need 12 by 2026-11-03 for next week",
+      "brief": "FL-KNE-1124: need 12 by 2026-11-03 for Fit check: Knee bearing shim",
       "claim": {
         "kind": "needs",
         "value": {
@@ -308,30 +384,40 @@
         }
       },
       "must_mention": [
-        "shim",
-        "next week",
-        "11/3"
+        "FL-KNE-1124",
+        "Fit check: Knee bearing shim",
+        "tues 11/3"
       ],
-      "pressure": "low",
+      "pressure": "elevated",
       "length": "short",
-      "text": "need 12 shim for next week, 11/3 is the day we need em"
+      "text": "FL-KNE-1124 Fit check: Knee bearing shim, need 12 by tues 11/3"
     },
     {
-      "ts": "1790033399.043625",
-      "user": "p-dmitri",
-      "thread_ts": "1790028953.565765",
+      "ts": "1790031760.906883",
+      "user": "p-carlos",
+      "thread_ts": "1790028953.651138",
       "events": [],
-      "brief": "reply (will check later) in the thread about: the message above",
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "@gwen can you take this one?"
+    },
+    {
+      "ts": "1790032824.869460",
+      "user": "p-gwen",
+      "thread_ts": "1790028953.651138",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "will look later today"
+      "text": "Looking at it now. Will post what I find here."
     },
     {
-      "ts": "1790036222.553344",
+      "ts": "1790036222.821064",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-002004"
+        "ev-002262"
       ],
       "brief": "FL-TST-2789: need 1 by 2026-10-05 for Test stand rework for Leg DVT build: Cell heater clamp plate",
       "claim": {
@@ -345,18 +431,18 @@
         "FL-TST-2789",
         "Test stand rework for Leg DVT build: Cell heater clamp plate",
         "FL-TST-2716",
-        "10/5"
+        "mon 10/5"
       ],
       "pressure": "elevated",
       "length": "medium",
-      "text": "FL-TST-2789 need 1 by 10/5 for Test stand rework for Leg DVT build: Cell heater clamp plate. same fixture as FL-TST-2716 fyi"
+      "text": "FL-TST-2789 Test stand rework for Leg DVT build: Cell heater clamp plate, need 1 by mon 10/5. same family as FL-TST-2716 so same drawing rev"
     },
     {
-      "ts": "1790037274.046704",
+      "ts": "1790037274.240390",
       "user": "p-renee",
       "thread_ts": null,
       "events": [
-        "ev-001921"
+        "ev-002160"
       ],
       "brief": "FL-TST-2274: need 2 by 2026-10-13",
       "claim": {
@@ -371,38 +457,45 @@
         "tues 10/13"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "Need 2 of FL-TST-2274 by tues 10/13."
+      "length": "medium",
+      "text": "FL-TST-2274, need 2 by tues 10/13. Can someone sanity check qty?"
     },
     {
-      "ts": "1790100035.694797",
-      "user": "p-tomas",
-      "thread_ts": null,
-      "events": [
-        "ev-001914"
-      ],
-      "brief": "that order: need 3 by 2026-09-29",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 3,
-          "by": "2026-09-29"
-        }
-      },
-      "must_mention": [
-        "that order",
-        "9/29"
-      ],
-      "pressure": "high",
+      "ts": "1790040931.679951",
+      "user": "p-kenji",
+      "thread_ts": "1790036222.821064",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
       "length": "short",
-      "text": "i think that order needs 3 by 9/29, probably worth chasing"
+      "text": "not sure i agree, the old plate worked fine with the thinner stock"
     },
     {
-      "ts": "1790101403.749992",
+      "ts": "1790042636.163186",
+      "user": "p-jade",
+      "thread_ts": "1790036222.821064",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "had the same thing on the last build, sat in receiving for days"
+    },
+    {
+      "ts": "1790047614.784253",
+      "user": "p-arjun",
+      "thread_ts": "1790036222.821064",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "i think its still open, checking the queue tmrw"
+    },
+    {
+      "ts": "1790101403.959759",
       "user": "p-owen",
       "thread_ts": null,
       "events": [
-        "ev-001887"
+        "ev-002126"
       ],
       "brief": "dyno base plate: need 2 by 2026-09-30 for next week",
       "claim": {
@@ -415,48 +508,18 @@
       "must_mention": [
         "dyno base plate",
         "next week",
-        "9/30"
+        "wed 9/30"
       ],
       "pressure": "high",
-      "length": "short",
-      "text": "dyno base plate need 2 for next week, 9/30"
-    },
-    {
-      "ts": "1790102126.703174",
-      "user": "p-priya",
-      "thread_ts": "1790100035.694797",
-      "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "Same plate as the one on the list yesterday, I believe."
-    },
-    {
-      "ts": "1790103437.071659",
-      "user": "p-zoe",
-      "thread_ts": "1790100035.694797",
-      "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
-      "must_mention": [],
       "length": "medium",
-      "text": "that plate has more aliases than a spy"
+      "text": "dyno base plate needed for next week, wed 9/30 at the latest"
     },
     {
-      "ts": "1790104213.544695",
-      "user": "p-priya",
-      "thread_ts": "1790101403.749992",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Is that the machined version or the one with the extra pockets?"
-    },
-    {
-      "ts": "1790112652.160474",
+      "ts": "1790112652.520560",
       "user": "p-owen",
       "thread_ts": null,
       "events": [
-        "ev-001890"
+        "ev-002129"
       ],
       "brief": "the part: need 2 by 2026-09-30",
       "claim": {
@@ -472,59 +535,16 @@
       ],
       "pressure": "high",
       "length": "short",
-      "text": "the part need 2 by wed the 30th"
+      "text": "the part, wed the 30th"
     },
     {
-      "ts": "1790116831.073725",
-      "user": "p-gwen",
-      "thread_ts": "1790112652.160474",
-      "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Thanks Owen, noted."
-    },
-    {
-      "ts": "1790180687.527799",
-      "user": "p-samir",
-      "thread_ts": null,
-      "events": [
-        "ev-003351"
-      ],
-      "brief": "FL-HIP-1053: need 12 by 2026-11-17",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 12,
-          "by": "2026-11-17"
-        }
-      },
-      "must_mention": [
-        "FL-HIP-1053",
-        "11/17"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "FL-HIP-1053 need 12 by 11/17"
-    },
-    {
-      "ts": "1790183341.338748",
-      "user": "p-diego",
-      "thread_ts": "1790180687.527799",
-      "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "12 hips, someone's ambitious 😂"
-    },
-    {
-      "ts": "1790185667.266190",
+      "ts": "1790185667.130861",
       "user": "p-owen",
       "thread_ts": null,
       "events": [
-        "ev-001959"
+        "ev-002204"
       ],
-      "brief": "FL-KNE-1146: need 8 by 2026-10-06 for next week",
+      "brief": "FL-KNE-1146: need 8 by 2026-10-06 for Design iteration bench trial: Knee rear cover (2)",
       "claim": {
         "kind": "needs",
         "value": {
@@ -534,20 +554,40 @@
       },
       "must_mention": [
         "FL-KNE-1146",
-        "next week",
+        "Design iteration bench trial: Knee rear cover (2)",
         "FL-KNE-1113",
         "10/6"
       ],
       "pressure": "high",
       "length": "short",
-      "text": "FL-KNE-1146 need 8 for next week, 10/6. same story as FL-KNE-1113"
+      "text": "FL-KNE-1146 Design iteration bench trial: Knee rear cover (2) need 8 by 10/6, goes with FL-KNE-1113"
     },
     {
-      "ts": "1790198513.396155",
+      "ts": "1790189990.193577",
+      "user": "p-carlos",
+      "thread_ts": "1790185667.130861",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "8 seems like a lot for a bench trial!!"
+    },
+    {
+      "ts": "1790195387.289053",
+      "user": "p-valeria",
+      "thread_ts": "1790185667.130861",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Is that for both sides or just the one? not 100% sure but i think the other half was already ordered."
+    },
+    {
+      "ts": "1790198513.832052",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-001952"
+        "ev-002195"
       ],
       "brief": "1244: need 7 by 2026-10-02",
       "claim": {
@@ -559,43 +599,43 @@
       },
       "must_mention": [
         "1244",
-        "10/2"
+        "fri 10/2"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "1244 needs 7 by 10/2 🙏"
+      "text": "1244 needed fri 10/2 😬"
     },
     {
-      "ts": "1790285756.652597",
-      "user": "p-arjun",
+      "ts": "1790199710.306428",
+      "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-001977"
+        "ev-002158"
       ],
-      "brief": "shim: need 12 by 2026-10-30",
+      "brief": "dyno adapter: need 3 by 2026-09-29",
       "claim": {
         "kind": "needs",
         "value": {
-          "qty": 12,
-          "by": "2026-10-30"
+          "qty": 3,
+          "by": "2026-09-29"
         }
       },
       "must_mention": [
-        "shim",
-        "fri 10/30"
+        "dyno adapter",
+        "9/29"
       ],
-      "pressure": "elevated",
+      "pressure": "high",
       "length": "medium",
-      "text": "shim need 12 by fri 10/30, nvm will fix if it changes"
+      "text": "dyno adapter, probably need 3 by 9/29. not 100% sure on the count"
     },
     {
-      "ts": "1790288036.026803",
+      "ts": "1790365982.379639",
       "user": "p-nadia",
-      "thread_ts": "1790285756.652597",
+      "thread_ts": null,
       "events": [
-        "ev-003157"
+        "ev-002225"
       ],
-      "brief": "Correction: shim: need 12 by 2026-11-03",
+      "brief": "FL-KNE-1124: need 12 by 2026-11-03 for Fit check: Knee bearing shim",
       "claim": {
         "kind": "needs",
         "value": {
@@ -604,69 +644,57 @@
         }
       },
       "must_mention": [
-        "shim",
-        "11/3"
-      ],
-      "pressure": "elevated",
-      "length": "medium",
-      "text": "*correction shim need 12 by 11/3 not the 30th"
-    },
-    {
-      "ts": "1790294688.002467",
-      "user": "p-ingrid",
-      "thread_ts": null,
-      "events": [
-        "ev-003362"
-      ],
-      "brief": "FL-TST-2375: need 1 by 2026-10-16",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 1,
-          "by": "2026-10-16"
-        }
-      },
-      "must_mention": [
-        "FL-TST-2375",
-        "fri 10/16"
+        "FL-KNE-1124",
+        "Fit check: Knee bearing shim",
+        "tues the 3rd"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "We need 1 of FL-TST-2375 by fri 10/16."
+      "text": "FL-KNE-1124 Fit check: Knee bearing shim need 12 by tues the 3rd"
     },
     {
-      "ts": "1790367969.461415",
-      "user": "p-priya",
-      "thread_ts": null,
-      "events": [
-        "ev-001932"
-      ],
-      "brief": "FL-TST-2424: need 1 by 2026-10-15 for the build",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 1,
-          "by": "2026-10-15"
-        }
-      },
-      "must_mention": [
-        "FL-TST-2424",
-        "the build",
-        "10/15"
-      ],
-      "pressure": "low",
-      "length": "short",
-      "text": "FL-TST-2424: Need 1 for the build by 10/15."
-    },
-    {
-      "ts": "1790368579.008969",
-      "user": "p-sofia",
-      "thread_ts": "1790367969.461415",
+      "ts": "1790369429.858283",
+      "user": "p-gwen",
+      "thread_ts": "1790365982.379639",
       "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
+      "brief": "reply (will check later) in the thread about: the message above",
       "must_mention": [],
+      "length": "short",
+      "text": "will check later"
+    },
+    {
+      "ts": "1790370667.566277",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-002236"
+      ],
+      "brief": "the part: need 9 by 2026-10-14 for Design iteration bench trial: Hip cable exit clamp (2)",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 9,
+          "by": "2026-10-14"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "Design iteration bench trial: Hip cable exit clamp (2)",
+        "10/14"
+      ],
+      "pressure": "high",
       "length": "medium",
-      "text": "Got it. I'll let the team know."
+      "text": "the part for Design iteration bench trial: Hip cable exit clamp (2), need 9 by 10/14!!"
+    },
+    {
+      "ts": "1790373496.825277",
+      "user": "p-priya",
+      "thread_ts": "1790370667.566277",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I would push back on that a little. Nine feels high for what is a fit trial, and we can always reorder."
     }
   ]
 }

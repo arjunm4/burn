@@ -1,0 +1,184 @@
+{
+  "job_id": "jira-SCM-2026-04-06-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 63,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "SCM",
+    "name": "Supply chain and procurement"
+  },
+  "week": {
+    "start": "2026-04-06",
+    "end": "2026-04-12"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "SCM-95",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-samir",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-04-07T13:49:37-07:00",
+      "due_date": null,
+      "events": [
+        "ev-000705"
+      ],
+      "brief": "Order 12x Knee bearing shim / shim: need 12 by 2026-04-29 for Build sub-assembly for Actuator DVT build: Knee bearing shim (2)",
+      "must_mention": [
+        "shim",
+        "Build sub-assembly for Actuator DVT build: Knee bearing shim (2)",
+        "4/29"
+      ],
+      "description_length": "one_line",
+      "summary": "Knee bearing shim x12",
+      "description": "shim, need 12 by thurs 4/29 for Build sub-assembly for Actuator DVT build: Knee bearing shim (2)",
+      "comments": [
+        {
+          "id": "SCM-95-c1",
+          "by": "p-talia",
+          "at": "2026-04-29T12:29:53-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "pics of the shims in slack 🙏"
+        }
+      ]
+    },
+    {
+      "key": "SCM-96",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-andre",
+      "assignee": "p-andre",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-04-07T14:57:27-07:00",
+      "due_date": "2026-04-15",
+      "events": [
+        "ev-000679"
+      ],
+      "brief": "Order 1x Hip to pelvis interface plate / FL-HIP-1021: need 1 by 2026-04-15 for Fixture install and shakedown for Hip actuator dyno efficiency sweep: Hip to pelvis interface plate",
+      "must_mention": [
+        "FL-HIP-1021",
+        "Fixture install and shakedown for Hip actuator dyno efficiency sweep: Hip to pelvis interface plate",
+        "4/15"
+      ],
+      "description_length": "one_line",
+      "summary": "Hip to pelvis interface plate",
+      "description": "FL-HIP-1021 need 1 by 4/15 for Fixture install and shakedown for Hip actuator dyno efficiency sweep: Hip to pelvis interface plate",
+      "comments": [
+        {
+          "id": "SCM-96-c1",
+          "by": "p-andre",
+          "at": "2026-04-08T14:19:12-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "@samir.k any eta on this?"
+        },
+        {
+          "id": "SCM-96-c2",
+          "by": "p-andre",
+          "at": "2026-04-20T16:48:47-07:00",
+          "events": [
+            "ev-000681"
+          ],
+          "brief": "interface plate arrived (1)",
+          "claim": {
+            "kind": "stock",
+            "value": 1
+          },
+          "must_mention": [
+            "interface plate",
+            "1"
+          ],
+          "body": "interface plate arrived, 1 in the cage"
+        },
+        {
+          "id": "SCM-96-c3",
+          "by": "p-talia",
+          "at": "2026-04-22T17:06:34-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on vendor for the second one 😬"
+        }
+      ]
+    }
+  ]
+}

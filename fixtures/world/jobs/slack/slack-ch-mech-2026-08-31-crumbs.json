@@ -19,25 +19,6 @@
   },
   "people": [
     {
-      "id": "p-andre",
-      "name": "Andre Baptiste",
-      "display_name": "andre",
-      "slack_id": "U07FLK0ANDR",
-      "title": "Test Engineer, dyno",
-      "style": {
-        "case": "lower",
-        "punctuation": "light",
-        "typos": "lots",
-        "emoji": "some",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": [
-          "fixes typos with *word",
-          "double-sends instead of editing"
-        ]
-      }
-    },
-    {
       "id": "p-arjun",
       "name": "Arjun Venkatesan",
       "display_name": "arjun",
@@ -53,6 +34,24 @@
         "quirks": [
           "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
           "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-bao",
+      "name": "Bao Nguyen",
+      "display_name": "bao.n",
+      "slack_id": "U07FLK0BAO0",
+      "title": "Electrical Engineer, motor drives",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
         ]
       }
     },
@@ -95,22 +94,6 @@
       }
     },
     {
-      "id": "p-ingrid",
-      "name": "Ingrid Solberg",
-      "display_name": "ingrid.s",
-      "slack_id": "U07FLK0INGR",
-      "title": "VP Hardware",
-      "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": []
-      }
-    },
-    {
       "id": "p-jade",
       "name": "Jade Thompson",
       "display_name": "jade.t",
@@ -145,22 +128,38 @@
       }
     },
     {
-      "id": "p-talia",
-      "name": "Talia Rosen",
-      "display_name": "talia",
-      "slack_id": "U07FLK0TALI",
-      "title": "Buyer/Planner",
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
       "style": {
-        "case": "mixed",
-        "punctuation": "light",
-        "typos": "rare",
-        "emoji": "lots",
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
         "length": "medium",
         "hedging": "low",
-        "quirks": [
-          "reacts with 🙏 and 😬",
-          "ends messages with an emoji"
-        ]
+        "quirks": []
       }
     }
   ],
@@ -183,11 +182,11 @@
   ],
   "messages": [
     {
-      "ts": "1788205336.802571",
+      "ts": "1788205336.991529",
       "user": "p-farah",
       "thread_ts": null,
       "events": [
-        "ev-003565"
+        "ev-004081"
       ],
       "brief": "hip dyno plate: still quoting rev C",
       "claim": {
@@ -197,36 +196,15 @@
       "must_mention": [
         "hip dyno plate"
       ],
-      "length": "medium",
-      "text": "Is anyone else seeing the hip dyno plate still quoted at rev C? I think the vendor may be working off an older drawing, so I will ask them to confirm."
-    },
-    {
-      "ts": "1788217377.678102",
-      "user": "p-arjun",
-      "thread_ts": null,
-      "events": [
-        "ev-003397"
-      ],
-      "brief": "Order XO-5480130 placed, promised 2026-09-15",
-      "claim": {
-        "kind": "eta",
-        "value": "2026-09-15"
-      },
-      "must_mention": [
-        "XO-5480130",
-        "dyno coupling",
-        "tues 9/15"
-      ],
-      "pressure": "elevated",
       "length": "short",
-      "text": "XO-5480130 placed for the dyno coupling, they promised tues 9/15"
+      "text": "hip dyno plate, still quoting rev C."
     },
     {
-      "ts": "1788281349.701889",
+      "ts": "1788281349.880421",
       "user": "p-lin",
       "thread_ts": null,
       "events": [
-        "ev-003007"
+        "ev-003396"
       ],
       "brief": "FL-TST-2462 rev B released: added gusset after it yielded in proof load",
       "claim": {
@@ -237,44 +215,24 @@
         "FL-TST-2462"
       ],
       "length": "short",
-      "text": "FL-TST-2462 rev B is released, gusset added"
+      "text": "FL-TST-2462 rev B released, added a gusset after it yielded in proof load"
     },
     {
-      "ts": "1788281524.888612",
-      "user": "p-talia",
-      "thread_ts": "1788281349.701889",
+      "ts": "1788284171.782941",
+      "user": "p-farah",
+      "thread_ts": "1788281349.880421",
       "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
+      "brief": "reply (pushes back) in the thread about: the message above",
       "must_mention": [],
       "length": "one_word",
-      "text": "👍"
+      "text": "Did the proof load run to the full test case, or stop at the first yield? The gusset size depends on that."
     },
     {
-      "ts": "1788284066.537794",
-      "user": "p-ingrid",
-      "thread_ts": "1788281349.701889",
-      "events": [],
-      "brief": "reply (will check later) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "Thanks, I will look at the updated drawing this afternoon."
-    },
-    {
-      "ts": "1788287425.108366",
-      "user": "p-andre",
-      "thread_ts": "1788281349.701889",
-      "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "ty lin"
-    },
-    {
-      "ts": "1788372573.478067",
+      "ts": "1788372573.338488",
       "user": "p-callum",
       "thread_ts": null,
       "events": [
-        "ev-003098"
+        "ev-003487"
       ],
       "brief": "FL-TST-2556 rev B released: tolerance relaxed after DFM feedback",
       "claim": {
@@ -284,15 +242,15 @@
       "must_mention": [
         "FL-TST-2556"
       ],
-      "length": "medium",
-      "text": "FL-TST-2556 rev B released, tol relaxed after the DFM feedback came back from them"
+      "length": "short",
+      "text": "FL-TST-2556 rev B released, relaxed the tolerance after dfm feedback"
     },
     {
-      "ts": "1788467817.477172",
+      "ts": "1788467817.165562",
       "user": "p-callum",
       "thread_ts": null,
       "events": [
-        "ev-003597"
+        "ev-004034"
       ],
       "brief": "foot clamp: still quoting rev A",
       "claim": {
@@ -303,14 +261,60 @@
         "foot clamp"
       ],
       "length": "short",
-      "text": "foot clamp still quoting rev A on the portal, thats wrong right?"
+      "text": "foot clamp still quoting rev A"
     },
     {
-      "ts": "1788554624.832984",
+      "ts": "1788468183.908610",
+      "user": "p-bao",
+      "thread_ts": null,
+      "events": [
+        "ev-004114"
+      ],
+      "brief": "knee dyno coupling: still quoting rev F",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev F"
+      },
+      "must_mention": [
+        "knee dyno coupling"
+      ],
+      "length": "short",
+      "text": "knee dyno coupling still quoting rev F"
+    },
+    {
+      "ts": "1788472541.728594",
+      "user": "p-lin",
+      "thread_ts": "1788468183.908610",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Is that confirmed? I thought the latest was already uploaded."
+    },
+    {
+      "ts": "1788538153.001679",
+      "user": "p-nora",
+      "thread_ts": null,
+      "events": [
+        "ev-004011"
+      ],
+      "brief": "tension jig: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "tension jig"
+      ],
+      "length": "short",
+      "text": "tension jig, still quoting rev A."
+    },
+    {
+      "ts": "1788554624.951788",
       "user": "p-jade",
       "thread_ts": null,
       "events": [
-        "ev-003428"
+        "ev-003991"
       ],
       "brief": "test objects: still quoting rev A",
       "claim": {
@@ -320,15 +324,35 @@
       "must_mention": [
         "test objects"
       ],
-      "length": "medium",
-      "text": "test objects still quoting at rev A, someone should ping them about that one"
+      "length": "short",
+      "text": "test objects still quoting rev A"
     },
     {
-      "ts": "1788571245.205135",
+      "ts": "1788558162.590564",
+      "user": "p-sofia",
+      "thread_ts": "1788554624.951788",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Thanks for flagging."
+    },
+    {
+      "ts": "1788560525.648129",
+      "user": "p-arjun",
+      "thread_ts": "1788554624.951788",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "fyi the vendor portal caches the old pdf, may need a re-upload"
+    },
+    {
+      "ts": "1788571245.684925",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-003049"
+        "ev-003438"
       ],
       "brief": "FL-HIP-1033 rev F released: clearance for harness",
       "claim": {
@@ -339,7 +363,7 @@
         "FL-HIP-1033"
       ],
       "length": "short",
-      "text": "FL-HIP-1033 rev F is out, opened up clearance for harness"
+      "text": "FL-HIP-1033 rev F is released, clearance for the harness"
     }
   ]
 }

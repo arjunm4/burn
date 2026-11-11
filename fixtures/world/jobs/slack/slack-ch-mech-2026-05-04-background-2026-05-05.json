@@ -1,0 +1,991 @@
+{
+  "job_id": "slack-ch-mech-2026-05-04-background-2026-05-05",
+  "source": "slack",
+  "status": "blank",
+  "priority": 56,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-mech",
+    "name": "mech",
+    "slack_id": "C07FLK0MECH",
+    "purpose": "Mechanical engineering: design, DFM, vendors, drawings"
+  },
+  "week": {
+    "start": "2026-05-04",
+    "end": "2026-05-10"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-bao",
+      "name": "Bao Nguyen",
+      "display_name": "bao.n",
+      "slack_id": "U07FLK0BAO0",
+      "title": "Electrical Engineer, motor drives",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-marcus",
+      "name": "Marcus Adeyemi",
+      "display_name": "marcus",
+      "slack_id": "U07FLK0MARC",
+      "title": "CTO",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Pushrod clevis bends at 1.6x body weight in the tilt stand. This week: Zoe: ankle clevis visibly bent after 1.6x BW tilt load.",
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno. This week: Heat spreader plate prototype drops steady-state by 14 C; housing fin redesign debated vs cost.",
+    "Ongoing: Orders sitting in DFM review because of tolerance callouts. This week: Talia: three orders stuck in DFM review over thread callouts and tight tolerances."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1777996019.868433",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about cad change to the rear cover",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1777997396.354702",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about inspection of the knee motor mount",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1777997763.022966",
+      "user": "p-bao",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to measurement of the crank",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1777997852.956942",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about measurement of the encoder bracket",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1777998361.833838",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on cad change to the spine fitting",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1777999365.318556",
+      "user": "p-nadia",
+      "thread_ts": "1777996019.868433",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: cad change to the rear cover",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1777999480.466929",
+      "user": "p-lin",
+      "thread_ts": "1777996019.868433",
+      "events": [],
+      "brief": "reply (answers) in the thread about: cad change to the rear cover",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1777999971.767630",
+      "user": "p-luis",
+      "thread_ts": "1777997852.956942",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: measurement of the encoder bracket",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778002190.423168",
+      "user": "p-kenji",
+      "thread_ts": "1777997852.956942",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: measurement of the encoder bracket",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1778002568.907199",
+      "user": "p-ingrid",
+      "thread_ts": "1777997763.022966",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: measurement of the crank",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778003922.303771",
+      "user": "p-wei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on off-topic: a conference talk video",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778004658.532826",
+      "user": "p-idris",
+      "thread_ts": "1777996019.868433",
+      "events": [],
+      "brief": "reply (answers) in the thread about: cad change to the rear cover",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778004736.571967",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about cad change to the hard stop",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778005033.343252",
+      "user": "p-samir",
+      "thread_ts": "1777997763.022966",
+      "events": [],
+      "brief": "reply (ack) in the thread about: measurement of the crank",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778005328.700997",
+      "user": "p-samir",
+      "thread_ts": "1777996019.868433",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: cad change to the rear cover",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1778005901.193530",
+      "user": "p-gwen",
+      "thread_ts": "1777997852.956942",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: measurement of the encoder bracket",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778006904.807693",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on cad change to the hand finger link",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778007610.089320",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about assembly of the busbar clamp",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778007652.186204",
+      "user": "p-wei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to cleanup of the ankle bushing",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1778007741.873518",
+      "user": "p-samir",
+      "thread_ts": "1778003922.303771",
+      "events": [],
+      "brief": "reply (ack) in the thread about: off-topic: a conference talk video",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1778008802.827500",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with off-topic: a 3d-printed desk toy",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778009247.207052",
+      "user": "p-carlos",
+      "thread_ts": "1778003922.303771",
+      "events": [],
+      "brief": "reply (answers) in the thread about: off-topic: a conference talk video",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1778009309.055872",
+      "user": "p-farah",
+      "thread_ts": "1778007652.186204",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: cleanup of the ankle bushing",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778009433.925627",
+      "user": "p-bao",
+      "thread_ts": "1777997763.022966",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: measurement of the crank",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1778011638.906061",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about inspection of the eccentric shaft",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778011927.723450",
+      "user": "p-farah",
+      "thread_ts": "1778007652.186204",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: cleanup of the ankle bushing",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778011943.215971",
+      "user": "p-luis",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about cad change to the shank cover",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778012375.984377",
+      "user": "p-kenji",
+      "thread_ts": "1778003922.303771",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: off-topic: a conference talk video",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778012593.960575",
+      "user": "p-zoe",
+      "thread_ts": "1778007610.089320",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: assembly of the busbar clamp",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1778013323.656593",
+      "user": "p-luis",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about bench notes on the cell tray",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1778013435.018288",
+      "user": "p-farah",
+      "thread_ts": "1778007610.089320",
+      "events": [],
+      "brief": "reply (answers) in the thread about: assembly of the busbar clamp",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1778015782.157297",
+      "user": "p-beth",
+      "thread_ts": "1778003922.303771",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: off-topic: a conference talk video",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778015893.860945",
+      "user": "p-samir",
+      "thread_ts": "1778003922.303771",
+      "events": [],
+      "brief": "reply (answers) in the thread about: off-topic: a conference talk video",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778016700.448884",
+      "user": "p-nora",
+      "thread_ts": "1778007652.186204",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: cleanup of the ankle bushing",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778016880.713385",
+      "user": "p-jade",
+      "thread_ts": "1778007652.186204",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: cleanup of the ankle bushing",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1778016980.108214",
+      "user": "p-luis",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about bench notes on the motor pack plate",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778017328.996037",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about cleanup of the leg cable clamp",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1778019794.748358",
+      "user": "p-nora",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about setup for the bearing retainer",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778019826.280070",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about setup for the rotor hub",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1778020120.764880",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about tolerance question on the knee backdrive torque and backlash check",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1778021314.860850",
+      "user": "p-wei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with measurement of the crank",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778022805.613088",
+      "user": "p-marcus",
+      "thread_ts": "1778020120.764880",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: tolerance question on the knee backdrive torque and backlash check",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1778023641.170880",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about off-topic: a bike commute mishap",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778024963.837272",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about tolerance question on the cell spacer",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778025923.191241",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on cad change to the ring pin housing",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778027378.324524",
+      "user": "p-callum",
+      "thread_ts": "1778020120.764880",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: tolerance question on the knee backdrive torque and backlash check",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778029899.012655",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about inspection of the crossbeam",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778032715.574864",
+      "user": "p-samir",
+      "thread_ts": "1778020120.764880",
+      "events": [],
+      "brief": "reply (answers) in the thread about: tolerance question on the knee backdrive torque and backlash check",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1778086539.624583",
+      "user": "p-samir",
+      "thread_ts": "1778020120.764880",
+      "events": [],
+      "brief": "reply (ack) in the thread about: tolerance question on the knee backdrive torque and backlash check",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1778087888.942893",
+      "user": "p-lukas",
+      "thread_ts": "1778020120.764880",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: tolerance question on the knee backdrive torque and backlash check",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

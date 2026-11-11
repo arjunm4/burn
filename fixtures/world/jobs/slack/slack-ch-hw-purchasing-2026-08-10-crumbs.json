@@ -1,0 +1,292 @@
+{
+  "job_id": "slack-ch-hw-purchasing-2026-08-10-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 27,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hw-purchasing",
+    "name": "hw-purchasing",
+    "slack_id": "C07FLK0HWPR",
+    "purpose": "Hardware buys: Xometry quotes, McMaster, Digi-Key, lead times"
+  },
+  "week": {
+    "start": "2026-08-10",
+    "end": "2026-08-16"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Farah wants 3 mm and a mica sheet; Lukas says that costs 18 mm of pack length.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators",
+    "Ongoing: Tendons fray at the proximal pulley after 40k grip cycles",
+    "Ongoing: Type III anodize adds ~0.025 mm per surface and kills the bearing press fit. This week: Arjun okays reaming four parts by hand to keep the build moving; rest reordered.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Callum proposes routing inboard through the joint axis; Diego says thigh link needs rework.",
+    "Ongoing: Gait controller tuning for the investor demo on the gait gantry. This week: Ankle gains cut 30%; Lin flags the boom clamp slipping on the pelvis adapter.",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Claire: hardware spend 23% over plan for the quarter, expedites a big share.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno. This week: Ingrid says no until DVT; run pinch tests on nights instead.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting. This week: Plates released; static load test planned on the drop gantry with a load yoke."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1786404641.835618",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-001669"
+      ],
+      "brief": "FL-HIP-1065: need 12 by 2026-08-18 for Fixture install and shakedown for Hip actuator thermal derate at continuous torque: Hip output shaft",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-08-18"
+        }
+      },
+      "must_mention": [
+        "FL-HIP-1065",
+        "Fixture install and shakedown for Hip actuator thermal derate at continuous torque: Hip output shaft",
+        "tues the 18th"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "FL-HIP-1065 need 12 by tues the 18th for Fixture install and shakedown for Hip actuator thermal derate at continuous torque: Hip output shaft"
+    },
+    {
+      "ts": "1786406935.627791",
+      "user": "p-callum",
+      "thread_ts": "1786404641.835618",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "thats a lot of shafts for one test"
+    },
+    {
+      "ts": "1786407161.595181",
+      "user": "p-zoe",
+      "thread_ts": "1786404641.835618",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "same thing happened with the last shaft run, we ended up with spares"
+    },
+    {
+      "ts": "1786407524.996442",
+      "user": "p-kenji",
+      "thread_ts": "1786404641.835618",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "shafts are cheap just not the lead time"
+    },
+    {
+      "ts": "1786553161.239244",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-001743"
+      ],
+      "brief": "FL-TST-2146: need 12 by 2026-08-31 for Hip actuator dyno efficiency sweep",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-08-31"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2146",
+        "Hip actuator dyno efficiency sweep",
+        "FL-HIP-1081",
+        "mon 8/31"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "FL-TST-2146 need 12 by mon 8/31 for Hip actuator dyno efficiency sweep, goes with FL-HIP-1081"
+    },
+    {
+      "ts": "1786716181.738803",
+      "user": "p-andre",
+      "thread_ts": "1786553161.239244",
+      "events": [
+        "ev-003652"
+      ],
+      "brief": "Correction: FL-TST-2146: need 12 by 2026-09-03 for Hip actuator dyno efficiency sweep",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-09-03"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2146",
+        "Hip actuator dyno efficiency sweep",
+        "FL-HIP-1081",
+        "thurs the 3rd"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Correction: FL-TST-2146 need 12 by thurs the 3rd for Hip actuator dyno efficiency sweep, goes with FL-HIP-1081"
+    },
+    {
+      "ts": "1786723399.400505",
+      "user": "p-wei",
+      "thread_ts": "1786553161.239244",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "will look into it later"
+    },
+    {
+      "ts": "1786725859.891371",
+      "user": "p-diego",
+      "thread_ts": "1786553161.239244",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "that sweep needs the full set on the bench before the first run 🙏"
+    }
+  ]
+}

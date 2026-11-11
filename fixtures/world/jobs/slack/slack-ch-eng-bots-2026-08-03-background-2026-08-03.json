@@ -1,0 +1,362 @@
+{
+  "job_id": "slack-ch-eng-bots-2026-08-03-background-2026-08-03",
+  "source": "slack",
+  "status": "blank",
+  "priority": 30,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-eng-bots",
+    "name": "eng-bots",
+    "slack_id": "C07FLK0BOTS",
+    "purpose": "GitHub, Jira and CI notifications"
+  },
+  "week": {
+    "start": "2026-08-03",
+    "end": "2026-08-09"
+  },
+  "people": [
+    {
+      "id": "p-anika",
+      "name": "Anika Joshi",
+      "display_name": "anika",
+      "slack_id": "U07FLK0ANIK",
+      "title": "Firmware Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-elena",
+      "name": "Elena Petrova",
+      "display_name": "elena",
+      "slack_id": "U07FLK0ELEN",
+      "title": "Software Infrastructure Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-felix",
+      "name": "Felix Wagner",
+      "display_name": "felix",
+      "slack_id": "U07FLK0FELI",
+      "title": "Software Engineer, simulation",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-gabriel",
+      "name": "Gabriel Moreau",
+      "display_name": "gabriel.m",
+      "slack_id": "U07FLK0GABR",
+      "title": "Controls Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-mateo",
+      "name": "Mateo Silva",
+      "display_name": "mateo",
+      "slack_id": "U07FLK0MATE",
+      "title": "Embedded Software Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-rohan",
+      "name": "Rohan Kapoor",
+      "display_name": "rohan",
+      "slack_id": "U07FLK0ROHA",
+      "title": "Controls Engineer, manipulation",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-tara",
+      "name": "Tara Brennan",
+      "display_name": "tara.b",
+      "slack_id": "U07FLK0TARA",
+      "title": "Infrastructure Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-yusuf",
+      "name": "Yusuf Demir",
+      "display_name": "yusuf",
+      "slack_id": "U07FLK0YUSU",
+      "title": "Firmware Engineer, motor control",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators. This week: Jonas starts FOC v2: 20 kHz current loop, thermal model from Nadia.",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Farah: bend radius at the knee is 8 mm, cable rated for 7.5x OD dynamic, we are at 3x.",
+    "Ongoing: Gait controller tuning for the investor demo on the gait gantry. This week: Ten consecutive steps at 0.3 m/s; ankle oscillates at heel strike.",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1785769974.140127",
+      "user": "p-rohan",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Pressure on legs and controls; exec check-ins twice a week.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1785771172.774454",
+      "user": "p-mateo",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on this: Marcus: show the leg on the gantry plus hip and hand separately; no torso.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1785776077.959072",
+      "user": "p-anika",
+      "thread_ts": "1785771172.774454",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Marcus: show the leg on the gantry plus hip and hand separately; no torso.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1785779781.550676",
+      "user": "p-tara",
+      "thread_ts": "1785771172.774454",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Marcus: show the leg on the gantry plus hip and hand separately; no torso.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1785781669.726742",
+      "user": "p-mei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: Ingrid warns the leg drop campaign slipped; demo date is hard.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1785782320.568813",
+      "user": "p-yusuf",
+      "thread_ts": "1785771172.774454",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Marcus: show the leg on the gantry plus hip and hand separately; no torso.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1785782816.417651",
+      "user": "p-yusuf",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about this: Ingrid warns the leg drop campaign slipped; demo date is hard.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1785783156.905791",
+      "user": "p-elena",
+      "thread_ts": "1785771172.774454",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Marcus: show the leg on the gantry plus hip and hand separately; no torso.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1785786601.935288",
+      "user": "p-farah",
+      "thread_ts": "1785781669.726742",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Ingrid warns the leg drop campaign slipped; demo date is hard.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1785789822.794966",
+      "user": "p-rohan",
+      "thread_ts": "1785781669.726742",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Ingrid warns the leg drop campaign slipped; demo date is hard.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1785791690.884541",
+      "user": "p-felix",
+      "thread_ts": "1785781669.726742",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Ingrid warns the leg drop campaign slipped; demo date is hard.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1785794829.596655",
+      "user": "p-yusuf",
+      "thread_ts": "1785781669.726742",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Ingrid warns the leg drop campaign slipped; demo date is hard.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1785798391.528179",
+      "user": "p-gabriel",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1785802999.777942",
+      "user": "p-yusuf",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about this: Ingrid warns the leg drop campaign slipped; demo date is hard.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

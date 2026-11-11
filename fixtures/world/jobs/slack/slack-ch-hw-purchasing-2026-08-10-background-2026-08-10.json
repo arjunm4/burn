@@ -1,0 +1,812 @@
+{
+  "job_id": "slack-ch-hw-purchasing-2026-08-10-background-2026-08-10",
+  "source": "slack",
+  "status": "blank",
+  "priority": 28,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hw-purchasing",
+    "name": "hw-purchasing",
+    "slack_id": "C07FLK0HWPR",
+    "purpose": "Hardware buys: Xometry quotes, McMaster, Digi-Key, lead times"
+  },
+  "week": {
+    "start": "2026-08-10",
+    "end": "2026-08-16"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-ishaan",
+      "name": "Ishaan Mehta",
+      "display_name": "ishaan.m",
+      "slack_id": "U07FLK0ISHA",
+      "title": "Electrical Engineer, sensors",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-kwame",
+      "name": "Kwame Asante",
+      "display_name": "kwame",
+      "slack_id": "U07FLK0KWAM",
+      "title": "Senior Electrical Engineer, power",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-valeria",
+      "name": "Valeria Ortiz",
+      "display_name": "valeria.o",
+      "slack_id": "U07FLK0VALE",
+      "title": "Electrical Engineer, battery systems",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Farah wants 3 mm and a mica sheet; Lukas says that costs 18 mm of pack length.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators",
+    "Ongoing: Tendons fray at the proximal pulley after 40k grip cycles",
+    "Ongoing: Type III anodize adds ~0.025 mm per surface and kills the bearing press fit. This week: Arjun okays reaming four parts by hand to keep the build moving; rest reordered.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Callum proposes routing inboard through the joint axis; Diego says thigh link needs rework.",
+    "Ongoing: Gait controller tuning for the investor demo on the gait gantry. This week: Ankle gains cut 30%; Lin flags the boom clamp slipping on the pelvis adapter.",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Claire: hardware spend 23% over plan for the quarter, expedites a big share.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno. This week: Ingrid says no until DVT; run pinch tests on nights instead.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting. This week: Plates released; static load test planned on the drop gantry with a load yoke."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1786379005.683987",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about off-topic: the ergonomics survey",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786381519.984558",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about this: Amara: pulley groove edge is sharp, Ra 3.2 and no radius; asks for polished groove.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786381963.744551",
+      "user": "p-lukas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Ankle gains cut 30%; Lin flags the boom clamp slipping on the pelvis adapter.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786387254.042668",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Lin starts the grip-cycle life test, target 100k cycles.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786388380.398959",
+      "user": "p-arjun",
+      "thread_ts": "1786387254.042668",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Lin starts the grip-cycle life test, target 100k cycles.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786388962.326420",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with off-topic: a teardown video",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786392193.155473",
+      "user": "p-lin",
+      "thread_ts": "1786387254.042668",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Lin starts the grip-cycle life test, target 100k cycles.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786392688.816667",
+      "user": "p-kenji",
+      "thread_ts": "1786387254.042668",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Lin starts the grip-cycle life test, target 100k cycles.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786394003.844399",
+      "user": "p-farah",
+      "thread_ts": "1786387254.042668",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Lin starts the grip-cycle life test, target 100k cycles.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786396266.996804",
+      "user": "p-nora",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786397361.136744",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Sofia debates Dyneema vs steel cable; Kenji says steel kills the bend radius.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786397462.827261",
+      "user": "p-tomas",
+      "thread_ts": "1786387254.042668",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Lin starts the grip-cycle life test, target 100k cycles.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786399748.775334",
+      "user": "p-diego",
+      "thread_ts": "1786387254.042668",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Lin starts the grip-cycle life test, target 100k cycles.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786400855.284318",
+      "user": "p-wei",
+      "thread_ts": "1786396266.996804",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786401010.928391",
+      "user": "p-farah",
+      "thread_ts": "1786387254.042668",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Lin starts the grip-cycle life test, target 100k cycles.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786402857.501389",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Carlos finds two broken phase conductors at the knee after the overnight gait run.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786402944.062717",
+      "user": "p-priya",
+      "thread_ts": "1786387254.042668",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Lin starts the grip-cycle life test, target 100k cycles.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786404814.462502",
+      "user": "p-sofia",
+      "thread_ts": "1786402857.501389",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Carlos finds two broken phase conductors at the knee after the overnight gait run.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786406088.793951",
+      "user": "p-lukas",
+      "thread_ts": "1786396266.996804",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786406388.837742",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to this: At 41k cycles index finger tendon frays at the proximal pulley.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786406751.539757",
+      "user": "p-carlos",
+      "thread_ts": "1786402857.501389",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Carlos finds two broken phase conductors at the knee after the overnight gait run.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786407307.855805",
+      "user": "p-farah",
+      "thread_ts": "1786387254.042668",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Lin starts the grip-cycle life test, target 100k cycles.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786409366.688619",
+      "user": "p-idris",
+      "thread_ts": "1786396266.996804",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786410263.628217",
+      "user": "p-hana",
+      "thread_ts": "1786387254.042668",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Lin starts the grip-cycle life test, target 100k cycles.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786410571.720459",
+      "user": "p-nora",
+      "thread_ts": "1786406388.837742",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: At 41k cycles index finger tendon frays at the proximal pulley.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786411188.036944",
+      "user": "p-nadia",
+      "thread_ts": "1786402857.501389",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Carlos finds two broken phase conductors at the knee after the overnight gait run.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786412719.093742",
+      "user": "p-nadia",
+      "thread_ts": "1786396266.996804",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786412939.722614",
+      "user": "p-owen",
+      "thread_ts": "1786406388.837742",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: At 41k cycles index finger tendon frays at the proximal pulley.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786414065.995051",
+      "user": "p-nadia",
+      "thread_ts": "1786406388.837742",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: At 41k cycles index finger tendon frays at the proximal pulley.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786414786.911079",
+      "user": "p-diego",
+      "thread_ts": "1786387254.042668",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Lin starts the grip-cycle life test, target 100k cycles.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786415399.599606",
+      "user": "p-kwame",
+      "thread_ts": "1786387254.042668",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Lin starts the grip-cycle life test, target 100k cycles.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786416355.800014",
+      "user": "p-diego",
+      "thread_ts": "1786387254.042668",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Lin starts the grip-cycle life test, target 100k cycles.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786468072.544899",
+      "user": "p-dmitri",
+      "thread_ts": "1786406388.837742",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: At 41k cycles index finger tendon frays at the proximal pulley.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786471791.415930",
+      "user": "p-valeria",
+      "thread_ts": "1786387254.042668",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Lin starts the grip-cycle life test, target 100k cycles.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786472139.147522",
+      "user": "p-ishaan",
+      "thread_ts": "1786406388.837742",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: At 41k cycles index finger tendon frays at the proximal pulley.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786472747.769434",
+      "user": "p-carlos",
+      "thread_ts": "1786387254.042668",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Lin starts the grip-cycle life test, target 100k cycles.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786475566.522163",
+      "user": "p-owen",
+      "thread_ts": "1786387254.042668",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Lin starts the grip-cycle life test, target 100k cycles.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

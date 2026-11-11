@@ -1,0 +1,242 @@
+{
+  "job_id": "slack-ch-supply-chain-2026-04-20-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 59,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-supply-chain",
+    "name": "supply-chain",
+    "slack_id": "C07FLK0SUPC",
+    "purpose": "Supply chain team: vendors, POs, deliveries, expedites"
+  },
+  "week": {
+    "start": "2026-04-20",
+    "end": "2026-04-26"
+  },
+  "people": [
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "context": [],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1776727560.532222",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-000531"
+      ],
+      "brief": "dyno adapter in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-04-20"
+      },
+      "must_mention": [
+        "dyno adapter",
+        "the build",
+        "4/20"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "dyno adapter in use for the build as of 4/20 🙂"
+    },
+    {
+      "ts": "1776821700.334307",
+      "user": "p-wei",
+      "thread_ts": null,
+      "events": [
+        "ev-000429"
+      ],
+      "brief": "output shaft in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-04-21"
+      },
+      "must_mention": [
+        "output shaft",
+        "the build",
+        "4/21"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "output shaft in use for the build, 4/21."
+    },
+    {
+      "ts": "1776874355.092050",
+      "user": "p-nora",
+      "thread_ts": "1776821700.334307",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Finally."
+    },
+    {
+      "ts": "1776876288.454583",
+      "user": "p-beth",
+      "thread_ts": "1776821700.334307",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@samir.k can you update the tracker?"
+    },
+    {
+      "ts": "1776916680.570563",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-000379"
+      ],
+      "brief": "vee block in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-04-21"
+      },
+      "must_mention": [
+        "vee block",
+        "4/21"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "vee block in use as of 4/21"
+    },
+    {
+      "ts": "1776983138.003135",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-000028"
+      ],
+      "brief": "Bearing set for battery enclosure (clevis): moved from 2026-04-22 to 2026-05-11",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-05-11"
+      },
+      "must_mention": [
+        "Bearing set for battery enclosure (clevis)",
+        "5/11"
+      ],
+      "length": "medium",
+      "text": "Bearing set for battery enclosure (clevis) moved out to 5/11"
+    }
+  ]
+}

@@ -1,0 +1,574 @@
+{
+  "job_id": "slack-ch-procurement-2026-05-11-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 53,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-05-11",
+    "end": "2026-05-17"
+  },
+  "people": [
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-kwame",
+      "name": "Kwame Asante",
+      "display_name": "kwame",
+      "slack_id": "U07FLK0KWAM",
+      "title": "Senior Electrical Engineer, power",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Pushrod clevis bends at 1.6x body weight in the tilt stand. This week: Hana: buckling, not yield; the clevis ear is 4 mm thick with a 6 mm hole.",
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno",
+    "Ongoing: Ratcheting risk at peak torque from loose wave generator fit. This week: Andre: knee ratcheted once at 95 Nm during the torque sweep, loud click, no damage.",
+    "Ongoing: Orders sitting in DFM review because of tolerance callouts. This week: Samir pushes engineers to put tolerances on the drawing, not just the STEP."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1778513282.482127",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-001058"
+      ],
+      "brief": "knee spacer: need 12 by 2026-06-11",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-06-11"
+        }
+      },
+      "must_mention": [
+        "knee spacer",
+        "thurs the 11th"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Need 12 knee spacer by thurs the 11th!! Please push on it."
+    },
+    {
+      "ts": "1778516051.167349",
+      "user": "p-kwame",
+      "thread_ts": "1778513282.482127",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "lol finally something moves faster than the dyno queue"
+    },
+    {
+      "ts": "1778522063.547377",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-000977"
+      ],
+      "brief": "FL-BAT-1685: need 1 by 2026-05-22 for Build sub-assembly for Leg DVT build: Battery clevis 10 (2)",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-05-22"
+        }
+      },
+      "must_mention": [
+        "FL-BAT-1685",
+        "Build sub-assembly for Leg DVT build: Battery clevis 10 (2)",
+        "5/22"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-BAT-1685: need 1 by 5/22 for Build sub-assembly for Leg DVT build: Battery clevis 10 (2). any way to get it sooner?"
+    },
+    {
+      "ts": "1778524399.994294",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-001059"
+      ],
+      "brief": "that order: need 12 by 2026-06-11",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-06-11"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "thurs the 11th"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Same ask on that order, need 12 by thurs the 11th!!"
+    },
+    {
+      "ts": "1778602029.852113",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-000958"
+      ],
+      "brief": "hard stop: need 12 by 2026-05-15",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-05-15"
+        }
+      },
+      "must_mention": [
+        "hard stop",
+        "5/15"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "hard stop: need 12 by 5/15 pls"
+    },
+    {
+      "ts": "1778606485.709527",
+      "user": "p-wei",
+      "thread_ts": "1778602029.852113",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Had the same thing happen last month, we ended up machining some in house."
+    },
+    {
+      "ts": "1778697042.175801",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-000996"
+      ],
+      "brief": "hip spacer: need 6 by 2026-06-29 for the fit check",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-06-29"
+        }
+      },
+      "must_mention": [
+        "hip spacer",
+        "the fit check",
+        "6/29"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "hip spacer, need 6 by 6/29 for the fit check"
+    },
+    {
+      "ts": "1778770986.656197",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-001162"
+      ],
+      "brief": "the part: need 2 by 2026-06-02",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-06-02"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "tues the 2nd"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "need 2 of the part by tues the 2nd"
+    },
+    {
+      "ts": "1778805522.177719",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-003752"
+      ],
+      "brief": "the part: need 1 by 2026-05-22",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-05-22"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "5/22"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "the part, need 1 by 5/22"
+    },
+    {
+      "ts": "1778809062.811190",
+      "user": "p-farah",
+      "thread_ts": "1778805522.177719",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "1. I can check the shared inbox for the vendor reply.\n2. Do we have a drawing revision to attach? Probably worth confirming before anyone orders."
+    },
+    {
+      "ts": "1778853253.637760",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-000991"
+      ],
+      "brief": "build stand: need 2 by 2026-05-22",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-05-22"
+        }
+      },
+      "must_mention": [
+        "build stand",
+        "5/22"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "hey need 2 build stand by 5/22 🙏 please"
+    },
+    {
+      "ts": "1778864946.369001",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-001019"
+      ],
+      "brief": "Quote Q-2486873-1 for FL-TST-2045: standard $118.33, 9 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-06-03",
+          "quote_id": "Q-2486873-1",
+          "price_usd": 118.33,
+          "lead_days": 9
+        }
+      },
+      "must_mention": [
+        "Q-2486873-1",
+        "FL-TST-2045",
+        "6/3"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Q-2486873-1 for FL-TST-2045 looks fine to me, need 6 by 6/3"
+    },
+    {
+      "ts": "1778868375.518050",
+      "user": "p-priya",
+      "thread_ts": "1778864946.369001",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "The quote notes list 9 business days, if that helps."
+    },
+    {
+      "ts": "1778870060.701756",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-001115"
+      ],
+      "brief": "FL-TST-2103: need 20 by 2026-06-11 for the fit check",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 20,
+          "by": "2026-06-11"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2103",
+        "the fit check",
+        "6/11"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2103: need 20 by 6/11 for the fit check"
+    },
+    {
+      "ts": "1778882407.410965",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-000999"
+      ],
+      "brief": "Quote Q-2487702-1 for FL-HIP-1079: standard $118.33, 8 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-06-25",
+          "quote_id": "Q-2487702-1",
+          "price_usd": 118.33,
+          "lead_days": 8
+        }
+      },
+      "must_mention": [
+        "Q-2487702-1",
+        "FL-HIP-1079",
+        "thurs 6/25"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Q-2487702-1 for FL-HIP-1079, need 6 by thurs 6/25"
+    },
+    {
+      "ts": "1778886090.891598",
+      "user": "p-beth",
+      "thread_ts": "1778882407.410965",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Noted. I'll add it to the open items list for the Monday sync."
+    },
+    {
+      "ts": "1778897155.634784",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-001012"
+      ],
+      "brief": "FL-LEG-1339: need 12 by 2026-07-01",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-07-01"
+        }
+      },
+      "must_mention": [
+        "FL-LEG-1339",
+        "7/1"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "FL-LEG-1339 need 12 by 7/1 🙏"
+    }
+  ]
+}

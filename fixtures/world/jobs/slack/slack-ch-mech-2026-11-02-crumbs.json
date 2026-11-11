@@ -38,39 +38,21 @@
       }
     },
     {
-      "id": "p-idris",
-      "name": "Idris Bello",
-      "display_name": "idris",
-      "slack_id": "U07FLK0IDRI",
-      "title": "Mechanical Engineer, battery enclosure",
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
       "style": {
-        "case": "lower",
-        "punctuation": "light",
-        "typos": "some",
-        "emoji": "rare",
-        "length": "medium",
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
         "hedging": "medium",
         "quirks": [
-          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
-          "corrects own dates"
-        ]
-      }
-    },
-    {
-      "id": "p-jade",
-      "name": "Jade Thompson",
-      "display_name": "jade.t",
-      "slack_id": "U07FLK0JADE",
-      "title": "Technician, receiving",
-      "style": {
-        "case": "lower",
-        "punctuation": "none",
-        "typos": "some",
-        "emoji": "rare",
-        "length": "terse",
-        "hedging": "low",
-        "quirks": [
-          "no capitals or end punctuation ever"
+          "numbered lists in status updates",
+          "restates the question before answering"
         ]
       }
     },
@@ -89,6 +71,24 @@
         "hedging": "low",
         "quirks": []
       }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
     }
   ],
   "context": [
@@ -103,11 +103,29 @@
   ],
   "messages": [
     {
-      "ts": "1793658780.833147",
+      "ts": "1793642830.214086",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-004018"
+      ],
+      "brief": "feedthrough: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "feedthrough"
+      ],
+      "length": "short",
+      "text": "feedthrough still quoting rev B"
+    },
+    {
+      "ts": "1793658780.450907",
       "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-003096"
+        "ev-003485"
       ],
       "brief": "FL-TST-2732 rev B released: locating pins moved after leg rev B",
       "claim": {
@@ -121,21 +139,21 @@
       "text": "FL-TST-2732 rev B released, locating pins moved after leg rev B"
     },
     {
-      "ts": "1793663650.336847",
-      "user": "p-idris",
-      "thread_ts": "1793658780.833147",
+      "ts": "1793663892.425416",
+      "user": "p-priya",
+      "thread_ts": "1793658780.450907",
       "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "brief": "reply (jokes) in the thread about: the message above",
       "must_mention": [],
-      "length": "one_word",
-      "text": "did the old fixtures need rework or just new ones"
+      "length": "short",
+      "text": "i'm sure they moved the pins to keep us on our toes"
     },
     {
-      "ts": "1793669183.473141",
+      "ts": "1793669183.558312",
       "user": "p-renee",
       "thread_ts": null,
       "events": [
-        "ev-003103"
+        "ev-003492"
       ],
       "brief": "FL-STR-1507 rev B released: moved M3 holes 1.5 mm to clear harness",
       "claim": {
@@ -145,18 +163,26 @@
       "must_mention": [
         "FL-STR-1507"
       ],
-      "length": "medium",
-      "text": "FL-STR-1507 rev B is out. moved the M3 holes 1.5 mm to clear the harness, check your mating parts before you order anything off the old one"
+      "length": "short",
+      "text": "FL-STR-1507 rev B released, moved M3 holes 1.5 mm to clear harness"
     },
     {
-      "ts": "1793672642.898841",
-      "user": "p-jade",
-      "thread_ts": "1793669183.473141",
-      "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
-      "must_mention": [],
+      "ts": "1793892334.055703",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-003886"
+      ],
+      "brief": "chamber cradle: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "chamber cradle"
+      ],
       "length": "medium",
-      "text": "ty renee, that was blocking my routing for the shoulder side, will pull the new rev in the morning"
+      "text": "chamber cradle still quoting rev A, can someone look at the quote page"
     }
   ]
 }

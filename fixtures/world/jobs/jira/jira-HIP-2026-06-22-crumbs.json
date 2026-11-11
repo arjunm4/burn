@@ -1,0 +1,143 @@
+{
+  "job_id": "jira-HIP-2026-06-22-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 41,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HIP",
+    "name": "Actuators (hip and knee)"
+  },
+  "week": {
+    "start": "2026-06-22",
+    "end": "2026-06-28"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HIP-281",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-arjun",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-06-22T17:42:50-07:00",
+      "due_date": "2026-07-14",
+      "events": [
+        "ev-001365"
+      ],
+      "brief": "Order 24x Dyno bellows coupling hub / FL-TST-2146: need 24 by 2026-07-10 for Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno bellows coupling hub",
+      "must_mention": [
+        "FL-TST-2146",
+        "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno bellows coupling hub",
+        "7/10"
+      ],
+      "description_length": "one_line",
+      "summary": "buy 24x dyno bellows coupling hub",
+      "description": "24 FL-TST-2146 needed 7/10 for Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno bellows coupling hub",
+      "comments": [
+        {
+          "id": "HIP-281-c1",
+          "by": "p-arjun",
+          "at": "2026-06-23T17:07:50-07:00",
+          "events": [
+            "ev-003535"
+          ],
+          "brief": "Correction: FL-TST-2146: need 24 by 2026-07-14 for Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno bellows coupling hub",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 24,
+              "by": "2026-07-14"
+            }
+          },
+          "must_mention": [
+            "FL-TST-2146",
+            "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno bellows coupling hub",
+            "7/14"
+          ],
+          "body": "correction: 24 FL-TST-2146 needed 7/14 for Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno bellows coupling hub"
+        },
+        {
+          "id": "HIP-281-c2",
+          "by": "p-nadia",
+          "at": "2026-07-13T10:43:40-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "@arjun is this stlil moving?"
+        }
+      ]
+    }
+  ]
+}

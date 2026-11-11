@@ -1,0 +1,988 @@
+{
+  "job_id": "slack-ch-mech-2026-08-10-background-2026-08-12",
+  "source": "slack",
+  "status": "blank",
+  "priority": 28,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-mech",
+    "name": "mech",
+    "slack_id": "C07FLK0MECH",
+    "purpose": "Mechanical engineering: design, DFM, vendors, drawings"
+  },
+  "week": {
+    "start": "2026-08-10",
+    "end": "2026-08-16"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-bao",
+      "name": "Bao Nguyen",
+      "display_name": "bao.n",
+      "slack_id": "U07FLK0BAO0",
+      "title": "Electrical Engineer, motor drives",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Farah wants 3 mm and a mica sheet; Lukas says that costs 18 mm of pack length.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators",
+    "Ongoing: Tendons fray at the proximal pulley after 40k grip cycles",
+    "Ongoing: Type III anodize adds ~0.025 mm per surface and kills the bearing press fit. This week: Arjun okays reaming four parts by hand to keep the build moving; rest reordered.",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Callum proposes routing inboard through the joint axis; Diego says thigh link needs rework.",
+    "Ongoing: Gait controller tuning for the investor demo on the gait gantry. This week: Ankle gains cut 30%; Lin flags the boom clamp slipping on the pelvis adapter.",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Claire: hardware spend 23% over plan for the quarter, expedites a big share.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno. This week: Ingrid says no until DVT; run pinch tests on nights instead.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting. This week: Plates released; static load test planned on the drop gantry with a load yoke."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1786548091.367462",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on inspection of the bearing spacer",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786550368.500889",
+      "user": "p-idris",
+      "thread_ts": "1786548091.367462",
+      "events": [],
+      "brief": "reply (ack) in the thread about: inspection of the bearing spacer",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786550409.403445",
+      "user": "p-lukas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on off-topic: the coffee machine",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786551814.147627",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about inspection of the hip cable clamp",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786552009.020046",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with the ongoing foc rewrite with a thermal model and derating for dvt actuators",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786552784.421895",
+      "user": "p-wei",
+      "thread_ts": "1786548091.367462",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: inspection of the bearing spacer",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786553008.451368",
+      "user": "p-kenji",
+      "thread_ts": "1786552009.020046",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the ongoing foc rewrite with a thermal model and derating for dvt actuators",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786555773.244548",
+      "user": "p-zoe",
+      "thread_ts": "1786552009.020046",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the ongoing foc rewrite with a thermal model and derating for dvt actuators",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786555875.259251",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on off-topic: board game night",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786556482.092457",
+      "user": "p-gwen",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on setup for the IMU mount",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786556535.856368",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on off-topic: a lost badge",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786557161.745558",
+      "user": "p-callum",
+      "thread_ts": "1786548091.367462",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: inspection of the bearing spacer",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786557346.262695",
+      "user": "p-carlos",
+      "thread_ts": "1786552009.020046",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the ongoing foc rewrite with a thermal model and derating for dvt actuators",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786558214.467686",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about inspection of the lift eye",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786560034.923418",
+      "user": "p-lukas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on bench notes on the thermistor clip",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786561551.473439",
+      "user": "p-luis",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on cad change to the shank cover",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786561727.813054",
+      "user": "p-bao",
+      "thread_ts": "1786556482.092457",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: setup for the IMU mount",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786562010.991357",
+      "user": "p-callum",
+      "thread_ts": "1786552009.020046",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the ongoing foc rewrite with a thermal model and derating for dvt actuators",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786562515.525281",
+      "user": "p-dmitri",
+      "thread_ts": "1786548091.367462",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: inspection of the bearing spacer",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786562658.709968",
+      "user": "p-tomas",
+      "thread_ts": "1786552009.020046",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the ongoing foc rewrite with a thermal model and derating for dvt actuators",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786563460.798743",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about inspection of the hip yoke",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786563493.251249",
+      "user": "p-luis",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786563963.511439",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Dmitri proposes a second grip fixture, ~$4k in machined parts.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786564062.309714",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about off-topic: a funny link",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786564852.692353",
+      "user": "p-lin",
+      "thread_ts": "1786563493.251249",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786565053.787213",
+      "user": "p-callum",
+      "thread_ts": "1786548091.367462",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: inspection of the bearing spacer",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786565287.323140",
+      "user": "p-samir",
+      "thread_ts": "1786556482.092457",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: setup for the IMU mount",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786565424.094138",
+      "user": "p-owen",
+      "thread_ts": "1786556482.092457",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: setup for the IMU mount",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786566016.527936",
+      "user": "p-omar",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on drawing review of the output shaft",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786566159.635585",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on cad change to the hip actuator evt dyno torque-speed map",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786566976.596260",
+      "user": "p-gwen",
+      "thread_ts": "1786552009.020046",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the ongoing foc rewrite with a thermal model and derating for dvt actuators",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786568465.479047",
+      "user": "p-nadia",
+      "thread_ts": "1786566016.527936",
+      "events": [],
+      "brief": "reply (answers) in the thread about: drawing review of the output shaft",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786568468.976640",
+      "user": "p-wei",
+      "thread_ts": "1786563493.251249",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786569484.716428",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on cad change to the brake bracket",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786570237.208449",
+      "user": "p-nora",
+      "thread_ts": "1786563493.251249",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786570417.115114",
+      "user": "p-nadia",
+      "thread_ts": "1786556482.092457",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: setup for the IMU mount",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786570937.443841",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about fit-up of the torso and pelvis static load test",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786571193.547411",
+      "user": "p-sofia",
+      "thread_ts": "1786566016.527936",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: drawing review of the output shaft",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786571415.426097",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on fit-up of the foot plate",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786572165.695013",
+      "user": "p-beth",
+      "thread_ts": "1786563493.251249",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786572689.235015",
+      "user": "p-hana",
+      "thread_ts": "1786563493.251249",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786573902.736454",
+      "user": "p-lin",
+      "thread_ts": "1786563493.251249",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786574636.420504",
+      "user": "p-sofia",
+      "thread_ts": "1786566016.527936",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: drawing review of the output shaft",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786577583.978743",
+      "user": "p-kenji",
+      "thread_ts": "1786566016.527936",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: drawing review of the output shaft",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786578498.807976",
+      "user": "p-nora",
+      "thread_ts": "1786566016.527936",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: drawing review of the output shaft",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786578911.610516",
+      "user": "p-nora",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on off-topic: the fire alarm test",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786581818.952768",
+      "user": "p-kenji",
+      "thread_ts": "1786566016.527936",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: drawing review of the output shaft",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786585153.596695",
+      "user": "p-lukas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about this: Rev 4 layout tightens the power loop; Farah approves for DVT.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786593508.290493",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with fit-up of the torso and pelvis static load test",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

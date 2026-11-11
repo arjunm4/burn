@@ -1,0 +1,606 @@
+{
+  "job_id": "jira-SCM-2026-02-23-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 75,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "SCM",
+    "name": "Supply chain and procurement"
+  },
+  "week": {
+    "start": "2026-02-23",
+    "end": "2026-03-01"
+  },
+  "people": [
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "SCM-21",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-kenji",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-02-23T15:27:31-08:00",
+      "due_date": "2026-04-06",
+      "events": [
+        "ev-000160"
+      ],
+      "brief": "Order 24x Hip cycloid disc spacer, 2x Hip stator mount plate, 6x Hip holding-brake bracket, 2x Hip to pelvis interface plate, 4x Hip actuator end cover / FL-HIP-1035: need 24 by 2026-04-06 for Fixture install and shakedown for Hip actuator dyno efficiency sweep: Hip cycloid disc spacer",
+      "must_mention": [
+        "FL-HIP-1035",
+        "Fixture install and shakedown for Hip actuator dyno efficiency sweep: Hip cycloid disc spacer",
+        "FL-HIP-1033",
+        "FL-HIP-1050",
+        "FL-HIP-1021",
+        "FL-HIP-1013",
+        "4/6"
+      ],
+      "description_length": "short",
+      "summary": "Hip cycloid disc spacer x24 + misc hip parts",
+      "description": "FL-HIP-1035, FL-HIP-1033, FL-HIP-1050, FL-HIP-1021, FL-HIP-1013: need 24 by 4/6 for Fixture install and shakedown for Hip actuator dyno efficiency sweep: Hip cycloid disc spacer",
+      "comments": [
+        {
+          "id": "SCM-21-c1",
+          "by": "p-kenji",
+          "at": "2026-02-24T08:40:08-08:00",
+          "events": [
+            "ev-000163"
+          ],
+          "brief": "disc spacer: need 24 by 2026-04-06",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 24,
+              "by": "2026-04-06"
+            }
+          },
+          "must_mention": [
+            "disc spacer",
+            "4/6"
+          ],
+          "body": "disc spacer need 24 by 4/6"
+        },
+        {
+          "id": "SCM-21-c2",
+          "by": "p-kenji",
+          "at": "2026-02-24T09:26:06-08:00",
+          "events": [
+            "ev-000164"
+          ],
+          "brief": "the spacer: need 24 by 2026-04-06",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 24,
+              "by": "2026-04-06"
+            }
+          },
+          "must_mention": [
+            "the spacer",
+            "mon the 6th"
+          ],
+          "body": "the spacer need 24 by mon the 6th"
+        }
+      ]
+    },
+    {
+      "key": "SCM-22",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-ingrid",
+      "assignee": "p-priya",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-02-23T15:44:59-08:00",
+      "due_date": "2026-03-18",
+      "events": [
+        "ev-000207"
+      ],
+      "brief": "Order 24x Hip output shaft, 24x Hip holding-brake bracket / output shaft: need 24 by 2026-03-18",
+      "must_mention": [
+        "output shaft",
+        "wed the 18th"
+      ],
+      "description_length": "one_line",
+      "summary": "Hip output shaft x24 + brake bracket",
+      "description": "output shaft need 24 by wed the 18th",
+      "comments": [
+        {
+          "id": "SCM-22-c1",
+          "by": "p-priya",
+          "at": "2026-02-24T13:46:15-08:00",
+          "events": [
+            "ev-000212"
+          ],
+          "brief": "the shaft: need 24 by 2026-03-18",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 24,
+              "by": "2026-03-18"
+            }
+          },
+          "must_mention": [
+            "the shaft",
+            "3/18"
+          ],
+          "body": "the shaft need 24 by 3/18"
+        }
+      ]
+    },
+    {
+      "key": "SCM-23",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-kenji",
+      "assignee": "p-kenji",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-02-24T09:13:40-08:00",
+      "due_date": "2026-03-12",
+      "events": [
+        "ev-000188"
+      ],
+      "brief": "Order 2x Hip to pelvis interface plate / that order: need 2 by 2026-03-13",
+      "must_mention": [
+        "that order",
+        "3/13"
+      ],
+      "description_length": "short",
+      "summary": "Hip to pelvis interface plate x2",
+      "description": "that order: need 2 by 3/13",
+      "comments": [
+        {
+          "id": "SCM-23-c1",
+          "by": "p-kenji",
+          "at": "2026-02-26T14:52:35-08:00",
+          "events": [
+            "ev-003715"
+          ],
+          "brief": "the plate: need 2 by 2026-03-09",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 2,
+              "by": "2026-03-09"
+            }
+          },
+          "must_mention": [
+            "the plate",
+            "mon the 9th"
+          ],
+          "body": "the plate need 2 by mon the 9th"
+        }
+      ]
+    },
+    {
+      "key": "SCM-24",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": "p-owen",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-02-24T15:50:17-08:00",
+      "due_date": "2026-04-20",
+      "events": [
+        "ev-000216"
+      ],
+      "brief": "Order 2x Knee rear cover, 21x Knee actuator housing / FL-KNE-1146: need 2 by 2026-04-20",
+      "must_mention": [
+        "FL-KNE-1146",
+        "mon the 20th"
+      ],
+      "description_length": "one_line",
+      "summary": "Knee rear cover + actuator housing",
+      "description": "FL-KNE-1146 need 2 by mon the 20th",
+      "comments": [
+        {
+          "id": "SCM-24-c1",
+          "by": "p-owen",
+          "at": "2026-02-25T14:16:32-08:00",
+          "events": [
+            "ev-000217"
+          ],
+          "brief": "FL-KNE-1146: need 2 by 2026-04-20",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 2,
+              "by": "2026-04-20"
+            }
+          },
+          "must_mention": [
+            "FL-KNE-1146",
+            "4/20"
+          ],
+          "body": "FL-KNE-1146 need 2 by 4/20"
+        },
+        {
+          "id": "SCM-24-c2",
+          "by": "p-owen",
+          "at": "2026-05-02T11:45:00-07:00",
+          "events": [
+            "ev-000226"
+          ],
+          "brief": "rear cover in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-05-01"
+          },
+          "must_mention": [
+            "rear cover",
+            "fri 5/1"
+          ],
+          "body": "rear cover in use fri 5/1"
+        }
+      ]
+    },
+    {
+      "key": "SCM-25",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-hana",
+      "assignee": "p-hana",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-02-25T08:34:54-08:00",
+      "due_date": "2026-03-10",
+      "events": [
+        "ev-000200"
+      ],
+      "brief": "Order 12x Hip eccentric input shaft, 12x Hip encoder read-head bracket, 16x Hip rotor hub, 12x Hip output shaft / FL-HIP-1053: need 12 by 2026-03-10 for Fit check for Actuator DVT build: Hip eccentric input shaft",
+      "must_mention": [
+        "FL-HIP-1053",
+        "Fit check for Actuator DVT build: Hip eccentric input shaft",
+        "FL-HIP-1041",
+        "FL-HIP-1093",
+        "FL-HIP-1065",
+        "3/10"
+      ],
+      "description_length": "one_line",
+      "summary": "Hip eccentric input shaft + misc hip parts",
+      "description": "FL-HIP-1053, FL-HIP-1041, FL-HIP-1093, FL-HIP-1065: need 12 by 3/10 for Fit check for Actuator DVT build: Hip eccentric input shaft",
+      "comments": [
+        {
+          "id": "SCM-25-c1",
+          "by": "p-talia",
+          "at": "2026-03-03T18:07:25-08:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "any update? 🙏"
+        }
+      ]
+    },
+    {
+      "key": "SCM-26",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-diego",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-02-25T09:08:03-08:00",
+      "due_date": "2026-03-24",
+      "events": [
+        "ev-000276"
+      ],
+      "brief": "Order 12x Hip eccentric input shaft, 8x Hip rotor hub, 24x Hip bearing preload ring, 2x Hip to pelvis interface plate / FL-HIP-1053: need 12 by 2026-03-24 for Fit check for Actuator DVT build: Hip eccentric input shaft (2)",
+      "must_mention": [
+        "FL-HIP-1053",
+        "Fit check for Actuator DVT build: Hip eccentric input shaft (2)",
+        "FL-HIP-1093",
+        "FL-HIP-1064",
+        "FL-HIP-1021",
+        "tues the 24th"
+      ],
+      "description_length": "short",
+      "summary": "Hip eccentric input shaft (2) + rotor hub etc",
+      "description": "FL-HIP-1053, FL-HIP-1093, FL-HIP-1064, FL-HIP-1021 need 12 by tues the 24th for Fit check for Actuator DVT build: Hip eccentric input shaft (2)",
+      "comments": [
+        {
+          "id": "SCM-26-c1",
+          "by": "p-diego",
+          "at": "2026-03-04T14:36:50-08:00",
+          "events": [
+            "ev-000278"
+          ],
+          "brief": "FL-HIP-1053: need 12 by 2026-03-24",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-03-24"
+            }
+          },
+          "must_mention": [
+            "FL-HIP-1053",
+            "3/24"
+          ],
+          "body": "FL-HIP-1053 need 12 by 3/24"
+        }
+      ]
+    },
+    {
+      "key": "SCM-28",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": "p-owen",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-02-26T14:25:18-08:00",
+      "due_date": null,
+      "events": [
+        "ev-000312"
+      ],
+      "brief": "Order 2x Hip stator mount plate, 12x Hip bearing preload ring, 4x Hip to pelvis interface plate, 8x Hip rotor hub, 8x Hip actuator end cover / FL-HIP-1033: need 2 by 2026-04-20 for Tolerance stack check for Actuator DVT build: Hip stator mount plate",
+      "must_mention": [
+        "FL-HIP-1033",
+        "Tolerance stack check for Actuator DVT build: Hip stator mount plate",
+        "FL-HIP-1064",
+        "FL-HIP-1021",
+        "FL-HIP-1093",
+        "FL-HIP-1013",
+        "4/20"
+      ],
+      "description_length": "short",
+      "summary": "Hip stator mount plate + preload ring etc",
+      "description": "FL-HIP-1033 with FL-HIP-1064, FL-HIP-1021, FL-HIP-1093, FL-HIP-1013, need 2 by 4/20 for Tolerance stack check for Actuator DVT build: Hip stator mount plate",
+      "comments": [
+        {
+          "id": "SCM-28-c1",
+          "by": "p-talia",
+          "at": "2026-02-26T16:10:26-08:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "any update? 🙏"
+        },
+        {
+          "id": "SCM-28-c2",
+          "by": "p-talia",
+          "at": "2026-03-05T16:09:49-08:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "vendor says soon, will update"
+        },
+        {
+          "id": "SCM-28-c3",
+          "by": "p-owen",
+          "at": "2026-03-11T10:24:47-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on vendor"
+        },
+        {
+          "id": "SCM-28-c4",
+          "by": "p-samir",
+          "at": "2026-03-11T13:40:24-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "this is slipping"
+        },
+        {
+          "id": "SCM-28-c5",
+          "by": "p-owen",
+          "at": "2026-04-01T11:36:22-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "@samir.k is this one placed yet?"
+        },
+        {
+          "id": "SCM-28-c6",
+          "by": "p-talia",
+          "at": "2026-04-07T14:40:43-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "still in progress, will update"
+        }
+      ]
+    },
+    {
+      "key": "SCM-30",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-hana",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-02-26T16:18:12-08:00",
+      "due_date": "2026-03-26",
+      "events": [
+        "ev-000301"
+      ],
+      "brief": "Order 12x Hip cycloid disc spacer / 1035: need 12 by 2026-03-26",
+      "must_mention": [
+        "1035",
+        "3/26"
+      ],
+      "description_length": "one_line",
+      "summary": "Hip cycloid disc spacer x12",
+      "description": "1035 need 12 by 3/26",
+      "comments": []
+    }
+  ]
+}

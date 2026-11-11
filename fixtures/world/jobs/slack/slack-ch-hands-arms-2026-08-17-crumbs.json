@@ -37,6 +37,56 @@
       }
     },
     {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
       "id": "p-priya",
       "name": "Priya Raman",
       "display_name": "priya",
@@ -52,6 +102,25 @@
         "quirks": [
           "numbered lists in status updates",
           "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-rohan",
+      "name": "Rohan Kapoor",
+      "display_name": "rohan",
+      "slack_id": "U07FLK0ROHA",
+      "title": "Controls Engineer, manipulation",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
         ]
       }
     },
@@ -75,19 +144,22 @@
       }
     },
     {
-      "id": "p-sofia",
-      "name": "Sofia Lindqvist",
-      "display_name": "sofia.l",
-      "slack_id": "U07FLK0SOFI",
-      "title": "Arms and Hands Lead",
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
       "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "rare",
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
         "length": "medium",
         "hedging": "low",
-        "quirks": []
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
       }
     },
     {
@@ -126,13 +198,137 @@
   ],
   "messages": [
     {
-      "ts": "1787012984.590036",
+      "ts": "1786985868.135517",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-001759"
+      ],
+      "brief": "guide bushing: need 12 by 2026-09-03 for Build sub-assembly: Tendon guide bushing",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-09-03"
+        }
+      },
+      "must_mention": [
+        "guide bushing",
+        "Build sub-assembly: Tendon guide bushing",
+        "thurs 9/3"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "need 12 guide bushing for Build sub-assembly: Tendon guide bushing, thurs 9/3 works"
+    },
+    {
+      "ts": "1786986756.610242",
+      "user": "p-rohan",
+      "thread_ts": "1786985868.135517",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "not sure that's enough, we scrapped a few last time during the press fit"
+    },
+    {
+      "ts": "1786991436.806685",
+      "user": "p-lin",
+      "thread_ts": "1786985868.135517",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "that was the old drawing, rev is tighter now"
+    },
+    {
+      "ts": "1786992047.136388",
+      "user": "p-lin",
+      "thread_ts": "1786985868.135517",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "yeah ok"
+    },
+    {
+      "ts": "1787012712.039992",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-001577"
+        "ev-003068"
       ],
-      "brief": "FL-TST-2424: need 1 by 2026-10-21 for Instrumentation fit-up: Grip fixture wrist clamp",
+      "brief": "Hand pinch force and tendon creep waits on Instrumentation fit-up for Hand pinch force and tendon creep: Grip load cell plate",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00205"
+      },
+      "must_mention": [
+        "Instrumentation fit-up for Hand pinch force and tendon creep: Grip load cell plate",
+        "Hand pinch force and tendon creep"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Hand pinch force and tendon creep waits on Instrumentation fit-up for Hand pinch force and tendon creep: Grip load cell plate"
+    },
+    {
+      "ts": "1787012984.744230",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-001790"
+      ],
+      "brief": "FL-TST-2424: need 1 by 2026-10-20 for Instrumentation fit-up: Grip fixture wrist clamp",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-10-20"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2424",
+        "Instrumentation fit-up: Grip fixture wrist clamp",
+        "FL-TST-2462",
+        "FL-TST-2480",
+        "FL-TST-2442",
+        "tues 10/20"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "FL-TST-2424 for Instrumentation fit-up: Grip fixture wrist clamp, need 1 tues 10/20. also FL-TST-2462 FL-TST-2480 FL-TST-2442 if anyone's counting"
+    },
+    {
+      "ts": "1787082991.333765",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-001761"
+      ],
+      "brief": "1413: need 12 by 2026-09-03",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-09-03"
+        }
+      },
+      "must_mention": [
+        "1413",
+        "9/3"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "1413 x12 by 9/3"
+    },
+    {
+      "ts": "1787148704.442552",
+      "user": "p-amara",
+      "thread_ts": "1787012984.744230",
+      "events": [
+        "ev-003689"
+      ],
+      "brief": "Correction: FL-TST-2424: need 1 by 2026-10-21 for Instrumentation fit-up: Grip fixture wrist clamp",
       "claim": {
         "kind": "needs",
         "value": {
@@ -150,7 +346,7 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "FL-TST-2424, FL-TST-2462, FL-TST-2480 and FL-TST-2442 all sit behind Instrumentation fit-up: Grip fixture wrist clamp, need them by 10/21"
+      "text": "fix: FL-TST-2424 for Instrumentation fit-up: Grip fixture wrist clamp is 10/21 not the 20th. FL-TST-2462 FL-TST-2480 FL-TST-2442 unchanged"
     },
     {
       "ts": "1787162409.928441",
@@ -169,81 +365,37 @@
         "tues 8/25"
       ],
       "length": "medium",
-      "text": "Wire harness for hand and wrist (tension jig) slipped a week, now tues 8/25. i think that's still ok for the jig but not 100% sure"
+      "text": "Wire harness for hand and wrist (tension jig) slipped, now tues 8/25"
     },
     {
-      "ts": "1787163702.920099",
+      "ts": "1787163702.526580",
       "user": "p-samir",
       "thread_ts": null,
       "events": [
-        "ev-001524"
+        "ev-001733"
       ],
-      "brief": "Order XO-5474621 placed, promised 2026-09-04",
+      "brief": "Order XO-5474621 placed, promised 2026-09-01",
       "claim": {
         "kind": "eta",
-        "value": "2026-09-04"
+        "value": "2026-09-01"
       },
       "must_mention": [
         "XO-5474621",
         "grip base",
-        "fri 9/4"
+        "tues the 1st"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "XO-5474621 is in, grip base promised fri 9/4"
+      "text": "XO-5474621 placed, grip base promised tues the 1st"
     },
     {
-      "ts": "1787163703.917747",
+      "ts": "1787163703.375726",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-001578"
+        "ev-001791"
       ],
-      "brief": "wrist clamp: need 1 by 2026-10-26 for Instrumentation fit-up: Grip fixture wrist clamp",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 1,
-          "by": "2026-10-26"
-        }
-      },
-      "must_mention": [
-        "wrist clamp",
-        "Instrumentation fit-up: Grip fixture wrist clamp",
-        "mon 10/26"
-      ],
-      "pressure": "low",
-      "length": "medium",
-      "text": "fyi the wrist clamp needs to be in hand by mon 10/26 so Instrumentation fit-up: Grip fixture wrist clamp can start, probably tight"
-    },
-    {
-      "ts": "1787189693.778532",
-      "user": "p-amara",
-      "thread_ts": null,
-      "events": [
-        "ev-002678"
-      ],
-      "brief": "Hand pinch force and tendon creep waits on Fixture install and shakedown for Hand pinch force and tendon creep: Grip load cell plate",
-      "claim": {
-        "kind": "blocked",
-        "value": "wi-00175"
-      },
-      "must_mention": [
-        "Fixture install and shakedown for Hand pinch force and tendon creep: Grip load cell plate",
-        "the creep"
-      ],
-      "pressure": "low",
-      "length": "short",
-      "text": "the creep test is stuck until Fixture install and shakedown for Hand pinch force and tendon creep: Grip load cell plate is done"
-    },
-    {
-      "ts": "1787191183.241609",
-      "user": "p-amara",
-      "thread_ts": "1787163703.917747",
-      "events": [
-        "ev-003160"
-      ],
-      "brief": "Correction: wrist clamp: need 1 by 2026-10-21 for Instrumentation fit-up: Grip fixture wrist clamp",
+      "brief": "wrist clamp: need 1 by 2026-10-21 for Instrumentation fit-up: Grip fixture wrist clamp",
       "claim": {
         "kind": "needs",
         "value": {
@@ -254,39 +406,58 @@
       "must_mention": [
         "wrist clamp",
         "Instrumentation fit-up: Grip fixture wrist clamp",
-        "wed the 21st"
+        "10/21"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "sorry, wrong date on the wrist clamp, it's wed the 21st for Instrumentation fit-up: Grip fixture wrist clamp"
+      "text": "wrist clamp, need 1 by 10/21 for Instrumentation fit-up: Grip fixture wrist clamp"
     },
     {
-      "ts": "1787262942.026236",
-      "user": "p-samir",
-      "thread_ts": "1787163702.920099",
-      "events": [
-        "ev-003146"
-      ],
-      "brief": "Correction: Order XO-5474621 placed, promised 2026-09-01",
-      "claim": {
-        "kind": "eta",
-        "value": "2026-09-01"
-      },
-      "must_mention": [
-        "XO-5474621",
-        "grip base",
-        "tues 9/1"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "correction, grip base on XO-5474621 is tues 9/1 not fri"
+      "ts": "1787168801.378660",
+      "user": "p-kenji",
+      "thread_ts": "1787163702.526580",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "ok"
     },
     {
-      "ts": "1787269536.824681",
+      "ts": "1787189693.075009",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-002686"
+        "ev-003026"
+      ],
+      "brief": "Hand pinch force and tendon creep waits on Fixture install and shakedown for Hand pinch force and tendon creep: Grip load cell plate",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00175"
+      },
+      "must_mention": [
+        "Fixture install and shakedown for Hand pinch force and tendon creep: Grip load cell plate",
+        "Hand pinch force and tendon creep"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Hand pinch force and tendon creep waits on Fixture install and shakedown for Hand pinch force and tendon creep: Grip load cell plate"
+    },
+    {
+      "ts": "1787191118.498684",
+      "user": "p-kenji",
+      "thread_ts": "1787189693.075009",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "is the load cell plate the one with the slotted holes?"
+    },
+    {
+      "ts": "1787269536.183039",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-003038"
       ],
       "brief": "Hand pinch force and tendon creep waits on Instrumentation fit-up for Hand pinch force and tendon creep: Tendon spool",
       "claim": {
@@ -299,47 +470,57 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Hand pinch force and tendon creep is also waiting on Instrumentation fit-up for Hand pinch force and tendon creep: Tendon spool"
+      "text": "Hand pinch force and tendon creep waits on Instrumentation fit-up for Hand pinch force and tendon creep: Tendon spool"
     },
     {
-      "ts": "1787329222.770487",
+      "ts": "1787329222.223163",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-001579"
+        "ev-001792"
       ],
-      "brief": "FL-TST-2424: need 1 by 2026-10-19",
+      "brief": "FL-TST-2424: need 1 by 2026-10-21",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 1,
-          "by": "2026-10-19"
+          "by": "2026-10-21"
         }
       },
       "must_mention": [
         "FL-TST-2424",
-        "10/19"
+        "10/21"
       ],
       "pressure": "low",
       "length": "medium",
-      "text": "FL-TST-2424 is needed by 10/19 as far as i know. Can someone confirm?"
+      "text": "FL-TST-2424 needed 10/21"
     },
     {
-      "ts": "1787330040.201104",
-      "user": "p-sofia",
-      "thread_ts": "1787329222.770487",
+      "ts": "1787334452.207646",
+      "user": "p-rohan",
+      "thread_ts": "1787329222.223163",
       "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "brief": "reply (pushes back) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "I'd push back on that a bit. The fixture will not be free before then, so I would not plan around it."
+      "text": "that's a long way out, why ask now"
     },
     {
-      "ts": "1787338026.771551",
+      "ts": "1787335479.570541",
+      "user": "p-ingrid",
+      "thread_ts": "1787329222.223163",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "priya planning ahead, who knew"
+    },
+    {
+      "ts": "1787338026.224349",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-002901"
+        "ev-003290"
       ],
       "brief": "Hand pinch force and tendon creep takes 1-2 working days",
       "claim": {
@@ -354,14 +535,14 @@
         "1-2 days"
       ],
       "length": "short",
-      "text": "Hand pinch force and tendon creep takes 1-2 days once the fixture is in i think"
+      "text": "Hand pinch force and tendon creep takes 1-2 days per run once the fixture is loaded"
     },
     {
-      "ts": "1787350145.782678",
+      "ts": "1787350145.082191",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-001580"
+        "ev-001793"
       ],
       "brief": "wrist clamp: need 1 by 2026-10-21",
       "claim": {
@@ -373,11 +554,21 @@
       },
       "must_mention": [
         "wrist clamp",
-        "wed the 21st"
+        "10/21"
       ],
       "pressure": "low",
       "length": "medium",
-      "text": "wrist clamp, wed the 21st is what i have. need to make sure it doesnt move again"
+      "text": "wrist clamp still needed by 10/21"
+    },
+    {
+      "ts": "1787354258.645854",
+      "user": "p-talia",
+      "thread_ts": "1787350145.082191",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "I can check what the machine shop has in stock Monday, they sometimes have spares of those"
     }
   ]
 }

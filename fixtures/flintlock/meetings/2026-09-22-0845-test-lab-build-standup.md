@@ -8,11 +8,10 @@
 
 ## Overview
 
-We need heat spreader by 10/1. We need 2124 by 9/24. We need FL-TST-2136 by 9/30. We need FL-ANK-1244 by 10/2.
+We need heat spreader by 10/1. We need FL-TST-2136 by 9/30. We need FL-ANK-1244 by 10/2.
 
 ## Discussion
 
 - Dmitri: We need heat spreader by 10/1.
-- Dmitri: We need 2124 by 9/24.
 - Dmitri: We need FL-TST-2136 by 9/30.
 - Dmitri: We need FL-ANK-1244 by 10/2.

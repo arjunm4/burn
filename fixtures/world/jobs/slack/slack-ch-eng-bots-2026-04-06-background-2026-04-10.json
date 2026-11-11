@@ -1,0 +1,207 @@
+{
+  "job_id": "slack-ch-eng-bots-2026-04-06-background-2026-04-10",
+  "source": "slack",
+  "status": "blank",
+  "priority": 64,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-eng-bots",
+    "name": "eng-bots",
+    "slack_id": "C07FLK0BOTS",
+    "purpose": "GitHub, Jira and CI notifications"
+  },
+  "week": {
+    "start": "2026-04-06",
+    "end": "2026-04-12"
+  },
+  "people": [
+    {
+      "id": "p-aisha",
+      "name": "Aisha Rahman",
+      "display_name": "aisha",
+      "slack_id": "U07FLK0AISH",
+      "title": "ML Engineer, perception",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-felix",
+      "name": "Felix Wagner",
+      "display_name": "felix",
+      "slack_id": "U07FLK0FELI",
+      "title": "Software Engineer, simulation",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-gabriel",
+      "name": "Gabriel Moreau",
+      "display_name": "gabriel.m",
+      "slack_id": "U07FLK0GABR",
+      "title": "Controls Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-yusuf",
+      "name": "Yusuf Demir",
+      "display_name": "yusuf",
+      "slack_id": "U07FLK0YUSU",
+      "title": "Firmware Engineer, motor control",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Absolute encoder on the knee output glitches when the motor runs above 8 A. This week: Firmware adds a plausibility filter; Bao calls it a band-aid.",
+    "Ongoing: Getting dyno and gantry logs into one place with consistent timestamps. This week: Pipeline to S3 with test ids in file names; Lin asks to tag by rig and booking."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1775834917.859230",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about this: Bao scopes it: common-mode noise on the SSI clock, cable runs alongside motor phases.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1775840238.112200",
+      "user": "p-gabriel",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Jonas sees 2-3 count jumps on the knee abs encoder above 8 A phase current.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1775842969.949444",
+      "user": "p-aisha",
+      "thread_ts": "1775840238.112200",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Jonas sees 2-3 count jumps on the knee abs encoder above 8 A phase current.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1775843209.595645",
+      "user": "p-yusuf",
+      "thread_ts": "1775840238.112200",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Jonas sees 2-3 count jumps on the knee abs encoder above 8 A phase current.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1775843339.632443",
+      "user": "p-gabriel",
+      "thread_ts": "1775840238.112200",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Jonas sees 2-3 count jumps on the knee abs encoder above 8 A phase current.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1775860170.516738",
+      "user": "p-gabriel",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: Elena: dyno logs are CSVs on a lab laptop, gantry logs on another.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1775868954.513090",
+      "user": "p-felix",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on this: Firmware adds a plausibility filter; Bao calls it a band-aid.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1775869249.483869",
+      "user": "p-felix",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Firmware adds a plausibility filter; Bao calls it a band-aid.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

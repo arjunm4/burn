@@ -38,6 +38,44 @@
       }
     },
     {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
       "id": "p-hana",
       "name": "Hana Kimura",
       "display_name": "hana",
@@ -56,36 +94,39 @@
       }
     },
     {
-      "id": "p-ingrid",
-      "name": "Ingrid Solberg",
-      "display_name": "ingrid.s",
-      "slack_id": "U07FLK0INGR",
-      "title": "VP Hardware",
-      "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": []
-      }
-    },
-    {
-      "id": "p-kenji",
-      "name": "Kenji Morimoto",
-      "display_name": "kenji.m",
-      "slack_id": "U07FLK0KENJ",
-      "title": "Mechanical Engineer",
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
       "style": {
         "case": "lower",
         "punctuation": "none",
-        "typos": "some",
-        "emoji": "rare",
+        "typos": "rare",
+        "emoji": "none",
         "length": "terse",
         "hedging": "low",
         "quirks": [
-          "no capitals or end punctuation ever"
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
         ]
       }
     },
@@ -95,6 +136,25 @@
       "display_name": "nora.f",
       "slack_id": "U07FLK0NORA",
       "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
       "style": {
         "case": "proper",
         "punctuation": "full",
@@ -145,11 +205,11 @@
   ],
   "messages": [
     {
-      "ts": "1789408368.699208",
+      "ts": "1789408368.685621",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-003548"
+        "ev-003852"
       ],
       "brief": "bellows hub: still quoting rev D",
       "claim": {
@@ -160,84 +220,90 @@
         "bellows hub"
       ],
       "length": "short",
-      "text": "bellows hub still quoting rev D, xometry hasnt updated yet"
+      "text": "bellows hub: vendor still quoting rev d"
     },
     {
-      "ts": "1789494640.824590",
-      "user": "p-ingrid",
-      "thread_ts": null,
-      "events": [
-        "ev-003328"
-      ],
-      "brief": "FL-TST-2789: need 2 by 2026-09-30 for Battery enclosure thermal runaway containment",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 2,
-          "by": "2026-09-30"
-        }
-      },
-      "must_mention": [
-        "FL-TST-2789",
-        "Battery enclosure thermal runaway containment",
-        "FL-BAT-1643",
-        "9/30"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "FL-TST-2789 x2 for Battery enclosure thermal runaway containment, 9/30. FL-BAT-1643 is the other half of that kit."
-    },
-    {
-      "ts": "1789498669.235440",
-      "user": "p-zoe",
-      "thread_ts": "1789494640.824590",
+      "ts": "1789409425.791825",
+      "user": "p-arjun",
+      "thread_ts": "1789408368.685621",
       "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
+      "brief": "reply (jokes) in the thread about: the message above",
       "must_mention": [],
-      "length": "one_word",
-      "text": "got it, adding to the list"
-    },
-    {
-      "ts": "1789534317.027003",
-      "user": "p-hana",
-      "thread_ts": null,
-      "events": [
-        "ev-003399"
-      ],
-      "brief": "FL-LEG-1343: need 3 by 2026-10-05 for Build sub-assembly for Leg DVT build: Thigh cover plate",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 3,
-          "by": "2026-10-05"
-        }
-      },
-      "must_mention": [
-        "FL-LEG-1343",
-        "Build sub-assembly for Leg DVT build: Thigh cover plate (2)",
-        "FL-LEG-1361",
-        "mon 10/5"
-      ],
-      "pressure": "elevated",
       "length": "short",
-      "text": "FL-LEG-1343 x3 for Build sub-assembly for Leg DVT build: Thigh cover plate (2), mon 10/5. FL-LEG-1361 too i think, not 100% sure"
+      "text": "never a quiet week"
     },
     {
-      "ts": "1789537646.029949",
-      "user": "p-kenji",
-      "thread_ts": "1789534317.027003",
+      "ts": "1789411307.320141",
+      "user": "p-beth",
+      "thread_ts": "1789408368.685621",
       "events": [],
       "brief": "reply (disagrees politely) in the thread about: the message above",
       "must_mention": [],
-      "length": "one_word",
-      "text": "not sure thats right, 1361 was a diff plate afaik"
+      "length": "short",
+      "text": "I see it a bit differently, but happy to be wrong."
     },
     {
-      "ts": "1789605735.760912",
+      "ts": "1789414221.453032",
+      "user": "p-nadia",
+      "thread_ts": "1789408368.685621",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "+1 on that"
+    },
+    {
+      "ts": "1789497510.956366",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-003873"
+      ],
+      "brief": "release clevis: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "release clevis"
+      ],
+      "length": "short",
+      "text": "release clevis: vendor still quoting rev a"
+    },
+    {
+      "ts": "1789500978.227739",
+      "user": "p-hana",
+      "thread_ts": "1789497510.956366",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@priya can you take a look"
+    },
+    {
+      "ts": "1789599164.088526",
+      "user": "p-lukas",
+      "thread_ts": null,
+      "events": [
+        "ev-004012"
+      ],
+      "brief": "FT adapter: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "FT adapter"
+      ],
+      "length": "short",
+      "text": "still seeing rev a on FT adapter"
+    },
+    {
+      "ts": "1789605735.712390",
       "user": "p-nora",
       "thread_ts": null,
       "events": [
-        "ev-003461"
+        "ev-003880"
       ],
       "brief": "boom clamp: still quoting rev A",
       "claim": {
@@ -248,7 +314,37 @@
         "boom clamp"
       ],
       "length": "short",
-      "text": "Still quoting rev A on the boom clamp, so I'm not touching the drawing until they confirm."
+      "text": "boom clamp quote is still rev A."
+    },
+    {
+      "ts": "1789605867.121386",
+      "user": "p-priya",
+      "thread_ts": "1789605735.712390",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Checking on this later."
+    },
+    {
+      "ts": "1789608561.091717",
+      "user": "p-arjun",
+      "thread_ts": "1789605735.712390",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "@lukas can you take a look"
+    },
+    {
+      "ts": "1789609598.173314",
+      "user": "p-callum",
+      "thread_ts": "1789605735.712390",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "is it the same one from before"
     }
   ]
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import './ui.css';
 
 export const C = {ink: '#1C1B17', paper: '#F4F2F0', muted: '#7A766F', faint: '#C9C5BE', line: '#E2DFDA', hair: '#EFECE8', accent: '#E4F222', critical: '#D03B3B', ok: '#2E7D32'};
 export const money = c => (c == null ? '—' : '$' + Math.round(c / 100).toLocaleString('en-US'));
@@ -27,30 +28,33 @@ const NAV = [['/orders', 'Orders'], ['/ramp', 'Ramp'], ['/inbox', 'Inbox']];
 export function Header({system}) {
   React.useEffect(() => { syncClock(system?.now); }, [system?.now]);
   const here = location.pathname;
-  return <header style={{display: 'flex', alignItems: 'center', gap: 20, padding: '14px 24px', borderBottom: `1px solid ${C.line}`}}>
-    <a href="/orders" style={{fontSize: 16, letterSpacing: '.04em', color: C.ink, textDecoration: 'none'}}>burn</a>
-    <nav style={{marginLeft: 'auto', display: 'flex', gap: 18, fontSize: 13}}>
-      {NAV.map(([href, label]) => <a key={href} href={href} style={{color: here.startsWith(href) ? C.ink : C.muted, textDecoration: 'none'}}>{label}</a>)}
-    </nav>
+  return <header className="burn-header">
+    <div className="burn-header-inner">
+      <a href="/orders" className="burn-brand" aria-label="Burn home"><span className="burn-mark" aria-hidden="true">b</span>burn<span className="burn-brand-dot">.</span></a>
+      <nav className="burn-nav" aria-label="Main navigation">
+        {NAV.map(([href, label]) => <a key={href} href={href} aria-current={here.startsWith(href) || (here === '/' && href === '/orders') ? 'page' : undefined}>{label}</a>)}
+      </nav>
+      <span className="burn-workspace">{system?.company?.name || 'Workspace'}</span>
+    </div>
   </header>;
 }
 
 export function Page({system, width = 1200, children, ...props}) {
-  return <div style={{minHeight: '100vh', fontSize: 13, display: 'flex', flexDirection: 'column'}}>
+  return <div className="burn-shell" style={{minHeight: '100vh', fontSize: 14, display: 'flex', flexDirection: 'column'}}>
     <Header system={system}/>
-    <main {...props} style={{flex: 1, padding: '28px 24px 60px', maxWidth: width, width: '100%', boxSizing: 'border-box', margin: '0 auto', ...(props.style || {})}}>{children}</main>
+    <main {...props} className={`burn-main ${props.className || ''}`} style={{flex: 1, padding: '40px 32px 72px', maxWidth: width, width: '100%', boxSizing: 'border-box', margin: '0 auto', ...(props.style || {})}}>{children}</main>
   </div>;
 }
 
 export function Button({primary, children, ...props}) {
-  return <button {...props} style={{background: primary ? C.accent : '#fff', border: `1px solid ${primary ? C.accent : C.line}`, borderRadius: 6, padding: '9px 14px', fontSize: 13, cursor: props.disabled ? 'default' : 'pointer', color: C.ink, opacity: props.disabled ? .5 : 1, ...(props.style || {})}}>{children}</button>;
+  return <button {...props} className={`burn-button ${primary ? 'burn-button-primary' : ''} ${props.className || ''}`} style={props.style}>{children}</button>;
 }
 
 export const input = {font: 'inherit', fontSize: 13, padding: '8px 10px', border: `1px solid ${C.line}`, borderRadius: 8, background: '#fff', color: C.ink, width: '100%', boxSizing: 'border-box'};
 
 export function Field({label, children}) {
-  return <label style={{display: 'flex', flexDirection: 'column', gap: 4}}>
-    <Eyebrow>{label}</Eyebrow>
+  return <label className="burn-field">
+    <span className="burn-field-label">{label}</span>
     {children}
   </label>;
 }

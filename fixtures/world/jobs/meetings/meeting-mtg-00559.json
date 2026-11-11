@@ -1,0 +1,313 @@
+{
+  "job_id": "meeting-mtg-00559",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 53,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00559",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-05-14T08:45:00-07:00",
+    "actual_min": 13,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-andre",
+      "p-lin",
+      "p-carlos",
+      "p-jade",
+      "p-destiny"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-000998",
+      "speaker": "p-dmitri",
+      "at_min": [
+        2,
+        8
+      ],
+      "brief": "Dmitri says: We need hip spacer by 6/22.",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-hip-bearing-spacer",
+        "value": {
+          "qty": 6,
+          "by": "2026-06-22"
+        }
+      },
+      "must_mention": [
+        "hip spacer",
+        "6/22"
+      ]
+    },
+    {
+      "event": "ev-000997",
+      "speaker": "p-dmitri",
+      "at_min": [
+        5,
+        11
+      ],
+      "brief": "hip spacer: need 6 by 2026-06-25 for the build",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-hip-bearing-spacer",
+        "value": {
+          "qty": 6,
+          "by": "2026-06-25"
+        }
+      },
+      "must_mention": [
+        "hip spacer",
+        "the build",
+        "6/25"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-dmitri",
+      "text": "Morning. We need hip spacer by 6/22. Six. I'll say it twice since Carlos was out yesterday."
+    },
+    {
+      "start_s": 18,
+      "speaker": "p-carlos",
+      "text": "Got it!! Thanks."
+    },
+    {
+      "start_s": 22,
+      "speaker": "p-dmitri",
+      "text": "And hip spacer, need 6 by 6/25 for the build, that's the other date from the schedule. I need to figure out which is real."
+    },
+    {
+      "start_s": 42,
+      "speaker": "p-zoe",
+      "text": "uh, the 22nd is what i have on my sheet"
+    },
+    {
+      "start_s": 48,
+      "speaker": "p-dmitri",
+      "text": "Okay, I'll sort it out, leave both for now."
+    },
+    {
+      "start_s": 56,
+      "speaker": "p-andre",
+      "text": "dyno is clean this morning. i swapped the coupling and it lines up better"
+    },
+    {
+      "start_s": 70,
+      "speaker": "p-lin",
+      "text": "Life test: rig two has a loose fixture bolt. I tightened it and added a note."
+    },
+    {
+      "start_s": 86,
+      "speaker": "p-dmitri",
+      "text": "Good. Jade?"
+    },
+    {
+      "start_s": 88,
+      "speaker": "p-jade",
+      "text": "nothing today"
+    },
+    {
+      "start_s": 92,
+      "speaker": "p-destiny",
+      "text": "hi sorry late, 😬 what are we on"
+    },
+    {
+      "start_s": 98,
+      "speaker": "p-dmitri",
+      "text": "Parts dates. Assembly status?"
+    },
+    {
+      "start_s": 104,
+      "speaker": "p-destiny",
+      "text": "We're waiting on the last harness, otherwise ok 🙏"
+    },
+    {
+      "start_s": 114,
+      "speaker": "p-carlos",
+      "text": "Harness is almost done, I'll have it by afternoon"
+    },
+    {
+      "start_s": 122,
+      "speaker": "p-dmitri",
+      "text": "Great. Zoe, fixtures?"
+    },
+    {
+      "start_s": 126,
+      "speaker": "p-zoe",
+      "text": "the thermal soak clamp passed the fit check, no changes"
+    },
+    {
+      "start_s": 138,
+      "speaker": "p-dmitri",
+      "text": "Good. Anything else? No. Thanks."
+    }
+  ],
+  "summary": {
+    "overview": "Short standup. Dyno clean after coupling swap, loose fixture bolt on life test rig tightened, harness almost done, clamp fit check passed.",
+    "shorthand_bullet": [
+      "dyno clean, coupling swapped",
+      "rig 2 loose bolt tightened, noted",
+      "thermal soak clamp fit check passed",
+      "two dates for hip spacer, need to reconcile"
+    ],
+    "action_items": [
+      "Dmitri to reconcile hip spacer dates",
+      "Carlos to finish harness by afternoon"
+    ],
+    "keywords": [
+      "standup",
+      "dyno",
+      "harness",
+      "fixtures",
+      "hip spacer"
+    ]
+  }
+}

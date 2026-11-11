@@ -7,9 +7,9 @@
 
 ## Overview
 
-We need FL-KNE-1120 by 10/6 (Assemble build unit: Knee output encoder bracket). We need FL-ANK-1253 by 10/9.
+We need FL-KNE-1120 by 10/6 (Assemble build unit: Knee output encoder bracket). We need FL-ANK-1253 by 10/14.
 
 ## Discussion
 
 - Dmitri: We need FL-KNE-1120 by 10/6 (Assemble build unit: Knee output encoder bracket).
-- Dmitri: We need FL-ANK-1253 by 10/9.
+- Dmitri: We need FL-ANK-1253 by 10/14.

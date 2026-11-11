@@ -36,21 +36,59 @@
       }
     },
     {
-      "id": "p-destiny",
-      "name": "Destiny Brooks",
-      "display_name": "destiny",
-      "slack_id": "U07FLK0DEST",
-      "title": "Assembly Technician",
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
       "style": {
         "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
         "punctuation": "light",
-        "typos": "rare",
-        "emoji": "lots",
+        "typos": "lots",
+        "emoji": "some",
         "length": "medium",
         "hedging": "low",
         "quirks": [
-          "reacts with 🙏 and 😬",
-          "ends messages with an emoji"
+          "fixes typos with *word",
+          "double-sends instead of editing"
         ]
       }
     },
@@ -69,6 +107,25 @@
         "hedging": "low",
         "quirks": [
           "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
         ]
       }
     },
@@ -115,7 +172,7 @@
   ],
   "tickets": [
     {
-      "key": "HIP-429",
+      "key": "HIP-426",
       "type": "Task",
       "status": "Done",
       "reporter": "p-andre",
@@ -127,87 +184,22 @@
       "created": "2026-09-21T14:41:55-07:00",
       "due_date": null,
       "events": [
-        "ev-001895"
+        "ev-002134"
       ],
       "brief": "Order 12x Knee rear cover, 1x Knee circular spline housing / FL-KNE-1146: need 12 by 2026-10-02 for Design iteration bench trial: Knee rear cover",
       "must_mention": [
         "FL-KNE-1146",
         "Design iteration bench trial: Knee rear cover",
         "FL-KNE-1176",
-        "fri 10/2"
+        "10/2"
       ],
       "description_length": "one_line",
-      "summary": "rear covers x12 FL-KNE-1146",
-      "description": "fri 10/2 for Design iteration bench trial: Knee rear cover. housing is FL-KNE-1176",
+      "summary": "Knee rear cover x12",
+      "description": "FL-KNE-1146 need 12 by 10/2 for Design iteration bench trial: Knee rear cover, FL-KNE-1176 too",
       "comments": []
     },
     {
-      "key": "HIP-433",
-      "type": "Task",
-      "status": "Done",
-      "reporter": "p-tomas",
-      "assignee": "p-tomas",
-      "labels": [
-        "procurement"
-      ],
-      "priority": "High",
-      "created": "2026-09-22T15:53:53-07:00",
-      "due_date": "2026-09-29",
-      "events": [
-        "ev-001915"
-      ],
-      "brief": "Order 3x Dyno mounting plate, knee actuator, 12x Knee output shaft / dyno adapter: need 3 by 2026-09-29",
-      "must_mention": [
-        "dyno adapter",
-        "tues the 29th"
-      ],
-      "description_length": "short",
-      "summary": "dyno adapter plate + out shafts",
-      "description": "need the dyno adapter by tues the 29th, 3 of them",
-      "comments": [
-        {
-          "id": "HIP-433-c1",
-          "by": "p-tomas",
-          "at": "2026-09-23T11:25:31-07:00",
-          "events": [
-            "ev-001917"
-          ],
-          "brief": "2124: need 3 by 2026-09-29",
-          "claim": {
-            "kind": "needs",
-            "value": {
-              "qty": 3,
-              "by": "2026-09-29"
-            }
-          },
-          "must_mention": [
-            "2124",
-            "9/29"
-          ],
-          "body": "2124 need 3 by 9/29"
-        },
-        {
-          "id": "HIP-433-c2",
-          "by": "p-destiny",
-          "at": "2026-10-09T11:19:42-07:00",
-          "events": [
-            "ev-001919"
-          ],
-          "brief": "dyno adapter arrived (3)",
-          "claim": {
-            "kind": "stock",
-            "value": 3
-          },
-          "must_mention": [
-            "dyno adapter",
-            "3"
-          ],
-          "body": "dyno adapter arrived, 3"
-        }
-      ]
-    },
-    {
-      "key": "HIP-434",
+      "key": "HIP-430",
       "type": "Task",
       "status": "Done",
       "reporter": "p-owen",
@@ -219,7 +211,7 @@
       "created": "2026-09-22T16:38:12-07:00",
       "due_date": "2026-09-30",
       "events": [
-        "ev-001891"
+        "ev-002130"
       ],
       "brief": "Order 2x Dyno base plate / FL-TST-2136: need 2 by 2026-09-30 for Instrumentation fit-up: Dyno base plate",
       "must_mention": [
@@ -227,105 +219,221 @@
         "Instrumentation fit-up: Dyno base plate",
         "9/30"
       ],
-      "description_length": "short",
-      "summary": "dyno base plates FL-TST-2136 x2",
-      "description": "need by 9/30 for Instrumentation fit-up: Dyno base plate",
-      "comments": [
-        {
-          "id": "HIP-434-c1",
-          "by": "p-owen",
-          "at": "2026-09-28T11:58:23-07:00",
-          "events": [],
-          "brief": "background: pushes it a bit, no new date given",
-          "must_mention": [],
-          "body": "slipping a bit, will update"
-        },
-        {
-          "id": "HIP-434-c2",
-          "by": "p-wei",
-          "at": "2026-09-29T12:07:46-07:00",
-          "events": [],
-          "brief": "background: notes photos or a file are in slack",
-          "must_mention": [],
-          "body": "pics in slack"
-        },
-        {
-          "id": "HIP-434-c3",
-          "by": "p-owen",
-          "at": "2026-10-01T18:08:14-07:00",
-          "events": [],
-          "brief": "background: short progress note",
-          "must_mention": [],
-          "body": "checking w/ vendor again"
-        }
-      ]
+      "description_length": "one_line",
+      "summary": "dyno base plate",
+      "description": "FL-TST-2136 need 2 by 9/30 for Instrumentation fit-up: Dyno base plate",
+      "comments": []
     },
     {
-      "key": "HIP-443",
+      "key": "HIP-432",
       "type": "Task",
       "status": "Done",
-      "reporter": "p-owen",
-      "assignee": "p-owen",
+      "reporter": "p-tomas",
+      "assignee": "p-tomas",
       "labels": [
         "procurement"
       ],
       "priority": "High",
-      "created": "2026-09-24T15:13:07-07:00",
-      "due_date": "2026-10-06",
+      "created": "2026-09-22T18:00:49-07:00",
+      "due_date": "2026-10-05",
       "events": [
-        "ev-001961"
+        "ev-002187"
       ],
-      "brief": "Order 8x Knee rear cover, 24x Knee winding thermistor clip / knee cover: need 8 by 2026-10-09",
+      "brief": "Order 3x Hip cycloid ring-pin housing, 9x Hip cable exit clamp, 10x Hip stator heat spreader, 4x Hip actuator end cover / FL-HIP-1056: need 3 by 2026-10-05 for Build sub-assembly: Hip cycloid ring-pin housing",
       "must_mention": [
-        "knee cover",
-        "10/9"
+        "FL-HIP-1056",
+        "Build sub-assembly: Hip cycloid ring-pin housing",
+        "FL-HIP-1091",
+        "FL-HIP-1028",
+        "FL-HIP-1013",
+        "10/5"
       ],
-      "description_length": "short",
-      "summary": "knee cover x8, thermistor clips",
-      "description": "knee cover needed 10/9 now, 8 pcs",
+      "description_length": "one_line",
+      "summary": "Hip cycloid ring-pin housing, misc hip parts",
+      "description": "FL-HIP-1056 need 3 by 10/5 for Build sub-assembly: Hip cycloid ring-pin housing. also FL-HIP-1091 FL-HIP-1028 FL-HIP-1013",
       "comments": [
         {
-          "id": "HIP-443-c1",
-          "by": "p-owen",
-          "at": "2026-09-25T17:06:08-07:00",
-          "events": [
-            "ev-001962"
-          ],
-          "brief": "FL-KNE-1146: need 8 by 2026-10-06",
-          "claim": {
-            "kind": "needs",
-            "value": {
-              "qty": 8,
-              "by": "2026-10-06"
-            }
-          },
-          "must_mention": [
-            "FL-KNE-1146",
-            "tues 10/6"
-          ],
-          "body": "FL-KNE-1146 need 8 by tues 10/6"
+          "id": "HIP-432-c1",
+          "by": "p-wei",
+          "at": "2026-10-01T16:35:59-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "vendor sent a proof, looks fine from our side"
         },
         {
-          "id": "HIP-443-c2",
-          "by": "p-owen",
-          "at": "2026-09-25T18:01:06-07:00",
+          "id": "HIP-432-c2",
+          "by": "p-tomas",
+          "at": "2026-10-05T15:08:52-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "any update?"
+        },
+        {
+          "id": "HIP-432-c3",
+          "by": "p-tomas",
+          "at": "2026-10-05T17:35:11-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on vendor, no ship notice yet"
+        },
+        {
+          "id": "HIP-432-c4",
+          "by": "p-tomas",
+          "at": "2026-10-10T23:47:00-07:00",
           "events": [
-            "ev-001963"
+            "ev-002191"
           ],
-          "brief": "knee cover: need 8 by 2026-10-06 for the fit check; asks whether expediting is worth it",
+          "brief": "ring pin housing in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-10-09"
+          },
+          "must_mention": [
+            "ring pin housing",
+            "the build",
+            "fri 10/9"
+          ],
+          "body": "ring pin housing in use for the build, fri 10/9, i think"
+        }
+      ]
+    },
+    {
+      "key": "HIP-440",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-nadia",
+      "assignee": "p-nadia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-24T14:35:56-07:00",
+      "due_date": "2026-11-03",
+      "events": [
+        "ev-002224"
+      ],
+      "brief": "Order 12x Knee bearing shim / 1124: need 12 by 2026-11-03",
+      "must_mention": [
+        "1124",
+        "11/3"
+      ],
+      "description_length": "short",
+      "summary": "knee bearing shim x12",
+      "description": "1124 need 12 by 11/3",
+      "comments": [
+        {
+          "id": "HIP-440-c1",
+          "by": "p-nadia",
+          "at": "2026-09-25T13:52:45-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on quote"
+        },
+        {
+          "id": "HIP-440-c2",
+          "by": "p-owen",
+          "at": "2026-09-28T13:23:35-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "vendor wants a print update first?"
+        },
+        {
+          "id": "HIP-440-c3",
+          "by": "p-nadia",
+          "at": "2026-10-12T17:41:56-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "pushed out again, vendor slipped"
+        }
+      ]
+    },
+    {
+      "key": "HIP-446",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-carlos",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-25T12:19:14-07:00",
+      "due_date": "2026-10-14",
+      "events": [
+        "ev-002235"
+      ],
+      "brief": "Order 9x Hip cable exit clamp, 21x Hip actuator housing / FL-HIP-1091: need 9 by 2026-10-14",
+      "must_mention": [
+        "FL-HIP-1091",
+        "10/14"
+      ],
+      "description_length": "medium",
+      "summary": "cable exit clamp + actuator housings",
+      "description": "FL-HIP-1091 need 9 by 10/14. housings are a separate line, check qty with the build plan before PO goes out",
+      "comments": [
+        {
+          "id": "HIP-446-c1",
+          "by": "p-dmitri",
+          "at": "2026-09-28T08:41:16-07:00",
+          "events": [
+            "ev-003768"
+          ],
+          "brief": "the part: need 9 by 2026-10-16 for Design iteration bench trial: Hip cable exit clamp",
           "claim": {
             "kind": "needs",
             "value": {
-              "qty": 8,
-              "by": "2026-10-06"
+              "qty": 9,
+              "by": "2026-10-16"
             }
           },
           "must_mention": [
-            "knee cover",
-            "the fit check",
-            "10/6"
+            "the part",
+            "Design iteration bench trial: Hip cable exit clamp (2)",
+            "fri 10/16"
           ],
-          "body": "knee cover need 8 by 10/6 for the fit check. is expediting worth it??"
+          "body": "the part need 9 by fri 10/16 for Design iteration bench trial: Hip cable exit clamp (2)"
+        },
+        {
+          "id": "HIP-446-c2",
+          "by": "p-samir",
+          "at": "2026-09-30T10:01:58-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "photos of the clamp are in slack"
+        },
+        {
+          "id": "HIP-446-c3",
+          "by": "p-samir",
+          "at": "2026-10-06T16:34:57-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "bumping, any word from the vendor?"
+        },
+        {
+          "id": "HIP-446-c4",
+          "by": "p-wei",
+          "at": "2026-10-12T12:11:38-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "can we push on this one"
+        },
+        {
+          "id": "HIP-446-c5",
+          "by": "p-nadia",
+          "at": "2026-10-16T16:09:12-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "vendor says in process, will update when it ships"
         }
       ]
     }

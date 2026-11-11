@@ -1,0 +1,595 @@
+{
+  "job_id": "slack-ch-supply-chain-2026-07-20-background-2026-07-22",
+  "source": "slack",
+  "status": "blank",
+  "priority": 34,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-supply-chain",
+    "name": "supply-chain",
+    "slack_id": "C07FLK0SUPC",
+    "purpose": "Supply chain team: vendors, POs, deliveries, expedites"
+  },
+  "week": {
+    "start": "2026-07-20",
+    "end": "2026-07-26"
+  },
+  "people": [
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-claire",
+      "name": "Claire Donnelly",
+      "display_name": "claire",
+      "slack_id": "U07FLK0CLAI",
+      "title": "Finance and Operations Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Type III anodize adds ~0.025 mm per surface and kills the bearing press fit. This week: Jade at receiving: rev B brackets will not take the bearing, press stalls at 2 kN.",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting. This week: Renee: machined plates are 1.4 kg heavier and ~$1.1k each on Xometry."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1784745637.313599",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1784746250.618924",
+      "user": "p-claire",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about off-topic: a funny link",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1784746483.440926",
+      "user": "p-claire",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1784747328.759064",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1784747860.900385",
+      "user": "p-omar",
+      "thread_ts": "1784746483.440926",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1784748056.937500",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on this: Renee: machined plates are 1.4 kg heavier and ~$1.1k each on Xometry.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1784749751.882841",
+      "user": "p-beth",
+      "thread_ts": "1784746483.440926",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1784759655.644789",
+      "user": "p-gwen",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about this: Nora: casting tooling quote is $38k and 9 weeks; Lukas wants machined plates for DVT.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1784760478.430541",
+      "user": "p-omar",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about this: Marcus: show the leg on the gantry plus hip and hand separately; no torso.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1784761508.075373",
+      "user": "p-omar",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Owen measures bore: 0.05 mm under; hard anodize build-up, drawing did not call a mask.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1784763301.672956",
+      "user": "p-gwen",
+      "thread_ts": "1784760478.430541",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Marcus: show the leg on the gantry plus hip and hand separately; no torso.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1784764346.709223",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1784764421.561577",
+      "user": "p-samir",
+      "thread_ts": "1784760478.430541",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Marcus: show the leg on the gantry plus hip and hand separately; no torso.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1784764571.569871",
+      "user": "p-beth",
+      "thread_ts": "1784764346.709223",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1784764674.976557",
+      "user": "p-talia",
+      "thread_ts": "1784759655.644789",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Nora: casting tooling quote is $38k and 9 weeks; Lukas wants machined plates for DVT.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1784764819.097206",
+      "user": "p-beth",
+      "thread_ts": "1784764346.709223",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1784765265.177885",
+      "user": "p-talia",
+      "thread_ts": "1784760478.430541",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Marcus: show the leg on the gantry plus hip and hand separately; no torso.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1784766679.841671",
+      "user": "p-ingrid",
+      "thread_ts": "1784761508.075373",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Owen measures bore: 0.05 mm under; hard anodize build-up, drawing did not call a mask.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1784767304.450632",
+      "user": "p-gwen",
+      "thread_ts": "1784764346.709223",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1784767564.709428",
+      "user": "p-samir",
+      "thread_ts": "1784761508.075373",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Owen measures bore: 0.05 mm under; hard anodize build-up, drawing did not call a mask.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1784769571.806347",
+      "user": "p-talia",
+      "thread_ts": "1784759655.644789",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Nora: casting tooling quote is $38k and 9 weeks; Lukas wants machined plates for DVT.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1784770112.063433",
+      "user": "p-samir",
+      "thread_ts": "1784764346.709223",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1784770820.908223",
+      "user": "p-beth",
+      "thread_ts": "1784761508.075373",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Owen measures bore: 0.05 mm under; hard anodize build-up, drawing did not call a mask.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1784771104.494123",
+      "user": "p-talia",
+      "thread_ts": "1784761508.075373",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Owen measures bore: 0.05 mm under; hard anodize build-up, drawing did not call a mask.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1784772479.392269",
+      "user": "p-jade",
+      "thread_ts": "1784761508.075373",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Owen measures bore: 0.05 mm under; hard anodize build-up, drawing did not call a mask.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1784772576.387936",
+      "user": "p-ingrid",
+      "thread_ts": "1784759655.644789",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Nora: casting tooling quote is $38k and 9 weeks; Lukas wants machined plates for DVT.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1784773775.425647",
+      "user": "p-jade",
+      "thread_ts": "1784764346.709223",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1784775348.711108",
+      "user": "p-omar",
+      "thread_ts": "1784759655.644789",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Nora: casting tooling quote is $38k and 9 weeks; Lukas wants machined plates for DVT.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1784776105.548219",
+      "user": "p-nora",
+      "thread_ts": "1784759655.644789",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Nora: casting tooling quote is $38k and 9 weeks; Lukas wants machined plates for DVT.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1784776214.021509",
+      "user": "p-nora",
+      "thread_ts": "1784764346.709223",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1784777051.182884",
+      "user": "p-beth",
+      "thread_ts": "1784764346.709223",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1784781204.241854",
+      "user": "p-beth",
+      "thread_ts": "1784764346.709223",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1784783285.245881",
+      "user": "p-ingrid",
+      "thread_ts": "1784764346.709223",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1784783811.334731",
+      "user": "p-samir",
+      "thread_ts": "1784764346.709223",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1784784174.134912",
+      "user": "p-nora",
+      "thread_ts": "1784764346.709223",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1784784293.619169",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about this: Jade at receiving: rev B brackets will not take the bearing, press stalls at 2 kN.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1784826350.856647",
+      "user": "p-talia",
+      "thread_ts": "1784764346.709223",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1784826768.795253",
+      "user": "p-talia",
+      "thread_ts": "1784764346.709223",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1784828737.789983",
+      "user": "p-nora",
+      "thread_ts": "1784764346.709223",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1784833975.209419",
+      "user": "p-talia",
+      "thread_ts": "1784764346.709223",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    }
+  ]
+}

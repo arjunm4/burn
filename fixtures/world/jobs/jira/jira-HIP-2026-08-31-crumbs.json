@@ -17,6 +17,25 @@
   },
   "people": [
     {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
       "id": "p-tomas",
       "name": "Tomas Ferreira",
       "display_name": "tomas",
@@ -33,6 +52,22 @@
           "\"i think\", \"probably\", \"not 100% sure but\""
         ]
       }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
     }
   ],
   "forbidden": [
@@ -43,7 +78,69 @@
   ],
   "tickets": [
     {
-      "key": "HIP-377",
+      "key": "HIP-371",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": "p-tomas",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-08-31T11:27:38-07:00",
+      "due_date": "2026-10-23",
+      "events": [
+        "ev-001821"
+      ],
+      "brief": "Order 12x Hip bearing preload ring, 7x Hip actuator housing / FL-HIP-1064: need 12 by 2026-10-23",
+      "must_mention": [
+        "FL-HIP-1064",
+        "fri 10/23"
+      ],
+      "description_length": "one_line",
+      "summary": "hip preload ring + housing",
+      "description": "FL-HIP-1064 x12 needed fri 10/23",
+      "comments": [
+        {
+          "id": "HIP-371-c1",
+          "by": "p-nadia",
+          "at": "2026-09-29T10:48:26-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "pinged vendor, waiting"
+        },
+        {
+          "id": "HIP-371-c2",
+          "by": "p-wei",
+          "at": "2026-09-30T17:37:29-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "Still nothing firm from them, pushing a bit."
+        },
+        {
+          "id": "HIP-371-c3",
+          "by": "p-tomas",
+          "at": "2026-10-09T02:21:00-07:00",
+          "events": [
+            "ev-001828"
+          ],
+          "brief": "preload nut in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-10-08"
+          },
+          "must_mention": [
+            "preload nut",
+            "10/8"
+          ],
+          "body": "preload nut in use, 10/8"
+        }
+      ]
+    },
+    {
+      "key": "HIP-375",
       "type": "Task",
       "status": "Done",
       "reporter": "p-tomas",
@@ -55,48 +152,35 @@
       "created": "2026-09-02T17:03:11-07:00",
       "due_date": "2026-09-14",
       "events": [
-        "ev-001623"
+        "ev-001843"
       ],
-      "brief": "Order 22x Knee wave generator hub / that order: need 22 by 2026-09-17 for Fit check for Actuator DVT gate review: Knee wave generator hub; asks whether expediting is worth it",
+      "brief": "Order 22x Knee wave generator hub / wave gen hub: need 22 by 2026-09-14",
       "must_mention": [
-        "that order",
-        "Fit check for Actuator DVT gate review: Knee wave generator hub",
-        "thurs the 17th"
+        "wave gen hub",
+        "9/14"
       ],
       "description_length": "one_line",
-      "summary": "Order 22x knee wave generator hub",
-      "description": "that order needed thurs the 17th for Fit check for Actuator DVT gate review: Knee wave generator hub. is expediting worth it?",
+      "summary": "knee wave gen hub x22",
+      "description": "wave gen hub: need 22 by 9/14",
       "comments": [
         {
-          "id": "HIP-377-c1",
+          "id": "HIP-375-c1",
           "by": "p-tomas",
-          "at": "2026-09-03T07:15:11-07:00",
+          "at": "2026-09-18T11:32:00-07:00",
           "events": [
-            "ev-003176"
+            "ev-001845"
           ],
-          "brief": "Correction: that order: need 22 by 2026-09-14 for Fit check for Actuator DVT gate review: Knee wave generator hub",
+          "brief": "wave gen hub in use",
           "claim": {
-            "kind": "needs",
-            "value": {
-              "qty": 22,
-              "by": "2026-09-14"
-            }
+            "kind": "done",
+            "value": "2026-09-17"
           },
           "must_mention": [
-            "that order",
-            "Fit check for Actuator DVT gate review: Knee wave generator hub",
-            "9/14"
+            "wave gen hub",
+            "the build",
+            "thurs 9/17"
           ],
-          "body": "Correction: that order is needed 9/14 for Fit check for Actuator DVT gate review: Knee wave generator hub"
-        },
-        {
-          "id": "HIP-377-c2",
-          "by": "p-tomas",
-          "at": "2026-09-11T18:27:31-07:00",
-          "events": [],
-          "brief": "background: pushes it a bit, no new date given",
-          "must_mention": [],
-          "body": "i think it's slipping a bit, nothing firm from the vendor"
+          "body": "wave gen hub in use in the build, thurs 9/17"
         }
       ]
     }

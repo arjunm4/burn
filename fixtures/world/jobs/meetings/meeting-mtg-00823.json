@@ -1,0 +1,272 @@
+{
+  "job_id": "meeting-mtg-00823",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 39,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00823",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-06-30T08:45:00-07:00",
+    "actual_min": 13,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-lin",
+      "p-carlos",
+      "p-jade",
+      "p-luis"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-001398",
+      "speaker": "p-dmitri",
+      "at_min": [
+        5,
+        11
+      ],
+      "brief": "that order: need 6 by 2026-07-08",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-grip-load-cell-plate",
+        "value": {
+          "qty": 6,
+          "by": "2026-07-08"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "7/8"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-dmitri",
+      "text": "Morning. Okay, quick one today. Lin, where are we on the life test cycles?"
+    },
+    {
+      "start_s": 47,
+      "speaker": "p-lin",
+      "text": "Morning. Rig two is at about sixty percent of the planned cycles, no faults so far. Rig one is still down for the thermocouple swap."
+    },
+    {
+      "start_s": 95,
+      "speaker": "p-carlos",
+      "text": "Thermocouple's in, I just need to re-zero it. Should be running by lunch."
+    },
+    {
+      "start_s": 142,
+      "speaker": "p-dmitri",
+      "text": "Good. Luis, did the load cell cabling get redone?"
+    },
+    {
+      "start_s": 190,
+      "speaker": "p-luis",
+      "text": "yeah finished it yest, ran continuity on all of them, one was marginal so i redid that end"
+    },
+    {
+      "start_s": 237,
+      "speaker": "p-dmitri",
+      "text": "Uh, marginal how? Intermittent or just high resistance?"
+    },
+    {
+      "start_s": 285,
+      "speaker": "p-luis",
+      "text": "high resistance, probably a bad crimp"
+    },
+    {
+      "start_s": 332,
+      "speaker": "p-zoe",
+      "text": "can i grab the bench after? the new fixture plate needs a fit check, shouldn't take long"
+    },
+    {
+      "start_s": 380,
+      "speaker": "p-carlos",
+      "text": "Bench is yours after ten."
+    },
+    {
+      "start_s": 427,
+      "speaker": "p-dmitri",
+      "text": "Okay, procurement. that order, I need 6 by 7/8. Nobody's confirmed it's on a PO yet."
+    },
+    {
+      "start_s": 475,
+      "speaker": "p-zoe",
+      "text": "i'll ping samir, i think he has it in the queue"
+    },
+    {
+      "start_s": 522,
+      "speaker": "p-dmitri",
+      "text": "Please do. We can't slip that one."
+    },
+    {
+      "start_s": 570,
+      "speaker": "p-jade",
+      "text": "got a box in at receiving this morning, not sure whose, ill tag it"
+    },
+    {
+      "start_s": 617,
+      "speaker": "p-lin",
+      "text": "Is it the thermal paste? I ordered some of that."
+    },
+    {
+      "start_s": 665,
+      "speaker": "p-jade",
+      "text": "ill check the label and tell you"
+    },
+    {
+      "start_s": 712,
+      "speaker": "p-dmitri",
+      "text": "Alright. Anything blocking anyone? No? Good, thanks all."
+    }
+  ],
+  "summary": {
+    "overview": "Short test lab standup. Rig two life test running clean, rig one back after thermocouple swap. Dmitri flagged an open order that needs a PO confirmed.",
+    "shorthand_bullet": [
+      "rig 2 life test ~60%, no faults",
+      "rig 1 thermocouple swapped, re-zero before lunch",
+      "load cell cabling redone, one marginal crimp fixed",
+      "that order: need 6 by 7/8, PO not confirmed yet",
+      "zoe has bench after 10 for fixture plate fit check"
+    ],
+    "action_items": [
+      "Zoe to ping Samir about the PO for that order",
+      "Carlos re-zero rig 1 thermocouple",
+      "Jade to check label on unclaimed box"
+    ],
+    "keywords": [
+      "life test",
+      "thermocouple",
+      "PO",
+      "fixture plate"
+    ]
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "job_id": "slack-ch-procurement-2026-06-01-background-2026-06-05",
+  "source": "slack",
+  "status": "blank",
+  "priority": 48,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-06-01",
+    "end": "2026-06-07"
+  },
+  "people": [
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-rachel",
+      "name": "Rachel Goldberg",
+      "display_name": "rachel",
+      "slack_id": "U07FLK0RACH",
+      "title": "Accounting and Finance Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Pushrod clevis bends at 1.6x body weight in the tilt stand",
+    "Ongoing: Bus-off events at 1 Mbps when all leg actuators stream. This week: Jonas proposes moving to CAN FD at 5 Mbps data rate; Farah wants to fix topology first.",
+    "Ongoing: Crossed-roller preload drops after thermal cycling; bore tolerance and preload ring design. This week: Carlos: two hip units feel notchy after thermal soak; preload ring backed off a quarter turn.",
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno. This week: Retest with spreader and 40 kHz: 9.5 min to limit, close enough to sign off for EVT.",
+    "Ongoing: Ratcheting risk at peak torque from loose wave generator fit. This week: Hub switched to 4140 with a clamp plus keyway; shaft rev B released.",
+    "Ongoing: Orders sitting in DFM review because of tolerance callouts. This week: Checklist adopted; DFM holds drop but still hit rush orders."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1780685715.216886",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on this: Wei proposes keyed hub to replace clamp hub; Tomas worries about key fretting.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780690282.236453",
+      "user": "p-callum",
+      "thread_ts": "1780685715.216886",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Wei proposes keyed hub to replace clamp hub; Tomas worries about key fretting.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1780690877.201651",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Callum wants a double-shear clevis; Hana worries about foot clearance.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780692910.629893",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Callum wants a double-shear clevis; Hana worries about foot clearance.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780694758.007053",
+      "user": "p-gwen",
+      "thread_ts": "1780685715.216886",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Wei proposes keyed hub to replace clamp hub; Tomas worries about key fretting.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1780694938.848768",
+      "user": "p-rachel",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about this: Callum wants a double-shear clevis; Hana worries about foot clearance.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780695935.197554",
+      "user": "p-ingrid",
+      "thread_ts": "1780685715.216886",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Wei proposes keyed hub to replace clamp hub; Tomas worries about key fretting.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1780700369.984188",
+      "user": "p-hana",
+      "thread_ts": "1780685715.216886",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Wei proposes keyed hub to replace clamp hub; Tomas worries about key fretting.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780704327.349940",
+      "user": "p-omar",
+      "thread_ts": "1780685715.216886",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Wei proposes keyed hub to replace clamp hub; Tomas worries about key fretting.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

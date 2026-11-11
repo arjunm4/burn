@@ -1,0 +1,271 @@
+{
+  "job_id": "meeting-mtg-00368",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 61,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00368",
+    "title": "Actuators standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-04-13T09:15:00-07:00",
+    "actual_min": 15,
+    "present": [
+      "p-arjun",
+      "p-owen",
+      "p-tomas",
+      "p-nadia"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-000754",
+      "speaker": "p-arjun",
+      "at_min": [
+        0,
+        6
+      ],
+      "brief": "1028: need 10 by 2026-05-05 for the build",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-hip-thermal-plate",
+        "value": {
+          "qty": 10,
+          "by": "2026-05-05"
+        }
+      },
+      "must_mention": [
+        "1028",
+        "the build",
+        "5/5"
+      ]
+    },
+    {
+      "event": "ev-000774",
+      "speaker": "p-arjun",
+      "at_min": [
+        5,
+        11
+      ],
+      "brief": "Arjun says: We need that order by 5/13.",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-knee-thigh-flange",
+        "value": {
+          "qty": 1,
+          "by": "2026-05-13"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "5/13"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-arjun",
+      "text": "ok lets go. 1028, we need 10 by 5/5 for the build. i dont know if thats ordered yet"
+    },
+    {
+      "start_s": 12,
+      "speaker": "p-tomas",
+      "text": "I think Samir ordered the first batch, but I'm not 100% sure it's all ten."
+    },
+    {
+      "start_s": 20,
+      "speaker": "p-arjun",
+      "text": "can you check"
+    },
+    {
+      "start_s": 22,
+      "speaker": "p-tomas",
+      "text": "Yes, I'll look after this."
+    },
+    {
+      "start_s": 28,
+      "speaker": "p-owen",
+      "text": "dyno is down for the bearing swap, back tmrw i think"
+    },
+    {
+      "start_s": 38,
+      "speaker": "p-arjun",
+      "text": "ok. how many cycles do we have on the hip unit"
+    },
+    {
+      "start_s": 44,
+      "speaker": "p-nadia",
+      "text": "like 400k i think, the log is on the drive. *the log says 410k maybe"
+    },
+    {
+      "start_s": 56,
+      "speaker": "p-arjun",
+      "text": "fine. thermal numbers?"
+    },
+    {
+      "start_s": 60,
+      "speaker": "p-owen",
+      "text": "winding temp is still high at continuous torque, we are trying a heat spreader"
+    },
+    {
+      "start_s": 72,
+      "speaker": "p-tomas",
+      "text": "I think that is probably the right fix. Fins would be too big for the housing."
+    },
+    {
+      "start_s": 84,
+      "speaker": "p-arjun",
+      "text": "yeah. also that order, we need it by 5/13. one piece"
+    },
+    {
+      "start_s": 96,
+      "speaker": "p-nadia",
+      "text": "which order"
+    },
+    {
+      "start_s": 99,
+      "speaker": "p-arjun",
+      "text": "the encoder one. i mean the one we talked about friday"
+    },
+    {
+      "start_s": 106,
+      "speaker": "p-nadia",
+      "text": "oh ok yeah. is it a vendor lead time thing"
+    },
+    {
+      "start_s": 111,
+      "speaker": "p-arjun",
+      "text": "probably yes, ill ask samir"
+    },
+    {
+      "start_s": 118,
+      "speaker": "p-tomas",
+      "text": "Not sure the lead time matches 5/13, probably worth asking."
+    },
+    {
+      "start_s": 128,
+      "speaker": "p-arjun",
+      "text": "yeah. ok anything else"
+    },
+    {
+      "start_s": 133,
+      "speaker": "p-owen",
+      "text": "no"
+    },
+    {
+      "start_s": 135,
+      "speaker": "p-nadia",
+      "text": "nope, thats it"
+    }
+  ],
+  "summary": {
+    "overview": "Actuators standup. Parts needed (1028 for the build, and one order by 5/13), dyno down for bearing swap, thermal work with heat spreader.",
+    "shorthand_bullet": [
+      "1028, need 10 by 5/5 for the build, Tomas to check order",
+      "that order, need by 5/13, 1 piece, Arjun to ask Samir",
+      "Dyno down for bearing swap, back tmrw",
+      "Hip unit about 400k cycles",
+      "Heat spreader to fix winding temp"
+    ],
+    "action_items": [
+      "Tomas to check 1028 order quantity",
+      "Arjun to ask Samir about lead time"
+    ],
+    "keywords": [
+      "actuators",
+      "1028",
+      "dyno",
+      "thermal",
+      "heat spreader"
+    ]
+  }
+}

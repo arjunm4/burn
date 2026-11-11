@@ -1,0 +1,241 @@
+{
+  "job_id": "slack-ch-legs-2026-04-06-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 63,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-legs",
+    "name": "legs",
+    "slack_id": "C07FLK0LEGS",
+    "purpose": "Leg and ankle: design, drop test, gait gantry"
+  },
+  "week": {
+    "start": "2026-04-06",
+    "end": "2026-04-12"
+  },
+  "people": [
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Leg (left, hip to foot)."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1775691041.189422",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [
+        "ev-004194"
+      ],
+      "brief": "Fixture install and shakedown for Leg drop test: Leg build stand done by tues",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-04-14"
+      },
+      "must_mention": [
+        "Fixture install and shakedown for Leg drop test: Leg build stand",
+        "4/14"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Fixture install and shakedown for Leg drop test: Leg build stand should be done by tues 4/14"
+    },
+    {
+      "ts": "1775691959.290521",
+      "user": "p-diego",
+      "thread_ts": "1775691041.189422",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "thanks!"
+    },
+    {
+      "ts": "1775742780.055182",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [
+        "ev-000367"
+      ],
+      "brief": "leg stand in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-04-08"
+      },
+      "must_mention": [
+        "leg stand",
+        "the build",
+        "wed the 8th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "leg stand in use for the build wed the 8th"
+    },
+    {
+      "ts": "1775775847.536373",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-003229"
+      ],
+      "brief": "Ankle tilt and load test waits on Ankle tilt and load stand",
+      "claim": {
+        "kind": "blocked",
+        "value": "rig-ankle-tilt-stand"
+      },
+      "must_mention": [
+        "Ankle tilt and load stand",
+        "Ankle tilt and load test"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Ankle tilt and load test is stuck waiting on Ankle tilt and load stand"
+    },
+    {
+      "ts": "1775778876.589389",
+      "user": "p-talia",
+      "thread_ts": "1775775847.536373",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "stuck on what"
+    },
+    {
+      "ts": "1775783355.091671",
+      "user": "p-priya",
+      "thread_ts": "1775775847.536373",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "same story as the heel strike rig last year, stand was the long pole"
+    },
+    {
+      "ts": "1775841215.980495",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-000731"
+      ],
+      "brief": "FL-ANK-1225: need 4 by 2026-06-02",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 4,
+          "by": "2026-06-02"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1225",
+        "tues the 2nd"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "FL-ANK-1225 need 4 by tues the 2nd"
+    }
+  ]
+}

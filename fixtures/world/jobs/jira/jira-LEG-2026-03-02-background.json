@@ -1,0 +1,314 @@
+{
+  "job_id": "jira-LEG-2026-03-02-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 74,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "LEG",
+    "name": "Legs and ankle"
+  },
+  "week": {
+    "start": "2026-03-02",
+    "end": "2026-03-08"
+  },
+  "people": [
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "LEG-15",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-callum",
+      "assignee": "p-priya",
+      "labels": [
+        "dfm"
+      ],
+      "priority": "Low",
+      "created": "2026-03-02T11:04:50-08:00",
+      "due_date": "2026-03-20",
+      "events": [],
+      "brief": "Investigate noise on bench unit (ankle and foot)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-16",
+      "type": "Task",
+      "status": "Blocked",
+      "reporter": "p-priya",
+      "assignee": "p-priya",
+      "labels": [
+        "cleanup"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-02T19:36:56-08:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Update assembly work instructions (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-16-c1",
+          "by": "p-priya",
+          "at": "2026-03-03T16:08:09-08:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-16-c2",
+          "by": "p-hana",
+          "at": "2026-03-20T18:03:57-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-17",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-callum",
+      "labels": [],
+      "priority": "Highest",
+      "created": "2026-03-03T10:00:00-08:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Fixture install and shakedown for Leg drop test: Leg build stand",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-18",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-callum",
+      "assignee": "p-diego",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-03-03T13:33:23-08:00",
+      "due_date": "2026-03-10",
+      "events": [],
+      "brief": "Update assembly work instructions (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-19",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-priya",
+      "labels": [
+        "bench"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-04T11:59:53-08:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Harness routing cleanup (ankle and foot)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-19-c1",
+          "by": "p-priya",
+          "at": "2026-03-16T10:46:21-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-19-c2",
+          "by": "p-priya",
+          "at": "2026-03-16T18:17:55-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-20",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-hana",
+      "assignee": "p-callum",
+      "labels": [
+        "docs"
+      ],
+      "priority": "High",
+      "created": "2026-03-04T13:22:37-08:00",
+      "due_date": "2026-03-13",
+      "events": [],
+      "brief": "Update drawing and BOM (ankle and foot)",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-21",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-callum",
+      "assignee": "p-diego",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-03-05T17:07:14-08:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Torque spec audit (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-22",
+      "type": "Sub-task",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-callum",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-03-06T14:23:30-08:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Document test procedure (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-22-c1",
+          "by": "p-diego",
+          "at": "2026-03-09T12:22:14-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-22-c2",
+          "by": "p-callum",
+          "at": "2026-03-12T10:54:22-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    }
+  ]
+}

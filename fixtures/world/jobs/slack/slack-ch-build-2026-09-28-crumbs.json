@@ -1,0 +1,105 @@
+{
+  "job_id": "slack-ch-build-2026-09-28-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 13,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-build",
+    "name": "build",
+    "slack_id": "C07FLK0BILD",
+    "purpose": "EVT/DVT build coordination"
+  },
+  "week": {
+    "start": "2026-09-28",
+    "end": "2026-10-04"
+  },
+  "people": [
+    {
+      "id": "p-kofi",
+      "name": "Kofi Mensah",
+      "display_name": "kofi",
+      "slack_id": "U07FLK0KOFI",
+      "title": "NPI Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway",
+    "Ongoing: BMS PCBA rev 1 balancing current and cell-tap fusing. This week: Bao: wrong bleed resistor value on the BOM, 68 ohm populated instead of 33.",
+    "Ongoing: Leg DVT build: parts readiness and what to do about late test hardware. This week: Nora posts build readiness: 82% of leg DVT parts in, shank links still at the vendor.",
+    "Ongoing: Frameless DVT motor from the vendor keeps slipping; stator stack length change. This week: Samir: vendor confirms PO for DVT stators, ETA late October.",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough. This week: Switch to higher-viscosity grease; soak passes.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real",
+    "Ongoing: Leg drop gantry shared by leg drop, torso static load and ankle impact. This week: Dmitri splits: torso Tue, leg Thu; nobody happy."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1790613387.522076",
+      "user": "p-kofi",
+      "thread_ts": null,
+      "events": [
+        "ev-004158"
+      ],
+      "brief": "Actuator DVT gate review: still quoting 2026-10-13",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-10-13"
+      },
+      "must_mention": [
+        "Actuator DVT gate review",
+        "10/13"
+      ],
+      "length": "medium",
+      "text": "Actuator DVT gate review is still being quoted as 10/13 in the build plan, not sure that's current"
+    },
+    {
+      "ts": "1790614976.457174",
+      "user": "p-talia",
+      "thread_ts": "1790613387.522076",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Thanks Kofi, I'll keep an eye on it and flag anything that slips 🙏"
+    }
+  ]
+}

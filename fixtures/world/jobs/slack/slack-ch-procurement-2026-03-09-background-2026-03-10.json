@@ -1,0 +1,556 @@
+{
+  "job_id": "slack-ch-procurement-2026-03-09-background-2026-03-10",
+  "source": "slack",
+  "status": "blank",
+  "priority": 72,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-03-09",
+    "end": "2026-03-15"
+  },
+  "people": [
+    {
+      "id": "p-bao",
+      "name": "Bao Nguyen",
+      "display_name": "bao.n",
+      "slack_id": "U07FLK0BAO0",
+      "title": "Electrical Engineer, motor drives",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-kwame",
+      "name": "Kwame Asante",
+      "display_name": "kwame",
+      "slack_id": "U07FLK0KWAM",
+      "title": "Senior Electrical Engineer, power",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-rachel",
+      "name": "Rachel Goldberg",
+      "display_name": "rachel",
+      "slack_id": "U07FLK0RACH",
+      "title": "Accounting and Finance Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Building the first three hip and knee actuators. This week: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+    "Ongoing: Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT",
+    "Ongoing: Coupling misalignment corrupting efficiency numbers on the dyno. This week: Dial indicator shows 0.15 mm parallel offset; adapter plate dowels are loose fit."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1773153208.418858",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773156381.385326",
+      "user": "p-rachel",
+      "thread_ts": "1773153208.418858",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773160780.269631",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to off-topic: the office plant",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773161046.244141",
+      "user": "p-diego",
+      "thread_ts": "1773153208.418858",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773161298.218132",
+      "user": "p-beth",
+      "thread_ts": "1773153208.418858",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773163575.515434",
+      "user": "p-bao",
+      "thread_ts": "1773153208.418858",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773164871.901774",
+      "user": "p-kenji",
+      "thread_ts": "1773160780.269631",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: off-topic: the office plant",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773168942.563893",
+      "user": "p-lin",
+      "thread_ts": "1773153208.418858",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773169121.060657",
+      "user": "p-kwame",
+      "thread_ts": "1773160780.269631",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: off-topic: the office plant",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1773169927.049855",
+      "user": "p-diego",
+      "thread_ts": "1773160780.269631",
+      "events": [],
+      "brief": "reply (ack) in the thread about: off-topic: the office plant",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773172221.557192",
+      "user": "p-kwame",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Dial indicator shows 0.15 mm parallel offset; adapter plate dowels are loose fit.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1773172499.909440",
+      "user": "p-callum",
+      "thread_ts": "1773160780.269631",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: off-topic: the office plant",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1773176812.539881",
+      "user": "p-zoe",
+      "thread_ts": "1773160780.269631",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: off-topic: the office plant",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773181285.432839",
+      "user": "p-beth",
+      "thread_ts": "1773160780.269631",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: off-topic: the office plant",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773184507.201009",
+      "user": "p-ingrid",
+      "thread_ts": "1773160780.269631",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: off-topic: the office plant",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773186841.462829",
+      "user": "p-ingrid",
+      "thread_ts": "1773160780.269631",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: off-topic: the office plant",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773191150.416476",
+      "user": "p-farah",
+      "thread_ts": "1773160780.269631",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: off-topic: the office plant",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773192790.228131",
+      "user": "p-omar",
+      "thread_ts": "1773160780.269631",
+      "events": [],
+      "brief": "reply (ack) in the thread about: off-topic: the office plant",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773193841.007397",
+      "user": "p-talia",
+      "thread_ts": "1773160780.269631",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: off-topic: the office plant",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773193931.640215",
+      "user": "p-carlos",
+      "thread_ts": "1773160780.269631",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: off-topic: the office plant",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773248292.551388",
+      "user": "p-samir",
+      "thread_ts": "1773160780.269631",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: off-topic: the office plant",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773249797.075222",
+      "user": "p-diego",
+      "thread_ts": "1773160780.269631",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: off-topic: the office plant",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1773251075.370858",
+      "user": "p-carlos",
+      "thread_ts": "1773160780.269631",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: off-topic: the office plant",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

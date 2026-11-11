@@ -36,22 +36,6 @@
       }
     },
     {
-      "id": "p-ingrid",
-      "name": "Ingrid Solberg",
-      "display_name": "ingrid.s",
-      "slack_id": "U07FLK0INGR",
-      "title": "VP Hardware",
-      "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": []
-      }
-    },
-    {
       "id": "p-kenji",
       "name": "Kenji Morimoto",
       "display_name": "kenji.m",
@@ -70,11 +54,11 @@
       }
     },
     {
-      "id": "p-nadia",
-      "name": "Nadia Haddad",
-      "display_name": "nadia",
-      "slack_id": "U07FLK0NADI",
-      "title": "Mechanical Engineer",
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
       "style": {
         "case": "lower",
         "punctuation": "light",
@@ -86,22 +70,6 @@
           "fixes typos with *word",
           "double-sends instead of editing"
         ]
-      }
-    },
-    {
-      "id": "p-renee",
-      "name": "Renee Dubois",
-      "display_name": "renee",
-      "slack_id": "U07FLK0RENE",
-      "title": "Mechanical Engineer",
-      "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": []
       }
     },
     {
@@ -120,25 +88,6 @@
         "quirks": [
           "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
           "corrects own dates"
-        ]
-      }
-    },
-    {
-      "id": "p-talia",
-      "name": "Talia Rosen",
-      "display_name": "talia",
-      "slack_id": "U07FLK0TALI",
-      "title": "Buyer/Planner",
-      "style": {
-        "case": "mixed",
-        "punctuation": "light",
-        "typos": "rare",
-        "emoji": "lots",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": [
-          "reacts with 🙏 and 😬",
-          "ends messages with an emoji"
         ]
       }
     },
@@ -167,7 +116,7 @@
   ],
   "tickets": [
     {
-      "key": "SCM-318",
+      "key": "SCM-337",
       "type": "Task",
       "status": "Done",
       "reporter": "p-wei",
@@ -179,7 +128,7 @@
       "created": "2026-09-28T08:18:15-07:00",
       "due_date": "2026-10-14",
       "events": [
-        "ev-002015"
+        "ev-002273"
       ],
       "brief": "Order 3x Knee to thigh flange, 6x Knee motor mount plate, 4x Knee rear cover, 24x Knee winding thermistor clip / FL-KNE-1190: need 3 by 2026-10-14 for Tolerance stack check: Knee to thigh flange",
       "must_mention": [
@@ -188,18 +137,18 @@
         "FL-KNE-1153",
         "FL-KNE-1146",
         "FL-KNE-1113",
-        "wed 10/14"
+        "wed the 14th"
       ],
       "description_length": "short",
-      "summary": "Knee flange + plates order FL-KNE-1190",
-      "description": "need 3 flanges wed 10/14 for Tolerance stack check: Knee to thigh flange. plates FL-KNE-1153, covers FL-KNE-1146, clips FL-KNE-1113",
+      "summary": "Knee flange + motor mount plate etc",
+      "description": "FL-KNE-1190 need 3 by wed the 14th for Tolerance stack check: Knee to thigh flange. also FL-KNE-1153, FL-KNE-1146, FL-KNE-1113 on the same buy",
       "comments": [
         {
-          "id": "SCM-318-c1",
+          "id": "SCM-337-c1",
           "by": "p-arjun",
           "at": "2026-09-30T10:02:06-07:00",
           "events": [
-            "ev-002018"
+            "ev-002276"
           ],
           "brief": "knee flange: need 3 by 2026-10-14 for the build",
           "claim": {
@@ -214,14 +163,14 @@
             "the build",
             "10/14"
           ],
-          "body": "knee flange: need 3 by 10/14 for the build"
+          "body": "knee flange need 3 by 10/14 for the build"
         },
         {
-          "id": "SCM-318-c2",
+          "id": "SCM-337-c2",
           "by": "p-wei",
           "at": "2026-11-05T04:00:00-08:00",
           "events": [
-            "ev-002021"
+            "ev-002279"
           ],
           "brief": "knee flange in use",
           "claim": {
@@ -231,111 +180,14 @@
           "must_mention": [
             "knee flange",
             "the build",
-            "11/3"
+            "tues 11/3"
           ],
-          "body": "knee flange in use for the build, 11/3 checks done"
+          "body": "knee flange in use for the build since tues 11/3"
         }
       ]
     },
     {
-      "key": "SCM-320",
-      "type": "Task",
-      "status": "Done",
-      "reporter": "p-ingrid",
-      "assignee": "p-renee",
-      "labels": [
-        "procurement"
-      ],
-      "priority": "High",
-      "created": "2026-09-28T14:28:24-07:00",
-      "due_date": "2026-10-07",
-      "events": [
-        "ev-002071"
-      ],
-      "brief": "Order 9x Chamber cable feedthrough plate, 2x Cell heater clamp plate / 2716: need 9 by 2026-10-07",
-      "must_mention": [
-        "2716",
-        "wed 10/7"
-      ],
-      "description_length": "one_line",
-      "summary": "feedthrough plates + heater clamp 2716",
-      "description": "need 9 wed 10/7",
-      "comments": [
-        {
-          "id": "SCM-320-c1",
-          "by": "p-renee",
-          "at": "2026-09-29T09:23:00-07:00",
-          "events": [
-            "ev-003330"
-          ],
-          "brief": "FL-TST-2716: need 9 by 2026-10-06 for the fit check",
-          "claim": {
-            "kind": "needs",
-            "value": {
-              "qty": 9,
-              "by": "2026-10-06"
-            }
-          },
-          "must_mention": [
-            "FL-TST-2716",
-            "the fit check",
-            "FL-TST-2789",
-            "10/6"
-          ],
-          "body": "FL-TST-2716 need 9 by 10/6 for the fit check, same lot as FL-TST-2789 if possible"
-        },
-        {
-          "id": "SCM-320-c2",
-          "by": "p-renee",
-          "at": "2026-09-29T14:08:08-07:00",
-          "events": [
-            "ev-002073"
-          ],
-          "brief": "FL-TST-2716: need 9 by 2026-10-07",
-          "claim": {
-            "kind": "needs",
-            "value": {
-              "qty": 9,
-              "by": "2026-10-07"
-            }
-          },
-          "must_mention": [
-            "FL-TST-2716",
-            "10/7"
-          ],
-          "body": "FL-TST-2716 back to 10/7 for the 9"
-        },
-        {
-          "id": "SCM-320-c3",
-          "by": "p-talia",
-          "at": "2026-10-02T16:50:30-07:00",
-          "events": [],
-          "brief": "background: any update?",
-          "must_mention": [],
-          "body": "any update??"
-        },
-        {
-          "id": "SCM-320-c4",
-          "by": "p-renee",
-          "at": "2026-10-12T10:14:31-07:00",
-          "events": [],
-          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
-          "must_mention": [],
-          "body": "Waiting on vendor to confirm."
-        },
-        {
-          "id": "SCM-320-c5",
-          "by": "p-samir",
-          "at": "2026-10-12T15:37:42-07:00",
-          "events": [],
-          "brief": "background: any update?",
-          "must_mention": [],
-          "body": "any update on this?"
-        }
-      ]
-    },
-    {
-      "key": "SCM-321",
+      "key": "SCM-340",
       "type": "Task",
       "status": "Done",
       "reporter": "p-kenji",
@@ -344,28 +196,68 @@
         "procurement"
       ],
       "priority": "Medium",
-      "created": "2026-09-28T16:47:20-07:00",
+      "created": "2026-09-29T09:23:06-07:00",
       "due_date": null,
       "events": [
-        "ev-001997"
+        "ev-002252"
       ],
-      "brief": "Order 1x Wrist to arm adapter, 24x Knuckle pin / 1488: need 1 by 2026-10-15 for the build",
+      "brief": "Order 1x Wrist to arm adapter, 24x Knuckle pin / arm adapter: need 1 by 2026-10-15",
       "must_mention": [
-        "1488",
-        "the build",
-        "1490",
+        "arm adapter",
         "10/15"
       ],
-      "description_length": "short",
-      "summary": "wrist adapter + knuckle pins 1488",
-      "description": "1 adapter for the build, thurs the 15th (10/15) was the ask. pins are 1490",
+      "description_length": "one_line",
+      "summary": "wrist arm adapter + knuckle pins",
+      "description": "arm adapter need 1 by 10/15",
       "comments": [
         {
-          "id": "SCM-321-c1",
+          "id": "SCM-340-c1",
           "by": "p-kenji",
           "at": "2026-09-29T11:34:21-07:00",
           "events": [
-            "ev-002000"
+            "ev-002254"
+          ],
+          "brief": "wrist adapter: need 1 by 2026-10-15",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 1,
+              "by": "2026-10-15"
+            }
+          },
+          "must_mention": [
+            "wrist adapter",
+            "10/15"
+          ],
+          "body": "wrist adapter need 1 by 10/15"
+        },
+        {
+          "id": "SCM-340-c2",
+          "by": "p-kenji",
+          "at": "2026-09-29T13:33:17-07:00",
+          "events": [
+            "ev-002255"
+          ],
+          "brief": "the adapter: need 1 by 2026-10-15",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 1,
+              "by": "2026-10-15"
+            }
+          },
+          "must_mention": [
+            "the adapter",
+            "thurs the 15th"
+          ],
+          "body": "the adapter need 1 by thurs the 15th"
+        },
+        {
+          "id": "SCM-340-c3",
+          "by": "p-kenji",
+          "at": "2026-09-29T13:49:46-07:00",
+          "events": [
+            "ev-002257"
           ],
           "brief": "1488: need 1 by 2026-10-15",
           "claim": {
@@ -377,55 +269,29 @@
           },
           "must_mention": [
             "1488",
-            "thurs the 15th"
+            "10/15"
           ],
-          "body": "1488 need 1, thurs the 15th"
+          "body": "1488 need 1 by 10/15"
         },
         {
-          "id": "SCM-321-c2",
-          "by": "p-kenji",
-          "at": "2026-10-23T12:56:00-07:00",
+          "id": "SCM-340-c4",
+          "by": "p-luis",
+          "at": "2026-10-21T12:10:22-07:00",
           "events": [
-            "ev-002003"
+            "ev-002260"
           ],
-          "brief": "1488 in use",
+          "brief": "arm adapter arrived (1)",
           "claim": {
-            "kind": "done",
-            "value": "2026-10-23"
+            "kind": "stock",
+            "value": 1
           },
           "must_mention": [
-            "1488",
-            "the build",
-            "10/23"
+            "arm adapter",
+            "1"
           ],
-          "body": "1488 in use for the build 10/23"
+          "body": "arm adapter arrived (1), looks good"
         }
       ]
-    },
-    {
-      "key": "SCM-330",
-      "type": "Task",
-      "status": "Done",
-      "reporter": "p-arjun",
-      "assignee": "p-nadia",
-      "labels": [
-        "procurement"
-      ],
-      "priority": "High",
-      "created": "2026-10-02T08:21:14-07:00",
-      "due_date": "2026-10-07",
-      "events": [
-        "ev-002078"
-      ],
-      "brief": "Order 6x Spin-test shaft coupling, 6x Dyno absorber motor adapter / the part: need 6 by 2026-10-07",
-      "must_mention": [
-        "the part",
-        "wed 10/7"
-      ],
-      "description_length": "one_line",
-      "summary": "spin test coupling + dyno adapter - the part",
-      "description": "need 6 of the part wed 10/7",
-      "comments": []
     }
   ]
 }

@@ -17,11 +17,48 @@
   },
   "people": [
     {
-      "id": "p-zoe",
-      "name": "Zoe Castellanos",
-      "display_name": "zoe.c",
-      "slack_id": "U07FLK0ZOE0",
-      "title": "Test Engineer, fixtures owner",
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
       "style": {
         "case": "lower",
         "punctuation": "light",
@@ -44,47 +81,88 @@
   ],
   "tickets": [
     {
-      "key": "HIP-456",
+      "key": "HIP-462",
       "type": "Task",
       "status": "Done",
-      "reporter": "p-zoe",
-      "assignee": "p-zoe",
+      "reporter": "p-owen",
+      "assignee": "p-samir",
       "labels": [
         "procurement"
       ],
       "priority": "High",
-      "created": "2026-09-29T17:35:02-07:00",
-      "due_date": "2026-10-13",
+      "created": "2026-10-01T17:37:30-07:00",
+      "due_date": "2026-10-23",
       "events": [
-        "ev-002059"
+        "ev-002392"
       ],
-      "brief": "Order 2x Hip to pelvis interface plate / interface plate: need 2 by 2026-10-13",
+      "brief": "Order 12x Hip holding-brake bracket, 7x Hip actuator housing / 1050: need 12 by 2026-10-23",
       "must_mention": [
-        "interface plate",
-        "10/13"
+        "1050",
+        "fri 10/23"
       ],
       "description_length": "short",
-      "summary": "Order 2x Hip to pelvis interface plate",
-      "description": "need 2 interface plate by 10/13",
+      "summary": "brake bracket / hip housing order",
+      "description": "1050 need 12 by fri 10/23",
       "comments": [
         {
-          "id": "HIP-456-c1",
-          "by": "p-zoe",
-          "at": "2026-10-02T10:18:38-07:00",
+          "id": "HIP-462-c1",
+          "by": "p-arjun",
+          "at": "2026-10-09T09:36:06-07:00",
           "events": [
-            "ev-002060"
+            "ev-002396"
           ],
-          "brief": "Order XO-5529420 placed, promised 2026-10-08",
+          "brief": "the part: need 12 by 2026-10-23",
           "claim": {
-            "kind": "eta",
-            "value": "2026-10-08"
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-10-23"
+            }
           },
           "must_mention": [
-            "XO-5529420",
-            "hip pelvis plate",
-            "thurs the 8th"
+            "the part",
+            "fri the 23rd"
           ],
-          "body": "Order XO-5529420 placed for hip pelvis plate, promised thurs the 8th"
+          "body": "the part need 12 by fri the 23rd, pls confirm w vendor"
+        },
+        {
+          "id": "HIP-462-c2",
+          "by": "p-owen",
+          "at": "2026-10-09T16:50:46-07:00",
+          "events": [
+            "ev-002397"
+          ],
+          "brief": "brake bracket: need 12 by 2026-10-23",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-10-23"
+            }
+          },
+          "must_mention": [
+            "brake bracket",
+            "fri the 23rd"
+          ],
+          "body": "brake bracket need 12 by fri the 23rd"
+        },
+        {
+          "id": "HIP-462-c3",
+          "by": "p-owen",
+          "at": "2026-10-22T16:22:42-07:00",
+          "events": [
+            "ev-002398"
+          ],
+          "brief": "brake mount arrived (12)",
+          "claim": {
+            "kind": "stock",
+            "value": 12
+          },
+          "must_mention": [
+            "brake mount",
+            "12"
+          ],
+          "body": "brake mount arrived (12)"
         }
       ]
     }

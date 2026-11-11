@@ -1,0 +1,308 @@
+{
+  "job_id": "meeting-mtg-00470",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 57,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00470",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-04-29T08:45:00-07:00",
+    "actual_min": 15,
+    "present": [
+      "p-dmitri",
+      "p-andre",
+      "p-lin",
+      "p-jade",
+      "p-luis",
+      "p-destiny"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-000896",
+      "speaker": "p-dmitri",
+      "at_min": [
+        5,
+        11
+      ],
+      "brief": "1310: need 12 by 2026-06-18",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-leg-hip-yoke",
+        "value": {
+          "qty": 12,
+          "by": "2026-06-18"
+        }
+      },
+      "must_mention": [
+        "1310",
+        "6/18"
+      ]
+    },
+    {
+      "event": "ev-000873",
+      "speaker": "p-dmitri",
+      "at_min": [
+        7,
+        13
+      ],
+      "brief": "flexspline clamp: need 6 by 2026-06-16",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-knee-flexspline-clamp",
+        "value": {
+          "qty": 6,
+          "by": "2026-06-16"
+        }
+      },
+      "must_mention": [
+        "flexspline clamp",
+        "6/16"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 8,
+      "speaker": "p-dmitri",
+      "text": "morning. dyno, andre"
+    },
+    {
+      "start_s": 18,
+      "speaker": "p-andre",
+      "text": "dyno is ok, the thermal cutoff tripped once, i bumped the limit and its fine"
+    },
+    {
+      "start_s": 40,
+      "speaker": "p-dmitri",
+      "text": "wait you changed the limit? tell me next time"
+    },
+    {
+      "start_s": 50,
+      "speaker": "p-andre",
+      "text": "*sorry, yeah, will log it"
+    },
+    {
+      "start_s": 90,
+      "speaker": "p-lin",
+      "text": "Life test rig is running fine. One sample failed early, we're looking at the fixture."
+    },
+    {
+      "start_s": 125,
+      "speaker": "p-jade",
+      "text": "nothing at receiving"
+    },
+    {
+      "start_s": 160,
+      "speaker": "p-destiny",
+      "text": "hip build, got the housings in. waiting on bearings 🙏"
+    },
+    {
+      "start_s": 200,
+      "speaker": "p-luis",
+      "text": "i can help w the bearings when they come"
+    },
+    {
+      "start_s": 320,
+      "speaker": "p-dmitri",
+      "text": "right, for the parts. 1310, need 12 by 6/18."
+    },
+    {
+      "start_s": 345,
+      "speaker": "p-andre",
+      "text": "is that the new spec or old?"
+    },
+    {
+      "start_s": 355,
+      "speaker": "p-dmitri",
+      "text": "new i think. i'll check"
+    },
+    {
+      "start_s": 450,
+      "speaker": "p-dmitri",
+      "text": "and flexspline clamp, need 6 by 6/16"
+    },
+    {
+      "start_s": 470,
+      "speaker": "p-luis",
+      "text": "same vendor?"
+    },
+    {
+      "start_s": 478,
+      "speaker": "p-dmitri",
+      "text": "probably"
+    },
+    {
+      "start_s": 560,
+      "speaker": "p-lin",
+      "text": "the early failure, i think the fixture was overtightened"
+    },
+    {
+      "start_s": 585,
+      "speaker": "p-dmitri",
+      "text": "ok so retest"
+    },
+    {
+      "start_s": 600,
+      "speaker": "p-lin",
+      "text": "yes"
+    },
+    {
+      "start_s": 700,
+      "speaker": "p-destiny",
+      "text": "anything else? no? ok 😬"
+    },
+    {
+      "start_s": 740,
+      "speaker": "p-dmitri",
+      "text": "thanks all"
+    }
+  ],
+  "summary": {
+    "overview": "Test lab standup. Dyno limit bumped after thermal cutoff trip, life test early failure likely fixture overtightening, hip build waiting on bearings.",
+    "shorthand_bullet": [
+      "dyno thermal cutoff tripped, limit bumped",
+      "life test early failure, fixture overtightened?",
+      "hip housings in, bearings pending",
+      "1310 need 12 by 6/18",
+      "flexspline clamp need 6 by 6/16"
+    ],
+    "action_items": [
+      "Andre: log limit change",
+      "Lin: retest sample",
+      "Dmitri: confirm spec for 1310"
+    ],
+    "keywords": [
+      "dyno",
+      "life test",
+      "hip",
+      "flexspline"
+    ]
+  }
+}

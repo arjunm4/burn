@@ -1,0 +1,365 @@
+{
+  "job_id": "meeting-mtg-00100",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 75,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00100",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-02-26T08:45:00-08:00",
+    "actual_min": 15,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-andre",
+      "p-lin",
+      "p-carlos",
+      "p-jade",
+      "p-luis",
+      "p-destiny",
+      "p-nora"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-000202",
+      "speaker": "p-dmitri",
+      "at_min": [
+        1,
+        7
+      ],
+      "brief": "input shaft: need 12 by 2026-03-10",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-hip-eccentric-shaft",
+        "value": {
+          "qty": 12,
+          "by": "2026-03-10"
+        }
+      },
+      "must_mention": [
+        "input shaft",
+        "3/10"
+      ]
+    },
+    {
+      "event": "ev-000270",
+      "speaker": "p-dmitri",
+      "at_min": [
+        11,
+        15
+      ],
+      "brief": "Dmitri says: We need the actuator by 3/26.",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-dyno-coupling-hip",
+        "value": {
+          "qty": 6,
+          "by": "2026-03-26"
+        }
+      },
+      "must_mention": [
+        "the actuator",
+        "3/26"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-dmitri",
+      "text": "Okay, Thursday. Let's start. Andre?"
+    },
+    {
+      "start_s": 160,
+      "speaker": "p-andre",
+      "text": "dyno is good, ran two speeds today, the data looks clean"
+    },
+    {
+      "start_s": 240,
+      "speaker": "p-dmitri",
+      "text": "Orders. Input shaft, need 12 by 3/10. Jade, add to the list."
+    },
+    {
+      "start_s": 276,
+      "speaker": "p-jade",
+      "text": "ok"
+    },
+    {
+      "start_s": 312,
+      "speaker": "p-nora",
+      "text": "To restate, input shaft, twelve, by the tenth. I'll check with the machine shop on where that stands."
+    },
+    {
+      "start_s": 348,
+      "speaker": "p-dmitri",
+      "text": "Please do."
+    },
+    {
+      "start_s": 384,
+      "speaker": "p-zoe",
+      "text": "gantry, the cable came, it fits. i need to run the first walking test, um, nxt wk probably"
+    },
+    {
+      "start_s": 420,
+      "speaker": "p-dmitri",
+      "text": "Probably?"
+    },
+    {
+      "start_s": 456,
+      "speaker": "p-zoe",
+      "text": "tues. tues nxt wk"
+    },
+    {
+      "start_s": 492,
+      "speaker": "p-lin",
+      "text": "Life test. Unit one is on day ten. The hairline crack hasn't grown. I'm measuring it every morning."
+    },
+    {
+      "start_s": 528,
+      "speaker": "p-carlos",
+      "text": "Good."
+    },
+    {
+      "start_s": 564,
+      "speaker": "p-luis",
+      "text": "the shop vac filter is clogged, ill swap"
+    },
+    {
+      "start_s": 600,
+      "speaker": "p-destiny",
+      "text": "Assembly, one kit done and two more tomorrow 🙏"
+    },
+    {
+      "start_s": 636,
+      "speaker": "p-carlos",
+      "text": "I'll have the harness for the second one by lunch."
+    },
+    {
+      "start_s": 672,
+      "speaker": "p-destiny",
+      "text": "Thank you!! 😬"
+    },
+    {
+      "start_s": 708,
+      "speaker": "p-andre",
+      "text": "sorry the actuator test stand *stand needs a calibration check before nxt run"
+    },
+    {
+      "start_s": 744,
+      "speaker": "p-dmitri",
+      "text": "Put it on the board."
+    },
+    {
+      "start_s": 780,
+      "speaker": "p-dmitri",
+      "text": "Last one. We need the actuator by 3/26, six of them. That's it, go."
+    }
+  ],
+  "summary": {
+    "overview": "Thursday test lab and build standup.",
+    "shorthand_bullet": [
+      "dyno clean data at two speeds",
+      "input shaft: need 12 by 3/10, nora checking with machine shop",
+      "gantry cable fits, first walking test tues nxt wk",
+      "life test unit one day ten, crack not growing, measured daily",
+      "stand needs calibration before next run",
+      "the actuator: need 6 by 3/26"
+    ],
+    "action_items": [
+      "nora check input shaft with machine shop",
+      "calibrate test stand",
+      "carlos harness for second kit"
+    ],
+    "keywords": [
+      "dyno",
+      "input shaft",
+      "gantry",
+      "life test",
+      "calibration"
+    ]
+  }
+}

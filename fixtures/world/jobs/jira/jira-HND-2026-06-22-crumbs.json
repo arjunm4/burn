@@ -1,0 +1,109 @@
+{
+  "job_id": "jira-HND-2026-06-22-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 41,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HND",
+    "name": "Hands and arms"
+  },
+  "week": {
+    "start": "2026-06-22",
+    "end": "2026-06-28"
+  },
+  "people": [
+    {
+      "id": "p-amara",
+      "name": "Amara Nwosu",
+      "display_name": "amara",
+      "slack_id": "U07FLK0AMAR",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HND-114",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-amara",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-06-26T14:10:59-07:00",
+      "due_date": "2026-08-17",
+      "events": [
+        "ev-001390"
+      ],
+      "brief": "Order 6x CMM vee block, shafts, 1x Torso static load yoke / V block: need 6 by 2026-08-12",
+      "must_mention": [
+        "V block",
+        "8/12"
+      ],
+      "description_length": "short",
+      "summary": "V block order for CMM, torso load yoke",
+      "description": "need 6 V block by 8/12, per the yoke drawing",
+      "comments": [
+        {
+          "id": "HND-114-c1",
+          "by": "p-amara",
+          "at": "2026-07-24T12:25:24-07:00",
+          "events": [
+            "ev-001394"
+          ],
+          "brief": "V block arrived (6)",
+          "claim": {
+            "kind": "stock",
+            "value": 6
+          },
+          "must_mention": [
+            "V block",
+            "6"
+          ],
+          "body": "V block arrived, 6 in the bin"
+        }
+      ]
+    }
+  ]
+}

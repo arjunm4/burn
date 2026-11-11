@@ -1,0 +1,368 @@
+{
+  "job_id": "meeting-mtg-00889",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 35,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00889",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-07-13T08:45:00-07:00",
+    "actual_min": 15,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-andre",
+      "p-lin",
+      "p-carlos",
+      "p-jade",
+      "p-luis",
+      "p-nora"
+    ],
+    "late_joiners": [
+      "p-andre"
+    ]
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-001469",
+      "speaker": "p-andre",
+      "at_min": [
+        3,
+        9
+      ],
+      "brief": "Andre says: We need the retainer by 8/6.",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-knee-cross-roller-retainer",
+        "value": {
+          "qty": 24,
+          "by": "2026-08-06"
+        }
+      },
+      "must_mention": [
+        "the retainer",
+        "8/6"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-dmitri",
+      "text": "Morning. Okay, let's keep it quick. Lin, how's the life test rig?"
+    },
+    {
+      "start_s": 14,
+      "speaker": "p-lin",
+      "text": "Good morning. Cycle count is still climbing, no faults overnight. One of the encoder cables is looking a bit frayed at the strain relief, I'll swap it today."
+    },
+    {
+      "start_s": 38,
+      "speaker": "p-dmitri",
+      "text": "Fine. Swap it, log it."
+    },
+    {
+      "start_s": 48,
+      "speaker": "p-carlos",
+      "text": "Left leg EVT unit, harness is still the blocker. I can do the mechanical side but I can't close it up."
+    },
+    {
+      "start_s": 64,
+      "speaker": "p-nora",
+      "text": "To restate, Carlos, mechanical is done but the unit can't close without the harness. Is there anything else on that unit that's also open, or is it just the one item?"
+    },
+    {
+      "start_s": 85,
+      "speaker": "p-carlos",
+      "text": "Just the harness. Rest is ready."
+    },
+    {
+      "start_s": 95,
+      "speaker": "p-zoe",
+      "text": "uh, fixtures, the tilt stand angle sensor is reading weird again, drifting a bit when it warms up. i'll recal after lunch"
+    },
+    {
+      "start_s": 118,
+      "speaker": "p-dmitri",
+      "text": "Okay. Andre, are you on?"
+    },
+    {
+      "start_s": 124,
+      "speaker": "p-andre",
+      "text": "sorry sorry, joining late, my mic was muted"
+    },
+    {
+      "start_s": 131,
+      "speaker": "p-dmitri",
+      "text": "No problem. Dyno status."
+    },
+    {
+      "start_s": 138,
+      "speaker": "p-andre",
+      "text": "dyno ran the hip actuator overnight, temp still climbing faster than we want. also we need the retainer by 8/6, the old one is chewed up"
+    },
+    {
+      "start_s": 165,
+      "speaker": "p-dmitri",
+      "text": "The retainer, 8/6, got it. Is Talia on it?"
+    },
+    {
+      "start_s": 174,
+      "speaker": "p-andre",
+      "text": "not yet, i'll ping her"
+    },
+    {
+      "start_s": 181,
+      "speaker": "p-nora",
+      "text": "Could you repeat the date, Andre? I missed it on the audio."
+    },
+    {
+      "start_s": 189,
+      "speaker": "p-andre",
+      "text": "8/6, the retainer"
+    },
+    {
+      "start_s": 196,
+      "speaker": "p-nora",
+      "text": "Thank you. I'll note it for the build plan."
+    },
+    {
+      "start_s": 210,
+      "speaker": "p-jade",
+      "text": "receiving, nothing big came in yesterday, couple of small boxes for the bench"
+    },
+    {
+      "start_s": 226,
+      "speaker": "p-luis",
+      "text": "i did the torque checks on the spare rig, one fastner was loose, *fastener, tightened it"
+    },
+    {
+      "start_s": 245,
+      "speaker": "p-dmitri",
+      "text": "Good catch Luis."
+    },
+    {
+      "start_s": 252,
+      "speaker": "p-zoe",
+      "text": "also is the thermal camera free this week? i need it for the fixture check"
+    },
+    {
+      "start_s": 266,
+      "speaker": "p-lin",
+      "text": "I can release it Wednesday after my run finishes."
+    },
+    {
+      "start_s": 278,
+      "speaker": "p-zoe",
+      "text": "ok thats fine, wed works"
+    },
+    {
+      "start_s": 290,
+      "speaker": "p-carlos",
+      "text": "Anyone seen the good torque driver? It walked off again!!"
+    },
+    {
+      "start_s": 301,
+      "speaker": "p-luis",
+      "text": "its on my cart, sorry, bringing it back"
+    },
+    {
+      "start_s": 312,
+      "speaker": "p-dmitri",
+      "text": "Okay. If nothing else, let's go. Thanks everyone."
+    },
+    {
+      "start_s": 320,
+      "speaker": "p-nora",
+      "text": "One last thing, please update the tracker if anything slips so I can reflect it in the weekly."
+    }
+  ],
+  "summary": {
+    "overview": "Short test lab and build standup. Life test running clean, left leg EVT unit still blocked on the harness, dyno running hot, fixture sensor drift.",
+    "shorthand_bullet": [
+      "Life test: no faults overnight, swap frayed encoder cable",
+      "Left leg EVT unit blocked on wiring harness, mech done",
+      "Tilt stand angle sensor drifting when warm, recal",
+      "Dyno hip actuator temp climbing faster than expected",
+      "Andre needs the retainer by 8/6, old one worn",
+      "Thermal camera freed up Wed"
+    ],
+    "action_items": [
+      "Lin to swap encoder cable",
+      "Zoe to recal tilt stand sensor",
+      "Andre to ping Talia about the retainer",
+      "Luis to return torque driver",
+      "Update tracker if anything slips"
+    ],
+    "keywords": [
+      "life test",
+      "dyno",
+      "EVT",
+      "harness",
+      "retainer"
+    ]
+  }
+}

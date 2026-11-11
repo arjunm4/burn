@@ -1,0 +1,648 @@
+{
+  "job_id": "jira-SCM-2026-07-20-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 33,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "SCM",
+    "name": "Supply chain and procurement"
+  },
+  "week": {
+    "start": "2026-07-20",
+    "end": "2026-07-26"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "SCM-220",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-07-20T14:30:33-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001503"
+      ],
+      "brief": "Order 3x Ankle impact striker, 2x Tilt stand angle calibration block / FL-TST-2495: need 3 by 2026-07-28 for Rig setup for Ankle heel-strike impact test: Ankle impact striker",
+      "must_mention": [
+        "FL-TST-2495",
+        "Rig setup for Ankle heel-strike impact test: Ankle impact striker",
+        "FL-TST-2567",
+        "7/28"
+      ],
+      "description_length": "medium",
+      "summary": "Ankle striker + tilt calib block",
+      "description": "FL-TST-2495 need 3 by 7/28 for Rig setup for Ankle heel-strike impact test: Ankle impact striker. FL-TST-2567 is the calibration block, same rig. drawing pdfs are attached to the parent ticket. please quote before ordering",
+      "comments": [
+        {
+          "id": "SCM-220-c1",
+          "by": "p-diego",
+          "at": "2026-07-20T17:20:34-07:00",
+          "events": [
+            "ev-001505"
+          ],
+          "brief": "striker: need 3 by 2026-07-28 for Rig setup for Ankle heel-strike impact test: Ankle impact striker",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 3,
+              "by": "2026-07-28"
+            }
+          },
+          "must_mention": [
+            "striker",
+            "Rig setup for Ankle heel-strike impact test: Ankle impact striker",
+            "tues 7/28"
+          ],
+          "body": "striker need 3 by tues 7/28 for Rig setup for Ankle heel-strike impact test: Ankle impact striker"
+        },
+        {
+          "id": "SCM-220-c2",
+          "by": "p-talia",
+          "at": "2026-07-21T09:21:39-07:00",
+          "events": [
+            "ev-001508"
+          ],
+          "brief": "2495: need 3 by 2026-07-23",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 3,
+              "by": "2026-07-23"
+            }
+          },
+          "must_mention": [
+            "2495",
+            "7/23"
+          ],
+          "body": "2495 need 3 by 7/23 😬"
+        },
+        {
+          "id": "SCM-220-c3",
+          "by": "p-talia",
+          "at": "2026-07-23T12:00:56-07:00",
+          "events": [
+            "ev-003821"
+          ],
+          "brief": "2495: need 3 by 2026-07-28",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 3,
+              "by": "2026-07-28"
+            }
+          },
+          "must_mention": [
+            "2495",
+            "tues 7/28"
+          ],
+          "body": "2495 need 3 by tues 7/28 🙏"
+        }
+      ]
+    },
+    {
+      "key": "SCM-221",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-tomas",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-07-20T17:26:08-07:00",
+      "due_date": "2026-08-13",
+      "events": [
+        "ev-001533"
+      ],
+      "brief": "Order 6x Dyno bellows coupling hub, 10x Dyno coupling, knee actuator, 12x Dyno shaft spacer / FL-TST-2146: need 6 by 2026-08-13 for Fixture install and shakedown for Hip actuator dyno efficiency sweep: Dyno bellows coupling hub",
+      "must_mention": [
+        "FL-TST-2146",
+        "Fixture install and shakedown for Hip actuator dyno efficiency sweep: Dyno bellows coupling hub",
+        "FL-TST-2103",
+        "FL-TST-2139",
+        "thurs the 13th"
+      ],
+      "description_length": "medium",
+      "summary": "Dyno bellows hubs / knee couplings / spacers",
+      "description": "FL-TST-2146 need 6 by thurs the 13th for Fixture install and shakedown for Hip actuator dyno efficiency sweep: Dyno bellows coupling hub. also FL-TST-2103 and FL-TST-2139 on the same order. spacers are plain steel, nothing special",
+      "comments": [
+        {
+          "id": "SCM-221-c1",
+          "by": "p-tomas",
+          "at": "2026-07-21T13:29:04-07:00",
+          "events": [
+            "ev-001537"
+          ],
+          "brief": "2146: need 6 by 2026-08-13",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 6,
+              "by": "2026-08-13"
+            }
+          },
+          "must_mention": [
+            "2146",
+            "8/13"
+          ],
+          "body": "2146 need 6 by 8/13"
+        },
+        {
+          "id": "SCM-221-c2",
+          "by": "p-arjun",
+          "at": "2026-07-22T17:03:13-07:00",
+          "events": [
+            "ev-001541"
+          ],
+          "brief": "FL-TST-2146: need 6 by 2026-08-13 for the fit check",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 6,
+              "by": "2026-08-13"
+            }
+          },
+          "must_mention": [
+            "FL-TST-2146",
+            "the fit check",
+            "thurs the 13th"
+          ],
+          "body": "FL-TST-2146 need 6 by thurs the 13th for the fit check"
+        },
+        {
+          "id": "SCM-221-c3",
+          "by": "p-tomas",
+          "at": "2026-08-23T07:07:00-07:00",
+          "events": [
+            "ev-001543"
+          ],
+          "brief": "coupling hub in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-08-21"
+          },
+          "must_mention": [
+            "coupling hub",
+            "the build",
+            "fri 8/21"
+          ],
+          "body": "coupling hub in use, the build started fri 8/21"
+        }
+      ]
+    },
+    {
+      "key": "SCM-222",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-nadia",
+      "assignee": "p-nadia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-07-21T08:04:19-07:00",
+      "due_date": "2026-08-03",
+      "events": [
+        "ev-001606"
+      ],
+      "brief": "Order 8x Hip actuator end cover, 5x Hip stator heat spreader, 4x Hip actuator housing, 12x Hip bearing preload ring, 12x Hip actuator bracket, 4x Hip rotor hub / the cap: need 8 by 2026-08-03 for the build",
+      "must_mention": [
+        "the cap",
+        "the build",
+        "8/3"
+      ],
+      "description_length": "one_line",
+      "summary": "Hip end covers, spreaders, housings etc",
+      "description": "the cap need 8 by 8/3 for the build",
+      "comments": []
+    },
+    {
+      "key": "SCM-224",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-lin",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-07-21T10:23:23-07:00",
+      "due_date": "2026-07-27",
+      "events": [
+        "ev-001581"
+      ],
+      "brief": "Order 3x Grip load cell plate / 2443: need 3 by 2026-07-27 for next week",
+      "must_mention": [
+        "2443",
+        "next week",
+        "7/27"
+      ],
+      "description_length": "short",
+      "summary": "Grip load cell plates",
+      "description": "2443 need 3 by 7/27, for next week",
+      "comments": []
+    },
+    {
+      "key": "SCM-225",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": "p-owen",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-07-21T12:18:58-07:00",
+      "due_date": "2026-07-24",
+      "events": [
+        "ev-001546"
+      ],
+      "brief": "Order 7x Dyno mounting plate, hip actuator / FL-TST-2138: need 7 by 2026-07-24",
+      "must_mention": [
+        "FL-TST-2138",
+        "7/24"
+      ],
+      "description_length": "short",
+      "summary": "dyno mounting plates, hip",
+      "description": "FL-TST-2138 need 7 by 7/24",
+      "comments": [
+        {
+          "id": "SCM-225-c1",
+          "by": "p-gwen",
+          "at": "2026-07-27T16:38:07-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on vendor"
+        },
+        {
+          "id": "SCM-225-c2",
+          "by": "p-owen",
+          "at": "2026-08-03T12:14:16-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "pics in slack"
+        },
+        {
+          "id": "SCM-225-c3",
+          "by": "p-owen",
+          "at": "2026-08-03T18:16:45-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "also the drawing is in slack"
+        },
+        {
+          "id": "SCM-225-c4",
+          "by": "p-owen",
+          "at": "2026-08-12T09:54:32-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "any update"
+        },
+        {
+          "id": "SCM-225-c5",
+          "by": "p-owen",
+          "at": "2026-08-19T14:26:58-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "can we push this one a bit"
+        }
+      ]
+    },
+    {
+      "key": "SCM-226",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-priya",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-07-21T15:49:36-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001595"
+      ],
+      "brief": "Order 14x Ankle yoke, 10x Heel bumper mount / FL-ANK-1244: need 14 by 2026-08-05 for the build",
+      "must_mention": [
+        "FL-ANK-1244",
+        "the build",
+        "wed 8/5"
+      ],
+      "description_length": "one_line",
+      "summary": "Ankle yokes, heel bumper mounts",
+      "description": "FL-ANK-1244 need 14 by wed 8/5 for the build",
+      "comments": [
+        {
+          "id": "SCM-226-c1",
+          "by": "p-priya",
+          "at": "2026-08-05T11:59:27-07:00",
+          "events": [
+            "ev-003817"
+          ],
+          "brief": "ankle yoke arrived",
+          "claim": {
+            "kind": "stock",
+            "value": 12
+          },
+          "must_mention": [
+            "ankle yoke",
+            "12"
+          ],
+          "body": "ankle yoke arrived 12"
+        }
+      ]
+    },
+    {
+      "key": "SCM-227",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-idris",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-07-21T16:14:58-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001590"
+      ],
+      "brief": "Order 9x Hip cycloid ring-pin housing, 12x Hip output shaft, 12x Hip encoder read-head bracket / pin ring: need 9 by 2026-08-06 for Instrumentation fit-up for Hip actuator dyno efficiency sweep: Hip cycloid ring-pin housing",
+      "must_mention": [
+        "pin ring",
+        "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Hip cycloid ring-pin housing",
+        "thurs 8/6"
+      ],
+      "description_length": "short",
+      "summary": "Hip ring-pin housing, output shaft, encoder bracket",
+      "description": "pin ring needed by thurs 8/6 for Instrumentation fit-up for Hip actuator dyno efficiency sweep: Hip cycloid ring-pin housing",
+      "comments": [
+        {
+          "id": "SCM-227-c1",
+          "by": "p-samir",
+          "at": "2026-07-23T20:56:44-07:00",
+          "events": [
+            "ev-003734"
+          ],
+          "brief": "1056: need 9 by 2026-08-03 for Instrumentation fit-up for Hip actuator dyno efficiency sweep: Hip cycloid ring-pin housing",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 9,
+              "by": "2026-08-03"
+            }
+          },
+          "must_mention": [
+            "1056",
+            "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Hip cycloid ring-pin housing",
+            "mon 8/3"
+          ],
+          "body": "1056 need 9 by mon 8/3 for Instrumentation fit-up for Hip actuator dyno efficiency sweep: Hip cycloid ring-pin housing"
+        },
+        {
+          "id": "SCM-227-c2",
+          "by": "p-idris",
+          "at": "2026-08-07T14:18:00-07:00",
+          "events": [
+            "ev-001593"
+          ],
+          "brief": "pin ring in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-08-07"
+          },
+          "must_mention": [
+            "pin ring",
+            "the build",
+            "fri 8/7"
+          ],
+          "body": "pin ring in use, the build fri 8/7"
+        }
+      ]
+    }
+  ]
+}

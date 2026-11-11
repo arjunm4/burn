@@ -19,25 +19,6 @@
   },
   "people": [
     {
-      "id": "p-aisha",
-      "name": "Aisha Rahman",
-      "display_name": "aisha",
-      "slack_id": "U07FLK0AISH",
-      "title": "ML Engineer, perception",
-      "style": {
-        "case": "lower",
-        "punctuation": "light",
-        "typos": "some",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "medium",
-        "quirks": [
-          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
-          "corrects own dates"
-        ]
-      }
-    },
-    {
       "id": "p-amara",
       "name": "Amara Nwosu",
       "display_name": "amara",
@@ -71,6 +52,25 @@
         "quirks": [
           "fixes typos with *word",
           "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
         ]
       }
     },
@@ -123,44 +123,6 @@
         "hedging": "high",
         "quirks": [
           "\"i think\", \"probably\", \"not 100% sure but\""
-        ]
-      }
-    },
-    {
-      "id": "p-priya",
-      "name": "Priya Raman",
-      "display_name": "priya",
-      "slack_id": "U07FLK0PRIY",
-      "title": "Legs Lead",
-      "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "none",
-        "length": "long",
-        "hedging": "medium",
-        "quirks": [
-          "numbered lists in status updates",
-          "restates the question before answering"
-        ]
-      }
-    },
-    {
-      "id": "p-rohan",
-      "name": "Rohan Kapoor",
-      "display_name": "rohan",
-      "slack_id": "U07FLK0ROHA",
-      "title": "Controls Engineer, manipulation",
-      "style": {
-        "case": "lower",
-        "punctuation": "light",
-        "typos": "lots",
-        "emoji": "some",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": [
-          "fixes typos with *word",
-          "double-sends instead of editing"
         ]
       }
     },
@@ -231,11 +193,11 @@
   ],
   "messages": [
     {
-      "ts": "1793036033.884730",
+      "ts": "1793036033.749051",
       "user": "p-talia",
       "thread_ts": null,
       "events": [
-        "ev-003572"
+        "ev-003952"
       ],
       "brief": "wrist adapter: still quoting rev A",
       "claim": {
@@ -246,14 +208,14 @@
         "wrist adapter"
       ],
       "length": "short",
-      "text": "wrist adapter: still quoting rev A 🙏"
+      "text": "wrist adapter still quoting rev A 🙏"
     },
     {
-      "ts": "1793057697.620885",
+      "ts": "1793057697.645005",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-002430"
+        "ev-002724"
       ],
       "brief": "2443: need 9 by 2026-11-09 for Test stand rework: Grip load cell plate (3)",
       "claim": {
@@ -269,87 +231,60 @@
         "11/9"
       ],
       "pressure": "elevated",
-      "length": "medium",
-      "text": "2443: need 9 by 11/9 for Test stand rework: Grip load cell plate (3), pls flag if that's a problem"
+      "length": "short",
+      "text": "I think we need 2443 x9 by 11/9 for Test stand rework: Grip load cell plate (3), not 100% sure the count is right"
     },
     {
-      "ts": "1793062023.675435",
+      "ts": "1793059046.232717",
+      "user": "p-talia",
+      "thread_ts": "1793057697.645005",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@sofia.l can you confirm the count? 🙏"
+    },
+    {
+      "ts": "1793061244.250212",
+      "user": "p-lin",
+      "thread_ts": "1793057697.645005",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Is that on top of what the grip rig already has, or instead of it?"
+    },
+    {
+      "ts": "1793062023.205351",
       "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-002423"
+        "ev-002717"
       ],
-      "brief": "FL-TST-2480: need 12 by 2026-11-17",
+      "brief": "FL-TST-2480: need 12 by 2026-11-19",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 12,
-          "by": "2026-11-17"
+          "by": "2026-11-19"
         }
       },
       "must_mention": [
         "FL-TST-2480",
-        "tues 11/17"
+        "thurs 11/19"
       ],
       "pressure": "low",
-      "length": "short",
-      "text": "FL-TST-2480 need 12, by tues 11/17"
+      "length": "medium",
+      "text": "FL-TST-2480 need 12 by thurs 11/19"
     },
     {
-      "ts": "1793074887.308941",
-      "user": "p-kenji",
-      "thread_ts": null,
-      "events": [
-        "ev-002397"
-      ],
-      "brief": "middle link: need 7 by 2026-11-05 for the build",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 7,
-          "by": "2026-11-05"
-        }
-      },
-      "must_mention": [
-        "middle link",
-        "the build",
-        "thumb block",
-        "palm frame",
-        "tendon pulley",
-        "thurs 11/5"
-      ],
-      "pressure": "high",
-      "length": "short",
-      "text": "need 7 middle link by thurs 11/5 for the build. also still waiting on the thumb block, palm frame and tendon pulley status"
-    },
-    {
-      "ts": "1793145591.780440",
-      "user": "p-kenji",
-      "thread_ts": null,
-      "events": [
-        "ev-002270"
-      ],
-      "brief": "1419 arrived (6)",
-      "claim": {
-        "kind": "stock",
-        "value": 6
-      },
-      "must_mention": [
-        "1419",
-        "6"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "1419 arrived, 6 in the box, putting them on the shelf"
-    },
-    {
-      "ts": "1793207133.396727",
+      "ts": "1793113323.366981",
       "user": "p-andre",
-      "thread_ts": null,
+      "thread_ts": "1793062023.205351",
       "events": [
-        "ev-002427"
+        "ev-003698"
       ],
-      "brief": "FL-TST-2480: need 12 by 2026-11-17",
+      "brief": "Correction: FL-TST-2480: need 12 by 2026-11-17",
       "claim": {
         "kind": "needs",
         "value": {
@@ -362,15 +297,98 @@
         "11/17"
       ],
       "pressure": "low",
-      "length": "short",
-      "text": "FL-TST-2480: need 12 by 11/17"
+      "length": "medium",
+      "text": "Correction: FL-TST-2480 need 12 by 11/17, not the 19th"
     },
     {
-      "ts": "1793210371.923507",
+      "ts": "1793136351.092275",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-002548"
+      ],
+      "brief": "1419 arrived",
+      "claim": {
+        "kind": "stock",
+        "value": 4
+      },
+      "must_mention": [
+        "1419",
+        "4"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "1419 arrived, 4 in the bag"
+    },
+    {
+      "ts": "1793196291.080362",
+      "user": "p-kenji",
+      "thread_ts": "1793136351.092275",
+      "events": [
+        "ev-003610"
+      ],
+      "brief": "Correction: 1419 arrived (6)",
+      "claim": {
+        "kind": "stock",
+        "value": 6
+      },
+      "must_mention": [
+        "1419",
+        "6"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "*correction 1419 arrived, 6 not 4, counted again this morning. 6"
+    },
+    {
+      "ts": "1793201346.496323",
+      "user": "p-talia",
+      "thread_ts": "1793136351.092275",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "@jade.t can you put the extras on the shelf by the wrist bench? 🙏"
+    },
+    {
+      "ts": "1793201434.068292",
+      "user": "p-omar",
+      "thread_ts": "1793136351.092275",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "yep that matches the packing slip"
+    },
+    {
+      "ts": "1793207133.997644",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002721"
+      ],
+      "brief": "FL-TST-2480: need 12 by 2026-11-19",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-11-19"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2480",
+        "11/19"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "FL-TST-2480 need 12 by 11/19"
+    },
+    {
+      "ts": "1793210371.600735",
       "user": "p-sofia",
       "thread_ts": null,
       "events": [
-        "ev-003019"
+        "ev-003408"
       ],
       "brief": "FL-HND-1413 rev B released: clearance for harness",
       "claim": {
@@ -381,34 +399,14 @@
         "FL-HND-1413"
       ],
       "length": "short",
-      "text": "FL-HND-1413 rev B released, clearance for harness"
+      "text": "FL-HND-1413 rev B released. Clearance for the harness is better now."
     },
     {
-      "ts": "1793211821.610726",
-      "user": "p-talia",
-      "thread_ts": "1793207133.396727",
-      "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "thanks"
-    },
-    {
-      "ts": "1793215444.687359",
-      "user": "p-sofia",
-      "thread_ts": "1793207133.396727",
-      "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "hm not sure that works"
-    },
-    {
-      "ts": "1793222739.423829",
+      "ts": "1793222739.750330",
       "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-002428"
+        "ev-002722"
       ],
       "brief": "2480: need 12 by 2026-11-17",
       "claim": {
@@ -423,25 +421,45 @@
         "11/17"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "2480 need 12 by 11/17, anyone with spare stock speak up now"
+      "length": "short",
+      "text": "2480 need 12 by 11/17"
     },
     {
-      "ts": "1793223578.818112",
-      "user": "p-omar",
-      "thread_ts": "1793222739.423829",
+      "ts": "1793226435.713151",
+      "user": "p-kenji",
+      "thread_ts": "1793222739.750330",
       "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
+      "brief": "reply (disagrees politely) in the thread about: the message above",
       "must_mention": [],
-      "length": "medium",
-      "text": "i might have a few on the bench from the last run but i'd have to count them, they're mixed in with the scrap bin"
+      "length": "one_word",
+      "text": "i dont think thats right, andre"
     },
     {
-      "ts": "1793272980.349560",
+      "ts": "1793228241.085485",
+      "user": "p-talia",
+      "thread_ts": "1793222739.750330",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Hang on, which of these dates is the real one? 😬"
+    },
+    {
+      "ts": "1793232242.924485",
+      "user": "p-talia",
+      "thread_ts": "1793222739.750330",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "andre has three dates for one part, new record 😂"
+    },
+    {
+      "ts": "1793272980.124232",
       "user": "p-kenji",
       "thread_ts": null,
       "events": [
-        "ev-002030"
+        "ev-002288"
       ],
       "brief": "proximal link in use",
       "claim": {
@@ -455,34 +473,54 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "proximal link in use for the build, done tues 10/27"
+      "text": "proximal link in use for the build, back on tues 10/27"
     },
     {
-      "ts": "1793293034.859904",
-      "user": "p-talia",
-      "thread_ts": "1793272980.349560",
-      "events": [],
-      "brief": "reply (will check later) in the thread about: the message above",
-      "must_mention": [],
+      "ts": "1793281500.548094",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-002419"
+      ],
+      "brief": "spin adapter in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-10-28"
+      },
+      "must_mention": [
+        "spin adapter",
+        "10/28"
+      ],
+      "pressure": "elevated",
       "length": "medium",
-      "text": "will look at the status after standup, i think the fixture was still on the other bench but not sure"
+      "text": "spin adapter in use, done 10/28, pressure was elevated so go easy when reseating it"
     },
     {
-      "ts": "1793297864.294345",
+      "ts": "1793296315.520933",
       "user": "p-kenji",
-      "thread_ts": "1793272980.349560",
+      "thread_ts": "1793281500.548094",
       "events": [],
       "brief": "reply (jokes) in the thread about: the message above",
       "must_mention": [],
-      "length": "short",
-      "text": "it's fine it only fell apart once"
+      "length": "medium",
+      "text": "zoe's adapter lives on the rig now, we just visit it"
     },
     {
-      "ts": "1793307464.462205",
+      "ts": "1793301171.002773",
+      "user": "p-lin",
+      "thread_ts": "1793281500.548094",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ok thanks"
+    },
+    {
+      "ts": "1793307464.834296",
       "user": "p-sofia",
       "thread_ts": null,
       "events": [
-        "ev-003016"
+        "ev-003405"
       ],
       "brief": "FL-HND-1486 rev C released: clearance for harness",
       "claim": {
@@ -493,58 +531,14 @@
         "FL-HND-1486"
       ],
       "length": "short",
-      "text": "FL-HND-1486 rev C released, clearance for harness"
+      "text": "FL-HND-1486 rev C released. Clearance for the harness again."
     },
     {
-      "ts": "1793307918.828125",
-      "user": "p-priya",
-      "thread_ts": null,
-      "events": [
-        "ev-003392"
-      ],
-      "brief": "2443: need 9 by 2026-11-09 for the fit check",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 9,
-          "by": "2026-11-09"
-        }
-      },
-      "must_mention": [
-        "2443",
-        "the fit check",
-        "11/9"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "2443 need 9 for the fit check by 11/9"
-    },
-    {
-      "ts": "1793309476.731308",
-      "user": "p-rohan",
-      "thread_ts": "1793307464.462205",
-      "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "ok"
-    },
-    {
-      "ts": "1793312296.302836",
-      "user": "p-lin",
-      "thread_ts": "1793307464.462205",
-      "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "harness clearance was the problem on the last rev too, should be fine now"
-    },
-    {
-      "ts": "1793313228.549358",
+      "ts": "1793313228.680713",
       "user": "p-sofia",
       "thread_ts": null,
       "events": [
-        "ev-003010"
+        "ev-003399"
       ],
       "brief": "FL-HND-1458 rev B released: hole pattern moved",
       "claim": {
@@ -554,45 +548,48 @@
       "must_mention": [
         "FL-HND-1458"
       ],
-      "length": "short",
-      "text": "FL-HND-1458 rev B released, hole pattern moved"
+      "length": "medium",
+      "text": "FL-HND-1458 rev B released. Hole pattern moved, so check any mating plates."
     },
     {
-      "ts": "1793315024.088493",
-      "user": "p-talia",
-      "thread_ts": "1793313228.549358",
+      "ts": "1793372373.040763",
+      "user": "p-andre",
+      "thread_ts": "1793207133.997644",
+      "events": [
+        "ev-003599"
+      ],
+      "brief": "Correction: FL-TST-2480: need 12 by 2026-11-17",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-11-17"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2480",
+        "tues the 17th"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Correction: FL-TST-2480 need 12 by tues the 17th"
+    },
+    {
+      "ts": "1793373722.843396",
+      "user": "p-kenji",
+      "thread_ts": "1793207133.997644",
       "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
+      "brief": "reply (tags someone else) in the thread about: the message above",
       "must_mention": [],
       "length": "one_word",
-      "text": "yep 👍"
+      "text": "@talia see andre's fix above"
     },
     {
-      "ts": "1793317536.331569",
-      "user": "p-sofia",
-      "thread_ts": "1793313228.549358",
-      "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "ok"
-    },
-    {
-      "ts": "1793321247.995967",
-      "user": "p-aisha",
-      "thread_ts": "1793313228.549358",
-      "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "we had holes shift on a drawing once and nobody noticed till the prints came back, so worth checking your mating parts against the new pattern"
-    },
-    {
-      "ts": "1793374008.300896",
+      "ts": "1793374008.921661",
       "user": "p-sofia",
       "thread_ts": null,
       "events": [
-        "ev-003407"
+        "ev-004090"
       ],
       "brief": "tendon bushing: still quoting rev A",
       "claim": {
@@ -603,24 +600,34 @@
         "tendon bushing"
       ],
       "length": "short",
-      "text": "tendon bushing: still quoting rev A"
+      "text": "tendon bushing still quoting rev A."
     },
     {
-      "ts": "1793375419.669943",
-      "user": "p-lin",
-      "thread_ts": "1793374008.300896",
+      "ts": "1793374883.541315",
+      "user": "p-kenji",
+      "thread_ts": "1793374008.921661",
       "events": [],
       "brief": "reply (will check later) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "will check later today"
+      "text": "will look at the drawing later today"
     },
     {
-      "ts": "1793377773.935746",
+      "ts": "1793376224.979012",
+      "user": "p-talia",
+      "thread_ts": "1793374008.921661",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "noted 🙏"
+    },
+    {
+      "ts": "1793377773.729523",
       "user": "p-sofia",
       "thread_ts": null,
       "events": [
-        "ev-002836"
+        "ev-003219"
       ],
       "brief": "Test stand rework: Grip load cell plate (2) waits on Motor sample lot for hand and wrist (load cell plate)",
       "claim": {
@@ -636,64 +643,98 @@
       "text": "Test stand rework: Grip load cell plate (2) waits on Motor sample lot for hand and wrist (load cell plate)"
     },
     {
-      "ts": "1793378467.373725",
-      "user": "p-aisha",
-      "thread_ts": "1793374008.300896",
+      "ts": "1793381524.699264",
+      "user": "p-talia",
+      "thread_ts": "1793374008.921661",
       "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
+      "brief": "reply (ack) in the thread about: the message above",
       "must_mention": [],
       "length": "one_word",
-      "text": "classic"
+      "text": "👍"
     },
     {
-      "ts": "1793381229.105738",
+      "ts": "1793382906.809118",
       "user": "p-omar",
-      "thread_ts": "1793377773.935746",
+      "thread_ts": "1793377773.729523",
       "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
+      "brief": "reply (will check later) in the thread about: the message above",
       "must_mention": [],
-      "length": "short",
-      "text": "the lot that never ends"
+      "length": "one_word",
+      "text": "i can check with the vendor later, probably monday"
     },
     {
-      "ts": "1793381479.083695",
-      "user": "p-rohan",
-      "thread_ts": "1793377773.935746",
-      "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "every week lol"
-    },
-    {
-      "ts": "1793385415.633781",
-      "user": "p-lin",
-      "thread_ts": "1793377773.935746",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "do we know who has the tracking on it"
-    },
-    {
-      "ts": "1793427960.529017",
-      "user": "p-zoe",
+      "ts": "1793397477.929906",
+      "user": "p-dmitri",
       "thread_ts": null,
       "events": [
-        "ev-002143"
+        "ev-003793"
       ],
-      "brief": "spin adapter in use",
+      "brief": "FL-HND-1413: need 12 by 2026-11-12 for the build",
       "claim": {
-        "kind": "done",
-        "value": "2026-10-30"
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-11-12"
+        }
       },
       "must_mention": [
-        "spin adapter",
-        "fri 10/30"
+        "FL-HND-1413",
+        "the build",
+        "thurs the 12th"
       ],
       "pressure": "elevated",
+      "length": "medium",
+      "text": "FL-HND-1413 need 12 by thurs the 12th for the build!! Pressure is elevated, so please chase."
+    },
+    {
+      "ts": "1793402491.887820",
+      "user": "p-talia",
+      "thread_ts": "1793397477.929906",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
       "length": "short",
-      "text": "spin adapter in use, done fri 10/30"
+      "text": "We are chasing it, but that date looks tight 😬"
+    },
+    {
+      "ts": "1793421407.585933",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-003220"
+      ],
+      "brief": "Tolerance stack check: Tendon guide bushing (2) waits on Motor sample lot for hand and wrist (tendon bushing)",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-gen-0124"
+      },
+      "must_mention": [
+        "Motor sample lot for hand and wrist (tendon bushing)",
+        "Tolerance stack check: Tendon guide bushing (2)"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Tolerance stack check: Tendon guide bushing (2) waits on Motor sample lot for hand and wrist (tendon bushing)"
+    },
+    {
+      "ts": "1793421593.367111",
+      "user": "p-kenji",
+      "thread_ts": "1793421407.585933",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "stack is fine, the stack of waiting is the problem"
+    },
+    {
+      "ts": "1793426183.082255",
+      "user": "p-talia",
+      "thread_ts": "1793421407.585933",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "the real tolerance stack is the pile of POs 😂"
     }
   ]
 }

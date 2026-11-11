@@ -56,21 +56,21 @@
       }
     },
     {
-      "id": "p-destiny",
-      "name": "Destiny Brooks",
-      "display_name": "destiny",
-      "slack_id": "U07FLK0DEST",
-      "title": "Assembly Technician",
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
       "style": {
         "case": "mixed",
-        "punctuation": "light",
-        "typos": "rare",
-        "emoji": "lots",
-        "length": "medium",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
         "hedging": "low",
         "quirks": [
-          "reacts with 🙏 and 😬",
-          "ends messages with an emoji"
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
         ]
       }
     },
@@ -93,19 +93,21 @@
       }
     },
     {
-      "id": "p-lin",
-      "name": "Lin Zhao",
-      "display_name": "lin.z",
-      "slack_id": "U07FLK0LIN0",
-      "title": "Test Engineer, life test",
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
       "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
         "emoji": "rare",
         "length": "medium",
-        "hedging": "low",
-        "quirks": []
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
       }
     },
     {
@@ -125,6 +127,22 @@
           "fixes typos with *word",
           "double-sends instead of editing"
         ]
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
       }
     },
     {
@@ -178,11 +196,106 @@
   ],
   "messages": [
     {
-      "ts": "1791315682.466625",
+      "ts": "1791215731.707175",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-002141"
+        "ev-002415"
+      ],
+      "brief": "FL-TST-2081: need 8 by 2026-10-26",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-10-26"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2081",
+        "10/26"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "FL-TST-2081 need 8 by 10/26"
+    },
+    {
+      "ts": "1791216014.607633",
+      "user": "p-talia",
+      "thread_ts": "1791215731.707175",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "hmm not sure that works with the vendor side 😬"
+    },
+    {
+      "ts": "1791219869.152871",
+      "user": "p-omar",
+      "thread_ts": "1791215731.707175",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I'll check on that later, not 100% sure who has it"
+    },
+    {
+      "ts": "1791225265.357767",
+      "user": "p-kenji",
+      "thread_ts": "1791215731.707175",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "ask zoe"
+    },
+    {
+      "ts": "1791242429.460756",
+      "user": "p-sofia",
+      "thread_ts": null,
+      "events": [
+        "ev-004131"
+      ],
+      "brief": "Encoder kit for hand and wrist: still quoting 2026-10-07",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-10-07"
+      },
+      "must_mention": [
+        "Encoder kit for hand and wrist (wrist clamp)",
+        "wed the 7th"
+      ],
+      "length": "medium",
+      "text": "Encoder kit for hand and wrist (wrist clamp) is still quoting wed the 7th."
+    },
+    {
+      "ts": "1791304386.401626",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-002388"
+      ],
+      "brief": "bellows hub: need 6 by 2026-11-03",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-11-03"
+        }
+      },
+      "must_mention": [
+        "bellows hub",
+        "tues the 3rd"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "bellows hub need 6 by tues the 3rd"
+    },
+    {
+      "ts": "1791315682.452553",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-002416"
       ],
       "brief": "spin adapter: need 8 by 2026-10-26",
       "claim": {
@@ -194,18 +307,81 @@
       },
       "must_mention": [
         "spin adapter",
-        "10/26"
+        "mon the 26th"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "spin adapter need 8 by 10/26"
+      "text": "Need 8 spin adapter by mon the 26th!!"
     },
     {
-      "ts": "1791393183.270597",
+      "ts": "1791316244.430863",
+      "user": "p-talia",
+      "thread_ts": "1791315682.452553",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "It's on my list, will update here 🙏"
+    },
+    {
+      "ts": "1791316912.930402",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-002389"
+      ],
+      "brief": "coupling hub: need 6 by 2026-11-03",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-11-03"
+        }
+      },
+      "must_mention": [
+        "coupling hub",
+        "11/3"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "coupling hub need 6 by 11/3"
+    },
+    {
+      "ts": "1791317345.764858",
+      "user": "p-sofia",
+      "thread_ts": "1791316912.930402",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Agreed."
+    },
+    {
+      "ts": "1791318264.902762",
+      "user": "p-talia",
+      "thread_ts": "1791315682.452553",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "do we know which supplier you want? 🙏"
+    },
+    {
+      "ts": "1791323288.048156",
+      "user": "p-rohan",
+      "thread_ts": "1791315682.452553",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "also the last lot had a burr on the bore, worth checkng"
+    },
+    {
+      "ts": "1791393183.221130",
       "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-002787"
+        "ev-003159"
       ],
       "brief": "Build sub-assembly: Thumb base waits on Sensor breakout PCB for hand and wrist (thumb base)",
       "claim": {
@@ -221,100 +397,11 @@
       "text": "Build sub-assembly: Thumb base waits on Sensor breakout PCB for hand and wrist (thumb base)"
     },
     {
-      "ts": "1791402049.444181",
-      "user": "p-destiny",
-      "thread_ts": null,
-      "events": [
-        "ev-001832"
-      ],
-      "brief": "1473 arrived (6)",
-      "claim": {
-        "kind": "stock",
-        "value": 6
-      },
-      "must_mention": [
-        "1473",
-        "6"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "1473 arrived (6) 📦"
-    },
-    {
-      "ts": "1791406661.259067",
-      "user": "p-talia",
-      "thread_ts": "1791402049.444181",
-      "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "Thanks Destiny! Can you drop them in the kitting shelf when you get a sec? 🙏"
-    },
-    {
-      "ts": "1791407286.623440",
-      "user": "p-kenji",
-      "thread_ts": null,
-      "events": [
-        "ev-003537"
-      ],
-      "brief": "Encoder kit for hand and wrist: still quoting 2026-10-07",
-      "claim": {
-        "kind": "eta",
-        "value": "2026-10-07"
-      },
-      "must_mention": [
-        "Encoder kit for hand and wrist (wrist clamp)",
-        "wed 10/7"
-      ],
-      "length": "short",
-      "text": "Encoder kit for hand and wrist (wrist clamp) still quoting wed 10/7"
-    },
-    {
-      "ts": "1791408453.675701",
-      "user": "p-talia",
-      "thread_ts": "1791402049.444181",
-      "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Also, did you check the labels match the packing slip? 😬"
-    },
-    {
-      "ts": "1791408848.553425",
-      "user": "p-lin",
-      "thread_ts": "1791407286.623440",
-      "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "Is that the same quote as last week?"
-    },
-    {
-      "ts": "1791408911.107726",
-      "user": "p-rohan",
-      "thread_ts": "1791402049.444181",
-      "events": [],
-      "brief": "reply (will check later) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "ill look at the box later today"
-    },
-    {
-      "ts": "1791409554.506302",
-      "user": "p-lin",
-      "thread_ts": "1791407286.623440",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "Same here, I would want to see it in writing."
-    },
-    {
-      "ts": "1791491916.677636",
+      "ts": "1791491916.551999",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-002799"
+        "ev-003175"
       ],
       "brief": "Rig setup: Grip fixture wrist clamp waits on Encoder kit for hand and wrist (wrist clamp)",
       "claim": {
@@ -327,14 +414,14 @@
       ],
       "pressure": "low",
       "length": "medium",
-      "text": "Rig setup: Grip fixture wrist clamp waits on Encoder kit for hand and wrist (wrist clamp), i think. not sure anyone has chased it"
+      "text": "Rig setup: Grip fixture wrist clamp waits on Encoder kit for hand and wrist (wrist clamp), no way to run it without"
     },
     {
-      "ts": "1791561728.927505",
+      "ts": "1791561728.302050",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-002777"
+        "ev-003148"
       ],
       "brief": "Design iteration bench trial: Palm frame waits on Sensor breakout PCB for hand and wrist (palm)",
       "claim": {
@@ -343,11 +430,21 @@
       },
       "must_mention": [
         "Sensor breakout PCB for hand and wrist (palm)",
-        "the frame"
+        "Design iteration bench trial: Palm frame"
       ],
       "pressure": "low",
-      "length": "short",
-      "text": "Design iteration bench trial: Palm frame waits on Sensor breakout PCB for hand and wrist (palm), probably the only thing holding the frame up"
+      "length": "medium",
+      "text": "Design iteration bench trial: Palm frame is still waiting on Sensor breakout PCB for hand and wrist (palm)"
+    },
+    {
+      "ts": "1791566522.141755",
+      "user": "p-talia",
+      "thread_ts": "1791561728.302050",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "palm frame, the gift that keeps waiting 😬🙏"
     }
   ]
 }

@@ -19,21 +19,39 @@
   },
   "people": [
     {
-      "id": "p-talia",
-      "name": "Talia Rosen",
-      "display_name": "talia",
-      "slack_id": "U07FLK0TALI",
-      "title": "Buyer/Planner",
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
       "style": {
-        "case": "mixed",
+        "case": "lower",
         "punctuation": "light",
-        "typos": "rare",
-        "emoji": "lots",
+        "typos": "some",
+        "emoji": "rare",
         "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
         "hedging": "low",
         "quirks": [
-          "reacts with 🙏 and 😬",
-          "ends messages with an emoji"
+          "no capitals or end punctuation ever"
         ]
       }
     }
@@ -49,25 +67,44 @@
   ],
   "messages": [
     {
-      "ts": "1794245951.287594",
-      "user": "p-talia",
+      "ts": "1794243343.289883",
+      "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-002444"
+        "ev-003826"
       ],
-      "brief": "Order XO-5580324 placed, promised 2026-12-02",
+      "brief": "1591 arrived",
       "claim": {
-        "kind": "eta",
-        "value": "2026-12-02"
+        "kind": "stock",
+        "value": 1
       },
       "must_mention": [
-        "XO-5580324",
-        "1540",
-        "wed 12/2"
+        "1591",
+        "1"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "Order XO-5580324 is placed, 1540 on the PO, promised wed 12/2 ✅"
+      "length": "short",
+      "text": "1591 arrived (1)"
+    },
+    {
+      "ts": "1794269088.301363",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [
+        "ev-002677"
+      ],
+      "brief": "2281 arrived (9)",
+      "claim": {
+        "kind": "stock",
+        "value": 9
+      },
+      "must_mention": [
+        "2281",
+        "9"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "2281 arrived (9)"
     }
   ]
 }

@@ -8,8 +8,9 @@
 
 ## Overview
 
-We need spacer set by 10/21.
+We need spacer set by 10/23. We need spacer set by 10/29.
 
 ## Discussion
 
-- Dmitri: We need spacer set by 10/21.
+- Dmitri: We need spacer set by 10/23.
+- Dmitri: We need spacer set by 10/29.

@@ -1,0 +1,178 @@
+{
+  "job_id": "slack-ch-structures-2026-08-10-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 27,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-structures",
+    "name": "structures-battery",
+    "slack_id": "C07FLK0STRC",
+    "purpose": "Torso, pelvis and battery enclosure"
+  },
+  "week": {
+    "start": "2026-08-10",
+    "end": "2026-08-16"
+  },
+  "people": [
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Torso and pelvis structure.",
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Farah wants 3 mm and a mica sheet; Lukas says that costs 18 mm of pack length.",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Callum proposes routing inboard through the joint axis; Diego says thigh link needs rework.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Claire: hardware spend 23% over plan for the quarter, expedites a big share.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno. This week: Ingrid says no until DVT; run pinch tests on nights instead.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting. This week: Plates released; static load test planned on the drop gantry with a load yoke."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1786573297.556968",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-001762"
+      ],
+      "brief": "2916: need 6 by 2026-10-07",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-10-07"
+        }
+      },
+      "must_mention": [
+        "2916",
+        "wed the 7th"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "2916 need 6 by wed the 7th"
+    },
+    {
+      "ts": "1786573825.185349",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-001763"
+      ],
+      "brief": "leg stand: need 6 by 2026-10-07",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-10-07"
+        }
+      },
+      "must_mention": [
+        "leg stand",
+        "10/7"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "leg stand, need 6 by 10/7"
+    },
+    {
+      "ts": "1786762563.794131",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-004271"
+      ],
+      "brief": "Test stand rework for Torso and pelvis static load test: Leg fixture hook, shank end done by weds",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-08-19"
+      },
+      "must_mention": [
+        "Test stand rework for Torso and pelvis static load test: Leg fixture hook, shank end",
+        "wed the 19th"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Test stand rework for Torso and pelvis static load test: Leg fixture hook, shank end done by wed the 19th"
+    },
+    {
+      "ts": "1786772401.490237",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-004032"
+      ],
+      "brief": "Motor sample lot for battery enclosure: still quoting 2026-08-07",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-08-07"
+      },
+      "must_mention": [
+        "Motor sample lot for battery enclosure (clevis)",
+        "8/7"
+      ],
+      "length": "short",
+      "text": "Motor sample lot for battery enclosure (clevis) still showing 8/7 on my end"
+    }
+  ]
+}

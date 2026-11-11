@@ -1,0 +1,302 @@
+{
+  "job_id": "jira-SCM-2026-06-01-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 47,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "SCM",
+    "name": "Supply chain and procurement"
+  },
+  "week": {
+    "start": "2026-06-01",
+    "end": "2026-06-07"
+  },
+  "people": [
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "SCM-177",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-callum",
+      "assignee": "p-callum",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-06-01T11:49:34-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001231"
+      ],
+      "brief": "Order 2x Dyno mounting plate, knee actuator, 1x Actuator bearing press jig, 2x Pelvis dummy mass block / 2124: need 2 by 2026-06-19",
+      "must_mention": [
+        "2124",
+        "6/19"
+      ],
+      "description_length": "short",
+      "summary": "Dyno plates + press jig + dummy mass blocks",
+      "description": "2124 needed, qty 2, by 6/19",
+      "comments": [
+        {
+          "id": "SCM-177-c1",
+          "by": "p-callum",
+          "at": "2026-06-02T22:57:53-07:00",
+          "events": [
+            "ev-001232"
+          ],
+          "brief": "2124: need 2 by 2026-06-19",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 2,
+              "by": "2026-06-19"
+            }
+          },
+          "must_mention": [
+            "2124",
+            "6/19"
+          ],
+          "body": "2124 - need 2 by 6/19"
+        },
+        {
+          "id": "SCM-177-c2",
+          "by": "p-destiny",
+          "at": "2026-06-16T17:05:27-07:00",
+          "events": [
+            "ev-001233"
+          ],
+          "brief": "knee dyno plate arrived (2)",
+          "claim": {
+            "kind": "stock",
+            "value": 2
+          },
+          "must_mention": [
+            "knee dyno plate",
+            "2"
+          ],
+          "body": "knee dyno plate arrived, 2 in the box 🙏"
+        }
+      ]
+    },
+    {
+      "key": "SCM-178",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-carlos",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-06-02T12:27:39-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001247"
+      ],
+      "brief": "Order 3x Dyno mounting plate, knee actuator, 12x Spin-test reference encoder mount, 2x Hand assembly holder / FL-TST-2124: need 3 by 2026-06-29",
+      "must_mention": [
+        "FL-TST-2124",
+        "mon the 29th"
+      ],
+      "description_length": "short",
+      "summary": "knee dyno plate x3 / spin ref enc mounts / hand holders",
+      "description": "FL-TST-2124 need 3 by mon the 29th!!",
+      "comments": []
+    },
+    {
+      "key": "SCM-179",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-kenji",
+      "assignee": "p-kenji",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-06-02T12:32:25-07:00",
+      "due_date": "2026-06-22",
+      "events": [
+        "ev-001237"
+      ],
+      "brief": "Order 18x Dyno coupling, hip actuator / hip dyno coupling: need 18 by 2026-06-22",
+      "must_mention": [
+        "hip dyno coupling",
+        "mon the 22nd"
+      ],
+      "description_length": "short",
+      "summary": "hip dyno coupling x18",
+      "description": "need 18 of the hip dyno coupling by mon the 22nd",
+      "comments": [
+        {
+          "id": "SCM-179-c1",
+          "by": "p-kenji",
+          "at": "2026-06-05T15:52:11-07:00",
+          "events": [
+            "ev-001238"
+          ],
+          "brief": "Order XO-5418359 placed, promised 2026-06-22",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-06-22"
+          },
+          "must_mention": [
+            "XO-5418359",
+            "2111",
+            "mon 6/22"
+          ],
+          "body": "XO-5418359 placed for 2111 promised mon 6/22"
+        },
+        {
+          "id": "SCM-179-c2",
+          "by": "p-kenji",
+          "at": "2026-06-22T18:21:47-07:00",
+          "events": [
+            "ev-001239"
+          ],
+          "brief": "2111 arrived",
+          "claim": {
+            "kind": "stock",
+            "value": 19
+          },
+          "must_mention": [
+            "2111",
+            "19"
+          ],
+          "body": "2111 arrived 19"
+        },
+        {
+          "id": "SCM-179-c3",
+          "by": "p-kenji",
+          "at": "2026-06-23T11:47:48-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "checking the bores on a few now"
+        },
+        {
+          "id": "SCM-179-c4",
+          "by": "p-kenji",
+          "at": "2026-06-23T14:17:47-07:00",
+          "events": [
+            "ev-003500"
+          ],
+          "brief": "Correction: 2111 arrived (18)",
+          "claim": {
+            "kind": "stock",
+            "value": 18
+          },
+          "must_mention": [
+            "2111",
+            "18"
+          ],
+          "body": "2111 arrived 18, not 19"
+        }
+      ]
+    }
+  ]
+}

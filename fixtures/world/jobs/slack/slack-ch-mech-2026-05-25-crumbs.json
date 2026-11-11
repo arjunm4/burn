@@ -1,0 +1,148 @@
+{
+  "job_id": "slack-ch-mech-2026-05-25-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 49,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-mech",
+    "name": "mech",
+    "slack_id": "C07FLK0MECH",
+    "purpose": "Mechanical engineering: design, DFM, vendors, drawings"
+  },
+  "week": {
+    "start": "2026-05-25",
+    "end": "2026-05-31"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Pushrod clevis bends at 1.6x body weight in the tilt stand. This week: Rev B clevis widened 3 mm, double shear; fits with a trimmed heel bumper.",
+    "Ongoing: Bus-off events at 1 Mbps when all leg actuators stream. This week: Farah measures 3 m of stub length; termination at the wrong end.",
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno",
+    "Ongoing: Ratcheting risk at peak torque from loose wave generator fit. This week: Wei proposes keyed hub to replace clamp hub; Tomas worries about key fretting.",
+    "Ongoing: Orders sitting in DFM review because of tolerance callouts"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1779819550.959890",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [
+        "ev-004113"
+      ],
+      "brief": "strike plate: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "strike plate"
+      ],
+      "length": "medium",
+      "text": "strike plate is still quoting rev A, anyone looking at that?"
+    },
+    {
+      "ts": "1780008232.278250",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-003930"
+      ],
+      "brief": "guard mount: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "guard mount"
+      ],
+      "length": "short",
+      "text": "guard mount still quoting rev A"
+    },
+    {
+      "ts": "1780010907.712725",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-004023"
+      ],
+      "brief": "torque cell bracket: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "torque cell bracket"
+      ],
+      "length": "short",
+      "text": "torque cell bracket still quoting rev A"
+    }
+  ]
+}

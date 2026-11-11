@@ -8,9 +8,8 @@
 
 ## Overview
 
-We need the bracket by 10/27. We need ankle crank by 11/3.
+We need ankle crank by 11/2.
 
 ## Discussion
 
-- Zoe: We need the bracket by 10/27.
-- Dmitri: We need ankle crank by 11/3.
+- Dmitri: We need ankle crank by 11/2.

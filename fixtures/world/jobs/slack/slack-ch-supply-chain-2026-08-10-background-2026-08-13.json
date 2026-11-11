@@ -1,0 +1,519 @@
+{
+  "job_id": "slack-ch-supply-chain-2026-08-10-background-2026-08-13",
+  "source": "slack",
+  "status": "blank",
+  "priority": 28,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-supply-chain",
+    "name": "supply-chain",
+    "slack_id": "C07FLK0SUPC",
+    "purpose": "Supply chain team: vendors, POs, deliveries, expedites"
+  },
+  "week": {
+    "start": "2026-08-10",
+    "end": "2026-08-16"
+  },
+  "people": [
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-claire",
+      "name": "Claire Donnelly",
+      "display_name": "claire",
+      "slack_id": "U07FLK0CLAI",
+      "title": "Finance and Operations Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Type III anodize adds ~0.025 mm per surface and kills the bearing press fit. This week: Arjun okays reaming four parts by hand to keep the build moving; rest reordered.",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Claire: hardware spend 23% over plan for the quarter, expedites a big share.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno. This week: Ingrid says no until DVT; run pinch tests on nights instead.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting. This week: Plates released; static load test planned on the drop gantry with a load yoke."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1786635375.281399",
+      "user": "p-claire",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about this: Jade at receiving: rev B brackets will not take the bearing, press stalls at 2 kN.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786642514.298250",
+      "user": "p-nora",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: Ingrid warns the leg drop campaign slipped; demo date is hard.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786643313.359323",
+      "user": "p-omar",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Dmitri proposes a second grip fixture, ~$4k in machined parts.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786644652.211472",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on this: Owen measures bore: 0.05 mm under; hard anodize build-up, drawing did not call a mask.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786646774.622541",
+      "user": "p-samir",
+      "thread_ts": "1786644652.211472",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Owen measures bore: 0.05 mm under; hard anodize build-up, drawing did not call a mask.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786647086.632749",
+      "user": "p-ingrid",
+      "thread_ts": "1786642514.298250",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Ingrid warns the leg drop campaign slipped; demo date is hard.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786651708.891873",
+      "user": "p-claire",
+      "thread_ts": "1786644652.211472",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Owen measures bore: 0.05 mm under; hard anodize build-up, drawing did not call a mask.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786652567.533106",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Owen measures bore: 0.05 mm under; hard anodize build-up, drawing did not call a mask.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786657770.271938",
+      "user": "p-ingrid",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to this: Lin: grip-cycle test ties up the fixture for 6 days; pinch tests wait.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786659732.527249",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on off-topic: a robotics competition video",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786661413.862896",
+      "user": "p-talia",
+      "thread_ts": "1786659732.527249",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: off-topic: a robotics competition video",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786662068.875089",
+      "user": "p-nora",
+      "thread_ts": "1786659732.527249",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: off-topic: a robotics competition video",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786663590.882190",
+      "user": "p-claire",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on the ongoing spend running ahead of plan; push to stop default expedites",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786665345.293747",
+      "user": "p-ingrid",
+      "thread_ts": "1786663590.882190",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the ongoing spend running ahead of plan; push to stop default expedites",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786667460.473518",
+      "user": "p-gwen",
+      "thread_ts": "1786659732.527249",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: off-topic: a robotics competition video",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786668763.000995",
+      "user": "p-gwen",
+      "thread_ts": "1786663590.882190",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the ongoing spend running ahead of plan; push to stop default expedites",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786668817.178692",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about the ongoing too many life tests for one grip fixture and one dyno",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786670319.590325",
+      "user": "p-omar",
+      "thread_ts": "1786663590.882190",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the ongoing spend running ahead of plan; push to stop default expedites",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786670594.206577",
+      "user": "p-ingrid",
+      "thread_ts": "1786659732.527249",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: off-topic: a robotics competition video",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786674960.994176",
+      "user": "p-omar",
+      "thread_ts": "1786659732.527249",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: off-topic: a robotics competition video",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786675521.580235",
+      "user": "p-samir",
+      "thread_ts": "1786663590.882190",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the ongoing spend running ahead of plan; push to stop default expedites",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786721828.763424",
+      "user": "p-beth",
+      "thread_ts": "1786659732.527249",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: off-topic: a robotics competition video",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786725297.666951",
+      "user": "p-talia",
+      "thread_ts": "1786659732.527249",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: off-topic: a robotics competition video",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786729844.083628",
+      "user": "p-beth",
+      "thread_ts": "1786659732.527249",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: off-topic: a robotics competition video",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786733705.593402",
+      "user": "p-omar",
+      "thread_ts": "1786659732.527249",
+      "events": [],
+      "brief": "reply (answers) in the thread about: off-topic: a robotics competition video",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786736033.215867",
+      "user": "p-ingrid",
+      "thread_ts": "1786659732.527249",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: off-topic: a robotics competition video",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786739674.695372",
+      "user": "p-beth",
+      "thread_ts": "1786659732.527249",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: off-topic: a robotics competition video",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786740609.871620",
+      "user": "p-beth",
+      "thread_ts": "1786659732.527249",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: off-topic: a robotics competition video",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786742662.932221",
+      "user": "p-talia",
+      "thread_ts": "1786659732.527249",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: off-topic: a robotics competition video",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786744687.418202",
+      "user": "p-talia",
+      "thread_ts": "1786659732.527249",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: off-topic: a robotics competition video",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786746506.975571",
+      "user": "p-beth",
+      "thread_ts": "1786659732.527249",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: off-topic: a robotics competition video",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786746920.666460",
+      "user": "p-omar",
+      "thread_ts": "1786659732.527249",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: off-topic: a robotics competition video",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786751658.350357",
+      "user": "p-nora",
+      "thread_ts": "1786659732.527249",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: off-topic: a robotics competition video",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786755452.690763",
+      "user": "p-gwen",
+      "thread_ts": "1786659732.527249",
+      "events": [],
+      "brief": "reply (ack) in the thread about: off-topic: a robotics competition video",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

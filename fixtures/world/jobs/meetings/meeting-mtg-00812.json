@@ -1,0 +1,297 @@
+{
+  "job_id": "meeting-mtg-00812",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 39,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00812",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-06-29T08:45:00-07:00",
+    "actual_min": 17,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-andre",
+      "p-lin",
+      "p-carlos",
+      "p-jade"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-001401",
+      "speaker": "p-zoe",
+      "at_min": [
+        5,
+        11
+      ],
+      "brief": "crank: need 8 by 2026-07-20 for next week",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-ankle-crank",
+        "value": {
+          "qty": 8,
+          "by": "2026-07-20"
+        }
+      },
+      "must_mention": [
+        "crank",
+        "next week",
+        "7/20"
+      ]
+    },
+    {
+      "event": "ev-001402",
+      "speaker": "p-zoe",
+      "at_min": [
+        5,
+        11
+      ],
+      "brief": "1276: need 8 by 2026-07-20 for Kit and assemble for Leg DVT build: Ankle drive crank",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-ankle-crank",
+        "value": {
+          "qty": 8,
+          "by": "2026-07-20"
+        }
+      },
+      "must_mention": [
+        "1276",
+        "Kit and assemble for Leg DVT build: Ankle drive crank",
+        "7/20"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-dmitri",
+      "text": "Morning everyone. Lin first."
+    },
+    {
+      "start_s": 4,
+      "speaker": "p-lin",
+      "text": "Life test is steady. Two units are past the planned count, I'm going to keep them going for now."
+    },
+    {
+      "start_s": 24,
+      "speaker": "p-dmitri",
+      "text": "Okay. Carlos?"
+    },
+    {
+      "start_s": 28,
+      "speaker": "p-carlos",
+      "text": "Leg DVT build, ankle fit check went fine. Need to redo the torque on a couple of fasteners."
+    },
+    {
+      "start_s": 44,
+      "speaker": "p-andre",
+      "text": "dyno is free after nine, who needs it?"
+    },
+    {
+      "start_s": 52,
+      "speaker": "p-lin",
+      "text": "Not me."
+    },
+    {
+      "start_s": 56,
+      "speaker": "p-dmitri",
+      "text": "Zoe, fixtures."
+    },
+    {
+      "start_s": 60,
+      "speaker": "p-zoe",
+      "text": "uh, fixtures, ok so the tilt stand needs the crank for next week. crank, need 8 by 7/20. that's 1276, for Kit and assemble for Leg DVT build: Ankle drive crank"
+    },
+    {
+      "start_s": 92,
+      "speaker": "p-dmitri",
+      "text": "1276, 8 by 7/20. I'll put it in."
+    },
+    {
+      "start_s": 100,
+      "speaker": "p-zoe",
+      "text": "ya, actually wait, i think thats right, 7/20 not 7/21"
+    },
+    {
+      "start_s": 110,
+      "speaker": "p-carlos",
+      "text": "I'll write it on the whiteboard!!"
+    },
+    {
+      "start_s": 118,
+      "speaker": "p-jade",
+      "text": "sorry late, receiving, one box came in over the weekend, small stuff"
+    },
+    {
+      "start_s": 132,
+      "speaker": "p-dmitri",
+      "text": "Anything for the bench?"
+    },
+    {
+      "start_s": 137,
+      "speaker": "p-jade",
+      "text": "brackets i think, ill drop them by"
+    },
+    {
+      "start_s": 146,
+      "speaker": "p-andre",
+      "text": "also the torque sensor on the dyno needs a recal, ill do it today"
+    },
+    {
+      "start_s": 160,
+      "speaker": "p-dmitri",
+      "text": "Good. Thanks all."
+    }
+  ],
+  "summary": {
+    "overview": "Short standup. Life test steady, leg DVT ankle fit check went fine, dyno free after nine. Zoe flagged the crank need.",
+    "shorthand_bullet": [
+      "Life test: two units past planned count, continuing",
+      "Ankle fit check ok, redo some torque",
+      "Crank: need 8 by 7/20 for next week",
+      "1276 for Kit and assemble for Leg DVT build: Ankle drive crank",
+      "Dyno torque sensor recal today"
+    ],
+    "action_items": [
+      "Dmitri to put crank request in",
+      "Carlos to redo torque on fasteners",
+      "Andre to recal dyno sensor",
+      "Jade to drop bracket box"
+    ],
+    "keywords": [
+      "crank",
+      "1276",
+      "leg DVT",
+      "life test",
+      "dyno"
+    ]
+  }
+}

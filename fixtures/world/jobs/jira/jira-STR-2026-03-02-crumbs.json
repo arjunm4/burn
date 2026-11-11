@@ -1,0 +1,233 @@
+{
+  "job_id": "jira-STR-2026-03-02-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 73,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "STR",
+    "name": "Torso, structures and battery"
+  },
+  "week": {
+    "start": "2026-03-02",
+    "end": "2026-03-08"
+  },
+  "people": [
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "STR-21",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-idris",
+      "assignee": "p-idris",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-02T08:07:59-08:00",
+      "due_date": "2026-04-02",
+      "events": [
+        "ev-000430"
+      ],
+      "brief": "Order 1x CMM fixture, hip bracket / FL-TST-2606: need 1 by 2026-04-07",
+      "must_mention": [
+        "FL-TST-2606",
+        "tues 4/7"
+      ],
+      "description_length": "one_line",
+      "summary": "CMM fixture hip bracket",
+      "description": "FL-TST-2606 need 1 by tues 4/7",
+      "comments": [
+        {
+          "id": "STR-21-c1",
+          "by": "p-idris",
+          "at": "2026-03-02T16:08:59-08:00",
+          "events": [
+            "ev-003540"
+          ],
+          "brief": "Correction: FL-TST-2606: need 1 by 2026-04-02",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 1,
+              "by": "2026-04-02"
+            }
+          },
+          "must_mention": [
+            "FL-TST-2606",
+            "4/2"
+          ],
+          "body": "Correction: FL-TST-2606 need 1 by 4/2"
+        },
+        {
+          "id": "STR-21-c2",
+          "by": "p-idris",
+          "at": "2026-03-12T09:35:14-07:00",
+          "events": [
+            "ev-000431"
+          ],
+          "brief": "bracket CMM fixture: need 1 by 2026-04-02",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 1,
+              "by": "2026-04-02"
+            }
+          },
+          "must_mention": [
+            "bracket CMM fixture",
+            "thurs 4/2"
+          ],
+          "body": "bracket CMM fixture need 1 by thurs 4/2"
+        }
+      ]
+    },
+    {
+      "key": "STR-25",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-renee",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-05T12:16:04-08:00",
+      "due_date": "2026-04-30",
+      "events": [
+        "ev-000318"
+      ],
+      "brief": "Order 1x Battery clevis 10 / FL-BAT-1685: need 1 by 2026-04-30",
+      "must_mention": [
+        "FL-BAT-1685",
+        "4/30"
+      ],
+      "description_length": "one_line",
+      "summary": "Battery clevis 10 x1",
+      "description": "FL-BAT-1685 need 1 by 4/30",
+      "comments": [
+        {
+          "id": "STR-25-c1",
+          "by": "p-renee",
+          "at": "2026-03-10T13:38:01-07:00",
+          "events": [
+            "ev-000322"
+          ],
+          "brief": "the 10: need 1 by 2026-04-30",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 1,
+              "by": "2026-04-30"
+            }
+          },
+          "must_mention": [
+            "the 10",
+            "thurs 4/30"
+          ],
+          "body": "the 10 need 1 by thurs 4/30"
+        },
+        {
+          "id": "STR-25-c2",
+          "by": "p-samir",
+          "at": "2026-03-23T10:45:51-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on vendor"
+        },
+        {
+          "id": "STR-25-c3",
+          "by": "p-samir",
+          "at": "2026-03-24T11:59:02-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "any update?"
+        },
+        {
+          "id": "STR-25-c4",
+          "by": "p-samir",
+          "at": "2026-03-30T13:58:24-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "photos in slack"
+        },
+        {
+          "id": "STR-25-c5",
+          "by": "p-idris",
+          "at": "2026-03-30T15:17:14-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "slipping a bit"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,277 @@
+{
+  "job_id": "slack-ch-eng-bots-2026-04-06-background-2026-04-08",
+  "source": "slack",
+  "status": "blank",
+  "priority": 64,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-eng-bots",
+    "name": "eng-bots",
+    "slack_id": "C07FLK0BOTS",
+    "purpose": "GitHub, Jira and CI notifications"
+  },
+  "week": {
+    "start": "2026-04-06",
+    "end": "2026-04-12"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-felix",
+      "name": "Felix Wagner",
+      "display_name": "felix",
+      "slack_id": "U07FLK0FELI",
+      "title": "Software Engineer, simulation",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-gabriel",
+      "name": "Gabriel Moreau",
+      "display_name": "gabriel.m",
+      "slack_id": "U07FLK0GABR",
+      "title": "Controls Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-jun",
+      "name": "Jun Park",
+      "display_name": "jun",
+      "slack_id": "U07FLK0JUN0",
+      "title": "Research Engineer, learned locomotion",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-leilani",
+      "name": "Leilani Kahale",
+      "display_name": "leilani.k",
+      "slack_id": "U07FLK0LEIL",
+      "title": "Locomotion Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-rohan",
+      "name": "Rohan Kapoor",
+      "display_name": "rohan",
+      "slack_id": "U07FLK0ROHA",
+      "title": "Controls Engineer, manipulation",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-yusuf",
+      "name": "Yusuf Demir",
+      "display_name": "yusuf",
+      "slack_id": "U07FLK0YUSU",
+      "title": "Firmware Engineer, motor control",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Absolute encoder on the knee output glitches when the motor runs above 8 A. This week: Firmware adds a plausibility filter; Bao calls it a band-aid.",
+    "Ongoing: Getting dyno and gantry logs into one place with consistent timestamps. This week: Pipeline to S3 with test ids in file names; Lin asks to tag by rig and booking."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1775662149.058695",
+      "user": "p-felix",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Pipeline to S3 with test ids in file names; Lin asks to tag by rig and booking.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1775673030.695487",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-004793"
+      ],
+      "brief": "background: Pipeline to S3 with test ids in file names; Lin asks to tag by rig and booking.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1775674307.869282",
+      "user": "p-leilani",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Andre wants raw 10 kHz torque data kept; storage cost debated.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1775681854.520595",
+      "user": "p-rohan",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about this: Farah wants twisted-pair and a shield drain at the driver end; Tomas asks if the bracket can move the readhead away.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1775690107.937043",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on the ongoing getting dyno and gantry logs into one place with consistent timestamps",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1775690283.344747",
+      "user": "p-yusuf",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on this: Jonas sees 2-3 count jumps on the knee abs encoder above 8 A phase current.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1775691137.142635",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-004794"
+      ],
+      "brief": "background: Pipeline to S3 with test ids in file names; Lin asks to tag by rig and booking.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1775691264.075816",
+      "user": "p-gabriel",
+      "thread_ts": "1775691137.142635",
+      "events": [],
+      "brief": "reply (ack) in the thread about: Pipeline to S3 with test ids in file names; Lin asks to tag by rig and booking.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1775693477.197683",
+      "user": "p-jun",
+      "thread_ts": "1775691137.142635",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: Pipeline to S3 with test ids in file names; Lin asks to tag by rig and booking.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    }
+  ]
+}

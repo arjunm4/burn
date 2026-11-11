@@ -1,0 +1,301 @@
+{
+  "job_id": "jira-LEG-2026-04-27-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 57,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "LEG",
+    "name": "Legs and ankle"
+  },
+  "week": {
+    "start": "2026-04-27",
+    "end": "2026-05-03"
+  },
+  "people": [
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "LEG-91",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-renee",
+      "assignee": "p-renee",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-04-27T14:48:14-07:00",
+      "due_date": "2026-05-20",
+      "events": [
+        "ev-000859"
+      ],
+      "brief": "Order 18x Hip pitch mounting bracket, 5x Knee belt pulley / hip bracket: need 18 by 2026-05-20",
+      "must_mention": [
+        "hip bracket",
+        "5/20"
+      ],
+      "description_length": "one_line",
+      "summary": "Hip pitch mounting bracket x18, Knee belt pulley x5",
+      "description": "hip bracket need 18 by 5/20",
+      "comments": []
+    },
+    {
+      "key": "LEG-92",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-zoe",
+      "assignee": "p-zoe",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-04-27T19:19:29-07:00",
+      "due_date": "2026-06-18",
+      "events": [
+        "ev-000895"
+      ],
+      "brief": "Order 12x Hip yaw yoke / 1310: need 12 by 2026-06-18 for Tolerance stack check for Leg DVT build: Hip yaw yoke",
+      "must_mention": [
+        "1310",
+        "Tolerance stack check for Leg DVT build: Hip yaw yoke",
+        "6/18"
+      ],
+      "description_length": "one_line",
+      "summary": "Hip yaw yoke x12",
+      "description": "1310 need 12 by 6/18 for Tolerance stack check for Leg DVT build: Hip yaw yoke",
+      "comments": [
+        {
+          "id": "LEG-92-c1",
+          "by": "p-zoe",
+          "at": "2026-05-01T15:42:52-07:00",
+          "events": [
+            "ev-000899"
+          ],
+          "brief": "the yoke: need 12 by 2026-06-18",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-06-18"
+            }
+          },
+          "must_mention": [
+            "the yoke",
+            "6/18"
+          ],
+          "body": "the yoke, need 12 by 6/18"
+        },
+        {
+          "id": "LEG-92-c2",
+          "by": "p-zoe",
+          "at": "2026-05-05T13:42:16-07:00",
+          "events": [
+            "ev-000900"
+          ],
+          "brief": "Order XO-5383169 placed, promised 2026-05-28",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-05-28"
+          },
+          "must_mention": [
+            "XO-5383169",
+            "yaw yoke",
+            "5/28"
+          ],
+          "body": "Order XO-5383169 placed, yaw yoke promised 5/28"
+        },
+        {
+          "id": "LEG-92-c3",
+          "by": "p-zoe",
+          "at": "2026-05-18T13:08:56-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "checking with vendor on ship status"
+        }
+      ]
+    },
+    {
+      "key": "LEG-93",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-04-28T11:53:22-07:00",
+      "due_date": "2026-05-01",
+      "events": [
+        "ev-000809"
+      ],
+      "brief": "Order 6x Tilt stand foot clamp / FL-TST-2556: need 6 by 2026-05-01",
+      "must_mention": [
+        "FL-TST-2556",
+        "5/1"
+      ],
+      "description_length": "one_line",
+      "summary": "Tilt stand foot clamp x6",
+      "description": "FL-TST-2556 need 6 by 5/1",
+      "comments": [
+        {
+          "id": "LEG-93-c1",
+          "by": "p-talia",
+          "at": "2026-04-28T13:28:59-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "Any update? 🙏"
+        },
+        {
+          "id": "LEG-93-c2",
+          "by": "p-diego",
+          "at": "2026-04-29T15:37:25-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "anything on this one? 😬"
+        },
+        {
+          "id": "LEG-93-c3",
+          "by": "p-talia",
+          "at": "2026-04-30T10:25:11-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "Pinging again, this is blocking the tilt stand 🙏"
+        },
+        {
+          "id": "LEG-93-c4",
+          "by": "p-talia",
+          "at": "2026-05-04T12:01:27-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "Diego, did the vendor reply? 😬"
+        },
+        {
+          "id": "LEG-93-c5",
+          "by": "p-talia",
+          "at": "2026-05-04T16:45:41-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "Following up, can you check the PO status? 🙏"
+        },
+        {
+          "id": "LEG-93-c6",
+          "by": "p-priya",
+          "at": "2026-05-06T12:28:53-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "Vendor says they are on it, will update as soon as I hear."
+        }
+      ]
+    }
+  ]
+}

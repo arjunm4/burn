@@ -1,0 +1,331 @@
+{
+  "job_id": "meeting-mtg-00726",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 45,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00726",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-06-12T08:45:00-07:00",
+    "actual_min": 8,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-andre",
+      "p-carlos",
+      "p-jade",
+      "p-luis",
+      "p-destiny",
+      "p-nora"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-001292",
+      "speaker": "p-dmitri",
+      "at_min": [
+        4,
+        8
+      ],
+      "brief": "Dmitri says: We need the plate by 7/2.",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-ankle-foot-plate",
+        "value": {
+          "qty": 9,
+          "by": "2026-07-02"
+        }
+      },
+      "must_mention": [
+        "the plate",
+        "7/2"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-dmitri",
+      "text": "Okay, Friday standup, let's be quick. Andre?"
+    },
+    {
+      "start_s": 8,
+      "speaker": "p-andre",
+      "text": "dyno ran the sweep overnight, data looks ok, i still need to post process it"
+    },
+    {
+      "start_s": 28,
+      "speaker": "p-dmitri",
+      "text": "Okay. Zoe?"
+    },
+    {
+      "start_s": 32,
+      "speaker": "p-zoe",
+      "text": "fixture rev two is on the bench, just needs the dowels pressed in, should be done by eow"
+    },
+    {
+      "start_s": 55,
+      "speaker": "p-carlos",
+      "text": "Technicians are on the harness build. Two units done, third is waiting on connectors."
+    },
+    {
+      "start_s": 78,
+      "speaker": "p-jade",
+      "text": "connectors came in yesterday but i havent logged them yet, will do after this"
+    },
+    {
+      "start_s": 95,
+      "speaker": "p-carlos",
+      "text": "Okay good, then we are not blocked."
+    },
+    {
+      "start_s": 120,
+      "speaker": "p-nora",
+      "text": "Let me restate where we are on the build schedule. First, the housings are in. Second, the shafts are due next week. Third, I need a firm date from you on the test window, Dmitri."
+    },
+    {
+      "start_s": 160,
+      "speaker": "p-dmitri",
+      "text": "I'll have it by end of day."
+    },
+    {
+      "start_s": 185,
+      "speaker": "p-luis",
+      "text": "i cleaned up the torque stand, theres a new calibration sticker on it"
+    },
+    {
+      "start_s": 205,
+      "speaker": "p-destiny",
+      "text": "Thanks Luis! Did it pass? 🙏"
+    },
+    {
+      "start_s": 212,
+      "speaker": "p-luis",
+      "text": "yep within spec"
+    },
+    {
+      "start_s": 245,
+      "speaker": "p-dmitri",
+      "text": "One more thing before we wrap. We need the plate by 7/2. Nine pieces."
+    },
+    {
+      "start_s": 262,
+      "speaker": "p-zoe",
+      "text": "is that the one for the new fixture, or the old one? sorry"
+    },
+    {
+      "start_s": 270,
+      "speaker": "p-dmitri",
+      "text": "The new one. Same thing, nine of them."
+    },
+    {
+      "start_s": 290,
+      "speaker": "p-zoe",
+      "text": "ok, i'll put it in"
+    },
+    {
+      "start_s": 330,
+      "speaker": "p-andre",
+      "text": "uh, anyone seen the spare thermocouples"
+    },
+    {
+      "start_s": 340,
+      "speaker": "p-jade",
+      "text": "bottom drawer"
+    },
+    {
+      "start_s": 360,
+      "speaker": "p-dmitri",
+      "text": "Okay, that's all. Good weekend everyone."
+    }
+  ],
+  "summary": {
+    "overview": "Quick Friday test lab and build standup. Dyno sweep data pending post-processing, fixture rev two nearly ready, harness build on track.",
+    "shorthand_bullet": [
+      "dyno sweep done, post-process pending",
+      "fixture rev 2 - dowels to press in, EOW",
+      "harness: 2 units done, 3rd waiting on connectors (arrived, not logged)",
+      "housings in, shafts next week",
+      "torque stand recalibrated",
+      "need the plate by 7/2, qty 9"
+    ],
+    "action_items": [
+      "Dmitri - firm test window date to Nora by EOD",
+      "Jade - log connectors",
+      "Zoe - put in request for the plate"
+    ],
+    "keywords": [
+      "dyno",
+      "fixture",
+      "harness",
+      "the plate"
+    ]
+  }
+}

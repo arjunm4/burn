@@ -8,8 +8,11 @@
 
 ## Overview
 
-We need stator jig by 11/3 (Fixture install and shakedown: Stator insertion jig).
+We need FL-TST-2274 by 10/19. We need FL-TST-2274 by 10/19. We need dummy mass by 10/19. We need stator jig by 11/3 (Fixture install and shakedown: Stator insertion jig).
 
 ## Discussion
 
+- Dmitri: We need FL-TST-2274 by 10/19.
+- Lin: We need FL-TST-2274 by 10/19.
+- Lin: We need dummy mass by 10/19.
 - Dmitri: We need stator jig by 11/3 (Fixture install and shakedown: Stator insertion jig).

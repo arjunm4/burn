@@ -1,0 +1,314 @@
+{
+  "job_id": "jira-STR-2026-04-13-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 61,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "STR",
+    "name": "Torso, structures and battery"
+  },
+  "week": {
+    "start": "2026-04-13",
+    "end": "2026-04-19"
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "STR-70",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-lin",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-04-13T14:08:49-07:00",
+      "due_date": "2026-05-28",
+      "events": [
+        "ev-000762"
+      ],
+      "brief": "Order 4x Spin-test stand adapter plate, 24x Spin-test reference encoder mount, 3x Leg build stand / FL-TST-2081: need 4 by 2026-05-28",
+      "must_mention": [
+        "FL-TST-2081",
+        "thurs the 28th"
+      ],
+      "description_length": "short",
+      "summary": "Spin-test adapter plate, ref encoder mount, build stand",
+      "description": "FL-TST-2081 need 4 by thurs the 28th. other two lines on same req",
+      "comments": [
+        {
+          "id": "STR-70-c1",
+          "by": "p-dmitri",
+          "at": "2026-04-15T10:04:48-07:00",
+          "events": [
+            "ev-000765"
+          ],
+          "brief": "that adapter plate: need 4 by 2026-06-01",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 4,
+              "by": "2026-06-01"
+            }
+          },
+          "must_mention": [
+            "that adapter plate",
+            "mon 6/1"
+          ],
+          "body": "that adapter plate, need 4 by mon 6/1"
+        },
+        {
+          "id": "STR-70-c2",
+          "by": "p-dmitri",
+          "at": "2026-04-15T17:34:48-07:00",
+          "events": [
+            "ev-003557"
+          ],
+          "brief": "Correction: that adapter plate: need 4 by 2026-05-28",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 4,
+              "by": "2026-05-28"
+            }
+          },
+          "must_mention": [
+            "that adapter plate",
+            "5/28"
+          ],
+          "body": "Correction: that adapter plate need 4 by 5/28!!"
+        },
+        {
+          "id": "STR-70-c3",
+          "by": "p-renee",
+          "at": "2026-04-22T14:53:25-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "photos of the plate in slack"
+        },
+        {
+          "id": "STR-70-c4",
+          "by": "p-talia",
+          "at": "2026-04-27T10:58:33-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "any word from the vendor? 🙏"
+        },
+        {
+          "id": "STR-70-c5",
+          "by": "p-lin",
+          "at": "2026-05-06T13:08:43-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on vendor, no new info"
+        },
+        {
+          "id": "STR-70-c6",
+          "by": "p-talia",
+          "at": "2026-05-11T17:38:55-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "pinging again 😬 any news?"
+        }
+      ]
+    },
+    {
+      "key": "STR-71",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-idris",
+      "assignee": "p-idris",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-04-14T09:10:40-07:00",
+      "due_date": null,
+      "events": [
+        "ev-000723"
+      ],
+      "brief": "Order 1x Battery clevis 10 / FL-BAT-1685: need 1 by 2026-05-04 for Design iteration bench trial for Leg DVT build: Battery clevis 10",
+      "must_mention": [
+        "FL-BAT-1685",
+        "Design iteration bench trial for Leg DVT build: Battery clevis 10",
+        "mon the 4th"
+      ],
+      "description_length": "medium",
+      "summary": "Battery clevis 10 - 1x",
+      "description": "FL-BAT-1685 need 1 by mon the 4th for Design iteration bench trial for Leg DVT build: Battery clevis 10. only buying the one so no margin",
+      "comments": [
+        {
+          "id": "STR-71-c1",
+          "by": "p-idris",
+          "at": "2026-04-14T10:37:21-07:00",
+          "events": [
+            "ev-000724"
+          ],
+          "brief": "the 10: need 1 by 2026-05-04",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 1,
+              "by": "2026-05-04"
+            }
+          },
+          "must_mention": [
+            "the 10",
+            "mon the 4th"
+          ],
+          "body": "the 10, need 1 by mon the 4th"
+        },
+        {
+          "id": "STR-71-c2",
+          "by": "p-idris",
+          "at": "2026-04-24T10:22:33-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "any update on this"
+        },
+        {
+          "id": "STR-71-c3",
+          "by": "p-renee",
+          "at": "2026-05-01T14:47:06-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "pics in slack thread"
+        },
+        {
+          "id": "STR-71-c4",
+          "by": "p-idris",
+          "at": "2026-05-04T10:09:00-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "@talia did the vendor confirm?"
+        },
+        {
+          "id": "STR-71-c5",
+          "by": "p-renee",
+          "at": "2026-05-04T15:33:49-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "Is there a tracking number yet?"
+        },
+        {
+          "id": "STR-71-c6",
+          "by": "p-idris",
+          "at": "2026-05-11T15:09:34-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "@talia any luck on this one?"
+        }
+      ]
+    }
+  ]
+}

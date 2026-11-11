@@ -1,0 +1,992 @@
+{
+  "job_id": "slack-ch-mech-2026-06-01-background-2026-06-01",
+  "source": "slack",
+  "status": "blank",
+  "priority": 48,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-mech",
+    "name": "mech",
+    "slack_id": "C07FLK0MECH",
+    "purpose": "Mechanical engineering: design, DFM, vendors, drawings"
+  },
+  "week": {
+    "start": "2026-06-01",
+    "end": "2026-06-07"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-marcus",
+      "name": "Marcus Adeyemi",
+      "display_name": "marcus",
+      "slack_id": "U07FLK0MARC",
+      "title": "CTO",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Pushrod clevis bends at 1.6x body weight in the tilt stand",
+    "Ongoing: Bus-off events at 1 Mbps when all leg actuators stream. This week: Jonas proposes moving to CAN FD at 5 Mbps data rate; Farah wants to fix topology first.",
+    "Ongoing: Crossed-roller preload drops after thermal cycling; bore tolerance and preload ring design. This week: Carlos: two hip units feel notchy after thermal soak; preload ring backed off a quarter turn.",
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno. This week: Retest with spreader and 40 kHz: 9.5 min to limit, close enough to sign off for EVT.",
+    "Ongoing: Ratcheting risk at peak torque from loose wave generator fit. This week: Hub switched to 4140 with a clamp plus keyway; shaft rev B released.",
+    "Ongoing: Orders sitting in DFM review because of tolerance callouts. This week: Checklist adopted; DFM holds drop but still hit rush orders."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1780328911.147281",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about cad change to the tendon bushing",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1780330131.675651",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about drawing review of the ankle clevis",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1780332459.441514",
+      "user": "p-luis",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on the ongoing ratcheting risk at peak torque from loose wave generator fit",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780333069.367927",
+      "user": "p-kenji",
+      "thread_ts": "1780330131.675651",
+      "events": [],
+      "brief": "reply (answers) in the thread about: drawing review of the ankle clevis",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780333772.424497",
+      "user": "p-jade",
+      "thread_ts": "1780330131.675651",
+      "events": [],
+      "brief": "reply (ack) in the thread about: drawing review of the ankle clevis",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780334339.255854",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about cad change to the leg first steps on the gait gantry",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780334896.216932",
+      "user": "p-zoe",
+      "thread_ts": "1780330131.675651",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: drawing review of the ankle clevis",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1780335237.101369",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about bench notes on the wrist yoke",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1780335239.259552",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about off-topic: the ergonomics survey",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1780335477.777013",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on setup for the hip bracket",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780336175.073165",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on cleanup of the tensioner",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780339049.145737",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about cleanup of the mount rail",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1780339633.087201",
+      "user": "p-callum",
+      "thread_ts": "1780335237.101369",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: bench notes on the wrist yoke",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1780341844.072509",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with bench notes on the pivot pin",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1780343886.042895",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on off-topic: the fire alarm test",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1780343953.081351",
+      "user": "p-diego",
+      "thread_ts": "1780341844.072509",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: bench notes on the pivot pin",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780344717.797414",
+      "user": "p-lukas",
+      "thread_ts": "1780335237.101369",
+      "events": [],
+      "brief": "reply (ack) in the thread about: bench notes on the wrist yoke",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1780345678.563443",
+      "user": "p-lin",
+      "thread_ts": "1780335237.101369",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: bench notes on the wrist yoke",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780346836.809103",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on measurement of the encoder bracket",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780347709.418836",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on measurement of the battery lid",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1780347725.171061",
+      "user": "p-lukas",
+      "thread_ts": "1780341844.072509",
+      "events": [],
+      "brief": "reply (answers) in the thread about: bench notes on the pivot pin",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1780349297.471699",
+      "user": "p-hana",
+      "thread_ts": "1780335237.101369",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: bench notes on the wrist yoke",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1780349671.764024",
+      "user": "p-beth",
+      "thread_ts": "1780335237.101369",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: bench notes on the wrist yoke",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780349984.050598",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to inspection of the crossbeam",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780350077.773133",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about cleanup of the tensioner",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780350234.695418",
+      "user": "p-farah",
+      "thread_ts": "1780335237.101369",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: bench notes on the wrist yoke",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1780350795.966277",
+      "user": "p-beth",
+      "thread_ts": "1780335237.101369",
+      "events": [],
+      "brief": "reply (ack) in the thread about: bench notes on the wrist yoke",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1780352223.629073",
+      "user": "p-omar",
+      "thread_ts": "1780341844.072509",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: bench notes on the pivot pin",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780352539.794560",
+      "user": "p-priya",
+      "thread_ts": "1780335237.101369",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: bench notes on the wrist yoke",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780352579.916084",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about drawing review of the CS housing",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780353691.264626",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on bench notes on the cell tray",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780354024.129051",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about assembly of the hand finger link middle",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1780354868.328333",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about measurement of the cyclo carrier",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1780355678.805270",
+      "user": "p-talia",
+      "thread_ts": "1780341844.072509",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: bench notes on the pivot pin",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780355759.257973",
+      "user": "p-beth",
+      "thread_ts": "1780335237.101369",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: bench notes on the wrist yoke",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780355911.103067",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about off-topic: running club",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1780356452.485204",
+      "user": "p-arjun",
+      "thread_ts": "1780353691.264626",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: bench notes on the cell tray",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780356527.451932",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about drawing review of the thigh link",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780356744.741233",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about cad change to the rod end spacer",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780358896.514954",
+      "user": "p-dmitri",
+      "thread_ts": "1780354868.328333",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: measurement of the cyclo carrier",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780359519.908278",
+      "user": "p-marcus",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on cleanup of the tensioner",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780359849.527315",
+      "user": "p-carlos",
+      "thread_ts": "1780353691.264626",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: bench notes on the cell tray",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1780360364.844202",
+      "user": "p-luis",
+      "thread_ts": "1780354868.328333",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: measurement of the cyclo carrier",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780360710.352488",
+      "user": "p-priya",
+      "thread_ts": "1780335237.101369",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: bench notes on the wrist yoke",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1780361947.256992",
+      "user": "p-sofia",
+      "thread_ts": "1780335237.101369",
+      "events": [],
+      "brief": "reply (answers) in the thread about: bench notes on the wrist yoke",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780362595.103408",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on inspection of the bearing spacer",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1780367217.507324",
+      "user": "p-idris",
+      "thread_ts": "1780335237.101369",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: bench notes on the wrist yoke",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780422291.900733",
+      "user": "p-arjun",
+      "thread_ts": "1780335237.101369",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: bench notes on the wrist yoke",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780427575.721534",
+      "user": "p-samir",
+      "thread_ts": "1780335237.101369",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: bench notes on the wrist yoke",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1780428574.082343",
+      "user": "p-diego",
+      "thread_ts": "1780335237.101369",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: bench notes on the wrist yoke",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1780430467.764250",
+      "user": "p-farah",
+      "thread_ts": "1780335237.101369",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: bench notes on the wrist yoke",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1780434901.149236",
+      "user": "p-samir",
+      "thread_ts": "1780335237.101369",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: bench notes on the wrist yoke",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780438198.904976",
+      "user": "p-nadia",
+      "thread_ts": "1780335237.101369",
+      "events": [],
+      "brief": "reply (ack) in the thread about: bench notes on the wrist yoke",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    }
+  ]
+}

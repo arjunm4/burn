@@ -17,6 +17,44 @@
   },
   "people": [
     {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
       "id": "p-diego",
       "name": "Diego Salcedo",
       "display_name": "diego",
@@ -33,6 +71,41 @@
           "reacts with 🙏 and 😬",
           "ends messages with an emoji"
         ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
       }
     },
     {
@@ -84,6 +157,24 @@
         "length": "medium",
         "hedging": "low",
         "quirks": []
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
       }
     },
     {
@@ -170,7 +261,52 @@
   ],
   "tickets": [
     {
-      "key": "SCM-302",
+      "key": "SCM-314",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-andre",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-21T08:50:49-07:00",
+      "due_date": null,
+      "events": [
+        "ev-002065"
+      ],
+      "brief": "Order 6x Thumb base, 7x Finger middle link / 1473: need 6 by 2026-10-05",
+      "must_mention": [
+        "1473",
+        "10/5"
+      ],
+      "description_length": "medium",
+      "summary": "Order 6x Thumb base, 7x Finger middle link",
+      "description": "1473: need 6 by 10/5\nsplit between the two builds, see attached sheet",
+      "comments": [
+        {
+          "id": "SCM-314-c1",
+          "by": "p-andre",
+          "at": "2026-10-19T22:25:00-07:00",
+          "events": [
+            "ev-002067"
+          ],
+          "brief": "1473 in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-10-19"
+          },
+          "must_mention": [
+            "1473",
+            "the build",
+            "mon the 19th"
+          ],
+          "body": "1473 in use for the build, mon the 19th"
+        }
+      ]
+    },
+    {
+      "key": "SCM-317",
       "type": "Task",
       "status": "Done",
       "reporter": "p-tomas",
@@ -182,7 +318,7 @@
       "created": "2026-09-21T12:39:48-07:00",
       "due_date": "2026-10-12",
       "events": [
-        "ev-001770"
+        "ev-001997"
       ],
       "brief": "Order 6x Knee output encoder bracket / abs encoder bracket: need 6 by 2026-10-12 for Kit and assemble: Knee output encoder bracket",
       "must_mention": [
@@ -191,24 +327,73 @@
         "mon the 12th"
       ],
       "description_length": "one_line",
-      "summary": "abs encoder bracket x6",
-      "description": "need by mon the 12th for Kit and assemble: Knee output encoder bracket",
+      "summary": "Order 6x Knee output encoder bracket",
+      "description": "abs encoder bracket: need 6 by mon the 12th for Kit and assemble: Knee output encoder bracket",
       "comments": [
         {
-          "id": "SCM-302-c1",
+          "id": "SCM-317-c1",
           "by": "p-talia",
-          "at": "2026-09-28T16:16:49-07:00",
-          "events": [],
-          "brief": "background: question to the assignee",
-          "must_mention": [],
-          "body": "@tomas can you confirm qty?"
+          "at": "2026-09-21T17:13:31-07:00",
+          "events": [
+            "ev-003717"
+          ],
+          "brief": "abs encoder bracket: need 6 by 2026-10-14 for Kit and assemble: Knee output encoder bracket",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 6,
+              "by": "2026-10-14"
+            }
+          },
+          "must_mention": [
+            "abs encoder bracket",
+            "Kit and assemble: Knee output encoder bracket",
+            "wed the 14th"
+          ],
+          "body": "abs encoder bracket: need 6 by wed the 14th for Kit and assemble: Knee output encoder bracket 🙏"
         },
         {
-          "id": "SCM-302-c2",
+          "id": "SCM-317-c2",
+          "by": "p-talia",
+          "at": "2026-09-23T18:00:22-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on vendor ack 😬"
+        },
+        {
+          "id": "SCM-317-c3",
+          "by": "p-gwen",
+          "at": "2026-09-28T12:09:58-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "Vendor confirmed they have the PO, following up."
+        },
+        {
+          "id": "SCM-317-c4",
+          "by": "p-tomas",
+          "at": "2026-10-01T10:14:51-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "photos of the sample are in slack"
+        },
+        {
+          "id": "SCM-317-c5",
+          "by": "p-talia",
+          "at": "2026-10-05T14:33:03-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "still waiting on vendor 🙏"
+        },
+        {
+          "id": "SCM-317-c6",
           "by": "p-tomas",
           "at": "2026-10-24T02:00:00-07:00",
           "events": [
-            "ev-001772"
+            "ev-001999"
           ],
           "brief": "1120 in use",
           "claim": {
@@ -218,14 +403,39 @@
           "must_mention": [
             "1120",
             "the build",
-            "fri the 23rd"
+            "fri 10/23"
           ],
-          "body": "1120 in use for the build, fri the 23rd"
+          "body": "1120 in use for the build, fri 10/23"
         }
       ]
     },
     {
-      "key": "SCM-307",
+      "key": "SCM-321",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-arjun",
+      "assignee": "p-tomas",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-09-22T11:00:35-07:00",
+      "due_date": "2026-09-29",
+      "events": [
+        "ev-002153"
+      ],
+      "brief": "Order 3x Dyno mounting plate, knee actuator, 12x Knee output shaft / FL-TST-2124: need 3 by 2026-09-29",
+      "must_mention": [
+        "FL-TST-2124",
+        "9/29"
+      ],
+      "description_length": "short",
+      "summary": "Order 3x Dyno mounting plate, knee actuator, 12x Knee output shaft",
+      "description": "FL-TST-2124: need 3 by 9/29",
+      "comments": []
+    },
+    {
+      "key": "SCM-323",
       "type": "Task",
       "status": "Done",
       "reporter": "p-lin",
@@ -237,30 +447,67 @@
       "created": "2026-09-22T11:22:47-07:00",
       "due_date": "2026-10-08",
       "events": [
-        "ev-001878"
+        "ev-002117"
       ],
       "brief": "Order 7x Gait gantry pelvis adapter, 24x Counterweight hub / FL-TST-2338: need 7 by 2026-10-08",
       "must_mention": [
         "FL-TST-2338",
-        "10/8"
+        "thurs 10/8"
       ],
       "description_length": "one_line",
-      "summary": "gantry pelvis adapter + hubs FL-TST-2338",
-      "description": "need 7 by 10/8",
+      "summary": "Order 7x Gait gantry pelvis adapter, 24x Counterweight hub",
+      "description": "FL-TST-2338: need 7 by thurs 10/8",
+      "comments": []
+    },
+    {
+      "key": "SCM-324",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-zoe",
+      "assignee": "p-zoe",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-09-22T13:34:58-07:00",
+      "due_date": null,
+      "events": [
+        "ev-002164"
+      ],
+      "brief": "Order 11x Knee wave generator hub, 24x Knee bearing shim / 1119: need 11 by 2026-09-29 for Tolerance stack check: Knee wave generator hub",
+      "must_mention": [
+        "1119",
+        "Tolerance stack check: Knee wave generator hub",
+        "shim",
+        "9/29"
+      ],
+      "description_length": "one_line",
+      "summary": "Order 11x Knee wave generator hub, 24x Knee bearing shim",
+      "description": "1119: need 11 by 9/29 for Tolerance stack check: Knee wave generator hub, shim qty is for the same set",
       "comments": [
         {
-          "id": "SCM-307-c1",
-          "by": "p-samir",
-          "at": "2026-10-08T13:47:11-07:00",
-          "events": [],
-          "brief": "background: pushes it a bit, no new date given",
-          "must_mention": [],
-          "body": "vendor slipped, no new date yet"
+          "id": "SCM-324-c1",
+          "by": "p-zoe",
+          "at": "2026-10-07T21:23:00-07:00",
+          "events": [
+            "ev-002167"
+          ],
+          "brief": "1119 in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-10-07"
+          },
+          "must_mention": [
+            "1119",
+            "the build",
+            "wed the 7th"
+          ],
+          "body": "1119 in use for the build, wed the 7th"
         }
       ]
     },
     {
-      "key": "SCM-309",
+      "key": "SCM-326",
       "type": "Task",
       "status": "Done",
       "reporter": "p-diego",
@@ -272,20 +519,20 @@
       "created": "2026-09-23T14:09:07-07:00",
       "due_date": "2026-10-01",
       "events": [
-        "ev-001911"
+        "ev-002150"
       ],
-      "brief": "Order 12x Ankle rod-end spacer / 1291: need 12 by 2026-09-30",
+      "brief": "Order 12x Ankle rod-end spacer / 1291: need 12 by 2026-10-01",
       "must_mention": [
         "1291",
-        "9/30"
+        "thurs 10/1"
       ],
-      "description_length": "one_line",
-      "summary": "Ankle rod-end spacers 1291",
-      "description": "12 needed 9/30",
+      "description_length": "short",
+      "summary": "Order 12x Ankle rod-end spacer",
+      "description": "1291: need 12 by thurs 10/1",
       "comments": []
     },
     {
-      "key": "SCM-312",
+      "key": "SCM-329",
       "type": "Task",
       "status": "Done",
       "reporter": "p-diego",
@@ -297,20 +544,39 @@
       "created": "2026-09-24T10:24:16-07:00",
       "due_date": "2026-10-02",
       "events": [
-        "ev-001953"
+        "ev-002196"
       ],
-      "brief": "Order 7x Ankle yoke, 24x Ankle F/T sensor mount, 12x Ankle rod-end spacer / ankle yoke: need 7 by 2026-10-02",
+      "brief": "Order 7x Ankle yoke, 24x Ankle F/T sensor mount, 12x Ankle rod-end spacer / ankle yoke: need 7 by 2026-10-05",
       "must_mention": [
         "ankle yoke",
-        "fri 10/2"
+        "mon the 5th"
       ],
       "description_length": "one_line",
-      "summary": "ankle yoke x7 + F/T mounts + spacers",
-      "description": "ankle yoke needed fri 10/2",
-      "comments": []
+      "summary": "Order 7x Ankle yoke, 24x Ankle F/T sensor mount, 12x Ankle rod-end spacer",
+      "description": "ankle yoke: need 7 by mon the 5th 🙏",
+      "comments": [
+        {
+          "id": "SCM-329-c1",
+          "by": "p-diego",
+          "at": "2026-09-25T14:06:02-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "any update? pretty please 😬"
+        },
+        {
+          "id": "SCM-329-c2",
+          "by": "p-diego",
+          "at": "2026-09-28T10:32:32-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "waiting on the vendor reply 🙏"
+        }
+      ]
     },
     {
-      "key": "SCM-315",
+      "key": "SCM-332",
       "type": "Task",
       "status": "Done",
       "reporter": "p-ingrid",
@@ -322,23 +588,23 @@
       "created": "2026-09-25T15:16:59-07:00",
       "due_date": null,
       "events": [
-        "ev-001966"
+        "ev-002213"
       ],
-      "brief": "Order 12x Torso harness bracket, 10x Pelvis side plate, left / 1582: need 12 by 2026-10-02",
+      "brief": "Order 12x Torso harness bracket, 10x Pelvis side plate, left / 1582: need 12 by 2026-10-05",
       "must_mention": [
         "1582",
-        "fri 10/2"
+        "mon 10/5"
       ],
-      "description_length": "short",
-      "summary": "torso harness brkt + pelvis plates 1582",
-      "description": "12 harness brackets, need fri 10/2 - urgent",
+      "description_length": "one_line",
+      "summary": "Order 12x Torso harness bracket, 10x Pelvis side plate, left",
+      "description": "1582: need 12 by mon 10/5",
       "comments": [
         {
-          "id": "SCM-315-c1",
+          "id": "SCM-332-c1",
           "by": "p-idris",
           "at": "2026-09-27T17:09:15-07:00",
           "events": [
-            "ev-001967"
+            "ev-002214"
           ],
           "brief": "that order: need 12 by 2026-10-05",
           "claim": {
@@ -353,29 +619,11 @@
             "10/5"
           ],
           "body": "that order: need 12 by 10/5"
-        },
-        {
-          "id": "SCM-315-c2",
-          "by": "p-ingrid",
-          "at": "2026-10-05T13:04:55-07:00",
-          "events": [],
-          "brief": "background: any update?",
-          "must_mention": [],
-          "body": "any update?"
-        },
-        {
-          "id": "SCM-315-c3",
-          "by": "p-samir",
-          "at": "2026-10-08T14:10:09-07:00",
-          "events": [],
-          "brief": "background: short progress note",
-          "must_mention": [],
-          "body": "chasing vendor, nothing yet"
         }
       ]
     },
     {
-      "key": "SCM-316",
+      "key": "SCM-333",
       "type": "Task",
       "status": "Done",
       "reporter": "p-zoe",
@@ -387,40 +635,112 @@
       "created": "2026-09-25T15:30:40-07:00",
       "due_date": "2026-10-26",
       "events": [
-        "ev-002050"
+        "ev-002308"
       ],
       "brief": "Order 10x Pack latch block / latch block: need 10 by 2026-10-26",
       "must_mention": [
         "latch block",
-        "mon 10/26"
+        "mon the 26th"
       ],
       "description_length": "one_line",
-      "summary": "latch block x10",
-      "description": "latch block needed mon 10/26",
+      "summary": "Order 10x Pack latch block",
+      "description": "latch block: need 10 by mon the 26th",
+      "comments": []
+    },
+    {
+      "key": "SCM-335",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": "p-owen",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-09-25T17:06:08-07:00",
+      "due_date": null,
+      "events": [
+        "ev-002207"
+      ],
+      "brief": "Order 8x Knee rear cover, 24x Knee winding thermistor clip / FL-KNE-1146: need 8 by 2026-10-06",
+      "must_mention": [
+        "FL-KNE-1146",
+        "10/6"
+      ],
+      "description_length": "one_line",
+      "summary": "Order 8x Knee rear cover, 24x Knee winding thermistor clip",
+      "description": "FL-KNE-1146: need 8 by 10/6",
       "comments": [
         {
-          "id": "SCM-316-c1",
-          "by": "p-talia",
-          "at": "2026-09-28T09:28:53-07:00",
+          "id": "SCM-335-c1",
+          "by": "p-owen",
+          "at": "2026-09-25T18:01:06-07:00",
           "events": [
-            "ev-003359"
+            "ev-002208"
           ],
-          "brief": "FL-BAT-1679: need 10 by 2026-10-21 for Install and torque: Pack latch block",
+          "brief": "knee cover: need 8 by 2026-10-08 for the fit check; asks whether expediting is worth it",
           "claim": {
             "kind": "needs",
             "value": {
-              "qty": 10,
-              "by": "2026-10-21"
+              "qty": 8,
+              "by": "2026-10-08"
             }
           },
           "must_mention": [
-            "FL-BAT-1679",
-            "Install and torque: Pack latch block",
-            "10/21"
+            "knee cover",
+            "the fit check",
+            "thurs the 8th"
           ],
-          "body": "FL-BAT-1679 need 10 by 10/21 for Install and torque: Pack latch block"
+          "body": "knee cover: need 8 by thurs the 8th for the fit check, worth expediting?"
+        },
+        {
+          "id": "SCM-335-c2",
+          "by": "p-owen",
+          "at": "2026-09-25T18:29:06-07:00",
+          "events": [
+            "ev-003590"
+          ],
+          "brief": "Correction: knee cover: need 8 by 2026-10-06 for the fit check",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 8,
+              "by": "2026-10-06"
+            }
+          },
+          "must_mention": [
+            "knee cover",
+            "the fit check",
+            "10/6"
+          ],
+          "body": "Correction: knee cover: need 8 by 10/6 for the fit check"
         }
       ]
+    },
+    {
+      "key": "SCM-336",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-dmitri",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-25T22:59:41-07:00",
+      "due_date": null,
+      "events": [
+        "ev-002229"
+      ],
+      "brief": "Order 2x Nail penetration guide block / 2833: need 2 by 2026-10-14",
+      "must_mention": [
+        "2833",
+        "wed the 14th"
+      ],
+      "description_length": "one_line",
+      "summary": "Order 2x Nail penetration guide block",
+      "description": "2833: need 2 by wed the 14th",
+      "comments": []
     }
   ]
 }

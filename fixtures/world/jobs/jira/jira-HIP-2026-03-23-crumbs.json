@@ -1,0 +1,191 @@
+{
+  "job_id": "jira-HIP-2026-03-23-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 67,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HIP",
+    "name": "Actuators (hip and knee)"
+  },
+  "week": {
+    "start": "2026-03-23",
+    "end": "2026-03-29"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HIP-118",
+      "type": "Task",
+      "status": "To Do",
+      "reporter": "p-tomas",
+      "assignee": "p-tomas",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-03-23T14:21:03-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Order 4x Knee rear cover",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": "Order 4x Knee rear cover",
+      "description": "rear cover for the knee actuator, needed for the next round of builds. drawing is attached to the ticket. cosmetic finish isnt critical but the bolt pattern has to match the housing we already have. ping me if the vendor asks about material, i think they will",
+      "comments": [
+        {
+          "id": "HIP-118-c1",
+          "by": "p-tomas",
+          "at": "2026-03-23T14:52:03-07:00",
+          "events": [
+            "ev-000516"
+          ],
+          "brief": "Order XO-5345666 placed, promised 2026-03-27",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-03-27"
+          },
+          "must_mention": [
+            "XO-5345666",
+            "1146",
+            "fri the 27th"
+          ],
+          "body": "Order XO-5345666 placed for 1146, promised fri the 27th"
+        }
+      ]
+    },
+    {
+      "key": "HIP-120",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": "p-owen",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-23T15:38:53-07:00",
+      "due_date": null,
+      "events": [
+        "ev-000601"
+      ],
+      "brief": "Order 2x Knee output flange, 24x Knee hard-stop block, 4x Knee rear cover, 7x Knee actuator housing, 12x Knee bearing shim / FL-KNE-1122: need 2 by 2026-05-15",
+      "must_mention": [
+        "FL-KNE-1122",
+        "fri the 15th"
+      ],
+      "description_length": "one_line",
+      "summary": "Order 2x Knee output flange, 24x Knee hard-stop block, 4x Knee rear cover, 7x Knee actuator housing, 12x Knee bearing shim",
+      "description": "FL-KNE-1122 need 2 by fri the 15th",
+      "comments": [
+        {
+          "id": "HIP-120-c1",
+          "by": "p-arjun",
+          "at": "2026-03-25T11:08:22-07:00",
+          "events": [
+            "ev-003720"
+          ],
+          "brief": "that order: need 2 by 2026-05-15",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 2,
+              "by": "2026-05-15"
+            }
+          },
+          "must_mention": [
+            "that order",
+            "5/15"
+          ],
+          "body": "that order: need 2 by 5/15"
+        },
+        {
+          "id": "HIP-120-c2",
+          "by": "p-owen",
+          "at": "2026-03-25T16:47:43-07:00",
+          "events": [
+            "ev-000605"
+          ],
+          "brief": "1122: need 2 by 2026-05-15",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 2,
+              "by": "2026-05-15"
+            }
+          },
+          "must_mention": [
+            "1122",
+            "fri 5/15"
+          ],
+          "body": "1122 need 2 by fri 5/15"
+        }
+      ]
+    }
+  ]
+}

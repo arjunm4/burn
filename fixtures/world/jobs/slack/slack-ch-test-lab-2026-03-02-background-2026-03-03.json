@@ -1,0 +1,307 @@
+{
+  "job_id": "slack-ch-test-lab-2026-03-02-background-2026-03-03",
+  "source": "slack",
+  "status": "blank",
+  "priority": 74,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-test-lab",
+    "name": "test-lab",
+    "slack_id": "C07FLK0TLAB",
+    "purpose": "Test lab: rigs, bookings, results, fixtures"
+  },
+  "week": {
+    "start": "2026-03-02",
+    "end": "2026-03-08"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Building the first three hip and knee actuators. This week: Carlos: kitting short three parts; spacers came in at the wrong length.",
+    "Ongoing: Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT. This week: Owen prices both: harmonic set ~$1.9k per joint and 10-week lead; cyclo is machined parts plus pins, ~3 weeks.",
+    "Ongoing: Coupling misalignment corrupting efficiency numbers on the dyno. This week: Andre: efficiency readings swing 4% between mounts of the same actuator."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1772548831.810394",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-004827"
+      ],
+      "brief": "background: Andre: efficiency readings swing 4% between mounts of the same actuator.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1772559266.333925",
+      "user": "p-arjun",
+      "thread_ts": "1772548831.810394",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: Andre: efficiency readings swing 4% between mounts of the same actuator.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1772559876.734208",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: Owen prices both: harmonic set ~$1.9k per joint and 10-week lead; cyclo is machined parts plus pins, ~3 weeks.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1772559995.678826",
+      "user": "p-wei",
+      "thread_ts": null,
+      "events": [
+        "ev-004825"
+      ],
+      "brief": "background: Andre: efficiency readings swing 4% between mounts of the same actuator.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1772561235.503479",
+      "user": "p-mei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to setup for the leg drop-test gantry",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1772561648.065146",
+      "user": "p-carlos",
+      "thread_ts": "1772548831.810394",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: Andre: efficiency readings swing 4% between mounts of the same actuator.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1772564130.286126",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1772566890.901085",
+      "user": "p-carlos",
+      "thread_ts": "1772564130.286126",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1772570546.490246",
+      "user": "p-lukas",
+      "thread_ts": "1772564130.286126",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1772572813.144035",
+      "user": "p-luis",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1772574829.507562",
+      "user": "p-idris",
+      "thread_ts": "1772564130.286126",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1772583809.313040",
+      "user": "p-luis",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Arjun pushes back: harmonic flexspline fatigue at hip peak torque (~140 Nm) is marginal, cyclo takes shock loads from drops.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    }
+  ]
+}

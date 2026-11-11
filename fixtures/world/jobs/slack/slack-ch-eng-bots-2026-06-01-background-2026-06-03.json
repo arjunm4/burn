@@ -1,0 +1,346 @@
+{
+  "job_id": "slack-ch-eng-bots-2026-06-01-background-2026-06-03",
+  "source": "slack",
+  "status": "blank",
+  "priority": 48,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-eng-bots",
+    "name": "eng-bots",
+    "slack_id": "C07FLK0BOTS",
+    "purpose": "GitHub, Jira and CI notifications"
+  },
+  "week": {
+    "start": "2026-06-01",
+    "end": "2026-06-07"
+  },
+  "people": [
+    {
+      "id": "p-aisha",
+      "name": "Aisha Rahman",
+      "display_name": "aisha",
+      "slack_id": "U07FLK0AISH",
+      "title": "ML Engineer, perception",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-anika",
+      "name": "Anika Joshi",
+      "display_name": "anika",
+      "slack_id": "U07FLK0ANIK",
+      "title": "Firmware Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-elena",
+      "name": "Elena Petrova",
+      "display_name": "elena",
+      "slack_id": "U07FLK0ELEN",
+      "title": "Software Infrastructure Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-felix",
+      "name": "Felix Wagner",
+      "display_name": "felix",
+      "slack_id": "U07FLK0FELI",
+      "title": "Software Engineer, simulation",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-ravi",
+      "name": "Ravi Subramaniam",
+      "display_name": "ravi",
+      "slack_id": "U07FLK0RAVI",
+      "title": "ML Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-tara",
+      "name": "Tara Brennan",
+      "display_name": "tara.b",
+      "slack_id": "U07FLK0TARA",
+      "title": "Infrastructure Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-yusuf",
+      "name": "Yusuf Demir",
+      "display_name": "yusuf",
+      "slack_id": "U07FLK0YUSU",
+      "title": "Firmware Engineer, motor control",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Bus-off events at 1 Mbps when all leg actuators stream. This week: Jonas proposes moving to CAN FD at 5 Mbps data rate; Farah wants to fix topology first."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1780506277.608192",
+      "user": "p-yusuf",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about this: Farah measures 3 m of stub length; termination at the wrong end.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1780510800.550778",
+      "user": "p-yusuf",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on this: Jonas proposes moving to CAN FD at 5 Mbps data rate; Farah wants to fix topology first.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780512997.265687",
+      "user": "p-mei",
+      "thread_ts": "1780510800.550778",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Jonas proposes moving to CAN FD at 5 Mbps data rate; Farah wants to fix topology first.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780517171.551373",
+      "user": "p-felix",
+      "thread_ts": "1780510800.550778",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Jonas proposes moving to CAN FD at 5 Mbps data rate; Farah wants to fix topology first.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1780520529.341639",
+      "user": "p-mei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about this: Jonas proposes moving to CAN FD at 5 Mbps data rate; Farah wants to fix topology first.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780526150.076620",
+      "user": "p-tara",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to this: Farah measures 3 m of stub length; termination at the wrong end.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780533614.927067",
+      "user": "p-elena",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on this: Jonas proposes moving to CAN FD at 5 Mbps data rate; Farah wants to fix topology first.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780534489.168051",
+      "user": "p-elena",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on this: Jonas proposes moving to CAN FD at 5 Mbps data rate; Farah wants to fix topology first.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1780534811.462069",
+      "user": "p-mei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about the ongoing bus-off events at 1 mbps when all leg actuators stream",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1780538316.474335",
+      "user": "p-mei",
+      "thread_ts": "1780534489.168051",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Jonas proposes moving to CAN FD at 5 Mbps data rate; Farah wants to fix topology first.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780538526.328764",
+      "user": "p-ravi",
+      "thread_ts": "1780534489.168051",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Jonas proposes moving to CAN FD at 5 Mbps data rate; Farah wants to fix topology first.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780539642.849563",
+      "user": "p-farah",
+      "thread_ts": "1780534489.168051",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: Jonas proposes moving to CAN FD at 5 Mbps data rate; Farah wants to fix topology first.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780541174.309305",
+      "user": "p-anika",
+      "thread_ts": "1780534489.168051",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Jonas proposes moving to CAN FD at 5 Mbps data rate; Farah wants to fix topology first.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1780587372.738008",
+      "user": "p-farah",
+      "thread_ts": "1780534489.168051",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Jonas proposes moving to CAN FD at 5 Mbps data rate; Farah wants to fix topology first.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1780590265.890319",
+      "user": "p-aisha",
+      "thread_ts": "1780534489.168051",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Jonas proposes moving to CAN FD at 5 Mbps data rate; Farah wants to fix topology first.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "job_id": "slack-ch-procurement-2026-07-13-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 35,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-07-13",
+    "end": "2026-07-19"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Six-axis sensor drifts with temperature and bolt preload. This week: Plate re-made flat and bolts torqued in sequence; drift drops to 3 N.",
+    "Ongoing: Tendons fray at the proximal pulley after 40k grip cycles",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Drop from 30 cm cracks the shank link at the knee clevis",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver. This week: Gate resistor bump slows edges, but switching losses rise 9%.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting. This week: Nora: casting tooling quote is $38k and 9 weeks; Lukas wants machined plates for DVT."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1783978174.544966",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-001463"
+      ],
+      "brief": "spool: need 8 by 2026-08-04",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-08-04"
+        }
+      },
+      "must_mention": [
+        "spool",
+        "tues the 4th"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "spool, need 8 by tues the 4th"
+    },
+    {
+      "ts": "1784066972.841741",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-001449"
+      ],
+      "brief": "FL-TST-2017: need 2 by 2026-08-03",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-08-03"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2017",
+        "mon the 3rd"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2017 need 2 by mon the 3rd, *FL-TST-2017"
+    },
+    {
+      "ts": "1784070077.481404",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-001458"
+      ],
+      "brief": "Quote Q-2522914-1 for FL-HIP-1065: standard $2301.18, 10 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-08-04",
+          "quote_id": "Q-2522914-1",
+          "price_usd": 2301.18,
+          "lead_days": 10
+        }
+      },
+      "must_mention": [
+        "Q-2522914-1",
+        "FL-HIP-1065",
+        "8/4"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Q-2522914-1 for FL-HIP-1065 came back, standard is $2301.18 and 10 BD for 24. we need them 8/4 so i think that works but not 100% sure"
+    },
+    {
+      "ts": "1784313892.170285",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-001605"
+      ],
+      "brief": "end cover: need 8 by 2026-08-03 for Assemble build unit for Actuator DVT build: Hip actuator end cover",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-08-03"
+        }
+      },
+      "must_mention": [
+        "end cover",
+        "Assemble build unit for Actuator DVT build: Hip actuator end cover",
+        "1028",
+        "main housing",
+        "1064",
+        "motor bracket",
+        "rotor hub",
+        "8/3"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "end cover, need 8 for Assemble build unit for Actuator DVT build: Hip actuator end cover by 8/3. 1028 also needs the main housing, 1064, motor bracket and rotor hub"
+    },
+    {
+      "ts": "1784325123.283564",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-001576"
+      ],
+      "brief": "FL-TST-2443: need 3 by 2026-07-27 for Instrumentation fit-up for Hand pinch force and tendon creep: Grip load cell plate",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-07-27"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2443",
+        "Instrumentation fit-up for Hand pinch force and tendon creep: Grip load cell plate",
+        "mon 7/27"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "FL-TST-2443 needs 3 by mon 7/27 for Instrumentation fit-up for Hand pinch force and tendon creep: Grip load cell plate."
+    }
+  ]
+}

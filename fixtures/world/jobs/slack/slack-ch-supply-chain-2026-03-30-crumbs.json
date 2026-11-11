@@ -1,0 +1,132 @@
+{
+  "job_id": "slack-ch-supply-chain-2026-03-30-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 65,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-supply-chain",
+    "name": "supply-chain",
+    "slack_id": "C07FLK0SUPC",
+    "purpose": "Supply chain team: vendors, POs, deliveries, expedites"
+  },
+  "week": {
+    "start": "2026-03-30",
+    "end": "2026-04-05"
+  },
+  "people": [
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1774908107.934441",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-000640"
+      ],
+      "brief": "Order XO-5355992 placed, promised 2026-04-21",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-04-21"
+      },
+      "must_mention": [
+        "XO-5355992",
+        "preload ring",
+        "tues 4/21"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "XO-5355992 is placed, promised tues 4/21, that's the preload ring 🙏"
+    },
+    {
+      "ts": "1775200680.909690",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-000242"
+      ],
+      "brief": "1122 in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-04-02"
+      },
+      "must_mention": [
+        "1122",
+        "the build",
+        "4/2"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "1122 is in use for the build, done 4/2"
+    },
+    {
+      "ts": "1775372940.239055",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-000282"
+      ],
+      "brief": "the eccentric in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-04-03"
+      },
+      "must_mention": [
+        "the eccentric",
+        "the build",
+        "fri the 3rd"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "the eccentric is in use for the build, done fri the 3rd 😬"
+    }
+  ]
+}

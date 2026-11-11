@@ -1,0 +1,278 @@
+{
+  "job_id": "slack-ch-structures-2026-02-23-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 75,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-structures",
+    "name": "structures-battery",
+    "slack_id": "C07FLK0STRC",
+    "purpose": "Torso, pelvis and battery enclosure"
+  },
+  "week": {
+    "start": "2026-02-23",
+    "end": "2026-03-01"
+  },
+  "people": [
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Torso and pelvis structure.",
+    "Ongoing: Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT. This week: Arjun pushes back: harmonic flexspline fatigue at hip peak torque (~140 Nm) is marginal, cyclo takes shock loads from drops."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1771869927.954051",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-000268"
+      ],
+      "brief": "FL-TST-2111: need 6 by 2026-03-23",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-03-23"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2111",
+        "mon the 23rd"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "FL-TST-2111: need 6 by mon the 23rd!!"
+    },
+    {
+      "ts": "1771870152.340623",
+      "user": "p-carlos",
+      "thread_ts": "1771869927.954051",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "IDRIS can you look at this one when you get a sec"
+    },
+    {
+      "ts": "1771871029.811197",
+      "user": "p-idris",
+      "thread_ts": "1771869927.954051",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "will check later today"
+    },
+    {
+      "ts": "1772050662.186773",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [
+        "ev-000096"
+      ],
+      "brief": "clevis arrived (1)",
+      "claim": {
+        "kind": "stock",
+        "value": 1
+      },
+      "must_mention": [
+        "clevis",
+        "1"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "clevis arrived (1)"
+    },
+    {
+      "ts": "1772051737.011486",
+      "user": "p-carlos",
+      "thread_ts": "1772050662.186773",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Is that all of it??"
+    },
+    {
+      "ts": "1772052491.062511",
+      "user": "p-ingrid",
+      "thread_ts": "1772050662.186773",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Ok."
+    },
+    {
+      "ts": "1772061979.481916",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-003332"
+      ],
+      "brief": "FL-BAT-1685 rev B released: hole pattern moved",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-BAT-1685"
+      ],
+      "length": "medium",
+      "text": "FL-BAT-1685 rev B released, moved the hole pattern. heads up if you have it printed"
+    },
+    {
+      "ts": "1772127060.234405",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-003576"
+      ],
+      "brief": "Correction: the actuator: need 6 by 2026-03-23",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-03-23"
+        }
+      },
+      "must_mention": [
+        "the actuator",
+        "mon 3/23"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Correction: the actuator need 6 by mon 3/23!!"
+    },
+    {
+      "ts": "1772127302.948760",
+      "user": "p-carlos",
+      "thread_ts": "1772127060.234405",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Yes, confirmed."
+    },
+    {
+      "ts": "1772131089.377101",
+      "user": "p-carlos",
+      "thread_ts": "1772127060.234405",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Same drawing as before, nothing changed on my side"
+    },
+    {
+      "ts": "1772136282.452336",
+      "user": "p-ingrid",
+      "thread_ts": "1772127060.234405",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Please make sure receiving knows it is coming."
+    },
+    {
+      "ts": "1772153352.398731",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-003333"
+      ],
+      "brief": "FL-BAT-1685 rev C released: hole pattern moved",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev C"
+      },
+      "must_mention": [
+        "FL-BAT-1685"
+      ],
+      "length": "short",
+      "text": "rev C is out for FL-BAT-1685, hole pattern moved"
+    }
+  ]
+}

@@ -1,0 +1,270 @@
+{
+  "job_id": "meeting-mtg-00867",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 37,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00867",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-07-08T08:45:00-07:00",
+    "actual_min": 15,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-andre",
+      "p-lin",
+      "p-luis",
+      "p-destiny"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-001440",
+      "speaker": "p-dmitri",
+      "at_min": [
+        4,
+        10
+      ],
+      "brief": "the part: need 8 by 2026-09-03",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-leg-thigh-bearing-cap",
+        "value": {
+          "qty": 8,
+          "by": "2026-09-03"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "9/3"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-dmitri",
+      "text": "Morning. Lin, status?"
+    },
+    {
+      "start_s": 4,
+      "speaker": "p-lin",
+      "text": "Life test is running, no faults. I've got a unit I want to open up this week, the bearing noise is increasing."
+    },
+    {
+      "start_s": 26,
+      "speaker": "p-dmitri",
+      "text": "Okay, schedule it with Luis."
+    },
+    {
+      "start_s": 32,
+      "speaker": "p-luis",
+      "text": "ok im free thursday, *thurs morning"
+    },
+    {
+      "start_s": 42,
+      "speaker": "p-andre",
+      "text": "dyno, uh, the sweep finished last night, data looks clean. i need to redo one point though, the torque sensor glitched"
+    },
+    {
+      "start_s": 66,
+      "speaker": "p-zoe",
+      "text": "fixtures, the new fixture plate fits, need to check clearance w the cable"
+    },
+    {
+      "start_s": 82,
+      "speaker": "p-dmitri",
+      "text": "Good. Now, the part, we need 8 by 9/3. Zoe, Andre, is that count right for both of you?"
+    },
+    {
+      "start_s": 102,
+      "speaker": "p-zoe",
+      "text": "i think so, 8 is fine for fixtures"
+    },
+    {
+      "start_s": 110,
+      "speaker": "p-andre",
+      "text": "yeah 8 for me too"
+    },
+    {
+      "start_s": 116,
+      "speaker": "p-dmitri",
+      "text": "9/3, 8 pieces. I'll tell Talia."
+    },
+    {
+      "start_s": 126,
+      "speaker": "p-destiny",
+      "text": "kitting trays are staged, nothing missing 🙏"
+    },
+    {
+      "start_s": 138,
+      "speaker": "p-lin",
+      "text": "Dmitri, can we get the thermal camera for a day?"
+    },
+    {
+      "start_s": 146,
+      "speaker": "p-dmitri",
+      "text": "Check with Zoe."
+    },
+    {
+      "start_s": 152,
+      "speaker": "p-zoe",
+      "text": "yeah sure its free tmrw"
+    },
+    {
+      "start_s": 160,
+      "speaker": "p-dmitri",
+      "text": "Alright, that's it. Go."
+    }
+  ],
+  "summary": {
+    "overview": "Short standup. Life test running, one unit scheduled for teardown, dyno data clean with one point to redo.",
+    "shorthand_bullet": [
+      "Life test no faults, bearing noise rising on one unit",
+      "Teardown Thurs morning w Luis",
+      "Dyno sweep done, redo one point",
+      "New fixture plate fits, check cable clearance",
+      "The part: need 8 by 9/3",
+      "Thermal camera free tmrw"
+    ],
+    "action_items": [
+      "Dmitri to tell Talia about 9/3 order",
+      "Andre to redo torque point",
+      "Zoe to check cable clearance",
+      "Lin and Luis teardown"
+    ],
+    "keywords": [
+      "life test",
+      "dyno",
+      "fixture",
+      "thermal camera"
+    ]
+  }
+}

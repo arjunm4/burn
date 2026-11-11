@@ -1,0 +1,407 @@
+{
+  "job_id": "jira-SCM-2026-08-03-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 29,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "SCM",
+    "name": "Supply chain and procurement"
+  },
+  "week": {
+    "start": "2026-08-03",
+    "end": "2026-08-09"
+  },
+  "people": [
+    {
+      "id": "p-amara",
+      "name": "Amara Nwosu",
+      "display_name": "amara",
+      "slack_id": "U07FLK0AMAR",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "SCM-244",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-samir",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-08-05T09:49:02-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Order 1x Grip fixture base plate",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": "Grip fixture base plate buy",
+      "description": "need the base plate for the grip fixture so test can clamp the hand at a repeatable angle. drawing is the one in the folder. standard aluminum is fine, no special finish. check the hole pattern against the fixture rail before releasing the PO, last time it was off by a bit and we reworked it in the shop. ping me if the quote comes back weird",
+      "comments": [
+        {
+          "id": "SCM-244-c1",
+          "by": "p-samir",
+          "at": "2026-08-07T11:10:19-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "po drafted, waiting on approval"
+        },
+        {
+          "id": "SCM-244-c2",
+          "by": "p-gwen",
+          "at": "2026-08-07T18:09:36-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on vendor to confirm lead time"
+        },
+        {
+          "id": "SCM-244-c3",
+          "by": "p-samir",
+          "at": "2026-08-10T14:28:44-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "any word from the vendor on this?"
+        },
+        {
+          "id": "SCM-244-c4",
+          "by": "p-samir",
+          "at": "2026-08-12T10:36:37-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "can you check if receiving has anything for this?"
+        },
+        {
+          "id": "SCM-244-c5",
+          "by": "p-jade",
+          "at": "2026-08-12T18:36:42-07:00",
+          "events": [
+            "ev-001648"
+          ],
+          "brief": "grip base arrived (1)",
+          "claim": {
+            "kind": "stock",
+            "value": 1
+          },
+          "must_mention": [
+            "grip base",
+            "1"
+          ],
+          "body": "grip base arrived (1)"
+        }
+      ]
+    },
+    {
+      "key": "SCM-245",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-nadia",
+      "assignee": "p-nadia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-08-05T16:29:24-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001683"
+      ],
+      "brief": "Order 24x Dyno thermocouple clamp, 24x Dyno bellows coupling hub / the part: need 24 by 2026-10-06",
+      "must_mention": [
+        "the part",
+        "tues the 6th"
+      ],
+      "description_length": "short",
+      "summary": "Dyno TC clamps + bellows coupling hubs",
+      "description": "the part: need 24 by tues the 6th. same drawings as last order",
+      "comments": [
+        {
+          "id": "SCM-245-c1",
+          "by": "p-nadia",
+          "at": "2026-08-07T12:21:24-07:00",
+          "events": [
+            "ev-003693"
+          ],
+          "brief": "Correction: the part: need 24 by 2026-10-01",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 24,
+              "by": "2026-10-01"
+            }
+          },
+          "must_mention": [
+            "the part",
+            "10/1"
+          ],
+          "body": "the part: need 24 by 10/1 not the 6th, sorry"
+        }
+      ]
+    },
+    {
+      "key": "SCM-246",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-amara",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-08-06T10:13:56-07:00",
+      "due_date": "2026-08-14",
+      "events": [
+        "ev-001692"
+      ],
+      "brief": "Order 12x Tendon guide bushing, 9x Thumb base / FL-HND-1413: need 12 by 2026-08-19 for next week",
+      "must_mention": [
+        "FL-HND-1413",
+        "next week",
+        "8/19"
+      ],
+      "description_length": "short",
+      "summary": "Hand tendon guide bushings / thumb bases",
+      "description": "FL-HND-1413 need 12 by 8/19, for next week's hand build",
+      "comments": [
+        {
+          "id": "SCM-246-c1",
+          "by": "p-amara",
+          "at": "2026-08-07T19:12:34-07:00",
+          "events": [
+            "ev-001694"
+          ],
+          "brief": "FL-HND-1413: need 12 by 2026-08-14",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-08-14"
+            }
+          },
+          "must_mention": [
+            "FL-HND-1413",
+            "fri 8/14"
+          ],
+          "body": "FL-HND-1413 moved up, need 12 by fri 8/14"
+        },
+        {
+          "id": "SCM-246-c2",
+          "by": "p-samir",
+          "at": "2026-08-24T09:12:00-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "photos are in slack, see the hand channel"
+        },
+        {
+          "id": "SCM-246-c3",
+          "by": "p-samir",
+          "at": "2026-08-24T11:42:11-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "any update on this?"
+        },
+        {
+          "id": "SCM-246-c4",
+          "by": "p-samir",
+          "at": "2026-08-24T13:09:22-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "pics of the parts in slack too"
+        },
+        {
+          "id": "SCM-246-c5",
+          "by": "p-samir",
+          "at": "2026-08-28T12:08:21-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "did the bushings pass the fit check?"
+        },
+        {
+          "id": "SCM-246-c6",
+          "by": "p-samir",
+          "at": "2026-08-28T17:03:14-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "following up with the vendor, will post here"
+        }
+      ]
+    },
+    {
+      "key": "SCM-250",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": "p-owen",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-08-07T09:31:43-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001700"
+      ],
+      "brief": "Order 3x Dyno absorber motor adapter, 3x Dyno mounting plate, knee actuator / absorber adapter: need 3 by 2026-08-27",
+      "must_mention": [
+        "absorber adapter",
+        "8/27"
+      ],
+      "description_length": "short",
+      "summary": "Dyno absorber adapter + mounting plate (knee)",
+      "description": "absorber adapter: need 3 by 8/27",
+      "comments": [
+        {
+          "id": "SCM-250-c1",
+          "by": "p-owen",
+          "at": "2026-08-07T17:26:28-07:00",
+          "events": [
+            "ev-003814"
+          ],
+          "brief": "FL-TST-2160: need 3 by 2026-08-27",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 3,
+              "by": "2026-08-27"
+            }
+          },
+          "must_mention": [
+            "FL-TST-2160",
+            "thurs the 27th"
+          ],
+          "body": "FL-TST-2160 need 3 by thurs the 27th"
+        },
+        {
+          "id": "SCM-250-c2",
+          "by": "p-owen",
+          "at": "2026-08-21T11:52:28-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "anyone know where this is at"
+        }
+      ]
+    }
+  ]
+}

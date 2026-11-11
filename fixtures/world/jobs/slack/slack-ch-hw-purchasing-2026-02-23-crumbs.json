@@ -1,0 +1,116 @@
+{
+  "job_id": "slack-ch-hw-purchasing-2026-02-23-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 75,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hw-purchasing",
+    "name": "hw-purchasing",
+    "slack_id": "C07FLK0HWPR",
+    "purpose": "Hardware buys: Xometry quotes, McMaster, Digi-Key, lead times"
+  },
+  "week": {
+    "start": "2026-02-23",
+    "end": "2026-03-01"
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT. This week: Arjun pushes back: harmonic flexspline fatigue at hip peak torque (~140 Nm) is marginal, cyclo takes shock loads from drops."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1772155434.731988",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-000271"
+      ],
+      "brief": "dyno coupling: need 6 by 2026-03-23",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-03-23"
+        }
+      },
+      "must_mention": [
+        "dyno coupling",
+        "3/23"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Need 6 of the dyno coupling by 3/23!!"
+    },
+    {
+      "ts": "1772213393.054673",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-000222"
+      ],
+      "brief": "1146: need 2 by 2026-04-20",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-04-20"
+        }
+      },
+      "must_mention": [
+        "1146",
+        "mon the 20th"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "1146 need 2 by mon the 20th"
+    }
+  ]
+}

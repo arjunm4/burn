@@ -1,0 +1,199 @@
+{
+  "job_id": "jira-STR-2026-07-06-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 38,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "STR",
+    "name": "Torso, structures and battery"
+  },
+  "week": {
+    "start": "2026-07-06",
+    "end": "2026-07-12"
+  },
+  "people": [
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "STR-141",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-renee",
+      "assignee": "p-renee",
+      "labels": [
+        "tech-debt"
+      ],
+      "priority": "High",
+      "created": "2026-07-06T09:01:47-07:00",
+      "due_date": "2026-07-10",
+      "events": [],
+      "brief": "Tolerance stack review (torso and pelvis structure)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "STR-142",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-idris",
+      "assignee": "p-idris",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-07-07T17:21:32-07:00",
+      "due_date": "2026-08-04",
+      "events": [],
+      "brief": "Document test procedure (battery enclosure)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "STR-143",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-renee",
+      "assignee": null,
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-07-08T10:59:46-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Review DFM feedback (battery enclosure)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "STR-144",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-idris",
+      "assignee": "p-renee",
+      "labels": [
+        "bench"
+      ],
+      "priority": "Highest",
+      "created": "2026-07-08T13:20:52-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Harness routing cleanup (torso and pelvis structure)",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "STR-145",
+      "type": "Sub-task",
+      "status": "Done",
+      "reporter": "p-idris",
+      "assignee": "p-renee",
+      "labels": [
+        "dfm"
+      ],
+      "priority": "Medium",
+      "created": "2026-07-09T21:49:15-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Rework fixture clamp (torso and pelvis structure)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "STR-146",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-lukas",
+      "assignee": "p-lukas",
+      "labels": [
+        "tech-debt"
+      ],
+      "priority": "Low",
+      "created": "2026-07-10T18:44:33-07:00",
+      "due_date": "2026-08-13",
+      "events": [],
+      "brief": "Clean up CAD configs (torso and pelvis structure)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    }
+  ]
+}

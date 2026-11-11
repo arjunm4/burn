@@ -1,0 +1,92 @@
+{
+  "job_id": "slack-ch-test-lab-2026-06-29-background-2026-06-30",
+  "source": "slack",
+  "status": "blank",
+  "priority": 40,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-test-lab",
+    "name": "test-lab",
+    "slack_id": "C07FLK0TLAB",
+    "purpose": "Test lab: rigs, bookings, results, fixtures"
+  },
+  "week": {
+    "start": "2026-06-29",
+    "end": "2026-07-05"
+  },
+  "people": [
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Six-axis sensor drifts with temperature and bolt preload. This week: Hana suspects mounting plate flatness; sensor wants 0.01 mm, plate is spec 0.05.",
+    "Ongoing: Capacitive tactile array crosstalk and flex cable routing through the finger",
+    "Ongoing: Crossed-roller preload drops after thermal cycling; bore tolerance and preload ring design",
+    "Ongoing: Drop from 30 cm cracks the shank link at the knee clevis. This week: Diego: fillet R0.5 is too tight, peak stress ~380 MPa in FEA, 7075 fatigue limit is lower.",
+    "Ongoing: Replace foot switches with a learned contact estimate from joint currents. This week: Estimator hits 96% on logged data; misses at slow heel strikes."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1782841070.897671",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Mei: Fz zero drifts ~12 N over a 20 min run.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1782844509.877792",
+      "user": "p-mei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on off-topic: a kid's science fair project",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

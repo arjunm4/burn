@@ -1,0 +1,338 @@
+{
+  "job_id": "slack-ch-hw-purchasing-2026-04-20-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 59,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hw-purchasing",
+    "name": "hw-purchasing",
+    "slack_id": "C07FLK0HWPR",
+    "purpose": "Hardware buys: Xometry quotes, McMaster, Digi-Key, lead times"
+  },
+  "week": {
+    "start": "2026-04-20",
+    "end": "2026-04-26"
+  },
+  "people": [
+    {
+      "id": "p-amara",
+      "name": "Amara Nwosu",
+      "display_name": "amara",
+      "slack_id": "U07FLK0AMAR",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno. This week: Nadia suspects poor stator-to-housing contact; thermal pad is 0.5 mm and compresses unevenly.",
+    "Ongoing: Absolute encoder on the knee output glitches when the motor runs above 8 A. This week: New harness with shielded pair plus ferrite: no glitches up to 20 A.",
+    "Ongoing: Getting dyno and gantry logs into one place with consistent timestamps. This week: Clock skew between DAQs found, 300 ms; PTP added on the lab switch."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1776722825.596377",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-003788"
+      ],
+      "brief": "ankle bushing: need 24 by 2026-05-08",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-05-08"
+        }
+      },
+      "must_mention": [
+        "ankle bushing",
+        "5/8"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "ankle bushing: need 24 by 5/8, not sure that's enough lead for the shop"
+    },
+    {
+      "ts": "1776725367.584188",
+      "user": "p-andre",
+      "thread_ts": "1776722825.596377",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "i dont think waiting is the issue, the last batch of those sat in inspection for days"
+    },
+    {
+      "ts": "1776730652.648244",
+      "user": "p-priya",
+      "thread_ts": "1776722825.596377",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Agree with Andre on that, not the shop."
+    },
+    {
+      "ts": "1776739954.522741",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-000743"
+      ],
+      "brief": "2549: need 1 by 2026-05-01; asks whether expediting is worth it",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-05-01"
+        }
+      },
+      "must_mention": [
+        "2549",
+        "5/1"
+      ],
+      "pressure": "high",
+      "asks_expedite": true,
+      "length": "short",
+      "text": "2549: need 1 by 5/1. Is expediting worth it for just one?"
+    },
+    {
+      "ts": "1776791333.610891",
+      "user": "p-samir",
+      "thread_ts": "1776739954.522741",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "is it the same one as last time or a new rev"
+    },
+    {
+      "ts": "1776794638.061629",
+      "user": "p-lukas",
+      "thread_ts": "1776739954.522741",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "nope not for one piece"
+    },
+    {
+      "ts": "1777049822.363753",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-000831"
+      ],
+      "brief": "1290: need 24 by 2026-05-18",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-05-18"
+        }
+      },
+      "must_mention": [
+        "1290",
+        "5/18"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "1290: need 24 by 5/18 🙏"
+    },
+    {
+      "ts": "1777075093.032539",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-000843"
+      ],
+      "brief": "hip dyno plate: need 7 by 2026-06-08",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 7,
+          "by": "2026-06-08"
+        }
+      },
+      "must_mention": [
+        "hip dyno plate",
+        "6/8"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "hip dyno plate need 7 by 6/8, thermal pad thing might change the pocket so maybe hold off on cutting"
+    },
+    {
+      "ts": "1777077817.885207",
+      "user": "p-carlos",
+      "thread_ts": "1777075093.032539",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "will check later and tell you what the bench needs"
+    },
+    {
+      "ts": "1777081832.816507",
+      "user": "p-priya",
+      "thread_ts": "1777075093.032539",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Pad compression is the thing to watch there."
+    }
+  ]
+}

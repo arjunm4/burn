@@ -1,0 +1,309 @@
+{
+  "job_id": "slack-ch-hands-arms-2026-07-06-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 37,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hands-arms",
+    "name": "hands-arms",
+    "slack_id": "C07FLK0HAND",
+    "purpose": "Arms, wrist and hand"
+  },
+  "week": {
+    "start": "2026-07-06",
+    "end": "2026-07-12"
+  },
+  "people": [
+    {
+      "id": "p-amara",
+      "name": "Amara Nwosu",
+      "display_name": "amara",
+      "slack_id": "U07FLK0AMAR",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hand and wrist.",
+    "Ongoing: Tendons fray at the proximal pulley after 40k grip cycles. This week: Lin starts the grip-cycle life test, target 100k cycles.",
+    "Ongoing: Capacitive tactile array crosstalk and flex cable routing through the finger. This week: Rev 2 ordered from the fab; tactile bracket moved 1 mm for the new connector.",
+    "Ongoing: What to show investors when no full humanoid exists. This week: Ingrid warns the leg drop campaign slipped; demo date is hard."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1783350616.725212",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-003014"
+      ],
+      "brief": "Hand grip-cycle life test waits on Grip load cell plate",
+      "claim": {
+        "kind": "blocked",
+        "value": "pt-grip-load-cell-plate"
+      },
+      "must_mention": [
+        "Grip load cell plate",
+        "Hand grip-cycle life test"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Hand grip-cycle life test is waiting on Grip load cell plate."
+    },
+    {
+      "ts": "1783457161.564390",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-004166"
+      ],
+      "brief": "Hand EVT assembly and tendon tensioning done by weds",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-07-08"
+      },
+      "must_mention": [
+        "Hand EVT assembly and tendon tensioning",
+        "7/8"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Hand EVT assembly and tendon tensioning should be done by weds 7/8, i think"
+    },
+    {
+      "ts": "1783458679.926888",
+      "user": "p-sofia",
+      "thread_ts": null,
+      "events": [
+        "ev-003238"
+      ],
+      "brief": "Hand EVT build waits on Hand grip-cycle life test",
+      "claim": {
+        "kind": "blocked",
+        "value": "test-hand-grip-cycle"
+      },
+      "must_mention": [
+        "Hand grip-cycle life test",
+        "Hand EVT build"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Hand EVT build waits on Hand grip-cycle life test."
+    },
+    {
+      "ts": "1783459350.196204",
+      "user": "p-talia",
+      "thread_ts": "1783458679.926888",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Which one is first, the grip test or the assembly? 🙏"
+    },
+    {
+      "ts": "1783461603.863113",
+      "user": "p-talia",
+      "thread_ts": "1783457161.564390",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Thanks for the update, good to know the tensioning is moving 🙏"
+    },
+    {
+      "ts": "1783462615.895842",
+      "user": "p-ingrid",
+      "thread_ts": "1783458679.926888",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Thank you."
+    },
+    {
+      "ts": "1783466156.274144",
+      "user": "p-sofia",
+      "thread_ts": "1783458679.926888",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I would not put it that way. The build can start on the thumb while the test runs."
+    },
+    {
+      "ts": "1783470414.237181",
+      "user": "p-sofia",
+      "thread_ts": null,
+      "events": [
+        "ev-003914"
+      ],
+      "brief": "Hand grip-cycle life test: still quoting 2026-07-06",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-07-06"
+      },
+      "must_mention": [
+        "Hand grip-cycle life test",
+        "7/6"
+      ],
+      "length": "short",
+      "text": "Hand grip-cycle life test, still quoting 7/6."
+    },
+    {
+      "ts": "1783719089.219611",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-001461"
+      ],
+      "brief": "tendon spool: need 8 by 2026-08-04 for Instrumentation fit-up for Hand pinch force and tendon creep: Tendon spool",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-08-04"
+        }
+      },
+      "must_mention": [
+        "tendon spool",
+        "Instrumentation fit-up for Hand pinch force and tendon creep: Tendon spool",
+        "1419",
+        "1486",
+        "1442",
+        "tendon pulley",
+        "tactile bracket",
+        "8/4"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "tendon spool, Instrumentation fit-up for Hand pinch force and tendon creep: Tendon spool, need 8 by 8/4. it ties to 1419 1486 and 1442, plus the tendon pulley and tactile bracket"
+    },
+    {
+      "ts": "1783790880.500315",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-001321"
+      ],
+      "brief": "the cylinder in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-07-10"
+      },
+      "must_mention": [
+        "the cylinder",
+        "the test",
+        "fri 7/10"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "the cylinder in use, done fri 7/10 for the test. it is back in the cabinet"
+    }
+  ]
+}

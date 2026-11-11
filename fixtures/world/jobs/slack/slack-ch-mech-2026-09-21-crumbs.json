@@ -52,6 +52,41 @@
         "hedging": "low",
         "quirks": []
       }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
     }
   ],
   "context": [
@@ -71,11 +106,11 @@
   ],
   "messages": [
     {
-      "ts": "1790032823.526009",
+      "ts": "1790032823.931164",
       "user": "p-lin",
       "thread_ts": null,
       "events": [
-        "ev-002996"
+        "ev-003385"
       ],
       "brief": "FL-TST-2301 rev B released: thickened to 4 mm after it flexed",
       "claim": {
@@ -85,15 +120,64 @@
       "must_mention": [
         "FL-TST-2301"
       ],
-      "length": "short",
-      "text": "FL-TST-2301 rev B is released. Thickened to 4 mm after it flexed."
+      "length": "medium",
+      "text": "FL-TST-2301 rev B is released. It flexed on the bench so I thickened it to 4 mm."
     },
     {
-      "ts": "1790176269.055459",
+      "ts": "1790092333.563957",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-003751"
+      ],
+      "brief": "FL-ANK-1244: need 7 by 2026-10-02 for Prototype fit-up: Ankle yoke",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 7,
+          "by": "2026-10-02"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1244",
+        "Prototype fit-up: Ankle yoke",
+        "FL-ANK-1259",
+        "FL-ANK-1291",
+        "10/2"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "FL-ANK-1244 Prototype fit-up: Ankle yoke, need 7 by 10/2. Same set as FL-ANK-1259 and FL-ANK-1291, so those should travel together."
+    },
+    {
+      "ts": "1790094978.515215",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-003755"
+      ],
+      "brief": "FL-TST-2274: need 2 by 2026-10-12",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-10-12"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2274",
+        "mon the 12th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2274, need 2 by mon the 12th."
+    },
+    {
+      "ts": "1790176269.558442",
       "user": "p-dmitri",
       "thread_ts": null,
       "events": [
-        "ev-003525"
+        "ev-004064"
       ],
       "brief": "camera mount: still quoting rev A",
       "claim": {
@@ -104,7 +188,7 @@
         "camera mount"
       ],
       "length": "short",
-      "text": "camera mount still quoting rev A!! Someone please fix."
+      "text": "camera mount, still quoting rev A"
     }
   ]
 }

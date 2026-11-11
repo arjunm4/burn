@@ -1,0 +1,289 @@
+{
+  "job_id": "jira-STR-2026-07-13-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 36,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "STR",
+    "name": "Torso, structures and battery"
+  },
+  "week": {
+    "start": "2026-07-13",
+    "end": "2026-07-19"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "STR-147",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-idris",
+      "assignee": "p-andre",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-07-14T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Assemble build unit for Leg DVT build: Battery clevis 10",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "STR-147-c1",
+          "by": "p-andre",
+          "at": "2026-07-16T12:33:14-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "STR-147-c2",
+          "by": "p-renee",
+          "at": "2026-08-17T13:59:08-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "STR-147-c3",
+          "by": "p-idris",
+          "at": "2026-08-20T12:25:03-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "STR-149",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-idris",
+      "assignee": "p-lukas",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-07-15T12:12:11-07:00",
+      "due_date": "2026-08-24",
+      "events": [],
+      "brief": "Rework fixture clamp (torso and pelvis structure)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "STR-150",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-idris",
+      "assignee": null,
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-07-15T16:01:53-07:00",
+      "due_date": "2026-07-29",
+      "events": [],
+      "brief": "Investigate noise on bench unit (battery enclosure)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "STR-150-c1",
+          "by": "p-idris",
+          "at": "2026-07-16T16:54:53-07:00",
+          "events": [],
+          "brief": "background: short note on why the due date moved (no date)",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "STR-151",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-idris",
+      "assignee": null,
+      "labels": [
+        "docs"
+      ],
+      "priority": "Low",
+      "created": "2026-07-16T09:32:27-07:00",
+      "due_date": "2026-08-10",
+      "events": [],
+      "brief": "Follow up vendor question (battery enclosure)",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "STR-152",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-lukas",
+      "assignee": "p-lukas",
+      "labels": [],
+      "priority": "Highest",
+      "created": "2026-07-16T10:27:17-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Tolerance stack review (torso and pelvis structure)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "STR-153",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-idris",
+      "assignee": "p-renee",
+      "labels": [
+        "cleanup"
+      ],
+      "priority": "Medium",
+      "created": "2026-07-17T10:03:28-07:00",
+      "due_date": "2026-07-31",
+      "events": [],
+      "brief": "Update drawing and BOM (battery enclosure)",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "STR-153-c1",
+          "by": "p-renee",
+          "at": "2026-07-17T13:46:42-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "STR-153-c2",
+          "by": "p-idris",
+          "at": "2026-07-20T11:24:41-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "STR-153-c3",
+          "by": "p-renee",
+          "at": "2026-07-20T18:09:42-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "STR-153-c4",
+          "by": "p-renee",
+          "at": "2026-07-21T15:29:27-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    }
+  ]
+}

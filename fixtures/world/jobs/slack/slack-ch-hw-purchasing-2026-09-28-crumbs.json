@@ -38,6 +38,25 @@
       }
     },
     {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
       "id": "p-diego",
       "name": "Diego Salcedo",
       "display_name": "diego",
@@ -57,6 +76,25 @@
       }
     },
     {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
       "id": "p-idris",
       "name": "Idris Bello",
       "display_name": "idris",
@@ -72,24 +110,6 @@
         "quirks": [
           "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
           "corrects own dates"
-        ]
-      }
-    },
-    {
-      "id": "p-kenji",
-      "name": "Kenji Morimoto",
-      "display_name": "kenji.m",
-      "slack_id": "U07FLK0KENJ",
-      "title": "Mechanical Engineer",
-      "style": {
-        "case": "lower",
-        "punctuation": "none",
-        "typos": "some",
-        "emoji": "rare",
-        "length": "terse",
-        "hedging": "low",
-        "quirks": [
-          "no capitals or end punctuation ever"
         ]
       }
     },
@@ -128,6 +148,25 @@
         "quirks": [
           "numbered lists in status updates",
           "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
         ]
       }
     },
@@ -180,25 +219,6 @@
         "hedging": "low",
         "quirks": []
       }
-    },
-    {
-      "id": "p-zoe",
-      "name": "Zoe Castellanos",
-      "display_name": "zoe.c",
-      "slack_id": "U07FLK0ZOE0",
-      "title": "Test Engineer, fixtures owner",
-      "style": {
-        "case": "lower",
-        "punctuation": "light",
-        "typos": "some",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "medium",
-        "quirks": [
-          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
-          "corrects own dates"
-        ]
-      }
     }
   ],
   "context": [
@@ -218,11 +238,35 @@
   ],
   "messages": [
     {
-      "ts": "1790702845.951314",
+      "ts": "1790621480.760500",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-002250"
+      ],
+      "brief": "1689: need 24 by 2026-10-02; asks whether expediting is worth it",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-10-02"
+        }
+      },
+      "must_mention": [
+        "1689",
+        "fri 10/2"
+      ],
+      "pressure": "elevated",
+      "asks_expedite": true,
+      "length": "short",
+      "text": "1689 need 24 by fri 10/2, is it worth expediting??"
+    },
+    {
+      "ts": "1790702845.515968",
       "user": "p-wei",
       "thread_ts": null,
       "events": [
-        "ev-002016"
+        "ev-002274"
       ],
       "brief": "FL-KNE-1190: need 3 by 2026-10-14",
       "claim": {
@@ -234,28 +278,18 @@
       },
       "must_mention": [
         "FL-KNE-1190",
-        "wed 10/14"
+        "10/14"
       ],
       "pressure": "high",
       "length": "short",
-      "text": "FL-KNE-1190 need 3 by wed 10/14"
+      "text": "I need 3 of FL-KNE-1190 by 10/14."
     },
     {
-      "ts": "1790706435.806976",
-      "user": "p-sofia",
-      "thread_ts": "1790702845.951314",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Is that a rev change or a straight re-order? Please say which when you place it."
-    },
-    {
-      "ts": "1790714287.937418",
+      "ts": "1790714287.603172",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-002023"
+        "ev-002281"
       ],
       "brief": "1021: need 2 by 2026-10-09",
       "claim": {
@@ -267,64 +301,87 @@
       },
       "must_mention": [
         "1021",
-        "fri 10/9"
-      ],
-      "pressure": "high",
-      "length": "short",
-      "text": "1021: need 2 by fri 10/9"
-    },
-    {
-      "ts": "1790714508.505321",
-      "user": "p-kenji",
-      "thread_ts": null,
-      "events": [
-        "ev-002001"
-      ],
-      "brief": "arm adapter: need 1 by 2026-10-15",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 1,
-          "by": "2026-10-15"
-        }
-      },
-      "must_mention": [
-        "arm adapter",
-        "thurs the 15th"
-      ],
-      "pressure": "low",
-      "length": "medium",
-      "text": "arm adapter need 1 by thurs the 15th"
-    },
-    {
-      "ts": "1790806118.532167",
-      "user": "p-andre",
-      "thread_ts": null,
-      "events": [
-        "ev-002039"
-      ],
-      "brief": "the pulley: need 5 by 2026-10-09",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 5,
-          "by": "2026-10-09"
-        }
-      },
-      "must_mention": [
-        "the pulley",
         "10/9"
       ],
       "pressure": "high",
       "length": "medium",
-      "text": "the pulley, need 5 by 10/9. dyno is blocked w/o them"
+      "text": "Not 100% sure but I think we need 2 of 1021 by 10/9"
     },
     {
-      "ts": "1790902237.350392",
+      "ts": "1790784104.484161",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-002734"
+      ],
+      "brief": "FL-TST-2878: need 3 by 2026-11-03 for Fixture install and shakedown: Stator insertion jig",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-11-03"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2878",
+        "Fixture install and shakedown: Stator insertion jig",
+        "FL-TST-2270",
+        "FL-TST-2376",
+        "tues 11/3"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "FL-TST-2878 need 3 for Fixture install and shakedown: Stator insertion jig, also FL-TST-2270 and FL-TST-2376, by tues 11/3 🙏"
+    },
+    {
+      "ts": "1790806118.330859",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002297"
+      ],
+      "brief": "the pulley: need 5 by 2026-10-06",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 5,
+          "by": "2026-10-06"
+        }
+      },
+      "must_mention": [
+        "the pulley",
+        "10/6"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "the pulley, need 5 by 10/6"
+    },
+    {
+      "ts": "1790807104.616878",
+      "user": "p-callum",
+      "thread_ts": "1790806118.330859",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "isnt that the one we ordered last time?"
+    },
+    {
+      "ts": "1790811424.552927",
+      "user": "p-farah",
+      "thread_ts": "1790806118.330859",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "No, different rev."
+    },
+    {
+      "ts": "1790902237.067119",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-002027"
+        "ev-002285"
       ],
       "brief": "the part: need 20 by 2026-10-23",
       "claim": {
@@ -339,17 +396,17 @@
         "fri 10/23"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "the part need 20 by fri 10/23. anyone seeing a lead time on it yet?"
+      "length": "short",
+      "text": "I need 20 of the part by fri 10/23, same as last time."
     },
     {
-      "ts": "1790953494.417804",
+      "ts": "1790954474.604244",
       "user": "p-nadia",
       "thread_ts": null,
       "events": [
-        "ev-002076"
+        "ev-002334"
       ],
-      "brief": "spin coupling: need 6 by 2026-10-07 for Test stand rework: Spin-test shaft coupling",
+      "brief": "the part: need 6 by 2026-10-07",
       "claim": {
         "kind": "needs",
         "value": {
@@ -358,86 +415,45 @@
         }
       },
       "must_mention": [
-        "spin coupling",
-        "Test stand rework: Spin-test shaft coupling",
-        "absorber adapter",
-        "wed 10/7"
-      ],
-      "pressure": "high",
-      "length": "short",
-      "text": "spin coupling need 6 for Test stand rework: Spin-test shaft coupling, plus absorber adapter, wed 10/7"
-    },
-    {
-      "ts": "1790956535.746225",
-      "user": "p-nadia",
-      "thread_ts": "1790953494.417804",
-      "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "nope i dont think wed is real, the machine shop is slammed"
-    },
-    {
-      "ts": "1790957432.741090",
-      "user": "p-kenji",
-      "thread_ts": "1790953494.417804",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "yeah wed is rough"
-    },
-    {
-      "ts": "1790957583.943100",
-      "user": "p-priya",
-      "thread_ts": "1790953494.417804",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "Agreed."
-    },
-    {
-      "ts": "1790961098.950226",
-      "user": "p-andre",
-      "thread_ts": "1790806118.532167",
-      "events": [
-        "ev-003113"
-      ],
-      "brief": "Correction: the pulley: need 5 by 2026-10-06",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 5,
-          "by": "2026-10-06"
-        }
-      },
-      "must_mention": [
-        "the pulley",
-        "10/6"
+        "the part",
+        "10/7"
       ],
       "pressure": "high",
       "length": "medium",
-      "text": "correction the pulley is needed 10/6 not 10/9, sorry. still 5"
+      "text": "need 6 of the part by 10/7, pls dont let it slip again"
     },
     {
-      "ts": "1790962000.571566",
-      "user": "p-zoe",
-      "thread_ts": "1790806118.532167",
-      "events": [],
-      "brief": "reply (will check later) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "will check the dyno schedule and tell you"
-    },
-    {
-      "ts": "1790969942.927522",
+      "ts": "1790969942.305831",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-002272"
+        "ev-002550"
       ],
-      "brief": "right pelvis plate: need 3 by 2026-11-10 for Kit and assemble: Pelvis side plate, right",
+      "brief": "right pelvis plate: need 3 by 2026-11-05 for Kit and assemble: Pelvis side plate, right",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-11-05"
+        }
+      },
+      "must_mention": [
+        "right pelvis plate",
+        "Kit and assemble: Pelvis side plate, right",
+        "thurs 11/5"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "right pelvis plate, need 3 for Kit and assemble: Pelvis side plate, right, by thurs 11/5"
+    },
+    {
+      "ts": "1790972582.270267",
+      "user": "p-idris",
+      "thread_ts": "1790969942.305831",
+      "events": [
+        "ev-003560"
+      ],
+      "brief": "Correction: right pelvis plate: need 3 by 2026-11-10 for Kit and assemble: Pelvis side plate, right",
       "claim": {
         "kind": "needs",
         "value": {
@@ -452,27 +468,37 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "right pelvis plate need 3 by 11/10 for Kit and assemble: Pelvis side plate, right"
+      "text": "*correction, right pelvis plate for Kit and assemble: Pelvis side plate, right, is needed 11/10 not the 5th"
     },
     {
-      "ts": "1790971991.685204",
-      "user": "p-diego",
-      "thread_ts": "1790969942.927522",
+      "ts": "1790976413.324266",
+      "user": "p-sofia",
+      "thread_ts": "1790969942.305831",
       "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "brief": "reply (thanks) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "Do you want both sides ordered together? Seems cheaper."
+      "text": "Thanks for catching that."
     },
     {
-      "ts": "1790976372.037373",
-      "user": "p-tomas",
-      "thread_ts": "1790969942.927522",
+      "ts": "1790981729.804054",
+      "user": "p-andre",
+      "thread_ts": "1790969942.305831",
       "events": [],
-      "brief": "reply (will check later) in the thread about: the message above",
+      "brief": "reply (pushes back) in the thread about: the message above",
       "must_mention": [],
       "length": "one_word",
-      "text": "ill look into the left side after standup"
+      "text": "wait, which side is this again"
+    },
+    {
+      "ts": "1790984309.696051",
+      "user": "p-samir",
+      "thread_ts": "1790969942.305831",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "@idris send the drawing rev too"
     }
   ]
 }

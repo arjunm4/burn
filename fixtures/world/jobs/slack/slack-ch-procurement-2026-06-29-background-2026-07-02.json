@@ -1,0 +1,93 @@
+{
+  "job_id": "slack-ch-procurement-2026-06-29-background-2026-07-02",
+  "source": "slack",
+  "status": "blank",
+  "priority": 40,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-06-29",
+    "end": "2026-07-05"
+  },
+  "people": [
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Six-axis sensor drifts with temperature and bolt preload. This week: Hana suspects mounting plate flatness; sensor wants 0.01 mm, plate is spec 0.05.",
+    "Ongoing: Capacitive tactile array crosstalk and flex cable routing through the finger",
+    "Ongoing: Crossed-roller preload drops after thermal cycling; bore tolerance and preload ring design",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Drop from 30 cm cracks the shank link at the knee clevis. This week: Diego: fillet R0.5 is too tight, peak stress ~380 MPa in FEA, 7075 fatigue limit is lower."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1783026603.793081",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Farah: ground pour missing under the electrode layer, crosstalk from the flex.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783039485.866207",
+      "user": "p-jonas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on this: Jonas adds per-taxel baseline calibration; Kenji wants a respin anyway.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    }
+  ]
+}

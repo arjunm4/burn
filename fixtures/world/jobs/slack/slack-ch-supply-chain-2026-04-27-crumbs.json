@@ -1,0 +1,353 @@
+{
+  "job_id": "slack-ch-supply-chain-2026-04-27-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 57,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-supply-chain",
+    "name": "supply-chain",
+    "slack_id": "C07FLK0SUPC",
+    "purpose": "Supply chain team: vendors, POs, deliveries, expedites"
+  },
+  "week": {
+    "start": "2026-04-27",
+    "end": "2026-05-03"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1777311180.681479",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-000646"
+      ],
+      "brief": "carrier in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-04-27"
+      },
+      "must_mention": [
+        "carrier",
+        "the build",
+        "4/27"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "carrier in use for the build today 4/27"
+    },
+    {
+      "ts": "1777313991.677255",
+      "user": "p-beth",
+      "thread_ts": "1777311180.681479",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@jade.t fyi"
+    },
+    {
+      "ts": "1777315082.655776",
+      "user": "p-beth",
+      "thread_ts": "1777311180.681479",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "yep"
+    },
+    {
+      "ts": "1777333500.356759",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-000626"
+      ],
+      "brief": "carrier in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-04-27"
+      },
+      "must_mention": [
+        "carrier",
+        "the build",
+        "mon 4/27"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "carrier in use for the build, mon 4/27"
+    },
+    {
+      "ts": "1777336943.539011",
+      "user": "p-jade",
+      "thread_ts": "1777333500.356759",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@beth can you log it"
+    },
+    {
+      "ts": "1777339835.364637",
+      "user": "p-beth",
+      "thread_ts": "1777333500.356759",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "thanks"
+    },
+    {
+      "ts": "1777420598.936408",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-000835"
+      ],
+      "brief": "Order XO-5376867 placed, promised 2026-05-19",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-05-19"
+      },
+      "must_mention": [
+        "XO-5376867",
+        "bronze bushing",
+        "5/19"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "XO-5376867 placed, bronze bushing promised 5/19"
+    },
+    {
+      "ts": "1777490270.656672",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-000031"
+      ],
+      "brief": "Encoder kit for ankle and foot (pivot pin): moved from 2026-05-04 to 2026-05-07",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-05-07"
+      },
+      "must_mention": [
+        "Encoder kit for ankle and foot (pivot pin)",
+        "5/7"
+      ],
+      "length": "short",
+      "text": "Encoder kit for ankle and foot (pivot pin) pushed out, now 5/7"
+    },
+    {
+      "ts": "1777504478.121342",
+      "user": "p-talia",
+      "thread_ts": "1777420598.936408",
+      "events": [
+        "ev-003567"
+      ],
+      "brief": "Correction: Order XO-5376867 placed, promised 2026-05-22",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-05-22"
+      },
+      "must_mention": [
+        "XO-5376867",
+        "bronze bushing",
+        "fri 5/22"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "update on XO-5376867, bronze bushing now fri 5/22 not the 19th"
+    },
+    {
+      "ts": "1777583058.118701",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-000813"
+      ],
+      "brief": "Order XO-5380246 placed, promised 2026-05-06",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-05-06"
+      },
+      "must_mention": [
+        "XO-5380246",
+        "2556",
+        "5/6"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "XO-5380246 placed for 2556, promised 5/6"
+    },
+    {
+      "ts": "1777584974.733579",
+      "user": "p-samir",
+      "thread_ts": "1777583058.118701",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "hm i don't think that matches what the vendor told me"
+    },
+    {
+      "ts": "1777586119.282461",
+      "user": "p-ingrid",
+      "thread_ts": "1777583058.118701",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "thanks talia"
+    },
+    {
+      "ts": "1777587934.624009",
+      "user": "p-beth",
+      "thread_ts": "1777583058.118701",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "same vendor as the last couple orders, if that helps"
+    }
+  ]
+}

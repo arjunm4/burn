@@ -291,7 +291,7 @@
   ],
   "background": [
     {
-      "event": "ev-004738",
+      "event": "ev-005198",
       "speaker": "p-beth",
       "brief": "Hardware program review: round of updates"
     }
@@ -305,197 +305,173 @@
     {
       "start_s": 0,
       "speaker": "p-beth",
-      "text": "Okay, I think we have most people. Let's get started, and Lukas can catch up when he joins. I'll go around by subsystem, same order as last week."
+      "text": "Okay, I think we have everyone except Lukas. Let's get started, I'd like to keep this to under an hour if we can."
     },
     {
-      "start_s": 22,
-      "speaker": "p-omar",
-      "text": "Can I just say, uh, I think the shared tracker is out of date for a few of these, so if something looks wrong in the rows, say so."
-    },
-    {
-      "start_s": 40,
+      "start_s": 12,
       "speaker": "p-ingrid",
-      "text": "Understood. Start with actuators, Arjun."
+      "text": "Sounds good. Beth, can you start with the overall picture?"
     },
     {
-      "start_s": 48,
+      "start_s": 20,
+      "speaker": "p-beth",
+      "text": "Sure. To restate, the goal today is a round of updates by workstream, then the schedule changes, then risks. Actuators first. Arjun?"
+    },
+    {
+      "start_s": 42,
       "speaker": "p-arjun",
-      "text": "ok so knee actuator, the new batch of housings passed the leak check, no weeps. the encoder cal is still the long pole, we redo it per unit and its slow. i think we can get it down if jonas gives us the batch script"
+      "text": "ok so, uh, actuator DVT builds are going fine. dyno is the bottleneck, we've got one rig and everyone wants it"
     },
     {
-      "start_s": 96,
-      "speaker": "p-jonas",
-      "text": "script is mostly done, ill push it today"
-    },
-    {
-      "start_s": 104,
-      "speaker": "p-arjun",
-      "text": "great ty. and the hip one, dmitri has more on that"
-    },
-    {
-      "start_s": 120,
+      "start_s": 65,
       "speaker": "p-dmitri",
-      "text": "Right. Dyno is booked solid through the week. We saw the housing temp climb faster than the model on the long holds. I don't want to call it until I've seen two more runs!!"
+      "text": "We are working on a second rig, but the torque transducer mount is not done!!"
+    },
+    {
+      "start_s": 80,
+      "speaker": "p-arjun",
+      "text": "yeah that. also the thermal numbers are better with the heat spreader, firmware derate is the backstop"
+    },
+    {
+      "start_s": 102,
+      "speaker": "p-jonas",
+      "text": "derate is in the branch, needs testing on the dyno"
+    },
+    {
+      "start_s": 112,
+      "speaker": "p-farah",
+      "text": "On the electrical side, 1. the driver board respin is back from assembly, 2. we are validating the bus load with all legs streaming, 3. no new issues on the power board. I think the biggest risk is still the CAN loading."
     },
     {
       "start_s": 160,
-      "speaker": "p-ingrid",
-      "text": "Is that a cooling problem or a controls problem? I don't want to chase the wrong one."
-    },
-    {
-      "start_s": 176,
-      "speaker": "p-dmitri",
-      "text": "Don't know yet. Could be the thermal pad contact. Could be the current limit on the drive being looser than we assumed."
+      "speaker": "p-priya",
+      "text": "Legs, I'll go through three points. First, the drop test fixture is mostly set up. Second, the harness is the long pole for the leg builds. Third, the gait gantry first steps are blocked on instrumentation."
     },
     {
       "start_s": 205,
+      "speaker": "p-ingrid",
+      "text": "Priya, is the harness a vendor issue or ours?"
+    },
+    {
+      "start_s": 214,
       "speaker": "p-priya",
-      "text": "To answer Ingrid's question from the legs side: 1. The leg structure hasn't changed, so cooling is not coming from us. 2. We did change the pad thickness on the last revision. 3. I'd want that checked before anyone blames the drive."
+      "text": "Mostly vendor lead time, not 100% sure on the rest."
     },
     {
-      "start_s": 250,
-      "speaker": "p-farah",
-      "text": "On the electrical side, I can confirm the drive current limit is set where we said. 1. Limit verified on the bench. 2. Logging is a bit noisy. 3. I'd like a fresh capture on the dyno."
+      "start_s": 226,
+      "speaker": "p-gwen",
+      "text": "I can look at that with Samir after this. We have a couple of open quotes."
     },
     {
-      "start_s": 300,
-      "speaker": "p-dmitri",
-      "text": "Fine, Farah, send me what you want logged and I'll add it."
-    },
-    {
-      "start_s": 318,
+      "start_s": 241,
       "speaker": "p-sofia",
-      "text": "Hands update. Finger tendon routing is stable after the last rework. We're still seeing a creak on the wrist joint at the end of travel, and Lukas's team may need to look at the housing."
+      "text": "Hands and wrist, the wrist prototype passed the first fatigue pass. We are cutting a revision for the finger link, nothing blocking."
     },
     {
-      "start_s": 365,
-      "speaker": "p-lukas",
-      "text": "sorry late. yep ok"
-    },
-    {
-      "start_s": 372,
-      "speaker": "p-ingrid",
-      "text": "Lukas, anything from structures before we get to schedule?"
-    },
-    {
-      "start_s": 382,
-      "speaker": "p-lukas",
-      "text": "wrist housing is on the cmm, results tmrw. torso brackets ok"
-    },
-    {
-      "start_s": 420,
-      "speaker": "p-nora",
-      "text": "From manufacturing, to restate the question, are we confident the parts for the next builds are showing up on time. Honestly, 1. most of it is. 2. a couple of fasteners are still short. 3. I'd like Gwen to confirm."
-    },
-    {
-      "start_s": 480,
-      "speaker": "p-gwen",
-      "text": "Fasteners are being expedited. I'll post the status in the channel after this, I don't have it in front of me."
-    },
-    {
-      "start_s": 520,
+      "start_s": 272,
       "speaker": "p-omar",
-      "text": "Hm, sorry, can you repeat that? Audio cut out. Is it the fasteners or the washers?"
+      "text": "i think the program rollup shows us roughly on track except for legs, probably"
     },
     {
-      "start_s": 532,
-      "speaker": "p-gwen",
-      "text": "Both, but the fasteners matter more."
+      "start_s": 290,
+      "speaker": "p-nora",
+      "text": "From manufacturing, we have a lot of orders sitting in DFM review. I will send a note about what we hold up on."
     },
     {
-      "start_s": 560,
+      "start_s": 326,
+      "speaker": "p-lukas",
+      "text": "sorry, late. what did i miss"
+    },
+    {
+      "start_s": 331,
       "speaker": "p-ingrid",
-      "text": "Okay. Beth, let's get the schedule updates."
+      "text": "Just updates, Lukas. We are about to cover the schedule."
     },
     {
-      "start_s": 1990,
+      "start_s": 1980,
       "speaker": "p-beth",
-      "text": "So, schedule, and just to restate, the question is what moved this week. The Leg DVT build slid to 11/4, and the reason is the parts we just talked about. Everything downstream shifts by the same amount."
+      "text": "Okay, schedule. Leg DVT build moved to 11/4. That was driven by the harness and the drop test fixture."
+    },
+    {
+      "start_s": 2040,
+      "speaker": "p-priya",
+      "text": "Right, and it assumes the harness lands in time."
     },
     {
       "start_s": 2060,
-      "speaker": "p-priya",
-      "text": "That works for legs. 1. We can use the extra time on the hip bracket fit. 2. I'd rather not lose the gain from fixing the pad. 3. We'll need the dyno data before that."
-    },
-    {
-      "start_s": 2120,
       "speaker": "p-ingrid",
-      "text": "Is anyone worried about the test lab being the bottleneck in that window?"
+      "text": "Understood. Any more movement behind that?"
     },
     {
-      "start_s": 2145,
+      "start_s": 2075,
+      "speaker": "p-beth",
+      "text": "Not on the leg side. Dmitri, test schedule?"
+    },
+    {
+      "start_s": 2090,
       "speaker": "p-dmitri",
-      "text": "We'll make it work. Just give me the build list early!!"
+      "text": "Test is gated by fixtures, same as always. The rig is the whole thing."
     },
     {
-      "start_s": 2200,
-      "speaker": "p-omar",
-      "text": "I think, probably, it will be fine, not 100% sure about the cal fixtures though"
-    },
-    {
-      "start_s": 2290,
-      "speaker": "p-beth",
-      "text": "Noted. I'll put that on the risk list."
-    },
-    {
-      "start_s": 2720,
-      "speaker": "p-beth",
-      "text": "Last item on my list. The Hip actuator thermal derate at continuous torque test is now 10/12, previous date has passed. Arjun, that's consistent with what you said earlier?"
-    },
-    {
-      "start_s": 2770,
-      "speaker": "p-arjun",
-      "text": "yeah thats what i have, oh wait, i said thurs earlier but its the following mon, 10/12, sorry"
-    },
-    {
-      "start_s": 2830,
-      "speaker": "p-ingrid",
-      "text": "Fine. Any other schedule risks anyone's sitting on?"
-    },
-    {
-      "start_s": 2900,
-      "speaker": "p-jonas",
-      "text": "no"
-    },
-    {
-      "start_s": 2915,
+      "start_s": 2150,
       "speaker": "p-lukas",
-      "text": "no"
+      "text": "structures frame is on schedule, we have the shin links done"
     },
     {
-      "start_s": 3000,
+      "start_s": 2220,
+      "speaker": "p-ingrid",
+      "text": "Good. Let's move on to the risks."
+    },
+    {
+      "start_s": 2700,
       "speaker": "p-beth",
-      "text": "Then I'll send the notes. Thanks everyone."
+      "text": "One more schedule item. Hip actuator thermal derate at continuous torque is now 10/12. Arjun, that's the test result date?"
+    },
+    {
+      "start_s": 2730,
+      "speaker": "p-arjun",
+      "text": "yeah, 10/12 is when we expect to have the numbers, i mean we need the dyno slot"
+    },
+    {
+      "start_s": 2760,
+      "speaker": "p-dmitri",
+      "text": "Dyno is yours that week, I will block it."
+    },
+    {
+      "start_s": 2800,
+      "speaker": "p-ingrid",
+      "text": "Okay. Anything else? Thanks everyone."
+    },
+    {
+      "start_s": 3100,
+      "speaker": "p-beth",
+      "text": "I'll send notes. Thanks."
     }
   ],
   "summary": {
-    "overview": "Weekly hardware program review, 54 min. Subsystem round of updates: knee actuator housings passed leak check, encoder cal still slow, hip actuator housing temps running ahead of the model on long holds with cooling vs drive limit still open. Schedule changes covered at the end.",
+    "overview": "Hardware program review, round of updates by workstream followed by schedule changes and risks. Legs and test fixtures are gating, actuator thermal work in progress.",
     "shorthand_bullet": [
-      "knee act: housings pass leak check, encoder cal is long pole, Jonas pushing batch script",
-      "hip act: housing temp climbing faster than model; pad contact vs current limit unresolved, need 2 more dyno runs",
-      "legs: pad thickness changed on last rev, check before blaming drive",
-      "electrical: drive limit verified on bench, wants fresh dyno capture",
-      "hands: tendon routing stable, wrist creak at end of travel, housing on CMM",
-      "fasteners short, being expedited (Gwen to post status)",
-      "Leg DVT build now 11/4, downstream shifts same amount",
+      "Actuators: DVT builds ok, single dyno rig is bottleneck, heat spreader improves thermals, firmware derate backstop",
+      "Electrical: driver respin back, CAN bus loading still biggest risk",
+      "Legs: drop test fixture mostly set up, harness long pole, gantry blocked on instrumentation",
+      "Hands: wrist passed first fatigue pass, finger link revision",
+      "Leg DVT build now 11/4",
       "Hip actuator thermal derate at continuous torque now 10/12",
-      "risk: cal fixtures for test window"
+      "Manufacturing: orders sitting in DFM review"
     ],
     "action_items": [
-      "Jonas: push encoder batch script",
-      "Dmitri: extra dyno runs, add Farah's logging",
-      "Farah: send list of channels to log",
-      "Gwen: post fastener status",
-      "Beth: add cal fixtures to risk list, send notes",
-      "someone to check pad contact"
+      "Gwen/Samir to look at harness lead time quotes",
+      "Dmitri to block dyno slot",
+      "Nora to send note on DFM holds",
+      "Beth to send notes"
     ],
     "keywords": [
       "program review",
-      "hip actuator",
-      "Leg DVT",
+      "DVT",
+      "dyno",
+      "harness",
       "thermal derate",
-      "fasteners",
-      "dyno"
+      "schedule"
     ]
   }
 }

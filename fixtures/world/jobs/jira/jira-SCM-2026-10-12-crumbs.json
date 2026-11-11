@@ -74,25 +74,6 @@
       }
     },
     {
-      "id": "p-dmitri",
-      "name": "Dmitri Sokolov",
-      "display_name": "dmitri",
-      "slack_id": "U07FLK0DMIT",
-      "title": "Test and Reliability Lead",
-      "style": {
-        "case": "mixed",
-        "punctuation": "full",
-        "typos": "some",
-        "emoji": "some",
-        "length": "terse",
-        "hedging": "low",
-        "quirks": [
-          "ALL CAPS for part numbers and deadlines",
-          "uses !!"
-        ]
-      }
-    },
-    {
       "id": "p-gwen",
       "name": "Gwen Albright",
       "display_name": "gwen",
@@ -181,24 +162,6 @@
       }
     },
     {
-      "id": "p-owen",
-      "name": "Owen Halloran",
-      "display_name": "owen",
-      "slack_id": "U07FLK0OWEN",
-      "title": "Mechanical Engineer, Actuators",
-      "style": {
-        "case": "lower",
-        "punctuation": "none",
-        "typos": "some",
-        "emoji": "rare",
-        "length": "terse",
-        "hedging": "low",
-        "quirks": [
-          "no capitals or end punctuation ever"
-        ]
-      }
-    },
-    {
       "id": "p-priya",
       "name": "Priya Raman",
       "display_name": "priya",
@@ -282,7 +245,7 @@
   ],
   "tickets": [
     {
-      "key": "SCM-340",
+      "key": "SCM-359",
       "type": "Task",
       "status": "Done",
       "reporter": "p-carlos",
@@ -294,23 +257,23 @@
       "created": "2026-10-12T10:20:26-07:00",
       "due_date": "2026-10-20",
       "events": [
-        "ev-002125"
+        "ev-002399"
       ],
-      "brief": "Order 2x Tilt stand weight hanger / FL-TST-2535: need 2 by 2026-10-16",
+      "brief": "Order 2x Tilt stand weight hanger / FL-TST-2535: need 2 by 2026-10-20",
       "must_mention": [
         "FL-TST-2535",
-        "10/16"
+        "10/20"
       ],
-      "description_length": "one_line",
-      "summary": "Tilt stand weight hanger x2 FL-TST-2535",
-      "description": "need 2 by 10/16",
+      "description_length": "short",
+      "summary": "Tilt stand weight hanger x2",
+      "description": "FL-TST-2535 x2, need by 10/20!!",
       "comments": [
         {
-          "id": "SCM-340-c1",
+          "id": "SCM-359-c1",
           "by": "p-carlos",
           "at": "2026-10-12T10:45:40-07:00",
           "events": [
-            "ev-002126"
+            "ev-002400"
           ],
           "brief": "FL-TST-2535: need 2 by 2026-10-20",
           "claim": {
@@ -324,35 +287,14 @@
             "FL-TST-2535",
             "10/20"
           ],
-          "body": "FL-TST-2535 need 2 by 10/20"
+          "body": "FL-TST-2535 x2 by 10/20"
         },
         {
-          "id": "SCM-340-c2",
-          "by": "p-carlos",
-          "at": "2026-10-13T11:37:26-07:00",
-          "events": [
-            "ev-003200"
-          ],
-          "brief": "Correction: FL-TST-2535: need 2 by 2026-10-20",
-          "claim": {
-            "kind": "needs",
-            "value": {
-              "qty": 2,
-              "by": "2026-10-20"
-            }
-          },
-          "must_mention": [
-            "FL-TST-2535",
-            "tues 10/20"
-          ],
-          "body": "Correction: FL-TST-2535, need 2 by tues 10/20"
-        },
-        {
-          "id": "SCM-340-c3",
+          "id": "SCM-359-c2",
           "by": "p-carlos",
           "at": "2026-11-08T02:09:00-08:00",
           "events": [
-            "ev-002130"
+            "ev-002404"
           ],
           "brief": "weight hanger in use",
           "claim": {
@@ -363,60 +305,12 @@
             "weight hanger",
             "11/6"
           ],
-          "body": "weight hanger in use since 11/6"
+          "body": "weight hanger is free again, done 11/6"
         }
       ]
     },
     {
-      "key": "SCM-341",
-      "type": "Task",
-      "status": "Done",
-      "reporter": "p-owen",
-      "assignee": "p-owen",
-      "labels": [
-        "procurement"
-      ],
-      "priority": "Medium",
-      "created": "2026-10-12T14:36:14-07:00",
-      "due_date": null,
-      "events": [
-        "ev-002165"
-      ],
-      "brief": "Order 12x Knee bearing shim, 4x Knee rear cover / that order: need 12 by 2026-10-30",
-      "must_mention": [
-        "that order",
-        "fri the 30th"
-      ],
-      "description_length": "one_line",
-      "summary": "knee bearing shim x12 + rear cover x4",
-      "description": "need 12 of that order fri the 30th",
-      "comments": [
-        {
-          "id": "SCM-341-c1",
-          "by": "p-owen",
-          "at": "2026-10-13T15:33:21-07:00",
-          "events": [
-            "ev-002168"
-          ],
-          "brief": "FL-KNE-1124: need 12 by 2026-10-30 for the fit check",
-          "claim": {
-            "kind": "needs",
-            "value": {
-              "qty": 12,
-              "by": "2026-10-30"
-            }
-          },
-          "must_mention": [
-            "FL-KNE-1124",
-            "the fit check",
-            "10/30"
-          ],
-          "body": "FL-KNE-1124 need 12 by 10/30 for the fit check"
-        }
-      ]
-    },
-    {
-      "key": "SCM-342",
+      "key": "SCM-360",
       "type": "Task",
       "status": "In Progress",
       "reporter": "p-arjun",
@@ -428,23 +322,23 @@
       "created": "2026-10-12T18:44:21-07:00",
       "due_date": null,
       "events": [
-        "ev-002151"
+        "ev-002428"
       ],
       "brief": "Order 10x Hip stator heat spreader, 24x Hip output bearing spacer, 12x Hip holding-brake bracket, 3x Hip cycloid ring-pin housing / 1028: need 10 by 2026-12-01",
       "must_mention": [
         "1028",
-        "tues the 1st"
+        "tues 12/1"
       ],
       "description_length": "short",
-      "summary": "Hip stator heat spreader, spacers, brake bracket, ring-pin housing",
-      "description": "1028 needed tues the 1st. rest of the kit is on the list in slack",
+      "summary": "Hip actuator parts: heat spreader, bearing spacer, brake bracket, ring-pin housing",
+      "description": "1028 x10 needed tues 12/1. rest of list same order as last quote",
       "comments": [
         {
-          "id": "SCM-342-c1",
+          "id": "SCM-360-c1",
           "by": "p-nadia",
           "at": "2026-10-13T14:18:22-07:00",
           "events": [
-            "ev-002152"
+            "ev-002429"
           ],
           "brief": "thermal plate: need 10 by 2026-12-01",
           "claim": {
@@ -456,14 +350,14 @@
           },
           "must_mention": [
             "thermal plate",
-            "tues the 1st"
+            "tues 12/1"
           ],
-          "body": "thermal plate needed tues the 1st, ordering tmrw"
+          "body": "thermal plate x10 by tues 12/1 - which vendor are we using"
         }
       ]
     },
     {
-      "key": "SCM-345",
+      "key": "SCM-363",
       "type": "Task",
       "status": "Done",
       "reporter": "p-lin",
@@ -475,60 +369,42 @@
       "created": "2026-10-13T17:30:25-07:00",
       "due_date": null,
       "events": [
-        "ev-002179"
+        "ev-002456"
       ],
-      "brief": "Order 4x Gait boom encoder bracket, 4x Tilt stand foot clamp, 2x Grip fixture wrist clamp / 2313: need 4 by 2026-11-06",
+      "brief": "Order 4x Gait boom encoder bracket, 4x Tilt stand foot clamp, 2x Grip fixture wrist clamp / 2313: need 4 by 2026-11-03",
       "must_mention": [
         "2313",
-        "fri 11/6"
+        "tues 11/3"
       ],
       "description_length": "one_line",
-      "summary": "Gait boom encoder bracket + tilt foot clamp + wrist clamp, 2313",
-      "description": "need 4 by fri 11/6",
+      "summary": "gait boom encoder bracket, tilt stand foot clamp, grip wrist clamp",
+      "description": "2313 x4 by tues 11/3",
       "comments": [
         {
-          "id": "SCM-345-c1",
-          "by": "p-dmitri",
-          "at": "2026-10-14T16:47:06-07:00",
+          "id": "SCM-363-c1",
+          "by": "p-lin",
+          "at": "2026-10-15T07:23:25-07:00",
           "events": [
-            "ev-003340"
+            "ev-003674"
           ],
-          "brief": "the part: need 4 by 2026-11-09",
+          "brief": "Correction: 2313: need 4 by 2026-11-04",
           "claim": {
             "kind": "needs",
             "value": {
               "qty": 4,
-              "by": "2026-11-09"
+              "by": "2026-11-04"
             }
           },
           "must_mention": [
-            "the part",
-            "11/9"
+            "2313",
+            "11/4"
           ],
-          "body": "the part needed 11/9 now"
-        },
-        {
-          "id": "SCM-345-c2",
-          "by": "p-lin",
-          "at": "2026-10-20T14:17:52-07:00",
-          "events": [],
-          "brief": "background: question to the assignee",
-          "must_mention": [],
-          "body": "Any word on this?"
-        },
-        {
-          "id": "SCM-345-c3",
-          "by": "p-lin",
-          "at": "2026-10-23T14:39:04-07:00",
-          "events": [],
-          "brief": "background: any update?",
-          "must_mention": [],
-          "body": "Bumping, any update?"
+          "body": "Correction: 2313 need 4 by 11/4"
         }
       ]
     },
     {
-      "key": "SCM-346",
+      "key": "SCM-364",
       "type": "Task",
       "status": "In Progress",
       "reporter": "p-idris",
@@ -540,23 +416,23 @@
       "created": "2026-10-14T09:18:18-07:00",
       "due_date": "2026-10-23",
       "events": [
-        "ev-002185"
+        "ev-002462"
       ],
       "brief": "Order 1x Cell heater clamp plate, 9x Chamber cable feedthrough plate, 10x Cage vent duct adapter, 2x Thermal chamber actuator cradle / FL-TST-2789: need 1 by 2026-10-23",
       "must_mention": [
         "FL-TST-2789",
-        "fri the 23rd"
+        "10/23"
       ],
       "description_length": "one_line",
-      "summary": "Cell heater clamp plate + chamber feedthrough, vent duct adapter, actuator cradle",
-      "description": "FL-TST-2789 needed fri the 23rd, just the 1",
+      "summary": "Thermal chamber parts - heater clamp plate, feedthrough plate, vent duct adapter, cradle",
+      "description": "FL-TST-2789 x1 by 10/23",
       "comments": [
         {
-          "id": "SCM-346-c1",
+          "id": "SCM-364-c1",
           "by": "p-idris",
           "at": "2026-10-29T05:08:00-07:00",
           "events": [
-            "ev-002189"
+            "ev-002466"
           ],
           "brief": "trigger heater plate in use",
           "claim": {
@@ -568,12 +444,135 @@
             "the build",
             "10/28"
           ],
-          "body": "trigger heater plate in use for the build, 10/28"
+          "body": "trigger heater plate off the bench, the build wrapped 10/28"
         }
       ]
     },
     {
-      "key": "SCM-351",
+      "key": "SCM-367",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-diego",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-10-14T15:02:10-07:00",
+      "due_date": "2026-11-03",
+      "events": [
+        "ev-002736"
+      ],
+      "brief": "Order 3x Stator insertion jig, 6x Torso load pad, 5x Gait foot-switch bracket / stator jig: need 3 by 2026-11-03 for Fixture install and shakedown: Stator insertion jig",
+      "must_mention": [
+        "stator jig",
+        "Fixture install and shakedown: Stator insertion jig",
+        "tues 11/3"
+      ],
+      "description_length": "one_line",
+      "summary": "Stator insertion jig x3, torso load pad, foot-switch bracket",
+      "description": "stator jig x3 by tues 11/3 for Fixture install and shakedown: Stator insertion jig. also load pads x6, foot-switch brackets x5",
+      "comments": [
+        {
+          "id": "SCM-367-c1",
+          "by": "p-diego",
+          "at": "2026-11-05T13:39:18-08:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "photos of the jig are in slack"
+        },
+        {
+          "id": "SCM-367-c2",
+          "by": "p-diego",
+          "at": "2026-11-06T12:00:25-08:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "still no word from vendor, bumping again"
+        },
+        {
+          "id": "SCM-367-c3",
+          "by": "p-gwen",
+          "at": "2026-11-09T10:58:48-08:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "posted the pack list photo in the slack thread"
+        }
+      ]
+    },
+    {
+      "key": "SCM-369",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-kenji",
+      "assignee": "p-kenji",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-10-14T17:30:40-07:00",
+      "due_date": null,
+      "events": [
+        "ev-002542"
+      ],
+      "brief": "Order 6x Finger distal link, 9x Palm frame, 2x Wrist to arm adapter / that order: need 6 by 2026-10-27 for Build sub-assembly: Finger distal link (2)",
+      "must_mention": [
+        "that order",
+        "Build sub-assembly: Finger distal link (2)",
+        "10/27"
+      ],
+      "description_length": "one_line",
+      "summary": "Finger distal link x6, palm frame x9, wrist adapter x2",
+      "description": "that order need by 10/27 for Build sub-assembly: Finger distal link (2)",
+      "comments": [
+        {
+          "id": "SCM-369-c1",
+          "by": "p-kenji",
+          "at": "2026-10-16T15:52:45-07:00",
+          "events": [
+            "ev-002546"
+          ],
+          "brief": "FL-HND-1419: need 6 by 2026-10-28",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 6,
+              "by": "2026-10-28"
+            }
+          },
+          "must_mention": [
+            "FL-HND-1419",
+            "wed 10/28"
+          ],
+          "body": "FL-HND-1419 need 6 by wed 10/28"
+        },
+        {
+          "id": "SCM-369-c2",
+          "by": "p-kenji",
+          "at": "2026-10-16T16:25:45-07:00",
+          "events": [
+            "ev-003639"
+          ],
+          "brief": "Correction: FL-HND-1419: need 6 by 2026-10-27",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 6,
+              "by": "2026-10-27"
+            }
+          },
+          "must_mention": [
+            "FL-HND-1419",
+            "tues 10/27"
+          ],
+          "body": "Correction: FL-HND-1419 need 6 by tues 10/27"
+        }
+      ]
+    },
+    {
+      "key": "SCM-371",
       "type": "Task",
       "status": "Done",
       "reporter": "p-kenji",
@@ -585,47 +584,29 @@
       "created": "2026-10-15T11:31:13-07:00",
       "due_date": "2026-11-03",
       "events": [
-        "ev-002243"
+        "ev-002520"
       ],
-      "brief": "Order 3x Grip fixture wrist clamp, 12x Grip fixture camera arm, 3x Grip-cycle test mandrel, 2x Tendon tension jig, 6x Pinch force anvil, 3x Grip load cell plate / FL-TST-2424: need 3 by 2026-11-03 for the fit check",
+      "brief": "Order 3x Grip fixture wrist clamp, 12x Grip fixture camera arm, 3x Grip-cycle test mandrel, 2x Tendon tension jig, 6x Pinch force anvil, 3x Grip load cell plate / FL-TST-2424: need 3 by 2026-11-03 for Fixture install and shakedown: Grip fixture wrist clamp",
       "must_mention": [
         "FL-TST-2424",
-        "the fit check",
+        "Fixture install and shakedown: Grip fixture wrist clamp",
         "FL-TST-2480",
         "FL-TST-2399",
         "FL-TST-2462",
         "FL-TST-2409",
         "FL-TST-2443",
-        "tues the 3rd"
+        "11/3"
       ],
-      "description_length": "short",
-      "summary": "Grip fixture wrist clamp, camera arm, mandrel, tension jig, anvil, load cell plate",
-      "description": "FL-TST-2424 x3 needed tues the 3rd for the fit check, also FL-TST-2480 FL-TST-2399 FL-TST-2462 FL-TST-2409 FL-TST-2443",
+      "description_length": "medium",
+      "summary": "Grip fixture parts (wrist clamp, camera arm, mandrel, tension jig, anvil, load cell plate)",
+      "description": "FL-TST-2424 x3 by 11/3 for Fixture install and shakedown: Grip fixture wrist clamp. same order: FL-TST-2480, FL-TST-2399, FL-TST-2462, FL-TST-2409, FL-TST-2443. camera arms x12, mandrel x3, tension jig x2, anvil x6, load cell plate x3",
       "comments": [
         {
-          "id": "SCM-351-c1",
-          "by": "p-kenji",
-          "at": "2026-10-19T15:41:22-07:00",
-          "events": [],
-          "brief": "background: pushes it a bit, no new date given",
-          "must_mention": [],
-          "body": "vendor slipping a bit, no new date yet"
-        },
-        {
-          "id": "SCM-351-c2",
-          "by": "p-talia",
-          "at": "2026-10-27T14:25:59-07:00",
-          "events": [],
-          "brief": "background: any update?",
-          "must_mention": [],
-          "body": "Any update on this? 🙏"
-        },
-        {
-          "id": "SCM-351-c3",
+          "id": "SCM-371-c1",
           "by": "p-kenji",
           "at": "2026-11-02T12:17:50-08:00",
           "events": [
-            "ev-002245"
+            "ev-002522"
           ],
           "brief": "2424 arrived (3)",
           "claim": {
@@ -636,76 +617,12 @@
             "2424",
             "3"
           ],
-          "body": "2424 arrived (3)"
-        },
-        {
-          "id": "SCM-351-c4",
-          "by": "p-talia",
-          "at": "2026-11-03T12:51:00-08:00",
-          "events": [],
-          "brief": "background: short progress note",
-          "must_mention": [],
-          "body": "Thanks, 3 more to chase 😬"
-        },
-        {
-          "id": "SCM-351-c5",
-          "by": "p-kenji",
-          "at": "2026-11-05T11:31:28-08:00",
-          "events": [],
-          "brief": "background: question to the assignee",
-          "must_mention": [],
-          "body": "anyone check the rest"
+          "body": "2424 arrived, 3 total"
         }
       ]
     },
     {
-      "key": "SCM-352",
-      "type": "Task",
-      "status": "In Progress",
-      "reporter": "p-tomas",
-      "assignee": "p-talia",
-      "labels": [
-        "procurement"
-      ],
-      "priority": "Medium",
-      "created": "2026-10-15T12:18:59-07:00",
-      "due_date": null,
-      "events": [
-        "ev-002395"
-      ],
-      "brief": "Order 3x Dyno chamber shaft feedthrough, 5x Dyno coupling, knee actuator / 2145: need 3 by 2026-11-18 for Rig setup: Dyno chamber shaft feedthrough (2)",
-      "must_mention": [
-        "2145",
-        "Rig setup: Dyno chamber shaft feedthrough (2)",
-        "knee dyno coupling",
-        "11/18"
-      ],
-      "description_length": "one_line",
-      "summary": "Dyno chamber shaft feedthrough + coupling",
-      "description": "2145 need 3 by 11/18 for Rig setup: Dyno chamber shaft feedthrough (2), knee dyno coupling too",
-      "comments": [
-        {
-          "id": "SCM-352-c1",
-          "by": "p-talia",
-          "at": "2026-10-19T11:48:50-07:00",
-          "events": [],
-          "brief": "background: notes photos or a file are in slack",
-          "must_mention": [],
-          "body": "Photos and notes are in slack 📎"
-        },
-        {
-          "id": "SCM-352-c2",
-          "by": "p-talia",
-          "at": "2026-11-06T10:58:35-08:00",
-          "events": [],
-          "brief": "background: any update?",
-          "must_mention": [],
-          "body": "Any update? 🙏"
-        }
-      ]
-    },
-    {
-      "key": "SCM-353",
+      "key": "SCM-372",
       "type": "Task",
       "status": "Done",
       "reporter": "p-diego",
@@ -717,7 +634,7 @@
       "created": "2026-10-15T16:20:25-07:00",
       "due_date": null,
       "events": [
-        "ev-002283"
+        "ev-002561"
       ],
       "brief": "Order 3x Drop height gauge block / height gauge: need 3 by 2026-10-26",
       "must_mention": [
@@ -726,66 +643,11 @@
       ],
       "description_length": "medium",
       "summary": "Drop height gauge block x3",
-      "description": "need 3 height gauge blocks by mon the 26th. drop test setup is waiting on them for the next run, supplier hasn't confirmed anything yet",
-      "comments": [
-        {
-          "id": "SCM-353-c1",
-          "by": "p-samir",
-          "at": "2026-10-19T11:22:08-07:00",
-          "events": [],
-          "brief": "background: any update?",
-          "must_mention": [],
-          "body": "Any update?"
-        },
-        {
-          "id": "SCM-353-c2",
-          "by": "p-samir",
-          "at": "2026-10-19T17:48:58-07:00",
-          "events": [],
-          "brief": "background: pushes it a bit, no new date given",
-          "must_mention": [],
-          "body": "vendor says still working on it, no date"
-        },
-        {
-          "id": "SCM-353-c3",
-          "by": "p-samir",
-          "at": "2026-10-21T11:44:33-07:00",
-          "events": [],
-          "brief": "background: any update?",
-          "must_mention": [],
-          "body": "any update?"
-        },
-        {
-          "id": "SCM-353-c4",
-          "by": "p-samir",
-          "at": "2026-10-22T17:29:59-07:00",
-          "events": [],
-          "brief": "background: any update?",
-          "must_mention": [],
-          "body": "update pls??"
-        },
-        {
-          "id": "SCM-353-c5",
-          "by": "p-samir",
-          "at": "2026-10-23T10:24:39-07:00",
-          "events": [],
-          "brief": "background: short progress note",
-          "must_mention": [],
-          "body": "vendor is packing, checking tracking"
-        },
-        {
-          "id": "SCM-353-c6",
-          "by": "p-samir",
-          "at": "2026-10-27T09:34:32-07:00",
-          "events": [],
-          "brief": "background: pushes it a bit, no new date given",
-          "must_mention": [],
-          "body": "still no new date from them"
-        }
-      ]
+      "description": "height gauge blocks x3, need by mon the 26th. flat to the tolerance on the print, check on arrival",
+      "comments": []
     },
     {
-      "key": "SCM-355",
+      "key": "SCM-374",
       "type": "Task",
       "status": "In Progress",
       "reporter": "p-tomas",
@@ -797,32 +659,23 @@
       "created": "2026-10-16T11:02:09-07:00",
       "due_date": "2026-11-11",
       "events": [
-        "ev-002337"
+        "ev-002622"
       ],
       "brief": "Order 3x Grip load cell plate, 2x Leg fixture hook, hip end, 3x Spreader bar end fitting, 2x Dyno shaft alignment jig / LC plate: need 3 by 2026-11-11",
       "must_mention": [
         "LC plate",
-        "wed the 11th"
+        "wed 11/11"
       ],
       "description_length": "one_line",
-      "summary": "LC plate x3, hook, end fittings, alignment jig",
-      "description": "need 3 by wed the 11th",
+      "summary": "Grip load cell plate, leg hook hip end, spreader bar fitting, dyno alignment jig",
+      "description": "LC plate x3 by wed 11/11",
       "comments": [
         {
-          "id": "SCM-355-c1",
-          "by": "p-talia",
-          "at": "2026-10-19T13:21:01-07:00",
-          "events": [],
-          "brief": "background: any update?",
-          "must_mention": [],
-          "body": "Any update? 🙏"
-        },
-        {
-          "id": "SCM-355-c2",
+          "id": "SCM-374-c1",
           "by": "p-tomas",
           "at": "2026-10-20T12:06:13-07:00",
           "events": [
-            "ev-002338"
+            "ev-002623"
           ],
           "brief": "the plate: need 3 by 2026-11-11",
           "claim": {
@@ -834,23 +687,14 @@
           },
           "must_mention": [
             "the plate",
-            "wed the 11th"
+            "wed 11/11"
           ],
-          "body": "the plate needed wed the 11th"
-        },
-        {
-          "id": "SCM-355-c3",
-          "by": "p-gwen",
-          "at": "2026-10-29T12:14:28-07:00",
-          "events": [],
-          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
-          "must_mention": [],
-          "body": "waiting on vendor"
+          "body": "the plate x3 by wed 11/11"
         }
       ]
     },
     {
-      "key": "SCM-358",
+      "key": "SCM-377",
       "type": "Task",
       "status": "Done",
       "reporter": "p-priya",
@@ -862,23 +706,23 @@
       "created": "2026-10-16T14:12:30-07:00",
       "due_date": "2026-11-02",
       "events": [
-        "ev-002306"
+        "ev-002589"
       ],
-      "brief": "Order 8x Ankle drive crank / FL-ANK-1276: need 8 by 2026-11-02",
+      "brief": "Order 8x Ankle drive crank / FL-ANK-1276: need 8 by 2026-10-29",
       "must_mention": [
         "FL-ANK-1276",
-        "11/2"
+        "thurs the 29th"
       ],
-      "description_length": "medium",
-      "summary": "Ankle drive crank x8 FL-ANK-1276",
-      "description": "Need 8 by 11/2. Same crank as last time, drawing unchanged since the previous order.",
+      "description_length": "short",
+      "summary": "Ankle drive crank x8",
+      "description": "FL-ANK-1276 x8 by thurs the 29th",
       "comments": [
         {
-          "id": "SCM-358-c1",
+          "id": "SCM-377-c1",
           "by": "p-priya",
           "at": "2026-10-16T17:40:26-07:00",
           "events": [
-            "ev-002307"
+            "ev-002590"
           ],
           "brief": "crank: need 8 by 2026-11-02",
           "claim": {
@@ -890,9 +734,45 @@
           },
           "must_mention": [
             "crank",
-            "11/2"
+            "mon the 2nd"
           ],
-          "body": "crank: need 8 by 11/2."
+          "body": "crank need 8 by mon the 2nd"
+        },
+        {
+          "id": "SCM-377-c2",
+          "by": "p-talia",
+          "at": "2026-10-19T12:13:13-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "pics of the crank drawing in slack"
+        },
+        {
+          "id": "SCM-377-c3",
+          "by": "p-samir",
+          "at": "2026-10-20T15:40:25-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "quote screenshot is in slack too"
+        },
+        {
+          "id": "SCM-377-c4",
+          "by": "p-priya",
+          "at": "2026-10-23T17:55:51-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "did this get placed?"
+        },
+        {
+          "id": "SCM-377-c5",
+          "by": "p-priya",
+          "at": "2026-10-26T15:46:02-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "inspection photos in slack"
         }
       ]
     }

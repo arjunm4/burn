@@ -1,0 +1,281 @@
+{
+  "job_id": "slack-ch-legs-2026-06-29-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 39,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-legs",
+    "name": "legs",
+    "slack_id": "C07FLK0LEGS",
+    "purpose": "Leg and ankle: design, drop test, gait gantry"
+  },
+  "week": {
+    "start": "2026-06-29",
+    "end": "2026-07-05"
+  },
+  "people": [
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Leg (left, hip to foot).",
+    "Ongoing: Six-axis sensor drifts with temperature and bolt preload. This week: Hana suspects mounting plate flatness; sensor wants 0.01 mm, plate is spec 0.05.",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Drop from 30 cm cracks the shank link at the knee clevis. This week: Diego: fillet R0.5 is too tight, peak stress ~380 MPa in FEA, 7075 fatigue limit is lower.",
+    "Ongoing: Replace foot switches with a learned contact estimate from joint currents. This week: Estimator hits 96% on logged data; misses at slow heel strikes."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1782748907.007410",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-001403"
+      ],
+      "brief": "FL-ANK-1276: need 8 by 2026-07-20 for the build",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-07-20"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1276",
+        "the build",
+        "mon 7/20"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-ANK-1276 need 8 by mon 7/20 for the build"
+    },
+    {
+      "ts": "1782752162.924458",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-004256"
+      ],
+      "brief": "Test stand rework for Ankle heel-strike impact test: Ankle drive crank done by tues",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-06-30"
+      },
+      "must_mention": [
+        "Test stand rework for Ankle heel-strike impact test: Ankle drive crank",
+        "tues 6/30"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Test stand rework for Ankle heel-strike impact test: Ankle drive crank should be done tues 6/30"
+    },
+    {
+      "ts": "1782775256.300963",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-004237"
+      ],
+      "brief": "Tolerance stack check for Leg DVT build: Thigh bearing cap done",
+      "claim": {
+        "kind": "done",
+        "value": "2026-06-29"
+      },
+      "must_mention": [
+        "Tolerance stack check for Leg DVT build: Thigh bearing cap",
+        "mon the 29th"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Tolerance stack check for Leg DVT build: Thigh bearing cap done, mon the 29th"
+    },
+    {
+      "ts": "1782926972.293297",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-001316"
+      ],
+      "brief": "foot plate arrived (3)",
+      "claim": {
+        "kind": "stock",
+        "value": 3
+      },
+      "must_mention": [
+        "foot plate",
+        "3"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "foot plate arrived (3)"
+    },
+    {
+      "ts": "1782930502.339652",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-003913"
+      ],
+      "brief": "pivot pin: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "pivot pin"
+      ],
+      "length": "short",
+      "text": "pivot pin still quoting rev A, i think"
+    },
+    {
+      "ts": "1782932407.090332",
+      "user": "p-beth",
+      "thread_ts": "1782930502.339652",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I saw a newer quote come through, I'm not convinced it's still on A."
+    },
+    {
+      "ts": "1782933715.846500",
+      "user": "p-hana",
+      "thread_ts": "1782930502.339652",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "which quote was it?"
+    },
+    {
+      "ts": "1782953087.694339",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-003313"
+      ],
+      "brief": "FL-ANK-1276 rev C released: material change",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev C"
+      },
+      "must_mention": [
+        "FL-ANK-1276"
+      ],
+      "length": "short",
+      "text": "FL-ANK-1276 rev C released, material change"
+    },
+    {
+      "ts": "1782955503.073750",
+      "user": "p-priya",
+      "thread_ts": "1782953087.694339",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ack, thanks"
+    }
+  ]
+}

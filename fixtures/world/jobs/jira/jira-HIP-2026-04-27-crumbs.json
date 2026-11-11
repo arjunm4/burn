@@ -1,0 +1,195 @@
+{
+  "job_id": "jira-HIP-2026-04-27-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 57,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HIP",
+    "name": "Actuators (hip and knee)"
+  },
+  "week": {
+    "start": "2026-04-27",
+    "end": "2026-05-03"
+  },
+  "people": [
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HIP-187",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-carlos",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-04-28T08:57:14-07:00",
+      "due_date": "2026-05-20",
+      "events": [
+        "ev-000863"
+      ],
+      "brief": "Order 5x Spin-test adapter, knee actuator, 6x Dyno chamber shaft feedthrough / the part: need 5 by 2026-05-20",
+      "must_mention": [
+        "the part",
+        "5/20"
+      ],
+      "description_length": "one_line",
+      "summary": "Spin-test adapter, knee actuator x5; Dyno chamber shaft feedthrough x6",
+      "description": "the part, NEED 5 BY 5/20!!",
+      "comments": []
+    },
+    {
+      "key": "HIP-189",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-wei",
+      "assignee": "p-wei",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-04-28T17:46:18-07:00",
+      "due_date": "2026-06-22",
+      "events": [
+        "ev-000856"
+      ],
+      "brief": "Order 8x Hip stator mount plate / that order: need 8 by 2026-06-19",
+      "must_mention": [
+        "that order",
+        "6/19"
+      ],
+      "description_length": "short",
+      "summary": "Hip stator mount plate x8",
+      "description": "Need 8 for that order by 6/19. Rest of the hip build is not blocked on it yet.",
+      "comments": [
+        {
+          "id": "HIP-189-c1",
+          "by": "p-wei",
+          "at": "2026-04-29T16:11:03-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "Any update from the vendor?"
+        },
+        {
+          "id": "HIP-189-c2",
+          "by": "p-wei",
+          "at": "2026-05-19T12:34:41-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "Is this still on track, or do we need to follow up?"
+        }
+      ]
+    },
+    {
+      "key": "HIP-190",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": "p-owen",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-04-29T09:08:13-07:00",
+      "due_date": null,
+      "events": [
+        "ev-000933"
+      ],
+      "brief": "Order 2x Spin-test stand adapter plate / spin adapter: need 2 by 2026-05-20 for Rig setup for Hip actuator dyno efficiency sweep: Spin-test stand adapter plate",
+      "must_mention": [
+        "spin adapter",
+        "Rig setup for Hip actuator dyno efficiency sweep: Spin-test stand adapter plate",
+        "5/20"
+      ],
+      "description_length": "medium",
+      "summary": "Spin-test stand adapter plate x2",
+      "description": "spin adapter need 2 by 5/20 for Rig setup for Hip actuator dyno efficiency sweep: Spin-test stand adapter plate\nneeded for the rig",
+      "comments": []
+    }
+  ]
+}

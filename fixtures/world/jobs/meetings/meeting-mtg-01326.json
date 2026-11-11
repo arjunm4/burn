@@ -273,7 +273,7 @@
   ],
   "background": [
     {
-      "event": "ev-004720",
+      "event": "ev-005180",
       "speaker": "p-gwen",
       "brief": "Hardware program review: round of updates"
     }
@@ -285,155 +285,121 @@
   ],
   "transcript": [
     {
-      "start_s": 0,
+      "start_s": 5,
       "speaker": "p-beth",
-      "text": "OK, I think we're recording. Thanks everyone for joining. Let's do the usual round, actuators first, then legs, arms and hands, structures, electrical, and test. Arjun, you want to start?"
+      "text": "Okay, let's get started. We have a lot of people, so keep it tight. Arjun, actuators first."
     },
     {
-      "start_s": 28,
+      "start_s": 15,
       "speaker": "p-arjun",
-      "text": "sure. so actuators, the hip unit builds are mostly on track, we had one rework on a housing, nothing blocking"
+      "text": "Uh, hip actuator rev B is through the efficiency sweep. Knee is a little behind, the wave generator hub needed a re-grind."
     },
     {
-      "start_s": 58,
-      "speaker": "p-arjun",
-      "text": "thermal on the test stand is the thing i'm watching, we saw some heat soak over the weekend. i'll have numbers thurs, sorry, fri"
+      "start_s": 35,
+      "speaker": "p-beth",
+      "text": "Okay. Priya, legs?"
     },
     {
-      "start_s": 92,
-      "speaker": "p-ingrid",
-      "text": "Arjun, is the soak a design problem or a stand problem?"
-    },
-    {
-      "start_s": 108,
-      "speaker": "p-arjun",
-      "text": "not sure yet. probably the stand but i don't want to say that till we've swapped the fan"
-    },
-    {
-      "start_s": 132,
+      "start_s": 40,
       "speaker": "p-priya",
-      "text": "Thanks. Let me restate to make sure I follow: legs status. One, the knee assembly fit check is done. Two, the ankle brackets are still waiting on parts. Three, we need to book the gait rig for next week and I haven't heard back."
+      "text": "Leg DVT build is on pace. Drop test fixture was shimmed and looks good now. Ankle is waiting on a few parts."
     },
     {
-      "start_s": 185,
-      "speaker": "p-dmitri",
-      "text": "Gait rig is open Tuesday and Wednesday. Put it on the calendar."
-    },
-    {
-      "start_s": 203,
-      "speaker": "p-priya",
-      "text": "Will do, thank you."
-    },
-    {
-      "start_s": 218,
+      "start_s": 65,
       "speaker": "p-sofia",
-      "text": "Arms and hands. The wrist module passed the first cycle test. We found some cable chafing near the strain relief, and we're reworking that."
+      "text": "Hands, finger creep test is at 80k cycles. Retension interval looks right, not seeing the 4 degree loss anymore."
     },
     {
-      "start_s": 258,
+      "start_s": 90,
+      "speaker": "p-lukas",
+      "text": "Structures, pelvis plates passed flatness, battery enclosure rev B is in the machine shop."
+    },
+    {
+      "start_s": 115,
+      "speaker": "p-farah",
+      "text": "Electrical, driver board respin is out for fab. I think we're okay on schedule, not totally sure about the connector lead time."
+    },
+    {
+      "start_s": 135,
+      "speaker": "p-gwen",
+      "text": "Connectors are on my list, I'll get you a date today."
+    },
+    {
+      "start_s": 150,
+      "speaker": "p-nora",
+      "text": "Sorry, joining late. What did I miss?"
+    },
+    {
+      "start_s": 155,
+      "speaker": "p-beth",
+      "text": "Just the first few, Nora, we'll circle back to you."
+    },
+    {
+      "start_s": 175,
+      "speaker": "p-beth",
+      "text": "Okay, schedule. The Actuator DVT gate review is moving from the 13th to 10/14."
+    },
+    {
+      "start_s": 190,
+      "speaker": "p-ingrid",
+      "text": "Why a day?"
+    },
+    {
+      "start_s": 194,
+      "speaker": "p-beth",
+      "text": "Just the date, nothing else changes."
+    },
+    {
+      "start_s": 205,
+      "speaker": "p-arjun",
+      "text": "That works for us, it actually gives me an extra day."
+    },
+    {
+      "start_s": 220,
+      "speaker": "p-dmitri",
+      "text": "Test lab can be ready by then. We need the dyno free the day before."
+    },
+    {
+      "start_s": 240,
+      "speaker": "p-jonas",
+      "text": "Firmware's okay with that, derate warning is merged."
+    },
+    {
+      "start_s": 260,
       "speaker": "p-omar",
-      "text": "i think the wrist rework is probably a week, but not 100% sure, depends on the cable supplier"
+      "text": "I'll update the master schedule."
     },
     {
       "start_s": 285,
-      "speaker": "p-sofia",
-      "text": "That seems about right."
+      "speaker": "p-nora",
+      "text": "NPI side, we have the build slots, no change from my end."
     },
     {
       "start_s": 305,
-      "speaker": "p-lukas",
-      "text": "structures. torso machining ok. no issues"
-    },
-    {
-      "start_s": 322,
       "speaker": "p-ingrid",
-      "text": "Lukas, anything on the crossbeam?"
-    },
-    {
-      "start_s": 330,
-      "speaker": "p-lukas",
-      "text": "waiting on a part, ok"
-    },
-    {
-      "start_s": 348,
-      "speaker": "p-farah",
-      "text": "Electrical. To restate the question about the driver boards: are we on schedule? One, the layout changes are complete. Two, fab is in progress. Three, assembly is not scheduled until the boards arrive."
-    },
-    {
-      "start_s": 402,
-      "speaker": "p-jonas",
-      "text": "fw side we flashed the bench units fine, no issues with the bootloader"
-    },
-    {
-      "start_s": 425,
-      "speaker": "p-ingrid",
-      "text": "Good. Beth, schedule check."
-    },
-    {
-      "start_s": 438,
-      "speaker": "p-beth",
-      "text": "Right. Schedule. We pushed some items. The Actuator DVT gate review moved from the thirteenth to 10/14, one day. That's a consequence of the thermal item Arjun mentioned."
-    },
-    {
-      "start_s": 490,
-      "speaker": "p-ingrid",
-      "text": "One day is fine. Make sure the invite updates."
-    },
-    {
-      "start_s": 508,
-      "speaker": "p-beth",
-      "text": "I'll send it today."
-    },
-    {
-      "start_s": 525,
-      "speaker": "p-nora",
-      "text": "Sorry, sorry, joining late, what did I miss? Jonas, you're on mute, no wait, that's me."
-    },
-    {
-      "start_s": 552,
-      "speaker": "p-beth",
-      "text": "We did actuators through electrical. I'll recap schedule for you after."
-    },
-    {
-      "start_s": 580,
-      "speaker": "p-nora",
-      "text": "Thanks. Manufacturing side, line one is booked for builds, the fixture shipment is about to arrive, we'll start testing pick and place offline."
-    },
-    {
-      "start_s": 638,
-      "speaker": "p-gwen",
-      "text": "On the supply side we're chasing two quotes, nothing else new. I'll share in the channel."
-    },
-    {
-      "start_s": 672,
-      "speaker": "p-ingrid",
-      "text": "OK, let's wrap. Thanks all."
+      "text": "Okay. Anything blocking? No? Thanks."
     }
   ],
   "summary": {
-    "overview": "Weekly hardware program review. Round of updates from actuators, legs, arms and hands, structures, electrical, firmware and manufacturing. Actuator thermal soak on the test stand is under investigation. The Actuator DVT gate review shifted by one day.",
+    "overview": "Weekly hardware program review. Subteam status across actuators, legs, hands, structures, electrical. Gate review date moved a day.",
     "shorthand_bullet": [
-      "Actuators: hip builds on track, one housing rework, thermal soak on stand being checked",
-      "Legs: knee fit check done, ankle brackets waiting on parts, gait rig booking",
-      "Arms/hands: wrist module passed first cycle test, cable chafing rework ~1 wk",
-      "Structures: torso machining ok, crossbeam waiting on a part",
-      "Electrical: layout done, fab in progress",
-      "Schedule: Actuator DVT gate review moved to 10/14",
-      "Supply: chasing two quotes"
+      "Actuator DVT gate review moved to 10/14",
+      "hip rev B through efficiency sweep, knee wave generator hub re-ground",
+      "finger creep test at 80k, retension interval OK",
+      "driver board respin out for fab",
+      "connector lead time to be confirmed"
     ],
     "action_items": [
-      "Beth - update calendar invite for Actuator DVT gate review",
-      "Arjun - thermal numbers end of week",
-      "Priya book gait rig",
-      "Gwen share quotes in channel",
-      "Beth recap schedule for Nora"
+      "Omar: update master schedule",
+      "Gwen: connector date today",
+      "dyno free the day before the review (no owner)"
     ],
     "keywords": [
       "program review",
-      "Actuator DVT gate review",
-      "thermal soak",
-      "wrist module",
-      "driver boards"
+      "DVT",
+      "gate review",
+      "actuators",
+      "schedule"
     ]
   }
 }

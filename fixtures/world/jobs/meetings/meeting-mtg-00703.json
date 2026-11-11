@@ -1,0 +1,280 @@
+{
+  "job_id": "meeting-mtg-00703",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 45,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00703",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-06-09T08:45:00-07:00",
+    "actual_min": 19,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-lin",
+      "p-carlos",
+      "p-luis",
+      "p-destiny"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-001338",
+      "speaker": "p-dmitri",
+      "at_min": [
+        3,
+        9
+      ],
+      "brief": "the actuator: need 10 by 2026-07-09",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-spin-knee-adapter",
+        "value": {
+          "qty": 10,
+          "by": "2026-07-09"
+        }
+      },
+      "must_mention": [
+        "the actuator",
+        "7/9"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-dmitri",
+      "text": "Alright, morning. Lin, life test, go."
+    },
+    {
+      "start_s": 65,
+      "speaker": "p-lin",
+      "text": "Good morning. Rig two is about forty percent through, no faults. Rig one is idle until the coupling swap."
+    },
+    {
+      "start_s": 131,
+      "speaker": "p-dmitri",
+      "text": "Zoe, fixtures?"
+    },
+    {
+      "start_s": 197,
+      "speaker": "p-zoe",
+      "text": "drop fixture is assembled, i think we just need to check the hooks nxt wk"
+    },
+    {
+      "start_s": 263,
+      "speaker": "p-carlos",
+      "text": "Hooks are on the shelf, I'll bring them over."
+    },
+    {
+      "start_s": 329,
+      "speaker": "p-dmitri",
+      "text": "The actuator, I need 10 by 7/9. Where are we on that?"
+    },
+    {
+      "start_s": 395,
+      "speaker": "p-zoe",
+      "text": "not sure, ill check with samir after this"
+    },
+    {
+      "start_s": 461,
+      "speaker": "p-dmitri",
+      "text": "Please, we can't test without it!!"
+    },
+    {
+      "start_s": 527,
+      "speaker": "p-luis",
+      "text": "i finished the cable harness for the rig, 2 of them, tested fine"
+    },
+    {
+      "start_s": 592,
+      "speaker": "p-dmitri",
+      "text": "Uh, tested how? Continuity only?"
+    },
+    {
+      "start_s": 658,
+      "speaker": "p-luis",
+      "text": "continuity and a quick load test *load"
+    },
+    {
+      "start_s": 724,
+      "speaker": "p-dmitri",
+      "text": "OK. Destiny, packs?"
+    },
+    {
+      "start_s": 790,
+      "speaker": "p-destiny",
+      "text": "Two done, working on the third 🙏 no blockers right now"
+    },
+    {
+      "start_s": 856,
+      "speaker": "p-carlos",
+      "text": "Gantry needs the second tech trained before we put more on it."
+    },
+    {
+      "start_s": 922,
+      "speaker": "p-dmitri",
+      "text": "Yes, that's already on the list. Anything else?"
+    },
+    {
+      "start_s": 988,
+      "speaker": "p-lin",
+      "text": "Not from me."
+    },
+    {
+      "start_s": 1054,
+      "speaker": "p-dmitri",
+      "text": "Thanks all."
+    }
+  ],
+  "summary": {
+    "overview": "Standup. Life test rig two running clean, rig one idle until coupling swap. Drop fixture assembled, hooks to be checked next week. Dmitri needs status on the actuator order.",
+    "shorthand_bullet": [
+      "rig 2 ~40%, no faults",
+      "drop fixture assembled, check hooks nxt wk",
+      "the actuator: need 10 by 7/9, status unclear",
+      "rig cable harnesses done and tested",
+      "packs: two done, third in progress",
+      "gantry needs second tech trained"
+    ],
+    "action_items": [
+      "Zoe check with Samir on the actuator order",
+      "Carlos bring hooks over",
+      "Train second gantry tech"
+    ],
+    "keywords": [
+      "life test",
+      "fixtures",
+      "hooks",
+      "gantry",
+      "packs"
+    ]
+  }
+}

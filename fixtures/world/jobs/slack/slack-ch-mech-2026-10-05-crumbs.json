@@ -19,92 +19,21 @@
   },
   "people": [
     {
-      "id": "p-diego",
-      "name": "Diego Salcedo",
-      "display_name": "diego",
-      "slack_id": "U07FLK0DIEG",
-      "title": "Mechanical Engineer",
-      "style": {
-        "case": "mixed",
-        "punctuation": "light",
-        "typos": "rare",
-        "emoji": "lots",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": [
-          "reacts with 🙏 and 😬",
-          "ends messages with an emoji"
-        ]
-      }
-    },
-    {
-      "id": "p-farah",
-      "name": "Farah Qureshi",
-      "display_name": "farah.q",
-      "slack_id": "U07FLK0FARA",
-      "title": "Electrical Lead",
-      "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "none",
-        "length": "long",
-        "hedging": "medium",
-        "quirks": [
-          "numbered lists in status updates",
-          "restates the question before answering"
-        ]
-      }
-    },
-    {
-      "id": "p-gwen",
-      "name": "Gwen Albright",
-      "display_name": "gwen",
-      "slack_id": "U07FLK0GWEN",
-      "title": "Head of Supply Chain",
-      "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": []
-      }
-    },
-    {
-      "id": "p-idris",
-      "name": "Idris Bello",
-      "display_name": "idris",
-      "slack_id": "U07FLK0IDRI",
-      "title": "Mechanical Engineer, battery enclosure",
+      "id": "p-marcus",
+      "name": "Marcus Adeyemi",
+      "display_name": "marcus",
+      "slack_id": "U07FLK0MARC",
+      "title": "CTO",
       "style": {
         "case": "lower",
-        "punctuation": "light",
-        "typos": "some",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "medium",
-        "quirks": [
-          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
-          "corrects own dates"
-        ]
-      }
-    },
-    {
-      "id": "p-lin",
-      "name": "Lin Zhao",
-      "display_name": "lin.z",
-      "slack_id": "U07FLK0LIN0",
-      "title": "Test Engineer, life test",
-      "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "rare",
-        "length": "medium",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
         "hedging": "low",
-        "quirks": []
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
       }
     },
     {
@@ -180,29 +109,11 @@
   ],
   "messages": [
     {
-      "ts": "1791232297.498288",
-      "user": "p-idris",
-      "thread_ts": null,
-      "events": [
-        "ev-003541"
-      ],
-      "brief": "heater clamp: still quoting rev A",
-      "claim": {
-        "kind": "substitute",
-        "value": "rev A"
-      },
-      "must_mention": [
-        "heater clamp"
-      ],
-      "length": "short",
-      "text": "heater clamp still quoting rev A"
-    },
-    {
-      "ts": "1791240381.550770",
+      "ts": "1791240381.698735",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-003086"
+        "ev-003475"
       ],
       "brief": "FL-LEG-1348 rev D released: tolerance relaxed after DFM feedback",
       "claim": {
@@ -212,25 +123,15 @@
       "must_mention": [
         "FL-LEG-1348"
       ],
-      "length": "medium",
-      "text": "FL-LEG-1348 rev D released. After the DFM feedback we relaxed the tolerance, so it should be much easier for the vendor to hold."
+      "length": "short",
+      "text": "FL-LEG-1348 rev D released, relaxed the tolerance after the DFM feedback"
     },
     {
-      "ts": "1791244135.406660",
-      "user": "p-lin",
-      "thread_ts": "1791240381.550770",
-      "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "Good. Did the feedback say which feature was the issue, or was it the general tolerance across the whole part?"
-    },
-    {
-      "ts": "1791264555.178657",
+      "ts": "1791264555.462478",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-002967"
+        "ev-003356"
       ],
       "brief": "FL-TST-2274 rev C released: added hole for safety pin",
       "claim": {
@@ -244,59 +145,11 @@
       "text": "FL-TST-2274 rev C released, added a hole for the safety pin"
     },
     {
-      "ts": "1791304867.869326",
-      "user": "p-diego",
-      "thread_ts": "1791264555.178657",
-      "events": [],
-      "brief": "reply (will check later) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "will pull it up after the meeting 🙏"
-    },
-    {
-      "ts": "1791306540.208561",
-      "user": "p-farah",
-      "thread_ts": "1791264555.178657",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Agreed, the pin hole makes sense."
-    },
-    {
-      "ts": "1791317422.644429",
-      "user": "p-zoe",
-      "thread_ts": null,
-      "events": [
-        "ev-003458"
-      ],
-      "brief": "dummy pelvis: still quoting rev B",
-      "claim": {
-        "kind": "substitute",
-        "value": "rev B"
-      },
-      "must_mention": [
-        "dummy pelvis"
-      ],
-      "length": "short",
-      "text": "dummy pelvis still quoting rev B"
-    },
-    {
-      "ts": "1791322677.984499",
-      "user": "p-gwen",
-      "thread_ts": "1791317422.644429",
-      "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "We had a similar issue with a bracket last quarter. The quote system picked up an older file."
-    },
-    {
-      "ts": "1791391327.457062",
+      "ts": "1791391327.030325",
       "user": "p-owen",
       "thread_ts": null,
       "events": [
-        "ev-003487"
+        "ev-003837"
       ],
       "brief": "dummy pelvis: still quoting rev B",
       "claim": {
@@ -306,8 +159,18 @@
       "must_mention": [
         "dummy pelvis"
       ],
-      "length": "short",
+      "length": "medium",
       "text": "dummy pelvis still quoting rev B"
+    },
+    {
+      "ts": "1791395628.033510",
+      "user": "p-marcus",
+      "thread_ts": "1791391327.030325",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "not sure thats right, i saw rev C on the drawing server"
     }
   ]
 }

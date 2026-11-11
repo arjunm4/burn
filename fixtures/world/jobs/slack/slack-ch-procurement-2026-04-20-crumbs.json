@@ -1,0 +1,225 @@
+{
+  "job_id": "slack-ch-procurement-2026-04-20-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 59,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-04-20",
+    "end": "2026-04-26"
+  },
+  "people": [
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno. This week: Nadia suspects poor stator-to-housing contact; thermal pad is 0.5 mm and compresses unevenly.",
+    "Ongoing: Absolute encoder on the knee output glitches when the motor runs above 8 A. This week: New harness with shielded pair plus ferrite: no glitches up to 20 A.",
+    "Ongoing: Getting dyno and gantry logs into one place with consistent timestamps. This week: Clock skew between DAQs found, 300 ms; PTP added on the lab switch."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1776800802.664188",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-000786"
+      ],
+      "brief": "Quote Q-2467707-1 for FL-TST-2878: standard $988.31, 8 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-04-28",
+          "quote_id": "Q-2467707-1",
+          "price_usd": 988.31,
+          "lead_days": 8
+        }
+      },
+      "must_mention": [
+        "Q-2467707-1",
+        "FL-TST-2878",
+        "4/28"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Q-2467707-1 for FL-TST-2878 is $988.31 standard, 8 BD. need 2 by 4/28"
+    },
+    {
+      "ts": "1776801049.785228",
+      "user": "p-samir",
+      "thread_ts": "1776800802.664188",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "cheaper than my last coffee run lol"
+    },
+    {
+      "ts": "1777044252.109607",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-000830"
+      ],
+      "brief": "FL-ANK-1290: need 24 by 2026-05-18",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-05-18"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1290",
+        "5/18"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-ANK-1290: need 24 by 5/18 🙏"
+    },
+    {
+      "ts": "1777055354.909888",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-000803"
+      ],
+      "brief": "Quote Q-2469118-1 for FL-LEG-1331: standard $236.92, 7 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-05-12",
+          "quote_id": "Q-2469118-1",
+          "price_usd": 236.92,
+          "lead_days": 7
+        }
+      },
+      "must_mention": [
+        "Q-2469118-1",
+        "FL-LEG-1331",
+        "tues 5/12"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Q-2469118-1 for FL-LEG-1331 standard $236.92 and 7 BD, need 12 by tues 5/12"
+    },
+    {
+      "ts": "1777060141.255079",
+      "user": "p-farah",
+      "thread_ts": "1777055354.909888",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Agreed, that price looks in line with what we saw before."
+    }
+  ]
+}

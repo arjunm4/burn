@@ -1,0 +1,405 @@
+{
+  "job_id": "slack-ch-actuators-2026-07-27-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 31,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-actuators",
+    "name": "actuators",
+    "slack_id": "C07FLK0ACTU",
+    "purpose": "Hip and knee actuators"
+  },
+  "week": {
+    "start": "2026-07-27",
+    "end": "2026-08-02"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-yusuf",
+      "name": "Yusuf Demir",
+      "display_name": "yusuf",
+      "slack_id": "U07FLK0YUSU",
+      "title": "Firmware Engineer, motor control",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hip actuator.",
+    "Ongoing: Type III anodize adds ~0.025 mm per surface and kills the bearing press fit. This week: Wei: mask the bore or open it pre-anodize by 0.05; argues masking is cheaper and repeatable.",
+    "Ongoing: What to show investors when no full humanoid exists. This week: Pressure on legs and controls; exec check-ins twice a week.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Carlos finds two broken phase conductors at the knee after the overnight gait run.",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver. This week: Rev 4 layout tightens the power loop; Farah approves for DVT.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno. This week: Lin: grip-cycle test ties up the fixture for 6 days; pinch tests wait.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting. This week: Ingrid approves machined plates for DVT only; casting decision deferred to PVT."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1785175697.143068",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [
+        "ev-001515"
+      ],
+      "brief": "1190 arrived (2)",
+      "claim": {
+        "kind": "stock",
+        "value": 2
+      },
+      "must_mention": [
+        "1190",
+        "2"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "1190 arrived (2)"
+    },
+    {
+      "ts": "1785189570.635807",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-004020"
+      ],
+      "brief": "preload ring: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "preload ring"
+      ],
+      "length": "short",
+      "text": "preload ring still quoting rev B"
+    },
+    {
+      "ts": "1785191338.416545",
+      "user": "p-ingrid",
+      "thread_ts": "1785189570.635807",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "which ring, the hip one?"
+    },
+    {
+      "ts": "1785195385.128589",
+      "user": "p-jonas",
+      "thread_ts": "1785189570.635807",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "will look at it after the thermal run"
+    },
+    {
+      "ts": "1785272572.887619",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-003954"
+      ],
+      "brief": "hip pelvis plate: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "hip pelvis plate"
+      ],
+      "length": "short",
+      "text": "hip pelvis plate still on the rev B quote"
+    },
+    {
+      "ts": "1785288320.636300",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-003059"
+      ],
+      "brief": "Fixture install and shakedown for Hip actuator dyno efficiency sweep: Dyno mounting plate, hip actuator waits on Wire harness for hip actuator (hip dyno plate)",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-gen-0066"
+      },
+      "must_mention": [
+        "Wire harness for hip actuator (hip dyno plate)",
+        "Fixture install and shakedown for Hip actuator dyno efficiency sweep: Dyno mounting plate, hip actuator"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Fixture install and shakedown for Hip actuator dyno efficiency sweep: Dyno mounting plate, hip actuator waits on Wire harness for hip actuator (hip dyno plate)"
+    },
+    {
+      "ts": "1785304225.090839",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-003990"
+      ],
+      "brief": "heat spreader: still quoting rev D",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev D"
+      },
+      "must_mention": [
+        "heat spreader"
+      ],
+      "length": "medium",
+      "text": "heat spreader still quoting rev D, drawing moved on a while ago i think"
+    },
+    {
+      "ts": "1785341341.823752",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-004278"
+      ],
+      "brief": "Test stand rework for Hip actuator dyno efficiency sweep: Dyno mounting plate, hip actuator done by mon",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-08-03"
+      },
+      "must_mention": [
+        "Test stand rework for Hip actuator dyno efficiency sweep: Dyno mounting plate, hip actuator",
+        "8/3"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Test stand rework for Hip actuator dyno efficiency sweep: Dyno mounting plate, hip actuator done by mon 8/3"
+    },
+    {
+      "ts": "1785534826.750519",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-004280"
+      ],
+      "brief": "Rig setup for Hip actuator dyno efficiency sweep: Dyno thermocouple clamp (3) done by tues",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-08-04"
+      },
+      "must_mention": [
+        "Rig setup for Hip actuator dyno efficiency sweep: Dyno thermocouple clamp (3)",
+        "8/4"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Rig setup for Hip actuator dyno efficiency sweep: Dyno thermocouple clamp (3) done by tues 8/4"
+    },
+    {
+      "ts": "1785538327.368932",
+      "user": "p-yusuf",
+      "thread_ts": "1785534826.750519",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "does that include the clamp spares or just the three"
+    },
+    {
+      "ts": "1785540853.543782",
+      "user": "p-owen",
+      "thread_ts": "1785534826.750519",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "thanks"
+    },
+    {
+      "ts": "1785541618.873375",
+      "user": "p-carlos",
+      "thread_ts": "1785534826.750519",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "will check and get back to you"
+    }
+  ]
+}

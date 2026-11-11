@@ -132,6 +132,25 @@
       }
     },
     {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
       "id": "p-ingrid",
       "name": "Ingrid Solberg",
       "display_name": "ingrid.s",
@@ -145,6 +164,24 @@
         "length": "medium",
         "hedging": "low",
         "quirks": []
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
       }
     },
     {
@@ -311,39 +348,11 @@
   ],
   "messages": [
     {
-      "ts": "1788873255.302814",
-      "user": "p-wei",
-      "thread_ts": null,
-      "events": [
-        "ev-001736"
-      ],
-      "brief": "1050: need 24 by 2026-09-28 for Design iteration bench trial: Hip holding-brake bracket",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 24,
-          "by": "2026-09-28"
-        }
-      },
-      "must_mention": [
-        "1050",
-        "Design iteration bench trial: Hip holding-brake bracket",
-        "eccentric shaft",
-        "1091",
-        "cyclo carrier",
-        "hip pelvis plate",
-        "9/28"
-      ],
-      "pressure": "high",
-      "length": "short",
-      "text": "1050 x24 for Design iteration bench trial: Hip holding-brake bracket, 9/28. 1091 in the same batch, plus eccentric shaft, cyclo carrier and hip pelvis plate"
-    },
-    {
-      "ts": "1788879961.853164",
+      "ts": "1788879961.114022",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002738"
+        "ev-003099"
       ],
       "brief": "Prototype fit-up for Actuator DVT build: Hip cycloidal carrier (2) waits on Hip crossed-roller bearings, rev B",
       "claim": {
@@ -352,18 +361,18 @@
       },
       "must_mention": [
         "Hip crossed-roller bearings, rev B",
-        "the (2)"
+        "Prototype fit-up for Actuator DVT build: Hip cycloidal carrier (2)"
       ],
       "pressure": "high",
       "length": "short",
-      "text": "the (2) carrier fit-up is waiting on Hip crossed-roller bearings, rev B"
+      "text": "Prototype fit-up for Actuator DVT build: Hip cycloidal carrier (2) is blocked, waiting on Hip crossed-roller bearings, rev B"
     },
     {
-      "ts": "1788880754.972732",
+      "ts": "1788880754.272617",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002788"
+        "ev-003160"
       ],
       "brief": "Design iteration bench trial: Hip cable exit clamp waits on Hip absolute encoder kit, DVT",
       "claim": {
@@ -375,15 +384,15 @@
         "Design iteration bench trial: Hip cable exit clamp"
       ],
       "pressure": "high",
-      "length": "short",
-      "text": "Design iteration bench trial: Hip cable exit clamp cant go until Hip absolute encoder kit, DVT shows up"
+      "length": "medium",
+      "text": "Design iteration bench trial: Hip cable exit clamp still waiting on Hip absolute encoder kit, DVT. cant do anything until it lands"
     },
     {
-      "ts": "1788881451.859834",
+      "ts": "1788881451.207017",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002780"
+        "ev-003152"
       ],
       "brief": "Build sub-assembly: Hip stator heat spreader waits on Battery test cage",
       "claim": {
@@ -396,14 +405,24 @@
       ],
       "pressure": "high",
       "length": "short",
-      "text": "Build sub-assembly: Hip stator heat spreader waits on Battery test cage, dont ask why"
+      "text": "Build sub-assembly: Hip stator heat spreader waits on Battery test cage"
     },
     {
-      "ts": "1788885700.203647",
+      "ts": "1788883051.551236",
+      "user": "p-jonas",
+      "thread_ts": "1788879961.114022",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "thanks"
+    },
+    {
+      "ts": "1788885700.304585",
       "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-002671"
+        "ev-003019"
       ],
       "brief": "Hip actuator dyno efficiency sweep waits on Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno absorber motor adapter",
       "claim": {
@@ -412,38 +431,28 @@
       },
       "must_mention": [
         "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno absorber motor adapter",
-        "the sweep"
+        "Hip actuator dyno efficiency sweep"
       ],
       "pressure": "high",
       "length": "short",
-      "text": "the sweep is sitting on Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno absorber motor adapter"
+      "text": "Hip actuator dyno efficiency sweep waits on Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno absorber motor adapter"
     },
     {
-      "ts": "1788886178.380266",
-      "user": "p-carlos",
-      "thread_ts": "1788881451.859834",
+      "ts": "1788886057.023991",
+      "user": "p-ingrid",
+      "thread_ts": "1788881451.207017",
       "events": [],
       "brief": "reply (agrees) in the thread about: the message above",
       "must_mention": [],
-      "length": "short",
-      "text": "Yep, same problem on my side!!"
+      "length": "one_word",
+      "text": "agreed"
     },
     {
-      "ts": "1788886284.525615",
-      "user": "p-wei",
-      "thread_ts": "1788885700.203647",
-      "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Not sure that is the real blocker. The adapter drawing is done, I think it is just machining."
-    },
-    {
-      "ts": "1788886852.924242",
+      "ts": "1788886852.211552",
       "user": "p-nadia",
       "thread_ts": null,
       "events": [
-        "ev-002865"
+        "ev-003251"
       ],
       "brief": "Hip actuator thermal derate at continuous torque waits on Thermal chamber",
       "claim": {
@@ -456,34 +465,44 @@
       ],
       "pressure": "high",
       "length": "short",
-      "text": "Hip actuator thermal derate at continuous torque is stuck till we get the Thermal chamber back"
+      "text": "Hip actuator thermal derate at continuous torque waits on Thermal chamber. still booked"
     },
     {
-      "ts": "1788889201.190531",
-      "user": "p-samir",
-      "thread_ts": "1788885700.203647",
+      "ts": "1788888095.829648",
+      "user": "p-arjun",
+      "thread_ts": "1788879961.114022",
       "events": [],
       "brief": "reply (shares a related experience) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "had that happen with a different adapter before, took them 2 wks to confirm the bore"
+      "text": "had this on the last carrier, shimming got us through"
     },
     {
-      "ts": "1788889476.204023",
-      "user": "p-bao",
-      "thread_ts": "1788885700.203647",
-      "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "thanks samir, that helps me plan the dyno week"
+      "ts": "1788893516.656313",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002833"
+      ],
+      "brief": "Knee actuator thermal soak waits on Test stand rework for Knee actuator thermal soak: Knee to thigh flange",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00056"
+      },
+      "must_mention": [
+        "Test stand rework for Knee actuator thermal soak: Knee to thigh flange",
+        "the soak"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Knee actuator thermal soak waits on Test stand rework for Knee actuator thermal soak: Knee to thigh flange. so the soak is stuck"
     },
     {
-      "ts": "1788900090.344174",
+      "ts": "1788900090.684737",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002546"
+        "ev-002872"
       ],
       "brief": "Actuator DVT build waits on Prototype fit-up for Actuator DVT build: Knee output shaft",
       "claim": {
@@ -499,11 +518,11 @@
       "text": "Actuator DVT build waits on Prototype fit-up for Actuator DVT build: Knee output shaft"
     },
     {
-      "ts": "1788900104.941494",
+      "ts": "1788900104.409437",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-002759"
+        "ev-003124"
       ],
       "brief": "Fit check for Actuator DVT gate review: Knee wave generator hub waits on Leg drop-test gantry",
       "claim": {
@@ -515,25 +534,15 @@
         "Fit check for Actuator DVT gate review: Knee wave generator hub"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "Fit check for Actuator DVT gate review: Knee wave generator hub is waiting on Leg drop-test gantry, i think that gantry is booked solid but not 100% sure"
-    },
-    {
-      "ts": "1788900486.843075",
-      "user": "p-wei",
-      "thread_ts": "1788900090.344174",
-      "events": [],
-      "brief": "reply (tags someone else) in the thread about: the message above",
-      "must_mention": [],
       "length": "short",
-      "text": "Tomas should know, he did the last shaft fit-up."
+      "text": "Fit check for Actuator DVT gate review: Knee wave generator hub waits on Leg drop-test gantry"
     },
     {
-      "ts": "1788902279.929860",
+      "ts": "1788902279.513813",
       "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-002873"
+        "ev-003260"
       ],
       "brief": "Knee actuator thermal soak waits on Actuator dyno",
       "claim": {
@@ -549,11 +558,602 @@
       "text": "Knee actuator thermal soak waits on Actuator dyno"
     },
     {
-      "ts": "1788902592.132096",
+      "ts": "1788902592.225152",
       "user": "p-nadia",
       "thread_ts": null,
       "events": [
-        "ev-001681"
+        "ev-001902"
+      ],
+      "brief": "FL-TST-2103: need 10 by 2026-10-01",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-10-01"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2103",
+        "10/1"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2103 x10 by 10/1"
+    },
+    {
+      "ts": "1788902684.204986",
+      "user": "p-owen",
+      "thread_ts": "1788900090.684737",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "will look later"
+    },
+    {
+      "ts": "1788903608.470429",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-001913"
+      ],
+      "brief": "FL-TST-2103: need 24 by 2026-10-05",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-10-05"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2103",
+        "10/5"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "FL-TST-2103 x24, need 10/5. nadia's 10 is separate from this one i think, should sort that out so we dont double buy"
+    },
+    {
+      "ts": "1788903918.820132",
+      "user": "p-arjun",
+      "thread_ts": "1788902592.225152",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "@samir.k"
+    },
+    {
+      "ts": "1788904005.411326",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-001897"
+      ],
+      "brief": "FL-HIP-1033: need 8 by 2026-09-28 for Design iteration bench trial: Hip stator mount plate",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-09-28"
+        }
+      },
+      "must_mention": [
+        "FL-HIP-1033",
+        "Design iteration bench trial: Hip stator mount plate",
+        "FL-HIP-1091",
+        "FL-HIP-1094",
+        "mon 9/28"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-HIP-1033 x8 for Design iteration bench trial: Hip stator mount plate, need mon 9/28. FL-HIP-1091 and FL-HIP-1094 are on the same trial"
+    },
+    {
+      "ts": "1788904237.928401",
+      "user": "p-wei",
+      "thread_ts": "1788900104.409437",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "which hub, the old one or the new?"
+    },
+    {
+      "ts": "1788904809.756794",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-003077"
+      ],
+      "brief": "Hip actuator dyno efficiency sweep waits on Rig setup for Hip actuator dyno efficiency sweep: Dyno mounting plate, hip actuator (2)",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00211"
+      },
+      "must_mention": [
+        "Rig setup for Hip actuator dyno efficiency sweep: Dyno mounting plate, hip actuator (2)",
+        "Hip actuator dyno efficiency sweep"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Hip actuator dyno efficiency sweep waits on Rig setup for Hip actuator dyno efficiency sweep: Dyno mounting plate, hip actuator (2)"
+    },
+    {
+      "ts": "1788906497.151602",
+      "user": "p-arjun",
+      "thread_ts": "1788902592.225152",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "yep"
+    },
+    {
+      "ts": "1788906526.969368",
+      "user": "p-andre",
+      "thread_ts": "1788903608.470429",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ack"
+    },
+    {
+      "ts": "1788908405.738663",
+      "user": "p-carlos",
+      "thread_ts": "1788903608.470429",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "not convinced thats the right fixture, we should look at the print again"
+    },
+    {
+      "ts": "1788911787.014411",
+      "user": "p-bao",
+      "thread_ts": "1788903608.470429",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "also the mating one needs checking"
+    },
+    {
+      "ts": "1788912513.936886",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [
+        "ev-001801"
+      ],
+      "brief": "dyno coupling arrived",
+      "claim": {
+        "kind": "stock",
+        "value": 7
+      },
+      "must_mention": [
+        "dyno coupling",
+        "7"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "dyno coupling arrived, got 7"
+    },
+    {
+      "ts": "1788917130.092605",
+      "user": "p-beth",
+      "thread_ts": "1788912513.936886",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "finally, my hero"
+    },
+    {
+      "ts": "1788926823.170843",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-001945"
+      ],
+      "brief": "that adapter plate: need 4 by 2026-09-29",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 4,
+          "by": "2026-09-29"
+        }
+      },
+      "must_mention": [
+        "that adapter plate",
+        "9/29"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "that adapter plate, need 4 by 9/29"
+    },
+    {
+      "ts": "1788961475.142795",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-001954"
+      ],
+      "brief": "FL-TST-2145: need 6 by 2026-10-01",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-10-01"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2145",
+        "10/1"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2145 x6 by 10/1"
+    },
+    {
+      "ts": "1788971572.469475",
+      "user": "p-owen",
+      "thread_ts": "1788926823.170843",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "btw the old one has a chipped corner"
+    },
+    {
+      "ts": "1788976800.906240",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-003081"
+      ],
+      "brief": "Actuator DVT build waits on Design iteration bench trial for Actuator DVT build: Knee wave generator hub",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00214"
+      },
+      "must_mention": [
+        "Design iteration bench trial for Actuator DVT build: Knee wave generator hub",
+        "Actuator DVT build"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Actuator DVT build waits on Design iteration bench trial for Actuator DVT build: Knee wave generator hub"
+    },
+    {
+      "ts": "1788977793.949307",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002927"
+      ],
+      "brief": "Knee actuator thermal soak waits on Instrumentation fit-up for Knee actuator thermal soak: Knee motor mount plate",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00116"
+      },
+      "must_mention": [
+        "Instrumentation fit-up for Knee actuator thermal soak: Knee motor mount plate",
+        "Knee actuator thermal soak"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Knee actuator thermal soak waits on Instrumentation fit-up for Knee actuator thermal soak: Knee motor mount plate"
+    },
+    {
+      "ts": "1788977967.313125",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002919"
+      ],
+      "brief": "Hip actuator dyno efficiency sweep waits on Test stand rework for Hip actuator dyno efficiency sweep: Hip encoder read-head bracket",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00110"
+      },
+      "must_mention": [
+        "Test stand rework for Hip actuator dyno efficiency sweep: Hip encoder read-head bracket",
+        "Hip actuator dyno efficiency sweep"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Hip actuator dyno efficiency sweep waits on Test stand rework for Hip actuator dyno efficiency sweep: Hip encoder read-head bracket"
+    },
+    {
+      "ts": "1788978068.278347",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-001856"
+      ],
+      "brief": "bellows hub: need 12 by 2026-09-30",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-09-30"
+        }
+      },
+      "must_mention": [
+        "bellows hub",
+        "9/30"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "bellows hub x12, need by 9/30. whos buying that"
+    },
+    {
+      "ts": "1788978731.028667",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-003242"
+      ],
+      "brief": "Actuator DVT build waits on Hip actuator dyno efficiency sweep",
+      "claim": {
+        "kind": "blocked",
+        "value": "test-hip-dyno"
+      },
+      "must_mention": [
+        "Hip actuator dyno efficiency sweep",
+        "Actuator DVT build"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Actuator DVT build is sitting on the Hip actuator dyno efficiency sweep"
+    },
+    {
+      "ts": "1788978778.427404",
+      "user": "p-carlos",
+      "thread_ts": "1788976800.906240",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ack"
+    },
+    {
+      "ts": "1788979086.683331",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-003040"
+      ],
+      "brief": "Hip actuator dyno efficiency sweep waits on Rig setup for Hip actuator dyno efficiency sweep: Dyno shaft alignment jig",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00187"
+      },
+      "must_mention": [
+        "Rig setup for Hip actuator dyno efficiency sweep: Dyno shaft alignment jig",
+        "Hip actuator dyno efficiency sweep"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Hip actuator dyno efficiency sweep waits on Rig setup for Hip actuator dyno efficiency sweep: Dyno shaft alignment jig"
+    },
+    {
+      "ts": "1788980303.807526",
+      "user": "p-arjun",
+      "thread_ts": "1788978731.028667",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "every dvt build has one of these chains, usually it resolves itself late friday"
+    },
+    {
+      "ts": "1788981333.875708",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-002789"
+      ],
+      "brief": "Actuator DVT build waits on Tolerance stack check for Actuator DVT build: Hip stator mount plate",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00031"
+      },
+      "must_mention": [
+        "Tolerance stack check for Actuator DVT build: Hip stator mount plate",
+        "the build"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Actuator DVT build waits on Tolerance stack check for Actuator DVT build: Hip stator mount plate. the build cant kick off until that closes"
+    },
+    {
+      "ts": "1788981524.482819",
+      "user": "p-beth",
+      "thread_ts": "1788978731.028667",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "agree"
+    },
+    {
+      "ts": "1788982027.925906",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-002953"
+      ],
+      "brief": "Actuator DVT build waits on Build sub-assembly for Actuator DVT build: Hip holding-brake bracket",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00132"
+      },
+      "must_mention": [
+        "Build sub-assembly for Actuator DVT build: Hip holding-brake bracket",
+        "Actuator DVT build"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Actuator DVT build waits on Build sub-assembly for Actuator DVT build: Hip holding-brake bracket"
+    },
+    {
+      "ts": "1788982085.829314",
+      "user": "p-nadia",
+      "thread_ts": "1788979086.683331",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "thanks, that helps me plan the chamber time"
+    },
+    {
+      "ts": "1788982529.800639",
+      "user": "p-tomas",
+      "thread_ts": "1788981333.875708",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "thanks, will pick that up after lunch"
+    },
+    {
+      "ts": "1788982820.500366",
+      "user": "p-samir",
+      "thread_ts": "1788978731.028667",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "will check later"
+    },
+    {
+      "ts": "1788984090.280926",
+      "user": "p-owen",
+      "thread_ts": "1788979086.683331",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "eh not sure i agree"
+    },
+    {
+      "ts": "1788984614.191582",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-003021"
+      ],
+      "brief": "Hip actuator dyno efficiency sweep waits on Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno bellows coupling hub",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00171"
+      },
+      "must_mention": [
+        "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno bellows coupling hub",
+        "Hip actuator dyno efficiency sweep"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "Hip actuator dyno efficiency sweep waits on Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno bellows coupling hub. that one has been open a while"
+    },
+    {
+      "ts": "1788984933.036855",
+      "user": "p-wei",
+      "thread_ts": "1788984614.191582",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "i see it differently, the coupling should come first"
+    },
+    {
+      "ts": "1788985572.318879",
+      "user": "p-yusuf",
+      "thread_ts": "1788984614.191582",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "@andre"
+    },
+    {
+      "ts": "1788987177.214613",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-002943"
+      ],
+      "brief": "Actuator DVT build waits on Assemble build unit for Actuator DVT build: Knee hard-stop block",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00125"
+      },
+      "must_mention": [
+        "Assemble build unit for Actuator DVT build: Knee hard-stop block",
+        "Actuator DVT build"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Actuator DVT build waits on Assemble build unit for Actuator DVT build: Knee hard-stop block"
+    },
+    {
+      "ts": "1788987683.165043",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-003883"
+      ],
+      "brief": "Actuator firmware v2: still quoting 2026-09-11",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-09-11"
+      },
+      "must_mention": [
+        "Actuator firmware v2 (FOC + thermal derate)",
+        "9/11"
+      ],
+      "length": "short",
+      "text": "Actuator firmware v2 (FOC + thermal derate), still showing 9/11 on the tracker, need to update"
+    },
+    {
+      "ts": "1788989805.912588",
+      "user": "p-carlos",
+      "thread_ts": "1788984614.191582",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "no, pretty sure that's wrong"
+    },
+    {
+      "ts": "1788991824.542454",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-001909"
+      ],
+      "brief": "Order XO-5487162 placed, promised 2026-09-25",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-09-25"
+      },
+      "must_mention": [
+        "XO-5487162",
+        "motor plate",
+        "fri 9/25"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Order XO-5487162 placed for the motor plate, promised fri 9/25"
+    },
+    {
+      "ts": "1788993254.348853",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-001905"
       ],
       "brief": "knee coupling: need 10 by 2026-10-01",
       "claim": {
@@ -569,476 +1169,24 @@
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "need 10 knee coupling by 10/1"
+      "text": "knee coupling x10, need 10/1"
     },
     {
-      "ts": "1788903608.273200",
-      "user": "p-arjun",
-      "thread_ts": null,
-      "events": [
-        "ev-001688"
-      ],
-      "brief": "FL-TST-2103: need 24 by 2026-10-05",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 24,
-          "by": "2026-10-05"
-        }
-      },
-      "must_mention": [
-        "FL-TST-2103",
-        "mon 10/5"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "FL-TST-2103 x24, mon 10/5"
-    },
-    {
-      "ts": "1788904005.642972",
-      "user": "p-tomas",
-      "thread_ts": null,
-      "events": [
-        "ev-001676"
-      ],
-      "brief": "FL-HIP-1033: need 8 by 2026-10-01 for Design iteration bench trial: Hip stator mount plate",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 8,
-          "by": "2026-10-01"
-        }
-      },
-      "must_mention": [
-        "FL-HIP-1033",
-        "Design iteration bench trial: Hip stator mount plate",
-        "FL-HIP-1091",
-        "FL-HIP-1094",
-        "10/1"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "FL-HIP-1033 x8 for Design iteration bench trial: Hip stator mount plate. FL-HIP-1091 and FL-HIP-1094 with it, need 10/1"
-    },
-    {
-      "ts": "1788904809.759566",
-      "user": "p-andre",
-      "thread_ts": null,
-      "events": [
-        "ev-002717"
-      ],
-      "brief": "Hip actuator dyno efficiency sweep waits on Rig setup for Hip actuator dyno efficiency sweep: Dyno mounting plate, hip actuator (2)",
-      "claim": {
-        "kind": "blocked",
-        "value": "wi-00211"
-      },
-      "must_mention": [
-        "Rig setup for Hip actuator dyno efficiency sweep: Dyno mounting plate, hip actuator (2)",
-        "Hip actuator dyno efficiency sweep"
-      ],
-      "pressure": "high",
-      "length": "short",
-      "text": "Hip actuator dyno efficiency sweep also blocked on Rig setup for Hip actuator dyno efficiency sweep: Dyno mounting plate, hip actuator (2)"
-    },
-    {
-      "ts": "1788905289.515700",
-      "user": "p-samir",
-      "thread_ts": "1788900104.941494",
-      "events": [],
-      "brief": "reply (will check later) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "will check"
-    },
-    {
-      "ts": "1788905501.343580",
-      "user": "p-owen",
-      "thread_ts": null,
-      "events": [
-        "ev-001566"
-      ],
-      "brief": "hip adapter plate arrived",
-      "claim": {
-        "kind": "stock",
-        "value": 4
-      },
-      "must_mention": [
-        "hip adapter plate",
-        "4"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "hip adapter plate arrived 4"
-    },
-    {
-      "ts": "1788905606.826135",
-      "user": "p-samir",
-      "thread_ts": "1788900104.941494",
-      "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "not sure its that simple, they still need a slot from the gantry people and those go fast"
-    },
-    {
-      "ts": "1788905991.733023",
+      "ts": "1788994815.822566",
       "user": "p-carlos",
-      "thread_ts": "1788903608.273200",
-      "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "24 of them? are we building a bridge!!"
-    },
-    {
-      "ts": "1788906396.820476",
-      "user": "p-nadia",
-      "thread_ts": "1788902592.132096",
+      "thread_ts": "1788993254.348853",
       "events": [],
       "brief": "reply (disagrees politely) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "no the count is right, i checked twice"
+      "text": "i dont think we need that many"
     },
     {
-      "ts": "1788908597.334614",
-      "user": "p-ingrid",
-      "thread_ts": "1788903608.273200",
-      "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "Thanks."
-    },
-    {
-      "ts": "1788909069.463990",
-      "user": "p-bao",
-      "thread_ts": "1788900104.941494",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "does the gantry need two techs for that or one"
-    },
-    {
-      "ts": "1788926823.124854",
-      "user": "p-nadia",
-      "thread_ts": null,
-      "events": [
-        "ev-001723"
-      ],
-      "brief": "that adapter plate: need 4 by 2026-09-29",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 4,
-          "by": "2026-09-29"
-        }
-      },
-      "must_mention": [
-        "that adapter plate",
-        "9/29"
-      ],
-      "pressure": "high",
-      "length": "medium",
-      "text": "that adapter plate x4 needed 9/29, sorry for the late msg"
-    },
-    {
-      "ts": "1788958500.764970",
-      "user": "p-owen",
-      "thread_ts": null,
-      "events": [
-        "ev-001501"
-      ],
-      "brief": "absorber adapter in use",
-      "claim": {
-        "kind": "done",
-        "value": "2026-09-08"
-      },
-      "must_mention": [
-        "absorber adapter",
-        "the build",
-        "tues 9/8"
-      ],
-      "pressure": "high",
-      "length": "medium",
-      "text": "absorber adapter in use, done tues 9/8, so the build can move"
-    },
-    {
-      "ts": "1788961475.059776",
-      "user": "p-nadia",
-      "thread_ts": null,
-      "events": [
-        "ev-001732"
-      ],
-      "brief": "FL-TST-2145: need 6 by 2026-10-01",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 6,
-          "by": "2026-10-01"
-        }
-      },
-      "must_mention": [
-        "FL-TST-2145",
-        "thurs 10/1"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "FL-TST-2145 x6 thurs 10/1"
-    },
-    {
-      "ts": "1788976800.113166",
+      "ts": "1789000996.736084",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002721"
-      ],
-      "brief": "Actuator DVT build waits on Design iteration bench trial for Actuator DVT build: Knee wave generator hub",
-      "claim": {
-        "kind": "blocked",
-        "value": "wi-00214"
-      },
-      "must_mention": [
-        "Design iteration bench trial for Actuator DVT build: Knee wave generator hub",
-        "Actuator DVT build"
-      ],
-      "pressure": "low",
-      "length": "medium",
-      "text": "Actuator DVT build waits on Design iteration bench trial for Actuator DVT build: Knee wave generator hub"
-    },
-    {
-      "ts": "1788977793.057805",
-      "user": "p-andre",
-      "thread_ts": null,
-      "events": [
-        "ev-002594"
-      ],
-      "brief": "Knee actuator thermal soak waits on Instrumentation fit-up for Knee actuator thermal soak: Knee motor mount plate",
-      "claim": {
-        "kind": "blocked",
-        "value": "wi-00116"
-      },
-      "must_mention": [
-        "Instrumentation fit-up for Knee actuator thermal soak: Knee motor mount plate",
-        "Knee actuator thermal soak"
-      ],
-      "pressure": "high",
-      "length": "short",
-      "text": "Knee actuator thermal soak is gated by Instrumentation fit-up for Knee actuator thermal soak: Knee motor mount plate"
-    },
-    {
-      "ts": "1788977967.894821",
-      "user": "p-andre",
-      "thread_ts": null,
-      "events": [
-        "ev-002586"
-      ],
-      "brief": "Hip actuator dyno efficiency sweep waits on Test stand rework for Hip actuator dyno efficiency sweep: Hip encoder read-head bracket",
-      "claim": {
-        "kind": "blocked",
-        "value": "wi-00110"
-      },
-      "must_mention": [
-        "Test stand rework for Hip actuator dyno efficiency sweep: Hip encoder read-head bracket",
-        "the sweep"
-      ],
-      "pressure": "high",
-      "length": "short",
-      "text": "the sweep also needs Test stand rework for Hip actuator dyno efficiency sweep: Hip encoder read-head bracket"
-    },
-    {
-      "ts": "1788978068.039638",
-      "user": "p-owen",
-      "thread_ts": null,
-      "events": [
-        "ev-001636"
-      ],
-      "brief": "bellows hub: need 12 by 2026-09-29",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 12,
-          "by": "2026-09-29"
-        }
-      },
-      "must_mention": [
-        "bellows hub",
-        "9/29"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "need 12 bellows hub 9/29"
-    },
-    {
-      "ts": "1788978506.897895",
-      "user": "p-ingrid",
-      "thread_ts": "1788977967.894821",
-      "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "I don't think that is accurate. The bracket drawing was released already."
-    },
-    {
-      "ts": "1788978731.046039",
-      "user": "p-arjun",
-      "thread_ts": null,
-      "events": [
-        "ev-002856"
-      ],
-      "brief": "Actuator DVT build waits on Hip actuator dyno efficiency sweep",
-      "claim": {
-        "kind": "blocked",
-        "value": "test-hip-dyno"
-      },
-      "must_mention": [
-        "Hip actuator dyno efficiency sweep",
-        "the build"
-      ],
-      "pressure": "high",
-      "length": "short",
-      "text": "Actuator DVT build is stuck behind Hip actuator dyno efficiency sweep, the build cant close w/o it"
-    },
-    {
-      "ts": "1788979086.541684",
-      "user": "p-andre",
-      "thread_ts": null,
-      "events": [
-        "ev-002688"
-      ],
-      "brief": "Hip actuator dyno efficiency sweep waits on Rig setup for Hip actuator dyno efficiency sweep: Dyno shaft alignment jig",
-      "claim": {
-        "kind": "blocked",
-        "value": "wi-00187"
-      },
-      "must_mention": [
-        "Rig setup for Hip actuator dyno efficiency sweep: Dyno shaft alignment jig",
-        "the sweep"
-      ],
-      "pressure": "high",
-      "length": "short",
-      "text": "and the sweep still needs Rig setup for Hip actuator dyno efficiency sweep: Dyno shaft alignment jig"
-    },
-    {
-      "ts": "1788981726.559977",
-      "user": "p-yusuf",
-      "thread_ts": "1788977967.894821",
-      "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "fw side can run on a bench motor if the dyno is late, not blocked on that"
-    },
-    {
-      "ts": "1788982027.599486",
-      "user": "p-arjun",
-      "thread_ts": null,
-      "events": [
-        "ev-002614"
-      ],
-      "brief": "Actuator DVT build waits on Build sub-assembly for Actuator DVT build: Hip holding-brake bracket",
-      "claim": {
-        "kind": "blocked",
-        "value": "wi-00132"
-      },
-      "must_mention": [
-        "Build sub-assembly for Actuator DVT build: Hip holding-brake bracket",
-        "Actuator DVT build"
-      ],
-      "pressure": "low",
-      "length": "short",
-      "text": "Actuator DVT build is gated on Build sub-assembly for Actuator DVT build: Hip holding-brake bracket"
-    },
-    {
-      "ts": "1788984614.858333",
-      "user": "p-andre",
-      "thread_ts": null,
-      "events": [
-        "ev-002673"
-      ],
-      "brief": "Hip actuator dyno efficiency sweep waits on Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno bellows coupling hub",
-      "claim": {
-        "kind": "blocked",
-        "value": "wi-00171"
-      },
-      "must_mention": [
-        "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno bellows coupling hub",
-        "the sweep"
-      ],
-      "pressure": "high",
-      "length": "medium",
-      "text": "the sweep still needs Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno bellows coupling hub too, so thats two hubs and adapters ahead of it"
-    },
-    {
-      "ts": "1788987177.466480",
-      "user": "p-arjun",
-      "thread_ts": null,
-      "events": [
-        "ev-002607"
-      ],
-      "brief": "Actuator DVT build waits on Assemble build unit for Actuator DVT build: Knee hard-stop block",
-      "claim": {
-        "kind": "blocked",
-        "value": "wi-00125"
-      },
-      "must_mention": [
-        "Assemble build unit for Actuator DVT build: Knee hard-stop block",
-        "Actuator DVT build"
-      ],
-      "pressure": "low",
-      "length": "short",
-      "text": "Assemble build unit for Actuator DVT build: Knee hard-stop block is the gate for Actuator DVT build now"
-    },
-    {
-      "ts": "1788989805.497592",
-      "user": "p-jonas",
-      "thread_ts": "1788987177.466480",
-      "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "ok"
-    },
-    {
-      "ts": "1788991365.040662",
-      "user": "p-arjun",
-      "thread_ts": "1788987177.466480",
-      "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "yep that tracks, hard-stop block is the last mech piece i think. will confirm w/ tomas"
-    },
-    {
-      "ts": "1788993254.967957",
-      "user": "p-samir",
-      "thread_ts": null,
-      "events": [
-        "ev-001683"
-      ],
-      "brief": "knee dyno coupling: need 10 by 2026-10-01",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 10,
-          "by": "2026-10-01"
-        }
-      },
-      "must_mention": [
-        "knee dyno coupling",
-        "10/1"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "knee dyno coupling x10, 10/1"
-    },
-    {
-      "ts": "1789000996.439102",
-      "user": "p-arjun",
-      "thread_ts": null,
-      "events": [
-        "ev-001637"
+        "ev-001857"
       ],
       "brief": "FL-TST-2146: need 12 by 2026-09-29",
       "claim": {
@@ -1050,71 +1198,71 @@
       },
       "must_mention": [
         "FL-TST-2146",
-        "tues 9/29"
+        "9/29"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "FL-TST-2146 x12 tues 9/29"
+      "text": "FL-TST-2146 x12 by 9/29"
     },
     {
-      "ts": "1789001133.950960",
-      "user": "p-samir",
-      "thread_ts": "1789000996.439102",
-      "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "cant be tues, the vendor wont have it"
-    },
-    {
-      "ts": "1789003397.209717",
+      "ts": "1789001757.893901",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-001679"
+        "ev-002834"
       ],
-      "brief": "FL-HIP-1033: need 8 by 2026-09-28",
+      "brief": "Actuator DVT build waits on Prototype fit-up for Actuator DVT build: Knee rear cover",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00057"
+      },
+      "must_mention": [
+        "Prototype fit-up for Actuator DVT build: Knee rear cover",
+        "the build"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Actuator DVT build waits on Prototype fit-up for Actuator DVT build: Knee rear cover. the build is blocked there"
+    },
+    {
+      "ts": "1789003094.955585",
+      "user": "p-yusuf",
+      "thread_ts": "1789000996.736084",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "thanks"
+    },
+    {
+      "ts": "1789003397.526518",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-001900"
+      ],
+      "brief": "FL-HIP-1033: need 8 by 2026-09-30",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 8,
-          "by": "2026-09-28"
+          "by": "2026-09-30"
         }
       },
       "must_mention": [
         "FL-HIP-1033",
-        "mon 9/28"
+        "9/30"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "FL-HIP-1033 x8 mon 9/28"
+      "text": "FL-HIP-1033 x8 needed 9/30"
     },
     {
-      "ts": "1789004246.494155",
-      "user": "p-samir",
-      "thread_ts": "1789000996.439102",
-      "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "worth noting the last lot of those was short a few"
-    },
-    {
-      "ts": "1789008037.106219",
-      "user": "p-carlos",
-      "thread_ts": "1789000996.439102",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Who is receiving it, Jade or Destiny??"
-    },
-    {
-      "ts": "1789052503.906163",
+      "ts": "1789052503.411005",
       "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-002691"
+        "ev-003044"
       ],
       "brief": "Hip actuator dyno efficiency sweep waits on Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno thermocouple clamp",
       "claim": {
@@ -1126,35 +1274,15 @@
         "Hip actuator dyno efficiency sweep"
       ],
       "pressure": "high",
-      "length": "short",
-      "text": "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno thermocouple clamp is the next thing Hip actuator dyno efficiency sweep is waiting on"
+      "length": "medium",
+      "text": "Hip actuator dyno efficiency sweep waits on Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno thermocouple clamp, still not started"
     },
     {
-      "ts": "1789056940.404033",
-      "user": "p-ingrid",
-      "thread_ts": "1789052503.906163",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Noted. Same here."
-    },
-    {
-      "ts": "1789058619.694476",
-      "user": "p-arjun",
-      "thread_ts": "1789052503.906163",
-      "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "at this rate the dyno is just a very expensive shelf"
-    },
-    {
-      "ts": "1789059069.646917",
+      "ts": "1789059069.819926",
       "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-002632"
+        "ev-002974"
       ],
       "brief": "Hip actuator dyno efficiency sweep waits on Rig setup for Hip actuator dyno efficiency sweep: Dyno coupling, knee actuator",
       "claim": {
@@ -1167,14 +1295,34 @@
       ],
       "pressure": "high",
       "length": "short",
-      "text": "Rig setup for Hip actuator dyno efficiency sweep: Dyno coupling, knee actuator is also open, Hip actuator dyno efficiency sweep cant start w/o it"
+      "text": "Hip actuator dyno efficiency sweep waits on Rig setup for Hip actuator dyno efficiency sweep: Dyno coupling, knee actuator"
     },
     {
-      "ts": "1789061016.914270",
+      "ts": "1789060627.815730",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-003111"
+      ],
+      "brief": "Hip actuator dyno efficiency sweep waits on Dyno mounting plate, hip actuator",
+      "claim": {
+        "kind": "blocked",
+        "value": "pt-dyno-adapter-hip"
+      },
+      "must_mention": [
+        "Dyno mounting plate, hip actuator",
+        "Hip actuator dyno efficiency sweep"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Hip actuator dyno efficiency sweep waits on Dyno mounting plate, hip actuator"
+    },
+    {
+      "ts": "1789061016.912873",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-003842"
+        "ev-004300"
       ],
       "brief": "Rig setup for Knee backdrive torque and backlash check: Dyno coupling, knee actuator done by tues",
       "claim": {
@@ -1183,18 +1331,18 @@
       },
       "must_mention": [
         "Rig setup for Knee backdrive torque and backlash check: Dyno coupling, knee actuator",
-        "tues the 15th"
+        "9/15"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Rig setup for Knee backdrive torque and backlash check: Dyno coupling, knee actuator should be done by tues the 15th"
+      "text": "Rig setup for Knee backdrive torque and backlash check: Dyno coupling, knee actuator should be done by tues, 9/15"
     },
     {
-      "ts": "1789062173.139716",
+      "ts": "1789062173.558882",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002557"
+        "ev-002884"
       ],
       "brief": "Actuator DVT build waits on Build sub-assembly for Actuator DVT build: Hip output shaft",
       "claim": {
@@ -1206,75 +1354,45 @@
         "Actuator DVT build"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "Actuator DVT build waits on Build sub-assembly for Actuator DVT build: Hip output shaft, shaft is coming back from the shop"
-    },
-    {
-      "ts": "1789062435.974794",
-      "user": "p-wei",
-      "thread_ts": "1789052503.906163",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "agree"
-    },
-    {
-      "ts": "1789063305.348280",
-      "user": "p-tomas",
-      "thread_ts": "1788904005.642972",
-      "events": [
-        "ev-003249"
-      ],
-      "brief": "Correction: FL-HIP-1033: need 8 by 2026-09-28 for Design iteration bench trial: Hip stator mount plate",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 8,
-          "by": "2026-09-28"
-        }
-      },
-      "must_mention": [
-        "FL-HIP-1033",
-        "Design iteration bench trial: Hip stator mount plate",
-        "FL-HIP-1091",
-        "FL-HIP-1094",
-        "9/28"
-      ],
-      "pressure": "elevated",
-      "length": "medium",
-      "text": "Correction: FL-HIP-1033 x8 for Design iteration bench trial: Hip stator mount plate is 9/28, not 10/1. FL-HIP-1091 and FL-HIP-1094 unchanged"
-    },
-    {
-      "ts": "1789064898.276507",
-      "user": "p-arjun",
-      "thread_ts": null,
-      "events": [
-        "ev-003349"
-      ],
-      "brief": "dyno coupling: need 24 by 2026-10-07 for Test stand rework: Dyno coupling, knee actuator",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 24,
-          "by": "2026-10-07"
-        }
-      },
-      "must_mention": [
-        "dyno coupling",
-        "Test stand rework: Dyno coupling, knee actuator",
-        "wed the 7th"
-      ],
-      "pressure": "elevated",
       "length": "short",
-      "text": "need 24 dyno coupling for Test stand rework: Dyno coupling, knee actuator, wed the 7th"
+      "text": "Actuator DVT build waits on Build sub-assembly for Actuator DVT build: Hip output shaft"
     },
     {
-      "ts": "1789065310.262757",
+      "ts": "1789062200.804028",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002875"
+      ],
+      "brief": "Hip actuator dyno efficiency sweep waits on Fixture install and shakedown for Hip actuator dyno efficiency sweep: Hip to pelvis interface plate",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00081"
+      },
+      "must_mention": [
+        "Fixture install and shakedown for Hip actuator dyno efficiency sweep: Hip to pelvis interface plate",
+        "Hip actuator dyno efficiency sweep"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Hip actuator dyno efficiency sweep waits on Fixture install and shakedown for Hip actuator dyno efficiency sweep: Hip to pelvis interface plate"
+    },
+    {
+      "ts": "1789063957.742191",
+      "user": "p-yusuf",
+      "thread_ts": "1789062200.804028",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "thats not how i read the schedule"
+    },
+    {
+      "ts": "1789065310.947519",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002617"
+        "ev-002956"
       ],
       "brief": "Actuator DVT build waits on Install and torque for Actuator DVT build: Hip encoder read-head bracket",
       "claim": {
@@ -1287,24 +1405,14 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Install and torque for Actuator DVT build: Hip encoder read-head bracket is whats holding Actuator DVT build now"
+      "text": "Actuator DVT build waits on Install and torque for Actuator DVT build: Hip encoder read-head bracket"
     },
     {
-      "ts": "1789065470.042875",
-      "user": "p-ingrid",
-      "thread_ts": "1788904005.642972",
-      "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "Tomas, which unit does that apply to, the hip or the knee? The two mount plates are not interchangeable."
-    },
-    {
-      "ts": "1789065813.693606",
+      "ts": "1789065813.920212",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-003852"
+        "ev-004310"
       ],
       "brief": "Test stand rework for Knee backdrive torque and backlash check: Dyno absorber motor adapter done by tues",
       "claim": {
@@ -1313,38 +1421,51 @@
       },
       "must_mention": [
         "Test stand rework for Knee backdrive torque and backlash check: Dyno absorber motor adapter",
-        "9/15"
+        "tues the 15th"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Test stand rework for Knee backdrive torque and backlash check: Dyno absorber motor adapter should be done by tues, 9/15 i think"
+      "text": "Test stand rework for Knee backdrive torque and backlash check: Dyno absorber motor adapter done by tues the 15th"
     },
     {
-      "ts": "1789066889.220796",
-      "user": "p-wei",
-      "thread_ts": "1788904005.642972",
-      "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "also the hip plate has a different hole pattern now"
+      "ts": "1789066937.185188",
+      "user": "p-arjun",
+      "thread_ts": "1789003397.526518",
+      "events": [
+        "ev-003526"
+      ],
+      "brief": "Correction: FL-HIP-1033: need 8 by 2026-09-28",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-09-28"
+        }
+      },
+      "must_mention": [
+        "FL-HIP-1033",
+        "9/28"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "correction, FL-HIP-1033 x8 by 9/28 not 9/30"
     },
     {
-      "ts": "1789067268.045556",
-      "user": "p-jonas",
-      "thread_ts": "1789064898.276507",
+      "ts": "1789066988.597482",
+      "user": "p-samir",
+      "thread_ts": "1789065310.947519",
       "events": [],
       "brief": "reply (tags someone else) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "@yusuf probably knows which coupling"
+      "text": "@arjun"
     },
     {
-      "ts": "1789067613.318699",
+      "ts": "1789067613.727271",
       "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-002740"
+        "ev-003101"
       ],
       "brief": "Hip actuator dyno efficiency sweep waits on Hip actuator housing",
       "claim": {
@@ -1353,18 +1474,18 @@
       },
       "must_mention": [
         "Hip actuator housing",
-        "the sweep"
+        "Hip actuator dyno efficiency sweep"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "the sweep waits on Hip actuator housing, no housing no sweep"
+      "length": "short",
+      "text": "Hip actuator dyno efficiency sweep waits on Hip actuator housing"
     },
     {
-      "ts": "1789068412.462249",
+      "ts": "1789068412.442110",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-001733"
+        "ev-001955"
       ],
       "brief": "the feedthrough: need 6 by 2026-10-01",
       "claim": {
@@ -1376,58 +1497,78 @@
       },
       "must_mention": [
         "the feedthrough",
-        "10/1"
+        "thurs the 1st"
       ],
       "pressure": "elevated",
-      "length": "medium",
-      "text": "need 6 of the feedthrough by 10/1"
+      "length": "short",
+      "text": "the feedthrough x6 by thurs the 1st"
     },
     {
-      "ts": "1789069696.720019",
-      "user": "p-beth",
-      "thread_ts": "1789065310.262757",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "Carlos, can you confirm whether the read-head bracket needs a torque spec update, or is it the same as the last build? I am trying to work out whether this is a paperwork delay or a parts delay."
-    },
-    {
-      "ts": "1789072527.094900",
+      "ts": "1789068629.519545",
       "user": "p-tomas",
-      "thread_ts": "1789068412.462249",
+      "thread_ts": "1789068412.442110",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "our last one leaked at the o-ring, check the groove"
+    },
+    {
+      "ts": "1789068726.092453",
+      "user": "p-owen",
+      "thread_ts": "1789067613.727271",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "housing again, shocker"
+    },
+    {
+      "ts": "1789069462.340785",
+      "user": "p-jonas",
+      "thread_ts": "1789065310.947519",
       "events": [],
       "brief": "reply (pushes back) in the thread about: the message above",
       "must_mention": [],
-      "length": "one_word",
-      "text": "not sure 6 is enough, probably want spares"
+      "length": "short",
+      "text": "nope, thats not what i heard"
     },
     {
-      "ts": "1789073657.931153",
+      "ts": "1789070500.682652",
       "user": "p-carlos",
-      "thread_ts": "1789065310.262757",
+      "thread_ts": "1789068412.442110",
       "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
+      "brief": "reply (shares a related experience) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "SAME TORQUE as before. Paperwork only!!"
+      "text": "had the same issue with a feedthrough on the chamber, took ages"
     },
     {
-      "ts": "1789073931.864406",
-      "user": "p-beth",
-      "thread_ts": "1789065310.262757",
+      "ts": "1789073079.782641",
+      "user": "p-andre",
+      "thread_ts": "1789065310.947519",
       "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
       "must_mention": [],
-      "length": "medium",
-      "text": "If it is paperwork only, then it should be closeable today. I'd push back on calling it a blocker until we know that is true."
+      "length": "one_word",
+      "text": "which chamber is this for"
     },
     {
-      "ts": "1789074038.091167",
+      "ts": "1789073122.836222",
+      "user": "p-andre",
+      "thread_ts": "1789068412.442110",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "fwiw the sweep needs it before the soak"
+    },
+    {
+      "ts": "1789074038.442765",
       "user": "p-ingrid",
       "thread_ts": null,
       "events": [
-        "ev-002866"
+        "ev-003252"
       ],
       "brief": "Actuator DVT gate review waits on Hip actuator thermal derate at continuous torque",
       "claim": {
@@ -1440,64 +1581,34 @@
       ],
       "pressure": "high",
       "length": "short",
-      "text": "Actuator DVT gate review waits on Hip actuator thermal derate at continuous torque"
+      "text": "Actuator DVT gate review waits on Hip actuator thermal derate at continuous torque."
     },
     {
-      "ts": "1789074195.998446",
-      "user": "p-yusuf",
-      "thread_ts": "1789074038.091167",
+      "ts": "1789075046.057957",
+      "user": "p-beth",
+      "thread_ts": "1789074038.442765",
       "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "derate model is done on fw side, its the chamber time"
-    },
-    {
-      "ts": "1789076186.695323",
-      "user": "p-carlos",
-      "thread_ts": "1789068412.462249",
-      "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
+      "brief": "reply (ack) in the thread about: the message above",
       "must_mention": [],
       "length": "one_word",
-      "text": "Thanks!!"
+      "text": "ack"
     },
     {
-      "ts": "1789077758.123912",
-      "user": "p-samir",
-      "thread_ts": "1789068412.462249",
+      "ts": "1789076680.890553",
+      "user": "p-ingrid",
+      "thread_ts": "1789074038.442765",
       "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "brief": "reply (shares a related experience) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "6 should be fine for one chamber, they sell them in pairs anyway"
+      "text": "We hit a similar derate dependency on the last program and it slipped the gate by a week."
     },
     {
-      "ts": "1789078291.820220",
-      "user": "p-carlos",
-      "thread_ts": "1789074038.091167",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "AGREE."
-    },
-    {
-      "ts": "1789078665.956170",
-      "user": "p-bao",
-      "thread_ts": "1789074038.091167",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "yeah makes sense"
-    },
-    {
-      "ts": "1789080659.189132",
+      "ts": "1789080659.353550",
       "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-002470"
+        "ev-002777"
       ],
       "brief": "Hip actuator dyno efficiency sweep waits on Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno inertia disc",
       "claim": {
@@ -1509,15 +1620,15 @@
         "Hip actuator dyno efficiency sweep"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno inertia disc is the last instrumentation item before Hip actuator dyno efficiency sweep can start, i think"
+      "length": "short",
+      "text": "Hip actuator dyno efficiency sweep waits on Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno inertia disc"
     },
     {
-      "ts": "1789081696.457730",
+      "ts": "1789081696.342444",
       "user": "p-talia",
       "thread_ts": null,
       "events": [
-        "ev-001647"
+        "ev-001867"
       ],
       "brief": "Order XO-5488000 placed, promised 2026-09-24",
       "claim": {
@@ -1527,18 +1638,18 @@
       "must_mention": [
         "XO-5488000",
         "port plate",
-        "thurs 9/24"
+        "9/24"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "Order XO-5488000 placed for the port plate, promised thurs 9/24 🙏"
+      "length": "short",
+      "text": "Order XO-5488000 placed for the port plate, promised 9/24 😬"
     },
     {
-      "ts": "1789085419.151374",
+      "ts": "1789085419.706310",
       "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-002855"
+        "ev-003241"
       ],
       "brief": "Hip actuator dyno efficiency sweep waits on Actuator firmware v2 (FOC + thermal derate)",
       "claim": {
@@ -1550,15 +1661,15 @@
         "Hip actuator dyno efficiency sweep"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "Hip actuator dyno efficiency sweep waits on Actuator firmware v2 (FOC + thermal derate) too, so firmware has to land before the dyno gets any data"
+      "length": "short",
+      "text": "Hip actuator dyno efficiency sweep waits on Actuator firmware v2 (FOC + thermal derate)"
     },
     {
-      "ts": "1789086153.007963",
+      "ts": "1789086153.493741",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002507"
+        "ev-002825"
       ],
       "brief": "Actuator DVT build waits on Tolerance stack check for Actuator DVT build: Knee bearing shim",
       "claim": {
@@ -1567,18 +1678,18 @@
       },
       "must_mention": [
         "Tolerance stack check for Actuator DVT build: Knee bearing shim",
-        "the build"
+        "Actuator DVT build"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "the build waits on Tolerance stack check for Actuator DVT build: Knee bearing shim"
+      "text": "Actuator DVT build waits on Tolerance stack check for Actuator DVT build: Knee bearing shim"
     },
     {
-      "ts": "1789086694.804028",
+      "ts": "1789086694.783091",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002875"
+        "ev-003262"
       ],
       "brief": "Actuator DVT build waits on Knee actuator thermal soak",
       "claim": {
@@ -1587,51 +1698,90 @@
       },
       "must_mention": [
         "Knee actuator thermal soak",
-        "the build"
+        "Actuator DVT build"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "Actuator DVT build also waits on Knee actuator thermal soak, so the build is behind that"
+      "length": "medium",
+      "text": "Actuator DVT build waits on Knee actuator thermal soak. this is the long pole now"
     },
     {
-      "ts": "1789088451.742191",
-      "user": "p-yusuf",
-      "thread_ts": "1789086694.804028",
+      "ts": "1789086835.452786",
+      "user": "p-arjun",
+      "thread_ts": "1789085419.706310",
       "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
+      "brief": "reply (agrees) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "thermal soak can overlap with build, dont see why it blocks"
+      "text": "yep thats right"
     },
     {
-      "ts": "1789092592.426925",
+      "ts": "1789089187.929133",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-002915"
+      ],
+      "brief": "Actuator DVT build waits on Install and torque for Actuator DVT build: Knee flexspline clamp ring",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00108"
+      },
+      "must_mention": [
+        "Install and torque for Actuator DVT build: Knee flexspline clamp ring",
+        "the build"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Actuator DVT build waits on Install and torque for Actuator DVT build: Knee flexspline clamp ring, so the build holds"
+    },
+    {
+      "ts": "1789089640.825777",
+      "user": "p-beth",
+      "thread_ts": "1789086694.783091",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Will check later and update the tracker."
+    },
+    {
+      "ts": "1789090926.625251",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-003126"
+      ],
+      "brief": "Fit check for Actuator DVT gate review: Knee wave generator hub waits on Knee harmonic reducer set, DVT",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-knee-harmonic-dvt"
+      },
+      "must_mention": [
+        "Knee harmonic reducer set, DVT",
+        "the hub"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "Fit check for Actuator DVT gate review: Knee wave generator hub waits on Knee harmonic reducer set, DVT. so the hub cant be fit checked yet"
+    },
+    {
+      "ts": "1789091152.880199",
+      "user": "p-beth",
+      "thread_ts": "1789086153.493741",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Will look at this tomorrow."
+    },
+    {
+      "ts": "1789092592.128663",
       "user": "p-talia",
       "thread_ts": null,
       "events": [
-        "ev-001680"
+        "ev-001901"
       ],
-      "brief": "Order XO-5488485 placed, promised 2026-09-29",
-      "claim": {
-        "kind": "eta",
-        "value": "2026-09-29"
-      },
-      "must_mention": [
-        "XO-5488485",
-        "stator mount",
-        "9/29"
-      ],
-      "pressure": "high",
-      "length": "short",
-      "text": "Order XO-5488485 placed for stator mount, promised 9/29 🙏"
-    },
-    {
-      "ts": "1789097032.598491",
-      "user": "p-talia",
-      "thread_ts": "1789092592.426925",
-      "events": [
-        "ev-003115"
-      ],
-      "brief": "Correction: Order XO-5488485 placed, promised 2026-09-28",
+      "brief": "Order XO-5488485 placed, promised 2026-09-28",
       "claim": {
         "kind": "eta",
         "value": "2026-09-28"
@@ -1643,14 +1793,24 @@
       ],
       "pressure": "high",
       "length": "short",
-      "text": "Correction: XO-5488485 stator mount is 9/28 not 9/29 😬"
+      "text": "Order XO-5488485 placed for the stator mount, promised 9/28 🙏"
     },
     {
-      "ts": "1789097702.783201",
+      "ts": "1789094421.726602",
+      "user": "p-yusuf",
+      "thread_ts": "1789092592.128663",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "ack"
+    },
+    {
+      "ts": "1789097702.734772",
       "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-002551"
+        "ev-002878"
       ],
       "brief": "Hip actuator dyno efficiency sweep waits on Test stand rework for Hip actuator dyno efficiency sweep: Dyno chamber shaft feedthrough",
       "claim": {
@@ -1662,15 +1822,58 @@
         "Hip actuator dyno efficiency sweep"
       ],
       "pressure": "high",
-      "length": "short",
-      "text": "and Test stand rework for Hip actuator dyno efficiency sweep: Dyno chamber shaft feedthrough, Hip actuator dyno efficiency sweep waits on that too"
+      "length": "medium",
+      "text": "Hip actuator dyno efficiency sweep waits on Test stand rework for Hip actuator dyno efficiency sweep: Dyno chamber shaft feedthrough. same feedthrough thing as earlier"
     },
     {
-      "ts": "1789138919.556269",
+      "ts": "1789101480.542456",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-003523"
+      ],
+      "brief": "Correction: knee dyno coupling: need 24 by 2026-10-05",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-10-05"
+        }
+      },
+      "must_mention": [
+        "knee dyno coupling",
+        "10/5"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Correction: knee dyno coupling x24 needed 10/5!!"
+    },
+    {
+      "ts": "1789135244.133028",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002455"
+        "ev-002935"
+      ],
+      "brief": "Actuator DVT build waits on Prototype fit-up for Actuator DVT build: Knee hard-stop block",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00120"
+      },
+      "must_mention": [
+        "Prototype fit-up for Actuator DVT build: Knee hard-stop block",
+        "Actuator DVT build"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Actuator DVT build waits on Prototype fit-up for Actuator DVT build: Knee hard-stop block. still not done and its friday"
+    },
+    {
+      "ts": "1789138919.732608",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-002756"
       ],
       "brief": "Actuator DVT build waits on Install and torque for Actuator DVT build: Hip actuator end cover",
       "claim": {
@@ -1686,21 +1889,11 @@
       "text": "Actuator DVT build waits on Install and torque for Actuator DVT build: Hip actuator end cover"
     },
     {
-      "ts": "1789141180.694911",
-      "user": "p-arjun",
-      "thread_ts": "1789092592.426925",
-      "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "yes, 28th works for us"
-    },
-    {
-      "ts": "1789142133.019726",
+      "ts": "1789142133.674587",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002536"
+        "ev-002859"
       ],
       "brief": "Actuator DVT build waits on Design iteration bench trial for Actuator DVT build: Hip rotor hub",
       "claim": {
@@ -1709,28 +1902,28 @@
       },
       "must_mention": [
         "Design iteration bench trial for Actuator DVT build: Hip rotor hub",
-        "the build"
+        "Actuator DVT build"
       ],
       "pressure": "low",
-      "length": "short",
-      "text": "the build waits on Design iteration bench trial for Actuator DVT build: Hip rotor hub"
+      "length": "medium",
+      "text": "Actuator DVT build waits on Design iteration bench trial for Actuator DVT build: Hip rotor hub, been sitting a few days"
     },
     {
-      "ts": "1789142618.404308",
-      "user": "p-carlos",
-      "thread_ts": "1789138919.556269",
+      "ts": "1789142383.764506",
+      "user": "p-arjun",
+      "thread_ts": "1789138919.732608",
       "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
+      "brief": "reply (ack) in the thread about: the message above",
       "must_mention": [],
-      "length": "short",
-      "text": "End cover torque is the same, one less thing to chase."
+      "length": "one_word",
+      "text": "ack"
     },
     {
-      "ts": "1789143219.310997",
+      "ts": "1789143219.631829",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002663"
+        "ev-003009"
       ],
       "brief": "Actuator DVT build waits on Fit check for Actuator DVT build: Knee winding thermistor clip",
       "claim": {
@@ -1742,25 +1935,84 @@
         "Actuator DVT build"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "Actuator DVT build waits on Fit check for Actuator DVT build: Knee winding thermistor clip, the clip is tiny but it holds everything"
+      "length": "short",
+      "text": "Actuator DVT build waits on Fit check for Actuator DVT build: Knee winding thermistor clip"
     },
     {
-      "ts": "1789145598.829373",
-      "user": "p-wei",
-      "thread_ts": "1789092592.426925",
+      "ts": "1789144259.593707",
+      "user": "p-beth",
+      "thread_ts": "1789092592.128663",
       "events": [],
-      "brief": "reply (will check later) in the thread about: the message above",
+      "brief": "reply (shares a related experience) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "will look at it later today"
+      "text": "Same thing happened with the last order, took a few days to sort."
     },
     {
-      "ts": "1789148489.062346",
+      "ts": "1789145523.285658",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-003900"
+      ],
+      "brief": "Knee actuator thermal soak: still quoting 2026-09-14",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-09-14"
+      },
+      "must_mention": [
+        "Knee actuator thermal soak",
+        "mon the 14th"
+      ],
+      "length": "short",
+      "text": "Knee actuator thermal soak still showing mon the 14th on the plan, thats stale"
+    },
+    {
+      "ts": "1789146085.205574",
+      "user": "p-carlos",
+      "thread_ts": "1789143219.631829",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "i can do it after lunch if someone sends me the clip"
+    },
+    {
+      "ts": "1789146590.189206",
+      "user": "p-tomas",
+      "thread_ts": "1789090926.625251",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "is that the DVT set or the proto set?"
+    },
+    {
+      "ts": "1789147015.928305",
+      "user": "p-beth",
+      "thread_ts": "1789138919.732608",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "@carlos can you look"
+    },
+    {
+      "ts": "1789147539.688250",
+      "user": "p-arjun",
+      "thread_ts": "1789086153.493741",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "no, its not that one"
+    },
+    {
+      "ts": "1789148489.969557",
       "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-002549"
+        "ev-002876"
       ],
       "brief": "Knee actuator thermal soak waits on Instrumentation fit-up for Knee actuator thermal soak: Knee flexspline clamp ring",
       "claim": {
@@ -1772,25 +2024,65 @@
         "Knee actuator thermal soak"
       ],
       "pressure": "high",
-      "length": "medium",
+      "length": "short",
       "text": "Knee actuator thermal soak waits on Instrumentation fit-up for Knee actuator thermal soak: Knee flexspline clamp ring"
     },
     {
-      "ts": "1789148636.471913",
-      "user": "p-samir",
-      "thread_ts": "1789148489.062346",
+      "ts": "1789148860.521538",
+      "user": "p-jonas",
+      "thread_ts": "1789090926.625251",
       "events": [],
       "brief": "reply (tags someone else) in the thread about: the message above",
       "must_mention": [],
-      "length": "short",
-      "text": "@talia is that one on order?"
+      "length": "one_word",
+      "text": "@arjun maybe"
     },
     {
-      "ts": "1789150144.955491",
+      "ts": "1789149256.275210",
+      "user": "p-ingrid",
+      "thread_ts": "1789090926.625251",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "It's the DVT set, I checked the BOM this morning."
+    },
+    {
+      "ts": "1789149783.562019",
+      "user": "p-ingrid",
+      "thread_ts": "1789138919.732608",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "I would add that this is the third time a sub-assembly has been the blocker on this build, worth a note in the retro."
+    },
+    {
+      "ts": "1789149794.398439",
+      "user": "p-nadia",
+      "thread_ts": "1789097702.734772",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "ack"
+    },
+    {
+      "ts": "1789150057.607879",
+      "user": "p-bao",
+      "thread_ts": "1789143219.631829",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "The chamber is the other thing on that list."
+    },
+    {
+      "ts": "1789150144.071944",
       "user": "p-talia",
       "thread_ts": null,
       "events": [
-        "ev-001670"
+        "ev-001891"
       ],
       "brief": "base plate: need 1 by 2026-10-01",
       "claim": {
@@ -1802,58 +2094,48 @@
       },
       "must_mention": [
         "base plate",
-        "10/1"
+        "thurs the 1st"
       ],
       "pressure": "high",
       "length": "short",
-      "text": "base plate x1 10/1 🙏"
+      "text": "base plate x1 needed thurs the 1st 🙏"
     },
     {
-      "ts": "1789150478.644158",
-      "user": "p-bao",
-      "thread_ts": "1789150144.955491",
+      "ts": "1789150264.794035",
+      "user": "p-owen",
+      "thread_ts": "1789150144.071944",
       "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
+      "brief": "reply (tags someone else) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "ok"
+      "text": "@samir.k"
     },
     {
-      "ts": "1789151135.128371",
+      "ts": "1789153358.983354",
       "user": "p-ingrid",
-      "thread_ts": "1789148489.062346",
+      "thread_ts": "1789097702.734772",
       "events": [],
       "brief": "reply (jokes) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "A single clamp ring holding up a thermal soak. Hardware in a nutshell."
+      "text": "housing, the gift that keeps giving"
     },
     {
-      "ts": "1789151876.605787",
-      "user": "p-samir",
-      "thread_ts": "1789150144.955491",
+      "ts": "1789158447.708931",
+      "user": "p-yusuf",
+      "thread_ts": "1789097702.734772",
       "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "brief": "reply (jokes) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "just 1? we lost one last build, order a spare"
+      "text": "someone put that on a t-shirt"
     },
     {
-      "ts": "1789156919.144168",
-      "user": "p-yusuf",
-      "thread_ts": "1789150144.955491",
-      "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "agree w samir order 2"
-    },
-    {
-      "ts": "1789160234.706977",
+      "ts": "1789160234.548196",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002530"
+        "ev-002853"
       ],
       "brief": "Actuator DVT build waits on Build sub-assembly for Actuator DVT build: Hip output bearing spacer",
       "claim": {
@@ -1865,15 +2147,45 @@
         "Actuator DVT build"
       ],
       "pressure": "low",
-      "length": "medium",
+      "length": "short",
       "text": "Actuator DVT build waits on Build sub-assembly for Actuator DVT build: Hip output bearing spacer"
     },
     {
-      "ts": "1789168297.153296",
+      "ts": "1789164064.801876",
+      "user": "p-arjun",
+      "thread_ts": "1789160234.548196",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "thx"
+    },
+    {
+      "ts": "1789164297.153596",
+      "user": "p-samir",
+      "thread_ts": "1789160234.548196",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ack"
+    },
+    {
+      "ts": "1789165190.066896",
+      "user": "p-beth",
+      "thread_ts": "1789160234.548196",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "The spacer is on order, I checked the tracker."
+    },
+    {
+      "ts": "1789168297.476663",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002695"
+        "ev-003049"
       ],
       "brief": "Actuator DVT build waits on Design iteration bench trial for Actuator DVT build: Knee to thigh flange",
       "claim": {
@@ -1889,11 +2201,11 @@
       "text": "Actuator DVT build waits on Design iteration bench trial for Actuator DVT build: Knee to thigh flange"
     },
     {
-      "ts": "1789169458.890790",
+      "ts": "1789169458.262799",
       "user": "p-destiny",
       "thread_ts": null,
       "events": [
-        "ev-001571"
+        "ev-001784"
       ],
       "brief": "2732 arrived (2)",
       "claim": {
@@ -1905,15 +2217,15 @@
         "2"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "2732 arrived, 2 of em 😬🙏"
+      "length": "short",
+      "text": "2732 arrived, 2 pcs"
     },
     {
-      "ts": "1789170528.415572",
+      "ts": "1789170528.710824",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002737"
+        "ev-003098"
       ],
       "brief": "Actuator DVT build waits on Prototype fit-up for Actuator DVT build: Hip cycloidal carrier (2)",
       "claim": {
@@ -1925,35 +2237,65 @@
         "Actuator DVT build"
       ],
       "pressure": "low",
-      "length": "medium",
+      "length": "short",
       "text": "Actuator DVT build waits on Prototype fit-up for Actuator DVT build: Hip cycloidal carrier (2)"
     },
     {
-      "ts": "1789172845.518833",
+      "ts": "1789171514.558255",
       "user": "p-beth",
-      "thread_ts": "1789170528.415572",
+      "thread_ts": "1789169458.262799",
       "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
+      "brief": "reply (will check later) in the thread about: the message above",
       "must_mention": [],
       "length": "one_word",
-      "text": "Arjun, I don't think the (2) carrier is the real gate. Can you check against the plan?"
+      "text": "Will check Monday."
     },
     {
-      "ts": "1789177465.039060",
-      "user": "p-samir",
-      "thread_ts": "1789170528.415572",
+      "ts": "1789172106.415792",
+      "user": "p-yusuf",
+      "thread_ts": "1789168297.476663",
       "events": [],
       "brief": "reply (answers) in the thread about: the message above",
       "must_mention": [],
       "length": "one_word",
-      "text": "carrier (2) is the second revision, yes its the gate"
+      "text": "ok"
     },
     {
-      "ts": "1789178610.666296",
+      "ts": "1789175794.942057",
+      "user": "p-tomas",
+      "thread_ts": "1789169458.262799",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "two whole pieces, call the press"
+    },
+    {
+      "ts": "1789176599.674033",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-003169"
+      ],
+      "brief": "Instrumentation fit-up: Dyno base plate waits on Hip absolute encoder kit, DVT",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-hip-encoder-dvt"
+      },
+      "must_mention": [
+        "Hip absolute encoder kit, DVT",
+        "the plate"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Instrumentation fit-up: Dyno base plate waits on Hip absolute encoder kit, DVT, so the plate sits"
+    },
+    {
+      "ts": "1789178610.016623",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-003626"
+        "ev-003859"
       ],
       "brief": "Actuator firmware v2: still quoting 2026-09-11",
       "claim": {
@@ -1964,25 +2306,15 @@
         "Actuator firmware v2 (FOC + thermal derate)",
         "9/11"
       ],
-      "length": "short",
-      "text": "Actuator firmware v2 (FOC + thermal derate) still quoting 9/11, ignore that"
+      "length": "medium",
+      "text": "Actuator firmware v2 (FOC + thermal derate) still says 9/11 on the board, that date is long gone"
     },
     {
-      "ts": "1789179543.690120",
-      "user": "p-wei",
-      "thread_ts": "1789178610.666296",
-      "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "quoted dates never match the build, we had that on the housing too"
-    },
-    {
-      "ts": "1789180536.247124",
+      "ts": "1789180536.309293",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002642"
+        "ev-002985"
       ],
       "brief": "Actuator DVT build waits on Prototype fit-up for Actuator DVT build: Hip cycloidal carrier",
       "claim": {
@@ -1998,11 +2330,11 @@
       "text": "Actuator DVT build waits on Prototype fit-up for Actuator DVT build: Hip cycloidal carrier"
     },
     {
-      "ts": "1789187329.697595",
+      "ts": "1789187329.277973",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-003026"
+        "ev-003415"
       ],
       "brief": "FL-HIP-1050 rev D released: tolerance relaxed after DFM feedback",
       "claim": {
@@ -2013,14 +2345,35 @@
         "FL-HIP-1050"
       ],
       "length": "short",
-      "text": "FL-HIP-1050 rev D released, tol relaxed after DFM feedback"
+      "text": "FL-HIP-1050 rev D released, tolerance relaxed after DFM feedback"
     },
     {
-      "ts": "1789251300.493249",
+      "ts": "1789195860.521396",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-001549"
+        "ev-001742"
+      ],
+      "brief": "carrier in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-09-11"
+      },
+      "must_mention": [
+        "carrier",
+        "the build",
+        "9/11"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "carrier in use for the build, done 9/11"
+    },
+    {
+      "ts": "1789251300.034797",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-001758"
       ],
       "brief": "dyno base in use",
       "claim": {
@@ -2034,7 +2387,7 @@
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "dyno base in use, done fri 9/11, so the build is unblocked on that"
+      "text": "dyno base in use for the build, done fri 9/11"
     }
   ]
 }

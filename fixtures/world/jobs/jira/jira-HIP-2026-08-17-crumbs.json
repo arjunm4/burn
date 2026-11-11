@@ -55,6 +55,25 @@
       }
     },
     {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
       "id": "p-owen",
       "name": "Owen Halloran",
       "display_name": "owen",
@@ -81,51 +100,96 @@
   ],
   "tickets": [
     {
-      "key": "HIP-361",
+      "key": "HIP-353",
       "type": "Task",
       "status": "Done",
-      "reporter": "p-arjun",
+      "reporter": "p-owen",
       "assignee": "p-owen",
       "labels": [
         "procurement"
       ],
       "priority": "Medium",
-      "created": "2026-08-19T16:34:13-07:00",
+      "created": "2026-08-17T13:24:09-07:00",
       "due_date": "2026-09-08",
       "events": [
-        "ev-001565"
+        "ev-001774"
       ],
-      "brief": "Order 2x Hip to pelvis interface plate / hip pelvis plate: need 2 by 2026-09-08",
+      "brief": "Order 2x Hip to pelvis interface plate / FL-HIP-1021: need 2 by 2026-09-08 for Fit check for Actuator DVT gate review: Hip to pelvis interface plate",
       "must_mention": [
-        "hip pelvis plate",
-        "tues 9/8"
+        "FL-HIP-1021",
+        "Fit check for Actuator DVT gate review: Hip to pelvis interface plate",
+        "9/8"
       ],
       "description_length": "short",
-      "summary": "hip pelvis plate x2",
-      "description": "need 2 by tues 9/8, same as last rev",
+      "summary": "Order 2x Hip to pelvis interface plate",
+      "description": "FL-HIP-1021 need 2 by 9/8 for Fit check for Actuator DVT gate review: Hip to pelvis interface plate",
       "comments": [
         {
-          "id": "HIP-361-c1",
+          "id": "HIP-353-c1",
           "by": "p-owen",
-          "at": "2026-08-31T17:21:55-07:00",
-          "events": [],
-          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
-          "must_mention": [],
-          "body": "waiting on vendor to confirm"
+          "at": "2026-08-19T11:55:19-07:00",
+          "events": [
+            "ev-001776"
+          ],
+          "brief": "FL-HIP-1021: need 2 by 2026-09-08",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 2,
+              "by": "2026-09-08"
+            }
+          },
+          "must_mention": [
+            "FL-HIP-1021",
+            "9/8"
+          ],
+          "body": "FL-HIP-1021 need 2 by 9/8"
         },
         {
-          "id": "HIP-361-c2",
+          "id": "HIP-353-c2",
+          "by": "p-arjun",
+          "at": "2026-08-19T16:34:13-07:00",
+          "events": [
+            "ev-001777"
+          ],
+          "brief": "1021: need 2 by 2026-09-08 for the fit check",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 2,
+              "by": "2026-09-08"
+            }
+          },
+          "must_mention": [
+            "1021",
+            "the fit check",
+            "tues the 8th"
+          ],
+          "body": "1021 need 2 by tues the 8th for the fit check"
+        },
+        {
+          "id": "HIP-353-c3",
           "by": "p-owen",
-          "at": "2026-09-08T15:01:29-07:00",
-          "events": [],
-          "brief": "background: short progress note",
-          "must_mention": [],
-          "body": "plates on the bench, checking bores"
+          "at": "2026-08-21T09:01:48-07:00",
+          "events": [
+            "ev-001779"
+          ],
+          "brief": "Order XO-5475388 placed, promised 2026-09-08",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-09-08"
+          },
+          "must_mention": [
+            "XO-5475388",
+            "hip adapter plate",
+            "9/8"
+          ],
+          "body": "Order XO-5475388 placed for the hip adapter plate, promised 9/8"
         }
       ]
     },
     {
-      "key": "HIP-363",
+      "key": "HIP-360",
       "type": "Task",
       "status": "Done",
       "reporter": "p-andre",
@@ -137,17 +201,36 @@
       "created": "2026-08-21T13:29:13-07:00",
       "due_date": "2026-09-10",
       "events": [
-        "ev-001567"
+        "ev-001780"
       ],
       "brief": "Order 2x Thermal chamber actuator cradle, 18x Chamber cable feedthrough plate, 20x Dyno coupling, knee actuator / FL-TST-2732: need 2 by 2026-09-10",
       "must_mention": [
         "FL-TST-2732",
-        "thurs the 10th"
+        "9/10"
       ],
       "description_length": "one_line",
-      "summary": "chamber cradle + feedthrough plates, dyno couplings",
-      "description": "FL-TST-2732 need 2 by thurs the 10th",
-      "comments": []
+      "summary": "Order 2x Thermal chamber actuator cradle, 18x Chamber cable feedthrough plate, 20x Dyno coupling, knee actuator",
+      "description": "FL-TST-2732 need 2 by 9/10",
+      "comments": [
+        {
+          "id": "HIP-360-c1",
+          "by": "p-dmitri",
+          "at": "2026-09-15T12:26:11-07:00",
+          "events": [
+            "ev-003718"
+          ],
+          "brief": "2732 arrived",
+          "claim": {
+            "kind": "stock",
+            "value": 4
+          },
+          "must_mention": [
+            "2732",
+            "4"
+          ],
+          "body": "2732 arrived (4)"
+        }
+      ]
     }
   ]
 }

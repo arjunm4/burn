@@ -1,0 +1,277 @@
+{
+  "job_id": "slack-ch-procurement-2026-06-01-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 47,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-06-01",
+    "end": "2026-06-07"
+  },
+  "people": [
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Pushrod clevis bends at 1.6x body weight in the tilt stand",
+    "Ongoing: Bus-off events at 1 Mbps when all leg actuators stream. This week: Jonas proposes moving to CAN FD at 5 Mbps data rate; Farah wants to fix topology first.",
+    "Ongoing: Crossed-roller preload drops after thermal cycling; bore tolerance and preload ring design. This week: Carlos: two hip units feel notchy after thermal soak; preload ring backed off a quarter turn.",
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno. This week: Retest with spreader and 40 kHz: 9.5 min to limit, close enough to sign off for EVT.",
+    "Ongoing: Ratcheting risk at peak torque from loose wave generator fit. This week: Hub switched to 4140 with a clamp plus keyway; shaft rev B released.",
+    "Ongoing: Orders sitting in DFM review because of tolerance callouts. This week: Checklist adopted; DFM holds drop but still hit rush orders."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1780350153.650702",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-001214"
+      ],
+      "brief": "1361: need 14 by 2026-06-23 for the build",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 14,
+          "by": "2026-06-23"
+        }
+      },
+      "must_mention": [
+        "1361",
+        "the build",
+        "tues 6/23"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "1361: need 14 for the build by tues 6/23"
+    },
+    {
+      "ts": "1780420167.269355",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-001227"
+      ],
+      "brief": "Quote Q-2502079-1 for FL-KNE-1122: standard $101.89, 7 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-06-18",
+          "quote_id": "Q-2502079-1",
+          "price_usd": 101.89,
+          "lead_days": 7
+        }
+      },
+      "must_mention": [
+        "Q-2502079-1",
+        "FL-KNE-1122",
+        "6/18"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Quote Q-2502079-1 for FL-KNE-1122 came back, standard $101.89, 7 BD. need qty 1 by 6/18, i think that works but not 100% sure"
+    },
+    {
+      "ts": "1780425223.894223",
+      "user": "p-beth",
+      "thread_ts": "1780420167.269355",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Got it, thanks Tomas."
+    },
+    {
+      "ts": "1780426646.398816",
+      "user": "p-talia",
+      "thread_ts": "1780420167.269355",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "@farah.q can you take a look? 🙏"
+    },
+    {
+      "ts": "1780429165.391269",
+      "user": "p-ingrid",
+      "thread_ts": null,
+      "events": [
+        "ev-003746"
+      ],
+      "brief": "saddle: need 14 by 2026-06-26 for Design iteration bench trial for Leg DVT build: Knee actuator saddle",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 14,
+          "by": "2026-06-26"
+        }
+      },
+      "must_mention": [
+        "saddle",
+        "Design iteration bench trial for Leg DVT build: Knee actuator saddle",
+        "6/26"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "saddle: need 14 for the Design iteration bench trial for Leg DVT build: Knee actuator saddle by 6/26."
+    },
+    {
+      "ts": "1780434078.915900",
+      "user": "p-farah",
+      "thread_ts": "1780429165.391269",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I'm not sure I'd order that many yet, Ingrid. We might change the design after the bench trial."
+    },
+    {
+      "ts": "1780504185.694952",
+      "user": "p-ingrid",
+      "thread_ts": null,
+      "events": [
+        "ev-003799"
+      ],
+      "brief": "actuator saddle: need 14 by 2026-06-23 for next week",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 14,
+          "by": "2026-06-23"
+        }
+      },
+      "must_mention": [
+        "actuator saddle",
+        "next week",
+        "tues 6/23"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Update on the actuator saddle: need 14 for next week, tues 6/23 now. Thanks."
+    }
+  ]
+}

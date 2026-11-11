@@ -1,0 +1,121 @@
+{
+  "job_id": "jira-HND-2026-07-27-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 31,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HND",
+    "name": "Hands and arms"
+  },
+  "week": {
+    "start": "2026-07-27",
+    "end": "2026-08-02"
+  },
+  "people": [
+    {
+      "id": "p-amara",
+      "name": "Amara Nwosu",
+      "display_name": "amara",
+      "slack_id": "U07FLK0AMAR",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HND-141",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-priya",
+      "assignee": "p-amara",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-07-31T08:07:02-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001641"
+      ],
+      "brief": "Order 12x Grip test object, Delrin / FL-TST-2461: need 12 by 2026-08-26",
+      "must_mention": [
+        "FL-TST-2461",
+        "wed the 26th"
+      ],
+      "description_length": "medium",
+      "summary": "Grip test objects, Delrin",
+      "description": "FL-TST-2461: need 12 by wed the 26th.\n\n1. Delrin stock only, no coating.\n2. Same shapes as the last set, so the existing drawings apply.\n3. Please confirm with the vendor before placing the order, so we know the real date.",
+      "comments": [
+        {
+          "id": "HND-141-c1",
+          "by": "p-amara",
+          "at": "2026-07-31T08:14:02-07:00",
+          "events": [
+            "ev-003685"
+          ],
+          "brief": "Correction: FL-TST-2461: need 12 by 2026-08-28",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-08-28"
+            }
+          },
+          "must_mention": [
+            "FL-TST-2461",
+            "fri the 28th"
+          ],
+          "body": "Correction: FL-TST-2461 need 12 by fri the 28th, not the 26th."
+        },
+        {
+          "id": "HND-141-c2",
+          "by": "p-amara",
+          "at": "2026-08-17T14:07:21-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on vendor to confirm"
+        }
+      ]
+    }
+  ]
+}

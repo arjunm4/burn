@@ -38,6 +38,25 @@
       }
     },
     {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
       "id": "p-idris",
       "name": "Idris Bello",
       "display_name": "idris",
@@ -53,6 +72,40 @@
         "quirks": [
           "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
           "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-kwame",
+      "name": "Kwame Asante",
+      "display_name": "kwame",
+      "slack_id": "U07FLK0KWAM",
+      "title": "Senior Electrical Engineer, power",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
         ]
       }
     },
@@ -73,21 +126,20 @@
       }
     },
     {
-      "id": "p-talia",
-      "name": "Talia Rosen",
-      "display_name": "talia",
-      "slack_id": "U07FLK0TALI",
-      "title": "Buyer/Planner",
+      "id": "p-valeria",
+      "name": "Valeria Ortiz",
+      "display_name": "valeria.o",
+      "slack_id": "U07FLK0VALE",
+      "title": "Electrical Engineer, battery systems",
       "style": {
         "case": "mixed",
         "punctuation": "light",
         "typos": "rare",
-        "emoji": "lots",
+        "emoji": "rare",
         "length": "medium",
-        "hedging": "low",
+        "hedging": "high",
         "quirks": [
-          "reacts with 🙏 and 😬",
-          "ends messages with an emoji"
+          "\"i think\", \"probably\", \"not 100% sure but\""
         ]
       }
     }
@@ -109,11 +161,30 @@
   ],
   "messages": [
     {
-      "ts": "1787596844.289954",
+      "ts": "1787595226.089285",
+      "user": "p-valeria",
+      "thread_ts": null,
+      "events": [
+        "ev-004007"
+      ],
+      "brief": "Motor sample lot for battery enclosure: still quoting 2026-09-01",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-09-01"
+      },
+      "must_mention": [
+        "Motor sample lot for battery enclosure (clevis)",
+        "9/1"
+      ],
+      "length": "short",
+      "text": "Motor sample lot for battery enclosure (clevis) still showing 9/1 on the quote"
+    },
+    {
+      "ts": "1787596844.071029",
       "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-002703"
+        "ev-003060"
       ],
       "brief": "Assemble build unit for Leg DVT build: Battery clevis 10 waits on Leg drop-test gantry",
       "claim": {
@@ -126,24 +197,34 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Assemble build unit for Leg DVT build: Battery clevis 10 waits on Leg drop-test gantry, so i'm sitting on it 😅"
+      "text": "Assemble build unit for Leg DVT build: Battery clevis 10 is sitting on the Leg drop-test gantry"
     },
     {
-      "ts": "1787601977.850459",
-      "user": "p-talia",
-      "thread_ts": "1787596844.289954",
+      "ts": "1787602165.811386",
+      "user": "p-kwame",
+      "thread_ts": "1787596844.071029",
       "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ok"
+    },
+    {
+      "ts": "1787604293.779733",
+      "user": "p-omar",
+      "thread_ts": "1787596844.071029",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
       "must_mention": [],
       "length": "medium",
-      "text": "maybe it needs a nap too 😂"
+      "text": "I think the gantry is booked through midweek anyway, probably worth asking the legs folks directly"
     },
     {
-      "ts": "1787695067.014687",
+      "ts": "1787695067.661775",
       "user": "p-renee",
       "thread_ts": null,
       "events": [
-        "ev-002941"
+        "ev-003330"
       ],
       "brief": "FL-BAT-1691 rev B released: Delrin to bronze after wear",
       "claim": {
@@ -154,14 +235,44 @@
         "FL-BAT-1691"
       ],
       "length": "short",
-      "text": "FL-BAT-1691 rev B released. Swapped Delrin for bronze after the wear we saw."
+      "text": "FL-BAT-1691 rev B is released, went from Delrin to bronze after the wear we saw"
     },
     {
-      "ts": "1787779434.093462",
+      "ts": "1787698262.032710",
+      "user": "p-omar",
+      "thread_ts": "1787695067.661775",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "thanks renee"
+    },
+    {
+      "ts": "1787702971.943637",
+      "user": "p-carlos",
+      "thread_ts": "1787695067.661775",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "bronze is heavier though, did anyone rerun the mass budget"
+    },
+    {
+      "ts": "1787703845.350831",
+      "user": "p-idris",
+      "thread_ts": "1787695067.661775",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "it's only a few grams on that one, bushing is small"
+    },
+    {
+      "ts": "1787779434.515299",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-003512"
+        "ev-004085"
       ],
       "brief": "cell spacer: still quoting rev A",
       "claim": {
@@ -171,8 +282,8 @@
       "must_mention": [
         "cell spacer"
       ],
-      "length": "medium",
-      "text": "cell spacer, still quoting rev A as far as i know"
+      "length": "short",
+      "text": "cell spacer, quote still says rev A"
     }
   ]
 }

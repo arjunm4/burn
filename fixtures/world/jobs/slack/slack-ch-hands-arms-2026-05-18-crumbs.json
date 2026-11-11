@@ -1,0 +1,75 @@
+{
+  "job_id": "slack-ch-hands-arms-2026-05-18-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 51,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hands-arms",
+    "name": "hands-arms",
+    "slack_id": "C07FLK0HAND",
+    "purpose": "Arms, wrist and hand"
+  },
+  "week": {
+    "start": "2026-05-18",
+    "end": "2026-05-24"
+  },
+  "people": [
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hand and wrist.",
+    "Ongoing: Orders sitting in DFM review because of tolerance callouts. This week: Owen argues the quote tool hides the hold until a day later; Gwen asks for a checklist."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1779322570.445810",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-001235"
+      ],
+      "brief": "FL-TST-2111: need 18 by 2026-06-22",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 18,
+          "by": "2026-06-22"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2111",
+        "mon the 22nd"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "FL-TST-2111 need 18 by mon the 22nd"
+    }
+  ]
+}

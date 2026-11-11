@@ -1,0 +1,694 @@
+{
+  "job_id": "slack-ch-supply-chain-2026-03-16-background-2026-03-17",
+  "source": "slack",
+  "status": "blank",
+  "priority": 70,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-supply-chain",
+    "name": "supply-chain",
+    "slack_id": "C07FLK0SUPC",
+    "purpose": "Supply chain team: vendors, POs, deliveries, expedites"
+  },
+  "week": {
+    "start": "2026-03-16",
+    "end": "2026-03-22"
+  },
+  "people": [
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-claire",
+      "name": "Claire Donnelly",
+      "display_name": "claire",
+      "slack_id": "U07FLK0CLAI",
+      "title": "Finance and Operations Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Building the first three hip and knee actuators. This week: Two hips and two knees built; third hip waits on the stator mount.",
+    "Ongoing: Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT. This week: Ingrid asks for a decision memo; Tomas concedes backdrivability favors cyclo for the hip at 50:1."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1773759706.690538",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773764802.336661",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1773768008.755605",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773768813.453012",
+      "user": "p-claire",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: Arjun pushes back: harmonic flexspline fatigue at hip peak torque (~140 Nm) is marginal, cyclo takes shock loads from drops.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773770661.467741",
+      "user": "p-samir",
+      "thread_ts": "1773768813.453012",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Arjun pushes back: harmonic flexspline fatigue at hip peak torque (~140 Nm) is marginal, cyclo takes shock loads from drops.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773774077.744410",
+      "user": "p-ingrid",
+      "thread_ts": "1773768813.453012",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Arjun pushes back: harmonic flexspline fatigue at hip peak torque (~140 Nm) is marginal, cyclo takes shock loads from drops.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1773777119.141969",
+      "user": "p-ingrid",
+      "thread_ts": "1773768813.453012",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Arjun pushes back: harmonic flexspline fatigue at hip peak torque (~140 Nm) is marginal, cyclo takes shock loads from drops.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773777807.046343",
+      "user": "p-omar",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about the ongoing building the first three hip and knee actuators",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773779096.200665",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with the ongoing whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for dvt",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1773782311.644359",
+      "user": "p-samir",
+      "thread_ts": "1773779096.200665",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the ongoing whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for dvt",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1773785134.919216",
+      "user": "p-jade",
+      "thread_ts": "1773779096.200665",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the ongoing whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for dvt",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773786209.611177",
+      "user": "p-beth",
+      "thread_ts": "1773779096.200665",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the ongoing whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for dvt",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773787032.999025",
+      "user": "p-ingrid",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773787512.359803",
+      "user": "p-gwen",
+      "thread_ts": "1773787032.999025",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773788340.365269",
+      "user": "p-talia",
+      "thread_ts": "1773787032.999025",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773788485.000679",
+      "user": "p-talia",
+      "thread_ts": "1773787032.999025",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773789890.439628",
+      "user": "p-ingrid",
+      "thread_ts": "1773779096.200665",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the ongoing whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for dvt",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773789944.718349",
+      "user": "p-gwen",
+      "thread_ts": "1773787032.999025",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773790143.971175",
+      "user": "p-talia",
+      "thread_ts": "1773787032.999025",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773791641.284306",
+      "user": "p-nora",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773793372.867734",
+      "user": "p-claire",
+      "thread_ts": "1773791641.284306",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773793531.144549",
+      "user": "p-claire",
+      "thread_ts": "1773787032.999025",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773794336.265877",
+      "user": "p-beth",
+      "thread_ts": "1773787032.999025",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773794544.710070",
+      "user": "p-ingrid",
+      "thread_ts": "1773787032.999025",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773794717.702717",
+      "user": "p-samir",
+      "thread_ts": "1773787032.999025",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773795147.624610",
+      "user": "p-ingrid",
+      "thread_ts": "1773787032.999025",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773795704.625101",
+      "user": "p-gwen",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about off-topic: a rental car story",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773796688.955149",
+      "user": "p-talia",
+      "thread_ts": "1773791641.284306",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773798584.134482",
+      "user": "p-samir",
+      "thread_ts": "1773791641.284306",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773799685.114663",
+      "user": "p-nora",
+      "thread_ts": "1773787032.999025",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773799898.014516",
+      "user": "p-talia",
+      "thread_ts": "1773791641.284306",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1773802466.404134",
+      "user": "p-gwen",
+      "thread_ts": "1773791641.284306",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773804709.339186",
+      "user": "p-samir",
+      "thread_ts": "1773787032.999025",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773807409.658688",
+      "user": "p-talia",
+      "thread_ts": "1773791641.284306",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1773809686.405758",
+      "user": "p-talia",
+      "thread_ts": "1773787032.999025",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773811616.134510",
+      "user": "p-jade",
+      "thread_ts": "1773791641.284306",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773812149.745539",
+      "user": "p-samir",
+      "thread_ts": "1773791641.284306",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773812439.767048",
+      "user": "p-claire",
+      "thread_ts": "1773787032.999025",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773850995.912036",
+      "user": "p-ingrid",
+      "thread_ts": "1773791641.284306",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773851698.652327",
+      "user": "p-nora",
+      "thread_ts": "1773791641.284306",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773851953.747902",
+      "user": "p-claire",
+      "thread_ts": "1773787032.999025",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1773853463.202628",
+      "user": "p-beth",
+      "thread_ts": "1773787032.999025",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773855614.225275",
+      "user": "p-ingrid",
+      "thread_ts": "1773791641.284306",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773856184.013297",
+      "user": "p-beth",
+      "thread_ts": "1773791641.284306",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773858304.803212",
+      "user": "p-jade",
+      "thread_ts": "1773791641.284306",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1773858478.211539",
+      "user": "p-nora",
+      "thread_ts": "1773791641.284306",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773859355.276350",
+      "user": "p-samir",
+      "thread_ts": "1773791641.284306",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773861202.866652",
+      "user": "p-omar",
+      "thread_ts": "1773791641.284306",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773864868.767349",
+      "user": "p-ingrid",
+      "thread_ts": "1773791641.284306",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773865024.234233",
+      "user": "p-beth",
+      "thread_ts": "1773791641.284306",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    }
+  ]
+}

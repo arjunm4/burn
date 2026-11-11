@@ -1,0 +1,378 @@
+{
+  "job_id": "jira-HIP-2026-03-16-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 69,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HIP",
+    "name": "Actuators (hip and knee)"
+  },
+  "week": {
+    "start": "2026-03-16",
+    "end": "2026-03-22"
+  },
+  "people": [
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HIP-95",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-03-18T09:04:38-07:00",
+      "due_date": "2026-03-23",
+      "events": [
+        "ev-000437"
+      ],
+      "brief": "Order 2x Hip actuator end cover / FL-HIP-1013: need 2 by 2026-03-20",
+      "must_mention": [
+        "FL-HIP-1013",
+        "3/20"
+      ],
+      "description_length": "short",
+      "summary": "Order 2x Hip actuator end cover",
+      "description": "FL-HIP-1013 need 2 by 3/20",
+      "comments": [
+        {
+          "id": "HIP-95-c1",
+          "by": "p-priya",
+          "at": "2026-03-18T14:34:30-07:00",
+          "events": [
+            "ev-000438"
+          ],
+          "brief": "1013: need 2 by 2026-03-23 for Test stand rework for Hip actuator dyno efficiency sweep: Hip actuator end cover",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 2,
+              "by": "2026-03-23"
+            }
+          },
+          "must_mention": [
+            "1013",
+            "Test stand rework for Hip actuator dyno efficiency sweep: Hip actuator end cover",
+            "3/23"
+          ],
+          "body": "1013 need 2 by 3/23 for Test stand rework for Hip actuator dyno efficiency sweep: Hip actuator end cover"
+        }
+      ]
+    },
+    {
+      "key": "HIP-105",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": "p-tomas",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-19T15:03:16-07:00",
+      "due_date": "2026-04-09",
+      "events": [
+        "ev-000491"
+      ],
+      "brief": "Order 2x CMM calibration block, 3x Stator insertion jig / the block: need 2 by 2026-04-09; asks whether expediting is worth it",
+      "must_mention": [
+        "the block",
+        "4/9"
+      ],
+      "description_length": "one_line",
+      "summary": "Order 2x CMM calibration block, 3x Stator insertion jig",
+      "description": "the block, need 2 by 4/9. worth expediting?",
+      "comments": []
+    },
+    {
+      "key": "HIP-109",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-kenji",
+      "assignee": "p-kenji",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-20T10:50:13-07:00",
+      "due_date": "2026-04-16",
+      "events": [
+        "ev-000569"
+      ],
+      "brief": "Order 2x Hip cycloidal carrier, 12x Hip output shaft, 6x Hip holding-brake bracket / FL-HIP-1094: need 2 by 2026-04-16 for the fit check",
+      "must_mention": [
+        "FL-HIP-1094",
+        "the fit check",
+        "4/16"
+      ],
+      "description_length": "one_line",
+      "summary": "Order 2x Hip cycloidal carrier, 12x Hip output shaft, 6x Hip holding-brake bracket",
+      "description": "FL-HIP-1094 need 2 by 4/16 for the fit check",
+      "comments": [
+        {
+          "id": "HIP-109-c1",
+          "by": "p-kenji",
+          "at": "2026-04-16T16:22:06-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "pics are in slack"
+        }
+      ]
+    },
+    {
+      "key": "HIP-111",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-nadia",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-20T16:47:01-07:00",
+      "due_date": "2026-04-14",
+      "events": [
+        "ev-000527"
+      ],
+      "brief": "Order 3x Dyno mounting plate, knee actuator, 2x Dyno base plate, 6x Dyno coupling, hip actuator, 24x Dyno torque transducer bracket, 3x Dyno chamber shaft feedthrough / dyno adapter: need 3 by 2026-04-14",
+      "must_mention": [
+        "dyno adapter",
+        "4/14"
+      ],
+      "description_length": "medium",
+      "summary": "Order 3x Dyno mounting plate, knee actuator, 2x Dyno base plate, 6x Dyno coupling, hip actuator, 24x Dyno torque transducer bracket, 3x Dyno chamber shaft feedthrough",
+      "description": "dyno adapter, need 3 by 4/14\nspec is on the drawing, same as the last set we ordered",
+      "comments": [
+        {
+          "id": "HIP-111-c1",
+          "by": "p-talia",
+          "at": "2026-03-25T11:24:20-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on vendor"
+        },
+        {
+          "id": "HIP-111-c2",
+          "by": "p-talia",
+          "at": "2026-03-31T18:28:07-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "checking in again"
+        },
+        {
+          "id": "HIP-111-c3",
+          "by": "p-talia",
+          "at": "2026-04-08T10:29:43-07:00",
+          "events": [
+            "ev-003791"
+          ],
+          "brief": "dyno adapter arrived",
+          "claim": {
+            "kind": "stock",
+            "value": 4
+          },
+          "must_mention": [
+            "dyno adapter",
+            "4"
+          ],
+          "body": "dyno adapter arrived (4)"
+        }
+      ]
+    },
+    {
+      "key": "HIP-112",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-talia",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-20T22:09:20-07:00",
+      "due_date": "2026-04-09",
+      "events": [
+        "ev-000507"
+      ],
+      "brief": "Order 1x Knee to thigh flange / that order: need 1 by 2026-04-09 for Test stand rework for Knee actuator thermal soak: Knee to thigh flange",
+      "must_mention": [
+        "that order",
+        "Test stand rework for Knee actuator thermal soak: Knee to thigh flange",
+        "thurs the 9th"
+      ],
+      "description_length": "one_line",
+      "summary": "Order 1x Knee to thigh flange",
+      "description": "that order: need 1 by thurs the 9th for Test stand rework for Knee actuator thermal soak: Knee to thigh flange",
+      "comments": [
+        {
+          "id": "HIP-112-c1",
+          "by": "p-talia",
+          "at": "2026-03-23T20:15:52-07:00",
+          "events": [
+            "ev-000510"
+          ],
+          "brief": "1190: need 1 by 2026-04-09",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 1,
+              "by": "2026-04-09"
+            }
+          },
+          "must_mention": [
+            "1190",
+            "4/9"
+          ],
+          "body": "1190 need 1 by 4/9"
+        },
+        {
+          "id": "HIP-112-c2",
+          "by": "p-diego",
+          "at": "2026-04-16T11:50:00-07:00",
+          "events": [
+            "ev-000511"
+          ],
+          "brief": "1190 in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-04-15"
+          },
+          "must_mention": [
+            "1190",
+            "the build",
+            "4/15"
+          ],
+          "body": "1190 in use for the build, 4/15"
+        }
+      ]
+    }
+  ]
+}

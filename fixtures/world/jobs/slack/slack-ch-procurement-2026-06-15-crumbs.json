@@ -1,0 +1,399 @@
+{
+  "job_id": "slack-ch-procurement-2026-06-15-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 43,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-06-15",
+    "end": "2026-06-21"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Capacitive tactile array crosstalk and flex cable routing through the finger. This week: Farah: ground pour missing under the electrode layer, crosstalk from the flex.",
+    "Ongoing: Crossed-roller preload drops after thermal cycling; bore tolerance and preload ring design. This week: Debate: thread-locked preload nut vs a ground spacer stack; Owen favors spacer, no torque sensitivity.",
+    "Ongoing: Ratcheting risk at peak torque from loose wave generator fit. This week: Rerun to 105 Nm clean; hard limit set at 90 Nm in firmware.",
+    "Ongoing: What to show investors when no full humanoid exists. This week: Helena wants a walking leg by late August for the raise.",
+    "Ongoing: Drop from 30 cm cracks the shank link at the knee clevis. This week: Zoe: drop test waiting on the machined lift hooks; gantry slots are Tue/Thu only."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1781641384.121564",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-001270"
+      ],
+      "brief": "Quote Q-2512140-1 for FL-TST-2201: standard $883.51, 9 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-07-02",
+          "quote_id": "Q-2512140-1",
+          "price_usd": 883.51,
+          "lead_days": 9
+        }
+      },
+      "must_mention": [
+        "Q-2512140-1",
+        "FL-TST-2201",
+        "thurs the 2nd"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Quote Q-2512140-1 for FL-TST-2201 came in, standard $883.51, 9 BD. Need 6 by thurs the 2nd 🙏"
+    },
+    {
+      "ts": "1781647402.067472",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-001327"
+      ],
+      "brief": "Quote Q-2512489-1 for FL-ANK-1295: standard $514.46, 10 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-07-31",
+          "quote_id": "Q-2512489-1",
+          "price_usd": 514.46,
+          "lead_days": 10
+        }
+      },
+      "must_mention": [
+        "Q-2512489-1",
+        "FL-ANK-1295",
+        "7/31"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Quote Q-2512489-1 for FL-ANK-1295 is in, standard $514.46, 10 BD, need 3 by 7/31, i think that works but not 100% sure"
+    },
+    {
+      "ts": "1781656850.260169",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-001318"
+      ],
+      "brief": "the part: need 9 by 2026-07-01 for Hand grip-cycle life test",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 9,
+          "by": "2026-07-01"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "Hand grip-cycle life test",
+        "wed the 1st"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "the part for Hand grip-cycle life test: NEED 9 BY wed the 1st!!"
+    },
+    {
+      "ts": "1781741112.534584",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-001350"
+      ],
+      "brief": "torque cell bracket: need 12 by 2026-07-08",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-07-08"
+        }
+      },
+      "must_mention": [
+        "torque cell bracket",
+        "wed 7/8"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "torque cell bracket need 12 by wed 7/8"
+    },
+    {
+      "ts": "1781802925.122521",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-001346"
+      ],
+      "brief": "Quote Q-2513625-1 for FL-TST-2074: standard $1162.07, 9 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-07-09",
+          "quote_id": "Q-2513625-1",
+          "price_usd": 1162.07,
+          "lead_days": 9
+        }
+      },
+      "must_mention": [
+        "Q-2513625-1",
+        "FL-TST-2074",
+        "7/9"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Q-2513625-1 for FL-TST-2074 back, standard $1162.07 / 9 BD, need 10 by 7/9"
+    },
+    {
+      "ts": "1781805123.204730",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-001352"
+      ],
+      "brief": "FL-TST-2135: need 12 by 2026-07-09",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-07-09"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2135",
+        "thurs 7/9"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2135 need 12 by thurs 7/9"
+    },
+    {
+      "ts": "1781833143.681076",
+      "user": "p-owen",
+      "thread_ts": "1781805123.204730",
+      "events": [
+        "ev-003669"
+      ],
+      "brief": "Correction: FL-TST-2135: need 12 by 2026-07-08",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-07-08"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2135",
+        "7/8"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "*FL-TST-2135 needed by 7/8 not 7/9, sorry"
+    },
+    {
+      "ts": "1781835870.092974",
+      "user": "p-samir",
+      "thread_ts": "1781805123.204730",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "ok got it, will update"
+    },
+    {
+      "ts": "1781836956.885856",
+      "user": "p-talia",
+      "thread_ts": "1781805123.204730",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "will check on that tomorrow 🙏"
+    },
+    {
+      "ts": "1781885016.229779",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-001363"
+      ],
+      "brief": "Quote Q-2513896-1 for FL-TST-2160: standard $2048.14, 7 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-07-01",
+          "quote_id": "Q-2513896-1",
+          "price_usd": 2048.14,
+          "lead_days": 7
+        }
+      },
+      "must_mention": [
+        "Q-2513896-1",
+        "FL-TST-2160",
+        "wed the 1st"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Q-2513896-1 for FL-TST-2160 posted, standard $2048.14, 7 BD, need 12 by wed the 1st"
+    },
+    {
+      "ts": "1781889465.673136",
+      "user": "p-arjun",
+      "thread_ts": "1781805123.204730",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "will check later"
+    }
+  ]
+}

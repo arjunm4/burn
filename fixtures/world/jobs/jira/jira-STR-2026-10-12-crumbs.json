@@ -1,0 +1,93 @@
+{
+  "job_id": "jira-STR-2026-10-12-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 9,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "STR",
+    "name": "Torso, structures and battery"
+  },
+  "week": {
+    "start": "2026-10-12",
+    "end": "2026-10-18"
+  },
+  "people": [
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "STR-257",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-zoe",
+      "assignee": "p-zoe",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-10-12T10:40:45-07:00",
+      "due_date": "2026-10-21",
+      "events": [
+        "ev-002436"
+      ],
+      "brief": "Order 2x Leg fixture hook, shank end / the part: need 2 by 2026-10-21 for Instrumentation fit-up: Leg fixture hook, shank end",
+      "must_mention": [
+        "the part",
+        "Instrumentation fit-up: Leg fixture hook, shank end",
+        "wed the 21st"
+      ],
+      "description_length": "one_line",
+      "summary": "Leg fixture hook, shank end x2",
+      "description": "the part x2, wed the 21st, for Instrumentation fit-up: Leg fixture hook, shank end",
+      "comments": [
+        {
+          "id": "STR-257-c1",
+          "by": "p-zoe",
+          "at": "2026-10-15T11:13:08-07:00",
+          "events": [
+            "ev-002438"
+          ],
+          "brief": "Order XO-5540471 placed, promised 2026-10-22",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-10-22"
+          },
+          "must_mention": [
+            "XO-5540471",
+            "shank hook",
+            "10/22"
+          ],
+          "body": "XO-5540471 placed for the shank hook, promised 10/22"
+        }
+      ]
+    }
+  ]
+}

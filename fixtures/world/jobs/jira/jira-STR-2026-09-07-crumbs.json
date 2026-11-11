@@ -1,0 +1,109 @@
+{
+  "job_id": "jira-STR-2026-09-07-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 19,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "STR",
+    "name": "Torso, structures and battery"
+  },
+  "week": {
+    "start": "2026-09-07",
+    "end": "2026-09-13"
+  },
+  "people": [
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "STR-198",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-renee",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-09-08T07:50:27-07:00",
+      "due_date": "2026-09-15",
+      "events": [
+        "ev-001834"
+      ],
+      "brief": "Order 24x Chamber thermocouple tree bracket, 18x Chamber cable feedthrough plate, 1x Cell heater clamp plate / TC tree: need 24 by 2026-09-11 for Test stand rework for Hip actuator thermal derate at continuous torque: Chamber thermocouple tree bracket",
+      "must_mention": [
+        "TC tree",
+        "Test stand rework for Hip actuator thermal derate at continuous torque: Chamber thermocouple tree bracket",
+        "9/11"
+      ],
+      "description_length": "short",
+      "summary": "TC tree bracket, feedthrough plates, heater clamp",
+      "description": "TC tree x24 needed by 9/11 for Test stand rework for Hip actuator thermal derate at continuous torque: Chamber thermocouple tree bracket.",
+      "comments": [
+        {
+          "id": "STR-198-c1",
+          "by": "p-renee",
+          "at": "2026-10-01T12:12:00-07:00",
+          "events": [
+            "ev-001835"
+          ],
+          "brief": "2717 in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-09-30"
+          },
+          "must_mention": [
+            "2717",
+            "the build",
+            "9/30"
+          ],
+          "body": "2717 in use in the build as of 9/30."
+        }
+      ]
+    }
+  ]
+}
