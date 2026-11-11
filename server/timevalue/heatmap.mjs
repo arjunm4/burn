@@ -45,7 +45,7 @@ export const ROWS = [
   'progress_rank',
   'id_share',
 ];
-export const EXTRAS = ['requester_expedite_rate', 'extra_usd_expedite'];
+export const EXTRAS = ['requester_expedite_rate', 'extra_usd_expedite', 'stated_need_gap'];
 
 const WINDOW_DAYS = 30;
 const RATE_PRIOR = 3; // pseudo-orders pulling a requester's rate toward the team rate
@@ -318,6 +318,7 @@ export function heatmap({ label, docs, reads, settings, progress, history, ctx }
 
   const rate = requesterRate(label, history, sidx);
   const usd = extraUsd(label);
+  const gap = noContext ? null : statedNeedGap(label, linkedDocs, ridx, keys);
   return {
     order_number: label.order_number,
     T,
@@ -326,9 +327,33 @@ export function heatmap({ label, docs, reads, settings, progress, history, ctx }
     extra: {
       requester_expedite_rate: rate === null ? null : round(rate),
       extra_usd_expedite: usd === null ? null : round(usd),
+      stated_need_gap: gap === null ? null : round(gap),
     },
     linked: linkedDocs.map((d) => d.id).sort(),
   };
+}
+
+// Days of slack the conversation implies: the earliest need-by date stated in the linked context
+// before T (needs / need_earlier claims about this order's parts) minus Standard's lead time.
+// Context only: the date comes from what people wrote, never from the dependency graph.
+export function statedNeedGap(label, linkedDocs, ridx, keys) {
+  const T = ms(label.T);
+  let best = null;
+  for (const d of linkedDocs) {
+    for (const c of ridx.get(d.id)?.claims ?? []) {
+      if (c.kind !== 'needs' && c.kind !== 'need_earlier') continue;
+      if (c.subject && !keys.has(c.subject)) continue;
+      const v = c.value;
+      const date = typeof v === 'string' ? v : (v?.by ?? v?.date ?? v?.min ?? null);
+      if (typeof date !== 'string' || !/^\d{4}-\d{2}-\d{2}/.test(date)) continue;
+      const t = Date.parse(date.slice(0, 10) + 'T17:00:00-08:00');
+      if (best === null || t < best) best = t;
+    }
+  }
+  if (best === null) return null;
+  const std = (label.tiers ?? []).find((t) => t.tier === 'standard');
+  const leadCal = typeof std?.lead_days === 'number' ? (std.lead_days * 7) / 5 : 14;
+  return (best - T) / DAY - leadCal;
 }
 
 function round(x) {
