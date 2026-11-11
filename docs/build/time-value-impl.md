@@ -1,5 +1,7 @@
 # Implementation: Time Value
 
+> **Habit model removed (Owen, 2026-11-10).** Agent E's modules (`heatmap.mjs`, `habit.mjs`, `train.mjs`, `HeatMap.jsx`) and their outputs were deleted after it scored 56% vs 60% never-expedite on world v2. The design stays in architecture §10; the code is in git history (commit `6413c1e` and earlier). Sections marked (E) below are historical.
+
 Companion to [`time-value-plan.md`](time-value-plan.md) (what and why). This file fixes **who builds what, the file layout, and the contracts between modules**, so agents can build in parallel. Design: [`../architecture.md`](../architecture.md) §6.1, §7, §8, §10.
 
 ## Ground rules for every agent
@@ -156,7 +158,7 @@ All seven modules are built and tested on hand-made fixtures (`npm test`: 193 pa
 
 1. `node scripts/timevalue/export-settings.mjs` → `settings.json`; prints doc counts, the Ramp↔Xometry link rate and the usable-order count (expect about 154).
 2. `node scripts/timevalue/read-jobs.mjs` → job files; Claude agents fill them per `read-job-instructions.md`; `node scripts/timevalue/read-jobs.mjs --collect`.
-3. `node scripts/timevalue/train.mjs` → `habit-model.json`, `heatmaps.json`.
+3. ~~`train.mjs`~~ (habit model removed).
 4. `node scripts/timevalue/grade.mjs` → `grading.json`.
 5. `node scripts/timevalue/demo-cards.mjs --sources fixtures/flintlock` → `demo-cards.json`; serve with `TIMEVALUE_SOURCES=fixtures/flintlock`.
 

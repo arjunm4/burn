@@ -31,7 +31,7 @@ Not needed for the demo: every external service is mocked (architecture §2.18).
 
 | Question | Answer | Where |
 |---|---|---|
-| Keep the habit model in the demo? | Tabled for now: the card shows the schedule decision only. On world v2 it scored 56% vs 60% for never-expedite (n = 45); the code and heat map stay in the repo | docs/build/time-value-plan.md |
+| Keep the habit model in the demo? | No: removed. The card shows the schedule decision only; the code was deleted (in git history). On world v2 it scored 56% vs 60% for never-expedite (n = 45); recoverable from git history | docs/build/time-value-plan.md |
 | What does the habit model learn from? | Only the context heat map (context linked to the part, per time band before T, plus the requester's expedite rate and the extra cost of the fastest tier); never the dependency graph. Label from the Ramp receipt | architecture §10 |
 | Per-order search, or a persistent graph? | One company-wide dependency graph, built continuously from every source; orders navigate it. Built tonight | architecture §2.1, §6.1 |
 | Do we need a BOM? | No; the demand anchors the decision | architecture §2.3 |

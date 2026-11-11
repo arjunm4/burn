@@ -1,6 +1,6 @@
 # Build plan: Time Value (cost of delay)
 
-> **Habit model tabled (Owen, 2026-11-10).** Hidden from the card and skipped by `rerun.mjs`; code kept. World v2 result: 56% held-out accuracy vs 60% never-expedite (n = 45).
+> **Habit model removed (Owen, 2026-11-10).** First hidden from the card, then its code deleted (recoverable from git history). World v2 result: 56% held-out accuracy vs 60% never-expedite (n = 45).
 
 Owner: Owen and Arjun, with Claude agents. Deadline: 2026-11-10, 11:59pm PT. Design: [`../architecture.md`](../architecture.md) §2.6, §2.10, §6.1, §7, §8, §10. Evidence: [`../research/cost-of-delay.md`](../research/cost-of-delay.md). World data: `fixtures/world/SCHEMA.md`, [`simulation-spec.md`](simulation-spec.md).
 
