@@ -627,20 +627,25 @@ One definition per knob; the simulation spec cites them as `k.<group>.<name>` an
 |---|---|---|
 | `weeks_of_context` | Most recent weeks of text to plan and write | 13 |
 | `orders.per_week`, `burst_mult`, `quiet_mult` | Xometry orders in a normal week; multipliers in burst and quiet weeks | 9, 2.55, 0.4 |
-| `orders.kind_mix`, `lines_mix`, `new_rev_rate` | Demand kinds; lines per order (1–6); chance a re-ordered part is a new revision | see file; .55 |
-| `orders.trigger_mix`, `burst_late_mult`, `last_minute_late_mult` | Early / on time / late by choice; late multipliers in burst weeks and for `last_minute` people | .40/.52/.08; 1.8; 2.5 |
+| `orders.kind_mix`, `lines_mix`, `new_rev_rate` | Demand kinds; lines per order (1–6); chance a re-ordered part is a new revision (on top of the seed revision histories) | see file; .20 |
+| `orders.trigger_mix`, `burst_late_mult`, `last_minute_late_mult` | Early / on time / late by choice; late multipliers in burst weeks and for `last_minute` people | .40/.57/.03; 3.9; 2.5 |
+| `orders.late_release_rate`, `burst_release_mult` | Demands made late by a late design release, not by the requester (they reach rule 6, not rule 4); multiplier in burst weeks | .04; 11.4 |
+| `orders.start_delay_rate` | Work-item consumers whose owner is not free on the written start day (true earliest start 2–8 wd later; never for late demands) | .85 |
+| `orders.slotted_rate` | Work-item consumers that need a resource with `slot_days` (source of test-slot cliffs) | .30 |
+| `orders.sibling_rate`, `late_sibling_rate` | Work-item consumers that also wait on a deliverable; the same for late demands (ETA near the Standard delivery date) | .38; .62 |
 | `orders.hidden_need_rate` | Demands with an unwritten earlier need | .03 |
 | `orders.buyer_placed_share`, `buyer_decides_share` | Orders placed by the two buyers; of those, tier chosen by the buyer | .40, .20 |
 | `quote.*` | Tax rate (.0938 on parts), price scale, quantity exponent, Economy discount range, small-lot premium, Expedite shipping range, cutoff, validity days | see file |
-| `decide.habit_strength` | Rule 2: default chance a habit decides | .30 |
-| `decide.budget_fire`, `budget_tier` | Rule 3 | .30; 0/.35/.65 |
+| `decide.habit_strength`, `habit_scale` | Rule 2: default chance a habit decides; multiplier on every person's `habit_strength` | .30; .6 |
+| `decide.budget_fire`, `budget_tier` | Rule 3 | .50; 0/.35/.65 |
 | `decide.late_tier` | Rule 4 tier split | .80/.20/0 |
-| `decide.pressure_factor`, `pressure_tier`, `burst_pressure_mult` | Rule 5 | .5; .90/.10/0; 1.6 |
-| `decide.wtp_median_usd`, `wtp_sigma`, `wtp_jitter_sigma`, `burst_wtp_mult` | Rule 6: willingness to pay per day gained | 350, .6, .5, 2 |
+| `decide.pressure_factor`, `pressure_tier`, `burst_pressure_mult` | Rule 5 | .15; .90/.10/0; 5 |
+| `decide.wtp_median_usd`, `wtp_sigma`, `wtp_jitter_sigma`, `burst_wtp_mult` | Rule 6: willingness to pay per day gained | 350, .6, .5, 5 |
 | `decide.noise` | Chance rule 6 is skipped | .05 |
 | `decide.spare_tier`, `default_tier`, `default_economy_if_slack_over_15` | Rules 1 and 7 | see file |
 | `belief.stale_rate`, `stale_age_days`, `checks_dependencies_range` | Missed recent announcements; range for people's `checks_dependencies` | .15, 2, .3–.95 |
-| `pressure.*` | Boosts, noise and level cut-offs for true and expressed pressure | see file |
+| `pressure.*` | Boosts, noise and level cut-offs for true and expressed pressure; `slack_mean_days`, `slack_sd_days` = spread of an assembly's true slack to its next milestone | see file; 7, 5 |
+| `fulfil.lateness`, `expedite_late_mult` | Delivery against the promise: 1 Xometry order in 40 arrives late (early .15, on time .825, late 1–2 wd .015, 3–6 wd .007, 7–15 wd .003); Expedite late-rate multiplier | see file; 1.0 |
 | `slip.*`, `test.*`, `deliverable.*`, `fulfil.*`, `ticket.*` | Slip announcement, test outcomes, deliverable slips, delivery and inspection, ticket lifecycle | see file |
 | `ordering_habit_mix` | Share of ordering people per habit (seed-org follows it) | none .45, over-expedites .15, always-standard .20, last-minute .10, batches .05, budget .05 |
 | `edge_reveal_mix` | Graph edges revealed / hinted / never written | .55 / .25 / .20 |
@@ -648,7 +653,7 @@ One definition per knob; the simulation spec cites them as `k.<group>.<name>` an
 | `imperfection_rates` | Crumbs that are stale / wrong then corrected / wrong never corrected / contradicted; ambiguous alias use | .08 / .05 / .02 / .03; .04 |
 | `crumb.*` | Chance of an expedite question before T; reference-style mix | .35 / .08; .25/.50/.25 |
 | `background_share`, `off_topic_share` | Per source | see file |
-| `targets.*` (*target*) | Order count 400–550; tier mix Expedite 20–30%, Standard 50–60%, Economy 15–20% (aim 27/55/18); Expedite 40–50% in burst weeks (aim 13% outside them); hidden-reason bands; expedites that truly gained 45–60%; revision share 30–40%; probe accuracy 66–78% | see file |
+| `targets.*` (*target*) | Order count 400–550; tier mix Expedite 20–30%, Standard 50–60%, Economy 15–20% (aim 27/55/18); Expedite 40–50% in burst weeks (aim 13% outside them); hidden-reason bands; expedites that truly gained 45–60%; revision share 30–40%; probe accuracy 66–78%; `late_share` 2–3% of Xometry orders delivered after the promised date (checked in `sim/selfcheck.mjs`) | see file |
 
 ## 9. Validator
 

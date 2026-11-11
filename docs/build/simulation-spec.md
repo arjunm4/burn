@@ -72,8 +72,8 @@ Stages S1, S3, S4a are pre-computed. S2 and S6–S10 run inside **one forward da
 | `rig_misc` | 12% | null | none |
 
 1. **Structural demands** come from the graph: every CNC part a test or build requires gets a demand; a failed test or a rejected inspection adds a `revision` or `remake` demand.
-2. **Filler demands** bring each week to its target so volume never depends on the seed's size: target `λ(w) = k.orders.per_week (9) × (k.orders.burst_mult (2.55) in burst weeks, k.orders.quiet_mult (0.4) in quiet weeks)`; expected total ≈ 11 × 23 + 6 × 3.6 + 22 × 9 ≈ 470; filler count = `max(0, Poisson(λ) − structural(w))`. Filler picks an assembly (weighted by headcount and phase) and a part of that assembly; a part already ordered gets a new revision with p = 0.55, tuned to **revision share 30–40%** (R).
-3. **Trigger:** `trigger_at = need_by_believed − std lead − offset`, offset by requester: early (5–15 wd spare) 40% · on time (0–4 wd) 52% · late (−1 to −6 wd, stored as `late_by_choice`) 8%, ×1.8 in burst weeks, ×2.5 for a `last_minute` person. Never before the revision's release (`parts.revisions[].known_at`) + 0–2 wd: a late design release, a failed test or a pulled-in date makes an order urgent without it being the requester's fault (rule 6, not rule 4). Buyer-placed orders add the buyer's queue delay (`orders.queue_delay_days`; a `batches_orders` buyer places only on `orders.batch_days`).
+2. **Filler demands** bring each week to its target so volume never depends on the seed's size: target `λ(w) = k.orders.per_week (9) × (k.orders.burst_mult (2.55) in burst weeks, k.orders.quiet_mult (0.4) in quiet weeks)`; expected total ≈ 11 × 23 + 6 × 3.6 + 22 × 9 ≈ 470; filler count = `max(0, Poisson(λ) − structural(w))`. Filler picks an assembly (weighted by headcount and phase) and a part of that assembly; a part already ordered gets a new revision with p = `k.orders.new_rev_rate` (0.2, on top of the seed revision histories), tuned to **revision share 30–40%** (R).
+3. **Trigger:** `trigger_at = need_by_believed − std lead − offset`, offset by requester: early (5–15 wd spare) 40% · on time (0–4 wd) 57% · late (−1 to −6 wd, stored as `late_by_choice`) 3%, ×3.9 in burst weeks, ×2.5 for a `last_minute` person. A further `k.orders.late_release_rate` (4%, ×11.4 in burst weeks) of demands are late through a late design release rather than by choice. Never before the revision's release (`parts.revisions[].known_at`) + 0–2 wd: a late design release, a failed test or a pulled-in date makes an order urgent without it being the requester's fault (rule 6, not rule 4). Buyer-placed orders add the buyer's queue delay (`orders.queue_delay_days`; a `batches_orders` buyer places only on `orders.batch_days`).
 4. **Hidden earlier need:** 3% of demands have a true need earlier than anything written down (`hidden_earlier_need`); the context shows slack and the requester still expedites (acceptance scenario 12).
 - **Targets (R):** 400–550 orders; baseline weeks 8–14; burst weeks 20–30; quiet weeks 3–5; 16–22 distinct requesters; the two buyers place ~40%; 3–4 engineers request 30%.
 - **Knobs:** `k.orders.*`.
@@ -95,14 +95,14 @@ Stages S1, S3, S4a are pre-computed. S2 and S6–S10 run inside **one forward da
 |---|---|---|---|
 | 1 | demand kind is `spare` | 5 / 45 / 50 | insurance or spare |
 | 2 | decider has a habit, p = `habit_strength` (0.30) | `over_expedites` → Exp; `always_standard` → Std; `budget_conscious` → Econ | personal habit |
-| 3 | inside a `meta.budget_windows` entry (the last 3 wd of each quarter and two 2-week freezes), p = `k.decide.budget_fire` (0.3) | 0 / 35 / 65 | budget squeeze (chose slower) |
+| 3 | inside a `meta.budget_windows` entry (the last 3 wd of each quarter and two 2-week freezes), p = `k.decide.budget_fire` (0.5) | 0 / 35 / 65 | budget squeeze (chose slower) |
 | 4 | Standard cannot reach the believed need-by and the demand is `late_by_choice` | 80 / 20 / 0 | `ordered_late` |
-| 5 | p = `k.decide.pressure_factor` (0.5) × true pressure (×`k.decide.burst_pressure_mult` 1.6 in burst weeks) when level is high or in a pressure window | 90 / 10 / 0 | pressure from a manager or a demo date |
-| 6 | believed gain(Exp vs Std) ≥ 1 wd and extra cost ÷ believed gain ≤ willingness × lognormal(1, 0.5) (×`k.decide.burst_wtp_mult` 2 in burst weeks) | Exp | by truth: true gain ≥ slot gap on a slotted resource → test-slot cliff; true gain > 0 → genuine schedule gain; true gain = 0 → no gain because another input was later |
+| 5 | p = `k.decide.pressure_factor` (0.15) × true pressure (×`k.decide.burst_pressure_mult` 5 in burst weeks) when level is high or in a pressure window | 90 / 10 / 0 | pressure from a manager or a demo date |
+| 6 | believed gain(Exp vs Std) ≥ 1 wd and extra cost ÷ believed gain ≤ willingness × lognormal(1, 0.5) (×`k.decide.burst_wtp_mult` 5 in burst weeks) | Exp | by truth: true gain ≥ slot gap on a slotted resource → test-slot cliff; true gain > 0 → genuine schedule gain; true gain = 0 → no gain because another input was later |
 | 6b | believed slack < Economy lead, Standard fits | Std | genuine schedule gain if true, else cheap part, default tier |
 | 7 | otherwise | 2 / 82 / 16 (Economy 30% when believed slack > 15 wd) | cheap part, default tier |
 
-- Willingness ($/day): the milestone's policy if the decider `checks_dependencies` and a policy exists, else the person's `orders.wtp_per_day_usd` (lognormal, median $350, σ 0.6; drawn by the simulator when the seed omits it). `orders.habit_strength` defaults to `k.decide.habit_strength`. The answer key stores the rule number as `rule`.
+- Willingness ($/day): the milestone's policy if the decider `checks_dependencies` and a policy exists, else the person's `orders.wtp_per_day_usd` (lognormal, median $350, σ 0.6; drawn by the simulator when the seed omits it). `orders.habit_strength` defaults to `k.decide.habit_strength`; every habit strength is multiplied by `k.decide.habit_scale` (0.6). The answer key stores the rule number as `rule`.
 - With p = `k.decide.noise` (0.05) rule 6 is skipped.
 - **Targets (`k.targets`):** Exp/Std/Econ 27/55/18 (R: 20–30/50–60/15–20); Expedite 40–50% in burst weeks, which hold about half of all orders, so aim for 42% in burst weeks and 13% outside them; reasons about: default 45–50%, genuine gain 9–13%, habit 10–13%, budget 6–8%, no gain 4–6%, late 4–6%, spare 5–7%, pressure 3–5%, cliff 2–3%. Of all expedites, 45–60% truly gained time.
 
@@ -117,7 +117,7 @@ Stages S1, S3, S4a are pre-computed. S2 and S6–S10 run inside **one forward da
 ### S10. Approval, delivery, inspection, first use — `sim/fulfil.mjs`
 - **Approval:** auto under `finance.approval.auto_approve_under_usd` (`auto_approved: true`); a second approver over `second_approver_over_usd`; else the manager: lognormal, median 2.5 business hours; 10% next wd; 3% 2+ wd (approver out → `people.delegate`). `placed_at` (T) = approval + 2–40 min. Ramp `user_transaction_time` = T + 0–3 min; settlement +1–3 days.
 - **Status timeline:** placed → DFM review (6% "action required", +1–3 wd) → in production → quality inspection → shipped → delivered. 2% cancelled before production (refund).
-- **Lateness vs promise:** 1–2 wd early 15% · on time 63% · 1–2 wd late 13% · 3–6 wd late 6% · 7–15 wd late 2%; Expedite late rates ×1.2.
+- **Lateness vs promise:** 1 order in 40 arrives after its promised date: 1–2 wd early 15% · on time 82.5% · 1–2 wd late 1.5% · 3–6 wd late 0.7% · 7–15 wd late 0.3% (`k.fulfil.lateness`); Expedite late rates ×1.0 (`k.fulfil.expedite_late_mult`). Checked against `k.targets.late_share` (2–3%) in `sim/selfcheck.mjs`.
 - **Inspection:** recorded on 60%; `pass` 94% · `partial` (use as is) 2% · `fail` 4% (inspection result `fail` → a demand with cause `remake` next wd; the new order carries `remade_from`). `ready_at` = inspection time, or delivery + 0–1 wd when unrecorded.
 - **First use** = when the consumer starts, ≥ `ready_at`; `first_use.recorded` true on 55%.
 
@@ -196,7 +196,7 @@ The label must be predictable from context only in part.
 | Beliefs differ from what was written | Stale belief, ignored siblings, hidden earlier need | `k.belief.stale_rate` (0.15), `k.orders.hidden_need_rate` (0.03) |
 | Undiscussed orders | No pre-T crumbs | `k.link_quality_mix.never_discussed` (0.22) |
 | Misleading pressure | Team expressiveness, noise, ambiguous aliases, hot threads about a sibling | `k.pressure.noise_sd` (0.12), ambiguous alias rate (0.04) |
-| Invisible causes | Budget windows are never written down | `k.decide.budget_fire` (0.3) |
+| Invisible causes | Budget windows are never written down | `k.decide.budget_fire` (0.5) |
 
 **Probe (in `checks`, on truth-side proxies of the visible attributes):** a lookup table over cells = visible days-to-need bin (unknown; < Std lead; Std–Econ lead; up to +10 wd; more) × max expressed pressure level in the last 7 days × requester's training-set expedite tercile × burst-week flag; predict the training majority of the cell, backing off to coarser cells when n < 5; score on the held-out orders.
 
@@ -290,7 +290,7 @@ Invariant *n* is cited as I*n*. `V` = `validate.mjs` (world only), `C` = `checks
 | 31 | Link quality clean / alias / never | each within ±4 points of `k.link_quality_mix` |
 | 31b | Usable orders in `coverage.json` at `--weeks 13` | 120–170 |
 | 32 | Edge reveal revealed / hinted / never; crumb status true / stale / wrong / contradiction | each within ±5 points; ±2 points of the knobs |
-| 33 | Lateness: delivered on time or early; ≥ 3 wd late | 72–84%; 5–11% |
+| 33 | Lateness: delivered on time or early; delivered after the promised date (`k.targets.late_share`) | 97–98%; 2–3% |
 | 34 | Other-vendor orders; SaaS charges; missing memo; missing receipt | 1,250–2,200; 250–400; 15–30%; 10–20% |
 | 35 | Tickets per month; description empty; due date set; due dates edited; open and stale 30+ days; open and Blocked | 250–400; 30–40%; 25–35%; 25–35%; 10–20%; 6–14% |
 | 36 | Slack messages per wd (generated channels); crumb-bearing share | 150–300; ≤ 12% |
@@ -322,6 +322,8 @@ Checkpoint 2 is the safety net: it needs no model call and already gives Burn re
 5. Test failures and re-runs → slips only from inputs and overruns.
 6. Feedback from late CNC parts into announced plan dates → announcements driven by deliverables and work items only; late parts still move the true dates and the answers.
 7. Meetings beyond the three purchasing series and gate reviews.
+
+**As built (simulator v1, 2026-11-10).** Cuts 2–6 above are taken; the rest of this list says where the code is simpler than §1. There is no day loop: stages run in sequence (deliverables → planned schedule → orders in time order → realized schedule), which is safe because announced plan dates never depend on CNC orders (cut 6). Stages S6–S8 and S10 live in `sim/orders.mjs`, S4b, S11 and S12 in `sim/context.mjs`, S2, S3 and S5 in `sim/world.mjs`. Only parts listed in a test's seed `inputs` feed a test; every other demand that feeds something feeds its own generated work item, whose completion is the order's `gated_date` (other inputs of that work item: at most one deliverable and one slotted resource). Work items are not serialized per person; an owner who is not free on the written day is a later true earliest start (`k.orders.start_delay_rate`), and a no-gain expedite then has `dominating_input: null`. No test re-runs, remakes, cancellations, splits, refunds, duplicates or ambiguous aliases. DFM holds (`k.fulfil.dfm_hold`) appear in the status timeline but are absorbed in the quoted lead time, so they never move a delivery. Crumb imperfections (S12.3) are produced at exactly the `k.imperfection_rates` shares of the final crumb count (stale 8%, wrong then corrected 5%, wrong never corrected 2%, contradiction 3%) and checked in `sim/selfcheck.mjs` to ±1.5 points; a misstated slip announcement is written into the announcement history, so later deciders believe it until it is corrected. Lateness is stratified over orders so the late share is 1 in 40 at any volume. The answers `summary.probe` holds the two baselines only.
 
 **Simplest acceptable version of each stage**
 
