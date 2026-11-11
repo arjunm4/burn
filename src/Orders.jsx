@@ -1,6 +1,7 @@
 import React from 'react';
 import {api, readFileAsBase64} from './api.js';
 import {C, Header, StateBadge, Button, Field, money, relTime} from './ui.jsx';
+import {DemoStart} from './Demo.jsx';
 
 /** /orders: start a new order (part entry) and see recent ones. */
 export default function Orders() {
@@ -50,6 +51,7 @@ export default function Orders() {
           {error && <div role="alert" style={{color: C.critical}}>{error}</div>}
           <Button primary disabled={busy || !form.name.trim()}>{busy ? 'Starting…' : 'Start'}</Button>
         </form>
+        <div style={{marginTop: 18}}><DemoStart/></div>
       </section>
       <section>
         <div style={{fontSize: 11, letterSpacing: '.1em', textTransform: 'uppercase', color: C.muted, paddingBottom: 8}}>Orders</div>

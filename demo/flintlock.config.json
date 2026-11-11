@@ -1,0 +1,28 @@
+{
+  "company": {
+    "name": "Flintlock Robotics",
+    "currency": "USD",
+    "timeZone": "America/Los_Angeles",
+    "manager": "Ingrid Solberg",
+    "holidays": ["2026-05-25", "2026-07-03", "2026-09-07", "2026-11-26", "2026-11-27", "2026-12-25", "2027-01-01"]
+  },
+  "specFields": [
+    {"key": "material", "label": "Material", "default": null},
+    {"key": "finish", "label": "Finish", "default": "As machined"},
+    {"key": "tolerance", "label": "Tolerance", "default": "ISO 2768-m"},
+    {"key": "quantity", "label": "Quantity", "default": null},
+    {"key": "revision", "label": "Drawing / CAD revision", "default": null},
+    {"key": "inspection", "label": "Inspection", "default": "Standard"},
+    {"key": "shipTo", "label": "Ship to", "default": "Flintlock Robotics, Receiving"}
+  ],
+  "milestones": {
+    "Actuator DVT build": {"valuePerDayCents": 45000, "targetOn": "2026-10-01", "owner": "Ingrid Solberg"},
+    "Hip actuator DVT spin test complete": {"valuePerDayCents": 60000, "targetOn": "2026-11-24", "owner": "Arjun Venkatesan"},
+    "Leg DVT build": {"valuePerDayCents": 35000, "targetOn": "2026-11-05", "owner": "Ingrid Solberg"},
+    "Leg EVT build": {"valuePerDayCents": 25000, "targetOn": "2026-05-19", "owner": "Ingrid Solberg"},
+    "Leg gait endurance run": {"valuePerDayCents": 17500, "targetOn": "2026-10-20", "owner": "Priya Raman"},
+    "Investor demo: leg walking on the gait gantry": {"valuePerDayCents": null, "targetOn": "2026-08-27", "hard": true, "owner": "Helena Marsh"}
+  },
+  "scenarios": {"slipDays": [3, 7]},
+  "vendor": {"name": "xometry", "allowedVendors": ["Xometry"]}
+}

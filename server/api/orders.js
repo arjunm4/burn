@@ -3,6 +3,7 @@
 // enough), capped at 20 MB. Mutations carry expectedRevision and get 409 on conflict.
 import {AppError} from '../contracts.js';
 import {verifyWebhook} from '../ramp/index.js';
+import {clock} from '../clock.js';
 
 const LIMIT = 20 * 1024 * 1024;
 async function rawBody(req) {
@@ -40,12 +41,12 @@ export function ordersRoutes(orchestrator, {ramp, vendor, config, webhookSecret 
   return async function handle(req, res, pathname, json) {
     const sameOrigin = () => { if (req.headers.origin && req.headers.origin !== `http://${req.headers.host}`) throw new AppError('Origin not allowed', 403); };
     if (pathname === '/api/system' && req.method === 'GET') {
-      return json({vendor: vendor.describe(), ramp: ramp.describe(), company: config.company, specFields: config.specFields, milestones: Object.keys(config.milestones)}), true;
+      return json({now: clock.iso(), vendor: vendor.describe(), ramp: ramp.describe(), company: config.company, specFields: config.specFields, milestones: Object.keys(config.milestones)}), true;
     }
     if (pathname === '/api/orders' && req.method === 'GET') return json({orders: orchestrator.list().map(publicOrder)}), true;
     if (pathname === '/api/orders' && req.method === 'POST') {
       sameOrigin(); const b = await body(req);
-      return json({order: publicOrder(orchestrator.enter({name: b.name, note: b.note, cad: cadFrom(b), engineer: b.engineer, fields: b.fields || {}}))}, 201), true;
+      return json({order: publicOrder(orchestrator.enter({name: b.name, note: b.note, partNumber: b.partNumber, cad: cadFrom(b), engineer: b.engineer, fields: b.fields || {}}))}, 201), true;
     }
     const m = pathname.match(/^\/api\/orders\/([A-Za-z0-9_-]+)(?:\/(events|stream|answer|argue|okay|reconcile|place))?$/);
     if (m) {

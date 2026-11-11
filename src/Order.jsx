@@ -1,6 +1,8 @@
 import React from 'react';
 import {api, subscribe, readFileAsBase64} from './api.js';
 import {C, Header, StateBadge, Button, Field, Section, Chip, money, day, relTime, STATE_LABEL} from './ui.jsx';
+import BrowserPanel from './BrowserPanel.jsx';
+import {DemoLiveChanges} from './Demo.jsx';
 
 const FEED = {
   'order.entered': 'Order entered', 'resolve.started': 'Reading the request', 'context.built': e => `Found ${e.context?.related?.length ?? 0} related message${e.context?.related?.length === 1 ? '' : 's'}${e.context?.milestoneLabel ? ` · feeds ${e.context.milestoneLabel}` : ''}`,
@@ -73,6 +75,8 @@ export default function Order({id}) {
 
         {order.state === 'needs_answer' && order.question && <QuestionPanel order={order} act={act} busy={busy}/>}
         {d && order.quote && <Comparison order={order} act={act} busy={busy}/>}
+        <DemoLiveChanges order={order}/>
+        <BrowserPanel orderId={order.id} state={order.state}/>
         {['specified', 'requested', 'approved', 'placing', 'placed', 'placement_unknown', 'invalidated', 'rejected', 'delivered', 'in_use', 'unresolved'].includes(order.state) && <RampPanel order={order} act={act} busy={busy} mock={mock} refresh={refresh}/>}
       </div>
 
@@ -142,7 +146,7 @@ function Comparison({order, act, busy}) {
     {d.switching && <div style={{color: C.muted}}>Switching condition: {d.switching}.</div>}
     <div style={{border: `1px solid ${C.line}`, borderRadius: 12, overflow: 'hidden', background: '#fff'}}>
       <div style={{display: 'grid', gridTemplateColumns: 'minmax(0,1.3fr) 1fr 1fr 1fr 1fr 1fr auto', gap: 8, padding: '8px 14px', fontSize: 11, letterSpacing: '.08em', textTransform: 'uppercase', color: C.muted, borderBottom: `1px solid ${C.line}`}}>
-        <span>Tier</span><span>Price</span><span>Part ready</span><span>{order.context?.milestoneLabel || 'Milestone'}</span><span>Days gained</span><span>Break-even</span><span/>
+        <span>Tier</span><span>Price</span><span>Part ready</span><span>{order.context?.milestoneLabel || 'Milestone'}</span><span>{d.workingDays ? 'Working days gained' : 'Days gained'}</span><span>Break-even</span><span/>
       </div>
       {d.options.map(o => {
         const qo = q.options.find(x => x.tier === o.tier) || {};
