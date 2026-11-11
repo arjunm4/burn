@@ -28,7 +28,9 @@ export function tierOutcomes(S, info) {
   if (c) {
     const free = resolveOne(cal, c, S.busy, { order: o.id, ready: null });
     need = cal.addWd(free.start, -1);
-    dominating = free.dominating;
+    // named only when binding: that input, not the consumer's own earliest start, sets the start
+    const other = c.inputs.find((i) => i.id === free.dominating);
+    dominating = other && other.ready && cal.addWd(other.ready, 1) > c.earliest ? free.dominating : null;
   }
   return { out, need, dominating };
 }
@@ -38,6 +40,13 @@ export function buildAnswers(S) {
   const evById = new Map(world.events.map((e) => [e.id, e]));
   const periods = world.meta.periods;
   const orders = [];
+  // The split is the coverage split: text starts on the Monday (weeks_of_context - 1) weeks before the demo week;
+  // an order is usable if T >= text start + 30 days; the newest 30% of usable orders are the test set.
+  const textStart = addDays(cal.weekOf(cal.demoNow), -7 * (k.weeks_of_context - 1));
+  const usableFrom = addDays(textStart, 30);
+  const usableIds = world.orders.filter((o) => o.type === 'xometry_cnc' && localDate(o.placed_at) >= usableFrom).sort((a, b) => cmp(Date.parse(a.placed_at), Date.parse(b.placed_at)) || cmp(a.id, b.id)).map((o) => o.id);
+  const nTest = Math.round(usableIds.length * 0.3);
+  const splitOf = new Map(usableIds.map((id, i) => [id, i >= usableIds.length - nTest ? 'test' : 'train']));
   const xo = world.orders.filter((o) => o.type === 'xometry_cnc');
   const edgesTo = new Map();
   for (const e of world.edges) { if (!edgesTo.has(e.to)) edgesTo.set(e.to, []); edgesTo.get(e.to).push(e); }
@@ -70,7 +79,7 @@ export function buildAnswers(S) {
           const sd = c.slotDays || (c.unit ? unitById.get(c.unit)?.slot_days : null);
           const gap = sd?.length ? Math.max(1, Math.round(5 / sd.length)) : null;
           reason = !helped ? 'no_gain_other_input_later' : gap && expGain >= gap ? 'test_slot_cliff' : 'genuine_gain';
-        } else reason = quoted.includes('economy') && gainOf('standard', 'economy') > 0 ? 'genuine_gain' : 'cheap_default';
+        } else reason = 'cheap_default'; // Standard because Economy would be late is the default choice (one reason, one tier)
         break;
       }
       default: reason = 'cheap_default';
@@ -83,10 +92,10 @@ export function buildAnswers(S) {
     const team = S.T.get(S.A.get(info.assembly)?.team);
     for (const [b, [lo, hi]] of Object.entries(bands)) {
       let sum = 0; let n = 0;
-      for (let d = lo; d < hi; d++) { const day = addDays(tDay, -d); if (day >= cal.windowStart && cal.isWd(day)) { sum += S.pressureValue(info.assembly, day); n++; } }
-      const v = n ? sum / n : S.pressureValue(info.assembly, cal.onOrBefore(addDays(tDay, -lo)) < cal.windowStart ? tDay : cal.onOrBefore(addDays(tDay, -lo)));
+      for (let d = lo; d < hi; d++) { const day = addDays(tDay, -d); if (day >= cal.windowStart && cal.isWd(day)) { sum += S.orderPressure(info, day); n++; } }
+      const v = n ? sum / n : S.orderPressure(info, cal.onOrBefore(addDays(tDay, -lo)) < cal.windowStart ? tDay : cal.onOrBefore(addDays(tDay, -lo)));
       true_pressure[b] = S.level(v);
-      expressed_pressure[b] = S.level(Math.max(0, Math.min(1, v + (team?.expressiveness || 0) + r.normal(0, k.pressure.noise_sd))));
+      expressed_pressure[b] = S.level(Math.max(0, Math.min(1, v + (team?.expressiveness || 0) * 0.5 + r.normal(0, k.pressure.noise_sd))));
     }
     const mine = new Set([...o.lines.map((l) => l.part), ...(c ? c.inputs.map((i) => i.id) : []), ...(c ? c.units : []), ...(c?.unit ? [c.unit] : [])]);
     const links = c ? (edgesTo.get(c.id) || []).filter((e) => mine.has(e.from)) : [];
@@ -110,7 +119,7 @@ export function buildAnswers(S) {
       crumbs: [...new Set((info.crumbs || []).map((e) => e.id))].sort(),
       crumbs_after: [...new Set((info.crumbsAfter || []).map((e) => e.id))].sort(),
       never_revealed: never,
-      split: day <= periods.lead_in.end ? 'lead_in' : day <= periods.train.end ? 'train' : 'test',
+      split: splitOf.get(o.id) || 'lead_in',
     });
   }
   orders.sort((a, b) => cmp(a.order, b.order));
@@ -155,14 +164,13 @@ export function buildAnswers(S) {
 
   // ---- summary ----
   const share = (arr, f) => (arr.length ? arr.filter(f).length / arr.length : 0);
-  const burstOf = (o) => S.info.get(o.id).burst;
+  const kindOfWeek = new Map(world.meta.weeks.map((w) => [w.week_start, w.kind]));
+  const burstOf = (o) => kindOfWeek.get(cal.weekOf(localDate(o.placed_at))) === 'burst';
   const tierMix = (arr) => Object.fromEntries(TIERS.map((t) => [t, share(arr, (o) => o.chosen_tier === t)]));
   const reasons = {};
   for (const a of orders) reasons[a.hidden_reason] = (reasons[a.hidden_reason] || 0) + 1 / orders.length;
   const exps = orders.filter((a) => xo.find((o) => o.id === a.order).chosen_tier === 'expedite');
-  const textStart = addDays(cal.windowEnd, -7 * k.weeks_of_context);
-  const usableFrom = addDays(textStart, 30);
-  const usable = xo.filter((o) => localDate(o.placed_at) >= usableFrom);
+  const usable = usableIds;
   const test = xo.filter((o) => orders.find((a) => a.order === o.id).split === 'test');
   const perWeek = new Map(world.meta.weeks.map((w) => [w.week_start, 0]));
   for (const o of xo) perWeek.set(cal.weekOf(localDate(o.placed_at)), (perWeek.get(cal.weekOf(localDate(o.placed_at))) || 0) + 1);
@@ -170,11 +178,12 @@ export function buildAnswers(S) {
   const totals = xo.map((o) => o.total_usd).sort((a, b) => a - b);
   const crumbs = world.events.filter((e) => e.kind === 'crumb');
   const correctedIds = new Set(crumbs.filter((e) => e.corrects).map((e) => e.corrects));
+  const contradictedIds = new Set(crumbs.flatMap((e) => e.contradicts || []));
   const crumb_truth_mix = {
     crumbs: crumbs.length,
     stale: share(crumbs, (e) => e.truth === 'stale'),
     wrong_corrected: share(crumbs, (e) => e.truth === 'wrong' && correctedIds.has(e.id)),
-    wrong_never_corrected: share(crumbs, (e) => e.truth === 'wrong' && !correctedIds.has(e.id) && !(e.contradicts || []).length),
+    wrong_never_corrected: share(crumbs, (e) => e.truth === 'wrong' && !correctedIds.has(e.id) && !(e.contradicts || []).length && !contradictedIds.has(e.id)),
     contradiction: share(crumbs, (e) => (e.contradicts || []).length > 0),
   };
   const summary = {
@@ -193,7 +202,8 @@ export function buildAnswers(S) {
     crumb_truth_mix,
     edge_reveal_mix: Object.fromEntries(['revealed', 'hinted', 'never'].map((q) => [q, share(world.edges, (e) => e.reveal === q)])),
     order_total_usd: { median: totals[Math.floor(totals.length / 2)] || 0, p99: totals[Math.floor(totals.length * 0.99)] || 0, sum: totals.reduce((s, x) => s + x, 0) },
-    usable_orders: { text_start: textStart, from: usableFrom, count: usable.length },
+    usable_orders: { text_start: textStart, from: usableFrom, count: usable.length, train: usable.length - nTest, test: nTest },
+    feeds_test_or_build_share: share(xo, (o) => !!(o.feeds_test || o.feeds_milestone)),
     probe: {
       note: 'baselines only (spec section 5, cut 2); the lookup-table probe is left to checks',
       always_standard_accuracy: share(test, (o) => o.chosen_tier === 'standard'),

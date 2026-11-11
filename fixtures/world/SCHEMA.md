@@ -579,7 +579,7 @@ Working days after 2026-11-10 (Veterans Day Wed 11/11 is worked; Thanksgiving 11
 | expedite_helped | bool | opt | Expedite completes earlier than Standard | |
 | break_even_usd_per_day / dominating_input | num / ref:any | opt | Extra cost of Expedite over Standard per day gained; the later input when the gain is 0 | |
 | crumbs / crumbs_after | [ref:events] | yes | Events before T / at or after T (checked) | |
-| split | enum split | yes | By `meta.periods` and T | |
+| split | enum split | yes | The coverage split: `lead_in` = not usable (T before text start + 30 days; text starts on the Monday `weeks_of_context` − 1 weeks before the demo week), then the newest 30% of usable orders are `test`, the rest `train` | |
 | never_revealed | [str] | yes | What was never written down | |
 | assembly_weeks[] | {assembly, week_start (Monday), milestone, true_progress 0–1, true_rank, pressure_value 0–1, true_pressure} | yes | True progress, rank among assemblies of the milestone (1 = furthest behind) and pressure per assembly per week | |
 
