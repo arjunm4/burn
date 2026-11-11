@@ -336,7 +336,17 @@ label:    the tier chosen, from the matching Xometry order (Ramp's amount alone 
 - The hidden reasons are ground truth for evaluation only, never training inputs.
 - Results are reported as "in this simulator, under these assumptions"; no real-world accuracy or ROI claims.
 
-The current `fixtures/` (14 Slack messages about Rev C electronics, one calendar) will be replaced by the generator's output.
+**Where the data lives:**
+
+| What | Where | In Git? |
+|---|---|---|
+| World script | `fixtures/world/world.json` | Yes |
+| Generator | `scripts/generate-world.mjs` | Yes |
+| Generated sources | `fixtures/slack/`, `fixtures/jira/`, `fixtures/meetings/`, `fixtures/calendar.ics`, `fixtures/xometry/`, `fixtures/ramp/` | Yes; generated once and committed so every run is the same |
+| Answer key (hidden reasons) | `fixtures/world/answers.json` | Yes; read only by evaluation |
+| App database (mock Ramp and Xometry state, orders) | `data/` (SQLite) | No; rebuilt from the fixtures |
+
+Slack is mock data shaped like Slack API responses, read by the existing connector in fixture mode; no real workspace. The current `fixtures/` (14 Slack messages about Rev C electronics, one calendar) is replaced by the generator's output.
 
 ## 13. Phased plan (design phases, not build tickets)
 
