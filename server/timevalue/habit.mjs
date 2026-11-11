@@ -46,6 +46,11 @@ function fitScaler(X) {
 }
 
 const standardize = (x, { mean, sd }) => x.map((v, j) => (v === null ? 0 : (v - mean[j]) / sd[j]));
+// Heat-map cells are shrunk harder than the few extras: cells are scaled by alpha before the fit,
+// which is the same as a penalty λ/alpha² on them. alpha and λ are both chosen by CV on train.
+export const ALPHAS = [0.1, 0.25, 0.5, 1];
+const cellMult = (alpha) => featureNames().map((n) => (n.includes('.') ? alpha : 1));
+const scaleBy = (z, mult) => z.map((v, j) => v * mult[j]);
 const sigmoid = (z) => (z >= 0 ? 1 / (1 + Math.exp(-z)) : Math.exp(z) / (1 + Math.exp(z)));
 
 // Newton / IRLS for L2 logistic regression; the bias is not penalized.
@@ -128,11 +133,13 @@ function logloss(p, y) {
 }
 
 // k-fold CV over λ (folds interleaved over the rows' order, deterministic). Returns {lambda, cv}.
-export function chooseLambda(rows, { lambdas = LAMBDAS, folds = 5 } = {}) {
+export function chooseLambda(rows, { lambdas = LAMBDAS, folds = 5, alphas = ALPHAS } = {}) {
+  const opts_alphas = alphas;
   const X = rows.map((r) => rawFeatures(r.heatmap));
   const y = rows.map((r) => (r.y ? 1 : 0));
   const cv = [];
-  for (const lambda of lambdas) {
+  for (const alpha of opts_alphas) for (const lambda of lambdas) {
+    const mult = cellMult(alpha);
     let loss = 0;
     let correct = 0;
     let count = 0;
@@ -142,30 +149,34 @@ export function chooseLambda(rows, { lambdas = LAMBDAS, folds = 5 } = {}) {
       X.forEach((_, i) => (i % folds === f ? te : tr).push(i));
       if (!tr.length || !te.length) continue;
       const scaler = fitScaler(tr.map((i) => X[i]));
-      const fit = fitLogistic(tr.map((i) => standardize(X[i], scaler)), tr.map((i) => y[i]), lambda);
+      const fit = fitLogistic(tr.map((i) => scaleBy(standardize(X[i], scaler), mult)), tr.map((i) => y[i]), lambda);
       for (const i of te) {
-        const z = standardize(X[i], scaler);
+        const z = scaleBy(standardize(X[i], scaler), mult);
         const p = sigmoid(fit.b + fit.w.reduce((s, w, j) => s + w * z[j], 0));
         loss += logloss(p, y[i]);
         correct += (p >= 0.5 ? 1 : 0) === y[i] ? 1 : 0;
         count++;
       }
     }
-    cv.push({ lambda, logloss: count ? round(loss / count) : null, accuracy: count ? round(correct / count) : null });
+    cv.push({ alpha, lambda, logloss: count ? round(loss / count) : null, accuracy: count ? round(correct / count) : null });
   }
   const best = cv.filter((c) => c.logloss !== null).reduce((a, b) => (b.logloss < a.logloss ? b : a), cv[0]);
-  return { lambda: best?.lambda ?? 1, cv };
+  return { lambda: best?.lambda ?? 1, alpha: best?.alpha ?? 1, cv };
 }
 
 export function train(rows, opts = {}) {
   let lambda = opts.lambda;
+  let alpha = typeof opts.alpha === 'number' ? opts.alpha : 1;
   let cv = null;
-  if (typeof lambda !== 'number') ({ lambda, cv } = chooseLambda(rows, opts));
+  if (typeof lambda !== 'number') ({ lambda, alpha, cv } = chooseLambda(rows, opts));
+  const mult = cellMult(alpha);
   const names = featureNames();
   const X = rows.map((r) => rawFeatures(r.heatmap));
   const y = rows.map((r) => (r.y ? 1 : 0));
   const scaler = fitScaler(X);
-  const fit = fitLogistic(X.map((x) => standardize(x, scaler)), y, lambda);
+  const raw = fitLogistic(X.map((x) => scaleBy(standardize(x, scaler), mult)), y, lambda);
+  // fold alpha into the weights so predict() and the heat map use plain standardized features
+  const fit = { w: raw.w.map((w, j) => w * mult[j]), b: raw.b };
 
   const weights = {};
   let j = 0;
@@ -179,6 +190,7 @@ export function train(rows, opts = {}) {
     extra,
     bias: round(fit.b),
     lambda,
+    alpha,
     n_train: rows.length,
     expedite_rate_train: rows.length ? round(y.reduce((a, b) => a + b, 0) / rows.length) : null,
     bands: BANDS.map((b) => b.key),

@@ -333,21 +333,24 @@ export function heatmap({ label, docs, reads, settings, progress, history, ctx }
   };
 }
 
-// Days of slack the conversation implies: the earliest need-by date stated in the linked context
-// before T (needs / need_earlier claims about this order's parts) minus Standard's lead time.
+// Days of slack the conversation implies: the most recently stated need-by date for this order's
+// parts in the linked context before T (needs / need_earlier claims), minus Standard's lead time.
 // Context only: the date comes from what people wrote, never from the dependency graph.
 export function statedNeedGap(label, linkedDocs, ridx, keys) {
   const T = ms(label.T);
   let best = null;
+  let bestAt = -Infinity;
   for (const d of linkedDocs) {
+    const at = ms(d.at);
     for (const c of ridx.get(d.id)?.claims ?? []) {
       if (c.kind !== 'needs' && c.kind !== 'need_earlier') continue;
-      if (c.subject && !keys.has(c.subject)) continue;
+      if (!c.subject || !keys.has(c.subject)) continue;
       const v = c.value;
       const date = typeof v === 'string' ? v : (v?.by ?? v?.date ?? v?.min ?? null);
       if (typeof date !== 'string' || !/^\d{4}-\d{2}-\d{2}/.test(date)) continue;
-      const t = Date.parse(date.slice(0, 10) + 'T17:00:00-08:00');
-      if (best === null || t < best) best = t;
+      if (at < bestAt) continue;
+      bestAt = at;
+      best = Date.parse(date.slice(0, 10) + 'T17:00:00-08:00');
     }
   }
   if (best === null) return null;

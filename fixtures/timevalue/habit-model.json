@@ -1,0 +1,586 @@
+{
+  "generated_from": "rendered sources (Ramp × Xometry labels, Slack/Jira/meetings/calendar context)",
+  "label": "expedite vs not (tier of the Xometry order matched to its Ramp charge)",
+  "advisory": true,
+  "weights": {
+    "messages": [
+      0.0033,
+      0.0058,
+      0.0135,
+      0.0302,
+      0.0037
+    ],
+    "pressure": [
+      0.0274,
+      -0.0169,
+      -0.0016,
+      0.0166,
+      0.0027
+    ],
+    "deadline_talk": [
+      -0.0084,
+      0.0133,
+      -0.0012,
+      0.0203,
+      -0.0048
+    ],
+    "waiting_talk": [
+      0.0177,
+      0.008,
+      -0.0069,
+      0.0142,
+      -0.004
+    ],
+    "slips": [
+      -0.0102,
+      0.0109,
+      0.0115,
+      -0.0218,
+      0
+    ],
+    "people": [
+      0.0063,
+      0.0034,
+      0.0058,
+      0.0348,
+      0.0065
+    ],
+    "manager": [
+      0.0043,
+      0.0142,
+      0.0095,
+      0.0234,
+      0.0051
+    ],
+    "meetings": [
+      0.0012,
+      -0.0142,
+      0.0249,
+      0.0275,
+      0.0071
+    ],
+    "progress_rank": [
+      0.01,
+      0.0082,
+      0.0088,
+      0.0108,
+      0.0154
+    ],
+    "id_share": [
+      -0.0176,
+      0.0078,
+      -0.003,
+      -0.024,
+      0.0093
+    ]
+  },
+  "extra": {
+    "requester_expedite_rate": 0.2864,
+    "extra_usd_expedite": -0.2574,
+    "stated_need_gap": -0.7841,
+    "no_context": -0.2496
+  },
+  "bias": -0.3904,
+  "lambda": 3,
+  "bands": [
+    "b14_30",
+    "b7_14",
+    "b3_7",
+    "b1_3",
+    "b0_1"
+  ],
+  "band_days": [
+    16,
+    7,
+    4,
+    2,
+    1
+  ],
+  "n_train": 104,
+  "n_test": 45,
+  "usable_from": "2026-09-16",
+  "n_labels": 482,
+  "n_unlinked_charges": 0,
+  "n_no_context": 4,
+  "expedite_rate_train": 0.4231,
+  "split": {
+    "train_until": "2026-10-21T09:58:02-07:00",
+    "test_from": "2026-10-21T10:29:31-07:00"
+  },
+  "accuracy": 0.6222,
+  "accuracy_ci95": [
+    0.4763,
+    0.7489
+  ],
+  "baseline_never_expedite": 0.6,
+  "accuracy_train": 0.7212,
+  "rows_used": [
+    "messages",
+    "pressure",
+    "deadline_talk",
+    "waiting_talk",
+    "slips",
+    "people",
+    "manager",
+    "meetings",
+    "progress_rank",
+    "id_share"
+  ],
+  "row_coverage": {
+    "messages": 0.9732,
+    "pressure": 0.9732,
+    "deadline_talk": 0.953,
+    "waiting_talk": 0.6107,
+    "slips": 0.1946,
+    "people": 0.9732,
+    "manager": 0.8523,
+    "meetings": 0.2886,
+    "progress_rank": 0.5705,
+    "id_share": 0.8591
+  },
+  "cv": [
+    {
+      "alpha": 0.1,
+      "lambda": 0.01,
+      "logloss": 1.1,
+      "accuracy": 0.6154
+    },
+    {
+      "alpha": 0.1,
+      "lambda": 0.03,
+      "logloss": 0.9222,
+      "accuracy": 0.6058
+    },
+    {
+      "alpha": 0.1,
+      "lambda": 0.1,
+      "logloss": 0.7853,
+      "accuracy": 0.5865
+    },
+    {
+      "alpha": 0.1,
+      "lambda": 0.3,
+      "logloss": 0.7058,
+      "accuracy": 0.5865
+    },
+    {
+      "alpha": 0.1,
+      "lambda": 1,
+      "logloss": 0.6613,
+      "accuracy": 0.5962
+    },
+    {
+      "alpha": 0.1,
+      "lambda": 3,
+      "logloss": 0.6479,
+      "accuracy": 0.6058
+    },
+    {
+      "alpha": 0.1,
+      "lambda": 10,
+      "logloss": 0.649,
+      "accuracy": 0.6154
+    },
+    {
+      "alpha": 0.1,
+      "lambda": 30,
+      "logloss": 0.6606,
+      "accuracy": 0.5962
+    },
+    {
+      "alpha": 0.1,
+      "lambda": 100,
+      "logloss": 0.677,
+      "accuracy": 0.5865
+    },
+    {
+      "alpha": 0.1,
+      "lambda": 300,
+      "logloss": 0.6864,
+      "accuracy": 0.5769
+    },
+    {
+      "alpha": 0.25,
+      "lambda": 0.01,
+      "logloss": 1.6387,
+      "accuracy": 0.6154
+    },
+    {
+      "alpha": 0.25,
+      "lambda": 0.03,
+      "logloss": 1.2579,
+      "accuracy": 0.5962
+    },
+    {
+      "alpha": 0.25,
+      "lambda": 0.1,
+      "logloss": 1.0077,
+      "accuracy": 0.5769
+    },
+    {
+      "alpha": 0.25,
+      "lambda": 0.3,
+      "logloss": 0.8527,
+      "accuracy": 0.6058
+    },
+    {
+      "alpha": 0.25,
+      "lambda": 1,
+      "logloss": 0.7355,
+      "accuracy": 0.5962
+    },
+    {
+      "alpha": 0.25,
+      "lambda": 3,
+      "logloss": 0.6732,
+      "accuracy": 0.5769
+    },
+    {
+      "alpha": 0.25,
+      "lambda": 10,
+      "logloss": 0.6505,
+      "accuracy": 0.5962
+    },
+    {
+      "alpha": 0.25,
+      "lambda": 30,
+      "logloss": 0.6591,
+      "accuracy": 0.5865
+    },
+    {
+      "alpha": 0.25,
+      "lambda": 100,
+      "logloss": 0.6763,
+      "accuracy": 0.5962
+    },
+    {
+      "alpha": 0.25,
+      "lambda": 300,
+      "logloss": 0.6862,
+      "accuracy": 0.5769
+    },
+    {
+      "alpha": 0.5,
+      "lambda": 0.01,
+      "logloss": 2.31,
+      "accuracy": 0.6346
+    },
+    {
+      "alpha": 0.5,
+      "lambda": 0.03,
+      "logloss": 1.7402,
+      "accuracy": 0.6154
+    },
+    {
+      "alpha": 0.5,
+      "lambda": 0.1,
+      "logloss": 1.2835,
+      "accuracy": 0.5962
+    },
+    {
+      "alpha": 0.5,
+      "lambda": 0.3,
+      "logloss": 1.0345,
+      "accuracy": 0.5962
+    },
+    {
+      "alpha": 0.5,
+      "lambda": 1,
+      "logloss": 0.8557,
+      "accuracy": 0.5962
+    },
+    {
+      "alpha": 0.5,
+      "lambda": 3,
+      "logloss": 0.7454,
+      "accuracy": 0.5769
+    },
+    {
+      "alpha": 0.5,
+      "lambda": 10,
+      "logloss": 0.6806,
+      "accuracy": 0.5769
+    },
+    {
+      "alpha": 0.5,
+      "lambda": 30,
+      "logloss": 0.6664,
+      "accuracy": 0.5769
+    },
+    {
+      "alpha": 0.5,
+      "lambda": 100,
+      "logloss": 0.6762,
+      "accuracy": 0.5865
+    },
+    {
+      "alpha": 0.5,
+      "lambda": 300,
+      "logloss": 0.6856,
+      "accuracy": 0.5673
+    },
+    {
+      "alpha": 1,
+      "lambda": 0.01,
+      "logloss": 2.9677,
+      "accuracy": 0.6538
+    },
+    {
+      "alpha": 1,
+      "lambda": 0.03,
+      "logloss": 2.382,
+      "accuracy": 0.6538
+    },
+    {
+      "alpha": 1,
+      "lambda": 0.1,
+      "logloss": 1.7542,
+      "accuracy": 0.6346
+    },
+    {
+      "alpha": 1,
+      "lambda": 0.3,
+      "logloss": 1.3117,
+      "accuracy": 0.6154
+    },
+    {
+      "alpha": 1,
+      "lambda": 1,
+      "logloss": 1.0253,
+      "accuracy": 0.5865
+    },
+    {
+      "alpha": 1,
+      "lambda": 3,
+      "logloss": 0.8717,
+      "accuracy": 0.5481
+    },
+    {
+      "alpha": 1,
+      "lambda": 10,
+      "logloss": 0.7649,
+      "accuracy": 0.5769
+    },
+    {
+      "alpha": 1,
+      "lambda": 30,
+      "logloss": 0.7116,
+      "accuracy": 0.5673
+    },
+    {
+      "alpha": 1,
+      "lambda": 100,
+      "logloss": 0.6886,
+      "accuracy": 0.5673
+    },
+    {
+      "alpha": 1,
+      "lambda": 300,
+      "logloss": 0.6868,
+      "accuracy": 0.5962
+    }
+  ],
+  "scaler": {
+    "features": [
+      "messages.b14_30",
+      "messages.b7_14",
+      "messages.b3_7",
+      "messages.b1_3",
+      "messages.b0_1",
+      "pressure.b14_30",
+      "pressure.b7_14",
+      "pressure.b3_7",
+      "pressure.b1_3",
+      "pressure.b0_1",
+      "deadline_talk.b14_30",
+      "deadline_talk.b7_14",
+      "deadline_talk.b3_7",
+      "deadline_talk.b1_3",
+      "deadline_talk.b0_1",
+      "waiting_talk.b14_30",
+      "waiting_talk.b7_14",
+      "waiting_talk.b3_7",
+      "waiting_talk.b1_3",
+      "waiting_talk.b0_1",
+      "slips.b14_30",
+      "slips.b7_14",
+      "slips.b3_7",
+      "slips.b1_3",
+      "slips.b0_1",
+      "people.b14_30",
+      "people.b7_14",
+      "people.b3_7",
+      "people.b1_3",
+      "people.b0_1",
+      "manager.b14_30",
+      "manager.b7_14",
+      "manager.b3_7",
+      "manager.b1_3",
+      "manager.b0_1",
+      "meetings.b14_30",
+      "meetings.b7_14",
+      "meetings.b3_7",
+      "meetings.b1_3",
+      "meetings.b0_1",
+      "progress_rank.b14_30",
+      "progress_rank.b7_14",
+      "progress_rank.b3_7",
+      "progress_rank.b1_3",
+      "progress_rank.b0_1",
+      "id_share.b14_30",
+      "id_share.b7_14",
+      "id_share.b3_7",
+      "id_share.b1_3",
+      "id_share.b0_1",
+      "requester_expedite_rate",
+      "extra_usd_expedite",
+      "stated_need_gap",
+      "no_context"
+    ],
+    "mean": [
+      0.4496,
+      0.6214,
+      0.9417,
+      1.1505,
+      1.5728,
+      0.0087,
+      -0.0088,
+      -0.0115,
+      -0.0096,
+      0.0128,
+      0.193,
+      0.2372,
+      0.6141,
+      0.6845,
+      1.1553,
+      0.0686,
+      0.0929,
+      0.051,
+      0.0485,
+      0.0583,
+      0.0067,
+      0.018,
+      0.0194,
+      0.0097,
+      0,
+      0.2367,
+      0.4105,
+      0.6165,
+      0.8107,
+      1.2621,
+      0.1359,
+      0.1803,
+      0.2524,
+      0.3447,
+      0.4078,
+      0.0273,
+      0.0055,
+      0.0801,
+      0.068,
+      0.0971,
+      2.2414,
+      2.4167,
+      2.55,
+      2.5645,
+      2.5484,
+      0.1736,
+      0.2202,
+      0.3022,
+      0.3025,
+      0.3977,
+      0.2348,
+      6.1102,
+      2.128,
+      0.0096
+    ],
+    "sd": [
+      0.5733,
+      0.6505,
+      1.11,
+      1.407,
+      2.0555,
+      0.0879,
+      0.0878,
+      0.0973,
+      0.0823,
+      0.087,
+      0.2801,
+      0.3244,
+      0.8366,
+      0.9927,
+      1.9397,
+      0.1117,
+      0.1674,
+      0.1273,
+      0.148,
+      0.2342,
+      0.0274,
+      0.0619,
+      0.0966,
+      0.069,
+      1,
+      0.2357,
+      0.3717,
+      0.6042,
+      0.8953,
+      1.5262,
+      0.1911,
+      0.2633,
+      0.3964,
+      0.631,
+      0.756,
+      0.0782,
+      0.056,
+      0.2493,
+      0.3417,
+      0.5663,
+      1.0877,
+      1.1444,
+      1.2169,
+      1.2394,
+      1.2139,
+      0.2031,
+      0.283,
+      0.3355,
+      0.3248,
+      0.3546,
+      0.1114,
+      0.7523,
+      11.0415,
+      0.0976
+    ]
+  },
+  "demo": {
+    "id": "pt-hip-bracket",
+    "T": "2026-11-10T11:30:00-08:00",
+    "p_expedite": 0.5324,
+    "n_train": 104,
+    "top": [
+      {
+        "row": "stated_need_gap",
+        "band": null,
+        "contribution": 0.4189
+      },
+      {
+        "row": "requester_expedite_rate",
+        "band": null,
+        "contribution": 0.3059
+      },
+      {
+        "row": "extra_usd_expedite",
+        "band": null,
+        "contribution": -0.2372
+      },
+      {
+        "row": "pressure",
+        "band": "b7_14",
+        "contribution": -0.0345
+      },
+      {
+        "row": "pressure",
+        "band": "b1_3",
+        "contribution": 0.0253
+      }
+    ]
+  }
+}
