@@ -54,7 +54,7 @@ export function decide(input) {
       // A later arrival from the part never improves a sibling: scenario arrivals override only their own node.
       const a = analyzeGraph(graph, {orderDate, arrivals: {...s.arrivals, [partNodeId]: o.readyOn}, calendar});
       const m = a.at[milestoneId];
-      outcomes[o.tier][s.id] = {finishOn: m?.finish ?? null, unknowns: a.unknown, blocked: a.blocked, drivenBy: m?.drivenBy ?? null};
+      outcomes[o.tier][s.id] = {finishOn: m?.finish ?? null, unknowns: a.unknown, blocked: a.blocked, drivenBy: m?.drivenBy ?? null, gatedBy: gateOf(graph, a.at, milestoneId, partNodeId)};
     }
   }
 
@@ -75,7 +75,9 @@ export function decide(input) {
     const f0 = cheapest ? finish(cheapest.tier, base) : null;
     const deltaDays = adm && f && f0 ? gained(f0, f) : null;
     const extraCents = cheapest ? o.priceCents - cheapest.priceCents : 0;
-    return {tier: o.tier, admissible: adm, ...(adm ? {} : {why}), readyOn: o.readyOn, finishOn: f, deltaDays, extraCents,
+    const gatedBy = outcomes[o.tier][base].gatedBy;
+    const missesTarget = !!(policy.targetOn && f && f > policy.targetOn);
+    return {tier: o.tier, admissible: adm, ...(adm ? {} : {why}), readyOn: o.readyOn, finishOn: f, deltaDays, extraCents, gatedBy, ...(missesTarget ? {lateByTarget: true} : {}),
       breakEvenCentsPerDay: deltaDays && deltaDays > 0 && extraCents > 0 ? Math.round(extraCents / deltaDays) : null, ...latestOrder(o)};
   });
 
@@ -179,6 +181,20 @@ export function decide(input) {
     unknowns: unknownBase, dominated: [...dominated], scenarios: scenarios.map(s => ({id: s.id, label: s.label})), outcomes};
 }
 
+// The input that sets the milestone's date for this option: walk back from the milestone through what drove
+// each start to the first part that is not the one being ordered (a sibling delivery or a booked rig). Null when
+// the ordered part itself sets the date.
+function gateOf(graph, at, milestoneId, partNodeId) {
+  let id = milestoneId;
+  for (let i = 0; id && i < 30; i++) {
+    const n = graph.nodes.find(x => x.id === id); if (!n) return null;
+    if (n.kind === 'part') return id === partNodeId ? null : n.label;
+    const prev = at[id]?.drivenBy || graph.edges.filter(e => e.to === id && at[e.from]?.finish != null).sort((a, b) => at[b.from].finish.localeCompare(at[a.from].finish))[0]?.from || null;
+    id = prev;
+  }
+  return null;
+}
+
 /** One-paragraph card text for a DecisionResult, in the voice of the worked examples. */
 export function explain(result, {milestoneLabel = 'the milestone'} = {}) {
   const rec = result.recommended && result.options.find(o => o.tier === result.recommended.tier);
@@ -199,7 +215,8 @@ export function explain(result, {milestoneLabel = 'the milestone'} = {}) {
   if (result.recommended.basis === 'dominance') {
     if (rec.tier === cheapest.tier) {
       const faster = result.options.filter(o => o.admissible && o.tier !== rec.tier && o.extraCents > 0);
-      return faster.length ? `${rec.tier}: paying more buys no time for ${milestoneLabel}${wait}. ${faster.map(o => o.tier).join(' and ')} finish${faster.length === 1 ? 'es' : ''} it on the same day because another input gates it.` : `${rec.tier} is the only valid option${wait}.`;
+      const gate = faster.map(o => o.gatedBy).find(Boolean);
+      return faster.length ? `${rec.tier}: paying more buys no time for ${milestoneLabel}${wait}. ${faster.map(o => o.tier).join(' and ')} finish${faster.length === 1 ? 'es' : ''} it on the same day because ${gate ? `${gate} gates it` : 'another input gates it'}.` : `${rec.tier} is the only valid option${wait}.`;
     }
     return `${rec.tier} is better on both price and time than the alternatives${wait}.`;
   }

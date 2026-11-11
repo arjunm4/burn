@@ -46,7 +46,7 @@ test('case B: another input dominates → Standard by dominance, no valuation ne
   assert.equal(opt(r, 'Expedited').breakEvenCentsPerDay, null);
   assert.deepEqual(r.recommended, {tier: 'Standard', basis: 'dominance'});
   assert.deepEqual(r.dominated, ['Expedited']);
-  assert.match(explain(r), /paying more buys no time.*another input gates it/);
+  assert.match(explain(r), /paying more buys no time.*Motor gates it/);
 });
 
 test('case C: every option late, linear policy → Expedited still wins', () => {

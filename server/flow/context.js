@@ -96,7 +96,7 @@ export function buildContext({order, ingest, config, now, graph: given = null, e
   const milestones = down.filter(n => n?.kind === 'milestone' && n.attrs?.date).sort((a, b) => a.attrs.date.localeCompare(b.attrs.date));
   const milestone = milestones[0] || null;
   const policyCfg = milestone ? config.milestones[milestone.id] || config.milestones[milestone.label] || null : null;
-  const policy = {valuePerDayCents: policyCfg?.valuePerDayCents ?? null, targetOn: policyCfg?.targetOn ?? milestone?.attrs?.date ?? null, hard: !!policyCfg?.hard, owner: policyCfg?.owner ?? milestone?.attrs?.owner ?? null, source: policyCfg ? 'config' : null,
+  const policy = {valuePerDayCents: policyCfg?.valuePerDayCents ?? null, targetOn: (milestone && overrides[milestone.id]?.date) || policyCfg?.targetOn || milestone?.attrs?.date || null, hard: !!policyCfg?.hard, owner: policyCfg?.owner ?? milestone?.attrs?.owner ?? null, source: policyCfg ? 'config' : null,
     // A value someone stated in conversation is context for the card, never authority: the policy comes from config.
     hint: milestone?.attrs?.valueHintCentsPerDay ? {centsPerDay: milestone.attrs.valueHintCentsPerDay, by: milestone.attrs.valueHintBy || null, evidence: milestone.attrs.valueHintEvidence || null} : null};
 
