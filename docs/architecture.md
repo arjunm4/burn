@@ -91,6 +91,7 @@ Each lists what we rejected and why.
 15. **One frozen order spec, verified by read-back.** The engineer's Okay freezes every field, the CAD hash, quote ID, tier and price; the Ramp request carries its hash; checkout proceeds only if every field read back from Xometry matches. The engineer never re-checks.
 16. **Burn places the order automatically once Ramp approval and the card are ready** (Owen's decision). It never opens a browser tab without alerting the engineer first. Guarded by spec verification, the Ramp card's exact limit and vendor lock, and idempotency.
 17. **Learning is on the synthesized context, not the part.** One example is one Xometry purchase in Ramp at time T; inputs are attributes of the context available before T; the label is the tier chosen (§10). The model is advisory.
+18. **Every external service is mocked for the demo** (Owen's decision): Ramp, Xometry, Slack, Jira, meeting notes and calendar. Mocks are labelled and shaped like the real services.
 
 ## 0. Detailed flow
 
@@ -117,7 +118,7 @@ Each lists what we rejected and why.
 | Booking | On `transactions.cleared`: `POST /receipts`, `POST /memos/{id}`, `POST /accounting/codings` | Records them | Documented |
 | Delivery | Asks "arrived OK?" | `POST /item-receipts` against the PO | Documented; needs a Ramp PO (Plus or Procurement add-on) |
 
-Demo: Ramp sandbox (demo.ramp.com; ⌘J simulates transactions). Access is requested through a form; apply early.
+Demo: Ramp is mocked (§2.18). The mock mirrors the calls and fields above, so the real sandbox can replace it later.
 
 ### 0.4 Placement
 - When approval and the card are ready, **Burn places the order automatically** (Owen's decision). **The engineer is alerted before the extension opens Xometry**; a browser tab never opens without that alert.
@@ -331,7 +332,7 @@ label:    the tier chosen, from the matching Xometry order (Ramp's amount alone 
 - **One world script first:** the hip-actuator program, people and roles, milestones and tests, and ~100–150 past Xometry orders over ~9 months, each with its need-by, blockers, sibling ETAs, urgency, the chosen tier and the hidden reason.
 - **Rendered into each source** with consistent names and timestamps: Slack messages, Jira tickets, meeting notes, calendar, Xometry order history and Ramp-shaped charges. An LLM writes the text from each scripted event; facts and times come from the script.
 - **Noise:** off-topic chatter, corrected dates, undiscussed orders, panic expedites that bought nothing.
-- **Real in the demo:** a demo Slack workspace seeded by the generator (so the channel can be scrolled live) and the Ramp sandbox for the live order.
+- **Everything is mocked in the demo** (§2.18): Ramp, Xometry, Slack, Jira, meeting notes and calendar, each as a labelled mock shaped like the real service.
 - The hidden reasons are ground truth for evaluation only, never training inputs.
 - Results are reported as "in this simulator, under these assumptions"; no real-world accuracy or ROI claims.
 
@@ -356,7 +357,7 @@ The current `fixtures/` (14 Slack messages about Rev C electronics, one calendar
 | Requests (`server/store.js`) | Lifecycle, revisions, audit | Order states (§4), frozen spec, Ramp links | Draft POs are superseded by Ramp |
 | UI (`/request`, `/approvals`, `/graph`) | Graph visual, evidence panel, run events | `/request` becomes part entry + comparison card; `/approvals` is replaced by Ramp | "Idle engineering $" tile implies cash savings |
 | Agent (`server/agent`) | Tool loop, offline fallback | Extractor and explainer behind the orchestrator | — |
-| New | — | Browser extension (Xometry provider); Ramp client (sandbox); world-script generator | — |
+| New | — | Browser extension (Xometry provider); Ramp client (mock); world-script generator | — |
 
 ## 15. History
 
