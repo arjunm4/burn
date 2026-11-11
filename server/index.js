@@ -7,6 +7,7 @@ import {createStore,AppError} from './store.js';
 import {createIngest} from './ingest/index.js';
 import {ingestRoutes} from './ingest/routes.js';
 import {setActiveIngest} from './ingest/active.js';
+import {timevalueRoutes} from './timevalue/routes.mjs';
 // Real servers ingest eagerly so the agent and /graph share data from the first request.
 export function startIngest(){const ingest=createIngest();setActiveIngest(ingest);ingest.sync().catch(error=>console.error('Initial sync failed:',error.message));return ingest;}
 async function body(req){let text='';for await(const chunk of req){text+=chunk;if(text.length>16384)throw new AppError('Request too large',413);}try{return JSON.parse(text||'{}');}catch{throw new AppError('Invalid JSON');}}
@@ -15,6 +16,8 @@ export function server(vite,store=createStore(),analyzeRequest=analyze,ingest=nu
   const json=(value,status=200)=>{res.writeHead(status,{'Content-Type':'application/json','Cache-Control':'no-store'});res.end(JSON.stringify(value));};
   try {
     if(pathname==='/api/requests'&&req.method==='GET')return json(store.snapshot());
+    // Time Value demo card and habit weights (read-only, no model call).
+    if(pathname.startsWith('/api/timevalue/')&&await timevalueRoutes(req,res,pathname,json))return;
     if(req.method==='POST'&&req.headers.origin&&req.headers.origin!==`http://${req.headers.host}`)throw new AppError('Origin not allowed',403);
     if(pathname==='/api/requests'&&req.method==='POST')return json({request:store.create(await body(req))},201);
     // Ingestion and graph routes (Slack, calendar, dependency graph); created on first use.
