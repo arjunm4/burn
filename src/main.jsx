@@ -17,7 +17,8 @@ function route() {
   const p = location.pathname;
   const order = p.match(/^\/orders\/([A-Za-z0-9_-]+)$/);
   if (order) return <Order id={order[1]}/>;
-  if (p === '/orders' || p === '/') return <Orders/>;
+  if (p === '/') return <NetworkGraph/>; // the demo opens on the dependency graph
+  if (p === '/orders') return <Orders/>;
   if (p === '/graph') return <Graph/>;
   if (p === '/ramp') return <Ramp/>;
   if (p === '/inbox') return <Inbox/>;
