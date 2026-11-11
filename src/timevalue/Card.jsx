@@ -15,10 +15,23 @@ const range = r => (!r ? '—' : typeof r === 'object' ? (r.min === r.max ? day(
 const money = n => (n == null ? '—' : '$' + Math.round(n).toLocaleString('en-US'));
 const STATUS = {pass: {mark: '✓', color: C.ink}, fail: {mark: '✕', color: C.critical}, unknown: {mark: '?', color: C.muted}, info: {mark: '·', color: C.muted}};
 const CHANGES = [
-  {n: 0, label: 'As of 10:30'},
-  {n: 1, label: 'Change 1: motor slips'},
-  {n: 2, label: 'Change 2: motor uncertain'},
+  {n: 0, label: '10:30 · motor on time'},
+  {n: 1, label: '10:45 · motor slips'},
+  {n: 2, label: '11:00 · motor unsure'},
+  {n: 3, label: '11:15 · sources disagree'},
 ];
+const WASTED = {count: 61, expedited: 133, premium_usd: 31159};
+
+// The brief "changed" highlight (respects prefers-reduced-motion).
+const CHANGED_CSS = `
+@keyframes tv-flash { from { background-color: ${C.accent}; } to { background-color: transparent; } }
+.tv-changed { animation: tv-flash 1.6s ease-out; border-radius: 4px; }
+.tv-tag { margin-left: 8px; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; padding: 1px 6px; border-radius: 8px; background: ${C.accent}; color: ${C.ink}; vertical-align: middle; }
+@media (prefers-reduced-motion: reduce) { .tv-changed { animation: none; outline: 2px solid ${C.accent}; } }
+`;
+const motorReady = card => card?.inputs?.[0]?.ready_text ?? null;
+const recTier = card => card?.recommended ?? null;
+function Changed({on}) { return on ? <span className="tv-tag">changed</span> : null; }
 
 function sourceLabel(id) {
   const s = String(id);
@@ -37,12 +50,14 @@ export default function TimeValue() {
   const [data, setData] = React.useState(null);
   const [habit, setHabit] = React.useState(null);
   const [offline, setOffline] = React.useState(false);
+  const prevRef = React.useRef(null);
+  const [prev, setPrev] = React.useState(null);
 
   React.useEffect(() => {
     let live = true;
     fetch(`/api/timevalue/demo?change=${change}`).then(r => (r.ok ? r.json() : Promise.reject(new Error(r.status))))
-      .then(d => { if (live) { setData(d); setOffline(false); } })
-      .catch(() => { if (live) { setData(precomputed.cards?.[change] || null); setOffline(true); } });
+      .then(d => { if (live) { setPrev(prevRef.current); prevRef.current = d?.card || null; setData(d); setOffline(false); } })
+      .catch(() => { if (live) { const d = precomputed.cards?.[change] || null; setPrev(prevRef.current); prevRef.current = d?.card || null; setData(d); setOffline(true); } });
     const url = new URL(location.href); if (change) url.searchParams.set('change', change); else url.searchParams.delete('change');
     history.replaceState(null, '', url);
     return () => { live = false; };
@@ -52,13 +67,20 @@ export default function TimeValue() {
   }, []);
 
   const card = data?.card;
+  const wasted = card?.wasted || precomputed.cards?.[0]?.card?.wasted || WASTED;
+  const changed = prev && card ? {motor: motorReady(prev) !== motorReady(card), tier: recTier(prev) !== recTier(card)} : {motor: false, tier: false};
   return <div style={{minHeight: '100vh', fontSize: 13, display: 'flex', flexDirection: 'column'}}>
     <header style={{display: 'flex', alignItems: 'center', gap: 18, padding: '14px 24px', borderBottom: `1px solid ${C.line}`}}>
       <span style={{fontSize: 16, letterSpacing: '.04em'}}>ramp</span>
       <span style={{color: C.muted}}>Procurement</span><span style={{color: C.faint}}>/</span><span>Time Value</span>
       <a href="/request" style={{marginLeft: 'auto', color: C.muted, fontSize: 12}}>Requests →</a>
     </header>
+    <style>{CHANGED_CSS}</style>
     <main style={{flex: 1, padding: '28px 24px 60px', display: 'flex', flexDirection: 'column', gap: 20, maxWidth: 1180, width: '100%', boxSizing: 'border-box', margin: '0 auto'}}>
+      <div role="note" style={{padding: '10px 14px', border: `1px solid ${C.critical}`, borderLeft: `4px solid ${C.critical}`, borderRadius: 6, background: '#fff', lineHeight: 1.45}}>
+        <span style={{...eyebrow, color: C.critical, marginRight: 8}}>Wasted</span>
+        Last 3 months at Flintlock: <b style={{fontWeight: 500}}>{wasted.count} of {wasted.expedited}</b> rush orders bought no time — <b style={{fontWeight: 500}}>{money(wasted.premium_usd)}</b> in premiums.
+      </div>
       <div style={{display: 'flex', gap: 12, alignItems: 'flex-end', flexWrap: 'wrap'}}>
         <div style={{display: 'flex', flexDirection: 'column', gap: 4}}>
           <div style={{fontSize: 22, letterSpacing: '-.02em'}}>Which tier is worth it?</div>
@@ -72,7 +94,7 @@ export default function TimeValue() {
 
       {!card && <span style={{color: C.muted}}>Loading card…</span>}
       {card && <div style={{display: 'grid', gridTemplateColumns: SHOW_HABIT ? 'minmax(0, 1.25fr) minmax(0, 1fr)' : 'minmax(0, 1fr)', gap: 20, alignItems: 'start'}} data-graph-grid>
-        <Recommendation card={card}/>
+        <Recommendation key={card.change?.n ?? 0} card={card} changed={changed}/>
         {SHOW_HABIT && <section style={{background: '#fff', border: `1px solid ${C.line}`, borderRadius: 12, padding: 16, display: 'flex', flexDirection: 'column', gap: 12}}>
           <div style={{display: 'flex', flexDirection: 'column', gap: 2}}>
             <span style={eyebrow}>Habit model · advisory</span>
@@ -85,11 +107,11 @@ export default function TimeValue() {
   </div>;
 }
 
-function Recommendation({card}) {
+function Recommendation({card, changed = {}}) {
   const ask = card.outcome === 'depends' || card.outcome === 'ask_owner' || (card.outcome === 'blocked' && card.outcome_tag === 'Ask first');
   return <article style={{background: '#fff', border: `1px solid ${C.line}`, borderRadius: 12, overflow: 'hidden', display: 'flex', flexDirection: 'column'}}>
     {card.change && <div role="status" style={{padding: '10px 16px', background: C.paper, borderBottom: `1px solid ${C.line}`, display: 'flex', flexDirection: 'column', gap: 3}}>
-      <span style={eyebrow}>New in Slack · {card.change.label}</span>
+      <span style={eyebrow}>New in Slack · {String(card.change.at || '').slice(11, 16)}</span>
       <span style={{lineHeight: 1.45}}><b style={{fontWeight: 500}}>{card.change.by}</b> in #actuators: “{card.change.text}”</span>
     </div>}
 
@@ -101,15 +123,19 @@ function Recommendation({card}) {
     </div>
 
     <div style={{padding: 16, display: 'flex', flexDirection: 'column', gap: 8, borderBottom: `1px solid ${C.hair}`}}>
-      <span style={{alignSelf: 'flex-start', fontSize: 11, letterSpacing: '.06em', textTransform: 'uppercase', padding: '2px 8px', borderRadius: 10, background: ask ? '#fff' : C.accent, border: `1px solid ${ask ? C.ink : C.accent}`}}>{card.outcome_tag}</span>
+      <span style={{alignSelf: 'flex-start', display: 'flex', alignItems: 'center'}}><span style={{fontSize: 11, letterSpacing: '.06em', textTransform: 'uppercase', padding: '2px 8px', borderRadius: 10, background: ask ? '#fff' : C.accent, border: `1px solid ${ask ? C.ink : C.accent}`}} className={changed.tier ? 'tv-changed' : undefined}>{card.outcome_tag}</span>{changed.tier && <Changed on/>}</span>
       <div style={{fontSize: 18, letterSpacing: '-.01em', lineHeight: 1.35, textWrap: 'pretty'}}>{card.headline}</div>
       {card.detail.map((d, i) => <div key={i} style={{lineHeight: 1.5, color: d.startsWith('Ask ') ? C.ink : C.muted, ...(d.startsWith('Ask ') ? {padding: '8px 10px', borderLeft: `2px solid ${C.ink}`, background: C.paper, borderRadius: 4} : {})}}>{d}</div>)}
     </div>
 
+    {card.dominated?.length > 0 && <div role="alert" style={{margin: '12px 16px 0', padding: '8px 10px', borderLeft: `3px solid ${C.critical}`, background: '#FBEDED', color: C.critical, borderRadius: 4, lineHeight: 1.45}}>
+      {card.dominated.map((d, i) => <div key={i}>{d}</div>)}
+    </div>}
     <table style={{width: '100%', borderCollapse: 'collapse', fontSize: 13}}>
       <thead><tr style={eyebrow}>{['Tier', 'Price', 'Part ready', 'Test done', 'Days saved', 'Break-even'].map(h => <th key={h} style={{fontWeight: 400, textAlign: 'left', padding: '10px 16px 6px'}}>{h}</th>)}</tr></thead>
       <tbody>{card.tiers.map(t => <tr key={t.tier} style={{background: t.recommended ? C.paper : '#fff'}}>
-        <td style={{padding: '9px 16px', borderTop: `1px solid ${C.hair}`}}>{t.label}{t.recommended && <span style={{marginLeft: 8, fontSize: 10, letterSpacing: '.06em', textTransform: 'uppercase', color: C.muted}}>preselected</span>}</td>
+        <td style={{padding: '9px 16px', borderTop: `1px solid ${C.hair}`}}>{t.label}{t.recommended && <span className={changed.tier ? 'tv-changed' : undefined} style={{marginLeft: 8, fontSize: 10, letterSpacing: '.06em', textTransform: 'uppercase', color: C.muted}}>preselected</span>}
+          {t.no_faster_than && <span style={{marginLeft: 8, fontSize: 10, letterSpacing: '.06em', textTransform: 'uppercase', color: C.critical}}>no faster than {t.no_faster_than}</span>}</td>
         <td style={{padding: '9px 16px', borderTop: `1px solid ${C.hair}`, fontVariantNumeric: 'tabular-nums'}}>{money(t.total)}</td>
         <td style={{padding: '9px 16px', borderTop: `1px solid ${C.hair}`}}>{day(t.ready)}</td>
         <td style={{padding: '9px 16px', borderTop: `1px solid ${C.hair}`}}>{range(t.finish)}</td>
@@ -121,7 +147,7 @@ function Recommendation({card}) {
     {card.inputs.length > 0 && <div style={{padding: 16, display: 'flex', flexDirection: 'column', gap: 6, borderTop: `1px solid ${C.hair}`}}>
       <span style={eyebrow}>The test also waits on</span>
       {card.inputs.map(i => <div key={i.id} style={{display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'baseline'}}>
-        <span>{i.name}</span><span style={{color: C.muted}}>ready {i.ready_text}</span>
+        <span>{i.name}</span><span className={changed.motor ? 'tv-changed' : undefined} style={{color: C.muted, padding: '0 2px'}}>ready {i.ready_text}</span>{changed.motor && <Changed on/>}
         {i.said_by && <span style={{color: C.muted, fontSize: 12}}>· {i.said_by}, {i.said_ago}{i.doc_id ? ` · ${sourceLabel(i.doc_id)}` : ''}</span>}
       </div>)}
     </div>}

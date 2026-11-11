@@ -1,9 +1,9 @@
 // Demo service (agent F): the recommendation card for the demo order, built from rendered sources only.
 //
-//   demoCard({change: 0|1|2, sourcesDir, outDir}) → {card, heatmap, sources, engine}
+//   demoCard({change: 0|1|2|3, sourcesDir, outDir}) → {card, heatmap, sources, engine}
 //
 // part entry → resolve the part → graphAt(now) → demoInputs → compare → rubric → habit line.
-// Change 1 or 2 appends demo/live-changes.json[n − 1] as a Slack doc, re-extracts claims and re-solves.
+// Change 1, 2 or 3 appends demo/live-changes.json[n − 1] as a Slack doc, re-extracts claims and re-solves.
 // No model call anywhere.
 //
 // Every step uses the other agents' modules when they exist (A: src/timevalue, B: sources/labels,
@@ -22,6 +22,14 @@ export const ROOT = path.resolve(HERE, '../..');
 export const FIXTURE_SOURCES = path.join(ROOT, 'fixtures/timevalue/demo-sources');
 export const DEFAULT_SOURCES = process.env.TIMEVALUE_SOURCES ? path.resolve(ROOT, process.env.TIMEVALUE_SOURCES) : FIXTURE_SOURCES;
 export const DEFAULT_OUT = path.join(ROOT, 'fixtures/timevalue');
+
+// The banner over the card: wasted rush orders in the last 3 months, from grading.json (fallback: the graded numbers).
+export const WASTED_FALLBACK = { count: 61, expedited: 133, premium_usd: 31159 };
+export async function wastedExpedites({ outDir = DEFAULT_OUT } = {}) {
+  const w = (await readJson(path.join(outDir, 'grading.json')))?.wasted_expedites;
+  return w && Number.isFinite(w.count) && Number.isFinite(w.expedited) && Number.isFinite(w.premium_usd)
+    ? { count: w.count, expedited: w.expedited, premium_usd: Math.round(w.premium_usd) } : { ...WASTED_FALLBACK };
+}
 
 // ------------------------------------------------------------------ optional modules
 
@@ -187,6 +195,7 @@ function fallbackDemoInputs({ settings, sources, part, now }) {
 
 const personBySlack = (settings, sid) => (settings?.people || []).find((p) => p.slack_id === sid) || null;
 const personById = (settings, id) => (settings?.people || []).find((p) => p.id === id || p.email === id) || null;
+const personByName = (settings, name) => (settings?.people || []).find((p) => p.name === name) || null;
 const firstName = (p) => (p?.name || '').split(' ')[0] || null;
 
 // ------------------------------------------------------------------ fallback: maths (contract of src/timevalue)
@@ -310,6 +319,8 @@ function liveDoc(sources, settings, change) {
 
 // ------------------------------------------------------------------ the card
 
+const CONFIDENT_OUTCOMES = new Set(['cheapest', 'pay', 'dont_pay']);
+
 export async function demoCard({ change = 0, sourcesDir = DEFAULT_SOURCES, outDir = DEFAULT_OUT } = {}) {
   change = Number(change) || 0;
   const st = await baseState(sourcesDir, outDir);
@@ -386,10 +397,25 @@ export async function demoCard({ change = 0, sourcesDir = DEFAULT_SOURCES, outDi
   if (mods.rubric) { try { rub = mods.rubric(cmp, { quoteValidUntil: quote.expires_on, now, facts, conversation }); engine.rubric = 'src/timevalue'; } catch (e) { engine.rubric = `fallback (${e.message})`; } } else engine.rubric = 'fallback';
   if (!rub) rub = fallbackRubric(cmp, { quoteValidUntil: quote.expires_on, now, facts });
 
+  // A conflict on the deciding input: the card must not be confident. Ask the owner which date is right.
+  const blocking = (rub.checks || []).flatMap((k) => (k.advisory ? k.items : [])).find((i) => i.key === 'conflict' && i.blocks);
+  const conflict = blocking && conversation?.conflicts?.find((k) => (k.values || []).every((v) => blocking.sources.includes(v.doc_id)));
+  if (conflict && CONFIDENT_OUTCOMES.has(cmp.outcome)) {
+    const runWith = (ready) => {
+      const a = { ...args, inputs: args.inputs.map((i) => (i.id === conflict.subject ? { ...i, ready } : i)) };
+      try { return mods.compare ? mods.compare(a) : fallbackCompare(a, mods.solve || fallbackSolve); } catch { return null; }
+    };
+    const alts = conflict.values.map((v) => ({ ...v, cmp: runWith(v.value) }));
+    cmp = { ...cmp, outcome: 'ask_owner', recommended: null, conflict: { ...conflict, alts },
+      question: { to: conflict.owner, text: `Which is right for the ${shortName(conflict.name)}: ${conflict.values.map((v) => `${readyText(v.value)} (${firstName(personByName(settings, v.by)) || v.by})`).join(' or ')}?` } };
+    if (mods.rubric) { try { rub = mods.rubric(cmp, { quoteValidUntil: quote.expires_on, now, facts, conversation }); } catch { /* keep */ } }
+  }
+
   // Habit line (advisory).
   const { habit, heatmap } = await habitLine(st, { docs, part, partEntry, quote, tiersIn, now, engine });
 
   const card = buildCard({ settings, partEntry, quote, part, test, milestone, target, policy, policyOwner, polRec, duration, testIn, tiersIn, others, cmp, rub, habit, live, now, args, mods });
+  card.wasted = await wastedExpedites({ outDir });
   return { card, heatmap, sources: sourceList({ card, others, di, live }), engine };
 }
 
@@ -449,11 +475,15 @@ async function conversationInputs(st, { docs, live, view, part, test, milestone,
   // Conflicts: accepted-or-disputed ETAs for the same input within the window, from different people or sources.
   const conflicts = [];
   for (const i of others) {
-    const fs = (view?.facts || []).filter((f) => f.subject === i.id && f.kind === 'eta' && (f.status === 'accepted' || f.status === 'disputed')
+    // Each person's or source's latest ETA in the window (a newer post by someone else does not erase what the
+    // first person said); a conflict is two of those that differ.
+    const fs = (view?.facts || []).filter((f) => f.subject === i.id && f.kind === 'eta' && f.status !== 'proposed'
       && f.at && Date.parse(f.at) >= t - 7 * DAY && Date.parse(f.at) <= t);
+    const latest = new Map();
+    for (const f of fs) { const k = `${f.by}|${String(f.doc_id).split(':')[0]}`; const prev = latest.get(k); if (!prev || Date.parse(f.at) >= Date.parse(prev.at)) latest.set(k, f); }
     const vals = [];
-    for (const f of fs) if (!vals.some((v) => JSON.stringify(v.value) === JSON.stringify(f.value))) vals.push(f);
-    const differ = vals.length > 1 && new Set(vals.map((f) => `${f.by}|${String(f.doc_id).split(':')[0]}`)).size > 1;
+    for (const f of [...latest.values()].sort((a, b) => Date.parse(a.at) - Date.parse(b.at))) if (!vals.some((v) => JSON.stringify(v.value) === JSON.stringify(f.value))) vals.push(f);
+    const differ = vals.length > 1;
     if (differ) conflicts.push({ subject: i.id, name: i.name, owner: i.owner ?? null, kind: 'eta',
       values: vals.map((f) => ({ value: f.value, by: personById(settings, f.by)?.name ?? f.by ?? null, at: f.at, doc_id: f.doc_id, status: f.status })) });
   }
@@ -529,6 +559,7 @@ function buildCard({ settings, partEntry, quote, part, test, milestone, target, 
   const saved = savedNum(fastest.days_saved);
   const beText = fastest.break_even != null ? money(fastest.break_even) : extra && saved ? money(extra / saved) : null;
   const dominatedLine = dominated.map((t) => `${t.label} (${money(t.total)}) finishes no sooner than ${fastest.label}: +${money(t.total - fastest.total)} for nothing.`);
+  for (const t of dominated) t.no_faster_than = fastest.label;
   switch (cmp.outcome) {
     case 'pay': {
       const net = policy?.usd_per_day != null && saved != null ? policy.usd_per_day * saved - extra : null;
@@ -560,6 +591,20 @@ function buildCard({ settings, partEntry, quote, part, test, milestone, target, 
     }
     case 'ask_owner': {
       outcomeTag = 'Ask first';
+      if (cmp.conflict) {
+        const k = cmp.conflict;
+        const who = firstName(owner(k.owner)) || 'the owner';
+        const say = (v) => `${firstName(personByName(settings, v.by)) || v.by || 'someone'} says ${readyText(v.value)}`;
+        headline = `Sources disagree on the ${shortName(k.name)}: ${k.values.map(say).join(', ')}. Ask before paying.`;
+        for (const a of k.alts) {
+          const best = (a.cmp?.tiers || []).reduce((m, t) => Math.max(m, savedNum(t.days_saved) ?? 0), 0);
+          const rec = a.cmp?.recommended ? tiers.find((t) => t.tier === lc(a.cmp.recommended))?.label : null;
+          detail.push(`If ${readyText(a.value)}: ${best > 0 && rec && rec !== cheapest.label ? `${rec} saves ${best} working day${best === 1 ? '' : 's'}` : `${fastest.label} buys no time, ${cheapest.label} is as fast`}.`);
+        }
+        detail.push(`Nothing preselected until ${who} answers.`);
+        detail.push(`Ask ${who}: "${cmp.question.text}"`);
+        break;
+      }
       const who = firstName(owner(cmp.question?.to)) || firstName(keyOwner) || ownerName || 'the owner';
       headline = key && !key.ready ? `Can't decide yet: no date for the ${keyShort}.` : `Can't decide yet: no value for a day of ${milestone.name || 'this milestone'}.`;
       detail.push(`Ask ${who}: "${cmp.question?.text || (key && !key.ready ? `When will the ${keyShort} be ready?` : 'What is a day worth?')}"`);
@@ -590,7 +635,7 @@ function buildCard({ settings, partEntry, quote, part, test, milestone, target, 
     inputs: others.map((i) => ({ id: i.id, name: i.name, ready: i.ready, ready_text: readyText(i.ready), owner: owner(i.owner)?.name || null, said_by: owner(i.said_by)?.name || null, said_at: i.said_at || null, said_ago: ago(i.said_at, now), doc_id: i.doc_id || null })),
     tiers,
     outcome: cmp.outcome, outcome_tag: outcomeTag, recommended: cmp.recommended ?? null,
-    headline, detail: [...detail, ...dominatedLine], question: cmp.question || null, switching: cmp.switching || null,
+    headline, detail, dominated: dominatedLine, question: cmp.question || null, switching: cmp.switching || null,
     checks: (rub.checks || []).map((c) => ({ ...c, text: named(c.text, settings), sources: c.sources || [],
       ...(c.items ? { items: c.items.map((i) => ({ ...i, text: named(i.text, settings), question: i.question ? { ...i.question, to_name: owner(i.question.to)?.name || null } : null })) } : {}) })), guards: rub.guards || [], blocked: !!rub.blocked,
     habit,

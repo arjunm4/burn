@@ -1,4 +1,4 @@
-// Precompute the demo's three cards (change 0, 1, 2) and the habit weights into <out>/demo-cards.json,
+// Precompute the demo's four cards (change 0–3) and the habit weights into <out>/demo-cards.json,
 // which the UI falls back to when the server route is unavailable. No model call.
 //
 //   node scripts/timevalue/demo-cards.mjs [--sources <dir>] [--out <dir>]
@@ -17,9 +17,9 @@ function arg(name, fallback) {
 const sourcesDir = arg('--sources', FIXTURE_SOURCES);
 const outDir = arg('--out', DEFAULT_OUT);
 const cards = {};
-for (const change of [0, 1, 2]) cards[change] = await demoCard({ change, sourcesDir, outDir });
+for (const change of [0, 1, 2, 3]) cards[change] = await demoCard({ change, sourcesDir, outDir });
 const out = { sources_dir: path.relative(ROOT, sourcesDir), cards, habit: await habitWeights({ outDir }) };
 mkdirSync(outDir, { recursive: true });
 writeFileSync(path.join(outDir, 'demo-cards.json'), JSON.stringify(out, null, 2) + '\n');
-for (const change of [0, 1, 2]) console.log(`change ${change}: ${cards[change].card.outcome} — ${cards[change].card.headline}`);
+for (const change of [0, 1, 2, 3]) console.log(`change ${change}: ${cards[change].card.outcome} — ${cards[change].card.headline}`);
 console.log(`wrote ${path.relative(ROOT, path.join(outDir, 'demo-cards.json'))} from ${out.sources_dir}`);

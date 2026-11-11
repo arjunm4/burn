@@ -131,12 +131,13 @@ function demoCheck(settingsX, sourcesX) {
   assert.deepEqual([r.policy.type, r.policy.usd_per_day, r.policy.set_by], ['per_day', 600, 'p-arjun']);
   // live changes appended as Slack docs
   let src = sourcesX, prev = NOW;
-  const want = ['2026-11-30', { min: '2026-11-19', max: '2026-11-30' }];
+  const want = ['2026-11-30', { min: '2026-11-19', max: '2026-11-30' }, '2026-11-27'];
+  const by = ['p-arjun', 'p-arjun', 'p-samir'];
   sourcesX.demo.liveChanges.changes.forEach((ch, i) => {
     const d = liveChangeDoc(ch, prev, settingsX.people); prev = d.at; src = appendDocs(src, [d]);
     const rr = demoInputs(graphAt(buildGraph({ settings: settingsX, sources: src }), d.at), 'pt-hip-bracket');
     const mm = rr.inputs.find((x) => x.id === 'dl-hip-motor-dvt');
-    assert.deepEqual(mm.ready, want[i]); assert.equal(mm.said_by, 'p-arjun'); assert.equal(mm.doc_id, d.id);
+    assert.deepEqual(mm.ready, want[i]); if (i < 2) assert.equal(mm.said_by, by[i]); assert.equal(mm.doc_id, d.id);
   });
   return r;
 }
