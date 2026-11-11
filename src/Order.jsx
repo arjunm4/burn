@@ -63,6 +63,7 @@ export default function Order({id}) {
   return <Page system={system} width={1240} data-q-main style={{display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 320px', gap: 40}}>
     <div style={{display: 'flex', flexDirection: 'column', gap: 24, minWidth: 0}}>
       <div>
+        <a href="/orders" className="burn-back-link">← All orders</a>
         <div style={{display: 'flex', gap: 12, alignItems: 'baseline', flexWrap: 'wrap'}}>
           <span style={{fontSize: 24, letterSpacing: '-.02em'}}>{order.entry.name}</span>
           <StateBadge state={order.state}/>
@@ -151,15 +152,15 @@ function Comparison({order, act, busy}) {
   const canOkay = ['recommended', 'needs_answer'].includes(order.state);
   const cell = {fontVariantNumeric: 'tabular-nums'};
   return <div style={{display: 'flex', flexDirection: 'column', gap: 14}}>
-    <div style={{fontSize: 17, lineHeight: 1.4, letterSpacing: '-.01em'}}>{d.text}</div>
-    <div style={{border: `1px solid ${C.line}`, borderRadius: 12, overflow: 'hidden', background: '#fff'}}>
+    <div className="burn-decision-summary"><span className="burn-kicker">The decision</span><div style={{fontSize: 20, lineHeight: 1.5, letterSpacing: '-.4px'}}>{d.text}</div></div>
+    <div className="burn-comparison-scroll" role="region" aria-label="Compare quoted options" tabIndex={0} style={{border: `1px solid ${C.line}`, borderRadius: 12, background: '#fff'}}><div className="burn-comparison-table">
       <div style={{display: 'grid', gridTemplateColumns: COLS, gap: 8, padding: '8px 14px', borderBottom: `1px solid ${C.line}`}}>
         {['Tier', 'Price', 'Part ready', order.context?.milestoneLabel || 'Milestone', 'Gained', 'Break-even', ''].map((h, i) => <Eyebrow key={i} style={{letterSpacing: '.08em'}}>{h}</Eyebrow>)}
       </div>
       {d.options.map(o => {
         const qo = q.options.find(x => x.tier === o.tier) || {};
         const isRec = o.tier === rec, chosen = order.frozen?.tier === o.tier, dominated = d.dominated?.includes(o.tier) && !isRec;
-        return <div key={o.tier} style={{display: 'grid', gridTemplateColumns: COLS, gap: 8, padding: '12px 14px', alignItems: 'center', borderTop: `1px solid ${C.hair}`, background: isRec || chosen ? C.paper : '#fff', opacity: o.admissible ? 1 : .5}}>
+        return <div key={o.tier} style={{display: 'grid', gridTemplateColumns: COLS, gap: 8, padding: '16px 14px', alignItems: 'center', borderTop: `1px solid ${C.hair}`, boxShadow: isRec || chosen ? 'inset 3px 0 #c4d31f' : 'none', background: isRec || chosen ? '#f7f8eb' : '#fff', opacity: o.admissible ? 1 : .5}}>
           <span style={{display: 'flex', gap: 6, alignItems: 'baseline', flexWrap: 'wrap'}}>{o.tier}{chosen ? <Chip tone="ink">okayed</Chip> : isRec ? <Chip tone="ink">recommended</Chip> : null}{!o.admissible && <Chip tone="critical">{o.why}</Chip>}</span>
           <span style={cell}>{money(qo.priceCents)}{o.extraCents > 0 && <span style={{color: C.muted}}> +{money(o.extraCents)}</span>}</span>
           <span style={cell}>{day(qo.readyOn)}</span>
@@ -169,7 +170,7 @@ function Comparison({order, act, busy}) {
           <span>{canOkay && o.admissible && <Button primary={isRec} disabled={busy} onClick={() => act(`/orders/${order.id}/okay`, {tier: o.tier})}>{isRec ? 'Okay' : 'Choose'}</Button>}</span>
         </div>;
       })}
-    </div>
+    </div></div>
     {(q.cutoff || q.validUntil) && <div style={{color: C.muted, fontSize: 12, marginTop: -6}}>{[q.cutoff && `Vendor cutoff ${clock(q.cutoff)} today`, q.validUntil && `quote valid until ${day(q.validUntil)}`].filter(Boolean).join(' · ')}</div>}
     {canOkay && <form onSubmit={e => { e.preventDefault(); act(`/orders/${order.id}/argue`, {text: argument}); setArgument(''); }} style={{display: 'flex', gap: 8}}>
       <input value={argument} onChange={e => setArgument(e.target.value)} placeholder="Disagree? Tell Burn why, e.g. the motor actually lands on the 21st" style={input}/>
