@@ -1,18 +1,16 @@
 import React from 'react';
+import ForceGraphLib from 'force-graph';
 import data from '../../fixtures/timevalue/company-graph.json';
 
-// Demo-only: Burn's company dependency graph as a live force-directed network (force-graph from unpkg).
-const LIB = 'https://unpkg.com/force-graph@1.43.5/dist/force-graph.min.js';
+// Demo-only: Burn's company dependency graph as a live force-directed network (force-graph, bundled).
 const BG = '#0B0B0A', ACCENT = '#E4F222', RED = '#FF4D4A', INK = '#F4F2F0', MUTED = '#8E8A82';
 const PALETTE = ['#5B8DEF', '#36C2B4', '#B07CF0', '#F0A04B', '#E86FA8', '#7BC96F', '#C9B458', '#6FB4E8'];
 const DEMO = ['pt-hip-bracket', 'dl-hip-motor-dvt', 'test-hip-spin', 'm-hip-spin-test'];
 const MOTOR = 'dl-hip-motor-dvt';
 const label = a => (a || 'shared').replace(/^a-/, '').replace(/-/g, ' ');
 
-function loadLib() {
-  if (window.ForceGraph) return Promise.resolve(window.ForceGraph);
-  return new Promise((ok, fail) => { const s = document.createElement('script'); s.src = LIB; s.onload = () => ok(window.ForceGraph); s.onerror = fail; document.head.appendChild(s); });
-}
+// Bundled with the app (works offline).
+function loadLib() { return Promise.resolve(ForceGraphLib); }
 
 export default function NetworkGraph() {
   const box = React.useRef(null);
