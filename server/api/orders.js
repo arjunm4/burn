@@ -25,12 +25,12 @@ const cadFrom = b => (b?.cad?.base64 ? {fileName: b.cad.fileName || 'part.step',
 export function publicOrder(o) {
   if (!o) return o;
   const {context, ramp, ...rest} = o;
-  const {cad, graph, ...ctx} = context || {};
+  const {cad, graph, agentRead, ...ctx} = context || {};
   const {credentialRef, ...r} = ramp || {};
   return {...rest, context: ctx, ramp: r};
 }
 
-export function ordersRoutes(orchestrator, {ramp, vendor, config, webhookSecret = process.env.RAMP_WEBHOOK_SECRET}) {
+export function ordersRoutes(orchestrator, {ramp, vendor, config, agent = null, webhookSecret = process.env.RAMP_WEBHOOK_SECRET}) {
   const subscribers = new Map(); // orderId -> Set(res)
   orchestrator.bus.on('order', e => {
     const subs = subscribers.get(e.orderId); if (!subs) return;
@@ -41,7 +41,7 @@ export function ordersRoutes(orchestrator, {ramp, vendor, config, webhookSecret 
   return async function handle(req, res, pathname, json) {
     const sameOrigin = () => { if (req.headers.origin && req.headers.origin !== `http://${req.headers.host}`) throw new AppError('Origin not allowed', 403); };
     if (pathname === '/api/system' && req.method === 'GET') {
-      return json({now: clock.iso(), vendor: vendor.describe(), ramp: ramp.describe(), company: config.company, specFields: config.specFields, milestones: Object.keys(config.milestones)}), true;
+      return json({now: clock.iso(), agent: {enabled: !!agent?.enabled, model: agent?.enabled ? agent.model : null}, vendor: vendor.describe(), ramp: ramp.describe(), company: config.company, specFields: config.specFields, milestones: Object.keys(config.milestones)}), true;
     }
     if (pathname === '/api/orders' && req.method === 'GET') return json({orders: orchestrator.list().map(publicOrder)}), true;
     if (pathname === '/api/orders' && req.method === 'POST') {

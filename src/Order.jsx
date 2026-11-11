@@ -5,6 +5,10 @@ import BrowserPanel from './BrowserPanel.jsx';
 import {DemoLiveChanges} from './Demo.jsx';
 
 const FEED = {
+  'agent.reading': e => `Burn is reading the team's records${e.model ? ` (${e.model})` : ''}…`,
+  'agent.search': e => `Searched ${e.tool === 'calendar' ? 'the calendar' : e.source ? e.source : 'Slack, Jira and notes'} for “${e.query}” · ${e.hits} hit${e.hits === 1 ? '' : 's'}${e.channels?.length ? ` in ${e.channels.join(', ')}` : ''}`,
+  'agent.claims': e => `Understood: ${e.summary}`, 'agent.wrote': 'Wrote the recommendation', 'agent.reply': e => `Burn: “${e.text}”`,
+  'agent.fallback': e => `Agent unavailable at ${e.stage} (${e.reason}); using rules`,
   'order.entered': 'Order entered', 'resolve.started': 'Reading the request', 'context.built': e => `Found ${e.context?.related?.length ?? 0} related message${e.context?.related?.length === 1 ? '' : 's'}${e.context?.milestoneLabel ? ` · feeds ${e.context.milestoneLabel}` : ''}`,
   'question': e => `Needs an answer: ${e.question?.text || ''}`, 'quote.started': 'Quoting on Xometry', 'quote.captured': e => `Quote captured · ${e.quote?.options?.length} tiers`,
   'recommended': 'Recommendation ready', 'answer.received': 'Answer received, re-solving', 'exchange.added': e => `You: “${e.statement?.text}”`, 'order.frozen': 'Order frozen',
@@ -99,7 +103,7 @@ export default function Order({id}) {
           {ctx.related?.length > 6 && <span style={{color: C.faint, fontSize: 11}}>+{ctx.related.length - 6} more related messages</span>}
         </Section>
         {!!order.exchange?.length && <Section title="Discussion">
-          {order.exchange.map((s, i) => <div key={i} style={{fontSize: 12}}><span style={{color: C.muted}}>{s.by} · {s.type}:</span> {s.text}</div>)}
+          {order.exchange.map((s, i) => <div key={i} style={{fontSize: 12, ...(s.by === 'Burn' ? {paddingLeft: 10, borderLeft: `2px solid ${C.accent}`} : {})}}><span style={{color: C.muted}}>{s.by}{s.type && s.type !== 'reply' ? ` · ${s.type}` : ''}:</span> {s.text}</div>)}
         </Section>}
         <Section title="History">
           <div style={{display: 'flex', flexDirection: 'column', gap: 3, fontSize: 11, color: C.muted}}>{events.slice(-15).map((e, i) => <div key={i}><span style={{color: C.faint}}>{new Date(e.at).toLocaleTimeString('en-US', {hour: 'numeric', minute: '2-digit'})}</span> · {e.event} · r{e.revision}</div>)}</div>
@@ -137,8 +141,6 @@ function Comparison({order, act, busy}) {
   const d = order.decision, q = order.quote;
   const rec = d.recommended?.tier;
   const [argument, setArgument] = React.useState('');
-  const [type, setType] = React.useState('factual correction');
-  const [factNode, setFactNode] = React.useState(''); const [factDate, setFactDate] = React.useState('');
   const canOkay = ['recommended', 'needs_answer'].includes(order.state);
   const uncertain = order.context?.uncertain || [];
   return <div style={{display: 'flex', flexDirection: 'column', gap: 12}}>
@@ -163,18 +165,13 @@ function Comparison({order, act, busy}) {
       })}
     </div>
     <div style={{color: C.muted, fontSize: 12}}>Assumptions: {d.assumptions.join(' · ')}{q.cutoff ? ` · Vendor cutoff ${new Date(q.cutoff).toLocaleTimeString('en-US', {hour: 'numeric', minute: '2-digit'})} today` : ''}{q.validUntil ? ` · quote valid until ${day(q.validUntil)}` : ''}</div>
-    {canOkay && <form onSubmit={e => { e.preventDefault(); act(`/orders/${order.id}/argue`, {text: argument, type, fact: type === 'factual correction' && factNode && factDate ? {nodeId: factNode, date: factDate} : null}); setArgument(''); }} style={{display: 'flex', flexDirection: 'column', gap: 8, borderTop: `1px solid ${C.hair}`, paddingTop: 12}}>
+    {canOkay && <form onSubmit={e => { e.preventDefault(); act(`/orders/${order.id}/argue`, {text: argument}); setArgument(''); }} style={{display: 'flex', flexDirection: 'column', gap: 8, borderTop: `1px solid ${C.hair}`, paddingTop: 12}}>
       <div style={{fontSize: 11, letterSpacing: '.1em', textTransform: 'uppercase', color: C.muted}}>Disagree? Say why</div>
       <div style={{display: 'flex', gap: 8, flexWrap: 'wrap'}}>
         <input value={argument} onChange={e => setArgument(e.target.value)} placeholder="e.g. the motor actually lands on the 21st" style={{...inp, flex: 1, minWidth: 220}}/>
-        <select value={type} onChange={e => setType(e.target.value)} style={inp}><option>factual correction</option><option>policy disagreement</option><option>preference</option></select>
-        {type === 'factual correction' && uncertain.length > 0 && <>
-          <select value={factNode} onChange={e => setFactNode(e.target.value)} style={inp}><option value="">which fact?</option>{uncertain.map(u => <option key={u.nodeId} value={u.nodeId}>{u.label}</option>)}</select>
-          <input type="date" value={factDate} onChange={e => setFactDate(e.target.value)} style={inp}/>
-        </>}
         <Button disabled={busy || !argument.trim()}>Send</Button>
       </div>
-      <div style={{color: C.faint, fontSize: 11}}>Your words are kept with the order. Only a date you assert changes the plan; a preference or policy disagreement goes to the approver as is.</div>
+      <div style={{color: C.faint, fontSize: 11}}>Burn reads what you say. A date you assert re-runs the comparison; a preference or policy disagreement is kept with the order for the approver.</div>
     </form>}
   </div>;
 }

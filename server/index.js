@@ -10,6 +10,7 @@ import {setActiveIngest, activeIngest} from './ingest/active.js';
 import {ordersRoutes} from './api/orders.js';
 import {recordingsRoutes} from './api/recordings.js';import {sharedXometrySite} from './vendors/site/index.js';
 import {createOrchestrator} from './flow/orchestrator.js';
+import {createAgent} from './flow/agent.js';
 import {createVendorProvider} from './vendors/index.js';
 import {loadConfig} from './config.js';
 import {createOrderStore} from './orders/store.js';
@@ -22,10 +23,10 @@ import {clock} from './clock.js';
 import {loadRecordedQuotes} from './vendors/recorded.js';
 // The v9 order flow: orchestrator over the order store, vendor provider and Ramp client.
 // Every component shares one clock (BURN_NOW anchors it for a demo set on a given day).
-export function startOrders({ingest=null,filename=process.env.ORDERS_DB||'data/orders.sqlite',store=createOrderStore({filename,now:clock.date}),ramp=createRampClient({mode:process.env.RAMP_MODE||'mock',filename,now:clock.date}),vendor=createVendorProvider({now:clock.date,quotes:loadRecordedQuotes()}),config=loadConfig()}={}){
-  const orchestrator=createOrchestrator({store,vendor,ramp,ingest:ingest||activeIngest(),config,now:clock.iso});
+export function startOrders({ingest=null,filename=process.env.ORDERS_DB||'data/orders.sqlite',store=createOrderStore({filename,now:clock.date}),ramp=createRampClient({mode:process.env.RAMP_MODE||'mock',filename,now:clock.date}),vendor=createVendorProvider({now:clock.date,quotes:loadRecordedQuotes()}),config=loadConfig(),agent=createAgent({now:clock.iso,log:(...a)=>console.error('[agent]',...a)})}={}){
+  const orchestrator=createOrchestrator({store,vendor,ramp,ingest:ingest||activeIngest(),config,agent,now:clock.iso,log:(...a)=>console.error('[flow]',...a)});
   const notifier=createNotifier({bus:orchestrator.bus,filename,config,now:clock.date}); // the people's side of the flow; same DB file
-  return {orchestrator,ramp,vendor,config,store,notifier};
+  return {orchestrator,ramp,vendor,config,store,notifier,agent};
 }
 // Real servers ingest eagerly so the agent and /graph share data from the first request.
 export function startIngest(){const ingest=createIngest({now:clock.date});setActiveIngest(ingest);ingest.sync().catch(error=>console.error('Initial sync failed:',error.message));return ingest;}

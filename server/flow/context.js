@@ -19,13 +19,14 @@ const day = iso => new Date(iso + 'T00:00:00Z').toLocaleDateString('en-US', {mon
  * @param {object} p.config         loadConfig() result
  * @param {string} p.now            ISO
  */
-export function buildContext({order, ingest, config, now}) {
+export function buildContext({order, ingest, config, now, graph: given = null, evidence: givenEvidence = null}) {
   const query = [...new Set([...tokens(order.entry.name).map(t => t + '*'), ...tokens(order.entry.note), ...(order.entry.partNumber ? [order.entry.partNumber.toLowerCase()] : [])])];
   const nameTokens = new Set([...tokens(order.entry.name), ...(order.entry.partNumber ? [order.entry.partNumber.toLowerCase()] : [])]);
   const docs = ingest ? ingest.listDocuments() : [];
-  const latest = ingest?.latestGraph?.();
-  const base = latest?.graph || {nodes: [], edges: []};
-  const evidence = latest?.evidence || {};
+  // The graph is either what the agent read for this order (given) or the latest ingest-wide rules graph.
+  const latest = given ? null : ingest?.latestGraph?.();
+  const base = given || latest?.graph || {nodes: [], edges: []};
+  const evidence = givenEvidence || latest?.evidence || {};
 
   // 1. Related documents: term overlap, name tokens weighted double, newest first on ties.
   const nameList = tokens(order.entry.name), head = nameList[nameList.length - 1];

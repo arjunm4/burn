@@ -8,7 +8,7 @@ import {decide, explain} from '../../src/decision/core.js';
 import {buildContext} from './context.js';
 import {AppError} from '../contracts.js';
 
-export function createOrchestrator({store, vendor, ramp, ingest = null, config, now = () => new Date().toISOString(), log = () => {}}) {
+export function createOrchestrator({store, vendor, ramp, ingest = null, config, agent = null, now = () => new Date().toISOString(), log = () => {}}) {
   const bus = new EventEmitter();
   bus.setMaxListeners(100);
   const publish = (order, type = 'order.updated', extra = {}) => bus.emit('order', {type, orderId: order.id, order, ...extra});
@@ -36,14 +36,26 @@ export function createOrchestrator({store, vendor, ramp, ingest = null, config, 
   }
 
   /** Steps 2–5: context, spec gate, quote, decision. Re-run after every answer or argument. */
-  async function resolve(id) {
+  async function resolve(id, {reread = true} = {}) {
     let order = store.get(id);
     order = store.update(id, order.revision, {state: 'resolving', question: null}, 'resolve.started');
     publish(order, 'resolve.started');
-    const ctx = buildContext({order, ingest, config, now: iso()});
+    // The agent reads the team's records for this order; if it is unavailable or fails, the rule graph stands in and the card says so.
+    // An answer or an argument re-solves on what was already read; new documents (a sync, a live message) make it read again.
+    let ctx = null, read = order.context?.agentRead && !reread ? order.context.agentRead : null;
+    if (!read && agent?.enabled && ingest) {
+      publish(order, 'agent.reading', {model: agent.model});
+      try {
+        read = await agent.read({order, docs: ingest.listDocuments(), emit: e => publish(order, e.type, e)});
+        publish(order, 'agent.claims', {summary: read.summary, nodes: read.graph.nodes.length, edges: read.graph.edges.length, dropped: read.dropped.length});
+      } catch (e) { log('agent read failed', e); publish(order, 'agent.fallback', {stage: 'read', reason: e.message}); read = null; }
+    }
+    if (read) ctx = buildContext({order, ingest, config, now: iso(), graph: read.graph, evidence: read.evidence});
+    if (!ctx) ctx = buildContext({order, ingest, config, now: iso()});
+    const agentRead = read ? {graph: read.graph, evidence: read.evidence, trace: read.trace, summary: read.summary, dropped: read.dropped} : null;
     const spec = resolveSpec(order, ctx);
     const gaps = spec.filter(f => f.provenance == null).map(f => f.key);
-    const contextPublic = {related: ctx.related, work: ctx.work, milestoneId: ctx.milestoneId, milestoneLabel: ctx.milestoneLabel, policy: ctx.policy, assumptions: ctx.assumptions, uncertain: ctx.uncertain, query: ctx.query, absorbed: ctx.absorbed, calendar: ctx.calendar};
+    const contextPublic = {related: ctx.related, work: ctx.work, milestoneId: ctx.milestoneId, milestoneLabel: ctx.milestoneLabel, policy: ctx.policy, assumptions: ctx.assumptions, uncertain: ctx.uncertain, query: ctx.query, absorbed: ctx.absorbed, calendar: ctx.calendar, agent: read ? {model: agent.model, summary: read.summary, trace: read.trace, dropped: read.dropped} : null};
     publish(order, 'context.built', {context: contextPublic});
 
     // Spec gate: ask for missing technical fields, the CAD, or the demand (what is it for?).
@@ -52,7 +64,7 @@ export function createOrchestrator({store, vendor, ramp, ingest = null, config, 
     if (gaps.length) missing.push({kind: 'spec', fields: gaps, text: `Confirm: ${gaps.map(k => config.specFields.find(f => f.key === k)?.label || k).join(', ')}.`});
     if (ctx.gaps.length) missing.push({kind: 'demand', text: ctx.gaps[0]});
     if (missing.length) {
-      order = store.update(id, order.revision, {state: 'needs_answer', spec, context: {...order.context, ...contextPublic}, question: missing[0], decision: null}, 'spec.gap');
+      order = store.update(id, order.revision, {state: 'needs_answer', spec, context: {...order.context, ...contextPublic, agentRead}, question: missing[0], decision: null}, 'spec.gap');
       publish(order, 'question', {question: missing[0]});
       return order;
     }
@@ -69,9 +81,18 @@ export function createOrchestrator({store, vendor, ramp, ingest = null, config, 
       milestoneId: ctx.milestoneId, orderDate: today(), now: iso(), policy: ctx.policy, uncertain: ctx.uncertain, assumptions: ctx.assumptions, calendar: ctx.calendar});
     decision.text = explain(decision, {milestoneLabel: ctx.milestoneLabel || 'the milestone'});
     const ask = decision.question && decision.question.flips ? {kind: 'fact', nodeId: decision.question.nodeId, owner: decision.question.owner, text: decision.question.text} : null;
+    // The agent writes the card, the question and the approver's justification from the computed numbers (checked); templates otherwise.
+    if (agent?.enabled) {
+      try {
+        const written = await agent.write({order, decision, ctx, quote});
+        decision.text = written.card; decision.justification = written.justification; decision.writtenBy = agent.model;
+        if (ask && written.question) ask.text = written.question;
+        publish(order, 'agent.wrote', {card: written.card});
+      } catch (e) { log('agent write failed', e); publish(order, 'agent.fallback', {stage: 'write', reason: e.message}); }
+    }
     order = store.get(id);
     order = store.update(id, order.revision, {state: ask ? 'needs_answer' : 'recommended', spec, quote, decision, decisionRevision: (order.decisionRevision || 0) + 1,
-      context: {...order.context, ...contextPublic, graph: ctx.graph, partNodeId: ctx.partNodeId}, question: ask}, 'decision.made');
+      context: {...order.context, ...contextPublic, graph: ctx.graph, partNodeId: ctx.partNodeId, agentRead}, question: ask}, 'decision.made');
     publish(order, ask ? 'question' : 'recommended', {question: ask});
     return order;
   }
@@ -92,7 +113,7 @@ export function createOrchestrator({store, vendor, ramp, ingest = null, config, 
     if (body.demand) patch.entry = {...(patch.entry || order.entry), note: `${order.entry.note} ${body.demand}`.trim()};
     order = store.update(id, expectedRevision, {...patch, question: null, state: 'resolving'}, 'answer.received');
     publish(order, 'answer.received');
-    return resolve(id);
+    return resolve(id, {reread: !!body.cad || !!body.demand});
   }
 
   /**
@@ -101,10 +122,19 @@ export function createOrchestrator({store, vendor, ramp, ingest = null, config, 
    */
   async function argue(id, expectedRevision, {text, type = 'unresolved', fact = null}) {
     let order = store.get(id);
+    if (!text?.trim()) throw new AppError('Say something');
+    // The agent reads what the engineer said: a date for a listed input is a fact; anything else is kept as what it is, and answered.
+    let reply = null;
+    if (agent?.enabled && !fact) {
+      try { const r = await agent.interpret({order, text}); type = r.type; fact = r.fact; reply = r.reply; }
+      catch (e) { log('agent interpret failed', e); publish(order, 'agent.fallback', {stage: 'interpret', reason: e.message}); }
+    }
     const statement = {at: iso(), by: order.entry.engineer, text, type, fact};
-    order = store.update(id, expectedRevision, {exchange: [...(order.exchange || []), statement]}, 'exchange.added');
-    publish(order, 'exchange.added', {statement});
-    if (fact) return answer(id, order.revision, {fact});
+    const exchange = [...(order.exchange || []), statement, ...(reply ? [{at: iso(), by: 'Burn', text: reply, type: 'reply'}] : [])];
+    order = store.update(id, expectedRevision, {exchange}, 'exchange.added');
+    publish(order, 'exchange.added', {statement, reply});
+    if (reply) publish(order, 'agent.reply', {text: reply});
+    if (fact) return answer(id, order.revision, {fact, by: order.entry.engineer});
     return order;
   }
 
@@ -123,7 +153,7 @@ export function createOrchestrator({store, vendor, ramp, ingest = null, config, 
     order = store.freeze(id, expectedRevision, frozen);
     publish(order, 'order.frozen');
 
-    const justification = `${order.decision.text}\n\nAssumptions:\n${order.decision.assumptions.map(a => '- ' + a).join('\n')}${order.quote.cutoff ? `\n\nVendor cutoff: approve by ${order.quote.cutoff} to start production today; after that, +1 business day.` : ''}`;
+    const justification = `${order.decision.justification || order.decision.text}\n\nAssumptions:\n${order.decision.assumptions.map(a => '- ' + a).join('\n')}${order.quote.cutoff ? `\n\nVendor cutoff: approve by ${order.quote.cutoff} to start production today; after that, +1 business day.` : ''}`;
     const req = await ramp.createRequest({request_owner_id: config.ramp.requestOwnerId || order.entry.engineer, spend_program_id: config.ramp.spendProgramId, currency: frozen.currency,
       name: `${order.entry.name} (${tier}) from Xometry`, line_items: [{description: `${order.entry.name}, ${tier}`, amount: {amount: option.priceCents, currency_code: frozen.currency}, quantity: 1}],
       field_answers: {justification, burn_order_id: id, spec_hash: order.specHash, decision_revision: order.decisionRevision, chosen_tier: tier, recommended_tier: order.decision.recommended?.tier || null},
