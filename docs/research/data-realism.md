@@ -26,7 +26,55 @@ Researched 2026-11-10 for Flintlock (~60 people, California, Xometry US). Mostly
 | Median order; tail | $600–900; $8–15k |
 | 9-month spend | $400–700k |
 
-With buyers in place, large orders may go on PO/net-30 rather than card (unverified how that shows in Ramp).
+A realistic company would not send every CNC job to Xometry: it keeps one or two local Bay Area shops for hot jobs (a small share, counted under "other custom fab" below).
+
+**All other purchasing over the same 39 weeks (J unless marked E):**
+| Category (typical vendors) | Orders/wk | Orders in 9 mo | Median; tail | Spend | Payment | Who orders |
+|---|---|---|---|---|---|---|
+| Fasteners and hardware (McMaster, some Misumi) | 6–10 | 250–400 | $90–180; $2k | $45–80k | Card or McMaster net-30 invoice | Engineers, techs |
+| Amazon Business (consumables, cables, impulse buys) | 10–18 charges | 400–700 | $35–60; $1.5k | $25–45k | Card | Everyone |
+| Electronics (Digi-Key, Mouser; rare Arrow, LCSC) | 4–7 | 160–270 | $120–250; $5k | $50–110k | Card | EE, firmware |
+| PCB and PCBA (JLCPCB, PCBWay, OSH Park; MacroFab or a local CM for larger builds) | 1–2 | 40–80 | $150–600; $8k | $60–120k | Card or PayPal; CM on PO | EE |
+| Other custom fab (SendCutSend, OSH Cut, Protolabs, Fictiv, local shop, Formlabs resin) | 3–5 | 110–190 | $200–500; $10k | $60–150k | Card; local shop net-30 | Mech, test |
+| Motors, gearing, bearings (maxon, CubeMars, T-Motor, harmonic drives, bearing distributors) | 1–2 | 40–80 | $1.5–4k; $60k | $250–500k | PO, wire, net-30; samples on card | Buyers |
+| Sensors and encoders (IMU, force-torque, cameras) | 0.5–1 | 20–40 | $800–2.5k; $25k | $60–150k | Mixed | Buyers, controls |
+| Batteries, cells, power | 0.3–0.6 | 10–25 | $500–2k; $15k | $20–60k | Mixed | Buyers, EE |
+| Tools and test equipment (Grainger, MSC, Home Depot, Harbor Freight, Uline, scope and PSU resellers) | 2–4 | 80–150 | $60–300; $20k | $80–200k | Card; capex on PO | Techs, test |
+| Raw stock (OnlineMetals, local metal supplier) | 0.5–1 | 20–40 | $150–400 | $8–20k | Card | Techs, test |
+| Shipping and couriers (FedEx, UPS) | 3–6 charges | 100–200 | $25–90; $600 | $10–25k | Card or carrier account | Ops, buyers |
+| Software and SaaS (CAD, Altium, MATLAB, Slack, Jira, GitHub, cloud) | n/a | 250–400 recurring charges across 25–40 subscriptions | $50–2k/mo; annual $20–80k | $250–450k | Card monthly; annual on invoice | Ops, team leads |
+
+**Totals (J):**
+| | Count | Spend |
+|---|---|---|
+| Xometry CNC | 400–550 | $400–700k |
+| Other hardware purchasing | 1,250–2,200 | $670k–1.46M |
+| SaaS | 250–400 charges | $250–450k |
+| **All** | **~1,900–3,100** | **~$1.3–2.6M** |
+
+Xometry is about 18–25% of order count and 25–35% of spend: the largest single vendor by count after Amazon and McMaster, and roughly tied with actuator components on spend.
+
+**Payment split (J):** net-30 and PO spend would sit in Ramp Bill Pay as bills, not card transactions: roughly 55–65% of dollars but only 10–15% of order count. How Ramp's API represents bills is unverified.
+
+**Shipping speed and rush behaviour:**
+- McMaster (E): "most orders arrive same or next day" ([delivery page](https://www.mcmaster.com/info/delivery)). A "rush" McMaster order is one placed before the cutoff, not a paid expedite. Shipping cost was often unknown until after ordering (anecdotal, dated: [blog](https://www.thefrankes.com/wp/?p=2602)), so the charge can differ from the confirmation.
+- Digi-Key and Mouser (J): paid overnight on 15–25% of orders, more in burst weeks.
+- Amazon (J): Prime one- or two-day by default.
+- Motors and sensors (J): 2–12 week lead times; this is where backorders and partial shipments live.
+
+**How other vendors appear in Ramp:**
+| Vendor | Descriptor | Source |
+|---|---|---|
+| Digi-Key | `DKC*DIGI KEY CORP`, `DKC DIGI-KEY CORP`, `DKC*DIGI-KEY CORP` | E, [Ramp charge finder](https://ramp.com/charge-finder/digi-key) |
+| Mouser | `MOUSER ELECTRONICS INC`, `PAYPAL *MOUSERELECT` | E, via search summary of [Brex](https://www.brex.com/tools/charge-finder/mouser-electronics) |
+| Amazon | `AMZN Mktp US*A1B2C3D4E`, `Amazon.com`, `AMZN.COM/BILL`, `AMAZON MKTPLACE PMTS` | E, [Amazon help](https://digprjsurvey.amazon.com/csad/help/node/GSNBBJP63SM65UDB) |
+| SendCutSend | `SENDCUTSEND.COM` | E, via search summary of [Brex](https://www.brex.com/tools/charge-finder/sendcutsendcom) |
+| McMaster | `MCMASTER-CARR`, `BILL*McMaster-Carr` | E, search summary only |
+| Others | `ULINE *SHIP SUPPLIES`, `GRAINGER`, `THE HOME DEPOT #0627`, `HARBOR FREIGHT TOOLS 412`, `PAYPAL *JLCPCB`, `PCBWAY`, `PROTOLABS`, `MISUMI USA`, `ONLINEMETALS.COM`, `FORMLABS`, `FEDEX 7812…`, `UPS*…`, `ALTIUM`, `MATHWORKS`, `PTC*ONSHAPE` | J, written in the usual style |
+
+Amazon charges per shipment (E), so one order becomes two or three charges that sum to the order total. Amazon and Home Depot have the worst memo and receipt rates (30–40% missing, J). SaaS charges recur on the same day each month. Refunds run about 2–4% of Amazon charges and 1% elsewhere (J). JLCPCB and PCBWay may show as foreign or PayPal charges.
+
+**Messiness to generate across vendors (J):** duplicate McMaster or Digi-Key orders by two engineers the same day (1–2%); McMaster orders at 16:30–17:30 PT the day before a test, then a "forgot the washers" order the next morning; Amazon impulse buys under $40 and an occasional personal-looking item flagged by policy; Digi-Key backorders that ship as a second charge weeks later; partial cancellations on motor POs; JLCPCB orders held for an engineering query; customs delays on CubeMars and T-Motor; a team lead's card carrying a SaaS tool nobody else knows about.
 
 **Communication (J):** Slack 1,800–3,000 messages/day including DMs (30–50/person); public channels 700–1,100/day; 70–110 channels, 35–45 active weekly; #mech 60–120/day, #supply-chain/#procurement 25–50, per-subsystem channels 15–40, #build-evt 40–150 in build weeks; top 20% of people write ~60%, 15–20% lurk. Generating only the 8–12 purchasing-relevant channels: ~150–300/day, ~30–55k over 9 months. Jira: 250–400 new tickets/month across 6–8 projects.
 
@@ -46,7 +94,7 @@ With buyers in place, large orders may go on PO/net-30 rather than card (unverif
 
 **California/Pacific:** America/Los_Angeles; PST (-0800) until 8 Mar 2026, PDT (-0700) until 1 Nov, then PST. Core hours 09:00–18:30 PT; supplier and Xometry emails often 05:00–15:00 PT. Holidays in the window: Presidents' Day 16 Feb (often worked), Memorial Day 25 May, Juneteenth 19 Jun (mixed), Independence Day observed Fri 3 Jul (quiet week), Labor Day 7 Sep; orders clump on the Thu/Fri before. Xometry, Inc. is in North Bethesda MD ([10-K](https://capedge.com/filing/1657573/0000950170-25-026655/10K-2024FY)); use descriptor variants like `XOMETRY INC`, `XOMETRY.COM` with `NORTH BETHESDA MD` or `DERWOOD MD` (J). Ramp: `currency_code: "USD"`, tax included in the charge.
 
-**Still unverified:** Standard/Economy day counts, ID formats, card descriptor and MCC, whether Xometry collects CA tax on every order, Bay Area tax rates, all volume numbers, the org split. One real Xometry quote PDF and one card statement line would settle the Xometry items.
+**Still unverified:** Standard/Economy day counts, ID formats, card descriptor and MCC, whether Xometry collects CA tax on every order, Bay Area tax rates, all volume, spend and payment-split numbers for every vendor, the descriptors marked J, whether McMaster charges cards per shipment, the org split. One real Xometry quote PDF and one card statement line would settle the Xometry items.
 
 ## Principles across all sources (J)
 
