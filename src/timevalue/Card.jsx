@@ -131,8 +131,17 @@ function Recommendation({card}) {
       {card.checks.map(k => { const s = STATUS[k.status] || STATUS.info; return <div key={k.n} style={{display: 'grid', gridTemplateColumns: '18px minmax(0,1fr)', gap: 8}}>
         <span aria-label={k.status} style={{color: s.color, textAlign: 'center'}}>{s.mark}</span>
         <span style={{display: 'flex', flexDirection: 'column', gap: 1}}>
+          {k.items ? <>
+            <span style={{fontWeight: 500}}>{k.label}</span>
+            {k.items.map((i, j) => <span key={j} style={{display: 'flex', flexDirection: 'column', gap: 1, paddingLeft: 8, borderLeft: `2px solid ${i.status === 'fail' ? C.critical : C.hair}`}}>
+              <span style={{color: i.status === 'fail' ? C.critical : C.muted}}>{(STATUS[i.status] || STATUS.info).mark} {i.text}</span>
+              {i.question && <span>Ask {i.question.to_name || 'the owner'}: "{i.question.text}"</span>}
+              <span style={{fontSize: 11, color: C.muted}}>{[...new Set(i.sources.map(sourceLabel))].join(' · ')}</span>
+            </span>)}
+          </> : <>
           <span><span style={{fontWeight: 500}}>{k.label}.</span> <span style={{color: C.muted}}>{k.text}</span></span>
           {k.sources.length > 0 && <span style={{fontSize: 11, color: C.muted}}>{[...new Set(k.sources.map(sourceLabel))].join(' · ')}</span>}
+          </>}
         </span>
       </div>; })}
       {card.guards?.filter(g => !g.ok).map(g => <div key={g.rule} role="alert" style={{fontSize: 12, color: C.critical}}>Guard failed: {g.rule}</div>)}

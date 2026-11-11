@@ -47,3 +47,18 @@ test('routes reject a bad change and unknown paths', async () => {
   assert.deepEqual(out.map((o) => o[0]), [400, 404]);
   assert.equal(await timevalueRoutes({ method: 'GET', url: '/api/x' }, null, '/api/x', json), false);
 });
+
+test('check 7 on the flintlock cards: advisory, cited, outcomes unchanged', async () => {
+  const { existsSync } = await import('node:fs');
+  const dir = new URL('../../fixtures/flintlock', import.meta.url).pathname;
+  if (!existsSync(dir)) return;
+  const expect = { 0: 'pay', 1: 'cheapest', 2: 'depends' };
+  for (const change of [0, 1, 2]) {
+    const c = (await demoCard({ change, sourcesDir: dir })).card;
+    assert.equal(c.outcome, expect[change]);
+    const k = c.checks.find((x) => x.advisory);
+    assert.equal(k.label, 'What the conversation says · from the LLM read');
+    assert.ok(k.items.length > 0 && k.items.every((i) => i.sources.length > 0));
+    assert.equal(c.blocked, false);
+  }
+});

@@ -335,11 +335,12 @@ export async function demoCard({ change = 0, sourcesDir = DEFAULT_SOURCES, outDi
     || { id: partEntry.part_number, part_number: partEntry.part_number, name: partEntry.part_name, aliases: [] };
 
   // Graph → demo inputs.
-  let di = null;
+  let di = null; let view = null;
   if (mods.graph && settings && claims) {
     try {
       const g = mods.graph.buildGraph({ settings, sources, claims });
-      di = mods.graph.demoInputs(mods.graph.graphAt(g, now), part.id);
+      view = mods.graph.graphAt(g, now);
+      di = mods.graph.demoInputs(view, part.id);
       engine.graph = 'graph.mjs';
     } catch (e) { engine.graph = `fallback (${e.message})`; }
   } else engine.graph = 'fallback';
@@ -378,8 +379,11 @@ export async function demoCard({ change = 0, sourcesDir = DEFAULT_SOURCES, outDi
   ];
   // A calendar booking's doc time is its start (in the future); the fact is the calendar as read now.
   for (const f of facts) if (!f.at && f.doc_id) f.at = f.doc_id.startsWith('cal:') ? now : docs.find((d) => d.id === f.doc_id)?.at || null;
+  let conversation = null;
+  try { conversation = await conversationInputs(st, { docs, live, view, part, test, milestone, target, others, now }); engine.conversation = conversation ? 'read-cache + graph' : 'no reads'; }
+  catch (e) { engine.conversation = `error (${e.message})`; }
   let rub;
-  if (mods.rubric) { try { rub = mods.rubric(cmp, { quoteValidUntil: quote.expires_on, now, facts }); engine.rubric = 'src/timevalue'; } catch (e) { engine.rubric = `fallback (${e.message})`; } } else engine.rubric = 'fallback';
+  if (mods.rubric) { try { rub = mods.rubric(cmp, { quoteValidUntil: quote.expires_on, now, facts, conversation }); engine.rubric = 'src/timevalue'; } catch (e) { engine.rubric = `fallback (${e.message})`; } } else engine.rubric = 'fallback';
   if (!rub) rub = fallbackRubric(cmp, { quoteValidUntil: quote.expires_on, now, facts });
 
   // Habit line (advisory).
@@ -395,17 +399,74 @@ function readyText(r) {
   return shortDate(toDate(r));
 }
 
+// Code reads of the last 45 days with the cached LLM reads (fixtures/timevalue/read-cache.json) laid over them.
+async function ensureReads(st, now) {
+  const { mods, settings } = st;
+  if (!st.reads && mods.read) {
+    const ctx = typeof mods.read.loadReadContext === 'function' ? await mods.read.loadReadContext(settings) : mods.read.makeReadContext(settings);
+    let reads = mods.read.readDocs(st.sources.docs.filter((d) => Date.parse(d.at) >= Date.parse(now) - 45 * DAY), ctx);
+    if (typeof mods.read.loadReadCache === 'function') { try { reads = mods.read.loadReadCache(DEFAULT_OUT, reads); } catch { /* code reads only */ } }
+    st.reads = reads; st.readCtx = ctx;
+  }
+  return st.reads;
+}
+
+// Check 7 inputs (architecture §8, Owen 2026-11-10): linked reads → earlier-need flags, pressure level with cited
+// snippets; graph facts → conflicts. The rubric decides what to show; nothing here changes the maths.
+export const EARLIER_NEED_PRESSURE = 0.6;
+async function conversationInputs(st, { docs, live, view, part, test, milestone, target, others, now }) {
+  const { mods, settings } = st;
+  if (!mods.read) return null;
+  const base = await ensureReads(st, now);
+  if (!base) return null;
+  const all = base instanceof Map ? new Map(base) : new Map(base.map((r) => [r.doc_id, r]));
+  if (live && st.readCtx) all.set(live.doc.id, mods.read.readDoc(live.doc, st.readCtx));
+  const baseline = mods.read.teamBaseline(all, settings);
+  const t = Date.parse(now);
+  const docById = new Map(docs.map((d) => [d.id, d]));
+  const ids = new Set([part.id, test.id, milestone.id, ...others.map((i) => i.id)].filter(Boolean));
+  const linked = [...all.values()].filter((r) => {
+    const at = Date.parse(r.at ?? docById.get(r.doc_id)?.at);
+    return at <= t && at >= t - 7 * DAY && ((r.refs || []).some((x) => ids.has(x.id)) || (r.claims || []).some((c) => ids.has(c.subject)));
+  }).map((r) => ({ ...r, at: r.at ?? docById.get(r.doc_id)?.at, relative: baseline.relative(r) }));
+
+  const earlier_need = linked.filter((r) => Date.parse(r.at) >= t - 3 * DAY
+    && (((r.pressure || 0) >= EARLIER_NEED_PRESSURE && r.relative > 0) || (r.claims || []).some((c) => c.kind === 'need_earlier')))
+    .map((r) => ({ doc_id: r.doc_id, by: r.author_id ?? null, at: r.at, pressure: r.pressure, relative: r.relative, need_earlier: (r.claims || []).some((c) => c.kind === 'need_earlier') }));
+
+  // Pressure level: the mean of the three highest pressures above the team baseline.
+  const top = linked.slice().sort((a, b) => b.relative - a.relative || a.doc_id.localeCompare(b.doc_id));
+  const lead = top.slice(0, 3).map((r) => Math.max(0, r.relative));
+  const score = lead.length ? lead.reduce((a, b) => a + b, 0) / lead.length : 0;
+  const level = score >= 0.35 ? 'high' : score >= 0.15 ? 'elevated' : 'low';
+  const snippet = (r) => {
+    const llmCue = (r.cues || []).find((c) => typeof c === 'string' && c.includes(' ') && !/^[a-z_]+$/.test(c));
+    const text = llmCue || docById.get(r.doc_id)?.text || '';
+    return text.length > 90 ? `${text.slice(0, 87)}…` : text;
+  };
+  const snippets = top.filter((r) => r.relative > 0 && (r.pressure || 0) > 0).slice(0, 3).map((r) => ({ doc_id: r.doc_id, text: snippet(r) })).filter((x) => x.text);
+
+  // Conflicts: accepted-or-disputed ETAs for the same input within the window, from different people or sources.
+  const conflicts = [];
+  for (const i of others) {
+    const fs = (view?.facts || []).filter((f) => f.subject === i.id && f.kind === 'eta' && (f.status === 'accepted' || f.status === 'disputed')
+      && f.at && Date.parse(f.at) >= t - 7 * DAY && Date.parse(f.at) <= t);
+    const vals = [];
+    for (const f of fs) if (!vals.some((v) => JSON.stringify(v.value) === JSON.stringify(f.value))) vals.push(f);
+    const differ = vals.length > 1 && new Set(vals.map((f) => `${f.by}|${String(f.doc_id).split(':')[0]}`)).size > 1;
+    if (differ) conflicts.push({ subject: i.id, name: i.name, owner: i.owner ?? null, kind: 'eta',
+      values: vals.map((f) => ({ value: f.value, by: personById(settings, f.by)?.name ?? f.by ?? null, at: f.at, doc_id: f.doc_id, status: f.status })) });
+  }
+
+  return { target, test_owner: test.owner ?? null, earlier_need, conflicts, pressure: { level, n: linked.length, snippets } };
+}
+
 async function habitLine(st, { docs, part, partEntry, quote, tiersIn, now, engine }) {
   const { mods, settings, model } = st;
   if (!model) { engine.habit = 'no habit-model.json yet'; return { habit: null, heatmap: null }; }
   if (!mods.heatmap || !mods.habit) { engine.habit = 'heatmap/habit modules missing'; return { habit: { p_expedite: null, n_train: model.n_train ?? null, text: null }, heatmap: null }; }
   try {
-    if (!st.reads && mods.read) {
-      const ctx = typeof mods.read.loadReadContext === 'function' ? await mods.read.loadReadContext(settings) : mods.read.makeReadContext(settings);
-      let reads = mods.read.readDocs(st.sources.docs.filter((d) => Date.parse(d.at) >= Date.parse(now) - 45 * DAY), ctx);
-      if (typeof mods.read.loadReadCache === 'function') { try { reads = mods.read.loadReadCache(DEFAULT_OUT, reads); } catch { /* code reads only */ } }
-      st.reads = reads; st.readCtx = ctx;
-    }
+    await ensureReads(st, now);
     let history = [];
     if (mods.labels) { try { const l = mods.labels.linkRampToXometry({ ramp: st.sources.ramp, xometry: st.sources.xometry }); history = Array.isArray(l) ? l : l.linked || l.labels || []; } catch { /* none */ } }
     const label = { order_number: quote.quote_id, quote_id: quote.quote_id, T: now, tier: null, total: null, requester_email: partEntry.requester.email, placer_email: partEntry.requester.email,
@@ -522,7 +583,8 @@ function buildCard({ settings, partEntry, quote, part, test, milestone, target, 
     tiers,
     outcome: cmp.outcome, outcome_tag: outcomeTag, recommended: cmp.recommended ?? null,
     headline, detail, question: cmp.question || null, switching: cmp.switching || null,
-    checks: (rub.checks || []).map((c) => ({ ...c, text: named(c.text, settings), sources: c.sources || [] })), guards: rub.guards || [], blocked: !!rub.blocked,
+    checks: (rub.checks || []).map((c) => ({ ...c, text: named(c.text, settings), sources: c.sources || [],
+      ...(c.items ? { items: c.items.map((i) => ({ ...i, text: named(i.text, settings), question: i.question ? { ...i.question, to_name: owner(i.question.to)?.name || null } : null })) } : {}) })), guards: rub.guards || [], blocked: !!rub.blocked,
     habit,
   };
 }

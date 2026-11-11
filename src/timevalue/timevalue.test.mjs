@@ -182,3 +182,61 @@ test('rubric guards', () => {
   const d = compare({ ...base, inputs: [motor({ min: '2026-11-19', max: '2026-11-30' })], milestone: { ...milestone, policy: null } });
   assert.equal(guard(facts.filter((f) => f.about !== 'value'), d)['no confident card with an open gap'], true);
 });
+
+// Check 7: what the conversation says (advisory; Owen 2026-11-10).
+const conv = (o = {}) => ({ target: '2026-11-24', test_owner: 'p-arjun', earlier_need: [], conflicts: [], pressure: null, ...o });
+const urgent = { doc_id: 'slack:C1:1', by: 'p-arjun', at: '2026-11-09T09:00:00-08:00', pressure: 0.8, relative: 0.6, need_earlier: false };
+const motorConflict = (subject = 'dl-hip-motor-dvt') => ({ subject, name: 'motor', owner: 'p-arjun', kind: 'eta',
+  values: [{ value: '2026-11-20', by: 'Arjun', doc_id: 'slack:C1:2' }, { value: '2026-11-30', by: 'Lena', doc_id: 'meeting:m1' }] });
+const check7 = (r) => r.checks.find((k) => k.advisory);
+
+test('check 7: never changes the maths; no citations → not shown', () => {
+  const c = compare({ ...base, inputs: [motor('2026-11-20')] });
+  const plain = rubric(c, { quoteValidUntil: quoteJson.expires_on, now: NOW, facts });
+  const withConv = rubric(c, { quoteValidUntil: quoteJson.expires_on, now: NOW, facts,
+    conversation: conv({ pressure: { level: 'high', n: 4, snippets: [{ doc_id: 'slack:C1:1', text: 'asap!!' }] } }) });
+  assert.deepEqual(withConv.checks.slice(0, 5), plain.checks);
+  assert.equal(withConv.blocked, false);
+  const k = check7(withConv);
+  assert.equal(k.n, 6);
+  assert.equal(k.label, 'What the conversation says · from the LLM read');
+  assert.match(k.items.find((i) => i.key === 'pressure').text, /high.*"asap!!"/);
+  // e. reason reuses the limiter fact and the decision only.
+  assert.equal(k.items.find((i) => i.key === 'reason').text, 'motor ETA 11/20, so expedite: saves 2 working days, worth it above $450/day.');
+  // Uncited pressure and no limiter fact → nothing to show.
+  const none = rubric(c, { quoteValidUntil: quoteJson.expires_on, now: NOW, facts: facts.filter((f) => f.about !== 'limiter'),
+    conversation: conv({ pressure: { level: 'low', n: 0, snippets: [] } }) });
+  assert.equal(check7(none), undefined);
+});
+
+test('check 7a: urgent talk with slack asks the test owner about an earlier need, without blocking', () => {
+  const early = compare({ ...base, inputs: [motor('2026-11-12')] });
+  // Target Fri 12/4: Standard (done Tue 12/1) still meets it, so the schedule shows slack.
+  const r = rubric(early, { quoteValidUntil: quoteJson.expires_on, now: NOW, facts, conversation: conv({ target: '2026-12-04', earlier_need: [urgent] }) });
+  const a = check7(r).items.find((i) => i.key === 'earlier_need');
+  assert.equal(a.status, 'unknown');
+  assert.deepEqual(a.question, { to: 'p-arjun', text: 'Is there an earlier need, e.g. a test slot?' });
+  assert.deepEqual(a.sources, ['slack:C1:1']);
+  assert.equal(r.blocked, false);
+  assert.equal(r.checks.find((k) => k.label === 'Decision').text, rubric(early, { quoteValidUntil: quoteJson.expires_on, now: NOW, facts }).checks.at(-1).text);
+  // No slack (case A: cheapest finishes after the target) → no earlier-need item.
+  const late = compare({ ...base, inputs: [motor('2026-11-20')] });
+  const r2 = rubric(late, { quoteValidUntil: quoteJson.expires_on, now: NOW, facts, conversation: conv({ earlier_need: [urgent] }) });
+  assert.equal(check7(r2).items.some((i) => i.key === 'earlier_need'), false);
+});
+
+test('check 7b: a conflict warns; on the limiter it blocks a confident card', () => {
+  const c = compare({ ...base, inputs: [motor('2026-11-20')] });
+  assert.equal(c.limiter.id, 'dl-hip-motor-dvt');
+  const crit = rubric(c, { quoteValidUntil: quoteJson.expires_on, now: NOW, facts, conversation: conv({ conflicts: [motorConflict()] }) });
+  const b = check7(crit).items.find((i) => i.key === 'conflict');
+  assert.equal(b.status, 'fail');
+  assert.equal(b.blocks, true);
+  assert.equal(b.question.to, 'p-arjun');
+  assert.deepEqual(b.sources, ['slack:C1:2', 'meeting:m1']);
+  assert.equal(crit.blocked, true);
+  assert.equal(c.recommended, 'Expedite'); // the tier itself is untouched
+  const side = rubric(c, { quoteValidUntil: quoteJson.expires_on, now: NOW, facts, conversation: conv({ conflicts: [motorConflict('gearbox')] }) });
+  assert.equal(check7(side).items[0].blocks, false);
+  assert.equal(side.blocked, false);
+});

@@ -132,6 +132,41 @@
             "status": "info",
             "text": "expedite: saves 2 working days, worth it above $450/day.",
             "sources": []
+          },
+          {
+            "n": 6,
+            "label": "What the conversation says · from the LLM read",
+            "status": "info",
+            "advisory": true,
+            "items": [
+              {
+                "key": "pressure",
+                "status": "info",
+                "text": "Pressure high over the last 7 days (13 linked messages): \"costs us about 600 a day\"; \"asking again\"; \"waits on\".",
+                "sources": [
+                  "slack:C07FLK0ACTU:1793747100.602740",
+                  "slack:C07FLK0ACTU:1793773570.410123",
+                  "slack:C07FLK0ACTU:1793758718.594384"
+                ],
+                "question": null
+              },
+              {
+                "key": "reason",
+                "status": "info",
+                "text": "DVT hip frameless motor ready Fri 11/20, so expedite: saves 2 working days, worth it above $450/day.",
+                "sources": [
+                  "slack:C07FLK0ACTU:1794246000.565944"
+                ],
+                "question": null
+              }
+            ],
+            "text": "Pressure high over the last 7 days (13 linked messages): \"costs us about 600 a day\"; \"asking again\"; \"waits on\". DVT hip frameless motor ready Fri 11/20, so expedite: saves 2 working days, worth it above $450/day.",
+            "sources": [
+              "slack:C07FLK0ACTU:1793747100.602740",
+              "slack:C07FLK0ACTU:1793773570.410123",
+              "slack:C07FLK0ACTU:1793758718.594384",
+              "slack:C07FLK0ACTU:1794246000.565944"
+            ]
           }
         ],
         "guards": [
@@ -304,6 +339,9 @@
         "demo/part-entry.json",
         "demo/policy.json",
         "demo/quote.json",
+        "slack:C07FLK0ACTU:1793747100.602740",
+        "slack:C07FLK0ACTU:1793758718.594384",
+        "slack:C07FLK0ACTU:1793773570.410123",
         "slack:C07FLK0ACTU:1794246000.565944",
         "slack:C07FLK0SUPC:1793991900.864420"
       ],
@@ -312,6 +350,7 @@
         "sources": "sources.mjs",
         "graph": "graph.mjs",
         "maths": "src/timevalue",
+        "conversation": "read-cache + graph",
         "rubric": "src/timevalue",
         "habit": "habit.mjs"
       }
@@ -453,6 +492,41 @@
             "status": "info",
             "text": "standard: no faster tier finishes the test sooner.",
             "sources": []
+          },
+          {
+            "n": 6,
+            "label": "What the conversation says · from the LLM read",
+            "status": "info",
+            "advisory": true,
+            "items": [
+              {
+                "key": "pressure",
+                "status": "info",
+                "text": "Pressure high over the last 7 days (14 linked messages): \"costs us about 600 a day\"; \"asking again\"; \"waits on\".",
+                "sources": [
+                  "slack:C07FLK0ACTU:1793747100.602740",
+                  "slack:C07FLK0ACTU:1793773570.410123",
+                  "slack:C07FLK0ACTU:1793758718.594384"
+                ],
+                "question": null
+              },
+              {
+                "key": "reason",
+                "status": "info",
+                "text": "DVT hip frameless motor ready Mon 11/30, so standard: no faster tier finishes the test sooner.",
+                "sources": [
+                  "slack:C07FLK0ACTU:1794336300.000000"
+                ],
+                "question": null
+              }
+            ],
+            "text": "Pressure high over the last 7 days (14 linked messages): \"costs us about 600 a day\"; \"asking again\"; \"waits on\". DVT hip frameless motor ready Mon 11/30, so standard: no faster tier finishes the test sooner.",
+            "sources": [
+              "slack:C07FLK0ACTU:1793747100.602740",
+              "slack:C07FLK0ACTU:1793773570.410123",
+              "slack:C07FLK0ACTU:1793758718.594384",
+              "slack:C07FLK0ACTU:1794336300.000000"
+            ]
           }
         ],
         "guards": [
@@ -625,6 +699,9 @@
         "demo/part-entry.json",
         "demo/policy.json",
         "demo/quote.json",
+        "slack:C07FLK0ACTU:1793747100.602740",
+        "slack:C07FLK0ACTU:1793758718.594384",
+        "slack:C07FLK0ACTU:1793773570.410123",
         "slack:C07FLK0ACTU:1794336300.000000",
         "slack:C07FLK0SUPC:1793991900.864420"
       ],
@@ -633,6 +710,7 @@
         "sources": "sources.mjs",
         "graph": "graph.mjs",
         "maths": "src/timevalue",
+        "conversation": "read-cache + graph",
         "rubric": "src/timevalue",
         "habit": "habit.mjs"
       }
@@ -790,6 +868,41 @@
             "status": "info",
             "text": "Depends on the DVT hip frameless motor being ready by Fri Nov 20.",
             "sources": []
+          },
+          {
+            "n": 6,
+            "label": "What the conversation says · from the LLM read",
+            "status": "info",
+            "advisory": true,
+            "items": [
+              {
+                "key": "pressure",
+                "status": "info",
+                "text": "Pressure high over the last 7 days (14 linked messages): \"costs us about 600 a day\"; \"asking again\"; \"waits on\".",
+                "sources": [
+                  "slack:C07FLK0ACTU:1793747100.602740",
+                  "slack:C07FLK0ACTU:1793773570.410123",
+                  "slack:C07FLK0ACTU:1793758718.594384"
+                ],
+                "question": null
+              },
+              {
+                "key": "reason",
+                "status": "info",
+                "text": "DVT hip frameless motor ready between Thu 11/19 and Mon 11/30, so depends on the DVT hip frameless motor being ready by Fri Nov 20.",
+                "sources": [
+                  "slack:C07FLK0ACTU:1794336300.000000"
+                ],
+                "question": null
+              }
+            ],
+            "text": "Pressure high over the last 7 days (14 linked messages): \"costs us about 600 a day\"; \"asking again\"; \"waits on\". DVT hip frameless motor ready between Thu 11/19 and Mon 11/30, so depends on the DVT hip frameless motor being ready by Fri Nov 20.",
+            "sources": [
+              "slack:C07FLK0ACTU:1793747100.602740",
+              "slack:C07FLK0ACTU:1793773570.410123",
+              "slack:C07FLK0ACTU:1793758718.594384",
+              "slack:C07FLK0ACTU:1794336300.000000"
+            ]
           }
         ],
         "guards": [
@@ -962,6 +1075,9 @@
         "demo/part-entry.json",
         "demo/policy.json",
         "demo/quote.json",
+        "slack:C07FLK0ACTU:1793747100.602740",
+        "slack:C07FLK0ACTU:1793758718.594384",
+        "slack:C07FLK0ACTU:1793773570.410123",
         "slack:C07FLK0ACTU:1794336300.000000",
         "slack:C07FLK0SUPC:1793991900.864420"
       ],
@@ -970,6 +1086,7 @@
         "sources": "sources.mjs",
         "graph": "graph.mjs",
         "maths": "src/timevalue",
+        "conversation": "read-cache + graph",
         "rubric": "src/timevalue",
         "habit": "habit.mjs"
       }

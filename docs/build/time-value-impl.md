@@ -122,7 +122,7 @@ compare({holidays, quote: [{tier, total, ready}], test, inputs /* ready: date | 
   → {tiers: [{tier, total, finish_by_scenario, days_saved, break_even}],
      outcome: "cheapest"|"pay"|"dont_pay"|"depends"|"ask_owner"|"blocked",
      recommended, limiter, switching: {input, by_date} | null, question: {to, text} | null}
-rubric(compareResult, {quoteValidUntil, now, facts: [{text, by, at, doc_id}]})
+rubric(compareResult, {quoteValidUntil, now, facts: [{text, by, at, doc_id}], conversation?})  // conversation → check 7, architecture §8
   → {checks: [{n, label, status: pass|fail|unknown|info, text, sources}], guards: [{rule, ok}], blocked}
 ```
 Rules: working days; ready on R → usable from `nextWd(R)`; start = first working day ≥ max(planned start, usable dates) on a rig slot day with no booking and the owner in; finish = `addWd(start, duration − 1)`. Scenarios: an input with `{min,max}` yields the endpoints plus the switching date. Per-day value = $/day × days saved; curve = cost by days late against `target`; no policy → `ask_owner`. **Tests:** cases A–E with the dates in `simulation-spec.md` S14 and `fixtures/flintlock/demo/`.
