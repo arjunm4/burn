@@ -1,14 +1,22 @@
-// Cases A-E from docs/architecture.md §7 with the dates in docs/build/simulation-spec.md S14,
-// the quote in fixtures/flintlock/demo/quote.json and the policy in fixtures/flintlock/demo/policy.json.
+// Cases A-E from docs/architecture.md §7 with the pinned dates in docs/build/simulation-spec.md S14.
+// Hand-made fixtures only (shaped like fixtures/flintlock/demo/{quote,policy}.json); no generated data is read.
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
 import { makeCalendar, addDays, solve, compare, rubric } from './index.mjs';
 import { makeCalendar as simCalendar } from '../../scripts/generate-world/lib/calendar.mjs';
 
-const read = (p) => JSON.parse(readFileSync(new URL(`../../fixtures/flintlock/demo/${p}`, import.meta.url)));
-const quoteJson = read('quote.json');
-const policyJson = read('policy.json').policies.find((p) => p.milestone === 'Hip actuator DVT spin test complete');
+const quoteJson = {
+  expires_on: '2026-12-10',
+  lead_time_options: [
+    { lead_time: 'Standard', total: 3000, estimated_delivery_date: '2026-11-24' }, // day 10
+    { lead_time: 'Expedite', total: 3900, estimated_delivery_date: '2026-11-17' }, // day 5
+  ],
+};
+const policyJson = {
+  milestone: 'Hip actuator DVT spin test complete', milestone_date: '2026-11-24', type: 'per_day', usd_per_day: 600,
+  set_by: { name: 'Arjun Venkatesan' },
+};
+const curvePolicy = { type: 'curve', curve: [{ days_late: 1, usd: 4000 }, { days_late: 3, usd: 25000 }, { days_late: 5, usd: 80000 }] };
 
 // S1 holidays (the subset that matters here plus the observance kinds).
 const holidays = [
@@ -82,8 +90,7 @@ test('case C: target 11/24 -> Standard 3 days late, Expedite 1 -> Expedite', () 
   assert.equal(tier(c, 'Expedite').by_scenario.base.days_late, 1);
   assert.equal(c.recommended, 'Expedite');
   // Same question as an owner curve: $4,000 at 1 day late vs $25,000 at 3 -> $21,000 avoided > $900.
-  const curve = read('policy.json').policies.find((p) => p.type === 'curve');
-  const k = compare({ ...base, inputs: [motor('2026-11-20')], milestone: { ...milestone, policy: { type: 'curve', curve: curve.curve } } });
+  const k = compare({ ...base, inputs: [motor('2026-11-20')], milestone: { ...milestone, policy: curvePolicy } });
   assert.equal(tier(k, 'Expedite').by_scenario.base.value, 21000);
   assert.equal(k.outcome, 'pay');
 });
