@@ -1,0 +1,270 @@
+{
+  "job_id": "slack-ch-procurement-2026-10-26-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 5,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-10-26",
+    "end": "2026-11-01"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Leg DVT build: parts readiness and what to do about late test hardware",
+    "Ongoing: Frameless DVT motor from the vendor keeps slipping; stator stack length change. This week: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Beth asks every owner for real dates on the hip spin test and motor."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1793034640.847583",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-002197"
+      ],
+      "brief": "Quote Q-2632111-1 for FL-LEG-1372: standard $929.85, 8 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-11-16",
+          "quote_id": "Q-2632111-1",
+          "price_usd": 929.85,
+          "lead_days": 8
+        }
+      },
+      "must_mention": [
+        "Q-2632111-1",
+        "FL-LEG-1372",
+        "11/16"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Got Q-2632111-1 back for FL-LEG-1372, need 10 of them in hand by 11/16 so can someone approve today 😬"
+    },
+    {
+      "ts": "1793051721.854556",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-002163"
+      ],
+      "brief": "grip pucks: need 12 by 2026-11-13",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-11-13"
+        }
+      },
+      "must_mention": [
+        "grip pucks",
+        "fri the 13th"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "need 12 grip pucks by fri the 13th"
+    },
+    {
+      "ts": "1793054072.581194",
+      "user": "p-callum",
+      "thread_ts": "1793051721.854556",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "yeah same, the old ones are basically glazed at this point"
+    },
+    {
+      "ts": "1793220299.457639",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002228"
+      ],
+      "brief": "Quote Q-2637845-1 for FL-BAT-1674: standard $947.25, 10 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-11-09",
+          "quote_id": "Q-2637845-1",
+          "price_usd": 947.25,
+          "lead_days": 10
+        }
+      },
+      "must_mention": [
+        "Q-2637845-1",
+        "FL-BAT-1674",
+        "11/9"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Q-2637845-1 is in for FL-BAT-1674, 10 needed by 11/9 pls approve"
+    },
+    {
+      "ts": "1793285183.083317",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-002244"
+      ],
+      "brief": "Quote Q-2638229-1 for FL-TST-2480: standard $237.31, 9 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-11-17",
+          "quote_id": "Q-2638229-1",
+          "price_usd": 237.31,
+          "lead_days": 9
+        }
+      },
+      "must_mention": [
+        "Q-2638229-1",
+        "FL-TST-2480",
+        "tues the 17th"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Q-2638229-1 for FL-TST-2480 is up, 12 pcs for tues the 17th 🙏"
+    },
+    {
+      "ts": "1793308449.151002",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-002222"
+      ],
+      "brief": "Quote Q-2640089-1 for FL-KNE-1120: standard $384.82, 8 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-11-17",
+          "quote_id": "Q-2640089-1",
+          "price_usd": 384.82,
+          "lead_days": 8
+        }
+      },
+      "must_mention": [
+        "Q-2640089-1",
+        "FL-KNE-1120",
+        "tues 11/17"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Also Q-2640089-1 on FL-KNE-1120, 12 needed tues 11/17 👀"
+    }
+  ]
+}

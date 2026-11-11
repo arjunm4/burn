@@ -1,0 +1,259 @@
+{
+  "job_id": "jira-LEG-2026-10-05-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 12,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "LEG",
+    "name": "Legs and ankle"
+  },
+  "week": {
+    "start": "2026-10-05",
+    "end": "2026-10-11"
+  },
+  "people": [
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "LEG-347",
+      "type": "Story",
+      "status": "To Do",
+      "reporter": "p-hana",
+      "assignee": "p-hana",
+      "labels": [
+        "evt"
+      ],
+      "priority": "High",
+      "created": "2026-10-07T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Kit and assemble: Heel bumper mount",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-348",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-callum",
+      "assignee": "p-hana",
+      "labels": [
+        "cleanup"
+      ],
+      "priority": "High",
+      "created": "2026-10-07T12:10:11-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Rework fixture clamp (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-348-c1",
+          "by": "p-priya",
+          "at": "2026-10-09T14:47:33-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-348-c2",
+          "by": "p-diego",
+          "at": "2026-10-23T09:56:18-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-348-c3",
+          "by": "p-hana",
+          "at": "2026-10-26T13:14:17-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-349",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-callum",
+      "assignee": null,
+      "labels": [
+        "cleanup"
+      ],
+      "priority": "Medium",
+      "created": "2026-10-07T18:02:27-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Update drawing and BOM (ankle and foot)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-350",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-diego",
+      "labels": [],
+      "priority": "Highest",
+      "created": "2026-10-08T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Rebuild leg with rev C shank and DVT knee",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-351",
+      "type": "Task",
+      "status": "To Do",
+      "reporter": "p-hana",
+      "assignee": "p-hana",
+      "labels": [
+        "build"
+      ],
+      "priority": "Low",
+      "created": "2026-10-08T10:00:00-07:00",
+      "due_date": "2026-11-11",
+      "events": [],
+      "brief": "Rig setup: Tilt stand weight hanger",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-351-c1",
+          "by": "p-hana",
+          "at": "2026-10-13T10:44:44-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-351-c2",
+          "by": "p-hana",
+          "at": "2026-10-26T09:13:55-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-351-c3",
+          "by": "p-hana",
+          "at": "2026-11-02T14:20:44-08:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    }
+  ]
+}

@@ -88,9 +88,8 @@ export function runContext(S) {
     const consRef = (mode) => (mode === 'vague' ? { id: consumer.id, mode: 'vague', token: consumer.type === 'test' ? 'the test' : r.pick(['the build', 'the fit check', 'next week']) } : { id: consumer.id, mode: 'alias', token: entName(consumer.id) });
     const pressureAt = (iso) => {
       const day = localDate(iso);
-      let urg = 0.2;
-      if (o.need_by_believed) { const s = cal.wdBetween(day, o.need_by_believed); urg = s < 8 ? 0.8 : s < 12 ? 0.5 : 0.2; }
-      return S.level(0.6 * S.expressed(info.assembly, day, r) + 0.4 * urg);
+      const team = S.T.get(A.team);
+      return S.level(Math.max(0, Math.min(1, S.orderPressure(info, day) + (team?.expressiveness || 0) * 0.5 + r.normal(0, k.pressure.noise_sd))));
     };
     const place = (time, by, extra) => {
       const src = r.weighted({ slack: 60, jira: 25, meeting: 15 });
@@ -184,9 +183,10 @@ export function runContext(S) {
   const orderEdge = new Set();
   for (const o of orders) { const c = S.info.get(o.id).consumer; if (c) for (const l of o.lines) orderEdge.add(`${l.part}|${c.id}`); }
   for (const e of world.edges) {
-    if (orderEdge.has(`${e.from}|${e.to}`)) continue;
+    const partToTest = S.PT.has(e.from) && S.TS.has(e.to);
+    if (orderEdge.has(`${e.from}|${e.to}`) && !partToTest) continue;
     const r = rng.fork(`edge:${e.id}`);
-    const want = r.weighted(k.edge_reveal_mix);
+    const want = e.from === 'pt-leg-lift-hook' ? 'revealed' : r.weighted(k.edge_reveal_mix);
     if (want === 'never') continue;
     const slot = S.slots.get(e.to) || (S.TS.has(e.from) ? S.slots.get(e.from) : null);
     const anchor = slot ? slot.start : (S.M.get(e.to)?.date[0].value || cal.windowEnd);
@@ -204,6 +204,56 @@ export function runContext(S) {
       pressure: asm ? S.level(S.expressed(asm, day, r)) : 'low', about: e.to, brief: `${entName(e.to)} waits on ${entName(e.from)}`,
     });
     if (ev) ev._dep = true;
+  }
+
+  // ---------------- test durations, and the demo order's context (S14: cases A, B and D need these four facts) ----------------
+  for (const t of world.tests) {
+    if (S.pinned.has(t.id)) continue;
+    const r = rng.fork(`duration:${t.id}`);
+    let day = cal.addWd(t.planned_date[0].value, -r.int(3, 10));
+    if (day < cal.windowStart) day = cal.addWd(cal.windowStart, r.int(0, 3));
+    if (day > cal.windowEnd) continue;
+    const est = t.duration_estimate_days;
+    const ok = t.duration_true_days >= est[0] && t.duration_true_days <= est[1];
+    S.event({
+      known_at: cal.sampleTime(r, day), source: 'slack', where: { channel: S.A.get(t.assembly)?.channel || world.channels[0].id, thread_of: null }, by: t.owner, kind: 'crumb', truth: ok ? 'true' : 'wrong',
+      claim: { kind: 'duration', subject: t.id, value: est, true_value: ok ? est : [t.duration_true_days, t.duration_true_days], effective: null, for_use: null },
+      refs: [{ id: t.id, mode: 'alias', token: t.name }], about: t.id, brief: `${t.name} takes ${est[0] === est[1] ? est[0] : `${est[0]}-${est[1]}`} working days`,
+    });
+  }
+  if (world.demo && S.TS.has(world.demo.test)) {
+    const d = world.demo;
+    const test = S.TS.get(d.test); const motor = S.DL.get(d.motor.deliverable); const part = S.PT.get(d.part); const ms = S.M.get(d.milestone);
+    const ch = S.A.get(test.assembly)?.channel || world.channels[0].id;
+    const arjun = S.P.has(d.policy.set_by) ? d.policy.set_by : test.owner;
+    const before = (n, hhmm) => atLocal(cal.addWd(cal.demoNow, -n), hhmm);
+    const say = (known_at, by, claim, refs, brief, where = { channel: ch, thread_of: null }, source = 'slack') => S.event({ known_at, source, where, by, kind: 'crumb', claim: { effective: null, for_use: null, ...claim }, refs, pressure: 'elevated', brief });
+    const motorRef = { id: motor.id, mode: 'alias', token: 'hip motor' };
+    const testRef = { id: test.id, mode: 'alias', token: 'spin test' };
+    // the motor's ready date, each time it was stated (a weekend statement is repeated on the next working day)
+    motor.eta.forEach((h, i) => {
+      const day = localDate(h.known_at);
+      const at = cal.isWd(day) ? h.known_at : atLocal(cal.nextWd(day), '09:40');
+      if (!S.inWin(at)) return;
+      const by = S.P.has(h.by) ? h.by : arjun;
+      const sc = S.CH.has('ch-supply-chain') && S.buyers.includes(by);
+      say(at, by, { kind: 'eta', subject: motor.id, value: h.value, true_value: h.value, effective: h.value }, [motorRef], `DVT hip motor ETA ${h.value}`, { channel: sc ? 'ch-supply-chain' : ch, thread_of: null });
+    });
+    const etaNow = motor.eta[motor.eta.length - 1].value;
+    say(before(2, '11:05'), S.buyers[0] || arjun, { kind: 'eta', subject: motor.id, value: etaNow, true_value: etaNow, effective: etaNow }, [motorRef, { id: test.id, mode: 'vague', token: 'the spin test' }], `Motor still lands ${etaNow}; the spin test waits on it`, { channel: S.CH.has('ch-supply-chain') ? 'ch-supply-chain' : ch, thread_of: null });
+    // the test takes 3 working days
+    const dur = d.test_duration_working_days;
+    say(before(3, '14:12'), arjun, { kind: 'duration', subject: test.id, value: [dur, dur], true_value: [dur, dur] }, [testRef], `Spin test takes ${dur} working days once it starts`);
+    // the bracket is needed for the spin test, and the test waits on bracket and motor
+    const planned = test.planned_date[test.planned_date.length - 1].value;
+    const needBy = cal.addWd(planned, -1);
+    say(before(2, '10:47'), d.requester, { kind: 'needs', subject: part.id, value: { qty: d.quantity, by: needBy }, true_value: { qty: d.quantity, by: needBy }, effective: needBy, for_use: test.id }, [{ id: part.id, mode: 'part_number', token: part.part_number }, testRef], `Need ${d.quantity}x ${part.part_number} rev ${d.revision} for the spin test`);
+    say(before(4, '11:20'), arjun, { kind: 'blocked', subject: test.id, value: motor.id, true_value: motor.id }, [motorRef, testRef], 'Spin test cannot start until the hip motor and the rev C brackets are both in');
+    say(before(1, '09:15'), d.requester, { kind: 'blocked', subject: test.id, value: part.id, true_value: part.id }, [{ id: part.id, mode: 'alias', token: part.aliases[0] || part.name }, testRef], 'Spin test also needs the new brackets; getting the quote today');
+    // what a day of delay is worth, stated by the milestone owner
+    const pol = ms.value_policy[ms.value_policy.length - 1].value;
+    const msDate = ms.date[ms.date.length - 1].value;
+    if (pol?.type === 'per_day') say(before(5, '15:05'), arjun, { kind: 'need_earlier', subject: ms.id, value: { date: msDate, reason: `each working day past it costs about ${pol.usd_per_day}` }, true_value: { date: msDate, reason: `each working day past it costs about ${pol.usd_per_day}` }, effective: msDate }, [{ id: ms.id, mode: 'alias', token: 'spin test' }, { id: ms.id, mode: 'alias', token: `${pol.usd_per_day} a day` }], `Spin test complete by ${msDate}; every working day it slips costs us about ${pol.usd_per_day} a day`);
   }
 
   // ---------------- attach sibling and consumer events to orders (S12.6) ----------------
@@ -323,11 +373,13 @@ export function runContext(S) {
             where = { channel: other.length ? r.pick(other) : ev.where.channel, thread_of: null };
           }
         } else where = { channel: A.channel, thread_of: null };
+        const firstWrong = r.chance(0.5);
         const other = S.event({
-          known_at: t2, source, where, by, kind: 'crumb', truth: 'wrong',
-          claim: { ...ev.claim, value: m.value, true_value: ev.claim.value }, refs: ev.refs.map((x) => ({ ...x })), contradicts: [ev.id], pressure: ev.pressure, reports: ev.reports, brief: m.brief,
+          known_at: t2, source, where, by, kind: 'crumb', truth: firstWrong ? 'true' : 'wrong',
+          claim: firstWrong ? { ...ev.claim } : { ...ev.claim, value: m.value, true_value: ev.claim.value }, refs: ev.refs.map((x) => ({ ...x })), contradicts: [ev.id], pressure: ev.pressure, reports: ev.reports, brief: firstWrong ? clean : m.brief,
         });
         if (!other) continue;
+        if (firstWrong) { ev.claim = { ...ev.claim, value: m.value }; ev.truth = 'wrong'; ev.brief = m.brief + (ev.asks_expedite ? '; asks whether expediting is worth it' : ''); }
         attach(other, c);
         ev._used = true;
         wantContra--;

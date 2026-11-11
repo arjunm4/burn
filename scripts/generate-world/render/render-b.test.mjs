@@ -171,3 +171,34 @@ test('demo: quote tiers equal the demo block; files parse; live changes are offs
   assert.ok(!/live-[a-z]|"case"|true_arrival|dl-hip|\bcase [A-E]\b/i.test(raw));
   assert.equal(get('demo/policy.json').policies[0].usd_per_day, 600);
 });
+
+test('meetings: a stale or wrong crumb gives the writer only what was said', () => {
+  const w = world();
+  // Move two imperfect crumbs into the meeting: ev-000008 (stale: said 10/26, truth 11/13) and ev-000012 (wrong).
+  for (const id of ['ev-000008', 'ev-000012']) {
+    const e = w.events.find((x) => x.id === id);
+    e.source = 'meeting'; e.where = { meeting: 'mtg-00001' }; e.known_at = '2026-10-22T10:44:00-07:00';
+  }
+  w.events.find((x) => x.id === 'ev-000008').brief = 'Owen still quotes the old ETA 10/26 (it changed to 11/13)';
+  const { records, jobs } = R.meetings.plan(w, ctx);
+  const md = R.meetings.emit(records, {}, ctx).files[0].content;
+  const job = JSON.stringify(jobs[0]);
+  const c8 = jobs[0].crumbs.find((c) => c.event === 'ev-000008');
+  assert.deepEqual(c8.must_mention, ['10/26']);
+  for (const blob of [JSON.stringify(c8), JSON.stringify(records[0].crumbs.find((c) => c.event === 'ev-000008')), md.split("\n").filter((l) => /Owen Halloran: /.test(l)).join("\n")]) {
+    assert.ok(!/11\/13|2026-11-13/.test(blob), 'stale crumb leaks its true value');
+  }
+  for (const blob of [job, JSON.stringify(records), md]) assert.ok(!/changed to|old ETA|true_value|"truth"/.test(blob), 'truth hint leaked');
+  assert.ok(!/11\/20/.test(JSON.stringify(jobs[0].crumbs.find((c) => c.event === 'ev-000012'))), 'wrong crumb leaks its true value');
+});
+
+test('ramp: every transaction has a merchant category code, consistent per merchant', () => {
+  const tx = JSON.parse(run('ramp').files.find((f) => f.path === 'ramp/transactions.json').content).data;
+  const seen = new Map();
+  for (const t of tx) {
+    assert.match(t.merchant_category_code, /^\d{4}$/);
+    assert.ok(t.merchant_category_code_description);
+    if (seen.has(t.merchant_name)) assert.equal(seen.get(t.merchant_name), t.merchant_category_code);
+    seen.set(t.merchant_name, t.merchant_category_code);
+  }
+});

@@ -83,8 +83,9 @@ export function runOrders(S) {
       const chunk = partsIn.slice(i, i + n); i += n;
       const requester = owner.orders.weight !== 'none' && !buyers.includes(owner.id) ? owner : (requesters.find((p) => p.team === S.A.get(t.assembly).team && r.chance(0.5)) || requesters.find((p) => p.team === 't-test') || requesters[0]);
       const cls = drawClass(r, requester, 'normal');
-      const off = cls === 'early' ? r.int(5, 15) : cls === 'on_time' ? r.int(0, 4) : -r.int(1, 6);
-      let day = cal.addWd(t.planned_date[0].value, -(2 + 11 + off));
+      // working days from the order to the need-by (2 wd before the planned start), by trigger class
+      const span = cls === 'early' ? r.int(18, 28) : cls === 'on_time' ? r.int(11, 12) : r.int(3, 6);
+      let day = cal.addWd(t.planned_date[0].value, -(2 + span));
       if (day < firstDay) day = cal.addWd(firstDay, r.int(0, 3));
       if (day > lastDay) continue;
       intents.push({ day, structural: true, test: t, parts: chunk, requester, cls, kind: 'test_hardware' });
@@ -110,7 +111,8 @@ export function runOrders(S) {
     const u = r.float();
     if (u < pLate) return 'late';
     if (u < pLate + pRel) return 'late_release';
-    return r.chance(ko.trigger_mix.early / (ko.trigger_mix.early + ko.trigger_mix.on_time)) ? 'early' : 'on_time';
+    const pEarly = ko.trigger_mix.early * (burst ? (ko.burst_early_mult ?? 1) : 1);
+    return r.chance(pEarly / (pEarly + ko.trigger_mix.on_time)) ? 'early' : 'on_time';
   }
   const released = (p, iso) => { let v = null; for (const h of p.revisions) if (Date.parse(h.known_at) <= Date.parse(iso)) v = h.value; return v; };
   const priceQ1 = (p, rev) => {
@@ -129,7 +131,7 @@ export function runOrders(S) {
     const r = rng.fork(`order:${seq}`);
     const day = it.day;
     const week = weekOfDay(day);
-    const burst = week?.kind === 'burst';
+    let burst = week?.kind === 'burst';
     // --- who, what for ---
     const kind = it.kind || r.weighted(ko.kind_mix);
     const requester = it.requester || r.weighted(requesters, reqW);
@@ -149,6 +151,7 @@ export function runOrders(S) {
       if (placer.orders.batch_days?.length) for (let g = 0; g < 6 && !placer.orders.batch_days.includes(dow(reqDay)); g++) reqDay = cal.nextWd(reqDay);
       if (reqDay > lastDay) reqDay = day;
     }
+    burst = weekOfDay(reqDay)?.kind === 'burst'; // the week the tier is decided in
     const requested_at = reqDay === day ? addMinutes(trigger_at, r.int(15, 150)) : cal.sampleBusinessTime(r, reqDay, 8 * 60 + 30, 15 * 60 + 30);
     let quoted_at = addMinutes(requested_at, -r.int(10, 120));
     if (reqDay === day && Date.parse(quoted_at) < Date.parse(trigger_at) + 180e3) quoted_at = addMinutes(trigger_at, 3);
@@ -198,8 +201,9 @@ export function runOrders(S) {
         }
       }
       if (had.size && !had.has(rev)) isRevision = true;
-      const qty = Math.max(1, Math.round(p.typical_qty * +r.weighted([0.5, 1, 2, 3, 6, 14], [1, 5, 2, 0.5, 0.12, 0.05])));
-      const unitStd = priceQ1(p, rev) * Math.pow(qty, k.quote.qty_exponent) * r.uniform(0.97, 1.03) * k.quote.price_scale;
+      const qmw = ko.qty_mult_weights ?? [1, 5, 2, 0.5];
+      const qty = Math.min(ko.max_line_qty ?? 24, Math.max(1, Math.round(Math.min(p.typical_qty, 12) * +r.weighted([0.5, 1, 2, 3, 6, 14, 30].slice(0, qmw.length), qmw))));
+      const unitStd = Math.max(k.quote.min_unit_usd ?? 18, priceQ1(p, rev) * Math.pow(qty, k.quote.qty_exponent) * r.uniform(0.97, 1.03) * k.quote.price_scale) + 0.01 * r.int(0, 9);
       lines.push({ p, rev, qty, unitStd });
     }
 
@@ -228,29 +232,42 @@ export function runOrders(S) {
 
     // --- consumer ---
     const id = S.nextId('ord-x', 5);
-    const cls = it.cls || drawClass(r, requester, week?.kind);
+    let cls = it.cls || drawClass(r, requester, burst ? 'burst' : 'normal');
+    // spares are never urgent; a rig part has no design release to be late
+    if (kind === 'spare') cls = 'early';
+    if (kind === 'rig_misc' && cls === 'late_release') cls = 'on_time';
+    // Need-by by trigger class, in working days from the request (S6.3):
+    //   early    Economy still arrives with 11-22 wd to spare
+    //   on time  Standard arrives in time, Economy would not
+    //   late     needed sooner than the Standard lead time (late by choice, or a late design release)
+    const stdTot = cal.wdBetween(reqDay, tS.est_delivery);
+    const econTot = cal.wdBetween(reqDay, tE.est_delivery);
+    const spanOf = () => (cls === 'early' ? econTot + r.int(11, 22) : cls === 'on_time' ? r.int(stdTot, Math.max(stdTot, Math.min(lead[0], econTot - 1))) : Math.max(1, lead[1] - r.int(1, 5)));
     const lateByChoice = cls === 'late';
     let consumer = null;
     let needWritten = null;
     let hiddenNeed = null;
     let sibling = null;
     let wi = null;
+    let target = null;
     if (it.test) {
       consumer = S.consumers.get(it.test.id);
     } else if (kind !== 'spare' && kind !== 'rig_misc') {
-      const off = cls === 'early' ? r.int(5, 15) : cls === 'on_time' ? r.int(0, 4) : -r.int(1, 6);
-      needWritten = cal.addWd(tS.est_delivery, off);
-      if (needWritten <= reqDay) needWritten = cal.addWd(reqDay, 1);
+      needWritten = cal.addWd(reqDay, spanOf());
       let P = cal.addWd(needWritten, 1);
       let slotDays = null;
       let unit = null;
-      if (slotted.length && r.chance(ko.slotted_rate ?? 0.1)) {
+      if (slotted.length && (cls === 'late' || cls === 'late_release') && r.chance(ko.slotted_rate ?? 0.1)) {
         // a slotted resource: the work can only start on its slot days
         unit = r.pick(slotted); slotDays = unit.slot_days;
-        for (let g = 0; g < 7 && !slotDays.includes(dow(P)); g++) P = cal.nextWd(P);
+        // the slot at or before the planned start if there is still one ahead, else the next one
+        let back = P;
+        for (let g = 0; g < 7 && !slotDays.includes(dow(back)); g++) back = cal.prevWd(back);
+        if (slotDays.includes(dow(back)) && back > cal.addWd(reqDay, 2)) P = back;
+        else for (let g = 0; g < 7 && !slotDays.includes(dow(P)); g++) P = cal.nextWd(P);
         needWritten = cal.addWd(P, -1);
       }
-      if (cls !== 'late' && cls !== 'late_release' && r.chance(ko.hidden_need_rate)) hiddenNeed = cal.addWd(tS.est_delivery, -r.int(1, 5));
+      if (cls !== 'late' && cls !== 'late_release' && r.chance(ko.hidden_need_rate)) hiddenNeed = cal.addWd(reqDay, Math.max(1, lead[1] - r.int(1, 5)));
       const est = r.int(1, 5);
       const dur = Math.max(1, Math.round(est * r.lognormal(1.25, 0.45)));
       const owner = r.chance(0.7) ? requester.id : (S.A.get(assembly).owner);
@@ -262,12 +279,33 @@ export function runOrders(S) {
       world.work_items.push(wi);
       // the owner is often not free on the planned day (serial work): the true earliest start is later than the written one
       const lateCls = cls === "late" || cls === "late_release";
-      const ownerDelay = !hiddenNeed && !lateCls && r.chance(ko.start_delay_rate ?? 0.5) ? r.int(2, 8) : 0;
+      const ownerDelay = !hiddenNeed && !lateCls && r.chance(ko.start_delay_rate ?? 0.5) ? r.int(3, 9) : 0;
       let earliest = hiddenNeed ? cal.addWd(hiddenNeed, 1) : cal.addWd(P, ownerDelay);
       if (slotDays) for (let g = 0; g < 7 && !slotDays.includes(dow(earliest)); g++) earliest = cal.nextWd(earliest);
       consumer = { id: wi.id, type: 'work_item', earliest, believedStart: P, slotDays, duration: dur, units: [], unit: unit?.id || null, milestone: null, inputs: [], created: cal.addWd(reqDay, -r.int(2, 12)), kind };
       S.consumers.set(wi.id, consumer);
       if (unit) { wi.blocked_by.push(unit.id); S.edge(unit.id, wi.id); }
+      // The real test run or build this step prepares for: test hardware feeds the next test on its rig or assembly,
+      // robot parts feed the next build of their assembly. The step must be done before it (a true edge).
+      {
+        const after = cal.addWd(P, dur + (ko.step_margin_days ?? 12));
+        const home = lines[0].p.belongs_to;
+        if (kind === 'test_hardware') {
+          const ts = world.tests.filter((t) => !S.pinned.has(t.id) && (t.rig === home || t.resources.includes(home) || t.assembly === assembly) && believedAt(t.planned_date, requested_at) >= after)
+            .sort((a, b) => cmp(believedAt(a.planned_date, requested_at), believedAt(b.planned_date, requested_at)) || cmp(a.id, b.id));
+          if (ts.length) target = { test: ts[0] };
+        }
+        if (!target) {
+          const ms = world.milestones.filter((m) => !S.pinned.has(m.id) && m.assemblies.includes(assembly) && believedAt(m.date, requested_at) >= after)
+            .sort((a, b) => cmp(believedAt(a.date, requested_at), believedAt(b.date, requested_at)) || cmp(a.id, b.id));
+          const pick = ms.find((m) => m.kind === 'build') || ms[0];
+          if (pick) target = { ms: pick };
+        }
+        const tn = target?.test || target?.ms;
+        if (tn) { wi.name = wi.name.replace(': ', ` for ${tn.name}: `); S.edge(wi.id, tn.id); }
+        if (target?.test) { wi.milestone = target.test.milestone ?? wi.milestone; S.consumers.get(target.test.id).inputs.push({ id: wi.id, consumer: wi.id, ready: null }); }
+        if (target?.ms) wi.milestone = target.ms.id;
+      }
       // sibling input
       if (r.chance(lateCls ? (ko.late_sibling_rate ?? 0.55) : (ko.sibling_rate ?? 0.38))) {
         const lo = cal.addWd(P, -12); const hi = cal.addWd(P, 2);
@@ -282,7 +320,7 @@ export function runOrders(S) {
           const firstKnown = cal.addWd(reqDay, -r.int(5, 25));
           const fk = firstKnown < firstDay ? firstDay : firstKnown;
           const did = `dl-gen-${String(S.nextId('dlg', 4)).slice(4)}`;
-          sibling = { id: did, name: `${kd[2]} for ${S.A.get(assembly).name.toLowerCase()} (${lines[0].p.aliases[0] || lines[0].p.name})`, kind: kd[0], owner: dOwner, assembly, vendor: null, order: null, eta: [{ value: lateCls ? cal.addWd(tS.est_delivery, r.int(-3, 3)) : cal.addWd(P, -r.int(1, 7)), effective: null, known_at: cal.sampleBusinessTime(r, fk), by: dOwner, where: null }], true_arrival: null, _gen: true };
+          sibling = { id: did, name: `${kd[2]} for ${S.A.get(assembly).name.toLowerCase()} (${lines[0].p.aliases[0] || lines[0].p.name})`, kind: kd[0], owner: dOwner, assembly, vendor: null, order: null, eta: [{ value: lateCls ? cal.addWd(tS.est_delivery, r.int(ko.late_sibling_eta_offset?.[0] ?? 0, ko.late_sibling_eta_offset?.[1] ?? 5)) : cal.addWd(P, -r.int(1, 7)), effective: null, known_at: cal.sampleBusinessTime(r, fk), by: dOwner, where: null }], true_arrival: null, _gen: true };
           if (Date.parse(sibling.eta[0].known_at) >= Date.parse(requested_at)) sibling.eta[0].known_at = addMinutes(requested_at, -r.int(60, 600));
           if (Date.parse(sibling.eta[0].known_at) < S.winStart) sibling.eta[0].known_at = world.meta.window.start;
           world.deliverables.push(sibling); S.DL.set(did, sibling);
@@ -293,6 +331,9 @@ export function runOrders(S) {
         S.edge(sibling.id, wi.id);
       }
     }
+
+    // spares and rig parts feed nothing, but people still write a soft need-by for them
+    if (!consumer) needWritten = cal.addWd(reqDay, spanOf());
 
     // --- belief snapshot and decision (S8) ---
     const stale = r.chance(k.belief.stale_rate);
@@ -323,7 +364,7 @@ export function runOrders(S) {
     let rule; let tier;
     const kd = k.decide;
     const noise = r.chance(kd.noise);
-    const habitFire = r.chance((decider.orders.habit_strength ?? kd.habit_strength) * (kd.habit_scale ?? 1));
+    const habitFire = r.chance(Math.min(1, (decider.orders.habit_strength ?? kd.habit_strength) * (kd.habit_scale ?? 1) * (kd.habit_scale_by_habit?.[habit] ?? 1)));
     const budgetFire = r.chance(kd.budget_fire);
     const pressFire = r.chance(kd.pressure_factor * pv * (burst ? kd.burst_pressure_mult : 1));
     const jitter = r.lognormal(1, kd.wtp_jitter_sigma);
@@ -333,7 +374,7 @@ export function runOrders(S) {
     else if (S.inBudgetWindow(reqDay) && budgetFire) { rule = 3; tier = r.weighted(kd.budget_tier); }
     else if (needBelieved && tS.est_delivery > needBelieved && lateByChoice) { rule = 4; tier = r.weighted(kd.late_tier); }
     else if ((S.level(pv) === 'high' || S.inPressureWindow(reqDay, assembly)) && pressFire) { rule = 5; tier = r.weighted(kd.pressure_tier); }
-    else if (!noise && consumer && gain._exp_std >= 1 && extra / gain._exp_std <= wtp * jitter * (burst ? kd.burst_wtp_mult : 1)) { rule = 6; tier = 'expedite'; }
+    else if (!noise && consumer && gain._exp_std >= 1 && extra / gain._exp_std <= wtp * (kd.wtp_scale ?? 1) * jitter * (burst ? kd.burst_wtp_mult : 1)) { rule = 6; tier = 'expedite'; }
     else if (econQuoted && needBelieved && tE.est_delivery > needBelieved && tS.est_delivery <= needBelieved) { rule = 6; tier = 'standard'; }
     else { rule = 7; const m = { ...kd.default_tier }; if (slack != null && slack > 15) { m.economy = kd.default_economy_if_slack_over_15; m.standard = 1 - m.economy - m.expedite; } tier = r.weighted(m); }
     if (tier === 'economy' && !econQuoted) tier = 'standard';
@@ -437,7 +478,7 @@ export function runOrders(S) {
       promised_date: chosen.est_delivery, status, delivered_at, carrier: 'FedEx', tracking: r.id(12),
       inspection: recorded ? { result: r.chance(0.02) ? 'partial' : 'pass', at: inspAt, by: inspector } : null,
       ready_at: recorded || inspLag ? inspAt : addMinutes(delivered_at, r.int(10, 90)), first_use: null,
-      feeds_test: it.test ? it.test.id : null, feeds_work_item: wi ? wi.id : null, feeds_milestone: it.test ? it.test.milestone : null,
+      feeds_test: it.test ? it.test.id : (target?.test?.id ?? null), feeds_work_item: wi ? wi.id : null, feeds_milestone: it.test ? it.test.milestone : (target?.test ? target.test.milestone : (target?.ms?.id ?? null)),
       need_by_believed: needWritten, link_quality: 'never_discussed', is_revision: isRevision, cancelled: false, remade_from: null,
       ramp_transaction_ids: [txId], descriptor, memo_present: memo, receipt_present: receipt, certifications: r.chance(0.15) ? ['CoC'] : [],
     };
@@ -447,7 +488,7 @@ export function runOrders(S) {
       for (const l of lines) S.edge(l.p.id, consumer.id);
     }
     S.info.set(id, {
-      order, kind, assembly, consumer, wi, test: it.test || null, sibling, ready, delivered, tiersAll, econQuoted, rule, cls, burst, newRev,
+      order, kind, assembly, consumer, wi, test: it.test || null, target, sibling, stdMisses: !!(needWritten && tS.est_delivery > needWritten), econFits: !!(needWritten && tE.est_delivery <= needWritten), ready, delivered, tiersAll, econQuoted, rule, cls, burst, newRev,
       belief: { need_by: needBelieved, inputs: beliefInputs, gain_days: gain, stale, ignored_siblings: ignored }, hiddenNeed, requester, decider, placer, reqDay,
     });
   }

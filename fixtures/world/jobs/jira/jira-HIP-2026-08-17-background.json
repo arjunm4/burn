@@ -1,0 +1,418 @@
+{
+  "job_id": "jira-HIP-2026-08-17-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 26,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HIP",
+    "name": "Actuators (hip and knee)"
+  },
+  "week": {
+    "start": "2026-08-17",
+    "end": "2026-08-23"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "HIP-353",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-carlos",
+      "assignee": "p-carlos",
+      "labels": [
+        "fit-check"
+      ],
+      "priority": "Medium",
+      "created": "2026-08-18T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Assemble DVT knee actuators (x2)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-353-c1",
+          "by": "p-carlos",
+          "at": "2026-08-20T16:05:19-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-353-c2",
+          "by": "p-carlos",
+          "at": "2026-09-02T16:33:06-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-353-c3",
+          "by": "p-carlos",
+          "at": "2026-09-10T10:13:06-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-354",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": "p-owen",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-08-18T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Fit check for Actuator DVT gate review: Hip to pelvis interface plate",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-354-c1",
+          "by": "p-owen",
+          "at": "2026-08-24T16:12:02-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-354-c2",
+          "by": "p-owen",
+          "at": "2026-09-21T09:11:09-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-354-c3",
+          "by": "p-tomas",
+          "at": "2026-09-21T11:16:04-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-354-c4",
+          "by": "p-owen",
+          "at": "2026-09-22T09:00:45-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-355",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-wei",
+      "assignee": null,
+      "labels": [
+        "dfm"
+      ],
+      "priority": "Medium",
+      "created": "2026-08-18T19:47:53-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Follow up vendor question (knee actuator)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-355-c1",
+          "by": "p-wei",
+          "at": "2026-08-20T09:10:39-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-355-c2",
+          "by": "p-wei",
+          "at": "2026-08-20T11:34:47-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-355-c3",
+          "by": "p-wei",
+          "at": "2026-08-24T17:17:04-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-356",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": "p-arjun",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-08-19T11:48:20-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Follow up vendor question (hip actuator)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-356-c1",
+          "by": "p-tomas",
+          "at": "2026-08-24T09:25:41-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-356-c2",
+          "by": "p-tomas",
+          "at": "2026-08-24T17:06:42-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-356-c3",
+          "by": "p-arjun",
+          "at": "2026-08-26T09:04:19-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-357",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-wei",
+      "assignee": "p-owen",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-08-19T15:56:25-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Harness routing cleanup (knee actuator)",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HIP-359",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-zoe",
+      "assignee": "p-zoe",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-08-21T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Tolerance stack check for Actuator DVT gate review: Knee output shaft",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-359-c1",
+          "by": "p-owen",
+          "at": "2026-08-28T13:36:16-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-359-c2",
+          "by": "p-zoe",
+          "at": "2026-09-03T11:26:18-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-359-c3",
+          "by": "p-zoe",
+          "at": "2026-09-09T17:58:53-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-359-c4",
+          "by": "p-zoe",
+          "at": "2026-09-15T15:16:21-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-359-c5",
+          "by": "p-zoe",
+          "at": "2026-09-15T15:45:37-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    }
+  ]
+}

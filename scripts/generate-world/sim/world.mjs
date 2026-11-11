@@ -179,6 +179,15 @@ export function buildWorld({ canon, org, program, knobs, seed }) {
       unitById.get(u).bookings.push({ id: nextId('bk', 5), start: t.actual_start, end: t.actual_end, test: t.id, by: t.owner, status: 'confirmed', conflict_with: [] });
     }
   }
+  for (const t of world.tests) {
+    if (pinned.has(t.id)) continue;
+    const was = S.preSlots.get(t.id).start; const now = real.slots.get(t.id).start;
+    if (now > was) {
+      const occ = cal.addWd(was, -1) < cal.windowStart ? cal.onOrAfter(cal.windowStart) : cal.addWd(was, -1);
+      const slip = { id: nextId('slip', 5), entity: t.id, cause: 'input_late', delta_days: cal.wdBetween(was, now), from: was, to: now, occurs_at: atLocal(occ, '08:00'), discovered_at: atLocal(occ, '16:30'), announced_at: null, by: null, venue: null, event: null };
+      world.slips.push(slip);
+    }
+  }
   for (const m of world.milestones) {
     if (pinned.has(m.id)) continue;
     const feeders = world.tests.filter((t) => t.milestone === m.id);
@@ -208,7 +217,7 @@ export function buildWorld({ canon, org, program, knobs, seed }) {
 
 // ---------------------------------------------------------------------------------------------------------
 function buildMeetings(S) {
-  const { world, cal, rng } = S;
+  const { world, cal, rng, k } = S;
   const DAYS = { MO: 1, TU: 2, WE: 3, TH: 4, FR: 5, SA: 6, SU: 0 };
   const r = rng.fork('meetings');
   const list = [];
@@ -249,7 +258,7 @@ function buildMeetings(S) {
         id: null, name: s.name, series: s.id, type: s.type, start, scheduled_min: s.duration_min,
         actual_min: Math.max(5, Math.round(s.duration_min * mr.uniform(0.55, 1.2)) + mr.int(-2, 3)), invited, present,
         late_joiners: present.filter((p) => p !== s.organizer && mr.chance(0.08)), external: [], note_taker: s.note_taker,
-        recorded: s.recorded && mr.chance(s.type === 'standup' ? 0.5 : 0.92), storylines: [], rsvp, moved_from: null, cancelled: false,
+        recorded: s.recorded && mr.chance(s.type === 'standup' ? (k.meetings?.standup_recorded ?? 0.5) : (k.meetings?.recorded ?? 0.92)), storylines: [], rsvp, moved_from: null, cancelled: false,
       });
     }
   }
@@ -274,14 +283,16 @@ function buildWindows(S) {
   const r = rng.fork('windows');
   const bw = [];
   for (const q of ['2026-03-31', '2026-06-30', '2026-09-30']) { const e = cal.onOrBefore(q); bw.push({ start: cal.addWd(e, -2), end: e, cause: 'Quarter-end spend freeze' }); }
-  const normal = world.meta.weeks.filter((w) => w.kind !== 'quiet' && w.week_start > cal.windowStart).map((w) => w.week_start);
+  const normal = world.meta.weeks.filter((w) => w.kind === 'normal' && w.week_start > cal.windowStart).map((w) => w.week_start);
   for (const ws of r.sample(normal, 2)) bw.push({ start: ws, end: addDays(ws, 11), cause: 'Cash review: discretionary spend held' });
   bw.sort((a, b) => cmp(a.start, b.start));
   world.meta.budget_windows = bw.map((b, i) => ({ id: `bw-${String(i + 1).padStart(2, '0')}`, ...b }));
   const pw = [];
   const builds = world.milestones.filter((m) => ['build', 'demo', 'gate'].includes(m.kind) && !S.pinned.has(m.id));
   const demo = world.milestones.find((m) => m.id === 'm-investor-demo') || builds[0];
-  const chosen = [demo, ...r.sample(builds.filter((m) => m !== demo), 3)].filter(Boolean);
+  // one exec push before the investor demo and before each long build burst, so pressure is not a one-season thing
+  const big = builds.filter((m) => m !== demo && m.kind === 'build' && (m.burst_weeks ?? 0) >= 2);
+  const chosen = [demo, ...(big.length >= 2 ? big.slice(0, 4) : r.sample(builds.filter((m) => m !== demo), 3))].filter(Boolean);
   for (const m of chosen) {
     const d = m.date[0].value;
     const len = r.int(5, 10);
@@ -402,7 +413,7 @@ function buildPressure(S) {
   const { world, cal, k, rng } = S;
   const late = new Map();
   for (const m of world.milestones) for (const a of m.assemblies) {
-    const base = m._pre ? cal.wdBetween(m.date[0].value, m._pre) : 0;
+    const base = Math.min(k.pressure.slip_carry_max_days ?? 2, m._pre ? cal.wdBetween(m.date[0].value, m._pre) : 0);
     late.set(`${a}|${m.id}`, base + Math.round(rng.fork(`late:${a}:${m.id}`).normal(-(k.pressure.slack_mean_days ?? 7), k.pressure.slack_sd_days ?? 5)));
   }
   const ms = world.milestones.slice().sort((x, y) => cmp(x.date[0].value, y.date[0].value) || cmp(x.id, y.id));
@@ -423,6 +434,15 @@ function buildPressure(S) {
     v = Math.max(0, Math.min(1, v));
     cache.set(key, v);
     return v;
+  };
+  // True pressure on one order: its assembly's pressure and its own urgency (can Standard still make the need-by?).
+  S.orderPressure = (info, day) => {
+    const base = S.pressureValue(info.assembly, day);
+    const ni = info.order.need_identified_at;
+    if (ni && day < ni.slice(0, 10)) return base;
+    const urgency = info.stdMisses ? 0.9 : info.econFits ? 0.1 : 0.45;
+    const v = 0.4 * base + 0.6 * urgency;
+    return Math.max(0, Math.min(1, info.rule === 5 ? Math.max(v, 0.8) : v));
   };
   S.level = (v) => (v < k.pressure.levels[0] ? 'low' : v < k.pressure.levels[1] ? 'elevated' : 'high');
   S.expressed = (a, day, r) => {

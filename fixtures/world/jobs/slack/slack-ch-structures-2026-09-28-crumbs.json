@@ -1,0 +1,464 @@
+{
+  "job_id": "slack-ch-structures-2026-09-28-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 13,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-structures",
+    "name": "structures-battery",
+    "slack_id": "C07FLK0STRC",
+    "purpose": "Torso, pelvis and battery enclosure"
+  },
+  "week": {
+    "start": "2026-09-28",
+    "end": "2026-10-04"
+  },
+  "people": [
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-kwame",
+      "name": "Kwame Asante",
+      "display_name": "kwame",
+      "slack_id": "U07FLK0KWAM",
+      "title": "Senior Electrical Engineer, power",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-valeria",
+      "name": "Valeria Ortiz",
+      "display_name": "valeria.o",
+      "slack_id": "U07FLK0VALE",
+      "title": "Electrical Engineer, battery systems",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Torso and pelvis structure.",
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway",
+    "Ongoing: BMS PCBA rev 1 balancing current and cell-tap fusing. This week: Bao: wrong bleed resistor value on the BOM, 68 ohm populated instead of 33.",
+    "Ongoing: Leg DVT build: parts readiness and what to do about late test hardware. This week: Nora posts build readiness: 82% of leg DVT parts in, shank links still at the vendor.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real",
+    "Ongoing: Leg drop gantry shared by leg drop, torso static load and ankle impact. This week: Dmitri splits: torso Tue, leg Thu; nobody happy."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1790622459.782198",
+      "user": "p-lukas",
+      "thread_ts": null,
+      "events": [
+        "ev-002914"
+      ],
+      "brief": "FL-STR-1582 rev B released: tolerance relaxed after DFM feedback",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-STR-1582"
+      ],
+      "length": "short",
+      "text": "FL-STR-1582 rev b is out, loosened the tol per dfm"
+    },
+    {
+      "ts": "1790623591.704125",
+      "user": "p-valeria",
+      "thread_ts": "1790622459.782198",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "nice 👍"
+    },
+    {
+      "ts": "1790627040.404480",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-002619"
+      ],
+      "brief": "Test stand rework for Leg DVT build: Cell heater clamp plate waits on BMS PCBA, rev 1",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-bms-pcba"
+      },
+      "must_mention": [
+        "BMS PCBA, rev 1",
+        "the plate"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "the plate for the cell heater clamp is stuck until BMS PCBA, rev 1 shows up. so the stand rework for leg dvt slips with it"
+    },
+    {
+      "ts": "1790627468.264562",
+      "user": "p-kwame",
+      "thread_ts": "1790627040.404480",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I don't think the plate needs to wait. We can mount it with a dummy board and swap later."
+    },
+    {
+      "ts": "1790632502.204795",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-001905"
+      ],
+      "brief": "FL-TST-2716: need 9 by 2026-10-02 for the build",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 9,
+          "by": "2026-10-02"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2716",
+        "the build",
+        "10/2"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2716: need 9 for the build, by 10/2."
+    },
+    {
+      "ts": "1790654053.196979",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-002495"
+      ],
+      "brief": "Torso and pelvis static load test waits on Rig setup for Torso and pelvis static load test: Leg drop-test lift hook",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00183"
+      },
+      "must_mention": [
+        "Rig setup for Torso and pelvis static load test: Leg drop-test lift hook",
+        "Torso and pelvis static load test"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Torso and pelvis static load test is blocked on Rig setup for Torso and pelvis static load test: Leg drop-test lift hook. Can't load the torso until the hook is on."
+    },
+    {
+      "ts": "1790659682.663971",
+      "user": "p-renee",
+      "thread_ts": "1790632502.204795",
+      "events": [
+        "ev-003061"
+      ],
+      "brief": "Correction: FL-TST-2716: need 9 by 2026-10-07 for the build",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 9,
+          "by": "2026-10-07"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2716",
+        "the build",
+        "10/7"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Correction, FL-TST-2716 for the build is needed by 10/7, not earlier. Still 9."
+    },
+    {
+      "ts": "1790719033.622777",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-001629"
+      ],
+      "brief": "2223 arrived (1)",
+      "claim": {
+        "kind": "stock",
+        "value": 1
+      },
+      "must_mention": [
+        "2223",
+        "1"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "2223 is in, qty 1. It's on the shelf by the gantry if anyone needs to look at it before we mount it."
+    },
+    {
+      "ts": "1790722348.608406",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-002448"
+      ],
+      "brief": "Torso and pelvis static load test waits on Rig setup for Torso and pelvis static load test: Gantry safety pin",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00148"
+      },
+      "must_mention": [
+        "Rig setup for Torso and pelvis static load test: Gantry safety pin",
+        "Torso and pelvis static load test"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Also waiting on Rig setup for Torso and pelvis static load test: Gantry safety pin before Torso and pelvis static load test can run."
+    },
+    {
+      "ts": "1790726908.877665",
+      "user": "p-ingrid",
+      "thread_ts": "1790722348.608406",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Is the pin something we can make in house, or are we waiting on a vendor?"
+    },
+    {
+      "ts": "1790787612.619166",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-002698"
+      ],
+      "brief": "Leg DVT build waits on Torso and pelvis static load test",
+      "claim": {
+        "kind": "blocked",
+        "value": "test-torso-static-load"
+      },
+      "must_mention": [
+        "Torso and pelvis static load test",
+        "Leg DVT build"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "To be clear, the Leg DVT build is now waiting on the Torso and pelvis static load test, since both need the gantry."
+    },
+    {
+      "ts": "1790788188.393777",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-002903"
+      ],
+      "brief": "FL-STR-1591 rev B released: added O-ring groove",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-STR-1591"
+      ],
+      "length": "short",
+      "text": "FL-STR-1591 rev B released, adds the O-ring groove."
+    },
+    {
+      "ts": "1790802210.635805",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-001669"
+      ],
+      "brief": "bar end arrived (1)",
+      "claim": {
+        "kind": "stock",
+        "value": 1
+      },
+      "must_mention": [
+        "bar end",
+        "1"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "bar end arrived, qty 1."
+    },
+    {
+      "ts": "1790872823.615841",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-002625"
+      ],
+      "brief": "Rig setup: Chamber cable feedthrough plate waits on BMS PCBA, rev 1",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-bms-pcba"
+      },
+      "must_mention": [
+        "BMS PCBA, rev 1",
+        "Rig setup: Chamber cable feedthrough plate"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Rig setup: Chamber cable feedthrough plate is waiting on BMS PCBA, rev 1 as well."
+    },
+    {
+      "ts": "1790873704.498816",
+      "user": "p-carlos",
+      "thread_ts": "1790872823.615841",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Same thing happened on the last chamber setup. Took a week just for the board."
+    },
+    {
+      "ts": "1790883163.222735",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-001856"
+      ],
+      "brief": "Order XO-5526363 placed, promised 2026-10-19",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-10-19"
+      },
+      "must_mention": [
+        "XO-5526363",
+        "2789",
+        "10/19"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "XO-5526363 placed for 2789, promised 10/19. fingers crossed"
+    }
+  ]
+}

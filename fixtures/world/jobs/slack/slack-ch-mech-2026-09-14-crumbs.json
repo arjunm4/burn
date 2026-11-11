@@ -1,0 +1,104 @@
+{
+  "job_id": "slack-ch-mech-2026-09-14-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 17,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-mech",
+    "name": "mech",
+    "slack_id": "C07FLK0MECH",
+    "purpose": "Mechanical engineering: design, DFM, vendors, drawings"
+  },
+  "week": {
+    "start": "2026-09-14",
+    "end": "2026-09-20"
+  },
+  "people": [
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators. This week: v2 released; hip efficiency sweep scheduled.",
+    "Ongoing: Aluminum links gall on 303 pins under side load",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real",
+    "Ongoing: Leg drop gantry shared by leg drop, torso static load and ankle impact. This week: Zoe: drop gantry only runs Tue/Thu because rigging needs two techs."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1789497510.525533",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-003399"
+      ],
+      "brief": "release clevis: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "release clevis"
+      ],
+      "length": "short",
+      "text": "release clevis still quoting, rev A"
+    },
+    {
+      "ts": "1789500839.029949",
+      "user": "p-kenji",
+      "thread_ts": "1789497510.525533",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "not sure rev a is worth quoting tbh"
+    }
+  ]
+}

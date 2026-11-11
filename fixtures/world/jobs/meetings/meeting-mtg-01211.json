@@ -1,0 +1,429 @@
+{
+  "job_id": "meeting-mtg-01211",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 21,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-01211",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-09-03T08:45:00-07:00",
+    "actual_min": 12,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-andre",
+      "p-lin",
+      "p-carlos",
+      "p-jade",
+      "p-luis",
+      "p-nora"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-001521",
+      "speaker": "p-dmitri",
+      "at_min": [
+        6,
+        12
+      ],
+      "brief": "that order: need 5 by 2026-09-25",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-thermal-feedthrough-plate",
+        "value": {
+          "qty": 5,
+          "by": "2026-09-25"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "9/25"
+      ]
+    },
+    {
+      "event": "ev-001525",
+      "speaker": "p-jade",
+      "at_min": [
+        7,
+        12
+      ],
+      "brief": "load cell plate: need 6 by 2026-10-23 for Fixture install and shakedown: Grip load cell plate",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-grip-load-cell-plate",
+        "value": {
+          "qty": 6,
+          "by": "2026-10-23"
+        }
+      },
+      "must_mention": [
+        "load cell plate",
+        "Fixture install and shakedown: Grip load cell plate",
+        "camera arm",
+        "2461",
+        "10/23"
+      ]
+    },
+    {
+      "event": "ev-001527",
+      "speaker": "p-dmitri",
+      "at_min": [
+        7,
+        12
+      ],
+      "brief": "LC plate: need 6 by 2026-10-23",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-grip-load-cell-plate",
+        "value": {
+          "qty": 6,
+          "by": "2026-10-23"
+        }
+      },
+      "must_mention": [
+        "LC plate",
+        "10/23"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 3,
+      "speaker": "p-dmitri",
+      "text": "Thursday. Short one, I have a call at nine. Zoe."
+    },
+    {
+      "start_s": 8,
+      "speaker": "p-zoe",
+      "text": "full load sweep done last night. it's good, no new peaks. i'm calling the clamp plate done. i'll write it up tmrw, er, today, whenever"
+    },
+    {
+      "start_s": 28,
+      "speaker": "p-dmitri",
+      "text": "Today."
+    },
+    {
+      "start_s": 31,
+      "speaker": "p-zoe",
+      "text": "today"
+    },
+    {
+      "start_s": 36,
+      "speaker": "p-carlos",
+      "text": "Then the leg goes on the stand this morning. Luis is helping me."
+    },
+    {
+      "start_s": 44,
+      "speaker": "p-luis",
+      "text": "yep. after that the spare harnes *harness"
+    },
+    {
+      "start_s": 52,
+      "speaker": "p-lin",
+      "text": "Swapped the logger cable on channel three yesterday. No dropped samples overnight. Life test continues."
+    },
+    {
+      "start_s": 66,
+      "speaker": "p-andre",
+      "text": "cal records are, uh, mostly sorted. two instruments are overdue. one of them is the torque wrench destiny uses so somebody tell her"
+    },
+    {
+      "start_s": 84,
+      "speaker": "p-carlos",
+      "text": "I'll tell her. She's off today."
+    },
+    {
+      "start_s": 90,
+      "speaker": "p-dmitri",
+      "text": "Overdue means it doesn't get used. Tag it."
+    },
+    {
+      "start_s": 95,
+      "speaker": "p-andre",
+      "text": "tagging it"
+    },
+    {
+      "start_s": 101,
+      "speaker": "p-nora",
+      "text": "From the build side, to answer the question I got yesterday about whether the second leg is on schedule: it is, roughly. Bearings are in, harness is next, and the press is the risk, because if the seal goes completely we're doing the bearings by hand."
+    },
+    {
+      "start_s": 130,
+      "speaker": "p-luis",
+      "text": "its holding with the pan. barely"
+    },
+    {
+      "start_s": 138,
+      "speaker": "p-nora",
+      "text": "Okay. I'll ask facilities about getting someone out for it."
+    },
+    {
+      "start_s": 150,
+      "speaker": "p-jade",
+      "text": "forklift came early yesterday. aisle was clear so it was fine"
+    },
+    {
+      "start_s": 160,
+      "speaker": "p-carlos",
+      "text": "Good, thanks for moving all that."
+    },
+    {
+      "start_s": 230,
+      "speaker": "p-andre",
+      "text": "does anyone know if the chamber is booked tmrw. i want to run the amp thing hot"
+    },
+    {
+      "start_s": 238,
+      "speaker": "p-lin",
+      "text": "I have it in the morning. Afternoon is open."
+    },
+    {
+      "start_s": 243,
+      "speaker": "p-andre",
+      "text": "afternoon works"
+    },
+    {
+      "start_s": 380,
+      "speaker": "p-dmitri",
+      "text": "Okay. That order. Five, by 9/25. Nora, that's on your list."
+    },
+    {
+      "start_s": 390,
+      "speaker": "p-nora",
+      "text": "That order, five by the twenty-fifth. Yes, I have it."
+    },
+    {
+      "start_s": 430,
+      "speaker": "p-jade",
+      "text": "also for receiving the load cell plate. 2461. not the camera arm, those look the same in the bag. need 6 by 10/23. its on the tracker as Fixture install and shakedown: Grip load cell plate"
+    },
+    {
+      "start_s": 458,
+      "speaker": "p-zoe",
+      "text": "oh good, yeah, people keep mixing those up"
+    },
+    {
+      "start_s": 467,
+      "speaker": "p-dmitri",
+      "text": "Right. LC plate, 6 by 10/23. Zoe owns the fixture."
+    },
+    {
+      "start_s": 476,
+      "speaker": "p-zoe",
+      "text": "yep"
+    },
+    {
+      "start_s": 482,
+      "speaker": "p-jade",
+      "text": "ill bag them separate when they come"
+    },
+    {
+      "start_s": 500,
+      "speaker": "p-lin",
+      "text": "Can we label the bins too? Last time somebody grabbed from the wrong one."
+    },
+    {
+      "start_s": 507,
+      "speaker": "p-jade",
+      "text": "ok"
+    },
+    {
+      "start_s": 520,
+      "speaker": "p-dmitri",
+      "text": "Done. Go."
+    }
+  ],
+  "summary": {
+    "overview": "Thu standup, short. Clamp plate done after full-load sweep. Leg #1 on stand today. Ch3 logger fixed. Two cal-overdue instruments tagged. Needs: that order x5 by 9/25; load cell plate x6 by 10/23.",
+    "shorthand_bullet": [
+      "Zoe - full-load sweep clean, clamp plate done, write-up today",
+      "Carlos/Luis - leg on stand AM, then spare harness",
+      "Lin - ch3 cable swap fixed dropped samples",
+      "Andre - 2 instruments overdue cal incl. Destiny's torque wrench, tagged; chamber PM tmrw for amp hot run",
+      "Nora - 2nd leg roughly on schedule, press seal is the risk",
+      "that order: 5 by 9/25 (Nora)",
+      "load cell plate 2461 (Fixture install and shakedown: Grip load cell plate) - 6 by 10/23, don't mix w/ camera arm",
+      "LC plate - Zoe owns fixture"
+    ],
+    "action_items": [
+      "Zoe write up clamp plate",
+      "tell Destiny re torque wrench",
+      "Nora ask facilities re press",
+      "label bins in receiving",
+      "Jade bag LC plates separately"
+    ],
+    "keywords": [
+      "clamp plate",
+      "sweep",
+      "calibration",
+      "LC plate",
+      "receiving",
+      "hand press"
+    ]
+  }
+}

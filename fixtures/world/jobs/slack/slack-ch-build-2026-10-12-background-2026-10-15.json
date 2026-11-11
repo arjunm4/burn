@@ -1,0 +1,140 @@
+{
+  "job_id": "slack-ch-build-2026-10-12-background-2026-10-15",
+  "source": "slack",
+  "status": "blank",
+  "priority": 10,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-build",
+    "name": "build",
+    "slack_id": "C07FLK0BILD",
+    "purpose": "EVT/DVT build coordination"
+  },
+  "week": {
+    "start": "2026-10-12",
+    "end": "2026-10-18"
+  },
+  "people": [
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: BMS PCBA rev 1 balancing current and cell-tap fusing. This week: Fuses added as bodge wires; Farah says rev 2 before any pack goes into the robot.",
+    "Ongoing: Leg DVT build: parts readiness and what to do about late test hardware. This week: Rev C links in, one fails inspection on a bore; Carlos builds with the good three.",
+    "Ongoing: Frameless DVT motor from the vendor keeps slipping; stator stack length change. This week: Vendor stack length went 25 to 28 mm on DVT; Owen realizes bracket bore must move 0.5 mm.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real",
+    "Ongoing: Leg drop gantry shared by leg drop, torso static load and ankle impact. This week: Carlos trains a second tech; Wednesday added from November."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1792080268.603046",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on the ongoing leg drop gantry shared by leg drop, torso static load and ankle impact",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1792084829.063127",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-003539"
+      ],
+      "brief": "background: Rev C links in, one fails inspection on a bore; Carlos builds with the good three.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1792096526.329692",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: Lukas wants a full week for torso static load; Priya needs it for the DVT leg drop.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1792105708.004867",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with off-topic: noise from the shop next door",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1792106770.140391",
+      "user": "p-wei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about this: Bao: wrong bleed resistor value on the BOM, 68 ohm populated instead of 33.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

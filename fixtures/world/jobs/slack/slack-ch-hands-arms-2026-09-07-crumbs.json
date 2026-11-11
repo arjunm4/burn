@@ -1,0 +1,237 @@
+{
+  "job_id": "slack-ch-hands-arms-2026-09-07-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 19,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hands-arms",
+    "name": "hands-arms",
+    "slack_id": "C07FLK0HAND",
+    "purpose": "Arms, wrist and hand"
+  },
+  "week": {
+    "start": "2026-09-07",
+    "end": "2026-09-13"
+  },
+  "people": [
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hand and wrist.",
+    "Ongoing: Aluminum links gall on 303 pins under side load. This week: Compromise: 17-4 H900 pins and hard anodize on the link bores.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Omar flags the DVT motor as the long pole; Arjun says it is fine.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Samir reports expedite share down from 34% to 22%; two builds slipped anyway.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting. This week: First static load to 2x: 0.6 mm deflection at the hip mount, within spec."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1788892373.198637",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-001645"
+      ],
+      "brief": "FL-HND-1487: need 24 by 2026-09-28 for Kit and assemble: Tactile board bracket",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-09-28"
+        }
+      },
+      "must_mention": [
+        "FL-HND-1487",
+        "Kit and assemble: Tactile board bracket",
+        "mon the 28th"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "FL-HND-1487 need 24 by mon the 28th for Kit and assemble: Tactile board bracket"
+    },
+    {
+      "ts": "1788903790.161325",
+      "user": "p-sofia",
+      "thread_ts": null,
+      "events": [
+        "ev-002826"
+      ],
+      "brief": "FL-HND-1440 rev C released: material change",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev C"
+      },
+      "must_mention": [
+        "FL-HND-1440"
+      ],
+      "length": "short",
+      "text": "FL-HND-1440 rev C is released with the material change."
+    },
+    {
+      "ts": "1789062255.533860",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-001646"
+      ],
+      "brief": "FL-HND-1487: need 24 by 2026-09-28",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-09-28"
+        }
+      },
+      "must_mention": [
+        "FL-HND-1487",
+        "mon 9/28"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-HND-1487 x24 still need by mon 9/28"
+    },
+    {
+      "ts": "1789070051.948356",
+      "user": "p-sofia",
+      "thread_ts": null,
+      "events": [
+        "ev-003398"
+      ],
+      "brief": "motor pack plate: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "motor pack plate"
+      ],
+      "length": "short",
+      "text": "Still quoting the motor pack plate at rev B."
+    },
+    {
+      "ts": "1789073037.923498",
+      "user": "p-talia",
+      "thread_ts": "1789070051.948356",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Can we not wait on rev B? 😬"
+    },
+    {
+      "ts": "1789073566.223785",
+      "user": "p-talia",
+      "thread_ts": "1789070051.948356",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Pinged them 🙏"
+    },
+    {
+      "ts": "1789141044.821797",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-001648"
+      ],
+      "brief": "the bracket: need 24 by 2026-09-28",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-09-28"
+        }
+      },
+      "must_mention": [
+        "the bracket",
+        "9/28"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "the bracket 24 by 9/28"
+    },
+    {
+      "ts": "1789291440.144298",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-001418"
+      ],
+      "brief": "grip base in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-09-11"
+      },
+      "must_mention": [
+        "grip base",
+        "the build",
+        "9/11"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "grip base on the build since 9/11"
+    }
+  ]
+}

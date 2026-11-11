@@ -1,0 +1,556 @@
+{
+  "job_id": "jira-SCM-2026-09-07-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 19,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "SCM",
+    "name": "Supply chain and procurement"
+  },
+  "week": {
+    "start": "2026-09-07",
+    "end": "2026-09-13"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "SCM-269",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-08T10:03:49-07:00",
+      "due_date": "2026-10-05",
+      "events": [
+        "ev-001561"
+      ],
+      "brief": "Order 24x Dyno coupling, knee actuator, 12x Dyno shaft spacer, 6x Dyno mounting plate, knee actuator / knee coupling: need 24 by 2026-10-05 for Test stand rework: Dyno coupling, knee actuator",
+      "must_mention": [
+        "knee coupling",
+        "Test stand rework: Dyno coupling, knee actuator",
+        "2139",
+        "dyno adapter",
+        "10/5"
+      ],
+      "description_length": "one_line",
+      "summary": "knee coupling + dyno adapter parts (2139)",
+      "description": "Test stand rework: Dyno coupling, knee actuator - 2139 knee coupling, dyno adapter spacers and plate, need by 10/5",
+      "comments": [
+        {
+          "id": "SCM-269-c1",
+          "by": "p-owen",
+          "at": "2026-09-10T12:13:58-07:00",
+          "events": [
+            "ev-001562"
+          ],
+          "brief": "that order: need 24 by 2026-10-05",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 24,
+              "by": "2026-10-05"
+            }
+          },
+          "must_mention": [
+            "that order",
+            "10/5"
+          ],
+          "body": "that order has to land by 10/5"
+        },
+        {
+          "id": "SCM-269-c2",
+          "by": "p-talia",
+          "at": "2026-09-15T17:53:29-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "Any update here? 😬"
+        },
+        {
+          "id": "SCM-269-c3",
+          "by": "p-arjun",
+          "at": "2026-09-15T22:26:21-07:00",
+          "events": [
+            "ev-003100"
+          ],
+          "brief": "dyno coupling: need 24 by 2026-10-05",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 24,
+              "by": "2026-10-05"
+            }
+          },
+          "must_mention": [
+            "dyno coupling",
+            "mon 10/5"
+          ],
+          "body": "dyno coupling - we still need it mon 10/5, otherwise rework slides"
+        },
+        {
+          "id": "SCM-269-c4",
+          "by": "p-owen",
+          "at": "2026-10-13T14:01:00-07:00",
+          "events": [
+            "ev-001566"
+          ],
+          "brief": "dyno coupling in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-10-12"
+          },
+          "must_mention": [
+            "dyno coupling",
+            "the build",
+            "mon the 12th"
+          ],
+          "body": "dyno coupling on the stand for the build since mon the 12th"
+        }
+      ]
+    },
+    {
+      "key": "SCM-271",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-zoe",
+      "assignee": "p-zoe",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-09T10:55:15-07:00",
+      "due_date": "2026-09-29",
+      "events": [
+        "ev-001588"
+      ],
+      "brief": "Order 8x Spine tube end fitting, 2x Torso lifting eye block, 12x Torso IMU plate, 12x Spine tube clamp, 12x Torso harness bracket, 4x Pelvis crossbeam / that order: need 8 by 2026-09-29",
+      "must_mention": [
+        "that order",
+        "9/29"
+      ],
+      "description_length": "one_line",
+      "summary": "Spine/torso fittings order",
+      "description": "that order needed by 9/29 for the spine stack",
+      "comments": [
+        {
+          "id": "SCM-271-c1",
+          "by": "p-dmitri",
+          "at": "2026-09-09T14:51:54-07:00",
+          "events": [
+            "ev-003122"
+          ],
+          "brief": "spine fitting: need 8 by 2026-09-28",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 8,
+              "by": "2026-09-28"
+            }
+          },
+          "must_mention": [
+            "spine fitting",
+            "9/28"
+          ],
+          "body": "Need spine fitting by 9/28 not 29!! Pls adjust."
+        }
+      ]
+    },
+    {
+      "key": "SCM-276",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-nadia",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-11T06:46:55-07:00",
+      "due_date": "2026-10-01",
+      "events": [
+        "ev-001597"
+      ],
+      "brief": "Order 2x Thermal chamber actuator cradle / FL-TST-2732: need 2 by 2026-10-01 for Hip actuator thermal derate at continuous torque",
+      "must_mention": [
+        "FL-TST-2732",
+        "Hip actuator thermal derate at continuous torque",
+        "thurs the 1st"
+      ],
+      "description_length": "one_line",
+      "summary": "thermal chamber cradle x2 FL-TST-2732",
+      "description": "FL-TST-2732 for Hip actuator thermal derate at continuous torque, need by thurs the 1st pls",
+      "comments": []
+    },
+    {
+      "key": "SCM-277",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-dmitri",
+      "assignee": "p-lin",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-11T08:12:14-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001690"
+      ],
+      "brief": "Order 12x Shank link / 1383: need 12 by 2026-10-08",
+      "must_mention": [
+        "1383",
+        "thurs 10/8"
+      ],
+      "description_length": "one_line",
+      "summary": "Shank link 1383 x12",
+      "description": "1383, need by thurs 10/8.",
+      "comments": [
+        {
+          "id": "SCM-277-c1",
+          "by": "p-dmitri",
+          "at": "2026-09-17T09:45:02-07:00",
+          "events": [
+            "ev-001692"
+          ],
+          "brief": "the link: need 12 by 2026-10-08",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-10-08"
+            }
+          },
+          "must_mention": [
+            "the link",
+            "10/8"
+          ],
+          "body": "Reminder: the link is needed 10/8."
+        },
+        {
+          "id": "SCM-277-c2",
+          "by": "p-dmitri",
+          "at": "2026-09-17T18:27:51-07:00",
+          "events": [
+            "ev-001693"
+          ],
+          "brief": "that order: need 12 by 2026-10-08",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-10-08"
+            }
+          },
+          "must_mention": [
+            "that order",
+            "10/8"
+          ],
+          "body": "Re that order - 10/8 still holds!!"
+        }
+      ]
+    },
+    {
+      "key": "SCM-279",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-ingrid",
+      "assignee": "p-renee",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-11T10:45:25-07:00",
+      "due_date": "2026-10-02",
+      "events": [
+        "ev-001626"
+      ],
+      "brief": "Order 1x Torso static load yoke, 24x Torso load pad / the yoke: need 1 by 2026-10-07 for the test",
+      "must_mention": [
+        "the yoke",
+        "the test",
+        "10/7"
+      ],
+      "description_length": "one_line",
+      "summary": "Torso static load yoke + pads",
+      "description": "Please order the yoke and pads; the test needs them by 10/7.",
+      "comments": [
+        {
+          "id": "SCM-279-c1",
+          "by": "p-ingrid",
+          "at": "2026-09-11T14:07:25-07:00",
+          "events": [
+            "ev-002965"
+          ],
+          "brief": "Correction: the yoke: need 1 by 2026-10-02 for the test",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 1,
+              "by": "2026-10-02"
+            }
+          },
+          "must_mention": [
+            "the yoke",
+            "the test",
+            "10/2"
+          ],
+          "body": "Correction: the yoke is needed by 10/2 for the test, not the 7th."
+        },
+        {
+          "id": "SCM-279-c2",
+          "by": "p-renee",
+          "at": "2026-09-17T11:22:17-07:00",
+          "events": [
+            "ev-001628"
+          ],
+          "brief": "Order XO-5499806 placed, promised 2026-09-29",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-09-29"
+          },
+          "must_mention": [
+            "XO-5499806",
+            "2223",
+            "9/29"
+          ],
+          "body": "Placed XO-5499806 for 2223. Promised 9/29."
+        },
+        {
+          "id": "SCM-279-c3",
+          "by": "p-renee",
+          "at": "2026-09-18T13:45:50-07:00",
+          "events": [
+            "ev-003119"
+          ],
+          "brief": "the yoke: need 1 by 2026-10-02",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 1,
+              "by": "2026-10-02"
+            }
+          },
+          "must_mention": [
+            "the yoke",
+            "fri the 2nd"
+          ],
+          "body": "Confirming the yoke is still needed fri the 2nd."
+        },
+        {
+          "id": "SCM-279-c4",
+          "by": "p-renee",
+          "at": "2026-10-08T08:17:00-07:00",
+          "events": [
+            "ev-001630"
+          ],
+          "brief": "2223 in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-10-06"
+          },
+          "must_mention": [
+            "2223",
+            "the test",
+            "10/6"
+          ],
+          "body": "2223 has been in the rig for the test since 10/6."
+        }
+      ]
+    }
+  ]
+}

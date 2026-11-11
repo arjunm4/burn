@@ -1,0 +1,112 @@
+{
+  "job_id": "slack-ch-structures-2026-08-24-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 23,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-structures",
+    "name": "structures-battery",
+    "slack_id": "C07FLK0STRC",
+    "purpose": "Torso, pelvis and battery enclosure"
+  },
+  "week": {
+    "start": "2026-08-24",
+    "end": "2026-08-30"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "context": [
+    "Channel for Torso and pelvis structure.",
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway",
+    "Ongoing: What to show investors when no full humanoid exists. This week: Demo done; Helena asks for a full lower body by Q1.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Ingrid backs it but exempts the investor demo and DVT builds.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno. This week: Night runs work but nobody watches them; one overnight run lost to a loose clamp.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1787596844.755681",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002515"
+      ],
+      "brief": "Assemble build unit for Leg DVT build: Battery clevis 10 waits on Leg drop-test gantry",
+      "claim": {
+        "kind": "blocked",
+        "value": "rig-leg-drop-gantry"
+      },
+      "must_mention": [
+        "Leg drop-test gantry",
+        "Assemble build unit for Leg DVT build: Battery clevis 10"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Assemble build unit for Leg DVT build: Battery clevis 10 is stuck til Leg drop-test gantry is up. anyone know when thats free"
+    },
+    {
+      "ts": "1787695067.258576",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-002753"
+      ],
+      "brief": "FL-BAT-1691 rev B released: Delrin to bronze after wear",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-BAT-1691"
+      ],
+      "length": "short",
+      "text": "FL-BAT-1691 rev B is released. Delrin swapped to bronze after the wear we saw."
+    }
+  ]
+}

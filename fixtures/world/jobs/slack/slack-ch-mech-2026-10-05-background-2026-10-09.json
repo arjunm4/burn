@@ -1,0 +1,262 @@
+{
+  "job_id": "slack-ch-mech-2026-10-05-background-2026-10-09",
+  "source": "slack",
+  "status": "blank",
+  "priority": 12,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-mech",
+    "name": "mech",
+    "slack_id": "C07FLK0MECH",
+    "purpose": "Mechanical engineering: design, DFM, vendors, drawings"
+  },
+  "week": {
+    "start": "2026-10-05",
+    "end": "2026-10-11"
+  },
+  "people": [
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: First containment trial: neighbor peaks 118 C, no propagation; lid gasket scorched.",
+    "Ongoing: BMS PCBA rev 1 balancing current and cell-tap fusing. This week: Rework five boards by hand; Idris asks whether cell taps need fuses for the cage test.",
+    "Ongoing: Leg DVT build: parts readiness and what to do about late test hardware. This week: Beth: build date holds if links arrive by Friday; Priya wants to start with rev B links.",
+    "Ongoing: Frameless DVT motor from the vendor keeps slipping; stator stack length change",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Leg DVT build at risk from shank links and ankle impact results.",
+    "Ongoing: Leg drop gantry shared by leg drop, torso static load and ankle impact. This week: A missed Thursday slot pushes a test a full week; Zoe asks for a third slot day."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1791563375.320142",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about cad change to the leg first steps on the gait gantry",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1791572243.426609",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on assembly of the busbar clamp",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1791575766.748846",
+      "user": "p-nora",
+      "thread_ts": "1791572243.426609",
+      "events": [],
+      "brief": "reply (answers) in the thread about: assembly of the busbar clamp",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1791579996.841441",
+      "user": "p-gwen",
+      "thread_ts": "1791572243.426609",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: assembly of the busbar clamp",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1791585508.200322",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on drawing review of the hand pinch force and tendon creep",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1791586717.817357",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with off-topic: the team lunch order",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1791588981.998190",
+      "user": "p-priya",
+      "thread_ts": "1791586717.817357",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: off-topic: the team lunch order",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1791593582.742455",
+      "user": "p-sofia",
+      "thread_ts": "1791586717.817357",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: off-topic: the team lunch order",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    }
+  ]
+}

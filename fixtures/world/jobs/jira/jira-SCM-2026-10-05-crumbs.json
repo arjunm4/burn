@@ -1,0 +1,238 @@
+{
+  "job_id": "jira-SCM-2026-10-05-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 11,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "SCM",
+    "name": "Supply chain and procurement"
+  },
+  "week": {
+    "start": "2026-10-05",
+    "end": "2026-10-11"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "SCM-337",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": "p-tomas",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-10-07T14:36:22-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001961"
+      ],
+      "brief": "Order 12x Dyno shaft spacer / 2139: need 12 by 2026-10-27 for the fit check",
+      "must_mention": [
+        "2139",
+        "the fit check",
+        "tues 10/27"
+      ],
+      "description_length": "short",
+      "summary": "dyno shaft spacers 2139",
+      "description": "12 pcs for the fit check, need tues 10/27",
+      "comments": [
+        {
+          "id": "SCM-337-c1",
+          "by": "p-arjun",
+          "at": "2026-10-08T09:46:26-07:00",
+          "events": [
+            "ev-001962"
+          ],
+          "brief": "dyno spacers: need 12 by 2026-10-27",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-10-27"
+            }
+          },
+          "must_mention": [
+            "dyno spacers",
+            "tues the 27th"
+          ],
+          "body": "dyno spacers still tues the 27th yes?"
+        },
+        {
+          "id": "SCM-337-c2",
+          "by": "p-tomas",
+          "at": "2026-11-05T12:18:00-08:00",
+          "events": [
+            "ev-001966"
+          ],
+          "brief": "spacer set in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-11-04"
+          },
+          "must_mention": [
+            "spacer set",
+            "the build",
+            "11/4"
+          ],
+          "body": "spacer set on the build 11/4"
+        }
+      ]
+    },
+    {
+      "key": "SCM-338",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-zoe",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-10-07T16:14:01-07:00",
+      "due_date": "2026-11-20",
+      "events": [
+        "ev-001935"
+      ],
+      "brief": "Order 12x Torso IMU plate, 2x Torso lifting eye block, 12x Torso harness bracket / IMU plate: need 12 by 2026-11-25",
+      "must_mention": [
+        "IMU plate",
+        "wed the 25th"
+      ],
+      "description_length": "medium",
+      "summary": "Torso IMU plate, lifting eye blocks, harness brkts",
+      "description": "IMU plate x12 needed wed the 25th.\nLifting eye blocks and harness brackets same drawing pkg, can ship together if easier.\nIMU plate flatness callout is on the dwg, pls",
+      "comments": [
+        {
+          "id": "SCM-338-c1",
+          "by": "p-samir",
+          "at": "2026-10-08T17:22:43-07:00",
+          "events": [
+            "ev-003187"
+          ],
+          "brief": "FL-STR-1507: need 12 by 2026-11-18",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-11-18"
+            }
+          },
+          "must_mention": [
+            "FL-STR-1507",
+            "wed the 18th"
+          ],
+          "body": "FL-STR-1507 pull in to wed the 18th"
+        },
+        {
+          "id": "SCM-338-c2",
+          "by": "p-samir",
+          "at": "2026-10-09T14:38:24-07:00",
+          "events": [
+            "ev-001938"
+          ],
+          "brief": "1507: need 12 by 2026-11-20",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-11-20"
+            }
+          },
+          "must_mention": [
+            "1507",
+            "11/20"
+          ],
+          "body": "ok 1507 by 11/20 works"
+        }
+      ]
+    }
+  ]
+}

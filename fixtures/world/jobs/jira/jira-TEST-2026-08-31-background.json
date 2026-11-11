@@ -1,0 +1,404 @@
+{
+  "job_id": "jira-TEST-2026-08-31-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 22,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "TEST",
+    "name": "Test, rigs and fixtures"
+  },
+  "week": {
+    "start": "2026-08-31",
+    "end": "2026-09-06"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "TEST-169",
+      "type": "Sub-task",
+      "status": "Blocked",
+      "reporter": "p-zoe",
+      "assignee": "p-andre",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-08-31T11:38:33-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Review DFM feedback",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "TEST-169-c1",
+          "by": "p-andre",
+          "at": "2026-09-02T17:15:06-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-169-c2",
+          "by": "p-zoe",
+          "at": "2026-09-11T09:57:31-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-169-c3",
+          "by": "p-andre",
+          "at": "2026-09-14T09:29:25-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-169-c4",
+          "by": "p-andre",
+          "at": "2026-09-23T13:11:21-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "TEST-170",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-zoe",
+      "assignee": "p-dmitri",
+      "labels": [
+        "docs"
+      ],
+      "priority": "High",
+      "created": "2026-08-31T22:01:13-07:00",
+      "due_date": "2026-09-17",
+      "events": [],
+      "brief": "Update assembly work instructions",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "TEST-170-c1",
+          "by": "p-dmitri",
+          "at": "2026-09-01T21:56:13-07:00",
+          "events": [],
+          "brief": "background: short note on why the due date moved (no date)",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "TEST-171",
+      "type": "Task",
+      "status": "Blocked",
+      "reporter": "p-dmitri",
+      "assignee": "p-dmitri",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-09-01T09:25:51-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Rework fixture clamp",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "TEST-171-c1",
+          "by": "p-dmitri",
+          "at": "2026-09-07T11:47:00-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-171-c2",
+          "by": "p-dmitri",
+          "at": "2026-09-15T16:44:02-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-171-c3",
+          "by": "p-dmitri",
+          "at": "2026-09-28T13:18:27-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "TEST-172",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-zoe",
+      "assignee": "p-zoe",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-09-01T10:37:41-07:00",
+      "due_date": "2026-09-17",
+      "events": [],
+      "brief": "Rework fixture clamp",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "TEST-173",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-dmitri",
+      "assignee": "p-lin",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-09-02T17:08:59-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Document test procedure",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "TEST-173-c1",
+          "by": "p-lin",
+          "at": "2026-09-03T13:00:07-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-173-c2",
+          "by": "p-lin",
+          "at": "2026-09-04T09:50:55-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-173-c3",
+          "by": "p-dmitri",
+          "at": "2026-09-07T16:32:15-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "TEST-174",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-zoe",
+      "assignee": "p-zoe",
+      "labels": [
+        "docs"
+      ],
+      "priority": "High",
+      "created": "2026-09-02T18:21:07-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Clean up CAD configs",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "TEST-174-c1",
+          "by": "p-lin",
+          "at": "2026-09-08T15:09:11-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "TEST-175",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-zoe",
+      "assignee": "p-zoe",
+      "labels": [
+        "cleanup"
+      ],
+      "priority": "High",
+      "created": "2026-09-02T22:12:58-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Investigate noise on bench unit",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "TEST-176",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-andre",
+      "assignee": "p-zoe",
+      "labels": [
+        "docs"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-04T08:55:18-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Capture lessons learned",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "TEST-177",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-dmitri",
+      "assignee": "p-andre",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-09-04T10:06:17-07:00",
+      "due_date": "2026-09-21",
+      "events": [],
+      "brief": "Document test procedure",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "TEST-178",
+      "type": "Story",
+      "status": "In Progress",
+      "reporter": "p-zoe",
+      "assignee": "p-andre",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-09-04T12:09:50-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Investigate noise on bench unit",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": []
+    }
+  ]
+}

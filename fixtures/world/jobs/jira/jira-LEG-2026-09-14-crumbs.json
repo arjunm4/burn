@@ -1,0 +1,191 @@
+{
+  "job_id": "jira-LEG-2026-09-14-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 17,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "LEG",
+    "name": "Legs and ankle"
+  },
+  "week": {
+    "start": "2026-09-14",
+    "end": "2026-09-20"
+  },
+  "people": [
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "LEG-294",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-talia",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-09-16T11:39:28-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001656"
+      ],
+      "brief": "Order 24x Ankle pivot pin, 12x Ankle F/T sensor mount / ankle pin: need 24 by 2026-09-25",
+      "must_mention": [
+        "ankle pin",
+        "9/25"
+      ],
+      "description_length": "short",
+      "summary": "ankle pin + F/T mounts",
+      "description": "24 ankle pin needed 9/25, F/T mounts can come later\npins are the blocker",
+      "comments": []
+    },
+    {
+      "key": "LEG-303",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-diego",
+      "assignee": "p-diego",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-09-18T13:01:42-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001836"
+      ],
+      "brief": "Order 5x Knee belt pulley / knee pulley: need 5 by 2026-10-06",
+      "must_mention": [
+        "knee pulley",
+        "tues the 6th"
+      ],
+      "description_length": "one_line",
+      "summary": "knee pulley qty 5",
+      "description": "knee pulley needed by tues the 6th",
+      "comments": [
+        {
+          "id": "LEG-303-c1",
+          "by": "p-hana",
+          "at": "2026-09-25T16:56:18-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on vendor"
+        },
+        {
+          "id": "LEG-303-c2",
+          "by": "p-callum",
+          "at": "2026-09-28T15:15:29-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "still waiting on review"
+        },
+        {
+          "id": "LEG-303-c3",
+          "by": "p-diego",
+          "at": "2026-10-22T17:51:00-07:00",
+          "events": [
+            "ev-001839"
+          ],
+          "brief": "knee pulley in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-10-21"
+          },
+          "must_mention": [
+            "knee pulley",
+            "the build",
+            "10/21"
+          ],
+          "body": "knee pulley in the build as of 10/21"
+        }
+      ]
+    }
+  ]
+}

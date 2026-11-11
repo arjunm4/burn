@@ -1,0 +1,111 @@
+{
+  "job_id": "slack-ch-legs-2026-11-09-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 1,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-legs",
+    "name": "legs",
+    "slack_id": "C07FLK0LEGS",
+    "purpose": "Leg and ankle: design, drop test, gait gantry"
+  },
+  "week": {
+    "start": "2026-11-09",
+    "end": "2026-11-15"
+  },
+  "people": [
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Leg (left, hip to foot)."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1794275640.829977",
+      "user": "p-luis",
+      "thread_ts": null,
+      "events": [
+        "ev-003430"
+      ],
+      "brief": "Bearing set for ankle and foot: still quoting 2026-11-09",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-11-09"
+      },
+      "must_mention": [
+        "Bearing set for ankle and foot (crank)",
+        "mon the 9th"
+      ],
+      "length": "medium",
+      "text": "Bearing set for ankle and foot (crank) still in qoute as of mon the 9th, nothing back yet"
+    },
+    {
+      "ts": "1794325680.786971",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-002255"
+      ],
+      "brief": "2878 in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-11-09"
+      },
+      "must_mention": [
+        "2878",
+        "the build",
+        "mon the 9th"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "2878 made it into the build mon the 9th 💪"
+    }
+  ]
+}

@@ -67,6 +67,15 @@ function fallbackText(ev, world, mm) {
   return t.charAt(0).toUpperCase() + t.slice(1) + '.';
 }
 
+// What the writer is told about a crumb. A stale or wrong statement's world brief may describe the
+// truth ("still quoting rev C (it changed to rev D)"), so for those the brief is rebuilt from the stated
+// value only. Any brief also loses parenthetical asides that reveal a change.
+const REVEALS = /\([^)]*\b(?:changed|actually|really|in fact|true|truth|stale|wrong|was moved|is now|not yet announced|unannounced)\b[^)]*\)/gi;
+function safeBrief(ev, fallback, people) {
+  if (ev.truth && ev.truth !== 'true') return `${firstName(people.get(ev.by)) || 'Someone'} says: ${fallback}`;
+  return String(ev.brief || '').replace(REVEALS, '').replace(/\s{2,}/g, ' ').trim();
+}
+
 function personForJob(p) {
   return { id: p.id, name: p.name, display_name: p.display_name, slack_id: p.slack_id, title: p.title, style: p.style };
 }
@@ -112,13 +121,14 @@ export function plan(world, ctx0 = {}) {
         const min = Math.max(0, Math.floor((toMs(ev.known_at) - start) / 60000));
         const at = [Math.max(0, min - 3), Math.min(m.actual_min, Math.max(min + 3, Math.max(0, min - 3) + 1))];
         const mm = mustMention(ev, world);
+        const fb = fallbackText(ev, world, mm);
         crumbs.push({
-          event: ev.id, speaker: ev.by, at_min: at, brief: ev.brief,
+          event: ev.id, speaker: ev.by, at_min: at, brief: safeBrief(ev, fb, people),
           claim: { kind: ev.claim.kind, subject: ev.claim.subject, value: ev.claim.value },
-          must_mention: mm, fallback_text: fallbackText(ev, world, mm),
+          must_mention: mm, fallback_text: fb,
         });
       } else {
-        background.push({ event: ev.id, speaker: ev.by, brief: ev.brief });
+        background.push({ event: ev.id, speaker: ev.by, brief: safeBrief(ev, "", people) });
       }
     }
     const week = mondayOf(dateOf(m.start));

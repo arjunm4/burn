@@ -1,0 +1,396 @@
+{
+  "job_id": "jira-LEG-2026-08-17-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 26,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "LEG",
+    "name": "Legs and ankle"
+  },
+  "week": {
+    "start": "2026-08-17",
+    "end": "2026-08-23"
+  },
+  "people": [
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "LEG-246",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-hana",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-08-17T14:27:22-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Torque spec audit (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-246-c1",
+          "by": "p-hana",
+          "at": "2026-08-19T10:19:07-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-246-c2",
+          "by": "p-priya",
+          "at": "2026-08-28T11:33:09-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-247",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-priya",
+      "assignee": "p-priya",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-08-18T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Install and torque for Leg DVT build: Ankle F/T sensor mount",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-248",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-callum",
+      "assignee": null,
+      "labels": [],
+      "priority": "High",
+      "created": "2026-08-18T13:03:58-07:00",
+      "due_date": "2026-09-04",
+      "events": [],
+      "brief": "Torque spec audit (ankle and foot)",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-248-c1",
+          "by": "p-callum",
+          "at": "2026-08-21T09:33:58-07:00",
+          "events": [],
+          "brief": "background: short note on why the due date moved (no date)",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-250",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-hana",
+      "assignee": "p-priya",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-08-18T18:16:50-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Firmware flag for bench mode (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-250-c1",
+          "by": "p-priya",
+          "at": "2026-09-02T09:16:54-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-251",
+      "type": "Sub-task",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": null,
+      "labels": [
+        "cleanup"
+      ],
+      "priority": "Medium",
+      "created": "2026-08-19T10:32:37-07:00",
+      "due_date": "2026-09-15",
+      "events": [],
+      "brief": "Follow up vendor question (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-251-c1",
+          "by": "p-priya",
+          "at": "2026-08-24T12:46:30-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-251-c2",
+          "by": "p-callum",
+          "at": "2026-08-24T14:22:24-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-252",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-hana",
+      "labels": [
+        "cleanup"
+      ],
+      "priority": "Medium",
+      "created": "2026-08-19T11:18:09-07:00",
+      "due_date": "2026-09-23",
+      "events": [],
+      "brief": "Capture lessons learned (ankle and foot)",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-252-c1",
+          "by": "p-hana",
+          "at": "2026-08-26T01:54:09-07:00",
+          "events": [],
+          "brief": "background: short note on why the due date moved (no date)",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-253",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-callum",
+      "assignee": "p-hana",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-08-20T09:03:11-07:00",
+      "due_date": "2026-09-28",
+      "events": [],
+      "brief": "Capture lessons learned (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-253-c1",
+          "by": "p-hana",
+          "at": "2026-08-24T10:41:11-07:00",
+          "events": [],
+          "brief": "background: short note on why the due date moved (no date)",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-254",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-callum",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-08-20T10:14:48-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Torque spec audit (ankle and foot)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-254-c1",
+          "by": "p-callum",
+          "at": "2026-08-24T17:34:03-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-254-c2",
+          "by": "p-callum",
+          "at": "2026-08-24T17:41:27-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-254-c3",
+          "by": "p-diego",
+          "at": "2026-08-25T11:49:55-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-255",
+      "type": "Sub-task",
+      "status": "Done",
+      "reporter": "p-hana",
+      "assignee": "p-priya",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-08-20T17:56:58-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Rework fixture clamp (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-255-c1",
+          "by": "p-priya",
+          "at": "2026-08-21T16:29:01-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-255-c2",
+          "by": "p-priya",
+          "at": "2026-08-24T15:31:06-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    }
+  ]
+}

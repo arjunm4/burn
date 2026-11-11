@@ -378,7 +378,7 @@ export async function runChecks({ world: worldDir, out: outDir, weeks = null, wr
     let same = 0;
     for (let i = 1; i < byT.length; i++) if (leads(byT[i]) === leads(byT[i - 1])) same++;
     band(40, 'consecutive_equal_leads', same / Math.max(1, byT.length - 1), 0, 0.15);
-    if (answers) Object.assign(stats, probe(world, answers, band, T(tg.probe_accuracy, 0.66, 0.78)));
+    if (answers) Object.assign(stats, probe(world, answers, band, T(tg.probe_accuracy, 0.66, 0.78), { weeks, targets: tg, coverage }));
     else warn(41, 'answers.json missing: probe not run');
   } else {
     info.statistics = `skipped (${xorders.length} Xometry orders: not a full world)`;
@@ -388,26 +388,45 @@ export async function runChecks({ world: worldDir, out: outDir, weeks = null, wr
   return { errors, warnings, info, coverage };
 }
 
-// §2 learnability probe on truth-side proxies of the visible attributes.
-export function probe(world, answers, band, accBand = [0.66, 0.78]) {
+// §2 learnability probe on truth-side proxies of the visible attributes (I41).
+// Cells: where the believed need-by falls against the quoted delivery dates (unknown if never discussed or no need-by;
+// Standard would miss it; Standard makes it but Economy would not; Economy makes it with up to 10 wd to spare; more)
+// x highest expressed pressure in the 7 days before T x requester's Expedite tercile on the training orders x burst week.
+// Split = the coverage split: orders with T >= text start + 30 days, the newest 30% held out.
+// Reports three-tier accuracy and Expedite-or-not. Bands come from knobs.targets (opts.targets) with spec defaults.
+export function probe(world, answers, band, accBand = [0.66, 0.78], opts = {}) {
   const meta = world.meta;
+  const tg = opts.targets || {};
+  const B = (name, lo, hi) => (Array.isArray(tg[name]) ? tg[name] : [lo, hi]);
   const ans = new Map(answers.orders.map((a) => [a.order, a]));
   const weekKind = new Map((meta.weeks || []).map((w) => [w.week_start, w.kind]));
   const LV = { low: 0, elevated: 1, high: 2 };
+  const xo = world.orders.filter((x) => x.type === 'xometry_cnc');
+  let setOf;
+  if (opts.coverage?.orders) setOf = new Map(opts.coverage.orders.map((c) => [c.order, c.set]));
+  else {
+    const usableFrom = addDays(dateOf(textStartFor(world, opts.weeks ?? 13)), 30);
+    const usable = xo.filter((o) => dateOf(o.placed_at) >= usableFrom).sort((a, b) => (toMs(a.placed_at) - toMs(b.placed_at)) || (a.id < b.id ? -1 : 1));
+    const nTest = Math.round(usable.length * 0.3);
+    setOf = new Map(usable.map((o, i) => [o.id, i >= usable.length - nTest ? 'test' : 'train']));
+  }
   const rows = [];
-  for (const o of world.orders.filter((x) => x.type === 'xometry_cnc')) {
+  for (const o of xo) {
     const a = ans.get(o.id);
-    if (!a || (a.split !== 'train' && a.split !== 'test')) continue;
-    const lead = (k) => o.tiers.find((t) => t.tier === k)?.lead_business_days;
-    const std = lead('standard') ?? 8; const econ = lead('economy') ?? std + 5;
+    const split = setOf.get(o.id);
+    if (!a || !split) continue;
+    const tier = (k) => o.tiers.find((t) => t.tier === k);
+    const std = tier('standard'); const econ = tier('economy');
     let bin = 'unknown';
-    if (o.link_quality !== 'never_discussed' && o.need_by_believed) {
-      const d = wdBetween(meta, dateOf(o.placed_at), o.need_by_believed);
-      bin = d < std ? 'lt_std' : d <= econ ? 'std_econ' : d <= econ + 10 ? 'econ_10' : 'more';
+    if (o.link_quality !== 'never_discussed' && o.need_by_believed && std) {
+      const need = o.need_by_believed;
+      if (std.est_delivery > need) bin = 'lt_std';
+      else if (econ ? econ.est_delivery > need : wdBetween(meta, std.est_delivery, need) < 5) bin = 'std_econ';
+      else bin = wdBetween(meta, econ ? econ.est_delivery : std.est_delivery, need) <= (econ ? 10 : 15) ? 'econ_10' : 'more';
     }
     const ep = a.expressed_pressure || {};
     const pres = ['low', 'elevated', 'high'][Math.max(0, ...['0-1', '1-3', '3-7'].map((b) => LV[ep[b]] ?? 0))];
-    rows.push({ o, a, bin, pres, burst: weekKind.get(mondayOf(dateOf(o.placed_at))) === 'burst', y: o.chosen_tier, split: a.split, reason: a.hidden_reason });
+    rows.push({ o, a, bin, pres, burst: weekKind.get(mondayOf(dateOf(o.placed_at))) === 'burst', y: o.chosen_tier, split, reason: a.hidden_reason });
   }
   const train = rows.filter((r) => r.split === 'train');
   const test = rows.filter((r) => r.split === 'test');
@@ -431,18 +450,21 @@ export function probe(world, answers, band, accBand = [0.66, 0.78]) {
   const predict = fit(levels);
   const predictHidden = fit([(r) => `${r.reason}|${levels[0](r)}`, (r) => `${r.reason}|${r.bin}`, (r) => r.reason, () => '']);
   const acc = (rs, f) => (rs.length ? rs.filter((r) => f(r) === r.y).length / rs.length : NaN);
-  const out = {};
+  const isExp = (t) => t === 'expedite';
+  const acc2 = (rs, f) => (rs.length ? rs.filter((r) => isExp(f(r)) === isExp(r.y)).length / rs.length : NaN);
+  const out = { train: train.length, test: test.length };
   if (!test.length) return out;
-  band(41, 'probe_always_standard', acc(test, () => 'standard'), 0.5, 0.6);
-  band(41, 'probe_days_to_need_rule', acc(test, (r) => (r.bin === 'lt_std' ? 'expedite' : 'standard')), 0, 0.7);
+  band(41, 'probe_always_standard', acc(test, () => 'standard'), ...B('probe_always_standard', 0.5, 0.6));
+  band(41, 'probe_days_to_need_rule', acc(test, (r) => (r.bin === 'lt_std' ? 'expedite' : 'standard')), ...B('probe_days_to_need_rule', 0, 0.7));
   band(41, 'probe_accuracy', acc(test, predict), ...accBand);
+  band(41, 'probe_expedite_or_not', acc2(test, predict), ...B('probe_expedite_or_not', 0.7, 0.85));
   const clean = test.filter((r) => r.o.link_quality === 'clean_id');
   const never = test.filter((r) => r.o.link_quality === 'never_discussed');
-  if (clean.length >= 10) band(41, 'probe_clean_id', acc(clean, predict), 0.74, 0.85);
-  if (never.length >= 10) band(41, 'probe_never_discussed', acc(never, predict), 0.52, 0.62);
+  if (clean.length >= 10) band(41, 'probe_clean_id', acc(clean, predict), ...B('probe_clean_id', 0.74, 0.85));
+  if (never.length >= 10) band(41, 'probe_never_discussed', acc(never, predict), ...B('probe_never_discussed', 0.52, 0.62));
   const exp = test.filter((r) => r.y === 'expedite');
-  if (exp.length) band(41, 'probe_expedite_recall', exp.filter((r) => predict(r) === 'expedite').length / exp.length, 0.5, 0.7);
-  band(41, 'probe_with_hidden_reason', acc(test, predictHidden), 0.9, 1);
+  if (exp.length) band(41, 'probe_expedite_recall', exp.filter((r) => predict(r) === 'expedite').length / exp.length, ...B('probe_expedite_recall', 0.5, 0.7));
+  band(41, 'probe_with_hidden_reason', acc(test, predictHidden), ...B('probe_with_hidden_reason', 0.9, 1));
   return out;
 }
 

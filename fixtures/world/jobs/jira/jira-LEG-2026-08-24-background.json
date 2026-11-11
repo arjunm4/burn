@@ -1,0 +1,361 @@
+{
+  "job_id": "jira-LEG-2026-08-24-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 24,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "LEG",
+    "name": "Legs and ankle"
+  },
+  "week": {
+    "start": "2026-08-24",
+    "end": "2026-08-30"
+  },
+  "people": [
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "LEG-256",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-hana",
+      "assignee": "p-callum",
+      "labels": [],
+      "priority": "Highest",
+      "created": "2026-08-24T16:42:48-07:00",
+      "due_date": "2026-09-17",
+      "events": [],
+      "brief": "Firmware flag for bench mode (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-256-c1",
+          "by": "p-callum",
+          "at": "2026-08-31T09:20:54-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-256-c2",
+          "by": "p-hana",
+          "at": "2026-09-03T11:16:05-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-257",
+      "type": "Sub-task",
+      "status": "Done",
+      "reporter": "p-callum",
+      "assignee": "p-callum",
+      "labels": [],
+      "priority": "Highest",
+      "created": "2026-08-24T17:42:51-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Harness routing cleanup (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-257-c1",
+          "by": "p-priya",
+          "at": "2026-09-01T09:09:10-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-257-c2",
+          "by": "p-callum",
+          "at": "2026-09-02T12:00:32-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-258",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-priya",
+      "labels": [
+        "dfm"
+      ],
+      "priority": "High",
+      "created": "2026-08-24T21:28:45-07:00",
+      "due_date": "2026-09-21",
+      "events": [],
+      "brief": "Capture lessons learned (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-258-c1",
+          "by": "p-callum",
+          "at": "2026-09-08T10:18:35-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-258-c2",
+          "by": "p-priya",
+          "at": "2026-09-09T12:37:20-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-259",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": null,
+      "labels": [
+        "rig"
+      ],
+      "priority": "High",
+      "created": "2026-08-25T10:00:00-07:00",
+      "due_date": "2026-10-09",
+      "events": [],
+      "brief": "Instrumentation fit-up for Leg DVT build: Gait gantry harness hook",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-259-c1",
+          "by": "p-callum",
+          "at": "2026-08-27T14:20:38-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-259-c2",
+          "by": "p-priya",
+          "at": "2026-09-21T12:56:30-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-259-c3",
+          "by": "p-callum",
+          "at": "2026-10-13T17:42:14-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-259-c4",
+          "by": "p-priya",
+          "at": "2026-10-14T16:34:36-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-260",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-hana",
+      "assignee": "p-hana",
+      "labels": [
+        "evt"
+      ],
+      "priority": "High",
+      "created": "2026-08-25T10:00:00-07:00",
+      "due_date": "2026-10-20",
+      "events": [],
+      "brief": "Prototype fit-up for Leg DVT build: Ankle rod-end spacer",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-260-c1",
+          "by": "p-hana",
+          "at": "2026-09-07T11:59:26-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-260-c2",
+          "by": "p-hana",
+          "at": "2026-10-08T10:18:18-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-260-c3",
+          "by": "p-hana",
+          "at": "2026-10-30T15:22:23-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-261",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-callum",
+      "labels": [
+        "dfm"
+      ],
+      "priority": "Low",
+      "created": "2026-08-25T15:31:51-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Tolerance stack review (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-262",
+      "type": "Bug",
+      "status": "Blocked",
+      "reporter": "p-priya",
+      "assignee": "p-diego",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-08-28T17:52:30-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Follow up vendor question (ankle and foot)",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": []
+    }
+  ]
+}

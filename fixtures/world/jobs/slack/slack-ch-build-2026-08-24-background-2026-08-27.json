@@ -1,0 +1,252 @@
+{
+  "job_id": "slack-ch-build-2026-08-24-background-2026-08-27",
+  "source": "slack",
+  "status": "blank",
+  "priority": 24,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-build",
+    "name": "build",
+    "slack_id": "C07FLK0BILD",
+    "purpose": "EVT/DVT build coordination"
+  },
+  "week": {
+    "start": "2026-08-24",
+    "end": "2026-08-30"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-yusuf",
+      "name": "Yusuf Demir",
+      "display_name": "yusuf",
+      "slack_id": "U07FLK0YUSU",
+      "title": "Firmware Engineer, motor control",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators. This week: Compromise: derate ramps over 2 s and publishes a warning to the controller.",
+    "Ongoing: Tendons fray at the proximal pulley after 40k grip cycles. This week: Passes 100k; creep makes the finger lose 4 deg of closure, retension interval set.",
+    "Ongoing: Aluminum links gall on 303 pins under side load. This week: Kenji pulls a finger apart: galling on the knuckle pin bore after pinch tests.",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind. This week: Tomas measures pin diameters: two batches differ by 8 microns; suspects pin supplier mix.",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough. This week: Dmitri: chamber only free Mondays; battery team has it midweek.",
+    "Ongoing: What to show investors when no full humanoid exists. This week: Demo done; Helena asks for a full lower body by Q1.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles",
+    "Ongoing: Gait controller tuning for the investor demo on the gait gantry. This week: Investor demo goes; one stumble recovered by the boom, Helena happy.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Ingrid backs it but exempts the investor demo and DVT builds.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno. This week: Night runs work but nobody watches them; one overnight run lost to a loose clamp.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1787867268.421419",
+      "user": "p-lukas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about off-topic: a meme about CAD software",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787869662.181795",
+      "user": "p-yusuf",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about the ongoing running the knee at 40 c ambient for dvt; chamber access and feedthrough",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787871616.056832",
+      "user": "p-arjun",
+      "thread_ts": "1787867268.421419",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: off-topic: a meme about CAD software",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787873315.899368",
+      "user": "p-gwen",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about this: Foot contact detection flaky; Ravi suggests learned contact estimator, Mei wants foot switches first.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787876266.776866",
+      "user": "p-callum",
+      "thread_ts": "1787867268.421419",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: off-topic: a meme about CAD software",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787876542.921900",
+      "user": "p-callum",
+      "thread_ts": "1787867268.421419",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: off-topic: a meme about CAD software",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787876661.204864",
+      "user": "p-dmitri",
+      "thread_ts": "1787867268.421419",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: off-topic: a meme about CAD software",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787881839.137147",
+      "user": "p-farah",
+      "thread_ts": "1787867268.421419",
+      "events": [],
+      "brief": "reply (ack) in the thread about: off-topic: a meme about CAD software",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

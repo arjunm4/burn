@@ -1,0 +1,250 @@
+{
+  "job_id": "slack-ch-hw-purchasing-2026-09-07-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 19,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hw-purchasing",
+    "name": "hw-purchasing",
+    "slack_id": "C07FLK0HWPR",
+    "purpose": "Hardware buys: Xometry quotes, McMaster, Digi-Key, lead times"
+  },
+  "week": {
+    "start": "2026-09-07",
+    "end": "2026-09-13"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators. This week: v2 build slips a week; dyno sweep waits on it.",
+    "Ongoing: Aluminum links gall on 303 pins under side load. This week: Compromise: 17-4 H900 pins and hard anodize on the link bores.",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind. This week: Shimmed unit measures 0.18 deg; Owen worries shims walk under reversing load.",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough. This week: Debate whether to run the dyno outside with a duct into the chamber instead; Tomas rejects, gradients too large.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Rev C release moves the cable inboard; Farah asks for high-flex cable on the next harness.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Omar flags the DVT motor as the long pole; Arjun says it is fine.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Samir reports expedite share down from 34% to 22%; two builds slipped anyway.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting. This week: First static load to 2x: 0.6 mm deflection at the hip mount, within spec."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1788975089.643171",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-001587"
+      ],
+      "brief": "spine fitting: need 8 by 2026-09-29",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-09-29"
+        }
+      },
+      "must_mention": [
+        "spine fitting",
+        "tues 9/29"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Need 8 spine fitting by tues 9/29!!"
+    },
+    {
+      "ts": "1788979540.715120",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-001551"
+      ],
+      "brief": "that order: need 8 by 2026-09-23",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-09-23"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "wed the 23rd"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "that order needs 8 by wed the 23rd"
+    },
+    {
+      "ts": "1789122940.855556",
+      "user": "p-tomas",
+      "thread_ts": "1788979540.715120",
+      "events": [
+        "ev-002942"
+      ],
+      "brief": "Correction: that order: need 8 by 2026-09-28",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-09-28"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "9/28"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "I think that order is actually 9/28, not the 23rd, probably worth double-checking"
+    },
+    {
+      "ts": "1789143462.095221",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-001679"
+      ],
+      "brief": "the pulley: need 10 by 2026-10-28",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-10-28"
+        }
+      },
+      "must_mention": [
+        "the pulley",
+        "wed the 28th"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "the pulley, 10 by wed the 28th i think"
+    },
+    {
+      "ts": "1789176517.193437",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-001650"
+      ],
+      "brief": "sensor bracket: need 24 by 2026-09-28 for Kit and assemble: Tactile board bracket",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-09-28"
+        }
+      },
+      "must_mention": [
+        "sensor bracket",
+        "Kit and assemble: Tactile board bracket",
+        "9/28"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "We need 24 sensor bracket by 9/28 for Kit and assemble: Tactile board bracket."
+    }
+  ]
+}

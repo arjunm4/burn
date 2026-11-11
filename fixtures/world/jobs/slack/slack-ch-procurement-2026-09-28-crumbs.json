@@ -1,0 +1,366 @@
+{
+  "job_id": "slack-ch-procurement-2026-09-28-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 13,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-09-28",
+    "end": "2026-10-04"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-rachel",
+      "name": "Rachel Goldberg",
+      "display_name": "rachel",
+      "slack_id": "U07FLK0RACH",
+      "title": "Accounting and Finance Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway",
+    "Ongoing: BMS PCBA rev 1 balancing current and cell-tap fusing. This week: Bao: wrong bleed resistor value on the BOM, 68 ohm populated instead of 33.",
+    "Ongoing: Leg DVT build: parts readiness and what to do about late test hardware. This week: Nora posts build readiness: 82% of leg DVT parts in, shank links still at the vendor.",
+    "Ongoing: Frameless DVT motor from the vendor keeps slipping; stator stack length change. This week: Samir: vendor confirms PO for DVT stators, ETA late October.",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough. This week: Switch to higher-viscosity grease; soak passes.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real",
+    "Ongoing: Leg drop gantry shared by leg drop, torso static load and ankle impact. This week: Dmitri splits: torso Tue, leg Thu; nobody happy."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1790626976.032449",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-002173"
+      ],
+      "brief": "tensioner: need 24 by 2026-11-12 for the fit check",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-11-12"
+        }
+      },
+      "must_mention": [
+        "tensioner",
+        "the fit check",
+        "saddle",
+        "11/12"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Need 24 of the tensioner for the fit check on the saddle. They have to be here by 11/12 or we lose the slot."
+    },
+    {
+      "ts": "1790627731.461814",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-001816"
+      ],
+      "brief": "Quote Q-2589969-1 for FL-STR-1582: standard $1393.57, 10 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-05",
+          "quote_id": "Q-2589969-1",
+          "price_usd": 1393.57,
+          "lead_days": 10
+        }
+      },
+      "must_mention": [
+        "Q-2589969-1",
+        "FL-STR-1582",
+        "10/5"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Q-2589969-1 back for FL-STR-1582, 12 pcs standard, 10 BD. need them by 10/5 so its tight"
+    },
+    {
+      "ts": "1790629698.623701",
+      "user": "p-carlos",
+      "thread_ts": "1790626976.032449",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Not sure 24 is right, last fit check we only used half. Order fewer and keep the spares money."
+    },
+    {
+      "ts": "1790630116.806478",
+      "user": "p-rachel",
+      "thread_ts": "1790627731.461814",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "If it goes over the approval limit, please attach the quote PDF to the Ramp request so I don't have to chase it."
+    },
+    {
+      "ts": "1790631790.200102",
+      "user": "p-rachel",
+      "thread_ts": "1790626976.032449",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Lin, is that 24 total or 24 per side?"
+    },
+    {
+      "ts": "1790712679.627623",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-001920"
+      ],
+      "brief": "the bracket: need 3 by 2026-10-22",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-10-22"
+        }
+      },
+      "must_mention": [
+        "the bracket",
+        "thurs the 22nd"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Need 3 of the bracket by thurs the 22nd, can someone get it moving 🙏"
+    },
+    {
+      "ts": "1790722178.366698",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-001876"
+      ],
+      "brief": "pulley: need 5 by 2026-10-06",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 5,
+          "by": "2026-10-06"
+        }
+      },
+      "must_mention": [
+        "pulley",
+        "tues the 6th"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "need 5 pulley by tues the 6th or dyno sits idle. who can push this"
+    },
+    {
+      "ts": "1790784642.060343",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-001886"
+      ],
+      "brief": "FL-BAT-1679: need 10 by 2026-10-26",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-10-26"
+        }
+      },
+      "must_mention": [
+        "FL-BAT-1679",
+        "mon 10/26"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "FL-BAT-1679 qty 10, need by mon 10/26. i think thats right, will double check the count with Valeria"
+    },
+    {
+      "ts": "1790884537.897830",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-001820"
+      ],
+      "brief": "Quote Q-2596355-1 for FL-LEG-1339: standard $740.61, 9 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-07",
+          "quote_id": "Q-2596355-1",
+          "price_usd": 740.61,
+          "lead_days": 9
+        }
+      },
+      "must_mention": [
+        "Q-2596355-1",
+        "FL-LEG-1339",
+        "10/7"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Got Q-2596355-1 for FL-LEG-1339, 12 pcs standard, 9 BD. Need by 10/7 😬"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "job_id": "slack-ch-build-2026-09-21-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 15,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-build",
+    "name": "build",
+    "slack_id": "C07FLK0BILD",
+    "purpose": "EVT/DVT build coordination"
+  },
+  "week": {
+    "start": "2026-09-21",
+    "end": "2026-09-27"
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Dmitri books the battery cage for the containment test; heater trigger fixture still on order.",
+    "Ongoing: BMS PCBA rev 1 balancing current and cell-tap fusing. This week: BMS boards in; balancing current measures 48 mA instead of 100 mA.",
+    "Ongoing: Aluminum links gall on 303 pins under side load. This week: Rev B finger links and pins released with the tactile board change.",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind. This week: Life check after 50k reversals: backlash up to 0.22 deg, accepted for DVT with a note.",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough. This week: Feedthrough plate arrives; first soak shows grease migration at 40 C after 3 h.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Actuator build slips; gate review held anyway with partial data.",
+    "Ongoing: Leg drop gantry shared by leg drop, torso static load and ankle impact. This week: Lukas wants a full week for torso static load; Priya needs it for the DVT leg drop."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1790103276.800377",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-003345"
+      ],
+      "brief": "Actuator DVT build: still quoting 2026-09-29",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-09-29"
+      },
+      "must_mention": [
+        "Actuator DVT build",
+        "9/29"
+      ],
+      "length": "medium",
+      "text": "Actuator DVT build: still quoting 9/29. Not locking anything until that firms up."
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "job_id": "jira-BLD-2026-09-07-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 20,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "BLD",
+    "name": "Builds and program"
+  },
+  "week": {
+    "start": "2026-09-07",
+    "end": "2026-09-13"
+  },
+  "people": [
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "BLD-168",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-omar",
+      "assignee": "p-beth",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-08T14:38:53-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Label and bin received parts",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "BLD-169",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-omar",
+      "assignee": "p-beth",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-09-09T12:39:59-07:00",
+      "due_date": "2026-09-30",
+      "events": [],
+      "brief": "Firmware flag for bench mode",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "BLD-170",
+      "type": "Sub-task",
+      "status": "Done",
+      "reporter": "p-omar",
+      "assignee": "p-omar",
+      "labels": [
+        "cleanup"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-09T18:24:44-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Investigate noise on bench unit",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    }
+  ]
+}

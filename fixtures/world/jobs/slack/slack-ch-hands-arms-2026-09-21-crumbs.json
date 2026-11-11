@@ -1,0 +1,158 @@
+{
+  "job_id": "slack-ch-hands-arms-2026-09-21-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 15,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hands-arms",
+    "name": "hands-arms",
+    "slack_id": "C07FLK0HAND",
+    "purpose": "Arms, wrist and hand"
+  },
+  "week": {
+    "start": "2026-09-21",
+    "end": "2026-09-27"
+  },
+  "people": [
+    {
+      "id": "p-amara",
+      "name": "Amara Nwosu",
+      "display_name": "amara",
+      "slack_id": "U07FLK0AMAR",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hand and wrist.",
+    "Ongoing: Aluminum links gall on 303 pins under side load. This week: Rev B finger links and pins released with the tactile board change.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Actuator build slips; gate review held anyway with partial data."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1790288610.736741",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-001641"
+      ],
+      "brief": "palm frame arrived (9)",
+      "claim": {
+        "kind": "stock",
+        "value": 9
+      },
+      "must_mention": [
+        "palm frame",
+        "9"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "palm frame arrived, 9 pcs. I think they look ok but haven't measured yet"
+    },
+    {
+      "ts": "1790288924.963859",
+      "user": "p-lin",
+      "thread_ts": "1790288610.736741",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Please don't send them to assembly until they've been measured."
+    },
+    {
+      "ts": "1790291657.717977",
+      "user": "p-lin",
+      "thread_ts": "1790288610.736741",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "The last batch had a warped edge we only caught on the cycler."
+    },
+    {
+      "ts": "1790292261.331961",
+      "user": "p-sofia",
+      "thread_ts": "1790288610.736741",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "I don't think we need to measure every one. Sample a few."
+    },
+    {
+      "ts": "1790367969.789659",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-001781"
+      ],
+      "brief": "the clamp: need 1 by 2026-10-15",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-10-15"
+        }
+      },
+      "must_mention": [
+        "the clamp",
+        "10/15"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "need 1 of the clamp by 10/15, i think"
+    }
+  ]
+}

@@ -6,9 +6,9 @@
 //
 // Tickets are rendered only when created inside the text window (spec §3.5); a crumb-bearing ticket without a
 // summary falls back to code text, a background ticket without one is dropped (and links to it removed).
-import { addDays } from '../lib/calendar.mjs';
+import { addDays, atLocalMinutes, dow } from '../lib/calendar.mjs';
 import { cmp } from '../lib/io.mjs';
-import { STYLE_RULES, crumbSpec, datePhrase, jobPerson, personOf, priorityOf, textWeeks, weekOf } from './slack.mjs';
+import { STYLE_RULES, crumbSpec, datePhrase, safeBrief, jobPerson, personOf, priorityOf, textWeeks, weekOf } from './slack.mjs';
 
 const FILLER_COMMENTS = ['status fragment, e.g. waiting on vendor or on a review', 'any update?', 'short progress note', 'question to the assignee', 'notes photos or a file are in slack', 'pushes it a bit, no new date given'];
 const CATEGORY = { 'To Do': ['new', 'To Do'], 'In Progress': ['indeterminate', 'In Progress'], Blocked: ['indeterminate', 'In Progress'], 'In Review': ['indeterminate', 'In Progress'], Done: ['done', 'Done'] };
@@ -31,6 +31,12 @@ export function plan(world, ctx) {
   const demoStart = demo.context_window ? Date.parse(demo.context_window.start) : Infinity;
   const issues = [];
   const batches = new Map();
+  const asmName = new Map(world.assemblies.map((a) => [a.id, a.name]));
+  const assemblyOf = (t) => {
+    if (t.assembly && asmName.has(t.assembly)) return [asmName.get(t.assembly)];
+    const p = projects.find((x) => x.id === t.project);
+    return p && (p.assemblies || []).length === 1 && asmName.has(p.assemblies[0]) ? [asmName.get(p.assemblies[0])] : [];
+  };
 
   // A ticket created before the text window is carried in when a crumb comment on it falls inside the
   // window, so that crumb is never lost (spec I16). Its job stays keyed by its creation week.
@@ -52,7 +58,7 @@ export function plan(world, ctx) {
     const comments = [];
     for (const e of evs.filter((x) => x.where.ticket_field === 'comment')) {
       const s = crumbSpec(e, world, r.fork(e.id));
-      comments.push({ at: e.known_at, by: e.by, events: [e.id], kind: e.kind, brief: e.kind === 'background' ? `background: ${e.brief}` : e.brief, must_mention: s.must_mention, ...(s.claim ? { claim: s.claim } : {}), ...(s.fallback_text ? { fallback_text: s.fallback_text } : {}) });
+      comments.push({ at: e.known_at, by: e.by, events: [e.id], kind: e.kind, brief: e.kind === 'background' ? `background: ${e.brief}` : safeBrief(e, world), must_mention: s.must_mention, ...(s.claim ? { claim: s.claim } : {}), ...(s.fallback_text ? { fallback_text: s.fallback_text } : {}) });
     }
     const dues = (t.due_date || []).filter((h) => Date.parse(h.known_at) <= now);
     for (let i = 1; i < dues.length; i++) {
@@ -65,7 +71,7 @@ export function plan(world, ctx) {
       const crumb = !!ev && ev.kind === 'crumb';
       comments.push({
         at: h.known_at, by: h.by, events: ev ? [ev.id] : [], kind: crumb ? 'crumb' : 'background',
-        brief: crumb ? `${person(h.by).display_name} changes the due date to ${h.value || 'none'}: ${ev.brief}` : 'background: short note on why the due date moved (no date)',
+        brief: crumb ? `${person(h.by).display_name} changes the due date to ${h.value || 'none'}: ${safeBrief(ev, world)}` : 'background: short note on why the due date moved (no date)',
         must_mention: crumb && phrase ? [phrase] : [],
         ...(crumb ? { fallback_text: phrase ? `due date moved to ${phrase}` : 'cleared due date' } : {}),
       });
@@ -79,7 +85,8 @@ export function plan(world, ctx) {
       const cr = r.fork(`c:${i}`);
       const span = until - Date.parse(t.created);
       if (span < 3600e3) break;
-      const at = toLocal(Date.parse(t.created) + cr.int(1800, Math.floor(span / 1000)) * 1000);
+      const at = workHours(toLocal(Date.parse(t.created) + cr.int(1800, Math.floor(span / 1000)) * 1000), cr);
+      if (Date.parse(at) > until || Date.parse(at) <= Date.parse(t.created)) continue;
       comments.push({ at, by: cr.chance(0.6) ? (t.assignee || t.reporter) : cr.pick(authors), events: [], kind: 'background', brief: `background: ${cr.pick(FILLER_COMMENTS)}`, must_mention: [] });
     }
     comments.sort((a, b) => cmp(a.at, b.at) || cmp(a.events.join(), b.events.join()));
@@ -89,8 +96,8 @@ export function plan(world, ctx) {
     // Changelog: status and due-date changes after creation, as of demo_now.
     const changelog = [];
     const st = (t.status || []).filter((h) => Date.parse(h.known_at) <= now);
-    for (let i = 1; i < st.length; i++) changelog.push({ at: st[i].known_at, by: st[i].by, field: 'status', from: st[i - 1].value, to: st[i].value });
-    for (let i = 1; i < dues.length; i++) changelog.push({ at: dues[i].known_at, by: dues[i].by, field: 'duedate', from: dues[i - 1].value, to: dues[i].value });
+    for (let i = 1; i < st.length; i++) changelog.push({ at: st[i].by ? dayShift(st[i].known_at) : st[i].known_at, by: st[i].by, field: 'status', from: st[i - 1].value, to: st[i].value });
+    for (let i = 1; i < dues.length; i++) changelog.push({ at: dues[i].by ? dayShift(dues[i].known_at) : dues[i].known_at, by: dues[i].by, field: 'duedate', from: dues[i - 1].value, to: dues[i].value });
     changelog.sort((a, b) => cmp(a.at, b.at) || cmp(a.field, b.field));
     changelog.forEach((c, i) => { c.id = String(100000 * (projIndex.get(t.project) || 0) + num * 20 + i + 1); });
     const status = asOf(t.status, now);
@@ -106,7 +113,9 @@ export function plan(world, ctx) {
       key: t.id, id: String(10000 * (projIndex.get(t.project) || 0) + num), project: t.project, week, job_id: jobId,
       kind: crumbTicket ? 'crumb' : 'background', events: own.map((e) => e.id), ...(weeks.has(week) ? {} : { carried: true }),
       type: t.type, status: status ? status.value : 'To Do', priority: t.priority,
-      reporter: t.reporter, assignee: t.assignee || null, labels: (t.labels || []).slice(), components: (t.components || []).slice(),
+      reporter: t.reporter, assignee: t.assignee || null, labels: (t.labels || []).slice(),
+      // The assembly as a real team records it: a component named after it (project-level when the ticket has none).
+      components: [...new Set([...(t.components || []), ...assemblyOf(t)])].sort(),
       parent: t.parent || null, created: jiraTime(t.created, r.int(0, 999)), updated: jiraTime(times[times.length - 1], r.int(0, 999)),
       created_iso: t.created, duedate: due ? due.value : null,
       links: (t.links || []).map((l) => ({ type: l.type, key: l.key })),
@@ -150,6 +159,22 @@ export function plan(world, ctx) {
     records: { projects: projects.map((p) => ({ key: p.id, id: String(10000 + projIndex.get(p.id)), name: p.name, lead: p.lead })), users, issues: issues.sort((a, b) => cmp(a.project, b.project) || (+a.key.split('-')[1]) - (+b.key.split('-')[1])) },
     jobs,
   };
+}
+
+// A person's change logged between 00:00 and 07:00 is shown in the morning (07:00-09:00, order kept within the night).
+function dayShift(iso) {
+  const min = +iso.slice(11, 13) * 60 + +iso.slice(14, 16);
+  if (min >= 420) return iso;
+  return atLocalMinutes(iso.slice(0, 10), 420 + Math.floor(min / 3.5), +iso.slice(17, 19));
+}
+// Move a time onto a working day between 09:00 and 18:30 (same day if possible, else the next weekday).
+function workHours(iso, r) {
+  let day = iso.slice(0, 10);
+  const min = +iso.slice(11, 13) * 60 + +iso.slice(14, 16);
+  if (min >= 540 && min < 1110 && dow(day) !== 0 && dow(day) !== 6) return iso;
+  if (min >= 1110) day = addDays(day, 1);
+  while (dow(day) === 0 || dow(day) === 6) day = addDays(day, 1);
+  return atLocalMinutes(day, r.int(540, 1100), r.int(0, 59));
 }
 
 function toLocal(ms) {

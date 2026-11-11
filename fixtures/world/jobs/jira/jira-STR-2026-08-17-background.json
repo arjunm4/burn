@@ -1,0 +1,266 @@
+{
+  "job_id": "jira-STR-2026-08-17-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 26,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "STR",
+    "name": "Torso, structures and battery"
+  },
+  "week": {
+    "start": "2026-08-17",
+    "end": "2026-08-23"
+  },
+  "people": [
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "STR-184",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-lukas",
+      "assignee": null,
+      "labels": [
+        "dvt"
+      ],
+      "priority": "Highest",
+      "created": "2026-08-17T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Fit check: Pelvis crossbeam",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "STR-185",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-renee",
+      "assignee": "p-lukas",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-08-17T16:39:58-07:00",
+      "due_date": "2026-09-01",
+      "events": [],
+      "brief": "Calibrate instrument (torso and pelvis structure)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "STR-185-c1",
+          "by": "p-lukas",
+          "at": "2026-08-18T14:40:58-07:00",
+          "events": [],
+          "brief": "background: short note on why the due date moved (no date)",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "STR-186",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-lukas",
+      "assignee": "p-lukas",
+      "labels": [
+        "dfm"
+      ],
+      "priority": "High",
+      "created": "2026-08-18T10:53:13-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Investigate noise on bench unit (torso and pelvis structure)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "STR-186-c1",
+          "by": "p-lukas",
+          "at": "2026-08-21T10:39:26-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "STR-187",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-lukas",
+      "assignee": "p-lukas",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-08-18T13:02:29-07:00",
+      "due_date": "2026-09-04",
+      "events": [],
+      "brief": "Clean up CAD configs (torso and pelvis structure)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "STR-188",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-idris",
+      "assignee": "p-renee",
+      "labels": [
+        "bench"
+      ],
+      "priority": "Low",
+      "created": "2026-08-19T08:56:14-07:00",
+      "due_date": "2026-09-18",
+      "events": [],
+      "brief": "Update drawing and BOM (torso and pelvis structure)",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "STR-188-c1",
+          "by": "p-renee",
+          "at": "2026-08-23T18:25:14-07:00",
+          "events": [],
+          "brief": "background: short note on why the due date moved (no date)",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "STR-188-c2",
+          "by": "p-lukas",
+          "at": "2026-09-02T11:00:43-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "STR-188-c3",
+          "by": "p-renee",
+          "at": "2026-09-14T15:18:20-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "STR-189",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-lukas",
+      "assignee": null,
+      "labels": [
+        "tech-debt"
+      ],
+      "priority": "High",
+      "created": "2026-08-19T22:30:16-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Update drawing and BOM (battery enclosure)",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "STR-189-c1",
+          "by": "p-lukas",
+          "at": "2026-08-24T16:09:08-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "STR-189-c2",
+          "by": "p-lukas",
+          "at": "2026-08-24T16:27:06-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    }
+  ]
+}

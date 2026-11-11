@@ -1,0 +1,92 @@
+{
+  "job_id": "jira-HIP-2026-08-31-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 21,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HIP",
+    "name": "Actuators (hip and knee)"
+  },
+  "week": {
+    "start": "2026-08-31",
+    "end": "2026-09-06"
+  },
+  "people": [
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HIP-374",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": "p-tomas",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-09-02T17:03:11-07:00",
+      "due_date": "2026-09-14",
+      "events": [
+        "ev-001503"
+      ],
+      "brief": "Order 22x Knee wave generator hub / that order: need 22 by 2026-09-14 for Fit check for Actuator DVT gate review: Knee wave generator hub; asks whether expediting is worth it",
+      "must_mention": [
+        "that order",
+        "Fit check for Actuator DVT gate review: Knee wave generator hub",
+        "mon the 14th"
+      ],
+      "description_length": "one_line",
+      "summary": "Knee WG hub order for DVT fit check",
+      "description": "Fit check for Actuator DVT gate review: Knee wave generator hub - i think that order needs to land mon the 14th, probably worth asking if expediting is worth it?",
+      "comments": [
+        {
+          "id": "HIP-374-c1",
+          "by": "p-tomas",
+          "at": "2026-09-09T12:00:56-07:00",
+          "events": [
+            "ev-003132"
+          ],
+          "brief": "Order XO-5483034 placed, promised 2026-09-15",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-09-15"
+          },
+          "must_mention": [
+            "XO-5483034",
+            "WG hub",
+            "tues the 15th"
+          ],
+          "body": "XO-5483034 placed for the WG hub, promised tues the 15th. not 100% sure that works, will check w/ arjun"
+        }
+      ]
+    }
+  ]
+}

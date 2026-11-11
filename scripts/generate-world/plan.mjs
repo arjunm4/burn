@@ -22,6 +22,40 @@ export const HIDDEN_KEYS = ['true_value', 'truth', 'demands', 'slips', 'habit', 
   'pressure_windows', 'hidden_reason', 'rule', 'belief', 'true_need_date', 'true_links', 'tier_outcomes', 'expedite_helped',
   'break_even_usd_per_day', 'dominating_input', 'true_pressure', 'expressed_pressure', 'never_revealed', 'split', 'true_progress', 'true_rank'];
 
+// Text slots of a job: key -> written text value (null when not written).
+export function jobTexts(job) {
+  const out = {};
+  if (job.messages) for (const m of job.messages) out[m.ts] = m.text ?? null;
+  else if (job.tickets) for (const t of job.tickets) {
+    out[t.key] = t.summary == null ? null : { summary: t.summary, description: t.description };
+    for (const c of t.comments || []) out[c.id] = c.body ?? null;
+  } else if (job.meeting) out[job.meeting.id] = job.transcript == null ? null : { transcript: job.transcript, summary: job.summary };
+  return out;
+}
+const textBlob = (v) => JSON.stringify(v);
+// Re-planning: keep the text of every written slot whose key still exists and whose required mentions it still
+// contains; report the rest. Mutates `job` (only its text fields).
+export function carryText(old, job, planned) {
+  const prev = jobTexts(old);
+  const dropped = [];
+  let kept = 0;
+  const ok = (k) => {
+    const v = prev[k];
+    if (v == null) return false;
+    const spec = planned.keys[k];
+    if (!spec) return false;
+    const all = typeof v === 'string' ? v : [v.summary, v.description, ...(v.transcript || []).map((x) => x.text), textBlob(v.summary)].join('\n');
+    return (spec.must_mention || []).every((m) => all.includes(m));
+  };
+  for (const [k, v] of Object.entries(prev)) if (v != null && !ok(k)) dropped.push(k);
+  if (job.messages) for (const m of job.messages) { if (ok(m.ts)) { m.text = prev[m.ts]; kept++; } }
+  else if (job.tickets) for (const t of job.tickets) {
+    if (ok(t.key)) { t.summary = prev[t.key].summary; t.description = prev[t.key].description; kept++; }
+    for (const c of t.comments || []) if (ok(c.id)) { c.body = prev[c.id]; kept++; }
+  } else if (job.meeting && ok(job.meeting.id)) { job.transcript = prev[job.meeting.id].transcript; job.summary = prev[job.meeting.id].summary; kept++; }
+  return { kept, dropped: dropped.sort(), total: Object.keys(planned.keys).length };
+}
+
 export function parseArgs(argv) {
   const out = {};
   for (let i = 0; i < argv.length; i++) {
@@ -83,6 +117,8 @@ export async function runPlan({ worldDir, seed, weeks }) {
   const renderers = await loadRenderers();
   const index = [];
   const plannedJobs = {};
+  let carried = 0;
+  const dropped = [];
   for (const [source, mod] of Object.entries(renderers)) {
     const ctx = makeCtx(world, { seed, weeks, knobs });
     ctx.rng = ctx.rng.fork(source);
@@ -91,27 +127,40 @@ export async function runPlan({ worldDir, seed, weeks }) {
     writeJson(join(worldDir, 'planned', `${source}.json`), records);
     for (const job of (jobs || []).slice().sort((a, b) => cmp(a.job_id, b.job_id))) {
       const path = join(worldDir, 'jobs', source, `${job.job_id}.json`);
+      plannedJobs[job.job_id] = jobKeys(job, world);
       let status = 'blank';
       if (existsSync(path)) {
-        try { const old = JSON.parse(readFileSync(path, 'utf8')); if (old.status === 'filled') status = 'filled'; } catch { /* rewrite */ }
+        let old = null;
+        try { old = JSON.parse(readFileSync(path, 'utf8')); } catch { /* unreadable: rewrite */ }
+        if (old && (old.status === 'filled' || old.status === 'partial')) {
+          const r = carryText(old, job, plannedJobs[job.job_id]);
+          carried += r.kept; dropped.push(...r.dropped.map((k) => `${job.job_id} ${k}`));
+          status = r.kept === 0 ? 'blank' : r.kept === r.total ? 'filled' : 'partial';
+          job.status = status;
+        }
       }
-      if (status !== 'filled') writeJson(path, job);
-      plannedJobs[job.job_id] = jobKeys(job, world);
-      index.push({ job_id: job.job_id, source, priority: job.priority, week: job.week ? job.week.start : null, status, path: `jobs/${source}/${job.job_id}.json` });
+      writeJson(path, job);
+      const kinds = Object.values(plannedJobs[job.job_id].keys);
+      index.push({
+        job_id: job.job_id, source, priority: job.priority, week: job.week ? job.week.start : null, status, path: `jobs/${source}/${job.job_id}.json`,
+        kind: kinds.some((k) => k.kind === 'crumb') ? 'crumbs' : 'background', slots: kinds.length, size_bytes: Buffer.byteLength(stringify(job)),
+      });
     }
   }
   // Demo context first, then newest week first, crumbs before background (encoded in priority), then id.
   index.sort((a, b) => a.priority - b.priority || cmp(a.job_id, b.job_id));
   writeJson(join(worldDir, 'jobs', 'index.json'), index);
   writeJson(join(worldDir, 'planned', 'jobs.json'), Object.fromEntries(Object.entries(plannedJobs).sort((a, b) => cmp(a[0], b[0]))));
-  return { index, seed, weeks };
+  return { index, seed, weeks, carried, dropped };
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const a = parseArgs(process.argv.slice(2));
   const worldDir = a.world ? join(process.cwd(), a.world) : join(ROOT, 'fixtures/world');
-  const { index, weeks } = await runPlan({ worldDir: a.world && a.world.startsWith('/') ? a.world : worldDir, seed: a.seed != null ? Number(a.seed) : undefined, weeks: a.weeks != null ? Number(a.weeks) : undefined });
+  const res = await runPlan({ worldDir: a.world && a.world.startsWith('/') ? a.world : worldDir, seed: a.seed != null ? Number(a.seed) : undefined, weeks: a.weeks != null ? Number(a.weeks) : undefined });
   const by = {};
-  for (const j of index) by[j.source] = (by[j.source] || 0) + 1;
-  console.log(`plan: ${weeks} weeks, ${index.length} jobs`, JSON.stringify(by));
+  for (const j of res.index) by[j.source] = (by[j.source] || 0) + 1;
+  console.log(`plan: ${res.weeks} weeks, ${res.index.length} jobs`, JSON.stringify(by));
+  console.log(`plan: carried over ${res.carried} written slots; dropped ${res.dropped.length}${res.dropped.length ? ':' : ''}`);
+  for (const d of res.dropped) console.log('  dropped ' + d);
 }

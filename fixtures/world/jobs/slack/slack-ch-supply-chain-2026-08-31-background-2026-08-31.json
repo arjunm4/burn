@@ -1,0 +1,755 @@
+{
+  "job_id": "slack-ch-supply-chain-2026-08-31-background-2026-08-31",
+  "source": "slack",
+  "status": "blank",
+  "priority": 22,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-supply-chain",
+    "name": "supply-chain",
+    "slack_id": "C07FLK0SUPC",
+    "purpose": "Supply chain team: vendors, POs, deliveries, expedites"
+  },
+  "week": {
+    "start": "2026-08-31",
+    "end": "2026-09-06"
+  },
+  "people": [
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-claire",
+      "name": "Claire Donnelly",
+      "display_name": "claire",
+      "slack_id": "U07FLK0CLAI",
+      "title": "Finance and Operations Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1788190196.406302",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1788192181.300691",
+      "user": "p-talia",
+      "thread_ts": "1788190196.406302",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788194583.666263",
+      "user": "p-samir",
+      "thread_ts": "1788190196.406302",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788195133.359425",
+      "user": "p-claire",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about this: Ingrid backs it but exempts the investor demo and DVT builds.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788196627.013481",
+      "user": "p-jade",
+      "thread_ts": "1788190196.406302",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788196809.473511",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1788199518.767919",
+      "user": "p-gwen",
+      "thread_ts": "1788195133.359425",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Ingrid backs it but exempts the investor demo and DVT builds.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788200148.335887",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: Ingrid backs it but exempts the investor demo and DVT builds.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788200226.606567",
+      "user": "p-beth",
+      "thread_ts": "1788195133.359425",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Ingrid backs it but exempts the investor demo and DVT builds.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788201750.736254",
+      "user": "p-beth",
+      "thread_ts": "1788190196.406302",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788202292.716157",
+      "user": "p-jade",
+      "thread_ts": "1788195133.359425",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Ingrid backs it but exempts the investor demo and DVT builds.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788202518.870871",
+      "user": "p-beth",
+      "thread_ts": "1788190196.406302",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788204445.993517",
+      "user": "p-beth",
+      "thread_ts": "1788190196.406302",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788206503.408163",
+      "user": "p-beth",
+      "thread_ts": "1788195133.359425",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Ingrid backs it but exempts the investor demo and DVT builds.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1788207295.556508",
+      "user": "p-samir",
+      "thread_ts": "1788190196.406302",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788207731.716096",
+      "user": "p-ingrid",
+      "thread_ts": "1788190196.406302",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788208617.775183",
+      "user": "p-omar",
+      "thread_ts": "1788190196.406302",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788209947.470580",
+      "user": "p-nora",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: Claire: hardware spend 23% over plan for the quarter, expedites a big share.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1788210473.685356",
+      "user": "p-claire",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788211036.763741",
+      "user": "p-ingrid",
+      "thread_ts": "1788195133.359425",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Ingrid backs it but exempts the investor demo and DVT builds.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788211471.159749",
+      "user": "p-omar",
+      "thread_ts": "1788210473.685356",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788211606.124591",
+      "user": "p-gwen",
+      "thread_ts": "1788210473.685356",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788211914.325601",
+      "user": "p-claire",
+      "thread_ts": "1788190196.406302",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788212957.514736",
+      "user": "p-samir",
+      "thread_ts": "1788195133.359425",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Ingrid backs it but exempts the investor demo and DVT builds.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788213497.671245",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1788215492.280390",
+      "user": "p-gwen",
+      "thread_ts": "1788210473.685356",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788216825.364797",
+      "user": "p-omar",
+      "thread_ts": "1788190196.406302",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788218373.855985",
+      "user": "p-ingrid",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about this: Gwen proposes expedite only with a stated need date; engineers grumble.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788218937.600733",
+      "user": "p-gwen",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about off-topic: office temperature",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1788218964.425423",
+      "user": "p-nora",
+      "thread_ts": "1788210473.685356",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1788221074.811811",
+      "user": "p-omar",
+      "thread_ts": "1788190196.406302",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788221364.489848",
+      "user": "p-jade",
+      "thread_ts": "1788210473.685356",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788221804.058979",
+      "user": "p-talia",
+      "thread_ts": "1788190196.406302",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788222807.916205",
+      "user": "p-talia",
+      "thread_ts": "1788190196.406302",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788223391.613353",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: Gwen proposes expedite only with a stated need date; engineers grumble.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1788223751.026360",
+      "user": "p-samir",
+      "thread_ts": "1788218937.600733",
+      "events": [],
+      "brief": "reply (answers) in the thread about: off-topic: office temperature",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788223920.272769",
+      "user": "p-beth",
+      "thread_ts": "1788190196.406302",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788224969.589881",
+      "user": "p-beth",
+      "thread_ts": "1788218937.600733",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: off-topic: office temperature",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788225401.506548",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Nora: casting tooling quote is $38k and 9 weeks; Lukas wants machined plates for DVT.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788225892.048667",
+      "user": "p-talia",
+      "thread_ts": "1788190196.406302",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788225962.835554",
+      "user": "p-claire",
+      "thread_ts": "1788210473.685356",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788226198.625048",
+      "user": "p-claire",
+      "thread_ts": "1788190196.406302",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788228701.356189",
+      "user": "p-jade",
+      "thread_ts": "1788218937.600733",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: off-topic: office temperature",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788230274.769027",
+      "user": "p-talia",
+      "thread_ts": "1788218937.600733",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: off-topic: office temperature",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788230936.075852",
+      "user": "p-claire",
+      "thread_ts": "1788218937.600733",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: off-topic: office temperature",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788285160.013141",
+      "user": "p-talia",
+      "thread_ts": "1788218937.600733",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: off-topic: office temperature",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788289388.665491",
+      "user": "p-beth",
+      "thread_ts": "1788218937.600733",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: off-topic: office temperature",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788294523.262792",
+      "user": "p-samir",
+      "thread_ts": "1788218937.600733",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: off-topic: office temperature",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788294650.653304",
+      "user": "p-ingrid",
+      "thread_ts": "1788218937.600733",
+      "events": [],
+      "brief": "reply (answers) in the thread about: off-topic: office temperature",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788297685.746695",
+      "user": "p-talia",
+      "thread_ts": "1788218937.600733",
+      "events": [],
+      "brief": "reply (ack) in the thread about: off-topic: office temperature",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788300835.872942",
+      "user": "p-samir",
+      "thread_ts": "1788218937.600733",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: off-topic: office temperature",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788302162.408675",
+      "user": "p-beth",
+      "thread_ts": "1788218937.600733",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: off-topic: office temperature",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788305985.048743",
+      "user": "p-talia",
+      "thread_ts": "1788218937.600733",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: off-topic: office temperature",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788306672.620159",
+      "user": "p-beth",
+      "thread_ts": "1788218937.600733",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: off-topic: office temperature",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788306903.428053",
+      "user": "p-gwen",
+      "thread_ts": "1788218937.600733",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: off-topic: office temperature",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1788307680.806600",
+      "user": "p-jade",
+      "thread_ts": "1788218937.600733",
+      "events": [],
+      "brief": "reply (ack) in the thread about: off-topic: office temperature",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    }
+  ]
+}

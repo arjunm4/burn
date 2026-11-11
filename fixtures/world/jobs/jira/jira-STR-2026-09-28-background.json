@@ -1,0 +1,449 @@
+{
+  "job_id": "jira-STR-2026-09-28-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 14,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "STR",
+    "name": "Torso, structures and battery"
+  },
+  "week": {
+    "start": "2026-09-28",
+    "end": "2026-10-04"
+  },
+  "people": [
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "STR-243",
+      "type": "Sub-task",
+      "status": "In Progress",
+      "reporter": "p-idris",
+      "assignee": "p-idris",
+      "labels": [
+        "dfm"
+      ],
+      "priority": "Low",
+      "created": "2026-09-28T15:15:23-07:00",
+      "due_date": "2026-10-16",
+      "events": [],
+      "brief": "Follow up vendor question (torso and pelvis structure)",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "STR-244",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-idris",
+      "assignee": "p-lukas",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-30T10:57:34-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Clean up CAD configs (battery enclosure)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "STR-244-c1",
+          "by": "p-lukas",
+          "at": "2026-10-12T09:47:24-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "STR-245",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-idris",
+      "assignee": "p-lukas",
+      "labels": [
+        "bench"
+      ],
+      "priority": "Low",
+      "created": "2026-10-01T08:46:27-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Torque spec audit (battery enclosure)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "STR-246",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-renee",
+      "assignee": "p-renee",
+      "labels": [
+        "dvt"
+      ],
+      "priority": "Medium",
+      "created": "2026-10-01T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Assemble build unit: Pack latch block",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "STR-246-c1",
+          "by": "p-renee",
+          "at": "2026-10-09T13:41:16-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "STR-246-c2",
+          "by": "p-lukas",
+          "at": "2026-11-02T12:03:11-08:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "STR-246-c3",
+          "by": "p-renee",
+          "at": "2026-11-02T14:09:17-08:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "STR-247",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-lukas",
+      "assignee": "p-lukas",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-10-01T13:40:15-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Torque spec audit (battery enclosure)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "STR-247-c1",
+          "by": "p-lukas",
+          "at": "2026-10-05T11:17:09-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "STR-247-c2",
+          "by": "p-lukas",
+          "at": "2026-10-05T13:10:03-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "STR-248",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-lukas",
+      "assignee": null,
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-10-01T21:54:07-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Label and bin received parts (battery enclosure)",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "STR-250",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-renee",
+      "assignee": "p-idris",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-10-02T09:09:26-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Torque spec audit (battery enclosure)",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "STR-250-c1",
+          "by": "p-idris",
+          "at": "2026-10-05T14:19:21-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "STR-250-c2",
+          "by": "p-idris",
+          "at": "2026-10-05T15:51:38-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "STR-250-c3",
+          "by": "p-renee",
+          "at": "2026-10-07T13:19:23-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "STR-251",
+      "type": "Sub-task",
+      "status": "In Progress",
+      "reporter": "p-lukas",
+      "assignee": "p-idris",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-10-02T09:14:03-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Label and bin received parts (torso and pelvis structure)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "STR-251-c1",
+          "by": "p-renee",
+          "at": "2026-10-07T12:27:28-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "STR-251-c2",
+          "by": "p-idris",
+          "at": "2026-10-14T13:16:31-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "STR-251-c3",
+          "by": "p-lukas",
+          "at": "2026-10-19T16:18:33-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "STR-252",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-idris",
+      "assignee": "p-idris",
+      "labels": [
+        "fit-check"
+      ],
+      "priority": "Low",
+      "created": "2026-10-02T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Rig setup: Cell heater clamp plate",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "STR-252-c1",
+          "by": "p-idris",
+          "at": "2026-10-05T16:04:26-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "STR-252-c2",
+          "by": "p-idris",
+          "at": "2026-10-20T17:45:30-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "STR-252-c3",
+          "by": "p-renee",
+          "at": "2026-10-26T15:27:29-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "STR-253",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-renee",
+      "assignee": null,
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-10-02T20:12:39-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Document test procedure (torso and pelvis structure)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "STR-253-c1",
+          "by": "p-idris",
+          "at": "2026-10-05T09:19:20-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "STR-253-c2",
+          "by": "p-renee",
+          "at": "2026-10-05T14:05:13-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "STR-253-c3",
+          "by": "p-renee",
+          "at": "2026-10-07T16:34:21-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "STR-253-c4",
+          "by": "p-renee",
+          "at": "2026-10-12T18:18:46-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    }
+  ]
+}

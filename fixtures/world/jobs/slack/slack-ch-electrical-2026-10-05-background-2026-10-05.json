@@ -1,0 +1,207 @@
+{
+  "job_id": "slack-ch-electrical-2026-10-05-background-2026-10-05",
+  "source": "slack",
+  "status": "blank",
+  "priority": 12,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-electrical",
+    "name": "electrical",
+    "slack_id": "C07FLK0ELEC",
+    "purpose": "Electrical and firmware: boards, harnesses, bring-up"
+  },
+  "week": {
+    "start": "2026-10-05",
+    "end": "2026-10-11"
+  },
+  "people": [
+    {
+      "id": "p-bao",
+      "name": "Bao Nguyen",
+      "display_name": "bao.n",
+      "slack_id": "U07FLK0BAO0",
+      "title": "Electrical Engineer, motor drives",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-valeria",
+      "name": "Valeria Ortiz",
+      "display_name": "valeria.o",
+      "slack_id": "U07FLK0VALE",
+      "title": "Electrical Engineer, battery systems",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: First containment trial: neighbor peaks 118 C, no propagation; lid gasket scorched.",
+    "Ongoing: BMS PCBA rev 1 balancing current and cell-tap fusing. This week: Rework five boards by hand; Idris asks whether cell taps need fuses for the cage test.",
+    "Ongoing: Frameless DVT motor from the vendor keeps slipping; stator stack length change",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Leg DVT build at risk from shank links and ankle impact results."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1791221477.772228",
+      "user": "p-valeria",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to this: Dmitri books the battery cage for the containment test; heater trigger fixture still on order.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1791222759.401156",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: BMS boards in; balancing current measures 48 mA instead of 100 mA.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1791223399.349603",
+      "user": "p-bao",
+      "thread_ts": null,
+      "events": [
+        "ev-003522"
+      ],
+      "brief": "background: Rework five boards by hand; Idris asks whether cell taps need fuses for the cage test.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1791241342.739262",
+      "user": "p-ingrid",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about this: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1791245758.796284",
+      "user": "p-jonas",
+      "thread_ts": "1791241342.739262",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1791250381.407054",
+      "user": "p-farah",
+      "thread_ts": "1791241342.739262",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1791253707.021835",
+      "user": "p-valeria",
+      "thread_ts": "1791241342.739262",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1791301110.788501",
+      "user": "p-bao",
+      "thread_ts": "1791241342.739262",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

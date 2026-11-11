@@ -1,0 +1,956 @@
+{
+  "job_id": "slack-ch-legs-2026-09-21-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 15,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-legs",
+    "name": "legs",
+    "slack_id": "C07FLK0LEGS",
+    "purpose": "Leg and ankle: design, drop test, gait gantry"
+  },
+  "week": {
+    "start": "2026-09-21",
+    "end": "2026-09-27"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-jun",
+      "name": "Jun Park",
+      "display_name": "jun",
+      "slack_id": "U07FLK0JUN0",
+      "title": "Research Engineer, learned locomotion",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-leilani",
+      "name": "Leilani Kahale",
+      "display_name": "leilani.k",
+      "slack_id": "U07FLK0LEIL",
+      "title": "Locomotion Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Leg (left, hip to foot).",
+    "Ongoing: Gait policy trained in sim overshoots on hardware; friction and backlash modelling. This week: Mei wants hip backlash fixed in hardware first; Ravi wants to randomize it.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Actuator build slips; gate review held anyway with partial data.",
+    "Ongoing: Leg drop gantry shared by leg drop, torso static load and ankle impact. This week: Lukas wants a full week for torso static load; Priya needs it for the DVT leg drop."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1790006903.505212",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-003289"
+      ],
+      "brief": "cable guide: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "cable guide"
+      ],
+      "length": "short",
+      "text": "The cable guide is still being quoted at rev A."
+    },
+    {
+      "ts": "1790007097.495326",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-001726"
+      ],
+      "brief": "FL-TST-2338: need 7 by 2026-10-08",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 7,
+          "by": "2026-10-08"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2338",
+        "thurs 10/8"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2338: we need seven by thurs 10/8."
+    },
+    {
+      "ts": "1790014405.499741",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-001756"
+      ],
+      "brief": "1291: need 12 by 2026-10-01 for Fit check for Leg DVT build: Ankle rod-end spacer",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-01"
+        }
+      },
+      "must_mention": [
+        "1291",
+        "Fit check for Leg DVT build: Ankle rod-end spacer",
+        "10/1"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "Need 12 of 1291 for Fit check for Leg DVT build: Ankle rod-end spacer by 10/1 😬"
+    },
+    {
+      "ts": "1790018838.679521",
+      "user": "p-diego",
+      "thread_ts": "1790014405.499741",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "wait, are we keeping the same thread on the rod end or did that change? 🤔"
+    },
+    {
+      "ts": "1790023149.654571",
+      "user": "p-luis",
+      "thread_ts": "1790014405.499741",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "same thread"
+    },
+    {
+      "ts": "1790024041.777909",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-001837"
+      ],
+      "brief": "1348: need 5 by 2026-10-06 for next week",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 5,
+          "by": "2026-10-06"
+        }
+      },
+      "must_mention": [
+        "1348",
+        "next week",
+        "10/6"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "For the knee, we need five of 1348 next week, by 10/6 at the latest."
+    },
+    {
+      "ts": "1790106326.532166",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-001757"
+      ],
+      "brief": "ankle spacers: need 12 by 2026-10-01 for Fit check for Leg DVT build: Ankle rod-end spacer",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-01"
+        }
+      },
+      "must_mention": [
+        "ankle spacers",
+        "Fit check for Leg DVT build: Ankle rod-end spacer",
+        "thurs 10/1"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Bumping the ankle spacers again, Fit check for Leg DVT build: Ankle rod-end spacer, thurs 10/1 🙏"
+    },
+    {
+      "ts": "1790113768.261336",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-001758"
+      ],
+      "brief": "the part: need 12 by 2026-10-01",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-01"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "thurs 10/1"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "checking on the part for diego, 12 needed by thurs 10/1"
+    },
+    {
+      "ts": "1790116833.546308",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-001728"
+      ],
+      "brief": "gait adapter: need 7 by 2026-10-08",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 7,
+          "by": "2026-10-08"
+        }
+      },
+      "must_mention": [
+        "gait adapter",
+        "10/8"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "We need seven of the gait adapter by 10/8."
+    },
+    {
+      "ts": "1790118322.062844",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-001694"
+      ],
+      "brief": "Order XO-5509877 placed, promised 2026-10-08",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-10-08"
+      },
+      "must_mention": [
+        "XO-5509877",
+        "tibia",
+        "10/8"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "XO-5509877 placed for the tibia part, promised 10/8."
+    },
+    {
+      "ts": "1790119221.167634",
+      "user": "p-priya",
+      "thread_ts": "1790118322.062844",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Thanks, Lin. I will check against the gantry schedule later today."
+    },
+    {
+      "ts": "1790119635.923146",
+      "user": "p-beth",
+      "thread_ts": "1790118322.062844",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Agreed, that lines up with the current DVT plan."
+    },
+    {
+      "ts": "1790191530.152058",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-001838"
+      ],
+      "brief": "the pulley: need 5 by 2026-10-06",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 5,
+          "by": "2026-10-06"
+        }
+      },
+      "must_mention": [
+        "the pulley",
+        "10/6"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Still need 5 of the pulley by 10/6, anyone have an update? 😬"
+    },
+    {
+      "ts": "1790204249.077465",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-002748"
+      ],
+      "brief": "FL-ANK-1244 rev C released: fit issue found at assembly",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev C"
+      },
+      "must_mention": [
+        "FL-ANK-1244"
+      ],
+      "length": "medium",
+      "text": "FL-ANK-1244 rev C is out, we found a fit issue at assembly. I think the old ones are probably not usable."
+    },
+    {
+      "ts": "1790209417.331637",
+      "user": "p-beth",
+      "thread_ts": "1790204249.077465",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Noted, thank you."
+    },
+    {
+      "ts": "1790211929.955641",
+      "user": "p-leilani",
+      "thread_ts": "1790204249.077465",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "We had the same thing on the hip bracket last spring, ended up reaming every one by hand 😅"
+    },
+    {
+      "ts": "1790215688.309568",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-001730"
+      ],
+      "brief": "Order XO-5515117 placed, promised 2026-10-09",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-10-09"
+      },
+      "must_mention": [
+        "XO-5515117",
+        "that adapter plate",
+        "fri 10/9"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "XO-5515117 placed for that adapter plate, promised fri 10/9 🙏"
+    },
+    {
+      "ts": "1790219522.104045",
+      "user": "p-mei",
+      "thread_ts": "1790215688.309568",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "To answer the gantry question: yes, the adapter plate is what lets us mount the leg on the gait gantry, so walking tests wait on it."
+    },
+    {
+      "ts": "1790224213.367865",
+      "user": "p-diego",
+      "thread_ts": "1790215688.309568",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@priya fyi for the gantry booking 👀"
+    },
+    {
+      "ts": "1790225587.656610",
+      "user": "p-beth",
+      "thread_ts": "1790215688.309568",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I'd hold off rebooking the gantry until it's actually in hand."
+    },
+    {
+      "ts": "1790272665.016256",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-001761"
+      ],
+      "brief": "that order: need 12 by 2026-10-01",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-01"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "10/1"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "To confirm on that order: we need twelve by 10/1."
+    },
+    {
+      "ts": "1790276861.353706",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [
+        "ev-001536"
+      ],
+      "brief": "clamp arrived (6)",
+      "claim": {
+        "kind": "stock",
+        "value": 6
+      },
+      "must_mention": [
+        "clamp",
+        "6"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "clamp in 6 of them on the shelf"
+    },
+    {
+      "ts": "1790279402.728147",
+      "user": "p-jun",
+      "thread_ts": "1790276861.353706",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@callum yours"
+    },
+    {
+      "ts": "1790281316.639052",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [
+        "ev-000068"
+      ],
+      "brief": "Wire harness for ankle and foot (rod end spacer): moved from 2026-09-22 to 2026-09-28",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-09-28"
+      },
+      "must_mention": [
+        "Wire harness for ankle and foot (rod end spacer)",
+        "9/28"
+      ],
+      "length": "short",
+      "text": "Update: Wire harness for ankle and foot (rod end spacer) has moved out to 9/28."
+    },
+    {
+      "ts": "1790281608.074625",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-002604"
+      ],
+      "brief": "Leg gait-gantry walking test waits on Counterweight hub",
+      "claim": {
+        "kind": "blocked",
+        "value": "pt-gait-counterweight-hub"
+      },
+      "must_mention": [
+        "Counterweight hub",
+        "Leg gait-gantry walking test"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "The Leg gait-gantry walking test is waiting on the Counterweight hub."
+    },
+    {
+      "ts": "1790282361.748172",
+      "user": "p-mei",
+      "thread_ts": "1790281608.074625",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "I would argue we can run the first walking passes without the counterweight, at reduced speed, and still learn something useful."
+    },
+    {
+      "ts": "1790283726.362423",
+      "user": "p-talia",
+      "thread_ts": "1790281608.074625",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I'm chasing the hub today 🙏"
+    },
+    {
+      "ts": "1790284478.917860",
+      "user": "p-zoe",
+      "thread_ts": "1790281608.074625",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "do we have the old hub still or did that get scrapped"
+    },
+    {
+      "ts": "1790293273.644010",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-002624"
+      ],
+      "brief": "Fixture install and shakedown: Tilt stand load arm waits on Driver PCBA respin for ankle and foot (load arm)",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-gen-0106"
+      },
+      "must_mention": [
+        "Driver PCBA respin for ankle and foot (load arm)",
+        "the arm"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Tilt stand is stuck, the arm is waiting on Driver PCBA respin for ankle and foot (load arm)."
+    },
+    {
+      "ts": "1790297224.088228",
+      "user": "p-luis",
+      "thread_ts": "1790293273.644010",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "could we just run it open loop for now? not ideal but"
+    },
+    {
+      "ts": "1790298395.838896",
+      "user": "p-ingrid",
+      "thread_ts": "1790293273.644010",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Thanks for flagging."
+    },
+    {
+      "ts": "1790300446.375619",
+      "user": "p-callum",
+      "thread_ts": "1790293273.644010",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "yeah agree w hana"
+    },
+    {
+      "ts": "1790307012.114521",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [
+        "ev-001778"
+      ],
+      "brief": "Order XO-5518107 placed, promised 2026-10-02",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-10-02"
+      },
+      "must_mention": [
+        "XO-5518107",
+        "calibration block",
+        "10/2"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "XO-5518107 is placed, calibration block, promised 10/2"
+    },
+    {
+      "ts": "1790351018.354463",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-001917"
+      ],
+      "brief": "1358: need 3 by 2026-10-22",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-10-22"
+        }
+      },
+      "must_mention": [
+        "1358",
+        "10/22"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Need 3 of 1358 by 10/22 😬"
+    },
+    {
+      "ts": "1790355388.338434",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-001817"
+      ],
+      "brief": "FL-LEG-1339: need 12 by 2026-10-07 for Fit check: Knee joint spacer",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-07"
+        }
+      },
+      "must_mention": [
+        "FL-LEG-1339",
+        "Fit check: Knee joint spacer",
+        "FL-LEG-1310",
+        "wed 10/7"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "need 12 FL-LEG-1339 for Fit check: Knee joint spacer, pairs with FL-LEG-1310. wed 10/7"
+    },
+    {
+      "ts": "1790357739.813960",
+      "user": "p-callum",
+      "thread_ts": "1790355388.338434",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "same spacer as last build or the shorter one"
+    },
+    {
+      "ts": "1790366683.173841",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-001874"
+      ],
+      "brief": "knee pulley: need 5 by 2026-10-06",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 5,
+          "by": "2026-10-06"
+        }
+      },
+      "must_mention": [
+        "knee pulley",
+        "tues the 6th"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "knee pulley x5 needed by tues the 6th"
+    }
+  ]
+}

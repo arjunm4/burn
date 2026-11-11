@@ -1,0 +1,426 @@
+{
+  "job_id": "meeting-mtg-01479",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 7,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-01479",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-10-20T08:45:00-07:00",
+    "actual_min": 19,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-lin",
+      "p-carlos",
+      "p-jade",
+      "p-destiny",
+      "p-nora"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-002146",
+      "speaker": "p-dmitri",
+      "at_min": [
+        9,
+        15
+      ],
+      "brief": "Dmitri says: We need flexspline clamp by 11/12.",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-knee-flexspline-clamp",
+        "value": {
+          "qty": 6,
+          "by": "2026-11-12"
+        }
+      },
+      "must_mention": [
+        "flexspline clamp",
+        "11/12"
+      ]
+    },
+    {
+      "event": "ev-002137",
+      "speaker": "p-dmitri",
+      "at_min": [
+        11,
+        17
+      ],
+      "brief": "that order: need 1 by 2026-11-06; asks whether expediting is worth it",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-tilt-weight-hanger",
+        "value": {
+          "qty": 1,
+          "by": "2026-11-06"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "11/6"
+      ]
+    },
+    {
+      "event": "ev-002115",
+      "speaker": "p-dmitri",
+      "at_min": [
+        12,
+        18
+      ],
+      "brief": "hip dyno plate: need 7 by 2026-11-10",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-dyno-adapter-hip",
+        "value": {
+          "qty": 7,
+          "by": "2026-11-10"
+        }
+      },
+      "must_mention": [
+        "hip dyno plate",
+        "11/10"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 5,
+      "speaker": "p-dmitri",
+      "text": "Morning. Andre and Luis are out today, so it's us. Lin."
+    },
+    {
+      "start_s": 11,
+      "speaker": "p-lin",
+      "text": "Knee life test is still running. I added the counter check. Nothing to report beyond that, which is good."
+    },
+    {
+      "start_s": 24,
+      "speaker": "p-dmitri",
+      "text": "Good."
+    },
+    {
+      "start_s": 30,
+      "speaker": "p-zoe",
+      "text": "fixtures. the load cell is mounted on the knee rig, uh, temporarily, with the old bracket. it's not great but it works for now"
+    },
+    {
+      "start_s": 48,
+      "speaker": "p-lin",
+      "text": "Does the temporary mount move under load? I don't want to chase a fake signal."
+    },
+    {
+      "start_s": 56,
+      "speaker": "p-zoe",
+      "text": "i don't think so. probably not. i'll put an indicator on it"
+    },
+    {
+      "start_s": 75,
+      "speaker": "p-carlos",
+      "text": "Mill's back. Tool change took longer than planned but it's running!!"
+    },
+    {
+      "start_s": 86,
+      "speaker": "p-jade",
+      "text": "two boxes yesterday both checked in"
+    },
+    {
+      "start_s": 92,
+      "speaker": "p-destiny",
+      "text": "Harness for the hip rig is done, just need someone to check my pinout before I plug it in 🙏"
+    },
+    {
+      "start_s": 101,
+      "speaker": "p-carlos",
+      "text": "I'll check it after this."
+    },
+    {
+      "start_s": 160,
+      "speaker": "p-nora",
+      "text": "The question is where the build kits are. One, the carts arrived. Two, I'm labeling them today. Three, I'm, uh, still missing a few things from the kitting list, which I'm chasing."
+    },
+    {
+      "start_s": 190,
+      "speaker": "p-dmitri",
+      "text": "Fine."
+    },
+    {
+      "start_s": 290,
+      "speaker": "p-zoe",
+      "text": "oh, also, the chamber, the door seal is torn on one corner. it still holds temp, mostly"
+    },
+    {
+      "start_s": 301,
+      "speaker": "p-lin",
+      "text": "It doesn't hold temp mostly. It held it fine on the last run but it was slower to settle."
+    },
+    {
+      "start_s": 310,
+      "speaker": "p-dmitri",
+      "text": "Put a ticket in. Next."
+    },
+    {
+      "start_s": 420,
+      "speaker": "p-destiny",
+      "text": "Can we get more of the heat shrink in the small size? We're almost out 😬"
+    },
+    {
+      "start_s": 428,
+      "speaker": "p-jade",
+      "text": "ill look on the shelf"
+    },
+    {
+      "start_s": 575,
+      "speaker": "p-dmitri",
+      "text": "Okay. My list. We need FLEXSPLINE CLAMP by 11/12. 6 of them. Nora, Zoe, whoever. Somebody own it."
+    },
+    {
+      "start_s": 592,
+      "speaker": "p-zoe",
+      "text": "i can, i think. i'll check what's in the system"
+    },
+    {
+      "start_s": 601,
+      "speaker": "p-nora",
+      "text": "The question is whether there's a drawing. If Zoe sends me the drawing, I'll get it out."
+    },
+    {
+      "start_s": 690,
+      "speaker": "p-dmitri",
+      "text": "And that order. Just 1. We need it by 11/6. Is it worth expediting? I don't know. Nora, find out what it costs."
+    },
+    {
+      "start_s": 708,
+      "speaker": "p-nora",
+      "text": "So the question is expedite or not. I'll get a number and we can decide. I don't want to pay for it if we don't need it on 11/6 exactly."
+    },
+    {
+      "start_s": 722,
+      "speaker": "p-dmitri",
+      "text": "We need it by 11/6."
+    },
+    {
+      "start_s": 726,
+      "speaker": "p-nora",
+      "text": "Okay. I'll get the number."
+    },
+    {
+      "start_s": 760,
+      "speaker": "p-dmitri",
+      "text": "Last. HIP DYNO PLATE. 7. By 11/10."
+    },
+    {
+      "start_s": 768,
+      "speaker": "p-carlos",
+      "text": "Could we make those in house? Mill's free next week."
+    },
+    {
+      "start_s": 776,
+      "speaker": "p-dmitri",
+      "text": "Maybe. Look at the drawing first."
+    },
+    {
+      "start_s": 781,
+      "speaker": "p-carlos",
+      "text": "Will do."
+    },
+    {
+      "start_s": 870,
+      "speaker": "p-lin",
+      "text": "Sorry, was the dyno plate date 11/10 or 11/12? I wrote both down."
+    },
+    {
+      "start_s": 878,
+      "speaker": "p-dmitri",
+      "text": "Plate 11/10. Clamp 11/12."
+    },
+    {
+      "start_s": 884,
+      "speaker": "p-lin",
+      "text": "Thanks."
+    },
+    {
+      "start_s": 1080,
+      "speaker": "p-dmitri",
+      "text": "Okay. Go."
+    }
+  ],
+  "summary": {
+    "overview": "Tuesday standup, Andre and Luis out. Dmitri ran through three upcoming needs, one with an expedite question. Load cell temporarily mounted on the knee rig, chamber door seal torn, mill back up.",
+    "shorthand_bullet": [
+      "Lin: knee life test running, counter check added",
+      "Zoe: load cell on knee rig w/ old bracket (temporary), indicator to confirm no movement",
+      "Mill back after tool change",
+      "Destiny: hip rig harness done, needs pinout check",
+      "Nora: carts arrived, labeling today, still chasing kitting items",
+      "Chamber door seal torn one corner, slower to settle",
+      "flexspline clamp: 6 by 11/12, Zoe to check / send drawing",
+      "that order: 1 by 11/6, expedite? Nora getting cost",
+      "hip dyno plate: 7 by 11/10, maybe in house on the mill",
+      "Small heat shrink almost out"
+    ],
+    "action_items": [
+      "Carlos check Destiny's pinout",
+      "Zoe indicate temp load cell mount",
+      "ticket for chamber door seal",
+      "Zoe send flexspline clamp drawing to Nora",
+      "Nora find out expedite cost for that order",
+      "Carlos look at hip dyno plate drawing for in-house",
+      "heat shrink"
+    ],
+    "keywords": [
+      "flexspline clamp",
+      "hip dyno plate",
+      "expedite",
+      "load cell",
+      "chamber",
+      "harness",
+      "mill"
+    ]
+  }
+}

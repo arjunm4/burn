@@ -1,0 +1,408 @@
+{
+  "job_id": "jira-LEG-2026-09-07-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 20,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "LEG",
+    "name": "Legs and ankle"
+  },
+  "week": {
+    "start": "2026-09-07",
+    "end": "2026-09-13"
+  },
+  "people": [
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "LEG-274",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-zoe",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-08T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Tolerance stack check: Thigh cover plate",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-275",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-callum",
+      "assignee": "p-callum",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-08T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Rig setup: Tilt stand angle calibration block",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-276",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-samir",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-08T13:27:02-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Order 3x Dyno coupling, hip actuator",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-277",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-callum",
+      "assignee": "p-diego",
+      "labels": [
+        "docs"
+      ],
+      "priority": "High",
+      "created": "2026-09-09T17:12:35-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Update assembly work instructions (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-277-c1",
+          "by": "p-hana",
+          "at": "2026-09-14T10:22:54-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-277-c2",
+          "by": "p-diego",
+          "at": "2026-09-14T14:02:12-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-277-c3",
+          "by": "p-priya",
+          "at": "2026-09-14T14:46:32-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-278",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-priya",
+      "labels": [
+        "dfm"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-10T15:19:47-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Clean up CAD configs (ankle and foot)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-278-c1",
+          "by": "p-priya",
+          "at": "2026-09-18T11:03:56-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-278-c2",
+          "by": "p-priya",
+          "at": "2026-09-29T11:16:12-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-279",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-hana",
+      "assignee": "p-hana",
+      "labels": [
+        "dvt"
+      ],
+      "priority": "Low",
+      "created": "2026-09-11T10:00:00-07:00",
+      "due_date": "2026-11-03",
+      "events": [],
+      "brief": "Build sub-assembly for Leg DVT build: Thigh cover plate",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-279-c1",
+          "by": "p-hana",
+          "at": "2026-10-28T15:43:46-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-279-c2",
+          "by": "p-callum",
+          "at": "2026-11-02T15:58:51-08:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-280",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-diego",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-09-11T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Fixture install and shakedown for Leg DVT build: Tilt stand F/T adapter plate",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-280-c1",
+          "by": "p-diego",
+          "at": "2026-09-30T16:52:26-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-280-c2",
+          "by": "p-priya",
+          "at": "2026-10-01T11:00:33-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-281",
+      "type": "Sub-task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-priya",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-11T16:45:00-07:00",
+      "due_date": "2026-10-02",
+      "events": [],
+      "brief": "Update drawing and BOM (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-281-c1",
+          "by": "p-callum",
+          "at": "2026-09-15T18:03:11-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-281-c2",
+          "by": "p-diego",
+          "at": "2026-09-16T14:27:20-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-281-c3",
+          "by": "p-priya",
+          "at": "2026-09-17T15:07:22-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,366 @@
+{
+  "job_id": "meeting-mtg-01404",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 11,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-01404",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-10-07T08:45:00-07:00",
+    "actual_min": 15,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-lin",
+      "p-carlos",
+      "p-jade",
+      "p-luis",
+      "p-destiny"
+    ],
+    "late_joiners": [
+      "p-zoe",
+      "p-luis"
+    ]
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-001933",
+      "speaker": "p-dmitri",
+      "at_min": [
+        7,
+        13
+      ],
+      "brief": "that order: need 12 by 2026-11-20",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-torso-imu-plate",
+        "value": {
+          "qty": 12,
+          "by": "2026-11-20"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "11/20"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 3,
+      "speaker": "p-dmitri",
+      "text": "Okay, let's go. Zoe and Luis aren't here yet, we'll start without them. Lin."
+    },
+    {
+      "start_s": 9,
+      "speaker": "p-lin",
+      "text": "Life test rig two is still running, no faults overnight. Rig one I paused because the encoder count drifted again, I want to reseat the connector before I restart it."
+    },
+    {
+      "start_s": 26,
+      "speaker": "p-dmitri",
+      "text": "Is it the connector or the cable?"
+    },
+    {
+      "start_s": 29,
+      "speaker": "p-lin",
+      "text": "I think connector. The drift shows up when the chamber cycles, so thermal. I'll know once I reseat it."
+    },
+    {
+      "start_s": 41,
+      "speaker": "p-dmitri",
+      "text": "Fine. Carlos."
+    },
+    {
+      "start_s": 44,
+      "speaker": "p-carlos",
+      "text": "Finishing the harness routing on the second leg today. Need the crimp tool back from whoever took it. Not naming names."
+    },
+    {
+      "start_s": 55,
+      "speaker": "p-destiny",
+      "text": "that's me sorry, it's on my bench, I'll bring it over"
+    },
+    {
+      "start_s": 61,
+      "speaker": "p-carlos",
+      "text": "Thanks."
+    },
+    {
+      "start_s": 64,
+      "speaker": "p-dmitri",
+      "text": "Jade."
+    },
+    {
+      "start_s": 66,
+      "speaker": "p-jade",
+      "text": "two boxes came in yesterday afternoon, both logged, one has a torn label so i'm checking it against the packing slip"
+    },
+    {
+      "start_s": 78,
+      "speaker": "p-jade",
+      "text": "also the shelf by receiving is full again"
+    },
+    {
+      "start_s": 84,
+      "speaker": "p-dmitri",
+      "text": "I'll deal with the shelf. Destiny."
+    },
+    {
+      "start_s": 88,
+      "speaker": "p-destiny",
+      "text": "Still on the foot subassembly, the uh, the sole pad bonding. Second one cured weird, there's a bubble near the toe, I want someone to look at it before I do the third."
+    },
+    {
+      "start_s": 104,
+      "speaker": "p-carlos",
+      "text": "I'll look after standup."
+    },
+    {
+      "start_s": 131,
+      "speaker": "p-zoe",
+      "text": "hey sorry, sorry, parking"
+    },
+    {
+      "start_s": 135,
+      "speaker": "p-dmitri",
+      "text": "You're up anyway."
+    },
+    {
+      "start_s": 138,
+      "speaker": "p-zoe",
+      "text": "ok um, the knee fixture rev, diego's got the clevis change, i'm waiting on that. meanwhile i'm doing the side load plots for kenji. that's it i think"
+    },
+    {
+      "start_s": 157,
+      "speaker": "p-dmitri",
+      "text": "When does the clevis come back?"
+    },
+    {
+      "start_s": 161,
+      "speaker": "p-zoe",
+      "text": "he said end of week? i'd say nxt wk to be safe"
+    },
+    {
+      "start_s": 214,
+      "speaker": "p-luis",
+      "text": "hi im here, the gate was stuck"
+    },
+    {
+      "start_s": 219,
+      "speaker": "p-dmitri",
+      "text": "Go."
+    },
+    {
+      "start_s": 221,
+      "speaker": "p-luis",
+      "text": "reamed the dowel hole on the clamp plate yesterday, fits good. gonna check it on the fixture this morning with the indicator"
+    },
+    {
+      "start_s": 236,
+      "speaker": "p-luis",
+      "text": "also the drill press chuck is wobbly, somone should look at it. *someone"
+    },
+    {
+      "start_s": 244,
+      "speaker": "p-carlos",
+      "text": "It's the arbor. I know. On my list."
+    },
+    {
+      "start_s": 452,
+      "speaker": "p-dmitri",
+      "text": "One more from me. On that order, we need twelve by 11/20. Not negotiable, the test plan's built around it."
+    },
+    {
+      "start_s": 466,
+      "speaker": "p-jade",
+      "text": "ok ill watch for it"
+    },
+    {
+      "start_s": 470,
+      "speaker": "p-dmitri",
+      "text": "Good. Anything else?"
+    },
+    {
+      "start_s": 474,
+      "speaker": "p-lin",
+      "text": "Just that the chamber door seal is getting worn, it's fine for now."
+    },
+    {
+      "start_s": 482,
+      "speaker": "p-dmitri",
+      "text": "Okay. Done, thanks."
+    }
+  ],
+  "summary": {
+    "overview": "Daily test lab and build standup. Zoe and Luis joined late.",
+    "shorthand_bullet": [
+      "Lin: rig 2 clean overnight, rig 1 paused, encoder drift on chamber cycle, reseating connector",
+      "Carlos: harness routing leg #2, crimp tool was on Destiny's bench",
+      "Jade: 2 boxes received, one torn label, checking vs packing slip; receiving shelf full",
+      "Destiny: sole pad bond, bubble near toe on #2, wants eyes before #3",
+      "Zoe: waiting on clevis change from Diego, doing side load plots",
+      "Luis: dowel hole reamed on clamp plate, checking w/ indicator; drill press chuck wobble",
+      "Dmitri: that order, need 12 by 11/20",
+      "chamber door seal wearing"
+    ],
+    "action_items": [
+      "Carlos look at Destiny's sole pad bubble",
+      "Dmitri clear receiving shelf",
+      "drill press arbor - Carlos",
+      "someone check chamber door seal at some point"
+    ],
+    "keywords": [
+      "life test",
+      "encoder drift",
+      "harness",
+      "sole pad",
+      "clamp plate",
+      "receiving"
+    ]
+  }
+}

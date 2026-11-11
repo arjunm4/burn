@@ -91,7 +91,7 @@ export async function runAssemble({ worldDir, outDir, weeks }) {
     if (!existsSync(path)) continue;
     let job;
     try { job = JSON.parse(readFileSync(path, 'utf8')); } catch { problems.push(`${entry.job_id}: unreadable, rejected`); counts.rejected++; continue; }
-    if (job.status !== 'filled') { counts.blank++; continue; }
+    if (job.status !== 'filled' && job.status !== 'partial') { counts.blank++; continue; }
     const planned = plannedJobs[job.job_id];
     if (!planned || job.job_id !== entry.job_id || job.source !== planned.source) { problems.push(`${entry.job_id}: not a planned job, rejected`); counts.rejected++; continue; }
     const { texts: t, problems: p } = extractJob(job, planned, projectKeys);

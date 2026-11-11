@@ -1,0 +1,273 @@
+{
+  "job_id": "slack-ch-procurement-2026-08-24-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 23,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-08-24",
+    "end": "2026-08-30"
+  },
+  "people": [
+    {
+      "id": "p-amara",
+      "name": "Amara Nwosu",
+      "display_name": "amara",
+      "slack_id": "U07FLK0AMAR",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators. This week: Compromise: derate ramps over 2 s and publishes a warning to the controller.",
+    "Ongoing: Tendons fray at the proximal pulley after 40k grip cycles. This week: Passes 100k; creep makes the finger lose 4 deg of closure, retension interval set.",
+    "Ongoing: Aluminum links gall on 303 pins under side load. This week: Kenji pulls a finger apart: galling on the knuckle pin bore after pinch tests.",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind. This week: Tomas measures pin diameters: two batches differ by 8 microns; suspects pin supplier mix.",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough. This week: Dmitri: chamber only free Mondays; battery team has it midweek.",
+    "Ongoing: What to show investors when no full humanoid exists. This week: Demo done; Helena asks for a full lower body by Q1.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles",
+    "Ongoing: Gait controller tuning for the investor demo on the gait gantry. This week: Investor demo goes; one stumble recovered by the boom, Helena happy.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Ingrid backs it but exempts the investor demo and DVT builds.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno. This week: Night runs work but nobody watches them; one overnight run lost to a loose clamp.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1787596448.481116",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-001474"
+      ],
+      "brief": "FL-TST-2111: need 6 by 2026-09-23 for Rig setup: Dyno coupling, hip actuator",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-09-23"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2111",
+        "Rig setup: Dyno coupling, hip actuator",
+        "FL-TST-2103",
+        "wed the 23rd"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Need 6 of FL-TST-2111 (Rig setup: Dyno coupling, hip actuator) by wed the 23rd, mates to FL-TST-2103"
+    },
+    {
+      "ts": "1787645888.704470",
+      "user": "p-tomas",
+      "thread_ts": "1787596448.481116",
+      "events": [
+        "ev-002922"
+      ],
+      "brief": "Correction: FL-TST-2111: need 6 by 2026-09-18 for Rig setup: Dyno coupling, hip actuator",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-09-18"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2111",
+        "Rig setup: Dyno coupling, hip actuator",
+        "FL-TST-2103",
+        "9/18"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Correction on FL-TST-2111, I think we actually need them by 9/18 not the 23rd. Rig setup: Dyno coupling, hip actuator has to be done before the FL-TST-2103 fit check, sorry"
+    },
+    {
+      "ts": "1787771118.266490",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-001465"
+      ],
+      "brief": "Quote Q-2555699-1 for FL-TST-2424: standard $1818.97, 8 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-10-21",
+          "quote_id": "Q-2555699-1",
+          "price_usd": 1818.97,
+          "lead_days": 8
+        }
+      },
+      "must_mention": [
+        "Q-2555699-1",
+        "FL-TST-2424",
+        "wed the 21st"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Q-2555699-1 back for FL-TST-2424, need it by wed the 21st, probably fine"
+    },
+    {
+      "ts": "1787804396.111164",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-003125"
+      ],
+      "brief": "dyno coupling: need 6 by 2026-08-31",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-08-31"
+        }
+      },
+      "must_mention": [
+        "dyno coupling",
+        "mon 8/31"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "dyno coupling still need 6 by mon 8/31 or the hip runs slip agian, *again. who's got this"
+    },
+    {
+      "ts": "1787847144.278422",
+      "user": "p-hana",
+      "thread_ts": "1787804396.111164",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "is that the same coupling Tomas posted or a different rev?"
+    },
+    {
+      "ts": "1787945897.714012",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-001477"
+      ],
+      "brief": "Quote Q-2557869-1 for FL-TST-2111: standard $957.43, 9 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-09-18",
+          "quote_id": "Q-2557869-1",
+          "price_usd": 957.43,
+          "lead_days": 9
+        }
+      },
+      "must_mention": [
+        "Q-2557869-1",
+        "FL-TST-2111",
+        "fri the 18th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Q-2557869-1 in for FL-TST-2111, covers fri the 18th"
+    }
+  ]
+}

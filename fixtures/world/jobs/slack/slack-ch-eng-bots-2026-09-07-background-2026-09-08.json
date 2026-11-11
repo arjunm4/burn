@@ -1,0 +1,256 @@
+{
+  "job_id": "slack-ch-eng-bots-2026-09-07-background-2026-09-08",
+  "source": "slack",
+  "status": "blank",
+  "priority": 20,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-eng-bots",
+    "name": "eng-bots",
+    "slack_id": "C07FLK0BOTS",
+    "purpose": "GitHub, Jira and CI notifications"
+  },
+  "week": {
+    "start": "2026-09-07",
+    "end": "2026-09-13"
+  },
+  "people": [
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-gabriel",
+      "name": "Gabriel Moreau",
+      "display_name": "gabriel.m",
+      "slack_id": "U07FLK0GABR",
+      "title": "Controls Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-leilani",
+      "name": "Leilani Kahale",
+      "display_name": "leilani.k",
+      "slack_id": "U07FLK0LEIL",
+      "title": "Locomotion Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-marcus",
+      "name": "Marcus Adeyemi",
+      "display_name": "marcus",
+      "slack_id": "U07FLK0MARC",
+      "title": "CTO",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-mateo",
+      "name": "Mateo Silva",
+      "display_name": "mateo",
+      "slack_id": "U07FLK0MATE",
+      "title": "Embedded Software Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway",
+    "Ongoing: Gait policy trained in sim overshoots on hardware; friction and backlash modelling. This week: Ravi: RL gait policy walks in sim, chatters on hardware.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators. This week: v2 build slips a week; dyno sweep waits on it.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Rev C release moves the cable inboard; Farah asks for high-flex cable on the next harness."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1788880251.765999",
+      "user": "p-mateo",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about this: Interim: machined strain-relief clamp and service loop; leg rev C routing planned.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1788883962.295732",
+      "user": "p-gabriel",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about this: Rev B: larger vent channel, mica sheets, spacing stays 2 mm.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788885317.966815",
+      "user": "p-mei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about this: Callum proposes routing inboard through the joint axis; Diego says thigh link needs rework.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788886433.964030",
+      "user": "p-farah",
+      "thread_ts": "1788883962.295732",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Rev B: larger vent channel, mica sheets, spacing stays 2 mm.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1788890144.322830",
+      "user": "p-marcus",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788890306.547004",
+      "user": "p-leilani",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Carlos finds two broken phase conductors at the knee after the overnight gait run.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788891351.418316",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on this: v2 build slips a week; dyno sweep waits on it.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1788892327.274536",
+      "user": "p-jonas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to this: Farah: bend radius at the knee is 8 mm, cable rated for 7.5x OD dynamic, we are at 3x.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788932533.357721",
+      "user": "p-leilani",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to this: Farah wants 3 mm and a mica sheet; Lukas says that costs 18 mm of pack length.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    }
+  ]
+}
