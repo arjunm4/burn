@@ -60,6 +60,60 @@ function walkJson(v, fn, keyPath = []) {
 const quantile = (xs, q) => { const s = xs.slice().sort((a, b) => a - b); if (!s.length) return NaN; const i = (s.length - 1) * q; const lo = Math.floor(i); return s[lo] + (s[Math.ceil(i)] - s[lo]) * (i - lo); };
 const share = (xs, f) => (xs.length ? xs.filter(f).length / xs.length : 0);
 
+// ---- date check: a named weekday must match the date it names (Pacific), relative dates point forward ----
+const WD = { sun: 0, mon: 1, tue: 2, wed: 3, thu: 4, fri: 5, sat: 6 };
+const MON = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12 };
+const WD_RE = '(sun|mon|tue|wed|thu|fri|sat)[a-z]*\\.?';
+const dowOf = (y, m, d) => new Date(Date.UTC(y, m - 1, d, 12)).getUTCDay();
+const pacificDate = (iso) => new Date(toMs(iso)).toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });
+export function dateTextViolations(text, anchorIso) {
+  const out = [];
+  if (typeof text !== 'string' || !anchorIso) return out;
+  const a = pacificDate(anchorIso); const [ay, am, ad] = a.split('-').map(Number);
+  const aDow = dowOf(ay, am, ad);
+  const yearFor = (m, d) => { let y = ay; if (m < am - 6) y++; else if (m > am + 6) y--; return y; };
+  let m;
+  // "wed the 18th", "wed 18th": the day of month nearest after the anchor
+  const r1 = new RegExp(`\\b${WD_RE} (?:the )?(\\d{1,2})(?:st|nd|rd|th)\\b`, 'gi');
+  while ((m = r1.exec(text))) {
+    const want = WD[m[1].toLowerCase()]; const day = +m[2];
+    let ok = false;
+    for (let k = 0; k < 3 && !ok; k++) { const mm = ((am - 1 + k) % 12) + 1; const yy = ay + Math.floor((am - 1 + k) / 12); if (new Date(Date.UTC(yy, mm - 1, day)).getUTCDate() === day && dowOf(yy, mm, day) === want) ok = true; }
+    if (!ok) out.push(`"${m[0]}": no ${m[1]} falls on the ${day}th within 3 months of ${a}`);
+  }
+  // "wed, nov 18", "wed 11/18"
+  const r2 = new RegExp(`\\b${WD_RE},? (?:(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\\.? (\\d{1,2})|(\\d{1,2})/(\\d{1,2}))\\b`, 'gi');
+  while ((m = r2.exec(text))) {
+    const mo = m[2] ? MON[m[2].toLowerCase()] : +m[4]; const day = m[2] ? +m[3] : +m[5];
+    if (!(mo >= 1 && mo <= 12 && day >= 1 && day <= 31)) continue;
+    if (dowOf(yearFor(mo, day), mo, day) !== WD[m[1].toLowerCase()]) out.push(`"${m[0]}": weekday does not match the date`);
+  }
+  // relative: "tomorrow wed" style is rare; check "next/this <weekday>" and "yesterday" never used for the future
+  const r3 = new RegExp(`\\b(?:next|this coming) ${WD_RE}`, 'gi');
+  while ((m = r3.exec(text))) { if (WD[m[1].toLowerCase()] === aDow && /next/i.test(m[0]) === false) out.push(`"${m[0]}": points at the message day`); }
+  const r4 = /\b(?:tomorrow|tmrw)[, ]+(?:is |on )?(sun|mon|tue|wed|thu|fri|sat)[a-z]*\b/gi;
+  while ((m = r4.exec(text))) if (WD[m[1].toLowerCase()] !== (aDow + 1) % 7) out.push(`"${m[0]}": tomorrow is not that weekday`);
+  const r5 = /\b(?:today|tonight)[, ]+(?:is )?(sun|mon|tue|wed|thu|fri|sat)[a-z]*\b/gi;
+  while ((m = r5.exec(text))) if (WD[m[1].toLowerCase()] !== aDow) out.push(`"${m[0]}": today is not that weekday`);
+  return out;
+}
+const TIME_KEYS = ['at', 'sent_at', 'created_at', 'time', 'start', 'ts', 'when', 'known_at', 'posted_at'];
+export function walkDateText(node, onViolation, anchor = null, where = '') {
+  if (Array.isArray(node)) { node.forEach((x, i) => walkDateText(x, onViolation, anchor, `${where}[${i}]`)); return; }
+  if (!node || typeof node !== 'object') return;
+  let a = anchor;
+  for (const k of TIME_KEYS) {
+    const v = node[k];
+    if (typeof v === 'string' && ISO_ANY.test(v)) { a = v; break; }
+    if (k === 'ts' && typeof v === 'string' && /^\d+\.\d+$/.test(v)) { a = new Date(+v * 1000).toISOString(); break; }
+  }
+  for (const [k, v] of Object.entries(node)) {
+    if (typeof v === 'string' && v.length > 8 && !TIME_KEYS.includes(k)) for (const msg of dateTextViolations(v, a)) onViolation(`${where}.${k}: ${msg}`);
+    else walkDateText(v, onViolation, a, `${where}.${k}`);
+  }
+}
+const ISO_ANY = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/;
+
 export async function runChecks({ world: worldDir, out: outDir, weeks = null, writeCoverage = true } = {}) {
   const errors = [];
   const warnings = [];
@@ -284,6 +338,10 @@ export async function runChecks({ world: worldDir, out: outDir, weeks = null, wr
     }
   }
   info.filled_jobs = filled;
+
+  // ---- I33: weekday/date agreement in planned and filled text ----
+  for (const { file, job } of jobs) walkDateText(job, (m) => err(33, `${path.relative(worldDir, file)}${m}`), job.stamp || meta.demo_now);
+  for (const [src, data] of Object.entries(planned)) walkDateText(data, (m) => err(33, `planned/${src}${m}`), meta.demo_now);
 
   // ---- I24: determinism of every renderer's plan ----
   let rngMod = null; let calMod = null;

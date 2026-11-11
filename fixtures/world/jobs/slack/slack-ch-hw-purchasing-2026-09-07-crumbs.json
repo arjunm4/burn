@@ -57,6 +57,25 @@
       }
     },
     {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
       "id": "p-hana",
       "name": "Hana Kimura",
       "display_name": "hana",
@@ -71,6 +90,43 @@
         "hedging": "high",
         "quirks": [
           "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
         ]
       }
     },
@@ -131,57 +187,113 @@
   ],
   "messages": [
     {
-      "ts": "1788975089.643171",
+      "ts": "1788887029.196048",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-001687"
+      ],
+      "brief": "FL-TST-2103: need 24 by 2026-10-05 for Test stand rework: Dyno coupling, knee actuator",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-10-05"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2103",
+        "Test stand rework: Dyno coupling, knee actuator",
+        "FL-TST-2139",
+        "FL-TST-2124",
+        "mon 10/5"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2103 for Test stand rework: Dyno coupling, knee actuator, need 24 by mon 10/5. also FL-TST-2139 and FL-TST-2124 go with it"
+    },
+    {
+      "ts": "1788975089.295881",
       "user": "p-dmitri",
       "thread_ts": null,
       "events": [
-        "ev-001587"
+        "ev-001715"
       ],
-      "brief": "spine fitting: need 8 by 2026-09-29",
+      "brief": "spine fitting: need 8 by 2026-10-02",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 8,
-          "by": "2026-09-29"
+          "by": "2026-10-02"
         }
       },
       "must_mention": [
         "spine fitting",
-        "tues 9/29"
+        "fri 10/2"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "Need 8 spine fitting by tues 9/29!!"
+      "text": "spine fitting, need 8 by fri 10/2!!"
     },
     {
-      "ts": "1788979540.715120",
+      "ts": "1788979540.725719",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-001551"
+        "ev-001677"
       ],
-      "brief": "that order: need 8 by 2026-09-23",
+      "brief": "that order: need 8 by 2026-09-24",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 8,
-          "by": "2026-09-23"
+          "by": "2026-09-24"
         }
       },
       "must_mention": [
         "that order",
-        "wed the 23rd"
+        "thurs 9/24"
       ],
       "pressure": "high",
       "length": "short",
-      "text": "that order needs 8 by wed the 23rd"
+      "text": "that order needs 8 by thurs 9/24 i think"
     },
     {
-      "ts": "1789122940.855556",
+      "ts": "1788980107.252104",
+      "user": "p-farah",
+      "thread_ts": "1788975089.295881",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Regarding your question about the lead time: the last one we got from them took about two weeks door to door, so I would ask now."
+    },
+    {
+      "ts": "1788984309.083575",
+      "user": "p-dmitri",
+      "thread_ts": "1788975089.295881",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "ok thx"
+    },
+    {
+      "ts": "1788989635.260494",
+      "user": "p-nadia",
+      "thread_ts": "1788975089.295881",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "same here, wil ask tmrw"
+    },
+    {
+      "ts": "1789039120.299736",
       "user": "p-tomas",
-      "thread_ts": "1788979540.715120",
+      "thread_ts": "1788979540.725719",
       "events": [
-        "ev-002942"
+        "ev-003271"
       ],
       "brief": "Correction: that order: need 8 by 2026-09-28",
       "claim": {
@@ -197,14 +309,14 @@
       ],
       "pressure": "high",
       "length": "medium",
-      "text": "I think that order is actually 9/28, not the 23rd, probably worth double-checking"
+      "text": "that order, 9/28 not the 24th. probably"
     },
     {
-      "ts": "1789143462.095221",
+      "ts": "1789143462.909614",
       "user": "p-hana",
       "thread_ts": null,
       "events": [
-        "ev-001679"
+        "ev-001825"
       ],
       "brief": "the pulley: need 10 by 2026-10-28",
       "claim": {
@@ -216,18 +328,41 @@
       },
       "must_mention": [
         "the pulley",
-        "wed the 28th"
+        "10/28"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "the pulley, 10 by wed the 28th i think"
+      "text": "the pulley needs 10 by 10/28 i think, not 100% sure on the count"
     },
     {
-      "ts": "1789176517.193437",
+      "ts": "1789144420.600217",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-001691"
+      ],
+      "brief": "dyno coupling: need 24 by 2026-10-05",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-10-05"
+        }
+      },
+      "must_mention": [
+        "dyno coupling",
+        "10/5"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "dyno coupling needs 24 by 10/5"
+    },
+    {
+      "ts": "1789176517.708240",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-001650"
+        "ev-001792"
       ],
       "brief": "sensor bracket: need 24 by 2026-09-28 for Kit and assemble: Tactile board bracket",
       "claim": {
@@ -240,11 +375,11 @@
       "must_mention": [
         "sensor bracket",
         "Kit and assemble: Tactile board bracket",
-        "9/28"
+        "mon 9/28"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "We need 24 sensor bracket by 9/28 for Kit and assemble: Tactile board bracket."
+      "length": "medium",
+      "text": "sensor bracket: we need it by mon 9/28 for Kit and assemble: Tactile board bracket. Can someone check the quote status before the weekend?"
     }
   ]
 }

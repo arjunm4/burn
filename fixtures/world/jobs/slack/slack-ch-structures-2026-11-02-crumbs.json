@@ -19,6 +19,25 @@
   },
   "people": [
     {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
       "id": "p-idris",
       "name": "Idris Bello",
       "display_name": "idris",
@@ -34,40 +53,6 @@
         "quirks": [
           "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
           "corrects own dates"
-        ]
-      }
-    },
-    {
-      "id": "p-ingrid",
-      "name": "Ingrid Solberg",
-      "display_name": "ingrid.s",
-      "slack_id": "U07FLK0INGR",
-      "title": "VP Hardware",
-      "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": []
-      }
-    },
-    {
-      "id": "p-jade",
-      "name": "Jade Thompson",
-      "display_name": "jade.t",
-      "slack_id": "U07FLK0JADE",
-      "title": "Technician, receiving",
-      "style": {
-        "case": "lower",
-        "punctuation": "none",
-        "typos": "some",
-        "emoji": "rare",
-        "length": "terse",
-        "hedging": "low",
-        "quirks": [
-          "no capitals or end punctuation ever"
         ]
       }
     },
@@ -159,6 +144,24 @@
       }
     },
     {
+      "id": "p-valeria",
+      "name": "Valeria Ortiz",
+      "display_name": "valeria.o",
+      "slack_id": "U07FLK0VALE",
+      "title": "Electrical Engineer, battery systems",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
       "id": "p-zoe",
       "name": "Zoe Castellanos",
       "display_name": "zoe.c",
@@ -190,11 +193,31 @@
   ],
   "messages": [
     {
-      "ts": "1793668519.884195",
+      "ts": "1793640429.653451",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-003709"
+      ],
+      "brief": "Battery test pack build (2 packs) done by tues",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-11-03"
+      },
+      "must_mention": [
+        "Battery test pack build (2 packs)",
+        "tues 11/3"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Battery test pack build (2 packs) done by tues 11/3"
+    },
+    {
+      "ts": "1793668519.053796",
       "user": "p-omar",
       "thread_ts": null,
       "events": [
-        "ev-003219"
+        "ev-003515"
       ],
       "brief": "lift eye: still quoting rev A",
       "claim": {
@@ -204,15 +227,15 @@
       "must_mention": [
         "lift eye"
       ],
-      "length": "medium",
-      "text": "lift eye is still quoting at rev A i think, haven't seen it move"
+      "length": "short",
+      "text": "lift eye: still quoting rev A"
     },
     {
-      "ts": "1793715967.756979",
+      "ts": "1793715967.948499",
       "user": "p-renee",
       "thread_ts": null,
       "events": [
-        "ev-002754"
+        "ev-002942"
       ],
       "brief": "FL-BAT-1691 rev C released: ID +0.05 mm for slip fit",
       "claim": {
@@ -222,116 +245,122 @@
       "must_mention": [
         "FL-BAT-1691"
       ],
-      "length": "medium",
-      "text": "FL-BAT-1691 rev C is released. ID opened up 0.05 mm so it slip fits."
+      "length": "short",
+      "text": "FL-BAT-1691 rev C released, ID +0.05 mm for slip fit"
     },
     {
-      "ts": "1793760555.219544",
-      "user": "p-jade",
+      "ts": "1793724344.790517",
+      "user": "p-talia",
       "thread_ts": null,
       "events": [
-        "ev-002010"
+        "ev-003644"
       ],
-      "brief": "boom encoder bracket arrived (4)",
+      "brief": "BMS standoff: still quoting rev B",
       "claim": {
-        "kind": "stock",
-        "value": 4
+        "kind": "substitute",
+        "value": "rev B"
       },
       "must_mention": [
-        "boom encoder bracket",
-        "4"
+        "BMS standoff"
       ],
-      "pressure": "low",
       "length": "short",
-      "text": "boom encoder bracket in 4 of them on the cart"
+      "text": "BMS standoff: still quoting rev B 😬"
     },
     {
-      "ts": "1793764055.880754",
-      "user": "p-omar",
-      "thread_ts": "1793760555.219544",
+      "ts": "1793728965.278815",
+      "user": "p-carlos",
+      "thread_ts": "1793724344.790517",
       "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "hmm not sure that's the right cart"
-    },
-    {
-      "ts": "1793811878.864795",
-      "user": "p-talia",
-      "thread_ts": "1793760555.219544",
-      "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "They're on the receiving shelf now, moved them this morning 🙏"
-    },
-    {
-      "ts": "1793816021.130935",
-      "user": "p-omar",
-      "thread_ts": "1793760555.219544",
-      "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
+      "brief": "reply (will check later) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "ok then probably fine, labels looked right"
+      "text": "will check later, in a review rn"
     },
     {
-      "ts": "1793847360.663603",
-      "user": "p-idris",
-      "thread_ts": null,
-      "events": [
-        "ev-001672"
-      ],
-      "brief": "pack fixture in use",
-      "claim": {
-        "kind": "done",
-        "value": "2026-11-04"
-      },
-      "must_mention": [
-        "pack fixture",
-        "the test",
-        "11/4"
-      ],
-      "pressure": "low",
-      "length": "short",
-      "text": "pack fixture is tied up for the test til 11/4 fyi"
-    },
-    {
-      "ts": "1793849875.083727",
-      "user": "p-talia",
-      "thread_ts": "1793847360.663603",
-      "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Can we not squeeze a quick fit check in before that 😬"
-    },
-    {
-      "ts": "1793904603.138881",
-      "user": "p-ingrid",
-      "thread_ts": "1793847360.663603",
+      "ts": "1793730789.321751",
+      "user": "p-lukas",
+      "thread_ts": "1793724344.790517",
       "events": [],
       "brief": "reply (shares a related experience) in the thread about: the message above",
       "must_mention": [],
-      "length": "one_word",
-      "text": "We had the same fight over one fixture at my last company."
+      "length": "medium",
+      "text": "had the same thing with the spacers last build, vendor kept sending the old rev quote"
     },
     {
-      "ts": "1793908571.221127",
-      "user": "p-ingrid",
-      "thread_ts": "1793847360.663603",
-      "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Fine."
-    },
-    {
-      "ts": "1793916779.511161",
+      "ts": "1793756340.952277",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-003467"
+        "ev-003863"
+      ],
+      "brief": "Fit check: Pelvis side plate, right done",
+      "claim": {
+        "kind": "done",
+        "value": "2026-11-03"
+      },
+      "must_mention": [
+        "Fit check: Pelvis side plate, right",
+        "11/3"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Fit check: Pelvis side plate, right is done 11/3. left one still needs the jig"
+    },
+    {
+      "ts": "1793760420.532054",
+      "user": "p-kwame",
+      "thread_ts": "1793756340.952277",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "did the bolts line up on the first try?"
+    },
+    {
+      "ts": "1793762916.724064",
+      "user": "p-talia",
+      "thread_ts": "1793756340.952277",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@valeria.o fyi for the left side 🙏"
+    },
+    {
+      "ts": "1793910222.947782",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-003601"
+      ],
+      "brief": "Bearing set for torso and pelvis structure: still quoting 2026-11-02",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-11-02"
+      },
+      "must_mention": [
+        "Bearing set for torso and pelvis structure (height gauge)",
+        "mon the 2nd"
+      ],
+      "length": "medium",
+      "text": "Bearing set for torso and pelvis structure (height gauge) still quoting mon the 2nd, no update from them since"
+    },
+    {
+      "ts": "1793912926.039136",
+      "user": "p-talia",
+      "thread_ts": "1793910222.947782",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "same thing happened to me on the last order, had to call them twice"
+    },
+    {
+      "ts": "1793916779.890916",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-003610"
       ],
       "brief": "cell spacer: still quoting rev B",
       "claim": {
@@ -342,32 +371,45 @@
         "cell spacer"
       ],
       "length": "short",
-      "text": "cell spacer still quoting rev B, will ping again"
+      "text": "cell spacer: still quoting rev B"
     },
     {
-      "ts": "1793927096.998980",
-      "user": "p-lukas",
+      "ts": "1793917711.960814",
+      "user": "p-idris",
+      "thread_ts": "1793916779.890916",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "thx"
+    },
+    {
+      "ts": "1793962140.247526",
+      "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-003366"
+        "ev-001821"
       ],
-      "brief": "IMU plate: still quoting rev A",
+      "brief": "heater clamp in use",
       "claim": {
-        "kind": "substitute",
-        "value": "rev A"
+        "kind": "done",
+        "value": "2026-11-04"
       },
       "must_mention": [
-        "IMU plate"
+        "heater clamp",
+        "the test",
+        "11/4"
       ],
-      "length": "medium",
-      "text": "IMU plate still on rev A quote"
+      "pressure": "elevated",
+      "length": "short",
+      "text": "heater clamp in use, the test is done 11/4"
     },
     {
-      "ts": "1793984282.928527",
+      "ts": "1793984282.744123",
       "user": "p-lukas",
       "thread_ts": null,
       "events": [
-        "ev-003340"
+        "ev-003467"
       ],
       "brief": "Bearing set for torso and pelvis structure: still quoting 2026-11-02",
       "claim": {
@@ -378,53 +420,45 @@
         "Bearing set for torso and pelvis structure (height gauge)",
         "11/2"
       ],
-      "length": "medium",
-      "text": "Bearing set for torso and pelvis structure (height gauge) still quoting, been that way since 11/2"
+      "length": "short",
+      "text": "Bearing set for torso and pelvis structure (height gauge): still quoting 11/2 fwiw"
     },
     {
-      "ts": "1793985861.892354",
-      "user": "p-kwame",
-      "thread_ts": "1793984282.928527",
+      "ts": "1793989084.388569",
+      "user": "p-valeria",
+      "thread_ts": "1793962140.247526",
       "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
+      "brief": "reply (ack) in the thread about: the message above",
       "must_mention": [],
-      "length": "medium",
-      "text": "The gauge also needs a flat surface plate to be useful."
+      "length": "short",
+      "text": "ok noted"
     },
     {
-      "ts": "1793999350.817538",
-      "user": "p-ingrid",
-      "thread_ts": null,
-      "events": [
-        "ev-003423"
-      ],
-      "brief": "cell spacer: still quoting rev B",
-      "claim": {
-        "kind": "substitute",
-        "value": "rev B"
-      },
-      "must_mention": [
-        "cell spacer"
-      ],
-      "length": "medium",
-      "text": "Where are we on the cell spacer? Still quoting rev B?"
-    },
-    {
-      "ts": "1794001747.342845",
+      "ts": "1793994466.508076",
       "user": "p-talia",
-      "thread_ts": "1793999350.817538",
+      "thread_ts": "1793962140.247526",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "not sure that's right, i thought the clamp got swapped out earlier in the week"
+    },
+    {
+      "ts": "1793995062.199346",
+      "user": "p-lukas",
+      "thread_ts": "1793962140.247526",
       "events": [],
       "brief": "reply (thanks) in the thread about: the message above",
       "must_mention": [],
-      "length": "short",
-      "text": "Thanks, chasing it today 🙏"
+      "length": "one_word",
+      "text": "thanks talia"
     },
     {
-      "ts": "1794006075.453913",
+      "ts": "1794006075.958682",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-002640"
+        "ev-002828"
       ],
       "brief": "Assemble build unit: Battery clevis 10 waits on 21700 cells for test packs",
       "claim": {
@@ -437,7 +471,7 @@
       ],
       "pressure": "low",
       "length": "medium",
-      "text": "Assemble build unit: Battery clevis 10 is stuck waiting on 21700 cells for test packs, cant start til those land"
+      "text": "Assemble build unit: Battery clevis 10 waits on 21700 cells for test packs, so nothing moves until those land"
     }
   ]
 }

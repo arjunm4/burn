@@ -7,9 +7,10 @@
 
 ## Overview
 
-We need abs encoder bracket by 11/17 (the fit check). We need FL-TST-2145 by 11/16.
+We need 2443 by 11/12 (the fit check). We need abs encoder bracket by 11/17 (the fit check). We need FL-TST-2145 by 11/12.
 
 ## Discussion
 
+- Dmitri: We need 2443 by 11/12 (the fit check).
 - Dmitri: We need abs encoder bracket by 11/17 (the fit check).
-- Carlos: We need FL-TST-2145 by 11/16.
+- Carlos: We need FL-TST-2145 by 11/12.

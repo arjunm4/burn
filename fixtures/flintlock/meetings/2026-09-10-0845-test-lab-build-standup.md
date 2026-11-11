@@ -8,10 +8,11 @@
 
 ## Overview
 
-We need end fitting by 9/29. We need 1487 by 9/28. We need FL-ANK-1291 by 9/28 (the fit check).
+We need end fitting by 9/29. We need dyno coupling by 10/5 (Test stand rework: Dyno coupling, knee actuator). We need 1487 by 9/28. We need FL-ANK-1291 by 9/28 (the fit check).
 
 ## Discussion
 
 - Zoe: We need end fitting by 9/29.
+- Dmitri: We need dyno coupling by 10/5 (Test stand rework: Dyno coupling, knee actuator).
 - Dmitri: We need 1487 by 9/28.
 - Zoe: We need FL-ANK-1291 by 9/28 (the fit check).

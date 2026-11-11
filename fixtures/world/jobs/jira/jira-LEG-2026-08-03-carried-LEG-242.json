@@ -1,0 +1,110 @@
+{
+  "job_id": "jira-LEG-2026-08-03-carried-LEG-242",
+  "source": "jira",
+  "status": "blank",
+  "priority": 29,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "LEG",
+    "name": "Legs and ankle"
+  },
+  "week": {
+    "start": "2026-08-03",
+    "end": "2026-08-09"
+  },
+  "people": [
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "LEG-242",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-hana",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-08-05T09:40:29-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001456"
+      ],
+      "brief": "Order 1x Tilt stand F/T adapter plate, 6x Tilt stand pivot shaft / FT adapter: need 1 by 2026-08-24",
+      "must_mention": [
+        "FT adapter",
+        "8/24"
+      ],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-242-c1",
+          "by": "p-hana",
+          "at": "2026-08-29T06:35:00-07:00",
+          "events": [
+            "ev-001460"
+          ],
+          "brief": "FT adapter in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-08-28"
+          },
+          "must_mention": [
+            "FT adapter",
+            "the build",
+            "fri 8/28"
+          ],
+          "body": null
+        }
+      ]
+    }
+  ]
+}

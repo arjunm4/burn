@@ -162,7 +162,7 @@
   ],
   "background": [
     {
-      "event": "ev-004336",
+      "event": "ev-004734",
       "speaker": "p-diego",
       "brief": "Test fixture design review: round of updates"
     }
@@ -174,240 +174,171 @@
   ],
   "transcript": [
     {
-      "start_s": 4,
+      "start_s": 0,
       "speaker": "p-zoe",
-      "text": "ok i think we're recording. kenji are you on? i see your name but no video"
+      "text": "ok can everyone see the screen? i'm sharing the fixture model"
     },
     {
-      "start_s": 11,
-      "speaker": "p-kenji",
-      "text": "yeah here camera's dead"
+      "start_s": 12,
+      "speaker": "p-diego",
+      "text": "I can see it 🙏 a little small though"
     },
     {
-      "start_s": 16,
+      "start_s": 20,
       "speaker": "p-zoe",
-      "text": "cool. so um, agenda is the knee fixture rev, the clamp plate thing luis flagged, and then i wanna just walk the open list"
-    },
-    {
-      "start_s": 31,
-      "speaker": "p-dmitri",
-      "text": "Start with the clamp plate. That's the one that bit us."
-    },
-    {
-      "start_s": 38,
-      "speaker": "p-luis",
-      "text": "yeah so on friday when we swapped the specimen the plate was walking, like you torque the four screws and it shifts toward the cable side"
-    },
-    {
-      "start_s": 52,
-      "speaker": "p-luis",
-      "text": "not a lot but you can see it on the dial indicator"
-    },
-    {
-      "start_s": 58,
-      "speaker": "p-kenji",
-      "text": "is that the slotted holes or the dowel"
+      "text": "zooming in. uh, so this is rev B of the shaker base, the main change is the plate is thicker around the mounting pattern"
     },
     {
       "start_s": 62,
-      "speaker": "p-luis",
-      "text": "slots. there's no dowel on that side, there's only the one dowel"
-    },
-    {
-      "start_s": 69,
-      "speaker": "p-diego",
-      "text": "Yeah that's on me, I left the second dowel off because I was worried about over-constraining with the base plate flatness. Probably the wrong call."
-    },
-    {
-      "start_s": 84,
-      "speaker": "p-dmitri",
-      "text": "It's the wrong call. One round, one diamond pin. Done."
-    },
-    {
-      "start_s": 90,
-      "speaker": "p-diego",
-      "text": "Diamond pin works. I can do that in the next rev, it's a quick change in the model."
-    },
-    {
-      "start_s": 101,
-      "speaker": "p-carlos",
-      "text": "Can we ream it in-house or does it go back out?"
-    },
-    {
-      "start_s": 106,
-      "speaker": "p-diego",
-      "text": "I think we can ream it here if the hole location's close enough, I'd rather not send it back out for one hole"
-    },
-    {
-      "start_s": 118,
-      "speaker": "p-carlos",
-      "text": "We can do it. Need the drawing marked up though, not a slack message."
-    },
-    {
-      "start_s": 124,
-      "speaker": "p-diego",
-      "text": "Fair. I'll redline it."
-    },
-    {
-      "start_s": 402,
-      "speaker": "p-zoe",
-      "text": "ok knee fixture. so the load cell alignment, kenji you had the uh the side load numbers from last week"
-    },
-    {
-      "start_s": 413,
       "speaker": "p-kenji",
-      "text": "yeah side load is still higher than i'd like on the flexion sweep, it's the rod end. there's slop in it"
+      "text": "how much thicker"
     },
     {
-      "start_s": 425,
+      "start_s": 68,
+      "speaker": "p-zoe",
+      "text": "couple mm, i'd have to check the sheet"
+    },
+    {
+      "start_s": 95,
+      "speaker": "p-diego",
+      "text": "Did you run a modal check on it? I'm worried about a resonance close to the test band 😬"
+    },
+    {
+      "start_s": 130,
+      "speaker": "p-zoe",
+      "text": "ran it yesterday, first mode is above the band, but not by a lot. um, maybe 15 percent margin? not great"
+    },
+    {
+      "start_s": 175,
       "speaker": "p-dmitri",
-      "text": "How much?"
+      "text": "15 percent isn't great. What happens if the payload is heavier than we planned?"
     },
     {
-      "start_s": 428,
+      "start_s": 205,
+      "speaker": "p-zoe",
+      "text": "then the margin shrinks. i'd want a rib, or stiffen the web"
+    },
+    {
+      "start_s": 245,
       "speaker": "p-kenji",
-      "text": "enough that the off-axis channel shows it at the end of travel. middle of the sweep is fine"
+      "text": "rib is easy on the machined version, harder if we go welded"
     },
     {
-      "start_s": 439,
-      "speaker": "p-zoe",
-      "text": "so i was thinking, maybe a spherical bearing instead of the rod end, but that's a bigger change to the clevis so"
+      "start_s": 280,
+      "speaker": "p-carlos",
+      "text": "From the floor side, welded would be a pain. Distortion on a plate that size is going to be a problem. Machined is better, even if it's slower!!"
     },
     {
-      "start_s": 452,
+      "start_s": 340,
+      "speaker": "p-luis",
+      "text": "also how do we get the fixture on the shaker, the bolt pattern i mean, can i actually reach the back bolts w/ a torque wrench"
+    },
+    {
+      "start_s": 385,
       "speaker": "p-diego",
-      "text": "It's not that bad actually. The clevis has the meat for it. I'd have to open the bore and add a retaining ring groove."
+      "text": "Good catch 😬 In the model, you can't, not with a standard wrench. We'd need a crow's foot or move the bolts."
     },
     {
-      "start_s": 466,
+      "start_s": 430,
+      "speaker": "p-zoe",
+      "text": "ok, yeah, adding that to the list"
+    },
+    {
+      "start_s": 470,
       "speaker": "p-dmitri",
-      "text": "Do it. I don't want to argue about side load in every life test report."
+      "text": "I'd rather move the bolts. Crow's feet change the torque you actually apply."
     },
     {
-      "start_s": 475,
-      "speaker": "p-luis",
-      "text": "wait which clevis, the top one or the one on the acutator side. *actuator"
-    },
-    {
-      "start_s": 483,
-      "speaker": "p-diego",
-      "text": "Top one, the one at the load cell."
-    },
-    {
-      "start_s": 905,
-      "speaker": "p-carlos",
-      "text": "Separate thing. The fixture cart. Someone keeps leaving the knee fixture on it with the casters unlocked."
-    },
-    {
-      "start_s": 914,
-      "speaker": "p-luis",
-      "text": "not me lol"
-    },
-    {
-      "start_s": 918,
-      "speaker": "p-carlos",
-      "text": "Not accusing. Just lock them!!"
-    },
-    {
-      "start_s": 1460,
-      "speaker": "p-zoe",
-      "text": "ok the hip side load frame. i don't think we have anything new there right, it's still waiting on the gusset change"
-    },
-    {
-      "start_s": 1471,
-      "speaker": "p-diego",
-      "text": "Gusset change is in the model, I just haven't released it. I wanted to run FEA one more time with the heavier load case."
-    },
-    {
-      "start_s": 1488,
+      "start_s": 510,
       "speaker": "p-kenji",
-      "text": "what mesh are you using on the weld fillets"
+      "text": "agreed"
     },
     {
-      "start_s": 1494,
+      "start_s": 560,
       "speaker": "p-diego",
-      "text": "Default, which, yeah, I know. I'll refine it there."
+      "text": "Moving on, cable management, what's the plan for the accelerometer leads? 🙏"
     },
     {
-      "start_s": 1510,
-      "speaker": "p-dmitri",
-      "text": "Release it this week. Refine later if the strain gauges disagree."
-    },
-    {
-      "start_s": 2290,
+      "start_s": 600,
       "speaker": "p-zoe",
-      "text": "ok the open list. couple of dates moved so i just want to read them out so nobody's surprised"
+      "text": "clips along the rib, strain relief at the sensor end, i think that works"
     },
     {
-      "start_s": 2301,
-      "speaker": "p-zoe",
-      "text": "Battery enclosure thermal runaway containment, that one slid, it's 11/4 now. it was supposed to be early this month, um, thurs? no, wed. anyway it's 11/4"
-    },
-    {
-      "start_s": 2322,
-      "speaker": "p-dmitri",
-      "text": "Noted."
-    },
-    {
-      "start_s": 2326,
-      "speaker": "p-zoe",
-      "text": "rest of the list is basically where it was last week, i'll update the tracker after this"
-    },
-    {
-      "start_s": 2338,
+      "start_s": 650,
       "speaker": "p-luis",
-      "text": "can we talk about the torque wrench cal sticker too, two of them are expired"
+      "text": "the leads on the last one got pinched under the plate, *pinched"
     },
     {
-      "start_s": 2346,
+      "start_s": 690,
+      "speaker": "p-zoe",
+      "text": "yeah, noted, i'll route them on top"
+    },
+    {
+      "start_s": 740,
+      "speaker": "p-dmitri",
+      "text": "Fine. Anything on the schedule?"
+    },
+    {
+      "start_s": 2260,
+      "speaker": "p-zoe",
+      "text": "yeah, uh, battery enclosure thermal runaway containment moved. Battery enclosure thermal runaway containment was 10/7, it's now 11/4. so that one slips"
+    },
+    {
+      "start_s": 2320,
+      "speaker": "p-dmitri",
+      "text": "OK. Noted. Do we have a workaround for the test lab until then?"
+    },
+    {
+      "start_s": 2350,
+      "speaker": "p-zoe",
+      "text": "we can run the small packs in the existing bay. nothing bigger, uh, until it lands"
+    },
+    {
+      "start_s": 2410,
       "speaker": "p-carlos",
-      "text": "Already pulled them. They're in the cal bin."
+      "text": "I'll make sure nobody's testing bigger ones. Cell packs are in the cage."
     },
     {
-      "start_s": 2352,
-      "speaker": "p-luis",
-      "text": "oh ok nvm"
-    },
-    {
-      "start_s": 3010,
-      "speaker": "p-zoe",
-      "text": "ok i think that's it. diego redline and dowel, kenji send me the side load plots. thanks all"
-    },
-    {
-      "start_s": 3021,
+      "start_s": 2480,
       "speaker": "p-diego",
-      "text": "On it."
+      "text": "Thanks 🙏 and let's finish the fixture comments, we're running over 😬"
+    },
+    {
+      "start_s": 2600,
+      "speaker": "p-dmitri",
+      "text": "OK. Zoe, send the revised model by eow. We'll review again."
+    },
+    {
+      "start_s": 2680,
+      "speaker": "p-zoe",
+      "text": "yep"
     }
   ],
   "summary": {
-    "overview": "Design review of current test fixtures. Clamp plate shift traced to a single dowel; team agreed on round plus diamond pin. Knee fixture side load at end of flexion travel blamed on rod end slop, moving to a spherical bearing at the top clevis. Hip load frame gusset change still unreleased pending FEA rerun. Open list read out, one date moved.",
+    "overview": "Test fixture design review for the shaker base, rev B. Discussed plate stiffness and modal margin, machined versus welded construction, bolt access for torque, and accelerometer lead routing. Schedule slip on battery enclosure noted.",
     "shorthand_bullet": [
-      "clamp plate walks on torque-down, slotted holes, only one dowel",
-      "fix: round pin + diamond pin, ream in-house, Carlos wants a marked-up drawing",
-      "knee fixture: off-axis load at end of sweep, rod end slop",
-      "swap to spherical bearing at top clevis (load cell side), needs bore + ring groove",
-      "hip load frame gusset change in model, not released, FEA rerun w/ heavier load case, refine fillet mesh",
-      "fixture cart casters left unlocked",
-      "Battery enclosure thermal runaway containment now 11/4",
-      "two torque wrenches past cal, pulled"
+      "rev B shaker base: thicker plate around mounting pattern",
+      "first mode above test band, margin thin (~15%), heavier payload shrinks it",
+      "add rib or stiffen web; machined preferred over welded (distortion)",
+      "back bolts unreachable with torque wrench: move bolts, not crow's foot",
+      "accelerometer leads: clips along rib, strain relief at sensor, route on top",
+      "Battery enclosure thermal runaway containment: was 10/7, now 11/4",
+      "small packs only in existing bay until it lands"
     ],
     "action_items": [
-      "Diego: redline clamp plate drawing w/ second dowel",
-      "Diego: spherical bearing change on top clevis",
-      "Kenji to send side load plots to Zoe",
-      "release gusset change this week",
-      "update tracker w/ new dates",
-      "lock the casters"
+      "Zoe send revised model by eow",
+      "Zoe add bolt access to the list",
+      "move bolt pattern",
+      "Carlos keep larger packs out of testing",
+      "reschedule review"
     ],
     "keywords": [
-      "clamp plate",
-      "dowel pin",
-      "knee fixture",
-      "side load",
-      "rod end",
-      "spherical bearing",
-      "FEA",
-      "fixture cart"
+      "shaker base",
+      "modal",
+      "rib",
+      "torque access",
+      "battery enclosure",
+      "thermal runaway containment"
     ]
   }
 }

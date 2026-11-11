@@ -7,9 +7,9 @@
 
 ## Overview
 
-We need 1120 by 10/2. We need distal link by 9/28.
+We need 1120 by 10/6. We need distal link by 9/28.
 
 ## Discussion
 
-- Dmitri: We need 1120 by 10/2.
+- Dmitri: We need 1120 by 10/6.
 - Dmitri: We need distal link by 9/28.

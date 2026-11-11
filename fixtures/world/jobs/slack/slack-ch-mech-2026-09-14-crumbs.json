@@ -19,6 +19,59 @@
   },
   "people": [
     {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
       "id": "p-kenji",
       "name": "Kenji Morimoto",
       "display_name": "kenji.m",
@@ -33,6 +86,25 @@
         "hedging": "low",
         "quirks": [
           "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
         ]
       }
     },
@@ -73,32 +145,110 @@
   ],
   "messages": [
     {
-      "ts": "1789497510.525533",
+      "ts": "1789408368.699208",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-003548"
+      ],
+      "brief": "bellows hub: still quoting rev D",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev D"
+      },
+      "must_mention": [
+        "bellows hub"
+      ],
+      "length": "short",
+      "text": "bellows hub still quoting rev D, xometry hasnt updated yet"
+    },
+    {
+      "ts": "1789494640.824590",
+      "user": "p-ingrid",
+      "thread_ts": null,
+      "events": [
+        "ev-003328"
+      ],
+      "brief": "FL-TST-2789: need 2 by 2026-09-30 for Battery enclosure thermal runaway containment",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-09-30"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2789",
+        "Battery enclosure thermal runaway containment",
+        "FL-BAT-1643",
+        "9/30"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2789 x2 for Battery enclosure thermal runaway containment, 9/30. FL-BAT-1643 is the other half of that kit."
+    },
+    {
+      "ts": "1789498669.235440",
       "user": "p-zoe",
+      "thread_ts": "1789494640.824590",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "got it, adding to the list"
+    },
+    {
+      "ts": "1789534317.027003",
+      "user": "p-hana",
       "thread_ts": null,
       "events": [
         "ev-003399"
       ],
-      "brief": "release clevis: still quoting rev A",
+      "brief": "FL-LEG-1343: need 3 by 2026-10-05 for Build sub-assembly for Leg DVT build: Thigh cover plate",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-10-05"
+        }
+      },
+      "must_mention": [
+        "FL-LEG-1343",
+        "Build sub-assembly for Leg DVT build: Thigh cover plate (2)",
+        "FL-LEG-1361",
+        "mon 10/5"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-LEG-1343 x3 for Build sub-assembly for Leg DVT build: Thigh cover plate (2), mon 10/5. FL-LEG-1361 too i think, not 100% sure"
+    },
+    {
+      "ts": "1789537646.029949",
+      "user": "p-kenji",
+      "thread_ts": "1789534317.027003",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "not sure thats right, 1361 was a diff plate afaik"
+    },
+    {
+      "ts": "1789605735.760912",
+      "user": "p-nora",
+      "thread_ts": null,
+      "events": [
+        "ev-003461"
+      ],
+      "brief": "boom clamp: still quoting rev A",
       "claim": {
         "kind": "substitute",
         "value": "rev A"
       },
       "must_mention": [
-        "release clevis"
+        "boom clamp"
       ],
       "length": "short",
-      "text": "release clevis still quoting, rev A"
-    },
-    {
-      "ts": "1789500839.029949",
-      "user": "p-kenji",
-      "thread_ts": "1789497510.525533",
-      "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "not sure rev a is worth quoting tbh"
+      "text": "Still quoting rev A on the boom clamp, so I'm not touching the drawing until they confirm."
     }
   ]
 }

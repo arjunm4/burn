@@ -36,39 +36,21 @@
       }
     },
     {
-      "id": "p-diego",
-      "name": "Diego Salcedo",
-      "display_name": "diego",
-      "slack_id": "U07FLK0DIEG",
-      "title": "Mechanical Engineer",
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
       "style": {
-        "case": "mixed",
+        "case": "lower",
         "punctuation": "light",
-        "typos": "rare",
-        "emoji": "lots",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": [
-          "reacts with 🙏 and 😬",
-          "ends messages with an emoji"
-        ]
-      }
-    },
-    {
-      "id": "p-hana",
-      "name": "Hana Kimura",
-      "display_name": "hana",
-      "slack_id": "U07FLK0HANA",
-      "title": "Mechanical Engineer",
-      "style": {
-        "case": "mixed",
-        "punctuation": "light",
-        "typos": "rare",
+        "typos": "some",
         "emoji": "rare",
         "length": "medium",
-        "hedging": "high",
+        "hedging": "medium",
         "quirks": [
-          "\"i think\", \"probably\", \"not 100% sure but\""
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
         ]
       }
     },
@@ -90,6 +72,25 @@
           "ends messages with an emoji"
         ]
       }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
     }
   ],
   "forbidden": [
@@ -100,7 +101,104 @@
   ],
   "tickets": [
     {
-      "key": "LEG-294",
+      "key": "LEG-298",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-samir",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-16T11:28:45-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Order 6x Thigh cover plate, 18x Thigh cable guide",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": "Order 6x thigh cover plate, 18x thigh cable guide",
+      "description": "for thigh assy, both go on the same order",
+      "comments": [
+        {
+          "id": "LEG-298-c1",
+          "by": "p-samir",
+          "at": "2026-09-16T12:24:45-07:00",
+          "events": [
+            "ev-001744"
+          ],
+          "brief": "Order XO-5495155 placed, promised 2026-10-02",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-10-02"
+          },
+          "must_mention": [
+            "XO-5495155",
+            "cover plate",
+            "10/2"
+          ],
+          "body": "XO-5495155 placed, cover plate promised 10/2"
+        },
+        {
+          "id": "LEG-298-c2",
+          "by": "p-samir",
+          "at": "2026-09-16T18:26:26-07:00",
+          "events": [
+            "ev-003386"
+          ],
+          "brief": "the part: need 6 by 2026-10-08",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 6,
+              "by": "2026-10-08"
+            }
+          },
+          "must_mention": [
+            "the part",
+            "10/8"
+          ],
+          "body": "the part, need 6 by 10/8"
+        },
+        {
+          "id": "LEG-298-c3",
+          "by": "p-zoe",
+          "at": "2026-10-02T14:33:07-07:00",
+          "events": [
+            "ev-001745"
+          ],
+          "brief": "cover plate arrived (6)",
+          "claim": {
+            "kind": "stock",
+            "value": 6
+          },
+          "must_mention": [
+            "cover plate",
+            "6"
+          ],
+          "body": "cover plate arrived, 6 of 6 🙂"
+        },
+        {
+          "id": "LEG-298-c4",
+          "by": "p-zoe",
+          "at": "2026-10-17T11:40:00-07:00",
+          "events": [
+            "ev-001746"
+          ],
+          "brief": "cover plate in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-10-16"
+          },
+          "must_mention": [
+            "cover plate",
+            "10/16"
+          ],
+          "body": "cover plate in use since 10/16"
+        }
+      ]
+    },
+    {
+      "key": "LEG-299",
       "type": "Task",
       "status": "In Progress",
       "reporter": "p-talia",
@@ -112,78 +210,43 @@
       "created": "2026-09-16T11:39:28-07:00",
       "due_date": null,
       "events": [
-        "ev-001656"
+        "ev-001798"
       ],
-      "brief": "Order 24x Ankle pivot pin, 12x Ankle F/T sensor mount / ankle pin: need 24 by 2026-09-25",
+      "brief": "Order 24x Ankle pivot pin, 12x Ankle F/T sensor mount / ankle pin: need 24 by 2026-09-23",
       "must_mention": [
         "ankle pin",
-        "9/25"
+        "wed the 23rd"
       ],
-      "description_length": "short",
-      "summary": "ankle pin + F/T mounts",
-      "description": "24 ankle pin needed 9/25, F/T mounts can come later\npins are the blocker",
-      "comments": []
-    },
-    {
-      "key": "LEG-303",
-      "type": "Task",
-      "status": "In Progress",
-      "reporter": "p-diego",
-      "assignee": "p-diego",
-      "labels": [
-        "procurement"
-      ],
-      "priority": "High",
-      "created": "2026-09-18T13:01:42-07:00",
-      "due_date": null,
-      "events": [
-        "ev-001836"
-      ],
-      "brief": "Order 5x Knee belt pulley / knee pulley: need 5 by 2026-10-06",
-      "must_mention": [
-        "knee pulley",
-        "tues the 6th"
-      ],
-      "description_length": "one_line",
-      "summary": "knee pulley qty 5",
-      "description": "knee pulley needed by tues the 6th",
+      "description_length": "medium",
+      "summary": "Order 24x Ankle pivot pin, 12x Ankle F/T sensor mount",
+      "description": "Also need the F/T sensor mounts, 12. Need 24 of the ankle pin by wed the 23rd 🙏",
       "comments": [
         {
-          "id": "LEG-303-c1",
-          "by": "p-hana",
-          "at": "2026-09-25T16:56:18-07:00",
+          "id": "LEG-299-c1",
+          "by": "p-talia",
+          "at": "2026-10-05T11:23:56-07:00",
           "events": [],
-          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "brief": "background: any update?",
           "must_mention": [],
-          "body": "waiting on vendor"
+          "body": "any update on this? 😬"
         },
         {
-          "id": "LEG-303-c2",
+          "id": "LEG-299-c2",
           "by": "p-callum",
-          "at": "2026-09-28T15:15:29-07:00",
+          "at": "2026-10-05T14:55:22-07:00",
           "events": [],
-          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "brief": "background: any update?",
           "must_mention": [],
-          "body": "still waiting on review"
+          "body": "bump, anyone heard back yet"
         },
         {
-          "id": "LEG-303-c3",
-          "by": "p-diego",
-          "at": "2026-10-22T17:51:00-07:00",
-          "events": [
-            "ev-001839"
-          ],
-          "brief": "knee pulley in use",
-          "claim": {
-            "kind": "done",
-            "value": "2026-10-21"
-          },
-          "must_mention": [
-            "knee pulley",
-            "the build",
-            "10/21"
-          ],
-          "body": "knee pulley in the build as of 10/21"
+          "id": "LEG-299-c3",
+          "by": "p-talia",
+          "at": "2026-10-12T10:13:09-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "still nothing here? 🙏"
         }
       ]
     }

@@ -38,6 +38,25 @@
       }
     },
     {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
       "id": "p-idris",
       "name": "Idris Bello",
       "display_name": "idris",
@@ -53,6 +72,72 @@
         "quirks": [
           "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
           "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-kwame",
+      "name": "Kwame Asante",
+      "display_name": "kwame",
+      "slack_id": "U07FLK0KWAM",
+      "title": "Senior Electrical Engineer, power",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-valeria",
+      "name": "Valeria Ortiz",
+      "display_name": "valeria.o",
+      "slack_id": "U07FLK0VALE",
+      "title": "Electrical Engineer, battery systems",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
         ]
       }
     }
@@ -74,11 +159,54 @@
   ],
   "messages": [
     {
-      "ts": "1787245737.257264",
+      "ts": "1787086472.603073",
+      "user": "p-ingrid",
+      "thread_ts": null,
+      "events": [
+        "ev-003345"
+      ],
+      "brief": "build stand: need 6 by 2026-10-02",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-10-02"
+        }
+      },
+      "must_mention": [
+        "build stand",
+        "fri 10/2"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "We need the build stand, 6 of them, by fri 10/2."
+    },
+    {
+      "ts": "1787163401.001489",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-003814"
+      ],
+      "brief": "Test stand rework for Torso and pelvis static load test: Leg fixture hook, shank end blocked on Driver PCBA respin for torso and pelvis structure (shank hook)",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-gen-0057"
+      },
+      "must_mention": [
+        "Test stand rework for Torso and pelvis static load test: Leg fixture hook, shank end",
+        "Driver PCBA respin for torso and pelvis structure (shank hook)"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Test stand rework for Torso and pelvis static load test: Leg fixture hook, shank end is blocked on Driver PCBA respin for torso and pelvis structure (shank hook)."
+    },
+    {
+      "ts": "1787245737.523758",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-003230"
+        "ev-003560"
       ],
       "brief": "Motor sample lot for battery enclosure: still quoting 2026-09-01",
       "claim": {
@@ -90,14 +218,14 @@
         "9/1"
       ],
       "length": "short",
-      "text": "Motor sample lot for battery enclosure (clevis) still quoting, looking like 9/1"
+      "text": "Motor sample lot for battery enclosure (clevis) still quoting 9/1 i think. nxt wk we'll know if it holds"
     },
     {
-      "ts": "1787269763.796681",
+      "ts": "1787269763.448256",
       "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-002517"
+        "ev-002705"
       ],
       "brief": "Assemble build unit for Leg DVT build: Battery clevis 10 waits on Motor sample lot for battery enclosure (clevis)",
       "claim": {
@@ -109,8 +237,38 @@
         "Assemble build unit for Leg DVT build: Battery clevis 10"
       ],
       "pressure": "low",
+      "length": "medium",
+      "text": "Assemble build unit for Leg DVT build: Battery clevis 10 is waiting on Motor sample lot for battery enclosure (clevis) now"
+    },
+    {
+      "ts": "1787273903.429117",
+      "user": "p-valeria",
+      "thread_ts": "1787269763.448256",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "ok"
+    },
+    {
+      "ts": "1787274204.995555",
+      "user": "p-carlos",
+      "thread_ts": "1787269763.448256",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
       "length": "short",
-      "text": "Assemble build unit for Leg DVT build: Battery clevis 10 is blocked on Motor sample lot for battery enclosure (clevis) fyi"
+      "text": "THANKS for the heads up!!"
+    },
+    {
+      "ts": "1787274952.259990",
+      "user": "p-kwame",
+      "thread_ts": "1787269763.448256",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "We had a similar wait on a cell sample last time and ended up building with a stand-in for the first fit check. Worked fine for the fit."
     }
   ]
 }

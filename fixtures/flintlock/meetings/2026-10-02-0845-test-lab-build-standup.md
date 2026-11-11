@@ -7,8 +7,9 @@
 
 ## Overview
 
-We need that order by 10/7.
+We need spin coupling by 10/7. We need that order by 10/6.
 
 ## Discussion
 
-- Dmitri: We need that order by 10/7.
+- Dmitri: We need spin coupling by 10/7.
+- Dmitri: We need that order by 10/6.

@@ -76,36 +76,21 @@
       }
     },
     {
-      "id": "p-ingrid",
-      "name": "Ingrid Solberg",
-      "display_name": "ingrid.s",
-      "slack_id": "U07FLK0INGR",
-      "title": "VP Hardware",
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
       "style": {
-        "case": "proper",
+        "case": "mixed",
         "punctuation": "full",
-        "typos": "none",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": []
-      }
-    },
-    {
-      "id": "p-jade",
-      "name": "Jade Thompson",
-      "display_name": "jade.t",
-      "slack_id": "U07FLK0JADE",
-      "title": "Technician, receiving",
-      "style": {
-        "case": "lower",
-        "punctuation": "none",
         "typos": "some",
-        "emoji": "rare",
+        "emoji": "some",
         "length": "terse",
         "hedging": "low",
         "quirks": [
-          "no capitals or end punctuation ever"
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
         ]
       }
     },
@@ -125,6 +110,25 @@
         "quirks": [
           "fixes typos with *word",
           "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
         ]
       }
     },
@@ -166,25 +170,6 @@
       }
     },
     {
-      "id": "p-samir",
-      "name": "Samir Khoury",
-      "display_name": "samir.k",
-      "slack_id": "U07FLK0SAMI",
-      "title": "Senior NPI Buyer",
-      "style": {
-        "case": "lower",
-        "punctuation": "light",
-        "typos": "some",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "medium",
-        "quirks": [
-          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
-          "corrects own dates"
-        ]
-      }
-    },
-    {
       "id": "p-talia",
       "name": "Talia Rosen",
       "display_name": "talia",
@@ -202,24 +187,6 @@
           "ends messages with an emoji"
         ]
       }
-    },
-    {
-      "id": "p-tomas",
-      "name": "Tomas Ferreira",
-      "display_name": "tomas",
-      "slack_id": "U07FLK0TOMA",
-      "title": "Mechanical Engineer, gear stages",
-      "style": {
-        "case": "mixed",
-        "punctuation": "light",
-        "typos": "rare",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "high",
-        "quirks": [
-          "\"i think\", \"probably\", \"not 100% sure but\""
-        ]
-      }
     }
   ],
   "context": [
@@ -235,124 +202,100 @@
   ],
   "messages": [
     {
-      "ts": "1793199360.158521",
-      "user": "p-tomas",
+      "ts": "1793079067.265958",
+      "user": "p-dmitri",
       "thread_ts": null,
       "events": [
-        "ev-001865"
+        "ev-003298"
       ],
-      "brief": "1021 in use",
+      "brief": "latch block: need 10 by 2026-12-21",
       "claim": {
-        "kind": "done",
-        "value": "2026-10-26"
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-12-21"
+        }
       },
       "must_mention": [
-        "1021",
-        "the build",
-        "10/26"
+        "latch block",
+        "12/21"
       ],
-      "pressure": "high",
-      "length": "medium",
-      "text": "1021 has been in use on the build since 10/26, so that one's off the list I think"
+      "pressure": "low",
+      "length": "short",
+      "text": "latch block need 10 by 12/21"
     },
     {
-      "ts": "1793224486.985775",
+      "ts": "1793118149.862668",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-003390"
+      ],
+      "brief": "1253: need 6 by 2026-11-12 for next week",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-11-12"
+        }
+      },
+      "must_mention": [
+        "1253",
+        "next week",
+        "toe",
+        "11/12"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "1253 toe pieces, need 6 by 11/12 for next week 🙏"
+    },
+    {
+      "ts": "1793224486.336082",
       "user": "p-nadia",
       "thread_ts": null,
       "events": [
-        "ev-002231"
+        "ev-002416"
       ],
-      "brief": "Order XO-5575349 placed, promised 2026-11-11",
+      "brief": "Order XO-5575349 placed, promised 2026-11-12",
       "claim": {
         "kind": "eta",
-        "value": "2026-11-11"
+        "value": "2026-11-12"
       },
       "must_mention": [
         "XO-5575349",
         "1119",
-        "11/11"
-      ],
-      "pressure": "elevated",
-      "length": "medium",
-      "text": "XO-5575349 placed for the 1119, promised 11/11"
-    },
-    {
-      "ts": "1793308396.787375",
-      "user": "p-talia",
-      "thread_ts": null,
-      "events": [
-        "ev-002245"
-      ],
-      "brief": "Order XO-5576364 placed, promised 2026-11-17",
-      "claim": {
-        "kind": "eta",
-        "value": "2026-11-17"
-      },
-      "must_mention": [
-        "XO-5576364",
-        "load cell plate",
-        "tues 11/17"
+        "11/12"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "XO-5576364 placed for the load cell plate, promised tues 11/17 😬"
+      "text": "Order XO-5575349 placed for 1119, promised 11/12"
     },
     {
-      "ts": "1793311343.083150",
-      "user": "p-samir",
-      "thread_ts": "1793308396.787375",
-      "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "split ship possible if we ask"
-    },
-    {
-      "ts": "1793314074.587125",
-      "user": "p-jade",
-      "thread_ts": "1793308396.787375",
-      "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "ty"
-    },
-    {
-      "ts": "1793314261.735498",
-      "user": "p-ingrid",
-      "thread_ts": "1793308396.787375",
-      "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "That's later than we want. Push them."
-    },
-    {
-      "ts": "1793316125.416609",
+      "ts": "1793316125.002420",
       "user": "p-carlos",
       "thread_ts": null,
       "events": [
-        "ev-001952"
+        "ev-002122"
       ],
-      "brief": "bellows hub arrived (6)",
+      "brief": "bellows hub arrived",
       "claim": {
         "kind": "stock",
-        "value": 6
+        "value": 5
       },
       "must_mention": [
         "bellows hub",
-        "6"
+        "5"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "6 bellows hub arrived. On the shelf!!"
+      "text": "bellows hub arrived (5)!!"
     },
     {
-      "ts": "1793332080.606914",
+      "ts": "1793332080.479840",
       "user": "p-nadia",
       "thread_ts": null,
       "events": [
-        "ev-001914"
+        "ev-002081"
       ],
       "brief": "2050 in use",
       "claim": {
@@ -362,49 +305,18 @@
       "must_mention": [
         "2050",
         "the build",
-        "thurs the 29th"
+        "10/29"
       ],
       "pressure": "high",
-      "length": "short",
-      "text": "2050 in use on the build since thurs the 29th"
-    },
-    {
-      "ts": "1793333086.036504",
-      "user": "p-nadia",
-      "thread_ts": "1793224486.985775",
-      "events": [
-        "ev-003003"
-      ],
-      "brief": "Correction: Order XO-5575349 placed, promised 2026-11-12",
-      "claim": {
-        "kind": "eta",
-        "value": "2026-11-12"
-      },
-      "must_mention": [
-        "XO-5575349",
-        "1119",
-        "thurs 11/12"
-      ],
-      "pressure": "elevated",
       "length": "medium",
-      "text": "*correction XO-5575349 for the 1119 is promised thurs 11/12 not the 11th"
+      "text": "2050 in use, the build took it 10/29, will see if the second set is needed"
     },
     {
-      "ts": "1793336816.814655",
-      "user": "p-samir",
-      "thread_ts": "1793224486.985775",
-      "events": [],
-      "brief": "reply (tags someone else) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "@talia fyi on that one"
-    },
-    {
-      "ts": "1793362260.629898",
+      "ts": "1793362260.151860",
       "user": "p-owen",
       "thread_ts": null,
       "events": [
-        "ev-001716"
+        "ev-001867"
       ],
       "brief": "input shaft in use",
       "claim": {
@@ -413,11 +325,41 @@
       },
       "must_mention": [
         "input shaft",
-        "10/29"
+        "thurs the 29th"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "input shaft in use since 10/29"
+      "text": "input shaft in use since thurs the 29th"
+    },
+    {
+      "ts": "1793384168.863169",
+      "user": "p-nora",
+      "thread_ts": "1793362260.151860",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "ok good to know"
+    },
+    {
+      "ts": "1793384888.450264",
+      "user": "p-beth",
+      "thread_ts": "1793362260.151860",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@nora.f can you log that"
+    },
+    {
+      "ts": "1793386136.057035",
+      "user": "p-beth",
+      "thread_ts": "1793362260.151860",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "thx"
     },
     {
       "ts": "1793395035.421498",
@@ -436,14 +378,14 @@
         "tues the 27th"
       ],
       "length": "short",
-      "text": "To update on the Encoder kit for leg (left, hip to foot) (hip pitch bracket): it has moved out to tues the 27th."
+      "text": "Encoder kit for leg (left, hip to foot) (hip pitch bracket) moved to tues the 27th, slipped again"
     },
     {
-      "ts": "1793399501.845967",
+      "ts": "1793399501.782698",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-002159"
+        "ev-002344"
       ],
       "brief": "side link arrived (9)",
       "claim": {
@@ -456,7 +398,7 @@
       ],
       "pressure": "high",
       "length": "short",
-      "text": "side link arrived, 9 of them 🙌"
+      "text": "side link arrived, 9 in the box 🙏"
     },
     {
       "ts": "1793400369.754131",
@@ -466,7 +408,7 @@
       "brief": "reply (jokes) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "At this point I'm going to start dating my status updates in pencil."
+      "text": "my favorite kind of friday news"
     }
   ]
 }

@@ -36,6 +36,25 @@
       }
     },
     {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
       "id": "p-diego",
       "name": "Diego Salcedo",
       "display_name": "diego",
@@ -74,6 +93,24 @@
       }
     },
     {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
       "id": "p-jade",
       "name": "Jade Thompson",
       "display_name": "jade.t",
@@ -88,25 +125,6 @@
         "hedging": "low",
         "quirks": [
           "no capitals or end punctuation ever"
-        ]
-      }
-    },
-    {
-      "id": "p-priya",
-      "name": "Priya Raman",
-      "display_name": "priya",
-      "slack_id": "U07FLK0PRIY",
-      "title": "Legs Lead",
-      "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "none",
-        "length": "long",
-        "hedging": "medium",
-        "quirks": [
-          "numbered lists in status updates",
-          "restates the question before answering"
         ]
       }
     },
@@ -138,7 +156,7 @@
   ],
   "tickets": [
     {
-      "key": "LEG-327",
+      "key": "LEG-331",
       "type": "Task",
       "status": "Done",
       "reporter": "p-andre",
@@ -150,26 +168,63 @@
       "created": "2026-09-28T09:36:12-07:00",
       "due_date": "2026-10-12",
       "events": [
-        "ev-001896"
+        "ev-002063"
       ],
-      "brief": "Order 2x Tilt stand foot clamp / FL-TST-2556: need 2 by 2026-10-14 for Instrumentation fit-up: Tilt stand foot clamp",
+      "brief": "Order 2x Tilt stand foot clamp / FL-TST-2556: need 2 by 2026-10-12 for Instrumentation fit-up: Tilt stand foot clamp",
       "must_mention": [
         "FL-TST-2556",
         "Instrumentation fit-up: Tilt stand foot clamp",
-        "10/14"
+        "10/12"
       ],
-      "description_length": "one_line",
-      "summary": "FL-TST-2556 tilt stand foot clamp x2",
-      "description": "for Instrumentation fit-up: Tilt stand foot clamp, need 10/14",
+      "description_length": "medium",
+      "summary": "Tilt stand foot clamp x2 FL-TST-2556",
+      "description": "need 2 by 10/12 for Instrumentation fit-up: Tilt stand foot clamp, due date is firm on my side",
       "comments": [
         {
-          "id": "LEG-327-c1",
+          "id": "LEG-331-c1",
+          "by": "p-andre",
+          "at": "2026-10-01T10:17:57-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "any update?"
+        },
+        {
+          "id": "LEG-331-c2",
+          "by": "p-andre",
+          "at": "2026-10-02T16:31:02-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on vendor"
+        },
+        {
+          "id": "LEG-331-c3",
           "by": "p-andre",
           "at": "2026-10-02T18:26:05-07:00",
           "events": [
-            "ev-001901"
+            "ev-002068"
           ],
-          "brief": "Order XO-5531472 placed, promised 2026-10-13",
+          "brief": "Order XO-5531472 placed, promised 2026-10-12",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-10-12"
+          },
+          "must_mention": [
+            "XO-5531472",
+            "clamp plate",
+            "mon the 12th"
+          ],
+          "body": "Order XO-5531472 placed, clamp plate promised mon the 12th"
+        },
+        {
+          "id": "LEG-331-c4",
+          "by": "p-andre",
+          "at": "2026-10-02T18:37:05-07:00",
+          "events": [
+            "ev-003226"
+          ],
+          "brief": "Correction: Order XO-5531472 placed, promised 2026-10-13",
           "claim": {
             "kind": "eta",
             "value": "2026-10-13"
@@ -177,32 +232,23 @@
           "must_mention": [
             "XO-5531472",
             "clamp plate",
-            "tues the 13th"
+            "10/13"
           ],
-          "body": "XO-5531472 placed for the clamp plate, promised tues the 13th"
+          "body": "*Correction: Order XO-5531472 placed, clamp plate promised 10/13"
         },
         {
-          "id": "LEG-327-c2",
-          "by": "p-priya",
-          "at": "2026-10-05T13:42:19-07:00",
+          "id": "LEG-331-c5",
+          "by": "p-andre",
+          "at": "2026-10-12T11:17:30-07:00",
           "events": [],
           "brief": "background: question to the assignee",
           "must_mention": [],
-          "body": "Andre, is the clamp drawing the one with the slotted holes?"
-        },
-        {
-          "id": "LEG-327-c3",
-          "by": "p-andre",
-          "at": "2026-10-12T11:12:09-07:00",
-          "events": [],
-          "brief": "background: notes photos or a file are in slack",
-          "must_mention": [],
-          "body": "pics of the fit-up in slack"
+          "body": "is this still on track?"
         }
       ]
     },
     {
-      "key": "LEG-335",
+      "key": "LEG-339",
       "type": "Task",
       "status": "Done",
       "reporter": "p-diego",
@@ -214,26 +260,53 @@
       "created": "2026-09-30T09:01:44-07:00",
       "due_date": "2026-11-03",
       "events": [
-        "ev-002252"
+        "ev-002440"
       ],
-      "brief": "Order 3x Stator insertion jig, 6x Torso load pad, 5x Gait foot-switch bracket / insertion jig: need 3 by 2026-11-03 for Fixture install and shakedown: Stator insertion jig",
+      "brief": "Order 3x Stator insertion jig, 6x Torso load pad, 5x Gait foot-switch bracket / insertion jig: need 3 by 2026-11-05 for Fixture install and shakedown: Stator insertion jig",
       "must_mention": [
         "insertion jig",
         "Fixture install and shakedown: Stator insertion jig",
         "load pad",
         "2376",
-        "tues 11/3"
+        "11/5"
       ],
       "description_length": "one_line",
-      "summary": "stator insertion jig + load pads + footswitch bkts",
-      "description": "insertion jig x3 for Fixture install and shakedown: Stator insertion jig, load pad 2376 too, all by tues 11/3",
+      "summary": "Stator insertion jig x3, torso load pad, foot-switch bracket",
+      "description": "insertion jig need 3 by 11/5 for Fixture install and shakedown: Stator insertion jig. load pad x6 and 2376 on the same order",
       "comments": [
         {
-          "id": "LEG-335-c1",
+          "id": "LEG-339-c1",
+          "by": "p-diego",
+          "at": "2026-10-05T09:04:42-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on review"
+        },
+        {
+          "id": "LEG-339-c2",
+          "by": "p-callum",
+          "at": "2026-10-05T16:21:13-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "any update?"
+        },
+        {
+          "id": "LEG-339-c3",
+          "by": "p-hana",
+          "at": "2026-10-06T14:55:02-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "update on this?"
+        },
+        {
+          "id": "LEG-339-c4",
           "by": "p-diego",
           "at": "2026-10-21T09:26:03-07:00",
           "events": [
-            "ev-002254"
+            "ev-002442"
           ],
           "brief": "insertion jig: need 3 by 2026-11-03 for Fixture install and shakedown: Stator insertion jig",
           "claim": {
@@ -246,14 +319,23 @@
           "must_mention": [
             "insertion jig",
             "Fixture install and shakedown: Stator insertion jig",
-            "11/3"
+            "tues the 3rd"
           ],
-          "body": "insertion jig still 11/3 for Fixture install and shakedown: Stator insertion jig"
+          "body": "insertion jig need 3 by tues the 3rd for Fixture install and shakedown: Stator insertion jig"
+        },
+        {
+          "id": "LEG-339-c5",
+          "by": "p-diego",
+          "at": "2026-11-02T16:53:15-08:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "parts moving, checking in with them"
         }
       ]
     },
     {
-      "key": "LEG-341",
+      "key": "LEG-345",
       "type": "Task",
       "status": "Done",
       "reporter": "p-dmitri",
@@ -265,32 +347,23 @@
       "created": "2026-09-30T16:18:56-07:00",
       "due_date": null,
       "events": [
-        "ev-001818"
+        "ev-001971"
       ],
       "brief": "Order 12x Knee joint spacer, 6x Hip yaw yoke / FL-LEG-1339: need 12 by 2026-10-07",
       "must_mention": [
         "FL-LEG-1339",
         "10/7"
       ],
-      "description_length": "short",
-      "summary": "Knee spacer FL-LEG-1339 + hip yaw yokes",
-      "description": "FL-LEG-1339 x12 by 10/7. yokes can follow",
+      "description_length": "one_line",
+      "summary": "Knee joint spacer x12 + hip yaw yoke",
+      "description": "FL-LEG-1339 need 12 by 10/7",
       "comments": [
         {
-          "id": "LEG-341-c1",
-          "by": "p-dmitri",
-          "at": "2026-10-16T11:23:51-07:00",
-          "events": [],
-          "brief": "background: pushes it a bit, no new date given",
-          "must_mention": [],
-          "body": "slipping a little, no date from them yet"
-        },
-        {
-          "id": "LEG-341-c2",
+          "id": "LEG-345-c1",
           "by": "p-jade",
           "at": "2026-10-21T13:35:22-07:00",
           "events": [
-            "ev-001821"
+            "ev-001974"
           ],
           "brief": "1339 arrived (12)",
           "claim": {
@@ -301,7 +374,7 @@
             "1339",
             "12"
           ],
-          "body": "1339 recvd qty 12"
+          "body": "1339 arrived (12)"
         }
       ]
     }

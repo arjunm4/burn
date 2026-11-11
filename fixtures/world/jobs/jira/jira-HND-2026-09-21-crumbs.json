@@ -1,0 +1,132 @@
+{
+  "job_id": "jira-HND-2026-09-21-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 15,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HND",
+    "name": "Hands and arms"
+  },
+  "week": {
+    "start": "2026-09-21",
+    "end": "2026-09-27"
+  },
+  "people": [
+    {
+      "id": "p-amara",
+      "name": "Amara Nwosu",
+      "display_name": "amara",
+      "slack_id": "U07FLK0AMAR",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HND-211",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-amara",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-25T12:32:52-07:00",
+      "due_date": "2026-10-15",
+      "events": [
+        "ev-001931"
+      ],
+      "brief": "Order 1x Grip fixture wrist clamp / FL-TST-2424: need 1 by 2026-10-15 for next week",
+      "must_mention": [
+        "FL-TST-2424",
+        "next week",
+        "10/15"
+      ],
+      "description_length": "short",
+      "summary": "Grip fixture wrist clamp FL-TST-2424",
+      "description": "1 needed by 10/15, hoping to use it next week for fit",
+      "comments": [
+        {
+          "id": "HND-211-c1",
+          "by": "p-samir",
+          "at": "2026-09-25T14:48:14-07:00",
+          "events": [
+            "ev-001934"
+          ],
+          "brief": "FL-TST-2424: need 1 by 2026-10-15",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 1,
+              "by": "2026-10-15"
+            }
+          },
+          "must_mention": [
+            "FL-TST-2424",
+            "10/15"
+          ],
+          "body": "FL-TST-2424 need 1 by 10/15"
+        },
+        {
+          "id": "HND-211-c2",
+          "by": "p-amara",
+          "at": "2026-10-21T19:31:00-07:00",
+          "events": [
+            "ev-001936"
+          ],
+          "brief": "hand clamp in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-10-21"
+          },
+          "must_mention": [
+            "hand clamp",
+            "the build",
+            "wed 10/21"
+          ],
+          "body": "hand clamp in use for the build, wed 10/21"
+        }
+      ]
+    }
+  ]
+}

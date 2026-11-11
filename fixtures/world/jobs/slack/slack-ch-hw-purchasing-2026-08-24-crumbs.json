@@ -19,11 +19,68 @@
   },
   "people": [
     {
-      "id": "p-andre",
-      "name": "Andre Baptiste",
-      "display_name": "andre",
-      "slack_id": "U07FLK0ANDR",
-      "title": "Test Engineer, dyno",
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-ishaan",
+      "name": "Ishaan Mehta",
+      "display_name": "ishaan.m",
+      "slack_id": "U07FLK0ISHA",
+      "title": "Electrical Engineer, sensors",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
       "style": {
         "case": "lower",
         "punctuation": "light",
@@ -34,24 +91,6 @@
         "quirks": [
           "fixes typos with *word",
           "double-sends instead of editing"
-        ]
-      }
-    },
-    {
-      "id": "p-owen",
-      "name": "Owen Halloran",
-      "display_name": "owen",
-      "slack_id": "U07FLK0OWEN",
-      "title": "Mechanical Engineer, Actuators",
-      "style": {
-        "case": "lower",
-        "punctuation": "none",
-        "typos": "some",
-        "emoji": "rare",
-        "length": "terse",
-        "hedging": "low",
-        "quirks": [
-          "no capitals or end punctuation ever"
         ]
       }
     },
@@ -95,13 +134,13 @@
   ],
   "messages": [
     {
-      "ts": "1787783958.027751",
-      "user": "p-andre",
+      "ts": "1787858090.474555",
+      "user": "p-dmitri",
       "thread_ts": null,
       "events": [
-        "ev-001471"
+        "ev-003323"
       ],
-      "brief": "dyno coupling: need 6 by 2026-09-03 for the test",
+      "brief": "hip coupling: need 6 by 2026-09-03",
       "claim": {
         "kind": "needs",
         "value": {
@@ -110,30 +149,49 @@
         }
       },
       "must_mention": [
-        "dyno coupling",
-        "the test",
+        "hip coupling",
         "9/3"
       ],
       "pressure": "high",
       "length": "medium",
-      "text": "need 6 dyno coupling by 9/3 for the test, can we get these quoted today?? the stand is basically waiting"
+      "text": "hip coupling needed by 9/3. Please chase this one, nobody has an ETA!!"
     },
     {
-      "ts": "1787784037.895811",
-      "user": "p-owen",
-      "thread_ts": "1787783958.027751",
+      "ts": "1787859072.374397",
+      "user": "p-ishaan",
+      "thread_ts": "1787858090.474555",
       "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "brief": "reply (disagrees politely) in the thread about: the message above",
       "must_mention": [],
-      "length": "one_word",
-      "text": "same drawing as the last batch or the new one"
+      "length": "medium",
+      "text": "Might be worth asking around first, I'd hold off on pinging the vendor again 🙏"
     },
     {
-      "ts": "1787946394.693771",
+      "ts": "1787859969.391380",
+      "user": "p-luis",
+      "thread_ts": "1787858090.474555",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "same, ask around 👍"
+    },
+    {
+      "ts": "1787860686.499260",
+      "user": "p-diego",
+      "thread_ts": "1787858090.474555",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "nah i'd email them again, can't hurt 😬"
+    },
+    {
+      "ts": "1787946394.145237",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-001501"
+        "ev-001621"
       ],
       "brief": "WG hub: need 22 by 2026-09-14 for Fit check for Actuator DVT gate review: Knee wave generator hub",
       "claim": {
@@ -146,11 +204,11 @@
       "must_mention": [
         "WG hub",
         "Fit check for Actuator DVT gate review: Knee wave generator hub",
-        "mon 9/14"
+        "9/14"
       ],
       "pressure": "high",
       "length": "short",
-      "text": "WG hub: need 22 by mon 9/14 for Fit check for Actuator DVT gate review: Knee wave generator hub. I think that's the whole count but probably worth a second look"
+      "text": "WG hub, need 22 by 9/14 for Fit check for Actuator DVT gate review: Knee wave generator hub"
     }
   ]
 }

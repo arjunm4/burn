@@ -8,8 +8,8 @@
 
 ## Overview
 
-We need load pad by 10/13.
+We need load pad by 10/8.
 
 ## Discussion
 
-- Dmitri: We need load pad by 10/13.
+- Dmitri: We need load pad by 10/8.

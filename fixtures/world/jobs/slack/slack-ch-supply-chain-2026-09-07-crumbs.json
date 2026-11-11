@@ -19,40 +19,55 @@
   },
   "people": [
     {
-      "id": "p-destiny",
-      "name": "Destiny Brooks",
-      "display_name": "destiny",
-      "slack_id": "U07FLK0DEST",
-      "title": "Assembly Technician",
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
       "style": {
-        "case": "mixed",
-        "punctuation": "light",
-        "typos": "rare",
-        "emoji": "lots",
-        "length": "medium",
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
         "hedging": "low",
         "quirks": [
-          "reacts with 🙏 and 😬",
-          "ends messages with an emoji"
+          "no capitals or end punctuation ever"
         ]
       }
     },
     {
-      "id": "p-talia",
-      "name": "Talia Rosen",
-      "display_name": "talia",
-      "slack_id": "U07FLK0TALI",
-      "title": "Buyer/Planner",
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
       "style": {
-        "case": "mixed",
-        "punctuation": "light",
-        "typos": "rare",
-        "emoji": "lots",
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
         "length": "medium",
         "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
         "quirks": [
-          "reacts with 🙏 and 😬",
-          "ends messages with an emoji"
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
         ]
       }
     },
@@ -88,55 +103,41 @@
   ],
   "messages": [
     {
-      "ts": "1789083602.440370",
-      "user": "p-talia",
+      "ts": "1788904353.273552",
+      "user": "p-jade",
       "thread_ts": null,
       "events": [
-        "ev-003109"
+        "ev-001588"
       ],
-      "brief": "1033: need 8 by 2026-09-25 for Design iteration bench trial: Hip stator mount plate",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 8,
-          "by": "2026-09-25"
-        }
-      },
-      "must_mention": [
-        "1033",
-        "Design iteration bench trial: Hip stator mount plate",
-        "9/25"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "1033 for Design iteration bench trial: Hip stator mount plate, need 8 by 9/25 🙏"
-    },
-    {
-      "ts": "1789164898.266512",
-      "user": "p-destiny",
-      "thread_ts": null,
-      "events": [
-        "ev-001455"
-      ],
-      "brief": "thermal cradle arrived (2)",
+      "brief": "2111 arrived (6)",
       "claim": {
         "kind": "stock",
-        "value": 2
+        "value": 6
       },
       "must_mention": [
-        "thermal cradle",
-        "2"
+        "2111",
+        "6"
       ],
       "pressure": "high",
       "length": "short",
-      "text": "thermal cradle arrived, qty 2, on the receiving shelf"
+      "text": "2111 arrived (6) on the dock, tagging it"
     },
     {
-      "ts": "1789204320.902056",
+      "ts": "1788908356.033921",
+      "user": "p-samir",
+      "thread_ts": "1788904353.273552",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "nice ty"
+    },
+    {
+      "ts": "1789204320.723530",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-001425"
+        "ev-001533"
       ],
       "brief": "carrier in use",
       "claim": {
@@ -146,11 +147,31 @@
       "must_mention": [
         "carrier",
         "the build",
-        "fri 9/11"
+        "9/11"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "carrier is in the build since fri 9/11, sorry late update"
+      "length": "short",
+      "text": "carrier is in use till 9/11, the build needs it so dont grab it"
+    },
+    {
+      "ts": "1789227120.920408",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-001557"
+      ],
+      "brief": "build stand in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-09-10"
+      },
+      "must_mention": [
+        "build stand",
+        "9/10"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "The build stand is in use until 9/10."
     }
   ]
 }

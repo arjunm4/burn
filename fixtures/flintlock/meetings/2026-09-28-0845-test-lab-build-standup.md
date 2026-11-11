@@ -8,11 +8,12 @@
 
 ## Overview
 
-We need harness bracket by 10/5 (the build). We need bracket CMM fixture by 10/14. We need FL-TST-2789 by 10/5. We need the part by 10/14.
+We need harness bracket by 10/5 (the build). We need bracket CMM fixture by 10/14. We need the retainer by 10/8. We need FL-TST-2789 by 10/5. We need the part by 10/14.
 
 ## Discussion
 
 - Dmitri: We need harness bracket by 10/5 (the build).
 - Dmitri: We need bracket CMM fixture by 10/14.
+- Dmitri: We need the retainer by 10/8.
 - Zoe: We need FL-TST-2789 by 10/5.
 - Dmitri: We need the part by 10/14.

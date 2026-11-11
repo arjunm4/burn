@@ -37,41 +37,6 @@
       }
     },
     {
-      "id": "p-carlos",
-      "name": "Carlos Mendoza",
-      "display_name": "carlos",
-      "slack_id": "U07FLK0CARL",
-      "title": "Lead Technician",
-      "style": {
-        "case": "mixed",
-        "punctuation": "full",
-        "typos": "some",
-        "emoji": "some",
-        "length": "terse",
-        "hedging": "low",
-        "quirks": [
-          "ALL CAPS for part numbers and deadlines",
-          "uses !!"
-        ]
-      }
-    },
-    {
-      "id": "p-ingrid",
-      "name": "Ingrid Solberg",
-      "display_name": "ingrid.s",
-      "slack_id": "U07FLK0INGR",
-      "title": "VP Hardware",
-      "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": []
-      }
-    },
-    {
       "id": "p-kenji",
       "name": "Kenji Morimoto",
       "display_name": "kenji.m",
@@ -90,21 +55,19 @@
       }
     },
     {
-      "id": "p-omar",
-      "name": "Omar Farouk",
-      "display_name": "omar.f",
-      "slack_id": "U07FLK0OMAR",
-      "title": "Technical Program Manager",
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
       "style": {
-        "case": "mixed",
-        "punctuation": "light",
-        "typos": "rare",
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
         "emoji": "rare",
         "length": "medium",
-        "hedging": "high",
-        "quirks": [
-          "\"i think\", \"probably\", \"not 100% sure but\""
-        ]
+        "hedging": "low",
+        "quirks": []
       }
     },
     {
@@ -135,107 +98,79 @@
   ],
   "messages": [
     {
-      "ts": "1793649574.649445",
-      "user": "p-sofia",
-      "thread_ts": null,
-      "events": [
-        "ev-003413"
-      ],
-      "brief": "palm: still quoting rev B",
-      "claim": {
-        "kind": "substitute",
-        "value": "rev B"
-      },
-      "must_mention": [
-        "palm"
-      ],
-      "length": "medium",
-      "text": "The palm is still out for quote at rev B. Will chase if nothing comes back soon."
-    },
-    {
-      "ts": "1793661487.375661",
-      "user": "p-sofia",
-      "thread_ts": null,
-      "events": [
-        "ev-003282"
-      ],
-      "brief": "middle link: still quoting rev A",
-      "claim": {
-        "kind": "substitute",
-        "value": "rev A"
-      },
-      "must_mention": [
-        "middle link"
-      ],
-      "length": "short",
-      "text": "The middle link is still quoting, rev A. Nudged them this morning."
-    },
-    {
-      "ts": "1793733536.436155",
+      "ts": "1793733536.416705",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-002653"
+        "ev-002841"
       ],
-      "brief": "Test stand rework: Grip load cell plate waits on Leg drop-test gantry",
+      "brief": "Test stand rework: Grip load cell plate (3) waits on Leg drop-test gantry",
       "claim": {
         "kind": "blocked",
         "value": "rig-leg-drop-gantry"
       },
       "must_mention": [
         "Leg drop-test gantry",
-        "Test stand rework: Grip load cell plate"
+        "Test stand rework: Grip load cell plate (3)"
       ],
       "pressure": "low",
-      "length": "short",
-      "text": "Test stand rework: Grip load cell plate is waiting on the Leg drop-test gantry i think, not 100% sure but that's what i heard"
+      "length": "medium",
+      "text": "Test stand rework: Grip load cell plate (3) is sitting behind the Leg drop-test gantry, i think we can't start until that frees up. not 100% sure on the order though"
     },
     {
-      "ts": "1793860513.122537",
-      "user": "p-sofia",
+      "ts": "1793741478.823950",
+      "user": "p-kenji",
       "thread_ts": null,
       "events": [
-        "ev-003385"
+        "ev-003543"
       ],
-      "brief": "middle link: still quoting rev A",
+      "brief": "tendon bushing: still quoting rev A",
       "claim": {
         "kind": "substitute",
         "value": "rev A"
       },
       "must_mention": [
-        "middle link"
+        "tendon bushing"
       ],
-      "length": "short",
-      "text": "Still no quote back on the middle link, rev A."
+      "length": "medium",
+      "text": "tendon bushing quote came back still on rev A, need to send them the new drawing"
     },
     {
-      "ts": "1793930764.973622",
+      "ts": "1793860513.331849",
+      "user": "p-sofia",
+      "thread_ts": null,
+      "events": [
+        "ev-003456"
+      ],
+      "brief": "hand finger link middle: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "hand finger link middle"
+      ],
+      "length": "medium",
+      "text": "The hand finger link middle quote is still on rev A. I'll resend the updated drawing tomorrow."
+    },
+    {
+      "ts": "1793900758.230464",
+      "user": "p-lin",
+      "thread_ts": "1793860513.331849",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Rev A is the gift that keeps on giving. Maybe it's a feature."
+    },
+    {
+      "ts": "1793930764.002269",
       "user": "p-kenji",
       "thread_ts": null,
       "events": [
-        "ev-002214"
+        "ev-002399"
       ],
-      "brief": "finger link arrived",
-      "claim": {
-        "kind": "stock",
-        "value": 5
-      },
-      "must_mention": [
-        "finger link",
-        "5"
-      ],
-      "pressure": "high",
-      "length": "short",
-      "text": "finger link in 5 pcs"
-    },
-    {
-      "ts": "1793949004.021475",
-      "user": "p-kenji",
-      "thread_ts": "1793930764.973622",
-      "events": [
-        "ev-002967"
-      ],
-      "brief": "Correction: finger link arrived (7)",
+      "brief": "finger link arrived (7)",
       "claim": {
         "kind": "stock",
         "value": 7
@@ -245,48 +180,28 @@
         "7"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "wait recounted finger link is 7 not 5 two were in the other bag"
-    },
-    {
-      "ts": "1793990971.007478",
-      "user": "p-omar",
-      "thread_ts": "1793930764.973622",
-      "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
-      "must_mention": [],
       "length": "short",
-      "text": "ok thanks"
+      "text": "finger link arrived, 7 pcs"
     },
     {
-      "ts": "1793995951.995102",
-      "user": "p-ingrid",
-      "thread_ts": "1793930764.973622",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Has anyone checked them against the drawing yet?"
-    },
-    {
-      "ts": "1794019999.241306",
-      "user": "p-carlos",
+      "ts": "1794010887.202784",
+      "user": "p-kenji",
       "thread_ts": null,
       "events": [
-        "ev-002135"
+        "ev-003870"
       ],
-      "brief": "2443 arrived (3)",
+      "brief": "Build sub-assembly: Finger distal link (2) done",
       "claim": {
-        "kind": "stock",
-        "value": 3
+        "kind": "done",
+        "value": "2026-11-06"
       },
       "must_mention": [
-        "2443",
-        "3"
+        "Build sub-assembly: Finger distal link (2)",
+        "11/6"
       ],
       "pressure": "low",
-      "length": "short",
-      "text": "2443 arrived, 3 pcs. On the shelf."
+      "length": "medium",
+      "text": "Build sub-assembly: Finger distal link (2) done 11/6 moving on to the next one"
     }
   ]
 }

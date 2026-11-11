@@ -38,6 +38,25 @@
       }
     },
     {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
       "id": "p-ingrid",
       "name": "Ingrid Solberg",
       "display_name": "ingrid.s",
@@ -88,6 +107,24 @@
       }
     },
     {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
       "id": "p-priya",
       "name": "Priya Raman",
       "display_name": "priya",
@@ -120,24 +157,6 @@
         "length": "medium",
         "hedging": "low",
         "quirks": []
-      }
-    },
-    {
-      "id": "p-valeria",
-      "name": "Valeria Ortiz",
-      "display_name": "valeria.o",
-      "slack_id": "U07FLK0VALE",
-      "title": "Electrical Engineer, battery systems",
-      "style": {
-        "case": "mixed",
-        "punctuation": "light",
-        "typos": "rare",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "high",
-        "quirks": [
-          "\"i think\", \"probably\", \"not 100% sure but\""
-        ]
       }
     },
     {
@@ -176,11 +195,31 @@
   ],
   "messages": [
     {
-      "ts": "1790622459.782198",
+      "ts": "1790622280.004025",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-003707"
+      ],
+      "brief": "Torso and pelvis first build done by weds",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-09-30"
+      },
+      "must_mention": [
+        "Torso and pelvis first build",
+        "9/30"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Torso and pelvis first build should be done by weds, 9/30. all the welds are in"
+    },
+    {
+      "ts": "1790622459.408845",
       "user": "p-lukas",
       "thread_ts": null,
       "events": [
-        "ev-002914"
+        "ev-003102"
       ],
       "brief": "FL-STR-1582 rev B released: tolerance relaxed after DFM feedback",
       "claim": {
@@ -190,25 +229,25 @@
       "must_mention": [
         "FL-STR-1582"
       ],
-      "length": "short",
-      "text": "FL-STR-1582 rev b is out, loosened the tol per dfm"
+      "length": "medium",
+      "text": "FL-STR-1582 rev B out, tol relaxed after dfm feedback"
     },
     {
-      "ts": "1790623591.704125",
-      "user": "p-valeria",
-      "thread_ts": "1790622459.782198",
+      "ts": "1790623762.564589",
+      "user": "p-carlos",
+      "thread_ts": "1790622459.408845",
       "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
+      "brief": "reply (will check later) in the thread about: the message above",
       "must_mention": [],
-      "length": "one_word",
-      "text": "nice 👍"
+      "length": "short",
+      "text": "Ok, I'll check on the first articles later today!!"
     },
     {
-      "ts": "1790627040.404480",
+      "ts": "1790627040.645654",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-002619"
+        "ev-002807"
       ],
       "brief": "Test stand rework for Leg DVT build: Cell heater clamp plate waits on BMS PCBA, rev 1",
       "claim": {
@@ -220,49 +259,99 @@
         "the plate"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "the plate for the cell heater clamp is stuck until BMS PCBA, rev 1 shows up. so the stand rework for leg dvt slips with it"
-    },
-    {
-      "ts": "1790627468.264562",
-      "user": "p-kwame",
-      "thread_ts": "1790627040.404480",
-      "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
       "length": "short",
-      "text": "I don't think the plate needs to wait. We can mount it with a dummy board and swap later."
+      "text": "the plate is stuck behind BMS PCBA, rev 1 so nothing to mount it to yet"
     },
     {
-      "ts": "1790632502.204795",
+      "ts": "1790627394.086347",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-003857"
+      ],
+      "brief": "Test stand rework for Hip actuator thermal derate at continuous torque: Chamber thermocouple tree bracket done by weds",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-09-30"
+      },
+      "must_mention": [
+        "Test stand rework for Hip actuator thermal derate at continuous torque: Chamber thermocouple tree bracket",
+        "9/30"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Test stand rework for Hip actuator thermal derate at continuous torque: Chamber thermocouple tree bracket should be done weds 9/30 *wed"
+    },
+    {
+      "ts": "1790627765.862812",
+      "user": "p-ingrid",
+      "thread_ts": "1790627394.086347",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Thanks, will look later."
+    },
+    {
+      "ts": "1790632502.153388",
       "user": "p-renee",
       "thread_ts": null,
       "events": [
-        "ev-001905"
+        "ev-002072"
       ],
-      "brief": "FL-TST-2716: need 9 by 2026-10-02 for the build",
+      "brief": "FL-TST-2716: need 9 by 2026-10-07 for the build",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 9,
-          "by": "2026-10-02"
+          "by": "2026-10-07"
         }
       },
       "must_mention": [
         "FL-TST-2716",
         "the build",
-        "10/2"
+        "wed the 7th"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "FL-TST-2716: need 9 for the build, by 10/2."
+      "length": "medium",
+      "text": "We need 9 FL-TST-2716 for the build by wed the 7th. Not in yet."
     },
     {
-      "ts": "1790654053.196979",
+      "ts": "1790632715.778217",
+      "user": "p-lukas",
+      "thread_ts": "1790627394.086347",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "is the bracket drawing final or still moving"
+    },
+    {
+      "ts": "1790633319.661309",
+      "user": "p-omar",
+      "thread_ts": "1790632502.153388",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ok noted"
+    },
+    {
+      "ts": "1790633460.427933",
+      "user": "p-kwame",
+      "thread_ts": "1790627394.086347",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Good to know."
+    },
+    {
+      "ts": "1790654053.318436",
       "user": "p-renee",
       "thread_ts": null,
       "events": [
-        "ev-002495"
+        "ev-002683"
       ],
       "brief": "Torso and pelvis static load test waits on Rig setup for Torso and pelvis static load test: Leg drop-test lift hook",
       "claim": {
@@ -275,58 +364,14 @@
       ],
       "pressure": "low",
       "length": "medium",
-      "text": "Torso and pelvis static load test is blocked on Rig setup for Torso and pelvis static load test: Leg drop-test lift hook. Can't load the torso until the hook is on."
+      "text": "Torso and pelvis static load test is blocked until Rig setup for Torso and pelvis static load test: Leg drop-test lift hook is sorted. Nothing to hang the frame from."
     },
     {
-      "ts": "1790659682.663971",
-      "user": "p-renee",
-      "thread_ts": "1790632502.204795",
-      "events": [
-        "ev-003061"
-      ],
-      "brief": "Correction: FL-TST-2716: need 9 by 2026-10-07 for the build",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 9,
-          "by": "2026-10-07"
-        }
-      },
-      "must_mention": [
-        "FL-TST-2716",
-        "the build",
-        "10/7"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "Correction, FL-TST-2716 for the build is needed by 10/7, not earlier. Still 9."
-    },
-    {
-      "ts": "1790719033.622777",
+      "ts": "1790722348.446855",
       "user": "p-renee",
       "thread_ts": null,
       "events": [
-        "ev-001629"
-      ],
-      "brief": "2223 arrived (1)",
-      "claim": {
-        "kind": "stock",
-        "value": 1
-      },
-      "must_mention": [
-        "2223",
-        "1"
-      ],
-      "pressure": "low",
-      "length": "medium",
-      "text": "2223 is in, qty 1. It's on the shelf by the gantry if anyone needs to look at it before we mount it."
-    },
-    {
-      "ts": "1790722348.608406",
-      "user": "p-renee",
-      "thread_ts": null,
-      "events": [
-        "ev-002448"
+        "ev-002636"
       ],
       "brief": "Torso and pelvis static load test waits on Rig setup for Torso and pelvis static load test: Gantry safety pin",
       "claim": {
@@ -338,25 +383,15 @@
         "Torso and pelvis static load test"
       ],
       "pressure": "low",
-      "length": "short",
-      "text": "Also waiting on Rig setup for Torso and pelvis static load test: Gantry safety pin before Torso and pelvis static load test can run."
+      "length": "medium",
+      "text": "And now Torso and pelvis static load test is also waiting on Rig setup for Torso and pelvis static load test: Gantry safety pin. Can't lift without it."
     },
     {
-      "ts": "1790726908.877665",
-      "user": "p-ingrid",
-      "thread_ts": "1790722348.608406",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Is the pin something we can make in house, or are we waiting on a vendor?"
-    },
-    {
-      "ts": "1790787612.619166",
+      "ts": "1790787612.816336",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-002698"
+        "ev-002886"
       ],
       "brief": "Leg DVT build waits on Torso and pelvis static load test",
       "claim": {
@@ -368,15 +403,15 @@
         "Leg DVT build"
       ],
       "pressure": "low",
-      "length": "short",
-      "text": "To be clear, the Leg DVT build is now waiting on the Torso and pelvis static load test, since both need the gantry."
+      "length": "medium",
+      "text": "Just flagging for everyone: Leg DVT build waits on Torso and pelvis static load test, since they share the gantry. So the order really matters here."
     },
     {
-      "ts": "1790788188.393777",
+      "ts": "1790788188.208175",
       "user": "p-renee",
       "thread_ts": null,
       "events": [
-        "ev-002903"
+        "ev-003091"
       ],
       "brief": "FL-STR-1591 rev B released: added O-ring groove",
       "claim": {
@@ -386,15 +421,73 @@
       "must_mention": [
         "FL-STR-1591"
       ],
-      "length": "short",
-      "text": "FL-STR-1591 rev B released, adds the O-ring groove."
+      "length": "medium",
+      "text": "FL-STR-1591 rev B is released. Added an O-ring groove."
     },
     {
-      "ts": "1790802210.635805",
+      "ts": "1790790806.607668",
+      "user": "p-lukas",
+      "thread_ts": "1790787612.816336",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "not convinced"
+    },
+    {
+      "ts": "1790793017.757469",
+      "user": "p-omar",
+      "thread_ts": "1790788188.208175",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "good, that was overdue"
+    },
+    {
+      "ts": "1790793657.982324",
+      "user": "p-lukas",
+      "thread_ts": null,
+      "events": [
+        "ev-003416"
+      ],
+      "brief": "harness bracket: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "harness bracket"
+      ],
+      "length": "short",
+      "text": "harness bracket still quoting rev A"
+    },
+    {
+      "ts": "1790795076.962634",
+      "user": "p-ingrid",
+      "thread_ts": "1790788188.208175",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Yes, they should have the new rev by now."
+    },
+    {
+      "ts": "1790799806.227633",
+      "user": "p-ingrid",
+      "thread_ts": "1790788188.208175",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Agreed."
+    },
+    {
+      "ts": "1790802210.899135",
       "user": "p-renee",
       "thread_ts": null,
       "events": [
-        "ev-001669"
+        "ev-001813"
       ],
       "brief": "bar end arrived (1)",
       "claim": {
@@ -407,14 +500,34 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "bar end arrived, qty 1."
+      "text": "bar end arrived (1)"
     },
     {
-      "ts": "1790872823.615841",
+      "ts": "1790810787.376669",
       "user": "p-renee",
       "thread_ts": null,
       "events": [
-        "ev-002625"
+        "ev-003708"
+      ],
+      "brief": "Torso and pelvis first build done",
+      "claim": {
+        "kind": "done",
+        "value": "2026-09-30"
+      },
+      "must_mention": [
+        "Torso and pelvis first build",
+        "wed the 30th"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Torso and pelvis first build is done, finished wed the 30th. Photos tomorrow."
+    },
+    {
+      "ts": "1790872823.484295",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-002813"
       ],
       "brief": "Rig setup: Chamber cable feedthrough plate waits on BMS PCBA, rev 1",
       "claim": {
@@ -427,24 +540,24 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Rig setup: Chamber cable feedthrough plate is waiting on BMS PCBA, rev 1 as well."
+      "text": "Rig setup: Chamber cable feedthrough plate is waiting on BMS PCBA, rev 1 too"
     },
     {
-      "ts": "1790873704.498816",
-      "user": "p-carlos",
-      "thread_ts": "1790872823.615841",
+      "ts": "1790876453.343457",
+      "user": "p-kwame",
+      "thread_ts": "1790872823.484295",
       "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "brief": "reply (answers) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "Same thing happened on the last chamber setup. Took a week just for the board."
+      "text": "The board is still in layout review, so that one will take a while."
     },
     {
-      "ts": "1790883163.222735",
+      "ts": "1790883163.171007",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-001856"
+        "ev-002011"
       ],
       "brief": "Order XO-5526363 placed, promised 2026-10-19",
       "claim": {
@@ -454,11 +567,40 @@
       "must_mention": [
         "XO-5526363",
         "2789",
-        "10/19"
+        "mon 10/19"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "XO-5526363 placed for 2789, promised 10/19. fingers crossed"
+      "text": "Order XO-5526363 placed for the 2789 parts, promised mon 10/19"
+    },
+    {
+      "ts": "1790885130.425410",
+      "user": "p-carlos",
+      "thread_ts": "1790883163.171007",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "promised, sure"
+    },
+    {
+      "ts": "1790974911.929485",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-003469"
+      ],
+      "brief": "21700 cells for test packs: still quoting 2026-09-24",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-09-24"
+      },
+      "must_mention": [
+        "21700 cells for test packs",
+        "thurs the 24th"
+      ],
+      "length": "short",
+      "text": "21700 cells for test packs: vendor still quoting thurs the 24th, thats already gone by"
     }
   ]
 }

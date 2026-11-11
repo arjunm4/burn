@@ -19,11 +19,11 @@
   },
   "people": [
     {
-      "id": "p-carlos",
-      "name": "Carlos Mendoza",
-      "display_name": "carlos",
-      "slack_id": "U07FLK0CARL",
-      "title": "Lead Technician",
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
       "style": {
         "case": "mixed",
         "punctuation": "full",
@@ -54,6 +54,22 @@
           "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
           "corrects own dates"
         ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
       }
     },
     {
@@ -144,6 +160,24 @@
       }
     },
     {
+      "id": "p-valeria",
+      "name": "Valeria Ortiz",
+      "display_name": "valeria.o",
+      "slack_id": "U07FLK0VALE",
+      "title": "Electrical Engineer, battery systems",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
       "id": "p-zoe",
       "name": "Zoe Castellanos",
       "display_name": "zoe.c",
@@ -179,11 +213,104 @@
   ],
   "messages": [
     {
-      "ts": "1788889807.883758",
+      "ts": "1788871866.206497",
       "user": "p-renee",
       "thread_ts": null,
       "events": [
-        "ev-002697"
+        "ev-001614"
+      ],
+      "brief": "2717: need 24 by 2026-09-15 for next week",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-09-15"
+        }
+      },
+      "must_mention": [
+        "2717",
+        "next week",
+        "2716",
+        "trigger heater plate",
+        "tues 9/15"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Need 24 of 2717 for next week, tues 9/15. 2716 trigger heater plate goes with it."
+    },
+    {
+      "ts": "1788879027.000474",
+      "user": "p-ingrid",
+      "thread_ts": null,
+      "events": [
+        "ev-001615"
+      ],
+      "brief": "TC tree: need 24 by 2026-09-15 for the build",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-09-15"
+        }
+      },
+      "must_mention": [
+        "TC tree",
+        "the build",
+        "tues 9/15"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "TC tree, need 24 for the build by tues 9/15."
+    },
+    {
+      "ts": "1788880714.636915",
+      "user": "p-omar",
+      "thread_ts": "1788879027.000474",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "I think that might be optimistic, probably worth asking the vendor first."
+    },
+    {
+      "ts": "1788883442.389613",
+      "user": "p-kwame",
+      "thread_ts": "1788879027.000474",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Is that 24 for one build or for spares as well?"
+    },
+    {
+      "ts": "1788888759.763118",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-001815"
+      ],
+      "brief": "the part: need 2 by 2026-10-05",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-10-05"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "mon the 5th"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "need 2 of the part by mon the 5th, not urgent"
+    },
+    {
+      "ts": "1788889807.918316",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-002885"
       ],
       "brief": "Torso and pelvis static load test waits on Torso and pelvis first build",
       "claim": {
@@ -196,44 +323,24 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "the test can't start until Torso and pelvis first build is together"
+      "text": "the test is stuck until Torso and pelvis first build is done."
     },
     {
-      "ts": "1788891385.372041",
-      "user": "p-talia",
-      "thread_ts": "1788889807.883758",
+      "ts": "1788892322.879514",
+      "user": "p-ingrid",
+      "thread_ts": "1788888759.763118",
       "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "same thing happened with the arm static rig 🙃"
-    },
-    {
-      "ts": "1788892383.297203",
-      "user": "p-talia",
-      "thread_ts": "1788889807.883758",
-      "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "so... forever then 😂"
-    },
-    {
-      "ts": "1788892517.877239",
-      "user": "p-carlos",
-      "thread_ts": "1788889807.883758",
-      "events": [],
-      "brief": "reply (tags someone else) in the thread about: the message above",
+      "brief": "reply (thanks) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "@idris do you know where the build is at"
+      "text": "Thanks."
     },
     {
-      "ts": "1788900726.690693",
+      "ts": "1788900726.593084",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-001586"
+        "ev-001714"
       ],
       "brief": "the part: need 8 by 2026-09-29 for Design iteration bench trial for Leg DVT build: Spine tube end fitting",
       "claim": {
@@ -246,39 +353,18 @@
       "must_mention": [
         "the part",
         "Design iteration bench trial for Leg DVT build: Spine tube end fitting",
-        "tues the 29th"
+        "9/29"
       ],
       "pressure": "elevated",
       "length": "medium",
-      "text": "need 8 of the part by tues the 29th for Design iteration bench trial for Leg DVT build: Spine tube end fitting"
+      "text": "the part, need 8 by 9/29 for Design iteration bench trial for Leg DVT build: Spine tube end fitting"
     },
     {
-      "ts": "1788905346.746375",
+      "ts": "1788911362.871502",
       "user": "p-talia",
       "thread_ts": null,
       "events": [
-        "ev-001495"
-      ],
-      "brief": "Order XO-5484613 placed, promised 2026-09-14",
-      "claim": {
-        "kind": "eta",
-        "value": "2026-09-14"
-      },
-      "must_mention": [
-        "XO-5484613",
-        "thermocouple bracket",
-        "9/14"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "XO-5484613 placed for the thermocouple bracket, promised 9/14 🙏"
-    },
-    {
-      "ts": "1788911362.896146",
-      "user": "p-talia",
-      "thread_ts": null,
-      "events": [
-        "ev-001510"
+        "ev-001634"
       ],
       "brief": "Order XO-5486061 placed, promised 2026-09-24",
       "claim": {
@@ -288,18 +374,71 @@
       "must_mention": [
         "XO-5486061",
         "lower hook",
-        "thurs the 24th"
+        "thurs 9/24"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "XO-5486061 is in for the lower hook, promised thurs the 24th 👍"
+      "text": "Order XO-5486061 placed for the lower hook, promised thurs 9/24 🙏"
     },
     {
-      "ts": "1788981060.713030",
+      "ts": "1788913297.376458",
+      "user": "p-valeria",
+      "thread_ts": "1788911362.871502",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ok great, i think thats in time for us"
+    },
+    {
+      "ts": "1788917389.283451",
+      "user": "p-talia",
+      "thread_ts": "1788911362.871502",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "yep should be 🙏"
+    },
+    {
+      "ts": "1788922231.676065",
+      "user": "p-valeria",
+      "thread_ts": "1788911362.871502",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "ok"
+    },
+    {
+      "ts": "1788975362.951553",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-003348"
+      ],
+      "brief": "spine fitting: need 8 by 2026-09-29",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-09-29"
+        }
+      },
+      "must_mention": [
+        "spine fitting",
+        "9/29"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "spine fitting, need 8 by 9/29!!"
+    },
+    {
+      "ts": "1788981060.298653",
       "user": "p-renee",
       "thread_ts": null,
       "events": [
-        "ev-002749"
+        "ev-002937"
       ],
       "brief": "FL-BAT-1689 rev B released: ID +0.05 mm for slip fit",
       "claim": {
@@ -309,15 +448,44 @@
       "must_mention": [
         "FL-BAT-1689"
       ],
-      "length": "short",
-      "text": "FL-BAT-1689 rev B released, ID opened up 0.05 for slip fit"
+      "length": "medium",
+      "text": "FL-BAT-1689 rev B is released. ID opened up a bit so it slips on."
     },
     {
-      "ts": "1788995625.900172",
+      "ts": "1788991953.442092",
+      "user": "p-lukas",
+      "thread_ts": null,
+      "events": [
+        "ev-003678"
+      ],
+      "brief": "Motor sample lot for battery enclosure: still quoting 2026-09-08",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-09-08"
+      },
+      "must_mention": [
+        "Motor sample lot for battery enclosure (clevis)",
+        "tues the 8th"
+      ],
+      "length": "short",
+      "text": "Motor sample lot for battery enclosure (clevis) still shows quoted for tues the 8th"
+    },
+    {
+      "ts": "1788992320.259448",
+      "user": "p-omar",
+      "thread_ts": "1788991953.442092",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Had the same on a clevis last month. Probably worth a call."
+    },
+    {
+      "ts": "1788995625.667807",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-001589"
+        "ev-001717"
       ],
       "brief": "the part: need 8 by 2026-09-29",
       "claim": {
@@ -329,124 +497,18 @@
       },
       "must_mention": [
         "the part",
-        "tues 9/29"
+        "tues the 29th"
       ],
       "pressure": "elevated",
-      "length": "medium",
-      "text": "reminder the part is 8 pcs, needed tues 9/29"
-    },
-    {
-      "ts": "1788999818.392223",
-      "user": "p-carlos",
-      "thread_ts": "1788995625.900172",
-      "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
-      "must_mention": [],
       "length": "short",
-      "text": "8 pcs, one per prayer"
+      "text": "the part, tues the 29th"
     },
     {
-      "ts": "1789004384.537491",
-      "user": "p-idris",
-      "thread_ts": "1788995625.900172",
-      "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "honestly at this point we should just 3d print a spine and call it DVT"
-    },
-    {
-      "ts": "1789004986.222340",
-      "user": "p-idris",
-      "thread_ts": "1788995625.900172",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "same finish as last time?"
-    },
-    {
-      "ts": "1789028346.703958",
-      "user": "p-talia",
-      "thread_ts": "1788905346.746375",
-      "events": [
-        "ev-003004"
-      ],
-      "brief": "Correction: Order XO-5484613 placed, promised 2026-09-15",
-      "claim": {
-        "kind": "eta",
-        "value": "2026-09-15"
-      },
-      "must_mention": [
-        "XO-5484613",
-        "thermocouple bracket",
-        "9/15"
-      ],
-      "pressure": "elevated",
-      "length": "medium",
-      "text": "correction, XO-5484613 thermocouple bracket now promised 9/15 not the 14th 😬"
-    },
-    {
-      "ts": "1789056129.854526",
-      "user": "p-renee",
-      "thread_ts": null,
-      "events": [
-        "ev-001625"
-      ],
-      "brief": "2223: need 1 by 2026-10-05 for the test",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 1,
-          "by": "2026-10-05"
-        }
-      },
-      "must_mention": [
-        "2223",
-        "the test",
-        "2270",
-        "mon 10/5"
-      ],
-      "pressure": "low",
-      "length": "short",
-      "text": "2223 x1 for the test by mon 10/5, goes with 2270"
-    },
-    {
-      "ts": "1789058584.102753",
-      "user": "p-lukas",
-      "thread_ts": "1788905346.746375",
-      "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "a day late is fine for us, no need to chase"
-    },
-    {
-      "ts": "1789063023.608538",
-      "user": "p-talia",
-      "thread_ts": "1788905346.746375",
-      "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "it's just the bracket, nothing else on that order is waiting 👍"
-    },
-    {
-      "ts": "1789067458.866224",
-      "user": "p-carlos",
-      "thread_ts": "1788905346.746375",
-      "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "last bracket order from them slipped too"
-    },
-    {
-      "ts": "1789068694.413330",
+      "ts": "1789068694.759171",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-003397"
+        "ev-003528"
       ],
       "brief": "BMS standoff: still quoting rev A",
       "claim": {
@@ -457,121 +519,61 @@
         "BMS standoff"
       ],
       "length": "short",
-      "text": "BMS standoff still quoting at rev A"
+      "text": "BMS standoff still quoting rev A, the RFQ is the old print"
     },
     {
-      "ts": "1789079728.909145",
+      "ts": "1789079728.289384",
       "user": "p-renee",
       "thread_ts": null,
       "events": [
-        "ev-001664"
+        "ev-001808"
       ],
-      "brief": "FL-TST-2211: need 1 by 2026-10-02 for the test",
+      "brief": "FL-TST-2211: need 1 by 2026-10-07 for the test",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 1,
-          "by": "2026-10-02"
+          "by": "2026-10-07"
         }
       },
       "must_mention": [
         "FL-TST-2211",
         "the test",
-        "fri 10/2"
+        "10/7"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "FL-TST-2211 x1 needed by fri 10/2 for the test"
+      "text": "FL-TST-2211, need 1 for the test by 10/7."
     },
     {
-      "ts": "1789081957.108299",
-      "user": "p-omar",
-      "thread_ts": "1789079728.909145",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "agreed, that one's on the critical path for the pelvis rig"
-    },
-    {
-      "ts": "1789136796.849241",
-      "user": "p-idris",
+      "ts": "1789148725.585786",
+      "user": "p-renee",
       "thread_ts": null,
       "events": [
-        "ev-003276"
+        "ev-001764"
       ],
-      "brief": "cell tray: still quoting rev A",
-      "claim": {
-        "kind": "substitute",
-        "value": "rev A"
-      },
-      "must_mention": [
-        "cell tray"
-      ],
-      "length": "short",
-      "text": "cell tray still out for quote rev A"
-    },
-    {
-      "ts": "1789145889.208340",
-      "user": "p-renee",
-      "thread_ts": "1789056129.854526",
-      "events": [
-        "ev-002970"
-      ],
-      "brief": "Correction: 2223: need 1 by 2026-10-02 for the test",
+      "brief": "torso yoke: need 1 by 2026-10-05",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 1,
-          "by": "2026-10-02"
+          "by": "2026-10-05"
         }
       },
       "must_mention": [
-        "2223",
-        "the test",
-        "2270",
-        "10/2"
+        "torso yoke",
+        "10/5"
       ],
       "pressure": "low",
-      "length": "short",
-      "text": "correction 2223 for the test is 10/2 not the 5th, still with 2270"
+      "length": "medium",
+      "text": "We need 1 torso yoke by 10/5. Can someone confirm the quote status before Monday?"
     },
     {
-      "ts": "1789148708.627175",
-      "user": "p-kwame",
-      "thread_ts": "1789056129.854526",
-      "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "we had the same date shuffle on the hip rig last month"
-    },
-    {
-      "ts": "1789148817.725112",
-      "user": "p-talia",
-      "thread_ts": "1789056129.854526",
-      "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "ok"
-    },
-    {
-      "ts": "1789150529.967470",
-      "user": "p-idris",
-      "thread_ts": "1789056129.854526",
-      "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "the 2nd is tight"
-    },
-    {
-      "ts": "1789172514.988932",
+      "ts": "1789172514.247764",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-001591"
+        "ev-001719"
       ],
       "brief": "Order XO-5490424 placed, promised 2026-09-29",
       "claim": {
@@ -588,11 +590,11 @@
       "text": "XO-5490424 placed for the end fitting, promised tues 9/29"
     },
     {
-      "ts": "1789172964.560573",
+      "ts": "1789172964.259587",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-002761"
+        "ev-002949"
       ],
       "brief": "FL-BAT-1684 rev B released: added O-ring groove",
       "claim": {
@@ -603,7 +605,7 @@
         "FL-BAT-1684"
       ],
       "length": "short",
-      "text": "FL-BAT-1684 rev B released, added an o-ring groove"
+      "text": "FL-BAT-1684 rev B released, added the o-ring groove"
     }
   ]
 }

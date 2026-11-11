@@ -57,6 +57,25 @@
       }
     },
     {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
       "id": "p-hana",
       "name": "Hana Kimura",
       "display_name": "hana",
@@ -71,6 +90,63 @@
         "hedging": "high",
         "quirks": [
           "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
         ]
       }
     },
@@ -110,11 +186,11 @@
   ],
   "messages": [
     {
-      "ts": "1788213134.519736",
+      "ts": "1788213134.521993",
       "user": "p-callum",
       "thread_ts": null,
       "events": [
-        "ev-002566"
+        "ev-002754"
       ],
       "brief": "Ankle heel-strike impact test waits on Ankle pushrod clevis",
       "claim": {
@@ -127,14 +203,34 @@
       ],
       "pressure": "low",
       "length": "medium",
-      "text": "Ankle heel-strike impact test is blocked on the Ankle pushrod clevis, cant run drop rig without it"
+      "text": "Ankle heel-strike impact test is stuck until the Ankle pushrod clevis shows up. nothing in receiving yet as far as i can tell"
     },
     {
-      "ts": "1788222737.281369",
+      "ts": "1788215048.760203",
+      "user": "p-mei",
+      "thread_ts": "1788213134.521993",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ok noted"
+    },
+    {
+      "ts": "1788217972.204689",
+      "user": "p-priya",
+      "thread_ts": "1788213134.521993",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "who has the open PO on that"
+    },
+    {
+      "ts": "1788222737.132632",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-001496"
+        "ev-001616"
       ],
       "brief": "FL-ANK-1253: need 3 by 2026-10-14 for Fit check: Ankle roll link",
       "claim": {
@@ -151,14 +247,24 @@
       ],
       "pressure": "low",
       "length": "medium",
-      "text": "FL-ANK-1253 need 3 for Fit check: Ankle roll link, by wed 10/14 👀"
+      "text": "FL-ANK-1253 x3 for Fit check: Ankle roll link, wed 10/14 🙏"
     },
     {
-      "ts": "1788304690.663386",
+      "ts": "1788224137.404114",
+      "user": "p-diego",
+      "thread_ts": "1788222737.132632",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "@hana can you confirm the drawing rev?"
+    },
+    {
+      "ts": "1788304690.450005",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-001498"
+        "ev-001618"
       ],
       "brief": "roll link: need 3 by 2026-10-14",
       "claim": {
@@ -174,14 +280,57 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "roll link reminder, 3 by 10/14 🙏"
+      "text": "roll link x3 needed 10/14 😬"
     },
     {
-      "ts": "1788381117.073341",
+      "ts": "1788308210.240801",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [
+        "ev-001611"
+      ],
+      "brief": "the clamp: need 4 by 2026-09-14",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 4,
+          "by": "2026-09-14"
+        }
+      },
+      "must_mention": [
+        "the clamp",
+        "mon the 14th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "need 4 of the clamp by mon the 14th, its blocking the rig"
+    },
+    {
+      "ts": "1788308718.649798",
+      "user": "p-mei",
+      "thread_ts": "1788308210.240801",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "yep same here"
+    },
+    {
+      "ts": "1788310524.081170",
+      "user": "p-luis",
+      "thread_ts": "1788308210.240801",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "had the same problem on the last rig, took forever to come in"
+    },
+    {
+      "ts": "1788381117.107797",
       "user": "p-hana",
       "thread_ts": null,
       "events": [
-        "ev-002740"
+        "ev-002928"
       ],
       "brief": "FL-ANK-1259 rev C released: moved M3 holes 1.5 mm to clear harness",
       "claim": {
@@ -192,14 +341,60 @@
         "FL-ANK-1259"
       ],
       "length": "short",
-      "text": "FL-ANK-1259 rev C is out, i think M3 holes moved 1.5 mm so they clear the harness"
+      "text": "FL-ANK-1259 rev C is out, moved M3 holes 1.5 mm to clear harness"
     },
     {
-      "ts": "1788536517.947262",
+      "ts": "1788448080.043122",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-003122"
+      ],
+      "brief": "Correction: FL-ANK-1253: need 3 by 2026-10-14",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-10-14"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1253",
+        "wed the 14th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Correction: FL-ANK-1253 is needed wed the 14th, NOT THE 15TH!!"
+    },
+    {
+      "ts": "1788485616.547000",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-001612"
+      ],
+      "brief": "the part: need 4 by 2026-09-11",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 4,
+          "by": "2026-09-11"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "9/11"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "the part: need 4 by 9/11. Please expedite."
+    },
+    {
+      "ts": "1788536517.218085",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-001580"
+        "ev-001708"
       ],
       "brief": "rod end spacer: need 24 by 2026-09-28",
       "claim": {
@@ -214,8 +409,8 @@
         "9/28"
       ],
       "pressure": "low",
-      "length": "short",
-      "text": "rod end spacer, need 24 by 9/28. fri? no, 9/28 is a mon"
+      "length": "medium",
+      "text": "need 24 rod end spacer by 9/28 pls, any news from the shop?"
     }
   ]
 }

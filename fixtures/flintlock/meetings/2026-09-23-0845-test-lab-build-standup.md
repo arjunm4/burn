@@ -8,8 +8,9 @@
 
 ## Overview
 
-We need 1056 by 10/5 (Build sub-assembly: Hip cycloid ring-pin housing).
+We need the part by 10/1. We need 1056 by 9/30 (Build sub-assembly: Hip cycloid ring-pin housing).
 
 ## Discussion
 
-- Dmitri: We need 1056 by 10/5 (Build sub-assembly: Hip cycloid ring-pin housing).
+- Dmitri: We need the part by 10/1.
+- Dmitri: We need 1056 by 9/30 (Build sub-assembly: Hip cycloid ring-pin housing).

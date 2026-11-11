@@ -51,6 +51,62 @@
           "no capitals or end punctuation ever"
         ]
       }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
     }
   ],
   "context": [
@@ -73,11 +129,11 @@
   ],
   "messages": [
     {
-      "ts": "1787005943.882745",
+      "ts": "1787005943.004578",
       "user": "p-ingrid",
       "thread_ts": null,
       "events": [
-        "ev-001445"
+        "ev-001559"
       ],
       "brief": "the mount: need 24 by 2026-09-10",
       "claim": {
@@ -89,18 +145,38 @@
       },
       "must_mention": [
         "the mount",
-        "9/10"
+        "thurs 9/10"
       ],
       "pressure": "high",
-      "length": "short",
-      "text": "We need 24 of the mount by 9/10."
+      "length": "medium",
+      "text": "Need the mount by thurs 9/10, 24 of them. Can we get a firm date today?"
     },
     {
-      "ts": "1787165719.295971",
+      "ts": "1787008444.622475",
+      "user": "p-owen",
+      "thread_ts": "1787005943.004578",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "not sure that works with the dyno schedule"
+    },
+    {
+      "ts": "1787012592.423776",
+      "user": "p-talia",
+      "thread_ts": "1787005943.004578",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "@ingrid.s I think Samir has the quote on this one, looping him in 🙏"
+    },
+    {
+      "ts": "1787165719.240883",
       "user": "p-owen",
       "thread_ts": null,
       "events": [
-        "ev-001450"
+        "ev-001564"
       ],
       "brief": "hip adapter plate: need 2 by 2026-09-08",
       "claim": {
@@ -115,8 +191,41 @@
         "9/8"
       ],
       "pressure": "elevated",
-      "length": "medium",
-      "text": "hip adapter plate need 2 by 9/8"
+      "length": "short",
+      "text": "hip adapter plate, need it 9/8"
+    },
+    {
+      "ts": "1787168456.243965",
+      "user": "p-tomas",
+      "thread_ts": "1787165719.240883",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I think that might be too early for the machine shop, not sure"
+    },
+    {
+      "ts": "1787357644.610292",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-003303"
+      ],
+      "brief": "FL-TST-2424: need 1 by 2026-10-21",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-10-21"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2424",
+        "10/21"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "FL-TST-2424 is needed by 10/21. Please keep that on the list."
     }
   ]
 }

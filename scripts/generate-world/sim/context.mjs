@@ -437,6 +437,35 @@ export function runContext(S) {
     const lag = r.weighted(k.ticket.close_lag);
     if (lag !== 'never') { const [lo, hi] = lag.split('-').map(Number); pushStatus(tk, 'Done', atLocalMinutes(cal.addWd(localDate(w.actual_done), r.int(lo, hi ?? lo)), r.int(15 * 60, 18 * 60), r.int(0, 59)), w.owner); }
   }
+  // ---------------- work-item status chatter: nearly every item gets a done/blocked message; items gating a test also get an ETA ----------------
+  {
+    const rw = rng.fork('wi-chatter');
+    const DOW = ['sun', 'mon', 'tues', 'weds', 'thurs', 'fri', 'sat'];
+    for (const w of world.work_items) {
+      const r = rw.fork(w.id);
+      const ch = S.A.get(w.assembly)?.channel || world.channels[0].id;
+      const ref = { id: w.id, mode: 'alias', token: w.name };
+      const have = world.events.filter((x) => x.claim?.subject === w.id && (x.claim.kind === 'done' || x.claim.kind === 'blocked'));
+      const gates = world.tests.some((t) => S.consumers.get(t.id)?.inputs.some((i) => i.id === w.id));
+      const doneDay = localDate(w.actual_done);
+      if (gates && r.chance(0.9) && cal.isWd(doneDay)) {
+        const day = cal.addWd(doneDay, -r.int(1, 4));
+        if (day >= cal.windowStart) {
+          const dow = DOW[new Date(`${doneDay}T12:00:00Z`).getUTCDay()];
+          S.event({ known_at: cal.sampleTime(r, day), source: 'slack', where: { channel: ch, thread_of: null }, by: w.owner, kind: 'crumb', claim: { kind: 'eta', subject: w.id, value: doneDay, true_value: doneDay, effective: doneDay, for_use: null }, refs: [ref], pressure: 'low', about: w.id, brief: `${w.name} done by ${dow}` });
+        }
+      }
+      if (have.length || !r.chance(0.98)) continue;
+      const blockerId = w.blocked_by[0];
+      if (blockerId && r.chance(0.5)) {
+        const day = cal.onOrAfter(localDate(w.actual_start));
+        S.event({ known_at: cal.sampleTime(r, day), source: 'slack', where: { channel: ch, thread_of: null }, by: w.owner, kind: 'crumb', claim: { kind: 'blocked', subject: w.id, value: blockerId, true_value: blockerId, effective: null, for_use: null }, refs: [ref, { id: blockerId, mode: 'alias', token: entName(blockerId) }], pressure: 'low', about: w.id, brief: `${w.name} blocked on ${entName(blockerId)}` });
+      } else if (cal.isWd(doneDay)) {
+        S.event({ known_at: atLocalMinutes(doneDay, r.int(16 * 60 + 5, 18 * 60), r.int(0, 59)), source: 'slack', where: { channel: ch, thread_of: null }, by: w.owner, kind: 'crumb', claim: { kind: 'done', subject: w.id, value: doneDay, true_value: doneDay, effective: doneDay, for_use: null }, refs: [ref], pressure: 'low', about: w.id, brief: `${w.name} done` });
+      }
+    }
+  }
+
   for (const m of world.milestones) {
     const proj = world.jira_projects.find((j) => j.id === 'BLD')?.id || world.jira_projects[0].id;
     mkTicket({ project: proj, type: 'Epic', brief: m.name, reporter: m.owner, assignee: m.owner, labels: ['milestone'], priority: 'High', created: atLocal(cal.onOrAfter(cal.windowStart), '09:20'), due: m.date[0].value });

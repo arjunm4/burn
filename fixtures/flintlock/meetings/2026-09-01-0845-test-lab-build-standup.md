@@ -8,9 +8,9 @@
 
 ## Overview
 
-We need the ring by 10/23. We need FL-TST-2716 by 9/29.
+We need the ring by 10/23. We need FL-TST-2716 by 9/25.
 
 ## Discussion
 
 - Dmitri: We need the ring by 10/23.
-- Dmitri: We need FL-TST-2716 by 9/29.
+- Dmitri: We need FL-TST-2716 by 9/25.
