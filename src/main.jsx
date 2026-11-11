@@ -8,7 +8,6 @@ import Inbox from './Inbox.jsx';
 import TimeValue from './timevalue/Card.jsx';
 import CompanyGraph from './timevalue/CompanyGraph.jsx';
 import NetworkGraph from './timevalue/NetworkGraph.jsx';
-import DemoGuide from './DemoGuide.jsx';
 import './style.css';
 
 // Routes: /orders (part entry + list), /orders/:id (one order), /graph (dependencies), /ramp (the approver's simulated Ramp), /inbox (one person's messages).
@@ -27,4 +26,4 @@ function route() {
   if (p === '/timevalue') return <TimeValue/>; // Owen's Time Value card (precomputed demo cases)
   return <Orders/>;
 }
-createRoot(document.getElementById('root')).render(<>{route()}<DemoGuide/></>);
+createRoot(document.getElementById('root')).render(route());
