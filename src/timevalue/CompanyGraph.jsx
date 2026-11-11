@@ -47,7 +47,7 @@ export default function CompanyGraph() {
     <header style={{display: 'flex', flexWrap: 'wrap', gap: 16, alignItems: 'baseline', padding: '20px 0 8px'}}>
       <h1 style={{margin: 0, fontSize: 22}}>Flintlock's dependency graph</h1>
       <span style={{color: C.muted, fontSize: 13}}>Rebuilt by Burn from Slack, Jira, meetings and the calendar · {graph.nodes.length} items · {graph.edges.length} links · 76% of true links recovered</span>
-      <a href="/timevalue" style={{color: C.accent, fontSize: 13, marginLeft: 'auto'}}>← Back to the decision</a>
+      <a href="/orders" style={{color: C.accent, fontSize: 13, marginLeft: 'auto'}}>← Back to the decision</a>
     </header>
     <div style={{display: 'flex', flexWrap: 'wrap', gap: 6, padding: '6px 0 12px'}}>
       {[...ASSEMBLIES, 'all'].map(a => <button key={a} onClick={() => setAsm(a)} style={{background: asm === a ? C.accent : C.panel, color: asm === a ? '#111' : C.ink, border: `1px solid ${C.line}`, borderRadius: 14, padding: '4px 12px', fontSize: 12, cursor: 'pointer', textTransform: 'capitalize'}}>{a === 'all' ? 'Whole company' : label(a)}</button>)}

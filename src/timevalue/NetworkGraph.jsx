@@ -153,7 +153,7 @@ export default function NetworkGraph() {
     </div>
     <div style={{position: 'absolute', top: 18, right: 22, display: 'flex', gap: 8}}>
       <button onClick={runSlip} style={{background: slip ? RED : 'transparent', color: slip ? '#fff' : INK, border: `1px solid ${slip ? RED : '#3A3833'}`, borderRadius: 18, padding: '8px 16px', fontSize: 13, cursor: 'pointer'}}>{slip ? 'Reset' : 'What if the motor slips?'}</button>
-      <a href="/timevalue" style={{color: ACCENT, border: '1px solid #3A3833', borderRadius: 18, padding: '8px 16px', fontSize: 13, textDecoration: 'none'}}>The decision →</a>
+      <a href="/orders" style={{color: ACCENT, border: '1px solid #3A3833', borderRadius: 18, padding: '8px 16px', fontSize: 13, textDecoration: 'none'}}>The decision →</a>
     </div>
     <nav style={{position: 'absolute', left: 22, top: 150, bottom: 345, width: 300, overflow: 'auto', background: 'rgba(27,26,24,0.88)', border: '1px solid #3A3833', borderRadius: 14, padding: '10px 8px', fontSize: 12.5, backdropFilter: 'blur(6px)'}}>
       <div style={{fontSize: 11, letterSpacing: '.12em', textTransform: 'uppercase', color: MUTED, padding: '0 6px 8px'}}>Hierarchy · milestone → what feeds it</div>
