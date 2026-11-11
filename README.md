@@ -45,7 +45,7 @@ The engineer types the part name and a short note about what it's for, and attac
 
 The **design** is v9 ([`docs/hld.md`](docs/hld.md), [`docs/architecture.md`](docs/architecture.md)). The **whole flow is built and runs end to end** on simulated services: part entry → context from Slack, Jira, meeting notes and the calendar → spec gate → Xometry quote through Burn's headless browser → recommendation → Okay → Ramp purchase request → manager approval → Xometry-locked card → field-by-field verified placement → charge → receipt, memo and project code. Every external service is simulated behind the interface a real one would implement (architecture §2.18): a Ramp mock with Ramp's field names, a simulated Xometry site that the real Playwright provider drives, recorded Slack/Jira/meeting/calendar exports read by the real connectors. The demo world is Owen's Flintlock Robotics data in `fixtures/flintlock/`; demo-only pieces (`demo/`, `scripts/demo.mjs`, `/api/demo`) are kept apart from the product code. The earlier Digi-Key prototype is still in the tree at `/request` and `/approvals`.
 
-**Time Value** (`/timevalue`) is a second, self-contained view of the decision: the same demo order as four precomputed cards, built only from the rendered Flintlock messages through Burn's company dependency graph, with every fact cited. It needs no server state and no model call.
+**The demo opens on the dependency graph** (`/`): the company map Burn rebuilt from messages, with the hip actuator bracket and everyone waiting on it highlighted. The order page then shows the same dependencies as a timeline, with who is blocked, right above Okay.
 
 ### The demo in one command
 
@@ -62,7 +62,7 @@ This starts Burn as Flintlock Robotics at 10:30 AM PT on Nov 10, 2026 (`BURN_NOW
 
 ## Time Value: the decision, graded against the truth
 
-`/timevalue` shows the demo order (4× hip actuator bracket rev C for the DVT spin test) as four cards. A red banner above them states the problem in Flintlock's history: **61 of 133 rush orders bought no time, $31,159 in premiums**.
+The Time Value cards (precomputed in `fixtures/timevalue/demo-cards.json`, page removed for the demo) cover the demo order (4× hip actuator bracket rev C for the DVT spin test) in five scenarios. A red banner above them states the problem in Flintlock's history: **61 of 133 rush orders bought no time, $31,159 in premiums**.
 
 | Tab | What happened | Card |
 | --- | --- | --- |
