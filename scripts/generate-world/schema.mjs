@@ -11,7 +11,7 @@
 // Suffix "!" = required and non-null; "?" = optional (may be absent or null).
 // An object spec nests fields.
 
-export const SCHEMA_VERSION = '1.0';
+export const SCHEMA_VERSION = '1.1';
 
 export const ENUMS = {
   hidden_reason: [
@@ -77,6 +77,16 @@ export const ENUMS = {
   ramp_instrument: ['card', 'bill'],
   ramp_kind: ['charge', 'split', 'refund', 'decline'],
   ramp_state: ['PENDING', 'CLEARED', 'DECLINED'],
+  part_category: [
+    'sensor_bracket', 'motor_mount_plate', 'housing', 'drive_shaft', 'adapter_plate',
+    'test_fixture', 'spacer_bushing', 'arm_link',
+  ],
+  demand_kind: ['test_hardware', 'build_part', 'iteration', 'spare', 'rig_misc'],
+  demand_cause: ['planned', 'revision', 'remake', 'test_failed', 'top_up'],
+  slip_cause: ['input_late', 'overrun', 'test_failed', 'resource_conflict', 'pulled_in', 'scope', 'vendor'],
+  slip_venue: ['slack', 'meeting', 'jira', 'calendar', 'nowhere'],
+  week_kind: ['normal', 'burst', 'quiet'],
+  split: ['lead_in', 'train', 'test'],
 };
 
 const hist = (t) => `hist:${t}`;
@@ -99,17 +109,27 @@ export const SPEC = {
     context_first_pass: { start: 'date!', end: 'date!' },
     holidays: [{ date: 'date!', name: 'str!', observance: 'enum:holiday_observance!', in_window: 'bool!' }],
     business_hours: { days: '[int]!', start: 'str!', end: 'str!', supplier_email_start: 'str!', supplier_email_end: 'str!' },
+    sim_horizon: 'date!',
+    weeks: [{ week_start: 'date!', activity: 'num!', kind: 'enum:week_kind!' }],
+    pressure_windows: [{ id: 'str!', start: 'date!', end: 'date!', assemblies: '[ref:assemblies]!', cause: 'str!' }],
+    budget_windows: [{ id: 'str!', start: 'date!', end: 'date!', cause: 'str!' }],
+    knobs_hash: 'str?',
   },
   teams: {
     id: 'str!', name: 'str!', headcount: 'int!', lead: 'ref:people!', members: '[ref:people]!',
     channels: '[ref:channels]!', jira_project: 'ref:jira_projects?', department: 'str!',
+    expressiveness: 'num?',
   },
   people: {
     id: 'str!', name: 'str!', display_name: 'str!', title: 'str!', team: 'ref:teams!',
     manager: 'ref:people?', email: 'str!', slack_id: 'str!', jira_account_id: 'str!',
     ramp_user_id: 'str!', ramp_card_ids: '[str]!', start_date: 'date!', end_date: 'date?',
     ooo: [{ start: 'date!', end: 'date!', reason: 'str!' }],
-    orders: { weight: 'enum:order_weight!', habit: 'enum:ordering_habit!' },
+    orders: {
+      weight: 'enum:order_weight!', habit: 'enum:ordering_habit!', habit_strength: 'num?',
+      wtp_per_day_usd: 'num?', checks_dependencies: 'num?', queue_delay_days: '[num]?', batch_days: '[int]?',
+    },
+    delegate: 'ref:people?',
     style: {
       case: 'enum:style_case!', punctuation: 'enum:style_punctuation!', typos: 'enum:style_level!',
       emoji: 'enum:style_level!', length: 'enum:style_length!', hedging: 'enum:style_hedging!', quirks: '[str]?',
@@ -124,23 +144,24 @@ export const SPEC = {
   },
   parts: {
     id: 'str!', name: 'str!', part_number: 'str!', cad_file: 'str!', aliases: '[str]!',
-    belongs_to: 'ref:any!', kind: 'enum:part_kind!', material: 'str!', finish: 'str!',
+    belongs_to: 'ref:any!', kind: 'enum:part_kind!', category: 'enum:part_category!', material: 'str!', finish: 'str!',
     tolerance: 'str!', process: 'enum:process!', typical_qty: 'int!', vendor: 'ref:vendors!',
     revisions: hist('str') + '!', price_hint_usd: 'num?',
   },
   test_rigs: {
     id: 'str!', name: 'str!', location: 'str!', owner: 'ref:people!', needs: '[ref:any]!',
-    bookings: [booking],
+    slot_days: '[int]?', bookings: [booking],
   },
   resources: {
     id: 'str!', name: 'str!', kind: 'enum:resource_kind!', location: 'str!', owner: 'ref:people!',
-    needs: '[ref:any]!', bookings: [booking],
+    needs: '[ref:any]!', slot_days: '[int]?', bookings: [booking],
   },
   tests: {
     id: 'str!', name: 'str!', assembly: 'ref:assemblies!', rig: 'ref:test_rigs?', resources: '[ref:resources]!',
     owner: 'ref:people!', milestone: 'ref:milestones?', duration_true_days: 'num!',
     duration_estimate_days: '[num]!', planned_date: hist('date') + '!',
-    actual_start: 'ftime?', actual_end: 'ftime?', result: 'enum:test_result?',
+    earliest_start: 'date?', actual_start: 'ftime?', actual_end: 'ftime?', result: 'enum:test_result?',
+    rerun_of: 'ref:tests?',
   },
   deliverables: {
     id: 'str!', name: 'str!', kind: 'enum:deliverable_kind!', owner: 'ref:people!',
@@ -150,16 +171,28 @@ export const SPEC = {
   work_items: {
     id: 'str!', name: 'str!', owner: 'ref:people!', assembly: 'ref:assemblies!',
     duration_true_days: 'num!', duration_estimate_days: '[num]?', blocked_by: '[ref:any]!',
-    status: hist('enum:work_status') + '!',
+    status: hist('enum:work_status') + '!', milestone: 'ref:milestones?',
+    actual_start: 'ftime?', actual_done: 'ftime?',
   },
   milestones: {
     id: 'str!', name: 'str!', owner: 'ref:people!', kind: 'enum:milestone_kind!', hardness: 'enum:hardness!',
     assemblies: '[ref:assemblies]!', date: hist('date') + '!', value_policy: hist('obj') + '!',
-    burst_weeks: 'int?',
+    burst_weeks: 'int?', actual_date: 'date?',
   },
   edges: {
     id: 'str!', from: 'ref:any!', to: 'ref:any!', kind: 'enum:edge_kind!', group: 'str?',
     reveal: 'enum:reveal!', revealed_by: '[ref:events]!', note: 'str?',
+  },
+  demands: {
+    id: 'str!', kind: 'enum:demand_kind!', cause: 'enum:demand_cause!', part: 'ref:parts!', revision: 'str!',
+    quantity: 'int!', assembly: 'ref:assemblies?', requester: 'ref:people!', feeds: 'ref:any?',
+    need_by_believed: 'date?', trigger_at: 'time!', late_by_choice: 'bool!', hidden_earlier_need: 'date?',
+    order: 'ref:orders?', caused_by: 'ref:any?',
+  },
+  slips: {
+    id: 'str!', entity: 'ref:any!', cause: 'enum:slip_cause!', delta_days: 'num!', from: 'date?', to: 'date?',
+    occurs_at: 'ftime!', discovered_at: 'ftime?', announced_at: 'time?', by: 'ref:people?',
+    venue: 'enum:slip_venue?', event: 'ref:events?',
   },
   storylines: {
     id: 'str!', name: 'str!', team: 'ref:teams!', topic: 'str!', people: '[ref:people]!',
@@ -208,20 +241,22 @@ export const SPEC = {
   },
   orders_xometry: {
     id: 'str!', type: 'enum:order_type!', vendor: 'ref:vendors!', quote_id: 'str!', order_number: 'str!',
-    lines: [{ part: 'ref:parts!', revision: 'str!', quantity: 'int!', unit_price_usd: 'num!' }],
+    lines: [{ part: 'ref:parts!', revision: 'str!', quantity: 'int!', unit_price_usd: 'num!', demand: 'ref:demands?' }],
     tiers: [{
-      tier: 'enum:tier!', subtotal_usd: 'num!', lead_business_days: 'int!',
-      est_ship: 'date!', est_delivery: 'date!',
+      tier: 'enum:tier!', subtotal_usd: 'num!', shipping_usd: 'num!', tax_usd: 'num!', total_usd: 'num!',
+      lead_business_days: 'int!', est_ship: 'date!', est_delivery: 'date!',
     }],
     chosen_tier: 'enum:tier!', quoted_at: 'time!', quote_expires: 'date!',
-    requester: 'ref:people!', placer: 'ref:people!', approver: 'ref:people!', approved_at: 'time!',
+    requester: 'ref:people!', placer: 'ref:people!', approver: 'ref:people!', tier_decided_by: 'ref:people!',
+    need_identified_at: 'time?', requested_at: 'time!', approved_at: 'time!', auto_approved: 'bool!',
     placed_at: 'time!', subtotal_usd: 'num!', shipping_usd: 'num!', tax_usd: 'num!', total_usd: 'num!',
     promised_date: 'date!', status: hist('enum:xometry_status') + '!', delivered_at: 'ftime?',
     carrier: 'str?', tracking: 'str?',
     inspection: { result: 'enum:inspection_result!', at: 'ftime!', by: 'ref:people?' },
-    first_use: { at: 'ftime!', recorded: 'bool!', evidence: 'ref:events?' },
-    feeds_test: 'ref:tests?', feeds_milestone: 'ref:milestones?', need_by_believed: 'date?',
-    link_quality: 'enum:link_quality!', cancelled: 'bool!', remade_from: 'ref:orders?',
+    ready_at: 'ftime?', first_use: { at: 'ftime!', recorded: 'bool!', evidence: 'ref:events?' },
+    feeds_test: 'ref:tests?', feeds_work_item: 'ref:work_items?', feeds_milestone: 'ref:milestones?',
+    need_by_believed: 'date?', link_quality: 'enum:link_quality!', is_revision: 'bool!', cancelled: 'bool!',
+    remade_from: 'ref:orders?',
     ramp_transaction_ids: '[ref:ramp_transactions]!', descriptor: 'str!',
     memo_present: 'bool!', receipt_present: 'bool!', certifications: '[str]?',
   },
@@ -230,7 +265,7 @@ export const SPEC = {
     description: 'str!', amount_usd: 'num!', placed_at: 'time!', by: 'ref:people!',
     payment_method: 'enum:payment_method!', status: 'enum:other_status!', delivered_at: 'ftime?',
     ramp_transaction_ids: '[ref:ramp_transactions]!', deliverable: 'ref:deliverables?', test: 'ref:tests?',
-    recurring: 'bool?',
+    recurring: 'bool?', duplicate_of: 'ref:orders?',
   },
   ramp_transactions: {
     id: 'str!', order: 'ref:orders?', instrument: 'enum:ramp_instrument!', kind: 'enum:ramp_kind!',
@@ -246,10 +281,14 @@ export const SPEC = {
       ticket_field: 'enum:ticket_field?', meeting: 'ref:meetings?', calendar: 'str?',
     },
     by: 'ref:people!', kind: 'enum:event_kind!', topic: 'enum:background_topic?',
-    claim: { kind: 'enum:claim_kind!', subject: 'ref:any!', value: 'any!', effective: 'any?', for_use: 'ref:any?' },
-    refs: [{ id: 'ref:any!', mode: 'enum:ref_mode!' }],
+    claim: {
+      kind: 'enum:claim_kind!', subject: 'ref:any!', value: 'any!', true_value: 'any?', effective: 'any?',
+      for_use: 'ref:any?',
+    },
+    refs: [{ id: 'ref:any!', mode: 'enum:ref_mode!', token: 'str?' }],
     truth: 'enum:truth_status!', corrects: 'ref:events?', contradicts: '[ref:events]?',
-    pressure: 'enum:pressure?', storyline: 'ref:storylines?', orders: '[ref:orders]!', brief: 'str!',
+    pressure: 'enum:pressure?', storyline: 'ref:storylines?', orders: '[ref:orders]!',
+    orders_after: '[ref:orders]!', asks_expedite: 'bool?', reports: 'ref:any?', brief: 'str!',
   },
   demo: {
     part: 'ref:parts!', revision: 'str!', quantity: 'int!', requester: 'ref:people!', placed_at: 'time!',
@@ -275,20 +314,27 @@ export const SPEC = {
 
 export const ANSWERS_SPEC = {
   orders: {
-    order: 'ref:orders!', hidden_reason: 'enum:hidden_reason!', true_need_date: 'date?',
-    true_links: '[ref:edges]!', true_pressure: 'obj!',
-    tier_outcomes: [{ tier: 'enum:tier!', ready_date: 'date!', gated_date: 'date?', days_gained: 'num!' }],
-    expedite_helped: 'bool?', crumbs: '[ref:events]!', never_revealed: '[str]!',
+    order: 'ref:orders!', hidden_reason: 'enum:hidden_reason!', rule: 'int!', true_need_date: 'date?',
+    belief: { need_by: 'date?', inputs: 'obj!', gain_days: 'obj!', stale: 'bool!', ignored_siblings: 'bool!' },
+    true_links: '[ref:edges]!', links_revealed_before_t: '[ref:edges]!',
+    true_pressure: 'obj!', expressed_pressure: 'obj!',
+    tier_outcomes: [{
+      tier: 'enum:tier!', ready_date: 'date!', test_start: 'date?', gated_date: 'date?', days_gained: 'num!',
+      true_slack_days: 'num?',
+    }],
+    expedite_helped: 'bool?', break_even_usd_per_day: 'num?', dominating_input: 'ref:any?',
+    crumbs: '[ref:events]!', crumbs_after: '[ref:events]!', never_revealed: '[str]!', split: 'enum:split!',
   },
   assembly_weeks: {
-    assembly: 'ref:assemblies!', week_start: 'date!', true_progress: 'num!', true_pressure: 'enum:pressure!',
+    assembly: 'ref:assemblies!', week_start: 'date!', milestone: 'ref:milestones?', true_progress: 'num!',
+    true_rank: 'int?', pressure_value: 'num!', true_pressure: 'enum:pressure!',
   },
 };
 
 // Top-level arrays in world.json, in file order. Orders are split by type for validation only.
 export const COLLECTIONS = [
   'teams', 'people', 'assemblies', 'parts', 'test_rigs', 'resources', 'tests', 'deliverables',
-  'work_items', 'milestones', 'edges', 'storylines', 'channels', 'jira_projects', 'meeting_series',
+  'work_items', 'milestones', 'edges', 'demands', 'slips', 'storylines', 'channels', 'jira_projects', 'meeting_series',
   'meetings', 'tickets', 'vendors', 'orders', 'ramp_transactions', 'events',
 ];
 

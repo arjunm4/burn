@@ -14,7 +14,7 @@ Owner: Owen, with Fable agents. Deadline: 2026-11-10, 11:59pm PT. Spec: [`../arc
 - **The context is generated from the truth and is deliberately imperfect:** stale facts, wrong dates, contradictions between sources, things nobody wrote down. The truth itself is complete and consistent.
 - **Models (Owen's decisions):** Fable plans and verifies; Opus builds. Fable writes the simulation spec, reviews the schema before anything is built on it, builds the simulator, and independently verifies the first run. Opus does the schema, seed, generator code, checks and the text tied to orders. Sonnet writes background text. Effort is medium unless a phase says otherwise.
 - **Read the style research first:** [`../research/data-realism.md`](../research/data-realism.md) (formats, Flintlock volumes, style numbers, fake-looking patterns) and, for orders, [`../research/startup-purchasing.md`](../research/startup-purchasing.md). Every agent's prompt points at the sections for its source, and its output must follow them.
-- **The app never reads `fixtures/world/`.** Burn sees only the rendered sources (`fixtures/slack/`, `fixtures/jira/`, …). The world model and answer key are for the generator and for grading.
+- **The app never reads `fixtures/world/`.** Burn sees only the rendered sources under `fixtures/flintlock/` (`slack/`, `jira/`, `meetings/`, `calendar.ics`, `xometry/`, `ramp/`). The prototype's own `fixtures/slack/` and `fixtures/calendar.ics` stay untouched until the app switches over, so its existing tests keep passing. The world model and answer key are for the generator and for grading.
 - **One file per agent.** Agents working in parallel each own distinct files and run no git commands.
 
 ## Robustness
@@ -172,4 +172,4 @@ The text fill stops at 10:00pm, whatever it has reached. The checks report the w
 
 - **Arjun (mock services):** the schema and source file formats after phase 0; the small world after phase 3; the final fixtures at 11:00pm.
 - **Cost of delay (Owen and Arjun):** needs milestones with owners and $/day policies, tests, the dependency graph and the Xometry tiers. The seed has them after phase 1a; the full world after phase 3.
-- **Training (unassigned):** reads the rendered sources, `fixtures/ramp/` and `fixtures/xometry/`; graded against `answers.json`.
+- **Training (unassigned):** reads the rendered sources under `fixtures/flintlock/`; graded against `answers.json`.

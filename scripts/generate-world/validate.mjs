@@ -151,6 +151,64 @@ export function validateWorld(world, answers) {
     if (o.vendor !== 'v-xometry') err(`orders(${o.id}).vendor`, 'Xometry orders use v-xometry');
     const sum = +(o.subtotal_usd + o.shipping_usd + o.tax_usd).toFixed(2);
     if (Math.abs(sum - o.total_usd) > 0.011) err(`orders(${o.id}).total_usd`, `${o.total_usd} != subtotal+shipping+tax ${sum}`);
+    for (const t of o.tiers || []) {
+      const ts = +(t.subtotal_usd + t.shipping_usd + t.tax_usd).toFixed(2);
+      if (Math.abs(ts - t.total_usd) > 0.011) err(`orders(${o.id}).tiers(${t.tier}).total_usd`, `${t.total_usd} != subtotal+shipping+tax ${ts}`);
+      if (t.tier === o.chosen_tier) {
+        if (Math.abs(t.total_usd - o.total_usd) > 0.011) err(`orders(${o.id}).total_usd`, 'differs from the chosen tier total');
+        if (t.est_delivery !== o.promised_date) err(`orders(${o.id}).promised_date`, 'differs from the chosen tier est_delivery');
+      }
+    }
+    // economy < standard < expedite on price; the reverse on lead time
+    const rank = ['economy', 'standard', 'expedite'];
+    const ts3 = rank.map((r) => (o.tiers || []).find((t) => t.tier === r)).filter(Boolean);
+    for (let i = 1; i < ts3.length; i++) {
+      if (!(ts3[i - 1].subtotal_usd < ts3[i].subtotal_usd)) err(`orders(${o.id}).tiers`, `${ts3[i].tier} must cost more than ${ts3[i - 1].tier}`);
+      if (!(ts3[i - 1].lead_business_days > ts3[i].lead_business_days)) err(`orders(${o.id}).tiers`, `${ts3[i].tier} must be faster than ${ts3[i - 1].tier}`);
+    }
+    const seq = ['quoted_at', 'requested_at', 'approved_at', 'placed_at'].map((k) => [k, Date.parse(o[k])]);
+    for (let i = 1; i < seq.length; i++) if (seq[i][1] < seq[i - 1][1]) err(`orders(${o.id}).${seq[i][0]}`, `earlier than ${seq[i - 1][0]}`);
+    for (const l of o.lines || []) {
+      if (!l.demand) continue;
+      const d = (world.demands || []).find((x) => x.id === l.demand);
+      if (d && d.order !== o.id) err(`orders(${o.id}).lines`, `demand ${l.demand} points at order ${d.order}`);
+    }
+  }
+  const placedAt = new Map(xo.map((o) => [o.id, Date.parse(o.placed_at)]));
+  const partsOf = new Map(xo.map((o) => [o.id, new Set((o.lines || []).map((l) => l.part))]));
+  const preT = new Map(xo.map((o) => [o.id, []]));
+  for (const e of world.events || []) {
+    const t = Date.parse(e.known_at);
+    for (const id of e.orders || []) {
+      if (!placedAt.has(id)) continue;
+      if (!(t < placedAt.get(id))) err(`events(${e.id}).orders`, `${id} was placed before this event; list it in orders_after`);
+      preT.get(id).push(e);
+    }
+    for (const id of e.orders_after || []) {
+      if (placedAt.has(id) && t < placedAt.get(id)) err(`events(${e.id}).orders_after`, `${id} was placed after this event; list it in orders`);
+    }
+    if (e.truth !== 'true' && e.claim && e.claim.true_value === undefined) err(`events(${e.id}).claim.true_value`, 'required when truth is stale or wrong');
+    if (e.corrects) {
+      const c = (world.events || []).find((x) => x.id === e.corrects);
+      if (c && Date.parse(c.known_at) > t) err(`events(${e.id}).corrects`, 'a correction must be later than its target');
+    }
+  }
+  for (const o of xo) {
+    const crumbs = preT.get(o.id).filter((e) => e.kind === 'crumb');
+    const byId = crumbs.some((e) => (e.refs || []).some((r) => (r.id === o.id || partsOf.get(o.id).has(r.id)) && (r.mode === 'id' || r.mode === 'part_number')));
+    if (o.link_quality === 'clean_id' && !byId) err(`orders(${o.id}).link_quality`, 'clean_id needs a crumb before T that refers to the part or order by id or part number');
+    if (o.link_quality === 'alias_only' && (!crumbs.length || byId)) err(`orders(${o.id}).link_quality`, 'alias_only needs crumbs before T, none by id or part number');
+    if (o.link_quality === 'never_discussed' && crumbs.length) err(`orders(${o.id}).link_quality`, 'never_discussed must have no crumbs before T');
+  }
+  for (const e of world.edges || []) {
+    const n = (e.revealed_by || []).length;
+    if (e.reveal === 'never' && n) err(`edges(${e.id}).revealed_by`, 'must be empty when reveal is never');
+    if (e.reveal !== 'never' && !n) err(`edges(${e.id}).revealed_by`, `reveal ${e.reveal} needs at least one event`);
+  }
+  for (const s of world.slips || []) {
+    const [a, b, c] = [s.occurs_at, s.discovered_at, s.announced_at].map((x) => (x ? Date.parse(x) : null));
+    if (b != null && b < a) err(`slips(${s.id}).discovered_at`, 'earlier than occurs_at');
+    if (c != null && c < (b ?? a)) err(`slips(${s.id}).announced_at`, 'earlier than discovery');
   }
   for (const e of world.events || []) {
     if (e.kind === 'crumb' && !e.claim) err(`events(${e.id}).claim`, 'crumbs need a typed claim');
@@ -182,6 +240,21 @@ export function validateWorld(world, answers) {
       if (o && o.type !== 'xometry_cnc') err('answers.orders', `${a.order} is not a Xometry order`);
       for (const b of Object.keys(a.true_pressure || {})) if (!ENUMS.time_band.includes(b)) err(`answers.orders(${a.order}).true_pressure`, `bad band ${b}`);
       for (const v of Object.values(a.true_pressure || {})) if (!ENUMS.pressure.includes(v)) err(`answers.orders(${a.order}).true_pressure`, `bad level ${v}`);
+      for (const [b, v] of Object.entries(a.expressed_pressure || {})) if (!ENUMS.time_band.includes(b) || !ENUMS.pressure.includes(v)) err(`answers.orders(${a.order}).expressed_pressure`, `bad entry ${b}: ${v}`);
+      if (!a.belief) err(`answers.orders(${a.order}).belief`, 'required');
+      if (o && o.type === 'xometry_cnc') {
+        const got = new Set((a.tier_outcomes || []).map((t) => t.tier));
+        for (const t of o.tiers || []) if (!got.has(t.tier)) err(`answers.orders(${a.order}).tier_outcomes`, `missing quoted tier ${t.tier}`);
+        for (const t of a.tier_outcomes || []) if (t.days_gained < 0) err(`answers.orders(${a.order}).tier_outcomes`, 'days_gained must be >= 0');
+        const T = Date.parse(o.placed_at);
+        const when = (id) => Date.parse((world.events || []).find((e) => e.id === id)?.known_at);
+        for (const id of a.crumbs || []) if (when(id) >= T) err(`answers.orders(${a.order}).crumbs`, `${id} is not before T; use crumbs_after`);
+        for (const id of a.crumbs_after || []) if (when(id) < T) err(`answers.orders(${a.order}).crumbs_after`, `${id} is before T`);
+        const exp = o.chosen_tier === 'expedite';
+        if (a.hidden_reason === 'no_gain_other_input_later' && (!exp || a.expedite_helped !== false)) err(`answers.orders(${a.order}).hidden_reason`, 'no_gain needs expedite chosen and expedite_helped false');
+        if (['genuine_gain', 'test_slot_cliff'].includes(a.hidden_reason) && exp && a.expedite_helped !== true) err(`answers.orders(${a.order}).hidden_reason`, `${a.hidden_reason} with expedite needs expedite_helped true`);
+        if (a.hidden_reason === 'budget_squeeze' && exp) err(`answers.orders(${a.order}).hidden_reason`, 'budget_squeeze cannot choose expedite');
+      }
     }
     for (const o of xo) if (!ans.has(o.id)) err('answers.orders', `no answers entry for Xometry order ${o.id}`);
     counts.answers_orders = ans.size;
