@@ -174,6 +174,7 @@ function QuestionPanel({order, act, busy}) {
   </form>;
 }
 
+const GRID = 'minmax(0,1fr) 90px 100px 110px 96px';
 function Decision({order, act, busy}) {
   const d = order.decision, q = order.quote, ctx = order.context || {};
   const rec = d.recommended?.tier, tent = d.tentative?.tier;
@@ -193,17 +194,22 @@ function Decision({order, act, busy}) {
       <div style={{fontSize: 16, lineHeight: 1.5, marginTop: 8, color: C.ink}}>{d.text}</div>
     </div>
     <div style={{border: `1px solid ${C.line}`, borderRadius: 12, overflow: 'hidden', background: '#fff'}}>
+      <div style={{display: 'grid', gridTemplateColumns: GRID, gap: 12, padding: '8px 16px', borderBottom: `1px solid ${C.line}`}}>
+        {['Lead time', 'Price', 'Part arrives', `${milestone} done`, ''].map((h, i) => <Eyebrow key={i} style={{letterSpacing: '.08em'}}>{h}</Eyebrow>)}
+      </div>
       {d.options.map((o, i) => {
         const isRec = o.tier === rec, isTent = o.tier === tent, chosen = order.frozen?.tier === o.tier, dominated = d.dominated?.includes(o.tier);
         const sub = !o.admissible ? o.why : dominated ? `+${money(o.extraCents)} buys no time${o.gatedBy ? `: ${o.gatedBy} gates the test` : ''}` : o.extraCents > 0 && o.deltaDays > 0 ? `+${money(o.extraCents)} for ${o.deltaDays} ${d.workingDays ? 'working ' : ''}day${o.deltaDays === 1 ? '' : 's'} sooner · break-even ${money(o.breakEvenCentsPerDay)}/day` : o.extraCents === 0 ? 'cheapest' : '';
-        return <div key={o.tier} style={{display: 'grid', gridTemplateColumns: 'minmax(0,1.6fr) 1fr 1.2fr auto', gap: 12, padding: '14px 16px', alignItems: 'center', borderTop: i ? `1px solid ${C.hair}` : 0, background: isRec || chosen ? C.paper : '#fff', opacity: o.admissible ? 1 : .5}}>
+        const num = {fontSize: 15, fontVariantNumeric: 'tabular-nums'};
+        return <div key={o.tier} style={{display: 'grid', gridTemplateColumns: GRID, gap: 12, padding: '14px 16px', alignItems: 'center', borderTop: i ? `1px solid ${C.hair}` : 0, background: isRec || chosen ? C.paper : '#fff', opacity: o.admissible ? 1 : .5}}>
           <span style={{minWidth: 0}}>
             <div style={{fontSize: 15, display: 'flex', gap: 8, alignItems: 'baseline'}}>{o.tier}{chosen ? <Chip tone="ink">okayed</Chip> : isRec ? <Chip tone="ink">recommended</Chip> : isTent ? <Chip>leaning</Chip> : null}</div>
-            {sub && <div style={{color: C.muted, fontSize: 12, marginTop: 2}}>{sub}</div>}
+            {sub && <div style={{color: C.muted, fontSize: 12, marginTop: 2, lineHeight: 1.35}}>{sub}</div>}
           </span>
-          <span style={{fontSize: 15, fontVariantNumeric: 'tabular-nums'}}>{money(priceOf(o.tier))}</span>
-          <span style={{fontSize: 13, color: o.finishOn ? C.ink : C.muted}}>{milestone} done <strong style={{fontWeight: 500}}>{o.finishOn ? day(o.finishOn) : '?'}</strong></span>
-          <span>{canOkay && o.admissible && <Button primary={isRec} disabled={busy} onClick={() => act(`/orders/${order.id}/okay`, {tier: o.tier})}>{isRec ? 'Okay' : 'Choose'}</Button>}</span>
+          <span style={num}>{money(priceOf(o.tier))}</span>
+          <span style={num}>{day(o.readyOn)}</span>
+          <span style={{...num, color: o.finishOn ? C.ink : C.muted}}>{o.finishOn ? day(o.finishOn) : '?'}</span>
+          <span style={{justifySelf: 'end'}}>{canOkay && o.admissible && <Button primary={isRec} disabled={busy} style={{width: 88}} onClick={() => act(`/orders/${order.id}/okay`, {tier: o.tier})}>{isRec ? 'Okay' : 'Choose'}</Button>}</span>
         </div>;
       })}
     </div>
