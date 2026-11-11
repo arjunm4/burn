@@ -3,23 +3,15 @@ import React from 'react';
 // Demo-only: a floating checklist that highlights what to click next and advances when you click it.
 // Progress lives in localStorage so it survives page changes. Reset with the ↺ button.
 const STEPS = [
-  {page: /^\/network$/, sel: '[data-demo="Hip actuator bracket"]', text: 'Hip actuator bracket', say: 'This is the part Owen needs: the hip actuator bracket. Burn rebuilt the whole company from its messages; here is where the bracket sits.'},
-  {page: /^\/network$/, sel: '[data-demo="Hip actuator DVT spin test"]', text: 'Hip actuator DVT spin test', say: 'The bracket feeds the DVT spin test. Each link comes from a real message (right panel).'},
-  {page: /^\/network$/, sel: '[data-demo="DVT hip frameless motor"]', text: 'DVT hip frameless motor', say: 'The test also waits on the motor: Arjun says Fri 11/20. That is what decides whether rushing the bracket helps.'},
-  {page: /^\/network$/, text: 'What if the motor slips?', say: 'If the motor slips, everything downstream moves with it.'},
-  {page: /^\/network$/, text: 'The decision →', say: 'Now the decision for the bracket order.'},
-  {page: /^\/timevalue$/, text: '10:45 · motor slips', say: '10:30: Expedite the bracket: 2 days sooner, worth it at $600/day. Now the motor slips…'},
-  {page: /^\/timevalue$/, text: '11:00 · motor unsure', say: 'Rushing the bracket buys nothing: the motor sets the start. Save $900. Now the date is unsure…'},
-  {page: /^\/timevalue$/, text: '11:15 · sources disagree', say: 'Burn does not guess: it asks Arjun one question. Now two people disagree…'},
-  {page: /^\/timevalue$/, text: '11:45 · test pulled in to 11/18', say: 'Then the motor arrives and the test is pulled in to a hard 11/18 investor date…'},
-  {page: /^\/timevalue$/, go: '/orders', say: 'It asks instead of picking. Now place the real bracket order.'},
-  {page: /^\/(orders)?$/, text: 'Enter it as', say: 'Owen enters 4× hip actuator bracket rev C with the CAD file.'},
-  {page: /^\/orders\/[\w-]+$/, text: 'Okay', exact: true, say: 'Burn read Slack, Jira and meetings, got the Xometry quote and recommends Expedite. Click Okay.'},
+  {page: /^\/network$/, sel: '[data-demo="Hip actuator bracket"]', text: 'Hip actuator bracket', say: 'Burn rebuilt Flintlock from its messages. Owen needs this bracket.'},
+  {page: /^\/network$/, go: '/orders', say: 'It feeds the spin test, which also waits on the motor. Now order it.'},
+  {page: /^\/(orders)?$/, text: 'Enter it as', say: 'Owen enters the bracket and attaches the CAD.'},
+  {page: /^\/orders\/[\w-]+$/, text: 'Okay', exact: true, say: 'Burn shows what the bracket waits on and picks the tier. Click Okay.'},
   {page: /^\/orders\/[\w-]+$/, go: '/ramp', say: 'The request goes to the manager in Ramp.'},
-  {page: /^\/ramp$/, text: 'Approve', exact: true, say: 'Ingrid sees the justification and approves.'},
-  {page: /^\/ramp$/, go: 'back', say: 'Back to the order: Burn places it with a card locked to Xometry for exactly $3,900.'},
+  {page: /^\/ramp$/, text: 'Approve', exact: true, say: 'Ingrid approves.'},
+  {page: /^\/ramp$/, go: 'back', say: 'Burn places the order with a card locked to Xometry.'},
 ];
-const KEY = 'burn-demo-step-v2';
+const KEY = 'burn-demo-step-v3';
 const CSS = `
 @keyframes demo-pulse { 0% { box-shadow: 0 0 0 0 rgba(228,242,34,.9); } 70% { box-shadow: 0 0 0 14px rgba(228,242,34,0); } 100% { box-shadow: 0 0 0 0 rgba(228,242,34,0); } }
 .demo-target { outline: 3px solid #E4F222 !important; outline-offset: 3px; border-radius: 8px; animation: demo-pulse 1.4s infinite; position: relative; z-index: 2; }
@@ -39,6 +31,7 @@ function findTarget(step) {
 export default function DemoGuide() {
   const [i, setI] = React.useState(read);
   const [open, setOpen] = React.useState(true);
+  const [list, setList] = React.useState(false);
   const step = STEPS[i];
   const go = n => { const v = Math.max(0, Math.min(STEPS.length, n)); write(v); setI(v); };
 
@@ -75,9 +68,10 @@ export default function DemoGuide() {
         {step.go ? <button onClick={() => goTo(step)} style={{...btn, background: '#E4F222', color: '#111', padding: '6px 12px', fontWeight: 600}}>{step.go === 'back' ? '← Back to the order' : `Open ${step.go}`}</button>
           : <div><b>Click: </b><span style={{color: '#E4F222'}}>{step.text}</span>{!onPage && <span style={{color: '#8E8A82'}}> (on another page)</span>}</div>}
       </div> : <div style={{margin: '10px 0', color: '#E4F222'}}>Done. ↺ to run it again.</div>}
-      <ol style={{margin: 0, paddingLeft: 18, maxHeight: 180, overflow: 'auto', color: '#8E8A82', fontSize: 12, lineHeight: 1.6}}>
+      {list && <ol style={{margin: 0, paddingLeft: 18, maxHeight: 180, overflow: 'auto', color: '#8E8A82', fontSize: 12, lineHeight: 1.6}}>
         {STEPS.map((s, n) => <li key={n} style={{color: n === i ? '#F4F2F0' : n < i ? '#5E5B55' : '#8E8A82', textDecoration: n < i ? 'line-through' : 'none', cursor: 'pointer'}} onClick={() => go(n)}>{s.text ? `Click "${s.text}"` : s.go === 'back' ? 'Back to the order' : `Open ${s.go}`}</li>)}
-      </ol>
+      </ol>}
+      <button onClick={() => setList(!list)} style={{...btn, border: 'none', color: '#8E8A82', padding: 0}}>{list ? 'Hide steps' : 'All steps'}</button>
     </>}
   </div>;
 }
