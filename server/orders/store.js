@@ -15,6 +15,14 @@ const editable = ['entry', 'spec', 'quote', 'decision', 'decisionRevision', 'con
 const clone = value => structuredClone(value);
 const fail = (message, status = 409) => { throw new AppError(message, status); };
 const nonempty = value => typeof value === 'string' && value.trim().length > 0;
+// Audit records retain provenance and transitions, not file bodies or vault handles.
+function auditDetail(value) {
+  if (Array.isArray(value)) return value.map(auditDetail);
+  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value)
+    .filter(([key]) => !['credentialRef', 'bytes'].includes(key))
+    .map(([key, child]) => [key, auditDetail(child)]));
+  return value;
+}
 
 export function createOrderStore({filename = 'data/orders.sqlite'} = {}) {
   if (filename !== ':memory:') mkdirSync(path.dirname(filename), {recursive: true});
@@ -41,7 +49,7 @@ export function createOrderStore({filename = 'data/orders.sqlite'} = {}) {
   function save(order, event, detail = {}) {
     order.updatedAt = new Date().toISOString();
     db.prepare('INSERT INTO orders VALUES(?,?,?) ON CONFLICT(id) DO UPDATE SET state=excluded.state,body=excluded.body').run(order.id, order.state, JSON.stringify(order));
-    db.prepare('INSERT INTO order_events(order_id,body) VALUES(?,?)').run(order.id, JSON.stringify({at: order.updatedAt, event, revision: order.revision, detail}));
+    db.prepare('INSERT INTO order_events(order_id,body) VALUES(?,?)').run(order.id, JSON.stringify({at: order.updatedAt, event, revision: order.revision, detail: auditDetail(detail)}));
     return clone(order);
   }
   function checked(id, revision) {
