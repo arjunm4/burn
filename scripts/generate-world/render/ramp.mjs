@@ -10,6 +10,34 @@ const SK_CATEGORY = {
   tools_test_equipment: 'Tools and Equipment', raw_stock: 'Industrial Supplies', shipping: 'Shipping', saas: 'Software',
 };
 
+// Merchant category codes (ISO 18245) by vendor category, with a few vendor-specific overrides.
+// Codes are plausible, not verified against real card statements; consistent per vendor.
+const MCC = {
+  cnc_xometry: ['5085', 'Industrial Supplies (Not Elsewhere Classified)'],
+  fasteners: ['5072', 'Hardware Equipment and Supplies'],
+  amazon_consumables: ['5999', 'Miscellaneous and Specialty Retail Stores'],
+  electronics: ['5065', 'Electrical Parts and Equipment'],
+  pcb: ['5065', 'Electrical Parts and Equipment'],
+  other_custom_fab: ['5085', 'Industrial Supplies (Not Elsewhere Classified)'],
+  motors_gearing_bearings: ['5085', 'Industrial Supplies (Not Elsewhere Classified)'],
+  sensors: ['5065', 'Electrical Parts and Equipment'],
+  batteries_power: ['5065', 'Electrical Parts and Equipment'],
+  tools_test_equipment: ['5085', 'Industrial Supplies (Not Elsewhere Classified)'],
+  raw_stock: ['5051', 'Metal Service Centers and Offices'],
+  shipping: ['4215', 'Courier Services (Air and Ground) and Freight Forwarders'],
+  saas: ['5734', 'Computer Software Stores'],
+};
+const MCC_BY_NAME = [
+  [/home depot/i, ['5200', 'Home Supply Warehouse Stores']],
+  [/harbor freight/i, ['5251', 'Hardware Stores']],
+  [/uline/i, ['5111', 'Stationery, Office Supplies, Printing and Writing Paper']],
+  [/amazon web services|aws|google cloud|github|slack|atlassian|jira/i, ['5734', 'Computer Software Stores']],
+];
+export function mccFor(vendor, merchantName) {
+  for (const [re, v] of MCC_BY_NAME) if (re.test(merchantName || vendor?.name || '')) return v;
+  return MCC[vendor?.category] || ['5999', 'Miscellaneous and Specialty Retail Stores'];
+}
+
 function xometryMemo(o, parts, label) {
   const p = parts.get(o.lines[0].part);
   const qty = o.lines.reduce((s, l) => s + l.quantity, 0);
@@ -47,7 +75,8 @@ export function plan(world, ctx0 = {}) {
   const records = [];
   for (const t of txs) {
     const o = t.order ? orders.get(t.order) : null;
-    const v = o ? vendors.get(o.vendor) : null;
+    const v = (o ? vendors.get(o.vendor) : null) || (world.vendors || []).find((x) => x.name === t.merchant_name) || null;
+    const [mccCode, mccDesc] = t.mcc ? [t.mcc, null] : mccFor(v, t.merchant_name);
     const holder = people.get(t.card_holder);
     const [first, ...rest] = String(holder?.name || '').split(' ');
     const settled = t.settlement_date && t.settlement_date <= today;
@@ -70,7 +99,8 @@ export function plan(world, ctx0 = {}) {
       merchant_name: t.merchant_name,
       merchant_descriptor: t.merchant_descriptor,
       merchant_id: uuidFrom(`merchant:${t.merchant_name}`),
-      merchant_category_code: t.mcc ?? null,
+      merchant_category_code: mccCode,
+      merchant_category_code_description: mccDesc ?? mccFor(v, t.merchant_name)[1],
       sk_category_name: category ? SK_CATEGORY[category] || null : null,
       memo,
       receipts: t.receipt_present ? [uuidFrom(`receipt:${t.id}`)] : [],
