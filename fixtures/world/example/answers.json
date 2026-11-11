@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "seed": 1,
+  "orders": [
+    {
+      "order": "ord-x-00001",
+      "hidden_reason": "genuine_gain",
+      "true_need_date": "2026-09-15",
+      "true_links": ["e-00001", "e-00004"],
+      "true_pressure": { "0-1": "elevated", "1-3": "elevated", "3-7": "elevated", "7-14": "low", "14-30": "low" },
+      "tier_outcomes": [
+        { "tier": "economy", "ready_date": "2026-09-28", "gated_date": "2026-09-30", "days_gained": 0 },
+        { "tier": "standard", "ready_date": "2026-09-18", "gated_date": "2026-09-22", "days_gained": 6 },
+        { "tier": "expedite", "ready_date": "2026-09-14", "gated_date": "2026-09-17", "days_gained": 9 }
+      ],
+      "expedite_helped": true,
+      "crumbs": ["ev-000001", "ev-000002", "ev-000003", "ev-000004"],
+      "never_revealed": ["Owen's tentative gantry booking (bk-00003) made the week of 9/14 the only open slot before 9/21"]
+    },
+    {
+      "order": "ord-x-00002",
+      "hidden_reason": "no_gain_other_input_later",
+      "true_need_date": "2026-11-20",
+      "true_links": ["e-00007", "e-00008"],
+      "true_pressure": { "0-1": "elevated", "1-3": "elevated", "3-7": "low", "7-14": "low", "14-30": "low" },
+      "tier_outcomes": [
+        { "tier": "standard", "ready_date": "2026-11-02", "gated_date": null, "days_gained": 0 },
+        { "tier": "expedite", "ready_date": "2026-10-27", "gated_date": null, "days_gained": 0 }
+      ],
+      "expedite_helped": false,
+      "crumbs": ["ev-000008", "ev-000009"],
+      "never_revealed": ["The requester was not in #supply-chain, where the motor slip to 11/13 was posted before he ordered"]
+    }
+  ],
+  "assembly_weeks": [
+    { "assembly": "a-leg", "week_start": "2026-09-07", "true_progress": 0.62, "true_pressure": "high" },
+    { "assembly": "a-leg", "week_start": "2026-09-14", "true_progress": 0.74, "true_pressure": "low" },
+    { "assembly": "a-hip-actuator", "week_start": "2026-10-19", "true_progress": 0.55, "true_pressure": "elevated" },
+    { "assembly": "a-hip-actuator", "week_start": "2026-10-26", "true_progress": 0.58, "true_pressure": "elevated" }
+  ]
+}

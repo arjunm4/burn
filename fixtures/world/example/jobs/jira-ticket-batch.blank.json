@@ -1,0 +1,104 @@
+{
+  "job_id": "jira-TEST-2026-08-31",
+  "source": "jira",
+  "status": "blank",
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "TEST",
+    "name": "Test, rigs and fixtures"
+  },
+  "week": {
+    "start": "2026-08-31",
+    "end": "2026-09-06"
+  },
+  "people": [
+    {
+      "id": "p-mateo",
+      "name": "Mateo Rinaldi",
+      "display_name": "mateo",
+      "slack_id": "U07FLK0MTEO",
+      "title": "Test Engineer, Fixtures",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low"
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)"
+  ],
+  "tickets": [
+    {
+      "key": "TEST-141",
+      "type": "Task",
+      "status": "To Do",
+      "reporter": "p-mateo",
+      "assignee": "p-mateo",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-09-02T09:47:12-07:00",
+      "due_date": "2026-09-14",
+      "events": [
+        "ev-000002"
+      ],
+      "brief": "Order 2x lift hook FL-TST-2017 for the drop gantry; Xometry; due 9/14.",
+      "must_mention": [
+        "FL-TST-2017"
+      ],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "TEST-141-c1",
+          "by": "p-owen",
+          "at": "2026-09-03T15:40:00-07:00",
+          "events": [
+            "ev-000003"
+          ],
+          "brief": "Owen sets due to 9/11: test moved to Monday (wrong).",
+          "body": null
+        },
+        {
+          "id": "TEST-141-c2",
+          "by": "p-mateo",
+          "at": "2026-09-04T09:20:00-07:00",
+          "events": [
+            "ev-000004"
+          ],
+          "brief": "Mateo puts due back to 9/14: test still Wed.",
+          "body": null
+        }
+      ]
+    }
+  ]
+}
