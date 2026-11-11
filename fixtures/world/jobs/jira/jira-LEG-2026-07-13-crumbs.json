@@ -1,0 +1,320 @@
+{
+  "job_id": "jira-LEG-2026-07-13-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 35,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "LEG",
+    "name": "Legs and ankle"
+  },
+  "week": {
+    "start": "2026-07-13",
+    "end": "2026-07-19"
+  },
+  "people": [
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "LEG-205",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-diego",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-07-13T17:29:53-07:00",
+      "due_date": "2026-08-06",
+      "events": [
+        "ev-001525"
+      ],
+      "brief": "Order 21x Gait gantry pelvis adapter, 9x Gait gantry harness hook, 1x Fall-catch clevis / FL-TST-2338: need 21 by 2026-08-05 for Leg first steps on the gait gantry",
+      "must_mention": [
+        "FL-TST-2338",
+        "Leg first steps on the gait gantry",
+        "FL-TST-2359",
+        "FL-TST-2375",
+        "8/5"
+      ],
+      "description_length": "short",
+      "summary": "PO: 21x Gait gantry pelvis adapter, 9x Gait gantry harness hook, 1x Fall-catch clevis",
+      "description": "Need 21 of FL-TST-2338 by 8/5 for Leg first steps on the gait gantry (also FL-TST-2359, FL-TST-2375)",
+      "comments": [
+        {
+          "id": "LEG-205-c1",
+          "by": "p-diego",
+          "at": "2026-07-14T13:53:18-07:00",
+          "events": [
+            "ev-003713"
+          ],
+          "brief": "FL-TST-2338: need 21 by 2026-08-06",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 21,
+              "by": "2026-08-06"
+            }
+          },
+          "must_mention": [
+            "FL-TST-2338",
+            "8/6"
+          ],
+          "body": "Can we get 21 FL-TST-2338 by 8/6? 🙂"
+        },
+        {
+          "id": "LEG-205-c2",
+          "by": "p-diego",
+          "at": "2026-07-15T14:04:53-07:00",
+          "events": [
+            "ev-003695"
+          ],
+          "brief": "Correction: FL-TST-2338: need 21 by 2026-08-06 for Leg first steps on the gait gantry",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 21,
+              "by": "2026-08-06"
+            }
+          },
+          "must_mention": [
+            "FL-TST-2338",
+            "Leg first steps on the gait gantry",
+            "FL-TST-2359",
+            "FL-TST-2375",
+            "8/6"
+          ],
+          "body": "Oops, FL-TST-2338: need 21 by 8/6 for Leg first steps on the gait gantry (also FL-TST-2359, FL-TST-2375) 🙂"
+        },
+        {
+          "id": "LEG-205-c3",
+          "by": "p-callum",
+          "at": "2026-07-16T18:22:59-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "any update on this?"
+        },
+        {
+          "id": "LEG-205-c4",
+          "by": "p-diego",
+          "at": "2026-07-22T13:49:45-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "Working it 😬"
+        },
+        {
+          "id": "LEG-205-c5",
+          "by": "p-priya",
+          "at": "2026-08-10T14:35:57-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "Files are in slack, check there."
+        }
+      ]
+    },
+    {
+      "key": "LEG-210",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-hana",
+      "assignee": "p-hana",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-07-15T10:30:30-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001474"
+      ],
+      "brief": "Order 3x Ankle pushrod clevis / the clevis: need 3 by 2026-08-04",
+      "must_mention": [
+        "the clevis",
+        "tues the 4th"
+      ],
+      "description_length": "medium",
+      "summary": "Buy 3x Ankle pushrod clevis",
+      "description": "Who's chasing the clevis? 3 due tues the 4th\nPls confirm lead time",
+      "comments": [
+        {
+          "id": "LEG-210-c1",
+          "by": "p-hana",
+          "at": "2026-08-03T12:50:36-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "Files are in slack, check there"
+        },
+        {
+          "id": "LEG-210-c2",
+          "by": "p-hana",
+          "at": "2026-08-03T16:29:21-07:00",
+          "events": [
+            "ev-001476"
+          ],
+          "brief": "pushrod clevis arrived",
+          "claim": {
+            "kind": "stock",
+            "value": 1
+          },
+          "must_mention": [
+            "pushrod clevis",
+            "1"
+          ],
+          "body": "pushrod clevis arrived, 1 so far"
+        },
+        {
+          "id": "LEG-210-c3",
+          "by": "p-hana",
+          "at": "2026-08-04T09:12:21-07:00",
+          "events": [
+            "ev-003650"
+          ],
+          "brief": "Correction: pushrod clevis arrived (3)",
+          "claim": {
+            "kind": "stock",
+            "value": 3
+          },
+          "must_mention": [
+            "pushrod clevis",
+            "3"
+          ],
+          "body": "pushrod clevis arrived, 3 in hand"
+        },
+        {
+          "id": "LEG-210-c4",
+          "by": "p-hana",
+          "at": "2026-08-07T13:56:45-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "Working it"
+        }
+      ]
+    },
+    {
+      "key": "LEG-212",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-diego",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-07-16T14:39:15-07:00",
+      "due_date": "2026-08-05",
+      "events": [
+        "ev-001482"
+      ],
+      "brief": "Order 3x Hip housing torque adapter, 3x Gait boom clamp / wrench adapter: need 3 by 2026-08-05 for Rig setup for Leg gait-gantry walking test: Hip housing torque adapter",
+      "must_mention": [
+        "wrench adapter",
+        "Rig setup for Leg gait-gantry walking test: Hip housing torque adapter",
+        "8/5"
+      ],
+      "description_length": "medium",
+      "summary": "PO: 3x Hip housing torque adapter, 3x Gait boom clamp",
+      "description": "wrench adapter x3, needed 8/5 for Rig setup for Leg gait-gantry walking test: Hip housing torque adapter\nNeeds to land before the test",
+      "comments": [
+        {
+          "id": "LEG-212-c1",
+          "by": "p-diego",
+          "at": "2026-07-20T16:07:06-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "Anything new here? 🙂"
+        }
+      ]
+    }
+  ]
+}

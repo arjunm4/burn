@@ -1,0 +1,156 @@
+{
+  "job_id": "slack-ch-actuators-2026-04-20-background-2026-04-24",
+  "source": "slack",
+  "status": "blank",
+  "priority": 60,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-actuators",
+    "name": "actuators",
+    "slack_id": "C07FLK0ACTU",
+    "purpose": "Hip and knee actuators"
+  },
+  "week": {
+    "start": "2026-04-20",
+    "end": "2026-04-26"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-bao",
+      "name": "Bao Nguyen",
+      "display_name": "bao.n",
+      "slack_id": "U07FLK0BAO0",
+      "title": "Electrical Engineer, motor drives",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hip actuator.",
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno. This week: Nadia suspects poor stator-to-housing contact; thermal pad is 0.5 mm and compresses unevenly.",
+    "Ongoing: Absolute encoder on the knee output glitches when the motor runs above 8 A. This week: New harness with shielded pair plus ferrite: no glitches up to 20 A.",
+    "Ongoing: Getting dyno and gantry logs into one place with consistent timestamps. This week: Clock skew between DAQs found, 300 ms; PTP added on the lab switch."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1777046845.693607",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to this: Pipeline to S3 with test ids in file names; Lin asks to tag by rig and booking.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1777062747.893328",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on fit-up of the end cover",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1777063239.828515",
+      "user": "p-bao",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about off-topic: cake in the kitchen",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1777063774.368649",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on inspection of the knee motor mount",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1777073169.866462",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-004601"
+      ],
+      "brief": "background: Nadia suspects poor stator-to-housing contact; thermal pad is 0.5 mm and compresses unevenly.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1777086077.708330",
+      "user": "p-bao",
+      "thread_ts": null,
+      "events": [
+        "ev-004604"
+      ],
+      "brief": "background: Bao notes current ripple at 20 kHz PWM adds copper loss; asks to try 40 kHz on the driver.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    }
+  ]
+}

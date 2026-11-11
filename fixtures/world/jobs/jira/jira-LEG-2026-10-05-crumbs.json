@@ -17,6 +17,25 @@
   },
   "people": [
     {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
       "id": "p-diego",
       "name": "Diego Salcedo",
       "display_name": "diego",
@@ -32,25 +51,6 @@
         "quirks": [
           "reacts with 🙏 and 😬",
           "ends messages with an emoji"
-        ]
-      }
-    },
-    {
-      "id": "p-priya",
-      "name": "Priya Raman",
-      "display_name": "priya",
-      "slack_id": "U07FLK0PRIY",
-      "title": "Legs Lead",
-      "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "none",
-        "length": "long",
-        "hedging": "medium",
-        "quirks": [
-          "numbered lists in status updates",
-          "restates the question before answering"
         ]
       }
     },
@@ -101,7 +101,7 @@
   ],
   "tickets": [
     {
-      "key": "LEG-350",
+      "key": "LEG-351",
       "type": "Task",
       "status": "In Progress",
       "reporter": "p-samir",
@@ -115,16 +115,16 @@
       "events": [],
       "brief": "Order 12x Tilt stand load arm",
       "must_mention": [],
-      "description_length": "one_line",
-      "summary": "Tilt stand load arm x12",
-      "description": "need all 12 for the tilt stand",
+      "description_length": "medium",
+      "summary": "Tilt stand load arms - buy",
+      "description": "replacement load arms for the tilt stand, current ones are bent from the heavy load runs. need the full set before next round of testing",
       "comments": [
         {
-          "id": "LEG-350-c1",
+          "id": "LEG-351-c1",
           "by": "p-zoe",
           "at": "2026-10-19T16:12:19-07:00",
           "events": [
-            "ev-002055"
+            "ev-002313"
           ],
           "brief": "lever arm arrived (12)",
           "claim": {
@@ -135,14 +135,14 @@
             "lever arm",
             "12"
           ],
-          "body": "lever arm arrived (12)"
+          "body": "lever arm arrived (12), looks ok out of the bag"
         },
         {
-          "id": "LEG-350-c2",
+          "id": "LEG-351-c2",
           "by": "p-zoe",
           "at": "2026-10-22T13:15:00-07:00",
           "events": [
-            "ev-002056"
+            "ev-002314"
           ],
           "brief": "lever arm in use",
           "claim": {
@@ -152,14 +152,23 @@
           "must_mention": [
             "lever arm",
             "the build",
-            "10/21"
+            "wed 10/21"
           ],
-          "body": "lever arm in use for the build, 10/21"
+          "body": "lever arm in use for the build, was wed 10/21 when we swapped them in"
+        },
+        {
+          "id": "LEG-351-c3",
+          "by": "p-samir",
+          "at": "2026-10-23T09:13:55-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on final sign off from the test side"
         }
       ]
     },
     {
-      "key": "LEG-356",
+      "key": "LEG-357",
       "type": "Task",
       "status": "Done",
       "reporter": "p-diego",
@@ -171,23 +180,23 @@
       "created": "2026-10-08T10:22:36-07:00",
       "due_date": null,
       "events": [
-        "ev-002197"
+        "ev-002472"
       ],
       "brief": "Order 2x Tilt stand angle calibration block, 24x Tilt stand stop bushing, 1x Tilt stand foot clamp, 3x Tilt stand load arm / cal block: need 2 by 2026-10-26",
       "must_mention": [
         "cal block",
-        "mon 10/26"
+        "10/26"
       ],
       "description_length": "one_line",
-      "summary": "Tilt stand cal block, stop bushings, foot clamp, load arms",
-      "description": "cal block need 2 by mon 10/26",
+      "summary": "cal block for tilt stand + misc bits",
+      "description": "need 2 cal block by 10/26, plus the bushings and foot clamp, load arms on the other ticket",
       "comments": [
         {
-          "id": "LEG-356-c1",
+          "id": "LEG-357-c1",
           "by": "p-diego",
           "at": "2026-10-09T12:43:34-07:00",
           "events": [
-            "ev-002199"
+            "ev-002474"
           ],
           "brief": "FL-TST-2567: need 2 by 2026-10-26",
           "claim": {
@@ -199,16 +208,34 @@
           },
           "must_mention": [
             "FL-TST-2567",
-            "mon the 26th"
+            "10/26"
           ],
-          "body": "FL-TST-2567 need 2 by mon the 26th"
+          "body": "FL-TST-2567 need 2 by 10/26 🙏"
         },
         {
-          "id": "LEG-356-c2",
+          "id": "LEG-357-c2",
+          "by": "p-diego",
+          "at": "2026-10-12T15:47:15-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "still with the vendor i think"
+        },
+        {
+          "id": "LEG-357-c3",
+          "by": "p-diego",
+          "at": "2026-10-12T16:27:41-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "any update? 😬"
+        },
+        {
+          "id": "LEG-357-c4",
           "by": "p-diego",
           "at": "2026-10-14T14:15:38-07:00",
           "events": [
-            "ev-002200"
+            "ev-002475"
           ],
           "brief": "angle block: need 2 by 2026-10-26",
           "claim": {
@@ -222,16 +249,25 @@
             "angle block",
             "10/26"
           ],
-          "body": "angle block need 2, 10/26"
+          "body": "angle block need 2 by 10/26, same ask as above 🙏"
         },
         {
-          "id": "LEG-356-c3",
-          "by": "p-priya",
-          "at": "2026-10-22T09:37:15-07:00",
+          "id": "LEG-357-c5",
+          "by": "p-diego",
+          "at": "2026-10-22T09:29:06-07:00",
           "events": [],
-          "brief": "background: notes photos or a file are in slack",
+          "brief": "background: question to the assignee",
           "must_mention": [],
-          "body": "Pics are in slack"
+          "body": "can you check where this is at? 😬"
+        },
+        {
+          "id": "LEG-357-c6",
+          "by": "p-callum",
+          "at": "2026-10-23T09:44:44-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "on it, chasing the vendor tmrw"
         }
       ]
     }

@@ -1,0 +1,338 @@
+{
+  "job_id": "slack-ch-hw-purchasing-2026-05-04-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 55,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hw-purchasing",
+    "name": "hw-purchasing",
+    "slack_id": "C07FLK0HWPR",
+    "purpose": "Hardware buys: Xometry quotes, McMaster, Digi-Key, lead times"
+  },
+  "week": {
+    "start": "2026-05-04",
+    "end": "2026-05-10"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Pushrod clevis bends at 1.6x body weight in the tilt stand. This week: Zoe: ankle clevis visibly bent after 1.6x BW tilt load.",
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno. This week: Heat spreader plate prototype drops steady-state by 14 C; housing fin redesign debated vs cost.",
+    "Ongoing: Orders sitting in DFM review because of tolerance callouts. This week: Talia: three orders stuck in DFM review over thread callouts and tight tolerances."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1777920754.427621",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-001049"
+      ],
+      "brief": "FL-TST-2139: need 12 by 2026-06-09",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-06-09"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2139",
+        "tues 6/9"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2139 need 12 by tues 6/9"
+    },
+    {
+      "ts": "1777935088.007196",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-000950"
+      ],
+      "brief": "knee cover: need 8 by 2026-05-22 for Fit check for Actuator DVT build: Knee rear cover",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-05-22"
+        }
+      },
+      "must_mention": [
+        "knee cover",
+        "Fit check for Actuator DVT build: Knee rear cover",
+        "thigh flange",
+        "fri 5/22"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "knee cover need 8 by fri 5/22 for Fit check for Actuator DVT build: Knee rear cover, along with the thigh flange"
+    },
+    {
+      "ts": "1777935301.412771",
+      "user": "p-kenji",
+      "thread_ts": "1777935088.007196",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ran into this on the last build too"
+    },
+    {
+      "ts": "1777937982.922588",
+      "user": "p-diego",
+      "thread_ts": "1777935088.007196",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "knee cover race, may the best Xometry quote win 😂"
+    },
+    {
+      "ts": "1777939366.069145",
+      "user": "p-lukas",
+      "thread_ts": "1777935088.007196",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "same thing last time"
+    },
+    {
+      "ts": "1778006812.883282",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-000911"
+      ],
+      "brief": "FL-HIP-1079: need 6 by 2026-06-30",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-06-30"
+        }
+      },
+      "must_mention": [
+        "FL-HIP-1079",
+        "tues the 30th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-HIP-1079: need 6 by tues the 30th"
+    },
+    {
+      "ts": "1778179120.548951",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-000927"
+      ],
+      "brief": "spacer set: need 12 by 2026-06-19",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-06-19"
+        }
+      },
+      "must_mention": [
+        "spacer set",
+        "6/19"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "spacer set, need 12 by 6/19 🙏"
+    },
+    {
+      "ts": "1778179578.911330",
+      "user": "p-farah",
+      "thread_ts": "1778179120.548951",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I'll look into it later this afternoon."
+    },
+    {
+      "ts": "1778180955.647598",
+      "user": "p-hana",
+      "thread_ts": "1778179120.548951",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "spacer set arriving by teleportation"
+    },
+    {
+      "ts": "1778183451.558141",
+      "user": "p-carlos",
+      "thread_ts": "1778179120.548951",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Checked, it's in the queue."
+    }
+  ]
+}

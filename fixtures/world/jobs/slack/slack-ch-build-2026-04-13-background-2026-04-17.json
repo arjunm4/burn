@@ -1,0 +1,179 @@
+{
+  "job_id": "slack-ch-build-2026-04-13-background-2026-04-17",
+  "source": "slack",
+  "status": "blank",
+  "priority": 62,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-build",
+    "name": "build",
+    "slack_id": "C07FLK0BILD",
+    "purpose": "EVT/DVT build coordination"
+  },
+  "week": {
+    "start": "2026-04-13",
+    "end": "2026-04-19"
+  },
+  "people": [
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno. This week: Andre: EVT hip hits the 120 C winding limit after ~4 min at 60 Nm, spec says 10 min.",
+    "Ongoing: Absolute encoder on the knee output glitches when the motor runs above 8 A",
+    "Ongoing: Getting dyno and gantry logs into one place with consistent timestamps"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1776453238.489183",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on off-topic: a recipe someone tried",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1776461188.608683",
+      "user": "p-nora",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about this: Farah wants twisted-pair and a shield drain at the driver end; Tomas asks if the bracket can move the readhead away.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1776464003.780426",
+      "user": "p-samir",
+      "thread_ts": "1776461188.608683",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Farah wants twisted-pair and a shield drain at the driver end; Tomas asks if the bracket can move the readhead away.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1776467686.265281",
+      "user": "p-dmitri",
+      "thread_ts": "1776461188.608683",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Farah wants twisted-pair and a shield drain at the driver end; Tomas asks if the bracket can move the readhead away.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1776478913.039930",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on this: Bao scopes it: common-mode noise on the SSI clock, cable runs alongside motor phases.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    }
+  ]
+}

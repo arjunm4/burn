@@ -1,0 +1,307 @@
+{
+  "job_id": "slack-ch-hands-arms-2026-03-16-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 69,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hands-arms",
+    "name": "hands-arms",
+    "slack_id": "C07FLK0HAND",
+    "purpose": "Arms, wrist and hand"
+  },
+  "week": {
+    "start": "2026-03-16",
+    "end": "2026-03-22"
+  },
+  "people": [
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hand and wrist.",
+    "Ongoing: Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT. This week: Ingrid asks for a decision memo; Tomas concedes backdrivability favors cyclo for the hip at 50:1."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1773691247.540330",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-000380"
+      ],
+      "brief": "FL-TST-2665: need 3 by 2026-04-03",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-04-03"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2665",
+        "4/3"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2665 need 3 by 4/3"
+    },
+    {
+      "ts": "1773691959.594115",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-000381"
+      ],
+      "brief": "FL-TST-2665: need 3 by 2026-04-06",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-04-06"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2665",
+        "mon 4/6"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2665: need 3 by mon 4/6. Please update the tracker."
+    },
+    {
+      "ts": "1773694118.520151",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-000383"
+      ],
+      "brief": "FL-TST-2665: need 3 by 2026-04-06",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-04-06"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2665",
+        "4/6"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2665 need 3 by 4/6"
+    },
+    {
+      "ts": "1773694267.673673",
+      "user": "p-kenji",
+      "thread_ts": "1773691959.594115",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "wait which one is it, same as before"
+    },
+    {
+      "ts": "1773698117.647065",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-000384"
+      ],
+      "brief": "the part: need 3 by 2026-04-03",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-04-03"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "fri the 3rd"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "the part need 3 by fri the 3rd"
+    },
+    {
+      "ts": "1773698240.664527",
+      "user": "p-talia",
+      "thread_ts": "1773694118.520151",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "had one like that before, the date moved twice and nobody told me 😬"
+    },
+    {
+      "ts": "1773699200.744044",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-000385"
+      ],
+      "brief": "2665: need 3 by 2026-04-06",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-04-06"
+        }
+      },
+      "must_mention": [
+        "2665",
+        "4/6"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "2665: need 3 by 4/6. I'd like the other date retired so nobody plans around it, and the tracker should show only this one."
+    },
+    {
+      "ts": "1773774831.833900",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-003767"
+      ],
+      "brief": "FL-TST-2665: need 3 by 2026-04-06",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-04-06"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2665",
+        "4/6"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2665 need 3 by 4/6 still"
+    },
+    {
+      "ts": "1773775833.217506",
+      "user": "p-talia",
+      "thread_ts": "1773774831.833900",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "will check on it later 🙏"
+    },
+    {
+      "ts": "1773816197.084507",
+      "user": "p-kenji",
+      "thread_ts": "1773698117.647065",
+      "events": [
+        "ev-003551"
+      ],
+      "brief": "Correction: the part: need 3 by 2026-04-06",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-04-06"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "4/6"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "the part need 3 by 4/6 sorry typed wrong date earlier"
+    },
+    {
+      "ts": "1773858512.164427",
+      "user": "p-ingrid",
+      "thread_ts": "1773698117.647065",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Hard to tell, which date was it again? Please say it once, clearly."
+    }
+  ]
+}

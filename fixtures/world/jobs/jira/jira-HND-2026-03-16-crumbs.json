@@ -1,0 +1,133 @@
+{
+  "job_id": "jira-HND-2026-03-16-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 69,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HND",
+    "name": "Hands and arms"
+  },
+  "week": {
+    "start": "2026-03-16",
+    "end": "2026-03-22"
+  },
+  "people": [
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HND-27",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-priya",
+      "assignee": "p-kenji",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-16T13:35:13-07:00",
+      "due_date": null,
+      "events": [
+        "ev-000382"
+      ],
+      "brief": "Order 3x CMM vee block, shafts, 6x Dyno absorber motor adapter, 12x Dyno inertia disc, 1x Dyno shaft alignment jig, 12x Dyno thermocouple clamp / V block: need 3 by 2026-04-06",
+      "must_mention": [
+        "V block",
+        "4/6"
+      ],
+      "description_length": "short",
+      "summary": "Order 3x CMM vee block, shafts, 6x Dyno absorber motor adapter, 12x Dyno inertia disc, 1x Dyno shaft alignment jig, 12x Dyno thermocouple clamp",
+      "description": "V block need 3 by 4/6",
+      "comments": [
+        {
+          "id": "HND-27-c1",
+          "by": "p-kenji",
+          "at": "2026-03-16T16:16:04-07:00",
+          "events": [
+            "ev-000386"
+          ],
+          "brief": "FL-TST-2665: need 3 by 2026-04-01",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 3,
+              "by": "2026-04-01"
+            }
+          },
+          "must_mention": [
+            "FL-TST-2665",
+            "4/1"
+          ],
+          "body": "FL-TST-2665 need 3 by 4/1"
+        },
+        {
+          "id": "HND-27-c2",
+          "by": "p-kenji",
+          "at": "2026-03-16T17:48:31-07:00",
+          "events": [
+            "ev-000387"
+          ],
+          "brief": "2665: need 3 by 2026-04-06",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 3,
+              "by": "2026-04-06"
+            }
+          },
+          "must_mention": [
+            "2665",
+            "4/6"
+          ],
+          "body": "2665 need 3 by 4/6"
+        }
+      ]
+    }
+  ]
+}

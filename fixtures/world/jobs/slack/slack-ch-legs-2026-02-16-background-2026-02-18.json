@@ -1,0 +1,464 @@
+{
+  "job_id": "slack-ch-legs-2026-02-16-background-2026-02-18",
+  "source": "slack",
+  "status": "blank",
+  "priority": 78,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-legs",
+    "name": "legs",
+    "slack_id": "C07FLK0LEGS",
+    "purpose": "Leg and ankle: design, drop test, gait gantry"
+  },
+  "week": {
+    "start": "2026-02-16",
+    "end": "2026-02-22"
+  },
+  "people": [
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-leilani",
+      "name": "Leilani Kahale",
+      "display_name": "leilani.k",
+      "slack_id": "U07FLK0LEIL",
+      "title": "Locomotion Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Leg (left, hip to foot).",
+    "Ongoing: Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT. This week: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1771431581.281289",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about the ongoing whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for dvt",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1771434136.360467",
+      "user": "p-mei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about drawing review of the leg drop test",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771435033.993114",
+      "user": "p-talia",
+      "thread_ts": "1771431581.281289",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the ongoing whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for dvt",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771435643.404280",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with drawing review of the ankle clevis",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1771436017.663627",
+      "user": "p-beth",
+      "thread_ts": "1771434136.360467",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: drawing review of the leg drop test",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771436797.924102",
+      "user": "p-diego",
+      "thread_ts": "1771434136.360467",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: drawing review of the leg drop test",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1771437566.764082",
+      "user": "p-callum",
+      "thread_ts": "1771431581.281289",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the ongoing whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for dvt",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771439098.827799",
+      "user": "p-diego",
+      "thread_ts": "1771434136.360467",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: drawing review of the leg drop test",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771442546.335370",
+      "user": "p-talia",
+      "thread_ts": "1771431581.281289",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the ongoing whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for dvt",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1771442805.029599",
+      "user": "p-zoe",
+      "thread_ts": "1771434136.360467",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: drawing review of the leg drop test",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1771444012.922502",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to cad change to the rod end spacer",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771444160.520735",
+      "user": "p-diego",
+      "thread_ts": "1771431581.281289",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the ongoing whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for dvt",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771444207.489466",
+      "user": "p-beth",
+      "thread_ts": "1771434136.360467",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: drawing review of the leg drop test",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1771448263.419300",
+      "user": "p-zoe",
+      "thread_ts": "1771434136.360467",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: drawing review of the leg drop test",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1771448449.978567",
+      "user": "p-leilani",
+      "thread_ts": "1771434136.360467",
+      "events": [],
+      "brief": "reply (ack) in the thread about: drawing review of the leg drop test",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1771452721.613385",
+      "user": "p-mei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about cleanup of the saddle",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1771453438.570960",
+      "user": "p-talia",
+      "thread_ts": "1771434136.360467",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: drawing review of the leg drop test",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771457439.806687",
+      "user": "p-diego",
+      "thread_ts": "1771434136.360467",
+      "events": [],
+      "brief": "reply (ack) in the thread about: drawing review of the leg drop test",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1771459824.393556",
+      "user": "p-mei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about off-topic: weekend plans",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771462131.287463",
+      "user": "p-callum",
+      "thread_ts": "1771434136.360467",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: drawing review of the leg drop test",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771463999.204830",
+      "user": "p-callum",
+      "thread_ts": "1771434136.360467",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: drawing review of the leg drop test",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771464750.416410",
+      "user": "p-diego",
+      "thread_ts": "1771434136.360467",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: drawing review of the leg drop test",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1771466384.621688",
+      "user": "p-beth",
+      "thread_ts": "1771434136.360467",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: drawing review of the leg drop test",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771467638.884295",
+      "user": "p-callum",
+      "thread_ts": "1771434136.360467",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: drawing review of the leg drop test",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771467815.312037",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on bench notes on the pivot pin",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771470773.493853",
+      "user": "p-zoe",
+      "thread_ts": "1771434136.360467",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: drawing review of the leg drop test",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

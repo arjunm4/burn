@@ -36,6 +36,25 @@
       }
     },
     {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
       "id": "p-idris",
       "name": "Idris Bello",
       "display_name": "idris",
@@ -55,11 +74,11 @@
       }
     },
     {
-      "id": "p-renee",
-      "name": "Renee Dubois",
-      "display_name": "renee",
-      "slack_id": "U07FLK0RENE",
-      "title": "Mechanical Engineer",
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
       "style": {
         "case": "proper",
         "punctuation": "full",
@@ -88,6 +107,25 @@
           "ends messages with an emoji"
         ]
       }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
     }
   ],
   "forbidden": [
@@ -98,7 +136,138 @@
   ],
   "tickets": [
     {
-      "key": "STR-277",
+      "key": "STR-274",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-zoe",
+      "assignee": "p-zoe",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-10-19T01:55:20-07:00",
+      "due_date": "2026-10-23",
+      "events": [
+        "ev-002532"
+      ],
+      "brief": "Order 7x Drop strike plate mount, 2x Torso static load yoke / strike plate: need 7 by 2026-10-23 for Rig setup: Drop strike plate mount",
+      "must_mention": [
+        "strike plate",
+        "Rig setup: Drop strike plate mount",
+        "fri 10/23"
+      ],
+      "description_length": "short",
+      "summary": "Drop strike plate mount x7 + static load yoke x2",
+      "description": "strike plate mounts for Rig setup: Drop strike plate mount, need by fri 10/23",
+      "comments": [
+        {
+          "id": "STR-274-c1",
+          "by": "p-zoe",
+          "at": "2026-10-23T14:47:44-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "did the mounts get here yet?"
+        },
+        {
+          "id": "STR-274-c2",
+          "by": "p-zoe",
+          "at": "2026-10-28T15:08:02-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on vendor for the yokes"
+        },
+        {
+          "id": "STR-274-c3",
+          "by": "p-zoe",
+          "at": "2026-10-28T18:17:49-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "are you still holding the rig slot for this?"
+        },
+        {
+          "id": "STR-274-c4",
+          "by": "p-zoe",
+          "at": "2026-10-30T18:08:16-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "mounts checked in, yokes still out"
+        }
+      ]
+    },
+    {
+      "key": "STR-276",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-lin",
+      "assignee": "p-lin",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-10-19T09:54:32-07:00",
+      "due_date": "2026-10-28",
+      "events": [
+        "ev-002570"
+      ],
+      "brief": "Order 24x Battery mount rail, 1x Battery clevis 10 / mount rail: need 24 by 2026-10-28 for Build sub-assembly: Battery mount rail",
+      "must_mention": [
+        "mount rail",
+        "Build sub-assembly: Battery mount rail",
+        "the clevis",
+        "10/28"
+      ],
+      "description_length": "one_line",
+      "summary": "Battery mount rail x24 / battery clevis",
+      "description": "need the clevis plus 24 mount rail by 10/28, Build sub-assembly: Battery mount rail",
+      "comments": [
+        {
+          "id": "STR-276-c1",
+          "by": "p-lin",
+          "at": "2026-10-22T13:53:01-07:00",
+          "events": [
+            "ev-002572"
+          ],
+          "brief": "Order XO-5560089 placed, promised 2026-10-29",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-10-29"
+          },
+          "must_mention": [
+            "XO-5560089",
+            "mount rail",
+            "10/29"
+          ],
+          "body": "XO-5560089 placed, mount rail promised 10/29"
+        },
+        {
+          "id": "STR-276-c2",
+          "by": "p-dmitri",
+          "at": "2026-10-22T14:52:30-07:00",
+          "events": [
+            "ev-003778"
+          ],
+          "brief": "the part: need 24 by 2026-10-26",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 24,
+              "by": "2026-10-26"
+            }
+          },
+          "must_mention": [
+            "the part",
+            "mon the 26th"
+          ],
+          "body": "can the part land mon the 26th instead?"
+        }
+      ]
+    },
+    {
+      "key": "STR-279",
       "type": "Task",
       "status": "Done",
       "reporter": "p-idris",
@@ -110,7 +279,7 @@
       "created": "2026-10-19T17:32:25-07:00",
       "due_date": "2026-11-04",
       "events": [
-        "ev-002260"
+        "ev-002537"
       ],
       "brief": "Order 6x Cell spacer comb / 1691: need 6 by 2026-11-04 for Build sub-assembly: Cell spacer comb",
       "must_mention": [
@@ -119,15 +288,15 @@
         "11/4"
       ],
       "description_length": "one_line",
-      "summary": "cell spacer comb x6",
-      "description": "1691 need 6 by 11/4 for Build sub-assembly: Cell spacer comb",
+      "summary": "Cell spacer comb x6 (1691)",
+      "description": "1691 x6 by 11/4, Build sub-assembly: Cell spacer comb",
       "comments": [
         {
-          "id": "STR-277-c1",
+          "id": "STR-279-c1",
           "by": "p-idris",
           "at": "2026-10-20T14:03:27-07:00",
           "events": [
-            "ev-002261"
+            "ev-002538"
           ],
           "brief": "cell spacer: need 6 by 2026-11-04 for next week",
           "claim": {
@@ -140,32 +309,14 @@
           "must_mention": [
             "cell spacer",
             "next week",
-            "11/4"
+            "wed the 4th"
           ],
-          "body": "cell spacer need 6 by 11/4 for next week"
-        },
-        {
-          "id": "STR-277-c2",
-          "by": "p-idris",
-          "at": "2026-10-30T09:41:09-07:00",
-          "events": [
-            "ev-003316"
-          ],
-          "brief": "cell spacer arrived",
-          "claim": {
-            "kind": "stock",
-            "value": 6
-          },
-          "must_mention": [
-            "cell spacer",
-            "6"
-          ],
-          "body": "cell spacer arrived, 6 in"
+          "body": "cell spacer needed wed the 4th, so next week for sure"
         }
       ]
     },
     {
-      "key": "STR-279",
+      "key": "STR-281",
       "type": "Task",
       "status": "Done",
       "reporter": "p-talia",
@@ -177,115 +328,30 @@
       "created": "2026-10-20T07:13:38-07:00",
       "due_date": null,
       "events": [
-        "ev-002210"
+        "ev-002485"
       ],
       "brief": "Order 1x Battery clevis 10, 5x Pack latch block, 12x Cell spacer comb, 24x BMS standoff, 5x Pack connector plate / the clevis: need 1 by 2026-11-09",
       "must_mention": [
         "the clevis",
         "11/9"
       ],
-      "description_length": "one_line",
-      "summary": "Battery clevis x1, pack latch block, cell spacer comb, BMS standoff, connector plate",
-      "description": "the clevis need 1 by 11/9 🙏",
-      "comments": [
-        {
-          "id": "STR-279-c1",
-          "by": "p-talia",
-          "at": "2026-10-20T16:48:49-07:00",
-          "events": [
-            "ev-003334"
-          ],
-          "brief": "clevis: need 1 by 2026-11-04",
-          "claim": {
-            "kind": "needs",
-            "value": {
-              "qty": 1,
-              "by": "2026-11-04"
-            }
-          },
-          "must_mention": [
-            "clevis",
-            "11/4"
-          ],
-          "body": "clevis need 1 by 11/4 😬"
-        }
-      ]
-    },
-    {
-      "key": "STR-280",
-      "type": "Task",
-      "status": "In Progress",
-      "reporter": "p-renee",
-      "assignee": "p-renee",
-      "labels": [
-        "procurement"
-      ],
-      "priority": "Medium",
-      "created": "2026-10-20T09:44:30-07:00",
-      "due_date": null,
-      "events": [
-        "ev-002400"
-      ],
-      "brief": "Order 15x Pack connector plate, 1x Battery clevis 10, 12x BMS standoff, 10x Battery enclosure lid / 1632: need 15 by 2026-12-10 for Build sub-assembly: Pack connector plate",
-      "must_mention": [
-        "1632",
-        "Build sub-assembly: Pack connector plate",
-        "clevis",
-        "standoffs",
-        "the lid",
-        "thurs 12/10"
-      ],
       "description_length": "short",
-      "summary": "Pack connector plate x15 + clevis, standoffs, enclosure lid",
-      "description": "1632 for Build sub-assembly: Pack connector plate, need 15 by thurs 12/10. Same order has the clevis, standoffs and the lid.",
+      "summary": "Battery clevis, pack latch block, cell spacer comb, BMS standoffs, connector plates",
+      "description": "the clevis needed 11/9, rest are along for the ride. same quote as last time",
       "comments": [
         {
-          "id": "STR-280-c1",
-          "by": "p-renee",
-          "at": "2026-10-20T14:28:27-07:00",
-          "events": [
-            "ev-002401"
-          ],
-          "brief": "1632: need 15 by 2026-12-10 for Build sub-assembly: Pack connector plate",
-          "claim": {
-            "kind": "needs",
-            "value": {
-              "qty": 15,
-              "by": "2026-12-10"
-            }
-          },
-          "must_mention": [
-            "1632",
-            "Build sub-assembly: Pack connector plate",
-            "thurs 12/10"
-          ],
-          "body": "1632: need 15 by thurs 12/10 for Build sub-assembly: Pack connector plate."
-        },
-        {
-          "id": "STR-280-c2",
-          "by": "p-renee",
-          "at": "2026-10-22T18:28:08-07:00",
-          "events": [
-            "ev-002402"
-          ],
-          "brief": "the plate: need 15 by 2026-12-10",
-          "claim": {
-            "kind": "needs",
-            "value": {
-              "qty": 15,
-              "by": "2026-12-10"
-            }
-          },
-          "must_mention": [
-            "the plate",
-            "12/10"
-          ],
-          "body": "the plate: need 15 by 12/10."
+          "id": "STR-281-c1",
+          "by": "p-talia",
+          "at": "2026-11-09T09:42:09-08:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on last box from vendor"
         }
       ]
     },
     {
-      "key": "STR-286",
+      "key": "STR-287",
       "type": "Task",
       "status": "In Progress",
       "reporter": "p-andre",
@@ -297,19 +363,47 @@
       "created": "2026-10-21T13:09:38-07:00",
       "due_date": null,
       "events": [
-        "ev-002408"
+        "ev-002700"
       ],
       "brief": "Order 10x Battery enclosure lid, 24x Cell spacer comb / FL-BAT-1674: need 10 by 2026-11-09 for Fit check: Battery enclosure lid",
       "must_mention": [
         "FL-BAT-1674",
         "Fit check: Battery enclosure lid",
         "FL-BAT-1691",
-        "11/9"
+        "mon the 9th"
       ],
       "description_length": "one_line",
-      "summary": "battery enclosure lid x10 + cell spacer comb x24",
-      "description": "FL-BAT-1674 need 10 by 11/9 for Fit check: Battery enclosure lid. FL-BAT-1691 is the spacer combs",
-      "comments": []
+      "summary": "Battery enclosure lid x10 / cell spacer comb x24",
+      "description": "FL-BAT-1674 x10 for Fit check: Battery enclosure lid, mon the 9th. cell spacers FL-BAT-1691 same order",
+      "comments": [
+        {
+          "id": "STR-287-c1",
+          "by": "p-andre",
+          "at": "2026-10-26T13:48:16-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "any update on this??"
+        },
+        {
+          "id": "STR-287-c2",
+          "by": "p-andre",
+          "at": "2026-10-27T10:15:49-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "still in machining i think"
+        },
+        {
+          "id": "STR-287-c3",
+          "by": "p-andre",
+          "at": "2026-11-02T12:51:37-08:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "can someone please push on this, fit check is blocked on it"
+        }
+      ]
     }
   ]
 }

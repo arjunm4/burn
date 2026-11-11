@@ -1,0 +1,113 @@
+{
+  "job_id": "jira-STR-2026-02-16-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 77,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "STR",
+    "name": "Torso, structures and battery"
+  },
+  "week": {
+    "start": "2026-02-16",
+    "end": "2026-02-22"
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "STR-12",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-dmitri",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-02-17T12:14:14-08:00",
+      "due_date": "2026-04-03",
+      "events": [
+        "ev-000145"
+      ],
+      "brief": "Order 3x Dyno mounting plate, knee actuator / FL-TST-2124: need 3 by 2026-04-03",
+      "must_mention": [
+        "FL-TST-2124",
+        "4/3"
+      ],
+      "description_length": "short",
+      "summary": "Dyno mounting plate, knee actuator x3",
+      "description": "FL-TST-2124 needed 4/3!!",
+      "comments": [
+        {
+          "id": "STR-12-c1",
+          "by": "p-samir",
+          "at": "2026-02-18T09:37:52-08:00",
+          "events": [
+            "ev-000148"
+          ],
+          "brief": "knee dyno plate: need 3 by 2026-04-08",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 3,
+              "by": "2026-04-08"
+            }
+          },
+          "must_mention": [
+            "knee dyno plate",
+            "4/8"
+          ],
+          "body": "knee dyno plate, need 3 by 4/8 - checking w/ vendor"
+        }
+      ]
+    }
+  ]
+}

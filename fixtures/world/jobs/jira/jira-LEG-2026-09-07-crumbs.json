@@ -17,6 +17,25 @@
   },
   "people": [
     {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
       "id": "p-lin",
       "name": "Lin Zhao",
       "display_name": "lin.z",
@@ -41,7 +60,7 @@
   ],
   "tickets": [
     {
-      "key": "LEG-281",
+      "key": "LEG-283",
       "type": "Task",
       "status": "Done",
       "reporter": "p-lin",
@@ -53,46 +72,25 @@
       "created": "2026-09-10T13:07:27-07:00",
       "due_date": null,
       "events": [
-        "ev-001838"
+        "ev-002073"
       ],
       "brief": "Order 12x Shank link / FL-LEG-1383: need 12 by 2026-10-08",
       "must_mention": [
         "FL-LEG-1383",
-        "thurs the 8th"
+        "thurs 10/8"
       ],
-      "description_length": "one_line",
-      "summary": "Order 12x Shank link",
-      "description": "Need FL-LEG-1383 by thurs the 8th.",
+      "description_length": "medium",
+      "summary": "Shank link x12 order",
+      "description": "FL-LEG-1383, need 12 on hand thurs 10/8 for the leg builds. Quote attached when it comes in, ask me if the drawing rev is unclear.",
       "comments": [
         {
-          "id": "LEG-281-c1",
-          "by": "p-lin",
+          "id": "LEG-283-c1",
+          "by": "p-dmitri",
           "at": "2026-09-15T16:43:35-07:00",
           "events": [
-            "ev-001841"
+            "ev-002076"
           ],
-          "brief": "that order: need 12 by 2026-10-09",
-          "claim": {
-            "kind": "needs",
-            "value": {
-              "qty": 12,
-              "by": "2026-10-09"
-            }
-          },
-          "must_mention": [
-            "that order",
-            "fri the 9th"
-          ],
-          "body": "For that order, needed fri the 9th."
-        },
-        {
-          "id": "LEG-281-c2",
-          "by": "p-lin",
-          "at": "2026-09-16T21:10:14-07:00",
-          "events": [
-            "ev-001842"
-          ],
-          "brief": "the link: need 12 by 2026-10-08",
+          "brief": "1383: need 12 by 2026-10-08",
           "claim": {
             "kind": "needs",
             "value": {
@@ -101,29 +99,10 @@
             }
           },
           "must_mention": [
-            "the link",
+            "1383",
             "thurs 10/8"
           ],
-          "body": "Now the link is needed thurs 10/8."
-        },
-        {
-          "id": "LEG-281-c3",
-          "by": "p-lin",
-          "at": "2026-10-14T03:37:00-07:00",
-          "events": [
-            "ev-001846"
-          ],
-          "brief": "tibia in use",
-          "claim": {
-            "kind": "done",
-            "value": "2026-10-12"
-          },
-          "must_mention": [
-            "tibia",
-            "the test",
-            "10/12"
-          ],
-          "body": "Swapped in the tibia for the test, in use as of 10/12."
+          "body": "1383 still needs 12 by thurs 10/8!!"
         }
       ]
     }

@@ -1,0 +1,404 @@
+{
+  "job_id": "jira-HIP-2026-05-18-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 51,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HIP",
+    "name": "Actuators (hip and knee)"
+  },
+  "week": {
+    "start": "2026-05-18",
+    "end": "2026-05-24"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HIP-239",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-kenji",
+      "assignee": "p-kenji",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-05-18T12:53:10-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001119"
+      ],
+      "brief": "Order 8x Knee rear cover, 6x Knee motor mount plate, 6x Knee hard-stop block, 6x Knee bearing shim, 12x Knee output shaft / rear cover: need 8 by 2026-07-15",
+      "must_mention": [
+        "rear cover",
+        "7/15"
+      ],
+      "description_length": "one_line",
+      "summary": "knee rear covers + misc knee parts",
+      "description": "rear cover x8 needed by 7/15",
+      "comments": [
+        {
+          "id": "HIP-239-c1",
+          "by": "p-kenji",
+          "at": "2026-05-19T14:17:31-07:00",
+          "events": [
+            "ev-001120"
+          ],
+          "brief": "rear cover: need 8 by 2026-07-15",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 8,
+              "by": "2026-07-15"
+            }
+          },
+          "must_mention": [
+            "rear cover",
+            "7/15"
+          ],
+          "body": "rear cover, need 8 by 7/15"
+        }
+      ]
+    },
+    {
+      "key": "HIP-240",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-talia",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-05-18T14:05:09-07:00",
+      "due_date": "2026-05-22",
+      "events": [
+        "ev-001027"
+      ],
+      "brief": "Order 12x Dyno torque transducer bracket / transducer bracket: need 12 by 2026-05-22",
+      "must_mention": [
+        "transducer bracket",
+        "fri 5/22"
+      ],
+      "description_length": "one_line",
+      "summary": "Dyno torque transducer bracket x12",
+      "description": "transducer bracket need 12 by fri 5/22",
+      "comments": [
+        {
+          "id": "HIP-240-c1",
+          "by": "p-lin",
+          "at": "2026-05-18T17:40:50-07:00",
+          "events": [
+            "ev-001030"
+          ],
+          "brief": "transducer bracket: need 12 by 2026-05-22",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-05-22"
+            }
+          },
+          "must_mention": [
+            "transducer bracket",
+            "fri the 22nd"
+          ],
+          "body": "transducer bracket: need 12, fri the 22nd. Hip dyno is waiting."
+        },
+        {
+          "id": "HIP-240-c2",
+          "by": "p-dmitri",
+          "at": "2026-05-18T18:20:25-07:00",
+          "events": [
+            "ev-003796"
+          ],
+          "brief": "the bracket: need 12 by 2026-05-19 for Rig setup for Hip actuator dyno efficiency sweep: Dyno torque transducer bracket",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-05-19"
+            }
+          },
+          "must_mention": [
+            "the bracket",
+            "Rig setup for Hip actuator dyno efficiency sweep: Dyno torque transducer bracket",
+            "5/19"
+          ],
+          "body": "the bracket is needed 5/19 for Rig setup for Hip actuator dyno efficiency sweep: Dyno torque transducer bracket!!"
+        },
+        {
+          "id": "HIP-240-c3",
+          "by": "p-talia",
+          "at": "2026-05-22T13:48:02-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "photos of the brackets are in slack"
+        }
+      ]
+    },
+    {
+      "key": "HIP-246",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-nadia",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-05-21T14:16:13-07:00",
+      "due_date": "2026-06-10",
+      "events": [
+        "ev-001164"
+      ],
+      "brief": "Order 12x Knee cross-roller retainer, 4x Knee rear cover / FL-KNE-1141: need 12 by 2026-06-10 for Fit check for Actuator DVT build: Knee cross-roller retainer",
+      "must_mention": [
+        "FL-KNE-1141",
+        "Fit check for Actuator DVT build: Knee cross-roller retainer",
+        "FL-KNE-1146",
+        "wed the 10th"
+      ],
+      "description_length": "one_line",
+      "summary": "Knee x-roller retainer x12 (+4 rear cvr)",
+      "description": "FL-KNE-1141 need 12 by wed the 10th for Fit check for Actuator DVT build: Knee cross-roller retainer. also FL-KNE-1146 on the same order",
+      "comments": [
+        {
+          "id": "HIP-246-c1",
+          "by": "p-arjun",
+          "at": "2026-05-27T09:11:14-07:00",
+          "events": [
+            "ev-003800"
+          ],
+          "brief": "the part: need 12 by 2026-06-08",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-06-08"
+            }
+          },
+          "must_mention": [
+            "the part",
+            "6/8"
+          ],
+          "body": "the part needed 6/8, 12 of them"
+        },
+        {
+          "id": "HIP-246-c2",
+          "by": "p-nadia",
+          "at": "2026-06-09T12:44:43-07:00",
+          "events": [
+            "ev-001169"
+          ],
+          "brief": "bearing retainer arrived (12)",
+          "claim": {
+            "kind": "stock",
+            "value": 12
+          },
+          "must_mention": [
+            "bearing retainer",
+            "12"
+          ],
+          "body": "bearing retainer arrived, 12"
+        }
+      ]
+    },
+    {
+      "key": "HIP-249",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-kenji",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-05-22T16:12:47-07:00",
+      "due_date": "2026-06-11",
+      "events": [
+        "ev-001158"
+      ],
+      "brief": "Order 11x Knee wave generator hub, 12x Knee hard-stop block, 1x Knee to thigh flange / that order: need 11 by 2026-06-11 for next week",
+      "must_mention": [
+        "that order",
+        "next week",
+        "6/11"
+      ],
+      "description_length": "short",
+      "summary": "knee WG hubs / hard-stop blocks / thigh flange",
+      "description": "that order is needed for next week, 11 by 6/11",
+      "comments": [
+        {
+          "id": "HIP-249-c1",
+          "by": "p-samir",
+          "at": "2026-06-09T09:25:30-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "still waiting on the vendor"
+        },
+        {
+          "id": "HIP-249-c2",
+          "by": "p-kenji",
+          "at": "2026-06-24T22:53:00-07:00",
+          "events": [
+            "ev-001160"
+          ],
+          "brief": "WG hub in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-06-23"
+          },
+          "must_mention": [
+            "WG hub",
+            "the build",
+            "tues the 23rd"
+          ],
+          "body": "WG hub in use for the build, tues the 23rd"
+        }
+      ]
+    }
+  ]
+}

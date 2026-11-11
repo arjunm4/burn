@@ -37,6 +37,43 @@
       }
     },
     {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
       "id": "p-kenji",
       "name": "Kenji Morimoto",
       "display_name": "kenji.m",
@@ -71,6 +108,24 @@
       }
     },
     {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
       "id": "p-sofia",
       "name": "Sofia Lindqvist",
       "display_name": "sofia.l",
@@ -98,11 +153,29 @@
   ],
   "messages": [
     {
-      "ts": "1793733536.416705",
+      "ts": "1793661487.745915",
+      "user": "p-sofia",
+      "thread_ts": null,
+      "events": [
+        "ev-004086"
+      ],
+      "brief": "hand finger link middle: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "hand finger link middle"
+      ],
+      "length": "medium",
+      "text": "the hand finger link middle is still quoting rev A, can someone look at that"
+    },
+    {
+      "ts": "1793733536.999432",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-002841"
+        "ev-003225"
       ],
       "brief": "Test stand rework: Grip load cell plate (3) waits on Leg drop-test gantry",
       "claim": {
@@ -114,33 +187,35 @@
         "Test stand rework: Grip load cell plate (3)"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "Test stand rework: Grip load cell plate (3) is sitting behind the Leg drop-test gantry, i think we can't start until that frees up. not 100% sure on the order though"
+      "length": "short",
+      "text": "Test stand rework: Grip load cell plate (3) waits on Leg drop-test gantry"
     },
     {
-      "ts": "1793741478.823950",
-      "user": "p-kenji",
-      "thread_ts": null,
-      "events": [
-        "ev-003543"
-      ],
-      "brief": "tendon bushing: still quoting rev A",
-      "claim": {
-        "kind": "substitute",
-        "value": "rev A"
-      },
-      "must_mention": [
-        "tendon bushing"
-      ],
-      "length": "medium",
-      "text": "tendon bushing quote came back still on rev A, need to send them the new drawing"
+      "ts": "1793734492.750019",
+      "user": "p-sofia",
+      "thread_ts": "1793733536.999432",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "how long is the gantry booked for"
     },
     {
-      "ts": "1793860513.331849",
+      "ts": "1793736028.415584",
+      "user": "p-lin",
+      "thread_ts": "1793733536.999432",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Last I heard it was in use for the drop tests."
+    },
+    {
+      "ts": "1793860513.880648",
       "user": "p-sofia",
       "thread_ts": null,
       "events": [
-        "ev-003456"
+        "ev-004054"
       ],
       "brief": "hand finger link middle: still quoting rev A",
       "claim": {
@@ -151,44 +226,44 @@
         "hand finger link middle"
       ],
       "length": "medium",
-      "text": "The hand finger link middle quote is still on rev A. I'll resend the updated drawing tomorrow."
+      "text": "hand finger link middle still quoting rev A, tried reloading the quote page twice, same result"
     },
     {
-      "ts": "1793900758.230464",
-      "user": "p-lin",
-      "thread_ts": "1793860513.331849",
-      "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "Rev A is the gift that keeps on giving. Maybe it's a feature."
-    },
-    {
-      "ts": "1793930764.002269",
+      "ts": "1793933584.725911",
       "user": "p-kenji",
       "thread_ts": null,
       "events": [
-        "ev-002399"
+        "ev-002689"
       ],
-      "brief": "finger link arrived (7)",
+      "brief": "hand finger link middle arrived (7)",
       "claim": {
         "kind": "stock",
         "value": 7
       },
       "must_mention": [
-        "finger link",
+        "hand finger link middle",
         "7"
       ],
-      "pressure": "high",
-      "length": "short",
-      "text": "finger link arrived, 7 pcs"
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "hand finger link middle arrived (7), hopefully they match the right drawing rev"
     },
     {
-      "ts": "1794010887.202784",
+      "ts": "1793934066.971956",
+      "user": "p-omar",
+      "thread_ts": "1793933584.725911",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Agreed, hopefully."
+    },
+    {
+      "ts": "1794010887.979843",
       "user": "p-kenji",
       "thread_ts": null,
       "events": [
-        "ev-003870"
+        "ev-004330"
       ],
       "brief": "Build sub-assembly: Finger distal link (2) done",
       "claim": {
@@ -197,11 +272,62 @@
       },
       "must_mention": [
         "Build sub-assembly: Finger distal link (2)",
-        "11/6"
+        "fri 11/6"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "Build sub-assembly: Finger distal link (2) done 11/6 moving on to the next one"
+      "length": "short",
+      "text": "Build sub-assembly: Finger distal link (2) done fri 11/6"
+    },
+    {
+      "ts": "1794012094.664504",
+      "user": "p-sofia",
+      "thread_ts": "1794010887.979843",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "I did that one last build, the pins are fiddly"
+    },
+    {
+      "ts": "1794019999.349042",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-002603"
+      ],
+      "brief": "2443 arrived (3)",
+      "claim": {
+        "kind": "stock",
+        "value": 3
+      },
+      "must_mention": [
+        "2443",
+        "3"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "2443 arrived (3)!!"
+    },
+    {
+      "ts": "1794061560.116534",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [
+        "ev-001875"
+      ],
+      "brief": "2443 in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-11-06"
+      },
+      "must_mention": [
+        "2443",
+        "the build",
+        "fri the 6th"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "2443 in use for the build fri the 6th"
     }
   ]
 }

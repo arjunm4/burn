@@ -54,6 +54,24 @@
       }
     },
     {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
       "id": "p-kenji",
       "name": "Kenji Morimoto",
       "display_name": "kenji.m",
@@ -72,56 +90,39 @@
       }
     },
     {
-      "id": "p-lin",
-      "name": "Lin Zhao",
-      "display_name": "lin.z",
-      "slack_id": "U07FLK0LIN0",
-      "title": "Test Engineer, life test",
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
       "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
         "emoji": "rare",
         "length": "medium",
-        "hedging": "low",
-        "quirks": []
-      }
-    },
-    {
-      "id": "p-priya",
-      "name": "Priya Raman",
-      "display_name": "priya",
-      "slack_id": "U07FLK0PRIY",
-      "title": "Legs Lead",
-      "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "none",
-        "length": "long",
-        "hedging": "medium",
+        "hedging": "high",
         "quirks": [
-          "numbered lists in status updates",
-          "restates the question before answering"
+          "\"i think\", \"probably\", \"not 100% sure but\""
         ]
       }
     },
     {
-      "id": "p-samir",
-      "name": "Samir Khoury",
-      "display_name": "samir.k",
-      "slack_id": "U07FLK0SAMI",
-      "title": "Senior NPI Buyer",
+      "id": "p-rohan",
+      "name": "Rohan Kapoor",
+      "display_name": "rohan",
+      "slack_id": "U07FLK0ROHA",
+      "title": "Controls Engineer, manipulation",
       "style": {
         "case": "lower",
         "punctuation": "light",
-        "typos": "some",
-        "emoji": "rare",
+        "typos": "lots",
+        "emoji": "some",
         "length": "medium",
-        "hedging": "medium",
+        "hedging": "low",
         "quirks": [
-          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
-          "corrects own dates"
+          "fixes typos with *word",
+          "double-sends instead of editing"
         ]
       }
     },
@@ -173,13 +174,13 @@
   ],
   "messages": [
     {
-      "ts": "1792444641.088989",
+      "ts": "1792444641.067248",
       "user": "p-kenji",
       "thread_ts": null,
       "events": [
-        "ev-002315"
+        "ev-002598"
       ],
-      "brief": "FL-TST-2443: need 3 by 2026-11-09 for next week",
+      "brief": "FL-TST-2443: need 3 by 2026-11-09 for Test stand rework: Grip load cell plate (2)",
       "claim": {
         "kind": "needs",
         "value": {
@@ -189,43 +190,96 @@
       },
       "must_mention": [
         "FL-TST-2443",
-        "next week",
+        "Test stand rework: Grip load cell plate (2)",
         "FL-TST-2480",
         "FL-TST-2462",
         "FL-TST-2399",
         "FL-TST-2409",
-        "11/9"
+        "mon the 9th"
       ],
       "pressure": "low",
-      "length": "short",
-      "text": "FL-TST-2443 need 3 by 11/9 for next week, same story for FL-TST-2480 FL-TST-2462 FL-TST-2399 FL-TST-2409"
+      "length": "medium",
+      "text": "need 3 of FL-TST-2443 for Test stand rework: Grip load cell plate (2), by mon the 9th. same list as FL-TST-2480 FL-TST-2462 FL-TST-2399 FL-TST-2409"
     },
     {
-      "ts": "1792447018.387023",
-      "user": "p-lin",
-      "thread_ts": "1792444641.088989",
+      "ts": "1792446758.355947",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-002608"
+      ],
+      "brief": "1413: need 12 by 2026-10-28",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-28"
+        }
+      },
+      "must_mention": [
+        "1413",
+        "wed 10/28"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "1413 need 12 by wed 10/28"
+    },
+    {
+      "ts": "1792447674.024476",
+      "user": "p-talia",
+      "thread_ts": "1792446758.355947",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "@sofia.l is that one yours? 🙏"
+    },
+    {
+      "ts": "1792449097.274498",
+      "user": "p-rohan",
+      "thread_ts": "1792444641.067248",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "is that for the same grip rig or a second one"
+    },
+    {
+      "ts": "1792450769.942845",
+      "user": "p-ingrid",
+      "thread_ts": "1792446758.355947",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Wednesday is optimistic, but I admire it."
+    },
+    {
+      "ts": "1792453677.283109",
+      "user": "p-kenji",
+      "thread_ts": "1792444641.067248",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "thanks rohan"
+    },
+    {
+      "ts": "1792454556.691067",
+      "user": "p-omar",
+      "thread_ts": "1792444641.067248",
       "events": [],
       "brief": "reply (shares a related experience) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "we had the same wait last build, ended up borrowing from the other bench"
+      "text": "We hit something similar on the wrist rig. Not 100% sure it's the same cause but worth a look."
     },
     {
-      "ts": "1792447246.674034",
-      "user": "p-talia",
-      "thread_ts": "1792444641.088989",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "which of those are we actually short on? 🙏"
-    },
-    {
-      "ts": "1792512031.135333",
+      "ts": "1792512031.700164",
       "user": "p-kenji",
       "thread_ts": null,
       "events": [
-        "ev-003656"
+        "ev-003940"
       ],
       "brief": "distal link: still quoting rev A",
       "claim": {
@@ -239,120 +293,11 @@
       "text": "distal link still quoting rev A"
     },
     {
-      "ts": "1792513560.128663",
-      "user": "p-priya",
-      "thread_ts": null,
-      "events": [
-        "ev-002316"
-      ],
-      "brief": "LC plate: need 3 by 2026-11-09 for the build",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 3,
-          "by": "2026-11-09"
-        }
-      },
-      "must_mention": [
-        "LC plate",
-        "the build",
-        "11/9"
-      ],
-      "pressure": "low",
-      "length": "short",
-      "text": "LC plate, need 3 by 11/9 for the build"
-    },
-    {
-      "ts": "1792514589.565390",
-      "user": "p-ingrid",
-      "thread_ts": "1792513560.128663",
-      "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "Can we double check the plate drawing first? The slot width changed in the last review and I don't think the quote picked it up."
-    },
-    {
-      "ts": "1792516856.718914",
-      "user": "p-priya",
-      "thread_ts": null,
-      "events": [
-        "ev-002317"
-      ],
-      "brief": "2443: need 3 by 2026-11-09 for the fit check",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 3,
-          "by": "2026-11-09"
-        }
-      },
-      "must_mention": [
-        "2443",
-        "the fit check",
-        "mon the 9th"
-      ],
-      "pressure": "low",
-      "length": "short",
-      "text": "2443 need 3 by mon the 9th for the fit check"
-    },
-    {
-      "ts": "1792612891.265406",
-      "user": "p-kenji",
-      "thread_ts": null,
-      "events": [
-        "ev-002269"
-      ],
-      "brief": "Order XO-5554482 placed, promised 2026-10-29",
-      "claim": {
-        "kind": "eta",
-        "value": "2026-10-29"
-      },
-      "must_mention": [
-        "XO-5554482",
-        "1419",
-        "thurs the 29th"
-      ],
-      "pressure": "high",
-      "length": "short",
-      "text": "Order XO-5554482 placed for 1419, promised thurs the 29th"
-    },
-    {
-      "ts": "1792615245.935415",
-      "user": "p-kenji",
-      "thread_ts": "1792612891.265406",
-      "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "ya vendor emailed back this morning"
-    },
-    {
-      "ts": "1792620264.567904",
-      "user": "p-talia",
-      "thread_ts": "1792612891.265406",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "should we cover with a second source? 😬"
-    },
-    {
-      "ts": "1792622874.985666",
-      "user": "p-kenji",
-      "thread_ts": "1792612891.265406",
-      "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "done that before, was slow"
-    },
-    {
-      "ts": "1792627541.381450",
+      "ts": "1792627541.297137",
       "user": "p-sofia",
       "thread_ts": null,
       "events": [
-        "ev-003558"
+        "ev-004037"
       ],
       "brief": "wrist adapter: still quoting rev A",
       "claim": {
@@ -362,56 +307,45 @@
       "must_mention": [
         "wrist adapter"
       ],
-      "length": "medium",
-      "text": "wrist adapter is still quoting rev A, can someone confirm the sheet"
+      "length": "short",
+      "text": "wrist adapter is still quoting rev A. Drawings have moved on since then."
     },
     {
-      "ts": "1792629429.579087",
+      "ts": "1792632932.288992",
       "user": "p-talia",
-      "thread_ts": "1792627541.381450",
+      "thread_ts": "1792627541.297137",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Are you sure it's the quote and not the drawing in the portal? 😬"
+    },
+    {
+      "ts": "1792637379.833827",
+      "user": "p-sofia",
+      "thread_ts": "1792627541.297137",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Fair question. I checked the portal and the quote page both, same result."
+    },
+    {
+      "ts": "1792641129.977451",
+      "user": "p-rohan",
+      "thread_ts": "1792627541.297137",
       "events": [],
       "brief": "reply (adds a detail) in the thread about: the message above",
       "must_mention": [],
       "length": "one_word",
-      "text": "i saw the quote header, says rev A there too"
+      "text": "the vendor's old pdf was cached on my side last time too"
     },
     {
-      "ts": "1792634020.600370",
-      "user": "p-sofia",
-      "thread_ts": "1792627541.381450",
-      "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "thanks, will redo it"
-    },
-    {
-      "ts": "1792718557.792874",
-      "user": "p-samir",
-      "thread_ts": null,
-      "events": [
-        "ev-002320"
-      ],
-      "brief": "Order XO-5563073 placed, promised 2026-11-06",
-      "claim": {
-        "kind": "eta",
-        "value": "2026-11-06"
-      },
-      "must_mention": [
-        "XO-5563073",
-        "load cell plate",
-        "11/6"
-      ],
-      "pressure": "low",
-      "length": "short",
-      "text": "Order XO-5563073 placed for the load cell plate, promised 11/6"
-    },
-    {
-      "ts": "1792776305.935447",
+      "ts": "1792776305.832600",
       "user": "p-dmitri",
       "thread_ts": null,
       "events": [
-        "ev-002387"
+        "ev-002670"
       ],
       "brief": "1413: need 12 by 2026-11-16 for Prototype fit-up: Tendon guide bushing",
       "claim": {
@@ -427,15 +361,45 @@
         "11/16"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "1413 need 12 by 11/16 for Prototype fit-up: Tendon guide bushing, anyone have a view on lead"
+      "length": "short",
+      "text": "1413: need 12 by 11/16 for Prototype fit-up: Tendon guide bushing!!"
     },
     {
-      "ts": "1792796423.713277",
+      "ts": "1792776975.229873",
+      "user": "p-ingrid",
+      "thread_ts": "1792776305.832600",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Thank you, noted."
+    },
+    {
+      "ts": "1792787520.522301",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [
+        "ev-002418"
+      ],
+      "brief": "spin adapter arrived (8)",
+      "claim": {
+        "kind": "stock",
+        "value": 8
+      },
+      "must_mention": [
+        "spin adapter",
+        "8"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "spin adapter arrived 8"
+    },
+    {
+      "ts": "1792796423.094088",
       "user": "p-kenji",
       "thread_ts": null,
       "events": [
-        "ev-002029"
+        "ev-002287"
       ],
       "brief": "proximal link arrived (20)",
       "claim": {
@@ -448,7 +412,7 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "proximal link arrived (20)"
+      "text": "proximal link arrived 20"
     }
   ]
 }

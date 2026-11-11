@@ -1,0 +1,98 @@
+{
+  "job_id": "jira-HND-2026-07-20-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 33,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HND",
+    "name": "Hands and arms"
+  },
+  "week": {
+    "start": "2026-07-20",
+    "end": "2026-07-26"
+  },
+  "people": [
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HND-129",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-zoe",
+      "assignee": "p-zoe",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-07-20T15:48:45-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001584"
+      ],
+      "brief": "Order 3x Finger distal link, 5x Forearm motor pack plate, 24x Tactile board bracket / FL-HND-1419: need 3 by 2026-09-02",
+      "must_mention": [
+        "FL-HND-1419",
+        "wed 9/2"
+      ],
+      "description_length": "short",
+      "summary": "Finger distal link / forearm plate / tactile brackets",
+      "description": "FL-HND-1419 need 3 by wed 9/2",
+      "comments": [
+        {
+          "id": "HND-129-c1",
+          "by": "p-sofia",
+          "at": "2026-08-10T14:15:46-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "any chance this can move up, hand build is waiting on it"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,318 @@
+{
+  "job_id": "jira-ELEC-2026-07-06-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 38,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "ELEC",
+    "name": "Electrical and firmware"
+  },
+  "week": {
+    "start": "2026-07-06",
+    "end": "2026-07-12"
+  },
+  "people": [
+    {
+      "id": "p-bao",
+      "name": "Bao Nguyen",
+      "display_name": "bao.n",
+      "slack_id": "U07FLK0BAO0",
+      "title": "Electrical Engineer, motor drives",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-kwame",
+      "name": "Kwame Asante",
+      "display_name": "kwame",
+      "slack_id": "U07FLK0KWAM",
+      "title": "Senior Electrical Engineer, power",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-theo",
+      "name": "Theo Lambert",
+      "display_name": "theo",
+      "slack_id": "U07FLK0THEO",
+      "title": "Hardware Engineer, harnessing",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-valeria",
+      "name": "Valeria Ortiz",
+      "display_name": "valeria.o",
+      "slack_id": "U07FLK0VALE",
+      "title": "Electrical Engineer, battery systems",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "ELEC-99",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-bao",
+      "assignee": null,
+      "labels": [
+        "bench"
+      ],
+      "priority": "High",
+      "created": "2026-07-06T17:21:58-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Torque spec audit",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "ELEC-99-c1",
+          "by": "p-bao",
+          "at": "2026-07-08T14:58:00-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "ELEC-99-c2",
+          "by": "p-bao",
+          "at": "2026-07-20T15:17:02-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "ELEC-99-c3",
+          "by": "p-bao",
+          "at": "2026-07-24T09:23:44-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "ELEC-100",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-kwame",
+      "assignee": "p-theo",
+      "labels": [
+        "bench"
+      ],
+      "priority": "Medium",
+      "created": "2026-07-07T14:56:04-07:00",
+      "due_date": "2026-07-24",
+      "events": [],
+      "brief": "Review DFM feedback",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "ELEC-100-c1",
+          "by": "p-theo",
+          "at": "2026-07-16T16:15:24-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "ELEC-101",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-valeria",
+      "assignee": "p-theo",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-07-09T08:34:52-07:00",
+      "due_date": "2026-07-20",
+      "events": [],
+      "brief": "Update assembly work instructions",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "ELEC-102",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-valeria",
+      "assignee": "p-kwame",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-07-09T09:53:22-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Update assembly work instructions",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "ELEC-102-c1",
+          "by": "p-farah",
+          "at": "2026-07-10T16:34:31-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "ELEC-102-c2",
+          "by": "p-kwame",
+          "at": "2026-07-13T15:45:34-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "ELEC-102-c3",
+          "by": "p-kwame",
+          "at": "2026-07-13T17:53:56-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "ELEC-102-c4",
+          "by": "p-theo",
+          "at": "2026-07-15T17:28:23-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "ELEC-102-c5",
+          "by": "p-kwame",
+          "at": "2026-07-17T12:48:59-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "ELEC-103",
+      "type": "Sub-task",
+      "status": "Done",
+      "reporter": "p-valeria",
+      "assignee": "p-kwame",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-07-09T10:01:16-07:00",
+      "due_date": "2026-07-27",
+      "events": [],
+      "brief": "Firmware flag for bench mode",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "ELEC-104",
+      "type": "Sub-task",
+      "status": "Done",
+      "reporter": "p-kwame",
+      "assignee": null,
+      "labels": [
+        "docs"
+      ],
+      "priority": "Medium",
+      "created": "2026-07-09T12:21:22-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Tolerance stack review",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    }
+  ]
+}

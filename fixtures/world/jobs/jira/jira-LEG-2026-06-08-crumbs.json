@@ -1,0 +1,130 @@
+{
+  "job_id": "jira-LEG-2026-06-08-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 45,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "LEG",
+    "name": "Legs and ankle"
+  },
+  "week": {
+    "start": "2026-06-08",
+    "end": "2026-06-14"
+  },
+  "people": [
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "LEG-169",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-hana",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-06-12T10:23:45-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001293"
+      ],
+      "brief": "Order 9x Foot sole plate, 24x Ankle rod-end spacer, 3x Ankle pushrod clevis, 24x Ankle pivot pin / the plate: need 9 by 2026-07-06 for the fit check",
+      "must_mention": [
+        "the plate",
+        "the fit check",
+        "7/6"
+      ],
+      "description_length": "one_line",
+      "summary": "Foot sole plate, rod end spacers, clevis, pivot pins",
+      "description": "the plate needed for the fit check, 7/6 i think",
+      "comments": [
+        {
+          "id": "LEG-169-c1",
+          "by": "p-samir",
+          "at": "2026-06-15T12:28:58-07:00",
+          "events": [
+            "ev-001296"
+          ],
+          "brief": "Order XO-5424146 placed, promised 2026-07-01",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-07-01"
+          },
+          "must_mention": [
+            "XO-5424146",
+            "foot plate",
+            "7/1"
+          ],
+          "body": "XO-5424146 placed, foot plate promised 7/1"
+        },
+        {
+          "id": "LEG-169-c2",
+          "by": "p-samir",
+          "at": "2026-06-17T05:50:58-07:00",
+          "events": [
+            "ev-003527"
+          ],
+          "brief": "Correction: Order XO-5424146 placed, promised 2026-06-30",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-06-30"
+          },
+          "must_mention": [
+            "XO-5424146",
+            "foot plate",
+            "6/30"
+          ],
+          "body": "correction, XO-5424146 foot plate is promised 6/30 not 7/1"
+        }
+      ]
+    }
+  ]
+}

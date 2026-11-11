@@ -1,0 +1,154 @@
+{
+  "job_id": "slack-ch-structures-2026-07-06-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 37,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-structures",
+    "name": "structures-battery",
+    "slack_id": "C07FLK0STRC",
+    "purpose": "Torso, pelvis and battery enclosure"
+  },
+  "week": {
+    "start": "2026-07-06",
+    "end": "2026-07-12"
+  },
+  "people": [
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-kwame",
+      "name": "Kwame Asante",
+      "display_name": "kwame",
+      "slack_id": "U07FLK0KWAM",
+      "title": "Senior Electrical Engineer, power",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Torso and pelvis structure.",
+    "Ongoing: Crossed-roller preload drops after thermal cycling; bore tolerance and preload ring design. This week: Rev B bracket and housing released with the new bearing; preload holds after 20 cycles.",
+    "Ongoing: What to show investors when no full humanoid exists. This week: Ingrid warns the leg drop campaign slipped; demo date is hard."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1783524009.423868",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-003065"
+      ],
+      "brief": "Rig setup for Torso and pelvis static load test: Leg fixture hook, shank end waits on Encoder kit for torso and pelvis structure (shank hook)",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-gen-0068"
+      },
+      "must_mention": [
+        "Encoder kit for torso and pelvis structure (shank hook)",
+        "Rig setup for Torso and pelvis static load test: Leg fixture hook, shank end"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Rig setup for Torso and pelvis static load test: Leg fixture hook, shank end waits on Encoder kit for torso and pelvis structure (shank hook)"
+    },
+    {
+      "ts": "1783528526.357300",
+      "user": "p-carlos",
+      "thread_ts": "1783524009.423868",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@kwame thats yours right"
+    },
+    {
+      "ts": "1783531115.393216",
+      "user": "p-lukas",
+      "thread_ts": "1783524009.423868",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "@carlos can you check with receiving if the kit came in"
+    },
+    {
+      "ts": "1783535602.765274",
+      "user": "p-kwame",
+      "thread_ts": "1783524009.423868",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "i dont think its the kit holding it up, hook still needs a weld inspection"
+    }
+  ]
+}

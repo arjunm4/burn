@@ -1,0 +1,294 @@
+{
+  "job_id": "jira-HIP-2026-06-08-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 46,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HIP",
+    "name": "Actuators (hip and knee)"
+  },
+  "week": {
+    "start": "2026-06-08",
+    "end": "2026-06-14"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "HIP-263",
+      "type": "Sub-task",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": null,
+      "labels": [
+        "tech-debt"
+      ],
+      "priority": "Medium",
+      "created": "2026-06-08T22:13:54-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Rework fixture clamp (hip actuator)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-263-c1",
+          "by": "p-nadia",
+          "at": "2026-06-10T11:45:31-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-264",
+      "type": "Sub-task",
+      "status": "Done",
+      "reporter": "p-nadia",
+      "assignee": "p-arjun",
+      "labels": [
+        "tech-debt"
+      ],
+      "priority": "Medium",
+      "created": "2026-06-09T13:28:43-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Tolerance stack review (hip actuator)",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-264-c1",
+          "by": "p-arjun",
+          "at": "2026-06-12T15:08:28-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-264-c2",
+          "by": "p-arjun",
+          "at": "2026-06-15T18:06:42-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-264-c3",
+          "by": "p-arjun",
+          "at": "2026-06-22T09:58:36-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-265",
+      "type": "Task",
+      "status": "Blocked",
+      "reporter": "p-owen",
+      "assignee": "p-tomas",
+      "labels": [
+        "dfm"
+      ],
+      "priority": "Medium",
+      "created": "2026-06-10T12:52:01-07:00",
+      "due_date": "2026-07-01",
+      "events": [],
+      "brief": "Label and bin received parts (knee actuator)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-265-c1",
+          "by": "p-tomas",
+          "at": "2026-06-12T03:51:01-07:00",
+          "events": [],
+          "brief": "background: short note on why the due date moved (no date)",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-266",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-wei",
+      "assignee": "p-wei",
+      "labels": [],
+      "priority": "Highest",
+      "created": "2026-06-10T17:51:43-07:00",
+      "due_date": "2026-06-30",
+      "events": [],
+      "brief": "Rework fixture clamp (knee actuator)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HIP-267",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-wei",
+      "assignee": "p-owen",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-06-12T09:21:17-07:00",
+      "due_date": "2026-06-22",
+      "events": [],
+      "brief": "Capture lessons learned (knee actuator)",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-267-c1",
+          "by": "p-owen",
+          "at": "2026-06-15T09:55:05-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-268",
+      "type": "Sub-task",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": "p-wei",
+      "labels": [
+        "bench"
+      ],
+      "priority": "Medium",
+      "created": "2026-06-12T11:26:06-07:00",
+      "due_date": "2026-06-22",
+      "events": [],
+      "brief": "Document test procedure (hip actuator)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    }
+  ]
+}

@@ -1,0 +1,555 @@
+{
+  "job_id": "slack-ch-build-2026-02-16-background-2026-02-20",
+  "source": "slack",
+  "status": "blank",
+  "priority": 78,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-build",
+    "name": "build",
+    "slack_id": "C07FLK0BILD",
+    "purpose": "EVT/DVT build coordination"
+  },
+  "week": {
+    "start": "2026-02-16",
+    "end": "2026-02-22"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-bao",
+      "name": "Bao Nguyen",
+      "display_name": "bao.n",
+      "slack_id": "U07FLK0BAO0",
+      "title": "Electrical Engineer, motor drives",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-yusuf",
+      "name": "Yusuf Demir",
+      "display_name": "yusuf",
+      "slack_id": "U07FLK0YUSU",
+      "title": "Firmware Engineer, motor control",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT. This week: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1771607785.819289",
+      "user": "p-yusuf",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771607904.950084",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1771609362.751154",
+      "user": "p-arjun",
+      "thread_ts": "1771607785.819289",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1771611382.602605",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about the ongoing whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for dvt",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771611558.531742",
+      "user": "p-farah",
+      "thread_ts": "1771607904.950084",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1771612651.345512",
+      "user": "p-lin",
+      "thread_ts": "1771607785.819289",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771613098.416960",
+      "user": "p-omar",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771614661.140477",
+      "user": "p-farah",
+      "thread_ts": "1771607904.950084",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1771618013.469946",
+      "user": "p-diego",
+      "thread_ts": "1771607785.819289",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771618112.305246",
+      "user": "p-jonas",
+      "thread_ts": "1771607904.950084",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1771621592.227846",
+      "user": "p-dmitri",
+      "thread_ts": "1771607785.819289",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771623170.373830",
+      "user": "p-zoe",
+      "thread_ts": "1771607904.950084",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771625771.767490",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on the ongoing whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for dvt",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771625817.158428",
+      "user": "p-priya",
+      "thread_ts": "1771607904.950084",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1771626362.136581",
+      "user": "p-priya",
+      "thread_ts": "1771607785.819289",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771626947.749706",
+      "user": "p-bao",
+      "thread_ts": "1771607904.950084",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771628830.633830",
+      "user": "p-jonas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with the ongoing whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for dvt",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771634284.514759",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771637111.917957",
+      "user": "p-nora",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1771638000.062775",
+      "user": "p-priya",
+      "thread_ts": "1771634284.514759",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1771642832.010357",
+      "user": "p-nadia",
+      "thread_ts": "1771634284.514759",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    }
+  ]
+}

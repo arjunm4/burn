@@ -1,0 +1,478 @@
+{
+  "job_id": "jira-HND-2026-03-16-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 70,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HND",
+    "name": "Hands and arms"
+  },
+  "week": {
+    "start": "2026-03-16",
+    "end": "2026-03-22"
+  },
+  "people": [
+    {
+      "id": "p-amara",
+      "name": "Amara Nwosu",
+      "display_name": "amara",
+      "slack_id": "U07FLK0AMAR",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "HND-25",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-amara",
+      "assignee": "p-amara",
+      "labels": [
+        "docs"
+      ],
+      "priority": "Low",
+      "created": "2026-03-16T11:53:32-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Review DFM feedback (hand and wrist)",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HND-26",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-amara",
+      "assignee": "p-kenji",
+      "labels": [
+        "tech-debt"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-16T12:24:52-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Firmware flag for bench mode (hand and wrist)",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HND-26-c1",
+          "by": "p-kenji",
+          "at": "2026-03-19T15:14:04-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HND-28",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-kenji",
+      "assignee": "p-sofia",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-03-17T10:28:49-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Capture lessons learned (hand and wrist)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HND-28-c1",
+          "by": "p-kenji",
+          "at": "2026-03-17T14:19:26-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HND-28-c2",
+          "by": "p-sofia",
+          "at": "2026-03-23T16:23:29-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HND-28-c3",
+          "by": "p-sofia",
+          "at": "2026-03-30T18:09:46-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HND-29",
+      "type": "Story",
+      "status": "In Progress",
+      "reporter": "p-amara",
+      "assignee": "p-kenji",
+      "labels": [
+        "dfm"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-17T10:57:34-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Update assembly work instructions (hand and wrist)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HND-30",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-amara",
+      "assignee": null,
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-03-17T14:33:59-07:00",
+      "due_date": "2026-03-31",
+      "events": [],
+      "brief": "Update assembly work instructions (hand and wrist)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HND-31",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-amara",
+      "assignee": "p-sofia",
+      "labels": [
+        "bench"
+      ],
+      "priority": "High",
+      "created": "2026-03-18T08:03:33-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Investigate noise on bench unit (hand and wrist)",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HND-31-c1",
+          "by": "p-sofia",
+          "at": "2026-03-24T16:45:02-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HND-31-c2",
+          "by": "p-amara",
+          "at": "2026-03-30T16:51:45-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HND-32",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-kenji",
+      "assignee": "p-kenji",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-03-18T09:22:54-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Torque spec audit (hand and wrist)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HND-33",
+      "type": "Sub-task",
+      "status": "Done",
+      "reporter": "p-amara",
+      "assignee": "p-amara",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-03-19T11:54:29-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Tolerance stack review (hand and wrist)",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HND-33-c1",
+          "by": "p-kenji",
+          "at": "2026-03-20T14:23:26-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HND-33-c2",
+          "by": "p-amara",
+          "at": "2026-04-10T12:22:12-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HND-34",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-kenji",
+      "assignee": "p-kenji",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-03-19T11:58:02-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Update drawing and BOM (hand and wrist)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HND-35",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-carlos",
+      "assignee": "p-carlos",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-03-19T15:14:08-07:00",
+      "due_date": "2026-03-23",
+      "events": [],
+      "brief": "Order 2x Spin-test base riser",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HND-35-c1",
+          "by": "p-sofia",
+          "at": "2026-03-20T15:48:50-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HND-35-c2",
+          "by": "p-amara",
+          "at": "2026-03-23T09:36:35-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HND-36",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-kenji",
+      "assignee": "p-sofia",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-03-20T09:56:28-07:00",
+      "due_date": "2026-04-06",
+      "events": [],
+      "brief": "Update drawing and BOM (hand and wrist)",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HND-36-c1",
+          "by": "p-kenji",
+          "at": "2026-03-23T11:21:43-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HND-36-c2",
+          "by": "p-sofia",
+          "at": "2026-04-03T15:49:44-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HND-37",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-amara",
+      "assignee": "p-amara",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-03-20T09:57:17-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Review DFM feedback (hand and wrist)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HND-38",
+      "type": "Sub-task",
+      "status": "Done",
+      "reporter": "p-amara",
+      "assignee": "p-sofia",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-03-20T14:59:30-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Review DFM feedback (hand and wrist)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HND-38-c1",
+          "by": "p-amara",
+          "at": "2026-03-25T11:07:19-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HND-38-c2",
+          "by": "p-sofia",
+          "at": "2026-03-25T16:09:50-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    }
+  ]
+}

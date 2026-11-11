@@ -1,0 +1,111 @@
+{
+  "job_id": "slack-ch-hands-arms-2026-06-01-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 47,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hands-arms",
+    "name": "hands-arms",
+    "slack_id": "C07FLK0HAND",
+    "purpose": "Arms, wrist and hand"
+  },
+  "week": {
+    "start": "2026-06-01",
+    "end": "2026-06-07"
+  },
+  "people": [
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hand and wrist.",
+    "Ongoing: Orders sitting in DFM review because of tolerance callouts. This week: Checklist adopted; DFM holds drop but still hit rush orders."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1780607497.628283",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-001053"
+      ],
+      "brief": "2139 arrived (12)",
+      "claim": {
+        "kind": "stock",
+        "value": 12
+      },
+      "must_mention": [
+        "2139",
+        "12"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "2139 arrived, 12, elevated pressure"
+    },
+    {
+      "ts": "1780610850.059359",
+      "user": "p-talia",
+      "thread_ts": "1780607497.628283",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "twelve of them, someone is having a good day 😄"
+    },
+    {
+      "ts": "1780612966.203626",
+      "user": "p-kenji",
+      "thread_ts": "1780607497.628283",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "not that good, still need the other half"
+    }
+  ]
+}

@@ -1,0 +1,246 @@
+{
+  "job_id": "slack-ch-test-lab-2026-07-27-background-2026-07-27",
+  "source": "slack",
+  "status": "blank",
+  "priority": 32,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-test-lab",
+    "name": "test-lab",
+    "slack_id": "C07FLK0TLAB",
+    "purpose": "Test lab: rigs, bookings, results, fixtures"
+  },
+  "week": {
+    "start": "2026-07-27",
+    "end": "2026-08-02"
+  },
+  "people": [
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Tendons fray at the proximal pulley after 40k grip cycles. This week: Amara: pulley groove edge is sharp, Ra 3.2 and no radius; asks for polished groove.",
+    "Ongoing: Type III anodize adds ~0.025 mm per surface and kills the bearing press fit. This week: Wei: mask the bore or open it pre-anodize by 0.05; argues masking is cheaper and repeatable.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Carlos finds two broken phase conductors at the knee after the overnight gait run.",
+    "Ongoing: Gait controller tuning for the investor demo on the gait gantry. This week: Foot contact detection flaky; Ravi suggests learned contact estimator, Mei wants foot switches first.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno. This week: Lin: grip-cycle test ties up the fixture for 6 days; pinch tests wait.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting. This week: Ingrid approves machined plates for DVT only; casting decision deferred to PVT."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1785167032.912605",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on this: Lin starts the grip-cycle life test, target 100k cycles.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1785168393.556943",
+      "user": "p-jade",
+      "thread_ts": "1785167032.912605",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Lin starts the grip-cycle life test, target 100k cycles.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1785173415.287717",
+      "user": "p-priya",
+      "thread_ts": "1785167032.912605",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Lin starts the grip-cycle life test, target 100k cycles.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1785190921.709457",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1785196122.337700",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about this: Renee: machined plates are 1.4 kg heavier and ~$1.1k each on Xometry.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1785197402.455214",
+      "user": "p-kenji",
+      "thread_ts": "1785196122.337700",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Renee: machined plates are 1.4 kg heavier and ~$1.1k each on Xometry.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1785202429.139440",
+      "user": "p-carlos",
+      "thread_ts": "1785196122.337700",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Renee: machined plates are 1.4 kg heavier and ~$1.1k each on Xometry.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1785202716.433143",
+      "user": "p-lin",
+      "thread_ts": "1785196122.337700",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Renee: machined plates are 1.4 kg heavier and ~$1.1k each on Xometry.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

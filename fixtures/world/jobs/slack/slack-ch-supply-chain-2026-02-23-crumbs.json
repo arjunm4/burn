@@ -1,0 +1,127 @@
+{
+  "job_id": "slack-ch-supply-chain-2026-02-23-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 75,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-supply-chain",
+    "name": "supply-chain",
+    "slack_id": "C07FLK0SUPC",
+    "purpose": "Supply chain team: vendors, POs, deliveries, expedites"
+  },
+  "week": {
+    "start": "2026-02-23",
+    "end": "2026-03-01"
+  },
+  "people": [
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT. This week: Arjun pushes back: harmonic flexspline fatigue at hip peak torque (~140 Nm) is marginal, cyclo takes shock loads from drops."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1772235399.268311",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-000229"
+      ],
+      "brief": "Order XO-5315219 placed, promised 2026-03-26",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-03-26"
+      },
+      "must_mention": [
+        "XO-5315219",
+        "clevis",
+        "thurs 3/26"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Order XO-5315219 placed for the clevis, promised thurs 3/26."
+    },
+    {
+      "ts": "1772240720.274688",
+      "user": "p-samir",
+      "thread_ts": "1772235399.268311",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "nice, thanks lin"
+    },
+    {
+      "ts": "1772242853.687815",
+      "user": "p-omar",
+      "thread_ts": "1772235399.268311",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "@gwen i think this one is yours? not sure"
+    }
+  ]
+}

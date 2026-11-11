@@ -1,0 +1,127 @@
+{
+  "job_id": "jira-STR-2026-04-06-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 63,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "STR",
+    "name": "Torso, structures and battery"
+  },
+  "week": {
+    "start": "2026-04-06",
+    "end": "2026-04-12"
+  },
+  "people": [
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "STR-66",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-zoe",
+      "assignee": "p-zoe",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-04-08T11:13:13-07:00",
+      "due_date": null,
+      "events": [
+        "ev-000701"
+      ],
+      "brief": "Order 1x Battery clevis 10 / the clevis: need 1 by 2026-05-01; asks whether expediting is worth it",
+      "must_mention": [
+        "the clevis",
+        "5/1"
+      ],
+      "description_length": "one_line",
+      "summary": "Order 1x Battery clevis 10",
+      "description": "the clevis, need 1 by 5/1. worth expediting?",
+      "comments": [
+        {
+          "id": "STR-66-c1",
+          "by": "p-zoe",
+          "at": "2026-04-15T16:31:32-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "any movement on this?"
+        },
+        {
+          "id": "STR-66-c2",
+          "by": "p-zoe",
+          "at": "2026-04-16T15:48:48-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "bump"
+        },
+        {
+          "id": "STR-66-c3",
+          "by": "p-zoe",
+          "at": "2026-04-23T09:51:08-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on vendor i think"
+        },
+        {
+          "id": "STR-66-c4",
+          "by": "p-zoe",
+          "at": "2026-04-27T18:02:22-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "@zoe.c is this still open on your side or can we close it out"
+        },
+        {
+          "id": "STR-66-c5",
+          "by": "p-zoe",
+          "at": "2026-04-28T12:10:07-07:00",
+          "events": [
+            "ev-000703"
+          ],
+          "brief": "clevis arrived (1)",
+          "claim": {
+            "kind": "stock",
+            "value": 1
+          },
+          "must_mention": [
+            "clevis",
+            "1"
+          ],
+          "body": "clevis arrived (1)"
+        }
+      ]
+    }
+  ]
+}

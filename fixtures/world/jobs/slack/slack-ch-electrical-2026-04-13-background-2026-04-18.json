@@ -1,0 +1,91 @@
+{
+  "job_id": "slack-ch-electrical-2026-04-13-background-2026-04-18",
+  "source": "slack",
+  "status": "blank",
+  "priority": 62,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-electrical",
+    "name": "electrical",
+    "slack_id": "C07FLK0ELEC",
+    "purpose": "Electrical and firmware: boards, harnesses, bring-up"
+  },
+  "week": {
+    "start": "2026-04-13",
+    "end": "2026-04-19"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno. This week: Andre: EVT hip hits the 120 C winding limit after ~4 min at 60 Nm, spec says 10 min.",
+    "Ongoing: Absolute encoder on the knee output glitches when the motor runs above 8 A"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1776537104.383659",
+      "user": "p-jonas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: Bao scopes it: common-mode noise on the SSI clock, cable runs alongside motor phases.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1776555489.387313",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: Jonas sees 2-3 count jumps on the knee abs encoder above 8 A phase current.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    }
+  ]
+}

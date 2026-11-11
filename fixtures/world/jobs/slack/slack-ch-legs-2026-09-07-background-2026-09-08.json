@@ -19,21 +19,21 @@
   },
   "people": [
     {
-      "id": "p-beth",
-      "name": "Beth Kowalski",
-      "display_name": "beth",
-      "slack_id": "U07FLK0BETH",
-      "title": "Technical Program Manager",
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
       "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "none",
-        "length": "long",
-        "hedging": "medium",
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
         "quirks": [
-          "numbered lists in status updates",
-          "restates the question before answering"
+          "fixes typos with *word",
+          "double-sends instead of editing"
         ]
       }
     },
@@ -53,6 +53,25 @@
         "quirks": [
           "ALL CAPS for part numbers and deadlines",
           "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
         ]
       }
     },
@@ -95,21 +114,21 @@
       }
     },
     {
-      "id": "p-talia",
-      "name": "Talia Rosen",
-      "display_name": "talia",
-      "slack_id": "U07FLK0TALI",
-      "title": "Buyer/Planner",
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
       "style": {
-        "case": "mixed",
+        "case": "lower",
         "punctuation": "light",
-        "typos": "rare",
-        "emoji": "lots",
+        "typos": "some",
+        "emoji": "rare",
         "length": "medium",
-        "hedging": "low",
+        "hedging": "medium",
         "quirks": [
-          "reacts with 🙏 and 😬",
-          "ends messages with an emoji"
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
         ]
       }
     }
@@ -131,11 +150,11 @@
   ],
   "messages": [
     {
-      "ts": "1788885645.066342",
+      "ts": "1788885645.603902",
       "user": "p-mei",
       "thread_ts": null,
       "events": [
-        "ev-003959"
+        "ev-004419"
       ],
       "brief": "background: Ravi: RL gait policy walks in sim, chatters on hardware.",
       "must_mention": [],
@@ -143,47 +162,67 @@
       "text": null
     },
     {
-      "ts": "1788902469.064192",
-      "user": "p-carlos",
-      "thread_ts": null,
-      "events": [
-        "ev-004237"
-      ],
-      "brief": "background: Rev C release moves the cable inboard; Farah asks for high-flex cable on the next harness.",
-      "must_mention": [],
-      "length": "long",
-      "text": null
-    },
-    {
-      "ts": "1788903848.353052",
-      "user": "p-beth",
-      "thread_ts": "1788902469.064192",
+      "ts": "1788889307.851834",
+      "user": "p-callum",
+      "thread_ts": "1788885645.603902",
       "events": [],
-      "brief": "reply (agrees) in the thread about: Rev C release moves the cable inboard; Farah asks for high-flex cable on the next harness.",
-      "must_mention": [],
-      "length": "short",
-      "text": null
-    },
-    {
-      "ts": "1788918530.975059",
-      "user": "p-elena",
-      "thread_ts": null,
-      "events": [
-        "ev-003957"
-      ],
-      "brief": "background: Ravi: RL gait policy walks in sim, chatters on hardware.",
+      "brief": "reply (pushes back) in the thread about: Ravi: RL gait policy walks in sim, chatters on hardware.",
       "must_mention": [],
       "length": "medium",
       "text": null
     },
     {
-      "ts": "1788922156.823974",
-      "user": "p-talia",
-      "thread_ts": null,
+      "ts": "1788890719.498810",
+      "user": "p-zoe",
+      "thread_ts": "1788885645.603902",
       "events": [],
-      "brief": "background: asks for a second opinion on inspection of the hip yoke",
+      "brief": "reply (pushes back) in the thread about: Ravi: RL gait policy walks in sim, chatters on hardware.",
       "must_mention": [],
-      "length": "long",
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788902469.977427",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-004697"
+      ],
+      "brief": "background: Rev C release moves the cable inboard; Farah asks for high-flex cable on the next harness.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1788903090.911501",
+      "user": "p-callum",
+      "thread_ts": "1788902469.977427",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: Rev C release moves the cable inboard; Farah asks for high-flex cable on the next harness.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1788907026.729014",
+      "user": "p-diego",
+      "thread_ts": "1788902469.977427",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: Rev C release moves the cable inboard; Farah asks for high-flex cable on the next harness.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788918530.827682",
+      "user": "p-elena",
+      "thread_ts": null,
+      "events": [
+        "ev-004417"
+      ],
+      "brief": "background: Ravi: RL gait policy walks in sim, chatters on hardware.",
+      "must_mention": [],
+      "length": "short",
       "text": null
     }
   ]

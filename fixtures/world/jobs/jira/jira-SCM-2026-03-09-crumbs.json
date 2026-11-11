@@ -1,0 +1,528 @@
+{
+  "job_id": "jira-SCM-2026-03-09-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 71,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "SCM",
+    "name": "Supply chain and procurement"
+  },
+  "week": {
+    "start": "2026-03-09",
+    "end": "2026-03-15"
+  },
+  "people": [
+    {
+      "id": "p-amara",
+      "name": "Amara Nwosu",
+      "display_name": "amara",
+      "slack_id": "U07FLK0AMAR",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "SCM-39",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-amara",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-09T10:39:38-07:00",
+      "due_date": null,
+      "events": [
+        "ev-000296"
+      ],
+      "brief": "Order 10x Dyno coupling, knee actuator, 3x Dyno chamber shaft feedthrough, 2x Spin-test stand adapter plate, 12x Spin-test shaft coupling / the actuator: need 10 by 2026-03-26",
+      "must_mention": [
+        "the actuator",
+        "3/26"
+      ],
+      "description_length": "one_line",
+      "summary": "Dyno coupling + feedthrough + adapter plate order",
+      "description": "need 10 by 3/26 for the actuator",
+      "comments": [
+        {
+          "id": "SCM-39-c1",
+          "by": "p-amara",
+          "at": "2026-03-16T15:44:26-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "which vendor is this going to?"
+        },
+        {
+          "id": "SCM-39-c2",
+          "by": "p-samir",
+          "at": "2026-03-27T14:13:53-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "got the quote, placing it"
+        }
+      ]
+    },
+    {
+      "key": "SCM-40",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-andre",
+      "assignee": "p-andre",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-09T11:35:09-07:00",
+      "due_date": null,
+      "events": [
+        "ev-000402"
+      ],
+      "brief": "Order 7x Dyno mounting plate, hip actuator, 1x Dyno shaft alignment jig / FL-TST-2138: need 7 by 2026-04-03 for Hip actuator EVT dyno torque-speed map",
+      "must_mention": [
+        "FL-TST-2138",
+        "Hip actuator EVT dyno torque-speed map",
+        "FL-TST-2125",
+        "fri 4/3"
+      ],
+      "description_length": "one_line",
+      "summary": "Dyno mounting plate hip + alignment jig",
+      "description": "FL-TST-2138 and FL-TST-2125, need 7 by fri 4/3 for Hip actuator EVT dyno torque-speed map",
+      "comments": [
+        {
+          "id": "SCM-40-c1",
+          "by": "p-andre",
+          "at": "2026-03-18T12:29:00-07:00",
+          "events": [
+            "ev-000403"
+          ],
+          "brief": "hip dyno plate: need 7 by 2026-04-02",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 7,
+              "by": "2026-04-02"
+            }
+          },
+          "must_mention": [
+            "hip dyno plate",
+            "4/2"
+          ],
+          "body": "hip dyno plate: need 7 by 4/2"
+        },
+        {
+          "id": "SCM-40-c2",
+          "by": "p-andre",
+          "at": "2026-03-18T23:52:00-07:00",
+          "events": [
+            "ev-003581"
+          ],
+          "brief": "Correction: hip dyno plate: need 7 by 2026-04-03",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 7,
+              "by": "2026-04-03"
+            }
+          },
+          "must_mention": [
+            "hip dyno plate",
+            "fri 4/3"
+          ],
+          "body": "Correction: hip dyno plate need 7 by fri 4/3"
+        },
+        {
+          "id": "SCM-40-c3",
+          "by": "p-talia",
+          "at": "2026-03-30T16:48:39-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "pics in slack"
+        }
+      ]
+    },
+    {
+      "key": "SCM-41",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": "p-tomas",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-09T13:29:57-07:00",
+      "due_date": "2026-03-31",
+      "events": [
+        "ev-000329"
+      ],
+      "brief": "Order 12x Spin-test shaft coupling, 5x Dyno coupling, knee actuator / the part: need 12 by 2026-03-31",
+      "must_mention": [
+        "the part",
+        "tues 3/31"
+      ],
+      "description_length": "one_line",
+      "summary": "Spin-test shaft coupling x12 + dyno coupling",
+      "description": "the part: need 12 by tues 3/31",
+      "comments": [
+        {
+          "id": "SCM-41-c1",
+          "by": "p-tomas",
+          "at": "2026-03-11T09:06:58-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on vendor"
+        },
+        {
+          "id": "SCM-41-c2",
+          "by": "p-tomas",
+          "at": "2026-03-11T11:53:47-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "still nothing"
+        },
+        {
+          "id": "SCM-41-c3",
+          "by": "p-tomas",
+          "at": "2026-03-25T11:53:07-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "slipping again"
+        },
+        {
+          "id": "SCM-41-c4",
+          "by": "p-talia",
+          "at": "2026-04-03T13:42:54-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on the quote still 🙏"
+        }
+      ]
+    },
+    {
+      "key": "SCM-42",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-amara",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-09T15:29:50-07:00",
+      "due_date": "2026-04-09",
+      "events": [
+        "ev-000472"
+      ],
+      "brief": "Order 3x Battery clevis 10 / FL-BAT-1685: need 3 by 2026-04-09 for Instrumentation fit-up for Battery enclosure thermal runaway containment: Battery clevis 10",
+      "must_mention": [
+        "FL-BAT-1685",
+        "Instrumentation fit-up for Battery enclosure thermal runaway containment: Battery clevis 10",
+        "thurs 4/9"
+      ],
+      "description_length": "short",
+      "summary": "Battery clevis 10 x3",
+      "description": "FL-BAT-1685 need 3 by thurs 4/9, Instrumentation fit-up for Battery enclosure thermal runaway containment: Battery clevis 10",
+      "comments": [
+        {
+          "id": "SCM-42-c1",
+          "by": "p-samir",
+          "at": "2026-03-16T10:50:11-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "is the rev final? or should we hold"
+        }
+      ]
+    },
+    {
+      "key": "SCM-43",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-wei",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-10T10:23:41-07:00",
+      "due_date": "2026-04-07",
+      "events": [
+        "ev-000424"
+      ],
+      "brief": "Order 24x Hip output shaft / hip shaft: need 24 by 2026-04-07 for Tolerance stack check for Actuator DVT build: Hip output shaft",
+      "must_mention": [
+        "hip shaft",
+        "Tolerance stack check for Actuator DVT build: Hip output shaft",
+        "4/7"
+      ],
+      "description_length": "short",
+      "summary": "Hip output shaft x24",
+      "description": "hip shaft need 24 by 4/7, Tolerance stack check for Actuator DVT build: Hip output shaft",
+      "comments": []
+    },
+    {
+      "key": "SCM-45",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": "p-tomas",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-03-10T17:20:57-07:00",
+      "due_date": "2026-03-23",
+      "events": [
+        "ev-000405"
+      ],
+      "brief": "Order 12x Knee motor mount plate / FL-KNE-1153: need 12 by 2026-03-20 for Kit and assemble for Actuator DVT build: Knee motor mount plate",
+      "must_mention": [
+        "FL-KNE-1153",
+        "Kit and assemble for Actuator DVT build: Knee motor mount plate",
+        "3/20"
+      ],
+      "description_length": "one_line",
+      "summary": "Knee motor mount plate x12 (FL-KNE-1153)",
+      "description": "need 12 by 3/20, Kit and assemble for Actuator DVT build: Knee motor mount plate",
+      "comments": [
+        {
+          "id": "SCM-45-c1",
+          "by": "p-tomas",
+          "at": "2026-03-11T03:22:57-07:00",
+          "events": [
+            "ev-003655"
+          ],
+          "brief": "Correction: FL-KNE-1153: need 12 by 2026-03-23 for Kit and assemble for Actuator DVT build: Knee motor mount plate",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-03-23"
+            }
+          },
+          "must_mention": [
+            "FL-KNE-1153",
+            "Kit and assemble for Actuator DVT build: Knee motor mount plate",
+            "mon the 23rd"
+          ],
+          "body": "Correction: FL-KNE-1153 need 12 by mon the 23rd, Kit and assemble for Actuator DVT build: Knee motor mount plate"
+        },
+        {
+          "id": "SCM-45-c2",
+          "by": "p-tomas",
+          "at": "2026-03-11T16:08:44-07:00",
+          "events": [
+            "ev-000407"
+          ],
+          "brief": "motor plate: need 12 by 2026-03-23 for Kit and assemble for Actuator DVT build: Knee motor mount plate",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-03-23"
+            }
+          },
+          "must_mention": [
+            "motor plate",
+            "Kit and assemble for Actuator DVT build: Knee motor mount plate",
+            "mon 3/23"
+          ],
+          "body": "motor plate: need 12 by mon 3/23 (Kit and assemble for Actuator DVT build: Knee motor mount plate)"
+        },
+        {
+          "id": "SCM-45-c3",
+          "by": "p-tomas",
+          "at": "2026-03-18T11:52:24-07:00",
+          "events": [
+            "ev-000409"
+          ],
+          "brief": "Order XO-5332211 placed, promised 2026-03-26",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-03-26"
+          },
+          "must_mention": [
+            "XO-5332211",
+            "knee motor mount",
+            "thurs 3/26"
+          ],
+          "body": "XO-5332211 placed for the knee motor mount, promised thurs 3/26"
+        },
+        {
+          "id": "SCM-45-c4",
+          "by": "p-jade",
+          "at": "2026-03-26T15:33:11-07:00",
+          "events": [
+            "ev-000410"
+          ],
+          "brief": "knee motor mount arrived",
+          "claim": {
+            "kind": "stock",
+            "value": 10
+          },
+          "must_mention": [
+            "knee motor mount",
+            "10"
+          ],
+          "body": "knee motor mount arrived (10)"
+        },
+        {
+          "id": "SCM-45-c5",
+          "by": "p-jade",
+          "at": "2026-03-26T16:30:11-07:00",
+          "events": [
+            "ev-003671"
+          ],
+          "brief": "Correction: knee motor mount arrived (12)",
+          "claim": {
+            "kind": "stock",
+            "value": 12
+          },
+          "must_mention": [
+            "knee motor mount",
+            "12"
+          ],
+          "body": "Correction: knee motor mount arrived (12)"
+        }
+      ]
+    }
+  ]
+}

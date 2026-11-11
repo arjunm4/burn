@@ -1,0 +1,370 @@
+{
+  "job_id": "slack-ch-eng-bots-2026-06-15-background-2026-06-18",
+  "source": "slack",
+  "status": "blank",
+  "priority": 44,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-eng-bots",
+    "name": "eng-bots",
+    "slack_id": "C07FLK0BOTS",
+    "purpose": "GitHub, Jira and CI notifications"
+  },
+  "week": {
+    "start": "2026-06-15",
+    "end": "2026-06-21"
+  },
+  "people": [
+    {
+      "id": "p-elena",
+      "name": "Elena Petrova",
+      "display_name": "elena",
+      "slack_id": "U07FLK0ELEN",
+      "title": "Software Infrastructure Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-leilani",
+      "name": "Leilani Kahale",
+      "display_name": "leilani.k",
+      "slack_id": "U07FLK0LEIL",
+      "title": "Locomotion Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-marcus",
+      "name": "Marcus Adeyemi",
+      "display_name": "marcus",
+      "slack_id": "U07FLK0MARC",
+      "title": "CTO",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-mateo",
+      "name": "Mateo Silva",
+      "display_name": "mateo",
+      "slack_id": "U07FLK0MATE",
+      "title": "Embedded Software Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-ravi",
+      "name": "Ravi Subramaniam",
+      "display_name": "ravi",
+      "slack_id": "U07FLK0RAVI",
+      "title": "ML Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-tara",
+      "name": "Tara Brennan",
+      "display_name": "tara.b",
+      "slack_id": "U07FLK0TARA",
+      "title": "Infrastructure Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-yusuf",
+      "name": "Yusuf Demir",
+      "display_name": "yusuf",
+      "slack_id": "U07FLK0YUSU",
+      "title": "Firmware Engineer, motor control",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Capacitive tactile array crosstalk and flex cable routing through the finger. This week: Farah: ground pour missing under the electrode layer, crosstalk from the flex.",
+    "Ongoing: What to show investors when no full humanoid exists. This week: Helena wants a walking leg by late August for the raise.",
+    "Ongoing: Replace foot switches with a learned contact estimate from joint currents. This week: Mei skeptical: foot switches are cheap; asks for false-positive rates."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1781798955.182703",
+      "user": "p-ravi",
+      "thread_ts": null,
+      "events": [
+        "ev-004749"
+      ],
+      "brief": "background: Mei skeptical: foot switches are cheap; asks for false-positive rates.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1781803631.102748",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1781806951.662563",
+      "user": "p-tara",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with the ongoing replace foot switches with a learned contact estimate from joint currents",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1781808664.802171",
+      "user": "p-yusuf",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on the ongoing capacitive tactile array crosstalk and flex cable routing through the finger",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1781812684.268609",
+      "user": "p-jonas",
+      "thread_ts": "1781808664.802171",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the ongoing capacitive tactile array crosstalk and flex cable routing through the finger",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1781814603.448160",
+      "user": "p-farah",
+      "thread_ts": "1781808664.802171",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the ongoing capacitive tactile array crosstalk and flex cable routing through the finger",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1781818235.172348",
+      "user": "p-mateo",
+      "thread_ts": "1781808664.802171",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the ongoing capacitive tactile array crosstalk and flex cable routing through the finger",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1781821922.846679",
+      "user": "p-mei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about this: Mei skeptical: foot switches are cheap; asks for false-positive rates.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1781822704.076216",
+      "user": "p-elena",
+      "thread_ts": "1781808664.802171",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the ongoing capacitive tactile array crosstalk and flex cable routing through the finger",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1781842396.340027",
+      "user": "p-leilani",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: First tactile boards arrive; 3 of 16 taxels read saturated.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1781885383.393813",
+      "user": "p-leilani",
+      "thread_ts": "1781842396.340027",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: First tactile boards arrive; 3 of 16 taxels read saturated.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1781889566.168089",
+      "user": "p-leilani",
+      "thread_ts": "1781842396.340027",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: First tactile boards arrive; 3 of 16 taxels read saturated.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1781892134.285618",
+      "user": "p-marcus",
+      "thread_ts": "1781842396.340027",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: First tactile boards arrive; 3 of 16 taxels read saturated.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1781894533.298545",
+      "user": "p-marcus",
+      "thread_ts": "1781842396.340027",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: First tactile boards arrive; 3 of 16 taxels read saturated.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1781899139.056384",
+      "user": "p-jonas",
+      "thread_ts": "1781842396.340027",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: First tactile boards arrive; 3 of 16 taxels read saturated.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "job_id": "slack-ch-mech-2026-06-22-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 41,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-mech",
+    "name": "mech",
+    "slack_id": "C07FLK0MECH",
+    "purpose": "Mechanical engineering: design, DFM, vendors, drawings"
+  },
+  "week": {
+    "start": "2026-06-22",
+    "end": "2026-06-28"
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Six-axis sensor drifts with temperature and bolt preload. This week: Mei: Fz zero drifts ~12 N over a 20 min run.",
+    "Ongoing: Capacitive tactile array crosstalk and flex cable routing through the finger. This week: Jonas adds per-taxel baseline calibration; Kenji wants a respin anyway.",
+    "Ongoing: Crossed-roller preload drops after thermal cycling; bore tolerance and preload ring design. This week: Spacer stack chosen; bore tolerance tightened on the housing drawing to +0.008/-0.",
+    "Ongoing: What to show investors when no full humanoid exists. This week: Marcus: show the leg on the gantry plus hip and hand separately; no torso.",
+    "Ongoing: Drop from 30 cm cracks the shank link at the knee clevis. This week: First drops at 15 cm fine; 30 cm drop leaves a crack at the shank clevis fillet."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1782312060.419644",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-003359"
+      ],
+      "brief": "FL-TST-2272 rev B released: locating pins moved after leg rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-TST-2272"
+      ],
+      "length": "medium",
+      "text": "FL-TST-2272 rev B is out. locating pins moved after leg rev B, so old prints are scrap!!"
+    },
+    {
+      "ts": "1782489728.272195",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-003355"
+      ],
+      "brief": "FL-TST-2201 rev B released: moved M3 holes 1.5 mm to clear harness",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-TST-2201"
+      ],
+      "length": "short",
+      "text": "FL-TST-2201 rev B released, moved the M3 holes 1.5 mm to clear the harness"
+    },
+    {
+      "ts": "1782492275.123440",
+      "user": "p-wei",
+      "thread_ts": "1782489728.272195",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "i had the same harness problem on the pelvis fixture, ended up slotting the holes"
+    },
+    {
+      "ts": "1782492805.111188",
+      "user": "p-priya",
+      "thread_ts": "1782489728.272195",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Noted, thanks."
+    }
+  ]
+}

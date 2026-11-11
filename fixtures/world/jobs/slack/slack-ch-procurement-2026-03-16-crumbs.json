@@ -1,0 +1,734 @@
+{
+  "job_id": "slack-ch-procurement-2026-03-16-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 69,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-03-16",
+    "end": "2026-03-22"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-bao",
+      "name": "Bao Nguyen",
+      "display_name": "bao.n",
+      "slack_id": "U07FLK0BAO0",
+      "title": "Electrical Engineer, motor drives",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Building the first three hip and knee actuators. This week: Two hips and two knees built; third hip waits on the stator mount.",
+    "Ongoing: Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT. This week: Ingrid asks for a decision memo; Tomas concedes backdrivability favors cyclo for the hip at 50:1.",
+    "Ongoing: Absolute encoder on the knee output glitches when the motor runs above 8 A. This week: Jonas sees 2-3 count jumps on the knee abs encoder above 8 A phase current.",
+    "Ongoing: Coupling misalignment corrupting efficiency numbers on the dyno. This week: Wei redraws the adapter with reamed dowel holes; alignment jig requested."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1773687065.798608",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-000352"
+      ],
+      "brief": "Quote Q-2430594-1 for FL-KNE-1139: standard $1592.22, 10 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-03-24",
+          "quote_id": "Q-2430594-1",
+          "price_usd": 1592.22,
+          "lead_days": 10
+        }
+      },
+      "must_mention": [
+        "Q-2430594-1",
+        "FL-KNE-1139",
+        "3/24"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "Quote Q-2430594-1 for FL-KNE-1139 is in, standard $1592.22 and 10 BD. need qty 12 by 3/24"
+    },
+    {
+      "ts": "1773692242.158178",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-000344"
+      ],
+      "brief": "Quote Q-2430819-1 for FL-KNE-1153: standard $837.44, 10 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-03-26",
+          "quote_id": "Q-2430819-1",
+          "price_usd": 837.44,
+          "lead_days": 10
+        }
+      },
+      "must_mention": [
+        "Q-2430819-1",
+        "FL-KNE-1153",
+        "3/26"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "Quote Q-2430819-1 for FL-KNE-1153: standard $837.44, 10 BD. need 12 by 3/26"
+    },
+    {
+      "ts": "1773694597.702108",
+      "user": "p-samir",
+      "thread_ts": "1773692242.158178",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "ok"
+    },
+    {
+      "ts": "1773696117.291323",
+      "user": "p-beth",
+      "thread_ts": "1773692242.158178",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Thanks, Andre."
+    },
+    {
+      "ts": "1773698760.483017",
+      "user": "p-arjun",
+      "thread_ts": "1773692242.158178",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "will approve after lunch"
+    },
+    {
+      "ts": "1773763867.195852",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-000333"
+      ],
+      "brief": "dyno base: need 2 by 2026-03-31; asks whether expediting is worth it",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-03-31"
+        }
+      },
+      "must_mention": [
+        "dyno base",
+        "tues 3/31"
+      ],
+      "pressure": "high",
+      "asks_expedite": true,
+      "length": "short",
+      "text": "dyno base, need 2 by tues 3/31. is expediting worth it?"
+    },
+    {
+      "ts": "1773764057.109495",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-000388"
+      ],
+      "brief": "2665: need 3 by 2026-04-06",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-04-06"
+        }
+      },
+      "must_mention": [
+        "2665",
+        "mon 4/6"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "2665 need 3 by mon 4/6"
+    },
+    {
+      "ts": "1773767769.620925",
+      "user": "p-arjun",
+      "thread_ts": "1773763867.195852",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "how many do we have in hand rn"
+    },
+    {
+      "ts": "1773769361.676734",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-000457"
+      ],
+      "brief": "the part: need 24 by 2026-04-14",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-04-14"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "tues the 14th"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "the part: need 24 by tues the 14th 😬"
+    },
+    {
+      "ts": "1773772816.185490",
+      "user": "p-farah",
+      "thread_ts": "1773763867.195852",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "I'd say yes, if the dyno is blocked without it, expediting is worth a look."
+    },
+    {
+      "ts": "1773853233.878306",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-000415"
+      ],
+      "brief": "Quote Q-2434184-1 for FL-HIP-1064: standard $237.18, 8 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-03-24",
+          "quote_id": "Q-2434184-1",
+          "price_usd": 237.18,
+          "lead_days": 8
+        }
+      },
+      "must_mention": [
+        "Q-2434184-1",
+        "FL-HIP-1064",
+        "tues the 24th"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "Quote Q-2434184-1 for FL-HIP-1064, standard $237.18 and 8 BD. Need 12 by tues the 24th 🙏"
+    },
+    {
+      "ts": "1773863994.815435",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-000485"
+      ],
+      "brief": "1124: need 12 by 2026-03-31",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-03-31"
+        }
+      },
+      "must_mention": [
+        "1124",
+        "3/31"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "1124 need 12 by 3/31"
+    },
+    {
+      "ts": "1773867549.416102",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-000404"
+      ],
+      "brief": "Quote Q-2434926-1 for FL-TST-2138: standard $649.71, 8 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 7,
+          "by": "2026-04-03",
+          "quote_id": "Q-2434926-1",
+          "price_usd": 649.71,
+          "lead_days": 8
+        }
+      },
+      "must_mention": [
+        "Q-2434926-1",
+        "FL-TST-2138",
+        "fri the 3rd"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Q-2434926-1 for FL-TST-2138 is $649.71 standard, 8 BD. need 7 by fri the 3rd"
+    },
+    {
+      "ts": "1773931242.636633",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-000444"
+      ],
+      "brief": "Quote Q-2436390-1 for FL-KNE-1189: standard $283.38, 10 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-04-01",
+          "quote_id": "Q-2436390-1",
+          "price_usd": 283.38,
+          "lead_days": 10
+        }
+      },
+      "must_mention": [
+        "Q-2436390-1",
+        "FL-KNE-1189",
+        "4/1"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "Quote Q-2436390-1 for FL-KNE-1189 came back at $283.38 standard, 10 BD. Need 12 by 4/1 🙏"
+    },
+    {
+      "ts": "1773952234.860509",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-000453"
+      ],
+      "brief": "Quote Q-2437905-1 for FL-TST-2111: standard $112.45, 9 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-04-03",
+          "quote_id": "Q-2437905-1",
+          "price_usd": 112.45,
+          "lead_days": 9
+        }
+      },
+      "must_mention": [
+        "Q-2437905-1",
+        "FL-TST-2111",
+        "4/3"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Q-2437905-1 for FL-TST-2111, $112.45 standard, 9 BD, need 3 by 4/3"
+    },
+    {
+      "ts": "1773954800.124228",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-000488"
+      ],
+      "brief": "that order: need 12 by 2026-03-31; asks whether expediting is worth it",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-03-31"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "3/31"
+      ],
+      "pressure": "high",
+      "asks_expedite": true,
+      "length": "short",
+      "text": "that order, need 12 by 3/31. is it worth expediting"
+    },
+    {
+      "ts": "1773956594.332111",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-000480"
+      ],
+      "brief": "Quote Q-2438980-1 for FL-KNE-1153: standard $1136.22, 9 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-04-08",
+          "quote_id": "Q-2438980-1",
+          "price_usd": 1136.22,
+          "lead_days": 9
+        }
+      },
+      "must_mention": [
+        "Q-2438980-1",
+        "FL-KNE-1153",
+        "wed 4/8"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Q-2438980-1 for FL-KNE-1153 is $1136.22 standard with 9 BD. need 6 by wed 4/8"
+    },
+    {
+      "ts": "1773957892.760333",
+      "user": "p-hana",
+      "thread_ts": "1773956594.332111",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Isn't that a lot higher than the last one? Not sure it's the same finish, could be worth checking."
+    },
+    {
+      "ts": "1773959313.770714",
+      "user": "p-callum",
+      "thread_ts": "1773956594.332111",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "thanks owen!"
+    },
+    {
+      "ts": "1773964983.099413",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-003762"
+      ],
+      "brief": "the part: need 11 by 2026-03-31",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 11,
+          "by": "2026-03-31"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "tues the 31st"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "the part: need 11 by tues the 31st 😬"
+    },
+    {
+      "ts": "1774032130.608696",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-000475"
+      ],
+      "brief": "Quote Q-2439756-1 for FL-BAT-1685: standard $761.84, 10 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-04-09",
+          "quote_id": "Q-2439756-1",
+          "price_usd": 761.84,
+          "lead_days": 10
+        }
+      },
+      "must_mention": [
+        "Q-2439756-1",
+        "FL-BAT-1685",
+        "thurs 4/9"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Q-2439756-1 for FL-BAT-1685, standard $761.84, 10 BD. need qty 3 by thurs 4/9"
+    },
+    {
+      "ts": "1774036249.526963",
+      "user": "p-bao",
+      "thread_ts": "1774032130.608696",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "will check the drawing later today"
+    },
+    {
+      "ts": "1774037622.484644",
+      "user": "p-kenji",
+      "thread_ts": "1774032130.608696",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "not sure that price is right tbh"
+    },
+    {
+      "ts": "1774039746.773100",
+      "user": "p-diego",
+      "thread_ts": "1774032130.608696",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "at least its not the flat rate one again 😂"
+    }
+  ]
+}

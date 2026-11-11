@@ -1,0 +1,177 @@
+{
+  "job_id": "slack-ch-hw-purchasing-2026-04-27-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 57,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hw-purchasing",
+    "name": "hw-purchasing",
+    "slack_id": "C07FLK0HWPR",
+    "purpose": "Hardware buys: Xometry quotes, McMaster, Digi-Key, lead times"
+  },
+  "week": {
+    "start": "2026-04-27",
+    "end": "2026-05-03"
+  },
+  "people": [
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1777433871.061657",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-003712"
+      ],
+      "brief": "shank: need 8 by 2026-05-27",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-05-27"
+        }
+      },
+      "must_mention": [
+        "shank",
+        "wed 5/27"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Need 8 shank, wed 5/27 is when we need them in hand."
+    },
+    {
+      "ts": "1777500973.741655",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-001056"
+      ],
+      "brief": "FL-LEG-1339: need 12 by 2026-06-11 for Kit and assemble for Leg DVT build: Knee joint spacer",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-06-11"
+        }
+      },
+      "must_mention": [
+        "FL-LEG-1339",
+        "Kit and assemble for Leg DVT build: Knee joint spacer",
+        "FL-LEG-1396",
+        "FL-LEG-1361",
+        "thurs 6/11"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-LEG-1339 x12 for Kit and assemble for Leg DVT build: Knee joint spacer, thurs 6/11!! FL-LEG-1396 and FL-LEG-1361 too."
+    },
+    {
+      "ts": "1777502318.893790",
+      "user": "p-zoe",
+      "thread_ts": "1777500973.741655",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "is that all three on the same date or do they stagger?"
+    },
+    {
+      "ts": "1777503287.330935",
+      "user": "p-kenji",
+      "thread_ts": "1777500973.741655",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "i'd split those out, one po each"
+    }
+  ]
+}

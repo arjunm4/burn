@@ -19,57 +19,39 @@
   },
   "people": [
     {
-      "id": "p-aisha",
-      "name": "Aisha Rahman",
-      "display_name": "aisha",
-      "slack_id": "U07FLK0AISH",
-      "title": "ML Engineer, perception",
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
       "style": {
         "case": "lower",
         "punctuation": "light",
-        "typos": "some",
-        "emoji": "rare",
+        "typos": "lots",
+        "emoji": "some",
         "length": "medium",
-        "hedging": "medium",
+        "hedging": "low",
         "quirks": [
-          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
-          "corrects own dates"
+          "fixes typos with *word",
+          "double-sends instead of editing"
         ]
       }
     },
     {
-      "id": "p-amara",
-      "name": "Amara Nwosu",
-      "display_name": "amara",
-      "slack_id": "U07FLK0AMAR",
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
       "title": "Mechanical Engineer",
       "style": {
-        "case": "mixed",
-        "punctuation": "light",
-        "typos": "rare",
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
         "emoji": "rare",
-        "length": "medium",
-        "hedging": "high",
+        "length": "terse",
+        "hedging": "low",
         "quirks": [
-          "\"i think\", \"probably\", \"not 100% sure but\""
-        ]
-      }
-    },
-    {
-      "id": "p-omar",
-      "name": "Omar Farouk",
-      "display_name": "omar.f",
-      "slack_id": "U07FLK0OMAR",
-      "title": "Technical Program Manager",
-      "style": {
-        "case": "mixed",
-        "punctuation": "light",
-        "typos": "rare",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "high",
-        "quirks": [
-          "\"i think\", \"probably\", \"not 100% sure but\""
+          "no capitals or end punctuation ever"
         ]
       }
     },
@@ -91,22 +73,6 @@
           "restates the question before answering"
         ]
       }
-    },
-    {
-      "id": "p-sofia",
-      "name": "Sofia Lindqvist",
-      "display_name": "sofia.l",
-      "slack_id": "U07FLK0SOFI",
-      "title": "Arms and Hands Lead",
-      "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": []
-      }
     }
   ],
   "context": [
@@ -122,54 +88,13 @@
   ],
   "messages": [
     {
-      "ts": "1789488830.474477",
+      "ts": "1789488830.581694",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-001780"
+        "ev-002007"
       ],
-      "brief": "the frame: need 9 by 2026-09-25",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 9,
-          "by": "2026-09-25"
-        }
-      },
-      "must_mention": [
-        "the frame",
-        "fri 9/25"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "the frame: need 9 by fri 9/25."
-    },
-    {
-      "ts": "1789492917.121401",
-      "user": "p-amara",
-      "thread_ts": null,
-      "events": [
-        "ev-003622"
-      ],
-      "brief": "motor pack plate: still quoting rev B",
-      "claim": {
-        "kind": "substitute",
-        "value": "rev B"
-      },
-      "must_mention": [
-        "motor pack plate"
-      ],
-      "length": "medium",
-      "text": "motor pack plate still quoting rev B, i think. not 100% sure but that's what the last mail said"
-    },
-    {
-      "ts": "1789579850.422304",
-      "user": "p-priya",
-      "thread_ts": "1789488830.474477",
-      "events": [
-        "ev-003286"
-      ],
-      "brief": "Correction: the frame: need 9 by 2026-09-22",
+      "brief": "the frame: need 9 by 2026-09-22",
       "claim": {
         "kind": "needs",
         "value": {
@@ -179,41 +104,79 @@
       },
       "must_mention": [
         "the frame",
-        "tues 9/22"
+        "tues the 22nd"
       ],
       "pressure": "elevated",
-      "length": "medium",
-      "text": "Correction, the frame: we need 9 by tues 9/22, not the 25th."
+      "length": "short",
+      "text": "Who's chasing the frame? 9 due tues the 22nd."
     },
     {
-      "ts": "1789580266.088706",
-      "user": "p-omar",
-      "thread_ts": "1789488830.474477",
+      "ts": "1789491779.241381",
+      "user": "p-kenji",
+      "thread_ts": "1789488830.581694",
       "events": [],
       "brief": "reply (tags someone else) in the thread about: the message above",
       "must_mention": [],
-      "length": "short",
-      "text": "@sofia.l can you confirm who is picking these up?"
+      "length": "one_word",
+      "text": "@andre thoughts"
     },
     {
-      "ts": "1789581939.910634",
-      "user": "p-sofia",
-      "thread_ts": "1789488830.474477",
+      "ts": "1789493594.372890",
+      "user": "p-kenji",
+      "thread_ts": "1789488830.581694",
       "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Agreed, that works for the arm team."
-    },
-    {
-      "ts": "1789584965.283498",
-      "user": "p-aisha",
-      "thread_ts": "1789488830.474477",
-      "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
+      "brief": "reply (tags someone else) in the thread about: the message above",
       "must_mention": [],
       "length": "one_word",
-      "text": "ok noted"
+      "text": "@priya you looked at this right"
+    },
+    {
+      "ts": "1789762317.949374",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002062"
+      ],
+      "brief": "1473: need 6 by 2026-10-07 for Build sub-assembly: Thumb base",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-10-07"
+        }
+      },
+      "must_mention": [
+        "1473",
+        "Build sub-assembly: Thumb base",
+        "1458",
+        "wed 10/7"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "who's chasing 1473? 6 due wed 10/7 for Build sub-assembly: Thumb base (also 1458)"
+    },
+    {
+      "ts": "1789766979.579091",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002063"
+      ],
+      "brief": "thumb base: need 6 by 2026-10-07",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-10-07"
+        }
+      },
+      "must_mention": [
+        "thumb base",
+        "10/7"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "thumb base x6, neeedd 10/7"
     }
   ]
 }

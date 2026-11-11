@@ -1,0 +1,135 @@
+{
+  "job_id": "jira-SCM-2026-11-02-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 3,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "SCM",
+    "name": "Supply chain and procurement"
+  },
+  "week": {
+    "start": "2026-11-02",
+    "end": "2026-11-08"
+  },
+  "people": [
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "SCM-418",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-idris",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-11-05T09:05:09-08:00",
+      "due_date": "2026-12-23",
+      "events": [
+        "ev-002741"
+      ],
+      "brief": "Order 5x Torso battery mount bracket, 5x Pelvis side plate, right / pack bracket: need 5 by 2026-12-23 for the build",
+      "must_mention": [
+        "pack bracket",
+        "the build",
+        "12/23"
+      ],
+      "description_length": "one_line",
+      "summary": "Order 5x Torso battery mount bracket, 5x Pelvis side plate, right",
+      "description": "pack bracket: need 5 by 12/23 for the build",
+      "comments": [
+        {
+          "id": "SCM-418-c1",
+          "by": "p-idris",
+          "at": "2026-11-05T09:23:33-08:00",
+          "events": [
+            "ev-002742"
+          ],
+          "brief": "1540: need 5 by 2026-12-23",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 5,
+              "by": "2026-12-23"
+            }
+          },
+          "must_mention": [
+            "1540",
+            "12/23"
+          ],
+          "body": "1540: need 5 by 12/23"
+        },
+        {
+          "id": "SCM-418-c2",
+          "by": "p-idris",
+          "at": "2026-11-05T09:35:14-08:00",
+          "events": [
+            "ev-002743"
+          ],
+          "brief": "the bracket: need 5 by 2026-12-23",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 5,
+              "by": "2026-12-23"
+            }
+          },
+          "must_mention": [
+            "the bracket",
+            "wed the 23rd"
+          ],
+          "body": "the bracket need 5 by wed the 23rd"
+        }
+      ]
+    }
+  ]
+}

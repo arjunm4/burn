@@ -1,0 +1,573 @@
+{
+  "job_id": "jira-LEG-2026-05-04-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 56,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "LEG",
+    "name": "Legs and ankle"
+  },
+  "week": {
+    "start": "2026-05-04",
+    "end": "2026-05-10"
+  },
+  "people": [
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "LEG-98",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-zoe",
+      "assignee": "p-zoe",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-05-04T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Install and torque for Leg DVT build: Shank to ankle adapter",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-99",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-callum",
+      "assignee": "p-callum",
+      "labels": [
+        "cleanup"
+      ],
+      "priority": "High",
+      "created": "2026-05-04T11:09:51-07:00",
+      "due_date": "2026-05-29",
+      "events": [],
+      "brief": "Update drawing and BOM (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-99-c1",
+          "by": "p-diego",
+          "at": "2026-05-04T13:27:02-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-99-c2",
+          "by": "p-callum",
+          "at": "2026-05-11T12:07:51-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-101",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-priya",
+      "assignee": "p-priya",
+      "labels": [
+        "evt"
+      ],
+      "priority": "Medium",
+      "created": "2026-05-05T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Tolerance stack check for Leg DVT build: Thigh link",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-102",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-callum",
+      "assignee": "p-callum",
+      "labels": [
+        "docs"
+      ],
+      "priority": "Low",
+      "created": "2026-05-05T14:45:12-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Firmware flag for bench mode (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-102-c1",
+          "by": "p-callum",
+          "at": "2026-05-06T17:17:10-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-102-c2",
+          "by": "p-callum",
+          "at": "2026-05-08T10:38:18-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-102-c3",
+          "by": "p-priya",
+          "at": "2026-05-08T15:06:32-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-103",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-priya",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-05-05T15:31:29-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Torque spec audit (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-104",
+      "type": "Sub-task",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-diego",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-05-05T22:09:39-07:00",
+      "due_date": "2026-05-29",
+      "events": [],
+      "brief": "Update drawing and BOM (ankle and foot)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-104-c1",
+          "by": "p-diego",
+          "at": "2026-05-06T09:59:38-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-104-c2",
+          "by": "p-callum",
+          "at": "2026-05-11T14:51:03-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-104-c3",
+          "by": "p-diego",
+          "at": "2026-05-11T17:25:30-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-105",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-callum",
+      "assignee": "p-diego",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-05-06T20:25:59-07:00",
+      "due_date": "2026-06-04",
+      "events": [],
+      "brief": "Label and bin received parts (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-106",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-priya",
+      "labels": [
+        "dvt"
+      ],
+      "priority": "High",
+      "created": "2026-05-07T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Design iteration bench trial for Leg DVT build: Knee joint spacer",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-106-c1",
+          "by": "p-callum",
+          "at": "2026-06-15T16:51:18-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-107",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-diego",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-05-07T12:50:22-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Capture lessons learned (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-107-c1",
+          "by": "p-diego",
+          "at": "2026-05-11T10:40:15-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-107-c2",
+          "by": "p-diego",
+          "at": "2026-05-14T18:12:19-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-108",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-diego",
+      "labels": [
+        "docs"
+      ],
+      "priority": "Medium",
+      "created": "2026-05-07T16:04:11-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Firmware flag for bench mode (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-109",
+      "type": "Sub-task",
+      "status": "Done",
+      "reporter": "p-hana",
+      "assignee": "p-callum",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-05-08T08:34:17-07:00",
+      "due_date": "2026-05-21",
+      "events": [],
+      "brief": "Tolerance stack review (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-109-c1",
+          "by": "p-callum",
+          "at": "2026-05-11T16:29:08-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-109-c2",
+          "by": "p-callum",
+          "at": "2026-05-12T16:45:51-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-109-c3",
+          "by": "p-callum",
+          "at": "2026-05-13T10:53:41-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-110",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-lin",
+      "assignee": "p-lin",
+      "labels": [
+        "fit-check"
+      ],
+      "priority": "Medium",
+      "created": "2026-05-08T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Instrumentation fit-up for Leg drop test: Leg build stand",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-110-c1",
+          "by": "p-priya",
+          "at": "2026-05-19T18:12:50-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-110-c2",
+          "by": "p-diego",
+          "at": "2026-05-25T16:22:10-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-110-c3",
+          "by": "p-lin",
+          "at": "2026-05-25T17:37:16-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-110-c4",
+          "by": "p-priya",
+          "at": "2026-05-26T17:53:54-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-110-c5",
+          "by": "p-lin",
+          "at": "2026-06-11T16:43:28-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-110-c6",
+          "by": "p-lin",
+          "at": "2026-06-12T09:11:52-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-111",
+      "type": "Story",
+      "status": "In Progress",
+      "reporter": "p-diego",
+      "assignee": "p-diego",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-05-08T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Design iteration bench trial for Leg DVT build: Shank cover plate",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    }
+  ]
+}

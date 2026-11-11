@@ -1,0 +1,240 @@
+{
+  "job_id": "jira-SCM-2026-05-25-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 49,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "SCM",
+    "name": "Supply chain and procurement"
+  },
+  "week": {
+    "start": "2026-05-25",
+    "end": "2026-05-31"
+  },
+  "people": [
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "SCM-175",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": "p-tomas",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-05-27T17:09:33-07:00",
+      "due_date": "2026-06-18",
+      "events": [
+        "ev-001223"
+      ],
+      "brief": "Order 1x Knee output flange / FL-KNE-1122: need 1 by 2026-06-18 for Prototype fit-up for Actuator DVT build: Knee output flange",
+      "must_mention": [
+        "FL-KNE-1122",
+        "Prototype fit-up for Actuator DVT build: Knee output flange",
+        "thurs 6/18"
+      ],
+      "description_length": "short",
+      "summary": "Knee output flange",
+      "description": "FL-KNE-1122 need 1 by thurs 6/18, for Prototype fit-up for Actuator DVT build: Knee output flange",
+      "comments": [
+        {
+          "id": "SCM-175-c1",
+          "by": "p-tomas",
+          "at": "2026-05-28T14:04:13-07:00",
+          "events": [
+            "ev-001224"
+          ],
+          "brief": "knee flange: need 1 by 2026-06-18 for Prototype fit-up for Actuator DVT build: Knee output flange",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 1,
+              "by": "2026-06-18"
+            }
+          },
+          "must_mention": [
+            "knee flange",
+            "Prototype fit-up for Actuator DVT build: Knee output flange",
+            "thurs 6/18"
+          ],
+          "body": "knee flange needed thurs 6/18 for Prototype fit-up for Actuator DVT build: Knee output flange"
+        },
+        {
+          "id": "SCM-175-c2",
+          "by": "p-tomas",
+          "at": "2026-05-28T14:47:28-07:00",
+          "events": [
+            "ev-001225"
+          ],
+          "brief": "knee flange: need 1 by 2026-06-18 for Prototype fit-up for Actuator DVT build: Knee output flange",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 1,
+              "by": "2026-06-18"
+            }
+          },
+          "must_mention": [
+            "knee flange",
+            "Prototype fit-up for Actuator DVT build: Knee output flange",
+            "6/18"
+          ],
+          "body": "knee flange, Prototype fit-up for Actuator DVT build: Knee output flange, still 6/18"
+        }
+      ]
+    },
+    {
+      "key": "SCM-176",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": "p-owen",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-05-28T08:49:15-07:00",
+      "due_date": "2026-06-18",
+      "events": [
+        "ev-001199"
+      ],
+      "brief": "Order 2x Dyno shaft alignment jig / FL-TST-2125: need 2 by 2026-06-18",
+      "must_mention": [
+        "FL-TST-2125",
+        "thurs 6/18"
+      ],
+      "description_length": "one_line",
+      "summary": "dyno shaft alignment jig x2",
+      "description": "FL-TST-2125 need 2 by thurs 6/18",
+      "comments": [
+        {
+          "id": "SCM-176-c1",
+          "by": "p-owen",
+          "at": "2026-06-01T16:01:53-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "photos in slack"
+        },
+        {
+          "id": "SCM-176-c2",
+          "by": "p-owen",
+          "at": "2026-06-01T16:52:28-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "fixture drawing checked, looks fine"
+        },
+        {
+          "id": "SCM-176-c3",
+          "by": "p-gwen",
+          "at": "2026-06-08T09:26:05-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "Any update on this one?"
+        },
+        {
+          "id": "SCM-176-c4",
+          "by": "p-owen",
+          "at": "2026-06-11T17:10:30-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "pics are in slack"
+        },
+        {
+          "id": "SCM-176-c5",
+          "by": "p-owen",
+          "at": "2026-06-17T12:59:02-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "waiting on the vendor to confirm shipping"
+        },
+        {
+          "id": "SCM-176-c6",
+          "by": "p-owen",
+          "at": "2026-07-01T23:37:00-07:00",
+          "events": [
+            "ev-001205"
+          ],
+          "brief": "2125 in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-06-30"
+          },
+          "must_mention": [
+            "2125",
+            "6/30"
+          ],
+          "body": "2125 in use since 6/30"
+        }
+      ]
+    }
+  ]
+}

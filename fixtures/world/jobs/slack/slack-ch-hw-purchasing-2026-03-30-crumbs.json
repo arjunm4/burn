@@ -1,0 +1,252 @@
+{
+  "job_id": "slack-ch-hw-purchasing-2026-03-30-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 65,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hw-purchasing",
+    "name": "hw-purchasing",
+    "slack_id": "C07FLK0HWPR",
+    "purpose": "Hardware buys: Xometry quotes, McMaster, Digi-Key, lead times"
+  },
+  "week": {
+    "start": "2026-03-30",
+    "end": "2026-04-05"
+  },
+  "people": [
+    {
+      "id": "p-amara",
+      "name": "Amara Nwosu",
+      "display_name": "amara",
+      "slack_id": "U07FLK0AMAR",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Absolute encoder on the knee output glitches when the motor runs above 8 A. This week: Farah wants twisted-pair and a shield drain at the driver end; Tomas asks if the bracket can move the readhead away.",
+    "Ongoing: Getting dyno and gantry logs into one place with consistent timestamps. This week: Andre wants raw 10 kHz torque data kept; storage cost debated."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1774985079.099368",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-000644"
+      ],
+      "brief": "pin carrier: need 2 by 2026-04-16",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-04-16"
+        }
+      },
+      "must_mention": [
+        "pin carrier",
+        "4/16"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "pin carrier, need 2 by 4/16, can we get a quote today"
+    },
+    {
+      "ts": "1774986605.881436",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-000660"
+      ],
+      "brief": "1189: need 24 by 2026-05-18 for Prototype fit-up for Actuator DVT build: Knee output shaft",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-05-18"
+        }
+      },
+      "must_mention": [
+        "1189",
+        "Prototype fit-up for Actuator DVT build: Knee output shaft",
+        "mon the 18th"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "1189: need 24 for Prototype fit-up for Actuator DVT build: Knee output shaft, mon the 18th. I think that's the right date."
+    },
+    {
+      "ts": "1775064955.904701",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-000683"
+      ],
+      "brief": "flexspline clamp: need 12 by 2026-04-28",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-04-28"
+        }
+      },
+      "must_mention": [
+        "flexspline clamp",
+        "tues 4/28"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "flexspline clamp need 12 by tues 4/28"
+    },
+    {
+      "ts": "1775075353.796038",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-000647"
+      ],
+      "brief": "FL-KNE-1122: need 2 by 2026-04-24 for Assemble build unit for Actuator DVT build: Knee output flange (2)",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-04-24"
+        }
+      },
+      "must_mention": [
+        "FL-KNE-1122",
+        "Assemble build unit for Actuator DVT build: Knee output flange (2)",
+        "FL-KNE-1153",
+        "fri the 24th"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "FL-KNE-1122 need 2 by fri the 24th for Assemble build unit for Actuator DVT build: Knee output flange (2). FL-KNE-1153 same date, not 100% sure on the qty there"
+    },
+    {
+      "ts": "1775144705.907496",
+      "user": "p-amara",
+      "thread_ts": "1774986605.881436",
+      "events": [
+        "ev-003544"
+      ],
+      "brief": "Correction: 1189: need 24 by 2026-05-19 for Prototype fit-up for Actuator DVT build: Knee output shaft",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-05-19"
+        }
+      },
+      "must_mention": [
+        "1189",
+        "Prototype fit-up for Actuator DVT build: Knee output shaft",
+        "tues 5/19"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Correction on 1189 for Prototype fit-up for Actuator DVT build: Knee output shaft, it's tues 5/19, not the 18th."
+    },
+    {
+      "ts": "1775258573.778202",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-000655"
+      ],
+      "brief": "retainer ring: need 12 by 2026-04-28 for Install and torque for Actuator DVT build: Knee cross-roller retainer",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-04-28"
+        }
+      },
+      "must_mention": [
+        "retainer ring",
+        "Install and torque for Actuator DVT build: Knee cross-roller retainer",
+        "WG hub",
+        "tues 4/28"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "retainer ring need 12 by tues 4/28 for Install and torque for Actuator DVT build: Knee cross-roller retainer, and same for the WG hub"
+    }
+  ]
+}

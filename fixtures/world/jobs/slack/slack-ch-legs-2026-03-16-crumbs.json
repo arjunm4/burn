@@ -1,0 +1,157 @@
+{
+  "job_id": "slack-ch-legs-2026-03-16-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 69,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-legs",
+    "name": "legs",
+    "slack_id": "C07FLK0LEGS",
+    "purpose": "Leg and ankle: design, drop test, gait gantry"
+  },
+  "week": {
+    "start": "2026-03-16",
+    "end": "2026-03-22"
+  },
+  "people": [
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Leg (left, hip to foot).",
+    "Ongoing: Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT. This week: Ingrid asks for a decision memo; Tomas concedes backdrivability favors cyclo for the hip at 50:1."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1773676857.401429",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [
+        "ev-000362"
+      ],
+      "brief": "leg stand: need 3 by 2026-03-30",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-03-30"
+        }
+      },
+      "must_mention": [
+        "leg stand",
+        "3/30"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "leg stand, need 3 by 3/30. still sorting out which frame size we want"
+    },
+    {
+      "ts": "1773682192.983598",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [
+        "ev-000364"
+      ],
+      "brief": "that order: need 3 by 2026-03-30",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-03-30"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "mon 3/30"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "that order, need 3 by mon 3/30"
+    },
+    {
+      "ts": "1773685527.283895",
+      "user": "p-talia",
+      "thread_ts": "1773682192.983598",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "the casters were backordered last time btw 😬"
+    },
+    {
+      "ts": "1773685663.517060",
+      "user": "p-diego",
+      "thread_ts": "1773682192.983598",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "yeah they came in loose in the box so check them"
+    }
+  ]
+}

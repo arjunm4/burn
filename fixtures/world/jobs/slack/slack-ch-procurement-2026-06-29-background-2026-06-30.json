@@ -1,0 +1,214 @@
+{
+  "job_id": "slack-ch-procurement-2026-06-29-background-2026-06-30",
+  "source": "slack",
+  "status": "blank",
+  "priority": 40,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-06-29",
+    "end": "2026-07-05"
+  },
+  "people": [
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-claire",
+      "name": "Claire Donnelly",
+      "display_name": "claire",
+      "slack_id": "U07FLK0CLAI",
+      "title": "Finance and Operations Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Six-axis sensor drifts with temperature and bolt preload. This week: Hana suspects mounting plate flatness; sensor wants 0.01 mm, plate is spec 0.05.",
+    "Ongoing: Capacitive tactile array crosstalk and flex cable routing through the finger",
+    "Ongoing: Crossed-roller preload drops after thermal cycling; bore tolerance and preload ring design",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Drop from 30 cm cracks the shank link at the knee clevis. This week: Diego: fillet R0.5 is too tight, peak stress ~380 MPa in FEA, 7075 fatigue limit is lower."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1782837608.806301",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about the ongoing drop from 30 cm cracks the shank link at the knee clevis",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1782841385.798854",
+      "user": "p-omar",
+      "thread_ts": "1782837608.806301",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the ongoing drop from 30 cm cracks the shank link at the knee clevis",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1782845440.332912",
+      "user": "p-claire",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: First drops at 15 cm fine; 30 cm drop leaves a crack at the shank clevis fillet.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1782846414.016681",
+      "user": "p-zoe",
+      "thread_ts": "1782837608.806301",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the ongoing drop from 30 cm cracks the shank link at the knee clevis",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1782849681.697416",
+      "user": "p-carlos",
+      "thread_ts": "1782837608.806301",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the ongoing drop from 30 cm cracks the shank link at the knee clevis",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1782851749.769371",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on this: Mei: Fz zero drifts ~12 N over a 20 min run.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1782852526.317553",
+      "user": "p-gwen",
+      "thread_ts": "1782837608.806301",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the ongoing drop from 30 cm cracks the shank link at the knee clevis",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    }
+  ]
+}

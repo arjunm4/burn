@@ -1,0 +1,149 @@
+{
+  "job_id": "slack-ch-eng-bots-2026-07-06-background-2026-07-09",
+  "source": "slack",
+  "status": "blank",
+  "priority": 38,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-eng-bots",
+    "name": "eng-bots",
+    "slack_id": "C07FLK0BOTS",
+    "purpose": "GitHub, Jira and CI notifications"
+  },
+  "week": {
+    "start": "2026-07-06",
+    "end": "2026-07-12"
+  },
+  "people": [
+    {
+      "id": "p-gabriel",
+      "name": "Gabriel Moreau",
+      "display_name": "gabriel.m",
+      "slack_id": "U07FLK0GABR",
+      "title": "Controls Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-leilani",
+      "name": "Leilani Kahale",
+      "display_name": "leilani.k",
+      "slack_id": "U07FLK0LEIL",
+      "title": "Locomotion Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-ravi",
+      "name": "Ravi Subramaniam",
+      "display_name": "ravi",
+      "slack_id": "U07FLK0RAVI",
+      "title": "ML Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Six-axis sensor drifts with temperature and bolt preload. This week: Ravi fits a temperature model; Mei prefers fixing the plate first.",
+    "Ongoing: Capacitive tactile array crosstalk and flex cable routing through the finger. This week: Rev 2 ordered from the fab; tactile bracket moved 1 mm for the new connector.",
+    "Ongoing: What to show investors when no full humanoid exists. This week: Ingrid warns the leg drop campaign slipped; demo date is hard.",
+    "Ongoing: Replace foot switches with a learned contact estimate from joint currents",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver. This week: Bao sees 30 V overshoot on the phase node at 48 V bus; MOSFETs rated 80 V."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1783614116.233047",
+      "user": "p-gabriel",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1783624992.065211",
+      "user": "p-leilani",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about this: Jonas adds per-taxel baseline calibration; Kenji wants a respin anyway.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783633113.962372",
+      "user": "p-ravi",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: Mei: Fz zero drifts ~12 N over a 20 min run.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1783639941.504734",
+      "user": "p-mei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on this: Mei skeptical: foot switches are cheap; asks for false-positive rates.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

@@ -37,6 +37,25 @@
       }
     },
     {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
       "id": "p-lin",
       "name": "Lin Zhao",
       "display_name": "lin.z",
@@ -50,6 +69,82 @@
         "length": "medium",
         "hedging": "low",
         "quirks": []
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-rohan",
+      "name": "Rohan Kapoor",
+      "display_name": "rohan",
+      "slack_id": "U07FLK0ROHA",
+      "title": "Controls Engineer, manipulation",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
       }
     }
   ],
@@ -66,11 +161,35 @@
   ],
   "messages": [
     {
-      "ts": "1790118316.025241",
+      "ts": "1790017464.446792",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-002066"
+      ],
+      "brief": "thumb block: need 6 by 2026-10-07 for Build sub-assembly: Thumb base",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-10-07"
+        }
+      },
+      "must_mention": [
+        "thumb block",
+        "Build sub-assembly: Thumb base",
+        "10/7"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "thumb block, need 6 by 10/7 for Build sub-assembly: Thumb base"
+    },
+    {
+      "ts": "1790118316.595501",
       "user": "p-lin",
       "thread_ts": null,
       "events": [
-        "ev-003853"
+        "ev-004311"
       ],
       "brief": "Build sub-assembly: Tendon guide bushing done",
       "claim": {
@@ -79,28 +198,18 @@
       },
       "must_mention": [
         "Build sub-assembly: Tendon guide bushing",
-        "9/22"
+        "tues 9/22"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Build sub-assembly: Tendon guide bushing is done as of 9/22."
+      "text": "Build sub-assembly: Tendon guide bushing is done as of tues 9/22."
     },
     {
-      "ts": "1790120818.635244",
-      "user": "p-lin",
-      "thread_ts": "1790118316.025241",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "Great, thanks. I'll pick it up for the next stage."
-    },
-    {
-      "ts": "1790288610.799103",
+      "ts": "1790288610.754215",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-001783"
+        "ev-002010"
       ],
       "brief": "palm frame arrived (9)",
       "claim": {
@@ -113,16 +222,16 @@
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "palm frame arrived, 9 of them i think"
+      "text": "palm frame arrived, 9 in the box. i think they look fine but haven't measured"
     },
     {
-      "ts": "1790369634.044255",
-      "user": "p-amara",
+      "ts": "1790367969.563838",
+      "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-001933"
+        "ev-002174"
       ],
-      "brief": "hand clamp: need 1 by 2026-10-15 for the fit check",
+      "brief": "that order: need 1 by 2026-10-15 for Rig setup: Grip fixture wrist clamp",
       "claim": {
         "kind": "needs",
         "value": {
@@ -131,13 +240,89 @@
         }
       },
       "must_mention": [
-        "hand clamp",
-        "the fit check",
-        "thurs the 15th"
+        "that order",
+        "Rig setup: Grip fixture wrist clamp",
+        "10/15"
       ],
-      "pressure": "elevated",
+      "pressure": "low",
       "length": "short",
-      "text": "i probably need 1 hand clamp by thurs the 15th for the fit check, not 100% sure it's in the pile yet"
+      "text": "Do you mean that order for the grip fixture? I need 1 by 10/15 for Rig setup: Grip fixture wrist clamp."
+    },
+    {
+      "ts": "1790369634.017506",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-002175"
+      ],
+      "brief": "FL-TST-2424: need 1 by 2026-10-15",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-10-15"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2424",
+        "thurs 10/15"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "FL-TST-2424 need 1 by thurs 10/15, i think. not 100% sure on the day"
+    },
+    {
+      "ts": "1790370754.489510",
+      "user": "p-rohan",
+      "thread_ts": "1790369634.017506",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "yep i saw it"
+    },
+    {
+      "ts": "1790372894.914912",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-002176"
+      ],
+      "brief": "the part: need 1 by 2026-10-15",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-10-15"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "10/15"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "the part need 1 by 10/15 too, so it's the same date"
+    },
+    {
+      "ts": "1790373127.375894",
+      "user": "p-talia",
+      "thread_ts": "1790367969.563838",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "got it 🙏"
+    },
+    {
+      "ts": "1790376104.587232",
+      "user": "p-lin",
+      "thread_ts": "1790369634.017506",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Yes, agreed."
     }
   ]
 }

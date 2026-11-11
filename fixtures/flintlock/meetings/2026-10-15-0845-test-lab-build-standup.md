@@ -8,8 +8,9 @@
 
 ## Overview
 
-We need FL-TST-2443 by 11/11.
+We need FL-TST-2443 by 11/11. We need ankle adapter by 11/11 (Tolerance stack check: Shank to ankle adapter).
 
 ## Discussion
 
 - Dmitri: We need FL-TST-2443 by 11/11.
+- Zoe: We need ankle adapter by 11/11 (Tolerance stack check: Shank to ankle adapter).

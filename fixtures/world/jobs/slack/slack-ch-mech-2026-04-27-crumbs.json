@@ -1,0 +1,252 @@
+{
+  "job_id": "slack-ch-mech-2026-04-27-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 57,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-mech",
+    "name": "mech",
+    "slack_id": "C07FLK0MECH",
+    "purpose": "Mechanical engineering: design, DFM, vendors, drawings"
+  },
+  "week": {
+    "start": "2026-04-27",
+    "end": "2026-05-03"
+  },
+  "people": [
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1777577985.338041",
+      "user": "p-nora",
+      "thread_ts": null,
+      "events": [
+        "ev-003342"
+      ],
+      "brief": "FL-TST-2957 rev B released: hook throat opened 6 mm to clear the shackle",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-TST-2957"
+      ],
+      "length": "short",
+      "text": "FL-TST-2957 rev B is out, hook throat opened up 6 mm so it clears the shackle"
+    },
+    {
+      "ts": "1777578465.279712",
+      "user": "p-farah",
+      "thread_ts": "1777577985.338041",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "we had the same clearance issue on the lift fixture, ended up filing it out by hand"
+    },
+    {
+      "ts": "1777582010.110635",
+      "user": "p-sofia",
+      "thread_ts": "1777577985.338041",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "yes the drawing is updated, checked the PDF"
+    },
+    {
+      "ts": "1777602720.924479",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-003445"
+      ],
+      "brief": "FL-KNE-1118 rev B released: ID +0.05 mm for slip fit",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-KNE-1118"
+      ],
+      "length": "short",
+      "text": "FL-KNE-1118 rev B released, ID +0.05 mm for slip fit"
+    },
+    {
+      "ts": "1777647813.567451",
+      "user": "p-nora",
+      "thread_ts": null,
+      "events": [
+        "ev-004066"
+      ],
+      "brief": "hand holder: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "hand holder"
+      ],
+      "length": "medium",
+      "text": "hand holder, vendor still quoting rev A"
+    },
+    {
+      "ts": "1777661059.108706",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-003893"
+      ],
+      "brief": "cal block: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "cal block"
+      ],
+      "length": "short",
+      "text": "cal block still quoting rev A"
+    },
+    {
+      "ts": "1777666306.451531",
+      "user": "p-samir",
+      "thread_ts": "1777661059.108706",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "same on my end"
+    },
+    {
+      "ts": "1777667406.001084",
+      "user": "p-sofia",
+      "thread_ts": "1777661059.108706",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "will look at the vendor portal later"
+    }
+  ]
+}

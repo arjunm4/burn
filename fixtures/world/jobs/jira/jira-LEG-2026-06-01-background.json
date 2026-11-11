@@ -1,0 +1,546 @@
+{
+  "job_id": "jira-LEG-2026-06-01-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 48,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "LEG",
+    "name": "Legs and ankle"
+  },
+  "week": {
+    "start": "2026-06-01",
+    "end": "2026-06-07"
+  },
+  "people": [
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "LEG-154",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-callum",
+      "assignee": "p-hana",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-06-01T09:52:45-07:00",
+      "due_date": "2026-06-15",
+      "events": [],
+      "brief": "Firmware flag for bench mode (ankle and foot)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-155",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-hana",
+      "assignee": "p-diego",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-06-01T14:02:03-07:00",
+      "due_date": "2026-06-23",
+      "events": [],
+      "brief": "Clean up CAD configs (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-156",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-hana",
+      "assignee": "p-diego",
+      "labels": [],
+      "priority": "Highest",
+      "created": "2026-06-01T15:56:36-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Rework fixture clamp (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-156-c1",
+          "by": "p-diego",
+          "at": "2026-06-04T10:08:01-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-156-c2",
+          "by": "p-diego",
+          "at": "2026-06-04T11:25:01-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-156-c3",
+          "by": "p-priya",
+          "at": "2026-06-04T17:36:16-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-156-c4",
+          "by": "p-callum",
+          "at": "2026-06-08T11:08:11-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-157",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-hana",
+      "assignee": "p-priya",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-06-02T08:43:08-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Update drawing and BOM (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-157-c1",
+          "by": "p-priya",
+          "at": "2026-06-05T15:42:00-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-158",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-diego",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-06-02T17:59:39-07:00",
+      "due_date": "2026-06-19",
+      "events": [],
+      "brief": "Order 24x Ankle rod-end spacer",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-158-c1",
+          "by": "p-diego",
+          "at": "2026-06-03T09:50:53-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-158-c2",
+          "by": "p-diego",
+          "at": "2026-06-15T18:13:10-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-159",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-hana",
+      "assignee": "p-hana",
+      "labels": [],
+      "priority": "Highest",
+      "created": "2026-06-03T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Design iteration bench trial for Leg DVT build: Heel bumper mount",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-159-c1",
+          "by": "p-hana",
+          "at": "2026-06-04T14:20:13-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-159-c2",
+          "by": "p-priya",
+          "at": "2026-07-08T13:14:27-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-159-c3",
+          "by": "p-hana",
+          "at": "2026-07-10T14:42:41-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-159-c4",
+          "by": "p-hana",
+          "at": "2026-07-13T14:19:19-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-160",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-diego",
+      "labels": [
+        "fit-check"
+      ],
+      "priority": "High",
+      "created": "2026-06-03T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Fixture install and shakedown for Leg first steps on the gait gantry: Drop load cell bracket",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-161",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-diego",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-06-03T11:31:36-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Update drawing and BOM (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-161-c1",
+          "by": "p-diego",
+          "at": "2026-06-08T11:39:31-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-161-c2",
+          "by": "p-callum",
+          "at": "2026-06-08T12:14:05-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-161-c3",
+          "by": "p-diego",
+          "at": "2026-06-09T10:23:46-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-162",
+      "type": "Sub-task",
+      "status": "Blocked",
+      "reporter": "p-hana",
+      "assignee": "p-priya",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-06-03T17:06:27-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Label and bin received parts (ankle and foot)",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-162-c1",
+          "by": "p-priya",
+          "at": "2026-06-18T16:52:08-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-163",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-hana",
+      "assignee": "p-diego",
+      "labels": [
+        "build"
+      ],
+      "priority": "Medium",
+      "created": "2026-06-04T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Build sub-assembly for Leg DVT build: Ankle yoke",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-163-c1",
+          "by": "p-diego",
+          "at": "2026-06-11T16:58:28-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-163-c2",
+          "by": "p-hana",
+          "at": "2026-07-08T18:19:27-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-163-c3",
+          "by": "p-diego",
+          "at": "2026-08-10T17:13:47-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-164",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-hana",
+      "assignee": "p-idris",
+      "labels": [
+        "fit-check"
+      ],
+      "priority": "High",
+      "created": "2026-06-04T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Assemble build unit for Leg DVT build: Foot sole plate",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-164-c1",
+          "by": "p-idris",
+          "at": "2026-06-15T12:11:40-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-164-c2",
+          "by": "p-priya",
+          "at": "2026-07-20T12:50:29-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-165",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-hana",
+      "assignee": "p-hana",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-06-05T10:00:00-07:00",
+      "due_date": "2026-07-22",
+      "events": [],
+      "brief": "Prototype fit-up for Leg DVT build: Foot sole plate",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-165-c1",
+          "by": "p-hana",
+          "at": "2026-06-15T14:38:45-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    }
+  ]
+}

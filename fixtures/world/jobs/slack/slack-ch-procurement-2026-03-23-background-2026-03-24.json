@@ -1,0 +1,124 @@
+{
+  "job_id": "slack-ch-procurement-2026-03-23-background-2026-03-24",
+  "source": "slack",
+  "status": "blank",
+  "priority": 68,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-03-23",
+    "end": "2026-03-29"
+  },
+  "people": [
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Building the first three hip and knee actuators. This week: Build retro: kitting list lived in a spreadsheet nobody updated.",
+    "Ongoing: Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT. This week: Decision: hip stays cycloidal through DVT, revisit for PVT; knee stays harmonic.",
+    "Ongoing: Absolute encoder on the knee output glitches when the motor runs above 8 A. This week: Bao scopes it: common-mode noise on the SSI clock, cable runs alongside motor phases.",
+    "Ongoing: Getting dyno and gantry logs into one place with consistent timestamps. This week: Elena: dyno logs are CSVs on a lab laptop, gantry logs on another.",
+    "Ongoing: Coupling misalignment corrupting efficiency numbers on the dyno. This week: Bellows coupling replaces the jaw coupling; repeatability within 0.6%."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1774369549.377260",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with the ongoing coupling misalignment corrupting efficiency numbers on the dyno",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1774376268.497038",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about this: Andre: efficiency readings swing 4% between mounts of the same actuator.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1774390434.412594",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Owen prices both: harmonic set ~$1.9k per joint and 10-week lead; cyclo is machined parts plus pins, ~3 weeks.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

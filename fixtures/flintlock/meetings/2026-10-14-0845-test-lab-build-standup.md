@@ -7,9 +7,10 @@
 
 ## Overview
 
-We need that order by 10/30 (Instrumentation fit-up: Dyno coupling, knee actuator (2)). We need LC plate by 11/11.
+We need that order by 10/30 (Instrumentation fit-up: Dyno coupling, knee actuator (2)). We need fingertip link by 11/3. We need LC plate by 11/9.
 
 ## Discussion
 
 - Dmitri: We need that order by 10/30 (Instrumentation fit-up: Dyno coupling, knee actuator (2)).
-- Dmitri: We need LC plate by 11/11.
+- Dmitri: We need fingertip link by 11/3.
+- Dmitri: We need LC plate by 11/9.

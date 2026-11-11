@@ -19,6 +19,25 @@
   },
   "people": [
     {
+      "id": "p-aisha",
+      "name": "Aisha Rahman",
+      "display_name": "aisha",
+      "slack_id": "U07FLK0AISH",
+      "title": "ML Engineer, perception",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
       "id": "p-amara",
       "name": "Amara Nwosu",
       "display_name": "amara",
@@ -121,6 +140,41 @@
           "\"i think\", \"probably\", \"not 100% sure but\""
         ]
       }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
     }
   ],
   "context": [
@@ -135,13 +189,13 @@
   ],
   "messages": [
     {
-      "ts": "1790706037.823291",
+      "ts": "1790639240.428658",
       "user": "p-kenji",
       "thread_ts": null,
       "events": [
-        "ev-001999"
+        "ev-002251"
       ],
-      "brief": "arm adapter: need 1 by 2026-10-15",
+      "brief": "FL-HND-1488: need 1 by 2026-10-15 for Design iteration bench trial: Wrist to arm adapter",
       "claim": {
         "kind": "needs",
         "value": {
@@ -150,69 +204,118 @@
         }
       },
       "must_mention": [
-        "arm adapter",
+        "FL-HND-1488",
+        "Design iteration bench trial: Wrist to arm adapter",
+        "FL-HND-1490",
         "10/15"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "arm adapter need 1 by 10/15"
+      "text": "FL-HND-1488 need 1 for Design iteration bench trial: Wrist to arm adapter, also FL-HND-1490, by 10/15"
     },
     {
-      "ts": "1790707901.657045",
-      "user": "p-ingrid",
-      "thread_ts": "1790706037.823291",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "Agreed, that one is needed."
-    },
-    {
-      "ts": "1790708440.495844",
-      "user": "p-jade",
-      "thread_ts": null,
-      "events": [
-        "ev-001653"
-      ],
-      "brief": "LC plate arrived",
-      "claim": {
-        "kind": "stock",
-        "value": 8
-      },
-      "must_mention": [
-        "LC plate",
-        "8"
-      ],
-      "pressure": "low",
-      "length": "short",
-      "text": "LC plate arrived 8"
-    },
-    {
-      "ts": "1790711235.397854",
+      "ts": "1790642149.336671",
       "user": "p-lin",
-      "thread_ts": "1790706037.823291",
+      "thread_ts": "1790639240.428658",
       "events": [],
       "brief": "reply (thanks) in the thread about: the message above",
       "must_mention": [],
-      "length": "short",
-      "text": "Thank you Kenji."
-    },
-    {
-      "ts": "1790712301.415865",
-      "user": "p-omar",
-      "thread_ts": "1790706037.823291",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
       "length": "medium",
-      "text": "Do we know yet if that adapter is the final design, or could it still change? Not sure it's worth ordering if so."
+      "text": "Thanks Kenji. Do you need the bench for the trial the whole day or just the morning?"
     },
     {
-      "ts": "1790715058.595631",
+      "ts": "1790646133.249496",
+      "user": "p-kenji",
+      "thread_ts": "1790639240.428658",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "morning should do it"
+    },
+    {
+      "ts": "1790649820.123717",
+      "user": "p-sofia",
+      "thread_ts": "1790639240.428658",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I'd rather we got it onto the arm before that, but fine if the bench is all we have."
+    },
+    {
+      "ts": "1790706037.774482",
       "user": "p-kenji",
       "thread_ts": null,
       "events": [
-        "ev-002026"
+        "ev-002253"
+      ],
+      "brief": "wrist adapter: need 1 by 2026-10-15 for the build",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-10-15"
+        }
+      },
+      "must_mention": [
+        "wrist adapter",
+        "the build",
+        "thurs the 15th"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "wrist adapter for the build, need 1 by thurs the 15th"
+    },
+    {
+      "ts": "1790710154.585259",
+      "user": "p-aisha",
+      "thread_ts": "1790706037.774482",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "got it"
+    },
+    {
+      "ts": "1790714061.552458",
+      "user": "p-ingrid",
+      "thread_ts": "1790706037.774482",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "kenji will you be wearing the wrist adapter yourself?"
+    },
+    {
+      "ts": "1790714508.755656",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-002256"
+      ],
+      "brief": "1488: need 1 by 2026-10-15",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-10-15"
+        }
+      },
+      "must_mention": [
+        "1488",
+        "thurs 10/15"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Do we have 1488 on track? Need 1 by thurs 10/15 and I'd like to know before I tell the review."
+    },
+    {
+      "ts": "1790715058.542736",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-002284"
       ],
       "brief": "FL-HND-1414: need 20 by 2026-10-23 for Build sub-assembly: Finger proximal link (2)",
       "claim": {
@@ -229,15 +332,66 @@
         "10/23"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "FL-HND-1414 need 20 by 10/23 for Build sub-assembly: Finger proximal link (2), also FL-HND-1454"
+      "length": "medium",
+      "text": "FL-HND-1414 need 20 for Build sub-assembly: Finger proximal link (2), plus FL-HND-1454, by 10/23"
     },
     {
-      "ts": "1790781184.182164",
+      "ts": "1790717200.187954",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [
+        "ev-001874"
+      ],
+      "brief": "2443 arrived (6)",
+      "claim": {
+        "kind": "stock",
+        "value": 6
+      },
+      "must_mention": [
+        "2443",
+        "6"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "2443 arrived 6"
+    },
+    {
+      "ts": "1790721814.607277",
+      "user": "p-ingrid",
+      "thread_ts": "1790717200.187954",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Did those get checked in against the packing slip?"
+    },
+    {
+      "ts": "1790736703.474195",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-002259"
+      ],
+      "brief": "Order XO-5524222 placed, promised 2026-10-23",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-10-23"
+      },
+      "must_mention": [
+        "XO-5524222",
+        "arm adapter",
+        "10/23"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Order XO-5524222 placed, arm adapter is promised 10/23"
+    },
+    {
+      "ts": "1790781184.471264",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-002776"
+        "ev-003147"
       ],
       "brief": "Design iteration bench trial: Palm frame waits on Battery test cage",
       "claim": {
@@ -249,35 +403,45 @@
         "Design iteration bench trial: Palm frame"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "Design iteration bench trial: Palm frame waits on Battery test cage, i think the cage is the bottleneck for us right now"
+      "length": "short",
+      "text": "Design iteration bench trial: Palm frame is waiting on the Battery test cage, i think"
     },
     {
-      "ts": "1790837020.454229",
-      "user": "p-jade",
-      "thread_ts": "1790708440.495844",
-      "events": [
-        "ev-003184"
-      ],
-      "brief": "Correction: LC plate arrived (6)",
-      "claim": {
-        "kind": "stock",
-        "value": 6
-      },
-      "must_mention": [
-        "LC plate",
-        "6"
-      ],
-      "pressure": "low",
-      "length": "medium",
-      "text": "LC plate arrived (6) sorry miscounted"
+      "ts": "1790784473.099841",
+      "user": "p-ingrid",
+      "thread_ts": "1790781184.471264",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "I don't think the cage is the blocker."
     },
     {
-      "ts": "1790855460.468172",
+      "ts": "1790785657.119796",
+      "user": "p-omar",
+      "thread_ts": "1790781184.471264",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "i think we hit something similar on the last build, not 100% sure but the cage was sitting in another lab"
+    },
+    {
+      "ts": "1790789958.356949",
+      "user": "p-aisha",
+      "thread_ts": "1790781184.471264",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "also the cage was moved thurs i think"
+    },
+    {
+      "ts": "1790855460.318862",
       "user": "p-kenji",
       "thread_ts": null,
       "events": [
-        "ev-001795"
+        "ev-002022"
       ],
       "brief": "1487 in use",
       "claim": {
@@ -287,11 +451,11 @@
       "must_mention": [
         "1487",
         "the build",
-        "tues the 29th"
+        "9/29"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "1487 in use for the build, done tues the 29th"
+      "length": "medium",
+      "text": "1487 has been in use for the build since 9/29, need it back asap"
     }
   ]
 }

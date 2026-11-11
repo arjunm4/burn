@@ -1,0 +1,583 @@
+{
+  "job_id": "slack-ch-legs-2026-07-27-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 31,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-legs",
+    "name": "legs",
+    "slack_id": "C07FLK0LEGS",
+    "purpose": "Leg and ankle: design, drop test, gait gantry"
+  },
+  "week": {
+    "start": "2026-07-27",
+    "end": "2026-08-02"
+  },
+  "people": [
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Leg (left, hip to foot).",
+    "Ongoing: What to show investors when no full humanoid exists. This week: Pressure on legs and controls; exec check-ins twice a week.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Carlos finds two broken phase conductors at the knee after the overnight gait run.",
+    "Ongoing: Gait controller tuning for the investor demo on the gait gantry. This week: Foot contact detection flaky; Ravi suggests learned contact estimator, Mei wants foot switches first.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno. This week: Lin: grip-cycle test ties up the fixture for 6 days; pinch tests wait.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting. This week: Ingrid approves machined plates for DVT only; casting decision deferred to PVT."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1785170518.606999",
+      "user": "p-mei",
+      "thread_ts": null,
+      "events": [
+        "ev-003052"
+      ],
+      "brief": "Leg first steps on the gait gantry waits on Gait gantry harness hook",
+      "claim": {
+        "kind": "blocked",
+        "value": "pt-gait-harness-hook"
+      },
+      "must_mention": [
+        "Gait gantry harness hook",
+        "Leg first steps on the gait gantry"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Leg first steps on the gait gantry waits on Gait gantry harness hook"
+    },
+    {
+      "ts": "1785175780.981505",
+      "user": "p-hana",
+      "thread_ts": "1785170518.606999",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "yeah same here"
+    },
+    {
+      "ts": "1785176773.048045",
+      "user": "p-ingrid",
+      "thread_ts": "1785170518.606999",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Thanks, Mei."
+    },
+    {
+      "ts": "1785196110.577141",
+      "user": "p-mei",
+      "thread_ts": null,
+      "events": [
+        "ev-002968"
+      ],
+      "brief": "Leg first steps on the gait gantry waits on Instrumentation fit-up for Leg first steps on the gait gantry: Leg fixture hook, shank end",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00142"
+      },
+      "must_mention": [
+        "Instrumentation fit-up for Leg first steps on the gait gantry: Leg fixture hook, shank end",
+        "Leg first steps on the gait gantry"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Leg first steps on the gait gantry waits on Instrumentation fit-up for Leg first steps on the gait gantry: Leg fixture hook, shank end"
+    },
+    {
+      "ts": "1785198127.752419",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-004276"
+      ],
+      "brief": "Assemble build unit for Leg DVT build: Ankle drive crank done",
+      "claim": {
+        "kind": "done",
+        "value": "2026-07-27"
+      },
+      "must_mention": [
+        "Assemble build unit for Leg DVT build: Ankle drive crank",
+        "7/27"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Assemble build unit for Leg DVT build: Ankle drive crank is done, closed it out 7/27. next one is the install"
+    },
+    {
+      "ts": "1785201245.915084",
+      "user": "p-diego",
+      "thread_ts": "1785196110.577141",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "hm not sure that holds, we still haven't tried it with the load on 😬"
+    },
+    {
+      "ts": "1785204296.302249",
+      "user": "p-ingrid",
+      "thread_ts": "1785196110.577141",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Understood."
+    },
+    {
+      "ts": "1785259854.459601",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-003882"
+      ],
+      "brief": "pivot pin: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "pivot pin"
+      ],
+      "length": "short",
+      "text": "vendor reply on the pivot pin, still quoting rev B 😬"
+    },
+    {
+      "ts": "1785275191.679734",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-001650"
+      ],
+      "brief": "FL-ANK-1276: need 8 by 2026-08-21 for Install and torque for Leg DVT build: Ankle drive crank",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-08-21"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1276",
+        "Install and torque for Leg DVT build: Ankle drive crank",
+        "FL-ANK-1295",
+        "8/21"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-ANK-1276 swap to FL-ANK-1295, need 8 by 8/21 for Install and torque for Leg DVT build: Ankle drive crank 🙏"
+    },
+    {
+      "ts": "1785278431.893016",
+      "user": "p-diego",
+      "thread_ts": "1785275191.679734",
+      "events": [
+        "ev-003604"
+      ],
+      "brief": "Correction: FL-ANK-1276: need 8 by 2026-08-24 for Install and torque for Leg DVT build: Ankle drive crank",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-08-24"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1276",
+        "Install and torque for Leg DVT build: Ankle drive crank",
+        "FL-ANK-1295",
+        "8/24"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "oops, correction: FL-ANK-1276 / FL-ANK-1295, need 8 by 8/24 for Install and torque for Leg DVT build: Ankle drive crank 🙏"
+    },
+    {
+      "ts": "1785347969.238384",
+      "user": "p-mei",
+      "thread_ts": null,
+      "events": [
+        "ev-003051"
+      ],
+      "brief": "Leg first steps on the gait gantry waits on Gait gantry pelvis adapter",
+      "claim": {
+        "kind": "blocked",
+        "value": "pt-gait-pelvis-adapter"
+      },
+      "must_mention": [
+        "Gait gantry pelvis adapter",
+        "Leg first steps on the gait gantry"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Leg first steps on the gait gantry waits on Gait gantry pelvis adapter. Holding the rest of the gantry setup until it shows up."
+    },
+    {
+      "ts": "1785348221.796089",
+      "user": "p-hana",
+      "thread_ts": "1785347969.238384",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Agreed, I think the adapter is the one thing we can't work around. Probably."
+    },
+    {
+      "ts": "1785353295.438250",
+      "user": "p-luis",
+      "thread_ts": null,
+      "events": [
+        "ev-001428"
+      ],
+      "brief": "toe arrived (4)",
+      "claim": {
+        "kind": "stock",
+        "value": 4
+      },
+      "must_mention": [
+        "toe",
+        "4"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "toe arrived (4) in recv, tagging them now"
+    },
+    {
+      "ts": "1785361186.828491",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-003080"
+      ],
+      "brief": "Test stand rework for Ankle heel-strike impact test: Tilt stand stop bushing waits on Sensor breakout PCB for ankle and foot (stop bushing)",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-gen-0071"
+      },
+      "must_mention": [
+        "Sensor breakout PCB for ankle and foot (stop bushing)",
+        "Test stand rework for Ankle heel-strike impact test: Tilt stand stop bushing"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Test stand rework for Ankle heel-strike impact test: Tilt stand stop bushing waits on Sensor breakout PCB for ankle and foot (stop bushing)"
+    },
+    {
+      "ts": "1785362443.222230",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-004292"
+      ],
+      "brief": "Rig setup for Ankle heel-strike impact test: Ankle impact striker done by fri",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-07-31"
+      },
+      "must_mention": [
+        "Rig setup for Ankle heel-strike impact test: Ankle impact striker",
+        "fri the 31st"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Rig setup for Ankle heel-strike impact test: Ankle impact striker done by fri the 31st"
+    },
+    {
+      "ts": "1785367347.504165",
+      "user": "p-diego",
+      "thread_ts": "1785362443.222230",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "thanks Hana 🙏"
+    },
+    {
+      "ts": "1785436888.718256",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-001651"
+      ],
+      "brief": "1276: need 8 by 2026-08-24",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-08-24"
+        }
+      },
+      "must_mention": [
+        "1276",
+        "8/24"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "1276: need 8 by 8/24, still the same ask as before, please keep an eye on it 🙏"
+    },
+    {
+      "ts": "1785441065.603823",
+      "user": "p-talia",
+      "thread_ts": "1785436888.718256",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "On it, will chase today 🙏"
+    },
+    {
+      "ts": "1785454249.772884",
+      "user": "p-destiny",
+      "thread_ts": null,
+      "events": [
+        "ev-001444"
+      ],
+      "brief": "bearing cap arrived",
+      "claim": {
+        "kind": "stock",
+        "value": 10
+      },
+      "must_mention": [
+        "bearing cap",
+        "10"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "bearing cap arrived, 10 in the bin on the cart 🙏"
+    },
+    {
+      "ts": "1785458438.759998",
+      "user": "p-callum",
+      "thread_ts": "1785454249.772884",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "are those the new ones or leftover from last lot? check the tag pls"
+    },
+    {
+      "ts": "1785503820.791578",
+      "user": "p-mei",
+      "thread_ts": null,
+      "events": [
+        "ev-003299"
+      ],
+      "brief": "Leg first steps on the gait gantry takes 3-4 working days",
+      "claim": {
+        "kind": "duration",
+        "value": [
+          3,
+          4
+        ]
+      },
+      "must_mention": [
+        "Leg first steps on the gait gantry",
+        "3-4 days"
+      ],
+      "length": "short",
+      "text": "Leg first steps on the gait gantry takes 3-4 days once the hardware is on the frame, so Monday is optimistic."
+    },
+    {
+      "ts": "1785536051.541375",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-001653"
+      ],
+      "brief": "the crank: need 8 by 2026-08-24 for the build",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-08-24"
+        }
+      },
+      "must_mention": [
+        "the crank",
+        "the build",
+        "8/24"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "the crank: need 8 by 8/24 for the build 😬"
+    },
+    {
+      "ts": "1785545980.175105",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-004293"
+      ],
+      "brief": "Rig setup for Ankle heel-strike impact test: Ankle impact striker done",
+      "claim": {
+        "kind": "done",
+        "value": "2026-07-31"
+      },
+      "must_mention": [
+        "Rig setup for Ankle heel-strike impact test: Ankle impact striker",
+        "fri the 31st"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Rig setup for Ankle heel-strike impact test: Ankle impact striker done, fri the 31st like we said. moving on to the tilt stand"
+    }
+  ]
+}

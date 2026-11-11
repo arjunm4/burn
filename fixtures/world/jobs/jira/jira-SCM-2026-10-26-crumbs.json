@@ -73,6 +73,22 @@
       }
     },
     {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
       "id": "p-owen",
       "name": "Owen Halloran",
       "display_name": "owen",
@@ -110,6 +126,25 @@
       }
     },
     {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
       "id": "p-talia",
       "name": "Talia Rosen",
       "display_name": "talia",
@@ -137,7 +172,7 @@
   ],
   "tickets": [
     {
-      "key": "SCM-381",
+      "key": "SCM-400",
       "type": "Task",
       "status": "In Progress",
       "reporter": "p-diego",
@@ -149,7 +184,7 @@
       "created": "2026-10-26T09:53:41-07:00",
       "due_date": "2026-11-11",
       "events": [
-        "ev-002417"
+        "ev-002711"
       ],
       "brief": "Order 24x Ankle pivot bushing, 6x Foot sole plate / 1290: need 24 by 2026-11-11",
       "must_mention": [
@@ -157,15 +192,15 @@
         "11/11"
       ],
       "description_length": "one_line",
-      "summary": "Ankle pivot bushing x24, foot sole plate x6",
-      "description": "foot sole plate is 1290, need the 24 bushings by 11/11 too 🙏",
+      "summary": "Order Ankle pivot bushing x24, foot sole plate x6",
+      "description": "1290 need 24 by 11/11 🙏",
       "comments": [
         {
-          "id": "SCM-381-c1",
+          "id": "SCM-400-c1",
           "by": "p-priya",
           "at": "2026-10-27T13:43:21-07:00",
           "events": [
-            "ev-002419"
+            "ev-002713"
           ],
           "brief": "1290: need 24 by 2026-11-11",
           "claim": {
@@ -177,33 +212,42 @@
           },
           "must_mention": [
             "1290",
-            "11/11"
+            "wed 11/11"
           ],
-          "body": "Checking qty on 1290, still 24 by 11/11?"
+          "body": "1290: Need 24 by wed 11/11."
         },
         {
-          "id": "SCM-381-c2",
+          "id": "SCM-400-c2",
           "by": "p-diego",
           "at": "2026-10-28T14:02:34-07:00",
           "events": [
-            "ev-002422"
+            "ev-002716"
           ],
-          "brief": "Order XO-5574639 placed, promised 2026-11-16",
+          "brief": "Order XO-5574639 placed, promised 2026-11-11",
           "claim": {
             "kind": "eta",
-            "value": "2026-11-16"
+            "value": "2026-11-11"
           },
           "must_mention": [
             "XO-5574639",
             "1290",
-            "mon the 16th"
+            "11/11"
           ],
-          "body": "Order XO-5574639 placed, 1290 promised mon the 16th 🙏"
+          "body": "Order XO-5574639 placed for 1290, promised 11/11 🙏"
+        },
+        {
+          "id": "SCM-400-c3",
+          "by": "p-diego",
+          "at": "2026-11-09T14:40:31-08:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on vendor to ship 😬"
         }
       ]
     },
     {
-      "key": "SCM-383",
+      "key": "SCM-402",
       "type": "Task",
       "status": "In Progress",
       "reporter": "p-owen",
@@ -215,23 +259,23 @@
       "created": "2026-10-27T08:19:06-07:00",
       "due_date": null,
       "events": [
-        "ev-002349"
+        "ev-002631"
       ],
-      "brief": "Order 12x Grip test object, Delrin / the part: need 12 by 2026-11-09",
+      "brief": "Order 12x Grip test object, Delrin / the part: need 12 by 2026-11-12",
       "must_mention": [
         "the part",
-        "mon 11/9"
+        "11/12"
       ],
-      "description_length": "one_line",
-      "summary": "delrin grip test object x12",
-      "description": "need 12 of the part by mon 11/9",
+      "description_length": "medium",
+      "summary": "Order Grip test object, Delrin x12",
+      "description": "the part: need 12 by 11/12. Rest of the fixture list is on the sheet",
       "comments": [
         {
-          "id": "SCM-383-c1",
+          "id": "SCM-402-c1",
           "by": "p-owen",
           "at": "2026-10-27T11:07:51-07:00",
           "events": [
-            "ev-002350"
+            "ev-002632"
           ],
           "brief": "2461: need 12 by 2026-11-12",
           "claim": {
@@ -243,16 +287,16 @@
           },
           "must_mention": [
             "2461",
-            "thurs the 12th"
+            "11/12"
           ],
-          "body": "2461 need 12 by thurs the 12th"
+          "body": "2461 need 12 by 11/12"
         },
         {
-          "id": "SCM-383-c2",
+          "id": "SCM-402-c2",
           "by": "p-owen",
           "at": "2026-10-27T11:15:33-07:00",
           "events": [
-            "ev-002351"
+            "ev-002633"
           ],
           "brief": "that order: need 12 by 2026-11-12",
           "claim": {
@@ -264,56 +308,44 @@
           },
           "must_mention": [
             "that order",
-            "thurs the 12th"
+            "11/12"
           ],
-          "body": "that order needs to land thurs the 12th"
+          "body": "that order need 12 by 11/12"
         },
         {
-          "id": "SCM-383-c3",
+          "id": "SCM-402-c3",
           "by": "p-talia",
           "at": "2026-10-27T12:20:56-07:00",
           "events": [
-            "ev-002352"
+            "ev-002634"
           ],
-          "brief": "delrin blocks: need 12 by 2026-11-12",
+          "brief": "delrin blocks: need 12 by 2026-11-17",
           "claim": {
             "kind": "needs",
             "value": {
               "qty": 12,
-              "by": "2026-11-12"
+              "by": "2026-11-17"
             }
           },
           "must_mention": [
             "delrin blocks",
-            "thurs the 12th"
+            "tues the 17th"
           ],
-          "body": "delrin blocks need 12 by thurs the 12th 🙏"
+          "body": "delrin blocks: need 12 by tues the 17th 🙏"
         },
         {
-          "id": "SCM-383-c4",
-          "by": "p-owen",
-          "at": "2026-10-28T03:18:06-07:00",
-          "events": [
-            "ev-003135"
-          ],
-          "brief": "Correction: the part: need 12 by 2026-11-12",
-          "claim": {
-            "kind": "needs",
-            "value": {
-              "qty": 12,
-              "by": "2026-11-12"
-            }
-          },
-          "must_mention": [
-            "the part",
-            "thurs 11/12"
-          ],
-          "body": "correction the part needs 12 by thurs 11/12"
+          "id": "SCM-402-c4",
+          "by": "p-gwen",
+          "at": "2026-11-02T13:17:09-08:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "Checking with the vendor, will update here."
         }
       ]
     },
     {
-      "key": "SCM-384",
+      "key": "SCM-403",
       "type": "Task",
       "status": "In Progress",
       "reporter": "p-amara",
@@ -325,20 +357,48 @@
       "created": "2026-10-27T08:43:03-07:00",
       "due_date": "2026-11-09",
       "events": [
-        "ev-002431"
+        "ev-002725"
       ],
       "brief": "Order 9x Grip load cell plate / the part: need 9 by 2026-11-09",
       "must_mention": [
         "the part",
-        "11/9"
+        "mon the 9th"
       ],
-      "description_length": "short",
-      "summary": "Grip load cell plate x9 - high",
-      "description": "Need 9 of the part by 11/9, not 100% sure on the qty",
-      "comments": []
+      "description_length": "one_line",
+      "summary": "Order Grip load cell plate x9",
+      "description": "the part: need 9 by mon the 9th",
+      "comments": [
+        {
+          "id": "SCM-403-c1",
+          "by": "p-talia",
+          "at": "2026-11-02T09:13:47-08:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "any update on this? 🙏"
+        },
+        {
+          "id": "SCM-403-c2",
+          "by": "p-samir",
+          "at": "2026-11-06T09:18:52-08:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on vendor"
+        },
+        {
+          "id": "SCM-403-c3",
+          "by": "p-samir",
+          "at": "2026-11-09T16:52:25-08:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "any update here? nothing from the vendor on my end"
+        }
+      ]
     },
     {
-      "key": "SCM-388",
+      "key": "SCM-407",
       "type": "Task",
       "status": "In Progress",
       "reporter": "p-andre",
@@ -350,23 +410,23 @@
       "created": "2026-10-27T15:33:51-07:00",
       "due_date": "2026-11-17",
       "events": [
-        "ev-002425"
+        "ev-002719"
       ],
       "brief": "Order 12x Grip fixture camera arm / FL-TST-2480: need 12 by 2026-11-17",
       "must_mention": [
         "FL-TST-2480",
-        "11/17"
+        "tues the 17th"
       ],
       "description_length": "short",
-      "summary": "grip fixture camera arm x12",
-      "description": "FL-TST-2480 need 12 by 11/17",
+      "summary": "Order Grip fixture camera arm x12",
+      "description": "FL-TST-2480, need 12 by tues the 17th.",
       "comments": [
         {
-          "id": "SCM-388-c1",
+          "id": "SCM-407-c1",
           "by": "p-andre",
           "at": "2026-10-27T21:56:16-07:00",
           "events": [
-            "ev-002426"
+            "ev-002720"
           ],
           "brief": "camera arm: need 12 by 2026-11-17",
           "claim": {
@@ -378,9 +438,18 @@
           },
           "must_mention": [
             "camera arm",
-            "11/17"
+            "tues the 17th"
           ],
-          "body": "camera arm need 12 by 11/17"
+          "body": "camera arm need 12 by tues the 17th"
+        },
+        {
+          "id": "SCM-407-c2",
+          "by": "p-andre",
+          "at": "2026-11-06T18:29:20-08:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "vendor quote still pending, will ping again mon"
         }
       ]
     }

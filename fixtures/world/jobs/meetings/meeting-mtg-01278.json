@@ -1,0 +1,280 @@
+{
+  "job_id": "meeting-mtg-01278",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 17,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-01278",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-09-16T08:45:00-07:00",
+    "actual_min": 10,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-lin",
+      "p-carlos",
+      "p-luis",
+      "p-destiny"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-002077",
+      "speaker": "p-lin",
+      "at_min": [
+        4,
+        10
+      ],
+      "brief": "Lin says: We need shank by 10/12 (Leg gait-gantry walking test).",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-leg-shank-link",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-12"
+        }
+      },
+      "must_mention": [
+        "shank",
+        "Leg gait-gantry walking test",
+        "10/12"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-dmitri",
+      "text": "Morning. Quick one. Zoe?"
+    },
+    {
+      "start_s": 60,
+      "speaker": "p-zoe",
+      "text": "gantry is mostly there, the foot plate's on, i still need to align the hip mount. thurs probably, maybe fri"
+    },
+    {
+      "start_s": 90,
+      "speaker": "p-dmitri",
+      "text": "Probably isn't a date."
+    },
+    {
+      "start_s": 120,
+      "speaker": "p-zoe",
+      "text": "fri. fri then"
+    },
+    {
+      "start_s": 150,
+      "speaker": "p-lin",
+      "text": "Life test update. Unit two completed the planned cycles. The post-test inspection shows some wear at the output bearing, but nothing out of tolerance."
+    },
+    {
+      "start_s": 180,
+      "speaker": "p-carlos",
+      "text": "Good. Do you want it torn down?"
+    },
+    {
+      "start_s": 210,
+      "speaker": "p-lin",
+      "text": "Not yet. I'd like to run a second set first."
+    },
+    {
+      "start_s": 240,
+      "speaker": "p-carlos",
+      "text": "Okay."
+    },
+    {
+      "start_s": 270,
+      "speaker": "p-luis",
+      "text": "the drop rig lift cable is frayed at the end, i cut it back and re-terminated"
+    },
+    {
+      "start_s": 300,
+      "speaker": "p-dmitri",
+      "text": "Log it in the rig book."
+    },
+    {
+      "start_s": 330,
+      "speaker": "p-luis",
+      "text": "yep will do *ok"
+    },
+    {
+      "start_s": 360,
+      "speaker": "p-destiny",
+      "text": "Assembly, I've got four units in various states of done 🙏 waiting on small fasteners for two of them"
+    },
+    {
+      "start_s": 390,
+      "speaker": "p-carlos",
+      "text": "I'll check the stock cabinet."
+    },
+    {
+      "start_s": 420,
+      "speaker": "p-lin",
+      "text": "Also, we need shank, 12 of them, by 10/12 for the Leg gait-gantry walking test."
+    },
+    {
+      "start_s": 455,
+      "speaker": "p-dmitri",
+      "text": "10/12, noted. Receiving will know."
+    },
+    {
+      "start_s": 489,
+      "speaker": "p-lin",
+      "text": "Thanks."
+    },
+    {
+      "start_s": 524,
+      "speaker": "p-dmitri",
+      "text": "Anything else? No? Good, go."
+    }
+  ],
+  "summary": {
+    "overview": "Wednesday test lab and build standup.",
+    "shorthand_bullet": [
+      "gantry: foot plate on, hip mount alignment pending, fri",
+      "life test unit two done planned cycles, bearing wear within tolerance, second set next",
+      "drop rig lift cable frayed, re-terminated, log in rig book",
+      "assembly: four units in progress, fasteners needed for two",
+      "shank: need 12 by 10/12 for the Leg gait-gantry walking test"
+    ],
+    "action_items": [
+      "carlos check fastener stock",
+      "luis log cable repair",
+      "zoe align hip mount"
+    ],
+    "keywords": [
+      "gantry",
+      "life test",
+      "drop rig",
+      "shank",
+      "fasteners"
+    ]
+  }
+}

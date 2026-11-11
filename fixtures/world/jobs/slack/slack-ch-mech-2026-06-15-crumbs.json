@@ -1,0 +1,146 @@
+{
+  "job_id": "slack-ch-mech-2026-06-15-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 43,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-mech",
+    "name": "mech",
+    "slack_id": "C07FLK0MECH",
+    "purpose": "Mechanical engineering: design, DFM, vendors, drawings"
+  },
+  "week": {
+    "start": "2026-06-15",
+    "end": "2026-06-21"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-kofi",
+      "name": "Kofi Mensah",
+      "display_name": "kofi",
+      "slack_id": "U07FLK0KOFI",
+      "title": "NPI Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Capacitive tactile array crosstalk and flex cable routing through the finger. This week: Farah: ground pour missing under the electrode layer, crosstalk from the flex.",
+    "Ongoing: Crossed-roller preload drops after thermal cycling; bore tolerance and preload ring design. This week: Debate: thread-locked preload nut vs a ground spacer stack; Owen favors spacer, no torque sensitivity.",
+    "Ongoing: Ratcheting risk at peak torque from loose wave generator fit. This week: Rerun to 105 Nm clean; hard limit set at 90 Nm in firmware.",
+    "Ongoing: What to show investors when no full humanoid exists. This week: Helena wants a walking leg by late August for the raise.",
+    "Ongoing: Drop from 30 cm cracks the shank link at the knee clevis. This week: Zoe: drop test waiting on the machined lift hooks; gantry slots are Tue/Thu only."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1781560308.570858",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-003437"
+      ],
+      "brief": "FL-HIP-1033 rev E released: material change",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev E"
+      },
+      "must_mention": [
+        "FL-HIP-1033"
+      ],
+      "length": "short",
+      "text": "FL-HIP-1033 rev E released, material change so check what you have in the bin"
+    },
+    {
+      "ts": "1781652887.441034",
+      "user": "p-kofi",
+      "thread_ts": null,
+      "events": [
+        "ev-004130"
+      ],
+      "brief": "press jig: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "press jig"
+      ],
+      "length": "short",
+      "text": "press jig still quoting rev B i think, not 100% sure"
+    },
+    {
+      "ts": "1781814999.387987",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-003384"
+      ],
+      "brief": "FL-TST-2135 rev C released: fit issue found at assembly",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev C"
+      },
+      "must_mention": [
+        "FL-TST-2135"
+      ],
+      "length": "short",
+      "text": "FL-TST-2135 rev c released fit issue found at assembly"
+    }
+  ]
+}

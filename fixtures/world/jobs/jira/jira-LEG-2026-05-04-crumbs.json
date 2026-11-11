@@ -1,0 +1,160 @@
+{
+  "job_id": "jira-LEG-2026-05-04-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 55,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "LEG",
+    "name": "Legs and ankle"
+  },
+  "week": {
+    "start": "2026-05-04",
+    "end": "2026-05-10"
+  },
+  "people": [
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "LEG-100",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-hana",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-05-05T07:34:47-07:00",
+      "due_date": null,
+      "events": [
+        "ev-000868"
+      ],
+      "brief": "Order 24x Thigh bearing cap, 10x Knee belt pulley / 1327: need 24 by 2026-06-18 for Tolerance stack check for Leg DVT build: Thigh bearing cap",
+      "must_mention": [
+        "1327",
+        "Tolerance stack check for Leg DVT build: Thigh bearing cap",
+        "6/18"
+      ],
+      "description_length": "medium",
+      "summary": "Thigh bearing cap x24, Knee belt pulley x10",
+      "description": "1327 need 24 by 6/18 for Tolerance stack check for Leg DVT build: Thigh bearing cap. pulleys are the other line on the quote i think",
+      "comments": [
+        {
+          "id": "LEG-100-c1",
+          "by": "p-talia",
+          "at": "2026-05-07T15:33:29-07:00",
+          "events": [
+            "ev-003802"
+          ],
+          "brief": "FL-LEG-1327: need 24 by 2026-06-18 for Tolerance stack check for Leg DVT build: Thigh bearing cap",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 24,
+              "by": "2026-06-18"
+            }
+          },
+          "must_mention": [
+            "FL-LEG-1327",
+            "Tolerance stack check for Leg DVT build: Thigh bearing cap",
+            "thurs 6/18"
+          ],
+          "body": "FL-LEG-1327 need 24 by thurs 6/18 for Tolerance stack check for Leg DVT build: Thigh bearing cap 🙏"
+        },
+        {
+          "id": "LEG-100-c2",
+          "by": "p-talia",
+          "at": "2026-05-08T14:08:44-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on vendor 😬"
+        },
+        {
+          "id": "LEG-100-c3",
+          "by": "p-talia",
+          "at": "2026-05-25T13:18:36-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "photos are in slack 🙏"
+        },
+        {
+          "id": "LEG-100-c4",
+          "by": "p-diego",
+          "at": "2026-06-01T17:42:19-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "pics in slack, see thread"
+        }
+      ]
+    }
+  ]
+}

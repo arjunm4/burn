@@ -1,0 +1,309 @@
+{
+  "job_id": "slack-ch-procurement-2026-04-06-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 63,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-04-06",
+    "end": "2026-04-12"
+  },
+  "people": [
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Absolute encoder on the knee output glitches when the motor runs above 8 A. This week: Firmware adds a plausibility filter; Bao calls it a band-aid.",
+    "Ongoing: Getting dyno and gantry logs into one place with consistent timestamps. This week: Pipeline to S3 with test ids in file names; Lin asks to tag by rig and booking."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1775514257.639720",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-000651"
+      ],
+      "brief": "Quote Q-2455714-1 for FL-KNE-1122: standard $477.42, 10 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-04-24",
+          "quote_id": "Q-2455714-1",
+          "price_usd": 477.42,
+          "lead_days": 10
+        }
+      },
+      "must_mention": [
+        "Q-2455714-1",
+        "FL-KNE-1122",
+        "4/24"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Q-2455714-1 for FL-KNE-1122 is in, standard is $477.42 and 10 BD. need 2 by 4/24"
+    },
+    {
+      "ts": "1775596033.070507",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-000675"
+      ],
+      "brief": "2878: need 3 by 2026-04-23",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-04-23"
+        }
+      },
+      "must_mention": [
+        "2878",
+        "thurs 4/23"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "2878 - need 3 by thurs 4/23, can someone push this one"
+    },
+    {
+      "ts": "1775597999.572480",
+      "user": "p-owen",
+      "thread_ts": "1775596033.070507",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "which rev is that, still the latest"
+    },
+    {
+      "ts": "1775667419.529007",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-000669"
+      ],
+      "brief": "Quote Q-2457283-1 for FL-KNE-1166: standard $579.45, 10 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 7,
+          "by": "2026-04-15",
+          "quote_id": "Q-2457283-1",
+          "price_usd": 579.45,
+          "lead_days": 10
+        }
+      },
+      "must_mention": [
+        "Q-2457283-1",
+        "FL-KNE-1166",
+        "4/15"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "Q-2457283-1 for FL-KNE-1166 came back, $579.45 standard, 10 BD. need 7 by 4/15"
+    },
+    {
+      "ts": "1775674399.866517",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-000676"
+      ],
+      "brief": "Quote Q-2457855-1 for FL-TST-2878: standard $226.29, 7 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-04-23",
+          "quote_id": "Q-2457855-1",
+          "price_usd": 226.29,
+          "lead_days": 7
+        }
+      },
+      "must_mention": [
+        "Q-2457855-1",
+        "FL-TST-2878",
+        "thurs the 23rd"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Q-2457855-1 for FL-TST-2878, $226.29 standard at 7 BD. need 3 by thurs the 23rd"
+    },
+    {
+      "ts": "1775676788.424798",
+      "user": "p-gwen",
+      "thread_ts": "1775674399.866517",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Tomas, that is not much runway for a quote that just landed. Can you confirm the qty before I turn it into a PO?"
+    },
+    {
+      "ts": "1775770348.968870",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-000687"
+      ],
+      "brief": "Quote Q-2458995-1 for FL-KNE-1118: standard $979.08, 9 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-04-28",
+          "quote_id": "Q-2458995-1",
+          "price_usd": 979.08,
+          "lead_days": 9
+        }
+      },
+      "must_mention": [
+        "Q-2458995-1",
+        "FL-KNE-1118",
+        "tues the 28th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Q-2458995-1 for FL-KNE-1118 is $979.08 standard, 9 BD. need 12 by tues the 28th"
+    },
+    {
+      "ts": "1775774411.247743",
+      "user": "p-zoe",
+      "thread_ts": "1775770348.968870",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "we got burned on a similar one last build, ended up chasing the vendor every other day"
+    },
+    {
+      "ts": "1775775220.777109",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-000708"
+      ],
+      "brief": "the part: need 12 by 2026-04-29",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-04-29"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "4/29"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "the part, need 12 by 4/29, same story as the other knee stuff"
+    },
+    {
+      "ts": "1775780042.596154",
+      "user": "p-tomas",
+      "thread_ts": "1775775220.777109",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "will look at it tmrw morning"
+    },
+    {
+      "ts": "1775780438.318640",
+      "user": "p-zoe",
+      "thread_ts": "1775775220.777109",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "ran into this on the fixture side too, sat in a drawer for a week before anyone noticed"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "job_id": "slack-ch-hw-purchasing-2026-05-25-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 49,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hw-purchasing",
+    "name": "hw-purchasing",
+    "slack_id": "C07FLK0HWPR",
+    "purpose": "Hardware buys: Xometry quotes, McMaster, Digi-Key, lead times"
+  },
+  "week": {
+    "start": "2026-05-25",
+    "end": "2026-05-31"
+  },
+  "people": [
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Pushrod clevis bends at 1.6x body weight in the tilt stand. This week: Rev B clevis widened 3 mm, double shear; fits with a trimmed heel bumper.",
+    "Ongoing: Bus-off events at 1 Mbps when all leg actuators stream. This week: Farah measures 3 m of stub length; termination at the wrong end.",
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno",
+    "Ongoing: Ratcheting risk at peak torque from loose wave generator fit. This week: Wei proposes keyed hub to replace clamp hub; Tomas worries about key fretting.",
+    "Ongoing: Orders sitting in DFM review because of tolerance callouts"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1779987862.843279",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-001187"
+      ],
+      "brief": "the end: need 2 by 2026-06-12",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-06-12"
+        }
+      },
+      "must_mention": [
+        "the end",
+        "6/12"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "the end need 2 by 6/12"
+    }
+  ]
+}

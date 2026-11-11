@@ -7,9 +7,10 @@
 
 ## Overview
 
-We need connector panel by 10/29. We need the plate by 10/29.
+We need FL-BAT-1632 by 10/29. We need 1632 by 10/29. We need the plate by 10/29.
 
 ## Discussion
 
-- Dmitri: We need connector panel by 10/29.
-- Zoe: We need the plate by 10/29.
+- Dmitri: We need FL-BAT-1632 by 10/29.
+- Dmitri: We need 1632 by 10/29.
+- Dmitri: We need the plate by 10/29.

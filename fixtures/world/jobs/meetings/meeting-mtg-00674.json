@@ -1,0 +1,362 @@
+{
+  "job_id": "meeting-mtg-00674",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 47,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00674",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-06-04T08:45:00-07:00",
+    "actual_min": 19,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-andre",
+      "p-lin",
+      "p-carlos",
+      "p-jade",
+      "p-luis",
+      "p-nora"
+    ],
+    "late_joiners": [
+      "p-zoe"
+    ]
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-001243",
+      "speaker": "p-dmitri",
+      "at_min": [
+        14,
+        19
+      ],
+      "brief": "FL-HIP-1065: need 12 by 2026-06-23",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-hip-output-shaft",
+        "value": {
+          "qty": 12,
+          "by": "2026-06-23"
+        }
+      },
+      "must_mention": [
+        "FL-HIP-1065",
+        "6/23"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-dmitri",
+      "text": "Morning. Zoe's running late. Andre, start us off."
+    },
+    {
+      "start_s": 10,
+      "speaker": "p-andre",
+      "text": "dyno is up, i ran a warmup sweep yesterday, torque ripple looks higher than expected, im checking the coupling alignment"
+    },
+    {
+      "start_s": 45,
+      "speaker": "p-dmitri",
+      "text": "Is it the coupling or the encoder?"
+    },
+    {
+      "start_s": 52,
+      "speaker": "p-andre",
+      "text": "probably coupling, encoder trace is clean"
+    },
+    {
+      "start_s": 85,
+      "speaker": "p-lin",
+      "text": "Life test status. Rig one is at about two thirds of the cycle target. No cracks at the knee flex point so far. Rig two is paused for a sensor swap."
+    },
+    {
+      "start_s": 140,
+      "speaker": "p-dmitri",
+      "text": "Okay. How long is the swap?"
+    },
+    {
+      "start_s": 146,
+      "speaker": "p-lin",
+      "text": "A couple of hours, then it restarts."
+    },
+    {
+      "start_s": 180,
+      "speaker": "p-carlos",
+      "text": "Build is moving. We pressed the bearings on two units, third has an interference issue, shaft is a hair oversize."
+    },
+    {
+      "start_s": 225,
+      "speaker": "p-nora",
+      "text": "Let me restate that so I have it right. The shaft on the third unit is oversize, and you want to know whether to rework it or pull a spare. Is that right?"
+    },
+    {
+      "start_s": 260,
+      "speaker": "p-carlos",
+      "text": "Yes. Spare would be faster."
+    },
+    {
+      "start_s": 280,
+      "speaker": "p-nora",
+      "text": "Then pull the spare and log the nonconformance."
+    },
+    {
+      "start_s": 320,
+      "speaker": "p-jade",
+      "text": "two pallets came in from the machine shop yesterday, checked against packing list, all good"
+    },
+    {
+      "start_s": 350,
+      "speaker": "p-zoe",
+      "text": "hey sorry, late. did i miss the fixture thing"
+    },
+    {
+      "start_s": 360,
+      "speaker": "p-dmitri",
+      "text": "Not yet. Go."
+    },
+    {
+      "start_s": 366,
+      "speaker": "p-zoe",
+      "text": "ok so the tilt fixture is calibrated, uh, load cell reads right against the known weight. next up is the sensor bracket install"
+    },
+    {
+      "start_s": 420,
+      "speaker": "p-luis",
+      "text": "i can help with the bracket thurs, i have the drill guide"
+    },
+    {
+      "start_s": 450,
+      "speaker": "p-zoe",
+      "text": "thurs works, thx"
+    },
+    {
+      "start_s": 500,
+      "speaker": "p-andre",
+      "text": "anyone know whos got the spare allen set"
+    },
+    {
+      "start_s": 510,
+      "speaker": "p-luis",
+      "text": "its in my toolbox, ill bring it"
+    },
+    {
+      "start_s": 560,
+      "speaker": "p-nora",
+      "text": "Last update from me. First, the next build review is moving a day. Second, I need test plans from everyone by end of week."
+    },
+    {
+      "start_s": 640,
+      "speaker": "p-dmitri",
+      "text": "Got it. Zoe, quick one for you."
+    },
+    {
+      "start_s": 850,
+      "speaker": "p-dmitri",
+      "text": "We need FL-HIP-1065 by 6/23. Twelve. Zoe, get that into the request."
+    },
+    {
+      "start_s": 880,
+      "speaker": "p-zoe",
+      "text": "yep, 1065, twelve, got it. is that for the hip dyno or the build?"
+    },
+    {
+      "start_s": 895,
+      "speaker": "p-dmitri",
+      "text": "Whichever comes first, just get it ordered."
+    },
+    {
+      "start_s": 950,
+      "speaker": "p-dmitri",
+      "text": "Okay, anything else? No? Good. Thanks!"
+    }
+  ],
+  "summary": {
+    "overview": "Test lab and build standup. Dyno torque ripple under investigation, life test rig one on track, third unit shaft oversize on build, tilt fixture calibrated.",
+    "shorthand_bullet": [
+      "dyno ripple high - check coupling alignment",
+      "life test rig 1 ~2/3 of cycle target, rig 2 sensor swap",
+      "build unit 3 shaft oversize - pull spare, log NCR",
+      "tilt fixture calibrated, bracket install thurs",
+      "build review moves 1 day",
+      "FL-HIP-1065: 12 needed by 6/23"
+    ],
+    "action_items": [
+      "Andre - check coupling alignment",
+      "Carlos - pull spare shaft, log NCR",
+      "Everyone - test plans by EOW",
+      "Zoe - put FL-HIP-1065 in request"
+    ],
+    "keywords": [
+      "dyno",
+      "life test",
+      "shaft",
+      "tilt fixture",
+      "FL-HIP-1065"
+    ]
+  }
+}

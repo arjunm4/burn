@@ -1,0 +1,908 @@
+{
+  "job_id": "slack-ch-legs-2026-04-27-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 57,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-legs",
+    "name": "legs",
+    "slack_id": "C07FLK0LEGS",
+    "purpose": "Leg and ankle: design, drop test, gait gantry"
+  },
+  "week": {
+    "start": "2026-04-27",
+    "end": "2026-05-03"
+  },
+  "people": [
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-leilani",
+      "name": "Leilani Kahale",
+      "display_name": "leilani.k",
+      "slack_id": "U07FLK0LEIL",
+      "title": "Locomotion Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Leg (left, hip to foot)."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1777307771.469296",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-000838"
+      ],
+      "brief": "the saddle: need 7 by 2026-05-19 for the fit check",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 7,
+          "by": "2026-05-19"
+        }
+      },
+      "must_mention": [
+        "the saddle",
+        "the fit check",
+        "5/19"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "need 7 of the saddle for the fit check, 5/19 please"
+    },
+    {
+      "ts": "1777308110.493758",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-000858"
+      ],
+      "brief": "FL-LEG-1358: need 18 by 2026-05-20 for Rig setup for Leg drop test: Hip pitch mounting bracket",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 18,
+          "by": "2026-05-20"
+        }
+      },
+      "must_mention": [
+        "FL-LEG-1358",
+        "Rig setup for Leg drop test: Hip pitch mounting bracket",
+        "FL-LEG-1348",
+        "5/20"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-LEG-1358 x18 for Rig setup for Leg drop test: Hip pitch mounting bracket, need by 5/20. FL-LEG-1348 is the same drawing family"
+    },
+    {
+      "ts": "1777309054.755455",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-000815"
+      ],
+      "brief": "1283: need 12 by 2026-05-12 for Install and torque for Leg DVT build: Ankle pivot pin",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-05-12"
+        }
+      },
+      "must_mention": [
+        "1283",
+        "Install and torque for Leg DVT build: Ankle pivot pin",
+        "ankle crank",
+        "side link",
+        "5/12"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "1283 needed x12 for Install and torque for Leg DVT build: Ankle pivot pin, 5/12. ankle crank and side link are already in hand"
+    },
+    {
+      "ts": "1777309277.089892",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-000805"
+      ],
+      "brief": "FL-TST-2556: need 6 by 2026-05-01",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-05-01"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2556",
+        "5/1"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2556 need 6 by 5/1"
+    },
+    {
+      "ts": "1777310544.353250",
+      "user": "p-ingrid",
+      "thread_ts": "1777309054.755455",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@samir.k can you pick this up"
+    },
+    {
+      "ts": "1777312269.409180",
+      "user": "p-priya",
+      "thread_ts": "1777307771.469296",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "we got burned by the saddle fit last build too, shims saved us"
+    },
+    {
+      "ts": "1777318151.800595",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-000878"
+      ],
+      "brief": "shin link: need 8 by 2026-05-21 for Prototype fit-up for Leg DVT build: Shank link",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-05-21"
+        }
+      },
+      "must_mention": [
+        "shin link",
+        "Prototype fit-up for Leg DVT build: Shank link",
+        "knee pulley",
+        "thurs 5/21"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "shin link x8 for Prototype fit-up for Leg DVT build: Shank link, thurs 5/21. knee pulley is already here"
+    },
+    {
+      "ts": "1777330127.450342",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-000833"
+      ],
+      "brief": "FL-ANK-1290: need 24 by 2026-05-19",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-05-19"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1290",
+        "tues the 19th"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "FL-ANK-1290 x24, tues the 19th"
+    },
+    {
+      "ts": "1777343921.740159",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-000806"
+      ],
+      "brief": "clamp plate: need 6 by 2026-05-01",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-05-01"
+        }
+      },
+      "must_mention": [
+        "clamp plate",
+        "5/1"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "clamp plate x6 by 5/1"
+    },
+    {
+      "ts": "1777394179.574335",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-000807"
+      ],
+      "brief": "foot clamp: need 6 by 2026-05-01",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-05-01"
+        }
+      },
+      "must_mention": [
+        "foot clamp",
+        "fri the 1st"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "need 6 foot clamp by fri the 1st, the test is lined up around it"
+    },
+    {
+      "ts": "1777398240.607935",
+      "user": "p-leilani",
+      "thread_ts": "1777394179.574335",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "noted"
+    },
+    {
+      "ts": "1777400355.874987",
+      "user": "p-diego",
+      "thread_ts": "1777394179.574335",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@samir.k is this one on your list?"
+    },
+    {
+      "ts": "1777414110.496414",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-003228"
+      ],
+      "brief": "Ankle tilt and load test waits on Ankle EVT assembly and F/T sensor zeroing",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-90005"
+      },
+      "must_mention": [
+        "Ankle EVT assembly and F/T sensor zeroing",
+        "the test"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Ankle tilt and load test waits on Ankle EVT assembly and F/T sensor zeroing, so the test is stuck till both are done"
+    },
+    {
+      "ts": "1777417574.333387",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-000810"
+      ],
+      "brief": "the clamp: need 6 by 2026-05-01",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-05-01"
+        }
+      },
+      "must_mention": [
+        "the clamp",
+        "5/1"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "the clamp, 6 by 5/1"
+    },
+    {
+      "ts": "1777435847.738491",
+      "user": "p-diego",
+      "thread_ts": "1777330127.450342",
+      "events": [
+        "ev-003675"
+      ],
+      "brief": "Correction: FL-ANK-1290: need 24 by 2026-05-18",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-05-18"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1290",
+        "mon 5/18"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "correction on FL-ANK-1290, need the 24 by mon 5/18"
+    },
+    {
+      "ts": "1777476758.823749",
+      "user": "p-diego",
+      "thread_ts": "1777330127.450342",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Thanks, that helps. I'll update the tracker with the new date."
+    },
+    {
+      "ts": "1777479011.342061",
+      "user": "p-kenji",
+      "thread_ts": "1777318151.800595",
+      "events": [
+        "ev-003508"
+      ],
+      "brief": "Correction: shin link: need 8 by 2026-05-22 for Prototype fit-up for Leg DVT build: Shank link",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-05-22"
+        }
+      },
+      "must_mention": [
+        "shin link",
+        "Prototype fit-up for Leg DVT build: Shank link",
+        "knee pulley",
+        "5/22"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "fix, shin link for Prototype fit-up for Leg DVT build: Shank link is 5/22. knee pulley unchanged"
+    },
+    {
+      "ts": "1777480148.383840",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-003230"
+      ],
+      "brief": "Leg EVT build waits on Ankle tilt and load test",
+      "claim": {
+        "kind": "blocked",
+        "value": "test-ankle-load"
+      },
+      "must_mention": [
+        "Ankle tilt and load test",
+        "Leg EVT build"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Leg EVT build waits on Ankle tilt and load test"
+    },
+    {
+      "ts": "1777488845.918811",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-000811"
+      ],
+      "brief": "clamp plate: need 6 by 2026-05-01",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-05-01"
+        }
+      },
+      "must_mention": [
+        "clamp plate",
+        "fri 5/1"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "clamp plate, 6 by fri 5/1"
+    },
+    {
+      "ts": "1777491959.723236",
+      "user": "p-beth",
+      "thread_ts": "1777488845.918811",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "yep"
+    },
+    {
+      "ts": "1777493014.154438",
+      "user": "p-diego",
+      "thread_ts": "1777488845.918811",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "agreed"
+    },
+    {
+      "ts": "1777493644.609605",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-000860"
+      ],
+      "brief": "1358: need 18 by 2026-05-20",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 18,
+          "by": "2026-05-20"
+        }
+      },
+      "must_mention": [
+        "1358",
+        "5/20"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "1358 x18 by 5/20"
+    },
+    {
+      "ts": "1777494158.955564",
+      "user": "p-priya",
+      "thread_ts": "1777488845.918811",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Thanks diego, that's what I needed."
+    },
+    {
+      "ts": "1777504078.451957",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-004225"
+      ],
+      "brief": "Fixture install and shakedown for Leg drop test: Stator insertion jig done by fri",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-05-01"
+      },
+      "must_mention": [
+        "Fixture install and shakedown for Leg drop test: Stator insertion jig",
+        "5/1"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Fixture install and shakedown for Leg drop test: Stator insertion jig should be done by fri 5/1, pretty sure"
+    },
+    {
+      "ts": "1777542120.847839",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-003606"
+      ],
+      "brief": "Correction: foot clamp: need 6 by 2026-05-01",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-05-01"
+        }
+      },
+      "must_mention": [
+        "foot clamp",
+        "fri the 1st"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "Correction: foot clamp, 6 needed by fri the 1st"
+    },
+    {
+      "ts": "1777566242.642968",
+      "user": "p-diego",
+      "thread_ts": "1777542120.847839",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "will look at it after lunch"
+    },
+    {
+      "ts": "1777568232.311562",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-000812"
+      ],
+      "brief": "the clamp: need 6 by 2026-05-01; asks whether expediting is worth it",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-05-01"
+        }
+      },
+      "must_mention": [
+        "the clamp",
+        "fri 5/1"
+      ],
+      "pressure": "high",
+      "asks_expedite": true,
+      "length": "short",
+      "text": "the clamp, 6 by fri 5/1. is it worth expediting?"
+    },
+    {
+      "ts": "1777569209.146166",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-000880"
+      ],
+      "brief": "tibia: need 8 by 2026-05-22",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-05-22"
+        }
+      },
+      "must_mention": [
+        "tibia",
+        "fri 5/22"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "need 8 tibia by fri 5/22"
+    },
+    {
+      "ts": "1777573593.295673",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-001057"
+      ],
+      "brief": "that order: need 12 by 2026-06-11",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-06-11"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "thurs the 11th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "that order needs to be in by thurs the 11th, 12 pcs"
+    },
+    {
+      "ts": "1777594612.295528",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-000750"
+      ],
+      "brief": "FT adapter arrived",
+      "claim": {
+        "kind": "stock",
+        "value": 2
+      },
+      "must_mention": [
+        "FT adapter",
+        "2"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FT adapter arrived, 2"
+    },
+    {
+      "ts": "1777597912.628706",
+      "user": "p-hana",
+      "thread_ts": "1777594612.295528",
+      "events": [
+        "ev-003680"
+      ],
+      "brief": "Correction: FT adapter arrived (1)",
+      "claim": {
+        "kind": "stock",
+        "value": 1
+      },
+      "must_mention": [
+        "FT adapter",
+        "1"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FT adapter, only 1 actually, ignore the 2"
+    },
+    {
+      "ts": "1777601974.806716",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-000898"
+      ],
+      "brief": "the yoke: need 12 by 2026-06-16",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-06-16"
+        }
+      },
+      "must_mention": [
+        "the yoke",
+        "6/16"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "need 12 of the yoke by 6/16, i think"
+    },
+    {
+      "ts": "1777602994.885024",
+      "user": "p-zoe",
+      "thread_ts": "1777601974.806716",
+      "events": [
+        "ev-003602"
+      ],
+      "brief": "Correction: the yoke: need 12 by 2026-06-18",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-06-18"
+        }
+      },
+      "must_mention": [
+        "the yoke",
+        "6/18"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "sorry, the yoke is 6/18"
+    },
+    {
+      "ts": "1777683218.876735",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-004226"
+      ],
+      "brief": "Fixture install and shakedown for Leg drop test: Stator insertion jig done",
+      "claim": {
+        "kind": "done",
+        "value": "2026-05-01"
+      },
+      "must_mention": [
+        "Fixture install and shakedown for Leg drop test: Stator insertion jig",
+        "fri the 1st"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Fixture install and shakedown for Leg drop test: Stator insertion jig done fri the 1st"
+    }
+  ]
+}

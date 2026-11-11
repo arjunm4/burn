@@ -1,0 +1,441 @@
+{
+  "job_id": "meeting-mtg-00544",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 53,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00544",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-05-12T08:45:00-07:00",
+    "actual_min": 19,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-andre",
+      "p-lin",
+      "p-carlos",
+      "p-jade",
+      "p-luis",
+      "p-destiny",
+      "p-nora"
+    ],
+    "late_joiners": [
+      "p-zoe"
+    ]
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-000946",
+      "speaker": "p-dmitri",
+      "at_min": [
+        0,
+        6
+      ],
+      "brief": "Dmitri says: We need the housings by 6/1.",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-cmm-housing-nest",
+        "value": {
+          "qty": 6,
+          "by": "2026-06-01"
+        }
+      },
+      "must_mention": [
+        "the housings",
+        "6/1"
+      ]
+    },
+    {
+      "event": "ev-000945",
+      "speaker": "p-dmitri",
+      "at_min": [
+        11,
+        17
+      ],
+      "brief": "CMM nest: need 6 by 2026-06-02",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-cmm-housing-nest",
+        "value": {
+          "qty": 6,
+          "by": "2026-06-02"
+        }
+      },
+      "must_mention": [
+        "CMM nest",
+        "6/2"
+      ]
+    },
+    {
+      "event": "ev-000967",
+      "speaker": "p-dmitri",
+      "at_min": [
+        14,
+        19
+      ],
+      "brief": "load yoke: need 1 by 2026-06-03",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-torso-load-yoke",
+        "value": {
+          "qty": 1,
+          "by": "2026-06-03"
+        }
+      },
+      "must_mention": [
+        "load yoke",
+        "6/3"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-dmitri",
+      "text": "Okay, morning. We need the housings by 6/1. Just getting that out first because I keep forgetting."
+    },
+    {
+      "start_s": 14,
+      "speaker": "p-carlos",
+      "text": "Six?"
+    },
+    {
+      "start_s": 16,
+      "speaker": "p-dmitri",
+      "text": "Six, yes."
+    },
+    {
+      "start_s": 19,
+      "speaker": "p-andre",
+      "text": "ok. dyno, i got the alignment under control i think, ran a sweep yesterday afternoon"
+    },
+    {
+      "start_s": 33,
+      "speaker": "p-lin",
+      "text": "Life test rig two is down for a fan swap, back this afternoon."
+    },
+    {
+      "start_s": 44,
+      "speaker": "p-dmitri",
+      "text": "Okay. Jade?"
+    },
+    {
+      "start_s": 47,
+      "speaker": "p-jade",
+      "text": "receiving got the coating samples back"
+    },
+    {
+      "start_s": 55,
+      "speaker": "p-dmitri",
+      "text": "How do they look?"
+    },
+    {
+      "start_s": 58,
+      "speaker": "p-jade",
+      "text": "didnt open them yet"
+    },
+    {
+      "start_s": 62,
+      "speaker": "p-luis",
+      "text": "i can look at them after, i have to anyway"
+    },
+    {
+      "start_s": 70,
+      "speaker": "p-destiny",
+      "text": "Assembly 😬 we found a loose connector on the newest unit, reseated and it's fine now"
+    },
+    {
+      "start_s": 86,
+      "speaker": "p-dmitri",
+      "text": "Okay, that's the one that kept dropping out?"
+    },
+    {
+      "start_s": 91,
+      "speaker": "p-destiny",
+      "text": "yes i think 🙏"
+    },
+    {
+      "start_s": 97,
+      "speaker": "p-carlos",
+      "text": "We'll keep an eye on it. Need a better connector, honestly!!"
+    },
+    {
+      "start_s": 108,
+      "speaker": "p-dmitri",
+      "text": "Noted. Nora, anything from your side?"
+    },
+    {
+      "start_s": 113,
+      "speaker": "p-nora",
+      "text": "nothing, just reading in today"
+    },
+    {
+      "start_s": 120,
+      "speaker": "p-dmitri",
+      "text": "Fine. Zoe's coming in?"
+    },
+    {
+      "start_s": 123,
+      "speaker": "p-zoe",
+      "text": "here sorry, late, my bike chain, ok what did i miss"
+    },
+    {
+      "start_s": 133,
+      "speaker": "p-dmitri",
+      "text": "Housing date. Zoe, fixtures, anything?"
+    },
+    {
+      "start_s": 140,
+      "speaker": "p-zoe",
+      "text": "the cmm fixture needs a nest redone, the old one doesn't hold the part flat"
+    },
+    {
+      "start_s": 154,
+      "speaker": "p-dmitri",
+      "text": "Right, so the CMM nest, need 6 by 6/2. Same week as the housings."
+    },
+    {
+      "start_s": 169,
+      "speaker": "p-zoe",
+      "text": "ok, six by 6/2, got it"
+    },
+    {
+      "start_s": 176,
+      "speaker": "p-carlos",
+      "text": "Is that also a vendor part"
+    },
+    {
+      "start_s": 180,
+      "speaker": "p-zoe",
+      "text": "i think we can make it in house but im not 100%"
+    },
+    {
+      "start_s": 192,
+      "speaker": "p-dmitri",
+      "text": "Check. And separately, load yoke, need 1 by 6/3."
+    },
+    {
+      "start_s": 206,
+      "speaker": "p-andre",
+      "text": "thats for the pull test?"
+    },
+    {
+      "start_s": 209,
+      "speaker": "p-dmitri",
+      "text": "Yeah."
+    },
+    {
+      "start_s": 213,
+      "speaker": "p-lin",
+      "text": "Do we want to hold the pull test until the yoke is here?"
+    },
+    {
+      "start_s": 220,
+      "speaker": "p-dmitri",
+      "text": "Yes. Okay, that's it, go."
+    }
+  ],
+  "summary": {
+    "overview": "Standup. Housings date stated, dyno alignment better, life test rig two down for fan, connector reseated, CMM nest and load yoke needed early next month.",
+    "shorthand_bullet": [
+      "dyno alignment ok, sweep run",
+      "rig 2 fan swap",
+      "connector on newest unit reseated",
+      "CMM nest needs redo, may make in house"
+    ],
+    "action_items": [
+      "Zoe to check in-house for nest",
+      "Luis to inspect coating samples",
+      "hold pull test till yoke arrives"
+    ],
+    "keywords": [
+      "standup",
+      "housings",
+      "CMM",
+      "yoke",
+      "connectors"
+    ]
+  }
+}

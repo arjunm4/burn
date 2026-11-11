@@ -1,0 +1,357 @@
+{
+  "job_id": "meeting-mtg-00262",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 67,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00262",
+    "title": "Actuators standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-03-25T09:15:00-07:00",
+    "actual_min": 10,
+    "present": [
+      "p-arjun",
+      "p-owen",
+      "p-tomas",
+      "p-wei",
+      "p-nadia",
+      "p-andre"
+    ],
+    "late_joiners": [
+      "p-nadia"
+    ]
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-000603",
+      "speaker": "p-owen",
+      "at_min": [
+        0,
+        6
+      ],
+      "brief": "knee flange: need 2 by 2026-05-15",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-knee-output-flange",
+        "value": {
+          "qty": 2,
+          "by": "2026-05-15"
+        }
+      },
+      "must_mention": [
+        "knee flange",
+        "5/15"
+      ]
+    },
+    {
+      "event": "ev-000611",
+      "speaker": "p-arjun",
+      "at_min": [
+        3,
+        9
+      ],
+      "brief": "Arjun says: We need the part by 5/1.",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-battery-enclosure-clevis-10",
+        "value": {
+          "qty": 2,
+          "by": "2026-05-01"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "5/1"
+      ]
+    },
+    {
+      "event": "ev-000614",
+      "speaker": "p-arjun",
+      "at_min": [
+        3,
+        9
+      ],
+      "brief": "battery clevis: need 2 by 2026-05-05",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-battery-enclosure-clevis-10",
+        "value": {
+          "qty": 2,
+          "by": "2026-05-05"
+        }
+      },
+      "must_mention": [
+        "battery clevis",
+        "5/5"
+      ]
+    },
+    {
+      "event": "ev-000549",
+      "speaker": "p-arjun",
+      "at_min": [
+        4,
+        10
+      ],
+      "brief": "the bracket: need 12 by 2026-03-30 for the build",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-hip-brake-bracket",
+        "value": {
+          "qty": 12,
+          "by": "2026-03-30"
+        }
+      },
+      "must_mention": [
+        "the bracket",
+        "the build",
+        "3/30"
+      ]
+    },
+    {
+      "event": "ev-000604",
+      "speaker": "p-owen",
+      "at_min": [
+        5,
+        10
+      ],
+      "brief": "Owen says: We need output flange by 5/12.",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-knee-output-flange",
+        "value": {
+          "qty": 2,
+          "by": "2026-05-12"
+        }
+      },
+      "must_mention": [
+        "output flange",
+        "5/12"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 5,
+      "speaker": "p-arjun",
+      "text": "Okay let's start. Owen, you first?"
+    },
+    {
+      "start_s": 12,
+      "speaker": "p-owen",
+      "text": "Yep. Bracket rev is going out for review today. Also the knee flange, we need 2 by 5/15, I will put the request in."
+    },
+    {
+      "start_s": 35,
+      "speaker": "p-wei",
+      "text": "Is that the same flange from the last build or a new rev?"
+    },
+    {
+      "start_s": 42,
+      "speaker": "p-owen",
+      "text": "New rev I think. Output flange, we need that by 5/12, 2 pieces too."
+    },
+    {
+      "start_s": 65,
+      "speaker": "p-tomas",
+      "text": "Okay, I will check what the vendor lead looks like for both."
+    },
+    {
+      "start_s": 90,
+      "speaker": "p-arjun",
+      "text": "We need the part by 5/1, uh, the two, same count. And the battery clevis, 2 by 5/5."
+    },
+    {
+      "start_s": 118,
+      "speaker": "p-andre",
+      "text": "is the clevis the one with the chamfer issue"
+    },
+    {
+      "start_s": 124,
+      "speaker": "p-arjun",
+      "text": "Yes, that one, rev fixed."
+    },
+    {
+      "start_s": 150,
+      "speaker": "p-arjun",
+      "text": "And the bracket, the build needs 12 by 3/30, so that is the near one."
+    },
+    {
+      "start_s": 175,
+      "speaker": "p-wei",
+      "text": "The bores on the housing came back from CMM, I will post the report after this."
+    },
+    {
+      "start_s": 205,
+      "speaker": "p-nadia",
+      "text": "Sorry, I'm late. What did I miss?"
+    },
+    {
+      "start_s": 212,
+      "speaker": "p-arjun",
+      "text": "Dates for a few parts. Tomas has them."
+    },
+    {
+      "start_s": 235,
+      "speaker": "p-nadia",
+      "text": "Okay. From me, the sensor board bring-up is done, firmware flashing is next."
+    },
+    {
+      "start_s": 270,
+      "speaker": "p-tomas",
+      "text": "Great. I will send the list of dates to purchasing after standup."
+    },
+    {
+      "start_s": 300,
+      "speaker": "p-arjun",
+      "text": "Thanks all."
+    }
+  ],
+  "summary": {
+    "overview": "Actuators standup. Several parts and dates raised: knee flange need 2 by 5/15, the part need 2 by 5/1, battery clevis need 2 by 5/5, output flange need 2 by 5/12, and the bracket need 12 by 3/30 for the build. Tomas to check vendor lead times and send dates to purchasing.",
+    "shorthand_bullet": [
+      "bracket rev out for review",
+      "knee flange 2 by 5/15",
+      "output flange 2 by 5/12",
+      "the part 2 by 5/1",
+      "battery clevis 2 by 5/5",
+      "the bracket 12 by 3/30 for the build",
+      "housing bores CMM report coming",
+      "sensor board bring-up done, firmware flash next"
+    ],
+    "action_items": [
+      "Tomas check vendor lead for flanges, send date list to purchasing",
+      "Wei post CMM report",
+      "Owen put in flange request"
+    ],
+    "keywords": [
+      "actuators",
+      "standup",
+      "knee flange",
+      "output flange",
+      "battery clevis"
+    ]
+  }
+}

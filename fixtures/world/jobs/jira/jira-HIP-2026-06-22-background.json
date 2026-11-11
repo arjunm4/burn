@@ -1,0 +1,232 @@
+{
+  "job_id": "jira-HIP-2026-06-22-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 42,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HIP",
+    "name": "Actuators (hip and knee)"
+  },
+  "week": {
+    "start": "2026-06-22",
+    "end": "2026-06-28"
+  },
+  "people": [
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "HIP-279",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": null,
+      "labels": [],
+      "priority": "Highest",
+      "created": "2026-06-22T09:02:43-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Firmware flag for bench mode (hip actuator)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-279-c1",
+          "by": "p-tomas",
+          "at": "2026-06-24T18:14:06-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-279-c2",
+          "by": "p-tomas",
+          "at": "2026-06-25T18:19:21-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-280",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-carlos",
+      "assignee": "p-carlos",
+      "labels": [],
+      "priority": "Highest",
+      "created": "2026-06-22T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Rig setup for Hip actuator dyno efficiency sweep: Dyno thermocouple clamp (3)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-280-c1",
+          "by": "p-carlos",
+          "at": "2026-06-29T14:44:57-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-280-c2",
+          "by": "p-wei",
+          "at": "2026-07-20T10:23:31-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-282",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": null,
+      "labels": [],
+      "priority": "Highest",
+      "created": "2026-06-23T09:49:38-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Investigate noise on bench unit (knee actuator)",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HIP-283",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": "p-tomas",
+      "labels": [
+        "bench"
+      ],
+      "priority": "High",
+      "created": "2026-06-25T06:58:54-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Rework fixture clamp (hip actuator)",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-283-c1",
+          "by": "p-tomas",
+          "at": "2026-07-07T18:12:20-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-283-c2",
+          "by": "p-wei",
+          "at": "2026-07-08T12:04:29-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    }
+  ]
+}

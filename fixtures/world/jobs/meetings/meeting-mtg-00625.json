@@ -1,0 +1,323 @@
+{
+  "job_id": "meeting-mtg-00625",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 49,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00625",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-05-27T08:45:00-07:00",
+    "actual_min": 13,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-andre",
+      "p-lin",
+      "p-carlos",
+      "p-jade",
+      "p-destiny"
+    ],
+    "late_joiners": [
+      "p-destiny"
+    ]
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-001184",
+      "speaker": "p-dmitri",
+      "at_min": [
+        5,
+        11
+      ],
+      "brief": "FL-TST-2260: need 2 by 2026-06-12 for the test",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-drop-fixture-hook",
+        "value": {
+          "qty": 2,
+          "by": "2026-06-12"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2260",
+        "the test",
+        "6/12"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-dmitri",
+      "text": "Morning everyone. Destiny will be late. Andre, status."
+    },
+    {
+      "start_s": 8,
+      "speaker": "p-andre",
+      "text": "dyno sweep finished, i uploaded the data, efficency peak is a little lower than the sim"
+    },
+    {
+      "start_s": 40,
+      "speaker": "p-lin",
+      "text": "That matches what we saw on the life test rig. Slightly higher losses at low speed."
+    },
+    {
+      "start_s": 70,
+      "speaker": "p-dmitri",
+      "text": "Okay, we should look at that with the actuator team."
+    },
+    {
+      "start_s": 100,
+      "speaker": "p-carlos",
+      "text": "Build update. Unit two is assembled, waiting on test. Unit three, we are kitting parts today."
+    },
+    {
+      "start_s": 135,
+      "speaker": "p-jade",
+      "text": "kit for unit three is half pulled, still missing a few fasteners"
+    },
+    {
+      "start_s": 160,
+      "speaker": "p-carlos",
+      "text": "I'll check the cabinet."
+    },
+    {
+      "start_s": 200,
+      "speaker": "p-zoe",
+      "text": "fixtures, tilt stand cal is done, uh, load cell reads good. still need to mount the sensor bracket"
+    },
+    {
+      "start_s": 250,
+      "speaker": "p-dmitri",
+      "text": "When can you mount it?"
+    },
+    {
+      "start_s": 255,
+      "speaker": "p-zoe",
+      "text": "thurs probably, nxt wk at the latest"
+    },
+    {
+      "start_s": 305,
+      "speaker": "p-dmitri",
+      "text": "Alright. One thing on the stand. We need FL-TST-2260 by 6/12 for the test. Two of them."
+    },
+    {
+      "start_s": 330,
+      "speaker": "p-zoe",
+      "text": "ok. i'll get that into the request"
+    },
+    {
+      "start_s": 370,
+      "speaker": "p-lin",
+      "text": "Is the test the same one from last month?"
+    },
+    {
+      "start_s": 380,
+      "speaker": "p-dmitri",
+      "text": "Yes, same setup."
+    },
+    {
+      "start_s": 430,
+      "speaker": "p-andre",
+      "text": "does anyone have the spare thermocouple tape"
+    },
+    {
+      "start_s": 440,
+      "speaker": "p-jade",
+      "text": "second shelf"
+    },
+    {
+      "start_s": 520,
+      "speaker": "p-destiny",
+      "text": "Hi all, sorry I'm late! Did I miss anything big? 🙏"
+    },
+    {
+      "start_s": 530,
+      "speaker": "p-dmitri",
+      "text": "No, just status. Unit three kit is half pulled, can you help finish it?"
+    },
+    {
+      "start_s": 545,
+      "speaker": "p-destiny",
+      "text": "Yes, will do right after this 😬"
+    },
+    {
+      "start_s": 600,
+      "speaker": "p-carlos",
+      "text": "Good. Then we should be ready to assemble tomorrow."
+    },
+    {
+      "start_s": 700,
+      "speaker": "p-dmitri",
+      "text": "That's all. Thanks, everybody."
+    }
+  ],
+  "summary": {
+    "overview": "Short standup. Dyno efficiency a bit below sim, same trend seen on life test. Unit three kitting under way.",
+    "shorthand_bullet": [
+      "dyno sweep done, efficiency peak a bit lower than sim",
+      "life test rig sees higher low-speed losses",
+      "unit 2 assembled, waiting on test",
+      "unit 3 kit half pulled, missing fasteners",
+      "tilt stand cal done, sensor bracket Thurs/nxt wk",
+      "FL-TST-2260 x2 needed by 6/12 for the test"
+    ],
+    "action_items": [
+      "Zoe - request for FL-TST-2260",
+      "Carlos - check cabinet for fasteners",
+      "Destiny - finish unit 3 kit",
+      "Dmitri - review efficiency with actuator team"
+    ],
+    "keywords": [
+      "dyno",
+      "efficiency",
+      "kitting",
+      "tilt stand",
+      "FL-TST-2260"
+    ]
+  }
+}

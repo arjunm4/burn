@@ -1,0 +1,244 @@
+{
+  "job_id": "jira-HIP-2026-03-30-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 65,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HIP",
+    "name": "Actuators (hip and knee)"
+  },
+  "week": {
+    "start": "2026-03-30",
+    "end": "2026-04-05"
+  },
+  "people": [
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HIP-143",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-30T08:58:58-07:00",
+      "due_date": "2026-04-16",
+      "events": [
+        "ev-000641"
+      ],
+      "brief": "Order 2x Hip cycloidal carrier, 12x Hip eccentric input shaft, 8x Hip rotor hub / FL-HIP-1094: need 2 by 2026-04-16 for the build",
+      "must_mention": [
+        "FL-HIP-1094",
+        "the build",
+        "FL-HIP-1053",
+        "FL-HIP-1093",
+        "4/16"
+      ],
+      "description_length": "medium",
+      "summary": "Order 2x Hip cycloidal carrier, 12x Hip eccentric input shaft, 8x Hip rotor hub",
+      "description": "FL-HIP-1094 need 2 by 4/16 for the build\nalso FL-HIP-1053 and FL-HIP-1093",
+      "comments": []
+    },
+    {
+      "key": "HIP-146",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-zoe",
+      "assignee": "p-zoe",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-03-31T13:47:45-07:00",
+      "due_date": "2026-04-15",
+      "events": [
+        "ev-000664"
+      ],
+      "brief": "Order 7x Knee actuator housing / the part: need 7 by 2026-04-17 for the build",
+      "must_mention": [
+        "the part",
+        "the build",
+        "fri the 17th"
+      ],
+      "description_length": "one_line",
+      "summary": "Order 7x Knee actuator housing",
+      "description": "the part: need 7 by fri the 17th for the build",
+      "comments": [
+        {
+          "id": "HIP-146-c1",
+          "by": "p-zoe",
+          "at": "2026-04-21T03:53:00-07:00",
+          "events": [
+            "ev-000671"
+          ],
+          "brief": "1166 in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-04-20"
+          },
+          "must_mention": [
+            "1166",
+            "the build",
+            "mon the 20th"
+          ],
+          "body": "1166 in use for the build, mon the 20th"
+        }
+      ]
+    },
+    {
+      "key": "HIP-149",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": "p-tomas",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-04-02T09:55:04-07:00",
+      "due_date": "2026-04-24",
+      "events": [
+        "ev-000648"
+      ],
+      "brief": "Order 2x Knee output flange, 6x Knee motor mount plate / FL-KNE-1122: need 2 by 2026-04-23",
+      "must_mention": [
+        "FL-KNE-1122",
+        "4/23"
+      ],
+      "description_length": "one_line",
+      "summary": "Order 2x Knee output flange, 6x Knee motor mount plate",
+      "description": "FL-KNE-1122 need 2 by 4/23",
+      "comments": [
+        {
+          "id": "HIP-149-c1",
+          "by": "p-tomas",
+          "at": "2026-04-03T11:19:41-07:00",
+          "events": [
+            "ev-000650"
+          ],
+          "brief": "1122: need 2 by 2026-04-24",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 2,
+              "by": "2026-04-24"
+            }
+          },
+          "must_mention": [
+            "1122",
+            "4/24"
+          ],
+          "body": "1122: need 2 by 4/24"
+        },
+        {
+          "id": "HIP-149-c2",
+          "by": "p-tomas",
+          "at": "2026-04-03T19:03:04-07:00",
+          "events": [
+            "ev-003591"
+          ],
+          "brief": "Correction: FL-KNE-1122: need 2 by 2026-04-24",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 2,
+              "by": "2026-04-24"
+            }
+          },
+          "must_mention": [
+            "FL-KNE-1122",
+            "4/24"
+          ],
+          "body": "Correction: FL-KNE-1122: need 2 by 4/24"
+        }
+      ]
+    }
+  ]
+}

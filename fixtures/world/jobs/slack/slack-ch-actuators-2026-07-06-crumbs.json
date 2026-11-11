@@ -1,0 +1,365 @@
+{
+  "job_id": "slack-ch-actuators-2026-07-06-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 37,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-actuators",
+    "name": "actuators",
+    "slack_id": "C07FLK0ACTU",
+    "purpose": "Hip and knee actuators"
+  },
+  "week": {
+    "start": "2026-07-06",
+    "end": "2026-07-12"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hip actuator.",
+    "Ongoing: Capacitive tactile array crosstalk and flex cable routing through the finger. This week: Rev 2 ordered from the fab; tactile bracket moved 1 mm for the new connector.",
+    "Ongoing: Crossed-roller preload drops after thermal cycling; bore tolerance and preload ring design. This week: Rev B bracket and housing released with the new bearing; preload holds after 20 cycles.",
+    "Ongoing: What to show investors when no full humanoid exists. This week: Ingrid warns the leg drop campaign slipped; demo date is hard.",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver. This week: Bao sees 30 V overshoot on the phase node at 48 V bus; MOSFETs rated 80 V."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1783368814.431841",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-001348"
+      ],
+      "brief": "knee spin adapter arrived (10)",
+      "claim": {
+        "kind": "stock",
+        "value": 10
+      },
+      "must_mention": [
+        "knee spin adapter",
+        "10"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "knee spin adapter arrived, 10 of them. In the cage by the CMM!!"
+    },
+    {
+      "ts": "1783370848.445568",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [
+        "ev-004060"
+      ],
+      "brief": "rotor hub: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "rotor hub"
+      ],
+      "length": "medium",
+      "text": "rotor hub, we are still quoting rev B."
+    },
+    {
+      "ts": "1783374538.139412",
+      "user": "p-jonas",
+      "thread_ts": "1783370848.445568",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "is anyone actually using the old one"
+    },
+    {
+      "ts": "1783619824.797872",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-004089"
+      ],
+      "brief": "Bearing set for hip actuator: still quoting 2026-07-13",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-07-13"
+      },
+      "must_mention": [
+        "Bearing set for hip actuator (knee spin adapter)",
+        "mon the 13th"
+      ],
+      "length": "medium",
+      "text": "Bearing set for hip actuator (knee spin adapter), still quoting mon the 13th, not sure it holds"
+    },
+    {
+      "ts": "1783621776.223793",
+      "user": "p-jonas",
+      "thread_ts": "1783619824.797872",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "i would not count on that, vendor tends to slip"
+    },
+    {
+      "ts": "1783639966.274447",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-001335"
+      ],
+      "brief": "CMM nest arrived (6)",
+      "claim": {
+        "kind": "stock",
+        "value": 6
+      },
+      "must_mention": [
+        "CMM nest",
+        "6"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "CMM nest arrived, 6 in total."
+    },
+    {
+      "ts": "1783689799.644768",
+      "user": "p-wei",
+      "thread_ts": null,
+      "events": [
+        "ev-001494"
+      ],
+      "brief": "the part: need 1 by 2026-07-29",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-07-29"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "7/29"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "the part, 1 needed by 7/29"
+    },
+    {
+      "ts": "1783702568.673293",
+      "user": "p-beth",
+      "thread_ts": "1783689799.644768",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Worth noting it needs the longer fasteners too."
+    },
+    {
+      "ts": "1783709640.219528",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-001371"
+      ],
+      "brief": "coupling hub arrived (24)",
+      "claim": {
+        "kind": "stock",
+        "value": 24
+      },
+      "must_mention": [
+        "coupling hub",
+        "24"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "coupling hub arrived, 24 in receiving!!"
+    },
+    {
+      "ts": "1783713076.442265",
+      "user": "p-owen",
+      "thread_ts": "1783709640.219528",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "yep"
+    },
+    {
+      "ts": "1783714769.018056",
+      "user": "p-owen",
+      "thread_ts": "1783709640.219528",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ill check later"
+    },
+    {
+      "ts": "1783719928.677717",
+      "user": "p-samir",
+      "thread_ts": "1783709640.219528",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "fyi the paperwork on that one came in a separate email"
+    },
+    {
+      "ts": "1783771920.075282",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-001259"
+      ],
+      "brief": "knee flange in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-07-09"
+      },
+      "must_mention": [
+        "knee flange",
+        "7/9"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "knee flange in use, done 7/9 so that one is off the list"
+    }
+  ]
+}

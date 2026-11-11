@@ -1,0 +1,257 @@
+{
+  "job_id": "meeting-mtg-00967",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 33,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00967",
+    "title": "Actuators standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-07-24T09:15:00-07:00",
+    "actual_min": 18,
+    "present": [
+      "p-arjun",
+      "p-tomas",
+      "p-wei",
+      "p-andre"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-001637",
+      "speaker": "p-arjun",
+      "at_min": [
+        2,
+        8
+      ],
+      "brief": "thigh link: need 20 by 2026-07-31",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-leg-thigh-link",
+        "value": {
+          "qty": 20,
+          "by": "2026-07-31"
+        }
+      },
+      "must_mention": [
+        "thigh link",
+        "7/31"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-arjun",
+      "text": "ok start. wei, tomas, andre, you here?"
+    },
+    {
+      "start_s": 6,
+      "speaker": "p-andre",
+      "text": "yea"
+    },
+    {
+      "start_s": 10,
+      "speaker": "p-tomas",
+      "text": "Yes. I think I can share my screen, one sec."
+    },
+    {
+      "start_s": 24,
+      "speaker": "p-wei",
+      "text": "Housings first? The hip housing bore came back a bit tight, I'm measuring them again with the CMM."
+    },
+    {
+      "start_s": 44,
+      "speaker": "p-arjun",
+      "text": "how tight"
+    },
+    {
+      "start_s": 50,
+      "speaker": "p-wei",
+      "text": "About 20 microns on two of them. Not out of tolerance on the others."
+    },
+    {
+      "start_s": 68,
+      "speaker": "p-tomas",
+      "text": "Is that the anodize? Not 100% sure, but I think the anodize thickness changed with the new vendor."
+    },
+    {
+      "start_s": 86,
+      "speaker": "p-wei",
+      "text": "Possibly. I'll ask them for the thickness report."
+    },
+    {
+      "start_s": 100,
+      "speaker": "p-arjun",
+      "text": "good. thigh link, we need 20 by 7/31, so its a bit tight"
+    },
+    {
+      "start_s": 118,
+      "speaker": "p-tomas",
+      "text": "Twenty? I thought it was fewer. I can double check the BOM."
+    },
+    {
+      "start_s": 130,
+      "speaker": "p-arjun",
+      "text": "check it, if its wrong tell me"
+    },
+    {
+      "start_s": 145,
+      "speaker": "p-andre",
+      "text": "dyno side, the knee actuator ran its first sweep yest, efficiency a little under target, probably the grease"
+    },
+    {
+      "start_s": 170,
+      "speaker": "p-arjun",
+      "text": "which grease"
+    },
+    {
+      "start_s": 176,
+      "speaker": "p-andre",
+      "text": "the new one, will swap back and rerun"
+    },
+    {
+      "start_s": 195,
+      "speaker": "p-tomas",
+      "text": "Gear stage noise was a bit high at low speed. I think it's the preload."
+    },
+    {
+      "start_s": 215,
+      "speaker": "p-arjun",
+      "text": "ok, back off the preload a half turn and listen again"
+    },
+    {
+      "start_s": 232,
+      "speaker": "p-tomas",
+      "text": "Will do."
+    },
+    {
+      "start_s": 250,
+      "speaker": "p-wei",
+      "text": "Do we have the shaft drawings updated? I saw two revs."
+    },
+    {
+      "start_s": 262,
+      "speaker": "p-arjun",
+      "text": "use the newer one, the old one is archived"
+    },
+    {
+      "start_s": 275,
+      "speaker": "p-wei",
+      "text": "Okay."
+    },
+    {
+      "start_s": 290,
+      "speaker": "p-arjun",
+      "text": "alright thanks, done"
+    }
+  ],
+  "summary": {
+    "overview": "Actuators standup. Housing bore tight on two parts, knee actuator first dyno sweep slightly under target, gear stage noise at low speed.",
+    "shorthand_bullet": [
+      "hip housing bore ~20um tight on two, re-measure on CMM, ask vendor for anodize report",
+      "thigh link need 20 by 7/31 (tomas to verify qty against BOM)",
+      "knee actuator sweep under target, swapping grease back",
+      "gear stage noise, back off preload half turn"
+    ],
+    "action_items": [
+      "wei ask vendor for anodize thickness report",
+      "tomas check BOM qty for thigh link",
+      "andre rerun sweep with old grease"
+    ],
+    "keywords": [
+      "housing bore",
+      "anodize",
+      "thigh link",
+      "dyno sweep",
+      "preload"
+    ]
+  }
+}

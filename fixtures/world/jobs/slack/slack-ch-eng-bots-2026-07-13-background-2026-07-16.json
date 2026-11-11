@@ -1,0 +1,205 @@
+{
+  "job_id": "slack-ch-eng-bots-2026-07-13-background-2026-07-16",
+  "source": "slack",
+  "status": "blank",
+  "priority": 36,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-eng-bots",
+    "name": "eng-bots",
+    "slack_id": "C07FLK0BOTS",
+    "purpose": "GitHub, Jira and CI notifications"
+  },
+  "week": {
+    "start": "2026-07-13",
+    "end": "2026-07-19"
+  },
+  "people": [
+    {
+      "id": "p-gabriel",
+      "name": "Gabriel Moreau",
+      "display_name": "gabriel.m",
+      "slack_id": "U07FLK0GABR",
+      "title": "Controls Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-ravi",
+      "name": "Ravi Subramaniam",
+      "display_name": "ravi",
+      "slack_id": "U07FLK0RAVI",
+      "title": "ML Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-yusuf",
+      "name": "Yusuf Demir",
+      "display_name": "yusuf",
+      "slack_id": "U07FLK0YUSU",
+      "title": "Firmware Engineer, motor control",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Six-axis sensor drifts with temperature and bolt preload. This week: Plate re-made flat and bolts torqued in sequence; drift drops to 3 N.",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Replace foot switches with a learned contact estimate from joint currents. This week: Kept as a backup to the foot switches; no hardware change.",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver. This week: Gate resistor bump slows edges, but switching losses rise 9%."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1784219152.019241",
+      "user": "p-yusuf",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Mei skeptical: foot switches are cheap; asks for false-positive rates.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1784220151.099069",
+      "user": "p-jonas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1784234885.308496",
+      "user": "p-ravi",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1784239499.150704",
+      "user": "p-mei",
+      "thread_ts": "1784234885.308496",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1784240792.735806",
+      "user": "p-gabriel",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: Kept as a backup to the foot switches; no hardware change.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1784242336.309297",
+      "user": "p-gabriel",
+      "thread_ts": "1784234885.308496",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1784246690.194919",
+      "user": "p-mei",
+      "thread_ts": "1784234885.308496",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1784248843.125007",
+      "user": "p-jonas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to the ongoing replace foot switches with a learned contact estimate from joint currents",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    }
+  ]
+}

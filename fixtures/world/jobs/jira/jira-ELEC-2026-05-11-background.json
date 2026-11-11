@@ -1,0 +1,411 @@
+{
+  "job_id": "jira-ELEC-2026-05-11-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 54,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "ELEC",
+    "name": "Electrical and firmware"
+  },
+  "week": {
+    "start": "2026-05-11",
+    "end": "2026-05-17"
+  },
+  "people": [
+    {
+      "id": "p-bao",
+      "name": "Bao Nguyen",
+      "display_name": "bao.n",
+      "slack_id": "U07FLK0BAO0",
+      "title": "Electrical Engineer, motor drives",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-ishaan",
+      "name": "Ishaan Mehta",
+      "display_name": "ishaan.m",
+      "slack_id": "U07FLK0ISHA",
+      "title": "Electrical Engineer, sensors",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-kwame",
+      "name": "Kwame Asante",
+      "display_name": "kwame",
+      "slack_id": "U07FLK0KWAM",
+      "title": "Senior Electrical Engineer, power",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-theo",
+      "name": "Theo Lambert",
+      "display_name": "theo",
+      "slack_id": "U07FLK0THEO",
+      "title": "Hardware Engineer, harnessing",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-valeria",
+      "name": "Valeria Ortiz",
+      "display_name": "valeria.o",
+      "slack_id": "U07FLK0VALE",
+      "title": "Electrical Engineer, battery systems",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "ELEC-60",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-farah",
+      "assignee": null,
+      "labels": [
+        "cleanup"
+      ],
+      "priority": "Medium",
+      "created": "2026-05-11T12:31:12-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Rework fixture clamp",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "ELEC-61",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-kwame",
+      "assignee": "p-bao",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-05-11T14:56:09-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Update drawing and BOM",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "ELEC-61-c1",
+          "by": "p-kwame",
+          "at": "2026-05-14T10:59:26-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "ELEC-62",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-ishaan",
+      "assignee": "p-bao",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-05-12T20:28:43-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Tolerance stack review",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "ELEC-63",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-kwame",
+      "assignee": "p-valeria",
+      "labels": [
+        "docs"
+      ],
+      "priority": "High",
+      "created": "2026-05-13T16:41:50-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Clean up CAD configs",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "ELEC-63-c1",
+          "by": "p-valeria",
+          "at": "2026-05-18T09:23:43-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "ELEC-63-c2",
+          "by": "p-valeria",
+          "at": "2026-05-18T09:53:51-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "ELEC-63-c3",
+          "by": "p-valeria",
+          "at": "2026-05-18T18:18:30-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "ELEC-64",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-farah",
+      "assignee": "p-kwame",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-05-14T09:37:16-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Update assembly work instructions",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "ELEC-64-c1",
+          "by": "p-farah",
+          "at": "2026-05-25T14:45:43-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "ELEC-64-c2",
+          "by": "p-theo",
+          "at": "2026-05-26T18:09:18-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "ELEC-64-c3",
+          "by": "p-bao",
+          "at": "2026-05-28T14:35:35-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "ELEC-65",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-farah",
+      "assignee": "p-theo",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-05-14T11:00:41-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Update assembly work instructions",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "ELEC-66",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-kwame",
+      "assignee": "p-kwame",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-05-14T11:58:45-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Rework fixture clamp",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "ELEC-66-c1",
+          "by": "p-kwame",
+          "at": "2026-05-18T14:14:29-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "ELEC-67",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-kwame",
+      "assignee": "p-ishaan",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-05-14T14:47:47-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Tolerance stack review",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "ELEC-68",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-kwame",
+      "assignee": "p-kwame",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-05-14T15:02:06-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Rework fixture clamp",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "ELEC-68-c1",
+          "by": "p-kwame",
+          "at": "2026-05-20T09:04:57-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "ELEC-69",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-theo",
+      "assignee": "p-theo",
+      "labels": [
+        "dfm"
+      ],
+      "priority": "Medium",
+      "created": "2026-05-15T15:40:36-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Label and bin received parts",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    }
+  ]
+}

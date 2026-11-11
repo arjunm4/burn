@@ -1,0 +1,285 @@
+{
+  "job_id": "jira-HIP-2026-03-02-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 73,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HIP",
+    "name": "Actuators (hip and knee)"
+  },
+  "week": {
+    "start": "2026-03-02",
+    "end": "2026-03-08"
+  },
+  "people": [
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HIP-45",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-wei",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-02T09:06:09-08:00",
+      "due_date": "2026-04-14",
+      "events": [
+        "ev-000250"
+      ],
+      "brief": "Order 6x Dyno inertia disc, 20x Dyno coupling, knee actuator / FL-TST-2149: need 6 by 2026-04-14 for Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno inertia disc",
+      "must_mention": [
+        "FL-TST-2149",
+        "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno inertia disc",
+        "FL-TST-2103",
+        "4/14"
+      ],
+      "description_length": "short",
+      "summary": "Dyno inertia disc + coupling order",
+      "description": "FL-TST-2149 and FL-TST-2103, need 6 by 4/14 for Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno inertia disc",
+      "comments": [
+        {
+          "id": "HIP-45-c1",
+          "by": "p-wei",
+          "at": "2026-03-03T08:44:57-08:00",
+          "events": [
+            "ev-000252"
+          ],
+          "brief": "FL-TST-2149: need 6 by 2026-04-14",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 6,
+              "by": "2026-04-14"
+            }
+          },
+          "must_mention": [
+            "FL-TST-2149",
+            "tues 4/14"
+          ],
+          "body": "FL-TST-2149 need 6 by tues 4/14"
+        },
+        {
+          "id": "HIP-45-c2",
+          "by": "p-samir",
+          "at": "2026-03-03T09:39:19-08:00",
+          "events": [
+            "ev-000253"
+          ],
+          "brief": "inertia disc: need 6 by 2026-04-14",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 6,
+              "by": "2026-04-14"
+            }
+          },
+          "must_mention": [
+            "inertia disc",
+            "tues the 14th"
+          ],
+          "body": "inertia disc need 6 by tues the 14th"
+        }
+      ]
+    },
+    {
+      "key": "HIP-53",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-ingrid",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-04T10:13:46-08:00",
+      "due_date": "2026-03-19",
+      "events": [
+        "ev-000240"
+      ],
+      "brief": "Order 1x Knee output flange / that order: need 1 by 2026-03-23 for Assemble build unit for Actuator DVT build: Knee output flange",
+      "must_mention": [
+        "that order",
+        "Assemble build unit for Actuator DVT build: Knee output flange",
+        "mon the 23rd"
+      ],
+      "description_length": "short",
+      "summary": "Knee output flange x1",
+      "description": "that order: need 1 by mon the 23rd, Assemble build unit for Actuator DVT build: Knee output flange",
+      "comments": [
+        {
+          "id": "HIP-53-c1",
+          "by": "p-talia",
+          "at": "2026-03-12T11:53:07-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "Any update? 🙏"
+        },
+        {
+          "id": "HIP-53-c2",
+          "by": "p-ingrid",
+          "at": "2026-03-16T10:29:34-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "This one is slipping."
+        },
+        {
+          "id": "HIP-53-c3",
+          "by": "p-tomas",
+          "at": "2026-03-16T11:32:24-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "I think the vendor is working on it, not sure"
+        }
+      ]
+    },
+    {
+      "key": "HIP-54",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-04T13:53:59-08:00",
+      "due_date": null,
+      "events": [
+        "ev-000335"
+      ],
+      "brief": "Order 12x Knee bearing shim, 12x Knee flexspline clamp ring / shim: need 12 by 2026-03-30 for Kit and assemble for Actuator DVT build: Knee bearing shim",
+      "must_mention": [
+        "shim",
+        "Kit and assemble for Actuator DVT build: Knee bearing shim",
+        "clamp ring",
+        "mon the 30th"
+      ],
+      "description_length": "medium",
+      "summary": "Knee bearing shim x12 + clamp ring",
+      "description": "shim: need 12 by mon the 30th for Kit and assemble for Actuator DVT build: Knee bearing shim. clamp ring on the same order",
+      "comments": []
+    }
+  ]
+}

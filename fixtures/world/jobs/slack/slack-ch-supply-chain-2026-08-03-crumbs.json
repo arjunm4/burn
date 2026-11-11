@@ -1,0 +1,214 @@
+{
+  "job_id": "slack-ch-supply-chain-2026-08-03-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 29,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-supply-chain",
+    "name": "supply-chain",
+    "slack_id": "C07FLK0SUPC",
+    "purpose": "Supply chain team: vendors, POs, deliveries, expedites"
+  },
+  "week": {
+    "start": "2026-08-03",
+    "end": "2026-08-09"
+  },
+  "people": [
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-claire",
+      "name": "Claire Donnelly",
+      "display_name": "claire",
+      "slack_id": "U07FLK0CLAI",
+      "title": "Finance and Operations Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Type III anodize adds ~0.025 mm per surface and kills the bearing press fit. This week: Drawing note added: mask bearing bores, anodize after machining; reorder of the batch debated.",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Too many life tests for one grip fixture and one dyno. This week: Dmitri proposes a second grip fixture, ~$4k in machined parts.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1785875218.538625",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-000049"
+      ],
+      "brief": "Encoder kit for knee actuator (dyno spacers): moved from 2026-08-03 to 2026-08-10",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-08-10"
+      },
+      "must_mention": [
+        "Encoder kit for knee actuator (dyno spacers)",
+        "mon 8/10"
+      ],
+      "length": "short",
+      "text": "Encoder kit for knee actuator (dyno spacers) slid to mon 8/10"
+    },
+    {
+      "ts": "1785957282.386040",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-001564"
+      ],
+      "brief": "thermal plate arrived (20)",
+      "claim": {
+        "kind": "stock",
+        "value": 20
+      },
+      "must_mention": [
+        "thermal plate",
+        "20"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "thermal plate arrived (20)"
+    },
+    {
+      "ts": "1786042162.209184",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-000050"
+      ],
+      "brief": "Encoder kit for knee actuator (dyno spacers): moved from 2026-08-10 to 2026-08-12",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-08-12"
+      },
+      "must_mention": [
+        "Encoder kit for knee actuator (dyno spacers)",
+        "8/12"
+      ],
+      "length": "medium",
+      "text": "Encoder kit for knee actuator (dyno spacers) moved again, 8/12 now"
+    },
+    {
+      "ts": "1786045605.370464",
+      "user": "p-beth",
+      "thread_ts": "1786042162.209184",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "that's the second slip, I wouldn't trust the new date yet"
+    },
+    {
+      "ts": "1786047659.216526",
+      "user": "p-claire",
+      "thread_ts": "1786042162.209184",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "noted"
+    },
+    {
+      "ts": "1786048929.412025",
+      "user": "p-jade",
+      "thread_ts": "1786042162.209184",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "agreed, vendor does this every time"
+    }
+  ]
+}

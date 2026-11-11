@@ -8,8 +8,9 @@
 
 ## Overview
 
-We need the part by 10/7.
+We need the part by 9/3. We need the part by 10/7.
 
 ## Discussion
 
+- Dmitri: We need the part by 9/3.
 - Dmitri: We need the part by 10/7.

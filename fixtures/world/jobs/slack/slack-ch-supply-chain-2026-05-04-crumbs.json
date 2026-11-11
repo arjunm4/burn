@@ -1,0 +1,337 @@
+{
+  "job_id": "slack-ch-supply-chain-2026-05-04-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 55,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-supply-chain",
+    "name": "supply-chain",
+    "slack_id": "C07FLK0SUPC",
+    "purpose": "Supply chain team: vendors, POs, deliveries, expedites"
+  },
+  "week": {
+    "start": "2026-05-04",
+    "end": "2026-05-10"
+  },
+  "people": [
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Orders sitting in DFM review because of tolerance callouts. This week: Talia: three orders stuck in DFM review over thread callouts and tight tolerances."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1778008082.386393",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-000869"
+      ],
+      "brief": "Order XO-5382151 placed, promised 2026-05-29",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-05-29"
+      },
+      "must_mention": [
+        "XO-5382151",
+        "bearing cap",
+        "5/29"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "XO-5382151 placed for the bearing cap, promised 5/29 🙏"
+    },
+    {
+      "ts": "1778011940.746037",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-000894"
+      ],
+      "brief": "Order XO-5382590 placed, promised 2026-05-26",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-05-26"
+      },
+      "must_mention": [
+        "XO-5382590",
+        "the bracket",
+        "tues the 26th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "XO-5382590 placed, the bracket is promised tues the 26th i think"
+    },
+    {
+      "ts": "1778089700.160687",
+      "user": "p-tomas",
+      "thread_ts": "1778011940.746037",
+      "events": [
+        "ev-003537"
+      ],
+      "brief": "Correction: Order XO-5382590 placed, promised 2026-05-21",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-05-21"
+      },
+      "must_mention": [
+        "XO-5382590",
+        "the bracket",
+        "5/21"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "correction, XO-5382590 the bracket is promised 5/21, i misread it yesterday. probably right this time"
+    },
+    {
+      "ts": "1778092259.774278",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-000030"
+      ],
+      "brief": "Sensor breakout PCB for knee actuator (thigh flange): moved from 2026-05-08 to 2026-05-12",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-05-12"
+      },
+      "must_mention": [
+        "Sensor breakout PCB for knee actuator (thigh flange)",
+        "5/12"
+      ],
+      "length": "medium",
+      "text": "Sensor breakout PCB for knee actuator (thigh flange) slipped again, now 5/12. was earlier that week before"
+    },
+    {
+      "ts": "1778097462.152312",
+      "user": "p-gwen",
+      "thread_ts": "1778092259.774278",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Thanks Samir. Let me know if the board house wants anything from us on the revision."
+    },
+    {
+      "ts": "1778124000.417920",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-000658"
+      ],
+      "brief": "1141 in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-05-06"
+      },
+      "must_mention": [
+        "1141",
+        "the build",
+        "wed the 6th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "1141 in use for the build, done wed the 6th"
+    },
+    {
+      "ts": "1778235060.912071",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-000814"
+      ],
+      "brief": "2556 in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-05-07"
+      },
+      "must_mention": [
+        "2556",
+        "thurs 5/7"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "2556 in use, should be done thurs 5/7 but not 100% sure"
+    },
+    {
+      "ts": "1778248920.291357",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-000689"
+      ],
+      "brief": "1118 in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-05-06"
+      },
+      "must_mention": [
+        "1118",
+        "the build",
+        "wed the 6th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "1118 in use for the build, done wed the 6th"
+    },
+    {
+      "ts": "1778262735.917766",
+      "user": "p-talia",
+      "thread_ts": "1778248920.291357",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "mine's been in use since last week too, always a scramble 😬"
+    },
+    {
+      "ts": "1778267080.468009",
+      "user": "p-samir",
+      "thread_ts": "1778248920.291357",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "yep same, free it up when you can"
+    },
+    {
+      "ts": "1778335080.997194",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-000751"
+      ],
+      "brief": "FT adapter in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-05-07"
+      },
+      "must_mention": [
+        "FT adapter",
+        "the test",
+        "5/7"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "FT adapter in use for the test, i think it'll be freed up 5/7"
+    }
+  ]
+}

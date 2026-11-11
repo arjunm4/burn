@@ -1,0 +1,671 @@
+{
+  "job_id": "jira-SCM-2026-03-23-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 68,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "SCM",
+    "name": "Supply chain and procurement"
+  },
+  "week": {
+    "start": "2026-03-23",
+    "end": "2026-03-29"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "SCM-67",
+      "type": "Task",
+      "status": "Blocked",
+      "reporter": "p-samir",
+      "assignee": "p-talia",
+      "labels": [
+        "tech-debt"
+      ],
+      "priority": "Low",
+      "created": "2026-03-23T07:23:33-07:00",
+      "due_date": "2026-04-20",
+      "events": [],
+      "brief": "Review DFM feedback",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "SCM-68",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-gwen",
+      "assignee": "p-talia",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-03-23T09:47:41-07:00",
+      "due_date": "2026-04-20",
+      "events": [],
+      "brief": "Torque spec audit",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "SCM-68-c1",
+          "by": "p-gwen",
+          "at": "2026-03-27T12:38:12-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "SCM-68-c2",
+          "by": "p-gwen",
+          "at": "2026-03-31T15:58:35-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "SCM-68-c3",
+          "by": "p-samir",
+          "at": "2026-04-06T18:10:24-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "SCM-69",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-samir",
+      "assignee": "p-samir",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-03-23T11:38:47-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Tolerance stack review",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "SCM-69-c1",
+          "by": "p-samir",
+          "at": "2026-03-27T09:31:36-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "SCM-70",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-gwen",
+      "assignee": "p-talia",
+      "labels": [
+        "docs"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-23T11:57:15-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Capture lessons learned",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "SCM-71",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-talia",
+      "assignee": "p-talia",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-03-23T12:40:02-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Label and bin received parts",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "SCM-71-c1",
+          "by": "p-talia",
+          "at": "2026-03-30T15:12:35-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "SCM-71-c2",
+          "by": "p-talia",
+          "at": "2026-04-06T14:58:11-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "SCM-71-c3",
+          "by": "p-talia",
+          "at": "2026-04-20T18:18:21-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "SCM-72",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-andre",
+      "assignee": "p-andre",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-23T14:02:39-07:00",
+      "due_date": "2026-04-06",
+      "events": [],
+      "brief": "Order 2x Actuator bearing press jig, 6x Hip housing torque adapter, 3x Stator insertion jig, 3x Leg build stand",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "SCM-74",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-samir",
+      "assignee": "p-gwen",
+      "labels": [
+        "dfm"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-23T18:20:49-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Firmware flag for bench mode",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "SCM-74-c1",
+          "by": "p-gwen",
+          "at": "2026-03-25T10:43:53-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "SCM-74-c2",
+          "by": "p-gwen",
+          "at": "2026-03-25T12:29:11-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "SCM-74-c3",
+          "by": "p-gwen",
+          "at": "2026-03-25T17:46:00-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "SCM-76",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-samir",
+      "assignee": "p-samir",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-03-24T10:04:10-07:00",
+      "due_date": "2026-04-13",
+      "events": [],
+      "brief": "Update assembly work instructions",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "SCM-76-c1",
+          "by": "p-gwen",
+          "at": "2026-03-27T15:34:59-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "SCM-77",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-talia",
+      "assignee": "p-gwen",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-03-25T09:30:02-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Rework fixture clamp",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "SCM-77-c1",
+          "by": "p-gwen",
+          "at": "2026-03-27T11:58:19-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "SCM-77-c2",
+          "by": "p-samir",
+          "at": "2026-04-03T17:27:29-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "SCM-78",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-talia",
+      "assignee": "p-talia",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-03-25T09:31:31-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Clean up CAD configs",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "SCM-78-c1",
+          "by": "p-talia",
+          "at": "2026-03-30T09:04:37-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "SCM-80",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-samir",
+      "assignee": null,
+      "labels": [
+        "dfm"
+      ],
+      "priority": "Highest",
+      "created": "2026-03-25T12:17:27-07:00",
+      "due_date": "2026-04-23",
+      "events": [],
+      "brief": "Update drawing and BOM",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "SCM-80-c1",
+          "by": "p-samir",
+          "at": "2026-03-26T15:39:24-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "SCM-80-c2",
+          "by": "p-samir",
+          "at": "2026-03-28T16:03:27-07:00",
+          "events": [],
+          "brief": "background: short note on why the due date moved (no date)",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "SCM-81",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-talia",
+      "assignee": "p-gwen",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-03-25T17:24:51-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Follow up vendor question",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "SCM-81-c1",
+          "by": "p-gwen",
+          "at": "2026-03-26T12:14:34-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "SCM-85",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-samir",
+      "assignee": "p-gwen",
+      "labels": [
+        "bench"
+      ],
+      "priority": "High",
+      "created": "2026-03-26T19:37:32-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Update assembly work instructions",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "SCM-85-c1",
+          "by": "p-gwen",
+          "at": "2026-04-03T10:08:40-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "SCM-86",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-gwen",
+      "assignee": "p-gwen",
+      "labels": [
+        "tech-debt"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-27T15:35:14-07:00",
+      "due_date": "2026-04-28",
+      "events": [],
+      "brief": "Torque spec audit",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "SCM-86-c1",
+          "by": "p-gwen",
+          "at": "2026-03-27T17:57:48-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "SCM-86-c2",
+          "by": "p-gwen",
+          "at": "2026-04-01T09:32:59-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "SCM-87",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-gwen",
+      "assignee": "p-gwen",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-03-27T16:43:35-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Update drawing and BOM",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "SCM-87-c1",
+          "by": "p-gwen",
+          "at": "2026-03-31T17:07:45-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "SCM-87-c2",
+          "by": "p-gwen",
+          "at": "2026-04-01T18:20:40-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "SCM-87-c3",
+          "by": "p-talia",
+          "at": "2026-04-02T11:25:28-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "SCM-87-c4",
+          "by": "p-gwen",
+          "at": "2026-04-06T16:38:07-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "SCM-87-c5",
+          "by": "p-gwen",
+          "at": "2026-04-07T11:24:19-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "SCM-87-c6",
+          "by": "p-samir",
+          "at": "2026-04-07T11:43:20-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "SCM-88",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-samir",
+      "assignee": "p-samir",
+      "labels": [
+        "cleanup"
+      ],
+      "priority": "Highest",
+      "created": "2026-03-27T16:43:43-07:00",
+      "due_date": "2026-04-03",
+      "events": [],
+      "brief": "Investigate noise on bench unit",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "SCM-89",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-samir",
+      "assignee": "p-samir",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-03-27T18:24:28-07:00",
+      "due_date": "2026-04-09",
+      "events": [],
+      "brief": "Follow up vendor question",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": []
+    }
+  ]
+}

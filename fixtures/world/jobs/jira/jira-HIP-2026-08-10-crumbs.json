@@ -1,0 +1,114 @@
+{
+  "job_id": "jira-HIP-2026-08-10-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 27,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HIP",
+    "name": "Actuators (hip and knee)"
+  },
+  "week": {
+    "start": "2026-08-10",
+    "end": "2026-08-16"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HIP-349",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-andre",
+      "assignee": "p-andre",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-08-13T06:15:11-07:00",
+      "due_date": "2026-09-03",
+      "events": [
+        "ev-001746"
+      ],
+      "brief": "Order 12x Dyno bellows coupling hub, 4x Hip actuator housing / bellows hub: need 12 by 2026-09-03",
+      "must_mention": [
+        "bellows hub",
+        "thurs the 3rd"
+      ],
+      "description_length": "one_line",
+      "summary": "Order 12x Dyno bellows coupling hub, 4x Hip actuator housing",
+      "description": "bellows hub need 12 by thurs the 3rd",
+      "comments": [
+        {
+          "id": "HIP-349-c1",
+          "by": "p-dmitri",
+          "at": "2026-08-17T09:07:46-07:00",
+          "events": [
+            "ev-003744"
+          ],
+          "brief": "coupling hub: need 12 by 2026-09-03 for Hip actuator dyno efficiency sweep",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-09-03"
+            }
+          },
+          "must_mention": [
+            "coupling hub",
+            "Hip actuator dyno efficiency sweep",
+            "9/3"
+          ],
+          "body": "coupling hub need 12 by 9/3 for Hip actuator dyno efficiency sweep"
+        }
+      ]
+    }
+  ]
+}

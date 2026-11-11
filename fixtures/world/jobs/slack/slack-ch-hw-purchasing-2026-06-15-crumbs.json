@@ -1,0 +1,296 @@
+{
+  "job_id": "slack-ch-hw-purchasing-2026-06-15-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 43,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hw-purchasing",
+    "name": "hw-purchasing",
+    "slack_id": "C07FLK0HWPR",
+    "purpose": "Hardware buys: Xometry quotes, McMaster, Digi-Key, lead times"
+  },
+  "week": {
+    "start": "2026-06-15",
+    "end": "2026-06-21"
+  },
+  "people": [
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-kwame",
+      "name": "Kwame Asante",
+      "display_name": "kwame",
+      "slack_id": "U07FLK0KWAM",
+      "title": "Senior Electrical Engineer, power",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Capacitive tactile array crosstalk and flex cable routing through the finger. This week: Farah: ground pour missing under the electrode layer, crosstalk from the flex.",
+    "Ongoing: Crossed-roller preload drops after thermal cycling; bore tolerance and preload ring design. This week: Debate: thread-locked preload nut vs a ground spacer stack; Owen favors spacer, no torque sensitivity.",
+    "Ongoing: Ratcheting risk at peak torque from loose wave generator fit. This week: Rerun to 105 Nm clean; hard limit set at 90 Nm in firmware.",
+    "Ongoing: Drop from 30 cm cracks the shank link at the knee clevis. This week: Zoe: drop test waiting on the machined lift hooks; gantry slots are Tue/Thu only."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1781573057.058200",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-001266"
+      ],
+      "brief": "FL-TST-2201: need 6 by 2026-07-02 for Fixture install and shakedown for Leg first steps on the gait gantry: Drop load cell bracket",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-07-02"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2201",
+        "Fixture install and shakedown for Leg first steps on the gait gantry: Drop load cell bracket",
+        "FL-TST-2216",
+        "FL-TST-2878",
+        "FL-TST-2232",
+        "thurs 7/2"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2201 need 6 for Fixture install and shakedown for Leg first steps on the gait gantry: Drop load cell bracket, plus FL-TST-2216, FL-TST-2878 and FL-TST-2232, by thurs 7/2 🙏"
+    },
+    {
+      "ts": "1781576930.727794",
+      "user": "p-lukas",
+      "thread_ts": "1781573057.058200",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "had the same bracket bind on the load cell last time, check the bolt pattern"
+    },
+    {
+      "ts": "1781660461.370052",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-001344"
+      ],
+      "brief": "that adapter plate: need 10 by 2026-07-09 for Test stand rework for Hip actuator dyno efficiency sweep: Spin-test adapter, knee actuator",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-07-09"
+        }
+      },
+      "must_mention": [
+        "that adapter plate",
+        "Test stand rework for Hip actuator dyno efficiency sweep: Spin-test adapter, knee actuator",
+        "7/9"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "that adapter plate need 10 for Test stand rework for Hip actuator dyno efficiency sweep: Spin-test adapter, knee actuator by 7/9"
+    },
+    {
+      "ts": "1781660953.191136",
+      "user": "p-gwen",
+      "thread_ts": "1781660461.370052",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Noted. Can you add it to the sheet so Talia sees it?"
+    },
+    {
+      "ts": "1781714100.006481",
+      "user": "p-kwame",
+      "thread_ts": "1781660461.370052",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I can take a look at the drawing this afternoon."
+    },
+    {
+      "ts": "1781715993.834839",
+      "user": "p-lukas",
+      "thread_ts": "1781660461.370052",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "ok but if it comes back wrong again im blaming the adapter"
+    },
+    {
+      "ts": "1781717415.736794",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-001349"
+      ],
+      "brief": "FL-TST-2135: need 12 by 2026-07-08",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-07-08"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2135",
+        "7/8"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2135 need 12 by 7/8"
+    },
+    {
+      "ts": "1781801273.709030",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-001358"
+      ],
+      "brief": "that order: need 2 by 2026-08-10 for the fit check",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-08-10"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "the fit check",
+        "8/10"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "that order need 2 for the fit check by 8/10"
+    }
+  ]
+}

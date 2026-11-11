@@ -1,0 +1,519 @@
+{
+  "job_id": "jira-SCM-2026-03-02-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 73,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "SCM",
+    "name": "Supply chain and procurement"
+  },
+  "week": {
+    "start": "2026-03-02",
+    "end": "2026-03-08"
+  },
+  "people": [
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "SCM-32",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-zoe",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-02T19:32:39-08:00",
+      "due_date": null,
+      "events": [
+        "ev-000256"
+      ],
+      "brief": "Order 12x Hip bearing preload ring, 4x Hip stator mount plate / FL-HIP-1064: need 12 by 2026-03-24 for Fixture install and shakedown for Hip actuator dyno efficiency sweep: Hip bearing preload ring",
+      "must_mention": [
+        "FL-HIP-1064",
+        "Fixture install and shakedown for Hip actuator dyno efficiency sweep: Hip bearing preload ring",
+        "FL-HIP-1033",
+        "3/24"
+      ],
+      "description_length": "one_line",
+      "summary": "Hip bearing preload ring x12 + stator mount plate",
+      "description": "FL-HIP-1064 and FL-HIP-1033, need 12 by 3/24 for Fixture install and shakedown for Hip actuator dyno efficiency sweep: Hip bearing preload ring",
+      "comments": [
+        {
+          "id": "SCM-32-c1",
+          "by": "p-zoe",
+          "at": "2026-03-04T14:01:45-08:00",
+          "events": [
+            "ev-000258"
+          ],
+          "brief": "preload ring: need 12 by 2026-03-24",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-03-24"
+            }
+          },
+          "must_mention": [
+            "preload ring",
+            "tues the 24th"
+          ],
+          "body": "preload ring need 12 by tues the 24th"
+        },
+        {
+          "id": "SCM-32-c2",
+          "by": "p-dmitri",
+          "at": "2026-03-05T09:25:37-08:00",
+          "events": [
+            "ev-000259"
+          ],
+          "brief": "preload nut: need 12 by 2026-03-25 for Fixture install and shakedown for Hip actuator dyno efficiency sweep: Hip bearing preload ring",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-03-25"
+            }
+          },
+          "must_mention": [
+            "preload nut",
+            "Fixture install and shakedown for Hip actuator dyno efficiency sweep: Hip bearing preload ring",
+            "3/25"
+          ],
+          "body": "preload nut need 12 by 3/25 for Fixture install and shakedown for Hip actuator dyno efficiency sweep: Hip bearing preload ring"
+        },
+        {
+          "id": "SCM-32-c3",
+          "by": "p-zoe",
+          "at": "2026-03-05T14:05:55-08:00",
+          "events": [
+            "ev-000262"
+          ],
+          "brief": "FL-HIP-1064: need 12 by 2026-03-24",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-03-24"
+            }
+          },
+          "must_mention": [
+            "FL-HIP-1064",
+            "3/24"
+          ],
+          "body": "FL-HIP-1064 need 12 by 3/24"
+        },
+        {
+          "id": "SCM-32-c4",
+          "by": "p-carlos",
+          "at": "2026-03-24T12:42:30-07:00",
+          "events": [
+            "ev-000265"
+          ],
+          "brief": "preload nut arrived (12)",
+          "claim": {
+            "kind": "stock",
+            "value": 12
+          },
+          "must_mention": [
+            "preload nut",
+            "12"
+          ],
+          "body": "preload nut arrived (12)"
+        }
+      ]
+    },
+    {
+      "key": "SCM-34",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": "p-tomas",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-03T16:38:13-08:00",
+      "due_date": "2026-03-23",
+      "events": [
+        "ev-000291"
+      ],
+      "brief": "Order 4x Spin-test stand adapter plate / the plate: need 4 by 2026-03-24",
+      "must_mention": [
+        "the plate",
+        "tues the 24th"
+      ],
+      "description_length": "one_line",
+      "summary": "Spin-test stand adapter plate x4",
+      "description": "the plate: need 4 by tues the 24th",
+      "comments": [
+        {
+          "id": "SCM-34-c1",
+          "by": "p-tomas",
+          "at": "2026-03-05T12:24:13-08:00",
+          "events": [
+            "ev-003681"
+          ],
+          "brief": "Correction: the plate: need 4 by 2026-03-23",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 4,
+              "by": "2026-03-23"
+            }
+          },
+          "must_mention": [
+            "the plate",
+            "3/23"
+          ],
+          "body": "Correction: the plate need 4 by 3/23"
+        },
+        {
+          "id": "SCM-34-c2",
+          "by": "p-samir",
+          "at": "2026-03-13T13:33:09-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "is this still open?"
+        },
+        {
+          "id": "SCM-34-c3",
+          "by": "p-tomas",
+          "at": "2026-03-26T14:26:27-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on vendor i think"
+        }
+      ]
+    },
+    {
+      "key": "SCM-35",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-03-04T11:34:32-08:00",
+      "due_date": "2026-04-01",
+      "events": [
+        "ev-000441"
+      ],
+      "brief": "Order 12x Knee output shaft / knee shaft: need 12 by 2026-04-03",
+      "must_mention": [
+        "knee shaft",
+        "fri the 3rd"
+      ],
+      "description_length": "one_line",
+      "summary": "Knee output shaft x12",
+      "description": "knee shaft need 12 by fri the 3rd",
+      "comments": [
+        {
+          "id": "SCM-35-c1",
+          "by": "p-diego",
+          "at": "2026-03-04T11:51:56-08:00",
+          "events": [
+            "ev-000442"
+          ],
+          "brief": "the part: need 12 by 2026-04-01",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-04-01"
+            }
+          },
+          "must_mention": [
+            "the part",
+            "wed 4/1"
+          ],
+          "body": "the part need 12 by wed 4/1"
+        },
+        {
+          "id": "SCM-35-c2",
+          "by": "p-talia",
+          "at": "2026-03-19T18:08:14-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "Any news? 😬"
+        },
+        {
+          "id": "SCM-35-c3",
+          "by": "p-diego",
+          "at": "2026-03-30T10:18:08-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "pics in slack"
+        }
+      ]
+    },
+    {
+      "key": "SCM-37",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-carlos",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-04T21:14:16-08:00",
+      "due_date": "2026-03-23",
+      "events": [
+        "ev-000273"
+      ],
+      "brief": "Order 6x Dyno coupling, hip actuator, 1x Dyno shaft alignment jig, 4x Spin-test stand adapter plate, 7x Dyno mounting plate, hip actuator, 12x Dyno torque transducer bracket / FL-TST-2111: need 6 by 2026-03-23; asks whether expediting is worth it",
+      "must_mention": [
+        "FL-TST-2111",
+        "mon the 23rd"
+      ],
+      "description_length": "one_line",
+      "summary": "Dyno coupling hip + misc dyno hardware",
+      "description": "FL-TST-2111 need 6 by mon the 23rd, is expediting worth it?",
+      "comments": [
+        {
+          "id": "SCM-37-c1",
+          "by": "p-talia",
+          "at": "2026-03-10T14:31:15-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "any update?"
+        },
+        {
+          "id": "SCM-37-c2",
+          "by": "p-carlos",
+          "at": "2026-04-08T05:29:00-07:00",
+          "events": [
+            "ev-000274"
+          ],
+          "brief": "2111 in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-04-06"
+          },
+          "must_mention": [
+            "2111",
+            "mon the 6th"
+          ],
+          "body": "2111 in use, since mon the 6th"
+        }
+      ]
+    },
+    {
+      "key": "SCM-38",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": "p-owen",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-03-06T09:37:34-08:00",
+      "due_date": "2026-03-26",
+      "events": [
+        "ev-000306"
+      ],
+      "brief": "Order 3x Dyno mounting plate, knee actuator, 1x Dyno shaft alignment jig / knee dyno plate: need 3 by 2026-03-31",
+      "must_mention": [
+        "knee dyno plate",
+        "tues 3/31"
+      ],
+      "description_length": "one_line",
+      "summary": "Dyno mounting plate knee actuator + jig",
+      "description": "knee dyno plate need 3 by tues 3/31",
+      "comments": [
+        {
+          "id": "SCM-38-c1",
+          "by": "p-owen",
+          "at": "2026-03-06T09:53:34-08:00",
+          "events": [
+            "ev-000307"
+          ],
+          "brief": "FL-TST-2124: need 3 by 2026-03-26 for the fit check",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 3,
+              "by": "2026-03-26"
+            }
+          },
+          "must_mention": [
+            "FL-TST-2124",
+            "the fit check",
+            "thurs 3/26"
+          ],
+          "body": "FL-TST-2124 need 3 by thurs 3/26 for the fit check"
+        }
+      ]
+    }
+  ]
+}

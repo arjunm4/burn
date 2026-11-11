@@ -1,0 +1,114 @@
+{
+  "job_id": "slack-ch-hw-purchasing-2026-07-13-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 35,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hw-purchasing",
+    "name": "hw-purchasing",
+    "slack_id": "C07FLK0HWPR",
+    "purpose": "Hardware buys: Xometry quotes, McMaster, Digi-Key, lead times"
+  },
+  "week": {
+    "start": "2026-07-13",
+    "end": "2026-07-19"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Six-axis sensor drifts with temperature and bolt preload. This week: Plate re-made flat and bolts torqued in sequence; drift drops to 3 N.",
+    "Ongoing: Tendons fray at the proximal pulley after 40k grip cycles",
+    "Ongoing: Drop from 30 cm cracks the shank link at the knee clevis",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver. This week: Gate resistor bump slows edges, but switching losses rise 9%.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting. This week: Nora: casting tooling quote is $38k and 9 weeks; Lukas wants machined plates for DVT."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1783989809.045417",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-001446"
+      ],
+      "brief": "FL-TST-2017: need 2 by 2026-08-06 for Rig setup for Torso and pelvis static load test: Leg drop-test lift hook",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-08-06"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2017",
+        "Rig setup for Torso and pelvis static load test: Leg drop-test lift hook",
+        "FL-TST-2270",
+        "FL-TST-2259",
+        "FL-TST-2274",
+        "FL-TST-2272",
+        "FL-TST-2257",
+        "thurs the 6th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2017 need 2 for Rig setup for Torso and pelvis static load test: Leg drop-test lift hook, thurs the 6th. same rig as FL-TST-2270 FL-TST-2259 FL-TST-2274 FL-TST-2272 FL-TST-2257"
+    },
+    {
+      "ts": "1784030249.134924",
+      "user": "p-andre",
+      "thread_ts": "1783989809.045417",
+      "events": [
+        "ev-003678"
+      ],
+      "brief": "Correction: FL-TST-2017: need 2 by 2026-08-03 for Rig setup for Torso and pelvis static load test: Leg drop-test lift hook",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-08-03"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2017",
+        "Rig setup for Torso and pelvis static load test: Leg drop-test lift hook",
+        "FL-TST-2270",
+        "FL-TST-2259",
+        "FL-TST-2274",
+        "FL-TST-2272",
+        "FL-TST-2257",
+        "mon 8/3"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Correction: FL-TST-2017 need 2 for Rig setup for Torso and pelvis static load test: Leg drop-test lift hook by mon 8/3. rest of the rig FL-TST-2270 FL-TST-2259 FL-TST-2274 FL-TST-2272 FL-TST-2257 unchanged"
+    }
+  ]
+}

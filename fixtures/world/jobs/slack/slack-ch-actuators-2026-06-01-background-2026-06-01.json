@@ -1,0 +1,220 @@
+{
+  "job_id": "slack-ch-actuators-2026-06-01-background-2026-06-01",
+  "source": "slack",
+  "status": "blank",
+  "priority": 48,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-actuators",
+    "name": "actuators",
+    "slack_id": "C07FLK0ACTU",
+    "purpose": "Hip and knee actuators"
+  },
+  "week": {
+    "start": "2026-06-01",
+    "end": "2026-06-07"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hip actuator.",
+    "Ongoing: Bus-off events at 1 Mbps when all leg actuators stream. This week: Jonas proposes moving to CAN FD at 5 Mbps data rate; Farah wants to fix topology first.",
+    "Ongoing: Crossed-roller preload drops after thermal cycling; bore tolerance and preload ring design. This week: Carlos: two hip units feel notchy after thermal soak; preload ring backed off a quarter turn.",
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno. This week: Retest with spreader and 40 kHz: 9.5 min to limit, close enough to sign off for EVT.",
+    "Ongoing: Ratcheting risk at peak torque from loose wave generator fit. This week: Hub switched to 4140 with a clamp plus keyway; shaft rev B released.",
+    "Ongoing: Orders sitting in DFM review because of tolerance callouts. This week: Checklist adopted; DFM holds drop but still hit rush orders."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1780335527.928365",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-004615"
+      ],
+      "brief": "background: Retest with spreader and 40 kHz: 9.5 min to limit, close enough to sign off for EVT.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780335935.541221",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about this: Bao notes current ripple at 20 kHz PWM adds copper loss; asks to try 40 kHz on the driver.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780336029.110798",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on off-topic: parking lot",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780352170.308735",
+      "user": "p-wei",
+      "thread_ts": null,
+      "events": [
+        "ev-004549"
+      ],
+      "brief": "background: Carlos: two hip units feel notchy after thermal soak; preload ring backed off a quarter turn.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780355662.836889",
+      "user": "p-carlos",
+      "thread_ts": "1780352170.308735",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: Carlos: two hip units feel notchy after thermal soak; preload ring backed off a quarter turn.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1780360713.423417",
+      "user": "p-arjun",
+      "thread_ts": "1780352170.308735",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: Carlos: two hip units feel notchy after thermal soak; preload ring backed off a quarter turn.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1780361539.526898",
+      "user": "p-ingrid",
+      "thread_ts": "1780352170.308735",
+      "events": [],
+      "brief": "reply (answers) in the thread about: Carlos: two hip units feel notchy after thermal soak; preload ring backed off a quarter turn.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

@@ -1,0 +1,416 @@
+{
+  "job_id": "meeting-mtg-00944",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 33,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00944",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-07-21T08:45:00-07:00",
+    "actual_min": 15,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-lin",
+      "p-carlos",
+      "p-jade",
+      "p-destiny"
+    ],
+    "late_joiners": [
+      "p-carlos"
+    ]
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-001583",
+      "speaker": "p-lin",
+      "at_min": [
+        0,
+        5
+      ],
+      "brief": "Lin says: We need load cell plate by 7/23.",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-grip-load-cell-plate",
+        "value": {
+          "qty": 3,
+          "by": "2026-07-23"
+        }
+      },
+      "must_mention": [
+        "load cell plate",
+        "7/23"
+      ]
+    },
+    {
+      "event": "ev-001604",
+      "speaker": "p-dmitri",
+      "at_min": [
+        0,
+        5
+      ],
+      "brief": "transducer bracket: need 12 by 2026-07-30",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-dyno-torque-cell-bracket",
+        "value": {
+          "qty": 12,
+          "by": "2026-07-30"
+        }
+      },
+      "must_mention": [
+        "transducer bracket",
+        "7/30"
+      ]
+    },
+    {
+      "event": "ev-001551",
+      "speaker": "p-dmitri",
+      "at_min": [
+        2,
+        8
+      ],
+      "brief": "the clevis: need 1 by 2026-07-29",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-battery-enclosure-clevis-10",
+        "value": {
+          "qty": 1,
+          "by": "2026-07-29"
+        }
+      },
+      "must_mention": [
+        "the clevis",
+        "7/29"
+      ]
+    },
+    {
+      "event": "ev-001507",
+      "speaker": "p-dmitri",
+      "at_min": [
+        6,
+        12
+      ],
+      "brief": "2495: need 3 by 2026-07-28",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-tilt-impact-striker",
+        "value": {
+          "qty": 3,
+          "by": "2026-07-28"
+        }
+      },
+      "must_mention": [
+        "2495",
+        "7/28"
+      ]
+    },
+    {
+      "event": "ev-001623",
+      "speaker": "p-dmitri",
+      "at_min": [
+        7,
+        13
+      ],
+      "brief": "Dmitri says: We need WG hub by 8/19.",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-knee-wave-gen-hub",
+        "value": {
+          "qty": 22,
+          "by": "2026-08-19"
+        }
+      },
+      "must_mention": [
+        "WG hub",
+        "8/19"
+      ]
+    },
+    {
+      "event": "ev-001625",
+      "speaker": "p-dmitri",
+      "at_min": [
+        8,
+        14
+      ],
+      "brief": "WG hub: need 22 by 2026-08-14",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-knee-wave-gen-hub",
+        "value": {
+          "qty": 22,
+          "by": "2026-08-14"
+        }
+      },
+      "must_mention": [
+        "WG hub",
+        "8/14"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-lin",
+      "text": "Before we start: we need load cell plate by 7/23."
+    },
+    {
+      "start_s": 8,
+      "speaker": "p-dmitri",
+      "text": "Right. And transducer bracket, need 12 by 7/30. Zoe, vendor?"
+    },
+    {
+      "start_s": 22,
+      "speaker": "p-zoe",
+      "text": "ill check, i think they quoted a week"
+    },
+    {
+      "start_s": 34,
+      "speaker": "p-dmitri",
+      "text": "The clevis too, need 1 by 7/29. Quiet one but we need it."
+    },
+    {
+      "start_s": 48,
+      "speaker": "p-jade",
+      "text": "nothing in receiving for either"
+    },
+    {
+      "start_s": 56,
+      "speaker": "p-destiny",
+      "text": "my leg unit is ready for fit up, i need the torque spec sheet 🙏"
+    },
+    {
+      "start_s": 66,
+      "speaker": "p-lin",
+      "text": "I have it, I'll send it over after."
+    },
+    {
+      "start_s": 78,
+      "speaker": "p-dmitri",
+      "text": "Good. Zoe, fixture status?"
+    },
+    {
+      "start_s": 86,
+      "speaker": "p-zoe",
+      "text": "spin fixture assembled, alignment check wed"
+    },
+    {
+      "start_s": 100,
+      "speaker": "p-carlos",
+      "text": "Sorry late, truck. What did I miss?"
+    },
+    {
+      "start_s": 108,
+      "speaker": "p-dmitri",
+      "text": "Parts list. Carlos, mill is open tmrw"
+    },
+    {
+      "start_s": 115,
+      "speaker": "p-carlos",
+      "text": "Ok!! I need it for the mount bracket"
+    },
+    {
+      "start_s": 126,
+      "speaker": "p-dmitri",
+      "text": "Also 2495, need 3 by 7/28."
+    },
+    {
+      "start_s": 136,
+      "speaker": "p-lin",
+      "text": "Is 2495 the hall sensor mount?"
+    },
+    {
+      "start_s": 144,
+      "speaker": "p-dmitri",
+      "text": "No no, different. Check the list."
+    },
+    {
+      "start_s": 158,
+      "speaker": "p-destiny",
+      "text": "ok! 🙏"
+    },
+    {
+      "start_s": 175,
+      "speaker": "p-jade",
+      "text": "ok"
+    },
+    {
+      "start_s": 245,
+      "speaker": "p-dmitri",
+      "text": "Alright. Last bit, WG hub, we need it by 8/19 for the long run"
+    },
+    {
+      "start_s": 262,
+      "speaker": "p-lin",
+      "text": "How many?"
+    },
+    {
+      "start_s": 268,
+      "speaker": "p-dmitri",
+      "text": "22. WG hub, need 22 by 8/14 is what I put on the list, so push if it slips"
+    },
+    {
+      "start_s": 286,
+      "speaker": "p-zoe",
+      "text": "got it"
+    },
+    {
+      "start_s": 300,
+      "speaker": "p-carlos",
+      "text": "Mill tmrw!!"
+    },
+    {
+      "start_s": 320,
+      "speaker": "p-destiny",
+      "text": "bye 🙏"
+    }
+  ],
+  "summary": {
+    "overview": "Standup. Parts due dates for test hardware, fixture status, mill scheduling.",
+    "shorthand_bullet": [
+      "load cell plate needed by 7/23",
+      "transducer bracket need 12 by 7/30",
+      "the clevis need 1 by 7/29",
+      "2495 need 3 by 7/28",
+      "WG hub need 22, 8/14 on list, 8/19 for long run",
+      "spin fixture assembled, alignment check Wed"
+    ],
+    "action_items": [
+      "zoe check transducer bracket vendor quote",
+      "lin send torque spec sheet to destiny",
+      "carlos mill tmrw"
+    ],
+    "keywords": [
+      "load cell plate",
+      "transducer bracket",
+      "WG hub",
+      "spin fixture",
+      "mill"
+    ]
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "job_id": "meeting-mtg-00733",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 43,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00733",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-06-15T08:45:00-07:00",
+    "actual_min": 17,
+    "present": [
+      "p-dmitri",
+      "p-andre",
+      "p-lin",
+      "p-carlos",
+      "p-luis",
+      "p-destiny"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-001324",
+      "speaker": "p-dmitri",
+      "at_min": [
+        2,
+        8
+      ],
+      "brief": "1295: need 3 by 2026-07-31",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-ankle-pushrod-clevis",
+        "value": {
+          "qty": 3,
+          "by": "2026-07-31"
+        }
+      },
+      "must_mention": [
+        "1295",
+        "7/31"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-dmitri",
+      "text": "Morning, let's go. Lin, life test first."
+    },
+    {
+      "start_s": 62,
+      "speaker": "p-lin",
+      "text": "Good morning. Rig two is still running, about three quarters done. We saw one connector come loose on Friday, I reseated it and it's been stable."
+    },
+    {
+      "start_s": 125,
+      "speaker": "p-dmitri",
+      "text": "Did you log that?"
+    },
+    {
+      "start_s": 187,
+      "speaker": "p-lin",
+      "text": "Yes, it's in the test log with the cycle count."
+    },
+    {
+      "start_s": 250,
+      "speaker": "p-dmitri",
+      "text": "Good. Andre, dyno?"
+    },
+    {
+      "start_s": 312,
+      "speaker": "p-andre",
+      "text": "efficiency sweep finished on the hip unit, data's in the drive. need to redo the low speed points tho, the torque sensor drifted"
+    },
+    {
+      "start_s": 375,
+      "speaker": "p-carlos",
+      "text": "Drifted how much? That sensor was just calibrated."
+    },
+    {
+      "start_s": 437,
+      "speaker": "p-andre",
+      "text": "like a couple percent, might be temp"
+    },
+    {
+      "start_s": 500,
+      "speaker": "p-dmitri",
+      "text": "Uh, let's recalibrate at temp then. Not at room temp."
+    },
+    {
+      "start_s": 562,
+      "speaker": "p-andre",
+      "text": "yep ok"
+    },
+    {
+      "start_s": 625,
+      "speaker": "p-dmitri",
+      "text": "1295, need 3 by 7/31. Can somebody confirm that's ordered?"
+    },
+    {
+      "start_s": 687,
+      "speaker": "p-luis",
+      "text": "i can ask talia, she was handling those"
+    },
+    {
+      "start_s": 750,
+      "speaker": "p-dmitri",
+      "text": "Please. Destiny, how are the pack assemblies?"
+    },
+    {
+      "start_s": 812,
+      "speaker": "p-destiny",
+      "text": "Two done, third waiting on a connector 😬 should be here soon 🙏"
+    },
+    {
+      "start_s": 875,
+      "speaker": "p-carlos",
+      "text": "I'm going to be out on the floor most of the day, shout if you need me."
+    },
+    {
+      "start_s": 937,
+      "speaker": "p-dmitri",
+      "text": "Alright, that's it. Thanks!"
+    }
+  ],
+  "summary": {
+    "overview": "Standup. Life test rig two about three quarters done after a connector reseat. Dyno hip efficiency sweep done but low speed points need redoing after torque sensor drift. Open order for 1295 needs confirming.",
+    "shorthand_bullet": [
+      "rig 2 ~75%, loose connector reseated and logged",
+      "hip efficiency sweep done, redo low speed points",
+      "torque sensor drift ~couple %, recal at temp",
+      "1295 need 3 by 7/31, confirm order",
+      "pack assemblies: two done, third waiting on connector"
+    ],
+    "action_items": [
+      "Luis ask Talia about 1295",
+      "Andre recal torque sensor at temp and redo low speed points"
+    ],
+    "keywords": [
+      "life test",
+      "dyno",
+      "torque sensor",
+      "connector",
+      "pack assembly"
+    ]
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "job_id": "jira-HIP-2026-02-16-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 77,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HIP",
+    "name": "Actuators (hip and knee)"
+  },
+  "week": {
+    "start": "2026-02-16",
+    "end": "2026-02-22"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HIP-20",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": "p-owen",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-02-16T15:05:24-08:00",
+      "due_date": "2026-03-09",
+      "events": [
+        "ev-000137"
+      ],
+      "brief": "Order 7x Hip actuator housing / main housing: need 7 by 2026-03-09",
+      "must_mention": [
+        "main housing",
+        "mon the 9th"
+      ],
+      "description_length": "medium",
+      "summary": "Order 7x Hip actuator housing",
+      "description": "main housing: need 7 by mon the 9th. ping me if the quote looks off",
+      "comments": [
+        {
+          "id": "HIP-20-c1",
+          "by": "p-arjun",
+          "at": "2026-03-10T11:41:06-07:00",
+          "events": [
+            "ev-003772"
+          ],
+          "brief": "main housing arrived",
+          "claim": {
+            "kind": "stock",
+            "value": 6
+          },
+          "must_mention": [
+            "main housing",
+            "6"
+          ],
+          "body": "main housing arrived (6)"
+        }
+      ]
+    },
+    {
+      "key": "HIP-21",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-02-16T22:51:20-08:00",
+      "due_date": "2026-03-05",
+      "events": [
+        "ev-000122"
+      ],
+      "brief": "Order 12x Knee bearing shim, 1x Knee to thigh flange / the shim: need 12 by 2026-03-05",
+      "must_mention": [
+        "the shim",
+        "3/5"
+      ],
+      "description_length": "medium",
+      "summary": "Knee bearing shim x12 + flange",
+      "description": "the shim: need 12 by 3/5, plus the flange on the same order",
+      "comments": []
+    }
+  ]
+}

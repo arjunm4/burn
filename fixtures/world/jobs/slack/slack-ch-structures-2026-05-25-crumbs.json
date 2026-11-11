@@ -1,0 +1,147 @@
+{
+  "job_id": "slack-ch-structures-2026-05-25-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 49,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-structures",
+    "name": "structures-battery",
+    "slack_id": "C07FLK0STRC",
+    "purpose": "Torso, pelvis and battery enclosure"
+  },
+  "week": {
+    "start": "2026-05-25",
+    "end": "2026-05-31"
+  },
+  "people": [
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-theo",
+      "name": "Theo Lambert",
+      "display_name": "theo",
+      "slack_id": "U07FLK0THEO",
+      "title": "Hardware Engineer, harnessing",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Torso and pelvis structure.",
+    "Ongoing: Orders sitting in DFM review because of tolerance callouts"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1779818753.523148",
+      "user": "p-theo",
+      "thread_ts": null,
+      "events": [
+        "ev-003904"
+      ],
+      "brief": "clevis: still quoting rev F",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev F"
+      },
+      "must_mention": [
+        "clevis"
+      ],
+      "length": "medium",
+      "text": "clevis still quoting rev F"
+    },
+    {
+      "ts": "1779840956.121168",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-002976"
+      ],
+      "brief": "Tolerance stack check for Leg DVT build: Battery clevis 10 (2) waits on Driver PCBA respin for battery enclosure (clevis)",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-gen-0044"
+      },
+      "must_mention": [
+        "Driver PCBA respin for battery enclosure (clevis)",
+        "Tolerance stack check for Leg DVT build: Battery clevis 10 (2)"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Tolerance stack check for Leg DVT build: Battery clevis 10 (2) waits on Driver PCBA respin for battery enclosure (clevis)"
+    },
+    {
+      "ts": "1779904231.269683",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-004019"
+      ],
+      "brief": "clevis: still quoting rev F",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev F"
+      },
+      "must_mention": [
+        "clevis"
+      ],
+      "length": "short",
+      "text": "clevis still quoting rev F"
+    }
+  ]
+}

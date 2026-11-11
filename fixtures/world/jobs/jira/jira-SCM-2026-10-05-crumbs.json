@@ -17,25 +17,6 @@
   },
   "people": [
     {
-      "id": "p-arjun",
-      "name": "Arjun Venkatesan",
-      "display_name": "arjun",
-      "slack_id": "U07FLK0ARJN",
-      "title": "Actuators Lead",
-      "style": {
-        "case": "lower",
-        "punctuation": "light",
-        "typos": "some",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "medium",
-        "quirks": [
-          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
-          "corrects own dates"
-        ]
-      }
-    },
-    {
       "id": "p-samir",
       "name": "Samir Khoury",
       "display_name": "samir.k",
@@ -51,6 +32,25 @@
         "quirks": [
           "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
           "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
         ]
       }
     },
@@ -100,7 +100,7 @@
   ],
   "tickets": [
     {
-      "key": "SCM-335",
+      "key": "SCM-353",
       "type": "Task",
       "status": "Done",
       "reporter": "p-zoe",
@@ -112,135 +112,130 @@
       "created": "2026-10-05T13:28:59-07:00",
       "due_date": "2026-11-11",
       "events": [
-        "ev-002354"
+        "ev-002636"
       ],
-      "brief": "Order 5x Shank to ankle adapter, 5x Knee belt pulley / FL-LEG-1372: need 5 by 2026-11-06 for the build",
+      "brief": "Order 5x Shank to ankle adapter, 5x Knee belt pulley / FL-LEG-1372: need 5 by 2026-11-11 for Tolerance stack check: Shank to ankle adapter",
       "must_mention": [
         "FL-LEG-1372",
-        "the build",
+        "Tolerance stack check: Shank to ankle adapter",
         "FL-LEG-1348",
-        "11/6"
+        "11/11"
       ],
-      "description_length": "one_line",
-      "summary": "Shank to ankle adapter x5, knee belt pulley x5",
-      "description": "FL-LEG-1372 and FL-LEG-1348 need 5 by 11/6 for the build",
+      "description_length": "medium",
+      "summary": "Shank to ankle adapter + knee pulley buy",
+      "description": "FL-LEG-1372 need 5 by 11/11 for Tolerance stack check: Shank to ankle adapter. FL-LEG-1348 same date, check drawing rev",
       "comments": [
         {
-          "id": "SCM-335-c1",
+          "id": "SCM-353-c1",
           "by": "p-zoe",
-          "at": "2026-10-06T09:34:59-07:00",
-          "events": [
-            "ev-003270"
-          ],
-          "brief": "Correction: FL-LEG-1372: need 5 by 2026-11-11 for the build",
-          "claim": {
-            "kind": "needs",
-            "value": {
-              "qty": 5,
-              "by": "2026-11-11"
-            }
-          },
-          "must_mention": [
-            "FL-LEG-1372",
-            "the build",
-            "FL-LEG-1348",
-            "wed 11/11"
-          ],
-          "body": "Correction: FL-LEG-1372 and FL-LEG-1348 moved to wed 11/11, for the build"
+          "at": "2026-10-08T17:48:58-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "nudging this one, any chance it moves up?"
         },
         {
-          "id": "SCM-335-c2",
+          "id": "SCM-353-c2",
           "by": "p-zoe",
-          "at": "2026-10-07T07:20:06-07:00",
-          "events": [
-            "ev-002355"
-          ],
-          "brief": "shank adapter: need 5 by 2026-11-11 for next week",
-          "claim": {
-            "kind": "needs",
-            "value": {
-              "qty": 5,
-              "by": "2026-11-11"
-            }
-          },
-          "must_mention": [
-            "shank adapter",
-            "next week",
-            "wed 11/11"
-          ],
-          "body": "shank adapter needed wed 11/11 for next week"
+          "at": "2026-10-09T11:22:08-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "any update?"
+        },
+        {
+          "id": "SCM-353-c3",
+          "by": "p-zoe",
+          "at": "2026-10-19T11:44:33-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "still nothing on this, any update from the vendor?"
+        },
+        {
+          "id": "SCM-353-c4",
+          "by": "p-zoe",
+          "at": "2026-10-21T10:24:39-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "vendor says they are still reviewing the drawing"
+        },
+        {
+          "id": "SCM-353-c5",
+          "by": "p-talia",
+          "at": "2026-10-21T11:26:17-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "chased them again this morning 🙏"
+        },
+        {
+          "id": "SCM-353-c6",
+          "by": "p-zoe",
+          "at": "2026-11-02T09:34:32-08:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "bumping, this is holding up the stack check"
         }
       ]
     },
     {
-      "key": "SCM-337",
+      "key": "SCM-355",
       "type": "Task",
       "status": "Done",
-      "reporter": "p-tomas",
-      "assignee": "p-tomas",
+      "reporter": "p-talia",
+      "assignee": "p-talia",
       "labels": [
         "procurement"
       ],
-      "priority": "Medium",
-      "created": "2026-10-07T14:36:22-07:00",
-      "due_date": null,
+      "priority": "High",
+      "created": "2026-10-07T11:28:05-07:00",
+      "due_date": "2026-10-23",
       "events": [
-        "ev-002131"
+        "ev-002363"
       ],
-      "brief": "Order 12x Dyno shaft spacer / 2139: need 12 by 2026-10-27 for the fit check",
+      "brief": "Order 5x Pack latch block, 12x Busbar clamp block / 1679: need 5 by 2026-10-23",
       "must_mention": [
-        "2139",
-        "the fit check",
-        "10/27"
+        "1679",
+        "fri the 23rd"
       ],
-      "description_length": "short",
-      "summary": "Dyno shaft spacer x12",
-      "description": "2139: need 12 by 10/27 for the fit check",
+      "description_length": "one_line",
+      "summary": "Pack latch block + busbar clamp block",
+      "description": "1679 need 5 by fri the 23rd 🙏",
       "comments": [
         {
-          "id": "SCM-337-c1",
-          "by": "p-arjun",
-          "at": "2026-10-08T09:46:26-07:00",
-          "events": [
-            "ev-002132"
-          ],
-          "brief": "dyno spacers: need 12 by 2026-10-27",
-          "claim": {
-            "kind": "needs",
-            "value": {
-              "qty": 12,
-              "by": "2026-10-27"
-            }
-          },
-          "must_mention": [
-            "dyno spacers",
-            "10/27"
-          ],
-          "body": "dyno spacers need 12 by 10/27"
+          "id": "SCM-355-c1",
+          "by": "p-talia",
+          "at": "2026-10-09T11:51:55-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on vendor confirmation 😬"
         },
         {
-          "id": "SCM-337-c2",
-          "by": "p-tomas",
-          "at": "2026-11-05T12:18:00-08:00",
-          "events": [
-            "ev-002136"
-          ],
-          "brief": "spacer set in use",
-          "claim": {
-            "kind": "done",
-            "value": "2026-11-04"
-          },
-          "must_mention": [
-            "spacer set",
-            "the build",
-            "wed 11/4"
-          ],
-          "body": "spacer set in use for the build, wed 11/4"
+          "id": "SCM-355-c2",
+          "by": "p-talia",
+          "at": "2026-10-12T12:27:03-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "any news from the shop? 🙏"
+        },
+        {
+          "id": "SCM-355-c3",
+          "by": "p-talia",
+          "at": "2026-10-16T11:14:38-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "shop says its in process, ill update when it ships 🙏"
         }
       ]
     },
     {
-      "key": "SCM-338",
+      "key": "SCM-356",
       "type": "Task",
       "status": "Done",
       "reporter": "p-zoe",
@@ -252,37 +247,136 @@
       "created": "2026-10-07T16:14:01-07:00",
       "due_date": "2026-11-20",
       "events": [
-        "ev-002105"
+        "ev-002370"
       ],
       "brief": "Order 12x Torso IMU plate, 2x Torso lifting eye block, 12x Torso harness bracket / IMU plate: need 12 by 2026-11-20",
       "must_mention": [
         "IMU plate",
-        "fri the 20th"
+        "11/20"
       ],
-      "description_length": "medium",
-      "summary": "Torso IMU plate x12 + lifting eye blocks, harness brackets",
-      "description": "IMU plate needed by fri the 20th, 12 of them. lifting eye blocks x2 and harness brackets x12 ride along",
+      "description_length": "one_line",
+      "summary": "Torso IMU plate order (+ eye block, harness bracket)",
+      "description": "IMU plate need 12 by 11/20, other two on the same PO",
       "comments": [
         {
-          "id": "SCM-338-c1",
+          "id": "SCM-356-c1",
           "by": "p-samir",
           "at": "2026-10-09T14:38:24-07:00",
           "events": [
-            "ev-002108"
+            "ev-002373"
           ],
-          "brief": "1507: need 12 by 2026-11-20",
+          "brief": "1507: need 12 by 2026-11-19",
           "claim": {
             "kind": "needs",
             "value": {
               "qty": 12,
-              "by": "2026-11-20"
+              "by": "2026-11-19"
             }
           },
           "must_mention": [
             "1507",
-            "fri 11/20"
+            "11/19"
           ],
-          "body": "1507 need 12 by fri 11/20"
+          "body": "1507 need 12 by 11/19"
+        },
+        {
+          "id": "SCM-356-c2",
+          "by": "p-samir",
+          "at": "2026-10-15T11:44:18-07:00",
+          "events": [
+            "ev-003759"
+          ],
+          "brief": "that order: need 12 by 2026-11-19",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-11-19"
+            }
+          },
+          "must_mention": [
+            "that order",
+            "thurs the 19th"
+          ],
+          "body": "that order, need 12 by thurs the 19th"
+        }
+      ]
+    },
+    {
+      "key": "SCM-357",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": "p-tomas",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-10-08T09:46:26-07:00",
+      "due_date": "2026-10-27",
+      "events": [
+        "ev-002406"
+      ],
+      "brief": "Order 12x Dyno shaft spacer / that order: need 12 by 2026-10-27",
+      "must_mention": [
+        "that order",
+        "tues the 27th"
+      ],
+      "description_length": "one_line",
+      "summary": "Dyno shaft spacer order",
+      "description": "that order, need 12 by tues the 27th",
+      "comments": [
+        {
+          "id": "SCM-357-c1",
+          "by": "p-tomas",
+          "at": "2026-10-08T13:37:47-07:00",
+          "events": [
+            "ev-003777"
+          ],
+          "brief": "FL-TST-2139: need 12 by 2026-10-26 for Fixture install and shakedown: Dyno shaft spacer",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-10-26"
+            }
+          },
+          "must_mention": [
+            "FL-TST-2139",
+            "Fixture install and shakedown: Dyno shaft spacer",
+            "mon 10/26"
+          ],
+          "body": "FL-TST-2139 need 12 by mon 10/26 for Fixture install and shakedown: Dyno shaft spacer, i think thats the right drawing"
+        },
+        {
+          "id": "SCM-357-c2",
+          "by": "p-tomas",
+          "at": "2026-10-12T07:53:50-07:00",
+          "events": [
+            "ev-002409"
+          ],
+          "brief": "the spacer: need 12 by 2026-10-27",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-10-27"
+            }
+          },
+          "must_mention": [
+            "the spacer",
+            "tues the 27th"
+          ],
+          "body": "the spacer need 12 by tues the 27th"
+        },
+        {
+          "id": "SCM-357-c3",
+          "by": "p-talia",
+          "at": "2026-10-28T11:49:16-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "vendor is quiet on this one, asked again 🙏"
         }
       ]
     }

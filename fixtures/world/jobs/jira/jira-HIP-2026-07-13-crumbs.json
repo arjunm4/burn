@@ -1,0 +1,93 @@
+{
+  "job_id": "jira-HIP-2026-07-13-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 35,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HIP",
+    "name": "Actuators (hip and knee)"
+  },
+  "week": {
+    "start": "2026-07-13",
+    "end": "2026-07-19"
+  },
+  "people": [
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HIP-305",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": "p-tomas",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-07-13T11:16:07-07:00",
+      "due_date": "2026-08-04",
+      "events": [
+        "ev-001456"
+      ],
+      "brief": "Order 24x Hip output shaft, 4x Hip stator mount plate, 3x Hip cycloid ring-pin housing / the part: need 24 by 2026-08-04",
+      "must_mention": [
+        "the part",
+        "tues the 4th"
+      ],
+      "description_length": "one_line",
+      "summary": "hip output shafts x24 + stator mounts + ring-pin housings",
+      "description": "the part need 24 by tues the 4th",
+      "comments": [
+        {
+          "id": "HIP-305-c1",
+          "by": "p-tomas",
+          "at": "2026-07-14T11:13:29-07:00",
+          "events": [
+            "ev-001457"
+          ],
+          "brief": "that order: need 24 by 2026-08-04",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 24,
+              "by": "2026-08-04"
+            }
+          },
+          "must_mention": [
+            "that order",
+            "tues the 4th"
+          ],
+          "body": "that order need 24 by tues the 4th"
+        }
+      ]
+    }
+  ]
+}

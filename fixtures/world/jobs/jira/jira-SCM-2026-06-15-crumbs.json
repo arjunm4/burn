@@ -1,0 +1,222 @@
+{
+  "job_id": "jira-SCM-2026-06-15-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 43,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "SCM",
+    "name": "Supply chain and procurement"
+  },
+  "week": {
+    "start": "2026-06-15",
+    "end": "2026-06-21"
+  },
+  "people": [
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "SCM-194",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-06-16T02:52:45-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001267"
+      ],
+      "brief": "Order 6x Drop load cell bracket, 4x Drop strike plate mount, 3x Stator insertion jig, 8x Drop gantry carriage adapter plate / the part: need 6 by 2026-07-02",
+      "must_mention": [
+        "the part",
+        "7/2"
+      ],
+      "description_length": "one_line",
+      "summary": "Drop test brackets, jigs, adapter plates",
+      "description": "the part, need 6 by 7/2 😬",
+      "comments": []
+    },
+    {
+      "key": "SCM-195",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-nadia",
+      "assignee": "p-nadia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-06-16T13:58:37-07:00",
+      "due_date": "2026-07-01",
+      "events": [
+        "ev-001361"
+      ],
+      "brief": "Order 12x Dyno absorber motor adapter, 2x Dyno base plate, 2x Dyno shaft alignment jig / FL-TST-2160: need 12 by 2026-07-01 for Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno absorber motor adapter",
+      "must_mention": [
+        "FL-TST-2160",
+        "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno absorber motor adapter",
+        "FL-TST-2136",
+        "FL-TST-2125",
+        "7/1"
+      ],
+      "description_length": "one_line",
+      "summary": "Dyno adapters/base plate/alignment jig FL-TST-2160",
+      "description": "need 12 FL-TST-2160 by 7/1 for Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno absorber motor adapter. also FL-TST-2136 and FL-TST-2125 from the same list",
+      "comments": [
+        {
+          "id": "SCM-195-c1",
+          "by": "p-nadia",
+          "at": "2026-07-01T16:35:29-07:00",
+          "events": [
+            "ev-001364"
+          ],
+          "brief": "2160 arrived (12)",
+          "claim": {
+            "kind": "stock",
+            "value": 12
+          },
+          "must_mention": [
+            "2160",
+            "12"
+          ],
+          "body": "2160 arrived, 12 in. checked the bores"
+        }
+      ]
+    },
+    {
+      "key": "SCM-199",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": "p-owen",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-06-18T14:23:43-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001353"
+      ],
+      "brief": "Order 12x Dyno torque transducer bracket, 4x Leg drop-test lift hook, 12x Tilt stand pivot shaft / torque cell bracket: need 12 by 2026-07-08",
+      "must_mention": [
+        "torque cell bracket",
+        "7/8"
+      ],
+      "description_length": "one_line",
+      "summary": "Dyno torque transducer bracket, drop-test hooks, tilt stand shafts",
+      "description": "torque cell bracket need 12 by 7/8",
+      "comments": [
+        {
+          "id": "SCM-199-c1",
+          "by": "p-owen",
+          "at": "2026-06-18T15:20:28-07:00",
+          "events": [
+            "ev-001354"
+          ],
+          "brief": "the part: need 12 by 2026-07-08",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-07-08"
+            }
+          },
+          "must_mention": [
+            "the part",
+            "7/8"
+          ],
+          "body": "the part, need 12 by 7/8"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,648 @@
+{
+  "job_id": "slack-ch-electrical-2026-03-02-background-2026-03-04",
+  "source": "slack",
+  "status": "blank",
+  "priority": 74,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-electrical",
+    "name": "electrical",
+    "slack_id": "C07FLK0ELEC",
+    "purpose": "Electrical and firmware: boards, harnesses, bring-up"
+  },
+  "week": {
+    "start": "2026-03-02",
+    "end": "2026-03-08"
+  },
+  "people": [
+    {
+      "id": "p-anika",
+      "name": "Anika Joshi",
+      "display_name": "anika",
+      "slack_id": "U07FLK0ANIK",
+      "title": "Firmware Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-ishaan",
+      "name": "Ishaan Mehta",
+      "display_name": "ishaan.m",
+      "slack_id": "U07FLK0ISHA",
+      "title": "Electrical Engineer, sensors",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-kwame",
+      "name": "Kwame Asante",
+      "display_name": "kwame",
+      "slack_id": "U07FLK0KWAM",
+      "title": "Senior Electrical Engineer, power",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-marcus",
+      "name": "Marcus Adeyemi",
+      "display_name": "marcus",
+      "slack_id": "U07FLK0MARC",
+      "title": "CTO",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-mateo",
+      "name": "Mateo Silva",
+      "display_name": "mateo",
+      "slack_id": "U07FLK0MATE",
+      "title": "Embedded Software Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-valeria",
+      "name": "Valeria Ortiz",
+      "display_name": "valeria.o",
+      "slack_id": "U07FLK0VALE",
+      "title": "Electrical Engineer, battery systems",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-yusuf",
+      "name": "Yusuf Demir",
+      "display_name": "yusuf",
+      "slack_id": "U07FLK0YUSU",
+      "title": "Firmware Engineer, motor control",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Building the first three hip and knee actuators. This week: Carlos: kitting short three parts; spacers came in at the wrong length.",
+    "Ongoing: Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT. This week: Owen prices both: harmonic set ~$1.9k per joint and 10-week lead; cyclo is machined parts plus pins, ~3 weeks."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1772643225.355526",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1772643831.075421",
+      "user": "p-talia",
+      "thread_ts": "1772643225.355526",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1772648360.631358",
+      "user": "p-arjun",
+      "thread_ts": "1772643225.355526",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1772648431.085868",
+      "user": "p-mateo",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about the ongoing building the first three hip and knee actuators",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1772649933.441240",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on off-topic: parking lot",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1772651572.590354",
+      "user": "p-yusuf",
+      "thread_ts": "1772643225.355526",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1772652492.251478",
+      "user": "p-anika",
+      "thread_ts": "1772643225.355526",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1772655075.837022",
+      "user": "p-farah",
+      "thread_ts": "1772643225.355526",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1772655762.308781",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Owen prices both: harmonic set ~$1.9k per joint and 10-week lead; cyclo is machined parts plus pins, ~3 weeks.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1772657356.134949",
+      "user": "p-valeria",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about the ongoing whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for dvt",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1772658561.601780",
+      "user": "p-kwame",
+      "thread_ts": "1772643225.355526",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1772658753.729403",
+      "user": "p-yusuf",
+      "thread_ts": "1772643225.355526",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1772660820.283463",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about the ongoing whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for dvt",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1772661345.985312",
+      "user": "p-mateo",
+      "thread_ts": "1772643225.355526",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1772661477.031962",
+      "user": "p-arjun",
+      "thread_ts": "1772643225.355526",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1772661864.825837",
+      "user": "p-arjun",
+      "thread_ts": "1772657356.134949",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the ongoing whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for dvt",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1772665078.125411",
+      "user": "p-farah",
+      "thread_ts": "1772643225.355526",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1772665312.008246",
+      "user": "p-ingrid",
+      "thread_ts": "1772657356.134949",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the ongoing whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for dvt",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1772665936.022571",
+      "user": "p-kwame",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about this: Owen prices both: harmonic set ~$1.9k per joint and 10-week lead; cyclo is machined parts plus pins, ~3 weeks.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1772667154.169722",
+      "user": "p-yusuf",
+      "thread_ts": "1772657356.134949",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the ongoing whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for dvt",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1772669187.741190",
+      "user": "p-farah",
+      "thread_ts": "1772643225.355526",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1772669221.208599",
+      "user": "p-farah",
+      "thread_ts": "1772665936.022571",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Owen prices both: harmonic set ~$1.9k per joint and 10-week lead; cyclo is machined parts plus pins, ~3 weeks.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1772672080.530855",
+      "user": "p-idris",
+      "thread_ts": "1772643225.355526",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1772672852.369177",
+      "user": "p-farah",
+      "thread_ts": "1772643225.355526",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1772674133.653012",
+      "user": "p-farah",
+      "thread_ts": "1772665936.022571",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Owen prices both: harmonic set ~$1.9k per joint and 10-week lead; cyclo is machined parts plus pins, ~3 weeks.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1772676436.369211",
+      "user": "p-farah",
+      "thread_ts": "1772665936.022571",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Owen prices both: harmonic set ~$1.9k per joint and 10-week lead; cyclo is machined parts plus pins, ~3 weeks.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1772676532.274571",
+      "user": "p-talia",
+      "thread_ts": "1772643225.355526",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1772676706.977044",
+      "user": "p-kwame",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1772681211.368814",
+      "user": "p-jonas",
+      "thread_ts": "1772676706.977044",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1772681614.422219",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1772681641.087554",
+      "user": "p-jonas",
+      "thread_ts": "1772665936.022571",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Owen prices both: harmonic set ~$1.9k per joint and 10-week lead; cyclo is machined parts plus pins, ~3 weeks.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1772729516.972303",
+      "user": "p-marcus",
+      "thread_ts": "1772676706.977044",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1772734291.538372",
+      "user": "p-ishaan",
+      "thread_ts": "1772676706.977044",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1772736810.801491",
+      "user": "p-jonas",
+      "thread_ts": "1772676706.977044",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1772737844.889078",
+      "user": "p-marcus",
+      "thread_ts": "1772665936.022571",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Owen prices both: harmonic set ~$1.9k per joint and 10-week lead; cyclo is machined parts plus pins, ~3 weeks.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1772739563.200086",
+      "user": "p-talia",
+      "thread_ts": "1772676706.977044",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1772740159.888501",
+      "user": "p-arjun",
+      "thread_ts": "1772665936.022571",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Owen prices both: harmonic set ~$1.9k per joint and 10-week lead; cyclo is machined parts plus pins, ~3 weeks.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1772744773.797386",
+      "user": "p-mateo",
+      "thread_ts": "1772676706.977044",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Carlos: kitting short three parts; spacers came in at the wrong length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

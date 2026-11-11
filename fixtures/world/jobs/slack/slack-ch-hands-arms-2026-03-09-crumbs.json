@@ -1,0 +1,104 @@
+{
+  "job_id": "slack-ch-hands-arms-2026-03-09-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 71,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hands-arms",
+    "name": "hands-arms",
+    "slack_id": "C07FLK0HAND",
+    "purpose": "Arms, wrist and hand"
+  },
+  "week": {
+    "start": "2026-03-09",
+    "end": "2026-03-15"
+  },
+  "people": [
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hand and wrist.",
+    "Ongoing: Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1773253945.667266",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-000468"
+      ],
+      "brief": "base riser: need 2 by 2026-03-23",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-03-23"
+        }
+      },
+      "must_mention": [
+        "base riser",
+        "mon the 23rd"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "base riser: need 2 by mon the 23rd!!"
+    },
+    {
+      "ts": "1773259035.618664",
+      "user": "p-omar",
+      "thread_ts": "1773253945.667266",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "I think @carlos means the ones for the wrist test, probably? not 100% sure, can someone confirm"
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "job_id": "slack-ch-procurement-2026-05-25-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 49,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-05-25",
+    "end": "2026-05-31"
+  },
+  "people": [
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Pushrod clevis bends at 1.6x body weight in the tilt stand. This week: Rev B clevis widened 3 mm, double shear; fits with a trimmed heel bumper.",
+    "Ongoing: Bus-off events at 1 Mbps when all leg actuators stream. This week: Farah measures 3 m of stub length; termination at the wrong end.",
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno",
+    "Ongoing: Ratcheting risk at peak torque from loose wave generator fit. This week: Wei proposes keyed hub to replace clamp hub; Tomas worries about key fretting.",
+    "Ongoing: Orders sitting in DFM review because of tolerance callouts"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1779813786.560578",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-001159"
+      ],
+      "brief": "Quote Q-2498999-1 for FL-KNE-1119: standard $811.75, 9 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 11,
+          "by": "2026-06-11",
+          "quote_id": "Q-2498999-1",
+          "price_usd": 811.75,
+          "lead_days": 9
+        }
+      },
+      "must_mention": [
+        "Q-2498999-1",
+        "FL-KNE-1119",
+        "thurs 6/11"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Q-2498999-1 for FL-KNE-1119, $811.75, 9 BD, need 11 by thurs 6/11"
+    },
+    {
+      "ts": "1779818822.466069",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-001107"
+      ],
+      "brief": "Quote Q-2500166-1 for FL-TST-2272: standard $1426.19, 9 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-06-12",
+          "quote_id": "Q-2500166-1",
+          "price_usd": 1426.19,
+          "lead_days": 9
+        }
+      },
+      "must_mention": [
+        "Q-2500166-1",
+        "FL-TST-2272",
+        "fri 6/12"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Q-2500166-1 for FL-TST-2272, $1426.19, 9 BD, need 2 by fri 6/12 🙏"
+    },
+    {
+      "ts": "1780005806.800577",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-001188"
+      ],
+      "brief": "Quote Q-2501467-1 for FL-TST-2260: standard $1477.83, 8 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-06-12",
+          "quote_id": "Q-2501467-1",
+          "price_usd": 1477.83,
+          "lead_days": 8
+        }
+      },
+      "must_mention": [
+        "Q-2501467-1",
+        "FL-TST-2260",
+        "6/12"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Q-2501467-1 for FL-TST-2260, $1477.83, 8 BD, need 2 by 6/12, can someone approve"
+    },
+    {
+      "ts": "1780009509.466036",
+      "user": "p-callum",
+      "thread_ts": "1780005806.800577",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "will check later"
+    },
+    {
+      "ts": "1780010472.442925",
+      "user": "p-diego",
+      "thread_ts": "1780005806.800577",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "does it need to be that fast?"
+    },
+    {
+      "ts": "1780014247.649804",
+      "user": "p-talia",
+      "thread_ts": "1780005806.800577",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "not sure that works for me 🙏"
+    }
+  ]
+}

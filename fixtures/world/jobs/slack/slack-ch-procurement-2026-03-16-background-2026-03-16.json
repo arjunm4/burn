@@ -1,0 +1,264 @@
+{
+  "job_id": "slack-ch-procurement-2026-03-16-background-2026-03-16",
+  "source": "slack",
+  "status": "blank",
+  "priority": 70,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-03-16",
+    "end": "2026-03-22"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Building the first three hip and knee actuators. This week: Two hips and two knees built; third hip waits on the stator mount.",
+    "Ongoing: Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT. This week: Ingrid asks for a decision memo; Tomas concedes backdrivability favors cyclo for the hip at 50:1.",
+    "Ongoing: Absolute encoder on the knee output glitches when the motor runs above 8 A. This week: Jonas sees 2-3 count jumps on the knee abs encoder above 8 A phase current.",
+    "Ongoing: Coupling misalignment corrupting efficiency numbers on the dyno. This week: Wei redraws the adapter with reamed dowel holes; alignment jig requested."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1773679979.451855",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on the ongoing building the first three hip and knee actuators",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1773680032.718573",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773682792.635255",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about this: Andre: efficiency readings swing 4% between mounts of the same actuator.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773684226.047990",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on the ongoing building the first three hip and knee actuators",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773695152.611253",
+      "user": "p-jonas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about the ongoing whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for dvt",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773696293.636810",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about the ongoing whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for dvt",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773701367.077631",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on this: Ingrid asks for a decision memo; Tomas concedes backdrivability favors cyclo for the hip at 50:1.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773704357.055492",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on this: Arjun pushes back: harmonic flexspline fatigue at hip peak torque (~140 Nm) is marginal, cyclo takes shock loads from drops.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    }
+  ]
+}

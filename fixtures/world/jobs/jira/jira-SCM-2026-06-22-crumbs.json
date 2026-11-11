@@ -1,0 +1,340 @@
+{
+  "job_id": "jira-SCM-2026-06-22-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 41,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "SCM",
+    "name": "Supply chain and procurement"
+  },
+  "week": {
+    "start": "2026-06-22",
+    "end": "2026-06-28"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "SCM-201",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-arjun",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-06-22T16:43:04-07:00",
+      "due_date": "2026-07-09",
+      "events": [
+        "ev-001331"
+      ],
+      "brief": "Order 6x CMM nest, actuator housings / FL-TST-2670: need 6 by 2026-07-06",
+      "must_mention": [
+        "FL-TST-2670",
+        "mon the 6th"
+      ],
+      "description_length": "one_line",
+      "summary": "CMM nest, actuator housings (FL-TST-2670)",
+      "description": "need 6 by mon the 6th",
+      "comments": [
+        {
+          "id": "SCM-201-c1",
+          "by": "p-ingrid",
+          "at": "2026-06-23T09:26:46-07:00",
+          "events": [
+            "ev-001334"
+          ],
+          "brief": "FL-TST-2670: need 6 by 2026-07-10",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 6,
+              "by": "2026-07-10"
+            }
+          },
+          "must_mention": [
+            "FL-TST-2670",
+            "fri 7/10"
+          ],
+          "body": "FL-TST-2670 need 6 by fri 7/10"
+        },
+        {
+          "id": "SCM-201-c2",
+          "by": "p-ingrid",
+          "at": "2026-06-23T21:17:46-07:00",
+          "events": [
+            "ev-003501"
+          ],
+          "brief": "Correction: FL-TST-2670: need 6 by 2026-07-09",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 6,
+              "by": "2026-07-09"
+            }
+          },
+          "must_mention": [
+            "FL-TST-2670",
+            "7/9"
+          ],
+          "body": "correction FL-TST-2670 needs to be 7/9"
+        },
+        {
+          "id": "SCM-201-c3",
+          "by": "p-talia",
+          "at": "2026-06-25T17:46:57-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "@arjun any update from the shop on this?"
+        },
+        {
+          "id": "SCM-201-c4",
+          "by": "p-talia",
+          "at": "2026-07-10T17:18:59-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "Still waiting on the vendor, will ping again 🙏"
+        },
+        {
+          "id": "SCM-201-c5",
+          "by": "p-arjun",
+          "at": "2026-07-13T11:34:06-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "did they say what the hold up is"
+        },
+        {
+          "id": "SCM-201-c6",
+          "by": "p-arjun",
+          "at": "2026-07-18T06:15:00-07:00",
+          "events": [
+            "ev-001336"
+          ],
+          "brief": "CMM nest in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-07-16"
+          },
+          "must_mention": [
+            "CMM nest",
+            "7/16"
+          ],
+          "body": "CMM nest in use as of 7/16, thx all"
+        }
+      ]
+    },
+    {
+      "key": "SCM-203",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-06-23T15:10:18-07:00",
+      "due_date": "2026-07-15",
+      "events": [
+        "ev-001378"
+      ],
+      "brief": "Order 8x Ankle drive crank, 3x Foot sole plate, 20x Heel bumper mount, 12x Ankle pivot pin, 2x Ankle pushrod clevis / 1276: need 8 by 2026-07-15 for Prototype fit-up for Leg DVT build: Ankle drive crank",
+      "must_mention": [
+        "1276",
+        "Prototype fit-up for Leg DVT build: Ankle drive crank",
+        "7/15"
+      ],
+      "description_length": "medium",
+      "summary": "Ankle drive crank + misc ankle parts (1276)",
+      "description": "Need 8 of 1276 for Prototype fit-up for Leg DVT build: Ankle drive crank, 7/15. Rest of the list is the sole plate, bumper mounts, pivot pins and pushrod clevises that go with it, quantities on the order.",
+      "comments": [
+        {
+          "id": "SCM-203-c1",
+          "by": "p-priya",
+          "at": "2026-06-24T10:46:29-07:00",
+          "events": [
+            "ev-001381"
+          ],
+          "brief": "crank: need 8 by 2026-07-14 for Prototype fit-up for Leg DVT build: Ankle drive crank",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 8,
+              "by": "2026-07-14"
+            }
+          },
+          "must_mention": [
+            "crank",
+            "Prototype fit-up for Leg DVT build: Ankle drive crank",
+            "7/14"
+          ],
+          "body": "Restating: the crank, need 8 by 7/14 for Prototype fit-up for Leg DVT build: Ankle drive crank."
+        },
+        {
+          "id": "SCM-203-c2",
+          "by": "p-priya",
+          "at": "2026-06-24T22:18:29-07:00",
+          "events": [
+            "ev-003594"
+          ],
+          "brief": "Correction: crank: need 8 by 2026-07-15 for Prototype fit-up for Leg DVT build: Ankle drive crank",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 8,
+              "by": "2026-07-15"
+            }
+          },
+          "must_mention": [
+            "crank",
+            "Prototype fit-up for Leg DVT build: Ankle drive crank",
+            "7/15"
+          ],
+          "body": "Correction: the crank needs to be 7/15, not 7/14, for Prototype fit-up for Leg DVT build: Ankle drive crank."
+        },
+        {
+          "id": "SCM-203-c3",
+          "by": "p-samir",
+          "at": "2026-07-08T17:25:33-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "any word from the vendor? checking in"
+        },
+        {
+          "id": "SCM-203-c4",
+          "by": "p-samir",
+          "at": "2026-07-13T17:53:01-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "vendor says parts are in process, no ship notice yet"
+        },
+        {
+          "id": "SCM-203-c5",
+          "by": "p-samir",
+          "at": "2026-07-16T10:36:49-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "thurs update? did the sole plate and bumper mounts show up with it"
+        },
+        {
+          "id": "SCM-203-c6",
+          "by": "p-samir",
+          "at": "2026-07-20T13:31:58-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "still nothing on tracking, pinging them again"
+        }
+      ]
+    }
+  ]
+}

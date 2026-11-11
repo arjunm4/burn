@@ -1,0 +1,321 @@
+{
+  "job_id": "meeting-mtg-00253",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 67,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00253",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-03-24T08:45:00-07:00",
+    "actual_min": 7,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-andre",
+      "p-lin",
+      "p-jade",
+      "p-luis",
+      "p-destiny"
+    ],
+    "late_joiners": [
+      "p-luis"
+    ]
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-000464",
+      "speaker": "p-dmitri",
+      "at_min": [
+        1,
+        7
+      ],
+      "brief": "FL-HIP-1081: need 7 by 2026-03-31; asks whether expediting is worth it",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-hip-housing",
+        "value": {
+          "qty": 7,
+          "by": "2026-03-31"
+        }
+      },
+      "must_mention": [
+        "FL-HIP-1081",
+        "3/31"
+      ]
+    },
+    {
+      "event": "ev-000536",
+      "speaker": "p-dmitri",
+      "at_min": [
+        1,
+        7
+      ],
+      "brief": "knee spin adapter: need 5 by 2026-03-31",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-spin-knee-adapter",
+        "value": {
+          "qty": 5,
+          "by": "2026-03-31"
+        }
+      },
+      "must_mention": [
+        "knee spin adapter",
+        "3/31"
+      ]
+    },
+    {
+      "event": "ev-000547",
+      "speaker": "p-dmitri",
+      "at_min": [
+        3,
+        7
+      ],
+      "brief": "the bracket: need 12 by 2026-03-30 for the fit check",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-hip-brake-bracket",
+        "value": {
+          "qty": 12,
+          "by": "2026-03-30"
+        }
+      },
+      "must_mention": [
+        "the bracket",
+        "the fit check",
+        "3/30"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 3,
+      "speaker": "p-dmitri",
+      "text": "Okay, short one. Parts first. FL-HIP-1081 we need 7 by 3/31, and I am wondering if expediting it is worth it. Thoughts?"
+    },
+    {
+      "start_s": 24,
+      "speaker": "p-zoe",
+      "text": "depends what the delta is, i havent seen the quote"
+    },
+    {
+      "start_s": 34,
+      "speaker": "p-dmitri",
+      "text": "Fair. Also the knee spin adapter, need 5 by 3/31."
+    },
+    {
+      "start_s": 46,
+      "speaker": "p-andre",
+      "text": "is that for the dyno or for the fixture"
+    },
+    {
+      "start_s": 52,
+      "speaker": "p-dmitri",
+      "text": "Dyno. And the bracket, we need 12 by 3/30 for the fit check."
+    },
+    {
+      "start_s": 66,
+      "speaker": "p-lin",
+      "text": "Which bracket is that, the long one?"
+    },
+    {
+      "start_s": 72,
+      "speaker": "p-dmitri",
+      "text": "The long one. Same as last time."
+    },
+    {
+      "start_s": 84,
+      "speaker": "p-jade",
+      "text": "nothing in receiving this morning for any of those"
+    },
+    {
+      "start_s": 98,
+      "speaker": "p-destiny",
+      "text": "Fit check fixture is clear on my side, I can slot it in 🙏"
+    },
+    {
+      "start_s": 116,
+      "speaker": "p-luis",
+      "text": "sorry im late, whats the thing for the fit check"
+    },
+    {
+      "start_s": 124,
+      "speaker": "p-zoe",
+      "text": "the bracket, we need it by the 30th"
+    },
+    {
+      "start_s": 136,
+      "speaker": "p-luis",
+      "text": "ok got it"
+    },
+    {
+      "start_s": 160,
+      "speaker": "p-dmitri",
+      "text": "Good. That's all. Zoe, send me the quote when you have it."
+    }
+  ],
+  "summary": {
+    "overview": "Short standup, mostly parts. FL-HIP-1081 need 7 by 3/31 with a question on whether to expedite; knee spin adapter need 5 by 3/31; the bracket need 12 by 3/30 for the fit check.",
+    "shorthand_bullet": [
+      "FL-HIP-1081: need 7 by 3/31, expedite?",
+      "knee spin adapter: need 5 by 3/31 (dyno)",
+      "the bracket: need 12 by 3/30 for the fit check",
+      "nothing in receiving",
+      "fit check fixture clear"
+    ],
+    "action_items": [
+      "Zoe send Dmitri the quote",
+      "decide on expedite for FL-HIP-1081"
+    ],
+    "keywords": [
+      "standup",
+      "expedite",
+      "fit check",
+      "parts"
+    ]
+  }
+}

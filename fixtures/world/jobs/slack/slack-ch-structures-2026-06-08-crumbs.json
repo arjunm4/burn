@@ -1,0 +1,193 @@
+{
+  "job_id": "slack-ch-structures-2026-06-08-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 45,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-structures",
+    "name": "structures-battery",
+    "slack_id": "C07FLK0STRC",
+    "purpose": "Torso, pelvis and battery enclosure"
+  },
+  "week": {
+    "start": "2026-06-08",
+    "end": "2026-06-14"
+  },
+  "people": [
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-valeria",
+      "name": "Valeria Ortiz",
+      "display_name": "valeria.o",
+      "slack_id": "U07FLK0VALE",
+      "title": "Electrical Engineer, battery systems",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Torso and pelvis structure.",
+    "Ongoing: Crossed-roller preload drops after thermal cycling; bore tolerance and preload ring design. This week: Wei checks bores on CMM: housing bore 0.012 mm oversize on one unit, out of the H6 band."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1781271480.832075",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-000969"
+      ],
+      "brief": "the yoke in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-06-10"
+      },
+      "must_mention": [
+        "the yoke",
+        "the build",
+        "6/10"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "the yoke in use for the build, back 6/10"
+    },
+    {
+      "ts": "1781279457.768023",
+      "user": "p-ingrid",
+      "thread_ts": "1781271480.832075",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "yep makes sense"
+    },
+    {
+      "ts": "1781282201.527501",
+      "user": "p-valeria",
+      "thread_ts": "1781271480.832075",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ok"
+    },
+    {
+      "ts": "1781313388.715168",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-001137"
+      ],
+      "brief": "the clevis arrived (1)",
+      "claim": {
+        "kind": "stock",
+        "value": 1
+      },
+      "must_mention": [
+        "the clevis",
+        "1"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "the clevis arrived, 1. high pressure so someone grab it"
+    },
+    {
+      "ts": "1781317880.459296",
+      "user": "p-talia",
+      "thread_ts": "1781313388.715168",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "we got a single one of those last time too and had to wait on the rest, hope it is not the same story 😬"
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "job_id": "slack-ch-mech-2026-08-10-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 27,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-mech",
+    "name": "mech",
+    "slack_id": "C07FLK0MECH",
+    "purpose": "Mechanical engineering: design, DFM, vendors, drawings"
+  },
+  "week": {
+    "start": "2026-08-10",
+    "end": "2026-08-16"
+  },
+  "people": [
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Farah wants 3 mm and a mica sheet; Lukas says that costs 18 mm of pack length.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators",
+    "Ongoing: Tendons fray at the proximal pulley after 40k grip cycles",
+    "Ongoing: Type III anodize adds ~0.025 mm per surface and kills the bearing press fit. This week: Arjun okays reaming four parts by hand to keep the build moving; rest reordered.",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Callum proposes routing inboard through the joint axis; Diego says thigh link needs rework.",
+    "Ongoing: Gait controller tuning for the investor demo on the gait gantry. This week: Ankle gains cut 30%; Lin flags the boom clamp slipping on the pelvis adapter.",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Claire: hardware spend 23% over plan for the quarter, expedites a big share.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno. This week: Ingrid says no until DVT; run pinch tests on nights instead.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting. This week: Plates released; static load test planned on the drop gantry with a load yoke."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1786375411.377775",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-003855"
+      ],
+      "brief": "knee dyno plate: still quoting rev C",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev C"
+      },
+      "must_mention": [
+        "knee dyno plate"
+      ],
+      "length": "short",
+      "text": "knee dyno plate still quoting rev C"
+    },
+    {
+      "ts": "1786381762.638535",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-003389"
+      ],
+      "brief": "FL-TST-2442 rev B released: switched to 4140 from 6061 for proof load margin",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-TST-2442"
+      ],
+      "length": "short",
+      "text": "FL-TST-2442 rev B released: switched to 4140 from 6061 for proof load margin"
+    },
+    {
+      "ts": "1786568390.053071",
+      "user": "p-nora",
+      "thread_ts": null,
+      "events": [
+        "ev-003958"
+      ],
+      "brief": "gauge pin: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "gauge pin"
+      ],
+      "length": "medium",
+      "text": "The quote for gauge pin is still showing rev B, so someone should check whether that is what the shop is cutting from."
+    },
+    {
+      "ts": "1786575480.460201",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-003391"
+      ],
+      "brief": "FL-TST-2399 rev B released: locating pins moved after leg rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-TST-2399"
+      ],
+      "length": "medium",
+      "text": "FL-TST-2399 rev B released. locating pins moved after leg rev B"
+    },
+    {
+      "ts": "1786583874.431763",
+      "user": "p-nora",
+      "thread_ts": null,
+      "events": [
+        "ev-003352"
+      ],
+      "brief": "FL-TST-2674 rev C released: shoulder fillet increased to R0.8",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev C"
+      },
+      "must_mention": [
+        "FL-TST-2674"
+      ],
+      "length": "short",
+      "text": "FL-TST-2674 rev C released, shoulder fillet increased to R0.8"
+    },
+    {
+      "ts": "1786659450.388456",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-003761"
+      ],
+      "brief": "knee shaft: need 12 by 2026-09-17 for Tolerance stack check for Actuator DVT gate review: Knee output shaft",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-09-17"
+        }
+      },
+      "must_mention": [
+        "knee shaft",
+        "Tolerance stack check for Actuator DVT gate review: Knee output shaft",
+        "hard stop",
+        "thurs the 17th"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "knee shaft need 12 by thurs the 17th for Tolerance stack check for Actuator DVT gate review: Knee output shaft, with the hard stop feature in"
+    },
+    {
+      "ts": "1786769236.982127",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-004135"
+      ],
+      "brief": "grip fixture base plate: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "grip fixture base plate"
+      ],
+      "length": "short",
+      "text": "grip fixture base plate still quoting rev A"
+    }
+  ]
+}

@@ -19,6 +19,43 @@
   },
   "people": [
     {
+      "id": "p-amara",
+      "name": "Amara Nwosu",
+      "display_name": "amara",
+      "slack_id": "U07FLK0AMAR",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
       "id": "p-callum",
       "name": "Callum Fraser",
       "display_name": "callum",
@@ -38,40 +75,91 @@
       }
     },
     {
-      "id": "p-carlos",
-      "name": "Carlos Mendoza",
-      "display_name": "carlos",
-      "slack_id": "U07FLK0CARL",
-      "title": "Lead Technician",
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
       "style": {
-        "case": "mixed",
+        "case": "proper",
         "punctuation": "full",
-        "typos": "some",
-        "emoji": "some",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
         "length": "terse",
         "hedging": "low",
         "quirks": [
-          "ALL CAPS for part numbers and deadlines",
-          "uses !!"
+          "one-word acks: ok, ty, yep"
         ]
       }
     },
     {
-      "id": "p-talia",
-      "name": "Talia Rosen",
-      "display_name": "talia",
-      "slack_id": "U07FLK0TALI",
-      "title": "Buyer/Planner",
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
       "style": {
         "case": "mixed",
         "punctuation": "light",
         "typos": "rare",
-        "emoji": "lots",
+        "emoji": "rare",
         "length": "medium",
-        "hedging": "low",
+        "hedging": "high",
         "quirks": [
-          "reacts with 🙏 and 😬",
-          "ends messages with an emoji"
+          "\"i think\", \"probably\", \"not 100% sure but\""
         ]
       }
     },
@@ -114,13 +202,36 @@
   ],
   "messages": [
     {
-      "ts": "1788203063.688158",
-      "user": "p-talia",
+      "ts": "1788197947.873355",
+      "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-001597"
+        "ev-001842"
       ],
-      "brief": "1414: need 10 by 2026-09-22 for Build sub-assembly: Finger proximal link",
+      "brief": "1119: need 22 by 2026-09-14",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 22,
+          "by": "2026-09-14"
+        }
+      },
+      "must_mention": [
+        "1119",
+        "9/14"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "1119 need 22 by 9/14"
+    },
+    {
+      "ts": "1788216188.636457",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-001818"
+      ],
+      "brief": "the part: need 10 by 2026-09-22 for Build sub-assembly: Finger proximal link",
       "claim": {
         "kind": "needs",
         "value": {
@@ -129,69 +240,109 @@
         }
       },
       "must_mention": [
-        "1414",
+        "the part",
         "Build sub-assembly: Finger proximal link",
-        "tues the 22nd"
+        "9/22"
       ],
-      "pressure": "elevated",
+      "pressure": "low",
       "length": "short",
-      "text": "1414 needs to land tues the 22nd, Build sub-assembly: Finger proximal link is waiting on it 🙏"
+      "text": "the part, need 10 by 9/22 for Build sub-assembly: Finger proximal link"
     },
     {
-      "ts": "1788223180.248318",
+      "ts": "1788216302.897254",
+      "user": "p-samir",
+      "thread_ts": "1788216188.636457",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "will look at it later"
+    },
+    {
+      "ts": "1788223180.650736",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-001707"
+        "ev-001929"
       ],
-      "brief": "FL-ANK-1291: need 24 by 2026-09-24 for Prototype fit-up for Leg DVT build: Ankle rod-end spacer",
+      "brief": "FL-ANK-1291: need 24 by 2026-09-23 for Prototype fit-up for Leg DVT build: Ankle rod-end spacer",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 24,
-          "by": "2026-09-24"
+          "by": "2026-09-23"
         }
       },
       "must_mention": [
         "FL-ANK-1291",
         "Prototype fit-up for Leg DVT build: Ankle rod-end spacer",
-        "thurs the 24th"
+        "9/23"
       ],
       "pressure": "low",
       "length": "medium",
-      "text": "FL-ANK-1291 thurs the 24th pls, Prototype fit-up for Leg DVT build: Ankle rod-end spacer"
+      "text": "FL-ANK-1291 need 24 by 9/23 for Prototype fit-up for Leg DVT build: Ankle rod-end spacer"
     },
     {
-      "ts": "1788294002.814079",
+      "ts": "1788294002.319749",
       "user": "p-callum",
       "thread_ts": null,
       "events": [
-        "ev-001610"
+        "ev-001829"
       ],
-      "brief": "2556: need 4 by 2026-09-09 for Ankle heel-strike impact test",
+      "brief": "2556: need 4 by 2026-09-11 for Ankle heel-strike impact test",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 4,
-          "by": "2026-09-09"
+          "by": "2026-09-11"
         }
       },
       "must_mention": [
         "2556",
         "Ankle heel-strike impact test",
         "the clevis",
-        "9/9"
+        "fri the 11th"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "2556 for the Ankle heel-strike impact test, the clevis, 9/9"
+      "length": "medium",
+      "text": "2556, need 4 by fri the 11th for Ankle heel-strike impact test, its the clevis. rig is sitting there with nothing to hit 😬"
     },
     {
-      "ts": "1788313960.773359",
+      "ts": "1788298143.730144",
+      "user": "p-andre",
+      "thread_ts": "1788294002.319749",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "is the rig going to hit it harder if the clevis shows up late"
+    },
+    {
+      "ts": "1788301699.608206",
+      "user": "p-jonas",
+      "thread_ts": "1788294002.319749",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "lol"
+    },
+    {
+      "ts": "1788302462.268103",
+      "user": "p-gwen",
+      "thread_ts": "1788294002.319749",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Same one that was on the last order, the vendor already has the drawing."
+    },
+    {
+      "ts": "1788343540.583184",
       "user": "p-zoe",
-      "thread_ts": "1788223180.248318",
+      "thread_ts": "1788223180.650736",
       "events": [
-        "ev-003237"
+        "ev-003628"
       ],
       "brief": "Correction: FL-ANK-1291: need 24 by 2026-09-28 for Prototype fit-up for Leg DVT build: Ankle rod-end spacer",
       "claim": {
@@ -204,56 +355,82 @@
       "must_mention": [
         "FL-ANK-1291",
         "Prototype fit-up for Leg DVT build: Ankle rod-end spacer",
-        "mon the 28th"
+        "9/28"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "sorry FL-ANK-1291 mon the 28th not thurs, Prototype fit-up for Leg DVT build: Ankle rod-end spacer is slipping"
+      "length": "short",
+      "text": "FL-ANK-1291 correction, need 24 by 9/28 for Prototype fit-up for Leg DVT build: Ankle rod-end spacer"
     },
     {
-      "ts": "1788418862.974543",
-      "user": "p-callum",
-      "thread_ts": "1788294002.814079",
+      "ts": "1788369348.483789",
+      "user": "p-andre",
+      "thread_ts": "1788223180.650736",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ok"
+    },
+    {
+      "ts": "1788377184.773666",
+      "user": "p-tomas",
+      "thread_ts": null,
       "events": [
-        "ev-003175"
+        "ev-001826"
       ],
-      "brief": "Correction: 2556: need 4 by 2026-09-11 for Ankle heel-strike impact test",
+      "brief": "Quote Q-2560086-1 for FL-HIP-1064: standard $864.51, 9 BD",
       "claim": {
         "kind": "needs",
         "value": {
-          "qty": 4,
-          "by": "2026-09-11"
+          "qty": 12,
+          "by": "2026-10-23",
+          "quote_id": "Q-2560086-1",
+          "price_usd": 864.51,
+          "lead_days": 9
         }
       },
       "must_mention": [
-        "2556",
-        "Ankle heel-strike impact test",
-        "the clevis",
-        "9/11"
+        "Q-2560086-1",
+        "FL-HIP-1064",
+        "fri the 23rd"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Q-2560086-1 for FL-HIP-1064 is back, need it fri the 23rd"
+    },
+    {
+      "ts": "1788542379.025150",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-001907"
+      ],
+      "brief": "knee motor mount: need 6 by 2026-09-25 for Assemble build unit: Knee motor mount plate",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-09-25"
+        }
+      },
+      "must_mention": [
+        "knee motor mount",
+        "Assemble build unit: Knee motor mount plate",
+        "9/25"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "2556 for Ankle heel-strike impact test the clevis is 9/11 not 9/9"
+      "text": "knee motor mount need 6 by 9/25 for Assemble build unit: Knee motor mount plate"
     },
     {
-      "ts": "1788453332.009511",
-      "user": "p-carlos",
-      "thread_ts": "1788294002.814079",
+      "ts": "1788544946.799266",
+      "user": "p-callum",
+      "thread_ts": "1788542379.025150",
       "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
+      "brief": "reply (jokes) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "I'll check the cage tmrw."
-    },
-    {
-      "ts": "1788453403.144627",
-      "user": "p-callum",
-      "thread_ts": "1788294002.814079",
-      "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "hmm not sure thats the right shelf tbh"
+      "text": "owen submitting requests like its a second job"
     }
   ]
 }

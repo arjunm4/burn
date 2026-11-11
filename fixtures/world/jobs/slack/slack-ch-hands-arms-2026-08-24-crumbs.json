@@ -19,6 +19,25 @@
   },
   "people": [
     {
+      "id": "p-aisha",
+      "name": "Aisha Rahman",
+      "display_name": "aisha",
+      "slack_id": "U07FLK0AISH",
+      "title": "ML Engineer, perception",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
       "id": "p-amara",
       "name": "Amara Nwosu",
       "display_name": "amara",
@@ -56,19 +75,21 @@
       }
     },
     {
-      "id": "p-ingrid",
-      "name": "Ingrid Solberg",
-      "display_name": "ingrid.s",
-      "slack_id": "U07FLK0INGR",
-      "title": "VP Hardware",
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
       "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
         "emoji": "rare",
-        "length": "medium",
+        "length": "terse",
         "hedging": "low",
-        "quirks": []
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
       }
     },
     {
@@ -106,6 +127,25 @@
       }
     },
     {
+      "id": "p-rohan",
+      "name": "Rohan Kapoor",
+      "display_name": "rohan",
+      "slack_id": "U07FLK0ROHA",
+      "title": "Controls Engineer, manipulation",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
       "id": "p-sofia",
       "name": "Sofia Lindqvist",
       "display_name": "sofia.l",
@@ -119,6 +159,25 @@
         "length": "medium",
         "hedging": "low",
         "quirks": []
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
       }
     }
   ],
@@ -140,11 +199,11 @@
   ],
   "messages": [
     {
-      "ts": "1787590892.837100",
+      "ts": "1787590892.794921",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-002854"
+        "ev-003240"
       ],
       "brief": "Hand pinch force and tendon creep waits on Hand grip-cycle fixture",
       "claim": {
@@ -157,14 +216,14 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Hand pinch force and tendon creep is stuck until the Hand grip-cycle fixture is ready"
+      "text": "Hand pinch force and tendon creep still waits on Hand grip-cycle fixture"
     },
     {
-      "ts": "1787595012.359920",
+      "ts": "1787595012.893763",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-002731"
+        "ev-003092"
       ],
       "brief": "Tolerance stack check: Tendon guide bushing waits on Bearing set for hand and wrist (tendon bushing)",
       "claim": {
@@ -176,15 +235,25 @@
         "Tolerance stack check: Tendon guide bushing"
       ],
       "pressure": "low",
-      "length": "short",
+      "length": "medium",
       "text": "Tolerance stack check: Tendon guide bushing is waiting on Bearing set for hand and wrist (tendon bushing), i think"
     },
     {
-      "ts": "1787601747.388389",
+      "ts": "1787600376.372127",
+      "user": "p-aisha",
+      "thread_ts": "1787595012.893763",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "had the same thing w the finger joints, shims fixed it for us"
+    },
+    {
+      "ts": "1787601747.180824",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-002853"
+        "ev-003239"
       ],
       "brief": "Hand pinch force and tendon creep waits on Fingertip tactile PCB, rev 1",
       "claim": {
@@ -193,18 +262,38 @@
       },
       "must_mention": [
         "Fingertip tactile PCB, rev 1",
-        "the creep"
+        "Hand pinch force and tendon creep"
       ],
       "pressure": "low",
-      "length": "short",
-      "text": "the creep is waiting on Fingertip tactile PCB, rev 1, probably a while yet"
+      "length": "medium",
+      "text": "Hand pinch force and tendon creep also waits on Fingertip tactile PCB, rev 1"
     },
     {
-      "ts": "1787605380.503560",
+      "ts": "1787602556.918826",
+      "user": "p-lin",
+      "thread_ts": "1787601747.180824",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Noted."
+    },
+    {
+      "ts": "1787604634.602576",
+      "user": "p-omar",
+      "thread_ts": "1787595012.893763",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Thanks for the update, looks like we are in a holding pattern then."
+    },
+    {
+      "ts": "1787605380.724723",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-003015"
+        "ev-003404"
       ],
       "brief": "FL-HND-1486 rev B released: anodize mask added on bores (build-up was 0.025 mm)",
       "claim": {
@@ -214,53 +303,25 @@
       "must_mention": [
         "FL-HND-1486"
       ],
-      "length": "medium",
-      "text": "FL-HND-1486 rev B is released. Added an anodize mask on the bores so the build-up stops eating the fit, ran about the same as before on the check pieces."
-    },
-    {
-      "ts": "1787605924.721797",
-      "user": "p-lin",
-      "thread_ts": "1787601747.388389",
-      "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
-      "must_mention": [],
       "length": "short",
-      "text": "Thanks for the update."
+      "text": "FL-HND-1486 rev B released: anodize mask added on bores (build-up was 0.025 mm)"
     },
     {
-      "ts": "1787607550.447236",
-      "user": "p-omar",
-      "thread_ts": "1787601747.388389",
+      "ts": "1787607804.497802",
+      "user": "p-talia",
+      "thread_ts": "1787595012.893763",
       "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
+      "brief": "reply (pushes back) in the thread about: the message above",
       "must_mention": [],
       "length": "one_word",
-      "text": "ok"
+      "text": "i would not call it a holding pattern lol 😬"
     },
     {
-      "ts": "1787787358.607996",
-      "user": "p-sofia",
-      "thread_ts": null,
-      "events": [
-        "ev-003418"
-      ],
-      "brief": "palm: still quoting rev A",
-      "claim": {
-        "kind": "substitute",
-        "value": "rev A"
-      },
-      "must_mention": [
-        "palm"
-      ],
-      "length": "short",
-      "text": "The palm is still quoting rev A on my side."
-    },
-    {
-      "ts": "1787855121.048301",
+      "ts": "1787855121.491836",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-002735"
+        "ev-003096"
       ],
       "brief": "Hand pinch force and tendon creep waits on Pinch force anvil",
       "claim": {
@@ -269,18 +330,48 @@
       },
       "must_mention": [
         "Pinch force anvil",
-        "the creep"
+        "Hand pinch force and tendon creep"
       ],
       "pressure": "low",
       "length": "medium",
-      "text": "the creep also needs the Pinch force anvil, not 100% sure where that is right now"
+      "text": "Hand pinch force and tendon creep waits on Pinch force anvil"
     },
     {
-      "ts": "1787941989.456187",
+      "ts": "1787855182.308862",
+      "user": "p-sofia",
+      "thread_ts": "1787855121.491836",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I thought the anvil was already on the shelf?"
+    },
+    {
+      "ts": "1787880256.060176",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [
+        "ev-001667"
+      ],
+      "brief": "fall clevis arrived (1)",
+      "claim": {
+        "kind": "stock",
+        "value": 1
+      },
+      "must_mention": [
+        "fall clevis",
+        "1"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "fall clevis arrived 1"
+    },
+    {
+      "ts": "1787941989.046077",
       "user": "p-carlos",
       "thread_ts": null,
       "events": [
-        "ev-001525"
+        "ev-001734"
       ],
       "brief": "grip base arrived (1)",
       "claim": {
@@ -292,38 +383,18 @@
         "1"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "grip base arrived (1). It's on the bench, DON'T move it!!"
-    },
-    {
-      "ts": "1787963814.221898",
-      "user": "p-lin",
-      "thread_ts": null,
-      "events": [
-        "ev-003850"
-      ],
-      "brief": "Fixture install and shakedown: Grip fixture base plate done",
-      "claim": {
-        "kind": "done",
-        "value": "2026-08-28"
-      },
-      "must_mention": [
-        "Fixture install and shakedown: Grip fixture base plate",
-        "8/28"
-      ],
-      "pressure": "low",
-      "length": "medium",
-      "text": "Fixture install and shakedown: Grip fixture base plate is done, 8/28."
-    },
-    {
-      "ts": "1787965900.003351",
-      "user": "p-ingrid",
-      "thread_ts": "1787963814.221898",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
       "length": "short",
-      "text": "Does that mean the grip fixture can start cycling Monday?"
+      "text": "grip base arrived, 1!!"
+    },
+    {
+      "ts": "1787942833.615451",
+      "user": "p-rohan",
+      "thread_ts": "1787941989.046077",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "it has a small nick on the edge, still usable *i think"
     }
   ]
 }

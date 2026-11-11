@@ -1,0 +1,93 @@
+{
+  "job_id": "slack-ch-hw-purchasing-2026-03-16-background-2026-03-19",
+  "source": "slack",
+  "status": "blank",
+  "priority": 70,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hw-purchasing",
+    "name": "hw-purchasing",
+    "slack_id": "C07FLK0HWPR",
+    "purpose": "Hardware buys: Xometry quotes, McMaster, Digi-Key, lead times"
+  },
+  "week": {
+    "start": "2026-03-16",
+    "end": "2026-03-22"
+  },
+  "people": [
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Building the first three hip and knee actuators. This week: Two hips and two knees built; third hip waits on the stator mount.",
+    "Ongoing: Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT. This week: Ingrid asks for a decision memo; Tomas concedes backdrivability favors cyclo for the hip at 50:1.",
+    "Ongoing: Absolute encoder on the knee output glitches when the motor runs above 8 A. This week: Jonas sees 2-3 count jumps on the knee abs encoder above 8 A phase current.",
+    "Ongoing: Coupling misalignment corrupting efficiency numbers on the dyno. This week: Wei redraws the adapter with reamed dowel holes; alignment jig requested."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1773938575.025386",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about the ongoing coupling misalignment corrupting efficiency numbers on the dyno",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1773942470.155776",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about off-topic: the ergonomics survey",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    }
+  ]
+}

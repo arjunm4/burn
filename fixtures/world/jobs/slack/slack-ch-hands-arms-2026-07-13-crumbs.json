@@ -1,0 +1,203 @@
+{
+  "job_id": "slack-ch-hands-arms-2026-07-13-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 35,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hands-arms",
+    "name": "hands-arms",
+    "slack_id": "C07FLK0HAND",
+    "purpose": "Arms, wrist and hand"
+  },
+  "week": {
+    "start": "2026-07-13",
+    "end": "2026-07-19"
+  },
+  "people": [
+    {
+      "id": "p-amara",
+      "name": "Amara Nwosu",
+      "display_name": "amara",
+      "slack_id": "U07FLK0AMAR",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hand and wrist.",
+    "Ongoing: Tendons fray at the proximal pulley after 40k grip cycles",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting. This week: Nora: casting tooling quote is $38k and 9 weeks; Lukas wants machined plates for DVT."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1783976285.875391",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-003027"
+      ],
+      "brief": "Fixture install and shakedown for Hand pinch force and tendon creep: Grip load cell plate waits on Fingertip tactile PCB, rev 1",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-hand-tactile-pcb"
+      },
+      "must_mention": [
+        "Fingertip tactile PCB, rev 1",
+        "Fixture install and shakedown for Hand pinch force and tendon creep: Grip load cell plate"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Fixture install and shakedown for Hand pinch force and tendon creep: Grip load cell plate is waiting on Fingertip tactile PCB, rev 1 i think"
+    },
+    {
+      "ts": "1784043298.256564",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-001613"
+      ],
+      "brief": "forearm plate: need 5 by 2026-08-05 for Design iteration bench trial: Forearm motor pack plate",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 5,
+          "by": "2026-08-05"
+        }
+      },
+      "must_mention": [
+        "forearm plate",
+        "Design iteration bench trial: Forearm motor pack plate",
+        "fingertip link",
+        "1429",
+        "wrist",
+        "pitch shaft",
+        "8/5"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "forearm plate, need 5 by 8/5 for Design iteration bench trial: Forearm motor pack plate. also chasing the fingertip link and 1429, and the wrist pitch shaft"
+    },
+    {
+      "ts": "1784049763.858656",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-003730"
+      ],
+      "brief": "that order: need 8 by 2026-07-30",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-07-30"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "thurs 7/30"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "that order, need 8 by thurs 7/30"
+    },
+    {
+      "ts": "1784052833.344999",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-001399"
+      ],
+      "brief": "load cell plate arrived (6)",
+      "claim": {
+        "kind": "stock",
+        "value": 6
+      },
+      "must_mention": [
+        "load cell plate",
+        "6"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "load cell plate arrived, 6 of them!!"
+    },
+    {
+      "ts": "1784342998.404492",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-004277"
+      ],
+      "brief": "Fixture install and shakedown for Hand pinch force and tendon creep: Grip load cell plate done by weds",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-07-22"
+      },
+      "must_mention": [
+        "Fixture install and shakedown for Hand pinch force and tendon creep: Grip load cell plate",
+        "wed 7/22"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Fixture install and shakedown for Hand pinch force and tendon creep: Grip load cell plate done by wed 7/22 probably"
+    }
+  ]
+}

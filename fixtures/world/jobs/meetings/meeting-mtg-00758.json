@@ -1,0 +1,274 @@
+{
+  "job_id": "meeting-mtg-00758",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 43,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00758",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-06-18T08:45:00-07:00",
+    "actual_min": 17,
+    "present": [
+      "p-dmitri",
+      "p-andre",
+      "p-lin",
+      "p-carlos",
+      "p-jade",
+      "p-destiny"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-003783",
+      "speaker": "p-dmitri",
+      "at_min": [
+        10,
+        16
+      ],
+      "brief": "Dmitri says: We need FL-TST-2160 by 7/7.",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-dyno-absorber-adapter",
+        "value": {
+          "qty": 12,
+          "by": "2026-07-07"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2160",
+        "7/7"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-dmitri",
+      "text": "Morning all. Lin, life test?"
+    },
+    {
+      "start_s": 62,
+      "speaker": "p-lin",
+      "text": "Good morning. Rig two is about halfway. No faults. We'll swap the coupling on rig one this afternoon."
+    },
+    {
+      "start_s": 125,
+      "speaker": "p-carlos",
+      "text": "I can help with that after lunch."
+    },
+    {
+      "start_s": 187,
+      "speaker": "p-dmitri",
+      "text": "Andre, dyno?"
+    },
+    {
+      "start_s": 250,
+      "speaker": "p-andre",
+      "text": "dyno ran fine, finished the thermal soak. one thing the data logger dropped a few samples around the end, need to check the buffer *size"
+    },
+    {
+      "start_s": 312,
+      "speaker": "p-dmitri",
+      "text": "Uh, did it lose the whole file or just samples?"
+    },
+    {
+      "start_s": 375,
+      "speaker": "p-andre",
+      "text": "just samples at the end, i think"
+    },
+    {
+      "start_s": 437,
+      "speaker": "p-destiny",
+      "text": "Pack assembly update, two modules done and the third is waiting on cell tabs 🙏 should be fine by tomorrow"
+    },
+    {
+      "start_s": 500,
+      "speaker": "p-dmitri",
+      "text": "Good. Carlos, anything on the floor?"
+    },
+    {
+      "start_s": 562,
+      "speaker": "p-carlos",
+      "text": "Gantry is booked tomorrow, someone from structures needs it."
+    },
+    {
+      "start_s": 625,
+      "speaker": "p-jade",
+      "text": "nothing came in yesterday for this team, one box sat on the dock"
+    },
+    {
+      "start_s": 687,
+      "speaker": "p-dmitri",
+      "text": "We need FL-TST-2160 by 7/7. I want to be sure that's ordered."
+    },
+    {
+      "start_s": 750,
+      "speaker": "p-andre",
+      "text": "i'll check"
+    },
+    {
+      "start_s": 812,
+      "speaker": "p-dmitri",
+      "text": "Please, it's for the life test fixtures, we have no spare!!"
+    },
+    {
+      "start_s": 875,
+      "speaker": "p-lin",
+      "text": "Understood, I'll note it in the rig plan."
+    },
+    {
+      "start_s": 937,
+      "speaker": "p-dmitri",
+      "text": "Okay, thanks everyone."
+    }
+  ],
+  "summary": {
+    "overview": "Standup. Life test rig two halfway, rig one coupling swap this afternoon. Dyno thermal soak done but logger dropped samples at the end. FL-TST-2160 needs confirming as ordered.",
+    "shorthand_bullet": [
+      "rig 2 ~50%, no faults",
+      "rig 1 coupling swap pm",
+      "dyno thermal soak done, logger dropped samples, check buffer",
+      "pack assembly: 2 modules done, third waiting on cell tabs",
+      "gantry booked tomorrow for structures",
+      "FL-TST-2160 needed by 7/7, no spare"
+    ],
+    "action_items": [
+      "Andre check FL-TST-2160 is ordered",
+      "Andre check logger buffer",
+      "Carlos help with rig 1 coupling"
+    ],
+    "keywords": [
+      "life test",
+      "dyno",
+      "logger",
+      "gantry",
+      "FL-TST-2160"
+    ]
+  }
+}

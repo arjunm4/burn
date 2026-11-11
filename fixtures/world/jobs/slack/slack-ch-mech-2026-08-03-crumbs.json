@@ -1,0 +1,225 @@
+{
+  "job_id": "slack-ch-mech-2026-08-03-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 29,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-mech",
+    "name": "mech",
+    "slack_id": "C07FLK0MECH",
+    "purpose": "Mechanical engineering: design, DFM, vendors, drawings"
+  },
+  "week": {
+    "start": "2026-08-03",
+    "end": "2026-08-09"
+  },
+  "people": [
+    {
+      "id": "p-amara",
+      "name": "Amara Nwosu",
+      "display_name": "amara",
+      "slack_id": "U07FLK0AMAR",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators. This week: Jonas starts FOC v2: 20 kHz current loop, thermal model from Nadia.",
+    "Ongoing: Tendons fray at the proximal pulley after 40k grip cycles. This week: Pulley groove re-cut with R0.3 edge and Delrin bushing; test restarted.",
+    "Ongoing: Type III anodize adds ~0.025 mm per surface and kills the bearing press fit. This week: Drawing note added: mask bearing bores, anodize after machining; reorder of the batch debated.",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Farah: bend radius at the knee is 8 mm, cable rated for 7.5x OD dynamic, we are at 3x.",
+    "Ongoing: Gait controller tuning for the investor demo on the gait gantry. This week: Ten consecutive steps at 0.3 m/s; ankle oscillates at heel strike.",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver",
+    "Ongoing: Too many life tests for one grip fixture and one dyno. This week: Dmitri proposes a second grip fixture, ~$4k in machined parts.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1785860448.107521",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-003998"
+      ],
+      "brief": "camera arm: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "camera arm"
+      ],
+      "length": "short",
+      "text": "camera arm still on quote for rev A, i think"
+    },
+    {
+      "ts": "1785865514.437605",
+      "user": "p-samir",
+      "thread_ts": "1785860448.107521",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "i dont think thats right, i saw the new one go out"
+    },
+    {
+      "ts": "1785867029.113876",
+      "user": "p-sofia",
+      "thread_ts": null,
+      "events": [
+        "ev-003406"
+      ],
+      "brief": "FL-HND-1487 rev B released: moved M3 holes 1.5 mm to clear harness",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-HND-1487"
+      ],
+      "length": "short",
+      "text": "FL-HND-1487 rev B is released, moved M3 holes 1.5 mm to clear the harness"
+    },
+    {
+      "ts": "1785872585.197917",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-003390"
+      ],
+      "brief": "FL-TST-2480 rev B released: added relief for connector backshell",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-TST-2480"
+      ],
+      "length": "short",
+      "text": "FL-TST-2480 rev B released. added relief for the connector backshell"
+    },
+    {
+      "ts": "1785946121.399277",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-003843"
+      ],
+      "brief": "gantry adapter: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "gantry adapter"
+      ],
+      "length": "short",
+      "text": "gantry adapter still quoting rev A"
+    },
+    {
+      "ts": "1785949922.789983",
+      "user": "p-talia",
+      "thread_ts": "1785946121.399277",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "classic 😬"
+    }
+  ]
+}

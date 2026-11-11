@@ -70,6 +70,25 @@
           "ends messages with an emoji"
         ]
       }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
     }
   ],
   "context": [
@@ -87,11 +106,11 @@
   ],
   "messages": [
     {
-      "ts": "1788892373.489662",
+      "ts": "1788892373.711705",
       "user": "p-kenji",
       "thread_ts": null,
       "events": [
-        "ev-001787"
+        "ev-002014"
       ],
       "brief": "FL-HND-1487: need 24 by 2026-09-28 for Kit and assemble: Tactile board bracket",
       "claim": {
@@ -104,18 +123,18 @@
       "must_mention": [
         "FL-HND-1487",
         "Kit and assemble: Tactile board bracket",
-        "9/28"
+        "mon the 28th"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "FL-HND-1487 need 24 for Kit and assemble: Tactile board bracket, due 9/28, kinda tight"
+      "length": "short",
+      "text": "FL-HND-1487 x24 for Kit and assemble: Tactile board bracket, need mon the 28th"
     },
     {
-      "ts": "1788903790.220653",
+      "ts": "1788903790.774668",
       "user": "p-sofia",
       "thread_ts": null,
       "events": [
-        "ev-003014"
+        "ev-003403"
       ],
       "brief": "FL-HND-1440 rev C released: material change",
       "claim": {
@@ -125,40 +144,57 @@
       "must_mention": [
         "FL-HND-1440"
       ],
-      "length": "medium",
-      "text": "FL-HND-1440 rev C is released. material changed so check your stack before you quote anything off the old print."
+      "length": "short",
+      "text": "FL-HND-1440 rev C released, material change. pull the new print"
     },
     {
-      "ts": "1789062255.027022",
+      "ts": "1788908520.463562",
+      "user": "p-talia",
+      "thread_ts": "1788903790.774668",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ack 🙏"
+    },
+    {
+      "ts": "1788913488.899013",
+      "user": "p-kenji",
+      "thread_ts": "1788903790.774668",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "@sofia.l ask amara"
+    },
+    {
+      "ts": "1789025940.002981",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-001668"
+      ],
+      "brief": "fall clevis in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-09-08"
+      },
+      "must_mention": [
+        "fall clevis",
+        "tues the 8th"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "fall clevis is in use, done tues the 8th so its free now"
+    },
+    {
+      "ts": "1789062255.963256",
       "user": "p-kenji",
       "thread_ts": null,
       "events": [
-        "ev-001788"
+        "ev-002015"
       ],
-      "brief": "FL-HND-1487: need 24 by 2026-10-01",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 24,
-          "by": "2026-10-01"
-        }
-      },
-      "must_mention": [
-        "FL-HND-1487",
-        "10/1"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "FL-HND-1487 need 24 by 10/1"
-    },
-    {
-      "ts": "1789069575.703617",
-      "user": "p-kenji",
-      "thread_ts": "1789062255.027022",
-      "events": [
-        "ev-003212"
-      ],
-      "brief": "Correction: FL-HND-1487: need 24 by 2026-09-28",
+      "brief": "FL-HND-1487: need 24 by 2026-09-28",
       "claim": {
         "kind": "needs",
         "value": {
@@ -171,68 +207,17 @@
         "9/28"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "correction FL-HND-1487 need 24 by 9/28"
-    },
-    {
-      "ts": "1789070051.868179",
-      "user": "p-sofia",
-      "thread_ts": null,
-      "events": [
-        "ev-003620"
-      ],
-      "brief": "motor pack plate: still quoting rev B",
-      "claim": {
-        "kind": "substitute",
-        "value": "rev B"
-      },
-      "must_mention": [
-        "motor pack plate"
-      ],
       "length": "medium",
-      "text": "Heads up, the motor pack plate is still being quoted at rev B. Can someone ping them?"
+      "text": "FL-HND-1487 x24 still need by 9/28"
     },
     {
-      "ts": "1789075014.343814",
-      "user": "p-talia",
-      "thread_ts": "1789070051.868179",
-      "events": [],
-      "brief": "reply (tags someone else) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "on it, @kenji.m can you resend the rev C print to the vendor? 🙏"
-    },
-    {
-      "ts": "1789141044.881269",
+      "ts": "1789141044.067545",
       "user": "p-kenji",
       "thread_ts": null,
       "events": [
-        "ev-001790"
+        "ev-002017"
       ],
-      "brief": "the bracket: need 24 by 2026-09-25",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 24,
-          "by": "2026-09-25"
-        }
-      },
-      "must_mention": [
-        "the bracket",
-        "9/25"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "the bracket need 24 by 9/25"
-    },
-    {
-      "ts": "1789143444.941350",
-      "user": "p-kenji",
-      "thread_ts": "1789141044.881269",
-      "events": [
-        "ev-003205"
-      ],
-      "brief": "Correction: the bracket: need 24 by 2026-09-28",
+      "brief": "the bracket: need 24 by 2026-09-28",
       "claim": {
         "kind": "needs",
         "value": {
@@ -242,18 +227,18 @@
       },
       "must_mention": [
         "the bracket",
-        "mon the 28th"
+        "9/28"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "the bracket is mon the 28th not the 25th, my bad"
+      "length": "medium",
+      "text": "the bracket x24, need it 9/28"
     },
     {
-      "ts": "1789291440.746661",
+      "ts": "1789291440.472758",
       "user": "p-kenji",
       "thread_ts": null,
       "events": [
-        "ev-001526"
+        "ev-001735"
       ],
       "brief": "grip base in use",
       "claim": {
@@ -263,11 +248,11 @@
       "must_mention": [
         "grip base",
         "the build",
-        "fri 9/11"
+        "9/11"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "grip base in use for the build, was done fri 9/11"
+      "text": "grip base in use for the build, done 9/11"
     }
   ]
 }

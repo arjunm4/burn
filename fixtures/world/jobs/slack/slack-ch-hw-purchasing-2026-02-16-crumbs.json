@@ -1,0 +1,139 @@
+{
+  "job_id": "slack-ch-hw-purchasing-2026-02-16-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 77,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hw-purchasing",
+    "name": "hw-purchasing",
+    "slack_id": "C07FLK0HWPR",
+    "purpose": "Hardware buys: Xometry quotes, McMaster, Digi-Key, lead times"
+  },
+  "week": {
+    "start": "2026-02-16",
+    "end": "2026-02-22"
+  },
+  "people": [
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT. This week: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1771351137.699365",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-000123"
+      ],
+      "brief": "FL-KNE-1124: need 12 by 2026-03-10",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-03-10"
+        }
+      },
+      "must_mention": [
+        "FL-KNE-1124",
+        "tues the 10th"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "FL-KNE-1124: need 12 by tues the 10th i think"
+    },
+    {
+      "ts": "1771394457.864148",
+      "user": "p-tomas",
+      "thread_ts": "1771351137.699365",
+      "events": [
+        "ev-003577"
+      ],
+      "brief": "Correction: FL-KNE-1124: need 12 by 2026-03-05",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-03-05"
+        }
+      },
+      "must_mention": [
+        "FL-KNE-1124",
+        "thurs the 5th"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Correction: FL-KNE-1124: need 12 by thurs the 5th, sorry"
+    },
+    {
+      "ts": "1771548957.090463",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-000182"
+      ],
+      "brief": "FL-HIP-1021: need 2 by 2026-03-12 for Instrumentation fit-up for Hip actuator EVT dyno torque-speed map: Hip to pelvis interface plate",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-03-12"
+        }
+      },
+      "must_mention": [
+        "FL-HIP-1021",
+        "Instrumentation fit-up for Hip actuator EVT dyno torque-speed map: Hip to pelvis interface plate",
+        "thurs the 12th"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "FL-HIP-1021 need 2 by thurs the 12th for Instrumentation fit-up for Hip actuator EVT dyno torque-speed map: Hip to pelvis interface plate"
+    }
+  ]
+}

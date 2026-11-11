@@ -1,0 +1,654 @@
+{
+  "job_id": "slack-ch-actuators-2026-06-29-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 39,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-actuators",
+    "name": "actuators",
+    "slack_id": "C07FLK0ACTU",
+    "purpose": "Hip and knee actuators"
+  },
+  "week": {
+    "start": "2026-06-29",
+    "end": "2026-07-05"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hip actuator.",
+    "Ongoing: Capacitive tactile array crosstalk and flex cable routing through the finger",
+    "Ongoing: Crossed-roller preload drops after thermal cycling; bore tolerance and preload ring design",
+    "Ongoing: What to show investors when no full humanoid exists"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1782756589.878715",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-004233"
+      ],
+      "brief": "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno mounting plate, hip actuator done by tues",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-06-30"
+      },
+      "must_mention": [
+        "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno mounting plate, hip actuator",
+        "tues 6/30"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno mounting plate, hip actuator done by tues 6/30"
+    },
+    {
+      "ts": "1782761691.916708",
+      "user": "p-tomas",
+      "thread_ts": "1782756589.878715",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "i think the last time the plate needed re-drilling for the load cell, probably worth checking first"
+    },
+    {
+      "ts": "1782765904.081336",
+      "user": "p-jonas",
+      "thread_ts": "1782756589.878715",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "load cell holes were already redone"
+    },
+    {
+      "ts": "1782778613.626128",
+      "user": "p-wei",
+      "thread_ts": null,
+      "events": [
+        "ev-001493"
+      ],
+      "brief": "FL-HIP-1021: need 1 by 2026-07-29 for Fit check for Actuator DVT build: Hip to pelvis interface plate",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-07-29"
+        }
+      },
+      "must_mention": [
+        "FL-HIP-1021",
+        "Fit check for Actuator DVT build: Hip to pelvis interface plate",
+        "7/29"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-HIP-1021 need 1 for Fit check for Actuator DVT build: Hip to pelvis interface plate by 7/29"
+    },
+    {
+      "ts": "1782778865.397311",
+      "user": "p-beth",
+      "thread_ts": "1782778613.626128",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "one plate, bold of you to ask for just one"
+    },
+    {
+      "ts": "1782783727.084481",
+      "user": "p-carlos",
+      "thread_ts": "1782778613.626128",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Got it, will flag it to the shop."
+    },
+    {
+      "ts": "1782784798.650394",
+      "user": "p-samir",
+      "thread_ts": "1782778613.626128",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "ok"
+    },
+    {
+      "ts": "1782791100.841714",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-001230"
+      ],
+      "brief": "1122 in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-06-29"
+      },
+      "must_mention": [
+        "1122",
+        "the build",
+        "6/29"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "1122 in use for the build, 6/29, so dont reuse the fixture for the dyno stuff until it comes back"
+    },
+    {
+      "ts": "1782840113.017862",
+      "user": "p-andre",
+      "thread_ts": "1782791100.841714",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "i will check the fixture log later today and tell you if its free"
+    },
+    {
+      "ts": "1782841561.092048",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-004238"
+      ],
+      "brief": "Test stand rework for Hip actuator dyno efficiency sweep: Hip encoder read-head bracket done by tues",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-07-07"
+      },
+      "must_mention": [
+        "Test stand rework for Hip actuator dyno efficiency sweep: Hip encoder read-head bracket",
+        "7/7"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Test stand rework for Hip actuator dyno efficiency sweep: Hip encoder read-head bracket done by tues 7/7"
+    },
+    {
+      "ts": "1782844927.057876",
+      "user": "p-owen",
+      "thread_ts": "1782791100.841714",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "fixture in use, so thats why the dyno was quiet"
+    },
+    {
+      "ts": "1782860756.283650",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-003020"
+      ],
+      "brief": "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno absorber motor adapter waits on Driver PCBA respin for knee actuator (absorber adapter)",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-gen-0058"
+      },
+      "must_mention": [
+        "Driver PCBA respin for knee actuator (absorber adapter)",
+        "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno absorber motor adapter"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno absorber motor adapter waits on Driver PCBA respin for knee actuator (absorber adapter)"
+    },
+    {
+      "ts": "1782861295.762004",
+      "user": "p-andre",
+      "thread_ts": "1782860756.283650",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "is the respin the one with the new gate driver"
+    },
+    {
+      "ts": "1782862272.243254",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-004248"
+      ],
+      "brief": "Tolerance stack check for Actuator DVT build: Hip actuator end cover done",
+      "claim": {
+        "kind": "done",
+        "value": "2026-06-30"
+      },
+      "must_mention": [
+        "Tolerance stack check for Actuator DVT build: Hip actuator end cover",
+        "6/30"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Tolerance stack check for Actuator DVT build: Hip actuator end cover done 6/30"
+    },
+    {
+      "ts": "1782867669.835670",
+      "user": "p-ingrid",
+      "thread_ts": "1782862272.243254",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "did the stack come out inside the budget or are we still over"
+    },
+    {
+      "ts": "1782868815.208310",
+      "user": "p-tomas",
+      "thread_ts": "1782862272.243254",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "not sure its done done, i saw a note about re-measuring the pilot"
+    },
+    {
+      "ts": "1782872420.510619",
+      "user": "p-beth",
+      "thread_ts": "1782862272.243254",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "I'll check the stack numbers with Arjun and post them in the thread once I've seen the CMM report."
+    },
+    {
+      "ts": "1782931185.988857",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-001421"
+      ],
+      "brief": "FL-TST-2159: need 12 by 2026-07-27 for the build",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-07-27"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2159",
+        "the build",
+        "7/27"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2159 need 12 for the build by 7/27!!"
+    },
+    {
+      "ts": "1782945989.562183",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-003011"
+      ],
+      "brief": "Prototype fit-up for Actuator DVT build: Hip cable exit clamp waits on Wire harness for hip actuator (hip cable clamp)",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-gen-0055"
+      },
+      "must_mention": [
+        "Wire harness for hip actuator (hip cable clamp)",
+        "Prototype fit-up for Actuator DVT build: Hip cable exit clamp"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Prototype fit-up for Actuator DVT build: Hip cable exit clamp waits on Wire harness for hip actuator (hip cable clamp)"
+    },
+    {
+      "ts": "1782991665.724718",
+      "user": "p-carlos",
+      "thread_ts": "1782931185.988857",
+      "events": [
+        "ev-003600"
+      ],
+      "brief": "Correction: FL-TST-2159: need 12 by 2026-07-24 for the build",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-07-24"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2159",
+        "the build",
+        "7/24"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2159 correction, need 12 for the build by 7/24 not the 27th!!"
+    },
+    {
+      "ts": "1783009459.918285",
+      "user": "p-beth",
+      "thread_ts": "1782931185.988857",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Thanks Carlos, I've updated the tracker with the earlier date."
+    },
+    {
+      "ts": "1783018545.790274",
+      "user": "p-wei",
+      "thread_ts": null,
+      "events": [
+        "ev-001408"
+      ],
+      "brief": "hip dyno plate: need 7 by 2026-07-20 for Test stand rework for Hip actuator dyno efficiency sweep: Dyno mounting plate, hip actuator",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 7,
+          "by": "2026-07-20"
+        }
+      },
+      "must_mention": [
+        "hip dyno plate",
+        "Test stand rework for Hip actuator dyno efficiency sweep: Dyno mounting plate, hip actuator",
+        "7/20"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "hip dyno plate, need 7 for Test stand rework for Hip actuator dyno efficiency sweep: Dyno mounting plate, hip actuator by 7/20"
+    },
+    {
+      "ts": "1783028916.564091",
+      "user": "p-wei",
+      "thread_ts": null,
+      "events": [
+        "ev-001410"
+      ],
+      "brief": "that order: need 7 by 2026-07-20 for the build",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 7,
+          "by": "2026-07-20"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "the build",
+        "7/20"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "that order, 7 needed for the build by 7/20"
+    },
+    {
+      "ts": "1783032542.724534",
+      "user": "p-wei",
+      "thread_ts": null,
+      "events": [
+        "ev-001412"
+      ],
+      "brief": "FL-TST-2138: need 7 by 2026-07-20",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 7,
+          "by": "2026-07-20"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2138",
+        "mon the 20th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2138 need 7 by mon the 20th"
+    }
+  ]
+}

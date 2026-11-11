@@ -1,0 +1,633 @@
+{
+  "job_id": "slack-ch-electrical-2026-07-06-background-2026-07-06",
+  "source": "slack",
+  "status": "blank",
+  "priority": 38,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-electrical",
+    "name": "electrical",
+    "slack_id": "C07FLK0ELEC",
+    "purpose": "Electrical and firmware: boards, harnesses, bring-up"
+  },
+  "week": {
+    "start": "2026-07-06",
+    "end": "2026-07-12"
+  },
+  "people": [
+    {
+      "id": "p-anika",
+      "name": "Anika Joshi",
+      "display_name": "anika",
+      "slack_id": "U07FLK0ANIK",
+      "title": "Firmware Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-bao",
+      "name": "Bao Nguyen",
+      "display_name": "bao.n",
+      "slack_id": "U07FLK0BAO0",
+      "title": "Electrical Engineer, motor drives",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-kwame",
+      "name": "Kwame Asante",
+      "display_name": "kwame",
+      "slack_id": "U07FLK0KWAM",
+      "title": "Senior Electrical Engineer, power",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-marcus",
+      "name": "Marcus Adeyemi",
+      "display_name": "marcus",
+      "slack_id": "U07FLK0MARC",
+      "title": "CTO",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-mateo",
+      "name": "Mateo Silva",
+      "display_name": "mateo",
+      "slack_id": "U07FLK0MATE",
+      "title": "Embedded Software Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-valeria",
+      "name": "Valeria Ortiz",
+      "display_name": "valeria.o",
+      "slack_id": "U07FLK0VALE",
+      "title": "Electrical Engineer, battery systems",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Capacitive tactile array crosstalk and flex cable routing through the finger. This week: Rev 2 ordered from the fab; tactile bracket moved 1 mm for the new connector.",
+    "Ongoing: Crossed-roller preload drops after thermal cycling; bore tolerance and preload ring design. This week: Rev B bracket and housing released with the new bearing; preload holds after 20 cycles.",
+    "Ongoing: What to show investors when no full humanoid exists. This week: Ingrid warns the leg drop campaign slipped; demo date is hard.",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver. This week: Bao sees 30 V overshoot on the phase node at 48 V bus; MOSFETs rated 80 V."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1783355937.899240",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about this: First tactile boards arrive; 3 of 16 taxels read saturated.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783358514.442432",
+      "user": "p-kwame",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to this: Farah: ground pour missing under the electrode layer, crosstalk from the flex.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1783359023.885488",
+      "user": "p-valeria",
+      "thread_ts": "1783358514.442432",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Farah: ground pour missing under the electrode layer, crosstalk from the flex.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783360127.937442",
+      "user": "p-valeria",
+      "thread_ts": "1783355937.899240",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: First tactile boards arrive; 3 of 16 taxels read saturated.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783360858.252436",
+      "user": "p-bao",
+      "thread_ts": "1783355937.899240",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: First tactile boards arrive; 3 of 16 taxels read saturated.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1783360894.243661",
+      "user": "p-jonas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Rev B bracket and housing released with the new bearing; preload holds after 20 cycles.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783361382.196156",
+      "user": "p-kwame",
+      "thread_ts": "1783360894.243661",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Rev B bracket and housing released with the new bearing; preload holds after 20 cycles.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1783362010.617629",
+      "user": "p-bao",
+      "thread_ts": "1783358514.442432",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Farah: ground pour missing under the electrode layer, crosstalk from the flex.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1783364771.452330",
+      "user": "p-jonas",
+      "thread_ts": "1783358514.442432",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Farah: ground pour missing under the electrode layer, crosstalk from the flex.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1783365075.889243",
+      "user": "p-marcus",
+      "thread_ts": "1783360894.243661",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Rev B bracket and housing released with the new bearing; preload holds after 20 cycles.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1783366739.861914",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783368022.117914",
+      "user": "p-arjun",
+      "thread_ts": "1783360894.243661",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Rev B bracket and housing released with the new bearing; preload holds after 20 cycles.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783368140.737458",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: Spacer stack chosen; bore tolerance tightened on the housing drawing to +0.008/-0.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1783369993.214874",
+      "user": "p-jonas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Debate: thread-locked preload nut vs a ground spacer stack; Owen favors spacer, no torque sensitivity.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1783370423.662259",
+      "user": "p-farah",
+      "thread_ts": "1783366739.861914",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783370689.542434",
+      "user": "p-valeria",
+      "thread_ts": "1783366739.861914",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1783375864.883709",
+      "user": "p-arjun",
+      "thread_ts": "1783366739.861914",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1783376310.614638",
+      "user": "p-arjun",
+      "thread_ts": "1783366739.861914",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783377501.178412",
+      "user": "p-ingrid",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about this: Rev 2 ordered from the fab; tactile bracket moved 1 mm for the new connector.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1783379501.116366",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [
+        "ev-004514"
+      ],
+      "brief": "background: Rev 2 ordered from the fab; tactile bracket moved 1 mm for the new connector.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1783380232.298173",
+      "user": "p-marcus",
+      "thread_ts": "1783366739.861914",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1783381604.738011",
+      "user": "p-kwame",
+      "thread_ts": "1783366739.861914",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783381671.211749",
+      "user": "p-arjun",
+      "thread_ts": "1783377501.178412",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Rev 2 ordered from the fab; tactile bracket moved 1 mm for the new connector.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1783382926.028481",
+      "user": "p-talia",
+      "thread_ts": "1783377501.178412",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Rev 2 ordered from the fab; tactile bracket moved 1 mm for the new connector.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783384407.920948",
+      "user": "p-kwame",
+      "thread_ts": "1783366739.861914",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1783387854.280977",
+      "user": "p-mateo",
+      "thread_ts": "1783366739.861914",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1783388126.992898",
+      "user": "p-farah",
+      "thread_ts": "1783377501.178412",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Rev 2 ordered from the fab; tactile bracket moved 1 mm for the new connector.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1783389261.110797",
+      "user": "p-talia",
+      "thread_ts": "1783377501.178412",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Rev 2 ordered from the fab; tactile bracket moved 1 mm for the new connector.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1783390203.951655",
+      "user": "p-ingrid",
+      "thread_ts": "1783366739.861914",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783393061.230073",
+      "user": "p-idris",
+      "thread_ts": "1783366739.861914",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1783437670.719612",
+      "user": "p-arjun",
+      "thread_ts": "1783366739.861914",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783438731.846836",
+      "user": "p-mateo",
+      "thread_ts": "1783366739.861914",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783439716.121894",
+      "user": "p-jonas",
+      "thread_ts": "1783366739.861914",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1783441023.231781",
+      "user": "p-jonas",
+      "thread_ts": "1783366739.861914",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783446292.325800",
+      "user": "p-anika",
+      "thread_ts": "1783366739.861914",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1783450433.657428",
+      "user": "p-marcus",
+      "thread_ts": "1783366739.861914",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783453095.184791",
+      "user": "p-idris",
+      "thread_ts": "1783366739.861914",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783457067.242545",
+      "user": "p-ingrid",
+      "thread_ts": "1783366739.861914",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

@@ -1,0 +1,999 @@
+{
+  "job_id": "slack-ch-mech-2026-08-03-background-2026-08-07",
+  "source": "slack",
+  "status": "blank",
+  "priority": 30,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-mech",
+    "name": "mech",
+    "slack_id": "C07FLK0MECH",
+    "purpose": "Mechanical engineering: design, DFM, vendors, drawings"
+  },
+  "week": {
+    "start": "2026-08-03",
+    "end": "2026-08-09"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators. This week: Jonas starts FOC v2: 20 kHz current loop, thermal model from Nadia.",
+    "Ongoing: Tendons fray at the proximal pulley after 40k grip cycles. This week: Pulley groove re-cut with R0.3 edge and Delrin bushing; test restarted.",
+    "Ongoing: Type III anodize adds ~0.025 mm per surface and kills the bearing press fit. This week: Drawing note added: mask bearing bores, anodize after machining; reorder of the batch debated.",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Farah: bend radius at the knee is 8 mm, cable rated for 7.5x OD dynamic, we are at 3x.",
+    "Ongoing: Gait controller tuning for the investor demo on the gait gantry. This week: Ten consecutive steps at 0.3 m/s; ankle oscillates at heel strike.",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver",
+    "Ongoing: Too many life tests for one grip fixture and one dyno. This week: Dmitri proposes a second grip fixture, ~$4k in machined parts.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1786117276.533039",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about off-topic: noise from the shop next door",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786117600.865326",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on this: Current sense offset drifts with board temp; Jonas compensates in firmware for now.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786117636.843033",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with measurement of the ankle adapter",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786117797.338791",
+      "user": "p-idris",
+      "thread_ts": "1786117600.865326",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Current sense offset drifts with board temp; Jonas compensates in firmware for now.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786118628.291517",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on cleanup of the heel mount",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786119899.463416",
+      "user": "p-ingrid",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about cad change to the spine fitting",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786120001.400163",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with cad change to the rear cover",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786120009.383151",
+      "user": "p-omar",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on setup for the IMU mount",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786122767.312831",
+      "user": "p-wei",
+      "thread_ts": "1786117600.865326",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Current sense offset drifts with board temp; Jonas compensates in firmware for now.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786122773.475266",
+      "user": "p-ingrid",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about bench notes on the disc spacer",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786125235.307983",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about bench notes on the palm",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786125546.906996",
+      "user": "p-gwen",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to cleanup of the knee shaft",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786125627.779408",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about assembly of the spine clamp",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786126484.091951",
+      "user": "p-andre",
+      "thread_ts": "1786117600.865326",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Current sense offset drifts with board temp; Jonas compensates in firmware for now.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786126667.304510",
+      "user": "p-gwen",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about off-topic: fantasy football",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786127477.654519",
+      "user": "p-omar",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on tolerance question on the cell spacer",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786127707.945855",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about cleanup of the spool",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786128494.949659",
+      "user": "p-luis",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with cad change to the latch block",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786128676.797064",
+      "user": "p-arjun",
+      "thread_ts": "1786117600.865326",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Current sense offset drifts with board temp; Jonas compensates in firmware for now.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786128702.205830",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on tolerance question on the cell spacer",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786129792.709246",
+      "user": "p-lukas",
+      "thread_ts": "1786127477.654519",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: tolerance question on the cell spacer",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786130863.488192",
+      "user": "p-talia",
+      "thread_ts": "1786127477.654519",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: tolerance question on the cell spacer",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786130876.246123",
+      "user": "p-dmitri",
+      "thread_ts": "1786117600.865326",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Current sense offset drifts with board temp; Jonas compensates in firmware for now.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786132309.005581",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786132767.394758",
+      "user": "p-jade",
+      "thread_ts": "1786128702.205830",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: tolerance question on the cell spacer",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786134447.916824",
+      "user": "p-gwen",
+      "thread_ts": "1786127477.654519",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: tolerance question on the cell spacer",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786136249.555994",
+      "user": "p-samir",
+      "thread_ts": "1786117600.865326",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Current sense offset drifts with board temp; Jonas compensates in firmware for now.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786137173.342504",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on fit-up of the torso and pelvis static load test",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786137555.554588",
+      "user": "p-priya",
+      "thread_ts": "1786128702.205830",
+      "events": [],
+      "brief": "reply (answers) in the thread about: tolerance question on the cell spacer",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786138212.292977",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about cad change to the latch block",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786138523.726918",
+      "user": "p-priya",
+      "thread_ts": "1786128702.205830",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: tolerance question on the cell spacer",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786138692.801442",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with off-topic: a hiking trail",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786139561.820228",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with assembly of the torso pelvis plate",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786141774.286330",
+      "user": "p-owen",
+      "thread_ts": "1786137173.342504",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: fit-up of the torso and pelvis static load test",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786142410.370172",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to inspection of the hip yoke",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786144035.476581",
+      "user": "p-callum",
+      "thread_ts": "1786139561.820228",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: assembly of the torso pelvis plate",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786144751.892999",
+      "user": "p-carlos",
+      "thread_ts": "1786139561.820228",
+      "events": [],
+      "brief": "reply (ack) in the thread about: assembly of the torso pelvis plate",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786144991.925228",
+      "user": "p-callum",
+      "thread_ts": "1786142410.370172",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: inspection of the hip yoke",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786145880.562079",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about inspection of the shim",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786147081.633806",
+      "user": "p-nadia",
+      "thread_ts": "1786137173.342504",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: fit-up of the torso and pelvis static load test",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786147193.388645",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about cleanup of the leg cable clamp",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786147795.260353",
+      "user": "p-wei",
+      "thread_ts": "1786142410.370172",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: inspection of the hip yoke",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786148872.243819",
+      "user": "p-owen",
+      "thread_ts": "1786137173.342504",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: fit-up of the torso and pelvis static load test",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786152889.907720",
+      "user": "p-idris",
+      "thread_ts": "1786142410.370172",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: inspection of the hip yoke",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786153230.227307",
+      "user": "p-sofia",
+      "thread_ts": "1786137173.342504",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: fit-up of the torso and pelvis static load test",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786156939.434757",
+      "user": "p-luis",
+      "thread_ts": "1786137173.342504",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: fit-up of the torso and pelvis static load test",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786157090.850999",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with cleanup of the ankle heel-strike impact test",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786157295.560849",
+      "user": "p-beth",
+      "thread_ts": "1786142410.370172",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: inspection of the hip yoke",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786158972.463113",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about off-topic: snacks restock",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786159814.972721",
+      "user": "p-luis",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about measurement of the encoder bracket",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

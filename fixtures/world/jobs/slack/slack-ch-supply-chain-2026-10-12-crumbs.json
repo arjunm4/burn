@@ -72,11 +72,11 @@
       }
     },
     {
-      "id": "p-gwen",
-      "name": "Gwen Albright",
-      "display_name": "gwen",
-      "slack_id": "U07FLK0GWEN",
-      "title": "Head of Supply Chain",
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
       "style": {
         "case": "proper",
         "punctuation": "full",
@@ -88,11 +88,11 @@
       }
     },
     {
-      "id": "p-kenji",
-      "name": "Kenji Morimoto",
-      "display_name": "kenji.m",
-      "slack_id": "U07FLK0KENJ",
-      "title": "Mechanical Engineer",
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
       "style": {
         "case": "lower",
         "punctuation": "none",
@@ -135,6 +135,25 @@
         "length": "medium",
         "hedging": "low",
         "quirks": []
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
       }
     },
     {
@@ -295,11 +314,11 @@
   ],
   "messages": [
     {
-      "ts": "1791825420.856218",
+      "ts": "1791825420.094871",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-001712"
+        "ev-001934"
       ],
       "brief": "1291 in use",
       "claim": {
@@ -313,7 +332,28 @@
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "1291 in use as of 10/12, the build can use it"
+      "text": "1291 in use since 10/12, the build is moving"
+    },
+    {
+      "ts": "1791858360.625399",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-002080"
+      ],
+      "brief": "shin link in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-10-12"
+      },
+      "must_mention": [
+        "shin link",
+        "the test",
+        "mon 10/12"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "shin link in use as of mon 10/12, the test is running overnight"
     },
     {
       "ts": "1791911666.192763",
@@ -332,7 +372,28 @@
         "10/9"
       ],
       "length": "short",
-      "text": "Driver PCBA respin for ankle and foot (roll link) moved again, now 10/9."
+      "text": "Driver PCBA respin for ankle and foot (roll link) moved again, now 10/9. yes i know it reads backwards"
+    },
+    {
+      "ts": "1791918872.512822",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-002383"
+      ],
+      "brief": "Order XO-5536197 placed, promised 2026-10-20",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-10-20"
+      },
+      "must_mention": [
+        "XO-5536197",
+        "dummy mass",
+        "tues the 20th"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "XO-5536197 (dummy mass) placed, promised tues the 20th"
     },
     {
       "ts": "1791919703.405355",
@@ -351,7 +412,7 @@
         "10/23"
       ],
       "length": "short",
-      "text": "Encoder kit for hand and wrist (wrist clamp) slid from 10/15 to 10/23"
+      "text": "Encoder kit for hand and wrist (wrist clamp) moved to 10/23"
     },
     {
       "ts": "1791921311.448510",
@@ -380,7 +441,27 @@
         "tues 10/20"
       ],
       "length": "short",
-      "text": "Encoder kit for hand and wrist (wrist clamp) correction, tues 10/20 not 10/23"
+      "text": "Encoder kit for hand and wrist (wrist clamp), correction. tues 10/20 not the 23rd"
+    },
+    {
+      "ts": "1791923536.001728",
+      "user": "p-omar",
+      "thread_ts": "1791918872.512822",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "sounds right to me"
+    },
+    {
+      "ts": "1791924206.071531",
+      "user": "p-beth",
+      "thread_ts": "1791918872.512822",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Last time that vendor shipped a day early, so we may get lucky."
     },
     {
       "ts": "1791927427.884496",
@@ -390,35 +471,24 @@
       "brief": "reply (adds a detail) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "Good. The finance side has no open issue on that one."
+      "text": "Vendor emailed me about it this morning, same thing."
     },
     {
-      "ts": "1791929296.099818",
-      "user": "p-kenji",
-      "thread_ts": null,
-      "events": [
-        "ev-002121"
-      ],
-      "brief": "Order XO-5536661 placed, promised 2026-10-29",
-      "claim": {
-        "kind": "eta",
-        "value": "2026-10-29"
-      },
-      "must_mention": [
-        "XO-5536661",
-        "bellows hub",
-        "10/29"
-      ],
-      "pressure": "elevated",
+      "ts": "1791928500.334197",
+      "user": "p-ingrid",
+      "thread_ts": "1791918872.512822",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
       "length": "short",
-      "text": "XO-5536661 placed for the bellows hub, promised 10/29"
+      "text": "A dummy mass that arrives on time. Now I've heard everything."
     },
     {
-      "ts": "1791934702.309984",
+      "ts": "1791934702.312373",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-001935"
+        "ev-002177"
       ],
       "brief": "hand clamp arrived (1)",
       "claim": {
@@ -430,46 +500,56 @@
         "1"
       ],
       "pressure": "low",
-      "length": "short",
-      "text": "hand clamp arrived (1), i think the rest are still on the way"
+      "length": "medium",
+      "text": "hand clamp arrived (1), i think it's the right rev but not 100% sure, will check"
     },
     {
-      "ts": "1791934740.622256",
+      "ts": "1791934740.712836",
       "user": "p-renee",
       "thread_ts": null,
       "events": [
-        "ev-002075"
+        "ev-002331"
       ],
-      "brief": "port plate in use",
+      "brief": "feedthrough plate in use",
       "claim": {
         "kind": "done",
         "value": "2026-10-13"
       },
       "must_mention": [
-        "port plate",
+        "feedthrough plate",
         "the build",
-        "10/13"
+        "tues 10/13"
       ],
       "pressure": "high",
       "length": "short",
-      "text": "port plate in use as of 10/13, the build is using it."
+      "text": "feedthrough plate in use since tues 10/13, the build is on it"
     },
     {
-      "ts": "1791937406.057704",
-      "user": "p-beth",
-      "thread_ts": "1791934740.622256",
+      "ts": "1791935608.404617",
+      "user": "p-omar",
+      "thread_ts": "1791934702.312373",
       "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
+      "brief": "reply (agrees) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "Renee, I would push back on that. We still need the second one inspected before anyone calls it done."
+      "text": "yep that's what i saw too"
     },
     {
-      "ts": "1792015353.297183",
+      "ts": "1791939193.136855",
+      "user": "p-ingrid",
+      "thread_ts": "1791934702.312373",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Agreed, good to see it."
+    },
+    {
+      "ts": "1792015353.603536",
       "user": "p-samir",
       "thread_ts": null,
       "events": [
-        "ev-002913"
+        "ev-003302"
       ],
       "brief": "DVT hip motor ETA 2026-11-13",
       "claim": {
@@ -478,58 +558,48 @@
       },
       "must_mention": [
         "hip motor",
-        "fri the 13th"
+        "fri 11/13"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "hip motor ETA fri the 13th"
+      "text": "hip motor ETA fri 11/13"
     },
     {
-      "ts": "1792016155.648127",
+      "ts": "1792015946.243843",
       "user": "p-omar",
-      "thread_ts": "1792015353.297183",
+      "thread_ts": "1792015353.603536",
       "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "i think that's the vendor's latest, but they keep moving it"
+    },
+    {
+      "ts": "1792020054.191010",
+      "user": "p-samir",
+      "thread_ts": "1792015353.603536",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "yeah"
+    },
+    {
+      "ts": "1792020173.110816",
+      "user": "p-talia",
+      "thread_ts": "1792015353.603536",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "not sure that holds, it's moved a few times already"
+      "text": "Vendor said same thing on the phone 😬"
     },
     {
-      "ts": "1792017660.538425",
-      "user": "p-tomas",
-      "thread_ts": null,
-      "events": [
-        "ev-001920"
-      ],
-      "brief": "dyno adapter in use",
-      "claim": {
-        "kind": "done",
-        "value": "2026-10-13"
-      },
-      "must_mention": [
-        "dyno adapter",
-        "10/13"
-      ],
-      "pressure": "high",
-      "length": "short",
-      "text": "dyno adapter in use since 10/13, I think it's fine"
-    },
-    {
-      "ts": "1792019554.548351",
-      "user": "p-beth",
-      "thread_ts": "1792015353.297183",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Agreed, I'd plan around that for now."
-    },
-    {
-      "ts": "1792043160.819877",
+      "ts": "1792043160.830658",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-001720"
+        "ev-001942"
       ],
       "brief": "end fitting in use",
       "claim": {
@@ -539,18 +609,18 @@
       "must_mention": [
         "end fitting",
         "the build",
-        "10/13"
+        "tues 10/13"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "end fitting in use 10/13, the build has it"
+      "text": "end fitting in use since tues 10/13, the build is on it"
     },
     {
-      "ts": "1792055940.351801",
+      "ts": "1792055940.266435",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-001784"
+        "ev-002011"
       ],
       "brief": "palm frame in use",
       "claim": {
@@ -560,18 +630,48 @@
       "must_mention": [
         "palm frame",
         "the build",
-        "10/14"
+        "wed the 14th"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "palm frame in use 10/14 for the build, not 100% sure it's the final one"
+      "length": "medium",
+      "text": "palm frame in use wed the 14th, the build is using it now. not 100% sure if it's the final rev"
     },
     {
-      "ts": "1792093877.885393",
+      "ts": "1792081282.406370",
+      "user": "p-jade",
+      "thread_ts": "1792055940.266435",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ack"
+    },
+    {
+      "ts": "1792084152.978267",
+      "user": "p-talia",
+      "thread_ts": "1792055940.266435",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@jade.t can you check receiving 🙏"
+    },
+    {
+      "ts": "1792088282.697758",
+      "user": "p-talia",
+      "thread_ts": "1792055940.266435",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Will look at the log after lunch 🙏"
+    },
+    {
+      "ts": "1792093877.022453",
       "user": "p-talia",
       "thread_ts": null,
       "events": [
-        "ev-002157"
+        "ev-002434"
       ],
       "brief": "Order XO-5540827 placed, promised 2026-11-04",
       "claim": {
@@ -584,15 +684,35 @@
         "wed the 4th"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "Order XO-5540827 placed for 1244, promised wed the 4th 🙏"
+      "length": "short",
+      "text": "XO-5540827 for 1244 placed, promised wed the 4th 🙏"
     },
     {
-      "ts": "1792126082.819043",
+      "ts": "1792094227.721378",
+      "user": "p-talia",
+      "thread_ts": "1792093877.022453",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "That one has a longer lead than the rest, so don't expect early."
+    },
+    {
+      "ts": "1792097282.325387",
+      "user": "p-beth",
+      "thread_ts": "1792093877.022453",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Thanks Talia."
+    },
+    {
+      "ts": "1792126082.860385",
       "user": "p-lin",
       "thread_ts": null,
       "events": [
-        "ev-002182"
+        "ev-002459"
       ],
       "brief": "Order XO-5544430 placed, promised 2026-11-03",
       "claim": {
@@ -602,21 +722,41 @@
       "must_mention": [
         "XO-5544430",
         "2313",
-        "tues the 3rd"
+        "tues 11/3"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Order XO-5544430 placed for 2313, promised tues the 3rd."
+      "text": "XO-5544430 for 2313, promised tues 11/3"
     },
     {
-      "ts": "1792168431.381000",
+      "ts": "1792127616.294589",
+      "user": "p-omar",
+      "thread_ts": "1792126082.860385",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "bold of them to promise"
+    },
+    {
+      "ts": "1792130038.260376",
+      "user": "p-talia",
+      "thread_ts": "1792126082.860385",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Thank you!"
+    },
+    {
+      "ts": "1792164146.963594",
       "user": "p-nora",
-      "thread_ts": "1792126082.819043",
+      "thread_ts": "1792126082.860385",
       "events": [],
       "brief": "reply (agrees) in the thread about: the message above",
       "must_mention": [],
-      "length": "short",
-      "text": "Same, that matches what we have."
+      "length": "one_word",
+      "text": "Same here, looks right."
     },
     {
       "ts": "1792169689.410295",
@@ -635,17 +775,7 @@
         "thurs the 29th"
       ],
       "length": "short",
-      "text": "Encoder kit for knee actuator (knee shaft) moved from 10/19 to thurs the 29th, i think"
-    },
-    {
-      "ts": "1792171869.874343",
-      "user": "p-samir",
-      "thread_ts": "1792126082.819043",
-      "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "yep checked it this morning"
+      "text": "Encoder kit for knee actuator (knee shaft) moved to thurs the 29th, I think from the vendor"
     },
     {
       "ts": "1792174108.479484",
@@ -655,17 +785,7 @@
       "brief": "reply (jokes) in the thread about: the message above",
       "must_mention": [],
       "length": "one_word",
-      "text": "encoder kit is always one more week"
-    },
-    {
-      "ts": "1792176015.581523",
-      "user": "p-gwen",
-      "thread_ts": "1792126082.819043",
-      "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "Noted. Please keep the tracker in sync with the vendor emails so the two do not drift apart."
+      "text": "ten days is generous for an encoder"
     },
     {
       "ts": "1792176901.119596",
@@ -675,14 +795,34 @@
       "brief": "reply (disagrees politely) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "dont think thats right, ill call them"
+      "text": "idk about generous, they slipped it last time too"
     },
     {
-      "ts": "1792204860.259863",
+      "ts": "1792198976.657124",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-002227"
+      ],
+      "brief": "shim arrived (12)",
+      "claim": {
+        "kind": "stock",
+        "value": 12
+      },
+      "must_mention": [
+        "shim",
+        "12"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "shim arrived (12)"
+    },
+    {
+      "ts": "1792204860.834483",
       "user": "p-wei",
       "thread_ts": null,
       "events": [
-        "ev-001762"
+        "ev-001989"
       ],
       "brief": "abs encoder bracket in use",
       "claim": {
@@ -692,11 +832,11 @@
       "must_mention": [
         "abs encoder bracket",
         "the build",
-        "thurs 10/15"
+        "10/15"
       ],
       "pressure": "low",
       "length": "medium",
-      "text": "abs encoder bracket in use since thurs 10/15, so the build has it."
+      "text": "abs encoder bracket in use since 10/15, the build is on it"
     }
   ]
 }

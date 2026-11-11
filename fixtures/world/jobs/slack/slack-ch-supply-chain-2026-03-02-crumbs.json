@@ -1,0 +1,230 @@
+{
+  "job_id": "slack-ch-supply-chain-2026-03-02-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 73,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-supply-chain",
+    "name": "supply-chain",
+    "slack_id": "C07FLK0SUPC",
+    "purpose": "Supply chain team: vendors, POs, deliveries, expedites"
+  },
+  "week": {
+    "start": "2026-03-02",
+    "end": "2026-03-08"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Building the first three hip and knee actuators. This week: Carlos: kitting short three parts; spacers came in at the wrong length.",
+    "Ongoing: Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT. This week: Owen prices both: harmonic set ~$1.9k per joint and 10-week lead; cyclo is machined parts plus pins, ~3 weeks."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1772574542.322498",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-000174"
+      ],
+      "brief": "preload ring arrived (12)",
+      "claim": {
+        "kind": "stock",
+        "value": 12
+      },
+      "must_mention": [
+        "preload ring",
+        "12"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "preload ring came in, 12 on the shelf"
+    },
+    {
+      "ts": "1772745992.044073",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [
+        "ev-000234"
+      ],
+      "brief": "spacer set arrived",
+      "claim": {
+        "kind": "stock",
+        "value": 25
+      },
+      "must_mention": [
+        "spacer set",
+        "25"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "spacer set in, counted 25"
+    },
+    {
+      "ts": "1772746474.409393",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-000266"
+      ],
+      "brief": "Order XO-5318688 placed, promised 2026-03-20",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-03-20"
+      },
+      "must_mention": [
+        "XO-5318688",
+        "that adapter plate",
+        "fri the 20th"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "XO-5318688 placed, that adapter plate should land fri the 20th"
+    },
+    {
+      "ts": "1772747972.214270",
+      "user": "p-andre",
+      "thread_ts": "1772745992.044073",
+      "events": [
+        "ev-003672"
+      ],
+      "brief": "Correction: spacer set arrived (24)",
+      "claim": {
+        "kind": "stock",
+        "value": 24
+      },
+      "must_mention": [
+        "spacer set",
+        "24"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "recounted the spacer set and its 24"
+    },
+    {
+      "ts": "1772832566.023601",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-000264"
+      ],
+      "brief": "Order XO-5319861 placed, promised 2026-03-24",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-03-24"
+      },
+      "must_mention": [
+        "XO-5319861",
+        "preload nut",
+        "tues 3/24"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "XO-5319861 placed for the preload nut, promised tues 3/24 🙏"
+    }
+  ]
+}

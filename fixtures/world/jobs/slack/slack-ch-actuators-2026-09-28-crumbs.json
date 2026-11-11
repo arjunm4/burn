@@ -57,6 +57,24 @@
       }
     },
     {
+      "id": "p-bao",
+      "name": "Bao Nguyen",
+      "display_name": "bao.n",
+      "slack_id": "U07FLK0BAO0",
+      "title": "Electrical Engineer, motor drives",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
       "id": "p-beth",
       "name": "Beth Kowalski",
       "display_name": "beth",
@@ -108,6 +126,24 @@
         "length": "medium",
         "hedging": "low",
         "quirks": []
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
       }
     },
     {
@@ -239,6 +275,24 @@
       }
     },
     {
+      "id": "p-yusuf",
+      "name": "Yusuf Demir",
+      "display_name": "yusuf",
+      "slack_id": "U07FLK0YUSU",
+      "title": "Firmware Engineer, motor control",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
       "id": "p-zoe",
       "name": "Zoe Castellanos",
       "display_name": "zoe.c",
@@ -274,11 +328,11 @@
   ],
   "messages": [
     {
-      "ts": "1790608801.629141",
+      "ts": "1790608801.230928",
       "user": "p-owen",
       "thread_ts": null,
       "events": [
-        "ev-002765"
+        "ev-003133"
       ],
       "brief": "Test stand rework: Dyno coupling, knee actuator waits on Wire harness for knee actuator (knee dyno coupling)",
       "claim": {
@@ -290,49 +344,59 @@
         "Test stand rework: Dyno coupling, knee actuator"
       ],
       "pressure": "high",
-      "length": "short",
-      "text": "Test stand rework: Dyno coupling, knee actuator waits on Wire harness for knee actuator (knee dyno coupling)"
+      "length": "medium",
+      "text": "Test stand rework: Dyno coupling, knee actuator is stuck waiting on Wire harness for knee actuator (knee dyno coupling)"
     },
     {
-      "ts": "1790609569.930973",
-      "user": "p-carlos",
-      "thread_ts": "1790608801.629141",
-      "events": [],
-      "brief": "reply (tags someone else) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "@andre can you look at this when you're in"
-    },
-    {
-      "ts": "1790611889.630789",
+      "ts": "1790611889.380232",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-002057"
+        "ev-002315"
       ],
-      "brief": "1021: need 2 by 2026-10-13 for the fit check",
+      "brief": "1021: need 2 by 2026-10-08 for Tolerance stack check: Hip to pelvis interface plate",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 2,
-          "by": "2026-10-13"
+          "by": "2026-10-08"
         }
       },
       "must_mention": [
         "1021",
-        "the fit check",
-        "tues 10/13"
+        "Tolerance stack check: Hip to pelvis interface plate",
+        "10/8"
       ],
       "pressure": "high",
       "length": "medium",
-      "text": "1021: need 2 by tues 10/13 for the fit check, fixture is booked"
+      "text": "1021 need 2 for Tolerance stack check: Hip to pelvis interface plate by 10/8"
     },
     {
-      "ts": "1790616800.432314",
+      "ts": "1790613203.924722",
+      "user": "p-carlos",
+      "thread_ts": "1790608801.230928",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "harness guy said he has the crimps, its the connector thats missing"
+    },
+    {
+      "ts": "1790614745.574274",
+      "user": "p-samir",
+      "thread_ts": "1790608801.230928",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ill ask the vendor what they have in stock"
+    },
+    {
+      "ts": "1790616800.955457",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-001939"
+        "ev-002181"
       ],
       "brief": "FL-TST-2074: need 5 by 2026-10-08",
       "claim": {
@@ -351,11 +415,74 @@
       "text": "FL-TST-2074 need 5 by 10/8"
     },
     {
-      "ts": "1790627482.473702",
+      "ts": "1790621632.047067",
+      "user": "p-jonas",
+      "thread_ts": "1790616800.955457",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "which stand"
+    },
+    {
+      "ts": "1790624436.159615",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-003803"
+      ],
+      "brief": "1124: need 12 by 2026-11-04",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-11-04"
+        }
+      },
+      "must_mention": [
+        "1124",
+        "11/4"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "1124 need 12 by 11/4, not urgent but it will be if it slips"
+    },
+    {
+      "ts": "1790625610.178956",
+      "user": "p-ingrid",
+      "thread_ts": "1790624436.159615",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Nadia, this should go to Samir."
+    },
+    {
+      "ts": "1790625654.885871",
+      "user": "p-yusuf",
+      "thread_ts": "1790616800.955457",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "will check later"
+    },
+    {
+      "ts": "1790627407.296552",
+      "user": "p-jonas",
+      "thread_ts": "1790624436.159615",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "@samir.k"
+    },
+    {
+      "ts": "1790627482.735112",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-003067"
+        "ev-003456"
       ],
       "brief": "FL-KNE-1146 rev D released: fit issue found at assembly",
       "claim": {
@@ -366,35 +493,14 @@
         "FL-KNE-1146"
       ],
       "length": "short",
-      "text": "FL-KNE-1146 rev D is released. found a fit issue at assembly"
+      "text": "FL-KNE-1146 rev D is released, fit issue found at assembly"
     },
     {
-      "ts": "1790628034.395326",
-      "user": "p-tomas",
-      "thread_ts": null,
-      "events": [
-        "ev-001948"
-      ],
-      "brief": "Order XO-5521345 placed, promised 2026-10-07",
-      "claim": {
-        "kind": "eta",
-        "value": "2026-10-07"
-      },
-      "must_mention": [
-        "XO-5521345",
-        "pin ring",
-        "wed 10/7"
-      ],
-      "pressure": "high",
-      "length": "short",
-      "text": "XO-5521345 placed for the pin ring, promised wed 10/7"
-    },
-    {
-      "ts": "1790628280.095954",
+      "ts": "1790634820.022848",
       "user": "p-nadia",
       "thread_ts": null,
       "events": [
-        "ev-001979"
+        "ev-002226"
       ],
       "brief": "Order XO-5521547 placed, promised 2026-10-19",
       "claim": {
@@ -404,38 +510,18 @@
       "must_mention": [
         "XO-5521547",
         "shim",
-        "10/19"
+        "mon the 19th"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "XO-5521547 placed for the shim, they say 10/19 😬"
+      "length": "medium",
+      "text": "XO-5521547 for the shim is placed, promised mon the 19th"
     },
     {
-      "ts": "1790629716.235145",
-      "user": "p-beth",
-      "thread_ts": "1790628034.395326",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "Good, thanks for confirming Tomas."
-    },
-    {
-      "ts": "1790631740.477181",
-      "user": "p-beth",
-      "thread_ts": "1790628280.095954",
-      "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Do we know if the shim is in the standard or the thin version? Asking before we plan the shim stack around it."
-    },
-    {
-      "ts": "1790639901.233732",
+      "ts": "1790639901.408611",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-002905"
+        "ev-003294"
       ],
       "brief": "Knee backdrive torque and backlash check takes 1 working days",
       "claim": {
@@ -449,15 +535,15 @@
         "Knee backdrive torque and backlash check",
         "1 days"
       ],
-      "length": "short",
-      "text": "Knee backdrive torque and backlash check is 1 days if the fixture is free"
+      "length": "medium",
+      "text": "Knee backdrive torque and backlash check is about 1 days of bench time, probably more if the preload drifts"
     },
     {
-      "ts": "1790643348.477625",
+      "ts": "1790643348.478773",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-002022"
+        "ev-002280"
       ],
       "brief": "hip pelvis plate: need 2 by 2026-10-09 for Fit check: Hip to pelvis interface plate",
       "claim": {
@@ -476,14 +562,44 @@
       ],
       "pressure": "high",
       "length": "short",
-      "text": "hip pelvis plate, need 2 by 10/9 for Fit check: Hip to pelvis interface plate. also the preload ring and stator mount"
+      "text": "hip pelvis plate need 2 for Fit check: Hip to pelvis interface plate by 10/9, also the preload ring and stator mount"
     },
     {
-      "ts": "1790684220.625269",
+      "ts": "1790644201.351587",
+      "user": "p-carlos",
+      "thread_ts": "1790639901.408611",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "we had the same thing on the old gearbox, backlash moved after the first hour of running so i redid it after a warmup"
+    },
+    {
+      "ts": "1790646956.501044",
+      "user": "p-jonas",
+      "thread_ts": "1790643348.478773",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "which rev of the plate?"
+    },
+    {
+      "ts": "1790648144.167710",
+      "user": "p-bao",
+      "thread_ts": "1790639901.408611",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "yeah same here"
+    },
+    {
+      "ts": "1790684220.128084",
       "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-001572"
+        "ev-001785"
       ],
       "brief": "2732 in use",
       "claim": {
@@ -492,18 +608,56 @@
       },
       "must_mention": [
         "2732",
-        "9/28"
+        "mon 9/28"
       ],
       "pressure": "high",
       "length": "short",
-      "text": "2732 in use since 9/28 😬"
+      "text": "2732 in use since mon 9/28, dyno is booked solid"
     },
     {
-      "ts": "1790698298.692963",
+      "ts": "1790694774.585475",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-003073"
+        "ev-003868"
+      ],
+      "brief": "wave gen hub: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "wave gen hub"
+      ],
+      "length": "medium",
+      "text": "wave gen hub is still quoting rev A, i think"
+    },
+    {
+      "ts": "1790695092.894572",
+      "user": "p-arjun",
+      "thread_ts": "1790694774.585475",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ive got rev B on my desk so thats not right"
+    },
+    {
+      "ts": "1790697647.829120",
+      "user": "p-yusuf",
+      "thread_ts": "1790694774.585475",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "@tomas"
+    },
+    {
+      "ts": "1790698298.506223",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-003462"
       ],
       "brief": "FL-KNE-1124 rev G released: clearance for harness",
       "claim": {
@@ -513,15 +667,57 @@
       "must_mention": [
         "FL-KNE-1124"
       ],
-      "length": "medium",
-      "text": "FL-KNE-1124 rev G is out, opened up clearance for the harness"
+      "length": "short",
+      "text": "FL-KNE-1124 rev G is released, adds clearance for the harness"
     },
     {
-      "ts": "1790706337.530142",
+      "ts": "1790700381.914122",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-003895"
+      ],
+      "brief": "shim: still quoting rev F",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev F"
+      },
+      "must_mention": [
+        "shim"
+      ],
+      "length": "short",
+      "text": "shim still quoting rev F"
+    },
+    {
+      "ts": "1790704299.189919",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-002316"
+      ],
+      "brief": "the part: need 2 by 2026-10-14 for Tolerance stack check: Hip to pelvis interface plate",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-10-14"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "Tolerance stack check: Hip to pelvis interface plate",
+        "wed 10/14"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "the part for Tolerance stack check: Hip to pelvis interface plate need 2 by wed 10/14"
+    },
+    {
+      "ts": "1790706337.952096",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-002684"
+        "ev-003036"
       ],
       "brief": "Leg DVT build waits on Build sub-assembly for Leg DVT build: Thigh cover plate",
       "claim": {
@@ -534,14 +730,14 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Leg DVT build waits on Build sub-assembly for Leg DVT build: Thigh cover plate"
+      "text": "Build sub-assembly for Leg DVT build: Thigh cover plate is on hold, Leg DVT build can't move"
     },
     {
-      "ts": "1790707502.284887",
+      "ts": "1790707502.458822",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-002573"
+        "ev-002903"
       ],
       "brief": "Leg DVT build waits on Install and torque for Leg DVT build: Ankle pivot pin",
       "claim": {
@@ -554,14 +750,14 @@
       ],
       "pressure": "low",
       "length": "medium",
-      "text": "Leg DVT build waits on Install and torque for Leg DVT build: Ankle pivot pin. Same story as the thigh cover."
+      "text": "Install and torque for Leg DVT build: Ankle pivot pin is also on hold, Leg DVT build is waiting on it."
     },
     {
-      "ts": "1790712977.121495",
+      "ts": "1790712977.202160",
       "user": "p-ingrid",
       "thread_ts": null,
       "events": [
-        "ev-003694"
+        "ev-004144"
       ],
       "brief": "wave gen hub: still quoting rev A",
       "claim": {
@@ -572,14 +768,14 @@
         "wave gen hub"
       ],
       "length": "short",
-      "text": "wave gen hub is still quoting rev A, can someone check that"
+      "text": "Is the wave gen hub still quoting rev A?"
     },
     {
-      "ts": "1790717123.486462",
+      "ts": "1790717123.927121",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-002793"
+        "ev-003166"
       ],
       "brief": "Leg DVT build waits on Test stand rework for Leg DVT build: Tilt stand F/T adapter plate",
       "claim": {
@@ -592,14 +788,58 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Leg DVT build waits on Test stand rework for Leg DVT build: Tilt stand F/T adapter plate"
+      "text": "Test stand rework for Leg DVT build: Tilt stand F/T adapter plate is not done and the Leg DVT build is waiting on it."
     },
     {
-      "ts": "1790720579.902403",
+      "ts": "1790717634.200538",
+      "user": "p-tomas",
+      "thread_ts": "1790712977.202160",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "lol the hub has been rev A since august"
+    },
+    {
+      "ts": "1790718186.083400",
+      "user": "p-tomas",
+      "thread_ts": "1790717123.927121",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "will take a look after lunch"
+    },
+    {
+      "ts": "1790719229.306130",
+      "user": "p-zoe",
+      "thread_ts": "1790611889.380232",
+      "events": [
+        "ev-003564"
+      ],
+      "brief": "Correction: 1021: need 2 by 2026-10-13 for Tolerance stack check: Hip to pelvis interface plate",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-10-13"
+        }
+      },
+      "must_mention": [
+        "1021",
+        "Tolerance stack check: Hip to pelvis interface plate",
+        "10/13"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "*correction 1021 need 2 for Tolerance stack check: Hip to pelvis interface plate by 10/13 not the 8th"
+    },
+    {
+      "ts": "1790720579.044727",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-002093"
+        "ev-002354"
       ],
       "brief": "FL-TST-2139: need 12 by 2026-10-26 for Rig setup: Dyno shaft spacer",
       "claim": {
@@ -612,18 +852,18 @@
       "must_mention": [
         "FL-TST-2139",
         "Rig setup: Dyno shaft spacer",
-        "10/26"
+        "mon 10/26"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "FL-TST-2139 need 12 by 10/26 for Rig setup: Dyno shaft spacer, not sure the spacer is final tho"
+      "length": "short",
+      "text": "FL-TST-2139 need 12 for Rig setup: Dyno shaft spacer by mon 10/26"
     },
     {
-      "ts": "1790721123.012414",
+      "ts": "1790721123.476951",
       "user": "p-luis",
       "thread_ts": null,
       "events": [
-        "ev-001859"
+        "ev-002098"
       ],
       "brief": "pads arrived (12)",
       "claim": {
@@ -636,14 +876,34 @@
       ],
       "pressure": "high",
       "length": "short",
-      "text": "pads arrived, 12 of them, in the cage"
+      "text": "pads arrived, 12"
     },
     {
-      "ts": "1790723486.973490",
+      "ts": "1790721598.575706",
+      "user": "p-carlos",
+      "thread_ts": "1790712977.202160",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "i dont think so, tbh"
+    },
+    {
+      "ts": "1790721811.737909",
+      "user": "p-arjun",
+      "thread_ts": "1790717123.927121",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "its the thin one, ill check which order it came on"
+    },
+    {
+      "ts": "1790723486.070877",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-002798"
+        "ev-003174"
       ],
       "brief": "Tolerance stack check: Knee wave generator hub waits on Gait gantry and treadmill",
       "claim": {
@@ -655,35 +915,35 @@
         "Tolerance stack check: Knee wave generator hub"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "Tolerance stack check: Knee wave generator hub waits on Gait gantry and treadmill, no way around it"
+      "length": "medium",
+      "text": "Tolerance stack check: Knee wave generator hub is waiting on Gait gantry and treadmill"
     },
     {
-      "ts": "1790726317.313868",
-      "user": "p-samir",
-      "thread_ts": "1790723486.973490",
-      "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "treadmill is booked through the week, gantry too. try nxt wk"
-    },
-    {
-      "ts": "1790726366.073098",
+      "ts": "1790723876.139779",
       "user": "p-beth",
-      "thread_ts": "1790721123.012414",
+      "thread_ts": "1790717123.927121",
       "events": [],
       "brief": "reply (thanks) in the thread about: the message above",
       "must_mention": [],
-      "length": "one_word",
-      "text": "Thanks Luis."
+      "length": "short",
+      "text": "Thanks Priya, noted."
     },
     {
-      "ts": "1790726721.912658",
+      "ts": "1790725676.550439",
+      "user": "p-beth",
+      "thread_ts": "1790720579.044727",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "That isn't what I saw."
+    },
+    {
+      "ts": "1790726721.612409",
       "user": "p-nadia",
       "thread_ts": null,
       "events": [
-        "ev-002736"
+        "ev-003097"
       ],
       "brief": "Rig setup: Dyno thermocouple clamp waits on Hip absolute encoder kit, DVT",
       "claim": {
@@ -696,34 +956,24 @@
       ],
       "pressure": "high",
       "length": "short",
-      "text": "Rig setup: Dyno thermocouple clamp waits on Hip absolute encoder kit, DVT 😬"
+      "text": "Rig setup: Dyno thermocouple clamp is waiting on Hip absolute encoder kit, DVT"
     },
     {
-      "ts": "1790726902.212817",
-      "user": "p-carlos",
-      "thread_ts": "1790721123.012414",
+      "ts": "1790727434.028867",
+      "user": "p-wei",
+      "thread_ts": "1790723486.070877",
       "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "Nope, the pads were in the wrong bin. Please recount!!"
-    },
-    {
-      "ts": "1790728030.351933",
-      "user": "p-beth",
-      "thread_ts": "1790723486.973490",
-      "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "brief": "reply (agrees) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "We had a similar stall on the last build where the treadmill held up three other checks. Worth asking whether the stack can be done on the bench."
+      "text": "Yes, the gantry has been the bottleneck for a while."
     },
     {
-      "ts": "1790728430.276015",
+      "ts": "1790728430.257963",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-003856"
+        "ev-004313"
       ],
       "brief": "Instrumentation fit-up for Actuator DVT gate review: Dyno mounting plate, hip actuator done",
       "claim": {
@@ -736,43 +986,68 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Instrumentation fit-up for Actuator DVT gate review: Dyno mounting plate, hip actuator done 9/29"
+      "text": "Instrumentation fit-up for Actuator DVT gate review: Dyno mounting plate, hip actuator is done 9/29"
     },
     {
-      "ts": "1790729259.564226",
-      "user": "p-carlos",
-      "thread_ts": "1790723486.973490",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "Agree with Beth. Bench stack is fine for a first pass."
-    },
-    {
-      "ts": "1790742390.472239",
-      "user": "p-beth",
+      "ts": "1790728502.593064",
+      "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-003585"
+        "ev-002317"
       ],
-      "brief": "Knee backdrive torque and backlash check: still quoting 2026-10-01",
+      "brief": "that order: need 2 by 2026-10-13 for the fit check",
       "claim": {
-        "kind": "eta",
-        "value": "2026-10-01"
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-10-13"
+        }
       },
       "must_mention": [
-        "Knee backdrive torque and backlash check",
-        "thurs the 1st"
+        "that order",
+        "the fit check",
+        "tues 10/13"
       ],
-      "length": "medium",
-      "text": "The Knee backdrive torque and backlash check is still being quoted for thurs the 1st. Can anyone confirm whether that is firm?"
+      "pressure": "high",
+      "length": "short",
+      "text": "that order need 2 for the fit check by tues 10/13"
     },
     {
-      "ts": "1790745727.993783",
+      "ts": "1790733827.766100",
+      "user": "p-carlos",
+      "thread_ts": "1790728430.257963",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "finally, now the dyno has something to be mounted to!!"
+    },
+    {
+      "ts": "1790735407.967466",
+      "user": "p-andre",
+      "thread_ts": "1790728430.257963",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "we did the same fit up on the old hip last year and lost half a day to a misaligned dowel. check that first"
+    },
+    {
+      "ts": "1790737488.946707",
+      "user": "p-beth",
+      "thread_ts": "1790728430.257963",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Why do we need to sign this off before the gate review?"
+    },
+    {
+      "ts": "1790745727.743935",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-003052"
+        "ev-003441"
       ],
       "brief": "FL-HIP-1028 rev F released: tolerance relaxed after DFM feedback",
       "claim": {
@@ -782,55 +1057,25 @@
       "must_mention": [
         "FL-HIP-1028"
       ],
-      "length": "medium",
-      "text": "FL-HIP-1028 rev F released. tol relaxed after the dfm feedback"
+      "length": "short",
+      "text": "FL-HIP-1028 rev F released, tolerance relaxed after DFM feedback"
     },
     {
-      "ts": "1790746876.249131",
-      "user": "p-owen",
-      "thread_ts": "1790742390.472239",
-      "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "its firm enough i think"
-    },
-    {
-      "ts": "1790747656.134336",
-      "user": "p-carlos",
-      "thread_ts": "1790745727.993783",
-      "events": [],
-      "brief": "reply (tags someone else) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "NICE. one less thing!!"
-    },
-    {
-      "ts": "1790783219.054179",
-      "user": "p-wei",
-      "thread_ts": "1790742390.472239",
+      "ts": "1790782402.685314",
+      "user": "p-samir",
+      "thread_ts": "1790745727.743935",
       "events": [],
       "brief": "reply (jokes) in the thread about: the message above",
       "must_mention": [],
       "length": "medium",
-      "text": "firm enough is a spec now"
+      "text": "relaxed tol, so the machinist can finally sleep"
     },
     {
-      "ts": "1790783529.832122",
-      "user": "p-ingrid",
-      "thread_ts": "1790742390.472239",
-      "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "Putting that on the next drawing."
-    },
-    {
-      "ts": "1790785444.545132",
+      "ts": "1790785444.573176",
       "user": "p-nadia",
       "thread_ts": null,
       "events": [
-        "ev-002904"
+        "ev-003293"
       ],
       "brief": "Hip actuator thermal derate at continuous torque takes 2-3 working days",
       "claim": {
@@ -844,97 +1089,214 @@
         "Hip actuator thermal derate at continuous torque",
         "2-3 days"
       ],
-      "length": "medium",
-      "text": "Hip actuator thermal derate at continuous torque is 2-3 days, depends on how fast it cools between runs"
+      "length": "short",
+      "text": "Hip actuator thermal derate at continuous torque takes 2-3 days in the chamber"
     },
     {
-      "ts": "1790786568.129890",
+      "ts": "1790786685.431676",
+      "user": "p-andre",
+      "thread_ts": "1790745727.743935",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "nice"
+    },
+    {
+      "ts": "1790791480.745703",
       "user": "p-wei",
-      "thread_ts": "1790785444.545132",
+      "thread_ts": "1790745727.743935",
       "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
+      "brief": "reply (ack) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "Sounds right. Last time it ran closer to three."
+      "text": "OK."
     },
     {
-      "ts": "1790788726.884519",
-      "user": "p-carlos",
-      "thread_ts": "1790745727.993783",
-      "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "does the actuator get a vote on cooling time"
-    },
-    {
-      "ts": "1790789854.635893",
-      "user": "p-ingrid",
-      "thread_ts": "1790785444.545132",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "Does that include setup?"
-    },
-    {
-      "ts": "1790794404.067172",
-      "user": "p-tomas",
-      "thread_ts": "1790785444.545132",
-      "events": [],
-      "brief": "reply (tags someone else) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "@andre you ran it last, can you answer"
-    },
-    {
-      "ts": "1790806952.419538",
-      "user": "p-samir",
-      "thread_ts": null,
+      "ts": "1790799639.003559",
+      "user": "p-zoe",
+      "thread_ts": "1790704299.189919",
       "events": [
-        "ev-002025"
+        "ev-003555"
       ],
-      "brief": "interface plate: need 2 by 2026-10-08 for Fit check: Hip to pelvis interface plate",
+      "brief": "Correction: the part: need 2 by 2026-10-13 for Tolerance stack check: Hip to pelvis interface plate",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 2,
-          "by": "2026-10-08"
+          "by": "2026-10-13"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "Tolerance stack check: Hip to pelvis interface plate",
+        "10/13"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "*correction the part for Tolerance stack check: Hip to pelvis interface plate is needed 10/13, not wed"
+    },
+    {
+      "ts": "1790801139.274417",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-002237"
+      ],
+      "brief": "Order XO-5526000 placed, promised 2026-10-21",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-10-21"
+      },
+      "must_mention": [
+        "XO-5526000",
+        "1091",
+        "10/21"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Order XO-5526000 placed for 1091, promised 10/21"
+    },
+    {
+      "ts": "1790802027.132044",
+      "user": "p-jonas",
+      "thread_ts": "1790801139.274417",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "that seems early, the vendor usually quotes longer"
+    },
+    {
+      "ts": "1790804887.083662",
+      "user": "p-carlos",
+      "thread_ts": "1790801139.274417",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "yeah they said the same thing on the last one and it was fine"
+    },
+    {
+      "ts": "1790805434.331163",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-003032"
+      ],
+      "brief": "Leg DVT build waits on Prototype fit-up for Leg DVT build: Toe plate",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00180"
+      },
+      "must_mention": [
+        "Prototype fit-up for Leg DVT build: Toe plate",
+        "the build"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Prototype fit-up for Leg DVT build: Toe plate is waiting, so the build is stuck at that step."
+    },
+    {
+      "ts": "1790806942.292447",
+      "user": "p-jonas",
+      "thread_ts": "1790805434.331163",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "i dont think the toe plate is the blocker, the heel one is"
+    },
+    {
+      "ts": "1790806952.881180",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-002283"
+      ],
+      "brief": "interface plate: need 2 by 2026-10-09 for Fit check: Hip to pelvis interface plate",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-10-09"
         }
       },
       "must_mention": [
         "interface plate",
         "Fit check: Hip to pelvis interface plate",
-        "thurs 10/8"
+        "fri 10/9"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "interface plate, need 2 by thurs 10/8 for Fit check: Hip to pelvis interface plate"
+      "length": "short",
+      "text": "interface plate need 2 for Fit check: Hip to pelvis interface plate by fri 10/9"
     },
     {
-      "ts": "1790812660.385588",
-      "user": "p-tomas",
+      "ts": "1790809945.140688",
+      "user": "p-beth",
+      "thread_ts": "1790801139.274417",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Last build we had a similar one and it came in at the last minute, so I wouldn't panic yet."
+    },
+    {
+      "ts": "1790810628.362289",
+      "user": "p-jonas",
+      "thread_ts": "1790806952.881180",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ok"
+    },
+    {
+      "ts": "1790812037.693158",
+      "user": "p-nadia",
+      "thread_ts": "1790805434.331163",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "no, the toe plate is first"
+    },
+    {
+      "ts": "1790815690.582525",
+      "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-003413"
+        "ev-003129"
       ],
-      "brief": "rear cover: still quoting rev C",
+      "brief": "Leg DVT build waits on Test stand rework for Leg DVT build: Gait boom clamp",
       "claim": {
-        "kind": "substitute",
-        "value": "rev C"
+        "kind": "blocked",
+        "value": "wi-00246"
       },
       "must_mention": [
-        "rear cover"
+        "Test stand rework for Leg DVT build: Gait boom clamp",
+        "Leg DVT build"
       ],
-      "length": "short",
-      "text": "rear cover still quoting rev C, is that right"
+      "pressure": "low",
+      "length": "medium",
+      "text": "Test stand rework for Leg DVT build: Gait boom clamp is not finished and the Leg DVT build is waiting."
     },
     {
-      "ts": "1790817138.357361",
+      "ts": "1790815825.956129",
+      "user": "p-jonas",
+      "thread_ts": "1790806952.881180",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "same here"
+    },
+    {
+      "ts": "1790817138.697842",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-003538"
+        "ev-003967"
       ],
       "brief": "Knee backdrive torque and backlash check: still quoting 2026-10-01",
       "claim": {
@@ -946,14 +1308,14 @@
         "thurs 10/1"
       ],
       "length": "short",
-      "text": "Knee backdrive torque and backlash check, still quoting thurs 10/1 i think"
+      "text": "Knee backdrive torque and backlash check still quoting thurs 10/1"
     },
     {
-      "ts": "1790817399.093191",
+      "ts": "1790817399.689911",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-002633"
+        "ev-002975"
       ],
       "brief": "Leg DVT build waits on Tolerance stack check for Leg DVT build: Battery clevis 10 (2)",
       "claim": {
@@ -966,64 +1328,54 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Leg DVT build waits on Tolerance stack check for Leg DVT build: Battery clevis 10 (2)"
+      "text": "Tolerance stack check for Leg DVT build: Battery clevis 10 (2) is waiting and the Leg DVT build is stuck on it."
     },
     {
-      "ts": "1790821094.552253",
-      "user": "p-beth",
-      "thread_ts": "1790817399.093191",
+      "ts": "1790818161.674587",
+      "user": "p-andre",
+      "thread_ts": "1790806952.881180",
       "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Priya, can you say which of the two clevises is holding things up?"
-    },
-    {
-      "ts": "1790821473.816207",
-      "user": "p-owen",
-      "thread_ts": "1790817138.357361",
-      "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "brief": "reply (ack) in the thread about: the message above",
       "must_mention": [],
       "length": "one_word",
-      "text": "same thing happened to my coupling last month"
+      "text": "got it"
     },
     {
-      "ts": "1790821719.340131",
-      "user": "p-owen",
-      "thread_ts": "1790817138.357361",
+      "ts": "1790819813.977747",
+      "user": "p-samir",
+      "thread_ts": "1790817138.697842",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "its pushed, ill update in the tracker"
+    },
+    {
+      "ts": "1790820974.850311",
+      "user": "p-nadia",
+      "thread_ts": "1790817399.689911",
       "events": [],
       "brief": "reply (adds a detail) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "that one went through twice before it fit"
+      "text": "I measured that one, the bore was tight"
     },
     {
-      "ts": "1790821958.232487",
-      "user": "p-beth",
-      "thread_ts": "1790817399.093191",
+      "ts": "1790822229.953427",
+      "user": "p-bao",
+      "thread_ts": "1790817138.697842",
       "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
+      "brief": "reply (agrees) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "Okay, thanks."
+      "text": "yep"
     },
     {
-      "ts": "1790822737.711765",
-      "user": "p-beth",
-      "thread_ts": "1790817399.093191",
-      "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "I don't think that is the whole picture, but fine for now."
-    },
-    {
-      "ts": "1790824778.055867",
+      "ts": "1790824778.119724",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-002578"
+        "ev-002908"
       ],
       "brief": "Leg DVT build waits on Fit check for Leg DVT build: Knee actuator saddle",
       "claim": {
@@ -1036,24 +1388,74 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Leg DVT build waits on Fit check for Leg DVT build: Knee actuator saddle"
+      "text": "Fit check for Leg DVT build: Knee actuator saddle is not done and the Leg DVT build waits on it."
     },
     {
-      "ts": "1790825388.979159",
-      "user": "p-wei",
-      "thread_ts": "1790817138.357361",
+      "ts": "1790825616.569843",
+      "user": "p-nadia",
+      "thread_ts": "1790817399.689911",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "that one is fine, its the next one that is off"
+    },
+    {
+      "ts": "1790825949.292081",
+      "user": "p-nadia",
+      "thread_ts": "1790817138.697842",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ty"
+    },
+    {
+      "ts": "1790828858.983162",
+      "user": "p-nadia",
+      "thread_ts": "1790824778.119724",
       "events": [],
       "brief": "reply (adds a detail) in the thread about: the message above",
       "must_mention": [],
-      "length": "one_word",
-      "text": "It did the same on mine."
+      "length": "medium",
+      "text": "i can pull the saddle off the shelf and try it with the old pins, takes maybe an hour"
     },
     {
-      "ts": "1790872965.662166",
+      "ts": "1790829865.446235",
+      "user": "p-wei",
+      "thread_ts": "1790824778.119724",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Which pins, the long ones?"
+    },
+    {
+      "ts": "1790871538.321271",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-002726"
+        "ev-002863"
+      ],
+      "brief": "Leg DVT build waits on Install and torque for Leg DVT build: Battery clevis 10 (2)",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00073"
+      },
+      "must_mention": [
+        "Install and torque for Leg DVT build: Battery clevis 10 (2)",
+        "the build"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Install and torque for Leg DVT build: Battery clevis 10 (2) is waiting and the build can't move."
+    },
+    {
+      "ts": "1790872965.793376",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-003086"
       ],
       "brief": "Leg DVT build waits on Fixture install and shakedown for Leg DVT build: Tilt stand F/T adapter plate",
       "claim": {
@@ -1062,28 +1464,28 @@
       },
       "must_mention": [
         "Fixture install and shakedown for Leg DVT build: Tilt stand F/T adapter plate",
-        "the build"
+        "Leg DVT build"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Leg DVT build waits on Fixture install and shakedown for Leg DVT build: Tilt stand F/T adapter plate, so the build can't start without it"
+      "text": "Fixture install and shakedown for Leg DVT build: Tilt stand F/T adapter plate is waiting on parts for the Leg DVT build."
     },
     {
-      "ts": "1790875181.143375",
-      "user": "p-beth",
-      "thread_ts": "1790872965.662166",
+      "ts": "1790878140.338708",
+      "user": "p-owen",
+      "thread_ts": "1790872965.793376",
       "events": [],
-      "brief": "reply (tags someone else) in the thread about: the message above",
+      "brief": "reply (agrees) in the thread about: the message above",
       "must_mention": [],
-      "length": "medium",
-      "text": "Looping in Zoe, since the fixture is hers. Zoe, is there an install date yet?"
+      "length": "one_word",
+      "text": "yep"
     },
     {
-      "ts": "1790878680.661849",
+      "ts": "1790878680.018013",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002912"
+        "ev-003301"
       ],
       "brief": "DVT hip motor ETA 2026-10-26",
       "claim": {
@@ -1096,45 +1498,24 @@
       ],
       "pressure": "elevated",
       "length": "medium",
-      "text": "DVT hip motor ETA 10/26, vendor said so this morning. fingers crossed"
+      "text": "DVT hip motor ETA 10/26, hopefully not another slip"
     },
     {
-      "ts": "1790879002.390731",
-      "user": "p-arjun",
-      "thread_ts": "1790872965.662166",
+      "ts": "1790881813.470090",
+      "user": "p-beth",
+      "thread_ts": "1790878680.018013",
       "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "brief": "reply (adds a detail) in the thread about: the message above",
       "must_mention": [],
-      "length": "short",
-      "text": "we got burned on motor ETAs last evt. keep a plan b"
+      "length": "medium",
+      "text": "That is the third time the date has moved, so I will mark it in the plan."
     },
     {
-      "ts": "1790880600.462302",
-      "user": "p-wei",
-      "thread_ts": null,
-      "events": [
-        "ev-001823"
-      ],
-      "brief": "clamp ring in use",
-      "claim": {
-        "kind": "done",
-        "value": "2026-10-01"
-      },
-      "must_mention": [
-        "clamp ring",
-        "the build",
-        "10/1"
-      ],
-      "pressure": "high",
-      "length": "short",
-      "text": "clamp ring in use for the build, done 10/1"
-    },
-    {
-      "ts": "1790882488.022352",
+      "ts": "1790882488.434739",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-002523"
+        "ev-002846"
       ],
       "brief": "Leg DVT build waits on Fit check for Leg DVT build: Battery clevis 10 (2)",
       "claim": {
@@ -1143,58 +1524,28 @@
       },
       "must_mention": [
         "Fit check for Leg DVT build: Battery clevis 10 (2)",
-        "the build"
+        "Leg DVT build"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Leg DVT build waits on Fit check for Leg DVT build: Battery clevis 10 (2), the build can't start without it"
+      "text": "Fit check for Leg DVT build: Battery clevis 10 (2) is not done and the Leg DVT build waits on it."
     },
     {
-      "ts": "1790883978.590723",
-      "user": "p-carlos",
-      "thread_ts": "1790880600.462302",
+      "ts": "1790882795.547362",
+      "user": "p-samir",
+      "thread_ts": "1790872965.793376",
       "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "brief": "reply (answers) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "Not true, the clamp ring was free yesterday!!"
+      "text": "thats the one from the vendor, ill chase"
     },
     {
-      "ts": "1790885180.635687",
-      "user": "p-beth",
-      "thread_ts": "1790880600.462302",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Agreed, Wei, thank you for flagging."
-    },
-    {
-      "ts": "1790886227.894655",
-      "user": "p-nadia",
-      "thread_ts": "1790880600.462302",
-      "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "no it wasnt, i saw it on the bench"
-    },
-    {
-      "ts": "1790887870.412123",
-      "user": "p-arjun",
-      "thread_ts": "1790882488.022352",
-      "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "same thing happened to us on the dyno clamp, we ended up borrowing one from the hand team"
-    },
-    {
-      "ts": "1790899203.189516",
+      "ts": "1790899203.770760",
       "user": "p-samir",
       "thread_ts": null,
       "events": [
-        "ev-002047"
+        "ev-002305"
       ],
       "brief": "Order XO-5527817 placed, promised 2026-10-09",
       "claim": {
@@ -1207,35 +1558,63 @@
         "10/9"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "XO-5527817 placed for 1141, promised 10/9. should be ok for the fit"
-    },
-    {
-      "ts": "1790903260.051482",
-      "user": "p-wei",
-      "thread_ts": "1790899203.189516",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "Good, that unblocks me too."
-    },
-    {
-      "ts": "1790906149.953663",
-      "user": "p-owen",
-      "thread_ts": "1790899203.189516",
-      "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
-      "must_mention": [],
       "length": "short",
-      "text": "ty"
+      "text": "Order XO-5527817 placed for 1141, promised 10/9"
     },
     {
-      "ts": "1790916284.340057",
+      "ts": "1790901931.218084",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-002095"
+        "ev-003902"
+      ],
+      "brief": "knee shaft: still quoting rev C",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev C"
+      },
+      "must_mention": [
+        "knee shaft"
+      ],
+      "length": "short",
+      "text": "knee shaft still quoting rev C"
+    },
+    {
+      "ts": "1790903835.621261",
+      "user": "p-carlos",
+      "thread_ts": "1790899203.770760",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "WHAT DAY, I NEED IT!!"
+    },
+    {
+      "ts": "1790905647.786562",
+      "user": "p-carlos",
+      "thread_ts": "1790899203.770760",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Is that door to door or ready to ship?"
+    },
+    {
+      "ts": "1790908295.886853",
+      "user": "p-andre",
+      "thread_ts": "1790899203.770760",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "the date is when they ship, not when we get it"
+    },
+    {
+      "ts": "1790916284.753224",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-002356"
       ],
       "brief": "FL-TST-2139: need 12 by 2026-10-26",
       "claim": {
@@ -1254,18 +1633,18 @@
       "text": "FL-TST-2139 need 12 by 10/26"
     },
     {
-      "ts": "1790949838.928598",
+      "ts": "1790949838.580811",
       "user": "p-owen",
       "thread_ts": null,
       "events": [
-        "ev-002013"
+        "ev-002271"
       ],
-      "brief": "FL-KNE-1189: need 12 by 2026-10-22 for Kit and assemble: Knee output shaft",
+      "brief": "FL-KNE-1189: need 12 by 2026-10-21 for Kit and assemble: Knee output shaft",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 12,
-          "by": "2026-10-22"
+          "by": "2026-10-21"
         }
       },
       "must_mention": [
@@ -1273,51 +1652,139 @@
         "Kit and assemble: Knee output shaft",
         "FL-KNE-1139",
         "FL-KNE-1124",
-        "10/22"
+        "wed 10/21"
       ],
       "pressure": "elevated",
-      "length": "medium",
-      "text": "FL-KNE-1189 need 12 by 10/22 for Kit and assemble: Knee output shaft. also FL-KNE-1139 and FL-KNE-1124"
+      "length": "short",
+      "text": "FL-KNE-1189 need 12 for Kit and assemble: Knee output shaft, also FL-KNE-1139 and FL-KNE-1124, by wed 10/21"
     },
     {
-      "ts": "1790953820.157856",
+      "ts": "1790953820.745444",
       "user": "p-nadia",
       "thread_ts": null,
       "events": [
-        "ev-002077"
+        "ev-002333"
       ],
-      "brief": "spin coupling: need 6 by 2026-10-09",
+      "brief": "the coupling: need 6 by 2026-10-07 for Test stand rework: Spin-test shaft coupling",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 6,
-          "by": "2026-10-09"
+          "by": "2026-10-07"
+        }
+      },
+      "must_mention": [
+        "the coupling",
+        "Test stand rework: Spin-test shaft coupling",
+        "10/7"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "the coupling need 6 for Test stand rework: Spin-test shaft coupling by 10/7"
+    },
+    {
+      "ts": "1790954328.803923",
+      "user": "p-beth",
+      "thread_ts": "1790953820.745444",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Thanks, will look at it next."
+    },
+    {
+      "ts": "1790954657.712642",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-002335"
+      ],
+      "brief": "spin coupling: need 6 by 2026-10-07",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-10-07"
         }
       },
       "must_mention": [
         "spin coupling",
-        "10/9"
+        "wed 10/7"
       ],
       "pressure": "high",
       "length": "short",
-      "text": "spin coupling need 6 by 10/9"
+      "text": "spin coupling need 6 by wed 10/7"
     },
     {
-      "ts": "1790953983.046546",
-      "user": "p-arjun",
-      "thread_ts": "1790949838.928598",
+      "ts": "1790955645.285397",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-002336"
+      ],
+      "brief": "spin coupling: need 6 by 2026-10-07 for Test stand rework: Spin-test shaft coupling",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-10-07"
+        }
+      },
+      "must_mention": [
+        "spin coupling",
+        "Test stand rework: Spin-test shaft coupling",
+        "wed the 7th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "spin coupling need 6 for Test stand rework: Spin-test shaft coupling by wed the 7th"
+    },
+    {
+      "ts": "1790958164.041853",
+      "user": "p-wei",
+      "thread_ts": "1790953820.745444",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Is the coupling the same one we used last time, or has the bore changed?"
+    },
+    {
+      "ts": "1790960972.933258",
+      "user": "p-beth",
+      "thread_ts": "1790949838.580811",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Understood."
+    },
+    {
+      "ts": "1790961418.735409",
+      "user": "p-yusuf",
+      "thread_ts": "1790949838.580811",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "i would not do it that way"
+    },
+    {
+      "ts": "1790961623.475564",
+      "user": "p-wei",
+      "thread_ts": "1790953820.745444",
       "events": [],
       "brief": "reply (jokes) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "owen ordering in bulk now? whos paying"
+      "text": "bring it up at standup and it will take a full hour"
     },
     {
-      "ts": "1790963687.516758",
+      "ts": "1790963687.872499",
       "user": "p-samir",
       "thread_ts": null,
       "events": [
-        "ev-002020"
+        "ev-002278"
       ],
       "brief": "Order XO-5528609 placed, promised 2026-10-08",
       "claim": {
@@ -1331,14 +1798,24 @@
       ],
       "pressure": "high",
       "length": "short",
-      "text": "XO-5528609 placed for the knee flange, promised 10/8"
+      "text": "Order XO-5528609 placed for the knee flange, promised 10/8"
     },
     {
-      "ts": "1790965910.195370",
+      "ts": "1790964459.140097",
+      "user": "p-andre",
+      "thread_ts": "1790949838.580811",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "nah"
+    },
+    {
+      "ts": "1790965910.709970",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-002612"
+        "ev-002948"
       ],
       "brief": "Leg DVT build waits on Design iteration bench trial for Leg DVT build: Shank cover plate",
       "claim": {
@@ -1350,89 +1827,65 @@
         "Leg DVT build"
       ],
       "pressure": "low",
-      "length": "short",
-      "text": "Leg DVT build waits on Design iteration bench trial for Leg DVT build: Shank cover plate"
-    },
-    {
-      "ts": "1790967495.332558",
-      "user": "p-carlos",
-      "thread_ts": "1790963687.516758",
-      "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "GOOD!!"
-    },
-    {
-      "ts": "1790970367.254968",
-      "user": "p-nadia",
-      "thread_ts": "1790963687.516758",
-      "events": [],
-      "brief": "reply (will check later) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "ill check the flange stock tmrw"
-    },
-    {
-      "ts": "1790970982.015104",
-      "user": "p-owen",
-      "thread_ts": "1790965910.195370",
-      "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
-      "must_mention": [],
       "length": "medium",
-      "text": "bench trial is free monday if someone wants it, jig is already set up"
+      "text": "Design iteration bench trial for Leg DVT build: Shank cover plate is still open, and the Leg DVT build needs it."
     },
     {
-      "ts": "1790971264.912781",
-      "user": "p-samir",
-      "thread_ts": "1790965910.195370",
-      "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "ok will tell the vendor"
-    },
-    {
-      "ts": "1790973506.393378",
-      "user": "p-samir",
-      "thread_ts": "1790965910.195370",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "which jig, the old one or the redesign?"
-    },
-    {
-      "ts": "1790973572.125739",
-      "user": "p-samir",
-      "thread_ts": "1790806952.419538",
+      "ts": "1790969793.260368",
+      "user": "p-priya",
+      "thread_ts": null,
       "events": [
-        "ev-003217"
+        "ev-002977"
       ],
-      "brief": "Correction: interface plate: need 2 by 2026-10-09 for Fit check: Hip to pelvis interface plate",
+      "brief": "Leg DVT build waits on Design iteration bench trial for Leg DVT build: Knee cable strain-relief clamp",
       "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 2,
-          "by": "2026-10-09"
-        }
+        "kind": "blocked",
+        "value": "wi-00147"
       },
       "must_mention": [
-        "interface plate",
-        "Fit check: Hip to pelvis interface plate",
-        "10/9"
+        "Design iteration bench trial for Leg DVT build: Knee cable strain-relief clamp",
+        "Leg DVT build"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Design iteration bench trial for Leg DVT build: Knee cable strain-relief clamp has not happened and the Leg DVT build is waiting on it."
+    },
+    {
+      "ts": "1790971912.280198",
+      "user": "p-luis",
+      "thread_ts": null,
+      "events": [
+        "ev-002166"
+      ],
+      "brief": "1119 arrived (11)",
+      "claim": {
+        "kind": "stock",
+        "value": 11
+      },
+      "must_mention": [
+        "1119",
+        "11"
       ],
       "pressure": "high",
       "length": "short",
-      "text": "correction, interface plate need 2 by 10/9 for Fit check: Hip to pelvis interface plate, not the 8th"
+      "text": "1119 arrived, 11"
     },
     {
-      "ts": "1790975862.036307",
+      "ts": "1790974106.852521",
+      "user": "p-beth",
+      "thread_ts": "1790971912.280198",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "We got ours in a day last time, so it should be fine."
+    },
+    {
+      "ts": "1790975862.750395",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-003598"
+        "ev-003846"
       ],
       "brief": "knee motor mount: still quoting rev E",
       "claim": {
@@ -1442,15 +1895,25 @@
       "must_mention": [
         "knee motor mount"
       ],
-      "length": "short",
-      "text": "knee motor mount still quoting rev E"
+      "length": "medium",
+      "text": "knee motor mount still quoting rev E, not sure that's right"
     },
     {
-      "ts": "1790984280.900522",
+      "ts": "1790978272.127920",
+      "user": "p-beth",
+      "thread_ts": "1790971912.280198",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Agreed."
+    },
+    {
+      "ts": "1790984280.941863",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-002577"
+        "ev-002907"
       ],
       "brief": "Leg DVT build waits on Install and torque for Leg DVT build: Ankle pivot bushing",
       "claim": {
@@ -1463,14 +1926,57 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Leg DVT build waits on Install and torque for Leg DVT build: Ankle pivot bushing"
+      "text": "Install and torque for Leg DVT build: Ankle pivot bushing is waiting and the Leg DVT build is on hold."
     },
     {
-      "ts": "1790989842.215811",
+      "ts": "1790986008.469109",
+      "user": "p-carlos",
+      "thread_ts": "1790984280.941863",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "ty"
+    },
+    {
+      "ts": "1790989173.314268",
+      "user": "p-yusuf",
+      "thread_ts": "1790984280.941863",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "will check later"
+    },
+    {
+      "ts": "1790989238.846649",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-002393"
+      ],
+      "brief": "the bracket: need 12 by 2026-10-23",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-23"
+        }
+      },
+      "must_mention": [
+        "the bracket",
+        "fri 10/23"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "the bracket need 12 by fri 10/23"
+    },
+    {
+      "ts": "1790989842.618343",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-002773"
+        "ev-003144"
       ],
       "brief": "Kit and assemble: Knee output encoder bracket waits on Sensor breakout PCB for knee actuator (abs encoder bracket)",
       "claim": {
@@ -1479,64 +1985,11 @@
       },
       "must_mention": [
         "Sensor breakout PCB for knee actuator (abs encoder bracket)",
-        "the bracket"
+        "Kit and assemble: Knee output encoder bracket"
       ],
       "pressure": "high",
-      "length": "short",
-      "text": "Kit and assemble: Knee output encoder bracket waits on Sensor breakout PCB for knee actuator (abs encoder bracket), so the bracket sits in a bag"
-    },
-    {
-      "ts": "1790991811.744118",
-      "user": "p-zoe",
-      "thread_ts": null,
-      "events": [
-        "ev-003380"
-      ],
-      "brief": "interface plate: need 2 by 2026-10-08",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 2,
-          "by": "2026-10-08"
-        }
-      },
-      "must_mention": [
-        "interface plate",
-        "10/8"
-      ],
-      "pressure": "high",
-      "length": "short",
-      "text": "interface plate need 2 by 10/8"
-    },
-    {
-      "ts": "1790995137.562618",
-      "user": "p-ingrid",
-      "thread_ts": "1790989842.215811",
-      "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "Thank you."
-    },
-    {
-      "ts": "1790998362.359905",
-      "user": "p-beth",
-      "thread_ts": "1790989842.215811",
-      "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "I'm not convinced the PCB is the only block, but let's see what Farah says Monday."
-    },
-    {
-      "ts": "1791001728.172862",
-      "user": "p-samir",
-      "thread_ts": "1790989842.215811",
-      "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "ok"
+      "length": "medium",
+      "text": "Kit and assemble: Knee output encoder bracket is waiting on Sensor breakout PCB for knee actuator (abs encoder bracket)"
     }
   ]
 }

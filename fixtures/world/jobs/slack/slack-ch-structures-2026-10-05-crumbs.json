@@ -73,22 +73,19 @@
       }
     },
     {
-      "id": "p-luis",
-      "name": "Luis Navarro",
-      "display_name": "luis.n",
-      "slack_id": "U07FLK0LUIS",
-      "title": "Mechanical Technician",
+      "id": "p-kwame",
+      "name": "Kwame Asante",
+      "display_name": "kwame",
+      "slack_id": "U07FLK0KWAM",
+      "title": "Senior Electrical Engineer, power",
       "style": {
-        "case": "lower",
-        "punctuation": "light",
-        "typos": "lots",
-        "emoji": "some",
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
         "length": "medium",
         "hedging": "low",
-        "quirks": [
-          "fixes typos with *word",
-          "double-sends instead of editing"
-        ]
+        "quirks": []
       }
     },
     {
@@ -165,24 +162,6 @@
       }
     },
     {
-      "id": "p-valeria",
-      "name": "Valeria Ortiz",
-      "display_name": "valeria.o",
-      "slack_id": "U07FLK0VALE",
-      "title": "Electrical Engineer, battery systems",
-      "style": {
-        "case": "mixed",
-        "punctuation": "light",
-        "typos": "rare",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "high",
-        "quirks": [
-          "\"i think\", \"probably\", \"not 100% sure but\""
-        ]
-      }
-    },
-    {
       "id": "p-zoe",
       "name": "Zoe Castellanos",
       "display_name": "zoe.c",
@@ -218,11 +197,11 @@
   ],
   "messages": [
     {
-      "ts": "1791228241.758311",
+      "ts": "1791228241.377241",
       "user": "p-talia",
       "thread_ts": null,
       "events": [
-        "ev-003501"
+        "ev-003995"
       ],
       "brief": "21700 cells for test packs: still quoting 2026-09-24",
       "claim": {
@@ -231,17 +210,17 @@
       },
       "must_mention": [
         "21700 cells for test packs",
-        "thurs the 24th"
+        "9/24"
       ],
       "length": "short",
-      "text": "21700 cells for test packs, vendor still quoting thurs the 24th 🙏"
+      "text": "21700 cells for test packs still quoting 9/24 🙏"
     },
     {
-      "ts": "1791307863.651147",
+      "ts": "1791307863.485754",
       "user": "p-renee",
       "thread_ts": null,
       "events": [
-        "ev-002817"
+        "ev-003200"
       ],
       "brief": "Assemble build unit: Pack latch block waits on 21700 cells for test packs",
       "claim": {
@@ -254,14 +233,24 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Assemble build unit: Pack latch block is stuck until the 21700 cells for test packs show up."
+      "text": "Assemble build unit: Pack latch block waits on 21700 cells for test packs"
     },
     {
-      "ts": "1791315007.491164",
+      "ts": "1791312229.940323",
+      "user": "p-talia",
+      "thread_ts": "1791307863.485754",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Chasing the vendor today 🙏"
+    },
+    {
+      "ts": "1791315007.378000",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-002102"
+        "ev-002367"
       ],
       "brief": "FL-STR-1507: need 12 by 2026-11-20 for Fit check: Torso IMU plate",
       "claim": {
@@ -280,14 +269,14 @@
       ],
       "pressure": "low",
       "length": "medium",
-      "text": "need 12 of FL-STR-1507 for Fit check: Torso IMU plate, same date for FL-STR-1560 and FL-STR-1582. thats 11/20"
+      "text": "FL-STR-1507 need 12 by 11/20 for Fit check: Torso IMU plate, also FL-STR-1560 and FL-STR-1582"
     },
     {
-      "ts": "1791318039.712406",
+      "ts": "1791318039.263455",
       "user": "p-talia",
       "thread_ts": null,
       "events": [
-        "ev-002052"
+        "ev-002310"
       ],
       "brief": "latch: need 10 by 2026-10-26",
       "claim": {
@@ -299,38 +288,53 @@
       },
       "must_mention": [
         "latch",
-        "10/26"
+        "mon 10/26"
       ],
       "pressure": "low",
       "length": "medium",
-      "text": "need 10 latch by 10/26, can you get it moving? 🙏"
+      "text": "latch, need 10 by mon 10/26"
     },
     {
-      "ts": "1791324788.909307",
-      "user": "p-idris",
+      "ts": "1791323309.187995",
+      "user": "p-renee",
       "thread_ts": null,
       "events": [
-        "ev-001995"
+        "ev-002362"
       ],
-      "brief": "BMS standoff arrived (24)",
+      "brief": "1679: need 5 by 2026-10-23 for Assemble build unit: Pack latch block",
       "claim": {
-        "kind": "stock",
-        "value": 24
+        "kind": "needs",
+        "value": {
+          "qty": 5,
+          "by": "2026-10-23"
+        }
       },
       "must_mention": [
-        "BMS standoff",
-        "24"
+        "1679",
+        "Assemble build unit: Pack latch block",
+        "1622",
+        "10/23"
       ],
       "pressure": "elevated",
-      "length": "medium",
-      "text": "BMS standoff came in, 24 in the bag. checking the thread tmrw"
+      "length": "short",
+      "text": "1679 need 5 by 10/23 for Assemble build unit: Pack latch block, and 1622 too"
     },
     {
-      "ts": "1791336104.866394",
+      "ts": "1791325901.117692",
+      "user": "p-talia",
+      "thread_ts": "1791323309.187995",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "always the last thing 😬"
+    },
+    {
+      "ts": "1791336104.476311",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-003653"
+        "ev-004028"
       ],
       "brief": "Battery enclosure thermal runaway containment: still quoting 2026-10-07",
       "claim": {
@@ -341,15 +345,15 @@
         "Battery enclosure thermal runaway containment",
         "wed the 7th"
       ],
-      "length": "medium",
-      "text": "Battery enclosure thermal runaway containment, vendor is still quoting wed the 7th"
+      "length": "short",
+      "text": "Battery enclosure thermal runaway containment still quoting wed the 7th"
     },
     {
-      "ts": "1791409138.133073",
+      "ts": "1791409138.834735",
       "user": "p-samir",
       "thread_ts": null,
       "events": [
-        "ev-002104"
+        "ev-002369"
       ],
       "brief": "FL-STR-1507: need 12 by 2026-11-20",
       "claim": {
@@ -361,18 +365,18 @@
       },
       "must_mention": [
         "FL-STR-1507",
-        "11/20"
+        "fri the 20th"
       ],
       "pressure": "low",
-      "length": "short",
-      "text": "FL-STR-1507 needs 12 by 11/20, pls dont let this one slip"
+      "length": "medium",
+      "text": "FL-STR-1507 need 12 by fri the 20th"
     },
     {
-      "ts": "1791416821.325614",
+      "ts": "1791416821.659617",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-002827"
+        "ev-003210"
       ],
       "brief": "Rig setup: Cell heater clamp plate waits on 21700 cells for test packs",
       "claim": {
@@ -385,14 +389,14 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Rig setup: Cell heater clamp plate cant start until the 21700 cells for test packs land"
+      "text": "Rig setup: Cell heater clamp plate waits on 21700 cells for test packs"
     },
     {
-      "ts": "1791417354.499203",
+      "ts": "1791417354.226238",
       "user": "p-ingrid",
       "thread_ts": null,
       "events": [
-        "ev-003680"
+        "ev-003908"
       ],
       "brief": "torso pelvis plate: still quoting rev A",
       "claim": {
@@ -403,14 +407,14 @@
         "torso pelvis plate"
       ],
       "length": "short",
-      "text": "The torso pelvis plate is still being quoted at rev A. Please confirm that is intended."
+      "text": "torso pelvis plate still quoting rev A"
     },
     {
-      "ts": "1791477468.141919",
+      "ts": "1791477468.619460",
       "user": "p-theo",
       "thread_ts": null,
       "events": [
-        "ev-003477"
+        "ev-003903"
       ],
       "brief": "Battery enclosure thermal runaway containment: still quoting 2026-10-07",
       "claim": {
@@ -422,36 +426,90 @@
         "10/7"
       ],
       "length": "short",
-      "text": "Battery enclosure thermal runaway containment still quoting 10/7 i think"
+      "text": "Battery enclosure thermal runaway containment still quoting 10/7"
     },
     {
-      "ts": "1791481165.687196",
-      "user": "p-carlos",
-      "thread_ts": "1791477468.141919",
-      "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "We had the same slip on a gasket order before. It cost us a week then!!"
-    },
-    {
-      "ts": "1791484782.285458",
-      "user": "p-carlos",
-      "thread_ts": "1791477468.141919",
-      "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "I dont think we should plan around that date. Vendor dates have been optimistic lately."
-    },
-    {
-      "ts": "1791488960.210044",
+      "ts": "1791488960.457426",
       "user": "p-samir",
       "thread_ts": null,
       "events": [
-        "ev-002106"
+        "ev-002371"
       ],
-      "brief": "the part: need 12 by 2026-11-20 for next week",
+      "brief": "the part: need 12 by 2026-11-19 for next week",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-11-19"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "next week",
+        "thurs the 19th"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "the part need 12 by thurs the 19th for next week"
+    },
+    {
+      "ts": "1791569669.365968",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-002822"
+      ],
+      "brief": "Battery enclosure thermal runaway containment waits on Instrumentation fit-up for Battery enclosure thermal runaway containment: Battery clevis 10",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00050"
+      },
+      "must_mention": [
+        "Instrumentation fit-up for Battery enclosure thermal runaway containment: Battery clevis 10",
+        "Battery enclosure thermal runaway containment"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Battery enclosure thermal runaway containment waits on Instrumentation fit-up for Battery enclosure thermal runaway containment: Battery clevis 10"
+    },
+    {
+      "ts": "1791571632.448132",
+      "user": "p-kwame",
+      "thread_ts": "1791569669.365968",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "at this rate the clevis will have its own fan club"
+    },
+    {
+      "ts": "1791573670.274037",
+      "user": "p-carlos",
+      "thread_ts": "1791569669.365968",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "clevis is the long pole yeah"
+    },
+    {
+      "ts": "1791578914.051096",
+      "user": "p-carlos",
+      "thread_ts": "1791569669.365968",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "agree"
+    },
+    {
+      "ts": "1791612920.649740",
+      "user": "p-samir",
+      "thread_ts": "1791488960.457426",
+      "events": [
+        "ev-003676"
+      ],
+      "brief": "Correction: the part: need 12 by 2026-11-20 for next week",
       "claim": {
         "kind": "needs",
         "value": {
@@ -462,71 +520,11 @@
       "must_mention": [
         "the part",
         "next week",
-        "11/20"
+        "fri 11/20"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "the part, need 12 by 11/20, so it has to be ordered next week"
-    },
-    {
-      "ts": "1791569669.514039",
-      "user": "p-idris",
-      "thread_ts": null,
-      "events": [
-        "ev-002504"
-      ],
-      "brief": "Battery enclosure thermal runaway containment waits on Instrumentation fit-up for Battery enclosure thermal runaway containment: Battery clevis 10",
-      "claim": {
-        "kind": "blocked",
-        "value": "wi-00050"
-      },
-      "must_mention": [
-        "Instrumentation fit-up for Battery enclosure thermal runaway containment: Battery clevis 10",
-        "the containment"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "the containment is waiting on Instrumentation fit-up for Battery enclosure thermal runaway containment: Battery clevis 10"
-    },
-    {
-      "ts": "1791573204.287496",
-      "user": "p-carlos",
-      "thread_ts": "1791569669.514039",
-      "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "I'd argue the instrumentation is not what's holding it. Gasket is the real gap."
-    },
-    {
-      "ts": "1791573280.649822",
-      "user": "p-valeria",
-      "thread_ts": "1791569669.514039",
-      "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "so we are waiting on a clevis to find out if the lid melts, classic"
-    },
-    {
-      "ts": "1791575075.683267",
-      "user": "p-luis",
-      "thread_ts": null,
-      "events": [
-        "ev-001854"
-      ],
-      "brief": "connector panel arrived (3)",
-      "claim": {
-        "kind": "stock",
-        "value": 3
-      },
-      "must_mention": [
-        "connector panel",
-        "3"
-      ],
-      "pressure": "low",
-      "length": "short",
-      "text": "connector panel arived, 3 in the box"
+      "text": "correction: the part need 12 by fri 11/20 for next week"
     }
   ]
 }

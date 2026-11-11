@@ -38,21 +38,105 @@
       }
     },
     {
-      "id": "p-priya",
-      "name": "Priya Raman",
-      "display_name": "priya",
-      "slack_id": "U07FLK0PRIY",
-      "title": "Legs Lead",
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
       "style": {
         "case": "proper",
         "punctuation": "full",
         "typos": "none",
-        "emoji": "none",
-        "length": "long",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
         "hedging": "medium",
         "quirks": [
-          "numbered lists in status updates",
-          "restates the question before answering"
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-valeria",
+      "name": "Valeria Ortiz",
+      "display_name": "valeria.o",
+      "slack_id": "U07FLK0VALE",
+      "title": "Electrical Engineer, battery systems",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
         ]
       }
     },
@@ -71,25 +155,6 @@
         "hedging": "low",
         "quirks": []
       }
-    },
-    {
-      "id": "p-zoe",
-      "name": "Zoe Castellanos",
-      "display_name": "zoe.c",
-      "slack_id": "U07FLK0ZOE0",
-      "title": "Test Engineer, fixtures owner",
-      "style": {
-        "case": "lower",
-        "punctuation": "light",
-        "typos": "some",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "medium",
-        "quirks": [
-          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
-          "corrects own dates"
-        ]
-      }
     }
   ],
   "context": [
@@ -105,59 +170,60 @@
   ],
   "messages": [
     {
-      "ts": "1793072347.898272",
-      "user": "p-zoe",
+      "ts": "1793053849.166669",
+      "user": "p-ingrid",
       "thread_ts": null,
       "events": [
-        "ev-002393"
+        "ev-002693"
       ],
-      "brief": "latch block: need 10 by 2026-12-23",
+      "brief": "FL-BAT-1632: need 15 by 2026-12-10",
       "claim": {
         "kind": "needs",
         "value": {
-          "qty": 10,
-          "by": "2026-12-23"
+          "qty": 15,
+          "by": "2026-12-10"
         }
       },
       "must_mention": [
-        "latch block",
-        "wed the 23rd"
+        "FL-BAT-1632",
+        "thurs the 10th"
       ],
       "pressure": "low",
-      "length": "short",
-      "text": "latch block: need 10 by wed the 23rd"
+      "length": "medium",
+      "text": "FL-BAT-1632 need 15 by thurs the 10th. Can we get a firm date?"
     },
     {
-      "ts": "1793113161.330330",
-      "user": "p-wei",
+      "ts": "1793057648.425407",
+      "user": "p-renee",
       "thread_ts": null,
       "events": [
-        "ev-002404"
+        "ev-002674"
       ],
-      "brief": "FL-KNE-1120: need 12 by 2026-11-17",
+      "brief": "gauge block: need 9 by 2026-11-10 for Rig setup: Drop height gauge block",
       "claim": {
         "kind": "needs",
         "value": {
-          "qty": 12,
-          "by": "2026-11-17"
+          "qty": 9,
+          "by": "2026-11-10"
         }
       },
       "must_mention": [
-        "FL-KNE-1120",
-        "tues the 17th"
+        "gauge block",
+        "Rig setup: Drop height gauge block",
+        "tues 11/10"
       ],
       "pressure": "elevated",
-      "length": "medium",
-      "text": "FL-KNE-1120 need 12 by tues the 17th, can we make that?"
+      "length": "short",
+      "text": "gauge block: need 9 for Rig setup: Drop height gauge block by tues 11/10. This one is under pressure."
     },
     {
-      "ts": "1793141508.474688",
-      "user": "p-priya",
+      "ts": "1793074887.707954",
+      "user": "p-kenji",
       "thread_ts": null,
       "events": [
-        "ev-002398"
+        "ev-002685"
       ],
-      "brief": "the link: need 7 by 2026-11-05",
+      "brief": "FL-HND-1458: need 7 by 2026-11-05 for Prototype fit-up: Finger middle link",
       "claim": {
         "kind": "needs",
         "value": {
@@ -166,21 +232,101 @@
         }
       },
       "must_mention": [
-        "the link",
-        "thurs the 5th"
+        "FL-HND-1458",
+        "Prototype fit-up: Finger middle link",
+        "FL-HND-1473",
+        "FL-HND-1486",
+        "FL-HND-1454",
+        "11/5"
       ],
       "pressure": "high",
       "length": "medium",
-      "text": "the link, need 7 by thurs the 5th!! line is waiting on it"
+      "text": "FL-HND-1458 need 7 by 11/5 for Prototype fit-up: Finger middle link. also FL-HND-1473, FL-HND-1486 and FL-HND-1454 go on the same fit-up"
     },
     {
-      "ts": "1793151603.911031",
+      "ts": "1793078682.741434",
+      "user": "p-samir",
+      "thread_ts": "1793074887.707954",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "ok i'll add those to the sheet"
+    },
+    {
+      "ts": "1793079548.375267",
+      "user": "p-valeria",
+      "thread_ts": "1793074887.707954",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "are those all the same vendor?"
+    },
+    {
+      "ts": "1793113161.137665",
+      "user": "p-wei",
+      "thread_ts": null,
+      "events": [
+        "ev-002696"
+      ],
+      "brief": "FL-KNE-1120: need 12 by 2026-11-12",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-11-12"
+        }
+      },
+      "must_mention": [
+        "FL-KNE-1120",
+        "thurs 11/12"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-KNE-1120 need 12 by thurs 11/12, pressure is elevated"
+    },
+    {
+      "ts": "1793124434.598841",
+      "user": "p-diego",
+      "thread_ts": "1793074887.707954",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "thanks samir 🙏"
+    },
+    {
+      "ts": "1793151603.313968",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-002421"
+        "ev-002715"
       ],
-      "brief": "that order: need 24 by 2026-11-11",
+      "brief": "that order: need 24 by 2026-11-12",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-11-12"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "11/12"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "that order need 24 by 11/12, and it is getting urgent 😬"
+    },
+    {
+      "ts": "1793280063.905149",
+      "user": "p-diego",
+      "thread_ts": "1793151603.313968",
+      "events": [
+        "ev-003692"
+      ],
+      "brief": "Correction: that order: need 24 by 2026-11-11",
       "claim": {
         "kind": "needs",
         "value": {
@@ -190,11 +336,31 @@
       },
       "must_mention": [
         "that order",
-        "wed 11/11"
+        "wed the 11th"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "that order, need 24 by wed 11/11"
+      "text": "correction, that order is needed by wed the 11th, not the 12th 🙏"
+    },
+    {
+      "ts": "1793294535.757998",
+      "user": "p-kenji",
+      "thread_ts": "1793151603.313968",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ok"
+    },
+    {
+      "ts": "1793299868.549893",
+      "user": "p-lin",
+      "thread_ts": "1793151603.313968",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "@samir.k can you confirm that with the vendor?"
     }
   ]
 }

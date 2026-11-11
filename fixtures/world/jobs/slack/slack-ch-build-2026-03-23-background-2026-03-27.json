@@ -1,0 +1,239 @@
+{
+  "job_id": "slack-ch-build-2026-03-23-background-2026-03-27",
+  "source": "slack",
+  "status": "blank",
+  "priority": 68,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-build",
+    "name": "build",
+    "slack_id": "C07FLK0BILD",
+    "purpose": "EVT/DVT build coordination"
+  },
+  "week": {
+    "start": "2026-03-23",
+    "end": "2026-03-29"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Building the first three hip and knee actuators. This week: Build retro: kitting list lived in a spreadsheet nobody updated.",
+    "Ongoing: Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT. This week: Decision: hip stays cycloidal through DVT, revisit for PVT; knee stays harmonic.",
+    "Ongoing: Absolute encoder on the knee output glitches when the motor runs above 8 A. This week: Bao scopes it: common-mode noise on the SSI clock, cable runs alongside motor phases.",
+    "Ongoing: Getting dyno and gantry logs into one place with consistent timestamps. This week: Elena: dyno logs are CSVs on a lab laptop, gantry logs on another.",
+    "Ongoing: Coupling misalignment corrupting efficiency numbers on the dyno. This week: Bellows coupling replaces the jaw coupling; repeatability within 0.6%."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1774625563.288271",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Arjun pushes back: harmonic flexspline fatigue at hip peak torque (~140 Nm) is marginal, cyclo takes shock loads from drops.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1774643711.875432",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-004414"
+      ],
+      "brief": "background: Build retro: kitting list lived in a spreadsheet nobody updated.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1774649960.860794",
+      "user": "p-sofia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Bao scopes it: common-mode noise on the SSI clock, cable runs alongside motor phases.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1774650123.368834",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Owen prices both: harmonic set ~$1.9k per joint and 10-week lead; cyclo is machined parts plus pins, ~3 weeks.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1774650816.719693",
+      "user": "p-nora",
+      "thread_ts": "1774650123.368834",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Owen prices both: harmonic set ~$1.9k per joint and 10-week lead; cyclo is machined parts plus pins, ~3 weeks.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1774652843.003811",
+      "user": "p-sofia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Jonas sees 2-3 count jumps on the knee abs encoder above 8 A phase current.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1774653079.692786",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1774654396.486397",
+      "user": "p-lukas",
+      "thread_ts": "1774650123.368834",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Owen prices both: harmonic set ~$1.9k per joint and 10-week lead; cyclo is machined parts plus pins, ~3 weeks.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1774669657.764391",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: Build retro: kitting list lived in a spreadsheet nobody updated.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    }
+  ]
+}

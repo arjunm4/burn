@@ -1,0 +1,181 @@
+{
+  "job_id": "slack-ch-legs-2026-03-30-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 65,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-legs",
+    "name": "legs",
+    "slack_id": "C07FLK0LEGS",
+    "purpose": "Leg and ankle: design, drop test, gait gantry"
+  },
+  "week": {
+    "start": "2026-03-30",
+    "end": "2026-04-05"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Leg (left, hip to foot)."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1774889826.965119",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002832"
+      ],
+      "brief": "Instrumentation fit-up for Leg drop test: Actuator bearing press jig waits on Bearing set for leg (left, hip to foot) (press jig)",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-gen-0011"
+      },
+      "must_mention": [
+        "Bearing set for leg (left, hip to foot) (press jig)",
+        "Instrumentation fit-up for Leg drop test: Actuator bearing press jig"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Instrumentation fit-up for Leg drop test: Actuator bearing press jig is waiting on Bearing set for leg (left, hip to foot) (press jig) still"
+    },
+    {
+      "ts": "1775090155.034469",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-000780"
+      ],
+      "brief": "FL-TST-2878: need 2 by 2026-04-28 for Instrumentation fit-up for Leg drop test: Stator insertion jig",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-04-28"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2878",
+        "Instrumentation fit-up for Leg drop test: Stator insertion jig",
+        "FL-TST-2956",
+        "tues 4/28"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "FL-TST-2878 need 2 by tues 4/28 for Instrumentation fit-up for Leg drop test: Stator insertion jig. FL-TST-2956 too, I think same date"
+    },
+    {
+      "ts": "1775240628.653615",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-000781"
+      ],
+      "brief": "stator jig: need 2 by 2026-04-28",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-04-28"
+        }
+      },
+      "must_mention": [
+        "stator jig",
+        "tues 4/28"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "stator jig: need 2 by tues 4/28. Please flag it if the quote comes back late."
+    },
+    {
+      "ts": "1775251906.258895",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-000782"
+      ],
+      "brief": "2878: need 2 by 2026-04-28 for the fit check",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-04-28"
+        }
+      },
+      "must_mention": [
+        "2878",
+        "the fit check",
+        "tues the 28th"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Following up on 2878: we need 2 for the fit check by tues the 28th."
+    }
+  ]
+}

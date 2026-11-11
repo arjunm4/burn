@@ -1,0 +1,355 @@
+{
+  "job_id": "slack-ch-supply-chain-2026-05-11-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 53,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-supply-chain",
+    "name": "supply-chain",
+    "slack_id": "C07FLK0SUPC",
+    "purpose": "Supply chain team: vendors, POs, deliveries, expedites"
+  },
+  "week": {
+    "start": "2026-05-11",
+    "end": "2026-05-17"
+  },
+  "people": [
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Orders sitting in DFM review because of tolerance callouts. This week: Samir pushes engineers to put tolerances on the drawing, not just the STEP."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1778620768.571617",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-000816"
+      ],
+      "brief": "pivot pin arrived (12)",
+      "claim": {
+        "kind": "stock",
+        "value": 12
+      },
+      "must_mention": [
+        "pivot pin",
+        "12"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "pivot pin arrived (12)!!"
+    },
+    {
+      "ts": "1778715087.930259",
+      "user": "p-mei",
+      "thread_ts": null,
+      "events": [
+        "ev-000004"
+      ],
+      "brief": "Shank IMU modules: moved from 2026-05-11 to 2026-05-19",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-05-19"
+      },
+      "must_mention": [
+        "Shank IMU modules",
+        "tues 5/19"
+      ],
+      "length": "short",
+      "text": "Shank IMU modules moved out to tues 5/19, vendor slipped."
+    },
+    {
+      "ts": "1778717682.243937",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-003769"
+      ],
+      "brief": "hip spacer: need 6 by 2026-06-25 for the fit check",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-06-25"
+        }
+      },
+      "must_mention": [
+        "hip spacer",
+        "the fit check",
+        "6/25"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "i think hip spacer, need 6 by 6/25 for the fit check"
+    },
+    {
+      "ts": "1778718359.462757",
+      "user": "p-beth",
+      "thread_ts": "1778715087.930259",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Thanks, will check later."
+    },
+    {
+      "ts": "1778874786.638462",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-001020"
+      ],
+      "brief": "Order XO-5393688 placed, promised 2026-06-01",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-06-01"
+      },
+      "must_mention": [
+        "XO-5393688",
+        "shield bracket",
+        "6/1"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "XO-5393688 shield bracket placed, promised 6/1"
+    },
+    {
+      "ts": "1778876751.285080",
+      "user": "p-ingrid",
+      "thread_ts": "1778874786.638462",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Adding @nora.f to follow up on that one."
+    },
+    {
+      "ts": "1778877171.996306",
+      "user": "p-nora",
+      "thread_ts": "1778874786.638462",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Had a similar delay earlier this year. It came in about when they said in the end."
+    },
+    {
+      "ts": "1778881203.934242",
+      "user": "p-jade",
+      "thread_ts": "1778874786.638462",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "will check at receiving when it lands"
+    },
+    {
+      "ts": "1778890867.677373",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-001000"
+      ],
+      "brief": "Order XO-5394315 placed, promised 2026-06-05",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-06-05"
+      },
+      "must_mention": [
+        "XO-5394315",
+        "hip spacer",
+        "fri the 5th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "XO-5394315 hip spacer placed, promised fri the 5th I think"
+    },
+    {
+      "ts": "1778893027.194987",
+      "user": "p-tomas",
+      "thread_ts": "1778890867.677373",
+      "events": [
+        "ev-003688"
+      ],
+      "brief": "Correction: Order XO-5394315 placed, promised 2026-06-09",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-06-09"
+      },
+      "must_mention": [
+        "XO-5394315",
+        "hip spacer",
+        "6/9"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Correction, XO-5394315 hip spacer is promised 6/9, not the earlier date"
+    },
+    {
+      "ts": "1778894129.043734",
+      "user": "p-nora",
+      "thread_ts": "1778890867.677373",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "This is going to be the longest spacer saga in history."
+    }
+  ]
+}

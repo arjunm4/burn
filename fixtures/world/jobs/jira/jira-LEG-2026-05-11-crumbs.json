@@ -1,0 +1,274 @@
+{
+  "job_id": "jira-LEG-2026-05-11-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 53,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "LEG",
+    "name": "Legs and ankle"
+  },
+  "week": {
+    "start": "2026-05-11",
+    "end": "2026-05-17"
+  },
+  "people": [
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "LEG-117",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-diego",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-05-13T11:49:35-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001089"
+      ],
+      "brief": "Order 12x Knee joint spacer, 18x Hip pitch mounting bracket / knee spacer: need 12 by 2026-06-05",
+      "must_mention": [
+        "knee spacer",
+        "6/5"
+      ],
+      "description_length": "one_line",
+      "summary": "Order Knee joint spacer x12 + Hip pitch bracket x18",
+      "description": "knee spacer, need 12 by 6/5",
+      "comments": []
+    },
+    {
+      "key": "LEG-122",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-diego",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-05-14T14:54:02-07:00",
+      "due_date": "2026-07-15",
+      "events": [
+        "ev-001003"
+      ],
+      "brief": "Order 18x Shank cover plate, 12x Shank belt tensioner bracket / FL-LEG-1396: need 18 by 2026-07-15 for Design iteration bench trial for Leg DVT build: Shank cover plate",
+      "must_mention": [
+        "FL-LEG-1396",
+        "Design iteration bench trial for Leg DVT build: Shank cover plate",
+        "FL-LEG-1356",
+        "wed the 15th"
+      ],
+      "description_length": "one_line",
+      "summary": "Shank cover plate x18, belt tensioner bracket x12 ??",
+      "description": "FL-LEG-1396 need 18 by wed the 15th for Design iteration bench trial for Leg DVT build: Shank cover plate. tensioner is FL-LEG-1356 🙏",
+      "comments": [
+        {
+          "id": "LEG-122-c1",
+          "by": "p-diego",
+          "at": "2026-05-15T08:43:02-07:00",
+          "events": [
+            "ev-001005"
+          ],
+          "brief": "1396: need 18 by 2026-07-15",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 18,
+              "by": "2026-07-15"
+            }
+          },
+          "must_mention": [
+            "1396",
+            "7/15"
+          ],
+          "body": "1396: need 18 by 7/15 😬"
+        },
+        {
+          "id": "LEG-122-c2",
+          "by": "p-diego",
+          "at": "2026-05-15T11:27:44-07:00",
+          "events": [
+            "ev-001006"
+          ],
+          "brief": "cover plate: need 18 by 2026-07-15",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 18,
+              "by": "2026-07-15"
+            }
+          },
+          "must_mention": [
+            "cover plate",
+            "7/15"
+          ],
+          "body": "cover plate 7/15, 18 pcs"
+        },
+        {
+          "id": "LEG-122-c3",
+          "by": "p-priya",
+          "at": "2026-05-15T13:19:05-07:00",
+          "events": [
+            "ev-001007"
+          ],
+          "brief": "the plate: need 18 by 2026-07-15 for the build",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 18,
+              "by": "2026-07-15"
+            }
+          },
+          "must_mention": [
+            "the plate",
+            "the build",
+            "wed the 15th"
+          ],
+          "body": "the plate needs to be here by wed the 15th for the build"
+        }
+      ]
+    },
+    {
+      "key": "LEG-124",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-priya",
+      "assignee": "p-diego",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-05-14T17:41:10-07:00",
+      "due_date": "2026-05-22",
+      "events": [
+        "ev-000987"
+      ],
+      "brief": "Order 2x Leg build stand, 7x Drop strike plate mount / FL-TST-2916: need 2 by 2026-05-19",
+      "must_mention": [
+        "FL-TST-2916",
+        "5/19"
+      ],
+      "description_length": "medium",
+      "summary": "Leg build stand x2, Drop strike plate mount x7",
+      "description": "FL-TST-2916 need 2 by 5/19. strike plate mounts same PO if possible, rest of the drop rig is waiting on these",
+      "comments": [
+        {
+          "id": "LEG-124-c1",
+          "by": "p-diego",
+          "at": "2026-05-15T08:38:45-07:00",
+          "events": [
+            "ev-000992"
+          ],
+          "brief": "leg stand: need 2 by 2026-05-22; asks whether expediting is worth it",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 2,
+              "by": "2026-05-22"
+            }
+          },
+          "must_mention": [
+            "leg stand",
+            "fri the 22nd"
+          ],
+          "body": "leg stand, now fri the 22nd. worth expediting?? 😬"
+        }
+      ]
+    },
+    {
+      "key": "LEG-127",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-05-15T11:05:05-07:00",
+      "due_date": "2026-07-01",
+      "events": [
+        "ev-001011"
+      ],
+      "brief": "Order 12x Knee joint spacer / FL-LEG-1339: need 12 by 2026-07-01",
+      "must_mention": [
+        "FL-LEG-1339",
+        "7/1"
+      ],
+      "description_length": "one_line",
+      "summary": "Knee joint spacer x12",
+      "description": "FL-LEG-1339 need 12 by 7/1",
+      "comments": []
+    }
+  ]
+}

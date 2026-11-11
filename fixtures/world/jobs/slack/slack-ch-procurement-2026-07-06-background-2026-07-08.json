@@ -1,0 +1,531 @@
+{
+  "job_id": "slack-ch-procurement-2026-07-06-background-2026-07-08",
+  "source": "slack",
+  "status": "blank",
+  "priority": 38,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-07-06",
+    "end": "2026-07-12"
+  },
+  "people": [
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-claire",
+      "name": "Claire Donnelly",
+      "display_name": "claire",
+      "slack_id": "U07FLK0CLAI",
+      "title": "Finance and Operations Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-kwame",
+      "name": "Kwame Asante",
+      "display_name": "kwame",
+      "slack_id": "U07FLK0KWAM",
+      "title": "Senior Electrical Engineer, power",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Six-axis sensor drifts with temperature and bolt preload. This week: Ravi fits a temperature model; Mei prefers fixing the plate first.",
+    "Ongoing: Tendons fray at the proximal pulley after 40k grip cycles. This week: Lin starts the grip-cycle life test, target 100k cycles.",
+    "Ongoing: Capacitive tactile array crosstalk and flex cable routing through the finger. This week: Rev 2 ordered from the fab; tactile bracket moved 1 mm for the new connector.",
+    "Ongoing: Crossed-roller preload drops after thermal cycling; bore tolerance and preload ring design. This week: Rev B bracket and housing released with the new bearing; preload holds after 20 cycles.",
+    "Ongoing: What to show investors when no full humanoid exists. This week: Ingrid warns the leg drop campaign slipped; demo date is hard.",
+    "Ongoing: Drop from 30 cm cracks the shank link at the knee clevis. This week: Rev B shank: fillet to R2 and wall 3 to 4 mm; release Monday.",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver. This week: Bao sees 30 V overshoot on the phase node at 48 V bus; MOSFETs rated 80 V."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1783530094.051145",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on the ongoing six-axis sensor drifts with temperature and bolt preload",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783532857.090625",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: First tactile boards arrive; 3 of 16 taxels read saturated.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1783533353.971992",
+      "user": "p-talia",
+      "thread_ts": "1783530094.051145",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the ongoing six-axis sensor drifts with temperature and bolt preload",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1783536484.029550",
+      "user": "p-kenji",
+      "thread_ts": "1783530094.051145",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the ongoing six-axis sensor drifts with temperature and bolt preload",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783537458.706820",
+      "user": "p-zoe",
+      "thread_ts": "1783532857.090625",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: First tactile boards arrive; 3 of 16 taxels read saturated.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1783539696.696529",
+      "user": "p-hana",
+      "thread_ts": "1783530094.051145",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the ongoing six-axis sensor drifts with temperature and bolt preload",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1783541159.172072",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on this: Ravi fits a temperature model; Mei prefers fixing the plate first.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783542002.643196",
+      "user": "p-talia",
+      "thread_ts": "1783532857.090625",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: First tactile boards arrive; 3 of 16 taxels read saturated.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1783542513.953475",
+      "user": "p-gwen",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Zoe: drop test waiting on the machined lift hooks; gantry slots are Tue/Thu only.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783543630.119030",
+      "user": "p-kwame",
+      "thread_ts": "1783541159.172072",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Ravi fits a temperature model; Mei prefers fixing the plate first.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1783544568.858588",
+      "user": "p-jonas",
+      "thread_ts": "1783541159.172072",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Ravi fits a temperature model; Mei prefers fixing the plate first.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783546621.905221",
+      "user": "p-jonas",
+      "thread_ts": "1783541159.172072",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Ravi fits a temperature model; Mei prefers fixing the plate first.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783546796.994122",
+      "user": "p-samir",
+      "thread_ts": "1783532857.090625",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: First tactile boards arrive; 3 of 16 taxels read saturated.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1783548647.692921",
+      "user": "p-beth",
+      "thread_ts": "1783532857.090625",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: First tactile boards arrive; 3 of 16 taxels read saturated.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1783551101.494025",
+      "user": "p-callum",
+      "thread_ts": "1783541159.172072",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Ravi fits a temperature model; Mei prefers fixing the plate first.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783552926.425098",
+      "user": "p-owen",
+      "thread_ts": "1783541159.172072",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Ravi fits a temperature model; Mei prefers fixing the plate first.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1783554141.599607",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: Rev B shank: fillet to R2 and wall 3 to 4 mm; release Monday.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783554817.573472",
+      "user": "p-claire",
+      "thread_ts": "1783541159.172072",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Ravi fits a temperature model; Mei prefers fixing the plate first.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783558415.551153",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on the ongoing capacitive tactile array crosstalk and flex cable routing through the finger",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1783558683.143703",
+      "user": "p-zoe",
+      "thread_ts": "1783558415.551153",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the ongoing capacitive tactile array crosstalk and flex cable routing through the finger",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1783560270.374330",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Helena wants a walking leg by late August for the raise.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1783564009.445806",
+      "user": "p-kenji",
+      "thread_ts": "1783558415.551153",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the ongoing capacitive tactile array crosstalk and flex cable routing through the finger",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

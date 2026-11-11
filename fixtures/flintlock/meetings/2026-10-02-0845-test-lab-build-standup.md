@@ -7,9 +7,8 @@
 
 ## Overview
 
-We need spin coupling by 10/7. We need that order by 10/6.
+We need FL-KNE-1189 by 10/22 (Kit and assemble: Knee output shaft) (FL-KNE-1139) (FL-KNE-1124).
 
 ## Discussion
 
-- Dmitri: We need spin coupling by 10/7.
-- Dmitri: We need that order by 10/6.
+- Dmitri: We need FL-KNE-1189 by 10/22 (Kit and assemble: Knee output shaft) (FL-KNE-1139) (FL-KNE-1124).

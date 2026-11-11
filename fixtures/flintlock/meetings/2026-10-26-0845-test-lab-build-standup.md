@@ -8,8 +8,8 @@
 
 ## Overview
 
-We need ankle adapter by 11/11.
+We need ankle adapter by 11/16.
 
 ## Discussion
 
-- Dmitri: We need ankle adapter by 11/11.
+- Dmitri: We need ankle adapter by 11/16.

@@ -1,0 +1,269 @@
+{
+  "job_id": "slack-ch-mech-2026-06-01-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 47,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-mech",
+    "name": "mech",
+    "slack_id": "C07FLK0MECH",
+    "purpose": "Mechanical engineering: design, DFM, vendors, drawings"
+  },
+  "week": {
+    "start": "2026-06-01",
+    "end": "2026-06-07"
+  },
+  "people": [
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Pushrod clevis bends at 1.6x body weight in the tilt stand",
+    "Ongoing: Bus-off events at 1 Mbps when all leg actuators stream. This week: Jonas proposes moving to CAN FD at 5 Mbps data rate; Farah wants to fix topology first.",
+    "Ongoing: Crossed-roller preload drops after thermal cycling; bore tolerance and preload ring design. This week: Carlos: two hip units feel notchy after thermal soak; preload ring backed off a quarter turn.",
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno. This week: Retest with spreader and 40 kHz: 9.5 min to limit, close enough to sign off for EVT.",
+    "Ongoing: Ratcheting risk at peak torque from loose wave generator fit. This week: Hub switched to 4140 with a clamp plus keyway; shaft rev B released.",
+    "Ongoing: Orders sitting in DFM review because of tolerance callouts. This week: Checklist adopted; DFM holds drop but still hit rush orders."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1780450333.420815",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-003378"
+      ],
+      "brief": "FL-TST-2149 rev C released: tolerance relaxed after DFM feedback",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev C"
+      },
+      "must_mention": [
+        "FL-TST-2149"
+      ],
+      "length": "short",
+      "text": "FL-TST-2149 rev C is out, relaxed the tolerance after the DFM feedback"
+    },
+    {
+      "ts": "1780590903.921818",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [
+        "ev-004000"
+      ],
+      "brief": "alignment jig: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "alignment jig"
+      ],
+      "length": "short",
+      "text": "alignment jig still quoting rev B"
+    },
+    {
+      "ts": "1780596898.063213",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-003943"
+      ],
+      "brief": "inertia disc: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "inertia disc"
+      ],
+      "length": "short",
+      "text": "inertia disc is still quoting rev B, probably need to resend the drawing"
+    },
+    {
+      "ts": "1780601864.573523",
+      "user": "p-nora",
+      "thread_ts": null,
+      "events": [
+        "ev-003976"
+      ],
+      "brief": "housing nest: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "housing nest"
+      ],
+      "length": "short",
+      "text": "The housing nest is still quoting rev B. I'll ping them and see whether they have the new print."
+    },
+    {
+      "ts": "1780604695.280954",
+      "user": "p-dmitri",
+      "thread_ts": "1780601864.573523",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "they had the same issue last time, just resend"
+    },
+    {
+      "ts": "1780609375.545971",
+      "user": "p-kenji",
+      "thread_ts": "1780601864.573523",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "yeah resend it"
+    },
+    {
+      "ts": "1780614301.769108",
+      "user": "p-kenji",
+      "thread_ts": "1780601864.573523",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "nah not sure that fixes it"
+    },
+    {
+      "ts": "1780694469.957222",
+      "user": "p-nora",
+      "thread_ts": null,
+      "events": [
+        "ev-003343"
+      ],
+      "brief": "FL-TST-2957 rev C released: added hole for safety pin",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev C"
+      },
+      "must_mention": [
+        "FL-TST-2957"
+      ],
+      "length": "short",
+      "text": "FL-TST-2957 rev C released. I added a hole for the safety pin, so please grab the new drawing before cutting anything."
+    },
+    {
+      "ts": "1780702455.378772",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-003972"
+      ],
+      "brief": "inertia disc: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "inertia disc"
+      ],
+      "length": "short",
+      "text": "inertia disc still quoting rev B"
+    }
+  ]
+}

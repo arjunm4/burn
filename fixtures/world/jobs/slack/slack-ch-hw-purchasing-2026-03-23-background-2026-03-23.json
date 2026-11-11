@@ -1,0 +1,207 @@
+{
+  "job_id": "slack-ch-hw-purchasing-2026-03-23-background-2026-03-23",
+  "source": "slack",
+  "status": "blank",
+  "priority": 68,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hw-purchasing",
+    "name": "hw-purchasing",
+    "slack_id": "C07FLK0HWPR",
+    "purpose": "Hardware buys: Xometry quotes, McMaster, Digi-Key, lead times"
+  },
+  "week": {
+    "start": "2026-03-23",
+    "end": "2026-03-29"
+  },
+  "people": [
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-valeria",
+      "name": "Valeria Ortiz",
+      "display_name": "valeria.o",
+      "slack_id": "U07FLK0VALE",
+      "title": "Electrical Engineer, battery systems",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Building the first three hip and knee actuators. This week: Build retro: kitting list lived in a spreadsheet nobody updated.",
+    "Ongoing: Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT. This week: Decision: hip stays cycloidal through DVT, revisit for PVT; knee stays harmonic.",
+    "Ongoing: Absolute encoder on the knee output glitches when the motor runs above 8 A. This week: Bao scopes it: common-mode noise on the SSI clock, cable runs alongside motor phases.",
+    "Ongoing: Getting dyno and gantry logs into one place with consistent timestamps. This week: Elena: dyno logs are CSVs on a lab laptop, gantry logs on another.",
+    "Ongoing: Coupling misalignment corrupting efficiency numbers on the dyno. This week: Bellows coupling replaces the jaw coupling; repeatability within 0.6%."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1774283848.570742",
+      "user": "p-gwen",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1774293295.042967",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on this: Ingrid asks for a decision memo; Tomas concedes backdrivability favors cyclo for the hip at 50:1.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1774303501.625916",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about this: Bellows coupling replaces the jaw coupling; repeatability within 0.6%.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1774307976.573620",
+      "user": "p-luis",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Bao scopes it: common-mode noise on the SSI clock, cable runs alongside motor phases.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1774308136.955123",
+      "user": "p-valeria",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on this: Owen prices both: harmonic set ~$1.9k per joint and 10-week lead; cyclo is machined parts plus pins, ~3 weeks.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1774309646.802079",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about the ongoing coupling misalignment corrupting efficiency numbers on the dyno",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

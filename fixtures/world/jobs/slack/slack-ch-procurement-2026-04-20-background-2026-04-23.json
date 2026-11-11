@@ -1,0 +1,586 @@
+{
+  "job_id": "slack-ch-procurement-2026-04-20-background-2026-04-23",
+  "source": "slack",
+  "status": "blank",
+  "priority": 60,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-04-20",
+    "end": "2026-04-26"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno. This week: Nadia suspects poor stator-to-housing contact; thermal pad is 0.5 mm and compresses unevenly.",
+    "Ongoing: Absolute encoder on the knee output glitches when the motor runs above 8 A. This week: New harness with shielded pair plus ferrite: no glitches up to 20 A.",
+    "Ongoing: Getting dyno and gantry logs into one place with consistent timestamps. This week: Clock skew between DAQs found, 300 ms; PTP added on the lab switch."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1776956203.859473",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on off-topic: traffic on 101",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1776959367.915459",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Firmware adds a plausibility filter; Bao calls it a band-aid.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1776960338.255705",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: Jonas sees 2-3 count jumps on the knee abs encoder above 8 A phase current.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1776968614.818039",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about this: Farah wants twisted-pair and a shield drain at the driver end; Tomas asks if the bracket can move the readhead away.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1776972170.580779",
+      "user": "p-ingrid",
+      "thread_ts": "1776968614.818039",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Farah wants twisted-pair and a shield drain at the driver end; Tomas asks if the bracket can move the readhead away.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1776973379.610113",
+      "user": "p-omar",
+      "thread_ts": "1776968614.818039",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Farah wants twisted-pair and a shield drain at the driver end; Tomas asks if the bracket can move the readhead away.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1776974441.641068",
+      "user": "p-gwen",
+      "thread_ts": "1776968614.818039",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Farah wants twisted-pair and a shield drain at the driver end; Tomas asks if the bracket can move the readhead away.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1776977852.297787",
+      "user": "p-talia",
+      "thread_ts": "1776968614.818039",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Farah wants twisted-pair and a shield drain at the driver end; Tomas asks if the bracket can move the readhead away.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1776982191.359721",
+      "user": "p-tomas",
+      "thread_ts": "1776968614.818039",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Farah wants twisted-pair and a shield drain at the driver end; Tomas asks if the bracket can move the readhead away.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1776985095.699692",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: New harness with shielded pair plus ferrite: no glitches up to 20 A.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1776986513.227716",
+      "user": "p-kenji",
+      "thread_ts": "1776968614.818039",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Farah wants twisted-pair and a shield drain at the driver end; Tomas asks if the bracket can move the readhead away.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1776988178.491984",
+      "user": "p-beth",
+      "thread_ts": "1776968614.818039",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: Farah wants twisted-pair and a shield drain at the driver end; Tomas asks if the bracket can move the readhead away.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1776989038.905092",
+      "user": "p-idris",
+      "thread_ts": "1776985095.699692",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: New harness with shielded pair plus ferrite: no glitches up to 20 A.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1776989125.013694",
+      "user": "p-zoe",
+      "thread_ts": "1776968614.818039",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Farah wants twisted-pair and a shield drain at the driver end; Tomas asks if the bracket can move the readhead away.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1776990466.819421",
+      "user": "p-beth",
+      "thread_ts": "1776985095.699692",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: New harness with shielded pair plus ferrite: no glitches up to 20 A.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1776990951.178181",
+      "user": "p-zoe",
+      "thread_ts": "1776968614.818039",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Farah wants twisted-pair and a shield drain at the driver end; Tomas asks if the bracket can move the readhead away.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1776991496.415997",
+      "user": "p-priya",
+      "thread_ts": "1776985095.699692",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: New harness with shielded pair plus ferrite: no glitches up to 20 A.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1776993310.115951",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on this: Firmware adds a plausibility filter; Bao calls it a band-aid.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1776993961.301613",
+      "user": "p-callum",
+      "thread_ts": "1776968614.818039",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Farah wants twisted-pair and a shield drain at the driver end; Tomas asks if the bracket can move the readhead away.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1776996086.043185",
+      "user": "p-zoe",
+      "thread_ts": "1776985095.699692",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: New harness with shielded pair plus ferrite: no glitches up to 20 A.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1776997886.666004",
+      "user": "p-andre",
+      "thread_ts": "1776985095.699692",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: New harness with shielded pair plus ferrite: no glitches up to 20 A.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1776998288.060171",
+      "user": "p-zoe",
+      "thread_ts": "1776968614.818039",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Farah wants twisted-pair and a shield drain at the driver end; Tomas asks if the bracket can move the readhead away.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1777051062.233657",
+      "user": "p-andre",
+      "thread_ts": "1776968614.818039",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Farah wants twisted-pair and a shield drain at the driver end; Tomas asks if the bracket can move the readhead away.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1777052770.881507",
+      "user": "p-hana",
+      "thread_ts": "1776968614.818039",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Farah wants twisted-pair and a shield drain at the driver end; Tomas asks if the bracket can move the readhead away.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1777056462.772310",
+      "user": "p-owen",
+      "thread_ts": "1776968614.818039",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Farah wants twisted-pair and a shield drain at the driver end; Tomas asks if the bracket can move the readhead away.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1777060088.596950",
+      "user": "p-zoe",
+      "thread_ts": "1776968614.818039",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Farah wants twisted-pair and a shield drain at the driver end; Tomas asks if the bracket can move the readhead away.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1777060878.923291",
+      "user": "p-priya",
+      "thread_ts": "1776968614.818039",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Farah wants twisted-pair and a shield drain at the driver end; Tomas asks if the bracket can move the readhead away.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1777064895.932749",
+      "user": "p-talia",
+      "thread_ts": "1776968614.818039",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Farah wants twisted-pair and a shield drain at the driver end; Tomas asks if the bracket can move the readhead away.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "job_id": "slack-ch-general-2026-08-10-background-2026-08-13",
+  "source": "slack",
+  "status": "blank",
+  "priority": 28,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-general",
+    "name": "general",
+    "slack_id": "C07FLK0GENL",
+    "purpose": "Company-wide announcements"
+  },
+  "week": {
+    "start": "2026-08-10",
+    "end": "2026-08-16"
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-elena",
+      "name": "Elena Petrova",
+      "display_name": "elena",
+      "slack_id": "U07FLK0ELEN",
+      "title": "Software Infrastructure Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-kofi",
+      "name": "Kofi Mensah",
+      "display_name": "kofi",
+      "slack_id": "U07FLK0KOFI",
+      "title": "NPI Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-mateo",
+      "name": "Mateo Silva",
+      "display_name": "mateo",
+      "slack_id": "U07FLK0MATE",
+      "title": "Embedded Software Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Farah wants 3 mm and a mica sheet; Lukas says that costs 18 mm of pack length.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators",
+    "Ongoing: Tendons fray at the proximal pulley after 40k grip cycles",
+    "Ongoing: Type III anodize adds ~0.025 mm per surface and kills the bearing press fit. This week: Arjun okays reaming four parts by hand to keep the build moving; rest reordered.",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Callum proposes routing inboard through the joint axis; Diego says thigh link needs rework.",
+    "Ongoing: Gait controller tuning for the investor demo on the gait gantry. This week: Ankle gains cut 30%; Lin flags the boom clamp slipping on the pelvis adapter.",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Claire: hardware spend 23% over plan for the quarter, expedites a big share.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno. This week: Ingrid says no until DVT; run pinch tests on nights instead.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting. This week: Plates released; static load test planned on the drop gantry with a load yoke."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1786650656.144194",
+      "user": "p-mei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on off-topic: lunch plans",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1786651250.646034",
+      "user": "p-elena",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about off-topic: a 3d-printed desk toy",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786651435.399249",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about this: Bao sees 30 V overshoot on the phase node at 48 V bus; MOSFETs rated 80 V.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786668580.505988",
+      "user": "p-mateo",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about this: Claire: hardware spend 23% over plan for the quarter, expedites a big share.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1786671598.696843",
+      "user": "p-mei",
+      "thread_ts": "1786668580.505988",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Claire: hardware spend 23% over plan for the quarter, expedites a big share.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786673151.948399",
+      "user": "p-nora",
+      "thread_ts": "1786668580.505988",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Claire: hardware spend 23% over plan for the quarter, expedites a big share.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786675012.694321",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on off-topic: the coffee machine",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786726332.355660",
+      "user": "p-kofi",
+      "thread_ts": "1786668580.505988",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: Claire: hardware spend 23% over plan for the quarter, expedites a big share.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    }
+  ]
+}

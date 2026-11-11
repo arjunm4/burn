@@ -1,0 +1,300 @@
+{
+  "job_id": "jira-SCM-2026-05-04-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 55,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "SCM",
+    "name": "Supply chain and procurement"
+  },
+  "week": {
+    "start": "2026-05-04",
+    "end": "2026-05-10"
+  },
+  "people": [
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "SCM-125",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": "p-tomas",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-05-04T09:43:51-07:00",
+      "due_date": "2026-05-22",
+      "events": [
+        "ev-000889"
+      ],
+      "brief": "Order 4x Hip actuator bracket / FL-HIP-1042: need 4 by 2026-05-20 for Tolerance stack check for Actuator DVT build: Hip actuator bracket",
+      "must_mention": [
+        "FL-HIP-1042",
+        "Tolerance stack check for Actuator DVT build: Hip actuator bracket",
+        "5/20"
+      ],
+      "description_length": "one_line",
+      "summary": "Hip actuator bracket x4",
+      "description": "FL-HIP-1042 need 4 by 5/20 for Tolerance stack check for Actuator DVT build: Hip actuator bracket",
+      "comments": [
+        {
+          "id": "SCM-125-c1",
+          "by": "p-tomas",
+          "at": "2026-05-04T13:51:39-07:00",
+          "events": [
+            "ev-000892"
+          ],
+          "brief": "FL-HIP-1042: need 4 by 2026-05-22",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 4,
+              "by": "2026-05-22"
+            }
+          },
+          "must_mention": [
+            "FL-HIP-1042",
+            "5/22"
+          ],
+          "body": "FL-HIP-1042 need 4 by 5/22"
+        },
+        {
+          "id": "SCM-125-c2",
+          "by": "p-tomas",
+          "at": "2026-05-05T03:55:51-07:00",
+          "events": [
+            "ev-003613"
+          ],
+          "brief": "Correction: FL-HIP-1042: need 4 by 2026-05-22 for Tolerance stack check for Actuator DVT build: Hip actuator bracket",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 4,
+              "by": "2026-05-22"
+            }
+          },
+          "must_mention": [
+            "FL-HIP-1042",
+            "Tolerance stack check for Actuator DVT build: Hip actuator bracket",
+            "5/22"
+          ],
+          "body": "Correction: FL-HIP-1042 need 4 by 5/22 for Tolerance stack check for Actuator DVT build: Hip actuator bracket"
+        }
+      ]
+    },
+    {
+      "key": "SCM-129",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-diego",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-05-06T13:14:21-07:00",
+      "due_date": "2026-06-19",
+      "events": [
+        "ev-000922"
+      ],
+      "brief": "Order 12x Dyno shaft spacer, 6x Leg build stand / the spacer: need 12 by 2026-06-19",
+      "must_mention": [
+        "the spacer",
+        "fri 6/19"
+      ],
+      "description_length": "medium",
+      "summary": "Dyno shaft spacer x12, Leg build stand x6",
+      "description": "the spacer, need 12 by fri 6/19. build stands are separate line on the same quote 🙏",
+      "comments": [
+        {
+          "id": "SCM-129-c1",
+          "by": "p-diego",
+          "at": "2026-05-06T18:20:16-07:00",
+          "events": [
+            "ev-000924"
+          ],
+          "brief": "dyno spacers: need 12 by 2026-06-19",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-06-19"
+            }
+          },
+          "must_mention": [
+            "dyno spacers",
+            "fri the 19th"
+          ],
+          "body": "dyno spacers need 12 by fri the 19th 🙏"
+        }
+      ]
+    },
+    {
+      "key": "SCM-131",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": "p-owen",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-05-07T10:58:03-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001016"
+      ],
+      "brief": "Order 6x Spin-test guard mount / FL-TST-2045: need 6 by 2026-06-03 for Instrumentation fit-up for Hip actuator dyno efficiency sweep: Spin-test guard mount",
+      "must_mention": [
+        "FL-TST-2045",
+        "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Spin-test guard mount",
+        "6/3"
+      ],
+      "description_length": "one_line",
+      "summary": "Spin-test guard mount x6",
+      "description": "FL-TST-2045 need 6 by 6/3 for Instrumentation fit-up for Hip actuator dyno efficiency sweep: Spin-test guard mount",
+      "comments": [
+        {
+          "id": "SCM-131-c1",
+          "by": "p-owen",
+          "at": "2026-05-15T09:39:47-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "any news on this"
+        },
+        {
+          "id": "SCM-131-c2",
+          "by": "p-owen",
+          "at": "2026-05-27T17:41:54-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "still waiting, bumping again"
+        },
+        {
+          "id": "SCM-131-c3",
+          "by": "p-samir",
+          "at": "2026-06-01T13:48:48-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on vendor, no ship notice yet"
+        },
+        {
+          "id": "SCM-131-c4",
+          "by": "p-owen",
+          "at": "2026-06-01T14:24:10-07:00",
+          "events": [
+            "ev-001021"
+          ],
+          "brief": "shield bracket arrived (6)",
+          "claim": {
+            "kind": "stock",
+            "value": 6
+          },
+          "must_mention": [
+            "shield bracket",
+            "6"
+          ],
+          "body": "shield bracket arrived, 6"
+        },
+        {
+          "id": "SCM-131-c5",
+          "by": "p-owen",
+          "at": "2026-06-01T16:32:50-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "pics in slack"
+        }
+      ]
+    }
+  ]
+}

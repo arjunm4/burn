@@ -1,0 +1,133 @@
+{
+  "job_id": "jira-LEG-2026-05-18-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 51,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "LEG",
+    "name": "Legs and ankle"
+  },
+  "week": {
+    "start": "2026-05-18",
+    "end": "2026-05-24"
+  },
+  "people": [
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "LEG-137",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-05-21T05:03:54-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001084"
+      ],
+      "brief": "Order 10x Shank to ankle adapter / FL-LEG-1372: need 10 by 2026-05-27",
+      "must_mention": [
+        "FL-LEG-1372",
+        "wed the 27th"
+      ],
+      "description_length": "medium",
+      "summary": "Shank to ankle adapter x10",
+      "description": "FL-LEG-1372, need 10 by wed the 27th. Needed for the leg build, adapters are on the critical path for the shank assembly",
+      "comments": [
+        {
+          "id": "LEG-137-c1",
+          "by": "p-talia",
+          "at": "2026-05-21T14:05:55-07:00",
+          "events": [
+            "ev-001086"
+          ],
+          "brief": "Order XO-5403531 placed, promised 2026-05-29",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-05-29"
+          },
+          "must_mention": [
+            "XO-5403531",
+            "shank adapter",
+            "fri the 29th"
+          ],
+          "body": "XO-5403531 placed for the shank adapter, promised fri the 29th"
+        },
+        {
+          "id": "LEG-137-c2",
+          "by": "p-talia",
+          "at": "2026-05-26T13:59:49-07:00",
+          "events": [
+            "ev-003707"
+          ],
+          "brief": "shank adapter: need 10 by 2026-05-26 for next week",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 10,
+              "by": "2026-05-26"
+            }
+          },
+          "must_mention": [
+            "shank adapter",
+            "next week",
+            "tues the 26th"
+          ],
+          "body": "shank adapter, need 10 by tues the 26th. for next week"
+        }
+      ]
+    }
+  ]
+}

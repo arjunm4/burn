@@ -1,0 +1,134 @@
+{
+  "job_id": "slack-ch-mech-2026-04-20-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 59,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-mech",
+    "name": "mech",
+    "slack_id": "C07FLK0MECH",
+    "purpose": "Mechanical engineering: design, DFM, vendors, drawings"
+  },
+  "week": {
+    "start": "2026-04-20",
+    "end": "2026-04-26"
+  },
+  "people": [
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno. This week: Nadia suspects poor stator-to-housing contact; thermal pad is 0.5 mm and compresses unevenly.",
+    "Ongoing: Absolute encoder on the knee output glitches when the motor runs above 8 A. This week: New harness with shielded pair plus ferrite: no glitches up to 20 A.",
+    "Ongoing: Getting dyno and gantry logs into one place with consistent timestamps. This week: Clock skew between DAQs found, 300 ms; PTP added on the lab switch."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1776792542.746065",
+      "user": "p-nora",
+      "thread_ts": null,
+      "events": [
+        "ev-003865"
+      ],
+      "brief": "inertia disc: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "inertia disc"
+      ],
+      "length": "short",
+      "text": "inertia disc: still quoting rev A"
+    },
+    {
+      "ts": "1776796262.125595",
+      "user": "p-lin",
+      "thread_ts": "1776792542.746065",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Which vendor is it? The one we used for the spin rig?"
+    },
+    {
+      "ts": "1776902113.899114",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-003426"
+      ],
+      "brief": "FL-HIP-1093 rev B released: journal OD ground to h6",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-HIP-1093"
+      ],
+      "length": "medium",
+      "text": "FL-HIP-1093 rev B released, journal OD ground to h6"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "job_id": "slack-ch-mech-2026-06-29-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 39,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-mech",
+    "name": "mech",
+    "slack_id": "C07FLK0MECH",
+    "purpose": "Mechanical engineering: design, DFM, vendors, drawings"
+  },
+  "week": {
+    "start": "2026-06-29",
+    "end": "2026-07-05"
+  },
+  "people": [
+    {
+      "id": "p-amara",
+      "name": "Amara Nwosu",
+      "display_name": "amara",
+      "slack_id": "U07FLK0AMAR",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Six-axis sensor drifts with temperature and bolt preload. This week: Hana suspects mounting plate flatness; sensor wants 0.01 mm, plate is spec 0.05.",
+    "Ongoing: Capacitive tactile array crosstalk and flex cable routing through the finger",
+    "Ongoing: Crossed-roller preload drops after thermal cycling; bore tolerance and preload ring design",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Drop from 30 cm cracks the shank link at the knee clevis. This week: Diego: fillet R0.5 is too tight, peak stress ~380 MPa in FEA, 7075 fatigue limit is lower."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1782856112.628653",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-003350"
+      ],
+      "brief": "FL-TST-2665 rev B released: wall thickened after test",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-TST-2665"
+      ],
+      "length": "short",
+      "text": "FL-TST-2665 rev B released, thickened the wall after the test"
+    },
+    {
+      "ts": "1783038310.286680",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-003915"
+      ],
+      "brief": "vee block: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "vee block"
+      ],
+      "length": "short",
+      "text": "vee block still quoting rev A"
+    }
+  ]
+}

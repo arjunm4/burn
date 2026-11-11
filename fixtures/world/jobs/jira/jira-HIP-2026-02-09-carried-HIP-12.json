@@ -1,0 +1,121 @@
+{
+  "job_id": "jira-HIP-2026-02-09-carried-HIP-12",
+  "source": "jira",
+  "status": "blank",
+  "priority": 79,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HIP",
+    "name": "Actuators (hip and knee)"
+  },
+  "week": {
+    "start": "2026-02-09",
+    "end": "2026-02-15"
+  },
+  "people": [
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HIP-12",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-lin",
+      "assignee": "p-lin",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-02-11T09:40:55-08:00",
+      "due_date": "2026-03-03",
+      "events": [
+        "ev-000114"
+      ],
+      "brief": "Order 12x Hip holding-brake bracket, 12x Hip eccentric input shaft, 9x Hip cable exit clamp / brake mount: need 12 by 2026-03-03 for Instrumentation fit-up for Hip actuator EVT dyno torque-speed map: Hip holding-brake bracket",
+      "must_mention": [
+        "brake mount",
+        "Instrumentation fit-up for Hip actuator EVT dyno torque-speed map: Hip holding-brake bracket",
+        "tues the 3rd"
+      ],
+      "description_length": "short",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-12-c1",
+          "by": "p-lin",
+          "at": "2026-02-11T13:41:17-08:00",
+          "events": [
+            "ev-000116"
+          ],
+          "brief": "brake bracket: need 12 by 2026-02-27 for Instrumentation fit-up for Hip actuator EVT dyno torque-speed map: Hip holding-brake bracket",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-02-27"
+            }
+          },
+          "must_mention": [
+            "brake bracket",
+            "Instrumentation fit-up for Hip actuator EVT dyno torque-speed map: Hip holding-brake bracket",
+            "2/27"
+          ],
+          "body": null
+        },
+        {
+          "id": "HIP-12-c2",
+          "by": "p-lin",
+          "at": "2026-03-02T12:18:34-08:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-12-c3",
+          "by": "p-lin",
+          "at": "2026-03-13T18:56:00-07:00",
+          "events": [
+            "ev-000120"
+          ],
+          "brief": "brake mount in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-03-12"
+          },
+          "must_mention": [
+            "brake mount",
+            "the build",
+            "thurs the 12th"
+          ],
+          "body": null
+        }
+      ]
+    }
+  ]
+}

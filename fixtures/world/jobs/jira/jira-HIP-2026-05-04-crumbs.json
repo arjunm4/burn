@@ -1,0 +1,142 @@
+{
+  "job_id": "jira-HIP-2026-05-04-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 55,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HIP",
+    "name": "Actuators (hip and knee)"
+  },
+  "week": {
+    "start": "2026-05-04",
+    "end": "2026-05-10"
+  },
+  "people": [
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HIP-198",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-nadia",
+      "assignee": "p-nadia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-05-04T17:24:02-07:00",
+      "due_date": "2026-06-30",
+      "events": [
+        "ev-000910"
+      ],
+      "brief": "Order 6x Hip output bearing spacer, 4x Hip stator mount plate, 8x Hip rotor hub / FL-HIP-1079: need 6 by 2026-06-30",
+      "must_mention": [
+        "FL-HIP-1079",
+        "6/30"
+      ],
+      "description_length": "one_line",
+      "summary": "hip output bearing spacer x6, stator mount plate x4, rotor hub x8",
+      "description": "FL-HIP-1079 need 6 by 6/30",
+      "comments": [
+        {
+          "id": "HIP-198-c1",
+          "by": "p-nadia",
+          "at": "2026-05-06T13:26:57-07:00",
+          "events": [
+            "ev-000912"
+          ],
+          "brief": "FL-HIP-1079: need 6 by 2026-06-30",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 6,
+              "by": "2026-06-30"
+            }
+          },
+          "must_mention": [
+            "FL-HIP-1079",
+            "tues 6/30"
+          ],
+          "body": "FL-HIP-1079 need 6 by tues 6/30"
+        },
+        {
+          "id": "HIP-198-c2",
+          "by": "p-nadia",
+          "at": "2026-05-07T11:56:47-07:00",
+          "events": [
+            "ev-000914"
+          ],
+          "brief": "bearing spacer: need 6 by 2026-06-30; asks whether expediting is worth it",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 6,
+              "by": "2026-06-30"
+            }
+          },
+          "must_mention": [
+            "bearing spacer",
+            "tues the 30th"
+          ],
+          "body": "bearing spacer needs to be in by tues the 30th, is expediting worth it??"
+        },
+        {
+          "id": "HIP-198-c3",
+          "by": "p-tomas",
+          "at": "2026-06-02T09:12:04-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "i think any update on this? not 100% sure where it stands"
+        }
+      ]
+    }
+  ]
+}

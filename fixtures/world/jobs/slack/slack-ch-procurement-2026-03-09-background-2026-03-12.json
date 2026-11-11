@@ -1,0 +1,308 @@
+{
+  "job_id": "slack-ch-procurement-2026-03-09-background-2026-03-12",
+  "source": "slack",
+  "status": "blank",
+  "priority": 72,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-03-09",
+    "end": "2026-03-15"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-bao",
+      "name": "Bao Nguyen",
+      "display_name": "bao.n",
+      "slack_id": "U07FLK0BAO0",
+      "title": "Electrical Engineer, motor drives",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Building the first three hip and knee actuators. This week: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+    "Ongoing: Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT",
+    "Ongoing: Coupling misalignment corrupting efficiency numbers on the dyno. This week: Dial indicator shows 0.15 mm parallel offset; adapter plate dowels are loose fit."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1773342517.862079",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: Andre: efficiency readings swing 4% between mounts of the same actuator.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1773346280.374338",
+      "user": "p-omar",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773347365.954443",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: Dial indicator shows 0.15 mm parallel offset; adapter plate dowels are loose fit.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1773349562.966347",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: Bearing press jig missing; Jade presses with an arbor and a socket, Nora unhappy.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773350069.243525",
+      "user": "p-omar",
+      "thread_ts": "1773347365.954443",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Dial indicator shows 0.15 mm parallel offset; adapter plate dowels are loose fit.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773351340.515835",
+      "user": "p-bao",
+      "thread_ts": "1773347365.954443",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Dial indicator shows 0.15 mm parallel offset; adapter plate dowels are loose fit.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773352604.708885",
+      "user": "p-zoe",
+      "thread_ts": "1773347365.954443",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Dial indicator shows 0.15 mm parallel offset; adapter plate dowels are loose fit.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1773353910.194886",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about the ongoing building the first three hip and knee actuators",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1773356852.113664",
+      "user": "p-andre",
+      "thread_ts": "1773347365.954443",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Dial indicator shows 0.15 mm parallel offset; adapter plate dowels are loose fit.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773357434.805767",
+      "user": "p-lin",
+      "thread_ts": "1773347365.954443",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Dial indicator shows 0.15 mm parallel offset; adapter plate dowels are loose fit.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1773361141.213407",
+      "user": "p-gwen",
+      "thread_ts": "1773347365.954443",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Dial indicator shows 0.15 mm parallel offset; adapter plate dowels are loose fit.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

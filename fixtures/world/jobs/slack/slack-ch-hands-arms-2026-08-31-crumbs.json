@@ -75,6 +75,22 @@
       }
     },
     {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
       "id": "p-jade",
       "name": "Jade Thompson",
       "display_name": "jade.t",
@@ -216,25 +232,6 @@
           "ends messages with an emoji"
         ]
       }
-    },
-    {
-      "id": "p-zoe",
-      "name": "Zoe Castellanos",
-      "display_name": "zoe.c",
-      "slack_id": "U07FLK0ZOE0",
-      "title": "Test Engineer, fixtures owner",
-      "style": {
-        "case": "lower",
-        "punctuation": "light",
-        "typos": "some",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "medium",
-        "quirks": [
-          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
-          "corrects own dates"
-        ]
-      }
     }
   ],
   "context": [
@@ -252,37 +249,13 @@
   ],
   "messages": [
     {
-      "ts": "1788195697.513595",
+      "ts": "1788200319.081547",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-001595"
+        "ev-001811"
       ],
-      "brief": "finger link: need 10 by 2026-09-22 for Build sub-assembly: Finger proximal link",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 10,
-          "by": "2026-09-22"
-        }
-      },
-      "must_mention": [
-        "finger link",
-        "Build sub-assembly: Finger proximal link",
-        "9/22"
-      ],
-      "pressure": "low",
-      "length": "short",
-      "text": "need 10 finger link by 9/22 for Build sub-assembly: Finger proximal link"
-    },
-    {
-      "ts": "1788200319.818394",
-      "user": "p-talia",
-      "thread_ts": null,
-      "events": [
-        "ev-001596"
-      ],
-      "brief": "1414: need 10 by 2026-09-22 for the build",
+      "brief": "1414: need 10 by 2026-09-22",
       "claim": {
         "kind": "needs",
         "value": {
@@ -292,21 +265,43 @@
       },
       "must_mention": [
         "1414",
-        "the build",
-        "9/22"
+        "tues the 22nd"
       ],
-      "pressure": "elevated",
-      "length": "medium",
-      "text": "1414: need 10 by 9/22 for the build. Can we pull anything in? 🙏"
+      "pressure": "low",
+      "length": "short",
+      "text": "1414 need 10 by tues the 22nd"
     },
     {
-      "ts": "1788209043.780309",
-      "user": "p-talia",
+      "ts": "1788203063.916458",
+      "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-001598"
+        "ev-001812"
       ],
-      "brief": "hand finger link: need 10 by 2026-09-22",
+      "brief": "finger link: need 10 by 2026-09-21",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-09-21"
+        }
+      },
+      "must_mention": [
+        "finger link",
+        "9/21"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "finger link need 10 by 9/21"
+    },
+    {
+      "ts": "1788204590.211491",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-001813"
+      ],
+      "brief": "FL-HND-1414: need 10 by 2026-09-22 for Build sub-assembly: Finger proximal link",
       "claim": {
         "kind": "needs",
         "value": {
@@ -315,29 +310,40 @@
         }
       },
       "must_mention": [
-        "hand finger link",
+        "FL-HND-1414",
+        "Build sub-assembly: Finger proximal link",
         "tues the 22nd"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Need 10 hand finger link by tues the 22nd, pls confirm 😬"
+      "text": "FL-HND-1414 need 10 for Build sub-assembly: Finger proximal link, tues the 22nd"
     },
     {
-      "ts": "1788212237.793648",
-      "user": "p-rohan",
-      "thread_ts": "1788209043.780309",
+      "ts": "1788205460.098156",
+      "user": "p-lin",
+      "thread_ts": "1788203063.916458",
       "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Are those the aluminum ones or the bronze-bushed version?"
+    },
+    {
+      "ts": "1788207228.536305",
+      "user": "p-rohan",
+      "thread_ts": "1788203063.916458",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
       "must_mention": [],
       "length": "medium",
-      "text": "i thought that was supposed to be later? not sure we need 10 up front, rohan"
+      "text": "aluminum for now, bushing change isnt in the cad yet"
     },
     {
-      "ts": "1788216188.697253",
+      "ts": "1788209043.499774",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-001600"
+        "ev-001814"
       ],
       "brief": "1414: need 10 by 2026-09-22 for Build sub-assembly: Finger proximal link",
       "claim": {
@@ -350,58 +356,138 @@
       "must_mention": [
         "1414",
         "Build sub-assembly: Finger proximal link",
-        "tues 9/22"
+        "9/22"
       ],
       "pressure": "elevated",
-      "length": "medium",
-      "text": "1414 x10, tues 9/22, for Build sub-assembly: Finger proximal link. Flagging again so it doesn't slip."
-    },
-    {
-      "ts": "1788216797.894418",
-      "user": "p-aisha",
-      "thread_ts": "1788216188.697253",
-      "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "that thing has been \"flagged\" since july lol"
-    },
-    {
-      "ts": "1788220792.919956",
-      "user": "p-talia",
-      "thread_ts": "1788216188.697253",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
       "length": "short",
-      "text": "Agreed, will chase it today 🙏"
+      "text": "1414 for Build sub-assembly: Finger proximal link, need 10 by 9/22"
     },
     {
-      "ts": "1788282420.334738",
-      "user": "p-zoe",
+      "ts": "1788210827.846940",
+      "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-001402"
+        "ev-001816"
       ],
-      "brief": "distal link in use",
+      "brief": "that order: need 10 by 2026-09-17",
       "claim": {
-        "kind": "done",
-        "value": "2026-08-31"
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-09-17"
+        }
       },
       "must_mention": [
-        "distal link",
-        "mon 8/31"
+        "that order",
+        "thurs the 17th"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "distal link is in use, free again after mon 8/31 so grab it then"
+      "text": "that order, need 10 by thurs the 17th"
     },
     {
-      "ts": "1788308580.223320",
+      "ts": "1788213934.479154",
+      "user": "p-sofia",
+      "thread_ts": "1788209043.499774",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Agreed."
+    },
+    {
+      "ts": "1788214879.718140",
+      "user": "p-lin",
+      "thread_ts": "1788209043.499774",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "I'd rather not commit before the pin fit is checked."
+    },
+    {
+      "ts": "1788215222.599433",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-001817"
+      ],
+      "brief": "FL-HND-1414: need 10 by 2026-09-22 for Build sub-assembly: Finger proximal link",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-09-22"
+        }
+      },
+      "must_mention": [
+        "FL-HND-1414",
+        "Build sub-assembly: Finger proximal link",
+        "tues 9/22"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "FL-HND-1414, Build sub-assembly: Finger proximal link, need 10 by tues 9/22"
+    },
+    {
+      "ts": "1788217238.956644",
+      "user": "p-omar",
+      "thread_ts": "1788215222.599433",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "we hit something similar on the wrist last time, the vendor said they could do it faster if we dropped the finish call-out i think"
+    },
+    {
+      "ts": "1788217889.389901",
+      "user": "p-talia",
+      "thread_ts": "1788209043.499774",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Hmm I'm not sure that's the right call 😬"
+    },
+    {
+      "ts": "1788220643.326531",
+      "user": "p-ingrid",
+      "thread_ts": "1788215222.599433",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "I disagree. Let's hear what the shop says first."
+    },
+    {
+      "ts": "1788288347.434518",
+      "user": "p-amara",
+      "thread_ts": "1788210827.846940",
+      "events": [
+        "ev-003658"
+      ],
+      "brief": "Correction: that order: need 10 by 2026-09-22",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-09-22"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "9/22"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "correction, that order is 9/22 not what i wrote earlier"
+    },
+    {
+      "ts": "1788308580.426015",
       "user": "p-sofia",
       "thread_ts": null,
       "events": [
-        "ev-003020"
+        "ev-003409"
       ],
       "brief": "FL-HND-1454 rev B released: Delrin to bronze after wear",
       "claim": {
@@ -411,15 +497,33 @@
       "must_mention": [
         "FL-HND-1454"
       ],
-      "length": "short",
-      "text": "FL-HND-1454 rev B released, Delrin to bronze after wear showed up in life test"
+      "length": "medium",
+      "text": "FL-HND-1454 rev B is released, Delrin to bronze after the wear we saw"
     },
     {
-      "ts": "1788393608.938750",
+      "ts": "1788311923.163001",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-003947"
+      ],
+      "brief": "palm: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "palm"
+      ],
+      "length": "short",
+      "text": "palm, still quoting rev A 😬"
+    },
+    {
+      "ts": "1788393608.829853",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-002750"
+        "ev-003115"
       ],
       "brief": "Build sub-assembly: Finger proximal link waits on Bearing set for hand and wrist (hand finger link)",
       "claim": {
@@ -428,30 +532,20 @@
       },
       "must_mention": [
         "Bearing set for hand and wrist (hand finger link)",
-        "the link"
+        "Build sub-assembly: Finger proximal link"
       ],
       "pressure": "low",
       "length": "medium",
-      "text": "Build sub-assembly: Finger proximal link waits on Bearing set for hand and wrist (hand finger link). i think the link is parked until those land, not 100% sure"
+      "text": "Build sub-assembly: Finger proximal link waits on Bearing set for hand and wrist (hand finger link), i think the bearings are still on the way"
     },
     {
-      "ts": "1788395657.116179",
-      "user": "p-kenji",
-      "thread_ts": "1788393608.938750",
-      "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "yeah still not in receiving"
-    },
-    {
-      "ts": "1788452161.215324",
-      "user": "p-dmitri",
+      "ts": "1788458016.909963",
+      "user": "p-jade",
       "thread_ts": null,
       "events": [
-        "ev-003268"
+        "ev-001870"
       ],
-      "brief": "Correction: LC plate: need 6 by 2026-10-23",
+      "brief": "LC plate: need 6 by 2026-10-23 for the fit check",
       "claim": {
         "kind": "needs",
         "value": {
@@ -461,89 +555,41 @@
       },
       "must_mention": [
         "LC plate",
-        "10/23"
+        "the fit check",
+        "fri the 23rd"
       ],
       "pressure": "low",
       "length": "medium",
-      "text": "Correction: LC plate, need 6 by 10/23!!"
+      "text": "LC plate need 6 for the fit check, fri the 23rd"
     },
     {
-      "ts": "1788453293.956363",
-      "user": "p-rohan",
-      "thread_ts": "1788452161.215324",
+      "ts": "1788460418.085872",
+      "user": "p-talia",
+      "thread_ts": "1788458016.909963",
       "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
+      "brief": "reply (disagrees politely) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "ok so thats the one for the new fixture?"
+      "text": "not sure about that, the fixture drawing isnt final 😬"
     },
     {
-      "ts": "1788458016.126187",
-      "user": "p-jade",
-      "thread_ts": null,
-      "events": [
-        "ev-001650"
-      ],
-      "brief": "the plate: need 6 by 2026-10-23 for the fit check",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 6,
-          "by": "2026-10-23"
-        }
-      },
-      "must_mention": [
-        "the plate",
-        "the fit check",
-        "fri 10/23"
-      ],
-      "pressure": "low",
-      "length": "short",
-      "text": "the plate x6 for the fit check, fri 10/23"
-    },
-    {
-      "ts": "1788458427.444380",
-      "user": "p-sofia",
-      "thread_ts": "1788452161.215324",
+      "ts": "1788462572.263676",
+      "user": "p-lin",
+      "thread_ts": "1788458016.909963",
       "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
+      "brief": "reply (disagrees politely) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "ok"
+      "text": "Disagree, I think the plate is fine as drawn."
     },
     {
-      "ts": "1788471987.286674",
+      "ts": "1788471987.755086",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-001662"
+        "ev-001883"
       ],
-      "brief": "FL-HND-1419: need 3 by 2026-09-30 for Build sub-assembly: Finger distal link",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 3,
-          "by": "2026-09-30"
-        }
-      },
-      "must_mention": [
-        "FL-HND-1419",
-        "Build sub-assembly: Finger distal link",
-        "FL-HND-1440",
-        "9/30"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "FL-HND-1419 x3 for Build sub-assembly: Finger distal link, need by 9/30. goes with FL-HND-1440"
-    },
-    {
-      "ts": "1788541527.652111",
-      "user": "p-amara",
-      "thread_ts": "1788471987.286674",
-      "events": [
-        "ev-003231"
-      ],
-      "brief": "Correction: FL-HND-1419: need 3 by 2026-09-28 for Build sub-assembly: Finger distal link",
+      "brief": "FL-HND-1419: need 3 by 2026-09-28 for Build sub-assembly: Finger distal link",
       "claim": {
         "kind": "needs",
         "value": {
@@ -558,45 +604,76 @@
         "9/28"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "Correction, FL-HND-1419 x3 for Build sub-assembly: Finger distal link needed 9/28 not 9/30, along with FL-HND-1440"
-    },
-    {
-      "ts": "1788541588.350030",
-      "user": "p-sofia",
-      "thread_ts": "1788471987.286674",
-      "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "mating side is the same lot so it should come in together"
-    },
-    {
-      "ts": "1788545488.286768",
-      "user": "p-talia",
-      "thread_ts": "1788471987.286674",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
       "length": "medium",
-      "text": "Is the supplier already confirmed on this one or still quoting?"
+      "text": "FL-HND-1419 need 3 by 9/28 for Build sub-assembly: Finger distal link, probably same lot as FL-HND-1440"
     },
     {
-      "ts": "1788546645.379745",
-      "user": "p-lin",
-      "thread_ts": "1788471987.286674",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
+      "ts": "1788484454.521854",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-001873"
+      ],
+      "brief": "load cell plate: need 6 by 2026-10-23 for the fit check; asks whether expediting is worth it",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-10-23"
+        }
+      },
+      "must_mention": [
+        "load cell plate",
+        "the fit check",
+        "10/23"
+      ],
+      "pressure": "low",
+      "asks_expedite": true,
       "length": "short",
-      "text": "Same on my side."
+      "text": "load cell plate, need 6 for the fit check by 10/23. is it worth expediting??"
     },
     {
-      "ts": "1788554794.104242",
+      "ts": "1788541184.950042",
+      "user": "p-sofia",
+      "thread_ts": null,
+      "events": [
+        "ev-004105"
+      ],
+      "brief": "tendon pulley: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "tendon pulley"
+      ],
+      "length": "short",
+      "text": "tendon pulley, still quoting rev A."
+    },
+    {
+      "ts": "1788553886.332547",
+      "user": "p-omar",
+      "thread_ts": null,
+      "events": [
+        "ev-003948"
+      ],
+      "brief": "tendon pulley: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "tendon pulley"
+      ],
+      "length": "medium",
+      "text": "tendon pulley is still quoting rev A, I think. not 100% sure which drawing they have"
+    },
+    {
+      "ts": "1788554794.879384",
       "user": "p-kenji",
       "thread_ts": null,
       "events": [
-        "ev-001785"
+        "ev-002012"
       ],
       "brief": "FL-HND-1487: need 24 by 2026-09-28 for Kit and assemble: Tactile board bracket",
       "claim": {
@@ -609,38 +686,18 @@
       "must_mention": [
         "FL-HND-1487",
         "Kit and assemble: Tactile board bracket",
-        "mon the 28th"
+        "9/28"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "FL-HND-1487 x24 for Kit and assemble: Tactile board bracket, mon the 28th"
+      "text": "FL-HND-1487 need 24 by 9/28 for Kit and assemble: Tactile board bracket"
     },
     {
-      "ts": "1788556622.335894",
-      "user": "p-kenji",
-      "thread_ts": "1788554794.104242",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "anyone know if we have spares in the cage"
-    },
-    {
-      "ts": "1788557917.567362",
-      "user": "p-sofia",
-      "thread_ts": "1788554794.104242",
-      "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "Thanks Kenji, I will check the bins."
-    },
-    {
-      "ts": "1788559914.997540",
+      "ts": "1788559914.877220",
       "user": "p-kenji",
       "thread_ts": null,
       "events": [
-        "ev-001786"
+        "ev-002013"
       ],
       "brief": "FL-HND-1487: need 24 by 2026-09-28",
       "claim": {
@@ -655,25 +712,25 @@
         "mon 9/28"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "FL-HND-1487 x24 needed mon 9/28"
+      "length": "medium",
+      "text": "FL-HND-1487 need 24 by mon 9/28"
     },
     {
-      "ts": "1788562851.684020",
+      "ts": "1788562468.300960",
       "user": "p-aisha",
-      "thread_ts": "1788559914.997540",
+      "thread_ts": "1788559914.877220",
       "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "brief": "reply (shares a related experience) in the thread about: the message above",
       "must_mention": [],
       "length": "one_word",
-      "text": "wait is that the same ask as earlier"
+      "text": "had to redo a bracket like that last month, tabs snapped off in the tumbler"
     },
     {
-      "ts": "1788563212.319194",
+      "ts": "1788563212.387645",
       "user": "p-kenji",
       "thread_ts": null,
       "events": [
-        "ev-003849"
+        "ev-004308"
       ],
       "brief": "Rig setup: Tendon tension jig done",
       "claim": {
@@ -686,34 +743,24 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Rig setup: Tendon tension jig done as of 9/4"
+      "text": "Rig setup: Tendon tension jig done, 9/4"
     },
     {
-      "ts": "1788566089.228374",
-      "user": "p-talia",
-      "thread_ts": "1788559914.997540",
+      "ts": "1788564049.653987",
+      "user": "p-ingrid",
+      "thread_ts": "1788563212.387645",
       "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "agree 🙏"
-    },
-    {
-      "ts": "1788566183.846375",
-      "user": "p-rohan",
-      "thread_ts": "1788563212.319194",
-      "events": [],
-      "brief": "reply (tags someone else) in the thread about: the message above",
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "@zoe.c did u need that for the cable tests"
+      "text": "Does it hold the cable preload across the full range?"
     },
     {
-      "ts": "1788568258.094775",
+      "ts": "1788568258.037328",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-001664"
+        "ev-001885"
       ],
       "brief": "FL-HND-1419: need 3 by 2026-09-28",
       "claim": {
@@ -725,51 +772,21 @@
       },
       "must_mention": [
         "FL-HND-1419",
-        "9/28"
+        "mon 9/28"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "FL-HND-1419, need 3 by 9/28."
+      "text": "FL-HND-1419 need 3 by mon 9/28"
     },
     {
-      "ts": "1788569764.565911",
-      "user": "p-omar",
-      "thread_ts": "1788563212.319194",
+      "ts": "1788568497.947303",
+      "user": "p-ingrid",
+      "thread_ts": "1788563212.387645",
       "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
+      "brief": "reply (thanks) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "nice, good to have that out of the way"
-    },
-    {
-      "ts": "1788571991.483574",
-      "user": "p-kenji",
-      "thread_ts": "1788568258.094775",
-      "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "not sure i agree on that, imo it can wait"
-    },
-    {
-      "ts": "1788572008.441409",
-      "user": "p-sofia",
-      "thread_ts": "1788563212.319194",
-      "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "Yes, it is in the lab now."
-    },
-    {
-      "ts": "1788572875.736152",
-      "user": "p-talia",
-      "thread_ts": "1788568258.094775",
-      "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "noted 🙏"
+      "text": "Thanks, Kenji."
     }
   ]
 }

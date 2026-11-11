@@ -1,0 +1,304 @@
+{
+  "job_id": "meeting-mtg-00574",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 51,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00574",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-05-18T08:45:00-07:00",
+    "actual_min": 14,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-andre",
+      "p-jade",
+      "p-luis"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-001026",
+      "speaker": "p-dmitri",
+      "at_min": [
+        2,
+        8
+      ],
+      "brief": "transducer bracket: need 12 by 2026-05-22",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-dyno-torque-cell-bracket",
+        "value": {
+          "qty": 12,
+          "by": "2026-05-22"
+        }
+      },
+      "must_mention": [
+        "transducer bracket",
+        "5/22"
+      ]
+    },
+    {
+      "event": "ev-003741",
+      "speaker": "p-dmitri",
+      "at_min": [
+        5,
+        11
+      ],
+      "brief": "Dmitri says: We need brake mount by 6/8 (next week).",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-hip-brake-bracket",
+        "value": {
+          "qty": 24,
+          "by": "2026-06-08"
+        }
+      },
+      "must_mention": [
+        "brake mount",
+        "next week",
+        "6/8"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-dmitri",
+      "text": "Monday standup. Everyone's here. Andre, dyno."
+    },
+    {
+      "start_s": 8,
+      "speaker": "p-andre",
+      "text": "dyno, i rebuilt the coupling over the weekend, runs smoother, still a little ripple at low speed"
+    },
+    {
+      "start_s": 45,
+      "speaker": "p-dmitri",
+      "text": "Good. We still need the transducer bracket, 12 of them by 5/22."
+    },
+    {
+      "start_s": 65,
+      "speaker": "p-zoe",
+      "text": "ok transducer bracket, twelve, 5/22, i'll put it in"
+    },
+    {
+      "start_s": 95,
+      "speaker": "p-andre",
+      "text": "is that for the second dyno or the first?"
+    },
+    {
+      "start_s": 103,
+      "speaker": "p-dmitri",
+      "text": "Both. Same part."
+    },
+    {
+      "start_s": 150,
+      "speaker": "p-zoe",
+      "text": "fixtures, tilt stand is basically done, load cell mount needed shimming, i think its square now"
+    },
+    {
+      "start_s": 200,
+      "speaker": "p-dmitri",
+      "text": "Check it with the indicator before you sign off."
+    },
+    {
+      "start_s": 210,
+      "speaker": "p-zoe",
+      "text": "will do"
+    },
+    {
+      "start_s": 260,
+      "speaker": "p-jade",
+      "text": "two boxes came in friday, one was fasteners, one was the cable order, both checked"
+    },
+    {
+      "start_s": 300,
+      "speaker": "p-luis",
+      "text": "i put the fasteners in the cabinet, bin labels are a mess tho"
+    },
+    {
+      "start_s": 330,
+      "speaker": "p-dmitri",
+      "text": "We need brake mount by 6/8, so next week, wait, no, it's the week after. Twenty-four of them."
+    },
+    {
+      "start_s": 360,
+      "speaker": "p-zoe",
+      "text": "so brake mount, 24, by 6/8, got it"
+    },
+    {
+      "start_s": 400,
+      "speaker": "p-luis",
+      "text": "thats the one for the hip brake right"
+    },
+    {
+      "start_s": 408,
+      "speaker": "p-dmitri",
+      "text": "Yes."
+    },
+    {
+      "start_s": 450,
+      "speaker": "p-andre",
+      "text": "uh, also the dyno fan is making a weird noise"
+    },
+    {
+      "start_s": 465,
+      "speaker": "p-luis",
+      "text": "i can grease the bearing, probably just dry"
+    },
+    {
+      "start_s": 500,
+      "speaker": "p-dmitri",
+      "text": "Go ahead, Luis."
+    },
+    {
+      "start_s": 560,
+      "speaker": "p-jade",
+      "text": "i can relabel the bins if someone gives me a label maker"
+    },
+    {
+      "start_s": 590,
+      "speaker": "p-zoe",
+      "text": "its in my drawer ill leave it on your bench"
+    },
+    {
+      "start_s": 680,
+      "speaker": "p-dmitri",
+      "text": "Alright, that's it. Have a good week."
+    }
+  ],
+  "summary": {
+    "overview": "Monday test lab standup. Dyno coupling rebuilt, tilt stand load cell mount shimmed, receiving checked in fasteners and cables.",
+    "shorthand_bullet": [
+      "dyno coupling rebuilt, some ripple at low speed",
+      "transducer bracket: need 12 by 5/22, both dynos",
+      "tilt stand done, verify squareness with indicator",
+      "brake mount: need 24 by 6/8 (next week-ish, Dmitri corrected himself)",
+      "dyno fan noisy - Luis to grease",
+      "bins need relabeling"
+    ],
+    "action_items": [
+      "Zoe - request transducer bracket and brake mount",
+      "Luis - grease fan bearing",
+      "Jade - relabel bins"
+    ],
+    "keywords": [
+      "dyno",
+      "coupling",
+      "tilt stand",
+      "transducer bracket",
+      "brake mount"
+    ]
+  }
+}
