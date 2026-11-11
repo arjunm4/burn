@@ -8,6 +8,7 @@ Built for a hackathon whose prompt is *automate an existing financial workflow*.
 
 | Path | What it is |
 | --- | --- |
+| [`docs/hld.md`](docs/hld.md) | One-page high-level design: who does what, the flow, how the recommendation is made, the parts of the system |
 | [`docs/architecture.md`](docs/architecture.md) | The design (v9 draft): flow, decisions, decision maths, learning, demo data |
 | [`docs/open-questions.md`](docs/open-questions.md) | Every open question in one list, with owner and status |
 | [`docs/research/`](docs/research/) | Research notes, e.g. [`ramp-integration.md`](docs/research/ramp-integration.md) (Ramp API path, mock plan, demo script) |
