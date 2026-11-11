@@ -64,7 +64,7 @@ test('case D: unknown motor date → the question goes to the motor owner, with 
 test('no policy and a real trade-off → nothing preselected; break-even shown', () => {
   const r = base(8, {policy: {valuePerDayCents: null, targetOn: null, hard: false, owner: null}});
   assert.equal(r.recommended, null);
-  assert.match(explain(r), /Nothing to recommend yet.*Break-even: Expedited at \$450\/day/);
+  assert.match(explain(r), /no value-of-time policy.*Expedited at \$450\/day/);
   assert.ok(r.assumptions.some(a => /No value-of-time policy/.test(a)));
 });
 

@@ -151,9 +151,10 @@ export function explain(result, {milestoneLabel = 'the milestone'} = {}) {
   const cheapest = result.options.filter(o => o.admissible).reduce((a, b) => (!a || b.extraCents < a.extraCents ? b : a), null);
   if (!result.options.some(o => o.admissible)) return `No valid option: ${result.options[0]?.why || 'the quote cannot be used'}.`;
   if (!rec) {
-    const gap = result.question ? ` It depends on ${result.question.text.split(':')[0].toLowerCase()}; ${result.question.owner} would know.` : '';
     const be = result.options.filter(o => o.breakEvenCentsPerDay).map(o => `${o.tier} at $${Math.round(o.breakEvenCentsPerDay / 100)}/day`).join(', ');
-    return `Nothing to recommend yet.${gap}${be ? ` Break-even: ${be}.` : ''}`;
+    if (result.question?.flips) return `Nothing to recommend yet: it depends on ${result.question.text.split(':')[0].toLowerCase()}, and ${result.question.owner} would know.${be ? ` Break-even: ${be}.` : ''}`;
+    if (result.unknowns?.length) return `Nothing to recommend yet: ${milestoneLabel}'s date is unknown because an input has no stated duration.${be ? ` Break-even: ${be}.` : ''}`;
+    return `Real trade-off, and no value-of-time policy is set for ${milestoneLabel}, so pick by break-even: ${be || 'none'}.`;
   }
   if (result.recommended.basis === 'dominance') {
     if (rec.tier === cheapest.tier) {

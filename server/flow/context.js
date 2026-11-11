@@ -30,17 +30,19 @@ export function buildContext({order, ingest, config, now}) {
   // 1. Related documents: term overlap, name tokens weighted double, newest first on ties.
   const related = docs.map(d => {
     const dt = new Set(tokens(d.text));
-    let score = 0;
-    for (const t of nameTokens) if (dt.has(t)) score += 2;
+    let score = 0, nameHits = 0;
+    for (const t of nameTokens) if (dt.has(t)) { score += 2; nameHits++; }
     for (const t of tokens(order.entry.note)) if (dt.has(t) && !nameTokens.has(t)) score += 1;
-    return {d, score};
+    return {d, score, nameHits};
   }).filter(x => x.score > 0).sort((a, b) => b.score - a.score || b.d.at.localeCompare(a.d.at)).slice(0, 12)
-    .map(({d, score}) => ({id: d.id, source: d.source, channel: d.channel, author: d.author, at: d.at, text: d.text, score}));
-  const relatedText = related.map(r => r.text.toLowerCase()).join('\n');
+    .map(({d, score, nameHits}) => ({id: d.id, source: d.source, channel: d.channel, author: d.author, at: d.at, text: d.text, score, nameHits}));
+  // Only documents that name the part itself can link it to work; note-only matches are context, not links.
+  const linkingText = related.filter(r => r.nameHits > 0).map(r => r.text.toLowerCase()).join('\n');
   const noteText = `${order.entry.name} ${order.entry.note}`.toLowerCase();
+  const noteTokens = tokens(order.entry.note);
 
-  // 2. Which work and milestones does this part feed? Named in the entry or in a related document.
-  const mentioned = n => { const l = n.label.toLowerCase(); return noteText.includes(l) || relatedText.includes(l) || tokens(l).every(t => nameTokens.has(t) || tokens(order.entry.note).includes(t)); };
+  // 2. Which work and milestones does this part feed? Named in the entry, or in a document that names the part.
+  const mentioned = n => { const l = n.label.toLowerCase(); const lt = tokens(l); return noteText.includes(l) || linkingText.includes(l) || (lt.length > 0 && lt.every(t => noteTokens.includes(t))); };
   const work = base.nodes.filter(n => n.kind === 'work' && mentioned(n));
   const milestonesNamed = base.nodes.filter(n => n.kind === 'milestone' && mentioned(n));
 
