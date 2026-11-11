@@ -94,7 +94,7 @@ export function createAgent({client = null, model = MODEL, now = () => new Date(
     const today = now().slice(0, 10);
     const byId = new Map(docs.map(d => [d.id, d]));
     const seen = new Map(); // ids handed to the model, so citations can be checked
-    const show = d => { seen.set(d.id, d); return {id: d.id, source: d.source, channel: d.channel, author: d.author, at: d.at.slice(0, 16), text: d.text.length > 400 ? d.text.slice(0, 400) + '…' : d.text, ...(d.attrs?.categories?.length ? {categories: d.attrs.categories} : {}), ...(d.end ? {end: d.end.slice(0, 10)} : {})}; };
+    const show = d => { seen.set(d.id, d); return {id: d.id, source: d.source, channel: d.channel, author: d.author, at: d.at.slice(0, 16), text: d.text.length > 300 ? d.text.slice(0, 300) + '…' : d.text, ...(d.attrs?.categories?.length ? {categories: d.attrs.categories} : {}), ...(d.end ? {end: d.end.slice(0, 10)} : {})}; };
     const trace = [];
     const entry = `Part: ${order.entry.name}${order.entry.partNumber ? ` (${order.entry.partNumber})` : ''}. Engineer's note: "${order.entry.note}". Spec: ${(order.spec || []).map(f => `${f.key}=${f.value}`).join(', ') || 'none yet'}. Today is ${today}. Requested by ${order.entry.engineer}.`;
     const messages = [{role: 'user', content: entry}];
@@ -108,7 +108,8 @@ export function createAgent({client = null, model = MODEL, now = () => new Date(
       const results = [];
       for (const u of uses) {
         if (u.name === 'report') { claims = u.input; results.push({type: 'tool_result', tool_use_id: u.id, content: 'Recorded.'}); continue; }
-        const hits = u.name === 'calendar' ? searchDocuments(docs, u.input.query, {limit: 15, source: 'calendar'}) : searchDocuments(docs, u.input.query, {limit: 20, source: u.input.source || null}).filter(d => d.source !== 'calendar');
+        // A dozen hits per search keeps a read to a few tens of thousands of tokens; the model can search again with narrower words.
+        const hits = u.name === 'calendar' ? searchDocuments(docs, u.input.query, {limit: 10, source: 'calendar'}) : searchDocuments(docs, u.input.query, {limit: 12, source: u.input.source || null}).filter(d => d.source !== 'calendar');
         const step = {tool: u.name, query: u.input.query, source: u.input.source || null, hits: hits.length, channels: [...new Set(hits.map(h => h.channel))].slice(0, 4)};
         trace.push(step); emit({type: 'agent.search', ...step});
         results.push({type: 'tool_result', tool_use_id: u.id, content: JSON.stringify(hits.map(show))});
