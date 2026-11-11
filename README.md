@@ -2,7 +2,7 @@
 
 **A purchasing agent for hardware teams that plugs into Ramp.**
 
-Built for a hackathon with the prompt *automate an existing financial workflow*.
+Built for a hackathon hosted by Ramp and BBS at Berkeley, with the prompt *automate an existing financial workflow*.
 
 ## The problem
 
