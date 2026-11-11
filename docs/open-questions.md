@@ -19,7 +19,7 @@ Owners: **A+O** = Arjun and Owen (product); **Build** = whoever is building it; 
 
 | # | Question | Status |
 |---|---|---|
-| R1 | Sandbox access: request submitted? How long does approval take? | **Action: request now** at docs.ramp.com/developer-api/v1/sandbox-access |
+| R1 | Sandbox access: request submitted? Ramp says ready in about one minute; needs an admin on a Ramp account (non-customer access unverified) | **Action: request now** at docs.ramp.com/developer-api/v1/sandbox-access; fallback is the mock (research/ramp-integration.md §8) |
 | R2 | Can `unified-requests` (purchase requests) early access be enabled on the sandbox business? | Ask Ramp; fallback is a request made by hand in the UI |
 | R3 | Does the sandbox business have Plus / Procurement (needed for purchase orders and item receipts)? | Unknown; fallback is a memo plus Burn's own record |
 | R4 | Does a ⌘J simulated transaction respect the card's merchant lock and amount? | Unknown |
