@@ -113,7 +113,6 @@ export default function Order({id}) {
         {order.spec?.length
           ? <Rows gap={3} rows={order.spec.filter(f => f.provenance !== 'default').map(f => [f.key, f.value ?? <span style={{color: C.critical}}>missing</span>])}/>
           : <span style={{color: C.muted}}>Not resolved yet.</span>}
-        {order.entry.cadFileName && <div style={{color: C.faint, marginTop: 6}}>{order.entry.cadFileName}</div>}
       </Section>
       {ctx.related?.length > 0 && <Fold title={`Sources · ${ctx.related.length}`}>
         <div style={{display: 'flex', flexDirection: 'column', gap: 8}}>{ctx.related.map(r => <Quote key={r.id} r={r}/>)}</div>
@@ -193,8 +192,6 @@ function Decision({order, act, busy}) {
       {recOpt && <div style={{fontSize: 30, letterSpacing: '-.02em', marginTop: 6}}>{recOpt.tier} · {money(priceOf(recOpt.tier))}</div>}
       <div style={{fontSize: 16, lineHeight: 1.5, marginTop: 8, color: C.ink}}>{d.text}</div>
     </div>
-    {(() => { const cs = tvCards.cards || tvCards; const pick = cs[(rec || tent) === 'rush' ? 4 : (rec || tent) === 'standard' ? 1 : 0]; const card = pick?.card || pick;
-      return card ? <div><div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline'}}><Eyebrow>What the bracket is waiting on</Eyebrow><a href="/network" style={{fontSize: 12, color: C.muted}}>see the whole map →</a></div><DependencyGraph card={card} C={C} sourceLabel={s => String(s).startsWith('slack:') ? 'Slack #actuators' : String(s)}/><div style={{marginTop: 12}}><WhoBlocked id="pt-hip-bracket" C={C}/></div></div> : null; })()}
     <div style={{border: `1px solid ${C.line}`, borderRadius: 12, overflow: 'hidden', background: '#fff'}}>
       <div style={{display: 'grid', gridTemplateColumns: GRID, gap: 12, padding: '8px 16px', borderBottom: `1px solid ${C.line}`}}>
         {['Lead time', 'Price', 'Part arrives', `${milestone} done`, ''].map((h, i) => <Eyebrow key={i} style={{letterSpacing: '.08em'}}>{h}</Eyebrow>)}
@@ -215,6 +212,8 @@ function Decision({order, act, busy}) {
         </div>;
       })}
     </div>
+    {(() => { const cs = tvCards.cards || tvCards; const pick = cs[(rec || tent) === 'rush' ? 4 : (rec || tent) === 'standard' ? 1 : 0]; const card = pick?.card || pick;
+      return card ? <div><div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline'}}><Eyebrow>What the bracket is waiting on</Eyebrow><a href="/network" style={{fontSize: 12, color: C.muted}}>see the whole map →</a></div><DependencyGraph card={card} C={C} sourceLabel={s => String(s).startsWith('slack:') ? 'Slack #actuators' : String(s)}/><div style={{marginTop: 12}}><WhoBlocked id="pt-hip-bracket" C={C}/></div></div> : null; })()}
     <Fold title="Why">
       <div style={{display: 'flex', flexDirection: 'column', gap: 6, fontSize: 13, lineHeight: 1.45}}>
         {(ctx.assumptions || []).map((a, i) => <div key={i}>{a.text}{a.ageDays > 0 && <span style={{color: C.faint}}> · {a.ageDays}d ago</span>}</div>)}

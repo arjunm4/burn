@@ -37,7 +37,6 @@ export default function Orders() {
   return <Page system={system} width={760} style={{display: 'flex', flexDirection: 'column', gap: 28}}>
     <section style={{display: 'flex', flexDirection: 'column', gap: 16}}>
       <div style={{fontSize: 30, letterSpacing: '-.02em', lineHeight: 1.15}}>What do you need?</div>
-      <div style={{color: C.muted, fontSize: 14, marginTop: -6}}>Name the part. Burn finds what it's for, gets the quote, and works out which lead time is worth paying for.</div>
       <div style={{border: `1px solid ${C.line}`, borderRadius: 12, background: '#fff', padding: 8, fontSize: 14}}>
         <DemoStart/>
       </div>
