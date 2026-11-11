@@ -18,7 +18,8 @@ export function loadDemo(env = process.env) {
   if (!existsSync(dir)) return null;
   const read = f => (existsSync(path.join(dir, f)) ? readJson(path.join(dir, f)) : null);
   const users = existsSync(path.join(world, 'slack/users.json')) ? readJson(path.join(world, 'slack/users.json')).members : [];
-  return {world, entry: read('part-entry.json'), liveChanges: read('live-changes.json')?.changes || [], policy: read('policy.json'), users};
+  return {world, entry: read('part-entry.json'), // burn-live-changes.json (the demo slice's single message) wins over the world's live-changes.json.
+  liveChanges: (read('burn-live-changes.json') || read('live-changes.json'))?.changes || [], policy: read('policy.json'), users};
 }
 
 async function body(req) { let text = ''; for await (const c of req) { text += c; if (text.length > 65536) throw new AppError('Request too large', 413); } try { return JSON.parse(text || '{}'); } catch { throw new AppError('Invalid JSON'); } }

@@ -86,6 +86,8 @@ export function buildContext({order, ingest, config, now, graph: given = null, e
   // The milestone's date, for this decision, follows the part's own path: other work that also feeds the
   // milestone is not this order's concern and must not make its date unknown. Everything downstream of the
   // part keeps all of its own inputs (that is where siblings come from).
+  const tentativeBooking = new Set(nodes.filter(n => n.attrs?.booking && n.attrs?.tentative).map(n => n.id));
+  for (let i = edges.length - 1; i >= 0; i--) if (tentativeBooking.has(edges[i].from)) edges.splice(i, 1);
   const reach = new Set(downstream({nodes, edges}, partNodeId));
   const pruned = edges.filter(e => !(e.kind === 'due' || e.kind === 'blocks') || !nodes.find(n => n.id === e.to && n.kind === 'milestone') || e.from === partNodeId || reach.has(e.from));
   const graph = {nodes, edges: pruned};
@@ -95,8 +97,11 @@ export function buildContext({order, ingest, config, now, graph: given = null, e
   const down = downstream(graph, partNodeId).map(id => nodes.find(n => n.id === id));
   const milestones = down.filter(n => n?.kind === 'milestone' && n.attrs?.date).sort((a, b) => a.attrs.date.localeCompare(b.attrs.date));
   const milestone = milestones[0] || null;
-  const policyCfg = milestone ? config.milestones[milestone.id] || config.milestones[milestone.label] || null : null;
-  const policy = {valuePerDayCents: policyCfg?.valuePerDayCents ?? null, targetOn: (milestone && overrides[milestone.id]?.date) || policyCfg?.targetOn || milestone?.attrs?.date || null, hard: !!policyCfg?.hard, owner: policyCfg?.owner ?? milestone?.attrs?.owner ?? null, source: policyCfg ? 'config' : null,
+  const sig = l => tokens(l).filter(t => !['complete', 'done', 'milestone', 'the', 'and', 'for', 'build'].includes(t));
+  const fuzzy = () => { const mine = sig(milestone.label); return Object.keys(config.milestones || {}).find(k => mine.filter(t => sig(k).includes(t)).length >= Math.min(2, mine.length)) || null; };
+  const policyKey = milestone ? ([milestone.id, milestone.label].find(k => config.milestones?.[k]) || fuzzy()) : null;
+  const policyCfg = policyKey ? config.milestones[policyKey] : null;
+  const policy = {valuePerDayCents: policyCfg?.valuePerDayCents ?? null, targetOn: (milestone && overrides[milestone.id]?.date) || milestone?.attrs?.date || policyCfg?.targetOn || null, hard: !!policyCfg?.hard, owner: policyCfg?.owner ?? milestone?.attrs?.owner ?? null, source: policyCfg ? 'config' : null,
     // A value someone stated in conversation is context for the card, never authority: the policy comes from config.
     hint: milestone?.attrs?.valueHintCentsPerDay ? {centsPerDay: milestone.attrs.valueHintCentsPerDay, by: milestone.attrs.valueHintBy || null, evidence: milestone.attrs.valueHintEvidence || null} : null};
 

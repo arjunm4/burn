@@ -57,7 +57,7 @@ test('the Ramp view: requests, cards and transactions follow a full okay → app
   assert.deepEqual(r.lineItems, [{description: 'Hip actuator bracket, Economy (cheapest valid lead time)', amountCents: cheapest.priceCents, kind: 'base'},
     {description: `Expedite premium: ${order.frozen.tier} over Economy, ${chosen.deltaDays} working days sooner`, amountCents: order.frozen.priceCents - cheapest.priceCents, kind: 'premium'}]);
   assert.deepEqual(r.verdict, {verdict: 'worth_it', daysGained: chosen.deltaDays, breakEvenCentsPerDay: chosen.breakEvenCentsPerDay, cheapestTier: 'Economy', chosenTier: order.frozen.tier, recommendedTier: order.frozen.tier,
-    dominatingInput: null, milestone: 'Spin test done', policy: {valuePerDayCents: 60000, owner: 'Arjun', version: 1, hash: policyHash('milestone:spin', POLICY)}, cutoff: order.quote.cutoff, assumptions: order.decision.assumptions});
+    dominatingInput: null, milestone: 'Spin test done', policy: {valuePerDayCents: 60000, owner: 'Arjun', version: 1, hash: policyHash('milestone:spin', POLICY)}, cutoff: order.quote.cutoff, assumptions: order.decision.assumptions, riskNote: null});
   assert.ok(chosen.deltaDays > 0 && chosen.breakEvenCentsPerDay > 0);
   assert.match(r.verdict.policy.hash, /^[0-9a-f]{12}$/); assert.notEqual(r.verdict.policy.hash, policyHash('milestone:spin', {...POLICY, version: 2}), 'a new policy version is a new hash');
   assert.deepEqual(Object.keys(r.order.entry), ['name', 'note', 'engineer']);

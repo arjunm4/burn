@@ -186,7 +186,9 @@ export function createOrchestrator({store, vendor, ramp, ingest = null, config, 
     const field_answers = {justification, burn_order_id: id, spec_hash: order.specHash, decision_revision: order.decisionRevision, chosen_tier: tier, recommended_tier: rec?.tier || null,
       verdict, days_gained: chosen.deltaDays ?? null, break_even_cents_per_day: chosen.breakEvenCentsPerDay ?? null, cheapest_tier: cheapest.tier, dominating_input: gatingInput(order, option.readyOn),
       milestone: order.context?.milestoneLabel || null, value_per_day_cents: policy.valuePerDayCents ?? null, policy_owner: policy.owner ?? null, policy_version: pol ? pol.version ?? 1 : null, policy_hash: pol ? policyHash(label, pol) : null,
-      cutoff: order.quote.cutoff || null, assumptions: dec.assumptions, risk_note: null};
+      cutoff: order.quote.cutoff || null, assumptions: dec.assumptions,
+      // When the engineer overrides the recommendation, the reason they gave Burn goes to the approver verbatim.
+      risk_note: rec && rec.tier !== tier ? ([...(order.exchange || [])].reverse().find(x => x.by === order.entry.engineer && x.type !== 'factual correction')?.text || null) : null};
     const req = await ramp.createRequest({request_owner_id: config.ramp.requestOwnerId || order.entry.engineer, spend_program_id: config.ramp.spendProgramId, currency: frozen.currency,
       name: `${order.entry.name} (${tier}) from Xometry`, line_items, field_answers,
       specHash: order.specHash, decisionRevision: order.decisionRevision, orderId: id, attachments: [{name: 'justification.txt', mime: 'text/plain', bytes: Buffer.from(justification)}]});

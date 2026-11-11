@@ -157,7 +157,8 @@ function RequestCard({r, busy, onDecide}) {
         </div>}
         {!premium && !v && !base && <Line label={r.name} amount={r.amountCents}/>}
       </div>
-      {v && <div style={{marginTop: 10, fontSize: 13, lineHeight: 1.5}}>{verdictLine(v, ms, r)}</div>}
+      {v?.riskNote && <div style={{marginTop: 12, padding: '10px 12px', background: C.paper, borderRadius: 8, fontSize: 13, lineHeight: 1.5}}><span style={{color: C.muted}}>{requester} chose {v.chosenTier} over Burn's {v.recommendedTier}: </span>“{v.riskNote}”</div>}
+      {v && !v.riskNote && v.verdict !== 'worth_it' && <div style={{marginTop: 10, fontSize: 13, lineHeight: 1.5, color: C.muted}}>{verdictLine(v, ms, r)}</div>}
       {!v && r.justification && <div style={{marginTop: 10, fontSize: 13, lineHeight: 1.5}}>{r.justification.split(/\n\n(?=Assumptions:)/)[0]}</div>}
     </Block>
 
