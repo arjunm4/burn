@@ -3,9 +3,9 @@ import React from 'react';
 // Demo-only: a floating checklist that highlights what to click next and advances when you click it.
 // Progress lives in localStorage so it survives page changes. Reset with the ↺ button.
 const STEPS = [
-  {page: /^\/network$/, sel: '[data-demo="Hip actuator bracket"]', text: 'Hip actuator bracket', say: 'Burn rebuilt Flintlock from its messages. Owen needs this bracket.'},
-  {page: /^\/network$/, go: '/orders', say: 'It feeds the spin test, which also waits on the motor. Now order it.'},
-  {page: /^\/(orders)?$/, text: 'Enter it as', say: 'Owen enters the bracket and attaches the CAD.'},
+  {page: /^\/(network)?$/, sel: '[data-demo="Hip actuator bracket"]', text: 'Hip actuator bracket', say: 'Burn rebuilt Flintlock from its messages. Owen needs this bracket.'},
+  {page: /^\/(network)?$/, go: '/orders', say: 'It feeds the spin test, which also waits on the motor. Now order it.'},
+  {page: /^\/orders$/, text: 'Enter it as', say: 'Owen enters the bracket and attaches the CAD.'},
   {page: /^\/orders\/[\w-]+$/, text: 'Okay', exact: true, say: 'Burn shows what the bracket waits on and picks the tier. Click Okay.'},
   {page: /^\/orders\/[\w-]+$/, go: '/ramp', say: 'The request goes to the manager in Ramp.'},
   {page: /^\/ramp$/, text: 'Approve', exact: true, say: 'Ingrid approves.'},
@@ -30,7 +30,7 @@ function findTarget(step) {
 
 export default function DemoGuide() {
   // Opening the first page of the demo always starts the guide from step 1.
-  const [i, setI] = React.useState(() => (location.pathname === '/network' ? (write(0), 0) : read()));
+  const [i, setI] = React.useState(() => (['/network', '/'].includes(location.pathname) ? (write(0), 0) : read()));
   const [open, setOpen] = React.useState(true);
   const [list, setList] = React.useState(false);
   const step = STEPS[i];
