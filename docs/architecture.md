@@ -336,6 +336,13 @@ label:    the tier chosen, from the matching Xometry order (Ramp's amount alone 
 - **One world script first:** the hip-actuator program, people and roles, milestones and tests, and ~100–150 past Xometry orders over ~9 months, each with its need-by, blockers, sibling ETAs, urgency, the chosen tier and the hidden reason.
 - **Rendered into each source** with consistent names and timestamps: Slack messages, Jira tickets, meeting notes, calendar, Xometry order history and Ramp-shaped charges. An LLM writes the text from each scripted event; facts and times come from the script.
 - **Noise:** off-topic chatter, corrected dates, undiscussed orders, panic expedites that bought nothing.
+- **Meetings** (Owen's decision): many meetings across the 9 months, each realistic to its topic:
+  - supply chain (internal)
+  - supply chain with mechanical engineering
+  - project management / program reviews
+  - others, e.g. design reviews, standups, build-readiness and gate reviews, vendor calls, all-hands
+
+  Most of each meeting is genuine engineering discussion (trade-offs, test results, design debates) unrelated to purchasing. The purchasing-relevant facts (a need-by date, a slipped sibling part, a test moved, a material switch) appear only as **sparse crumbs** inside that discussion. Burn's job is to find them. Formats and messiness follow [`research/data-realism.md`](research/data-realism.md).
 - **Everything is mocked in the demo** (§2.18): Ramp, Xometry, Slack, Jira, meeting notes and calendar, each as a labelled mock shaped like the real service.
 - The hidden reasons are ground truth for evaluation only, never training inputs.
 - Results are reported as "in this simulator, under these assumptions"; no real-world accuracy or ROI claims.
