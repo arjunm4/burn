@@ -505,7 +505,14 @@ function buildCard({ settings, partEntry, quote, part, test, milestone, target, 
       finish: fins.length === 0 ? null : fins.length === 1 || fins[0] === fins.at(-1) ? fins[0] : { min: fins[0], max: fins.at(-1) },
       days_saved: savedText(c.days_saved), break_even: c.break_even ?? null, recommended: cmp.recommended != null && lc(cmp.recommended) === t.tier };
   }).sort((a, b) => a.total - b.total);
-  const cheapest = tiers[0]; const fastest = tiers.at(-1);
+  const cheapest = tiers[0];
+  // The faster tier to talk about: the recommended one, else the cheapest tier that reaches the most days saved.
+  // Tiers that cost more but save no more days than a cheaper tier are dominated and called out separately.
+  const maxSaved = (t) => { const v = t.days_saved; return typeof v === 'number' ? v : v && typeof v === 'object' ? (v.max ?? v.min ?? 0) : 0; };
+  const faster = tiers.slice(1);
+  const top = faster.length ? Math.max(...faster.map(maxSaved)) : 0;
+  const fastest = faster.find((t) => t.recommended) || faster.find((t) => maxSaved(t) === top) || tiers.at(-1);
+  const dominated = faster.filter((t) => t !== fastest && t.total > fastest.total && maxSaved(t) <= maxSaved(fastest));
   const extra = fastest.total - cheapest.total;
   const owner = (id) => personById(settings, id);
   const policyText = policy?.type === 'per_day' ? `${money(policy.usd_per_day)}/day` : policy?.type === 'curve' ? 'a cost curve' : 'none';
@@ -521,6 +528,7 @@ function buildCard({ settings, partEntry, quote, part, test, milestone, target, 
   let headline; let detail = []; let outcomeTag;
   const saved = savedNum(fastest.days_saved);
   const beText = fastest.break_even != null ? money(fastest.break_even) : extra && saved ? money(extra / saved) : null;
+  const dominatedLine = dominated.map((t) => `${t.label} (${money(t.total)}) finishes no sooner than ${fastest.label}: +${money(t.total - fastest.total)} for nothing.`);
   switch (cmp.outcome) {
     case 'pay': {
       const net = policy?.usd_per_day != null && saved != null ? policy.usd_per_day * saved - extra : null;
@@ -582,7 +590,7 @@ function buildCard({ settings, partEntry, quote, part, test, milestone, target, 
     inputs: others.map((i) => ({ id: i.id, name: i.name, ready: i.ready, ready_text: readyText(i.ready), owner: owner(i.owner)?.name || null, said_by: owner(i.said_by)?.name || null, said_at: i.said_at || null, said_ago: ago(i.said_at, now), doc_id: i.doc_id || null })),
     tiers,
     outcome: cmp.outcome, outcome_tag: outcomeTag, recommended: cmp.recommended ?? null,
-    headline, detail, question: cmp.question || null, switching: cmp.switching || null,
+    headline, detail: [...detail, ...dominatedLine], question: cmp.question || null, switching: cmp.switching || null,
     checks: (rub.checks || []).map((c) => ({ ...c, text: named(c.text, settings), sources: c.sources || [],
       ...(c.items ? { items: c.items.map((i) => ({ ...i, text: named(i.text, settings), question: i.question ? { ...i.question, to_name: owner(i.question.to)?.name || null } : null })) } : {}) })), guards: rub.guards || [], blocked: !!rub.blocked,
     habit,

@@ -76,6 +76,17 @@
             "days_saved": 2,
             "break_even": 450,
             "recommended": true
+          },
+          {
+            "tier": "rush",
+            "label": "Rush",
+            "total": 6900,
+            "ready": "2026-11-12",
+            "lead_days": 2,
+            "finish": "2026-11-25",
+            "days_saved": 2,
+            "break_even": 1950,
+            "recommended": false
           }
         ],
         "outcome": "pay",
@@ -84,7 +95,8 @@
         "headline": "Expedite: +$300 under the spin-test policy ($600/day, owner Arjun).",
         "detail": [
           "Finishes the spin test 2 working days sooner for +$900. Worth it while a day is worth more than $450.",
-          "Assumes the motor is ready by Fri 11/20 (Arjun, yesterday). If it slips to Tue 11/24 or later, Standard is as fast."
+          "Assumes the motor is ready by Fri 11/20 (Arjun, yesterday). If it slips to Tue 11/24 or later, Standard is as fast.",
+          "Rush ($6,900) finishes no sooner than Expedite: +$3,000 for nothing."
         ],
         "question": null,
         "switching": null,
@@ -102,7 +114,7 @@
             "n": 2,
             "label": "Schedule solved",
             "status": "pass",
-            "text": "standard done Tue Dec 1; expedite done Wed Nov 25",
+            "text": "standard done Tue Dec 1; expedite done Wed Nov 25; rush done Wed Nov 25",
             "sources": [
               "cal:cal-bk-00001",
               "slack:C07FLK0SUPC:1793991900.864420"
@@ -189,9 +201,14 @@
         ],
         "blocked": false,
         "habit": {
-          "p_expedite": 0.5003,
+          "p_expedite": 0.4086,
           "n_train": 104,
           "top": [
+            {
+              "row": "extra_usd_expedite",
+              "band": null,
+              "contribution": -0.5464
+            },
             {
               "row": "stated_need_gap",
               "band": null,
@@ -201,11 +218,6 @@
               "row": "requester_expedite_rate",
               "band": null,
               "contribution": 0.2454
-            },
-            {
-              "row": "extra_usd_expedite",
-              "band": null,
-              "contribution": -0.1755
             },
             {
               "row": "no_context",
@@ -223,7 +235,7 @@
             0.4118,
             0.6906
           ],
-          "text": "Teams like yours expedite this 50% of the time (n = 104 past orders). Advisory only; the schedule decides."
+          "text": "Teams like yours expedite this 41% of the time (n = 104 past orders). Advisory only; the schedule decides."
         }
       },
       "heatmap": {
@@ -306,7 +318,7 @@
         },
         "extra": {
           "requester_expedite_rate": 0.3538,
-          "extra_usd_expedite": 6.8035,
+          "extra_usd_expedite": 8.269,
           "stated_need_gap": -3.7292
         },
         "linked": [
@@ -437,6 +449,17 @@
             "days_saved": 0,
             "break_even": null,
             "recommended": false
+          },
+          {
+            "tier": "rush",
+            "label": "Rush",
+            "total": 6900,
+            "ready": "2026-11-12",
+            "lead_days": 2,
+            "finish": "2026-12-03",
+            "days_saved": 0,
+            "break_even": null,
+            "recommended": false
           }
         ],
         "outcome": "cheapest",
@@ -444,7 +467,8 @@
         "recommended": "standard",
         "headline": "Standard: Expedite buys no time. Save $900.",
         "detail": [
-          "The motor (ready Mon 11/30, Arjun, today) sets the start; both tiers finish the spin test Thu 12/3."
+          "The motor (ready Mon 11/30, Arjun, today) sets the start; both tiers finish the spin test Thu 12/3.",
+          "Rush ($6,900) finishes no sooner than Expedite: +$3,000 for nothing."
         ],
         "question": null,
         "switching": null,
@@ -462,7 +486,7 @@
             "n": 2,
             "label": "Schedule solved",
             "status": "pass",
-            "text": "standard done Thu Dec 3; expedite done Thu Dec 3",
+            "text": "standard done Thu Dec 3; expedite done Thu Dec 3; rush done Thu Dec 3",
             "sources": [
               "cal:cal-bk-00001",
               "slack:C07FLK0SUPC:1793991900.864420"
@@ -549,9 +573,14 @@
         ],
         "blocked": false,
         "habit": {
-          "p_expedite": 0.5004,
+          "p_expedite": 0.4087,
           "n_train": 104,
           "top": [
+            {
+              "row": "extra_usd_expedite",
+              "band": null,
+              "contribution": -0.5464
+            },
             {
               "row": "stated_need_gap",
               "band": null,
@@ -561,11 +590,6 @@
               "row": "requester_expedite_rate",
               "band": null,
               "contribution": 0.2454
-            },
-            {
-              "row": "extra_usd_expedite",
-              "band": null,
-              "contribution": -0.1755
             },
             {
               "row": "no_context",
@@ -583,7 +607,7 @@
             0.4118,
             0.6906
           ],
-          "text": "Teams like yours expedite this 50% of the time (n = 104 past orders). Advisory only; the schedule decides."
+          "text": "Teams like yours expedite this 41% of the time (n = 104 past orders). Advisory only; the schedule decides."
         }
       },
       "heatmap": {
@@ -666,7 +690,7 @@
         },
         "extra": {
           "requester_expedite_rate": 0.3538,
-          "extra_usd_expedite": 6.8035,
+          "extra_usd_expedite": 8.269,
           "stated_need_gap": -3.7396
         },
         "linked": [
@@ -806,6 +830,20 @@
             "days_saved": null,
             "break_even": null,
             "recommended": false
+          },
+          {
+            "tier": "rush",
+            "label": "Rush",
+            "total": 6900,
+            "ready": "2026-11-12",
+            "lead_days": 2,
+            "finish": {
+              "min": "2026-11-25",
+              "max": "2026-12-03"
+            },
+            "days_saved": null,
+            "break_even": null,
+            "recommended": false
           }
         ],
         "outcome": "depends",
@@ -814,7 +852,8 @@
         "headline": "Depends on the motor. Expedite pays only if it is ready by Fri 11/20.",
         "detail": [
           "Arjun said between Thu 11/19 and Mon 11/30 (today). Nothing preselected until Arjun answers.",
-          "Ask Arjun: \"Will DVT hip frameless motor be ready by Fri Nov 20? If yes, expedite is worth it; if later, standard is as good.\""
+          "Ask Arjun: \"Will DVT hip frameless motor be ready by Fri Nov 20? If yes, expedite is worth it; if later, standard is as good.\"",
+          "Rush ($6,900) finishes no sooner than Expedite: +$3,000 for nothing."
         ],
         "question": {
           "to": "p-arjun",
@@ -838,7 +877,7 @@
             "n": 2,
             "label": "Schedule solved",
             "status": "pass",
-            "text": "standard done Tue Dec 1 / Tue Dec 1 / Thu Dec 3; expedite done Wed Nov 25 / Wed Nov 25 / Thu Dec 3",
+            "text": "standard done Tue Dec 1 / Tue Dec 1 / Thu Dec 3; expedite done Wed Nov 25 / Wed Nov 25 / Thu Dec 3; rush done Wed Nov 25 / Wed Nov 25 / Thu Dec 3",
             "sources": [
               "cal:cal-bk-00001",
               "slack:C07FLK0SUPC:1793991900.864420"
@@ -925,9 +964,14 @@
         ],
         "blocked": false,
         "habit": {
-          "p_expedite": 0.5004,
+          "p_expedite": 0.4087,
           "n_train": 104,
           "top": [
+            {
+              "row": "extra_usd_expedite",
+              "band": null,
+              "contribution": -0.5464
+            },
             {
               "row": "stated_need_gap",
               "band": null,
@@ -937,11 +981,6 @@
               "row": "requester_expedite_rate",
               "band": null,
               "contribution": 0.2454
-            },
-            {
-              "row": "extra_usd_expedite",
-              "band": null,
-              "contribution": -0.1755
             },
             {
               "row": "no_context",
@@ -959,7 +998,7 @@
             0.4118,
             0.6906
           ],
-          "text": "Teams like yours expedite this 50% of the time (n = 104 past orders). Advisory only; the schedule decides."
+          "text": "Teams like yours expedite this 41% of the time (n = 104 past orders). Advisory only; the schedule decides."
         }
       },
       "heatmap": {
@@ -1042,7 +1081,7 @@
         },
         "extra": {
           "requester_expedite_rate": 0.3538,
-          "extra_usd_expedite": 6.8035,
+          "extra_usd_expedite": 8.269,
           "stated_need_gap": -3.7396
         },
         "linked": [
