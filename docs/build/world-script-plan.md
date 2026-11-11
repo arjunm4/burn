@@ -2,7 +2,7 @@
 
 Owner: Owen. Spec: [`../architecture.md`](../architecture.md) §12; realism rules: [`../research/data-realism.md`](../research/data-realism.md).
 
-**Company:** Flintlock Robotics, fictional humanoid robotics startup, ~60 people, at a stage of its robot generation heavy in custom CNC parts. Every order Burn handles is a custom CNC part on Xometry; other purchases appear only as background conversation.
+**Company:** Flintlock Robotics, fictional humanoid robotics startup, ~60 people, in California (Pacific time), ordering from Xometry's US site, at a stage of its robot generation heavy in custom CNC parts. Every order Burn handles is a custom CNC part on Xometry; other purchases appear only as background conversation.
 
 **Principle:** the world script is the single source of truth. Code decides facts and timestamps; LLMs only write text.
 
