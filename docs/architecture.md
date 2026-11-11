@@ -139,7 +139,7 @@ Burn moves from advising at the vendor's quote page to running the order from th
 
 ### v8 changes (Owen's decisions; supersede the matching parts of §0 above)
 
-**Xometry only for v1.** Other vendors and vendor-reliability learning are deferred.
+**Xometry only for v1.** Other vendors and vendor-reliability learning are deferred. Xometry is reached through the browser extension (§0) behind one internal **provider interface**: upload CAD → quote tiers → place order → status. The demo may use a stub with realistic Xometry tiers if the extension isn't ready. *Considered (research, Nov 2026):* AFN (agenticfabricationnetwork.ai) is the only documented self-serve buyer API covering CNC, but it has no sandbox, is merchant of record (conflicts with Ramp-issued payment), offers shipping options rather than production tiers, and is new and unproven; its API shape informs the interface and it can be a later provider. Shapeways and Sculpteo (3D printing only) and PCBWay/JLC (PCB, partner-only) are later candidates.
 
 **Kickoff: the engineer's part entry.** Every order starts in Burn's purchasing interface, where the engineer enters the **part name and a short summary** in their own words (what it is, what it's for, anything urgent) plus the CAD file. This entry is the anchor for everything after it:
 - it is the **retrieval query**: Burn finds the Slack threads, meeting notes and calendar items related to this part and synthesizes them into the part's **context record**;
