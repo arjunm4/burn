@@ -1,0 +1,220 @@
+// The order orchestrator (architecture §4): owns the flow from part entry to booked order.
+// It reads frozen snapshots, calls the decision core, and talks to the store, vendor and
+// Ramp through their contracts. It never invents facts or costs, never approves, and the
+// model (when used) only classifies and explains.
+import {EventEmitter} from 'node:events';
+import {createHash} from 'node:crypto';
+import {decide, explain} from '../../src/decision/core.js';
+import {buildContext} from './context.js';
+import {AppError} from '../contracts.js';
+
+export function createOrchestrator({store, vendor, ramp, ingest = null, config, now = () => new Date().toISOString(), log = () => {}}) {
+  const bus = new EventEmitter();
+  bus.setMaxListeners(100);
+  const publish = (order, type = 'order.updated', extra = {}) => bus.emit('order', {type, orderId: order.id, order, ...extra});
+  const iso = () => now();
+  const today = () => iso().slice(0, 10);
+
+  // Which spec fields are still gaps: engineer answers win, then authorized defaults.
+  function resolveSpec(order, ctx) {
+    const answered = Object.fromEntries(order.spec.filter(f => f.provenance === 'engineer').map(f => [f.key, f]));
+    return config.specFields.map(f => answered[f.key] || (ctx.specSuggestions[f.key] ? {key: f.key, ...ctx.specSuggestions[f.key]} : {key: f.key, value: null, provenance: null}));
+  }
+
+  /** Step 1: part entry. Returns at once; resolution continues in the background. */
+  function enter({name, note = '', cad = null, engineer = 'engineer', fields = {}}) {
+    if (!name?.trim()) throw new AppError('Part name is required');
+    const cadHash = cad?.bytes ? createHash('sha256').update(cad.bytes).digest('hex') : null;
+    // `__fault` is a test/demo knob for the fake vendor (drift, drop-option, timeout, reject); it is never a spec field.
+    let order = store.create({name: name.trim(), note: note.trim(), cadHash, cadFileName: cad?.fileName || null, engineer, fault: fields.__fault || null});
+    const given = Object.entries(fields).filter(([k, v]) => k !== '__fault' && v != null && v !== '').map(([key, value]) => ({key, value, provenance: 'engineer', sourceRef: 'part entry'}));
+    order = store.update(order.id, order.revision, {spec: given, context: {cad: cad ? {fileName: cad.fileName, bytes: cad.bytes.toString('base64')} : null, overrides: {}}, exchange: []}, 'order.entered');
+    publish(order, 'order.entered');
+    setImmediate(() => resolve(order.id).catch(e => log('resolve failed', e)));
+    return order;
+  }
+
+  /** Steps 2–5: context, spec gate, quote, decision. Re-run after every answer or argument. */
+  async function resolve(id) {
+    let order = store.get(id);
+    order = store.update(id, order.revision, {state: 'resolving', question: null}, 'resolve.started');
+    publish(order, 'resolve.started');
+    const ctx = buildContext({order, ingest, config, now: iso()});
+    const spec = resolveSpec(order, ctx);
+    const gaps = spec.filter(f => f.provenance == null).map(f => f.key);
+    const contextPublic = {related: ctx.related, work: ctx.work, milestoneId: ctx.milestoneId, milestoneLabel: ctx.milestoneLabel, policy: ctx.policy, assumptions: ctx.assumptions, uncertain: ctx.uncertain, query: ctx.query};
+    publish(order, 'context.built', {context: contextPublic});
+
+    // Spec gate: ask for missing technical fields, the CAD, or the demand (what is it for?).
+    const missing = [];
+    if (!order.entry.cadHash) missing.push({kind: 'cad', text: 'Attach the CAD file (STEP) for this part.'});
+    if (gaps.length) missing.push({kind: 'spec', fields: gaps, text: `Confirm: ${gaps.map(k => config.specFields.find(f => f.key === k)?.label || k).join(', ')}.`});
+    if (ctx.gaps.length) missing.push({kind: 'demand', text: ctx.gaps[0]});
+    if (missing.length) {
+      order = store.update(id, order.revision, {state: 'needs_answer', spec, context: {...order.context, ...contextPublic}, question: missing[0], decision: null}, 'spec.gap');
+      publish(order, 'question', {question: missing[0]});
+      return order;
+    }
+
+    // Quote on the vendor with the resolved spec and the engineer's CAD.
+    const fields = Object.fromEntries(spec.map(f => [f.key, f.value]));
+    if (order.entry.fault) fields.__fault = order.entry.fault;
+    publish(order, 'quote.started');
+    const quote = await vendor.quote({fields, cad: {fileName: order.entry.cadFileName, bytes: Buffer.from(order.context.cad.bytes, 'base64'), hash: order.entry.cadHash}});
+    publish(order, 'quote.captured', {quote});
+
+    // Decide, in the same world for every option.
+    const decision = decide({options: quote.options, quote: {validUntil: quote.validUntil, cutoff: quote.cutoff}, graph: ctx.graph, partNodeId: ctx.partNodeId,
+      milestoneId: ctx.milestoneId, orderDate: today(), now: iso(), policy: ctx.policy, uncertain: ctx.uncertain, assumptions: ctx.assumptions});
+    decision.text = explain(decision, {milestoneLabel: ctx.milestoneLabel || 'the milestone'});
+    const ask = decision.question && decision.question.flips ? {kind: 'fact', nodeId: decision.question.nodeId, owner: decision.question.owner, text: decision.question.text} : null;
+    order = store.get(id);
+    order = store.update(id, order.revision, {state: ask ? 'needs_answer' : 'recommended', spec, quote, decision, decisionRevision: (order.decisionRevision || 0) + 1,
+      context: {...order.context, ...contextPublic, graph: ctx.graph, partNodeId: ctx.partNodeId}, question: ask}, 'decision.made');
+    publish(order, ask ? 'question' : 'recommended', {question: ask});
+    return order;
+  }
+
+  /** Answers: spec fields, the CAD, or a fact (a date for a node). Each answer re-solves. */
+  async function answer(id, expectedRevision, body) {
+    let order = store.get(id);
+    const patch = {};
+    if (body.fields) {
+      const given = Object.entries(body.fields).filter(([, v]) => v != null && v !== '').map(([key, value]) => ({key, value, provenance: 'engineer', sourceRef: 'answer'}));
+      patch.spec = [...order.spec.filter(f => !body.fields[f.key]), ...given];
+    }
+    if (body.cad) { patch.entry = {...order.entry, cadHash: createHash('sha256').update(body.cad.bytes).digest('hex'), cadFileName: body.cad.fileName}; patch.context = {...order.context, cad: {fileName: body.cad.fileName, bytes: body.cad.bytes.toString('base64')}}; }
+    if (body.fact) {
+      const overrides = {...(order.context?.overrides || {}), [body.fact.nodeId]: {date: body.fact.date, evidence: `answer:${id}:${iso()}`, by: body.fact.by || order.entry.engineer}};
+      patch.context = {...(patch.context || order.context), overrides};
+    }
+    if (body.demand) patch.entry = {...(patch.entry || order.entry), note: `${order.entry.note} ${body.demand}`.trim()};
+    order = store.update(id, expectedRevision, {...patch, question: null, state: 'resolving'}, 'answer.received');
+    publish(order, 'answer.received');
+    return resolve(id);
+  }
+
+  /**
+   * The engineer argues. The statement is kept, typed, and never silently becomes a fact:
+   * only a `fact` carried with it (an explicit date the engineer asserts) changes the plan.
+   */
+  async function argue(id, expectedRevision, {text, type = 'unresolved', fact = null}) {
+    let order = store.get(id);
+    const statement = {at: iso(), by: order.entry.engineer, text, type, fact};
+    order = store.update(id, expectedRevision, {exchange: [...(order.exchange || []), statement]}, 'exchange.added');
+    publish(order, 'exchange.added', {statement});
+    if (fact) return answer(id, order.revision, {fact});
+    return order;
+  }
+
+  /** Okay: freeze the order and send it to Ramp for approval. */
+  async function okay(id, expectedRevision, {tier}) {
+    let order = store.get(id);
+    if (!order.quote || !order.decision) throw new AppError('No quote to approve yet', 409);
+    const chosen = order.decision.options.find(o => o.tier === tier);
+    if (!chosen) throw new AppError('Unknown tier'); if (!chosen.admissible) throw new AppError(`${tier} is not a valid option: ${chosen.why}`, 409);
+    const option = order.quote.options.find(o => o.tier === tier);
+    const fields = Object.fromEntries(order.spec.map(f => [f.key, f.value]));
+    if (order.entry.fault) fields.__fault = order.entry.fault;
+    const frozen = {partName: order.entry.name, cadHash: order.entry.cadHash, fields, vendor: order.quote.vendor, quoteId: order.quote.quoteId, tier, priceCents: option.priceCents, currency: config.company.currency,
+      total: {includesTax: false, includesShipping: true, varianceCents: 0}};
+    order = store.freeze(id, expectedRevision, frozen);
+    publish(order, 'order.frozen');
+
+    const justification = `${order.decision.text}\n\nAssumptions:\n${order.decision.assumptions.map(a => '- ' + a).join('\n')}${order.quote.cutoff ? `\n\nVendor cutoff: approve by ${order.quote.cutoff} to start production today; after that, +1 business day.` : ''}`;
+    const req = await ramp.createRequest({request_owner_id: config.ramp.requestOwnerId || order.entry.engineer, spend_program_id: config.ramp.spendProgramId, currency: frozen.currency,
+      name: `${order.entry.name} (${tier}) from Xometry`, line_items: [{description: `${order.entry.name}, ${tier}`, amount: {amount: option.priceCents, currency_code: frozen.currency}, quantity: 1}],
+      field_answers: {justification, burn_order_id: id, spec_hash: order.specHash, decision_revision: order.decisionRevision, chosen_tier: tier, recommended_tier: order.decision.recommended?.tier || null},
+      specHash: order.specHash, decisionRevision: order.decisionRevision, attachments: [{name: 'justification.txt', mime: 'text/plain', bytes: Buffer.from(justification)}]});
+    if (!req.ok) { order = store.update(id, order.revision, {state: 'unresolved', question: {kind: 'ramp', text: `Ramp request failed: ${req.reason}`}}, 'ramp.request.failed'); publish(order, 'ramp.request.failed'); return order; }
+    order = store.recordRamp(id, order.revision, {requestId: req.requestId, approvalStatus: req.status, state: 'requested'}, 'ramp.requested');
+    publish(order, 'ramp.requested');
+    return order;
+  }
+
+  /** Inbound Ramp events: authenticated by the client, deduplicated here, reconciled against Ramp's state. */
+  async function handleRampEvent(event) {
+    if (store.seenEvent('ramp', event.id)) return {duplicate: true};
+    const findByRequest = rid => store.list().find(o => o.ramp.requestId === rid);
+    if (event.type === 'unified_requests.approved' || event.type === 'unified_requests.rejected') {
+      let order = findByRequest(event.payload.id);
+      if (!order) return {ignored: 'unknown request'};
+      const live = await ramp.getRequest(event.payload.id);   // reconcile against the authoritative state
+      if (event.type === 'unified_requests.rejected' || live.status === 'REJECTED') {
+        if (['requested'].includes(order.state)) { order = store.recordRamp(order.id, order.revision, {approvalStatus: 'REJECTED', state: 'rejected'}, 'ramp.rejected'); publish(order, 'ramp.rejected'); }
+        return {ok: true};
+      }
+      if (live.status !== 'APPROVED') return {ignored: `request is ${live.status}`};
+      if (order.state !== 'requested') return {ignored: `order is ${order.state}`};   // late, duplicate, or already superseded
+      // The approval must bind to this exact order and decision.
+      if ((event.payload.specHash && event.payload.specHash !== order.specHash) || (event.payload.decisionRevision && event.payload.decisionRevision !== order.decisionRevision)) {
+        order = store.update(order.id, order.revision, {state: 'invalidated', question: {kind: 'stale', text: 'Approval refers to an earlier version of this order; re-approval needed.'}}, 'approval.stale'); publish(order, 'approval.stale'); return {ok: true};
+      }
+      order = store.recordRamp(order.id, order.revision, {approvalStatus: 'APPROVED', state: 'approved'}, 'ramp.approved');
+      publish(order, 'ramp.approved');
+      return placeNow(order.id);
+    }
+    if (event.type === 'transactions.cleared') {
+      const order = store.list().find(o => o.ramp.cardId === event.payload.card_id);
+      if (!order) return {ignored: 'unknown card'};
+      return book(order.id, event.payload.id);
+    }
+    return {ignored: event.type};
+  }
+
+  /** Steps 7–8: revalidate, issue the card, place with every field verified. */
+  async function placeNow(id) {
+    let order = store.get(id);
+    // Pre-placement revalidation (architecture §0.4).
+    const problems = [];
+    if (order.quote?.validUntil && Date.parse(order.quote.validUntil) < Date.parse(iso())) problems.push('the quote has expired');
+    const chosen = order.quote?.options.find(o => o.tier === order.frozen.tier);
+    if (!chosen || chosen.priceCents !== order.frozen.priceCents) problems.push('the quoted price changed');
+    if (problems.length) {
+      order = store.update(id, order.revision, {state: 'invalidated', question: {kind: 'stale', text: `Needs re-approval: ${problems.join('; ')}.`}}, 'placement.invalidated'); publish(order, 'placement.invalidated'); return {ok: false, problems};
+    }
+    if (!order.ramp.cardId) {
+      const card = await ramp.issueCard({user_id: config.ramp.requestOwnerId || order.entry.engineer, limitCents: order.frozen.priceCents + order.frozen.total.varianceCents, allowed_vendors: config.vendor.allowedVendors, lock_date: order.quote.validUntil, orderId: id});
+      if (!card.ok) { order = store.recordRamp(id, order.revision, {paymentState: 'failed', state: 'unresolved'}, 'card.failed'); publish(order, 'card.failed', {reason: card.reason}); return {ok: false, reason: card.reason}; }
+      order = store.recordRamp(id, order.revision, {cardId: card.cardId, cardLast4: card.last4, credentialRef: card.credentialRef, paymentState: 'issued'}, 'card.issued');
+      publish(order, 'card.issued');
+    }
+    publish(order, 'placement.notice', {text: `Placing your Xometry order now (${order.frozen.tier}, $${(order.frozen.priceCents / 100).toLocaleString('en-US')}).`});
+    const attempt = store.beginPlacement(id, order.revision);
+    publish(store.get(id), 'placement.begun', {attempt});
+    let result;
+    try {
+      result = await vendor.place({spec: {...order.frozen, __specHash: order.specHash}, card: {credentialRef: order.ramp.credentialRef}, attemptId: attempt.id});
+    } catch (error) { result = {outcome: 'unknown', reason: error.message}; }
+    order = store.endPlacement(attempt.id, result.outcome, {vendorOrderId: result.vendorOrderId, promisedOn: result.promisedOn, reason: result.reason || (result.mismatches ? 'mismatch: ' + result.mismatches.map(m => `${m.field} (expected ${m.expected}, got ${m.actual})`).join(', ') : null)});
+    publish(order, `placement.${result.outcome}`, {result});
+    if (result.outcome === 'unknown') await reconcile(id, attempt.id);
+    return {ok: result.outcome === 'succeeded', result};
+  }
+
+  /** placement_unknown: look for the order in the vendor's records before anything else can happen. */
+  async function reconcile(id, attemptId = null) {
+    let order = store.get(id);
+    if (order.state !== 'placement_unknown') return order;
+    const since = attemptId ? store.attempts?.(id)?.find(a => a.id === attemptId)?.startedAt : null;
+    const found = await vendor.findOrder({specHash: order.specHash, since, attemptId});
+    if (found.found) { order = store.reconcile(id, {vendorOrderId: found.vendorOrderId, promisedOn: found.promisedOn}); publish(order, 'placement.reconciled'); }
+    else publish(order, 'placement.unresolved', {text: 'Vendor response lost and no matching order found yet; a person must confirm before any retry.'});
+    return order;
+  }
+
+  /** Step 10: the charge cleared; attach receipt, memo and coding. Retries never touch the purchase. */
+  async function book(id, txnId) {
+    let order = store.get(id);
+    if (!order.ramp.transactionIds.includes(txnId)) order = store.recordRamp(id, order.revision, {transactionIds: [...order.ramp.transactionIds, txnId], paymentState: 'charged'}, 'charge.cleared');
+    const memo = `${order.entry.name} (${order.frozen?.tier}) for ${order.context?.milestoneLabel || 'project'}. ${order.decision?.text || ''}`.trim();
+    const res = await ramp.book(txnId, {memo, receipt: {name: `xometry-${order.vendorOrder.vendorOrderId || 'order'}.txt`, bytes: Buffer.from(`Xometry order ${order.vendorOrder.vendorOrderId}\n${order.frozen?.tier} $${order.frozen?.priceCents / 100}`)}, coding: {project: order.context?.milestoneLabel || null, burn_order_id: id}});
+    order = store.get(id);
+    order = store.recordRamp(id, order.revision, {bookingState: res.ok ? 'coded' : 'failed'}, res.ok ? 'booked' : 'booking.failed');
+    publish(order, res.ok ? 'booked' : 'booking.failed');
+    return {ok: res.ok};
+  }
+
+  ramp.onEvent(handleRampEvent);
+  return {enter, resolve, answer, argue, okay, handleRampEvent, placeNow, reconcile, book, bus, get: store.get, list: store.list, events: store.events};
+}

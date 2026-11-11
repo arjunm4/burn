@@ -42,7 +42,7 @@ export function createFakeVendor({now = () => new Date(), basePriceCents = 30000
       // Orders placed after 14:00 local start production the next business day.
       const cutoff = new Date(Date.parse(today + 'T14:00:00-08:00')).toISOString();
       const options = TIERS.map(x => ({tier: x.tier, priceCents: priceFor(fields, x.factor), mfgDays: x.mfgDays, shipDays: x.shipDays,
-        readyOn: addDays(today, businessDaysToCalendar(x.mfgDays) + x.shipDays + receivingDays)}));
+        readyOn: addDays(today, businessDaysToCalendar(x.mfgDays, today) + x.shipDays + receivingDays)}));
       const quoteId = 'Q-' + createHash('sha1').update(cad.hash + JSON.stringify(fields)).digest('hex').slice(0, 8).toUpperCase();
       const config = createHash('sha1').update(JSON.stringify(fields)).digest('hex').slice(0, 6);
       const validUntil = addDays(today, 30);
@@ -86,7 +86,8 @@ export function createFakeVendor({now = () => new Date(), basePriceCents = 30000
 
     // Reconciliation: does the vendor have an order for this spec since the attempt began?
     async findOrder({specHash, since, attemptId}) {
-      for (const [id, o] of orders) if ((attemptId && o.attemptId === attemptId) || (specHash && o.specHash === specHash)) if (!since || o.placedAt >= since) return {found: true, vendorOrderId: id, promisedOn: o.promisedOn};
+      // An attempt id is exact; a spec match additionally has to fall inside the attempt's window.
+      for (const [id, o] of orders) if ((attemptId && o.attemptId === attemptId) || (specHash && o.specHash === specHash && (!since || o.placedAt >= since))) return {found: true, vendorOrderId: id, promisedOn: o.promisedOn};
       return {found: false};
     },
 
@@ -94,9 +95,9 @@ export function createFakeVendor({now = () => new Date(), basePriceCents = 30000
   };
 }
 
-// Business days → calendar days, counting from today (Mon–Fri shop).
-function businessDaysToCalendar(n) {
-  let days = 0, remaining = n; const d = new Date();
-  while (remaining > 0) { days++; const w = new Date(d.getTime() + days * DAY).getUTCDay(); if (w !== 0 && w !== 6) remaining--; }
+// Business days → calendar days, counting from the given day (Mon–Fri shop).
+function businessDaysToCalendar(n, fromIso) {
+  let days = 0, remaining = n; const start = Date.parse(fromIso + 'T00:00:00Z');
+  while (remaining > 0) { days++; const w = new Date(start + days * DAY).getUTCDay(); if (w !== 0 && w !== 6) remaining--; }
   return days;
 }

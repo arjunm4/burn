@@ -6,11 +6,23 @@ import {analyze} from './agent/index.js';
 import {createStore,AppError} from './store.js';
 import {createIngest} from './ingest/index.js';
 import {ingestRoutes} from './ingest/routes.js';
-import {setActiveIngest} from './ingest/active.js';
+import {setActiveIngest, activeIngest} from './ingest/active.js';
+import {ordersRoutes} from './api/orders.js';
+import {createOrchestrator} from './flow/orchestrator.js';
+import {createVendorProvider} from './vendors/index.js';
+import {loadConfig} from './config.js';
+import {createMemoryOrderStore} from './stubs/orderStore.js';
+import {createMemoryRamp} from './stubs/ramp.js';
+// The v9 order flow: orchestrator over the order store, vendor provider and Ramp client.
+// Store and Ramp are in-memory stubs until server/orders and server/ramp land.
+export function startOrders({ingest=null,store=createMemoryOrderStore(),ramp=createMemoryRamp(),vendor=createVendorProvider(),config=loadConfig()}={}){
+  const orchestrator=createOrchestrator({store,vendor,ramp,ingest:ingest||activeIngest(),config});
+  return {orchestrator,ramp,vendor,config,store};
+}
 // Real servers ingest eagerly so the agent and /graph share data from the first request.
 export function startIngest(){const ingest=createIngest();setActiveIngest(ingest);ingest.sync().catch(error=>console.error('Initial sync failed:',error.message));return ingest;}
 async function body(req){let text='';for await(const chunk of req){text+=chunk;if(text.length>16384)throw new AppError('Request too large',413);}try{return JSON.parse(text||'{}');}catch{throw new AppError('Invalid JSON');}}
-export function server(vite,store=createStore(),analyzeRequest=analyze,ingest=null) { const inFlight=new Map(); let ingestHandler=null; return http.createServer(async (req,res) => {
+export function server(vite,store=createStore(),analyzeRequest=analyze,ingest=null,orders=null) { const inFlight=new Map(); let ingestHandler=null; let ordersHandler=null; return http.createServer(async (req,res) => {
   const pathname=new URL(req.url,'http://localhost').pathname;
   const json=(value,status=200)=>{res.writeHead(status,{'Content-Type':'application/json','Cache-Control':'no-store'});res.end(JSON.stringify(value));};
   try {
@@ -19,6 +31,7 @@ export function server(vite,store=createStore(),analyzeRequest=analyze,ingest=nu
     if(pathname==='/api/requests'&&req.method==='POST')return json({request:store.create(await body(req))},201);
     // Ingestion and graph routes (Slack, calendar, dependency graph); created on first use.
     if(/^\/api\/(sync|sources|graph|documents)(\/|$)/.test(pathname)&&await (ingestHandler||=ingestRoutes(ingest||=createIngest()))(req,res,pathname,json))return;
+    if(/^\/api\/(orders|ramp|system)(\/|$)/.test(pathname)&&await (ordersHandler||=ordersRoutes((orders||=startOrders({ingest})).orchestrator,orders))(req,res,pathname,json))return;
     const detail=pathname.match(/^\/api\/requests\/([a-z0-9_-]+)$/);
     if(detail&&req.method==='GET')return json({request:store.get(detail[1]),events:store.audit(detail[1])});
     const route=pathname.match(/^\/api\/requests\/([a-z0-9_-]+)\/(run|answer|select|approve|reset|audit)$/);
