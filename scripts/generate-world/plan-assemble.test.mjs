@@ -33,6 +33,7 @@ async function run(weeks, fill) {
   const res = await quiet(() => runAssemble({ worldDir: dir, outDir: join(dir, 'out'), weeks }));
   return { dir, res, out: walk(join(dir, 'out')) };
 }
+const bgJob = (dir, ch, week) => readdirSync(join(dir, 'jobs/slack')).filter((f) => f.startsWith(`slack-${ch}-${week}-background`)).sort()[0].replace(/\.json$/, '');
 const slackMsgs = (out, ch) => JSON.parse(out[`slack/${ch}.json`]).messages;
 const world = readJ(join(EXAMPLE, 'world.json'));
 
@@ -78,7 +79,7 @@ const exJira = readJ(join(EXAMPLE, 'jobs/jira-ticket-batch.filled.json'));
 function fillFromExamples(dir, mutate) {
   // Slack crumbs: match example messages by their events; background: first filler gets the example's background line.
   fillSlack(dir, 'slack-ch-test-lab-2026-08-31-crumbs', (m) => exSlack.messages.find((x) => x.events.length && x.events.join() === m.events.join())?.text);
-  fillSlack(dir, 'slack-ch-test-lab-2026-08-31-background', (m, i) => (i === 0 ? exSlack.messages[3].text : null));
+  fillSlack(dir, bgJob(dir, 'ch-test-lab', '2026-08-31'), (m, i) => (i === 0 ? exSlack.messages[3].text : null));
   const p = join(dir, 'jobs/jira/jira-TEST-2026-08-31-crumbs.json');
   const job = readJ(p);
   for (const t of job.tickets) {
@@ -145,7 +146,7 @@ test('a filled job with an unplanned key is rejected whole', async () => {
 
 test('background text breaking the rules is dropped; crumb text missing a must_mention falls back', async () => {
   const { dir, out, res } = await run(WEEKS_TO_EXAMPLE, (d) => {
-    fillSlack(d, 'slack-ch-test-lab-2026-08-31-background', () => 'order XO-1234567 costs $400 on 9/12');
+    fillSlack(d, bgJob(d, 'ch-test-lab', '2026-08-31'), () => 'order XO-1234567 costs $400 on 9/12');
     const p = join(d, 'jobs/slack/slack-ch-test-lab-2026-08-31-crumbs.json');
     const job = readJ(p); for (const m of job.messages) m.text = 'something vague'; job.status = 'filled';
     writeFileSync(p, JSON.stringify(job));
@@ -181,4 +182,53 @@ test('CLI: plan then assemble run end to end with --weeks 1', () => {
   const a = execFileSync(node, [join(ROOT, 'scripts/generate-world/assemble.mjs'), '--weeks', '1', '--world', dir, '--out', join(dir, 'out')], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
   assert.match(a, /assemble: \d+ files/);
   assert.ok(existsSync(join(dir, 'out/slack/channels.json')) && existsSync(join(dir, 'jobs/index.json')));
+});
+
+test('no brief or fallback text carries a hidden value (truth of a stale, wrong or contradicted claim)', async () => {
+  const { hiddenValues } = await import('./render/slack.mjs');
+  const { dir } = await run(13);
+  const ev = new Map(world.events.map((e) => [e.id, e]));
+  const check = (where, text, ids) => {
+    for (const id of ids || []) {
+      const e = ev.get(id);
+      if (!e || e.kind !== 'crumb') continue;
+      for (const h of hiddenValues(e)) assert.ok(!String(text).includes(h), `${where}: "${text}" contains hidden ${h}`);
+      assert.ok(!/never corrected|changed to|\bwrong\b|\bstale\b/i.test(text), `${where}: ${text}`);
+    }
+  };
+  const visit = (o, where) => {
+    if (Array.isArray(o)) return o.forEach((x) => visit(x, where));
+    if (!o || typeof o !== 'object') return;
+    if (o.events && typeof o.brief === 'string') check(where, o.brief, o.events);
+    if (o.events && typeof o.fallback_text === 'string') check(where, o.fallback_text, o.events);
+    for (const v of Object.values(o)) visit(v, where);
+  };
+  for (const [name, text] of Object.entries(walk(join(dir, 'jobs')))) visit(JSON.parse(text), name);
+  for (const [name, text] of Object.entries(walk(join(dir, 'planned')))) visit(JSON.parse(text), name);
+  // The example's contradicted Jira comment is planned (so the check above really ran on it).
+  assert.ok(Object.values(walk(join(dir, 'jobs'))).some((t) => t.includes('ev-000012')));
+});
+
+test('human timestamps follow working hours; jobs stay small', async () => {
+  const { dir } = await run(13);
+  const local = (sec) => { const ms = sec * 1000; const iso = new Date(ms - 8 * 3600e3).toISOString(); return iso; };
+  const offset = (iso) => (/-07:00$/.test(iso) ? 7 : 8);
+  const slack = readJ(join(dir, 'planned/slack.json')).messages.filter((m) => m.kind !== 'bot' && !m.events.length);
+  assert.ok(slack.length > 300);
+  let core = 0;
+  for (const m of slack) {
+    const sec = Number(m.ts.split('.')[0]);
+    // Pacific wall clock: try both offsets and pick the one schema.pacificOffset would (via week of year is overkill here).
+    const d = new Date(sec * 1000 - (sec < 1793523600 && sec > 1772963200 ? 7 : 8) * 3600e3);
+    const min = d.getUTCHours() * 60 + d.getUTCMinutes();
+    assert.ok(!(min >= 30 && min < 360), `night message ${m.ts}`);
+    if (min >= 480 && min < 1110 && d.getUTCDay() !== 0 && d.getUTCDay() !== 6) core++;
+  }
+  assert.ok(core / slack.length >= 0.85, `core share ${core / slack.length}`);
+  void local; void offset;
+  for (const i of readJ(join(dir, 'planned/jira.json')).issues) {
+    for (const c of i.comments) if (!c.events.length) { const min = +c.at.slice(11, 13) * 60 + +c.at.slice(14, 16); assert.ok(min >= 540 && min < 1110, c.at); }
+    for (const c of i.changelog) if (c.by) assert.ok(+c.at.slice(11, 13) >= 7, c.at);
+  }
+  for (const j of readJ(join(dir, 'jobs/index.json'))) assert.ok(j.slots <= 130, `${j.job_id} has ${j.slots} slots`);
 });

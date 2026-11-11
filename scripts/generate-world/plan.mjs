@@ -97,7 +97,11 @@ export async function runPlan({ worldDir, seed, weeks }) {
       }
       if (status !== 'filled') writeJson(path, job);
       plannedJobs[job.job_id] = jobKeys(job, world);
-      index.push({ job_id: job.job_id, source, priority: job.priority, week: job.week ? job.week.start : null, status, path: `jobs/${source}/${job.job_id}.json` });
+      const kinds = Object.values(plannedJobs[job.job_id].keys);
+      index.push({
+        job_id: job.job_id, source, priority: job.priority, week: job.week ? job.week.start : null, status, path: `jobs/${source}/${job.job_id}.json`,
+        kind: kinds.some((k) => k.kind === 'crumb') ? 'crumbs' : 'background', slots: kinds.length, size_bytes: Buffer.byteLength(stringify(job)),
+      });
     }
   }
   // Demo context first, then newest week first, crumbs before background (encoded in priority), then id.

@@ -15,8 +15,14 @@ export const STYLE_RULES = {
   slack: ['docs/research/data-realism.md#slack', 'docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources'],
   jira: ['docs/research/data-realism.md#tickets-jira', 'docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources'],
 };
-const HOUR_SHAPE = [[360, 480, 2], [480, 540, 5], [540, 720, 34], [720, 780, 7], [780, 1020, 36], [1020, 1110, 10], [1110, 1200, 3], [1200, 1380, 3]];
-const OFF_TOPIC = ['lunch plans', 'the coffee machine', 'weekend plans', 'parking lot', 'someone\'s dog visiting the office', 'office temperature', 'a funny link', 'snacks restock', 'a sports game last night'];
+const HOUR_SHAPE = [[420, 480, 2], [480, 540, 5], [540, 720, 34], [720, 780, 7], [780, 1020, 36], [1020, 1110, 10], [1110, 1200, 3], [1200, 1380, 3]];
+const DAILY_CAP = 300;
+const MAX_JOB = 120;
+const OPENERS = ['asks about', 'quick update on', 'question on', 'thinking out loud about', 'heads up about', 'complains mildly about', 'asks for a second opinion on', 'shares a photo related to', 'jokes about', 'notes progress on', 'flags a small issue with', 'asks who knows about'];
+const REPLY_STANCES = ['ack', 'agrees', 'pushes back', 'asks a follow-up', 'answers', 'adds a detail', 'will check later', 'jokes', 'thanks', 'tags someone else', 'disagrees politely', 'shares a related experience'];
+const ACTIONS = ['tolerance question on', 'bench notes on', 'fit-up of', 'cad change to', 'inspection of', 'drawing review of', 'assembly of', 'cleanup of', 'measurement of', 'setup for'];
+function actionFor(id) { let h = 0; for (const c of id) h = (h * 31 + c.charCodeAt(0)) >>> 0; return ACTIONS[h % ACTIONS.length]; }
+const OFF_TOPIC = ['the new espresso grinder', 'a podcast episode', 'a hiking trail', 'the fire alarm test', 'a 3d-printed desk toy', 'the parking garage gate', 'a recipe someone tried', 'board game night', 'a bike commute mishap', 'fantasy football', 'a lost badge', 'the office plant', 'a conference talk video', 'mechanical keyboards', 'a pet photo', 'cake in the kitchen', 'the wifi in the high bay', 'a rental car story', 'a kid\'s science fair project', 'a teardown video', 'a local taco place', 'noise from the shop next door', 'a meme about CAD software', 'running club', 'a book recommendation', 'standing desks', 'traffic on 101', 'a broken microwave', 'the team lunch order', 'a movie from the weekend', 'a hackathon idea', 'the vending machine', 'a cat on a keyboard', 'the ergonomics survey', 'a sourdough starter', 'the holiday party', 'a robotics competition video', 'a 3am shipping notification', 'office music', 'the new hire welcome lunch', 'lunch plans', 'the coffee machine', 'weekend plans', 'parking lot', 'someone\'s dog visiting the office', 'office temperature', 'a funny link', 'snacks restock', 'a sports game last night'];
 const ON_TOPIC = ['quick question about a drawing or tolerance', 'status update on bench work', 'asks who has a tool or fixture', 'shares a photo of a part on the bench', 'notes something odd seen during bring-up', 'asks for a review of a CAD change', 'mentions a vendor email came in', 'heads up about lab or bench availability'];
 const REPLY_BRIEFS = ['ack', 'short answer', 'follow-up question', 'agrees and adds a detail', 'says they will look after lunch'];
 const REACTIONS = ['eyes', 'white_check_mark', '+1', 'pray', 'grimacing'];
@@ -115,6 +121,50 @@ export function fallbackText(ev, tokens, phrase, world) {
   return t;
 }
 
+// A human time at least `sec` seconds after `iso`, moved to the next working morning if it lands outside 08:00-20:00.
+function humanAfter(iso, sec, rng, burst) {
+  const t = isoLocal(new Date(Date.parse(iso) + sec * 1000).toISOString());
+  const min = +t.slice(11, 13) * 60 + +t.slice(14, 16);
+  const d = dow(t.slice(0, 10));
+  if (min >= 480 && min < (burst ? 1380 : 1200) && d !== 0 && d !== 6) return t;
+  let day = min >= 480 ? addDays(t.slice(0, 10), 1) : t.slice(0, 10);
+  while (dow(day) === 0 || dow(day) === 6) day = addDays(day, 1);
+  return atLocalMinutes(day, rng.int(500, 690), rng.int(0, 59));
+}
+
+// Leaves of a value as strings (for leak checks).
+export function leaves(v) {
+  if (v == null) return [];
+  if (typeof v === 'object') return Object.values(v).flatMap(leaves);
+  return [String(v)];
+}
+// Strings of the truth that the stated value does not contain: these must never reach a writer.
+export function hiddenValues(ev) {
+  if (!ev.claim || ev.claim.true_value === undefined) return [];
+  const stated = new Set(leaves(ev.claim.value));
+  const out = [];
+  for (const x of leaves(ev.claim.true_value)) {
+    if (stated.has(x) || x.length < 3) continue;
+    out.push(x);
+    if (/^\d{4}-\d{2}-\d{2}$/.test(x)) out.push(`${+x.slice(5, 7)}/${+x.slice(8, 10)}`);
+  }
+  return out;
+}
+// A brief that gives only what the speaker believed and said: parentheticals are dropped from imperfect crumbs,
+// and a brief that still names a hidden value (or the error) is rebuilt from the stated claim.
+export function safeBrief(ev, world) {
+  let b = String(ev.brief || '');
+  if (ev.kind !== 'crumb') return b;
+  if (ev.truth !== 'true' || ev.contradicts) b = b.replace(/\s*\([^)]*\)/g, '').trim();
+  const hidden = hiddenValues(ev);
+  if (!hidden.some((h) => b.includes(h)) && !/changed to|actually|wrong|stale|never corrected|contradict|misheard/i.test(b)) return b;
+  const who = world.people.find((p) => p.id === ev.by);
+  const tok = (ev.refs || []).map((r) => r.token).find(Boolean) || derivedTokens(ev, world)[0] || 'it';
+  const v = ev.claim.value;
+  const val = typeof v === 'object' && v ? Object.entries(v).filter(([k, x]) => x != null && k !== 'reason').map(([k, x]) => `${k} ${x}`).join(', ') : String(v);
+  return `${who ? who.display_name : 'Someone'} says ${tok}: ${ev.claim.kind.replace('_', ' ')} ${val}`;
+}
+
 function uuid(r) {
   const h = () => r.int(0, 15).toString(16);
   const s = Array.from({ length: 32 }, h);
@@ -155,6 +205,43 @@ export function plan(world, ctx) {
     const s = usedSec.get(e.where.channel) || new Set(); s.add(epochOf(e.known_at)); usedSec.set(e.where.channel, s);
   }
 
+  // Weekly message targets per channel: seeded rate × activity (Slack bursts capped at ×1.3), then the whole
+  // workspace capped at DAILY_CAP a working day, trimming channels that are not purchasing-relevant first.
+  const targets = new Map();
+  for (const week of weeks) {
+    const wk = weekRec.get(week) || { activity: 1 };
+    const act = Math.min(wk.activity ?? 1, 1.3);
+    // Days after demo_now do not count; the demo day counts for the share of activity before demo_now (~0.25).
+    const demoDay = demoNow.slice(0, 10);
+    const wdUnits = Array.from({ length: 7 }, (_, i) => addDays(week, i)).filter((d) => d <= demoDay)
+      .reduce((s, d) => s + ctx.cal.dayActivity(d) * (d === demoDay ? 0.25 : 1), 0);
+    const t = new Map(channels.map((c) => [c.id, (c.base_rate_per_day || 0) * act * wdUnits]));
+    const cap = DAILY_CAP * wdUnits;
+    const sum = (f) => channels.filter(f).reduce((s, c) => s + t.get(c.id), 0);
+    let total = sum(() => true);
+    if (total > cap) {
+      const other = sum((c) => !c.purchasing_relevant);
+      const k = Math.max(0, (other - (total - cap)) / (other || 1));
+      for (const c of channels) if (!c.purchasing_relevant) t.set(c.id, t.get(c.id) * k);
+      total = sum(() => true);
+      if (total > cap) for (const c of channels) t.set(c.id, t.get(c.id) * cap / total);
+    }
+    targets.set(week, t);
+  }
+  const storylinesFor = (ch, week) => (world.storylines || []).filter((s) => week >= weekStart(s.start) && week <= s.end
+    && ((world.teams.find((t) => t.id === s.team)?.channels || []).includes(ch.id) || (s.people || []).some((p) => ch.members.includes(p))));
+  // On-topic subjects for a channel-week: storyline beats and topics, plus the channel's own parts (by alias), rigs and tests.
+  const topicPool = (ch, week, sls) => {
+    const out = [];
+    for (const s of sls) { out.push(`the ongoing ${s.topic.toLowerCase()}`); for (const b of s.beats || []) if (b.week <= week) out.push(`this: ${b.summary}`); }
+    const asm = new Set([ch.assembly, ...world.assemblies.filter((a) => (world.teams.find((t) => t.id === a.team)?.channels || []).includes(ch.id)).map((a) => a.id)].filter(Boolean));
+    for (const p of world.parts || []) if (asm.has(p.belongs_to) && p.aliases && p.aliases[0]) out.push(`${actionFor(p.id)} the ${p.aliases[0]}`);
+    for (const t of world.tests || []) if (asm.has(t.assembly)) out.push(`${actionFor(t.id)} the ${String(t.name).toLowerCase()}`);
+    for (const x of world.test_rigs || []) if (ch.id === 'ch-test-lab' || asm.has(x.belongs_to)) out.push(`${actionFor(x.id)} the ${String(x.name).toLowerCase()}`);
+    if (!out.length) for (const a of ON_TOPIC) out.push(`${a} (#${ch.name}: ${ch.purpose})`);
+    return out;
+  };
+
   for (const ch of channels) {
     const chEvents = world.events.filter((e) => e.source === 'slack' && e.where.channel === ch.id && Date.parse(e.known_at) <= Date.parse(demoNow));
     const members = ch.members.map(person).filter(Boolean);
@@ -183,16 +270,19 @@ export function plan(world, ctx) {
         if (rr.chance(0.04)) { const ets = Number(m.ts.split('.')[0]) + rr.int(20, 900); if (ets * 1000 <= Date.parse(demoNow)) m.edited = { user: m.user, ts: `${ets}.000000` }; }
         return m;
       };
-      const fillerReplies = (rr, parent, n, group, baseAt) => {
+      const fillerReplies = (rr, parent, n, group, baseAt, about) => {
         let at = baseAt;
+        let added = 0;
         for (let i = 0; i < n; i++) {
-          at = new Date(Date.parse(at) + rr.int(60, 5400) * 1000).toISOString();
-          if (Date.parse(at) > Date.parse(demoNow) || weekOf(isoLocal(at)) !== week) break;
+          at = humanAfter(at, rr.int(60, 5400), rr, burst);
+          if (!at || Date.parse(at) > Date.parse(demoNow) || weekOf(at) !== week) break;
           const u = rr.weighted(members.map((p) => [p, weightOf(p)]));
-          const m = human(rr, isoLocal(at), u, { thread_ts: parent.ts, kind: 'background', events: [], brief: `reply in thread: ${rr.pick(REPLY_BRIEFS)}`, must_mention: [], length: rr.weighted([['one_word', 35], ['short', 50], ['medium', 15]]) });
+          const m = human(rr, at, u, { thread_ts: parent.ts, kind: 'background', events: [], brief: `reply (${rr.pick(REPLY_STANCES)}) in the thread about: ${about}`, must_mention: [], length: rr.weighted([['one_word', 35], ['short', 50], ['medium', 15]]) });
           if (rr.chance(0.1)) m.subtype = 'thread_broadcast';
           group.push(decorate(rr, m));
+          added++;
         }
+        return added;
       };
       // Event threads.
       for (const t of threads) {
@@ -205,7 +295,7 @@ export function plan(world, ctx) {
           const spec = crumbSpec(e, world, er);
           const u = person(e.by);
           const m = human(er, e.known_at, u, {
-            thread_ts: parent ? parent.ts : null, kind: e.kind, events: [e.id], brief: e.kind === 'background' ? `background: ${e.brief}` : e.brief,
+            thread_ts: parent ? parent.ts : null, kind: e.kind, events: [e.id], brief: e.kind === 'background' ? `background: ${e.brief}` : safeBrief(e, world),
             ...(spec.claim ? { claim: spec.claim } : {}), must_mention: spec.must_mention,
             ...(e.kind === 'crumb' && e.pressure ? { pressure: e.pressure } : {}),
             ...(e.asks_expedite ? { asks_expedite: true } : {}),
@@ -216,31 +306,28 @@ export function plan(world, ctx) {
           group.push(decorate(er, m));
           if (!parent) parent = m;
         }
-        if (rr.chance(0.4)) fillerReplies(rr, parent, rr.int(1, 3), group, t.evs[t.evs.length - 1].known_at);
+        if (rr.chance(0.4)) fillerReplies(rr, parent, rr.int(1, 3), group, t.evs[t.evs.length - 1].known_at, t.root.kind === 'background' ? t.root.brief : 'the message above');
       }
-      // Filler to reach the channel's volume.
+      // Filler up to the channel's (capped) weekly volume; the count includes event messages and replies.
       const days = Array.from({ length: 7 }, (_, i) => addDays(week, i));
       const wdDays = days.filter((d) => ctx.cal.isWd(d));
-      const perWeek = (ch.base_rate_per_day || 0) * (wk.activity ?? 1) * wdDays.reduce((s, d) => s + ctx.cal.dayActivity(d), 0);
-      const fillerTotal = Math.max(0, Math.round(perWeek * r.uniform(0.85, 1.15)) - threads.reduce((s, t) => s + t.evs.length, 0));
-      const tops = Math.round(fillerTotal / 2.2);
+      const target = Math.round((targets.get(week).get(ch.id) || 0) * r.uniform(0.9, 1.1));
+      let count = msgs.crumbs.length + msgs.background.length;
       const fr = r.fork('filler');
-      const storylines = (world.storylines || []).filter((s) => week >= weekStart(s.start) && week <= s.end && (world.teams.find((t) => t.id === s.team)?.channels || []).includes(ch.id));
-      for (let i = 0; i < tops && members.length; i++) {
+      const storylines = storylinesFor(ch, week);
+      const topics = topicPool(ch, week, storylines);
+      for (let i = 0; count < target && members.length && i < target * 3; i++) {
         const rr = fr.fork(String(i));
-        const day = rr.chance(0.02) ? rr.pick(days.filter((d) => !ctx.cal.isWd(d))) || rr.pick(days) : rr.weighted(wdDays.length ? wdDays.map((d) => [d, ctx.cal.dayActivity(d)]) : days.map((d) => [d, 1]));
+        const day = rr.chance(0.02) ? rr.pick(days.filter((d) => !ctx.cal.isWd(d))) : rr.weighted(wdDays.length ? wdDays.map((d) => [d, ctx.cal.dayActivity(d)]) : days.map((d) => [d, 1]));
         const at = humanTime(day, rr, burst);
         if (Date.parse(at) > Date.parse(demoNow) || Date.parse(at) < Date.parse(world.meta.window.start)) continue;
         const u = rr.weighted(members.map((p) => [p, weightOf(p)]));
-        let brief;
-        if (rr.chance(ch.on_topic_share ?? 0.8)) {
-          const sl = storylines.length && rr.chance(0.35) ? rr.pick(storylines) : null;
-          const beat = sl && (sl.beats || []).find((b) => b.week === week);
-          brief = sl ? `background: ${beat ? beat.summary : sl.topic}` : `background: ${rr.pick(ON_TOPIC)} (#${ch.name}: ${ch.purpose})`;
-        } else brief = `background: off-topic, ${rr.pick(OFF_TOPIC)}`;
+        const topic = rr.chance(ch.on_topic_share ?? 0.8) && topics.length ? rr.pick(topics) : `off-topic: ${rr.pick(OFF_TOPIC)}`;
+        const brief = `background: ${rr.pick(OPENERS)} ${topic}`;
         const m = decorate(rr, human(rr, at, u, { thread_ts: null, kind: 'background', events: [], brief, must_mention: [], length: rr.weighted([['one_word', 12], ['short', 58], ['medium', 22], ['long', 8]]) }));
         msgs.background.push(m);
-        if (rr.chance(0.3)) fillerReplies(rr, m, rr.chance(0.07) ? rr.int(15, 18) : rr.int(2, 6), msgs.background, at);
+        count++;
+        if (rr.chance(0.3)) count += fillerReplies(rr, m, Math.min(target - count, rr.chance(0.07) ? rr.int(15, 18) : rr.int(2, 6)), msgs.background, at, topic);
       }
       // Bots and joins: code-written text, no writer.
       const br = r.fork('bots');
@@ -263,24 +350,53 @@ export function plan(world, ctx) {
         }
       }
       messages.push(...system);
-      for (const part of ['crumbs', 'background']) {
-        const list = msgs[part].sort((a, b) => cmp(a.ts, b.ts));
-        if (!list.length) continue;
+      // Crumb threads: one job per channel-week. Background: one job per day (half-days when a day is large),
+      // a thread going with its parent's slot. Ids depend only on channel and date, so jobs nest under --weeks.
+      const groups = [];
+      if (msgs.crumbs.length) groups.push(['crumbs', msgs.crumbs]);
+      const tsTime = (m) => isoLocal(new Date(Number(m.ts.split('.')[0]) * 1000).toISOString());
+      const parentOf = new Map(msgs.background.filter((m) => !m.thread_ts).map((m) => [m.ts, m]));
+      const slotDay = new Map();
+      for (const m of msgs.background) {
+        const root = m.thread_ts && parentOf.get(m.thread_ts) ? parentOf.get(m.thread_ts) : m;
+        const t = tsTime(root);
+        const d = t.slice(0, 10);
+        (slotDay.get(d) || slotDay.set(d, []).get(d)).push({ m, pm: +t.slice(11, 13) >= 13 });
+      }
+      for (const d of [...slotDay.keys()].sort()) {
+        const list = slotDay.get(d);
+        if (list.length <= MAX_JOB) { groups.push([`background-${d}`, list.map((x) => x.m)]); continue; }
+        // Large day: split into parts of whole threads, in time order of their parents.
+        const byRoot = new Map();
+        for (const x of list) { const k = x.m.thread_ts && parentOf.has(x.m.thread_ts) ? x.m.thread_ts : x.m.ts; (byRoot.get(k) || byRoot.set(k, []).get(k)).push(x.m); }
+        const roots = [...byRoot.keys()].sort();
+        const parts = Math.ceil(list.length / MAX_JOB);
+        const size = Math.ceil(list.length / parts);
+        let cur = [], n = 1;
+        for (const k of roots) {
+          if (cur.length && cur.length + byRoot.get(k).length > size && n < parts) { groups.push([`background-${d}-p${n}`, cur]); cur = []; n++; }
+          cur.push(...byRoot.get(k));
+        }
+        if (cur.length) groups.push([`background-${d}-p${n}`, cur]);
+      }
+      for (const [part, raw] of groups) {
+        const list = raw.sort((a, b) => cmp(a.ts, b.ts));
+        const background = part !== 'crumbs';
         const jobId = `slack-${ch.id}-${week}-${part}`;
         for (const m of list) m.job_id = jobId;
         messages.push(...list);
         const ppl = [...new Set(list.map((m) => m.person))].sort().map((id) => jobPerson(person(id)));
-        const isDemo = part === 'crumbs' && list.some((m) => m.demo && Number(m.ts) * 1000 >= demoStart);
+        const isDemo = !background && list.some((m) => m.demo && Number(m.ts) * 1000 >= demoStart);
         const context = [];
         if (ch.assembly) { const a = world.assemblies.find((x) => x.id === ch.assembly); if (a) context.push(`Channel for ${a.name}.`); }
         for (const s of storylines) { const beat = (s.beats || []).find((b) => b.week === week); context.push(`Ongoing: ${s.topic}${beat ? '. This week: ' + beat.summary : ''}`); }
         jobs.push({
-          job_id: jobId, source: 'slack', status: 'blank', priority: isDemo ? 0 : priorityOf(week, demoNow, part === 'background'),
+          job_id: jobId, source: 'slack', status: 'blank', priority: isDemo ? 0 : priorityOf(week, demoNow, background),
           style_rules: STYLE_RULES.slack,
           channel: { id: ch.id, name: ch.name, slack_id: ch.slack_id, purpose: ch.purpose },
           week: { start: week, end: addDays(week, 6) },
           people: ppl, context,
-          forbidden: part === 'crumbs'
+          forbidden: !background
             ? ['hidden reasons', 'any fact not in a message brief or the context', 'dates other than those in the claim', 'stating which shipping tier was chosen']
             : ['hidden reasons', 'part numbers, quote ids, order numbers or Jira keys', 'dollar amounts of $50 or more', 'explicit dates (relative time like "last week" is fine)'],
           messages: list.map((m) => ({
