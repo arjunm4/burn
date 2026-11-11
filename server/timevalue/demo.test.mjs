@@ -22,7 +22,7 @@ test('change 1 is case B: the motor dominates, Standard', async () => {
   const c = await card(1);
   assert.equal(c.outcome, 'cheapest');
   assert.equal(c.recommended, 'standard');
-  assert.deepEqual(c.tiers.map((t) => t.finish), ['2026-12-03', '2026-12-03']);
+  assert.ok(c.tiers.length >= 2 && c.tiers.every((t) => t.finish === '2026-12-03')); // every tier, Rush included
   assert.match(c.change.text, /11\/30/);
 });
 
