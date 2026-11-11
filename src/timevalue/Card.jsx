@@ -1,5 +1,8 @@
 import React from 'react';
 import HeatMap from './HeatMap.jsx';
+
+// The habit model is tabled (Owen, 2026-11-10): the card shows the schedule decision only.
+const SHOW_HABIT = false;
 import precomputed from '../../fixtures/timevalue/demo-cards.json';
 
 // Time Value: the recommendation card for the demo order, plus the habit model's weights.
@@ -68,15 +71,15 @@ export default function TimeValue() {
       </div>
 
       {!card && <span style={{color: C.muted}}>Loading card…</span>}
-      {card && <div style={{display: 'grid', gridTemplateColumns: 'minmax(0, 1.25fr) minmax(0, 1fr)', gap: 20, alignItems: 'start'}} data-graph-grid>
+      {card && <div style={{display: 'grid', gridTemplateColumns: SHOW_HABIT ? 'minmax(0, 1.25fr) minmax(0, 1fr)' : 'minmax(0, 1fr)', gap: 20, alignItems: 'start'}} data-graph-grid>
         <Recommendation card={card}/>
-        <section style={{background: '#fff', border: `1px solid ${C.line}`, borderRadius: 12, padding: 16, display: 'flex', flexDirection: 'column', gap: 12}}>
+        {SHOW_HABIT && <section style={{background: '#fff', border: `1px solid ${C.line}`, borderRadius: 12, padding: 16, display: 'flex', flexDirection: 'column', gap: 12}}>
           <div style={{display: 'flex', flexDirection: 'column', gap: 2}}>
             <span style={eyebrow}>Habit model · advisory</span>
             <span style={{color: C.muted, lineHeight: 1.45}}>What in the 30 days of conversation before an order made this team expedite. It never sets the tier.</span>
           </div>
           <HeatMap habit={habit} top={card.habit?.top || []}/>
-        </section>
+        </section>}
       </div>}
     </main>
   </div>;
@@ -135,9 +138,9 @@ function Recommendation({card}) {
       {card.guards?.filter(g => !g.ok).map(g => <div key={g.rule} role="alert" style={{fontSize: 12, color: C.critical}}>Guard failed: {g.rule}</div>)}
     </div>
 
-    <div style={{padding: '12px 16px', borderTop: `1px solid ${C.hair}`, background: C.paper, color: C.muted, fontSize: 12, lineHeight: 1.5}}>
+    {SHOW_HABIT && <div style={{padding: '12px 16px', borderTop: `1px solid ${C.hair}`, background: C.paper, color: C.muted, fontSize: 12, lineHeight: 1.5}}>
       <span style={{...eyebrow, marginRight: 8}}>Habit · advisory</span>
       {card.habit?.text || (card.habit?.n_train ? `Habit model trained on ${card.habit.n_train} orders; no score for this order yet.` : 'No habit model yet. The recommendation above comes from the schedule alone.')}
-    </div>
+    </div>}
   </article>;
 }

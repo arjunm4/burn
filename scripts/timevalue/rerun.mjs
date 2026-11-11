@@ -14,7 +14,7 @@ if (step === 'jobs') {
   run('read-jobs.mjs');
 } else if (step === 'finish') {
   run('read-jobs.mjs', '--collect');
-  run('train.mjs');
+  // run('train.mjs');  // habit model tabled (Owen, 2026-11-10)
   run('grade.mjs');
   run('demo-cards.mjs', '--sources', 'fixtures/flintlock');
 } else {
