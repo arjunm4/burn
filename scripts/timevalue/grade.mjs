@@ -80,7 +80,7 @@ export function buildEngineCases(world, answers) {
   // and that test (orders are created in id order), so an earlier order for the same part no longer gates.
   const gatingOrder = new Map(); // `${test}|${part}` -> order
   for (const o of xo.slice().sort((a, b) => (a.id < b.id ? -1 : 1))) {
-    if (!o.feeds_test || o.cancelled) continue;
+    if (!o.feeds_test || o.feeds_work_item || o.cancelled) continue; // a work item's order sets no test input
     for (const l of o.lines) gatingOrder.set(`${o.feeds_test}|${l.part}`, o);
   }
   const pinned = new Set([world.demo?.test, world.demo?.milestone].filter(Boolean));
@@ -95,7 +95,10 @@ export function buildEngineCases(world, answers) {
       const exp = a.tier_outcomes.find((x) => x.tier === t.tier);
       return { tier: t.tier, total: t.total_usd, ready: exp.ready_date, expected: { test_start: exp.test_start ?? null, gated_date: exp.gated_date ?? null, days_gained: exp.days_gained } };
     });
-    if (o.feeds_test && tests.has(o.feeds_test)) {
+    // An order placed for a work item names the test that work item prepares for in feeds_test too, but its
+    // consumer in the simulator (orders.mjs: consumer = wi) is the work item: only structural orders (no work
+    // item) are inputs of the test itself.
+    if (o.feeds_test && !o.feeds_work_item && tests.has(o.feeds_test)) {
       const t = tests.get(o.feeds_test);
       if (pinned.has(t.id) || pinned.has(t.milestone)) { skipped.push({ order: o.id, reason: `feeds the pinned demo test ${t.id}` }); continue; }
       const us = [t.rig, ...(t.resources || [])].filter(Boolean);
@@ -132,8 +135,11 @@ export function buildEngineCases(world, answers) {
         order_parts: mine, // empty = a later order for the same parts gates the test, so every tier lands the same
         test: {
           planned_start: t.earliest_start ?? t.planned_date[0].value, duration_days: Math.max(1, Math.round(t.duration_true_days)),
-          rig_slot_days: slot, bookings, owner_out: (owner?.ooo || []).map((x) => ({ start: x.start, end: x.end })), owner: t.owner,
+          // The simulator does not model owner out-of-office, so grading against it passes none; the owner's
+          // outages ride along (owner_ooo) only to explain a mismatch from an engine that is fed them.
+          rig_slot_days: slot, bookings, owner_out: [], owner: t.owner,
         },
+        owner_ooo: (owner?.ooo || []).map((x) => ({ start: x.start, end: x.end })),
         inputs, tiers,
         milestone: m ? { id: m.id, target: m.date[0].value, hardness: m.hardness, kind: m.kind, policy: null, feeders } : null,
         _m: m,
@@ -153,7 +159,7 @@ export function buildEngineCases(world, answers) {
       });
     } else skipped.push({ order: o.id, reason: 'feeds nothing (all gains 0)' });
   }
-  return { cases, skipped, cal };
+  return { cases, skipped, cal, holidays: world.meta.holidays || [] };
 }
 
 // Milestone date from this test's finish and the other feeders' realized ends (S2: soft moves, hard keeps its
@@ -197,7 +203,7 @@ export function diagnose(cal, c, tierReady, got, exp) {
       const clash = t.bookings.find((b) => !(gotEnd < b.start || got.start > b.end));
       if (clash) why.push(`run ${got.start}..${gotEnd} overlaps booking ${clash.id} (${clash.start}..${clash.end}); a booking blocks every day of the run, not just the start day`);
     } else {
-      const ooo = t.owner_out.find((x) => !(cal.addWd(exp.test_start, t.duration_days - 1) < x.start || exp.test_start > x.end));
+      const ooo = [...t.owner_out, ...(c.owner_ooo || [])].find((x) => !(cal.addWd(exp.test_start, t.duration_days - 1) < x.start || exp.test_start > x.end));
       if (ooo) why.push(`owner out ${ooo.start}..${ooo.end} pushed the start; the simulator's truth does not model owner out-of-office`);
       const expEnd = cal.addWd(exp.test_start, t.duration_days - 1);
       const near = t.bookings.find((b) => b.end === exp.test_start || b.start === expEnd || cal.addWd(b.end, 1) === exp.test_start);

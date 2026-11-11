@@ -15,8 +15,8 @@ const exAnswers = JSON.parse(readFileSync(join(EX, 'answers.json'), 'utf8'));
 
 // Stub of A's contract (impl.md, src/timevalue/), only to check the harness:
 // ready on R -> usable nextWd(R); start = first wd >= max(planned start, usable dates) on a slot day with no
-// booking overlapping the run (and, if asked, the owner in); finish = addWd(start, duration - 1).
-function makeRefEngine({ ownerOut = false, usableLag = 1 } = {}) {
+// booking overlapping the run (and, if given outages, the owner in); finish = addWd(start, duration - 1).
+function makeRefEngine({ ownerOut = null, usableLag = 1 } = {}) {
   const solve = ({ holidays, test: t, inputs }) => {
     const cal = makeCalendar({ holidays, window: { start: '2026-02-10T00:00:00-08:00', end: '2026-11-10T23:59:59-08:00' } });
     let d = t.planned_start;
@@ -33,7 +33,7 @@ function makeRefEngine({ ownerOut = false, usableLag = 1 } = {}) {
       const end = cal.addWd(d, Math.max(1, t.duration_days) - 1);
       const hit = (b) => !(end < b.start || d > b.end);
       if (t.bookings.some(hit)) continue;
-      if (ownerOut && t.owner_out.some(hit)) continue;
+      if ([...t.owner_out, ...(ownerOut || [])].some(hit)) continue;
       return { start: d, finish: end, limiter };
     }
     throw new Error('no slot');
@@ -41,7 +41,7 @@ function makeRefEngine({ ownerOut = false, usableLag = 1 } = {}) {
   return { solve, compare: null };
 }
 
-const built = (w, a) => { const b = buildEngineCases(w, a); b.holidays = w.meta.holidays; return b; };
+const built = (w, a) => buildEngineCases(w, a); // carries world.meta.holidays to the engine
 
 // ---- hand-made mini world; every expected date worked out by hand (Thanksgiving 11-26/27 closed) ----
 const H = [
@@ -79,7 +79,8 @@ function miniWorld() {
       order('ord-x-00001', { feeds_test: 'test-1', lines: [{ part: 'pt-a' }], chosen_tier: 'standard', total_usd: 300, tiers: [tier('standard', 300, '2026-11-12'), tier('expedite', 400, '2026-11-11')] }),
       order('ord-x-00002', { feeds_test: 'test-1', lines: [{ part: 'pt-a' }], chosen_tier: 'expedite', total_usd: 900, need_by_believed: '2026-11-18',
         tiers: [tier('economy', 500, '2026-11-24'), tier('standard', 600, '2026-11-19'), tier('expedite', 900, '2026-11-13')] }),
-      order('ord-x-00003', { feeds_work_item: 'wi-1', lines: [{ part: 'pt-b' }], chosen_tier: 'standard', total_usd: 200,
+      // a work item's order also names the test the work item prepares for (as the simulator writes it); its consumer is the work item
+      order('ord-x-00003', { feeds_work_item: 'wi-1', feeds_test: 'test-1', lines: [{ part: 'pt-b' }], chosen_tier: 'standard', total_usd: 200,
         tiers: [tier('economy', 150, '2026-11-20'), tier('standard', 200, '2026-11-12'), tier('expedite', 260, '2026-11-10')] }),
     ],
     ramp_transactions: [1, 2, 3].map((n) => ({ id: `rt-${n}`, order: `ord-x-0000${n}`, kind: 'charge' })),
@@ -118,6 +119,8 @@ test('mini world: hand-computed dates, superseded order, work item, holidays, sl
   const c2 = b.cases[1];
   assert.deepEqual(c2.test.bookings.map((x) => x.id), ['bk-1']); // own and tentative ad hoc bookings excluded
   assert.deepEqual(c2.test.rig_slot_days, [2, 4]);
+  assert.deepEqual(c2.test.owner_out, []); // the simulator does not model owner out-of-office
+  assert.deepEqual(c2.owner_ooo, [{ start: '2026-12-01', end: '2026-12-02' }]);
   const g = gradeEngine(b, makeRefEngine());
   assert.deepEqual(g.mismatches, []);
   assert.equal(g.all.exact_share, 1);
@@ -127,7 +130,8 @@ test('mini world: engine errors are caught and explained', () => {
   const { world, answers } = miniWorld();
   const early = gradeEngine(built(world, answers), makeRefEngine({ usableLag: 0 }));
   assert.ok(early.mismatches.some((m) => m.reasons.some((r) => r.includes('before the last input is usable'))));
-  const ooo = gradeEngine(built(world, answers), makeRefEngine({ ownerOut: true }));
+  // an engine that is fed the owner's outage (p-tess out 12-01..12-02) moves Economy past it; the truth does not
+  const ooo = gradeEngine(built(world, answers), makeRefEngine({ ownerOut: [{ start: '2026-12-01', end: '2026-12-02' }] }));
   const m = ooo.mismatches.find((x) => x.order === 'ord-x-00002' && x.tier === 'economy');
   assert.ok(m && m.reasons.some((r) => r.includes('owner out')), JSON.stringify(ooo.mismatches.map((x) => x.reasons)));
   const throws = gradeEngine(built(world, answers), { solve: () => { throw new Error('boom'); } });
@@ -189,9 +193,8 @@ test("A's engine on the example and mini worlds (skips until src/timevalue lands
   const ex = gradeEngine(built(exWorld, exAnswers), engine);
   assert.deepEqual(ex.mismatches, []);
   const { world, answers } = miniWorld();
+  // owner_out is [] when grading against the simulator, so p-tess's outage (12-01..12-02) moves nothing
   const g = gradeEngine(built(world, answers), engine);
-  // The only expected difference: the truth ignores owner out-of-office (p-tess out 12-01..12-02).
-  // Economy is pushed past the outage; the other tiers' days gained follow from it.
-  assert.ok(g.mismatches.length > 0);
-  for (const m of g.mismatches) assert.ok(m.reasons.some((r) => r.includes('owner out') || r.startsWith('knock-on')), JSON.stringify(m));
+  assert.deepEqual(g.mismatches, []);
+  assert.equal(g.all.exact_share, 1);
 });
