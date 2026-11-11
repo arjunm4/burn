@@ -91,6 +91,7 @@ All in `fixtures/world/knobs.json`, with defaults set in phase 0 and tuned by Ow
 - the share of graph links that are revealed, only hinted at, or never written down
 - the link-quality mix (clean id, alias only, never discussed)
 - rates of stale facts, wrong dates later corrected, errors never corrected, and contradictions between sources
+- how often a Xometry order arrives after its promised date: **1 in 40** (Owen's number)
 - off-topic and background shares per source
 - how many recent weeks of context to write (default 13)
 
