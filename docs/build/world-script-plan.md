@@ -12,10 +12,19 @@ Owner: Owen, with Fable agents. Deadline: 2026-11-10, 11:59pm PT. Spec: [`../arc
 
 - **The world model is the ground truth and the single source of it.** Code decides facts, IDs and timestamps. Models write seed content and text.
 - **The context is generated from the truth and is deliberately imperfect:** stale facts, wrong dates, contradictions between sources, things nobody wrote down. The truth itself is complete and consistent.
-- **Models (Owen's decision, to cut cost):** Opus for most work: schema, seed, generator code, checks, and the text tied to orders. Fable only for the simulator, the one intricate piece. Sonnet for background text. Effort is medium unless a phase says otherwise.
+- **Models (Owen's decisions):** Fable plans and verifies; Opus builds. Fable writes the simulation spec, reviews the schema before anything is built on it, builds the simulator, and independently verifies the first run. Opus does the schema, seed, generator code, checks and the text tied to orders. Sonnet writes background text. Effort is medium unless a phase says otherwise.
 - **Read the style research first:** [`../research/data-realism.md`](../research/data-realism.md) (formats, Flintlock volumes, style numbers, fake-looking patterns) and, for orders, [`../research/startup-purchasing.md`](../research/startup-purchasing.md). Every agent's prompt points at the sections for its source, and its output must follow them.
 - **The app never reads `fixtures/world/`.** Burn sees only the rendered sources (`fixtures/slack/`, `fixtures/jira/`, …). The world model and answer key are for the generator and for grading.
 - **One file per agent.** Agents working in parallel each own distinct files and run no git commands.
+
+## Robustness
+
+- **Spec before code.** A Fable architect writes [`simulation-spec.md`](simulation-spec.md): the simulation design stage by stage, the contract of every module, and a numbered list of invariants.
+- **Schema gate.** The architect reconciles the schema against the spec and fixes gaps before any agent builds on it.
+- **Checks in code.** The validator and `checks` enforce the invariants: every reference resolves, nothing refers to a fact before it was knowable, the answer key never leaks into rendered text, and the volumes fall in the researched ranges. Every agent must leave `npm test` passing.
+- **Same seed, same world.** One seeded random source, no wall-clock time, stable ordering.
+- **A working dataset at every step.** The tiny example, then `--weeks 1`, then `--weeks 13`, each committed once it passes. If a later step fails, the demo still has complete data.
+- **Independent verification.** After the first run, a Fable agent that did not build anything checks the world against the answer key and the research.
 
 ## The world model: seed plus simulation
 
@@ -119,15 +128,16 @@ Phase 2 runs alongside phase 1: both code against the schema, not against the da
 
 | Phase | What | Agents | Model, effort | Time |
 |---|---|---|---|---|
-| 0. Schema | Field reference, canonical ids (teams, assemblies, test rigs, milestones, channels, Jira projects), a tiny valid example world, the validator, default knobs. Merged at once so the mock services can code against it | 1 | Opus, medium | 25 min |
+| 0. Schema | Field reference, canonical ids (teams, assemblies, test rigs, milestones, channels, Jira projects), a tiny valid example world, the validator, default knobs | 1 | Opus, medium | 25 min |
+| 0b. Spec and schema gate | The simulation spec (written alongside phase 0), then the schema reconciled against it and fixed. Merged at once so the mock services can code against it | 1 | Fable, high | 20 + 10 min |
 | 1a. Seed | People, org, channels, meeting series, vendors and finance · program (assemblies, parts catalog, rigs, tests, milestones, deliverables, storylines, demo block) | 2 in parallel | Opus, medium | 40 min |
 | 1b. Simulator | Schedule and slips, tickets, orders with decisions and hidden reasons, deliveries, events with their imperfections, other-vendor orders, the answer key | 1 | Fable, high | 55 min |
 | 2. Generator code | `plan`, `assemble`, Slack and Jira · meetings, calendar, Xometry, Ramp and other-vendor orders | 2 in parallel | Opus, medium | 55 min |
-| 3. First run | Run the simulation, validate, run `--weeks 1` end to end, fix what breaks, hand the small world to Arjun | 1 | Opus, high | 30 min |
+| 3. First run | Run the simulation, validate, run `--weeks 1` end to end, fix what breaks, hand the small world to Arjun. Then an independent verification of the world against the answer key and the research | 1 + 1 | Opus, high; verification on Fable, high | 30 min |
 | 4. Text fill | Agents over the job files for the most recent 13 weeks, in the order below | Several at a time, in the background | Opus low for order-related text; Sonnet low for background; medium for meetings | Until 10:00pm |
 | 5. Checks and provenance | Consistency, realism and answer-key checks; the provenance index | 1 | Opus, medium | 30 min |
 
-Seven agents before the text fill. Each agent re-reads the plan, the schema and the style research, so fewer, larger agents cost less than many small ones.
+Nine agents before the text fill. Each agent re-reads the plan, the schema and the style research, so fewer, larger agents cost less than many small ones.
 
 **Checks:**
 - **Consistency:** every crumb appears in at least one source; IDs, names and dates match across sources; nothing is dated after the order it informs.
@@ -150,10 +160,10 @@ The text fill stops at 10:00pm, whatever it has reached. The checks report the w
 
 | By | Done |
 |---|---|
-| 6:40pm | Schema merged; mock services start against it |
-| 7:40pm | Seed, simulator and generator code done |
-| 8:10pm | World generated and validated; `--weeks 1` passes end to end; small world handed to Arjun |
-| 8:10–10:00pm | Text fill for the most recent 13 weeks, in the background; cost of delay with Arjun in parallel |
+| 6:55pm | Schema and simulation spec reconciled and merged; mock services start against the schema |
+| 7:55pm | Seed, simulator and generator code done |
+| 8:25pm | World generated, validated and independently verified; `--weeks 1` passes end to end; small world handed to Arjun |
+| 8:25–10:00pm | Text fill for the most recent 13 weeks, in the background; cost of delay with Arjun in parallel |
 | 10:00pm | Text fill stops; assemble, checks, provenance |
 | 10:45pm | Final fixtures merged |
 | 11:30pm | Submit |
