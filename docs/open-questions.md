@@ -37,6 +37,7 @@ Not needed for the demo: every external service is mocked (architecture §2.18).
 | Engineer click or automatic placement? | Automatic on approval; the engineer is alerted before any browser tab opens | architecture §0.4, §2.16 |
 | Use the Claude–Codex collaboration workflow? | No; dropped | CLAUDE.md |
 | Real Ramp sandbox or mocks? | Mock everything: Ramp, Xometry, Slack, Jira, meetings, calendar | architecture §2.18 |
+| Example company for the demo data? | Flintlock Robotics, a fictional humanoid robotics startup | architecture §12 |
 | Which vendor first? | Xometry only, via the browser extension | architecture §2.14 |
 | Does Xometry have a test mode or buyer API? | No; demo stops at a dummy checkout page | architecture §0.4 |
 | Ramp MCP / Agent Cards instead of REST? | No; REST with app credentials; MCP is a stretch check | research/ramp-integration.md §2 |

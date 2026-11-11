@@ -333,7 +333,8 @@ label:    the tier chosen, from the matching Xometry order (Ramp's amount alone 
 16. Habit data sparse or contrary to policy: abstain or show the difference; policy governs.
 
 **Synthetic data for the demo and training.** All context except Slack and the live Ramp order is generated:
-- **One world script first:** the hip-actuator program, people and roles, milestones and tests, and ~100–150 past Xometry orders over ~9 months, each with its need-by, blockers, sibling ETAs, urgency, the chosen tier and the hidden reason.
+- **Example company:** **Flintlock Robotics**, a fictional humanoid robotics startup (Owen's decision). The hip actuator, spin test and EVT/DVT builds are part of its humanoid program.
+- **One world script first:** Flintlock's hip-actuator program, people and roles, milestones and tests, and ~100–150 past Xometry orders over ~9 months, each with its need-by, blockers, sibling ETAs, urgency, the chosen tier and the hidden reason.
 - **Rendered into each source** with consistent names and timestamps: Slack messages, Jira tickets, meeting notes, calendar, Xometry order history and Ramp-shaped charges. An LLM writes the text from each scripted event; facts and times come from the script.
 - **Noise:** off-topic chatter, corrected dates, undiscussed orders, panic expedites that bought nothing.
 - **Meetings** (Owen's decision): many meetings across the 9 months, each realistic to its topic:
