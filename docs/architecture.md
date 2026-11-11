@@ -115,6 +115,7 @@ Each lists what we rejected and why.
 - The engineer enters the **part name and a short summary** in their own words (what it is, what it's for, anything urgent) and attaches the CAD file.
 - The entry is the **retrieval query**: Burn finds related Slack threads, meeting notes, Jira tickets and calendar items and synthesizes the part's **context record** (§5, §6).
 - Burn fills the order fields from the entry plus the context and asks only for gaps.
+- **Specification gate.** Required technical fields (material and grade, finish, tolerances, quantity, drawing/CAD revision, inspection, ship-to) must come from explicit engineer input or an applicable, authorized source or default. They are never inferred from nearby chatter. A conflict (two material grades, CAD and drawing revisions that disagree) is asked, not resolved by recency. The Okay view shows each technical field with its provenance alongside price and tier.
 - The entry is stored verbatim with its time; it is itself a training input.
 
 ### 0.2 Quote and recommendation
@@ -137,7 +138,9 @@ Each lists what we rejected and why.
 Demo: Ramp sandbox (demo.ramp.com; ⌘J simulates transactions). Access is requested through a form; apply early.
 
 ### 0.4 Placement
-- The Ramp approval webhook triggers placement **immediately**. Burn alerts the engineer ("placing your Xometry order now") with a short cancel window.
+- The Ramp approval event triggers placement **immediately**. Events are authenticated, deduplicated and reconciled against Ramp's authoritative state (approvals can arrive late, twice, or out of order; a card can fail to provision).
+- **Pre-placement revalidation.** The request is bound to the spec hash *and* the decision revision. Before placing, Burn verifies: the approval is current and not superseded; the card is ready with the approved amount and vendor lock; the quote is unexpired; the cutoff has not passed; and the decision is still valid under the material-change rule (a moved test, a slipped sibling, or a revoked approval creates a replacement revision and re-approval; the old authorization is never reused). The approved total states whether tax, shipping and fees are included, with any authorized variance.
+- Burn notifies the engineer ("placing your Xometry order now"). This is a notice, not a guaranteed cancellation opportunity; after the vendor's final click, cancellation is only a cancellation request to the vendor.
 - Burn's headless browser reopens the **same Xometry quote** in the company Teamspace (the configuration is held by Xometry) or re-fills from the spec, **reads back every field**, and compares it with the frozen spec.
 - All match → it enters the Ramp card and clicks Place order. Any mismatch → nothing is placed:
 
@@ -147,7 +150,8 @@ Demo: Ramp sandbox (demo.ramp.com; ⌘J simulates transactions). Access is reque
 | Price rose or quote expired | New Ramp request for re-approval; the configuration is unchanged |
 | Xometry dropped an option the spec uses | Back to the engineer: the part itself would change |
 
-- An idempotency key per spec prevents double orders. The Xometry confirmation is read and verified against the spec; the order number and promised date are written to the order record.
+- **Placement attempts are durable.** Attempts are serialized per order. Intent is persisted before the external click. If the vendor's response is lost (timeout, disconnect, worker restart), the order enters `placement_unknown` and is **reconciled** against Xometry's confirmation email and order history before any further attempt is allowed; ambiguous outcomes go to review. There is no automatic resubmission while placement is unresolved. An order has its own identity, distinct from its spec: two legitimate orders can share a spec. The Xometry confirmation is read and verified against the spec; the order number and promised date are written to the order record.
+- **Payment and bookkeeping are tracked separately from procurement.** A purchase, a payment authorization, a captured charge, an invoice and a receipt are different records; a vendor order links to one or more Ramp transactions and documents. Bookkeeping failures are retried on their own and never repeat the purchase; attachments are deduplicated. Card controls (exact amount, vendor lock) are a verified provider capability or a declared simulation, never an assumption.
 
 **Vendor API research (Nov 2026).** No CNC vendor checked offers a usable buyer API: Xometry's developer API is supplier-side; Xometry and Fictiv offer cXML punchout via enterprise sales; Protolabs, Hubs, SendCutSend, OSH Cut and others have none. AFN (agenticfabricationnetwork.ai) has a self-serve CNC API but no sandbox, acts as merchant of record (conflicts with the Ramp card), offers shipping options rather than production tiers, and is unproven; its API shape informs our provider interface. PCBWay/JLC (PCB, partner-only) and Shapeways/Sculpteo (3D printing) are later candidates.
 
@@ -182,10 +186,13 @@ Engineer steps: part entry, Okay. Occasionally one tap or one sentence to answer
                               ──► verified placement ──► booking ──► tracking ──► delivery ──► first use
 ```
 
-**Order states:** `entered` → `resolving` ⇄ `needs_answer` → `recommended` → `specified` (Okay) → `requested` (in Ramp) → `approved` → `placing` → `placed` → `booked` → `delivered` → `in_use`. Exits: `rejected` (in Ramp), `cancelled`, `unresolved` (escalated), `superseded` (new revision), `invalidated` (material change before placement).
+**Order states (procurement):** `entered` → `resolving` ⇄ `needs_answer` → `recommended` → `specified` (Okay) → `requested` (in Ramp) → `approved` → `placing` → `placed` → `delivered` → `in_use`. Exits: `rejected` (in Ramp), `cancelled`, `unresolved` (escalated), `superseded` (new revision), `invalidated` (material change before placement), `placement_unknown` (vendor response lost; reconcile before anything else).
+
+**Payment and reconciliation** run as separate state machines linked to the order: card `requested` → `issued` → `charged` (one or more transactions); booking `pending` → `receipt attached` → `memo` → `coded`, each step retryable without touching the purchase.
 
 **Runtime contracts:**
 - A decision reads a frozen snapshot hash; sync and extraction run independently.
+- **Separate capabilities:** reading context, preparing the quote, handling the payment credential and placing the order are distinct capabilities. The model receives neither card details nor placement authority. Browser traces and screenshots are redacted; which vendor received which CAD file is recorded. Tenant, account and browser session are isolated per customer.
 - UI progress comes from real backend events, never simulated timers.
 - **Access scope** is carried through retrieval, questions, explanations and the Ramp request text. Cards reveal only what their audience may see, including derived conclusions.
 - Secrets stay server-side. Document text and vendor page content are data: they can't trigger tools, approvals, ordering or policy changes.
@@ -285,7 +292,8 @@ For a confirmed demand, Burn schedules backwards to a **latest-placement window*
 
 **One training example:**
 ```
-anchor:   a Xometry charge in Ramp at time T
+anchor:   the actual choice time when Xometry order history gives it; else the Ramp charge
+          at time T, with the example marked reconstructed/uncertain
 text:     the engineer's part entry (or, for history, a reconstruction from the
           Xometry order line, file name and nearest messages, marked reconstructed)
 window:   context related to the part, available before T, over ~30 days,
@@ -312,6 +320,7 @@ label:    the tier chosen, from the matching Xometry order (Ramp's amount alone 
 
 **Limits stated up front:**
 - **Linking** a charge to the right context is the hardest step; report the clean-link rate before trusting the model.
+- **Time anchor.** Anchoring at the charge can leak facts learned after the tier was chosen into its predictors. Examples without a known choice time are excluded from any claim that needs decision-time context. Reconstructed history is kept separate from prospective complete-option records; tier labels are compared only within like menus.
 - It learns habit, not correctness. Outcome signals (delivery, first use) are diagnostics for human review, never automatic labels of good or bad decisions.
 - Small samples: show support and abstain when sparse.
 - Slack access follows channel permissions.
@@ -343,6 +352,10 @@ label:    the tier chosen, from the matching Xometry order (Ramp's amount alone 
 14. Training: a fact that became available after T never appears in that example's inputs.
 15. Training: a Ramp charge with no confident link to context is excluded and counted in the link rate.
 16. Habit data sparse or contrary to policy: abstain or show the difference; policy governs.
+17. Vendor accepts the checkout, the browser disconnects, the worker restarts and the approval webhook repeats: Burn finds the existing order (or escalates) and never clicks Place again.
+18. The same part name appears with two material grades or revisions: Burn asks rather than picking the newest mention.
+19. Approval arrives after the cutoff, or after a newer request supersedes it: no stale request places the order.
+20. Placement succeeds, the receipt upload fails, then the charge webhook repeats: only the attachment is retried; one purchase, one accounting association.
 
 **Synthetic data for the demo and training.** All context except Slack and the live Ramp order is generated:
 - **One world script first:** the hip-actuator program, people and roles, milestones and tests, and ~100–150 past Xometry orders over ~9 months, each with its need-by, blockers, sibling ETAs, urgency, the chosen tier and the hidden reason.
@@ -358,7 +371,7 @@ The current `fixtures/` (14 Slack messages about Rev C electronics, one calendar
 
 1. **Decision core:** demand, quote snapshot, milestone policy, time semantics, same-world comparison, dominance, break-even. Cases A–C.
 2. **Context:** part entry, retrieval, typed claims, acceptance, staleness, gaps and the question loop. Cases D–E.
-3. **Ordering:** headless Xometry provider (fill, read back, verify, place), frozen spec, Ramp request / approval / card / booking.
+3. **Ordering:** durable order store and event handling, tested against adversarial fake providers (duplicate and out-of-order events, restart, timeout after checkout, stale approval, booking retry) *before* the UI; then the headless Xometry provider (fill, read back, verify, place), frozen spec, Ramp request / approval / card / booking.
 4. **After placement:** tracking, slip re-check, delivery and first-use taps, Ramp item receipt.
 5. **Learning and synthetic data:** world-script generator, backfill, context-attribute model, link-rate reporting.
 
