@@ -15,7 +15,7 @@ import { textWeeks } from './render/slack.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 export const ROOT = join(HERE, '..', '..');
-export const SOURCES = ['slack', 'jira', 'meetings', 'calendar', 'xometry', 'ramp'];
+export const SOURCES = ['slack', 'jira', 'meetings', 'calendar', 'xometry', 'ramp', 'demo'];
 // Keys that must never appear in a job (spec §4 I20).
 export const HIDDEN_KEYS = ['true_value', 'truth', 'demands', 'slips', 'habit', 'habit_strength', 'wtp_per_day_usd', 'checks_dependencies',
   'expressiveness', 'tier_decided_by', 'need_identified_at', 'reveal', 'link_quality', 'storyline', 'storylines_ids', 'budget_windows',

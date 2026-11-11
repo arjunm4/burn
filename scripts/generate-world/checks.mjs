@@ -230,7 +230,7 @@ export async function runChecks({ world: worldDir, out: outDir, weeks = null, wr
 
   // ---- I22: rendered structured sources equal a re-emit of planned/ ----
   const ctxBase = { seed: meta.seed, weeks, textStart, demoNow: meta.demo_now, knobs };
-  for (const [src, mod] of [['xometry', 'xometry'], ['ramp', 'ramp'], ['calendar', 'calendar']]) {
+  for (const [src, mod] of [['xometry', 'xometry'], ['ramp', 'ramp'], ['calendar', 'calendar'], ['demo', 'demo']]) {
     const recs = planned[src]?.records || (Array.isArray(planned[src]) ? planned[src] : null);
     if (!recs) continue;
     const r = await import(pathToFileURL(path.join(HERE, 'render', `${mod}.mjs`)).href);
@@ -289,7 +289,7 @@ export async function runChecks({ world: worldDir, out: outDir, weeks = null, wr
   let rngMod = null; let calMod = null;
   try { rngMod = await import(pathToFileURL(path.join(HERE, 'lib/rng.mjs')).href); } catch { /* lib not there yet */ }
   try { calMod = await import(pathToFileURL(path.join(HERE, 'lib/calendar.mjs')).href); } catch { /* lib not there yet */ }
-  for (const name of ['meetings', 'calendar', 'xometry', 'ramp', 'slack', 'jira']) {
+  for (const name of ['meetings', 'calendar', 'xometry', 'ramp', 'demo', 'slack', 'jira']) {
     const p = path.join(HERE, 'render', `${name}.mjs`);
     if (!fs.existsSync(p)) continue;
     try {

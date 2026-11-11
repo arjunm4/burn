@@ -8,6 +8,7 @@ import * as meetings from './meetings.mjs';
 import * as calendar from './calendar.mjs';
 import * as xometry from './xometry.mjs';
 import * as ramp from './ramp.mjs';
+import * as demo from './demo.mjs';
 import { parseCalendar } from '../../../server/connectors/ics.js';
 import { HIDDEN_KEYS } from '../checks.mjs';
 
@@ -19,7 +20,7 @@ const W = world();
 const NOW = Date.parse(W.meta.demo_now);
 const ctx = { seed: 1, weeks: 13, demoNow: W.meta.demo_now };
 const texts = { 'mtg-00001': { transcript: filled.transcript, summary: filled.summary } };
-const R = { meetings, calendar, xometry, ramp };
+const R = { meetings, calendar, xometry, ramp, demo };
 
 function run(name, w = world()) {
   const { records, jobs } = R[name].plan(w, ctx);
@@ -147,4 +148,26 @@ test('meetings: missing text falls back to the crumb line; window limits', () =>
   const w = world();
   w.meetings[0].start = '2026-11-10T11:00:00-08:00';
   assert.equal(R.meetings.plan(w, ctx).jobs.length, 0, 'meeting after demo now');
+});
+
+test('demo: quote tiers equal the demo block; files parse; live changes are offsets', () => {
+  const { files } = run('demo');
+  const get = (p) => JSON.parse(files.find((f) => f.path === p).content);
+  const q = get('demo/quote.json');
+  const want = Object.fromEntries(W.demo.quote.tiers.map((t) => [t.tier, t]));
+  assert.deepEqual(q.lead_time_options.map((t) => t.total), [want.standard.price_usd, want.expedite.price_usd]);
+  assert.deepEqual(q.lead_time_options.map((t) => t.estimated_delivery_date), [want.standard.ready_date, want.expedite.ready_date]);
+  assert.equal(q.quote_id, W.demo.quote.quote_id);
+  assert.equal(q.parts[0].quantity, W.demo.quantity);
+  assert.ok(!('chosen_tier' in q));
+  const pe = get('demo/part-entry.json');
+  assert.equal(pe.requester.email, 'owen@flintlockrobotics.com');
+  const lc = get('demo/live-changes.json').changes;
+  assert.equal(lc.length, 2);
+  assert.equal(lc[0].offset_minutes, 15);
+  assert.match(lc[0].message.text, /11\/30/);
+  assert.equal(lc[0].message.channel, 'C07FLK0ACTU');
+  const raw = files.map((f) => f.content).join('\n');
+  assert.ok(!/live-[a-z]|"case"|true_arrival|dl-hip|\bcase [A-E]\b/i.test(raw));
+  assert.equal(get('demo/policy.json').policies[0].usd_per_day, 600);
 });
