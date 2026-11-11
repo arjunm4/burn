@@ -1,0 +1,389 @@
+{
+  "job_id": "slack-ch-structures-2026-09-14-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 17,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-structures",
+    "name": "structures-battery",
+    "slack_id": "C07FLK0STRC",
+    "purpose": "Torso, pelvis and battery enclosure"
+  },
+  "week": {
+    "start": "2026-09-14",
+    "end": "2026-09-20"
+  },
+  "people": [
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-kwame",
+      "name": "Kwame Asante",
+      "display_name": "kwame",
+      "slack_id": "U07FLK0KWAM",
+      "title": "Senior Electrical Engineer, power",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "context": [
+    "Channel for Torso and pelvis structure.",
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real",
+    "Ongoing: Leg drop gantry shared by leg drop, torso static load and ankle impact. This week: Zoe: drop gantry only runs Tue/Thu because rigging needs two techs."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1789420540.907468",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-001750"
+      ],
+      "brief": "right pelvis plate: need 5 by 2026-10-13 for the fit check",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 5,
+          "by": "2026-10-13"
+        }
+      },
+      "must_mention": [
+        "right pelvis plate",
+        "the fit check",
+        "10/13"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "need 5 of the right pelvis plate for the fit check, by 10/13. still sorting the rest of the stack"
+    },
+    {
+      "ts": "1789421929.945572",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-002519"
+      ],
+      "brief": "Torso and pelvis static load test waits on Rig setup for Torso and pelvis static load test: Leg fixture hook, shank end",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00203"
+      },
+      "must_mention": [
+        "Rig setup for Torso and pelvis static load test: Leg fixture hook, shank end",
+        "Torso and pelvis static load test"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Torso and pelvis static load test is blocked on Rig setup for Torso and pelvis static load test: Leg fixture hook, shank end."
+    },
+    {
+      "ts": "1789425842.354951",
+      "user": "p-ingrid",
+      "thread_ts": "1789420540.907468",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Keep the gantry in mind, it only runs Tue/Thu."
+    },
+    {
+      "ts": "1789490303.208424",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-001673"
+      ],
+      "brief": "heater clamp: need 2 by 2026-10-05 for Battery enclosure thermal runaway containment",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-10-05"
+        }
+      },
+      "must_mention": [
+        "heater clamp",
+        "Battery enclosure thermal runaway containment",
+        "vent plate",
+        "10/5"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "2 heater clamp by 10/5 for Battery enclosure thermal runaway containment, same run as the vent plate"
+    },
+    {
+      "ts": "1789490666.073994",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-002567"
+      ],
+      "brief": "Test stand rework for Hip actuator thermal derate at continuous torque: Chamber thermocouple tree bracket waits on Gait gantry and treadmill",
+      "claim": {
+        "kind": "blocked",
+        "value": "rig-gait-gantry"
+      },
+      "must_mention": [
+        "Gait gantry and treadmill",
+        "the bracket"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "the bracket for the chamber tc tree is stuck behind Gait gantry and treadmill, cant do the stand rework till that frees up"
+    },
+    {
+      "ts": "1789496723.001039",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-003367"
+      ],
+      "brief": "BMS standoff: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "BMS standoff"
+      ],
+      "length": "short",
+      "text": "BMS standoff still out for quote, rev A"
+    },
+    {
+      "ts": "1789500493.657971",
+      "user": "p-idris",
+      "thread_ts": "1789496723.001039",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "anyone know if they want the inserts on this one"
+    },
+    {
+      "ts": "1789515487.634737",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-001627"
+      ],
+      "brief": "the yoke: need 1 by 2026-10-05",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-10-05"
+        }
+      },
+      "must_mention": [
+        "the yoke",
+        "10/5"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Need 1 of the yoke by 10/5."
+    },
+    {
+      "ts": "1789663473.843811",
+      "user": "p-ingrid",
+      "thread_ts": null,
+      "events": [
+        "ev-001666"
+      ],
+      "brief": "FL-TST-2211: need 1 by 2026-10-02",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-10-02"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2211",
+        "fri 10/2"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "We need one FL-TST-2211 by fri 10/2 on the tracker."
+    },
+    {
+      "ts": "1789675044.372905",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-002751"
+      ],
+      "brief": "FL-BAT-1622 rev B released: added relief for connector backshell",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-BAT-1622"
+      ],
+      "length": "medium",
+      "text": "FL-BAT-1622 rev B is released, added relief so the connector backshell clears"
+    },
+    {
+      "ts": "1789679488.388813",
+      "user": "p-idris",
+      "thread_ts": "1789675044.372905",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "i dont think the vent spacing needs to change for it tho"
+    },
+    {
+      "ts": "1789679673.316281",
+      "user": "p-kwame",
+      "thread_ts": "1789675044.372905",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I'll look at the harness routing this afternoon."
+    },
+    {
+      "ts": "1789756026.013580",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-001753"
+      ],
+      "brief": "1591: need 5 by 2026-10-13",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 5,
+          "by": "2026-10-13"
+        }
+      },
+      "must_mention": [
+        "1591",
+        "tues the 13th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "need 5x 1591 by tues the 13th"
+    },
+    {
+      "ts": "1789765119.335884",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-001755"
+      ],
+      "brief": "FL-STR-1591: need 5 by 2026-10-14",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 5,
+          "by": "2026-10-14"
+        }
+      },
+      "must_mention": [
+        "FL-STR-1591",
+        "wed the 14th"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "actually FL-STR-1591 needed by wed the 14th not tues, still 5"
+    },
+    {
+      "ts": "1789767901.365274",
+      "user": "p-carlos",
+      "thread_ts": "1789765119.335884",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Will check!"
+    }
+  ]
+}

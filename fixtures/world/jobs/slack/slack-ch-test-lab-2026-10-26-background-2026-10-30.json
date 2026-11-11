@@ -1,0 +1,603 @@
+{
+  "job_id": "slack-ch-test-lab-2026-10-26-background-2026-10-30",
+  "source": "slack",
+  "status": "blank",
+  "priority": 6,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-test-lab",
+    "name": "test-lab",
+    "slack_id": "C07FLK0TLAB",
+    "purpose": "Test lab: rigs, bookings, results, fixtures"
+  },
+  "week": {
+    "start": "2026-10-26",
+    "end": "2026-11-01"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-leilani",
+      "name": "Leilani Kahale",
+      "display_name": "leilani.k",
+      "slack_id": "U07FLK0LEIL",
+      "title": "Locomotion Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Leg DVT build: parts readiness and what to do about late test hardware",
+    "Ongoing: Frameless DVT motor from the vendor keeps slipping; stator stack length change. This week: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Beth asks every owner for real dates on the hip spin test and motor."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1793381716.676058",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on this: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793383341.975695",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on the ongoing frameless dvt motor from the vendor keeps slipping; stator stack length change",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793383736.139857",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about off-topic: parking lot",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793385103.934588",
+      "user": "p-jade",
+      "thread_ts": "1793383341.975695",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the ongoing frameless dvt motor from the vendor keeps slipping; stator stack length change",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793385471.905349",
+      "user": "p-leilani",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on this: ETA slips to mid November; Arjun asks if a second source exists, Gwen says 12 weeks.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793387382.267006",
+      "user": "p-nora",
+      "thread_ts": "1793383341.975695",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the ongoing frameless dvt motor from the vendor keeps slipping; stator stack length change",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793388418.857904",
+      "user": "p-owen",
+      "thread_ts": "1793383736.139857",
+      "events": [],
+      "brief": "reply (answers) in the thread about: off-topic: parking lot",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793389199.058091",
+      "user": "p-lukas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: Beth: build date holds if links arrive by Friday; Priya wants to start with rev B links.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793389252.924623",
+      "user": "p-mei",
+      "thread_ts": "1793385471.905349",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: ETA slips to mid November; Arjun asks if a second source exists, Gwen says 12 weeks.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793391286.488077",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on fit-up of the gait gantry and treadmill",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793391417.527234",
+      "user": "p-owen",
+      "thread_ts": "1793383736.139857",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: off-topic: parking lot",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793393598.480466",
+      "user": "p-dmitri",
+      "thread_ts": "1793383736.139857",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: off-topic: parking lot",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793393775.981673",
+      "user": "p-idris",
+      "thread_ts": "1793385471.905349",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: ETA slips to mid November; Arjun asks if a second source exists, Gwen says 12 weeks.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793394985.175886",
+      "user": "p-zoe",
+      "thread_ts": "1793391286.488077",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: fit-up of the gait gantry and treadmill",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793395074.373071",
+      "user": "p-jade",
+      "thread_ts": "1793385471.905349",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: ETA slips to mid November; Arjun asks if a second source exists, Gwen says 12 weeks.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793395779.499710",
+      "user": "p-carlos",
+      "thread_ts": "1793385471.905349",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: ETA slips to mid November; Arjun asks if a second source exists, Gwen says 12 weeks.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793396159.081314",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: Build slips four days; Beth moves the program review item.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793396623.462005",
+      "user": "p-luis",
+      "thread_ts": "1793396159.081314",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Build slips four days; Beth moves the program review item.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793396830.184190",
+      "user": "p-sofia",
+      "thread_ts": "1793383736.139857",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: off-topic: parking lot",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793397763.784477",
+      "user": "p-diego",
+      "thread_ts": "1793396159.081314",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Build slips four days; Beth moves the program review item.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793397822.724564",
+      "user": "p-mei",
+      "thread_ts": "1793383736.139857",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: off-topic: parking lot",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793399084.919967",
+      "user": "p-diego",
+      "thread_ts": "1793391286.488077",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: fit-up of the gait gantry and treadmill",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793401630.488082",
+      "user": "p-carlos",
+      "thread_ts": "1793383736.139857",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: off-topic: parking lot",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793402311.228822",
+      "user": "p-idris",
+      "thread_ts": "1793391286.488077",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: fit-up of the gait gantry and treadmill",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793402395.622799",
+      "user": "p-priya",
+      "thread_ts": "1793396159.081314",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Build slips four days; Beth moves the program review item.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793405562.291751",
+      "user": "p-nora",
+      "thread_ts": "1793396159.081314",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Build slips four days; Beth moves the program review item.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793408255.067577",
+      "user": "p-mei",
+      "thread_ts": "1793396159.081314",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Build slips four days; Beth moves the program review item.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    }
+  ]
+}

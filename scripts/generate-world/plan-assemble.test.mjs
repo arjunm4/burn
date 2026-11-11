@@ -232,3 +232,33 @@ test('human timestamps follow working hours; jobs stay small', async () => {
   }
   for (const j of readJ(join(dir, 'jobs/index.json'))) assert.ok(j.slots <= 130, `${j.job_id} has ${j.slots} slots`);
 });
+
+test('re-running plan keeps written text whose key and mentions still hold, and reports what it dropped', async () => {
+  const { carryText, jobKeys } = await import('./plan.mjs');
+  const dir = freshWorld();
+  await quiet(() => runPlan({ worldDir: dir, weeks: WEEKS_TO_EXAMPLE }));
+  const id = 'slack-ch-test-lab-2026-08-31-crumbs';
+  const p = join(dir, 'jobs/slack', `${id}.json`);
+  const job = fillSlack(dir, id, (m) => `${m.must_mention.join(' ')} written`);
+  // Simulate a stale written slot: one text loses its mention, one key no longer exists.
+  job.messages[0].text = 'lost the mention';
+  job.messages.push({ ...job.messages[1], ts: '1.000001', text: 'orphan' });
+  job.status = 'partial';
+  writeFileSync(p, JSON.stringify(job));
+  const res = await quiet(() => runPlan({ worldDir: dir, weeks: WEEKS_TO_EXAMPLE }));
+  const after = readJ(p);
+  assert.equal(res.carried, after.messages.length - 1);
+  assert.deepEqual(res.dropped.sort(), [`${id} 1.000001`, `${id} ${after.messages[0].ts}`].sort());
+  assert.equal(after.messages[0].text, null);
+  assert.ok(after.messages.slice(1).every((m) => m.text.endsWith('written')));
+  assert.equal(after.status, 'partial');
+  // Same keys, same text: carryText is a no-op on a fully valid job.
+  const r = carryText(after, structuredClone(after), jobKeys(after, world));
+  assert.equal(r.kept, after.messages.length - 1);
+});
+
+test('equal duration bounds read "3 days", a range "2-4 days"', async () => {
+  const { valuePhrase } = await import('./render/slack.mjs');
+  assert.equal(valuePhrase({ kind: 'duration', value: [3, 3] }, world, null), '3 days');
+  assert.equal(valuePhrase({ kind: 'duration', value: [2, 4] }, world, null), '2-4 days');
+});

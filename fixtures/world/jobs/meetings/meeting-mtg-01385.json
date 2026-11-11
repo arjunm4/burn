@@ -1,0 +1,374 @@
+{
+  "job_id": "meeting-mtg-01385",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 11,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-01385",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-10-05T08:45:00-07:00",
+    "actual_min": 17,
+    "present": [
+      "p-dmitri",
+      "p-andre",
+      "p-carlos",
+      "p-jade",
+      "p-luis",
+      "p-nora"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-001929",
+      "speaker": "p-dmitri",
+      "at_min": [
+        9,
+        15
+      ],
+      "brief": "2139: need 12 by 2026-10-26",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-dyno-spacer-set",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-26"
+        }
+      },
+      "must_mention": [
+        "2139",
+        "10/26"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 6,
+      "speaker": "p-dmitri",
+      "text": "Okay. Small crew today, Zoe and Lin are at the offsite thing. Nora's joining us. Andre."
+    },
+    {
+      "start_s": 15,
+      "speaker": "p-andre",
+      "text": "morning. so dyno, friday I got the new torque transducer mounted, zeroed it, and the readings at no load are kinda noisy. like more than the old one. I think it's grounding, the shield is tied at both ends"
+    },
+    {
+      "start_s": 41,
+      "speaker": "p-andre",
+      "text": "both ends*, I mean I need to lift one"
+    },
+    {
+      "start_s": 46,
+      "speaker": "p-dmitri",
+      "text": "Lift it today. I want clean data before anything real goes on."
+    },
+    {
+      "start_s": 51,
+      "speaker": "p-andre",
+      "text": "yep"
+    },
+    {
+      "start_s": 54,
+      "speaker": "p-nora",
+      "text": "Can I ask, roughly, when the dyno is usable for actual units? I'm trying to plan the first actuator runs."
+    },
+    {
+      "start_s": 62,
+      "speaker": "p-andre",
+      "text": "if it's the shield, like, tomorrow. if it's not, I dunno"
+    },
+    {
+      "start_s": 68,
+      "speaker": "p-nora",
+      "text": "Okay, that's fair. Tomorrow if it's the shield. I'll pencil that in loosely."
+    },
+    {
+      "start_s": 76,
+      "speaker": "p-dmitri",
+      "text": "Carlos."
+    },
+    {
+      "start_s": 78,
+      "speaker": "p-carlos",
+      "text": "I finished putting the new benches together. Bench three is level, bench four wobbles, I'll shim it. Also we're out of the blue loctite!!"
+    },
+    {
+      "start_s": 93,
+      "speaker": "p-luis",
+      "text": "there's a half bottle in my drawer"
+    },
+    {
+      "start_s": 96,
+      "speaker": "p-carlos",
+      "text": "Half a bottle isn't a supply, Luis."
+    },
+    {
+      "start_s": 99,
+      "speaker": "p-luis",
+      "text": "its something 🤷"
+    },
+    {
+      "start_s": 103,
+      "speaker": "p-dmitri",
+      "text": "Order more. Jade."
+    },
+    {
+      "start_s": 106,
+      "speaker": "p-jade",
+      "text": "three boxes friday one was damaged corner crushed, parts looked fine, took pics"
+    },
+    {
+      "start_s": 116,
+      "speaker": "p-dmitri",
+      "text": "Whose?"
+    },
+    {
+      "start_s": 118,
+      "speaker": "p-jade",
+      "text": "actuators"
+    },
+    {
+      "start_s": 120,
+      "speaker": "p-dmitri",
+      "text": "Send the pictures to Arjun anyway."
+    },
+    {
+      "start_s": 124,
+      "speaker": "p-jade",
+      "text": "ok"
+    },
+    {
+      "start_s": 127,
+      "speaker": "p-luis",
+      "text": "so me, I'm building up the first knee unit for the dyno, like the mechanical side, I'm, uh, waiting on the encoder mount, the printed one cracked when I put the screws in. reprinting it at higher infill"
+    },
+    {
+      "start_s": 156,
+      "speaker": "p-luis",
+      "text": "higher infill**"
+    },
+    {
+      "start_s": 160,
+      "speaker": "p-nora",
+      "text": "Sorry, Luis, did it crack at the screw bosses, or across the part?"
+    },
+    {
+      "start_s": 165,
+      "speaker": "p-luis",
+      "text": "bosses. both of them"
+    },
+    {
+      "start_s": 168,
+      "speaker": "p-nora",
+      "text": "Okay. Then I'd maybe also go with heat-set inserts rather than screwing straight into the plastic, just a thought."
+    },
+    {
+      "start_s": 178,
+      "speaker": "p-luis",
+      "text": "oh yeah, good one. we have those I think"
+    },
+    {
+      "start_s": 184,
+      "speaker": "p-carlos",
+      "text": "Second drawer, left cabinet."
+    },
+    {
+      "start_s": 560,
+      "speaker": "p-dmitri",
+      "text": "Okay. One thing for the list. 2139. We need twelve. By 10/26. 2139, twelve, the twenty-sixth. Nora, you'll want that on your sheet."
+    },
+    {
+      "start_s": 580,
+      "speaker": "p-nora",
+      "text": "Twenty-one thirty-nine, twelve, by the twenty-sixth. Yes, got it, I'll add it."
+    },
+    {
+      "start_s": 590,
+      "speaker": "p-andre",
+      "text": "is that the one for the dyno or for assembly"
+    },
+    {
+      "start_s": 594,
+      "speaker": "p-dmitri",
+      "text": "Look it up. It's on the tracker."
+    },
+    {
+      "start_s": 598,
+      "speaker": "p-andre",
+      "text": "ok ok"
+    },
+    {
+      "start_s": 612,
+      "speaker": "p-carlos",
+      "text": "Who's on coffee this week? The pot's been empty since like seven."
+    },
+    {
+      "start_s": 617,
+      "speaker": "p-luis",
+      "text": "not it"
+    },
+    {
+      "start_s": 620,
+      "speaker": "p-dmitri",
+      "text": "Carlos, it's you. Okay, done. Go."
+    }
+  ],
+  "summary": {
+    "overview": "Monday standup, Zoe and Lin out. Dyno torque transducer noisy, likely shield grounding. New benches up. Knee unit build-up waiting on a reprinted encoder mount. Dmitri added 2139 to the list.",
+    "shorthand_bullet": [
+      "new torque transducer noisy at no load, shield tied both ends, Andre lifting one",
+      "dyno usable maybe tomorrow if it's the shield (Nora planning first actuator runs)",
+      "benches assembled, bench 4 wobbles, shimming",
+      "out of blue loctite",
+      "receiving: 3 boxes Fri, one crushed corner (actuators), parts looked ok, pics taken",
+      "Luis: first knee unit for dyno, encoder mount cracked at bosses, reprint higher infill",
+      "Nora suggests heat-set inserts",
+      "2139: need 12 by 10/26"
+    ],
+    "action_items": [
+      "Andre lift shield on one end, re-check noise",
+      "Carlos shim bench 4",
+      "order loctite",
+      "Jade send damaged box pics to Arjun",
+      "Luis reprint encoder mount, use inserts",
+      "Nora add 2139 to sheet",
+      "coffee"
+    ],
+    "keywords": [
+      "torque transducer",
+      "grounding",
+      "encoder mount",
+      "heat-set inserts",
+      "benches",
+      "2139"
+    ]
+  }
+}

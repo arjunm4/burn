@@ -1,0 +1,156 @@
+{
+  "job_id": "slack-ch-supply-chain-2026-09-07-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 19,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-supply-chain",
+    "name": "supply-chain",
+    "slack_id": "C07FLK0SUPC",
+    "purpose": "Supply chain team: vendors, POs, deliveries, expedites"
+  },
+  "week": {
+    "start": "2026-09-07",
+    "end": "2026-09-13"
+  },
+  "people": [
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Omar flags the DVT motor as the long pole; Arjun says it is fine.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Samir reports expedite share down from 34% to 22%; two builds slipped anyway.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting. This week: First static load to 2x: 0.6 mm deflection at the hip mount, within spec."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1789083602.440370",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-003109"
+      ],
+      "brief": "1033: need 8 by 2026-09-25 for Design iteration bench trial: Hip stator mount plate",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-09-25"
+        }
+      },
+      "must_mention": [
+        "1033",
+        "Design iteration bench trial: Hip stator mount plate",
+        "9/25"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "1033 for Design iteration bench trial: Hip stator mount plate, need 8 by 9/25 🙏"
+    },
+    {
+      "ts": "1789164898.266512",
+      "user": "p-destiny",
+      "thread_ts": null,
+      "events": [
+        "ev-001455"
+      ],
+      "brief": "thermal cradle arrived (2)",
+      "claim": {
+        "kind": "stock",
+        "value": 2
+      },
+      "must_mention": [
+        "thermal cradle",
+        "2"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "thermal cradle arrived, qty 2, on the receiving shelf"
+    },
+    {
+      "ts": "1789204320.902056",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-001425"
+      ],
+      "brief": "carrier in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-09-11"
+      },
+      "must_mention": [
+        "carrier",
+        "the build",
+        "fri 9/11"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "carrier is in the build since fri 9/11, sorry late update"
+    }
+  ]
+}

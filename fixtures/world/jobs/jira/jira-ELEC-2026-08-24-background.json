@@ -1,0 +1,335 @@
+{
+  "job_id": "jira-ELEC-2026-08-24-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 24,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "ELEC",
+    "name": "Electrical and firmware"
+  },
+  "week": {
+    "start": "2026-08-24",
+    "end": "2026-08-30"
+  },
+  "people": [
+    {
+      "id": "p-bao",
+      "name": "Bao Nguyen",
+      "display_name": "bao.n",
+      "slack_id": "U07FLK0BAO0",
+      "title": "Electrical Engineer, motor drives",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-ishaan",
+      "name": "Ishaan Mehta",
+      "display_name": "ishaan.m",
+      "slack_id": "U07FLK0ISHA",
+      "title": "Electrical Engineer, sensors",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-kwame",
+      "name": "Kwame Asante",
+      "display_name": "kwame",
+      "slack_id": "U07FLK0KWAM",
+      "title": "Senior Electrical Engineer, power",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-theo",
+      "name": "Theo Lambert",
+      "display_name": "theo",
+      "slack_id": "U07FLK0THEO",
+      "title": "Hardware Engineer, harnessing",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-valeria",
+      "name": "Valeria Ortiz",
+      "display_name": "valeria.o",
+      "slack_id": "U07FLK0VALE",
+      "title": "Electrical Engineer, battery systems",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "ELEC-142",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-theo",
+      "assignee": "p-bao",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-08-24T08:03:29-07:00",
+      "due_date": "2026-09-09",
+      "events": [],
+      "brief": "Investigate noise on bench unit",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "ELEC-143",
+      "type": "Sub-task",
+      "status": "Done",
+      "reporter": "p-kwame",
+      "assignee": "p-bao",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-08-24T15:48:30-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Capture lessons learned",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "ELEC-143-c1",
+          "by": "p-bao",
+          "at": "2026-08-27T10:59:11-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "ELEC-143-c2",
+          "by": "p-bao",
+          "at": "2026-08-28T16:02:02-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "ELEC-144",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-theo",
+      "assignee": "p-bao",
+      "labels": [
+        "tech-debt"
+      ],
+      "priority": "Low",
+      "created": "2026-08-27T07:28:51-07:00",
+      "due_date": "2026-09-03",
+      "events": [],
+      "brief": "Clean up CAD configs",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "ELEC-144-c1",
+          "by": "p-bao",
+          "at": "2026-08-28T14:09:06-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "ELEC-144-c2",
+          "by": "p-farah",
+          "at": "2026-08-28T17:52:27-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "ELEC-145",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-theo",
+      "assignee": "p-kwame",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-08-27T09:42:31-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Label and bin received parts",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "ELEC-146",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-bao",
+      "assignee": "p-ishaan",
+      "labels": [
+        "dfm"
+      ],
+      "priority": "Highest",
+      "created": "2026-08-27T10:19:14-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Calibrate instrument",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "ELEC-146-c1",
+          "by": "p-ishaan",
+          "at": "2026-08-28T10:47:40-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "ELEC-146-c2",
+          "by": "p-ishaan",
+          "at": "2026-09-04T12:57:15-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "ELEC-146-c3",
+          "by": "p-valeria",
+          "at": "2026-09-07T17:27:29-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "ELEC-147",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-kwame",
+      "assignee": "p-theo",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-08-27T16:24:54-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Firmware flag for bench mode",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "ELEC-148",
+      "type": "Story",
+      "status": "In Progress",
+      "reporter": "p-theo",
+      "assignee": "p-bao",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-08-28T15:52:38-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Tolerance stack review",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    }
+  ]
+}

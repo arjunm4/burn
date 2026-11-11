@@ -1,0 +1,197 @@
+{
+  "job_id": "slack-ch-mech-2026-10-05-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 11,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-mech",
+    "name": "mech",
+    "slack_id": "C07FLK0MECH",
+    "purpose": "Mechanical engineering: design, DFM, vendors, drawings"
+  },
+  "week": {
+    "start": "2026-10-05",
+    "end": "2026-10-11"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-bao",
+      "name": "Bao Nguyen",
+      "display_name": "bao.n",
+      "slack_id": "U07FLK0BAO0",
+      "title": "Electrical Engineer, motor drives",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: First containment trial: neighbor peaks 118 C, no propagation; lid gasket scorched.",
+    "Ongoing: BMS PCBA rev 1 balancing current and cell-tap fusing. This week: Rework five boards by hand; Idris asks whether cell taps need fuses for the cage test.",
+    "Ongoing: Leg DVT build: parts readiness and what to do about late test hardware. This week: Beth: build date holds if links arrive by Friday; Priya wants to start with rev B links.",
+    "Ongoing: Frameless DVT motor from the vendor keeps slipping; stator stack length change",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Leg DVT build at risk from shank links and ankle impact results.",
+    "Ongoing: Leg drop gantry shared by leg drop, torso static load and ankle impact. This week: A missed Thursday slot pushes a test a full week; Zoe asks for a third slot day."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1791240381.380384",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-002898"
+      ],
+      "brief": "FL-LEG-1348 rev D released: tolerance relaxed after DFM feedback",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev D"
+      },
+      "must_mention": [
+        "FL-LEG-1348"
+      ],
+      "length": "short",
+      "text": "FL-LEG-1348 rev D is released. Tolerance relaxed per the DFM feedback."
+    },
+    {
+      "ts": "1791264555.051851",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-002779"
+      ],
+      "brief": "FL-TST-2274 rev C released: added hole for safety pin",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev C"
+      },
+      "must_mention": [
+        "FL-TST-2274"
+      ],
+      "length": "short",
+      "text": "FL-TST-2274 rev C out, added the safety pin hole"
+    },
+    {
+      "ts": "1791317422.267374",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-003362"
+      ],
+      "brief": "dummy pelvis: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "dummy pelvis"
+      ],
+      "length": "short",
+      "text": "dummy pelvis still quoting off rev B fyi"
+    },
+    {
+      "ts": "1791321993.510893",
+      "user": "p-arjun",
+      "thread_ts": "1791317422.267374",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "yeah thats expected"
+    },
+    {
+      "ts": "1791326134.441478",
+      "user": "p-bao",
+      "thread_ts": "1791317422.267374",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "fine by me"
+    },
+    {
+      "ts": "1791331491.628213",
+      "user": "p-zoe",
+      "thread_ts": "1791317422.267374",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ok, should i push them to requote on the new rev?"
+    }
+  ]
+}

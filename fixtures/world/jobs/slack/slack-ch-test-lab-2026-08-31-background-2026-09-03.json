@@ -1,0 +1,225 @@
+{
+  "job_id": "slack-ch-test-lab-2026-08-31-background-2026-09-03",
+  "source": "slack",
+  "status": "blank",
+  "priority": 22,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-test-lab",
+    "name": "test-lab",
+    "slack_id": "C07FLK0TLAB",
+    "purpose": "Test lab: rigs, bookings, results, fixtures"
+  },
+  "week": {
+    "start": "2026-08-31",
+    "end": "2026-09-06"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Rev B: larger vent channel, mica sheets, spacing stays 2 mm.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators",
+    "Ongoing: Aluminum links gall on 303 pins under side load. This week: Amara wants bronze bushings; Kenji says no room, wall would be 0.6 mm.",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind. This week: Shim vs re-grind debate; Arjun leans shim for DVT, re-grind the disc profile for PVT.",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough. This week: Andre needs a shaft feedthrough plate machined to run the knee inside the chamber.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1788448510.658286",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about bench notes on the spin-test stand",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788449952.028053",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on this: Andre needs a shaft feedthrough plate machined to run the knee inside the chamber.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788456963.738232",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-003787"
+      ],
+      "brief": "background: Andre needs a shaft feedthrough plate machined to run the knee inside the chamber.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1788458916.029407",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on the ongoing vent path sizing and cell spacing to contain a single-cell runaway",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1788478459.212421",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Carlos finds two broken phase conductors at the knee after the overnight gait run.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788478690.690615",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on off-topic: a funny link",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1788481891.285749",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-003788"
+      ],
+      "brief": "background: Andre needs a shaft feedthrough plate machined to run the knee inside the chamber.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1788487166.169520",
+      "user": "p-andre",
+      "thread_ts": "1788481891.285749",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: Andre needs a shaft feedthrough plate machined to run the knee inside the chamber.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788537434.431210",
+      "user": "p-lin",
+      "thread_ts": "1788481891.285749",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: Andre needs a shaft feedthrough plate machined to run the knee inside the chamber.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

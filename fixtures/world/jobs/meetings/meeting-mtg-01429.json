@@ -1,0 +1,410 @@
+{
+  "job_id": "meeting-mtg-01429",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 9,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-01429",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-10-12T08:45:00-07:00",
+    "actual_min": 13,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-andre",
+      "p-lin",
+      "p-carlos",
+      "p-jade",
+      "p-luis",
+      "p-destiny"
+    ],
+    "late_joiners": [
+      "p-carlos",
+      "p-destiny"
+    ]
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-001965",
+      "speaker": "p-dmitri",
+      "at_min": [
+        9,
+        13
+      ],
+      "brief": "the part: need 12 by 2026-10-27",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-dyno-spacer-set",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-27"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "10/27"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 5,
+      "speaker": "p-dmitri",
+      "text": "Morning. Monday, let's go. Carlos isn't here yet, so Andre, start."
+    },
+    {
+      "start_s": 12,
+      "speaker": "p-andre",
+      "text": "ok so dyno, over the weekend the hip unit ran the whole profile, no faults, which is nice for once. I pulled the data this mornign, morning, I'll look at the thermal curve today, the winding temp looked a bit higher than last time but I havent compared properly."
+    },
+    {
+      "start_s": 41,
+      "speaker": "p-dmitri",
+      "text": "How much higher?"
+    },
+    {
+      "start_s": 43,
+      "speaker": "p-andre",
+      "text": "few degrees? I don't want to say a number before I check the thermocouple placement, I think lin moved one"
+    },
+    {
+      "start_s": 54,
+      "speaker": "p-lin",
+      "text": "I didn't move the dyno ones. I moved the life test ones on Friday."
+    },
+    {
+      "start_s": 60,
+      "speaker": "p-andre",
+      "text": "oh ok. then it's real maybe. I'll look."
+    },
+    {
+      "start_s": 66,
+      "speaker": "p-dmitri",
+      "text": "Lin, life test."
+    },
+    {
+      "start_s": 68,
+      "speaker": "p-lin",
+      "text": "Life test is running. Both stations went through the weekend. Station one had one overcurrent trip on Saturday night, it auto-restarted and has been fine since. I'm going to check whether that lines up with the HVAC cycling, because the last one did."
+    },
+    {
+      "start_s": 96,
+      "speaker": "p-dmitri",
+      "text": "Okay. Zoe."
+    },
+    {
+      "start_s": 98,
+      "speaker": "p-zoe",
+      "text": "um, fixtures. the new clamp blocks for the ankle rig are, they're printed, they fit, but I want to run one cycle with them before I say done. so, today or tomorrow. probably tomorrow, I'm in the design review most of today."
+    },
+    {
+      "start_s": 121,
+      "speaker": "p-dmitri",
+      "text": "Fine."
+    },
+    {
+      "start_s": 124,
+      "speaker": "p-jade",
+      "text": "nothing came in friday after 3 so receiving is same as friday"
+    },
+    {
+      "start_s": 131,
+      "speaker": "p-dmitri",
+      "text": "Okay. Luis."
+    },
+    {
+      "start_s": 134,
+      "speaker": "p-luis",
+      "text": "so I'm still on the knee rebuild, I got the new seals in, the, uh, I need to press the bearing but the arbor press is, somebody has the, the adapter thing"
+    },
+    {
+      "start_s": 152,
+      "speaker": "p-luis",
+      "text": "the adapter* for the small bore"
+    },
+    {
+      "start_s": 158,
+      "speaker": "p-carlos",
+      "text": "Sorry! Traffic on 880. It's in my drawer, Luis, the adapter. I'll get it."
+    },
+    {
+      "start_s": 166,
+      "speaker": "p-luis",
+      "text": "ok cool 👍"
+    },
+    {
+      "start_s": 170,
+      "speaker": "p-dmitri",
+      "text": "Carlos, since you're here, anything?"
+    },
+    {
+      "start_s": 173,
+      "speaker": "p-carlos",
+      "text": "Rig two cable chain is cracked again. I'm going to zip tie it for now, but it needs a real fix. Also the shop vac is dead!!"
+    },
+    {
+      "start_s": 186,
+      "speaker": "p-lin",
+      "text": "The shop vac has been dead since last week."
+    },
+    {
+      "start_s": 190,
+      "speaker": "p-carlos",
+      "text": "Then it's extra dead."
+    },
+    {
+      "start_s": 195,
+      "speaker": "p-dmitri",
+      "text": "Okay. Somebody put in for a new one, I don't care who."
+    },
+    {
+      "start_s": 240,
+      "speaker": "p-destiny",
+      "text": "Hi! Sorry, had to sign for a delivery at the front 🙏"
+    },
+    {
+      "start_s": 246,
+      "speaker": "p-dmitri",
+      "text": "What was it?"
+    },
+    {
+      "start_s": 248,
+      "speaker": "p-destiny",
+      "text": "Not ours I think, it was for the office. Anyway, assembly, I finished the second leg harness, the third one is waiting on connectors still 😬"
+    },
+    {
+      "start_s": 262,
+      "speaker": "p-jade",
+      "text": "connectors not here yet"
+    },
+    {
+      "start_s": 266,
+      "speaker": "p-destiny",
+      "text": "Yeah figured. I'll work on the shin covers meanwhile 🙂"
+    },
+    {
+      "start_s": 560,
+      "speaker": "p-dmitri",
+      "text": "Last thing before we go. The part, for the fixture. We need twelve, we need the part by 10/27. Not the week after. Zoe, you know which one."
+    },
+    {
+      "start_s": 578,
+      "speaker": "p-zoe",
+      "text": "yeah, yeah. the twenty seventh. ok. uh, that's a, that's a tuesday? monday? I'll check."
+    },
+    {
+      "start_s": 590,
+      "speaker": "p-dmitri",
+      "text": "Doesn't matter what day. That date."
+    },
+    {
+      "start_s": 596,
+      "speaker": "p-andre",
+      "text": "is that for dyno too or just the fixture"
+    },
+    {
+      "start_s": 600,
+      "speaker": "p-dmitri",
+      "text": "Just the fixture. Okay. Done. Thanks."
+    },
+    {
+      "start_s": 607,
+      "speaker": "p-destiny",
+      "text": "Thanks all ✌️"
+    }
+  ],
+  "summary": {
+    "overview": "Monday standup. Weekend runs mostly clean on dyno and life test. Assembly waiting on connectors. Dmitri flagged a need-by for the part.",
+    "shorthand_bullet": [
+      "dyno: hip unit ran full profile over weekend, winding temp maybe higher, Andre checking",
+      "life test: both stations ran, one OC trip Sat night on stn 1, checking vs HVAC",
+      "fixtures: ankle rig clamp blocks fit, one cycle before calling done",
+      "receiving: nothing new",
+      "Luis: knee rebuild, needs small bore press adapter (Carlos has it)",
+      "rig 2 cable chain cracked again, temp zip tie",
+      "shop vac dead",
+      "Destiny: 2nd leg harness done, 3rd waiting on connectors",
+      "the part: need 12 by 10/27 for fixture"
+    ],
+    "action_items": [
+      "Andre compare thermal curve, check TC placement",
+      "Lin check OC trip vs HVAC",
+      "Zoe run one cycle w/ new clamp blocks",
+      "Carlos give Luis press adapter",
+      "real fix for rig 2 cable chain",
+      "someone put in for a shop vac",
+      "the part by 10/27"
+    ],
+    "keywords": [
+      "dyno",
+      "life test",
+      "clamp blocks",
+      "cable chain",
+      "leg harness",
+      "connectors"
+    ]
+  }
+}

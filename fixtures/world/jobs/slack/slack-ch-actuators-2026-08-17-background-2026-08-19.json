@@ -1,0 +1,396 @@
+{
+  "job_id": "slack-ch-actuators-2026-08-17-background-2026-08-19",
+  "source": "slack",
+  "status": "blank",
+  "priority": 26,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-actuators",
+    "name": "actuators",
+    "slack_id": "C07FLK0ACTU",
+    "purpose": "Hip and knee actuators"
+  },
+  "week": {
+    "start": "2026-08-17",
+    "end": "2026-08-23"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-yusuf",
+      "name": "Yusuf Demir",
+      "display_name": "yusuf",
+      "slack_id": "U07FLK0YUSU",
+      "title": "Firmware Engineer, motor control",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hip actuator.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators. This week: Mei worries derate will cut torque mid-step and drop the leg.",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind. This week: Dyno shows 0.4 deg backlash on two of three rev B units, twice spec.",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Interim: machined strain-relief clamp and service loop; leg rev C routing planned.",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver. This week: Rev 4 boards arrive; ringing down to 9 V overshoot.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Gwen proposes expedite only with a stated need date; engineers grumble.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1787155995.020734",
+      "user": "p-wei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about cad change to the hip actuator evt dyno torque-speed map",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787156561.513330",
+      "user": "p-tomas",
+      "thread_ts": "1787155995.020734",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: cad change to the hip actuator evt dyno torque-speed map",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787161661.295425",
+      "user": "p-carlos",
+      "thread_ts": "1787155995.020734",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: cad change to the hip actuator evt dyno torque-speed map",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787167469.824719",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787167630.695265",
+      "user": "p-nadia",
+      "thread_ts": "1787167469.824719",
+      "events": [],
+      "brief": "reply (answers) in the thread about: setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787168187.164240",
+      "user": "p-beth",
+      "thread_ts": "1787167469.824719",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787170590.146128",
+      "user": "p-owen",
+      "thread_ts": "1787167469.824719",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787171562.765201",
+      "user": "p-beth",
+      "thread_ts": "1787167469.824719",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787171899.999536",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to this: Farah: bend radius at the knee is 8 mm, cable rated for 7.5x OD dynamic, we are at 3x.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787172682.934905",
+      "user": "p-beth",
+      "thread_ts": "1787167469.824719",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: setup for the hip actuator dyno efficiency sweep",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787176272.703755",
+      "user": "p-andre",
+      "thread_ts": "1787171899.999536",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Farah: bend radius at the knee is 8 mm, cable rated for 7.5x OD dynamic, we are at 3x.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787179450.781313",
+      "user": "p-andre",
+      "thread_ts": "1787171899.999536",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Farah: bend radius at the knee is 8 mm, cable rated for 7.5x OD dynamic, we are at 3x.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787180751.170054",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about bench notes on the thigh flange",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787181359.950565",
+      "user": "p-yusuf",
+      "thread_ts": "1787180751.170054",
+      "events": [],
+      "brief": "reply (ack) in the thread about: bench notes on the thigh flange",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787182003.160745",
+      "user": "p-beth",
+      "thread_ts": "1787171899.999536",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Farah: bend radius at the knee is 8 mm, cable rated for 7.5x OD dynamic, we are at 3x.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787185737.153348",
+      "user": "p-carlos",
+      "thread_ts": "1787180751.170054",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: bench notes on the thigh flange",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787186466.300844",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on inspection of the bearing spacer",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787189877.765539",
+      "user": "p-samir",
+      "thread_ts": "1787186466.300844",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: inspection of the bearing spacer",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787246892.855700",
+      "user": "p-carlos",
+      "thread_ts": "1787186466.300844",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: inspection of the bearing spacer",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

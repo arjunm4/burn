@@ -1,0 +1,453 @@
+{
+  "job_id": "meeting-mtg-01447",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 9,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-01447",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-10-14T08:45:00-07:00",
+    "actual_min": 17,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-andre",
+      "p-lin",
+      "p-carlos",
+      "p-jade",
+      "p-luis",
+      "p-destiny",
+      "p-nora"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-002105",
+      "speaker": "p-dmitri",
+      "at_min": [
+        6,
+        12
+      ],
+      "brief": "that order: need 10 by 2026-10-30 for Instrumentation fit-up: Dyno coupling, knee actuator",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-dyno-coupling-knee",
+        "value": {
+          "qty": 10,
+          "by": "2026-10-30"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "Instrumentation fit-up: Dyno coupling, knee actuator",
+        "10/30"
+      ]
+    },
+    {
+      "event": "ev-002150",
+      "speaker": "p-dmitri",
+      "at_min": [
+        10,
+        16
+      ],
+      "brief": "LC plate: need 3 by 2026-11-11",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-grip-load-cell-plate",
+        "value": {
+          "qty": 3,
+          "by": "2026-11-11"
+        }
+      },
+      "must_mention": [
+        "LC plate",
+        "11/11"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 3,
+      "speaker": "p-dmitri",
+      "text": "Okay, everyone's here, wow. Nora's sitting in today. Andre, go."
+    },
+    {
+      "start_s": 11,
+      "speaker": "p-andre",
+      "text": "so I started the second hip unit on the profile at like seven. it's maybe a third through. so far the temps look like the first one, so, it might be the setup not the unit. I'll know by lunch"
+    },
+    {
+      "start_s": 34,
+      "speaker": "p-nora",
+      "text": "Sorry, just so I follow, is the question whether the hip units run hot, or whether the dyno is reading hot?"
+    },
+    {
+      "start_s": 41,
+      "speaker": "p-andre",
+      "text": "yeah exactly that. if both run the same, it's probably the dyno, the cooling or the coupling. if not it's the unit"
+    },
+    {
+      "start_s": 55,
+      "speaker": "p-nora",
+      "text": "Okay, thanks. That matters for me, so please loop me in when you know."
+    },
+    {
+      "start_s": 62,
+      "speaker": "p-dmitri",
+      "text": "Lin."
+    },
+    {
+      "start_s": 64,
+      "speaker": "p-lin",
+      "text": "Life test is clean overnight, no trips since facilities changed the schedule. Station two is coming up on its next inspection interval tomorrow, so I'll pull it for a couple of hours."
+    },
+    {
+      "start_s": 84,
+      "speaker": "p-dmitri",
+      "text": "Fine. Zoe."
+    },
+    {
+      "start_s": 86,
+      "speaker": "p-zoe",
+      "text": "clamp blocks are at, uh, a bunch of cycles now, still good. I'm calling it. I'm moving on to the dyno coupling stuff now, which, dmitri you wanted to talk about"
+    },
+    {
+      "start_s": 104,
+      "speaker": "p-dmitri",
+      "text": "Yes, in a minute. Carlos."
+    },
+    {
+      "start_s": 107,
+      "speaker": "p-carlos",
+      "text": "Bench one load cell is good now. Rig two still zip tied. And the door bench is clear!!"
+    },
+    {
+      "start_s": 117,
+      "speaker": "p-jade",
+      "text": "luis the shims were yours"
+    },
+    {
+      "start_s": 120,
+      "speaker": "p-luis",
+      "text": "told you 😄"
+    },
+    {
+      "start_s": 123,
+      "speaker": "p-luis",
+      "text": "knee is back together, encoder's on, it spins, it's, it sounds ok by hand. ready for andre whenever"
+    },
+    {
+      "start_s": 139,
+      "speaker": "p-andre",
+      "text": "tomorrow probly. *probably"
+    },
+    {
+      "start_s": 144,
+      "speaker": "p-destiny",
+      "text": "Third leg harness is done! Tested continuity on all of it, all good 🎉"
+    },
+    {
+      "start_s": 152,
+      "speaker": "p-nora",
+      "text": "Nice. Destiny, can you put a photo of the routing in the folder? I want to use it for the work instruction."
+    },
+    {
+      "start_s": 160,
+      "speaker": "p-destiny",
+      "text": "Yep will do 📸"
+    },
+    {
+      "start_s": 420,
+      "speaker": "p-dmitri",
+      "text": "Okay. Dyno coupling. On the plan it's Instrumentation fit-up: Dyno coupling, knee actuator. We need that order by 10/30. Ten of them. Zoe, that's the one you're chasing."
+    },
+    {
+      "start_s": 443,
+      "speaker": "p-zoe",
+      "text": "yeah. ten, by the thirtieth. I think that's, I think we're ok? I'll check with purchasing today"
+    },
+    {
+      "start_s": 456,
+      "speaker": "p-nora",
+      "text": "Sorry, the thirtieth of this month?"
+    },
+    {
+      "start_s": 459,
+      "speaker": "p-dmitri",
+      "text": "Yes. 10/30."
+    },
+    {
+      "start_s": 462,
+      "speaker": "p-nora",
+      "text": "Okay. Then I'd ask that we, um, that we hear early if it slips."
+    },
+    {
+      "start_s": 478,
+      "speaker": "p-zoe",
+      "text": "yep, will flag"
+    },
+    {
+      "start_s": 485,
+      "speaker": "p-lin",
+      "text": "Is the coupling the same one as the hip dyno uses, or different?"
+    },
+    {
+      "start_s": 490,
+      "speaker": "p-andre",
+      "text": "different bore. similar design"
+    },
+    {
+      "start_s": 640,
+      "speaker": "p-dmitri",
+      "text": "And the LC plate. Three. By 11/11."
+    },
+    {
+      "start_s": 647,
+      "speaker": "p-carlos",
+      "text": "LC plate for which bench, one or two?"
+    },
+    {
+      "start_s": 651,
+      "speaker": "p-dmitri",
+      "text": "Talk to me after."
+    },
+    {
+      "start_s": 656,
+      "speaker": "p-carlos",
+      "text": "Okay. The eleventh. Got it."
+    },
+    {
+      "start_s": 660,
+      "speaker": "p-jade",
+      "text": "ill watch for both"
+    },
+    {
+      "start_s": 667,
+      "speaker": "p-luis",
+      "text": "is anyone else freezing in here or is it just me"
+    },
+    {
+      "start_s": 671,
+      "speaker": "p-lin",
+      "text": "That's the new HVAC schedule. You're welcome."
+    },
+    {
+      "start_s": 676,
+      "speaker": "p-dmitri",
+      "text": "Okay. Done. Go."
+    }
+  ],
+  "summary": {
+    "overview": "Wednesday standup, Nora sat in. Second hip unit running, early temps look like the first, so maybe setup not unit. Clamp blocks signed off. Two need-by dates from Dmitri on the dyno coupling and LC plates.",
+    "shorthand_bullet": [
+      "hip unit 2 on profile, temps similar to unit 1, answer by lunch",
+      "Nora wants to know if unit or dyno, affects her",
+      "life test clean, stn 2 inspection tomorrow",
+      "clamp blocks done, Zoe moving to dyno coupling",
+      "bench 1 load cell ok, door bench cleared",
+      "shims were Luis's",
+      "knee rebuild done, to Andre tomorrow",
+      "3rd leg harness done, continuity ok",
+      "Instrumentation fit-up: Dyno coupling, knee actuator, that order x10 needed by 10/30",
+      "LC plate x3 by 11/11"
+    ],
+    "action_items": [
+      "Andre loop in Nora on hip temp result",
+      "Zoe check w/ purchasing on coupling, flag early if it slips",
+      "Destiny photo of harness routing to the folder",
+      "Lin pull stn 2 for inspection",
+      "watch receiving for coupling + LC plates"
+    ],
+    "keywords": [
+      "dyno coupling",
+      "knee actuator",
+      "LC plate",
+      "hip unit",
+      "leg harness",
+      "work instructions"
+    ]
+  }
+}

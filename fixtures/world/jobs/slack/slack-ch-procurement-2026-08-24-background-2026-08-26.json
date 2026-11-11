@@ -1,0 +1,367 @@
+{
+  "job_id": "slack-ch-procurement-2026-08-24-background-2026-08-26",
+  "source": "slack",
+  "status": "blank",
+  "priority": 24,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-08-24",
+    "end": "2026-08-30"
+  },
+  "people": [
+    {
+      "id": "p-claire",
+      "name": "Claire Donnelly",
+      "display_name": "claire",
+      "slack_id": "U07FLK0CLAI",
+      "title": "Finance and Operations Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-kwame",
+      "name": "Kwame Asante",
+      "display_name": "kwame",
+      "slack_id": "U07FLK0KWAM",
+      "title": "Senior Electrical Engineer, power",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators. This week: Compromise: derate ramps over 2 s and publishes a warning to the controller.",
+    "Ongoing: Tendons fray at the proximal pulley after 40k grip cycles. This week: Passes 100k; creep makes the finger lose 4 deg of closure, retension interval set.",
+    "Ongoing: Aluminum links gall on 303 pins under side load. This week: Kenji pulls a finger apart: galling on the knuckle pin bore after pinch tests.",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind. This week: Tomas measures pin diameters: two batches differ by 8 microns; suspects pin supplier mix.",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough. This week: Dmitri: chamber only free Mondays; battery team has it midweek.",
+    "Ongoing: What to show investors when no full humanoid exists. This week: Demo done; Helena asks for a full lower body by Q1.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles",
+    "Ongoing: Gait controller tuning for the investor demo on the gait gantry. This week: Investor demo goes; one stumble recovered by the boom, Helena happy.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Ingrid backs it but exempts the investor demo and DVT builds.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno. This week: Night runs work but nobody watches them; one overnight run lost to a loose clamp.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1787760965.461241",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on this: Amara: pulley groove edge is sharp, Ra 3.2 and no radius; asks for polished groove.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787762210.546173",
+      "user": "p-gwen",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about the ongoing gait controller tuning for the investor demo on the gait gantry",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787765490.325050",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to off-topic: the fire alarm test",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787767495.174130",
+      "user": "p-ingrid",
+      "thread_ts": "1787762210.546173",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the ongoing gait controller tuning for the investor demo on the gait gantry",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787768738.037502",
+      "user": "p-owen",
+      "thread_ts": "1787765490.325050",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: off-topic: the fire alarm test",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787770714.458875",
+      "user": "p-ingrid",
+      "thread_ts": "1787762210.546173",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the ongoing gait controller tuning for the investor demo on the gait gantry",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787771328.899601",
+      "user": "p-kenji",
+      "thread_ts": "1787762210.546173",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the ongoing gait controller tuning for the investor demo on the gait gantry",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787771479.550959",
+      "user": "p-gwen",
+      "thread_ts": "1787765490.325050",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: off-topic: the fire alarm test",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787771827.663827",
+      "user": "p-ingrid",
+      "thread_ts": "1787762210.546173",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the ongoing gait controller tuning for the investor demo on the gait gantry",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787772397.611453",
+      "user": "p-claire",
+      "thread_ts": "1787762210.546173",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the ongoing gait controller tuning for the investor demo on the gait gantry",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787774011.748994",
+      "user": "p-kwame",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: Passes 100k; creep makes the finger lose 4 deg of closure, retension interval set.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787774268.859405",
+      "user": "p-gwen",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787775843.897081",
+      "user": "p-wei",
+      "thread_ts": "1787774268.859405",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787776359.328561",
+      "user": "p-claire",
+      "thread_ts": "1787774268.859405",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787787401.011611",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Amara: pulley groove edge is sharp, Ra 3.2 and no radius; asks for polished groove.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "job_id": "slack-ch-general-2026-09-07-background-2026-09-09",
+  "source": "slack",
+  "status": "blank",
+  "priority": 20,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-general",
+    "name": "general",
+    "slack_id": "C07FLK0GENL",
+    "purpose": "Company-wide announcements"
+  },
+  "week": {
+    "start": "2026-09-07",
+    "end": "2026-09-13"
+  },
+  "people": [
+    {
+      "id": "p-aisha",
+      "name": "Aisha Rahman",
+      "display_name": "aisha",
+      "slack_id": "U07FLK0AISH",
+      "title": "ML Engineer, perception",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-anika",
+      "name": "Anika Joshi",
+      "display_name": "anika",
+      "slack_id": "U07FLK0ANIK",
+      "title": "Firmware Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway",
+    "Ongoing: Gait policy trained in sim overshoots on hardware; friction and backlash modelling. This week: Ravi: RL gait policy walks in sim, chatters on hardware.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators. This week: v2 build slips a week; dyno sweep waits on it.",
+    "Ongoing: Aluminum links gall on 303 pins under side load. This week: Compromise: 17-4 H900 pins and hard anodize on the link bores.",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind. This week: Shimmed unit measures 0.18 deg; Owen worries shims walk under reversing load.",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough. This week: Debate whether to run the dyno outside with a duct into the chamber instead; Tomas rejects, gradients too large.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Rev C release moves the cable inboard; Farah asks for high-flex cable on the next harness.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Omar flags the DVT motor as the long pole; Arjun says it is fine.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Samir reports expedite share down from 34% to 22%; two builds slipped anyway.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting. This week: First static load to 2x: 0.6 mm deflection at the hip mount, within spec."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1788971272.078761",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with off-topic: parking lot",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788986439.281202",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about this: Omar flags the DVT motor as the long pole; Arjun says it is fine.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788991419.192973",
+      "user": "p-aisha",
+      "thread_ts": "1788986439.281202",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Omar flags the DVT motor as the long pole; Arjun says it is fine.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788993679.050211",
+      "user": "p-idris",
+      "thread_ts": "1788986439.281202",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Omar flags the DVT motor as the long pole; Arjun says it is fine.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788994645.077203",
+      "user": "p-carlos",
+      "thread_ts": "1788986439.281202",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Omar flags the DVT motor as the long pole; Arjun says it is fine.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788996644.804610",
+      "user": "p-anika",
+      "thread_ts": "1788986439.281202",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Omar flags the DVT motor as the long pole; Arjun says it is fine.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1789009396.210911",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about this: Claire: hardware spend 23% over plan for the quarter, expedites a big share.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

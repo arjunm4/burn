@@ -1,0 +1,152 @@
+{
+  "job_id": "slack-ch-supply-chain-2026-08-24-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 23,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-supply-chain",
+    "name": "supply-chain",
+    "slack_id": "C07FLK0SUPC",
+    "purpose": "Supply chain team: vendors, POs, deliveries, expedites"
+  },
+  "week": {
+    "start": "2026-08-24",
+    "end": "2026-08-30"
+  },
+  "people": [
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: What to show investors when no full humanoid exists. This week: Demo done; Helena asks for a full lower body by Q1.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Ingrid backs it but exempts the investor demo and DVT builds.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno. This week: Night runs work but nobody watches them; one overnight run lost to a loose clamp.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1787781469.394242",
+      "user": "p-destiny",
+      "thread_ts": null,
+      "events": [
+        "ev-001378"
+      ],
+      "brief": "1276 arrived (16)",
+      "claim": {
+        "kind": "stock",
+        "value": 16
+      },
+      "must_mention": [
+        "1276",
+        "16"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "1276 is here, all 16 on the shelf by receiving 📦"
+    },
+    {
+      "ts": "1787876960.666910",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-000057"
+      ],
+      "brief": "Motor sample lot for hip actuator (torque cell bracket): moved from 2026-08-19 to 2026-08-26",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-08-26"
+      },
+      "must_mention": [
+        "Motor sample lot for hip actuator (torque cell bracket)",
+        "wed the 26th"
+      ],
+      "length": "short",
+      "text": "Motor sample lot for hip actuator (torque cell bracket) slipped, now wed the 26th"
+    },
+    {
+      "ts": "1787953200.619331",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-001352"
+      ],
+      "brief": "that adapter plate in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-08-28"
+      },
+      "must_mention": [
+        "that adapter plate",
+        "the build",
+        "8/28"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "that adapter plate is on the rig now as of 8/28, so I think the build can keep moving"
+    }
+  ]
+}

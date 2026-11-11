@@ -1,0 +1,758 @@
+{
+  "job_id": "slack-ch-actuators-2026-08-24-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 23,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-actuators",
+    "name": "actuators",
+    "slack_id": "C07FLK0ACTU",
+    "purpose": "Hip and knee actuators"
+  },
+  "week": {
+    "start": "2026-08-24",
+    "end": "2026-08-30"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hip actuator.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators. This week: Compromise: derate ramps over 2 s and publishes a warning to the controller.",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind. This week: Tomas measures pin diameters: two batches differ by 8 microns; suspects pin supplier mix.",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough. This week: Dmitri: chamber only free Mondays; battery team has it midweek.",
+    "Ongoing: What to show investors when no full humanoid exists. This week: Demo done; Helena asks for a full lower body by Q1.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Ingrid backs it but exempts the investor demo and DVT builds.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno. This week: Night runs work but nobody watches them; one overnight run lost to a loose clamp.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1787589872.033984",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-002706"
+      ],
+      "brief": "Assemble DVT knee actuators (x2) waits on Motor driver PCBA, DVT (rev 4)",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-motor-driver-pcba-dvt"
+      },
+      "must_mention": [
+        "Motor driver PCBA, DVT (rev 4)",
+        "Assemble DVT knee actuators (x2)"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Assemble DVT knee actuators (x2) is blocked on Motor driver PCBA, DVT (rev 4). Nothing to build till those land!!"
+    },
+    {
+      "ts": "1787609879.382640",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-001468"
+      ],
+      "brief": "FL-TST-2111: need 6 by 2026-09-03 for Hip actuator dyno efficiency sweep",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-09-03"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2111",
+        "Hip actuator dyno efficiency sweep",
+        "FL-TST-2138",
+        "thurs the 3rd"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "need 6 of FL-TST-2111 by thurs the 3rd for the Hip actuator dyno efficiency sweep, plus FL-TST-2138 . anyone know where those stand"
+    },
+    {
+      "ts": "1787616789.722553",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-001469"
+      ],
+      "brief": "hip coupling: need 6 by 2026-09-03 for Hip actuator dyno efficiency sweep",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-09-03"
+        }
+      },
+      "must_mention": [
+        "hip coupling",
+        "Hip actuator dyno efficiency sweep",
+        "9/3"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "same for hip coupling, 6 by 9/3 or the Hip actuator dyno efficiency sweep slides"
+    },
+    {
+      "ts": "1787678141.974976",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-001475"
+      ],
+      "brief": "dyno coupling: need 6 by 2026-09-18",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-09-18"
+        }
+      },
+      "must_mention": [
+        "dyno coupling",
+        "fri 9/18"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "dyno coupling, need 6 by fri 9/18. putting the rfq out today"
+    },
+    {
+      "ts": "1787678925.960516",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-003381"
+      ],
+      "brief": "Hip crossed-roller bearings, rev B: still quoting 2026-08-20",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-08-20"
+      },
+      "must_mention": [
+        "Hip crossed-roller bearings, rev B",
+        "thurs the 20th"
+      ],
+      "length": "short",
+      "text": "Hip crossed-roller bearings, rev B still showing quoted for thurs the 20th, chasing"
+    },
+    {
+      "ts": "1787679805.472492",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002284"
+      ],
+      "brief": "Hip actuator dyno efficiency sweep waits on Rig setup for Hip actuator dyno efficiency sweep: Dyno mounting plate, hip actuator",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00025"
+      },
+      "must_mention": [
+        "Rig setup for Hip actuator dyno efficiency sweep: Dyno mounting plate, hip actuator",
+        "Hip actuator dyno efficiency sweep"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "Hip actuator dyno efficiency sweep also waiting on Rig setup for Hip actuator dyno efficiency sweep: Dyno mounting plate, hip actuator. cant bolt anything down w/o it"
+    },
+    {
+      "ts": "1787681078.319371",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002493"
+      ],
+      "brief": "Hip actuator dyno efficiency sweep waits on Rig setup for Hip actuator dyno efficiency sweep: Dyno thermocouple clamp",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00179"
+      },
+      "must_mention": [
+        "Rig setup for Hip actuator dyno efficiency sweep: Dyno thermocouple clamp",
+        "the sweep"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "and Rig setup for Hip actuator dyno efficiency sweep: Dyno thermocouple clamp, the sweep needs temps or its useless"
+    },
+    {
+      "ts": "1787681632.568821",
+      "user": "p-nadia",
+      "thread_ts": "1787678141.974976",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "the 18th doesnt work for us, dyno is booked solid after that w the life tests"
+    },
+    {
+      "ts": "1787685310.858933",
+      "user": "p-arjun",
+      "thread_ts": "1787678141.974976",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "the old one is cracked at the set screw fwiw"
+    },
+    {
+      "ts": "1787694952.721310",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002311"
+      ],
+      "brief": "Hip actuator dyno efficiency sweep waits on Rig setup for Hip actuator dyno efficiency sweep: Dyno absorber motor adapter",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00047"
+      },
+      "must_mention": [
+        "Rig setup for Hip actuator dyno efficiency sweep: Dyno absorber motor adapter",
+        "Hip actuator dyno efficiency sweep"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Rig setup for Hip actuator dyno efficiency sweep: Dyno absorber motor adapter is another one holding up Hip actuator dyno efficiency sweep"
+    },
+    {
+      "ts": "1787696461.770756",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002339"
+      ],
+      "brief": "Hip actuator dyno efficiency sweep waits on Fixture install and shakedown for Hip actuator dyno efficiency sweep: Hip bearing preload ring",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00065"
+      },
+      "must_mention": [
+        "Fixture install and shakedown for Hip actuator dyno efficiency sweep: Hip bearing preload ring",
+        "the sweep"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "Fixture install and shakedown for Hip actuator dyno efficiency sweep: Hip bearing preload ring too. the sweep is turning into a long list lol"
+    },
+    {
+      "ts": "1787701050.961479",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002714"
+      ],
+      "brief": "Hip actuator dyno efficiency sweep takes 2-3 working days",
+      "claim": {
+        "kind": "duration",
+        "value": [
+          2,
+          3
+        ]
+      },
+      "must_mention": [
+        "Hip actuator dyno efficiency sweep",
+        "2-3 days"
+      ],
+      "length": "short",
+      "text": "once its all on the stand the Hip actuator dyno efficiency sweep itself is like 2-3 days"
+    },
+    {
+      "ts": "1787762289.731528",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002328"
+      ],
+      "brief": "Hip actuator dyno efficiency sweep waits on Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno mounting plate, knee actuator",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00059"
+      },
+      "must_mention": [
+        "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno mounting plate, knee actuator",
+        "Hip actuator dyno efficiency sweep"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Dyno mounting plate, knee actuator — also needed for Hip actuator dyno efficiency sweep"
+    },
+    {
+      "ts": "1787766299.611494",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002324"
+      ],
+      "brief": "Hip actuator dyno efficiency sweep waits on Fixture install and shakedown for Hip actuator dyno efficiency sweep: Hip output bearing spacer",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00054"
+      },
+      "must_mention": [
+        "Fixture install and shakedown for Hip actuator dyno efficiency sweep: Hip output bearing spacer",
+        "Hip actuator dyno efficiency sweep"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "another one: Fixture install and shakedown for Hip actuator dyno efficiency sweep: Hip output bearing spacer. Hip actuator dyno efficiency sweep cant start w/o it"
+    },
+    {
+      "ts": "1787767224.496770",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-001516"
+      ],
+      "brief": "FL-TST-2716: need 5 by 2026-09-25",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 5,
+          "by": "2026-09-25"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2716",
+        "9/25"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "FL-TST-2716 need 5 of these by 9/25 for the knee side, can someone get it quoted"
+    },
+    {
+      "ts": "1787768536.965887",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002407"
+      ],
+      "brief": "Hip actuator dyno efficiency sweep waits on Rig setup for Hip actuator dyno efficiency sweep: Spin-test stand adapter plate",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00117"
+      },
+      "must_mention": [
+        "Rig setup for Hip actuator dyno efficiency sweep: Spin-test stand adapter plate",
+        "Hip actuator dyno efficiency sweep"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Rig setup for Hip actuator dyno efficiency sweep: Spin-test stand adapter plate, adding to the Hip actuator dyno efficiency sweep pile"
+    },
+    {
+      "ts": "1787777678.648677",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-003363"
+      ],
+      "brief": "pelvis plate: still quoting rev C",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev C"
+      },
+      "must_mention": [
+        "pelvis plate"
+      ],
+      "length": "short",
+      "text": "pelvis plate still sitting at quote, rev C. No PO yet."
+    },
+    {
+      "ts": "1787783336.317913",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-001470"
+      ],
+      "brief": "dyno coupling: need 6 by 2026-09-03",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-09-03"
+        }
+      },
+      "must_mention": [
+        "dyno coupling",
+        "thurs the 3rd"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "dyno coupling — we actually need the 6 by thurs the 3rd not later, the sweep is on the stand that week"
+    },
+    {
+      "ts": "1787851758.790739",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002522"
+      ],
+      "brief": "Hip actuator dyno efficiency sweep waits on Instrumentation fit-up for Hip actuator dyno efficiency sweep: Hip cycloid ring-pin housing",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00206"
+      },
+      "must_mention": [
+        "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Hip cycloid ring-pin housing",
+        "the sweep"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Instrumentation fit-up for Hip actuator dyno efficiency sweep: Hip cycloid ring-pin housing, the sweep cant run w/o it either"
+    },
+    {
+      "ts": "1787851975.817793",
+      "user": "p-wei",
+      "thread_ts": null,
+      "events": [
+        "ev-001615"
+      ],
+      "brief": "FL-KNE-1120: need 12 by 2026-10-06 for Assemble build unit: Knee output encoder bracket",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-06"
+        }
+      },
+      "must_mention": [
+        "FL-KNE-1120",
+        "Assemble build unit: Knee output encoder bracket",
+        "FL-KNE-1176",
+        "10/6"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-KNE-1120: need 12 by 10/6 for Assemble build unit: Knee output encoder bracket. FL-KNE-1176 goes with it."
+    },
+    {
+      "ts": "1787856867.114769",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-001476"
+      ],
+      "brief": "that order: need 6 by 2026-09-18 for Rig setup: Dyno coupling, hip actuator",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-09-18"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "Rig setup: Dyno coupling, hip actuator",
+        "fri 9/18"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "I think that order needs to be 6 by fri 9/18 for Rig setup: Dyno coupling, hip actuator, probably fine if it lands then"
+    },
+    {
+      "ts": "1787859911.755582",
+      "user": "p-tomas",
+      "thread_ts": "1787856867.114769",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ok"
+    },
+    {
+      "ts": "1787953778.485817",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-002583"
+      ],
+      "brief": "Install and torque: Knee output flange waits on Motor driver PCBA, DVT (rev 4)",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-motor-driver-pcba-dvt"
+      },
+      "must_mention": [
+        "Motor driver PCBA, DVT (rev 4)",
+        "Install and torque: Knee output flange"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Install and torque: Knee output flange is stuck on the Motor driver PCBA, DVT (rev 4) too, i think"
+    },
+    {
+      "ts": "1787958861.488821",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002344"
+      ],
+      "brief": "Hip actuator dyno efficiency sweep waits on Test stand rework for Hip actuator dyno efficiency sweep: Dyno coupling, hip actuator",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00069"
+      },
+      "must_mention": [
+        "Test stand rework for Hip actuator dyno efficiency sweep: Dyno coupling, hip actuator",
+        "Hip actuator dyno efficiency sweep"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Test stand rework for Hip actuator dyno efficiency sweep: Dyno coupling, hip actuator is the last thing blocking Hip actuator dyno efficiency sweep"
+    },
+    {
+      "ts": "1787961267.905370",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-001487"
+      ],
+      "brief": "Order XO-5479070 placed, promised 2026-09-14",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-09-14"
+      },
+      "must_mention": [
+        "XO-5479070",
+        "that adapter plate",
+        "mon 9/14"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "XO-5479070 placed for that adapter plate, promised mon 9/14"
+    },
+    {
+      "ts": "1787961437.839922",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-001478"
+      ],
+      "brief": "Order XO-5480130 placed, promised 2026-09-18",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-09-18"
+      },
+      "must_mention": [
+        "XO-5480130",
+        "dyno coupling",
+        "9/18"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "XO-5480130 in for the dyno coupling, promise 9/18"
+    },
+    {
+      "ts": "1787964090.975275",
+      "user": "p-andre",
+      "thread_ts": "1787958861.488821",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "thats too late, we said thurs"
+    },
+    {
+      "ts": "1787965739.375466",
+      "user": "p-beth",
+      "thread_ts": "1787958861.488821",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Is it, though? Not before the stand is free."
+    },
+    {
+      "ts": "1787966053.937310",
+      "user": "p-samir",
+      "thread_ts": "1787958861.488821",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "best they'd do, i asked"
+    },
+    {
+      "ts": "1787979377.864232",
+      "user": "p-samir",
+      "thread_ts": "1787961437.839922",
+      "events": [
+        "ev-002927"
+      ],
+      "brief": "Correction: Order XO-5480130 placed, promised 2026-09-17",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-09-17"
+      },
+      "must_mention": [
+        "XO-5480130",
+        "dyno coupling",
+        "9/17"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "correction XO-5480130 dyno coupling promise is 9/17 not 18, misread the quote"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "job_id": "jira-TEST-2026-11-09-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 2,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "TEST",
+    "name": "Test, rigs and fixtures"
+  },
+  "week": {
+    "start": "2026-11-09",
+    "end": "2026-11-15"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "TEST-264",
+      "type": "Task",
+      "status": "To Do",
+      "reporter": "p-lin",
+      "assignee": "p-andre",
+      "labels": [
+        "cleanup"
+      ],
+      "priority": "Medium",
+      "created": "2026-11-10T08:44:39-08:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Torque spec audit",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    }
+  ]
+}

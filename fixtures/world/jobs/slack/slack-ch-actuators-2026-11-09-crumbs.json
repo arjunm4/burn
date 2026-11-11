@@ -1,0 +1,197 @@
+{
+  "job_id": "slack-ch-actuators-2026-11-09-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 0,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-actuators",
+    "name": "actuators",
+    "slack_id": "C07FLK0ACTU",
+    "purpose": "Hip and knee actuators"
+  },
+  "week": {
+    "start": "2026-11-09",
+    "end": "2026-11-15"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hip actuator.",
+    "Ongoing: Frameless DVT motor from the vendor keeps slipping; stator stack length change. This week: Arjun sets $600/day on the spin test slipping; debate on whether to expedite the bracket."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1794244500.541815",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-002732"
+      ],
+      "brief": "Spin test also needs the new brackets; getting the quote today",
+      "claim": {
+        "kind": "blocked",
+        "value": "pt-hip-bracket"
+      },
+      "must_mention": [
+        "hip bracket",
+        "spin test"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "spin test needs the new hip bracket too, chasing the quote today"
+    },
+    {
+      "ts": "1794246000.702810",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-002727"
+      ],
+      "brief": "DVT hip motor ETA 2026-11-20",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-11-20"
+      },
+      "must_mention": [
+        "hip motor",
+        "fri the 20th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "vendor says hip motor fri the 20th now. we'll see"
+    },
+    {
+      "ts": "1794252660.138687",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-001704"
+      ],
+      "brief": "brake bracket in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-11-09"
+      },
+      "must_mention": [
+        "brake bracket",
+        "the build",
+        "11/9"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "brake bracket went into the build 11/9 fits fine"
+    },
+    {
+      "ts": "1794257285.573960",
+      "user": "p-ingrid",
+      "thread_ts": "1794252660.138687",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Fine, but I'd rather not celebrate one bracket while the motor is still floating."
+    },
+    {
+      "ts": "1794260444.037467",
+      "user": "p-owen",
+      "thread_ts": "1794252660.138687",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "@andre"
+    },
+    {
+      "ts": "1794264182.295186",
+      "user": "p-andre",
+      "thread_ts": "1794252660.138687",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "eh i think its fine to call it, torque check on the dyno looked clean this morning. motor is a seperate problem"
+    }
+  ]
+}

@@ -1,0 +1,597 @@
+{
+  "job_id": "slack-ch-actuators-2026-10-26-background-2026-10-27",
+  "source": "slack",
+  "status": "blank",
+  "priority": 6,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-actuators",
+    "name": "actuators",
+    "slack_id": "C07FLK0ACTU",
+    "purpose": "Hip and knee actuators"
+  },
+  "week": {
+    "start": "2026-10-26",
+    "end": "2026-11-01"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-yusuf",
+      "name": "Yusuf Demir",
+      "display_name": "yusuf",
+      "slack_id": "U07FLK0YUSU",
+      "title": "Firmware Engineer, motor control",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hip actuator.",
+    "Ongoing: Leg DVT build: parts readiness and what to do about late test hardware",
+    "Ongoing: Frameless DVT motor from the vendor keeps slipping; stator stack length change. This week: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Beth asks every owner for real dates on the hip spin test and motor."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1793117477.003707",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on assembly of the output flange",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793121220.621251",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793121232.503410",
+      "user": "p-samir",
+      "thread_ts": "1793117477.003707",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: assembly of the output flange",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793123507.974942",
+      "user": "p-yusuf",
+      "thread_ts": "1793121220.621251",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793125204.110988",
+      "user": "p-jonas",
+      "thread_ts": "1793117477.003707",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: assembly of the output flange",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793125394.143045",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about drawing review of the CS housing",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793126871.786766",
+      "user": "p-nadia",
+      "thread_ts": "1793121220.621251",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793128576.348979",
+      "user": "p-beth",
+      "thread_ts": "1793121220.621251",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793129980.388132",
+      "user": "p-jonas",
+      "thread_ts": "1793117477.003707",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: assembly of the output flange",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793133088.652790",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about inspection of the eccentric shaft",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793133471.419580",
+      "user": "p-samir",
+      "thread_ts": "1793121220.621251",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793133782.780559",
+      "user": "p-samir",
+      "thread_ts": "1793133088.652790",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: inspection of the eccentric shaft",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793134679.222099",
+      "user": "p-beth",
+      "thread_ts": "1793117477.003707",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: assembly of the output flange",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793135459.980704",
+      "user": "p-owen",
+      "thread_ts": "1793121220.621251",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793136357.905364",
+      "user": "p-wei",
+      "thread_ts": "1793133088.652790",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: inspection of the eccentric shaft",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793137190.769066",
+      "user": "p-owen",
+      "thread_ts": "1793121220.621251",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793137344.622368",
+      "user": "p-jonas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about the ongoing leg dvt build: parts readiness and what to do about late test hardware",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1793138478.771185",
+      "user": "p-tomas",
+      "thread_ts": "1793117477.003707",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: assembly of the output flange",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793138801.028245",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on drawing review of the CS housing",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793141013.852613",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-003730"
+      ],
+      "brief": "background: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793141486.689535",
+      "user": "p-carlos",
+      "thread_ts": "1793121220.621251",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793142739.585450",
+      "user": "p-carlos",
+      "thread_ts": "1793121220.621251",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793142993.588661",
+      "user": "p-ingrid",
+      "thread_ts": "1793117477.003707",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: assembly of the output flange",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793144501.850618",
+      "user": "p-carlos",
+      "thread_ts": "1793141013.852613",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793145470.523087",
+      "user": "p-beth",
+      "thread_ts": "1793121220.621251",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793148076.667915",
+      "user": "p-jonas",
+      "thread_ts": "1793141013.852613",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793149486.968155",
+      "user": "p-nadia",
+      "thread_ts": "1793121220.621251",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793153255.569194",
+      "user": "p-wei",
+      "thread_ts": "1793121220.621251",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793158360.088225",
+      "user": "p-jonas",
+      "thread_ts": "1793121220.621251",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793162401.681971",
+      "user": "p-ingrid",
+      "thread_ts": "1793121220.621251",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793165768.000890",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on measurement of the hip actuator thermal derate at continuous torque",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793166876.698656",
+      "user": "p-beth",
+      "thread_ts": "1793121220.621251",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793203706.087029",
+      "user": "p-samir",
+      "thread_ts": "1793165768.000890",
+      "events": [],
+      "brief": "reply (answers) in the thread about: measurement of the hip actuator thermal derate at continuous torque",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793205325.072880",
+      "user": "p-wei",
+      "thread_ts": "1793121220.621251",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793206723.573006",
+      "user": "p-wei",
+      "thread_ts": "1793121220.621251",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793207433.518537",
+      "user": "p-carlos",
+      "thread_ts": "1793165768.000890",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: measurement of the hip actuator thermal derate at continuous torque",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    }
+  ]
+}

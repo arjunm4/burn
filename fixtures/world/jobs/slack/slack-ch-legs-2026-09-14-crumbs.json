@@ -1,0 +1,685 @@
+{
+  "job_id": "slack-ch-legs-2026-09-14-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 17,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-legs",
+    "name": "legs",
+    "slack_id": "C07FLK0LEGS",
+    "purpose": "Leg and ankle: design, drop test, gait gantry"
+  },
+  "week": {
+    "start": "2026-09-14",
+    "end": "2026-09-20"
+  },
+  "people": [
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Leg (left, hip to foot).",
+    "Ongoing: Gait policy trained in sim overshoots on hardware; friction and backlash modelling. This week: Elena adds joint friction and 0.2 deg backlash to the sim; chatter reproduces.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators. This week: v2 released; hip efficiency sweep scheduled.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real",
+    "Ongoing: Leg drop gantry shared by leg drop, torso static load and ankle impact. This week: Zoe: drop gantry only runs Tue/Thu because rigging needs two techs."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1789405816.440761",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [
+        "ev-002531"
+      ],
+      "brief": "Ankle heel-strike impact test waits on Test stand rework for Ankle heel-strike impact test: Tilt stand stop bushing",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00213"
+      },
+      "must_mention": [
+        "Test stand rework for Ankle heel-strike impact test: Tilt stand stop bushing",
+        "the test"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "the test is stuck on Test stand rework for Ankle heel-strike impact test: Tilt stand stop bushing, again"
+    },
+    {
+      "ts": "1789422504.975824",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-001654"
+      ],
+      "brief": "FL-ANK-1283: need 24 by 2026-09-23 for the build",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-09-23"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1283",
+        "the build",
+        "FL-ANK-1259",
+        "wed the 23rd"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "need 24 FL-ANK-1283 for the build by wed the 23rd, mates w FL-ANK-1259 😬"
+    },
+    {
+      "ts": "1789450531.654674",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-001718"
+      ],
+      "brief": "that order: need 9 by 2026-10-02",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 9,
+          "by": "2026-10-02"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "10/2"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Need 9 on that order by 10/2."
+    },
+    {
+      "ts": "1789508030.682438",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-002654"
+      ],
+      "brief": "Leg DVT build waits on Ankle heel-strike impact test",
+      "claim": {
+        "kind": "blocked",
+        "value": "test-ankle-impact"
+      },
+      "must_mention": [
+        "Ankle heel-strike impact test",
+        "the build"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "the build is now waiting on the Ankle heel-strike impact test. Gantry is only Tue/Thu."
+    },
+    {
+      "ts": "1789518477.404591",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-001631"
+      ],
+      "brief": "FL-LEG-1343: need 3 by 2026-10-05 for Build sub-assembly for Leg DVT build: Thigh cover plate",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-10-05"
+        }
+      },
+      "must_mention": [
+        "FL-LEG-1343",
+        "Build sub-assembly for Leg DVT build: Thigh cover plate",
+        "FL-LEG-1361",
+        "10/5"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-LEG-1343 need 3 by 10/5 for Build sub-assembly for Leg DVT build: Thigh cover plate, probably goes with FL-LEG-1361"
+    },
+    {
+      "ts": "1789584723.601277",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-001657"
+      ],
+      "brief": "1283: need 24 by 2026-09-25 for the fit check; asks whether expediting is worth it",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-09-25"
+        }
+      },
+      "must_mention": [
+        "1283",
+        "the fit check",
+        "fri 9/25"
+      ],
+      "pressure": "elevated",
+      "asks_expedite": true,
+      "length": "short",
+      "text": "We need 24 of 1283 for the fit check by fri 9/25. Is expediting worth it, or can we live with the standard lead?"
+    },
+    {
+      "ts": "1789587939.306920",
+      "user": "p-beth",
+      "thread_ts": "1789584723.601277",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "I'd hold off on paying extra."
+    },
+    {
+      "ts": "1789588721.866978",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-001681"
+      ],
+      "brief": "FL-LEG-1348: need 10 by 2026-11-02",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-11-02"
+        }
+      },
+      "must_mention": [
+        "FL-LEG-1348",
+        "mon the 2nd"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "FL-LEG-1348 need 10 by mon the 2nd i think"
+    },
+    {
+      "ts": "1789588833.391110",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-001633"
+      ],
+      "brief": "FL-LEG-1343: need 3 by 2026-10-05",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-10-05"
+        }
+      },
+      "must_mention": [
+        "FL-LEG-1343",
+        "10/5"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "And FL-LEG-1343, still 3 needed by 10/5. Not 100% sure the quote is back yet"
+    },
+    {
+      "ts": "1789590740.164174",
+      "user": "p-zoe",
+      "thread_ts": "1789584723.601277",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "fwiw i dont think the fit check is the long pole, gantry is"
+    },
+    {
+      "ts": "1789594284.839488",
+      "user": "p-diego",
+      "thread_ts": "1789422504.975824",
+      "events": [
+        "ev-002952"
+      ],
+      "brief": "Correction: FL-ANK-1283: need 24 by 2026-09-25 for the build",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-09-25"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1283",
+        "the build",
+        "FL-ANK-1259",
+        "fri the 25th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "correction FL-ANK-1283 for the build is fri the 25th, still with FL-ANK-1259 🙏"
+    },
+    {
+      "ts": "1789612072.217483",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [
+        "ev-002404"
+      ],
+      "brief": "Ankle heel-strike impact test waits on Fixture install and shakedown for Ankle heel-strike impact test: Ankle impact striker",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-00115"
+      },
+      "must_mention": [
+        "Fixture install and shakedown for Ankle heel-strike impact test: Ankle impact striker",
+        "Ankle heel-strike impact test"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Ankle heel-strike impact test also needs Fixture install and shakedown for Ankle heel-strike impact test: Ankle impact striker"
+    },
+    {
+      "ts": "1789618214.097301",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-001691"
+      ],
+      "brief": "1383: need 12 by 2026-10-08 for the test",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-08"
+        }
+      },
+      "must_mention": [
+        "1383",
+        "the test",
+        "thurs the 8th"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Need 12 of 1383 for the test by thurs the 8th."
+    },
+    {
+      "ts": "1789673342.716058",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-001593"
+      ],
+      "brief": "1295 arrived (6)",
+      "claim": {
+        "kind": "stock",
+        "value": 6
+      },
+      "must_mention": [
+        "1295",
+        "6"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "1295 in, 6 of them 👍"
+    },
+    {
+      "ts": "1789679352.838463",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-002575"
+      ],
+      "brief": "Test stand rework for Leg DVT build: Gait boom clamp waits on Firmware build for leg (left, hip to foot) (boom clamp)",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-gen-0084"
+      },
+      "must_mention": [
+        "Firmware build for leg (left, hip to foot) (boom clamp)",
+        "the clamp"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "the clamp rework is blocked on Firmware build for leg (left, hip to foot) (boom clamp). Who owns that build?"
+    },
+    {
+      "ts": "1789683113.509670",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-002890"
+      ],
+      "brief": "FL-LEG-1392 rev B released: hole pattern moved",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-LEG-1392"
+      ],
+      "length": "short",
+      "text": "FL-LEG-1392 rev B is released; hole pattern moved."
+    },
+    {
+      "ts": "1789684595.798945",
+      "user": "p-ingrid",
+      "thread_ts": "1789679352.838463",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Why does a clamp need firmware? That seems like the wrong dependency."
+    },
+    {
+      "ts": "1789689348.416129",
+      "user": "p-mei",
+      "thread_ts": "1789679352.838463",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "To answer the question: the clamp has the boom encoder on it, so it needs the firmware build to read out."
+    },
+    {
+      "ts": "1789708661.915720",
+      "user": "p-hana",
+      "thread_ts": "1789588721.866978",
+      "events": [
+        "ev-002982"
+      ],
+      "brief": "Correction: FL-LEG-1348: need 10 by 2026-10-28",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-10-28"
+        }
+      },
+      "must_mention": [
+        "FL-LEG-1348",
+        "10/28"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Correction, FL-LEG-1348 actually 10/28, sorry"
+    },
+    {
+      "ts": "1789755340.993259",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-001835"
+      ],
+      "brief": "knee pulley: need 5 by 2026-10-07 for Design iteration bench trial: Knee belt pulley",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 5,
+          "by": "2026-10-07"
+        }
+      },
+      "must_mention": [
+        "knee pulley",
+        "Design iteration bench trial: Knee belt pulley",
+        "wed the 7th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "need 5 knee pulley by wed the 7th for Design iteration bench trial: Knee belt pulley 🙏"
+    },
+    {
+      "ts": "1789758400.920292",
+      "user": "p-diego",
+      "thread_ts": "1789755340.993259",
+      "events": [
+        "ev-002983"
+      ],
+      "brief": "Correction: knee pulley: need 5 by 2026-10-06 for Design iteration bench trial: Knee belt pulley",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 5,
+          "by": "2026-10-06"
+        }
+      },
+      "must_mention": [
+        "knee pulley",
+        "Design iteration bench trial: Knee belt pulley",
+        "tues the 6th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "knee pulley actually tues the 6th, Design iteration bench trial: Knee belt pulley moved up 😬"
+    },
+    {
+      "ts": "1789780760.419652",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-001796"
+      ],
+      "brief": "FL-ANK-1244: need 7 by 2026-10-07 for Prototype fit-up: Ankle yoke",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 7,
+          "by": "2026-10-07"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1244",
+        "Prototype fit-up: Ankle yoke",
+        "FL-ANK-1259",
+        "FL-ANK-1291",
+        "10/7"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-ANK-1244 need 7 by 10/7 for Prototype fit-up: Ankle yoke, goes w FL-ANK-1259 and FL-ANK-1291 👀"
+    },
+    {
+      "ts": "1789783040.621436",
+      "user": "p-diego",
+      "thread_ts": "1789780760.419652",
+      "events": [
+        "ev-003060"
+      ],
+      "brief": "Correction: FL-ANK-1244: need 7 by 2026-10-02 for Prototype fit-up: Ankle yoke",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 7,
+          "by": "2026-10-02"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1244",
+        "Prototype fit-up: Ankle yoke",
+        "FL-ANK-1259",
+        "FL-ANK-1291",
+        "fri 10/2"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "scratch that, FL-ANK-1244 need 7 by fri 10/2 for Prototype fit-up: Ankle yoke. FL-ANK-1259 and FL-ANK-1291 same 😬"
+    },
+    {
+      "ts": "1789785139.942225",
+      "user": "p-zoe",
+      "thread_ts": "1789780760.419652",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ok noted"
+    }
+  ]
+}

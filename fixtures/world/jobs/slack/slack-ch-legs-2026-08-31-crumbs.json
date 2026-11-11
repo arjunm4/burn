@@ -1,0 +1,221 @@
+{
+  "job_id": "slack-ch-legs-2026-08-31-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 21,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-legs",
+    "name": "legs",
+    "slack_id": "C07FLK0LEGS",
+    "purpose": "Leg and ankle: design, drop test, gait gantry"
+  },
+  "week": {
+    "start": "2026-08-31",
+    "end": "2026-09-06"
+  },
+  "people": [
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Leg (left, hip to foot).",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1788213134.519736",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [
+        "ev-002566"
+      ],
+      "brief": "Ankle heel-strike impact test waits on Ankle pushrod clevis",
+      "claim": {
+        "kind": "blocked",
+        "value": "pt-ankle-pushrod-clevis"
+      },
+      "must_mention": [
+        "Ankle pushrod clevis",
+        "Ankle heel-strike impact test"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Ankle heel-strike impact test is blocked on the Ankle pushrod clevis, cant run drop rig without it"
+    },
+    {
+      "ts": "1788222737.281369",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-001496"
+      ],
+      "brief": "FL-ANK-1253: need 3 by 2026-10-14 for Fit check: Ankle roll link",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-10-14"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1253",
+        "Fit check: Ankle roll link",
+        "wed 10/14"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "FL-ANK-1253 need 3 for Fit check: Ankle roll link, by wed 10/14 👀"
+    },
+    {
+      "ts": "1788304690.663386",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-001498"
+      ],
+      "brief": "roll link: need 3 by 2026-10-14",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-10-14"
+        }
+      },
+      "must_mention": [
+        "roll link",
+        "10/14"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "roll link reminder, 3 by 10/14 🙏"
+    },
+    {
+      "ts": "1788381117.073341",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-002740"
+      ],
+      "brief": "FL-ANK-1259 rev C released: moved M3 holes 1.5 mm to clear harness",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev C"
+      },
+      "must_mention": [
+        "FL-ANK-1259"
+      ],
+      "length": "short",
+      "text": "FL-ANK-1259 rev C is out, i think M3 holes moved 1.5 mm so they clear the harness"
+    },
+    {
+      "ts": "1788536517.947262",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-001580"
+      ],
+      "brief": "rod end spacer: need 24 by 2026-09-28",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-09-28"
+        }
+      },
+      "must_mention": [
+        "rod end spacer",
+        "9/28"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "rod end spacer, need 24 by 9/28. fri? no, 9/28 is a mon"
+    }
+  ]
+}

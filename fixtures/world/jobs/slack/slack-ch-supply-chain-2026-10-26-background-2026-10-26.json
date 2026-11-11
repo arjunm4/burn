@@ -1,0 +1,565 @@
+{
+  "job_id": "slack-ch-supply-chain-2026-10-26-background-2026-10-26",
+  "source": "slack",
+  "status": "blank",
+  "priority": 6,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-supply-chain",
+    "name": "supply-chain",
+    "slack_id": "C07FLK0SUPC",
+    "purpose": "Supply chain team: vendors, POs, deliveries, expedites"
+  },
+  "week": {
+    "start": "2026-10-26",
+    "end": "2026-11-01"
+  },
+  "people": [
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-claire",
+      "name": "Claire Donnelly",
+      "display_name": "claire",
+      "slack_id": "U07FLK0CLAI",
+      "title": "Finance and Operations Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Leg DVT build: parts readiness and what to do about late test hardware",
+    "Ongoing: Frameless DVT motor from the vendor keeps slipping; stator stack length change. This week: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Beth asks every owner for real dates on the hip spin test and motor."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1793028755.175359",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about this: Beth: build date holds if links arrive by Friday; Priya wants to start with rev B links.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793030868.152108",
+      "user": "p-claire",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: ETA slips to mid November; Arjun asks if a second source exists, Gwen says 12 weeks.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793032111.137210",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Nora posts build readiness: 82% of leg DVT parts in, shank links still at the vendor.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793033429.297162",
+      "user": "p-samir",
+      "thread_ts": "1793028755.175359",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Beth: build date holds if links arrive by Friday; Priya wants to start with rev B links.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793033586.230125",
+      "user": "p-omar",
+      "thread_ts": "1793032111.137210",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Nora posts build readiness: 82% of leg DVT parts in, shank links still at the vendor.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793034758.517067",
+      "user": "p-ingrid",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Omar flags the DVT motor as the long pole; Arjun says it is fine.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793036020.754830",
+      "user": "p-jade",
+      "thread_ts": "1793032111.137210",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Nora posts build readiness: 82% of leg DVT parts in, shank links still at the vendor.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793036819.504697",
+      "user": "p-nora",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1793037963.047183",
+      "user": "p-omar",
+      "thread_ts": "1793028755.175359",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Beth: build date holds if links arrive by Friday; Priya wants to start with rev B links.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793038038.692057",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: Beth: build date holds if links arrive by Friday; Priya wants to start with rev B links.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793038880.095849",
+      "user": "p-ingrid",
+      "thread_ts": "1793038038.692057",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Beth: build date holds if links arrive by Friday; Priya wants to start with rev B links.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793040754.784023",
+      "user": "p-beth",
+      "thread_ts": "1793032111.137210",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Nora posts build readiness: 82% of leg DVT parts in, shank links still at the vendor.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793040806.448227",
+      "user": "p-talia",
+      "thread_ts": "1793038038.692057",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Beth: build date holds if links arrive by Friday; Priya wants to start with rev B links.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793042087.408230",
+      "user": "p-jade",
+      "thread_ts": "1793028755.175359",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Beth: build date holds if links arrive by Friday; Priya wants to start with rev B links.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793042691.737247",
+      "user": "p-nora",
+      "thread_ts": "1793028755.175359",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Beth: build date holds if links arrive by Friday; Priya wants to start with rev B links.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793043596.608275",
+      "user": "p-nora",
+      "thread_ts": "1793032111.137210",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Nora posts build readiness: 82% of leg DVT parts in, shank links still at the vendor.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793043683.365417",
+      "user": "p-beth",
+      "thread_ts": "1793038038.692057",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Beth: build date holds if links arrive by Friday; Priya wants to start with rev B links.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793043920.514149",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Actuator build slips; gate review held anyway with partial data.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793045031.153633",
+      "user": "p-claire",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on this: ETA slips to mid November; Arjun asks if a second source exists, Gwen says 12 weeks.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793047441.076767",
+      "user": "p-samir",
+      "thread_ts": "1793032111.137210",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Nora posts build readiness: 82% of leg DVT parts in, shank links still at the vendor.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793048247.868805",
+      "user": "p-samir",
+      "thread_ts": "1793038038.692057",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Beth: build date holds if links arrive by Friday; Priya wants to start with rev B links.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793048483.671946",
+      "user": "p-samir",
+      "thread_ts": "1793038038.692057",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Beth: build date holds if links arrive by Friday; Priya wants to start with rev B links.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793051624.240214",
+      "user": "p-gwen",
+      "thread_ts": "1793038038.692057",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Beth: build date holds if links arrive by Friday; Priya wants to start with rev B links.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793052227.435427",
+      "user": "p-talia",
+      "thread_ts": "1793032111.137210",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Nora posts build readiness: 82% of leg DVT parts in, shank links still at the vendor.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793052975.306089",
+      "user": "p-nora",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to this: Beth asks every owner for real dates on the hip spin test and motor.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793053139.764827",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about this: Actuator build slips; gate review held anyway with partial data.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793053603.966007",
+      "user": "p-nora",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Beth asks every owner for real dates on the hip spin test and motor.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793055072.812932",
+      "user": "p-samir",
+      "thread_ts": "1793053603.966007",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: Beth asks every owner for real dates on the hip spin test and motor.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793055269.312377",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Beth: build date holds if links arrive by Friday; Priya wants to start with rev B links.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793055555.550994",
+      "user": "p-omar",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793057318.230365",
+      "user": "p-beth",
+      "thread_ts": "1793053603.966007",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Beth asks every owner for real dates on the hip spin test and motor.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793059715.552127",
+      "user": "p-nora",
+      "thread_ts": "1793053603.966007",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: Beth asks every owner for real dates on the hip spin test and motor.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793060855.449824",
+      "user": "p-talia",
+      "thread_ts": "1793055555.550994",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793063028.170718",
+      "user": "p-beth",
+      "thread_ts": "1793055555.550994",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793065161.755990",
+      "user": "p-gwen",
+      "thread_ts": "1793055555.550994",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793068575.385114",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: Beth: build date holds if links arrive by Friday; Priya wants to start with rev B links.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793080737.083806",
+      "user": "p-gwen",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Omar flags the DVT motor as the long pole; Arjun says it is fine.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

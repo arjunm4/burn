@@ -1,0 +1,632 @@
+{
+  "job_id": "slack-ch-hands-arms-2026-10-26-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 5,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hands-arms",
+    "name": "hands-arms",
+    "slack_id": "C07FLK0HAND",
+    "purpose": "Arms, wrist and hand"
+  },
+  "week": {
+    "start": "2026-10-26",
+    "end": "2026-11-01"
+  },
+  "people": [
+    {
+      "id": "p-aisha",
+      "name": "Aisha Rahman",
+      "display_name": "aisha",
+      "slack_id": "U07FLK0AISH",
+      "title": "ML Engineer, perception",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hand and wrist.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Beth asks every owner for real dates on the hip spin test and motor."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1793036033.669112",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-003312"
+      ],
+      "brief": "wrist adapter: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "wrist adapter"
+      ],
+      "length": "short",
+      "text": "wrist adapter still quoting on rev A, nudging them 😬"
+    },
+    {
+      "ts": "1793062023.717481",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002238"
+      ],
+      "brief": "FL-TST-2480: need 12 by 2026-11-17",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-11-17"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2480",
+        "11/17"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "need 12x FL-TST-2480 by 11/17 for the grip rig"
+    },
+    {
+      "ts": "1793062925.971677",
+      "user": "p-lin",
+      "thread_ts": "1793062023.717481",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Agreed, that timing works for life test too."
+    },
+    {
+      "ts": "1793065789.934783",
+      "user": "p-kenji",
+      "thread_ts": "1793062023.717481",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "last time those came back with burrs on every edge"
+    },
+    {
+      "ts": "1793074887.011896",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-002212"
+      ],
+      "brief": "finger link: need 7 by 2026-11-04 for the build",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 7,
+          "by": "2026-11-04"
+        }
+      },
+      "must_mention": [
+        "finger link",
+        "the build",
+        "thumb block",
+        "palm frame",
+        "tendon pulley",
+        "wed 11/4"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "need 7 finger link for the build by wed 11/4 plus thumb block palm frame tendon pulley"
+    },
+    {
+      "ts": "1793137227.728101",
+      "user": "p-kenji",
+      "thread_ts": "1793074887.011896",
+      "events": [
+        "ev-002944"
+      ],
+      "brief": "Correction: finger link: need 7 by 2026-11-05 for the build",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 7,
+          "by": "2026-11-05"
+        }
+      },
+      "must_mention": [
+        "finger link",
+        "the build",
+        "thumb block",
+        "palm frame",
+        "tendon pulley",
+        "11/5"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "correction finger link for the build is 11/5 not 4th, same for thumb block palm frame tendon pulley"
+    },
+    {
+      "ts": "1793141712.701021",
+      "user": "p-aisha",
+      "thread_ts": "1793074887.011896",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ok noted"
+    },
+    {
+      "ts": "1793144047.006118",
+      "user": "p-talia",
+      "thread_ts": "1793074887.011896",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Asked shop for an update 🙏"
+    },
+    {
+      "ts": "1793145591.632154",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-002087"
+      ],
+      "brief": "1419 arrived (6)",
+      "claim": {
+        "kind": "stock",
+        "value": 6
+      },
+      "must_mention": [
+        "1419",
+        "6"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "1419 arrived 6 pcs"
+    },
+    {
+      "ts": "1793147154.545813",
+      "user": "p-kenji",
+      "thread_ts": "1793145591.632154",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "@lin.z yours"
+    },
+    {
+      "ts": "1793149947.137444",
+      "user": "p-talia",
+      "thread_ts": "1793145591.632154",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Finally, was about to file a missing persons report 😂"
+    },
+    {
+      "ts": "1793207133.390835",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002242"
+      ],
+      "brief": "FL-TST-2480: need 12 by 2026-11-17",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-11-17"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2480",
+        "tues 11/17"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "reminder FL-TST-2480 x12 needed tues 11/17"
+    },
+    {
+      "ts": "1793209802.865838",
+      "user": "p-omar",
+      "thread_ts": "1793207133.390835",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "is that firm or can it slip a couple days?"
+    },
+    {
+      "ts": "1793210371.405242",
+      "user": "p-sofia",
+      "thread_ts": null,
+      "events": [
+        "ev-002831"
+      ],
+      "brief": "FL-HND-1413 rev B released: clearance for harness",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-HND-1413"
+      ],
+      "length": "medium",
+      "text": "FL-HND-1413 rev B is released with more clearance for the harness."
+    },
+    {
+      "ts": "1793214262.618672",
+      "user": "p-talia",
+      "thread_ts": "1793207133.390835",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Last batch from them slipped too, so I'd ping early 😬"
+    },
+    {
+      "ts": "1793217277.496651",
+      "user": "p-lin",
+      "thread_ts": "1793207133.390835",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@andre can you confirm qty with Talia?"
+    },
+    {
+      "ts": "1793222739.920607",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002243"
+      ],
+      "brief": "2480: need 12 by 2026-11-17",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-11-17"
+        }
+      },
+      "must_mention": [
+        "2480",
+        "tues the 17th"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "2480 still need 12 by tues the 17th, *tuesday"
+    },
+    {
+      "ts": "1793272980.618376",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-001870"
+      ],
+      "brief": "finger link in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-10-27"
+      },
+      "must_mention": [
+        "finger link",
+        "the build",
+        "10/27"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "finger link done on the build as of 10/27 its in use now"
+    },
+    {
+      "ts": "1793291375.764616",
+      "user": "p-kenji",
+      "thread_ts": "1793272980.618376",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ok"
+    },
+    {
+      "ts": "1793296688.676105",
+      "user": "p-kenji",
+      "thread_ts": "1793272980.618376",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "spare ones in bin"
+    },
+    {
+      "ts": "1793307464.308522",
+      "user": "p-sofia",
+      "thread_ts": null,
+      "events": [
+        "ev-002828"
+      ],
+      "brief": "FL-HND-1486 rev C released: clearance for harness",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev C"
+      },
+      "must_mention": [
+        "FL-HND-1486"
+      ],
+      "length": "short",
+      "text": "FL-HND-1486 rev C released, harness clearance."
+    },
+    {
+      "ts": "1793313228.307262",
+      "user": "p-sofia",
+      "thread_ts": null,
+      "events": [
+        "ev-002822"
+      ],
+      "brief": "FL-HND-1458 rev B released: hole pattern moved",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-HND-1458"
+      ],
+      "length": "short",
+      "text": "FL-HND-1458 rev B released: hole pattern moved."
+    },
+    {
+      "ts": "1793314386.585698",
+      "user": "p-lin",
+      "thread_ts": "1793313228.307262",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "That breaks my mount."
+    },
+    {
+      "ts": "1793316040.436459",
+      "user": "p-kenji",
+      "thread_ts": "1793313228.307262",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "dont think so pattern still fits the old adapter"
+    },
+    {
+      "ts": "1793374008.699796",
+      "user": "p-sofia",
+      "thread_ts": null,
+      "events": [
+        "ev-003298"
+      ],
+      "brief": "tendon bushing: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "tendon bushing"
+      ],
+      "length": "short",
+      "text": "The tendon bushing is still quoting at rev A."
+    },
+    {
+      "ts": "1793377773.793208",
+      "user": "p-sofia",
+      "thread_ts": null,
+      "events": [
+        "ev-002648"
+      ],
+      "brief": "Test stand rework: Grip load cell plate waits on Motor sample lot for hand and wrist (load cell plate)",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-gen-0123"
+      },
+      "must_mention": [
+        "Motor sample lot for hand and wrist (load cell plate)",
+        "Test stand rework: Grip load cell plate"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Test stand rework: Grip load cell plate is blocked on the Motor sample lot for hand and wrist (load cell plate)."
+    },
+    {
+      "ts": "1793378137.307767",
+      "user": "p-talia",
+      "thread_ts": "1793377773.793208",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Load cell itself is here already 🙏"
+    },
+    {
+      "ts": "1793379562.058200",
+      "user": "p-sofia",
+      "thread_ts": "1793377773.793208",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Same thing happened on the last stand, the plate was the long pole."
+    },
+    {
+      "ts": "1793380768.252417",
+      "user": "p-lin",
+      "thread_ts": "1793377773.793208",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Thanks."
+    },
+    {
+      "ts": "1793427960.720970",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-001973"
+      ],
+      "brief": "spin adapter in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-10-30"
+      },
+      "must_mention": [
+        "spin adapter",
+        "10/30"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "spin adapter in use, wrapped up 10/30"
+    }
+  ]
+}

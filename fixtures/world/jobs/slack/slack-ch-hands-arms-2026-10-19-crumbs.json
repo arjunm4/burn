@@ -1,0 +1,231 @@
+{
+  "job_id": "slack-ch-hands-arms-2026-10-19-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 7,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hands-arms",
+    "name": "hands-arms",
+    "slack_id": "C07FLK0HAND",
+    "purpose": "Arms, wrist and hand"
+  },
+  "week": {
+    "start": "2026-10-19",
+    "end": "2026-10-25"
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-rohan",
+      "name": "Rohan Kapoor",
+      "display_name": "rohan",
+      "slack_id": "U07FLK0ROHA",
+      "title": "Controls Engineer, manipulation",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hand and wrist.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1792444641.065500",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-002130"
+      ],
+      "brief": "FL-TST-2443: need 3 by 2026-11-10 for Test stand rework: Grip load cell plate",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-11-10"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2443",
+        "Test stand rework: Grip load cell plate",
+        "FL-TST-2480",
+        "FL-TST-2462",
+        "FL-TST-2399",
+        "FL-TST-2409",
+        "11/10"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "need 3 FL-TST-2443 by 11/10 for Test stand rework: Grip load cell plate, plus FL-TST-2480 FL-TST-2462 FL-TST-2399 FL-TST-2409 go with it"
+    },
+    {
+      "ts": "1792612891.447673",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-002086"
+      ],
+      "brief": "Order XO-5554482 placed, promised 2026-10-29",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-10-29"
+      },
+      "must_mention": [
+        "XO-5554482",
+        "1419",
+        "10/29"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "XO-5554482 placed for the 1419 promised 10/29"
+    },
+    {
+      "ts": "1792776305.736870",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-002202"
+      ],
+      "brief": "1413: need 12 by 2026-11-16 for Prototype fit-up: Tendon guide bushing",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-11-16"
+        }
+      },
+      "must_mention": [
+        "1413",
+        "Prototype fit-up: Tendon guide bushing",
+        "11/16"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Need 12x 1413 by 11/16 for Prototype fit-up: Tendon guide bushing!!"
+    },
+    {
+      "ts": "1792780518.634476",
+      "user": "p-kenji",
+      "thread_ts": "1792776305.736870",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "old ones were wearing a groove in the tendon after a few hundred cycles"
+    },
+    {
+      "ts": "1792784840.651353",
+      "user": "p-rohan",
+      "thread_ts": "1792776305.736870",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ill check the cad tonight"
+    },
+    {
+      "ts": "1792788148.308962",
+      "user": "p-omar",
+      "thread_ts": "1792776305.736870",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "not 100% sure we need all of them for fit-up, probably half would do?"
+    },
+    {
+      "ts": "1792796423.863831",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-001869"
+      ],
+      "brief": "finger link arrived (20)",
+      "claim": {
+        "kind": "stock",
+        "value": 20
+      },
+      "must_mention": [
+        "finger link",
+        "20"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "finger link arrived all 20 of them"
+    }
+  ]
+}

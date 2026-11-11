@@ -1,0 +1,457 @@
+{
+  "job_id": "jira-SCM-2026-09-14-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 17,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "SCM",
+    "name": "Supply chain and procurement"
+  },
+  "week": {
+    "start": "2026-09-14",
+    "end": "2026-09-20"
+  },
+  "people": [
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "SCM-281",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-zoe",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-09-14T09:03:08-07:00",
+      "due_date": "2026-09-21",
+      "events": [
+        "ev-001570"
+      ],
+      "brief": "Order 10x Hip stator heat spreader, 3x Hip cycloid ring-pin housing / FL-HIP-1028: need 10 by 2026-09-21 for the build",
+      "must_mention": [
+        "FL-HIP-1028",
+        "the build",
+        "FL-HIP-1056",
+        "mon the 21st"
+      ],
+      "description_length": "short",
+      "summary": "FL-HIP-1028 spreaders + FL-HIP-1056 housings",
+      "description": "10x FL-HIP-1028 for the build, 3x FL-HIP-1056\nneed by mon the 21st",
+      "comments": [
+        {
+          "id": "SCM-281-c1",
+          "by": "p-zoe",
+          "at": "2026-09-14T14:59:56-07:00",
+          "events": [
+            "ev-001572"
+          ],
+          "brief": "FL-HIP-1028: need 10 by 2026-09-21 for next week",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 10,
+              "by": "2026-09-21"
+            }
+          },
+          "must_mention": [
+            "FL-HIP-1028",
+            "next week",
+            "9/21"
+          ],
+          "body": "FL-HIP-1028 10 pcs by 9/21, it's for next week"
+        },
+        {
+          "id": "SCM-281-c2",
+          "by": "p-talia",
+          "at": "2026-09-15T13:46:22-07:00",
+          "events": [
+            "ev-001574"
+          ],
+          "brief": "the spreader: need 10 by 2026-09-21",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 10,
+              "by": "2026-09-21"
+            }
+          },
+          "must_mention": [
+            "the spreader",
+            "mon 9/21"
+          ],
+          "body": "the spreader - still mon 9/21"
+        },
+        {
+          "id": "SCM-281-c3",
+          "by": "p-talia",
+          "at": "2026-09-17T11:40:28-07:00",
+          "events": [
+            "ev-001576"
+          ],
+          "brief": "Order XO-5499120 placed, promised 2026-09-24",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-09-24"
+          },
+          "must_mention": [
+            "XO-5499120",
+            "thermal plate",
+            "thurs 9/24"
+          ],
+          "body": "XO-5499120 placed, thermal plate promised thurs 9/24"
+        },
+        {
+          "id": "SCM-281-c4",
+          "by": "p-zoe",
+          "at": "2026-09-24T13:42:08-07:00",
+          "events": [
+            "ev-001577"
+          ],
+          "brief": "thermal plate arrived (10)",
+          "claim": {
+            "kind": "stock",
+            "value": 10
+          },
+          "must_mention": [
+            "thermal plate",
+            "10"
+          ],
+          "body": "thermal plate arrived, 10"
+        }
+      ]
+    },
+    {
+      "key": "SCM-291",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-hana",
+      "assignee": "p-hana",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-16T11:54:50-07:00",
+      "due_date": "2026-10-05",
+      "events": [
+        "ev-001632"
+      ],
+      "brief": "Order 3x Thigh cover plate, 14x Knee actuator saddle / FL-LEG-1343: need 3 by 2026-10-05",
+      "must_mention": [
+        "FL-LEG-1343",
+        "10/5"
+      ],
+      "description_length": "one_line",
+      "summary": "FL-LEG-1343 thigh cover plate + saddles",
+      "description": "3 covers by 10/5",
+      "comments": [
+        {
+          "id": "SCM-291-c1",
+          "by": "p-luis",
+          "at": "2026-10-01T15:51:40-07:00",
+          "events": [
+            "ev-001635"
+          ],
+          "brief": "1343 arrived (3)",
+          "claim": {
+            "kind": "stock",
+            "value": 3
+          },
+          "must_mention": [
+            "1343",
+            "3"
+          ],
+          "body": "1343 arrived (3)"
+        }
+      ]
+    },
+    {
+      "key": "SCM-294",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-samir",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-17T13:15:45-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Order 1x Spreader bar end fitting",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": "spreader bar end fitting",
+      "description": "",
+      "comments": [
+        {
+          "id": "SCM-294-c1",
+          "by": "p-samir",
+          "at": "2026-09-21T10:45:06-07:00",
+          "events": [
+            "ev-003123"
+          ],
+          "brief": "Order XO-5500194 placed, promised 2026-09-25",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-09-25"
+          },
+          "must_mention": [
+            "XO-5500194",
+            "bar end",
+            "9/25"
+          ],
+          "body": "XO-5500194 placed for the bar end, promised 9/25"
+        }
+      ]
+    },
+    {
+      "key": "SCM-295",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-zoe",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-17T18:24:22-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001697"
+      ],
+      "brief": "Order 3x Pack connector plate / the plate: need 3 by 2026-10-29",
+      "must_mention": [
+        "the plate",
+        "thurs the 29th"
+      ],
+      "description_length": "one_line",
+      "summary": "Pack connector plate x3",
+      "description": "the plate, 3 off, thurs the 29th",
+      "comments": [
+        {
+          "id": "SCM-295-c1",
+          "by": "p-dmitri",
+          "at": "2026-09-21T18:31:37-07:00",
+          "events": [
+            "ev-001701"
+          ],
+          "brief": "1632: need 3 by 2026-10-29",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 3,
+              "by": "2026-10-29"
+            }
+          },
+          "must_mention": [
+            "1632",
+            "thurs the 29th"
+          ],
+          "body": "1632 - 3 by thurs the 29th"
+        }
+      ]
+    },
+    {
+      "key": "SCM-298",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-idris",
+      "assignee": "p-idris",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-18T12:01:59-07:00",
+      "due_date": "2026-10-05",
+      "events": [],
+      "brief": "Order 2x Battery cage pack fixture",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": "battery cage pack fixture",
+      "description": "2 needed for cage fitment",
+      "comments": [
+        {
+          "id": "SCM-298-c1",
+          "by": "p-carlos",
+          "at": "2026-10-02T18:51:29-07:00",
+          "events": [
+            "ev-001671"
+          ],
+          "brief": "pack fixture arrived (2)",
+          "claim": {
+            "kind": "stock",
+            "value": 2
+          },
+          "must_mention": [
+            "pack fixture",
+            "2"
+          ],
+          "body": "pack fixture arrived, both 2 here"
+        }
+      ]
+    }
+  ]
+}

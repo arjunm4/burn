@@ -1,0 +1,309 @@
+{
+  "job_id": "jira-LEG-2026-09-28-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 13,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "LEG",
+    "name": "Legs and ankle"
+  },
+  "week": {
+    "start": "2026-09-28",
+    "end": "2026-10-04"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "LEG-327",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-andre",
+      "assignee": "p-andre",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-09-28T09:36:12-07:00",
+      "due_date": "2026-10-12",
+      "events": [
+        "ev-001896"
+      ],
+      "brief": "Order 2x Tilt stand foot clamp / FL-TST-2556: need 2 by 2026-10-14 for Instrumentation fit-up: Tilt stand foot clamp",
+      "must_mention": [
+        "FL-TST-2556",
+        "Instrumentation fit-up: Tilt stand foot clamp",
+        "10/14"
+      ],
+      "description_length": "one_line",
+      "summary": "FL-TST-2556 tilt stand foot clamp x2",
+      "description": "for Instrumentation fit-up: Tilt stand foot clamp, need 10/14",
+      "comments": [
+        {
+          "id": "LEG-327-c1",
+          "by": "p-andre",
+          "at": "2026-10-02T18:26:05-07:00",
+          "events": [
+            "ev-001901"
+          ],
+          "brief": "Order XO-5531472 placed, promised 2026-10-13",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-10-13"
+          },
+          "must_mention": [
+            "XO-5531472",
+            "clamp plate",
+            "tues the 13th"
+          ],
+          "body": "XO-5531472 placed for the clamp plate, promised tues the 13th"
+        },
+        {
+          "id": "LEG-327-c2",
+          "by": "p-priya",
+          "at": "2026-10-05T13:42:19-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": "Andre, is the clamp drawing the one with the slotted holes?"
+        },
+        {
+          "id": "LEG-327-c3",
+          "by": "p-andre",
+          "at": "2026-10-12T11:12:09-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "pics of the fit-up in slack"
+        }
+      ]
+    },
+    {
+      "key": "LEG-335",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-diego",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-09-30T09:01:44-07:00",
+      "due_date": "2026-11-03",
+      "events": [
+        "ev-002252"
+      ],
+      "brief": "Order 3x Stator insertion jig, 6x Torso load pad, 5x Gait foot-switch bracket / insertion jig: need 3 by 2026-11-03 for Fixture install and shakedown: Stator insertion jig",
+      "must_mention": [
+        "insertion jig",
+        "Fixture install and shakedown: Stator insertion jig",
+        "load pad",
+        "2376",
+        "tues 11/3"
+      ],
+      "description_length": "one_line",
+      "summary": "stator insertion jig + load pads + footswitch bkts",
+      "description": "insertion jig x3 for Fixture install and shakedown: Stator insertion jig, load pad 2376 too, all by tues 11/3",
+      "comments": [
+        {
+          "id": "LEG-335-c1",
+          "by": "p-diego",
+          "at": "2026-10-21T09:26:03-07:00",
+          "events": [
+            "ev-002254"
+          ],
+          "brief": "insertion jig: need 3 by 2026-11-03 for Fixture install and shakedown: Stator insertion jig",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 3,
+              "by": "2026-11-03"
+            }
+          },
+          "must_mention": [
+            "insertion jig",
+            "Fixture install and shakedown: Stator insertion jig",
+            "11/3"
+          ],
+          "body": "insertion jig still 11/3 for Fixture install and shakedown: Stator insertion jig"
+        }
+      ]
+    },
+    {
+      "key": "LEG-341",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-dmitri",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-09-30T16:18:56-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001818"
+      ],
+      "brief": "Order 12x Knee joint spacer, 6x Hip yaw yoke / FL-LEG-1339: need 12 by 2026-10-07",
+      "must_mention": [
+        "FL-LEG-1339",
+        "10/7"
+      ],
+      "description_length": "short",
+      "summary": "Knee spacer FL-LEG-1339 + hip yaw yokes",
+      "description": "FL-LEG-1339 x12 by 10/7. yokes can follow",
+      "comments": [
+        {
+          "id": "LEG-341-c1",
+          "by": "p-dmitri",
+          "at": "2026-10-16T11:23:51-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "slipping a little, no date from them yet"
+        },
+        {
+          "id": "LEG-341-c2",
+          "by": "p-jade",
+          "at": "2026-10-21T13:35:22-07:00",
+          "events": [
+            "ev-001821"
+          ],
+          "brief": "1339 arrived (12)",
+          "claim": {
+            "kind": "stock",
+            "value": 12
+          },
+          "must_mention": [
+            "1339",
+            "12"
+          ],
+          "body": "1339 recvd qty 12"
+        }
+      ]
+    }
+  ]
+}

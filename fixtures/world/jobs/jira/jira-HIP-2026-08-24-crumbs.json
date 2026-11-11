@@ -1,0 +1,130 @@
+{
+  "job_id": "jira-HIP-2026-08-24-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 23,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HIP",
+    "name": "Actuators (hip and knee)"
+  },
+  "week": {
+    "start": "2026-08-24",
+    "end": "2026-08-30"
+  },
+  "people": [
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HIP-366",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-wei",
+      "assignee": "p-wei",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-08-28T09:30:22-07:00",
+      "due_date": "2026-10-06",
+      "events": [
+        "ev-001616"
+      ],
+      "brief": "Order 12x Knee output encoder bracket, 4x Knee circular spline housing / the bracket: need 12 by 2026-10-06",
+      "must_mention": [
+        "the bracket",
+        "10/6"
+      ],
+      "description_length": "one_line",
+      "summary": "Knee encoder bracket + CS housing",
+      "description": "Need the bracket by 10/6.",
+      "comments": [
+        {
+          "id": "HIP-366-c1",
+          "by": "p-wei",
+          "at": "2026-09-04T10:36:08-07:00",
+          "events": [
+            "ev-001619"
+          ],
+          "brief": "FL-KNE-1120: need 12 by 2026-10-06",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-10-06"
+            }
+          },
+          "must_mention": [
+            "FL-KNE-1120",
+            "10/6"
+          ],
+          "body": "FL-KNE-1120: still need by 10/6."
+        },
+        {
+          "id": "HIP-366-c2",
+          "by": "p-wei",
+          "at": "2026-09-11T13:29:23-07:00",
+          "events": [
+            "ev-001621"
+          ],
+          "brief": "FL-KNE-1120: need 12 by 2026-10-06",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-10-06"
+            }
+          },
+          "must_mention": [
+            "FL-KNE-1120",
+            "tues the 6th"
+          ],
+          "body": "FL-KNE-1120 confirmed for tues the 6th."
+        },
+        {
+          "id": "HIP-366-c3",
+          "by": "p-wei",
+          "at": "2026-10-02T16:17:23-07:00",
+          "events": [
+            "ev-001623"
+          ],
+          "brief": "abs encoder bracket arrived (12)",
+          "claim": {
+            "kind": "stock",
+            "value": 12
+          },
+          "must_mention": [
+            "abs encoder bracket",
+            "12"
+          ],
+          "body": "Abs encoder bracket arrived, all 12. Marked it on the abs encoder bracket bin."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,582 @@
+{
+  "job_id": "jira-SCM-2026-10-19-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 7,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "SCM",
+    "name": "Supply chain and procurement"
+  },
+  "week": {
+    "start": "2026-10-19",
+    "end": "2026-10-25"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "SCM-360",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-10-19T10:33:23-07:00",
+      "due_date": null,
+      "events": [
+        "ev-002179"
+      ],
+      "brief": "Order 2x Leg drop-test lift hook, 3x Leg build stand, 6x Torso load pad, 2x Leg fixture hook, hip end, 3x Drop load cell bracket / FL-TST-2017: need 2 by 2026-10-29 for Rig setup: Leg drop-test lift hook",
+      "must_mention": [
+        "FL-TST-2017",
+        "Rig setup: Leg drop-test lift hook",
+        "FL-TST-2916",
+        "FL-TST-2270",
+        "FL-TST-2260",
+        "FL-TST-2201",
+        "10/29"
+      ],
+      "description_length": "short",
+      "summary": "Drop test rig hardware - lift hooks, stands, load pads",
+      "description": "FL-TST-2017 x2 by 10/29 for Rig setup: Leg drop-test lift hook.\nAlso on this one: FL-TST-2916, FL-TST-2270, FL-TST-2260, FL-TST-2201 🙏",
+      "comments": [
+        {
+          "id": "SCM-360-c1",
+          "by": "p-diego",
+          "at": "2026-10-19T18:59:44-07:00",
+          "events": [
+            "ev-002180"
+          ],
+          "brief": "the hook: need 2 by 2026-10-29",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 2,
+              "by": "2026-10-29"
+            }
+          },
+          "must_mention": [
+            "the hook",
+            "10/29"
+          ],
+          "body": "the hook is the long pole, has to land by 10/29 ⚠️"
+        },
+        {
+          "id": "SCM-360-c2",
+          "by": "p-samir",
+          "at": "2026-10-22T17:43:53-07:00",
+          "events": [
+            "ev-003096"
+          ],
+          "brief": "FL-TST-2017: need 2 by 2026-11-03 for the build",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 2,
+              "by": "2026-11-03"
+            }
+          },
+          "must_mention": [
+            "FL-TST-2017",
+            "the build",
+            "tues the 3rd"
+          ],
+          "body": "talked to legs, FL-TST-2017 actually needed for the build tues the 3rd, not 10/29. still 2 pcs"
+        }
+      ]
+    },
+    {
+      "key": "SCM-367",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-arjun",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-10-20T11:16:27-07:00",
+      "due_date": "2026-12-14",
+      "events": [
+        "ev-002043"
+      ],
+      "brief": "Order 2x Hip cycloidal carrier / FL-HIP-1094: need 2 by 2026-12-14",
+      "must_mention": [
+        "FL-HIP-1094",
+        "mon the 14th"
+      ],
+      "description_length": "one_line",
+      "summary": "FL-HIP-1094 cycloidal carrier x2",
+      "description": "need by mon the 14th",
+      "comments": [
+        {
+          "id": "SCM-367-c1",
+          "by": "p-talia",
+          "at": "2026-11-06T15:06:02-08:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "Vendor DFM notes in slack 📎"
+        },
+        {
+          "id": "SCM-367-c2",
+          "by": "p-arjun",
+          "at": "2026-11-09T10:58:48-08:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "marked up drawing in slack"
+        },
+        {
+          "id": "SCM-367-c3",
+          "by": "p-talia",
+          "at": "2026-11-09T12:00:25-08:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "Might slide a little, will update 😬"
+        }
+      ]
+    },
+    {
+      "key": "SCM-368",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-ingrid",
+      "assignee": "p-renee",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-10-20T11:58:30-07:00",
+      "due_date": "2026-11-10",
+      "events": [
+        "ev-002128"
+      ],
+      "brief": "Order 7x Gait boom encoder bracket, 12x Tilt stand pivot shaft / FL-TST-2313: need 7 by 2026-11-10",
+      "must_mention": [
+        "FL-TST-2313",
+        "tues the 10th"
+      ],
+      "description_length": "medium",
+      "summary": "Gait boom encoder brackets + tilt stand pivot shafts",
+      "description": "Seven FL-TST-2313 encoder brackets needed by tues the 10th. The pivot shafts can follow on the same order. Renee, please confirm the encoder hole pattern against the current boom before release.",
+      "comments": [
+        {
+          "id": "SCM-368-c1",
+          "by": "p-renee",
+          "at": "2026-10-22T11:36:25-07:00",
+          "events": [
+            "ev-002129"
+          ],
+          "brief": "Order XO-5558552 placed, promised 2026-11-10",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-11-10"
+          },
+          "must_mention": [
+            "XO-5558552",
+            "2313",
+            "11/10"
+          ],
+          "body": "Order XO-5558552 placed for 2313, promised 11/10."
+        }
+      ]
+    },
+    {
+      "key": "SCM-370",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-talia",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-10-20T16:55:57-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Order 3x Ankle pushrod clevis",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": "ankle pushrod clevis",
+      "description": "",
+      "comments": [
+        {
+          "id": "SCM-370-c1",
+          "by": "p-talia",
+          "at": "2026-10-26T16:53:29-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "waiting on vendor 😬"
+        },
+        {
+          "id": "SCM-370-c2",
+          "by": "p-talia",
+          "at": "2026-10-27T09:48:07-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "photos of the packing slip in slack"
+        },
+        {
+          "id": "SCM-370-c3",
+          "by": "p-gwen",
+          "at": "2026-10-27T16:28:04-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "Received and checked in."
+        },
+        {
+          "id": "SCM-370-c4",
+          "by": "p-diego",
+          "at": "2026-11-02T11:48:00-08:00",
+          "events": [
+            "ev-002058"
+          ],
+          "brief": "1295 in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-11-02"
+          },
+          "must_mention": [
+            "1295",
+            "the build",
+            "mon the 2nd"
+          ],
+          "body": "1295 went into the build mon the 2nd ✅"
+        },
+        {
+          "id": "SCM-370-c5",
+          "by": "p-gwen",
+          "at": "2026-11-02T15:00:37-08:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "Let's leave this open a bit longer."
+        },
+        {
+          "id": "SCM-370-c6",
+          "by": "p-talia",
+          "at": "2026-11-04T09:23:01-08:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "any update??"
+        }
+      ]
+    },
+    {
+      "key": "SCM-371",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": "p-owen",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-10-20T19:19:07-07:00",
+      "due_date": null,
+      "events": [
+        "ev-002114"
+      ],
+      "brief": "Order 7x Dyno mounting plate, hip actuator, 1x Dyno shaft alignment jig / that adapter plate: need 7 by 2026-11-10 for the build",
+      "must_mention": [
+        "that adapter plate",
+        "the build",
+        "11/10"
+      ],
+      "description_length": "medium",
+      "summary": "dyno adapter plates hip act + align jig",
+      "description": "need 7 of that adapter plate by 11/10 for the build\nalign jig on same order\nsame material as the old plate dont change it",
+      "comments": [
+        {
+          "id": "SCM-371-c1",
+          "by": "p-arjun",
+          "at": "2026-10-21T15:06:23-07:00",
+          "events": [
+            "ev-003163"
+          ],
+          "brief": "FL-TST-2138: need 7 by 2026-11-09",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 7,
+              "by": "2026-11-09"
+            }
+          },
+          "must_mention": [
+            "FL-TST-2138",
+            "11/9"
+          ],
+          "body": "owen FL-TST-2138 needs to be in by 11/9 not 10th, sorry my bad"
+        }
+      ]
+    },
+    {
+      "key": "SCM-372",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-lin",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-10-21T08:09:36-07:00",
+      "due_date": null,
+      "events": [
+        "ev-002176"
+      ],
+      "brief": "Order 24x Shank belt tensioner bracket, 4x Knee actuator saddle / the part: need 24 by 2026-11-12",
+      "must_mention": [
+        "the part",
+        "11/12"
+      ],
+      "description_length": "medium",
+      "summary": "Shank belt tensioner brackets and knee actuator saddles",
+      "description": "Need 24 of the part by 11/12 for the life test rig. The saddles can ship with them. Samir, let me know if lead time looks tight.",
+      "comments": []
+    },
+    {
+      "key": "SCM-374",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-nadia",
+      "assignee": "p-nadia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-10-22T14:48:18-07:00",
+      "due_date": "2026-11-09",
+      "events": [
+        "ev-002190"
+      ],
+      "brief": "Order 4x Nail penetration guide block, 7x Gait boom encoder bracket / nail guide: need 4 by 2026-11-09",
+      "must_mention": [
+        "nail guide",
+        "11/9"
+      ],
+      "description_length": "one_line",
+      "summary": "nail pen guide blocks + encoder bkts",
+      "description": "4 nail guide blocks by 11/9",
+      "comments": [
+        {
+          "id": "SCM-374-c1",
+          "by": "p-nadia",
+          "at": "2026-10-23T15:57:16-07:00",
+          "events": [
+            "ev-002191"
+          ],
+          "brief": "the block: need 4 by 2026-11-09",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 4,
+              "by": "2026-11-09"
+            }
+          },
+          "must_mention": [
+            "the block",
+            "11/9"
+          ],
+          "body": "the block is the one that matters, 4 by 11/9. brackets can wait"
+        }
+      ]
+    }
+  ]
+}

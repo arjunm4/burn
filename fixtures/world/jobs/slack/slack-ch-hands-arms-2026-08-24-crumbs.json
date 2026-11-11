@@ -1,0 +1,195 @@
+{
+  "job_id": "slack-ch-hands-arms-2026-08-24-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 23,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hands-arms",
+    "name": "hands-arms",
+    "slack_id": "C07FLK0HAND",
+    "purpose": "Arms, wrist and hand"
+  },
+  "week": {
+    "start": "2026-08-24",
+    "end": "2026-08-30"
+  },
+  "people": [
+    {
+      "id": "p-amara",
+      "name": "Amara Nwosu",
+      "display_name": "amara",
+      "slack_id": "U07FLK0AMAR",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hand and wrist.",
+    "Ongoing: Tendons fray at the proximal pulley after 40k grip cycles. This week: Passes 100k; creep makes the finger lose 4 deg of closure, retension interval set.",
+    "Ongoing: Aluminum links gall on 303 pins under side load. This week: Kenji pulls a finger apart: galling on the knuckle pin bore after pinch tests.",
+    "Ongoing: What to show investors when no full humanoid exists. This week: Demo done; Helena asks for a full lower body by Q1.",
+    "Ongoing: Gait controller tuning for the investor demo on the gait gantry. This week: Investor demo goes; one stumble recovered by the boom, Helena happy.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Ingrid backs it but exempts the investor demo and DVT builds.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno. This week: Night runs work but nobody watches them; one overnight run lost to a loose clamp.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1787590892.513392",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-002666"
+      ],
+      "brief": "Hand pinch force and tendon creep waits on Hand grip-cycle fixture",
+      "claim": {
+        "kind": "blocked",
+        "value": "rig-hand-grip-fixture"
+      },
+      "must_mention": [
+        "Hand grip-cycle fixture",
+        "Hand pinch force and tendon creep"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Hand pinch force and tendon creep is stuck until we get the Hand grip-cycle fixture back, i think. night runs are eating it"
+    },
+    {
+      "ts": "1787595012.747134",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-002543"
+      ],
+      "brief": "Tolerance stack check: Tendon guide bushing waits on Bearing set for hand and wrist (tendon bushing)",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-gen-0076"
+      },
+      "must_mention": [
+        "Bearing set for hand and wrist (tendon bushing)",
+        "Tolerance stack check: Tendon guide bushing"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Tolerance stack check: Tendon guide bushing can't close without the Bearing set for hand and wrist (tendon bushing), probably"
+    },
+    {
+      "ts": "1787601747.241203",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-002665"
+      ],
+      "brief": "Hand pinch force and tendon creep waits on Fingertip tactile PCB, rev 1",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-hand-tactile-pcb"
+      },
+      "must_mention": [
+        "Fingertip tactile PCB, rev 1",
+        "the creep"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "also still no Fingertip tactile PCB, rev 1 so the creep run can't log pinch anyway"
+    },
+    {
+      "ts": "1787605380.977517",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-002827"
+      ],
+      "brief": "FL-HND-1486 rev B released: anodize mask added on bores (build-up was 0.025 mm)",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-HND-1486"
+      ],
+      "length": "medium",
+      "text": "FL-HND-1486 rev B is out. added an anodize mask on the bores, build-up was measuring 0.025 mm and the pins weren't going in"
+    },
+    {
+      "ts": "1787855121.997938",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-002547"
+      ],
+      "brief": "Hand pinch force and tendon creep waits on Pinch force anvil",
+      "claim": {
+        "kind": "blocked",
+        "value": "pt-grip-pinch-anvil"
+      },
+      "must_mention": [
+        "Pinch force anvil",
+        "the creep"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Pinch force anvil is the other thing holding the creep test. not 100% sure where it ended up after Kenji's teardown"
+    },
+    {
+      "ts": "1787941989.619229",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-001417"
+      ],
+      "brief": "grip base arrived (1)",
+      "claim": {
+        "kind": "stock",
+        "value": 1
+      },
+      "must_mention": [
+        "grip base",
+        "1"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "grip base arrived, qty 1. On the shelf."
+    }
+  ]
+}

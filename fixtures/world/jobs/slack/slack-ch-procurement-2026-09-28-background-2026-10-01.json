@@ -1,0 +1,304 @@
+{
+  "job_id": "slack-ch-procurement-2026-09-28-background-2026-10-01",
+  "source": "slack",
+  "status": "blank",
+  "priority": 14,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-09-28",
+    "end": "2026-10-04"
+  },
+  "people": [
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway",
+    "Ongoing: BMS PCBA rev 1 balancing current and cell-tap fusing. This week: Bao: wrong bleed resistor value on the BOM, 68 ohm populated instead of 33.",
+    "Ongoing: Leg DVT build: parts readiness and what to do about late test hardware. This week: Nora posts build readiness: 82% of leg DVT parts in, shank links still at the vendor.",
+    "Ongoing: Frameless DVT motor from the vendor keeps slipping; stator stack length change. This week: Samir: vendor confirms PO for DVT stators, ETA late October.",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough. This week: Switch to higher-viscosity grease; soak passes.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real",
+    "Ongoing: Leg drop gantry shared by leg drop, torso static load and ankle impact. This week: Dmitri splits: torso Tue, leg Thu; nobody happy."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1790871090.007760",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on this: Dmitri splits: torso Tue, leg Thu; nobody happy.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790877456.809588",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about the ongoing vent path sizing and cell spacing to contain a single-cell runaway",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790885025.270326",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on off-topic: noise from the shop next door",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790888129.500669",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790888229.670958",
+      "user": "p-nadia",
+      "thread_ts": "1790885025.270326",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: off-topic: noise from the shop next door",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790888441.354847",
+      "user": "p-diego",
+      "thread_ts": "1790885025.270326",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: off-topic: noise from the shop next door",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790891195.172336",
+      "user": "p-gwen",
+      "thread_ts": "1790885025.270326",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: off-topic: noise from the shop next door",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790904035.889151",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about the ongoing frameless dvt motor from the vendor keeps slipping; stator stack length change",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790906014.813792",
+      "user": "p-beth",
+      "thread_ts": "1790904035.889151",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the ongoing frameless dvt motor from the vendor keeps slipping; stator stack length change",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790907756.056282",
+      "user": "p-talia",
+      "thread_ts": "1790904035.889151",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the ongoing frameless dvt motor from the vendor keeps slipping; stator stack length change",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

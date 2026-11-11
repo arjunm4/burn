@@ -1,0 +1,156 @@
+{
+  "job_id": "jira-STR-2026-09-28-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 13,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "STR",
+    "name": "Torso, structures and battery"
+  },
+  "week": {
+    "start": "2026-09-28",
+    "end": "2026-10-04"
+  },
+  "people": [
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "STR-249",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-idris",
+      "assignee": "p-idris",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-10-02T08:17:35-07:00",
+      "due_date": null,
+      "events": [
+        "ev-002088"
+      ],
+      "brief": "Order 3x Pelvis side plate, right, 12x Spine tube clamp, 5x Pelvis side plate, left / FL-STR-1591: need 3 by 2026-11-10 for Kit and assemble: Pelvis side plate, right",
+      "must_mention": [
+        "FL-STR-1591",
+        "Kit and assemble: Pelvis side plate, right",
+        "FL-STR-1554",
+        "FL-STR-1567",
+        "11/10"
+      ],
+      "description_length": "one_line",
+      "summary": "Pelvis side plates R/L FL-STR-1591, spine clamps",
+      "description": "FL-STR-1591 x3 for Kit and assemble: Pelvis side plate, right, plus FL-STR-1554 FL-STR-1567, need 11/10",
+      "comments": [
+        {
+          "id": "STR-249-c1",
+          "by": "p-idris",
+          "at": "2026-10-09T06:07:24-07:00",
+          "events": [
+            "ev-002090"
+          ],
+          "brief": "the part: need 3 by 2026-11-10",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 3,
+              "by": "2026-11-10"
+            }
+          },
+          "must_mention": [
+            "the part",
+            "tues the 10th"
+          ],
+          "body": "the part still tues the 10th"
+        },
+        {
+          "id": "STR-249-c2",
+          "by": "p-idris",
+          "at": "2026-10-13T17:11:17-07:00",
+          "events": [
+            "ev-002092"
+          ],
+          "brief": "the part: need 3 by 2026-11-10 for next week; asks whether expediting is worth it",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 3,
+              "by": "2026-11-10"
+            }
+          },
+          "must_mention": [
+            "the part",
+            "next week",
+            "11/10"
+          ],
+          "body": "the part needed next week of 11/10, worth expediting?"
+        },
+        {
+          "id": "STR-249-c3",
+          "by": "p-luis",
+          "at": "2026-11-06T16:48:13-08:00",
+          "events": [
+            "ev-002094"
+          ],
+          "brief": "1591 arrived (3)",
+          "claim": {
+            "kind": "stock",
+            "value": 3
+          },
+          "must_mention": [
+            "1591",
+            "3"
+          ],
+          "body": "1591 in, 3 pcs"
+        }
+      ]
+    }
+  ]
+}

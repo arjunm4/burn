@@ -70,7 +70,7 @@ export function valuePhrase(claim, world, rng) {
     case 'eta': case 'done': return isDate(v) ? datePhrase(v, rng) : null;
     case 'needs': return v && isDate(v.by) ? datePhrase(v.by, rng) : null;
     case 'need_earlier': return v && isDate(v.date) ? datePhrase(v.date, rng) : null;
-    case 'duration': return Array.isArray(v) ? `${v[0]}-${v[1]} days` : null;
+    case 'duration': return Array.isArray(v) ? (v[0] === v[1] ? `${v[0]} days` : `${v[0]}-${v[1]} days`) : null;
     case 'stock': return v == null ? null : String(v);
     case 'owner': { const p = world.people.find((x) => x.id === v); return p ? p.display_name : null; }
     default: return null;

@@ -1,0 +1,408 @@
+{
+  "job_id": "slack-ch-eng-bots-2026-08-17-background-2026-08-17",
+  "source": "slack",
+  "status": "blank",
+  "priority": 26,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-eng-bots",
+    "name": "eng-bots",
+    "slack_id": "C07FLK0BOTS",
+    "purpose": "GitHub, Jira and CI notifications"
+  },
+  "week": {
+    "start": "2026-08-17",
+    "end": "2026-08-23"
+  },
+  "people": [
+    {
+      "id": "p-anika",
+      "name": "Anika Joshi",
+      "display_name": "anika",
+      "slack_id": "U07FLK0ANIK",
+      "title": "Firmware Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-gabriel",
+      "name": "Gabriel Moreau",
+      "display_name": "gabriel.m",
+      "slack_id": "U07FLK0GABR",
+      "title": "Controls Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-jun",
+      "name": "Jun Park",
+      "display_name": "jun",
+      "slack_id": "U07FLK0JUN0",
+      "title": "Research Engineer, learned locomotion",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-leilani",
+      "name": "Leilani Kahale",
+      "display_name": "leilani.k",
+      "slack_id": "U07FLK0LEIL",
+      "title": "Locomotion Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-ravi",
+      "name": "Ravi Subramaniam",
+      "display_name": "ravi",
+      "slack_id": "U07FLK0RAVI",
+      "title": "ML Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-rohan",
+      "name": "Rohan Kapoor",
+      "display_name": "rohan",
+      "slack_id": "U07FLK0ROHA",
+      "title": "Controls Engineer, manipulation",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-tara",
+      "name": "Tara Brennan",
+      "display_name": "tara.b",
+      "slack_id": "U07FLK0TARA",
+      "title": "Infrastructure Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-yusuf",
+      "name": "Yusuf Demir",
+      "display_name": "yusuf",
+      "slack_id": "U07FLK0YUSU",
+      "title": "Firmware Engineer, motor control",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Vent channel sizing debated; burst plate at 0.5 bar vs open slots.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators. This week: Mei worries derate will cut torque mid-step and drop the leg.",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Interim: machined strain-relief clamp and service loop; leg rev C routing planned.",
+    "Ongoing: Gait controller tuning for the investor demo on the gait gantry. This week: Dress rehearsal: 2 minutes continuous walking; demo plan locked.",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver. This week: Rev 4 boards arrive; ringing down to 9 V overshoot."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1786986783.185083",
+      "user": "p-rohan",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to this: Foot contact detection flaky; Ravi suggests learned contact estimator, Mei wants foot switches first.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786987238.560549",
+      "user": "p-jun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about this: Pressure on legs and controls; exec check-ins twice a week.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786987814.833971",
+      "user": "p-mei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on this: Rev 4 boards arrive; ringing down to 9 V overshoot.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786991535.956342",
+      "user": "p-yusuf",
+      "thread_ts": "1786986783.185083",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Foot contact detection flaky; Ravi suggests learned contact estimator, Mei wants foot switches first.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1786993836.041801",
+      "user": "p-jun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Current sense offset drifts with board temp; Jonas compensates in firmware for now.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1786995448.067479",
+      "user": "p-gabriel",
+      "thread_ts": "1786986783.185083",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Foot contact detection flaky; Ravi suggests learned contact estimator, Mei wants foot switches first.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1786998581.209995",
+      "user": "p-ravi",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about this: Jonas starts FOC v2: 20 kHz current loop, thermal model from Nadia.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1786999380.718883",
+      "user": "p-gabriel",
+      "thread_ts": "1786998581.209995",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Jonas starts FOC v2: 20 kHz current loop, thermal model from Nadia.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787003387.548962",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on this: Mei: leg stands on the treadmill with the boom carrying 60% of the pelvis load.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787003960.318180",
+      "user": "p-ravi",
+      "thread_ts": "1786998581.209995",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Jonas starts FOC v2: 20 kHz current loop, thermal model from Nadia.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787006179.605151",
+      "user": "p-mei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about this: Marcus: show the leg on the gantry plus hip and hand separately; no torso.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787007412.514943",
+      "user": "p-tara",
+      "thread_ts": "1786998581.209995",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Jonas starts FOC v2: 20 kHz current loop, thermal model from Nadia.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787010075.786054",
+      "user": "p-jun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to this: Gate resistor bump slows edges, but switching losses rise 9%.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787011411.723849",
+      "user": "p-rohan",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Mei: leg stands on the treadmill with the boom carrying 60% of the pelvis load.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787012666.164029",
+      "user": "p-mei",
+      "thread_ts": "1786998581.209995",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Jonas starts FOC v2: 20 kHz current loop, thermal model from Nadia.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787013150.407806",
+      "user": "p-anika",
+      "thread_ts": "1786998581.209995",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Jonas starts FOC v2: 20 kHz current loop, thermal model from Nadia.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787013235.988586",
+      "user": "p-rohan",
+      "thread_ts": "1787011411.723849",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Mei: leg stands on the treadmill with the boom carrying 60% of the pelvis load.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787014644.364454",
+      "user": "p-leilani",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with the ongoing vent path sizing and cell spacing to contain a single-cell runaway",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787014927.362541",
+      "user": "p-gabriel",
+      "thread_ts": "1787011411.723849",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Mei: leg stands on the treadmill with the boom carrying 60% of the pelvis load.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    }
+  ]
+}

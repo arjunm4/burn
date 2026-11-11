@@ -1,0 +1,309 @@
+{
+  "job_id": "slack-ch-supply-chain-2026-08-31-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 21,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-supply-chain",
+    "name": "supply-chain",
+    "slack_id": "C07FLK0SUPC",
+    "purpose": "Supply chain team: vendors, POs, deliveries, expedites"
+  },
+  "week": {
+    "start": "2026-08-31",
+    "end": "2026-09-06"
+  },
+  "people": [
+    {
+      "id": "p-amara",
+      "name": "Amara Nwosu",
+      "display_name": "amara",
+      "slack_id": "U07FLK0AMAR",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1788218442.723124",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-000055"
+      ],
+      "brief": "Motor sample lot for battery enclosure (clevis): moved from 2026-09-02 to 2026-09-08",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-09-08"
+      },
+      "must_mention": [
+        "Motor sample lot for battery enclosure (clevis)",
+        "tues the 8th"
+      ],
+      "length": "short",
+      "text": "Motor sample lot for battery enclosure (clevis) slipped, vendor now saying tues the 8th. was supposed to be this wed"
+    },
+    {
+      "ts": "1788274860.107984",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-001346"
+      ],
+      "brief": "ankle crank in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-08-31"
+      },
+      "must_mention": [
+        "ankle crank",
+        "the build",
+        "mon 8/31"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "ankle crank went into the build mon 8/31, so that one's off the list 👍"
+    },
+    {
+      "ts": "1788415200.744645",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-001187"
+      ],
+      "brief": "1454 in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-09-02"
+      },
+      "must_mention": [
+        "1454",
+        "the build",
+        "9/2"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "fyi 1454 is in use, went into the build 9/2 i think. probably should close it out"
+    },
+    {
+      "ts": "1788471120.983155",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-001357"
+      ],
+      "brief": "fall clevis in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-09-03"
+      },
+      "must_mention": [
+        "fall clevis",
+        "9/3"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "fall clevis on the rig as of 9/3, can stop chasing it"
+    },
+    {
+      "ts": "1788481301.597443",
+      "user": "p-destiny",
+      "thread_ts": null,
+      "events": [
+        "ev-001442"
+      ],
+      "brief": "tendon bushing arrived (12)",
+      "claim": {
+        "kind": "stock",
+        "value": 12
+      },
+      "must_mention": [
+        "tendon bushing",
+        "12"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "tendon bushing just showed up, 12 in the bag. Dropped them on the hands bench by the grip fixture 🙏"
+    },
+    {
+      "ts": "1788489912.504169",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-001504"
+      ],
+      "brief": "Order XO-5483034 placed, promised 2026-09-10",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-09-10"
+      },
+      "must_mention": [
+        "XO-5483034",
+        "WG hub",
+        "9/10"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Placed XO-5483034 for the WG hub, promise date is 9/10. Not 100% sure they'll hold it but that's what the quote says"
+    },
+    {
+      "ts": "1788492838.283221",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-000056"
+      ],
+      "brief": "Motor sample lot for battery enclosure (clevis): moved again, now 2026-09-10",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-09-10"
+      },
+      "must_mention": [
+        "Motor sample lot for battery enclosure (clevis)",
+        "thurs 9/10"
+      ],
+      "length": "short",
+      "text": "Motor sample lot for battery enclosure (clevis) moved again, now thurs 9/10. ugh. 2nd slip on this one"
+    },
+    {
+      "ts": "1788568440.789292",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-001336"
+      ],
+      "brief": "delrin blocks in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-09-03"
+      },
+      "must_mention": [
+        "delrin blocks",
+        "the test",
+        "9/3"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "delrin blocks have been in the test since 9/3, i think nobody marked them received. probably worth fixing in the tracker"
+    }
+  ]
+}

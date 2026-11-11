@@ -1,0 +1,208 @@
+{
+  "job_id": "jira-TEST-2026-11-02-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 4,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "TEST",
+    "name": "Test, rigs and fixtures"
+  },
+  "week": {
+    "start": "2026-11-02",
+    "end": "2026-11-08"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "TEST-262",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-lin",
+      "assignee": "p-lin",
+      "labels": [
+        "dfm"
+      ],
+      "priority": "Medium",
+      "created": "2026-11-03T19:36:25-08:00",
+      "due_date": "2026-11-25",
+      "events": [],
+      "brief": "Review DFM feedback",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "TEST-262-c1",
+          "by": "p-zoe",
+          "at": "2026-11-05T10:18:38-08:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-262-c2",
+          "by": "p-lin",
+          "at": "2026-11-06T11:05:19-08:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "TEST-263",
+      "type": "Bug",
+      "status": "To Do",
+      "reporter": "p-idris",
+      "assignee": "p-idris",
+      "labels": [
+        "test-failure"
+      ],
+      "priority": "High",
+      "created": "2026-11-05T18:57:00-08:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Battery enclosure thermal runaway containment: failed, root cause open",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "TEST-263-c1",
+          "by": "p-idris",
+          "at": "2026-11-06T16:55:20-08:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-263-c2",
+          "by": "p-idris",
+          "at": "2026-11-09T13:38:45-08:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-263-c3",
+          "by": "p-andre",
+          "at": "2026-11-09T15:53:58-08:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-263-c4",
+          "by": "p-idris",
+          "at": "2026-11-09T16:27:01-08:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-263-c5",
+          "by": "p-idris",
+          "at": "2026-11-09T17:26:03-08:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    }
+  ]
+}

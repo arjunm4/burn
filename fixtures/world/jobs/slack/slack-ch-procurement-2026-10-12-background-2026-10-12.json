@@ -1,0 +1,261 @@
+{
+  "job_id": "slack-ch-procurement-2026-10-12-background-2026-10-12",
+  "source": "slack",
+  "status": "blank",
+  "priority": 10,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-10-12",
+    "end": "2026-10-18"
+  },
+  "people": [
+    {
+      "id": "p-bao",
+      "name": "Bao Nguyen",
+      "display_name": "bao.n",
+      "slack_id": "U07FLK0BAO0",
+      "title": "Electrical Engineer, motor drives",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-claire",
+      "name": "Claire Donnelly",
+      "display_name": "claire",
+      "slack_id": "U07FLK0CLAI",
+      "title": "Finance and Operations Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-rachel",
+      "name": "Rachel Goldberg",
+      "display_name": "rachel",
+      "slack_id": "U07FLK0RACH",
+      "title": "Accounting and Finance Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: BMS PCBA rev 1 balancing current and cell-tap fusing. This week: Fuses added as bodge wires; Farah says rev 2 before any pack goes into the robot.",
+    "Ongoing: Leg DVT build: parts readiness and what to do about late test hardware. This week: Rev C links in, one fails inspection on a bore; Carlos builds with the good three.",
+    "Ongoing: Frameless DVT motor from the vendor keeps slipping; stator stack length change. This week: Vendor stack length went 25 to 28 mm on DVT; Owen realizes bracket bore must move 0.5 mm.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real",
+    "Ongoing: Leg drop gantry shared by leg drop, torso static load and ankle impact. This week: Carlos trains a second tech; Wednesday added from November."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1791824274.856216",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Rework five boards by hand; Idris asks whether cell taps need fuses for the cage test.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1791825881.910901",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to off-topic: a meme about CAD software",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1791828144.729885",
+      "user": "p-ingrid",
+      "thread_ts": "1791824274.856216",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Rework five boards by hand; Idris asks whether cell taps need fuses for the cage test.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1791832396.268979",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Fuses added as bodge wires; Farah says rev 2 before any pack goes into the robot.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1791832523.142562",
+      "user": "p-tomas",
+      "thread_ts": "1791824274.856216",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Rework five boards by hand; Idris asks whether cell taps need fuses for the cage test.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1791833863.583702",
+      "user": "p-claire",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with off-topic: parking lot",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1791843095.271578",
+      "user": "p-rachel",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Carlos trains a second tech; Wednesday added from November.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1791843937.048640",
+      "user": "p-bao",
+      "thread_ts": "1791843095.271578",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Carlos trains a second tech; Wednesday added from November.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

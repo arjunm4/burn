@@ -1,0 +1,455 @@
+{
+  "job_id": "slack-ch-hands-arms-2026-10-12-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 9,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hands-arms",
+    "name": "hands-arms",
+    "slack_id": "C07FLK0HAND",
+    "purpose": "Arms, wrist and hand"
+  },
+  "week": {
+    "start": "2026-10-12",
+    "end": "2026-10-18"
+  },
+  "people": [
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hand and wrist.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1791935107.144585",
+      "user": "p-sofia",
+      "thread_ts": null,
+      "events": [
+        "ev-003326"
+      ],
+      "brief": "knuckle pin: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "knuckle pin"
+      ],
+      "length": "short",
+      "text": "Shop for the knuckle pin is still quoting rev B."
+    },
+    {
+      "ts": "1791994030.436843",
+      "user": "p-sofia",
+      "thread_ts": null,
+      "events": [
+        "ev-003373"
+      ],
+      "brief": "Encoder kit for hand and wrist: still quoting 2026-10-23",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-10-23"
+      },
+      "must_mention": [
+        "Encoder kit for hand and wrist (wrist clamp)",
+        "fri 10/23"
+      ],
+      "length": "short",
+      "text": "Encoder kit for hand and wrist (wrist clamp) still quoting, fri 10/23 now."
+    },
+    {
+      "ts": "1792076526.968843",
+      "user": "p-sofia",
+      "thread_ts": null,
+      "events": [
+        "ev-002821"
+      ],
+      "brief": "FL-HND-1419 rev B released: hole pattern moved",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-HND-1419"
+      ],
+      "length": "short",
+      "text": "FL-HND-1419 rev B released, hole pattern moved."
+    },
+    {
+      "ts": "1792081726.523415",
+      "user": "p-sofia",
+      "thread_ts": "1792076526.968843",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "And no, we're not reusing the old plates with slotted holes. Tried that on the last build."
+    },
+    {
+      "ts": "1792082243.972775",
+      "user": "p-kenji",
+      "thread_ts": "1792076526.968843",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "slots would be fine for fit check imo"
+    },
+    {
+      "ts": "1792082721.525313",
+      "user": "p-kenji",
+      "thread_ts": "1792076526.968843",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "we lose a week otherwise"
+    },
+    {
+      "ts": "1792120347.013372",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-002083"
+      ],
+      "brief": "fingertip link: need 6 by 2026-10-27",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-10-27"
+        }
+      },
+      "must_mention": [
+        "fingertip link",
+        "10/27"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "We need 6 fingertip link by 10/27. Who can get a quote going?"
+    },
+    {
+      "ts": "1792164247.982530",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-002084"
+      ],
+      "brief": "distal link: need 6 by 2026-10-26",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-10-26"
+        }
+      },
+      "must_mention": [
+        "distal link",
+        "mon 10/26"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "need 6 distal link by mon 10/26"
+    },
+    {
+      "ts": "1792165327.110084",
+      "user": "p-kenji",
+      "thread_ts": "1792164247.982530",
+      "events": [
+        "ev-002921"
+      ],
+      "brief": "Correction: distal link: need 6 by 2026-10-27",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-10-27"
+        }
+      },
+      "must_mention": [
+        "distal link",
+        "tues 10/27"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "sorry distal link is tues 10/27 not monday"
+    },
+    {
+      "ts": "1792172596.968410",
+      "user": "p-sofia",
+      "thread_ts": null,
+      "events": [
+        "ev-003417"
+      ],
+      "brief": "tactile bracket: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "tactile bracket"
+      ],
+      "length": "short",
+      "text": "The tactile bracket is still quoting rev B, chasing."
+    },
+    {
+      "ts": "1792172848.292233",
+      "user": "p-omar",
+      "thread_ts": "1792172596.968410",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "i think the same shop did that on the palm parts too"
+    },
+    {
+      "ts": "1792174966.410401",
+      "user": "p-talia",
+      "thread_ts": "1792172596.968410",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "will check in a bit 🙏"
+    },
+    {
+      "ts": "1792176353.064707",
+      "user": "p-kenji",
+      "thread_ts": "1792172596.968410",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "they have the new step"
+    },
+    {
+      "ts": "1792180775.190047",
+      "user": "p-omar",
+      "thread_ts": null,
+      "events": [
+        "ev-003383"
+      ],
+      "brief": "Encoder kit for hand and wrist: still quoting 2026-10-23",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-10-23"
+      },
+      "must_mention": [
+        "Encoder kit for hand and wrist (wrist clamp)",
+        "fri 10/23"
+      ],
+      "length": "short",
+      "text": "Encoder kit for hand and wrist (wrist clamp) is still quoting, probably fri 10/23"
+    },
+    {
+      "ts": "1792184895.998477",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-003462"
+      ],
+      "brief": "tactile bracket: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "tactile bracket"
+      ],
+      "length": "short",
+      "text": "tactile bracket still quoting rev B 😬"
+    },
+    {
+      "ts": "1792191165.315910",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-002085"
+      ],
+      "brief": "1419: need 6 by 2026-10-27",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-10-27"
+        }
+      },
+      "must_mention": [
+        "1419",
+        "tues 10/27"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "need 6 of 1419 by tues 10/27"
+    },
+    {
+      "ts": "1792194735.673030",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-002065"
+      ],
+      "brief": "wrist clamp: need 3 by 2026-11-03",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-11-03"
+        }
+      },
+      "must_mention": [
+        "wrist clamp",
+        "11/3"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "We need 3 wrist clamp by 11/3. Quote first please."
+    },
+    {
+      "ts": "1792200041.132055",
+      "user": "p-talia",
+      "thread_ts": "1792194735.673030",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "yep on it 👍"
+    },
+    {
+      "ts": "1792202599.507157",
+      "user": "p-kenji",
+      "thread_ts": "1792194735.673030",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "clamps all the way down"
+    },
+    {
+      "ts": "1792206255.744541",
+      "user": "p-lin",
+      "thread_ts": "1792194735.673030",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "drawing is on the drive"
+    }
+  ]
+}

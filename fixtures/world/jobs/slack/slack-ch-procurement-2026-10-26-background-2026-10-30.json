@@ -1,0 +1,794 @@
+{
+  "job_id": "slack-ch-procurement-2026-10-26-background-2026-10-30",
+  "source": "slack",
+  "status": "blank",
+  "priority": 6,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-10-26",
+    "end": "2026-11-01"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-bao",
+      "name": "Bao Nguyen",
+      "display_name": "bao.n",
+      "slack_id": "U07FLK0BAO0",
+      "title": "Electrical Engineer, motor drives",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-claire",
+      "name": "Claire Donnelly",
+      "display_name": "claire",
+      "slack_id": "U07FLK0CLAI",
+      "title": "Finance and Operations Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-rachel",
+      "name": "Rachel Goldberg",
+      "display_name": "rachel",
+      "slack_id": "U07FLK0RACH",
+      "title": "Accounting and Finance Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Leg DVT build: parts readiness and what to do about late test hardware",
+    "Ongoing: Frameless DVT motor from the vendor keeps slipping; stator stack length change. This week: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Beth asks every owner for real dates on the hip spin test and motor."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1793373058.339732",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about this: ETA slips to mid November; Arjun asks if a second source exists, Gwen says 12 weeks.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793374239.015958",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Rev C links in, one fails inspection on a bore; Carlos builds with the good three.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793376722.435885",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: Beth asks every owner for real dates on the hip spin test and motor.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793384377.095533",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on off-topic: the wifi in the high bay",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793390256.214794",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about this: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793390617.496568",
+      "user": "p-ingrid",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with off-topic: a pet photo",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793391155.942438",
+      "user": "p-owen",
+      "thread_ts": "1793390256.214794",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793396153.646616",
+      "user": "p-rachel",
+      "thread_ts": "1793390256.214794",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793396264.556495",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to the ongoing leg dvt build: parts readiness and what to do about late test hardware",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793396630.578058",
+      "user": "p-jonas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: ETA slips to mid November; Arjun asks if a second source exists, Gwen says 12 weeks.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793397327.628605",
+      "user": "p-carlos",
+      "thread_ts": "1793390256.214794",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793400018.713407",
+      "user": "p-owen",
+      "thread_ts": "1793396264.556495",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the ongoing leg dvt build: parts readiness and what to do about late test hardware",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793401782.636542",
+      "user": "p-rachel",
+      "thread_ts": "1793390256.214794",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793401979.217543",
+      "user": "p-farah",
+      "thread_ts": "1793396264.556495",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the ongoing leg dvt build: parts readiness and what to do about late test hardware",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793402283.563467",
+      "user": "p-wei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about this: Vendor stack length went 25 to 28 mm on DVT; Owen realizes bracket bore must move 0.5 mm.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793402844.792560",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Actuator build slips; gate review held anyway with partial data.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793403451.270293",
+      "user": "p-claire",
+      "thread_ts": "1793402283.563467",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Vendor stack length went 25 to 28 mm on DVT; Owen realizes bracket bore must move 0.5 mm.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793403670.806836",
+      "user": "p-wei",
+      "thread_ts": "1793390256.214794",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793403801.074063",
+      "user": "p-omar",
+      "thread_ts": "1793396264.556495",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the ongoing leg dvt build: parts readiness and what to do about late test hardware",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793404436.932260",
+      "user": "p-bao",
+      "thread_ts": "1793402283.563467",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Vendor stack length went 25 to 28 mm on DVT; Owen realizes bracket bore must move 0.5 mm.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793404915.395568",
+      "user": "p-zoe",
+      "thread_ts": "1793402844.792560",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Actuator build slips; gate review held anyway with partial data.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793405304.012016",
+      "user": "p-farah",
+      "thread_ts": "1793402283.563467",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Vendor stack length went 25 to 28 mm on DVT; Owen realizes bracket bore must move 0.5 mm.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793405733.628370",
+      "user": "p-kenji",
+      "thread_ts": "1793390256.214794",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793406543.880595",
+      "user": "p-lin",
+      "thread_ts": "1793390256.214794",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793407776.186320",
+      "user": "p-talia",
+      "thread_ts": "1793396264.556495",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the ongoing leg dvt build: parts readiness and what to do about late test hardware",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793408871.850602",
+      "user": "p-priya",
+      "thread_ts": "1793402844.792560",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Actuator build slips; gate review held anyway with partial data.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793409707.798199",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: ETA slips to mid November; Arjun asks if a second source exists, Gwen says 12 weeks.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793410478.533424",
+      "user": "p-talia",
+      "thread_ts": "1793402844.792560",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Actuator build slips; gate review held anyway with partial data.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793410969.373154",
+      "user": "p-zoe",
+      "thread_ts": "1793390256.214794",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793412240.886572",
+      "user": "p-zoe",
+      "thread_ts": "1793396264.556495",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the ongoing leg dvt build: parts readiness and what to do about late test hardware",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793413293.411921",
+      "user": "p-farah",
+      "thread_ts": "1793390256.214794",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793417793.266899",
+      "user": "p-rachel",
+      "thread_ts": "1793390256.214794",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793420083.650203",
+      "user": "p-rachel",
+      "thread_ts": "1793390256.214794",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793423309.827864",
+      "user": "p-beth",
+      "thread_ts": "1793390256.214794",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793423815.890050",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about this: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793426395.327996",
+      "user": "p-samir",
+      "thread_ts": "1793390256.214794",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    }
+  ]
+}

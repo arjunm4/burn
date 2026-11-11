@@ -1,0 +1,533 @@
+{
+  "job_id": "meeting-mtg-01311",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 15,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-01311",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-09-22T08:45:00-07:00",
+    "actual_min": 11,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-andre",
+      "p-lin",
+      "p-carlos",
+      "p-jade",
+      "p-luis",
+      "p-destiny"
+    ],
+    "late_joiners": [
+      "p-lin",
+      "p-jade"
+    ]
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-001723",
+      "speaker": "p-dmitri",
+      "at_min": [
+        0,
+        5
+      ],
+      "brief": "heat spreader: need 10 by 2026-10-01; asks whether expediting is worth it",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-hip-thermal-plate",
+        "value": {
+          "qty": 10,
+          "by": "2026-10-01"
+        }
+      },
+      "must_mention": [
+        "heat spreader",
+        "10/1"
+      ]
+    },
+    {
+      "event": "ev-001765",
+      "speaker": "p-dmitri",
+      "at_min": [
+        1,
+        7
+      ],
+      "brief": "2124: need 3 by 2026-09-29",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-dyno-adapter-knee",
+        "value": {
+          "qty": 3,
+          "by": "2026-09-29"
+        }
+      },
+      "must_mention": [
+        "2124",
+        "9/29"
+      ]
+    },
+    {
+      "event": "ev-001738",
+      "speaker": "p-dmitri",
+      "at_min": [
+        5,
+        11
+      ],
+      "brief": "FL-TST-2136: need 2 by 2026-09-30",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-dyno-base-plate",
+        "value": {
+          "qty": 2,
+          "by": "2026-09-30"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2136",
+        "9/30"
+      ]
+    },
+    {
+      "event": "ev-001797",
+      "speaker": "p-dmitri",
+      "at_min": [
+        5,
+        11
+      ],
+      "brief": "FL-ANK-1244: need 7 by 2026-10-02",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-ankle-yoke",
+        "value": {
+          "qty": 7,
+          "by": "2026-10-02"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1244",
+        "10/2"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-dmitri",
+      "text": "Okay, let's go. Short one, I've got the review at nine."
+    },
+    {
+      "start_s": 7,
+      "speaker": "p-carlos",
+      "text": "Go."
+    },
+    {
+      "start_s": 10,
+      "speaker": "p-dmitri",
+      "text": "Dyno first. Andre."
+    },
+    {
+      "start_s": 13,
+      "speaker": "p-andre",
+      "text": "knee unit from last night tripped again, same overcurrent fault, same spot in the profile. like right at the stair-climb segment"
+    },
+    {
+      "start_s": 27,
+      "speaker": "p-andre",
+      "text": "i pulled the logs, havent looked at the encoder data yet"
+    },
+    {
+      "start_s": 33,
+      "speaker": "p-dmitri",
+      "text": "Drive or the unit?"
+    },
+    {
+      "start_s": 36,
+      "speaker": "p-andre",
+      "text": "dunno yet. im swapping the drive this morning, if the fault follows the drive we know"
+    },
+    {
+      "start_s": 45,
+      "speaker": "p-dmitri",
+      "text": "Fine. Do that before anything else."
+    },
+    {
+      "start_s": 50,
+      "speaker": "p-dmitri",
+      "text": "Thermal. We're still cooking the motor on the long holds. I need the heat spreader, ten of them, by 10/1. Question is whether it's worth paying to expedite or we just, uh, eat the wait."
+    },
+    {
+      "start_s": 71,
+      "speaker": "p-zoe",
+      "text": "i mean if the holds are the only thing blocked we could cut the hold profile short till they land? not sure it tells us much tho"
+    },
+    {
+      "start_s": 84,
+      "speaker": "p-carlos",
+      "text": "It tells us nothing. Short-hold thermal data is garbage."
+    },
+    {
+      "start_s": 90,
+      "speaker": "p-dmitri",
+      "text": "Yeah. I'll ask Gwen what it actually costs and decide today."
+    },
+    {
+      "start_s": 99,
+      "speaker": "p-destiny",
+      "text": "Can I get one of the old spreaders back for the fit check? I gave mine to Luis 😬"
+    },
+    {
+      "start_s": 106,
+      "speaker": "p-luis",
+      "text": "its on the bench by the arbor press, the one with the tape on it"
+    },
+    {
+      "start_s": 112,
+      "speaker": "p-luis",
+      "text": "blue tape, not the red"
+    },
+    {
+      "start_s": 118,
+      "speaker": "p-dmitri",
+      "text": "Also 2124. Need three by 9/29. That one's not optional!!"
+    },
+    {
+      "start_s": 129,
+      "speaker": "p-carlos",
+      "text": "Three by the twenty-ninth. Got it."
+    },
+    {
+      "start_s": 141,
+      "speaker": "p-lin",
+      "text": "Sorry, sorry. The badge reader on the side door is dead again."
+    },
+    {
+      "start_s": 147,
+      "speaker": "p-dmitri",
+      "text": "Lin, life test. Quick."
+    },
+    {
+      "start_s": 150,
+      "speaker": "p-lin",
+      "text": "Ankle rig is about two thirds of the way through the cycle target. Backlash is creeping but still inside the limit. I'll have a plot by end of day."
+    },
+    {
+      "start_s": 164,
+      "speaker": "p-dmitri",
+      "text": "Creeping how much."
+    },
+    {
+      "start_s": 167,
+      "speaker": "p-lin",
+      "text": "Small. Roughly linear since the weekend. I don't want to call it until I see the next block."
+    },
+    {
+      "start_s": 180,
+      "speaker": "p-zoe",
+      "text": "fixtures, the new clamp plate for the hip rig is cut, just waiting on deburr. should be on the rig thurs. maybe fri actually"
+    },
+    {
+      "start_s": 195,
+      "speaker": "p-luis",
+      "text": "i can deburr it today if nobody needs me on the line after 10"
+    },
+    {
+      "start_s": 201,
+      "speaker": "p-carlos",
+      "text": "You're on the line till lunch. After."
+    },
+    {
+      "start_s": 205,
+      "speaker": "p-luis",
+      "text": "ok after lunch"
+    },
+    {
+      "start_s": 232,
+      "speaker": "p-jade",
+      "text": "hey sorry was at the dock truck came early"
+    },
+    {
+      "start_s": 238,
+      "speaker": "p-dmitri",
+      "text": "Anything for us?"
+    },
+    {
+      "start_s": 241,
+      "speaker": "p-jade",
+      "text": "couple boxes for test mostly fasteners and some cable stuff ill put them on the shelf by inspection"
+    },
+    {
+      "start_s": 252,
+      "speaker": "p-andre",
+      "text": "did the torque transducer come back from cal?"
+    },
+    {
+      "start_s": 256,
+      "speaker": "p-jade",
+      "text": "didnt see it"
+    },
+    {
+      "start_s": 259,
+      "speaker": "p-andre",
+      "text": "ok ill chase it"
+    },
+    {
+      "start_s": 318,
+      "speaker": "p-dmitri",
+      "text": "Two more on the list. FL-TST-2136, need two by 9/30. And FL-ANK-1244, seven of those by 10/2."
+    },
+    {
+      "start_s": 334,
+      "speaker": "p-zoe",
+      "text": "sorry 2136 by when?"
+    },
+    {
+      "start_s": 337,
+      "speaker": "p-dmitri",
+      "text": "9/30. The thirtieth."
+    },
+    {
+      "start_s": 341,
+      "speaker": "p-destiny",
+      "text": "Seven of the ankle ones, ok, putting it on the whiteboard 🙏"
+    },
+    {
+      "start_s": 352,
+      "speaker": "p-carlos",
+      "text": "Who's on the overnight soak tonight?"
+    },
+    {
+      "start_s": 356,
+      "speaker": "p-andre",
+      "text": "me. ill set it up before i leave"
+    },
+    {
+      "start_s": 362,
+      "speaker": "p-lin",
+      "text": "I'll check it when I get in."
+    },
+    {
+      "start_s": 370,
+      "speaker": "p-dmitri",
+      "text": "Housekeeping. Somebody left the chamber door open overnight Sunday. Again."
+    },
+    {
+      "start_s": 378,
+      "speaker": "p-destiny",
+      "text": "Wasn't me 😅"
+    },
+    {
+      "start_s": 381,
+      "speaker": "p-carlos",
+      "text": "I'll print a sign for the door."
+    },
+    {
+      "start_s": 387,
+      "speaker": "p-zoe",
+      "text": "also the coffee machine is doing the grinding noise again"
+    },
+    {
+      "start_s": 392,
+      "speaker": "p-luis",
+      "text": "its been doing that for weeks lol"
+    },
+    {
+      "start_s": 397,
+      "speaker": "p-dmitri",
+      "text": "Not our problem. Andre, drive swap. Lin, plot. Zoe, clamp plate. I'll sort the expedite question. Done."
+    }
+  ],
+  "summary": {
+    "overview": "Quick standup. Knee unit on dyno still tripping overcurrent at same point in profile, drive swap today to isolate. Motor running hot on long holds while waiting on heat spreaders; Dmitri to decide on expediting. Life test backlash creeping but in limit. Lin and Jade late.",
+    "shorthand_bullet": [
+      "dyno: knee unit overcurrent trip, same segment, Andre swapping drive",
+      "heat spreader x10 needed by 10/1, expedite y/n TBD (Dmitri w/ Gwen)",
+      "2124 x3 by 9/29",
+      "FL-TST-2136 x2 by 9/30",
+      "FL-ANK-1244 x7 by 10/2",
+      "life test ankle rig ~2/3 thru, backlash creeping, plot EOD",
+      "hip rig clamp plate cut, needs deburr, Luis after lunch",
+      "torque transducer not back from cal?",
+      "chamber door left open again"
+    ],
+    "action_items": [
+      "Andre swap drive on knee unit, check if fault follows",
+      "Dmitri ask Gwen re expedite cost on spreaders",
+      "Lin backlash plot",
+      "deburr clamp plate",
+      "chase transducer cal",
+      "sign for chamber door"
+    ],
+    "keywords": [
+      "dyno",
+      "overcurrent",
+      "heat spreader",
+      "backlash",
+      "life test",
+      "clamp plate",
+      "thermal hold"
+    ]
+  }
+}

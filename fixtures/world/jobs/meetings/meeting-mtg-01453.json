@@ -1,0 +1,363 @@
+{
+  "job_id": "meeting-mtg-01453",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 9,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-01453",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-10-15T08:45:00-07:00",
+    "actual_min": 16,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-lin",
+      "p-carlos",
+      "p-jade",
+      "p-luis",
+      "p-destiny"
+    ],
+    "late_joiners": [
+      "p-destiny"
+    ]
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-002151",
+      "speaker": "p-dmitri",
+      "at_min": [
+        0,
+        6
+      ],
+      "brief": "FL-TST-2443: need 3 by 2026-11-11",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-grip-load-cell-plate",
+        "value": {
+          "qty": 3,
+          "by": "2026-11-11"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2443",
+        "11/11"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 4,
+      "speaker": "p-dmitri",
+      "text": "Morning. Andre's out today, he sent his update, the second hip unit ran the same as the first, so it's the dyno setup, not the units. He'll dig into it when he's back."
+    },
+    {
+      "start_s": 22,
+      "speaker": "p-lin",
+      "text": "So the cooling, probably."
+    },
+    {
+      "start_s": 24,
+      "speaker": "p-dmitri",
+      "text": "Probably. Don't guess yet."
+    },
+    {
+      "start_s": 28,
+      "speaker": "p-dmitri",
+      "text": "Before I forget. FL-TST-2443, we need three by 11/11. Zoe, Carlos, that's on your list. FL-TST-2443. Three."
+    },
+    {
+      "start_s": 45,
+      "speaker": "p-zoe",
+      "text": "two four four three, ok. yeah I have it. three by the eleventh"
+    },
+    {
+      "start_s": 53,
+      "speaker": "p-carlos",
+      "text": "Got it."
+    },
+    {
+      "start_s": 57,
+      "speaker": "p-dmitri",
+      "text": "Okay. Lin."
+    },
+    {
+      "start_s": 59,
+      "speaker": "p-lin",
+      "text": "Station two inspection is done. Some wear on the output side, within what we expected at this cycle count. Photos are in the folder. It's back running as of about an hour ago."
+    },
+    {
+      "start_s": 80,
+      "speaker": "p-dmitri",
+      "text": "Within expected, good. Zoe."
+    },
+    {
+      "start_s": 83,
+      "speaker": "p-zoe",
+      "text": "I talked to purchasing about the dyno coupling, they, um, they said it's in progress, no date back yet. I'll ask again fri. tomorrow I mean. I'm also starting on the hip side bracket for the dyno, the drawing anyway."
+    },
+    {
+      "start_s": 110,
+      "speaker": "p-dmitri",
+      "text": "Push them for a date."
+    },
+    {
+      "start_s": 113,
+      "speaker": "p-zoe",
+      "text": "yep"
+    },
+    {
+      "start_s": 116,
+      "speaker": "p-carlos",
+      "text": "Rig two cable chain, I found an old one in the back that fits. Swapped it last night. No more zip ties!!"
+    },
+    {
+      "start_s": 127,
+      "speaker": "p-lin",
+      "text": "Finally."
+    },
+    {
+      "start_s": 130,
+      "speaker": "p-luis",
+      "text": "nice"
+    },
+    {
+      "start_s": 133,
+      "speaker": "p-jade",
+      "text": "two deliveries yesterday, both for structures, i messaged lukas"
+    },
+    {
+      "start_s": 141,
+      "speaker": "p-dmitri",
+      "text": "Okay. Luis."
+    },
+    {
+      "start_s": 143,
+      "speaker": "p-luis",
+      "text": "so with andre out the knee doesn't get its spin today, so I'm gonna do the teardown report on the life test one, the bearing thing. I scoped it, it's, it's definitely brinelling, the marks are evenly spaced."
+    },
+    {
+      "start_s": 170,
+      "speaker": "p-lin",
+      "text": "Evenly spaced like at the ball pitch?"
+    },
+    {
+      "start_s": 173,
+      "speaker": "p-luis",
+      "text": "yeah. looks like it"
+    },
+    {
+      "start_s": 176,
+      "speaker": "p-lin",
+      "text": "Then that's probably static load, not the cycling. Send me the pictures, I'd like to see them before you write it up."
+    },
+    {
+      "start_s": 186,
+      "speaker": "p-luis",
+      "text": "ok, sending after this. after this*"
+    },
+    {
+      "start_s": 240,
+      "speaker": "p-destiny",
+      "text": "Hi sorry!! Badge didn't work at the side door 😩"
+    },
+    {
+      "start_s": 246,
+      "speaker": "p-carlos",
+      "text": "It's been doing that all week."
+    },
+    {
+      "start_s": 249,
+      "speaker": "p-destiny",
+      "text": "Ugh. Okay, assembly, I'm starting the shin covers today, and I put the harness photo in the folder for Nora 🙂"
+    },
+    {
+      "start_s": 262,
+      "speaker": "p-dmitri",
+      "text": "Good. Anything else? No?"
+    },
+    {
+      "start_s": 266,
+      "speaker": "p-zoe",
+      "text": "oh, the hex keys at bench three are all, like, rounded. can we get new ones"
+    },
+    {
+      "start_s": 273,
+      "speaker": "p-dmitri",
+      "text": "Yes. Okay, done."
+    }
+  ],
+  "summary": {
+    "overview": "Thursday standup, Andre out. Hip temp question resolved toward the dyno setup. Dmitri flagged FL-TST-2443 need-by up front. Life test station back after inspection.",
+    "shorthand_bullet": [
+      "FL-TST-2443: need 3 by 11/11",
+      "Andre (via msg): hip unit 2 same as unit 1, so dyno setup not units, digging in when back",
+      "life test stn 2 inspection done, wear within expected, back running",
+      "dyno coupling: purchasing says in progress, no date",
+      "Zoe starting hip side dyno bracket drawing",
+      "rig 2 cable chain replaced, zip ties gone",
+      "2 deliveries for structures, Lukas messaged",
+      "life test bearing: brinelling, evenly spaced, Lin thinks static load",
+      "Destiny on shin covers, harness photo in folder",
+      "bench 3 hex keys rounded"
+    ],
+    "action_items": [
+      "Zoe push purchasing for a coupling date",
+      "Luis send bearing pics to Lin before writing report",
+      "new hex keys for bench 3",
+      "badge reader side door, someone tell facilities?",
+      "FL-TST-2443 x3 by 11/11"
+    ],
+    "keywords": [
+      "FL-TST-2443",
+      "dyno setup",
+      "brinelling",
+      "life test",
+      "cable chain",
+      "shin covers"
+    ]
+  }
+}

@@ -1,0 +1,268 @@
+{
+  "job_id": "jira-LEG-2026-10-05-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 11,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "LEG",
+    "name": "Legs and ankle"
+  },
+  "week": {
+    "start": "2026-10-05",
+    "end": "2026-10-11"
+  },
+  "people": [
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "LEG-346",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-samir",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-10-06T11:07:26-07:00",
+      "due_date": "2026-10-09",
+      "events": [],
+      "brief": "Order 12x Tilt stand load arm",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": "tilt stand load arms",
+      "description": "for the tilt stand, same design as current arm",
+      "comments": [
+        {
+          "id": "LEG-346-c1",
+          "by": "p-zoe",
+          "at": "2026-10-19T16:12:19-07:00",
+          "events": [
+            "ev-001890"
+          ],
+          "brief": "lever arm arrived (12)",
+          "claim": {
+            "kind": "stock",
+            "value": 12
+          },
+          "must_mention": [
+            "lever arm",
+            "12"
+          ],
+          "body": "lever arm in, all 12"
+        },
+        {
+          "id": "LEG-346-c2",
+          "by": "p-zoe",
+          "at": "2026-10-22T13:15:00-07:00",
+          "events": [
+            "ev-001891"
+          ],
+          "brief": "lever arm in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-10-21"
+          },
+          "must_mention": [
+            "lever arm",
+            "the build",
+            "wed the 21st"
+          ],
+          "body": "lever arm on the build since wed the 21st"
+        },
+        {
+          "id": "LEG-346-c3",
+          "by": "p-samir",
+          "at": "2026-10-23T12:34:28-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "any update?"
+        },
+        {
+          "id": "LEG-346-c4",
+          "by": "p-samir",
+          "at": "2026-10-26T10:46:20-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "pushing a bit, no new date"
+        },
+        {
+          "id": "LEG-346-c5",
+          "by": "p-samir",
+          "at": "2026-10-26T11:04:58-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "still a bit out, will update"
+        },
+        {
+          "id": "LEG-346-c6",
+          "by": "p-samir",
+          "at": "2026-11-02T11:33:06-08:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "anything new here?"
+        }
+      ]
+    },
+    {
+      "key": "LEG-352",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-diego",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-10-08T10:22:36-07:00",
+      "due_date": null,
+      "events": [
+        "ev-002025"
+      ],
+      "brief": "Order 2x Tilt stand angle calibration block, 24x Tilt stand stop bushing, 1x Tilt stand foot clamp, 3x Tilt stand load arm / cal block: need 2 by 2026-10-23",
+      "must_mention": [
+        "cal block",
+        "fri 10/23"
+      ],
+      "description_length": "short",
+      "summary": "Tilt stand cal block, stop bushings etc",
+      "description": "cal block x2 by fri 10/23, the rest is lower priority",
+      "comments": [
+        {
+          "id": "LEG-352-c1",
+          "by": "p-diego",
+          "at": "2026-10-08T10:37:36-07:00",
+          "events": [
+            "ev-002935"
+          ],
+          "brief": "Correction: cal block: need 2 by 2026-10-26",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 2,
+              "by": "2026-10-26"
+            }
+          },
+          "must_mention": [
+            "cal block",
+            "10/26"
+          ],
+          "body": "correction cal block 10/26"
+        },
+        {
+          "id": "LEG-352-c2",
+          "by": "p-diego",
+          "at": "2026-10-09T12:43:34-07:00",
+          "events": [
+            "ev-002027"
+          ],
+          "brief": "FL-TST-2567: need 2 by 2026-10-26",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 2,
+              "by": "2026-10-26"
+            }
+          },
+          "must_mention": [
+            "FL-TST-2567",
+            "mon the 26th"
+          ],
+          "body": "FL-TST-2567 need 2 by mon the 26th"
+        },
+        {
+          "id": "LEG-352-c3",
+          "by": "p-diego",
+          "at": "2026-10-14T14:15:38-07:00",
+          "events": [
+            "ev-002028"
+          ],
+          "brief": "angle block: need 2 by 2026-10-26",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 2,
+              "by": "2026-10-26"
+            }
+          },
+          "must_mention": [
+            "angle block",
+            "10/26"
+          ],
+          "body": "angle block still 10/26"
+        }
+      ]
+    }
+  ]
+}

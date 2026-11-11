@@ -1,0 +1,123 @@
+{
+  "job_id": "slack-ch-procurement-2026-10-12-background-2026-10-16",
+  "source": "slack",
+  "status": "blank",
+  "priority": 10,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-10-12",
+    "end": "2026-10-18"
+  },
+  "people": [
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: BMS PCBA rev 1 balancing current and cell-tap fusing. This week: Fuses added as bodge wires; Farah says rev 2 before any pack goes into the robot.",
+    "Ongoing: Leg DVT build: parts readiness and what to do about late test hardware. This week: Rev C links in, one fails inspection on a bore; Carlos builds with the good three.",
+    "Ongoing: Frameless DVT motor from the vendor keeps slipping; stator stack length change. This week: Vendor stack length went 25 to 28 mm on DVT; Owen realizes bracket bore must move 0.5 mm.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real",
+    "Ongoing: Leg drop gantry shared by leg drop, torso static load and ankle impact. This week: Carlos trains a second tech; Wednesday added from November."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1792175994.107191",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: A missed Thursday slot pushes a test a full week; Zoe asks for a third slot day.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1792176431.230634",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about this: Zoe: drop gantry only runs Tue/Thu because rigging needs two techs.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1792182433.077917",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: Rev C links in, one fails inspection on a bore; Carlos builds with the good three.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    }
+  ]
+}

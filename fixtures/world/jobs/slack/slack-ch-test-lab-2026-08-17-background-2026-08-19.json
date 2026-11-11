@@ -1,0 +1,261 @@
+{
+  "job_id": "slack-ch-test-lab-2026-08-17-background-2026-08-19",
+  "source": "slack",
+  "status": "blank",
+  "priority": 26,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-test-lab",
+    "name": "test-lab",
+    "slack_id": "C07FLK0TLAB",
+    "purpose": "Test lab: rigs, bookings, results, fixtures"
+  },
+  "week": {
+    "start": "2026-08-17",
+    "end": "2026-08-23"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Vent channel sizing debated; burst plate at 0.5 bar vs open slots.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators. This week: Mei worries derate will cut torque mid-step and drop the leg.",
+    "Ongoing: Tendons fray at the proximal pulley after 40k grip cycles",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind. This week: Dyno shows 0.4 deg backlash on two of three rev B units, twice spec.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Interim: machined strain-relief clamp and service loop; leg rev C routing planned.",
+    "Ongoing: Gait controller tuning for the investor demo on the gait gantry. This week: Dress rehearsal: 2 minutes continuous walking; demo plan locked.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1787157011.151349",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about the ongoing gait controller tuning for the investor demo on the gait gantry",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787162329.104597",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about this: Sofia debates Dyneema vs steel cable; Kenji says steel kills the bend radius.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787164785.179099",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Ingrid says no until DVT; run pinch tests on nights instead.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787181331.486799",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: Renee: machined plates are 1.4 kg heavier and ~$1.1k each on Xometry.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787185079.873075",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on off-topic: snacks restock",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787187612.505190",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with cad change to the actuator dyno",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787191386.930487",
+      "user": "p-diego",
+      "thread_ts": "1787187612.505190",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: cad change to the actuator dyno",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787192100.050887",
+      "user": "p-andre",
+      "thread_ts": "1787187612.505190",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: cad change to the actuator dyno",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787194627.500439",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Dyno shows 0.4 deg backlash on two of three rev B units, twice spec.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    }
+  ]
+}

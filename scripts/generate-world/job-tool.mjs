@@ -46,6 +46,7 @@ const tsWhen = (ts, people) => {
 const shortBrief = (b) => String(b).replace(/^background: /, '').replace(/^reply \((.*?)\) in the thread about: the message above$/, 'reply: $1').replace(/^reply \((.*?)\) in the thread about: /, 'reply ($1) re: ');
 const mm = (list) => (list && list.length ? list.map((s) => JSON.stringify(s)).join(' ') : '-');
 function claimNote(c) {
+  if (c && c.kind === 'duration' && Array.isArray(c.value)) return `duration ${c.value[0] === c.value[1] ? c.value[0] : c.value.join('-')} days`;
   if (!c || /^[a-z]+-[a-z0-9-]+$/.test(String(c.value))) return null; /* ids add nothing for a writer */ const v = typeof c.value === 'object' && c.value ? Object.entries(c.value).filter(([, x]) => x != null).map(([k, x]) => `${k}=${x}`).join(' ') : c.value; return `${c.kind} ${v}`; }
 
 export function viewJob(job) {

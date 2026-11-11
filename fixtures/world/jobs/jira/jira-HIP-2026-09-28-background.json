@@ -1,0 +1,787 @@
+{
+  "job_id": "jira-HIP-2026-09-28-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 14,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HIP",
+    "name": "Actuators (hip and knee)"
+  },
+  "week": {
+    "start": "2026-09-28",
+    "end": "2026-10-04"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "HIP-446",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": null,
+      "labels": [
+        "tech-debt"
+      ],
+      "priority": "Highest",
+      "created": "2026-09-28T12:53:39-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Label and bin received parts (knee actuator)",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-446-c1",
+          "by": "p-tomas",
+          "at": "2026-10-01T10:01:58-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-446-c2",
+          "by": "p-arjun",
+          "at": "2026-10-05T12:13:58-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-446-c3",
+          "by": "p-arjun",
+          "at": "2026-10-05T16:49:46-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-446-c4",
+          "by": "p-nadia",
+          "at": "2026-10-07T17:53:44-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-446-c5",
+          "by": "p-nadia",
+          "at": "2026-10-09T16:09:12-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-447",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-arjun",
+      "assignee": "p-wei",
+      "labels": [
+        "cleanup"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-28T13:30:21-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Review DFM feedback (hip actuator)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-447-c1",
+          "by": "p-wei",
+          "at": "2026-10-01T14:47:23-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-448",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": null,
+      "labels": [
+        "dfm"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-29T08:24:37-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Rework fixture clamp (knee actuator)",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HIP-449",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-arjun",
+      "assignee": "p-arjun",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-29T10:00:00-07:00",
+      "due_date": "2026-10-19",
+      "events": [],
+      "brief": "Tolerance stack check: Hip to pelvis interface plate",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-449-c1",
+          "by": "p-arjun",
+          "at": "2026-10-09T15:55:37-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-449-c2",
+          "by": "p-owen",
+          "at": "2026-10-12T11:12:11-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-449-c3",
+          "by": "p-arjun",
+          "at": "2026-10-20T13:36:14-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-450",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-arjun",
+      "assignee": "p-arjun",
+      "labels": [
+        "build"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-29T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Test stand rework: Dyno inertia disc",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HIP-451",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-wei",
+      "assignee": "p-nadia",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-09-29T14:09:38-07:00",
+      "due_date": "2026-10-05",
+      "events": [],
+      "brief": "Update drawing and BOM (knee actuator)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-451-c1",
+          "by": "p-nadia",
+          "at": "2026-10-01T15:52:44-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-452",
+      "type": "Bug",
+      "status": "In Progress",
+      "reporter": "p-nadia",
+      "assignee": "p-owen",
+      "labels": [
+        "bench"
+      ],
+      "priority": "Low",
+      "created": "2026-09-29T17:33:42-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Document test procedure (knee actuator)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-452-c1",
+          "by": "p-owen",
+          "at": "2026-10-19T10:01:54-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-453",
+      "type": "Bug",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": "p-nadia",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-09-29T18:52:04-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Rework fixture clamp (hip actuator)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-453-c1",
+          "by": "p-nadia",
+          "at": "2026-10-01T11:43:42-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-453-c2",
+          "by": "p-tomas",
+          "at": "2026-10-05T13:25:07-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-453-c3",
+          "by": "p-owen",
+          "at": "2026-10-05T13:42:23-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-454",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-nadia",
+      "assignee": "p-nadia",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-30T09:30:36-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Update assembly work instructions (knee actuator)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-454-c1",
+          "by": "p-nadia",
+          "at": "2026-09-30T12:49:33-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-454-c2",
+          "by": "p-nadia",
+          "at": "2026-10-20T17:21:55-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-454-c3",
+          "by": "p-nadia",
+          "at": "2026-10-27T15:33:23-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-455",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-arjun",
+      "assignee": "p-tomas",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-30T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Rig setup: Dyno shaft spacer",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-455-c1",
+          "by": "p-tomas",
+          "at": "2026-10-01T09:05:40-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-455-c2",
+          "by": "p-wei",
+          "at": "2026-10-20T16:01:20-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-455-c3",
+          "by": "p-arjun",
+          "at": "2026-10-23T13:43:45-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-456",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-samir",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-30T10:49:39-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Order 9x Hip cable exit clamp, 21x Hip actuator housing",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HIP-457",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-arjun",
+      "assignee": "p-nadia",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-10-01T08:16:14-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Follow up vendor question (hip actuator)",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HIP-458",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-nadia",
+      "assignee": "p-owen",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-10-01T09:22:09-07:00",
+      "due_date": "2026-10-28",
+      "events": [],
+      "brief": "Calibrate instrument (hip actuator)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-458-c1",
+          "by": "p-arjun",
+          "at": "2026-10-02T17:00:53-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-458-c2",
+          "by": "p-tomas",
+          "at": "2026-10-05T16:34:01-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-459",
+      "type": "Task",
+      "status": "To Do",
+      "reporter": "p-owen",
+      "assignee": "p-owen",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-10-01T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Kit and assemble: Knee output shaft",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-459-c1",
+          "by": "p-nadia",
+          "at": "2026-10-12T17:36:43-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-459-c2",
+          "by": "p-owen",
+          "at": "2026-10-16T11:20:16-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-459-c3",
+          "by": "p-owen",
+          "at": "2026-10-19T12:28:35-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-459-c4",
+          "by": "p-owen",
+          "at": "2026-10-26T15:28:03-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-460",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-tomas",
+      "assignee": null,
+      "labels": [],
+      "priority": "High",
+      "created": "2026-10-01T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Fixture install and shakedown: Dyno shaft spacer",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HIP-461",
+      "type": "Sub-task",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": "p-arjun",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-10-01T16:03:18-07:00",
+      "due_date": "2026-10-27",
+      "events": [],
+      "brief": "Firmware flag for bench mode (hip actuator)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-461-c1",
+          "by": "p-arjun",
+          "at": "2026-10-12T16:22:17-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-462",
+      "type": "Sub-task",
+      "status": "To Do",
+      "reporter": "p-arjun",
+      "assignee": "p-arjun",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-10-02T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Install and torque: Hip holding-brake bracket",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HIP-463",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-tomas",
+      "assignee": "p-tomas",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-10-02T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Instrumentation fit-up: Dyno thermocouple clamp",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-463-c1",
+          "by": "p-nadia",
+          "at": "2026-10-12T11:20:48-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-463-c2",
+          "by": "p-wei",
+          "at": "2026-10-27T16:18:04-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-464",
+      "type": "Task",
+      "status": "To Do",
+      "reporter": "p-zoe",
+      "assignee": "p-zoe",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-10-02T10:11:38-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Order 2x Hip to pelvis interface plate",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    }
+  ]
+}
