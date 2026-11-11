@@ -3,7 +3,7 @@
 // Returns true when it handled the request.
 import { demoCard } from './demo.mjs';
 
-const CHANGES = new Set(['0', '1', '2', '3']);
+const CHANGES = new Set(['0', '1', '2', '3', '4']);
 
 export async function timevalueRoutes(req, res, pathname, json) {
   if (!pathname.startsWith('/api/timevalue/')) return false;

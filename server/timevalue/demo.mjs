@@ -169,7 +169,10 @@ export async function demoCard({ change = 0, sourcesDir = DEFAULT_SOURCES, outDi
   const policy = di.policy ? { type: di.policy.type, usd_per_day: di.policy.usd_per_day ?? null, curve: di.policy.curve ?? null }
     : polRec ? { type: polRec.type, usd_per_day: polRec.usd_per_day, curve: polRec.curve } : null;
   const policyOwner = personById(settings, di.policy?.by) || personById(settings, polRec?.set_by?.email) || personById(settings, milestone.owner);
-  const target = polRec?.milestone_date || null;
+  // A live message can pull the milestone in to a hard date ("has to be done by 11/18 (hard date ...)").
+  const hardM = String(live?.doc?.text || live?.text || '').match(/done by (\d{1,2})\/(\d{1,2})[^)]*hard/i);
+  const hardDate = hardM ? `${String(now).slice(0, 4)}-${hardM[1].padStart(2, '0')}-${hardM[2].padStart(2, '0')}` : null;
+  const target = hardDate || polRec?.milestone_date || null;
   const duration = di.duration?.value ?? null;
 
   const holidays = settings.holidays || [];
@@ -178,7 +181,7 @@ export async function demoCard({ change = 0, sourcesDir = DEFAULT_SOURCES, outDi
     const dl = (settings.deliverables || []).find((d) => d.id === i.id) || (settings.parts || []).find((p) => p.id === i.id);
     return { ...i, name: i.name || dl?.name || i.id, owner: i.owner || dl?.owner || null, ready: i.ready && typeof i.ready === 'object' && !('min' in i.ready) ? i.ready.value ?? null : i.ready };
   });
-  const testIn = { id: test.id, owner: test.owner, planned_start: toDate(di.planned_start?.value), duration_days: duration, rig_slot_days: di.rig?.slot_days ?? null, bookings: [], owner_out: [] };
+  const testIn = { id: test.id, owner: test.owner, planned_start: hardDate ? toDate(now) : toDate(di.planned_start?.value), duration_days: duration, rig_slot_days: di.rig?.slot_days ?? null, bookings: [], owner_out: [] };
   const args = { holidays, part: part.id, quote: tiersIn.map(({ tier, total, ready }) => ({ tier, total, ready })), test: testIn, inputs: others.map((i) => ({ id: i.id, ready: i.ready, owner: i.owner, said_by: i.said_by, name: i.name })), milestone: { id: milestone.id, target, policy, owner: milestone.owner }, now };
 
   let cmp = compare(args);
@@ -212,8 +215,28 @@ export async function demoCard({ change = 0, sourcesDir = DEFAULT_SOURCES, outDi
   }
 
   const card = buildCard({ settings, partEntry, quote, part, test, milestone, target, policy, policyOwner, polRec, duration, testIn, tiersIn, others, cmp, rub, live, now, args });
+  if (hardDate) applyHardDate(card, hardDate);
   card.wasted = await wastedExpedites({ outDir });
   return { card, sources: sourceList({ card, others, di, live }), engine };
+}
+
+// Hard date: a tier that finishes after it is not an option; the cheapest tier that makes it is the answer.
+function applyHardDate(card, date) {
+  const fin = (t) => (typeof t.finish === 'string' ? t.finish : t.finish?.max) || null;
+  const ok = card.tiers.filter((t) => fin(t) && fin(t) <= date).sort((a, b) => a.total - b.total);
+  const late = card.tiers.filter((t) => !ok.includes(t));
+  const short = (d) => { const x = new Date(d + 'T00:00:00Z'); return `${['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][x.getUTCDay()]} ${x.getUTCMonth() + 1}/${x.getUTCDate()}`; };
+  card.milestone = { ...card.milestone, target: date, hard: true };
+  if (card.test) card.test = { ...card.test, planned_start: String(card.now || '').slice(0, 10) || card.test.planned_start };
+  if (!ok.length) { card.outcome = 'blocked'; card.headline = `No option finishes the spin test by the hard date (${short(date)}).`; return; }
+  const pick = ok[0];
+  card.tiers = card.tiers.map((t) => ({ ...t, recommended: t.tier === pick.tier, misses_hard_date: !ok.includes(t) }));
+  card.outcome = 'pay'; card.recommended = pick.tier; card.outcome_tag = `Pay for ${pick.label}`;
+  card.headline = `${pick.label}: the only option that finishes the spin test by the hard date, ${short(date)}.`;
+  card.detail = [`The motor is on the bench (Arjun) and the spin test was pulled in to ${short(date)} for the investor visit.`,
+    ...late.map((t) => `${t.label} finishes ${short(fin(t))}: misses the hard date.`),
+    `${pick.label} finishes ${short(fin(pick))} for ${card.tiers.find((t) => t.tier === pick.tier).total.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })}.`];
+  card.dominated = null;
 }
 
 // compare() with one input's ready date replaced; null if the maths rejects it.

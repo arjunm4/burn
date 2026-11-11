@@ -16,6 +16,7 @@ const CHANGES = [
   {n: 1, label: '10:45 · motor slips'},
   {n: 2, label: '11:00 · motor unsure'},
   {n: 3, label: '11:15 · sources disagree'},
+  {n: 4, label: '11:45 · test pulled in to 11/18'},
 ];
 const WASTED = {count: 61, expedited: 133, premium_usd: 31159};
 

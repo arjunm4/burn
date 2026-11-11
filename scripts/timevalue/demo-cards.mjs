@@ -17,9 +17,9 @@ function arg(name, fallback) {
 const sourcesDir = arg('--sources', FIXTURE_SOURCES);
 const outDir = arg('--out', DEFAULT_OUT);
 const cards = {};
-for (const change of [0, 1, 2, 3]) cards[change] = await demoCard({ change, sourcesDir, outDir });
+for (const change of [0, 1, 2, 3, 4]) cards[change] = await demoCard({ change, sourcesDir, outDir });
 const out = { sources_dir: path.relative(ROOT, sourcesDir), cards };
 mkdirSync(outDir, { recursive: true });
 writeFileSync(path.join(outDir, 'demo-cards.json'), JSON.stringify(out, null, 2) + '\n');
-for (const change of [0, 1, 2, 3]) console.log(`change ${change}: ${cards[change].card.outcome} — ${cards[change].card.headline}`);
+for (const change of [0, 1, 2, 3, 4]) console.log(`change ${change}: ${cards[change].card.outcome} — ${cards[change].card.headline}`);
 console.log(`wrote ${path.relative(ROOT, path.join(outDir, 'demo-cards.json'))} from ${out.sources_dir}`);

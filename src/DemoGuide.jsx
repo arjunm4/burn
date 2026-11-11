@@ -11,6 +11,7 @@ const STEPS = [
   {page: /^\/timevalue$/, text: '10:45 · motor slips', say: '10:30: Expedite the bracket: 2 days sooner, worth it at $600/day. Now the motor slips…'},
   {page: /^\/timevalue$/, text: '11:00 · motor unsure', say: 'Rushing the bracket buys nothing: the motor sets the start. Save $900. Now the date is unsure…'},
   {page: /^\/timevalue$/, text: '11:15 · sources disagree', say: 'Burn does not guess: it asks Arjun one question. Now two people disagree…'},
+  {page: /^\/timevalue$/, text: '11:45 · test pulled in to 11/18', say: 'Then the motor arrives and the test is pulled in to a hard 11/18 investor date…'},
   {page: /^\/timevalue$/, go: '/orders', say: 'It asks instead of picking. Now place the real bracket order.'},
   {page: /^\/(orders)?$/, text: 'Enter it as', say: 'Owen enters 4× hip actuator bracket rev C with the CAD file.'},
   {page: /^\/orders\/[\w-]+$/, text: 'Okay', exact: true, say: 'Burn read Slack, Jira and meetings, got the Xometry quote and recommends Expedite. Click Okay.'},
