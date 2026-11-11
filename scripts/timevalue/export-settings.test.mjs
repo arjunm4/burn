@@ -62,7 +62,10 @@ test('settings follow the contract and hide what Burn must find', () => {
     { value: '2026-11-19', known_at: '2026-10-01T09:00:00-07:00', by: 'p-owen' },
   ]);
   assert.deepEqual(s.tests[0].duration_estimate_days, [2, 3]);
-  assert.deepEqual(s.milestones[0].date, [{ value: '2026-11-24', known_at: '2026-10-05T09:15:00-07:00', by: 'p-arjun' }]);
+  assert.deepEqual(s.milestones[0].date, [
+    { value: '2026-11-18', known_at: '2026-02-10T09:00:00-08:00', by: 'p-arjun' },
+    { value: '2026-11-24', known_at: '2026-10-05T09:15:00-07:00', by: 'p-arjun' },
+  ]);
   // value policy history is configuration: kept whole
   assert.deepEqual(s.milestones[0].value_policy, [{ value: { type: 'per_day', usd_per_day: 600 }, known_at: '2026-10-05T09:15:00-07:00', by: 'p-arjun' }]);
   assert.deepEqual(s.rigs, [
