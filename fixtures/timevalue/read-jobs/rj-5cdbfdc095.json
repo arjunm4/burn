@@ -1,0 +1,3059 @@
+{
+  "job_id": "rj-5cdbfdc095",
+  "priority": 167,
+  "label": "weeks of 2026-03-09..2026-03-16",
+  "now": "2026-11-10T10:30:00-08:00",
+  "instructions": "docs/build/read-job-instructions.md",
+  "output": "Fill \"results\" with one entry per doc (see instructions), set \"filled_by\", then save this file.",
+  "catalog": [
+    {
+      "id": "dl-battery-cells",
+      "kind": "deliverable",
+      "name": "21700 cells for test packs",
+      "aliases": [],
+      "assembly": "a-battery-enclosure"
+    },
+    {
+      "id": "dl-bms-pcba",
+      "kind": "deliverable",
+      "name": "BMS PCBA, rev 1",
+      "aliases": [
+        "bms board",
+        "bms"
+      ],
+      "assembly": "a-battery-enclosure"
+    },
+    {
+      "id": "dl-fw-actuator-v2",
+      "kind": "deliverable",
+      "name": "Actuator firmware v2 (FOC + thermal derate)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-fw-gait-controller",
+      "kind": "deliverable",
+      "name": "Gait controller build for the gantry",
+      "aliases": [],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "dl-gen-0001",
+      "kind": "deliverable",
+      "name": "Sensor breakout PCB for knee actuator (shim)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0002",
+      "kind": "deliverable",
+      "name": "Wire harness for hip actuator (preload ring)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0003",
+      "kind": "deliverable",
+      "name": "Sensor breakout PCB for battery enclosure (clevis)",
+      "aliases": [],
+      "assembly": "a-battery-enclosure"
+    },
+    {
+      "id": "dl-gen-0004",
+      "kind": "deliverable",
+      "name": "Motor sample lot for hip actuator (inertia disc)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0005",
+      "kind": "deliverable",
+      "name": "Wire harness for hip actuator (spin coupling)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0006",
+      "kind": "deliverable",
+      "name": "Sensor breakout PCB for leg (left, hip to foot) (leg stand)",
+      "aliases": [],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "dl-gen-0007",
+      "kind": "deliverable",
+      "name": "Driver PCBA respin for knee actuator (thermistor clip)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0008",
+      "kind": "deliverable",
+      "name": "Driver PCBA respin for knee actuator (absorber adapter)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0009",
+      "kind": "deliverable",
+      "name": "Sensor breakout PCB for hip actuator (hip housing)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0010",
+      "kind": "deliverable",
+      "name": "Bearing set for knee actuator (knee motor mount)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0011",
+      "kind": "deliverable",
+      "name": "Bearing set for leg (left, hip to foot) (press jig)",
+      "aliases": [],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "dl-gen-0012",
+      "kind": "deliverable",
+      "name": "Wire harness for knee actuator (knee dyno plate)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0013",
+      "kind": "deliverable",
+      "name": "Wire harness for hip actuator (eccentric shaft)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0014",
+      "kind": "deliverable",
+      "name": "Wire harness for hip actuator (brake bracket)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0015",
+      "kind": "deliverable",
+      "name": "Bearing set for battery enclosure (clevis)",
+      "aliases": [],
+      "assembly": "a-battery-enclosure"
+    },
+    {
+      "id": "dl-gen-0016",
+      "kind": "deliverable",
+      "name": "Wire harness for hip actuator (hip dyno coupling)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0017",
+      "kind": "deliverable",
+      "name": "Wire harness for knee actuator (TC clamp)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0018",
+      "kind": "deliverable",
+      "name": "Wire harness for hip actuator (rotor hub)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0019",
+      "kind": "deliverable",
+      "name": "Bearing set for hip actuator (cyclo carrier)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0020",
+      "kind": "deliverable",
+      "name": "Driver PCBA respin for battery enclosure (clevis)",
+      "aliases": [],
+      "assembly": "a-battery-enclosure"
+    },
+    {
+      "id": "dl-gen-0021",
+      "kind": "deliverable",
+      "name": "Sensor breakout PCB for hip actuator (disc spacer)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0022",
+      "kind": "deliverable",
+      "name": "Firmware build for knee actuator (output flange)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0023",
+      "kind": "deliverable",
+      "name": "Motor sample lot for knee actuator (knee shaft)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0024",
+      "kind": "deliverable",
+      "name": "Firmware build for battery enclosure (clevis)",
+      "aliases": [],
+      "assembly": "a-battery-enclosure"
+    },
+    {
+      "id": "dl-gen-0025",
+      "kind": "deliverable",
+      "name": "Driver PCBA respin for knee actuator (shim)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0026",
+      "kind": "deliverable",
+      "name": "Bearing set for hip actuator (output shaft)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0027",
+      "kind": "deliverable",
+      "name": "Sensor breakout PCB for hip actuator (heat spreader)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0028",
+      "kind": "deliverable",
+      "name": "Sensor breakout PCB for knee actuator (thigh flange)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0029",
+      "kind": "deliverable",
+      "name": "Driver PCBA respin for knee actuator (knee shaft)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0031",
+      "kind": "deliverable",
+      "name": "Driver PCBA respin for battery enclosure (clevis)",
+      "aliases": [],
+      "assembly": "a-battery-enclosure"
+    },
+    {
+      "id": "dl-gen-0032",
+      "kind": "deliverable",
+      "name": "Sensor breakout PCB for knee actuator (flexspline clamp)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0033",
+      "kind": "deliverable",
+      "name": "Driver PCBA respin for leg (left, hip to foot) (hip yoke)",
+      "aliases": [],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "dl-gen-0036",
+      "kind": "deliverable",
+      "name": "Motor sample lot for knee actuator (hard stop)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0037",
+      "kind": "deliverable",
+      "name": "Driver PCBA respin for knee actuator (CS housing)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0038",
+      "kind": "deliverable",
+      "name": "Wire harness for leg (left, hip to foot) (shank cover)",
+      "aliases": [],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "dl-gen-0039",
+      "kind": "deliverable",
+      "name": "Firmware build for hip actuator (torque cell bracket)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0040",
+      "kind": "deliverable",
+      "name": "Sensor breakout PCB for hip actuator (brake bracket)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0041",
+      "kind": "deliverable",
+      "name": "Bearing set for leg (left, hip to foot) (knee spacer)",
+      "aliases": [],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "dl-gen-0042",
+      "kind": "deliverable",
+      "name": "Bearing set for knee actuator (flexspline clamp)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0043",
+      "kind": "deliverable",
+      "name": "Bearing set for leg (left, hip to foot) (shank hook)",
+      "aliases": [],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "dl-gen-0044",
+      "kind": "deliverable",
+      "name": "Driver PCBA respin for battery enclosure (clevis)",
+      "aliases": [],
+      "assembly": "a-battery-enclosure"
+    },
+    {
+      "id": "dl-gen-0045",
+      "kind": "deliverable",
+      "name": "Driver PCBA respin for knee actuator (wave gen hub)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0046",
+      "kind": "deliverable",
+      "name": "Wire harness for knee actuator (bearing retainer)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0049",
+      "kind": "deliverable",
+      "name": "Bearing set for leg (left, hip to foot) (saddle)",
+      "aliases": [],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "dl-gen-0050",
+      "kind": "deliverable",
+      "name": "Wire harness for leg (left, hip to foot) (saddle)",
+      "aliases": [],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "dl-gen-0051",
+      "kind": "deliverable",
+      "name": "Wire harness for hip actuator (output shaft)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0052",
+      "kind": "deliverable",
+      "name": "Wire harness for leg (left, hip to foot) (load cell bracket)",
+      "aliases": [],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "dl-gen-0053",
+      "kind": "deliverable",
+      "name": "Firmware build for hip actuator (disc spacer)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0055",
+      "kind": "deliverable",
+      "name": "Wire harness for hip actuator (hip cable clamp)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0056",
+      "kind": "deliverable",
+      "name": "Bearing set for hip actuator (knee spin adapter)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0057",
+      "kind": "deliverable",
+      "name": "Driver PCBA respin for torso and pelvis structure (shank hook)",
+      "aliases": [],
+      "assembly": "a-torso-pelvis"
+    },
+    {
+      "id": "dl-gen-0058",
+      "kind": "deliverable",
+      "name": "Driver PCBA respin for knee actuator (absorber adapter)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0061",
+      "kind": "deliverable",
+      "name": "Firmware build for torso and pelvis structure (lift hook)",
+      "aliases": [],
+      "assembly": "a-torso-pelvis"
+    },
+    {
+      "id": "dl-gen-0063",
+      "kind": "deliverable",
+      "name": "Encoder kit for knee actuator (dyno spacers)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0064",
+      "kind": "deliverable",
+      "name": "Firmware build for leg (left, hip to foot) (IMU mount)",
+      "aliases": [],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "dl-gen-0065",
+      "kind": "deliverable",
+      "name": "Firmware build for knee actuator (bellows hub)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0066",
+      "kind": "deliverable",
+      "name": "Wire harness for hip actuator (hip dyno plate)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0067",
+      "kind": "deliverable",
+      "name": "Motor sample lot for battery enclosure (clevis)",
+      "aliases": [],
+      "assembly": "a-battery-enclosure"
+    },
+    {
+      "id": "dl-gen-0068",
+      "kind": "deliverable",
+      "name": "Encoder kit for torso and pelvis structure (shank hook)",
+      "aliases": [],
+      "assembly": "a-torso-pelvis"
+    },
+    {
+      "id": "dl-gen-0069",
+      "kind": "deliverable",
+      "name": "Motor sample lot for hip actuator (torque cell bracket)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0070",
+      "kind": "deliverable",
+      "name": "Motor sample lot for hip actuator (end cover)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0072",
+      "kind": "deliverable",
+      "name": "Wire harness for leg (left, hip to foot) (thigh link)",
+      "aliases": [],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "dl-gen-0077",
+      "kind": "deliverable",
+      "name": "Firmware build for knee actuator (absorber adapter)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0080",
+      "kind": "deliverable",
+      "name": "Driver PCBA respin for torso and pelvis structure (crossbeam)",
+      "aliases": [],
+      "assembly": "a-torso-pelvis"
+    },
+    {
+      "id": "dl-gen-0081",
+      "kind": "deliverable",
+      "name": "Sensor breakout PCB for battery enclosure (TC tree)",
+      "aliases": [],
+      "assembly": "a-battery-enclosure"
+    },
+    {
+      "id": "dl-gen-0083",
+      "kind": "deliverable",
+      "name": "Firmware build for torso and pelvis structure (shank hook)",
+      "aliases": [],
+      "assembly": "a-torso-pelvis"
+    },
+    {
+      "id": "dl-gen-0084",
+      "kind": "deliverable",
+      "name": "Firmware build for leg (left, hip to foot) (boom clamp)",
+      "aliases": [],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "dl-gen-0085",
+      "kind": "deliverable",
+      "name": "Driver PCBA respin for leg (left, hip to foot) (harness hook)",
+      "aliases": [],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "dl-gen-0086",
+      "kind": "deliverable",
+      "name": "Wire harness for knee actuator (knee dyno coupling)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0088",
+      "kind": "deliverable",
+      "name": "Firmware build for torso and pelvis structure (spine fitting)",
+      "aliases": [],
+      "assembly": "a-torso-pelvis"
+    },
+    {
+      "id": "dl-gen-0089",
+      "kind": "deliverable",
+      "name": "Sensor breakout PCB for knee actuator (abs encoder bracket)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0090",
+      "kind": "deliverable",
+      "name": "Encoder kit for leg (left, hip to foot) (thigh cover)",
+      "aliases": [],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "dl-gen-0094",
+      "kind": "deliverable",
+      "name": "Firmware build for hip actuator (brake bracket)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0098",
+      "kind": "deliverable",
+      "name": "Wire harness for hip actuator (knee spin adapter)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0099",
+      "kind": "deliverable",
+      "name": "Wire harness for knee actuator (rear cover)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0100",
+      "kind": "deliverable",
+      "name": "Sensor breakout PCB for leg (left, hip to foot) (knee spacer)",
+      "aliases": [],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "dl-gen-0101",
+      "kind": "deliverable",
+      "name": "Encoder kit for knee actuator (knee shaft)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0102",
+      "kind": "deliverable",
+      "name": "Firmware build for knee actuator (thigh flange)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0103",
+      "kind": "deliverable",
+      "name": "Wire harness for hip actuator (hip pelvis plate)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0105",
+      "kind": "deliverable",
+      "name": "Motor sample lot for leg (left, hip to foot) (knee pulley)",
+      "aliases": [],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "dl-gen-0108",
+      "kind": "deliverable",
+      "name": "Firmware build for hip actuator (spin coupling)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0109",
+      "kind": "deliverable",
+      "name": "Encoder kit for leg (left, hip to foot) (hip pitch bracket)",
+      "aliases": [],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "dl-gen-0110",
+      "kind": "deliverable",
+      "name": "Wire harness for hip actuator (dyno spacers)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0111",
+      "kind": "deliverable",
+      "name": "Bearing set for leg (left, hip to foot) (dummy pelvis)",
+      "aliases": [],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "dl-gen-0112",
+      "kind": "deliverable",
+      "name": "Sensor breakout PCB for knee actuator (shim)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0113",
+      "kind": "deliverable",
+      "name": "Firmware build for hip actuator (brake bracket)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0115",
+      "kind": "deliverable",
+      "name": "Driver PCBA respin for hip actuator (hip dyno plate)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0116",
+      "kind": "deliverable",
+      "name": "Wire harness for torso and pelvis structure (shank hook)",
+      "aliases": [],
+      "assembly": "a-torso-pelvis"
+    },
+    {
+      "id": "dl-gen-0117",
+      "kind": "deliverable",
+      "name": "Wire harness for knee actuator (inertia disc)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0119",
+      "kind": "deliverable",
+      "name": "Bearing set for hip actuator (brake bracket)",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-gen-0120",
+      "kind": "deliverable",
+      "name": "Firmware build for knee actuator (TC clamp)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0121",
+      "kind": "deliverable",
+      "name": "Driver PCBA respin for knee actuator (hip dyno plate)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0125",
+      "kind": "deliverable",
+      "name": "Driver PCBA respin for leg (left, hip to foot) (ankle adapter)",
+      "aliases": [],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "dl-gen-0126",
+      "kind": "deliverable",
+      "name": "Motor sample lot for leg (left, hip to foot) (lift hook)",
+      "aliases": [],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "dl-gen-0129",
+      "kind": "deliverable",
+      "name": "Bearing set for torso and pelvis structure (height gauge)",
+      "aliases": [],
+      "assembly": "a-torso-pelvis"
+    },
+    {
+      "id": "dl-gen-0130",
+      "kind": "deliverable",
+      "name": "Firmware build for knee actuator (feedthrough)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-gen-0132",
+      "kind": "deliverable",
+      "name": "Motor sample lot for knee actuator (abs encoder bracket)",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-hip-crossed-roller",
+      "kind": "deliverable",
+      "name": "Hip crossed-roller bearings, rev B",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-hip-encoder-dvt",
+      "kind": "deliverable",
+      "name": "Hip absolute encoder kit, DVT",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-hip-motor-dvt",
+      "kind": "deliverable",
+      "name": "DVT hip frameless motor",
+      "aliases": [
+        "hip motor",
+        "dvt motor",
+        "dvt hip motor"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-hip-motor-evt",
+      "kind": "deliverable",
+      "name": "EVT hip frameless motor (qty 3)",
+      "aliases": [
+        "evt hip motor",
+        "hip motors"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "dl-knee-harmonic-dvt",
+      "kind": "deliverable",
+      "name": "Knee harmonic reducer set, DVT",
+      "aliases": [],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-knee-motor-evt",
+      "kind": "deliverable",
+      "name": "EVT knee motor (qty 3)",
+      "aliases": [
+        "knee motor",
+        "evt knee motor"
+      ],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-leg-harness",
+      "kind": "deliverable",
+      "name": "Leg wiring harness, EVT",
+      "aliases": [],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "dl-leg-imu",
+      "kind": "deliverable",
+      "name": "Shank IMU modules",
+      "aliases": [],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "dl-motor-driver-pcba-dvt",
+      "kind": "deliverable",
+      "name": "Motor driver PCBA, DVT (rev 4)",
+      "aliases": [
+        "dvt driver board",
+        "dvt motor driver",
+        "driver pcba dvt"
+      ],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "dl-motor-driver-pcba-evt",
+      "kind": "deliverable",
+      "name": "Motor driver PCBA, EVT (rev 2)",
+      "aliases": [
+        "evt driver board",
+        "evt motor driver"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "m-actuator-dvt-build",
+      "kind": "milestone",
+      "name": "Actuator DVT build",
+      "assemblies": [
+        "a-hip-actuator",
+        "a-knee-actuator"
+      ]
+    },
+    {
+      "id": "m-actuator-dvt-gate",
+      "kind": "milestone",
+      "name": "Actuator DVT gate review",
+      "assemblies": [
+        "a-hip-actuator",
+        "a-knee-actuator"
+      ]
+    },
+    {
+      "id": "m-actuator-evt-build",
+      "kind": "milestone",
+      "name": "Actuator EVT build",
+      "assemblies": [
+        "a-hip-actuator",
+        "a-knee-actuator"
+      ]
+    },
+    {
+      "id": "m-hip-spin-test",
+      "kind": "milestone",
+      "name": "Hip actuator DVT spin test complete",
+      "assemblies": [
+        "a-hip-actuator"
+      ]
+    },
+    {
+      "id": "m-investor-demo",
+      "kind": "milestone",
+      "name": "Investor demo: leg walking on the gait gantry",
+      "assemblies": [
+        "a-leg",
+        "a-hip-actuator",
+        "a-knee-actuator",
+        "a-ankle"
+      ]
+    },
+    {
+      "id": "m-leg-drop-complete",
+      "kind": "milestone",
+      "name": "Leg drop-test campaign complete",
+      "assemblies": [
+        "a-leg"
+      ]
+    },
+    {
+      "id": "m-leg-dvt-build",
+      "kind": "milestone",
+      "name": "Leg DVT build",
+      "assemblies": [
+        "a-leg",
+        "a-ankle",
+        "a-torso-pelvis",
+        "a-battery-enclosure"
+      ]
+    },
+    {
+      "id": "m-leg-evt-build",
+      "kind": "milestone",
+      "name": "Leg EVT build",
+      "assemblies": [
+        "a-leg",
+        "a-ankle"
+      ]
+    },
+    {
+      "id": "m-leg-gait-demo",
+      "kind": "milestone",
+      "name": "Leg gait endurance run",
+      "assemblies": [
+        "a-leg"
+      ]
+    },
+    {
+      "id": "pt-battery-bms-standoff",
+      "kind": "part",
+      "name": "BMS standoff",
+      "part_number": "FL-BAT-1689",
+      "aliases": [
+        "BMS standoff",
+        "standoffs",
+        "1689"
+      ],
+      "assembly": "a-battery-enclosure"
+    },
+    {
+      "id": "pt-battery-busbar-clamp",
+      "kind": "part",
+      "name": "Busbar clamp block",
+      "part_number": "FL-BAT-1622",
+      "aliases": [
+        "busbar clamp",
+        "clamp block",
+        "1622"
+      ],
+      "assembly": "a-battery-enclosure"
+    },
+    {
+      "id": "pt-battery-cell-spacer",
+      "kind": "part",
+      "name": "Cell spacer comb",
+      "part_number": "FL-BAT-1691",
+      "aliases": [
+        "cell spacer",
+        "comb",
+        "1691"
+      ],
+      "assembly": "a-battery-enclosure"
+    },
+    {
+      "id": "pt-battery-connector-plate",
+      "kind": "part",
+      "name": "Pack connector plate",
+      "part_number": "FL-BAT-1632",
+      "aliases": [
+        "connector plate",
+        "connector panel",
+        "1632"
+      ],
+      "assembly": "a-battery-enclosure"
+    },
+    {
+      "id": "pt-battery-enclosure-clevis-10",
+      "kind": "part",
+      "name": "Battery clevis 10",
+      "part_number": "FL-BAT-1685",
+      "aliases": [
+        "clevis",
+        "the clevis",
+        "battery clevis"
+      ],
+      "assembly": "a-battery-enclosure"
+    },
+    {
+      "id": "pt-battery-latch-block",
+      "kind": "part",
+      "name": "Pack latch block",
+      "part_number": "FL-BAT-1679",
+      "aliases": [
+        "latch block",
+        "latch",
+        "1679"
+      ],
+      "assembly": "a-battery-enclosure"
+    },
+    {
+      "id": "pt-battery-lid",
+      "kind": "part",
+      "name": "Battery enclosure lid",
+      "part_number": "FL-BAT-1674",
+      "aliases": [
+        "battery lid",
+        "the lid",
+        "pack lid",
+        "1674"
+      ],
+      "assembly": "a-battery-enclosure"
+    },
+    {
+      "id": "pt-battery-mount-rail",
+      "kind": "part",
+      "name": "Battery mount rail",
+      "part_number": "FL-BAT-1629",
+      "aliases": [
+        "mount rail",
+        "rail",
+        "1629"
+      ],
+      "assembly": "a-battery-enclosure"
+    },
+    {
+      "id": "pt-battery-tray",
+      "kind": "part",
+      "name": "Battery cell tray",
+      "part_number": "FL-BAT-1684",
+      "aliases": [
+        "cell tray",
+        "tray",
+        "1684"
+      ],
+      "assembly": "a-battery-enclosure"
+    },
+    {
+      "id": "pt-battery-vent-plate",
+      "kind": "part",
+      "name": "Battery vent plate",
+      "part_number": "FL-BAT-1643",
+      "aliases": [
+        "vent plate",
+        "burst plate",
+        "1643"
+      ],
+      "assembly": "a-battery-enclosure"
+    },
+    {
+      "id": "pt-build-leg-stand",
+      "kind": "part",
+      "name": "Leg build stand",
+      "part_number": "FL-TST-2916",
+      "aliases": [
+        "leg stand",
+        "build stand",
+        "2916"
+      ],
+      "assembly": null
+    },
+    {
+      "id": "pt-dyno-adapter-knee",
+      "kind": "part",
+      "name": "Dyno mounting plate, knee actuator",
+      "part_number": "FL-TST-2124",
+      "aliases": [
+        "knee dyno plate",
+        "dyno adapter",
+        "2124"
+      ],
+      "assembly": null
+    },
+    {
+      "id": "pt-dyno-bellows-hub",
+      "kind": "part",
+      "name": "Dyno bellows coupling hub",
+      "part_number": "FL-TST-2146",
+      "aliases": [
+        "bellows hub",
+        "coupling hub",
+        "2146"
+      ],
+      "assembly": null
+    },
+    {
+      "id": "pt-hip-bearing-spacer",
+      "kind": "part",
+      "name": "Hip output bearing spacer",
+      "part_number": "FL-HIP-1079",
+      "aliases": [
+        "bearing spacer",
+        "hip spacer",
+        "1079"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "pt-hip-bracket",
+      "kind": "part",
+      "name": "Hip actuator bracket",
+      "part_number": "FL-HIP-1042",
+      "aliases": [
+        "hip bracket",
+        "the bracket",
+        "1042",
+        "motor bracket"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "pt-hip-brake-bracket",
+      "kind": "part",
+      "name": "Hip holding-brake bracket",
+      "part_number": "FL-HIP-1050",
+      "aliases": [
+        "brake bracket",
+        "brake mount",
+        "1050"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "pt-hip-cable-clamp",
+      "kind": "part",
+      "name": "Hip cable exit clamp",
+      "part_number": "FL-HIP-1091",
+      "aliases": [
+        "hip cable clamp",
+        "strain relief clamp",
+        "1091"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "pt-hip-cyclo-carrier",
+      "kind": "part",
+      "name": "Hip cycloidal carrier",
+      "part_number": "FL-HIP-1094",
+      "aliases": [
+        "cyclo carrier",
+        "carrier",
+        "pin carrier",
+        "1094"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "pt-hip-cycloid-disc-spacer",
+      "kind": "part",
+      "name": "Hip cycloid disc spacer",
+      "part_number": "FL-HIP-1035",
+      "aliases": [
+        "disc spacer",
+        "cyclo spacer",
+        "1035"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "pt-hip-eccentric-shaft",
+      "kind": "part",
+      "name": "Hip eccentric input shaft",
+      "part_number": "FL-HIP-1053",
+      "aliases": [
+        "eccentric shaft",
+        "input shaft",
+        "the eccentric",
+        "1053"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "pt-hip-encoder-bracket",
+      "kind": "part",
+      "name": "Hip encoder read-head bracket",
+      "part_number": "FL-HIP-1041",
+      "aliases": [
+        "encoder bracket",
+        "readhead bracket",
+        "1041"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "pt-hip-end-cover",
+      "kind": "part",
+      "name": "Hip actuator end cover",
+      "part_number": "FL-HIP-1013",
+      "aliases": [
+        "end cover",
+        "back cover",
+        "the cap",
+        "1013"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "pt-hip-housing",
+      "kind": "part",
+      "name": "Hip actuator housing",
+      "part_number": "FL-HIP-1081",
+      "aliases": [
+        "hip housing",
+        "the housing",
+        "main housing",
+        "1081"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "pt-hip-motor-rotor-hub",
+      "kind": "part",
+      "name": "Hip rotor hub",
+      "part_number": "FL-HIP-1093",
+      "aliases": [
+        "rotor hub",
+        "hub",
+        "1093"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "pt-hip-output-shaft",
+      "kind": "part",
+      "name": "Hip output shaft",
+      "part_number": "FL-HIP-1065",
+      "aliases": [
+        "output shaft",
+        "hip shaft",
+        "1065"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "pt-hip-pelvis-interface",
+      "kind": "part",
+      "name": "Hip to pelvis interface plate",
+      "part_number": "FL-HIP-1021",
+      "aliases": [
+        "hip pelvis plate",
+        "interface plate",
+        "hip adapter plate",
+        "1021"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "pt-hip-preload-nut",
+      "kind": "part",
+      "name": "Hip bearing preload ring",
+      "part_number": "FL-HIP-1064",
+      "aliases": [
+        "preload ring",
+        "preload nut",
+        "1064"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "pt-hip-ring-gear",
+      "kind": "part",
+      "name": "Hip cycloid ring-pin housing",
+      "part_number": "FL-HIP-1056",
+      "aliases": [
+        "ring pin housing",
+        "pin ring",
+        "1056"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "pt-hip-stator-mount",
+      "kind": "part",
+      "name": "Hip stator mount plate",
+      "part_number": "FL-HIP-1033",
+      "aliases": [
+        "stator mount",
+        "motor mount",
+        "1033"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "pt-hip-thermal-plate",
+      "kind": "part",
+      "name": "Hip stator heat spreader",
+      "part_number": "FL-HIP-1028",
+      "aliases": [
+        "heat spreader",
+        "thermal plate",
+        "1028"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "pt-knee-abs-encoder-bracket",
+      "kind": "part",
+      "name": "Knee output encoder bracket",
+      "part_number": "FL-KNE-1120",
+      "aliases": [
+        "abs encoder bracket",
+        "encoder bracket",
+        "1120"
+      ],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "pt-knee-circular-spline-hsg",
+      "kind": "part",
+      "name": "Knee circular spline housing",
+      "part_number": "FL-KNE-1176",
+      "aliases": [
+        "CS housing",
+        "spline housing",
+        "1176"
+      ],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "pt-knee-cross-roller-retainer",
+      "kind": "part",
+      "name": "Knee cross-roller retainer",
+      "part_number": "FL-KNE-1141",
+      "aliases": [
+        "bearing retainer",
+        "retainer ring",
+        "1141"
+      ],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "pt-knee-flexspline-clamp",
+      "kind": "part",
+      "name": "Knee flexspline clamp ring",
+      "part_number": "FL-KNE-1118",
+      "aliases": [
+        "flexspline clamp",
+        "clamp ring",
+        "1118"
+      ],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "pt-knee-hard-stop",
+      "kind": "part",
+      "name": "Knee hard-stop block",
+      "part_number": "FL-KNE-1139",
+      "aliases": [
+        "hard stop",
+        "stop block",
+        "1139"
+      ],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "pt-knee-housing",
+      "kind": "part",
+      "name": "Knee actuator housing",
+      "part_number": "FL-KNE-1166",
+      "aliases": [
+        "knee housing",
+        "the housing",
+        "1166"
+      ],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "pt-knee-motor-mount",
+      "kind": "part",
+      "name": "Knee motor mount plate",
+      "part_number": "FL-KNE-1153",
+      "aliases": [
+        "knee motor mount",
+        "motor plate",
+        "1153"
+      ],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "pt-knee-output-flange",
+      "kind": "part",
+      "name": "Knee output flange",
+      "part_number": "FL-KNE-1122",
+      "aliases": [
+        "output flange",
+        "knee flange",
+        "1122"
+      ],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "pt-knee-output-shaft",
+      "kind": "part",
+      "name": "Knee output shaft",
+      "part_number": "FL-KNE-1189",
+      "aliases": [
+        "knee shaft",
+        "output shaft",
+        "1189"
+      ],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "pt-knee-rear-cover",
+      "kind": "part",
+      "name": "Knee rear cover",
+      "part_number": "FL-KNE-1146",
+      "aliases": [
+        "rear cover",
+        "knee cover",
+        "1146"
+      ],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "pt-knee-shim-pack",
+      "kind": "part",
+      "name": "Knee bearing shim",
+      "part_number": "FL-KNE-1124",
+      "aliases": [
+        "shim",
+        "knee shims",
+        "1124"
+      ],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "pt-knee-thermistor-clip",
+      "kind": "part",
+      "name": "Knee winding thermistor clip",
+      "part_number": "FL-KNE-1113",
+      "aliases": [
+        "thermistor clip",
+        "NTC clip",
+        "1113"
+      ],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "pt-knee-thigh-flange",
+      "kind": "part",
+      "name": "Knee to thigh flange",
+      "part_number": "FL-KNE-1190",
+      "aliases": [
+        "thigh flange",
+        "knee flange",
+        "1190"
+      ],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "pt-knee-wave-gen-hub",
+      "kind": "part",
+      "name": "Knee wave generator hub",
+      "part_number": "FL-KNE-1119",
+      "aliases": [
+        "wave gen hub",
+        "WG hub",
+        "1119"
+      ],
+      "assembly": "a-knee-actuator"
+    },
+    {
+      "id": "pt-leg-actuator-saddle",
+      "kind": "part",
+      "name": "Knee actuator saddle",
+      "part_number": "FL-LEG-1361",
+      "aliases": [
+        "saddle",
+        "actuator saddle",
+        "1361"
+      ],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "pt-leg-belt-tensioner",
+      "kind": "part",
+      "name": "Shank belt tensioner bracket",
+      "part_number": "FL-LEG-1356",
+      "aliases": [
+        "tensioner",
+        "belt tensioner",
+        "1356"
+      ],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "pt-leg-cable-guide",
+      "kind": "part",
+      "name": "Thigh cable guide",
+      "part_number": "FL-LEG-1392",
+      "aliases": [
+        "cable guide",
+        "harness guide",
+        "1392"
+      ],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "pt-leg-hip-pitch-bracket",
+      "kind": "part",
+      "name": "Hip pitch mounting bracket",
+      "part_number": "FL-LEG-1358",
+      "aliases": [
+        "hip pitch bracket",
+        "hip bracket",
+        "1358"
+      ],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "pt-leg-hip-yoke",
+      "kind": "part",
+      "name": "Hip yaw yoke",
+      "part_number": "FL-LEG-1310",
+      "aliases": [
+        "hip yoke",
+        "yaw yoke",
+        "1310"
+      ],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "pt-leg-imu-mount",
+      "kind": "part",
+      "name": "Shank IMU mount",
+      "part_number": "FL-LEG-1385",
+      "aliases": [
+        "IMU mount",
+        "imu bracket",
+        "1385"
+      ],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "pt-leg-knee-cable-clamp",
+      "kind": "part",
+      "name": "Knee cable strain-relief clamp",
+      "part_number": "FL-LEG-1331",
+      "aliases": [
+        "leg cable clamp",
+        "knee clamp",
+        "strain relief clamp",
+        "1331"
+      ],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "pt-leg-knee-pulley",
+      "kind": "part",
+      "name": "Knee belt pulley",
+      "part_number": "FL-LEG-1348",
+      "aliases": [
+        "knee pulley",
+        "pulley",
+        "1348"
+      ],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "pt-leg-knee-spacer",
+      "kind": "part",
+      "name": "Knee joint spacer",
+      "part_number": "FL-LEG-1339",
+      "aliases": [
+        "knee spacer",
+        "leg spacer",
+        "1339"
+      ],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "pt-leg-shank-cover",
+      "kind": "part",
+      "name": "Shank cover plate",
+      "part_number": "FL-LEG-1396",
+      "aliases": [
+        "shank cover",
+        "cover plate",
+        "1396"
+      ],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "pt-leg-shank-foot-adapter",
+      "kind": "part",
+      "name": "Shank to ankle adapter",
+      "part_number": "FL-LEG-1372",
+      "aliases": [
+        "ankle adapter",
+        "shank adapter",
+        "1372"
+      ],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "pt-leg-shank-link",
+      "kind": "part",
+      "name": "Shank link",
+      "part_number": "FL-LEG-1383",
+      "aliases": [
+        "shank",
+        "shin link",
+        "tibia",
+        "1383"
+      ],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "pt-leg-thigh-bearing-cap",
+      "kind": "part",
+      "name": "Thigh bearing cap",
+      "part_number": "FL-LEG-1327",
+      "aliases": [
+        "bearing cap",
+        "thigh cap",
+        "1327"
+      ],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "pt-leg-thigh-cover",
+      "kind": "part",
+      "name": "Thigh cover plate",
+      "part_number": "FL-LEG-1343",
+      "aliases": [
+        "thigh cover",
+        "cover plate",
+        "1343"
+      ],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "pt-leg-thigh-link",
+      "kind": "part",
+      "name": "Thigh link",
+      "part_number": "FL-LEG-1377",
+      "aliases": [
+        "thigh link",
+        "thigh",
+        "femur",
+        "1377"
+      ],
+      "assembly": "a-leg"
+    },
+    {
+      "id": "pt-pelvis-plate-left",
+      "kind": "part",
+      "name": "Pelvis side plate, left",
+      "part_number": "FL-STR-1567",
+      "aliases": [
+        "torso pelvis plate",
+        "pelvis plate",
+        "left pelvis plate",
+        "1567"
+      ],
+      "assembly": "a-torso-pelvis"
+    },
+    {
+      "id": "pt-pelvis-plate-right",
+      "kind": "part",
+      "name": "Pelvis side plate, right",
+      "part_number": "FL-STR-1591",
+      "aliases": [
+        "torso pelvis plate",
+        "pelvis plate",
+        "right pelvis plate",
+        "1591"
+      ],
+      "assembly": "a-torso-pelvis"
+    },
+    {
+      "id": "pt-spin-base-riser",
+      "kind": "part",
+      "name": "Spin-test base riser",
+      "part_number": "FL-TST-2049",
+      "aliases": [
+        "riser",
+        "base riser",
+        "2049"
+      ],
+      "assembly": null
+    },
+    {
+      "id": "pt-torso-battery-mount",
+      "kind": "part",
+      "name": "Torso battery mount bracket",
+      "part_number": "FL-STR-1540",
+      "aliases": [
+        "battery mount",
+        "pack bracket",
+        "1540"
+      ],
+      "assembly": "a-torso-pelvis"
+    },
+    {
+      "id": "pt-torso-crossbeam",
+      "kind": "part",
+      "name": "Pelvis crossbeam",
+      "part_number": "FL-STR-1514",
+      "aliases": [
+        "crossbeam",
+        "cross beam",
+        "1514"
+      ],
+      "assembly": "a-torso-pelvis"
+    },
+    {
+      "id": "pt-torso-harness-bracket",
+      "kind": "part",
+      "name": "Torso harness bracket",
+      "part_number": "FL-STR-1582",
+      "aliases": [
+        "harness bracket",
+        "1582"
+      ],
+      "assembly": "a-torso-pelvis"
+    },
+    {
+      "id": "pt-torso-hip-mount",
+      "kind": "part",
+      "name": "Pelvis hip actuator mount",
+      "part_number": "FL-STR-1593",
+      "aliases": [
+        "hip mount",
+        "pelvis hip mount",
+        "1593"
+      ],
+      "assembly": "a-torso-pelvis"
+    },
+    {
+      "id": "pt-torso-imu-plate",
+      "kind": "part",
+      "name": "Torso IMU plate",
+      "part_number": "FL-STR-1507",
+      "aliases": [
+        "IMU plate",
+        "torso imu",
+        "1507"
+      ],
+      "assembly": "a-torso-pelvis"
+    },
+    {
+      "id": "pt-torso-lift-eye",
+      "kind": "part",
+      "name": "Torso lifting eye block",
+      "part_number": "FL-STR-1560",
+      "aliases": [
+        "lift eye",
+        "lifting point",
+        "1560"
+      ],
+      "assembly": "a-torso-pelvis"
+    },
+    {
+      "id": "pt-torso-spine-clamp",
+      "kind": "part",
+      "name": "Spine tube clamp",
+      "part_number": "FL-STR-1554",
+      "aliases": [
+        "spine clamp",
+        "tube clamp",
+        "1554"
+      ],
+      "assembly": "a-torso-pelvis"
+    },
+    {
+      "id": "pt-torso-spine-tube-end",
+      "kind": "part",
+      "name": "Spine tube end fitting",
+      "part_number": "FL-STR-1566",
+      "aliases": [
+        "spine fitting",
+        "end fitting",
+        "1566"
+      ],
+      "assembly": "a-torso-pelvis"
+    },
+    {
+      "id": "rig-actuator-dyno",
+      "kind": "rig",
+      "name": "Actuator dyno"
+    },
+    {
+      "id": "rig-gait-gantry",
+      "kind": "rig",
+      "name": "Gait gantry and treadmill"
+    },
+    {
+      "id": "rig-leg-drop-gantry",
+      "kind": "rig",
+      "name": "Leg drop-test gantry"
+    },
+    {
+      "id": "rig-spin-test-stand",
+      "kind": "rig",
+      "name": "Spin-test stand"
+    },
+    {
+      "id": "test-battery-thermal",
+      "kind": "test",
+      "name": "Battery enclosure thermal runaway containment",
+      "assembly": "a-battery-enclosure",
+      "rig": null,
+      "milestone": "m-leg-dvt-build"
+    },
+    {
+      "id": "test-hip-dyno",
+      "kind": "test",
+      "name": "Hip actuator dyno efficiency sweep",
+      "assembly": "a-hip-actuator",
+      "rig": "rig-actuator-dyno",
+      "milestone": "m-actuator-dvt-build"
+    },
+    {
+      "id": "test-hip-evt-dyno",
+      "kind": "test",
+      "name": "Hip actuator EVT dyno torque-speed map",
+      "assembly": "a-hip-actuator",
+      "rig": "rig-actuator-dyno",
+      "milestone": null
+    },
+    {
+      "id": "test-hip-spin",
+      "kind": "test",
+      "name": "Hip actuator DVT spin test",
+      "assembly": "a-hip-actuator",
+      "rig": "rig-spin-test-stand",
+      "milestone": "m-hip-spin-test"
+    },
+    {
+      "id": "test-hip-thermal",
+      "kind": "test",
+      "name": "Hip actuator thermal derate at continuous torque",
+      "assembly": "a-hip-actuator",
+      "rig": "rig-actuator-dyno",
+      "milestone": "m-actuator-dvt-gate"
+    },
+    {
+      "id": "test-knee-backdrive",
+      "kind": "test",
+      "name": "Knee backdrive torque and backlash check",
+      "assembly": "a-knee-actuator",
+      "rig": "rig-actuator-dyno",
+      "milestone": "m-actuator-dvt-gate"
+    },
+    {
+      "id": "test-knee-dyno",
+      "kind": "test",
+      "name": "Knee actuator dyno torque test",
+      "assembly": "a-knee-actuator",
+      "rig": "rig-actuator-dyno",
+      "milestone": "m-actuator-evt-build"
+    },
+    {
+      "id": "test-knee-thermal",
+      "kind": "test",
+      "name": "Knee actuator thermal soak",
+      "assembly": "a-knee-actuator",
+      "rig": "rig-actuator-dyno",
+      "milestone": "m-actuator-dvt-build"
+    },
+    {
+      "id": "test-leg-drop",
+      "kind": "test",
+      "name": "Leg drop test",
+      "assembly": "a-leg",
+      "rig": "rig-leg-drop-gantry",
+      "milestone": "m-leg-drop-complete"
+    },
+    {
+      "id": "test-leg-gait",
+      "kind": "test",
+      "name": "Leg gait-gantry walking test",
+      "assembly": "a-leg",
+      "rig": "rig-gait-gantry",
+      "milestone": "m-leg-gait-demo"
+    },
+    {
+      "id": "test-leg-gait-evt",
+      "kind": "test",
+      "name": "Leg first steps on the gait gantry",
+      "assembly": "a-leg",
+      "rig": "rig-gait-gantry",
+      "milestone": "m-investor-demo"
+    },
+    {
+      "id": "test-torso-static-load",
+      "kind": "test",
+      "name": "Torso and pelvis static load test",
+      "assembly": "a-torso-pelvis",
+      "rig": "rig-leg-drop-gantry",
+      "milestone": "m-leg-dvt-build"
+    }
+  ],
+  "docs": [
+    {
+      "id": "slack:C07FLK0ACTU:1773676190.226356",
+      "source": "slack",
+      "where": "#actuators",
+      "thread": "1773676190.226356",
+      "author": "Arjun Venkatesan",
+      "author_id": "p-arjun",
+      "at": "2026-03-16T08:49:50-07:00",
+      "text": "Actuator EVT build waits on Knee actuator dyno torque test, so that's the gate for now"
+    },
+    {
+      "id": "slack:C07FLK0ACTU:1773677250.036845",
+      "source": "slack",
+      "where": "#actuators",
+      "thread": "1773676190.226356",
+      "author": "Arjun Venkatesan",
+      "author_id": "p-arjun",
+      "at": "2026-03-16T09:07:30-07:00",
+      "text": "will check the schedule later and see if it moves"
+    },
+    {
+      "id": "slack:C07FLK0LEGS:1773676857.401429",
+      "source": "slack",
+      "where": "#legs",
+      "thread": "1773676857.401429",
+      "author": "Callum Fraser",
+      "author_id": "p-callum",
+      "at": "2026-03-16T09:00:57-07:00",
+      "text": "leg stand, need 3 by 3/30. still sorting out which frame size we want"
+    },
+    {
+      "id": "jira:SCM-19:desc",
+      "source": "jira",
+      "where": "SCM-19",
+      "thread": "SCM-19",
+      "author": "Hana Kimura",
+      "author_id": "p-hana",
+      "at": "2026-02-18T14:07:48-08:00",
+      "text": "Need knee flange 1 by 3/13 for Fit check for Actuator DVT build: Knee to thigh flange. motor plate qty 6 same order i think"
+    },
+    {
+      "id": "jira:SCM-19:c60381",
+      "source": "jira",
+      "where": "SCM-19",
+      "thread": "SCM-19",
+      "author": "Hana Kimura",
+      "author_id": "p-hana",
+      "at": "2026-02-19T11:00:23-08:00",
+      "text": "the part: need 1 by fri 3/13, still"
+    },
+    {
+      "id": "jira:SCM-19:c60382",
+      "source": "jira",
+      "where": "SCM-19",
+      "thread": "SCM-19",
+      "author": "Priya Raman",
+      "author_id": "p-priya",
+      "at": "2026-02-24T11:37:06-08:00",
+      "text": "Same ask on 1190, needed 3/13."
+    },
+    {
+      "id": "jira:SCM-19:h600381",
+      "source": "jira",
+      "where": "SCM-19",
+      "thread": "SCM-19",
+      "author": "Samir Khoury",
+      "author_id": "p-samir",
+      "at": "2026-02-24T15:37:16-08:00",
+      "text": "status: To Do -> In Progress"
+    },
+    {
+      "id": "jira:SCM-19:c60383",
+      "source": "jira",
+      "where": "SCM-19",
+      "thread": "SCM-19",
+      "author": "Samir Khoury",
+      "author_id": "p-samir",
+      "at": "2026-03-02T12:28:56-08:00",
+      "text": "photos of the flange in slack"
+    },
+    {
+      "id": "jira:SCM-19:h600382",
+      "source": "jira",
+      "where": "SCM-19",
+      "thread": "SCM-19",
+      "author": "Hana Kimura",
+      "author_id": "p-hana",
+      "at": "2026-03-15T23:40:15-07:00",
+      "text": "status: In Progress -> Done"
+    },
+    {
+      "id": "jira:HIP-11:desc",
+      "source": "jira",
+      "where": "HIP-11",
+      "thread": "HIP-11",
+      "author": "Tomas Ferreira",
+      "author_id": "p-tomas",
+      "at": "2026-02-11T09:31:06-08:00",
+      "text": "need 2x FL-KNE-1176 by 3/12 (Tolerance stack check for Actuator DVT build: Knee circular spline housing)"
+    },
+    {
+      "id": "jira:HIP-11:c30223",
+      "source": "jira",
+      "where": "HIP-11",
+      "thread": "HIP-11",
+      "author": "Tomas Ferreira",
+      "author_id": "p-tomas",
+      "at": "2026-02-19T11:31:22-08:00",
+      "text": "need 2x spline housing by 3/12"
+    },
+    {
+      "id": "jira:HIP-11:h300221",
+      "source": "jira",
+      "where": "HIP-11",
+      "thread": "HIP-11",
+      "author": "Tomas Ferreira",
+      "author_id": "p-tomas",
+      "at": "2026-02-25T09:39:57-08:00",
+      "text": "status: To Do -> In Progress"
+    },
+    {
+      "id": "jira:HIP-11:h300222",
+      "source": "jira",
+      "where": "HIP-11",
+      "thread": "HIP-11",
+      "author": "Tomas Ferreira",
+      "author_id": "p-tomas",
+      "at": "2026-03-15T12:49:53-07:00",
+      "text": "status: In Progress -> Done"
+    },
+    {
+      "id": "jira:STR-12:desc",
+      "source": "jira",
+      "where": "STR-12",
+      "thread": "STR-12",
+      "author": "Dmitri Sokolov",
+      "author_id": "p-dmitri",
+      "at": "2026-02-17T12:14:14-08:00",
+      "text": "FL-TST-2124 needed 4/3!!"
+    },
+    {
+      "id": "jira:STR-12:c70241",
+      "source": "jira",
+      "where": "STR-12",
+      "thread": "STR-12",
+      "author": "Samir Khoury",
+      "author_id": "p-samir",
+      "at": "2026-02-18T09:37:52-08:00",
+      "text": "knee dyno plate, need 3 by 4/8 - checking w/ vendor"
+    },
+    {
+      "id": "jira:STR-12:h700241",
+      "source": "jira",
+      "where": "STR-12",
+      "thread": "STR-12",
+      "author": "Samir Khoury",
+      "author_id": "p-samir",
+      "at": "2026-02-19T15:20:00-08:00",
+      "text": "status: To Do -> In Progress"
+    },
+    {
+      "id": "jira:STR-12:h700242",
+      "source": "jira",
+      "where": "STR-12",
+      "thread": "STR-12",
+      "author": "Carlos Mendoza",
+      "author_id": "p-carlos",
+      "at": "2026-03-14T22:28:56-07:00",
+      "text": "status: In Progress -> Done"
+    },
+    {
+      "id": "slack:C07FLK0STRC:1773457201.168737",
+      "source": "slack",
+      "where": "#structures-battery",
+      "thread": "1773457201.168737",
+      "author": "Renee Dubois",
+      "author_id": "p-renee",
+      "at": "2026-03-13T20:00:01-07:00",
+      "text": "FL-TST-2146 needed fri the 3rd. 12 of them."
+    },
+    {
+      "id": "jira:HIP-12:desc",
+      "source": "jira",
+      "where": "HIP-12",
+      "thread": "HIP-12",
+      "author": "Lin Zhao",
+      "author_id": "p-lin",
+      "at": "2026-02-11T09:40:55-08:00",
+      "text": "need 12x brake mount by tues the 3rd (Instrumentation fit-up for Hip actuator EVT dyno torque-speed map: Hip holding-brake bracket)"
+    },
+    {
+      "id": "jira:HIP-12:c30241",
+      "source": "jira",
+      "where": "HIP-12",
+      "thread": "HIP-12",
+      "author": "Lin Zhao",
+      "author_id": "p-lin",
+      "at": "2026-02-11T13:41:17-08:00",
+      "text": "need 12x brake bracket by 2/27 (Instrumentation fit-up for Hip actuator EVT dyno torque-speed map: Hip holding-brake bracket)"
+    },
+    {
+      "id": "jira:HIP-12:h300241",
+      "source": "jira",
+      "where": "HIP-12",
+      "thread": "HIP-12",
+      "author": "Lin Zhao",
+      "author_id": "p-lin",
+      "at": "2026-02-12T16:01:39-08:00",
+      "text": "status: To Do -> In Progress"
+    },
+    {
+      "id": "jira:HIP-12:h300242",
+      "source": "jira",
+      "where": "HIP-12",
+      "thread": "HIP-12",
+      "author": "Lin Zhao",
+      "author_id": "p-lin",
+      "at": "2026-03-03T09:55:29-08:00",
+      "text": "status: In Progress -> Done"
+    },
+    {
+      "id": "jira:HIP-12:c30243",
+      "source": "jira",
+      "where": "HIP-12",
+      "thread": "HIP-12",
+      "author": "Lin Zhao",
+      "author_id": "p-lin",
+      "at": "2026-03-13T18:56:00-07:00",
+      "text": "brake mount done thurs the 12th (the build)"
+    },
+    {
+      "id": "slack:C07FLK0HWPR:1773451745.671990",
+      "source": "slack",
+      "where": "#hw-purchasing",
+      "thread": "1773451745.671990",
+      "author": "Carlos Mendoza",
+      "author_id": "p-carlos",
+      "at": "2026-03-13T18:29:05-07:00",
+      "text": "base riser needed mon the 23rd, need 2!!"
+    },
+    {
+      "id": "slack:C07FLK0ACTU:1773441540.653865",
+      "source": "slack",
+      "where": "#actuators",
+      "thread": "1773441540.653865",
+      "author": "Arjun Venkatesan",
+      "author_id": "p-arjun",
+      "at": "2026-03-13T15:39:00-07:00",
+      "text": "Instrumentation fit-up for Hip actuator EVT dyno torque-speed map: Hip to pelvis interface plate done by thurs, 3/19"
+    },
+    {
+      "id": "slack:C07FLK0ACTU:1773442128.325281",
+      "source": "slack",
+      "where": "#actuators",
+      "thread": "1773441540.653865",
+      "author": "Jonas Pedersen",
+      "author_id": "p-jonas",
+      "at": "2026-03-13T15:48:48-07:00",
+      "text": "fw side is ready whenever it lands"
+    },
+    {
+      "id": "slack:C07FLK0ACTU:1773443021.404919",
+      "source": "slack",
+      "where": "#actuators",
+      "thread": "1773441540.653865",
+      "author": "Yusuf Demir",
+      "author_id": "p-yusuf",
+      "at": "2026-03-13T16:03:41-07:00",
+      "text": "does the interface plate come with the encoder cutout already or do we machine it"
+    },
+    {
+      "id": "slack:C07FLK0ACTU:1773440650.901877",
+      "source": "slack",
+      "where": "#actuators",
+      "thread": "1773440650.901877",
+      "author": "Andre Baptiste",
+      "author_id": "p-andre",
+      "at": "2026-03-13T15:24:10-07:00",
+      "text": "Hip actuator EVT dyno torque-speed map is waiting on Instrumentation fit-up for Hip actuator EVT dyno torque-speed map: Hip holding-brake bracket"
+    },
+    {
+      "id": "slack:C07FLK0HWPR:1773435910.786796",
+      "source": "slack",
+      "where": "#hw-purchasing",
+      "thread": "1773435910.786796",
+      "author": "Renee Dubois",
+      "author_id": "p-renee",
+      "at": "2026-03-13T14:05:10-07:00",
+      "text": "coupling hub, need 12 by fri 4/3. Same ask as the others."
+    },
+    {
+      "id": "slack:C07FLK0ACTU:1773430506.034473",
+      "source": "slack",
+      "where": "#actuators",
+      "thread": "1773430506.034473",
+      "author": "Callum Fraser",
+      "author_id": "p-callum",
+      "at": "2026-03-13T12:35:06-07:00",
+      "text": "FL-HIP-1035 need 12 by fri the 3rd"
+    },
+    {
+      "id": "slack:C07FLK0ACTU:1773434739.349662",
+      "source": "slack",
+      "where": "#actuators",
+      "thread": "1773430506.034473",
+      "author": "Jonas Pedersen",
+      "author_id": "p-jonas",
+      "at": "2026-03-13T13:45:39-07:00",
+      "text": "i think the supplier rev matters for that one too"
+    },
+    {
+      "id": "slack:C07FLK0ACTU:1773430255.283697",
+      "source": "slack",
+      "where": "#actuators",
+      "thread": "1773430255.283697",
+      "author": "Wei Huang",
+      "author_id": "p-wei",
+      "at": "2026-03-13T12:30:55-07:00",
+      "text": "hip shaft: need 24 by tues 4/7 for Tolerance stack check for Actuator DVT build: Hip output shaft"
+    },
+    {
+      "id": "slack:C07FLK0ACTU:1773430367.278841",
+      "source": "slack",
+      "where": "#actuators",
+      "thread": "1773430255.283697",
+      "author": "Wei Huang",
+      "author_id": "p-wei",
+      "at": "2026-03-13T12:32:47-07:00",
+      "text": "Thanks, noted."
+    },
+    {
+      "id": "slack:C07FLK0ACTU:1773434733.494132",
+      "source": "slack",
+      "where": "#actuators",
+      "thread": "1773430255.283697",
+      "author": "Wei Huang",
+      "author_id": "p-wei",
+      "at": "2026-03-13T13:45:33-07:00",
+      "text": "That doesn't match the print for me. I'd check the drawing again."
+    },
+    {
+      "id": "slack:C07FLK0ACTU:1773427206.210050",
+      "source": "slack",
+      "where": "#actuators",
+      "thread": "1773427206.210050",
+      "author": "Hana Kimura",
+      "author_id": "p-hana",
+      "at": "2026-03-13T11:40:06-07:00",
+      "text": "eccentric shaft arrived (11), counting the rest now"
+    },
+    {
+      "id": "slack:C07FLK0ACTU:1773428106.624163",
+      "source": "slack",
+      "where": "#actuators",
+      "thread": "1773427206.210050",
+      "author": "Hana Kimura",
+      "author_id": "p-hana",
+      "at": "2026-03-13T11:55:06-07:00",
+      "text": "Correction: eccentric shaft arrived (12), I miscounted one"
+    },
+    {
+      "id": "slack:C07FLK0ACTU:1773430350.892042",
+      "source": "slack",
+      "where": "#actuators",
+      "thread": "1773427206.210050",
+      "author": "Samir Khoury",
+      "author_id": "p-samir",
+      "at": "2026-03-13T12:32:30-07:00",
+      "text": "count it a third time hana"
+    },
+    {
+      "id": "slack:C07FLK0ACTU:1773431263.211152",
+      "source": "slack",
+      "where": "#actuators",
+      "thread": "1773427206.210050",
+      "author": "Andre Baptiste",
+      "author_id": "p-andre",
+      "at": "2026-03-13T12:47:43-07:00",
+      "text": "nope, didnt see that many on the cart earlier"
+    },
+    {
+      "id": "slack:C07FLK0STRC:1773428276.271466",
+      "source": "slack",
+      "where": "#structures-battery",
+      "thread": "1773428276.271466",
+      "author": "Priya Raman",
+      "author_id": "p-priya",
+      "at": "2026-03-13T11:57:56-07:00",
+      "text": "battery clevis, need 3 by thurs 4/9 for the fit check, if that is feasible."
+    },
+    {
+      "id": "slack:C07FLK0STRC:1773429952.960036",
+      "source": "slack",
+      "where": "#structures-battery",
+      "thread": "1773428276.271466",
+      "author": "Carlos Mendoza",
+      "author_id": "p-carlos",
+      "at": "2026-03-13T12:25:52-07:00",
+      "text": "Which rev for those?"
+    }
+  ],
+  "filled_by": "claude-reader-7",
+  "results": [
+    {
+      "doc_id": "slack:C07FLK0ACTU:1773676190.226356",
+      "refs": [
+        {
+          "id": "m-actuator-evt-build",
+          "mode": "alias",
+          "token": "Actuator EVT build"
+        },
+        {
+          "id": "test-knee-dyno",
+          "mode": "alias",
+          "token": "Knee actuator dyno torque test"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "blocked",
+          "subject": "m-actuator-evt-build",
+          "value": "test-knee-dyno"
+        }
+      ],
+      "pressure": 0.4,
+      "done": [],
+      "cues": [
+        "that's the gate for now"
+      ]
+    },
+    {
+      "doc_id": "slack:C07FLK0ACTU:1773677250.036845",
+      "refs": [
+        {
+          "id": "m-actuator-evt-build",
+          "mode": "vague",
+          "token": "the schedule"
+        }
+      ],
+      "claims": [],
+      "pressure": 0,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "slack:C07FLK0LEGS:1773676857.401429",
+      "refs": [
+        {
+          "id": "pt-build-leg-stand",
+          "mode": "alias",
+          "token": "leg stand"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "needs",
+          "subject": "pt-build-leg-stand",
+          "value": "2026-03-30",
+          "qty": 3
+        }
+      ],
+      "pressure": 0.15,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "jira:SCM-19:desc",
+      "refs": [
+        {
+          "id": "pt-knee-thigh-flange",
+          "mode": "alias",
+          "token": "Knee to thigh flange"
+        },
+        {
+          "id": "pt-knee-motor-mount",
+          "mode": "alias",
+          "token": "motor plate"
+        },
+        {
+          "id": "m-actuator-dvt-build",
+          "mode": "alias",
+          "token": "Actuator DVT build"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "needs",
+          "subject": "pt-knee-thigh-flange",
+          "value": "2026-03-13",
+          "qty": 1,
+          "for": "m-actuator-dvt-build"
+        }
+      ],
+      "pressure": 0.15,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "jira:SCM-19:c60381",
+      "refs": [
+        {
+          "id": "pt-knee-thigh-flange",
+          "mode": "vague",
+          "token": "the part"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "needs",
+          "subject": "pt-knee-thigh-flange",
+          "value": "2026-03-13",
+          "qty": 1
+        }
+      ],
+      "pressure": 0.15,
+      "done": [],
+      "cues": [
+        "still"
+      ]
+    },
+    {
+      "doc_id": "jira:SCM-19:c60382",
+      "refs": [
+        {
+          "id": "pt-knee-thigh-flange",
+          "mode": "id",
+          "token": "1190"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "needs",
+          "subject": "pt-knee-thigh-flange",
+          "value": "2026-03-13"
+        }
+      ],
+      "pressure": 0.15,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "jira:SCM-19:h600381",
+      "refs": [
+        {
+          "id": "pt-knee-thigh-flange",
+          "mode": "vague",
+          "token": "status"
+        }
+      ],
+      "claims": [],
+      "pressure": 0,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "jira:SCM-19:c60383",
+      "refs": [
+        {
+          "id": "pt-knee-thigh-flange",
+          "mode": "alias",
+          "token": "the flange"
+        }
+      ],
+      "claims": [],
+      "pressure": 0,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "jira:SCM-19:h600382",
+      "refs": [
+        {
+          "id": "pt-knee-thigh-flange",
+          "mode": "vague",
+          "token": "status"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "done",
+          "subject": "pt-knee-thigh-flange",
+          "value": "2026-03-15"
+        }
+      ],
+      "pressure": 0,
+      "done": [
+        "pt-knee-thigh-flange"
+      ],
+      "cues": []
+    },
+    {
+      "doc_id": "jira:HIP-11:desc",
+      "refs": [
+        {
+          "id": "pt-knee-circular-spline-hsg",
+          "mode": "id",
+          "token": "FL-KNE-1176"
+        },
+        {
+          "id": "m-actuator-dvt-build",
+          "mode": "alias",
+          "token": "Actuator DVT build"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "needs",
+          "subject": "pt-knee-circular-spline-hsg",
+          "value": "2026-03-12",
+          "qty": 2,
+          "for": "m-actuator-dvt-build"
+        }
+      ],
+      "pressure": 0.15,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "jira:HIP-11:c30223",
+      "refs": [
+        {
+          "id": "pt-knee-circular-spline-hsg",
+          "mode": "alias",
+          "token": "spline housing"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "needs",
+          "subject": "pt-knee-circular-spline-hsg",
+          "value": "2026-03-12",
+          "qty": 2
+        }
+      ],
+      "pressure": 0.15,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "jira:HIP-11:h300221",
+      "refs": [
+        {
+          "id": "pt-knee-circular-spline-hsg",
+          "mode": "vague",
+          "token": "status"
+        }
+      ],
+      "claims": [],
+      "pressure": 0,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "jira:HIP-11:h300222",
+      "refs": [
+        {
+          "id": "pt-knee-circular-spline-hsg",
+          "mode": "vague",
+          "token": "status"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "done",
+          "subject": "pt-knee-circular-spline-hsg",
+          "value": "2026-03-15"
+        }
+      ],
+      "pressure": 0,
+      "done": [
+        "pt-knee-circular-spline-hsg"
+      ],
+      "cues": []
+    },
+    {
+      "doc_id": "jira:STR-12:desc",
+      "refs": [
+        {
+          "id": "pt-dyno-adapter-knee",
+          "mode": "id",
+          "token": "FL-TST-2124"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "needs",
+          "subject": "pt-dyno-adapter-knee",
+          "value": "2026-04-03"
+        }
+      ],
+      "pressure": 0.25,
+      "done": [],
+      "cues": [
+        "needed 4/3!!"
+      ]
+    },
+    {
+      "doc_id": "jira:STR-12:c70241",
+      "refs": [
+        {
+          "id": "pt-dyno-adapter-knee",
+          "mode": "alias",
+          "token": "knee dyno plate"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "needs",
+          "subject": "pt-dyno-adapter-knee",
+          "value": "2026-04-08",
+          "qty": 3
+        }
+      ],
+      "pressure": 0.15,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "jira:STR-12:h700241",
+      "refs": [
+        {
+          "id": "pt-dyno-adapter-knee",
+          "mode": "vague",
+          "token": "status"
+        }
+      ],
+      "claims": [],
+      "pressure": 0,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "jira:STR-12:h700242",
+      "refs": [
+        {
+          "id": "pt-dyno-adapter-knee",
+          "mode": "vague",
+          "token": "status"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "done",
+          "subject": "pt-dyno-adapter-knee",
+          "value": "2026-03-14"
+        }
+      ],
+      "pressure": 0,
+      "done": [
+        "pt-dyno-adapter-knee"
+      ],
+      "cues": []
+    },
+    {
+      "doc_id": "slack:C07FLK0STRC:1773457201.168737",
+      "refs": [
+        {
+          "id": "pt-dyno-bellows-hub",
+          "mode": "id",
+          "token": "FL-TST-2146"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "needs",
+          "subject": "pt-dyno-bellows-hub",
+          "value": "2026-04-03",
+          "qty": 12
+        }
+      ],
+      "pressure": 0.15,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "jira:HIP-12:desc",
+      "refs": [
+        {
+          "id": "pt-hip-brake-bracket",
+          "mode": "alias",
+          "token": "brake mount"
+        },
+        {
+          "id": "test-hip-evt-dyno",
+          "mode": "alias",
+          "token": "Hip actuator EVT dyno torque-speed map"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "needs",
+          "subject": "pt-hip-brake-bracket",
+          "value": "2026-03-03",
+          "qty": 12,
+          "for": "test-hip-evt-dyno"
+        }
+      ],
+      "pressure": 0.15,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "jira:HIP-12:c30241",
+      "refs": [
+        {
+          "id": "pt-hip-brake-bracket",
+          "mode": "alias",
+          "token": "brake bracket"
+        },
+        {
+          "id": "test-hip-evt-dyno",
+          "mode": "alias",
+          "token": "Hip actuator EVT dyno torque-speed map"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "needs",
+          "subject": "pt-hip-brake-bracket",
+          "value": "2026-02-27",
+          "qty": 12,
+          "for": "test-hip-evt-dyno"
+        },
+        {
+          "kind": "need_earlier",
+          "subject": "pt-hip-brake-bracket",
+          "value": "2026-02-27"
+        }
+      ],
+      "pressure": 0.2,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "jira:HIP-12:h300241",
+      "refs": [
+        {
+          "id": "pt-hip-brake-bracket",
+          "mode": "vague",
+          "token": "status"
+        }
+      ],
+      "claims": [],
+      "pressure": 0,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "jira:HIP-12:h300242",
+      "refs": [
+        {
+          "id": "pt-hip-brake-bracket",
+          "mode": "vague",
+          "token": "status"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "done",
+          "subject": "pt-hip-brake-bracket",
+          "value": "2026-03-03"
+        }
+      ],
+      "pressure": 0,
+      "done": [
+        "pt-hip-brake-bracket"
+      ],
+      "cues": []
+    },
+    {
+      "doc_id": "jira:HIP-12:c30243",
+      "refs": [
+        {
+          "id": "pt-hip-brake-bracket",
+          "mode": "alias",
+          "token": "brake mount"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "done",
+          "subject": "pt-hip-brake-bracket",
+          "value": "2026-03-12"
+        }
+      ],
+      "pressure": 0,
+      "done": [
+        "pt-hip-brake-bracket"
+      ],
+      "cues": []
+    },
+    {
+      "doc_id": "slack:C07FLK0HWPR:1773451745.671990",
+      "refs": [
+        {
+          "id": "pt-spin-base-riser",
+          "mode": "alias",
+          "token": "base riser"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "needs",
+          "subject": "pt-spin-base-riser",
+          "value": "2026-03-23",
+          "qty": 2
+        }
+      ],
+      "pressure": 0.35,
+      "done": [],
+      "cues": [
+        "need 2!!"
+      ]
+    },
+    {
+      "doc_id": "slack:C07FLK0ACTU:1773441540.653865",
+      "refs": [
+        {
+          "id": "pt-hip-pelvis-interface",
+          "mode": "alias",
+          "token": "Hip to pelvis interface plate"
+        },
+        {
+          "id": "test-hip-evt-dyno",
+          "mode": "alias",
+          "token": "Hip actuator EVT dyno torque-speed map"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "needs",
+          "subject": "pt-hip-pelvis-interface",
+          "value": "2026-03-19",
+          "for": "test-hip-evt-dyno"
+        }
+      ],
+      "pressure": 0.15,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "slack:C07FLK0ACTU:1773442128.325281",
+      "refs": [],
+      "claims": [],
+      "pressure": 0,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "slack:C07FLK0ACTU:1773443021.404919",
+      "refs": [
+        {
+          "id": "pt-hip-pelvis-interface",
+          "mode": "alias",
+          "token": "interface plate"
+        }
+      ],
+      "claims": [],
+      "pressure": 0,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "slack:C07FLK0ACTU:1773440650.901877",
+      "refs": [
+        {
+          "id": "test-hip-evt-dyno",
+          "mode": "alias",
+          "token": "Hip actuator EVT dyno torque-speed map"
+        },
+        {
+          "id": "pt-hip-brake-bracket",
+          "mode": "alias",
+          "token": "Hip holding-brake bracket"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "blocked",
+          "subject": "test-hip-evt-dyno",
+          "value": "pt-hip-brake-bracket"
+        }
+      ],
+      "pressure": 0.4,
+      "done": [],
+      "cues": [
+        "is waiting on"
+      ]
+    },
+    {
+      "doc_id": "slack:C07FLK0HWPR:1773435910.786796",
+      "refs": [
+        {
+          "id": "pt-dyno-bellows-hub",
+          "mode": "alias",
+          "token": "coupling hub"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "needs",
+          "subject": "pt-dyno-bellows-hub",
+          "value": "2026-04-03",
+          "qty": 12
+        }
+      ],
+      "pressure": 0.15,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "slack:C07FLK0ACTU:1773430506.034473",
+      "refs": [
+        {
+          "id": "pt-hip-cycloid-disc-spacer",
+          "mode": "id",
+          "token": "FL-HIP-1035"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "needs",
+          "subject": "pt-hip-cycloid-disc-spacer",
+          "value": "2026-04-03",
+          "qty": 12
+        }
+      ],
+      "pressure": 0.15,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "slack:C07FLK0ACTU:1773434739.349662",
+      "refs": [
+        {
+          "id": "pt-hip-cycloid-disc-spacer",
+          "mode": "vague",
+          "token": "that one"
+        }
+      ],
+      "claims": [],
+      "pressure": 0.1,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "slack:C07FLK0ACTU:1773430255.283697",
+      "refs": [
+        {
+          "id": "pt-hip-output-shaft",
+          "mode": "alias",
+          "token": "hip shaft"
+        },
+        {
+          "id": "m-actuator-dvt-build",
+          "mode": "alias",
+          "token": "Actuator DVT build"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "needs",
+          "subject": "pt-hip-output-shaft",
+          "value": "2026-04-07",
+          "qty": 24,
+          "for": "m-actuator-dvt-build"
+        }
+      ],
+      "pressure": 0.15,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "slack:C07FLK0ACTU:1773430367.278841",
+      "refs": [],
+      "claims": [],
+      "pressure": 0,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "slack:C07FLK0ACTU:1773434733.494132",
+      "refs": [
+        {
+          "id": "pt-hip-output-shaft",
+          "mode": "vague",
+          "token": "the print"
+        }
+      ],
+      "claims": [],
+      "pressure": 0.15,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "slack:C07FLK0ACTU:1773427206.210050",
+      "refs": [
+        {
+          "id": "pt-hip-eccentric-shaft",
+          "mode": "alias",
+          "token": "eccentric shaft"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "done",
+          "subject": "pt-hip-eccentric-shaft",
+          "value": "2026-03-13"
+        }
+      ],
+      "pressure": 0,
+      "done": [
+        "pt-hip-eccentric-shaft"
+      ],
+      "cues": []
+    },
+    {
+      "doc_id": "slack:C07FLK0ACTU:1773428106.624163",
+      "refs": [
+        {
+          "id": "pt-hip-eccentric-shaft",
+          "mode": "alias",
+          "token": "eccentric shaft"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "done",
+          "subject": "pt-hip-eccentric-shaft",
+          "value": "2026-03-13"
+        }
+      ],
+      "pressure": 0,
+      "done": [
+        "pt-hip-eccentric-shaft"
+      ],
+      "cues": []
+    },
+    {
+      "doc_id": "slack:C07FLK0ACTU:1773430350.892042",
+      "refs": [
+        {
+          "id": "pt-hip-eccentric-shaft",
+          "mode": "vague",
+          "token": "it"
+        }
+      ],
+      "claims": [],
+      "pressure": 0,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "slack:C07FLK0ACTU:1773431263.211152",
+      "refs": [
+        {
+          "id": "pt-hip-eccentric-shaft",
+          "mode": "vague",
+          "token": "that many"
+        }
+      ],
+      "claims": [],
+      "pressure": 0,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "slack:C07FLK0STRC:1773428276.271466",
+      "refs": [
+        {
+          "id": "pt-battery-enclosure-clevis-10",
+          "mode": "alias",
+          "token": "battery clevis"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "needs",
+          "subject": "pt-battery-enclosure-clevis-10",
+          "value": "2026-04-09",
+          "qty": 3
+        }
+      ],
+      "pressure": 0.2,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "slack:C07FLK0STRC:1773429952.960036",
+      "refs": [
+        {
+          "id": "pt-battery-enclosure-clevis-10",
+          "mode": "vague",
+          "token": "those"
+        }
+      ],
+      "claims": [],
+      "pressure": 0,
+      "done": [],
+      "cues": []
+    }
+  ]
+}
