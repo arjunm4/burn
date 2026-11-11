@@ -1,5 +1,12 @@
 # Architecture decisions
 
+**Note (2026-11-10):** the decisions below were made for the pre-v8 prototype (Digi-Key sensor demo) and still describe the code as it runs. The product design has moved to v8 ([`docs/architecture.md`](../docs/architecture.md)), which supersedes some of them for future work:
+- The local approval policy ($500 or deviation from the recommendation) is replaced by approval in Ramp (architecture §2.12).
+- Local draft purchase orders are replaced by Ramp requests and verified Xometry placement (§0.3, §0.4).
+- The Digi-Key sensor workflow states are replaced by the v8 order states (§4).
+
+Build ownership for v8 is not yet agreed (see `docs/open-questions.md` B5).
+
 ## Agreed direction (Claude mailbox 7291fdba, Codex reply 65b6015b)
 
 - Local hackathon stack: Vite/React + Node HTTP + built-in SQLite, no additional DB service.

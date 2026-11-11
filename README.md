@@ -1,10 +1,28 @@
-# Purchasing agent
+# Burn
 
-A hackathon procurement assistant with an engineer conversation at `/request` and an approver queue at `/approvals`. The visual design follows Purchasing Agent Engineer and Purchasing Agent v2 HTML references.
+Burn is a hardware purchasing agent that plugs into Ramp. An engineer enters the part they need; Burn gathers the related context from Slack, meetings, Jira and calendars, fills the Xometry order, recommends a production/shipping tier with a cost-of-delay justification, sends the request through Ramp for the manager's approval, places the order with a Ramp card, and books the receipt, memo and project code.
 
-**Next architecture:** [`docs/architecture.md`](docs/architecture.md) is the v8 draft design (pending Codex review): Burn as a hardware purchasing agent that plugs into Ramp, for custom CNC parts on Xometry. It is a design only; the code below predates it.
+Built for a hackathon whose prompt is *automate an existing financial workflow*.
 
-## Run locally
+## Where things are
+
+| Path | What it is |
+| --- | --- |
+| [`docs/architecture.md`](docs/architecture.md) | The design (v8 draft, pending Codex review): flow, decisions, decision maths, learning, demo data |
+| [`docs/open-questions.md`](docs/open-questions.md) | Every open question in one list, with owner and status |
+| [`docs/research/`](docs/research/) | Research notes, e.g. [`ramp-integration.md`](docs/research/ramp-integration.md) (Ramp API path, mock plan, demo script) |
+| `collaboration/` | Claude–Codex protocol and recorded decisions |
+| `src/`, `server/`, `fixtures/` | The current prototype (below) |
+
+## Status
+
+The **design** is v8. The **code** is the earlier prototype: a Digi-Key sensor purchase with a local approval queue and draft purchase orders. It does not yet implement the v8 flow (part entry, Xometry extension, Ramp). [`docs/architecture.md` §14](docs/architecture.md) maps what to keep and change, and [`docs/research/ramp-integration.md` §3](docs/research/ramp-integration.md) has the hackathon build plan.
+
+## Current prototype (pre-v8)
+
+This section describes the code as it runs today.
+
+### Run locally
 
 Requires Node.js 24.2+ (built-in SQLite) and npm.
 
@@ -15,7 +33,7 @@ npm run dev
 
 Open http://localhost:5173/request and http://localhost:5173/approvals in separate tabs. For production assets, run `npm run build` then `npm start`. The local server binds to 127.0.0.1:5173.
 
-## Demo workflow
+### Demo workflow
 
 1. Open `/request`, submit “ACS37002 × 40 from Digi-Key, standard shipping.”, and watch the working steps follow backend tool executions over NDJSON.
 2. Answer whether Rev B boards can substitute. Yes creates a standard-shipping draft purchase order. No presents the three shipping options and their delay costs.
@@ -25,7 +43,7 @@ Open http://localhost:5173/request and http://localhost:5173/approvals in separa
 
 The queue also contains the six original example decisions. Both screens refresh shared state periodically and when focused. Working-step progress uses actual tool events; it has no simulated step timers.
 
-## What's implemented
+### What's implemented
 
 - Shared decision records and deterministic shipping + delay cost derivation in `src/decisions.js`.
 - SQLite-backed requests and immutable audit entries in `server/store.js`.
@@ -36,7 +54,7 @@ The queue also contains the six original example decisions. Both screens refresh
 
 SQLite defaults to `data/purchasing.sqlite` (ignored by Git). Set `PURCHASING_DB` to override its path. Stop the app and remove the database plus its `-wal`/`-shm` siblings to reseed all demo data.
 
-## API
+### API
 
 | Method | Path | Purpose |
 | --- | --- | --- |
@@ -52,7 +70,7 @@ SQLite defaults to `data/purchasing.sqlite` (ignored by Git). Set `PURCHASING_DB
 
 Every mutation except the tool stream returns `{request}`. `/run` persists analysis and increments the revision before sending `run.completed {request}`; use that revision for the next answer. It also accepts `choiceId: "revb_yes"` or `"revb_no"` as an alternative to `answer`. Errors return `{error}`; stale revisions return HTTP 409. The server remains the authority for transitions, tier validity and approval rules.
 
-## Agent
+### Agent
 
 `server/agent/index.js` exports `analyze({text, requester}, emit)`. It turns a free-text request ("ACS37002 × 40 from Digi-Key, standard") into a matched request, the context the recommendation depends on, and at most one question for the engineer.
 
@@ -62,14 +80,14 @@ Every mutation except the tool stream returns `{request}`. `/run` persists analy
 - The model never does arithmetic. Shipping and delay costs come from `src/decisions.js`. The model's ids are re-checked against the facts its tools returned; only its phrasing is trusted.
 - It emits `tool.started` / `tool.completed` events with `{index, name, label, summary}`, which drive the engineer's "working" list, plus `agent.fallback` when it switches planners.
 
-## UI
+### UI
 
 - `/request` starts a new request: a free-text composer plus your recent requests. Submitting creates the request (`POST /api/requests`) and opens `/request/:id`.
 - `/request/:id` is the conversation. The working list comes from live agent events. The agent's question comes from `request.question`. Shipping options show arrival dates from `ORDER_DATE`, days late against the milestone, and an estimated total (shipping + waiting engineers × $1,100/day). Options are equal-weight buttons, with the recommendation tagged. When a choice needs approval, the conversation says why (over $500, or differs from the recommendation) and shows a "Waiting on Priya" status until it's approved.
 - `/approvals` is Priya's queue. It links each decision back to the engineer's conversation and explains why it needs approval.
 - The conversation logic lives in `src/conversation.js`: pure functions, unit-tested in `src/conversation.test.js`. `src/Engineer.jsx` only renders it.
 
-## Integrations: Slack and calendar
+### Integrations: Slack and calendar
 
 The server ingests Slack messages and calendar events, extracts a dependency graph from them, and the agent, `/graph` and `/approvals` all read that graph. With no credentials it runs on seeded fixtures (`fixtures/slack/*.json` are saved Slack API responses and `fixtures/calendar.ics` is a calendar), so the demo works offline.
 
@@ -90,7 +108,7 @@ Run `npm run dev` (it loads `.env`). Ingestion starts with the server; **Sync so
 
 Code: `server/connectors/{slack,ics}.js` are the connectors. `server/ingest/` holds sources, documents and graph versions in SQLite (`INGEST_DB`, default `data/ingest.sqlite`).
 
-## Dependency graph
+### Dependency graph
 
 - **Extraction** (`server/graph/extract.js`). Calendar events become milestones (`CATEGORIES:MILESTONE` or titles with EVT/DVT/freeze…), out-of-office windows and time-boxed bookings. Messages yield parts (matched to the request catalog), work items, people, and three edge kinds: `A blocks B` (B can't start until A is done), `person assigned work`, and `work due milestone`. Claude structured output does the message extraction when a key is set; message text is wrapped as untrusted data, and only known keys and real evidence ids survive. Without a key, rules tuned for common phrasing ("X is blocked until…", "can only start after…", "needs…", "I'm on X with Y", "takes about N days") do it. **Every edge cites the messages or events it came from.**
 - **Scheduling** (`src/graph/engine.js`, which runs in both the server and the browser). Parts arrive on the date of the chosen shipping tier. Work starts once its blockers are done and its people are back from OOO. Milestones slip when their due work or parts are late. The engine reports the critical path (what determined each start), missed bookings, and idle engineer-days against the fastest-shipping baseline at $1,100/day. On the seeded data, standard sensors produce the same $30,800 the request totals use, now derived from Slack and the calendar. The engine also finds that the slow harness vendor is a hidden EVT bottleneck.
@@ -98,11 +116,17 @@ Code: `server/connectors/{slack,ics}.js` are the connectors. `server/ingest/` ho
 - **`/approvals`** shows a compact graph of everything waiting on the selected request, scheduled with the tier being approved. It names the real cause when a milestone would still slip, e.g. "EVT build still slips 4d with this option: Cable harness arrives Nov 18, not this order."
 - **The agent** reads ingested messages, calendar milestones and graph dependencies when the server is running.
 
-## Current boundaries
+### Current boundaries
 
 Slack and calendar connectors are implemented but have only been exercised against recorded API responses and fixture files here. No live Slack token or calendar URL has been supplied yet; add them to `.env` (see Integrations). The legacy `server/tools.js` helper is retained only for its original unit test. Vendor and purchasing integrations don't exist yet. Approval costs in `/approvals` facts and the engineer chat still come from `src/decisions.js`; the graph views compute theirs from ingested data. Claude’s agent uses its deterministic fallback without model credentials; live model execution remains unverified in this session. Free text is matched against seven fixture parts; unmatched requests cannot create orders. Purchase orders are local drafts; no vendor purchase is placed. Identity is the reference demo identity, not authenticated access control. Evidence links and the reference Ask button still need actual source/conversation integrations. Run locally for the demo; add authentication before shared hosting.
 
 Request entry, agent analysis, shipping selection, approval, and draft purchase orders are integrated on `main`. Live project/vendor sources, actual purchasing and authenticated approvers remain future integrations.
+
+### Validation
+
+`npm test` checks cost derivation, tool events, persistent approval overrides, duplicate prevention, invalid inputs, dependency invalidation and API handlers. Agent integration tests also cover matching, unsupported parts, question choice aliases, and revision conflicts after analysis. API handler tests run in-process for deterministic isolation. The workflow test crosses request creation, agent tools, engineer answers, shipping selection, approver overrides, draft identity, dependency release and audit APIs. `npm run build` verifies the React production bundle. Chrome verification on isolated previews passed sensor request creation, Rev C answer, Standard selection, Priority approval override, and matching draft PO in both routes. Final production-build checks also passed Rev B substitution, persistent question/answer and actual tool summaries after reload, a scope-probe request without a clarification question, automatic draft creation, and unknown-input rejection. The combined branch passes 30 tests. The preview uses a scratch database; the user’s normal dev database is separate. Model-backed execution is still unverified without credentials.
+
+Catalog matching uses seeded shipping and project context. Parsed quantities appear consistently in the approval description and draft purchase order, which also saves the vendor and exact shipping quote. A new purchase can fulfill the seeded project dependency only when it matches the catalog part and project and covers at least the catalog quantity; a partial purchase leaves that dependency waiting. This is demo fulfillment logic, not a live inventory allocation system.
 
 ## Collaboration and Git conventions
 
@@ -118,9 +142,3 @@ git worktree add .worktrees/claude-ui -b claude/ui
 Commit messages use Conventional Commits: `feat(api): persist request lifecycle`, `feat(ui-engineer): connect engineer conversation`, `test(api): cover approvals and stale writes`, `docs: document demo workflow`. Keep README updates with their feature. Review and merge finished branches from the main checkout.
 
 Each agent works in its own worktree under `.worktrees/` (`codex/<topic>`, `claude/<topic>`), rebases on `main`, and fast-forward merges after `npm test` and `npm run build` pass. Scopes: `db`, `api`, `agent`, `ui-engineer`, `ui-approvals`, `docs`, `collab`, `deps`, `test`. Claude and Codex have exchanged architectural reviews through the shared mailbox and native cmux messages. Runtime mailbox files are ignored by Git; durable decisions live in `collaboration/DECISIONS.md`.
-
-## Validation
-
-`npm test` checks cost derivation, tool events, persistent approval overrides, duplicate prevention, invalid inputs, dependency invalidation and API handlers. Agent integration tests also cover matching, unsupported parts, question choice aliases, and revision conflicts after analysis. API handler tests run in-process for deterministic isolation. The workflow test crosses request creation, agent tools, engineer answers, shipping selection, approver overrides, draft identity, dependency release and audit APIs. `npm run build` verifies the React production bundle. Chrome verification on isolated previews passed sensor request creation, Rev C answer, Standard selection, Priority approval override, and matching draft PO in both routes. Final production-build checks also passed Rev B substitution, persistent question/answer and actual tool summaries after reload, a scope-probe request without a clarification question, automatic draft creation, and unknown-input rejection. The combined branch passes 30 tests. The preview uses a scratch database; the user’s normal dev database is separate. Model-backed execution is still unverified without credentials.
-
-Catalog matching uses seeded shipping and project context. Parsed quantities appear consistently in the approval description and draft purchase order, which also saves the vendor and exact shipping quote. A new purchase can fulfill the seeded project dependency only when it matches the catalog part and project and covers at least the catalog quantity; a partial purchase leaves that dependency waiting. This is demo fulfillment logic, not a live inventory allocation system.

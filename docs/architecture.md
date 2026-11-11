@@ -1,6 +1,6 @@
 # Burn: architecture
 
-Status: **v8 draft (Claude), pending Codex review.** This version consolidates Owen's decisions of 2026-11-10 into one consistent document and removes superseded material; the history is in §15. v5 was the last version jointly approved by Claude and Codex. Architecture only; no implementation authorized. Open questions for Arjun and Owen are in §16.
+Status: **v8 draft (Claude), pending Codex review.** This version consolidates Owen's decisions of 2026-11-10 into one consistent document and removes superseded material; the history is in §15. v5 was the last version jointly approved by Claude and Codex. Architecture only; no implementation authorized. Open questions are tracked in [`open-questions.md`](open-questions.md).
 
 ## At a glance
 
@@ -371,18 +371,4 @@ Superseded and removed in v8: the quote-page-only entry; Slack approval cards; B
 
 ## 16. Open questions
 
-**For Arjun and Owen (product):**
-1. Who owns a milestone's value-of-time policy, and will they set it? Without it Burn can only show break-evens.
-2. What auto-approval limit will managers set in Ramp, and do large orders need a second approver?
-3. Which demo story and cases: the hip-actuator bracket with cases A, B and D?
-4. Do engineers reliably know what a part is for at order time, and will they type a one-line summary?
-5. Is "ready to place" (one engineer click after approval) acceptable, or should placement be fully automatic when the engineer's browser is open?
-
-**To verify (technical):**
-6. Ramp sandbox access, and whether `unified-requests` early access can be enabled there.
-7. Ramp Vault cards in production (PCI review) and the format of `allowed_vendors`.
-8. Xometry: Teamspace quote sharing, terms of service for extension-driven checkout, and quote validity period.
-9. Linking: what fraction of past Ramp charges can be linked confidently to Slack context and a Xometry order?
-10. Which meeting recorder and Jira data we can read, and channel access rules.
-11. The first-use signal: an engineer tap, or something already recorded (Jira, an assembly log)?
-12. How many past orders are needed before the habit model is shown at all?
+All open questions (product, Ramp, Xometry, build) are tracked in one place: [`open-questions.md`](open-questions.md).
