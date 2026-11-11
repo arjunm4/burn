@@ -53,7 +53,10 @@ export function decide(input) {
     }
   }
 
-  const admissible = options.filter(() => !inadmissibleWhy);
+  // A hard owner target makes any option that misses it in the base world inadmissible (kept as reference).
+  const hardMiss = o => policy.hard && policy.targetOn && (outcomes[o.tier][scenarios[0].id].finishOn == null || outcomes[o.tier][scenarios[0].id].finishOn > policy.targetOn);
+  const whyFor = o => inadmissibleWhy || (hardMiss(o) ? `misses the hard deadline ${policy.targetOn}` : null);
+  const admissible = options.filter(o => !whyFor(o));
   const cheapest = admissible.length ? admissible.reduce((a, b) => (b.priceCents < a.priceCents ? b : a)) : null;
   const finish = (tier, sid) => outcomes[tier][sid].finishOn;
   const base = scenarios[0].id;
@@ -61,12 +64,12 @@ export function decide(input) {
 
   // 4. Per-option summary in the base scenario: days gained vs the cheapest admissible option, break-even.
   const summary = options.map(o => {
-    const adm = !inadmissibleWhy;
+    const why = whyFor(o); const adm = !why;
     const f = finish(o.tier, base);
     const f0 = cheapest ? finish(cheapest.tier, base) : null;
     const deltaDays = adm && f && f0 ? daysBetween(f, f0) : null;
     const extraCents = cheapest ? o.priceCents - cheapest.priceCents : 0;
-    return {tier: o.tier, admissible: adm, ...(adm ? {} : {why: inadmissibleWhy}), readyOn: o.readyOn, finishOn: f, deltaDays, extraCents,
+    return {tier: o.tier, admissible: adm, ...(adm ? {} : {why}), readyOn: o.readyOn, finishOn: f, deltaDays, extraCents,
       breakEvenCentsPerDay: deltaDays && deltaDays > 0 && extraCents > 0 ? Math.round(extraCents / deltaDays) : null};
   });
 
@@ -135,13 +138,17 @@ export function decide(input) {
     return null;
   }
 
+  // While the flip question is open nothing is preselected: the tentative answer is kept separately.
+  let tentative = null;
+  if (question?.flips && recommended) { tentative = recommended; recommended = null; }
+
   // 8. Assumptions, with the age of each fact, plus the policy source.
   const stated = assumptions.map(a => a.ageDays == null ? a.text : `${a.text} (${a.ageDays === 0 ? 'today' : `${a.ageDays}d ago`})`);
   if (policy.valuePerDayCents) stated.push(`A day of ${milestoneId.replace(/^milestone:/, '')} is valued at $${(policy.valuePerDayCents / 100).toLocaleString('en-US')}${policy.owner ? ` (${policy.owner}'s policy)` : ''}`);
   else stated.push('No value-of-time policy set for this milestone; showing break-even only');
   if (pastCutoff) stated.push('The vendor cutoff has passed; production starts next business day');
 
-  return {snapshotHash, options: summary, recommended, assumptions: stated, switching, question,
+  return {snapshotHash, options: summary, recommended, tentative, assumptions: stated, switching, question,
     unknowns: unknownBase, dominated: [...dominated], scenarios: scenarios.map(s => ({id: s.id, label: s.label})), outcomes};
 }
 
@@ -150,6 +157,10 @@ export function explain(result, {milestoneLabel = 'the milestone'} = {}) {
   const rec = result.recommended && result.options.find(o => o.tier === result.recommended.tier);
   const cheapest = result.options.filter(o => o.admissible).reduce((a, b) => (!a || b.extraCents < a.extraCents ? b : a), null);
   if (!result.options.some(o => o.admissible)) return `No valid option: ${result.options[0]?.why || 'the quote cannot be used'}.`;
+  if (!rec && result.question?.flips && result.tentative) {
+    const t = result.options.find(o => o.tier === result.tentative.tier);
+    return `Leaning ${t.tier}, but it hinges on ${result.question.text.split(':')[0].toLowerCase()}: ${result.question.owner} would know. ${result.switching ? result.switching + '.' : ''}`.trim();
+  }
   if (!rec) {
     const be = result.options.filter(o => o.breakEvenCentsPerDay).map(o => `${o.tier} at $${Math.round(o.breakEvenCentsPerDay / 100)}/day`).join(', ');
     if (result.question?.flips) return `Nothing to recommend yet: it depends on ${result.question.text.split(':')[0].toLowerCase()}, and ${result.question.owner} would know.${be ? ` Break-even: ${be}.` : ''}`;

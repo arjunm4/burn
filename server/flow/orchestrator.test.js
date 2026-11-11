@@ -1,18 +1,19 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {createOrchestrator} from './orchestrator.js';
-import {createMemoryOrderStore} from '../stubs/orderStore.js';
-import {createMemoryRamp} from '../stubs/ramp.js';
+import {createOrderStore} from '../orders/store.js';
+import {createRampClient} from '../ramp/index.js';
 import {createVendorProvider} from '../vendors/index.js';
 import {loadConfig} from '../config.js';
 
 // A tiny ingested world: the spin test needs the bracket and Arjun's motor; the milestone is dated.
-const ORDER = '2026-11-09';
+// A Monday a few weeks out, so quote validity and cutoffs are in the future for the store's checks.
+const ORDER = '2026-12-07';
 const d = n => new Date(Date.parse(ORDER + 'T00:00:00Z') + n * 86400000).toISOString().slice(0, 10);
 const world = (motorDay = 8) => ({
   listDocuments: () => [
-    {id: 's1', source: 'slack', channel: '#actuator', author: 'Arjun', at: '2026-11-06T18:00:00Z', text: `Motor magnets land ${d(motorDay)}; the spin test needs the hip actuator bracket and the motor and takes 3 days.`},
-    {id: 's2', source: 'slack', channel: '#random', author: 'Lee', at: '2026-11-07T10:00:00Z', text: 'Lunch?'},
+    {id: 's1', source: 'slack', channel: '#actuator', author: 'Arjun', at: '2026-12-04T18:00:00Z', text: `Motor magnets land ${d(motorDay)}; the spin test needs the hip actuator bracket and the motor and takes 3 days.`},
+    {id: 's2', source: 'slack', channel: '#random', author: 'Lee', at: '2026-12-05T10:00:00Z', text: 'Lunch?'},
   ],
   latestGraph: () => ({graph: {
     nodes: [
@@ -21,14 +22,14 @@ const world = (motorDay = 8) => ({
       {id: 'milestone:spin', kind: 'milestone', label: 'Spin test done', attrs: {date: d(11), evidence: 's1'}},
     ],
     edges: [{id: 'e2', from: 'part:motor', to: 'work:spin-test', kind: 'blocks', evidence: ['s1']}, {id: 'e3', from: 'work:spin-test', to: 'milestone:spin', kind: 'due', evidence: ['s1']}],
-  }, evidence: {s1: {id: 's1', at: '2026-11-06T18:00:00Z', author: 'Arjun'}}}),
+  }, evidence: {s1: {id: 's1', at: '2026-12-04T18:00:00Z', author: 'Arjun'}}}),
 });
 const config = () => ({...loadConfig(), milestones: {'milestone:spin': {valuePerDayCents: 60000, owner: 'Arjun'}}, scenarios: {slipDays: [1, 4]}});
 const cad = {fileName: 'bracket.step', bytes: Buffer.from('solid bracket')};
 const settle = () => new Promise(r => setTimeout(r, 30));
 
 function boot(opts = {}) {
-  const store = createMemoryOrderStore(), ramp = createMemoryRamp();
+  const store = createOrderStore({filename: ':memory:'}), ramp = createRampClient({mode: 'mock', filename: ':memory:'});
   const vendor = createVendorProvider({mode: 'fake', now: () => new Date(ORDER + 'T17:00:00Z'), basePriceCents: 300000});
   const o = createOrchestrator({store, vendor, ramp, ingest: opts.ingest === null ? null : world(opts.motorDay), config: config(), now: () => ORDER + 'T17:00:00Z'});
   const seen = []; o.bus.on('order', e => seen.push(e.type));
@@ -81,22 +82,25 @@ test('Okay → Ramp request → approval → card → verified placement → cha
   order = await o.okay(order.id, order.revision, {tier});
   assert.equal(order.state, 'requested');
   assert.ok(order.specHash && order.ramp.requestId);
-  const req = ramp._records.requests.get(order.ramp.requestId);
+  const sim = await ramp.simulate();
+  const req = sim.inspect('request', order.ramp.requestId);
   assert.equal(req.specHash, order.specHash);
   assert.match(req.field_answers.justification, /worth it if a day|paying more buys no time|better on both/);
-  const sim = await ramp.simulate();
   await sim.approve(order.ramp.requestId);
   order = o.get(order.id);
   assert.equal(order.state, 'placed', JSON.stringify(store.events(order.id).map(e => e.event)));
   assert.ok(order.vendorOrder.vendorOrderId.startsWith('XO-'));
   assert.equal(order.paymentState, 'issued');
-  const txn = await sim.charge(order.ramp.cardId, order.frozen.priceCents);
+  const txnId = await sim.charge(order.ramp.cardId, order.frozen.priceCents, {idempotencyKey: 'test-charge-1'});
   order = o.get(order.id);
   assert.equal(order.paymentState, 'charged'); assert.equal(order.bookingState, 'coded');
-  assert.deepEqual(order.ramp.transactionIds, [txn]);
-  // A repeated approval event is a no-op: one placement, ever.
-  await sim.redeliver('unified_requests.approved', {id: order.ramp.requestId, specHash: order.specHash, decisionRevision: order.decisionRevision});
+  assert.deepEqual(order.ramp.transactionIds, [txnId]);
+  // A replayed approval event is a no-op: one placement, ever.
+  const approval = sim.events().find(e => e.type === 'unified_requests.approved');
+  await sim.replay([approval.id]);
+  await o.handleRampEvent({...approval, id: 'evt-dup-' + approval.id});   // same payload, new id: the order has moved on, so it's ignored
   assert.equal(store.attempts(order.id).length, 1);
+  assert.equal(o.get(order.id).state, 'placed');
 });
 
 test('a field that drifts at checkout blocks placement and returns the order to approved', async () => {
@@ -124,19 +128,32 @@ test('a lost vendor response goes to placement_unknown and is reconciled from th
   assert.equal(store.attempts(order.id).length, 1);
 });
 
-test('a stale approval (earlier decision revision) invalidates instead of placing', async () => {
-  const {o, ramp} = boot();
+test('events are hints: a reordered "rejected" event after Ramp says APPROVED still places; a premature "approved" is ignored', async () => {
+  const {o, ramp, store} = boot();
   let order = o.enter({name: 'Hip actuator bracket', note: 'for the spin test', cad, engineer: 'Owen', fields: {material: '6061-T6', quantity: 2, revision: 'B', shipTo: 'Emeryville'}});
   await settle(); order = o.get(order.id);
   order = await o.okay(order.id, order.revision, {tier: order.decision.recommended.tier});
-  await o.handleRampEvent({id: 'evt-stale', type: 'unified_requests.approved', payload: {id: order.ramp.requestId, specHash: order.specHash, decisionRevision: order.decisionRevision - 1}});
-  // The mock still says PENDING, so the stale event is ignored; now approve for real but with an old revision in the payload.
+  // An "approved" event while Ramp still says PENDING does nothing.
+  const early = await o.handleRampEvent({id: 'evt-early', type: 'unified_requests.approved', payload: {id: order.ramp.requestId}});
+  assert.equal(early.ignored, 'request is PENDING');
+  assert.equal(o.get(order.id).state, 'requested');
+  // Ramp approves, but the only event we receive is a stale, reordered "rejected": the live state wins.
   const sim = await ramp.simulate();
-  ramp._records.requests.get(order.ramp.requestId).status = 'APPROVED';
-  await o.handleRampEvent({id: 'evt-stale-2', type: 'unified_requests.approved', payload: {id: order.ramp.requestId, specHash: 'other', decisionRevision: order.decisionRevision}});
-  order = o.get(order.id);
-  assert.equal(order.state, 'invalidated');
-  assert.ok(sim);
+  await sim.approve(order.ramp.requestId, {deliverEvent: false});
+  await o.handleRampEvent({id: 'evt-reordered', type: 'unified_requests.rejected', payload: {id: order.ramp.requestId}});
+  assert.equal(o.get(order.id).state, 'placed');
+  assert.equal(store.attempts(order.id).length, 1);
+});
+
+test('Okay is refused while the flip question is open', async () => {
+  const {o} = boot({motorDay: 8});
+  const cfg = config(); cfg.scenarios.slipDays = [1, 4];
+  let order = o.enter({name: 'Hip actuator bracket', note: 'for the spin test', cad, engineer: 'Owen', fields: {material: '6061-T6', quantity: 2, revision: 'B', shipTo: 'Emeryville'}});
+  await settle(); order = o.get(order.id);
+  if (order.state === 'needs_answer') {
+    assert.equal(order.question.kind, 'fact');
+    await assert.rejects(o.okay(order.id, order.revision, {tier: order.decision.tentative.tier}), /Answer the open question first/);
+  } else assert.equal(order.state, 'recommended');
 });
 
 test('the engineer argues: the statement is kept and typed; only an explicit fact changes the plan', async () => {

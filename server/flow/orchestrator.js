@@ -18,7 +18,8 @@ export function createOrchestrator({store, vendor, ramp, ingest = null, config, 
   // Which spec fields are still gaps: engineer answers win, then authorized defaults.
   function resolveSpec(order, ctx) {
     const answered = Object.fromEntries(order.spec.filter(f => f.provenance === 'engineer').map(f => [f.key, f]));
-    return config.specFields.map(f => answered[f.key] || (ctx.specSuggestions[f.key] ? {key: f.key, ...ctx.specSuggestions[f.key]} : {key: f.key, value: null, provenance: null}));
+    return config.specFields.map(f => answered[f.key] || (ctx.specSuggestions[f.key] ? {key: f.key, ...ctx.specSuggestions[f.key]} : {key: f.key, value: null, provenance: null}))
+      .map(f => (f.key === 'quantity' && f.value != null ? {...f, value: Number.parseInt(f.value, 10)} : f));
   }
 
   /** Step 1: part entry. Returns at once; resolution continues in the background. */
@@ -111,6 +112,7 @@ export function createOrchestrator({store, vendor, ramp, ingest = null, config, 
   async function okay(id, expectedRevision, {tier}) {
     let order = store.get(id);
     if (!order.quote || !order.decision) throw new AppError('No quote to approve yet', 409);
+    if (order.state !== 'recommended') throw new AppError(order.question?.kind === 'fact' ? 'Answer the open question first; nothing can be okayed while it could change the decision' : `Cannot okay from ${order.state}`, 409);
     const chosen = order.decision.options.find(o => o.tier === tier);
     if (!chosen) throw new AppError('Unknown tier'); if (!chosen.admissible) throw new AppError(`${tier} is not a valid option: ${chosen.why}`, 409);
     const option = order.quote.options.find(o => o.tier === tier);
@@ -125,39 +127,60 @@ export function createOrchestrator({store, vendor, ramp, ingest = null, config, 
     const req = await ramp.createRequest({request_owner_id: config.ramp.requestOwnerId || order.entry.engineer, spend_program_id: config.ramp.spendProgramId, currency: frozen.currency,
       name: `${order.entry.name} (${tier}) from Xometry`, line_items: [{description: `${order.entry.name}, ${tier}`, amount: {amount: option.priceCents, currency_code: frozen.currency}, quantity: 1}],
       field_answers: {justification, burn_order_id: id, spec_hash: order.specHash, decision_revision: order.decisionRevision, chosen_tier: tier, recommended_tier: order.decision.recommended?.tier || null},
-      specHash: order.specHash, decisionRevision: order.decisionRevision, attachments: [{name: 'justification.txt', mime: 'text/plain', bytes: Buffer.from(justification)}]});
+      specHash: order.specHash, decisionRevision: order.decisionRevision, orderId: id, attachments: [{name: 'justification.txt', mime: 'text/plain', bytes: Buffer.from(justification)}]});
     if (!req.ok) { order = store.update(id, order.revision, {state: 'unresolved', question: {kind: 'ramp', text: `Ramp request failed: ${req.reason}`}}, 'ramp.request.failed'); publish(order, 'ramp.request.failed'); return order; }
-    order = store.recordRamp(id, order.revision, {requestId: req.requestId, approvalStatus: req.status, state: 'requested'}, 'ramp.requested');
+    order = store.recordRamp(id, order.revision, {requestId: req.requestId, approvalStatus: req.status}, 'ramp.request.created');
+    order = store.update(id, order.revision, {state: 'requested'}, 'ramp.requested');
     publish(order, 'ramp.requested');
     return order;
   }
 
   /** Inbound Ramp events: authenticated by the client, deduplicated here, reconciled against Ramp's state. */
   async function handleRampEvent(event) {
+    if (!event?.id || !event?.type) throw new AppError('Malformed event');
     if (store.seenEvent('ramp', event.id)) return {duplicate: true};
     const findByRequest = rid => store.list().find(o => o.ramp.requestId === rid);
-    if (event.type === 'unified_requests.approved' || event.type === 'unified_requests.rejected') {
-      let order = findByRequest(event.payload.id);
-      if (!order) return {ignored: 'unknown request'};
-      const live = await ramp.getRequest(event.payload.id);   // reconcile against the authoritative state
-      if (event.type === 'unified_requests.rejected' || live.status === 'REJECTED') {
-        if (['requested'].includes(order.state)) { order = store.recordRamp(order.id, order.revision, {approvalStatus: 'REJECTED', state: 'rejected'}, 'ramp.rejected'); publish(order, 'ramp.rejected'); }
-        return {ok: true};
-      }
-      if (live.status !== 'APPROVED') return {ignored: `request is ${live.status}`};
-      if (order.state !== 'requested') return {ignored: `order is ${order.state}`};   // late, duplicate, or already superseded
-      // The approval must bind to this exact order and decision.
-      if ((event.payload.specHash && event.payload.specHash !== order.specHash) || (event.payload.decisionRevision && event.payload.decisionRevision !== order.decisionRevision)) {
-        order = store.update(order.id, order.revision, {state: 'invalidated', question: {kind: 'stale', text: 'Approval refers to an earlier version of this order; re-approval needed.'}}, 'approval.stale'); publish(order, 'approval.stale'); return {ok: true};
-      }
-      order = store.recordRamp(order.id, order.revision, {approvalStatus: 'APPROVED', state: 'approved'}, 'ramp.approved');
-      publish(order, 'ramp.approved');
-      return placeNow(order.id);
+    if (event.type.startsWith('unified_requests.')) {
+      const requestId = event.payload?.id || event.payload?.requestId;
+      const found = findByRequest(requestId);
+      if (!found) return {ignored: 'unknown request'};
+      // The event is a hint; Ramp's current state is the authority (events can be late, duplicated or reordered).
+      const live = await ramp.getRequest(requestId);
+      if (live?.ok === false) return {ignored: live.reason};
+      // One atomic step: mark the event processed and apply the state change, with nothing async inside.
+      const step = store.processEvent('ramp', event.id, () => {
+        let order = store.get(found.id);
+        if (order.state !== 'requested') return {ignored: `order is ${order.state}`};
+        if (live.status === 'REJECTED' || live.status === 'CANCELLED') {
+          order = store.recordRamp(order.id, order.revision, {approvalStatus: live.status}, 'ramp.' + live.status.toLowerCase());
+          return {outcome: 'rejected', order: store.update(order.id, order.revision, {state: 'rejected'}, 'ramp.rejected')};
+        }
+        if (live.status !== 'APPROVED') return {ignored: `request is ${live.status}`};
+        if (live.specHash !== order.specHash || live.decisionRevision !== order.decisionRevision) {
+          return {outcome: 'stale', order: store.update(order.id, order.revision, {state: 'invalidated', question: {kind: 'stale', text: 'The approval refers to an earlier version of this order; re-approval needed.'}}, 'approval.stale')};
+        }
+        order = store.recordRamp(order.id, order.revision, {approvalStatus: 'APPROVED'}, 'ramp.approval.recorded');
+        return {outcome: 'approved', order: store.update(order.id, order.revision, {state: 'approved'}, 'ramp.approved')};
+      });
+      if (step.duplicate) return {duplicate: true};
+      const r = step.value;
+      if (r.order) publish(r.order, r.outcome === 'approved' ? 'ramp.approved' : r.outcome === 'stale' ? 'approval.stale' : 'ramp.rejected');
+      if (r.outcome === 'approved') return placeNow(found.id);   // outside the transaction: it talks to the vendor
+      return r.order ? {ok: true, outcome: r.outcome} : r;
     }
     if (event.type === 'transactions.cleared') {
-      const order = store.list().find(o => o.ramp.cardId === event.payload.card_id);
-      if (!order) return {ignored: 'unknown card'};
-      return book(order.id, event.payload.id);
+      const cardId = event.payload?.card_id || event.payload?.cardId;
+      const found = store.list().find(o => o.ramp.cardId === cardId);
+      if (!found) return {ignored: 'unknown card'};
+      const txnId = event.payload.id || event.payload.transactionId;
+      const step = store.processEvent('ramp', event.id, () => {
+        const order = store.get(found.id);
+        if (order.ramp.transactionIds.includes(txnId)) return order;
+        return store.recordRamp(order.id, order.revision, {transactionIds: [...order.ramp.transactionIds, txnId], paymentState: 'charged'}, 'charge.cleared');
+      });
+      if (step.duplicate) return {duplicate: true};
+      publish(step.value, 'charge.cleared');
+      return book(found.id, txnId);   // bookkeeping runs outside the transaction and retries on its own
     }
     return {ignored: event.type};
   }
@@ -165,17 +188,28 @@ export function createOrchestrator({store, vendor, ramp, ingest = null, config, 
   /** Steps 7–8: revalidate, issue the card, place with every field verified. */
   async function placeNow(id) {
     let order = store.get(id);
-    // Pre-placement revalidation (architecture §0.4).
+    if (order.state !== 'approved') return {ok: false, reason: `order is ${order.state}`};
+    // Pre-placement revalidation (architecture §0.4): approval, quote, price, cutoff, and the decision itself.
     const problems = [];
+    const live = await ramp.getRequest(order.ramp.requestId);
+    if (live?.status !== 'APPROVED' || live.specHash !== order.specHash || live.decisionRevision !== order.decisionRevision) problems.push('the Ramp approval is no longer current');
     if (order.quote?.validUntil && Date.parse(order.quote.validUntil) < Date.parse(iso())) problems.push('the quote has expired');
     const chosen = order.quote?.options.find(o => o.tier === order.frozen.tier);
     if (!chosen || chosen.priceCents !== order.frozen.priceCents) problems.push('the quoted price changed');
+    // Material-change rule: re-decide on today's context; a frozen tier that is no longer valid, or a
+    // changed recommendation, needs the engineer and approver to look again.
+    const ctx = buildContext({order, ingest, config, now: iso()});
+    const fresh = decide({options: order.quote.options, quote: {validUntil: order.quote.validUntil, cutoff: order.quote.cutoff}, graph: ctx.graph, partNodeId: ctx.partNodeId, milestoneId: ctx.milestoneId || order.context?.milestoneId, orderDate: today(), now: iso(), policy: ctx.policy, uncertain: ctx.uncertain, assumptions: ctx.assumptions});
+    const frozenNow = fresh.options.find(o => o.tier === order.frozen.tier);
+    if (!frozenNow?.admissible) problems.push(`${order.frozen.tier} is no longer a valid option (${frozenNow?.why || 'unknown'})`);
+    else if (fresh.recommended && order.decision.recommended && fresh.recommended.tier !== order.decision.recommended.tier) problems.push(`the recommendation changed to ${fresh.recommended.tier} since approval`);
+    if (order.quote?.cutoff && Date.parse(order.quote.cutoff) < Date.parse(iso())) publish(order, 'placement.notice', {text: 'The vendor cutoff passed during approval; production starts the next business day.'});
     if (problems.length) {
       order = store.update(id, order.revision, {state: 'invalidated', question: {kind: 'stale', text: `Needs re-approval: ${problems.join('; ')}.`}}, 'placement.invalidated'); publish(order, 'placement.invalidated'); return {ok: false, problems};
     }
     if (!order.ramp.cardId) {
       const card = await ramp.issueCard({user_id: config.ramp.requestOwnerId || order.entry.engineer, limitCents: order.frozen.priceCents + order.frozen.total.varianceCents, allowed_vendors: config.vendor.allowedVendors, lock_date: order.quote.validUntil, orderId: id});
-      if (!card.ok) { order = store.recordRamp(id, order.revision, {paymentState: 'failed', state: 'unresolved'}, 'card.failed'); publish(order, 'card.failed', {reason: card.reason}); return {ok: false, reason: card.reason}; }
+      if (!card.ok) { order = store.recordRamp(id, order.revision, {paymentState: 'failed'}, 'card.failed'); order = store.update(id, order.revision, {state: 'unresolved', question: {kind: 'ramp', text: `Card could not be issued: ${card.reason}`}}, 'card.failed'); publish(order, 'card.failed', {reason: card.reason}); return {ok: false, reason: card.reason}; }
       order = store.recordRamp(id, order.revision, {cardId: card.cardId, cardLast4: card.last4, credentialRef: card.credentialRef, paymentState: 'issued'}, 'card.issued');
       publish(order, 'card.issued');
     }
@@ -196,10 +230,11 @@ export function createOrchestrator({store, vendor, ramp, ingest = null, config, 
   async function reconcile(id, attemptId = null) {
     let order = store.get(id);
     if (order.state !== 'placement_unknown') return order;
-    const since = attemptId ? store.attempts?.(id)?.find(a => a.id === attemptId)?.startedAt : null;
+    const since = attemptId ? store.attempts(id).find(a => a.id === attemptId)?.startedAt : null;
     const found = await vendor.findOrder({specHash: order.specHash, since, attemptId});
     if (found.found) { order = store.reconcile(id, {vendorOrderId: found.vendorOrderId, promisedOn: found.promisedOn}); publish(order, 'placement.reconciled'); }
     else publish(order, 'placement.unresolved', {text: 'Vendor response lost and no matching order found yet; a person must confirm before any retry.'});
+    if (!found.found && arguments.length > 2 && arguments[2]?.cancel) { order = store.reconcile(id, {cancelled: true, reason: arguments[2].cancel}); publish(order, 'placement.cancelled'); }
     return order;
   }
 
@@ -207,6 +242,7 @@ export function createOrchestrator({store, vendor, ramp, ingest = null, config, 
   async function book(id, txnId) {
     let order = store.get(id);
     if (!order.ramp.transactionIds.includes(txnId)) order = store.recordRamp(id, order.revision, {transactionIds: [...order.ramp.transactionIds, txnId], paymentState: 'charged'}, 'charge.cleared');
+    if (order.bookingState === 'coded') return {ok: true, already: true};
     const memo = `${order.entry.name} (${order.frozen?.tier}) for ${order.context?.milestoneLabel || 'project'}. ${order.decision?.text || ''}`.trim();
     const res = await ramp.book(txnId, {memo, receipt: {name: `xometry-${order.vendorOrder.vendorOrderId || 'order'}.txt`, bytes: Buffer.from(`Xometry order ${order.vendorOrder.vendorOrderId}\n${order.frozen?.tier} $${order.frozen?.priceCents / 100}`)}, coding: {project: order.context?.milestoneLabel || null, burn_order_id: id}});
     order = store.get(id);

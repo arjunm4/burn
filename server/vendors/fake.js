@@ -39,10 +39,14 @@ export function createFakeVendor({now = () => new Date(), basePriceCents = 30000
       if (!cad?.hash) throw new Error('CAD file required');
       const t = now();
       const today = t.toISOString().slice(0, 10);
-      // Orders placed after 14:00 local start production the next business day.
-      const cutoff = new Date(Date.parse(today + 'T14:00:00-08:00')).toISOString();
+      // Orders placed after 14:00 local start production the next business day, so the quote's
+      // cutoff is always the NEXT one: order by then and production starts on `startsOn`.
+      const todayCutoff = new Date(Date.parse(today + 'T14:00:00-08:00')).toISOString();
+      const afterCutoff = t.toISOString() > todayCutoff;
+      const startsOn = afterCutoff ? addDays(today, businessDaysToCalendar(1, today)) : today;
+      const cutoff = afterCutoff ? new Date(Date.parse(startsOn + 'T14:00:00-08:00')).toISOString() : todayCutoff;
       const options = TIERS.map(x => ({tier: x.tier, priceCents: priceFor(fields, x.factor), mfgDays: x.mfgDays, shipDays: x.shipDays,
-        readyOn: addDays(today, businessDaysToCalendar(x.mfgDays, today) + x.shipDays + receivingDays)}));
+        readyOn: addDays(startsOn, businessDaysToCalendar(x.mfgDays, startsOn) + x.shipDays + receivingDays)}));
       const quoteId = 'Q-' + createHash('sha1').update(cad.hash + JSON.stringify(fields)).digest('hex').slice(0, 8).toUpperCase();
       const config = createHash('sha1').update(JSON.stringify(fields)).digest('hex').slice(0, 6);
       const validUntil = addDays(today, 30);
@@ -86,8 +90,9 @@ export function createFakeVendor({now = () => new Date(), basePriceCents = 30000
 
     // Reconciliation: does the vendor have an order for this spec since the attempt began?
     async findOrder({specHash, since, attemptId}) {
-      // An attempt id is exact; a spec match additionally has to fall inside the attempt's window.
-      for (const [id, o] of orders) if ((attemptId && o.attemptId === attemptId) || (specHash && o.specHash === specHash && (!since || o.placedAt >= since))) return {found: true, vendorOrderId: id, promisedOn: o.promisedOn};
+      // An attempt id is an exact identity: when given, only that attempt's order counts, never another order with the same spec.
+      if (attemptId) { for (const [id, o] of orders) if (o.attemptId === attemptId) return {found: true, vendorOrderId: id, promisedOn: o.promisedOn}; return {found: false}; }
+      for (const [id, o] of orders) if (specHash && o.specHash === specHash && (!since || o.placedAt >= since)) return {found: true, vendorOrderId: id, promisedOn: o.promisedOn};
       return {found: false};
     },
 

@@ -56,9 +56,11 @@ test('case C: every option late, linear policy → Expedited still wins', () => 
 
 test('case D: unknown motor date → the question goes to the motor owner, with a switching condition', () => {
   const r = base(8, {uncertain: [{nodeId: 'part:motor', label: 'motor ready', owner: 'Arjun', current: day(8), plausible: [day(7), day(8), day(9), day(12)]}]});
-  assert.equal(r.recommended.tier, 'Expedited');
+  assert.equal(r.recommended, null, 'nothing is preselected while the flip question is open');
+  assert.deepEqual(r.tentative, {tier: 'Expedited', basis: 'economics'});
   assert.ok(r.question && r.question.flips && r.question.owner === 'Arjun', JSON.stringify(r.question));
   assert.match(r.switching, /Standard wins if motor ready 2026-11-18/);
+  assert.match(explain(r), /Leaning Expedited, but it hinges on motor ready/);
 });
 
 test('no policy and a real trade-off → nothing preselected; break-even shown', () => {
@@ -74,6 +76,18 @@ test('unknown duration → unknown outcome, no recommendation, unknowns listed',
   assert.equal(r.recommended, null);
   assert.ok(r.unknowns.includes('milestone:spin'));
   assert.equal(opt(r, 'Expedited').deltaDays, null);
+});
+
+test('a hard deadline makes late options inadmissible; the one that makes it is recommended', () => {
+  // Hard target day 11: Standard finishes day 13 (misses), Expedited day 11 (makes it).
+  const r = base(8, {policy: {valuePerDayCents: null, targetOn: day(11), hard: true, owner: 'Arjun'}});
+  assert.equal(opt(r, 'Standard').admissible, false);
+  assert.match(opt(r, 'Standard').why, /hard deadline/);
+  assert.deepEqual(r.recommended, {tier: 'Expedited', basis: 'dominance'});
+  // Nothing makes it: no valid option, say so.
+  const none = base(12, {policy: {valuePerDayCents: null, targetOn: day(11), hard: true, owner: 'Arjun'}});
+  assert.equal(none.recommended, null);
+  assert.match(explain(none), /No valid option: misses the hard deadline/);
 });
 
 test('expired quote → inadmissible, explained', () => {

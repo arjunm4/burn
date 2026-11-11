@@ -11,11 +11,10 @@ import {ordersRoutes} from './api/orders.js';
 import {createOrchestrator} from './flow/orchestrator.js';
 import {createVendorProvider} from './vendors/index.js';
 import {loadConfig} from './config.js';
-import {createMemoryOrderStore} from './stubs/orderStore.js';
-import {createMemoryRamp} from './stubs/ramp.js';
+import {createOrderStore} from './orders/store.js';
+import {createRampClient} from './ramp/index.js';
 // The v9 order flow: orchestrator over the order store, vendor provider and Ramp client.
-// Store and Ramp are in-memory stubs until server/orders and server/ramp land.
-export function startOrders({ingest=null,store=createMemoryOrderStore(),ramp=createMemoryRamp(),vendor=createVendorProvider(),config=loadConfig()}={}){
+export function startOrders({ingest=null,filename=process.env.ORDERS_DB||'data/orders.sqlite',store=createOrderStore({filename}),ramp=createRampClient({mode:process.env.RAMP_MODE||'mock',filename}),vendor=createVendorProvider(),config=loadConfig()}={}){
   const orchestrator=createOrchestrator({store,vendor,ramp,ingest:ingest||activeIngest(),config});
   return {orchestrator,ramp,vendor,config,store};
 }

@@ -24,6 +24,11 @@ test('fake vendor quotes four tiers, cheaper-slower to dearer-faster, with cutof
   }
   assert.equal(q.validUntil, '2026-12-09');
   assert.ok(q.cutoff.startsWith('2026-11-09T22:00'));
+  assert.ok((await createVendorProvider({mode: 'fake', now: () => new Date('2026-11-09T23:30:00Z')}).quote({fields, cad})).cutoff.startsWith('2026-11-10T22:00'), 'after the cutoff, the next cutoff is quoted');
+  // Quoting after the cutoff pushes every tier out by a business day.
+  const late = createVendorProvider({mode: 'fake', now: () => new Date('2026-11-09T23:30:00Z')});
+  const lq = await late.quote({fields, cad});
+  assert.ok(lq.options[1].readyOn > q.options[1].readyOn);
   // Same fields + CAD -> same quote id; a changed field -> a new configuration.
   assert.equal((await v.quote({fields, cad})).quoteId, q.quoteId);
   assert.notEqual((await v.quote({fields: {...fields, quantity: 5}, cad})).configurationRevision, q.configurationRevision);
@@ -62,6 +67,9 @@ test('a lost response is reported as unknown, and the order can be found again f
   const found = await v.findOrder({attemptId: 'att-9'});
   assert.equal(found.found, true);
   assert.equal((await v.findOrder({attemptId: 'never'})).found, false);
+  // Another attempt with the same spec is a different order: an explicit attempt id never matches it.
+  assert.equal((await v.findOrder({attemptId: 'att-10', specHash: spec.__specHash})).found, false);
+  assert.equal((await v.findOrder({specHash: spec.__specHash})).found, true, 'spec-only lookups still work for reconciliation');
 });
 
 test('headless provider reports itself disabled and never pretends to place', async () => {
