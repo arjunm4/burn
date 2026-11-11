@@ -31,9 +31,9 @@ Owners: **A+O** = Arjun and Owen (product); **Build** = whoever is building it; 
 
 | # | Question | Status |
 |---|---|---|
-| X1 | Do Xometry's terms allow automated (headless) quoting and checkout? | Unknown (terms page could not be fetched); blocks any real use |
-| X5 | Can we set up a company Xometry account (Teamspace purchasing user) for Burn's headless browser, and does it need 2FA or a CAPTCHA at login? | Unknown; needed before the headless provider works |
-| X6 | Does Xometry show bot detection to a headless browser (quote upload and checkout)? | Unknown; test early, fall back to a recorded run in the demo |
+| X1 | Do Xometry's terms allow automated (headless) quoting and checkout? | **No, as written**: the Customer Service Agreement bans robots and scrapers (§7.1.2) and account sharing (§7.1.7); robots.txt disallows `/quoting/`, `/checkout/`, `/login`. Sanctioned paths: cXML punchout or Xometry's written permission. Demo-only until resolved ([research](research/xometry-automation.md)) |
+| X5 | Can we set up a company Xometry account (Teamspace purchasing user) for Burn's headless browser, and does it need 2FA or a CAPTCHA at login? | Partly: a dedicated Teamspace member works (roles are Admin/Contributor; any member can check out a shared quote); Auth0 login with optional email-code MFA; card or PO payment; quotes held 30 days. **Still to test:** session length, and entering a fresh Ramp card per order ([research](research/xometry-automation.md)) |
+| X6 | Does Xometry show bot detection to a headless browser (quote upload and checkout)? | Light on pages (Cloudflare, no challenge seen); **login uses Auth0 Bot Detection (Cloudflare Turnstile)**; React quote page with a hidden file input; FullStory session replay records visits. Log in by hand once and reuse the session; test early ([research](research/xometry-automation.md)) |
 | X2 | Does Teamspace quote sharing work for every quote type, so placement reuses the engineer's quote? | Unknown |
 | X3 | How long is a Xometry quote valid? | Unknown (Protolabs and SendCutSend: 30 days) |
 | X4 | Is there a buyer API or partner arrangement on request? | Ask Xometry; punchout exists for enterprise |
@@ -47,7 +47,7 @@ Owners: **A+O** = Arjun and Owen (product); **Build** = whoever is building it; 
 | B3 | What is the first-use signal: an engineer tap, or something already recorded (Jira, an assembly log)? | Engineer tap for v1 |
 | B4 | Demo Slack workspace: who sets it up and seeds it? | Open |
 | B5 | Who owns which build pieces (headless Xometry provider, Ramp client/mock, decision core, generator)? | Open |
-| B7 | Headless runtime: local Playwright on the demo laptop, or a hosted browser (e.g. Browserbase) for always-on placement? | Local for the demo; hosted for real use |
+| B7 | Headless runtime: local Playwright on the demo laptop, or a hosted browser (e.g. Browserbase) for always-on placement? | Recommended: local Playwright with a saved Chrome profile plus video/trace for the demo; Browserbase for production (persistent contexts, 30-day replays, live view, identifies the agent); Kernel runner-up. Plain Playwright for exact steps, Stagehand only for reading prices; never let an LLM place the order ([research](research/xometry-automation.md)) |
 | B6 | `scripts/collab.mjs` fails on Node 14 (`randomUUID`); the README requires Node 24.2+ | Use Node 24 locally |
 
 ## Answered
