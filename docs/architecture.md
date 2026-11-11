@@ -1,6 +1,6 @@
 # Burn: architecture
 
-Status: **v8 draft.** This version consolidates Owen's decisions of 2026-11-10 into one consistent document and removes superseded material; the history is in §15. v5 was the last version jointly approved by Claude and Codex. Architecture only; no implementation authorized. Open questions are tracked in [`open-questions.md`](open-questions.md).
+Status: **v9 draft.** v9 moves all Xometry work (quoting and placement) to Burn's server-side headless browser on a company Xometry account, so placement happens the moment Ramp approves (Arjun's decision, 2026-11-10). v8 consolidated Owen's decisions of 2026-11-10; the history is in §15. v5 was the last version jointly approved by Claude and Codex. Architecture only; no implementation authorized. Open questions are tracked in [`open-questions.md`](open-questions.md).
 
 ## At a glance
 
@@ -16,6 +16,19 @@ So teams overpay to expedite parts that wouldn't have sped anything up, underpay
 ### Product
 **Burn is a hardware purchasing agent that plugs into Ramp.** The engineer tells Burn what part they need. Burn gathers the related context, fills the Xometry order, recommends a tier with a justification, sends the request through Ramp for the manager's approval, places the order with a Ramp card, and codes the expense.
 
+**In plain terms:** the engineer types the name of the part, a short note about what it's for, and attaches the design file. Burn does the rest:
+1. It reads the team's Slack, meeting notes, Jira and calendar to find everything related to the part: which test it's needed for, what else that test is waiting on, and when the deadline is.
+2. Its own browser, running on Burn's server, fills in the order on Xometry and gets the price for each speed option. Nothing opens on anyone's computer.
+3. It shows the engineer the options and its recommendation, in plain terms: "Expedited gets the spin test done 2 days sooner for $900 more; worth it if a day is worth more than $450." If faster wouldn't help because something else is holding things up, it says so and picks the cheaper option. If one missing fact would change the answer, it asks the one person who knows.
+4. The engineer clicks Okay, or talks it through with Burn to settle any disagreement, then sends it for approval.
+5. Burn sends the request to Ramp with the explanation attached. The manager approves it there, or Ramp's rules approve small orders automatically.
+6. Ramp issues a card that only works at Xometry, for exactly the approved amount.
+7. The moment it's approved, Burn alerts the engineer and places the order. It first checks that every detail matches what the engineer approved; if anything changed, it stops instead of buying.
+8. When the charge comes through, Burn attaches the receipt, the explanation and the project code in Ramp, so nobody writes an expense note. It tracks delivery and checks with the engineer once the part is in use.
+9. Over time, Burn learns how the team actually makes these choices, from past Xometry purchases in Ramp and the conversations and deadlines leading up to each, and shows that as extra context next to its recommendation.
+
+In short: the engineer describes the part and clicks Okay, the manager approves in Ramp, and Burn handles the research, the decision, the vendor form, the purchase and the bookkeeping.
+
 > "Expedited gets the spin test done 2 days sooner for +$900. Worth it if a day is worth more than $450 (your policy says $600). If the motor slips to day 10, Standard is just as fast."
 
 - **The engineer** enters the part name, a short summary and the CAD file, then clicks Okay (or edits, or argues).
@@ -27,7 +40,7 @@ So teams overpay to expedite parts that wouldn't have sped anything up, underpay
 
 | Burn (hardware-specific) | Ramp (money) |
 |---|---|
-| Part entry, context gathering, Xometry fill, tier recommendation, frozen order spec, verified checkout, tracking, learning | Purchase request, manager approval and auto-approval rules, virtual card, receipt/memo/GL, item receipt |
+| Part entry, context gathering, Xometry quoting and placement (headless browser), tier recommendation, frozen order spec, verified checkout, tracking, learning | Purchase request, manager approval and auto-approval rules, virtual card, receipt/memo/GL, item receipt |
 
 ### Flow
 
@@ -35,15 +48,17 @@ So teams overpay to expedite parts that wouldn't have sped anything up, underpay
  1. Part entry      engineer: part name + short summary + CAD file
  2. Context         Burn retrieves related Slack, meetings, Jira, calendar → context record
  3. Form            Burn fills the order fields; asks only for gaps
- 4. Quote           extension fills Xometry in the engineer's browser; reads back every tier
+ 4. Quote           Burn's headless browser fills Xometry (company account) and
+                    reads back every tier; the engineer sees the options in Burn
  5. Recommend       schedule effect, break-even, basis; best tier preselected
- 6. Okay            engineer accepts / edits / argues → frozen order spec (hash)
- 7. Ramp request    Burn creates it with justification + quote PDF
+ 6. Okay            engineer accepts, edits, or talks it through with Burn → frozen order spec (hash)
+ 7. Ramp request    Burn creates it with justification + quote PDF + the vendor cutoff
+                    ("approve by 2:00pm PT to make today's start")
  8. Approve         manager approves in Ramp (or Ramp auto-approves)
  9. Card            Ramp virtual card: exact amount, Xometry only, lock date
-10. Place           Burn places automatically on approval; it alerts the engineer
-                    before the extension opens Xometry, then verifies every field
-                    against the spec, pays with the Ramp card, places the order
+10. Place           the moment Ramp approves, Burn alerts the engineer and its headless
+                    browser reopens the quote, verifies every field against the spec,
+                    pays with the Ramp card and places the order
 11. Book            Burn sends receipt, memo, project/GL to Ramp when the charge clears
 12. After           tracking, slip re-checks, delivery (Ramp item receipt), first use, learning log
 ```
@@ -51,10 +66,10 @@ So teams overpay to expedite parts that wouldn't have sped anything up, underpay
 ### Example
 1. Owen enters "hip-actuator bracket, for the spin test, need it soon" and attaches the STEP file.
 2. Burn finds the #actuator thread: the spin test also needs Arjun's motor (ready day 8), and the test takes 3 days.
-3. The extension fills Xometry. Standard: day 10, $3,000. Expedited: day 5, $3,900.
+3. Burn's headless browser fills Xometry. Standard: day 10, $3,000. Expedited: day 5, $3,900.
 4. Standard finishes the test on day 13, Expedited on day 11: 2 days for $900, break-even $450/day. The spin-test policy says $600/day, so Burn preselects Expedited and states the assumption (motor by day 8).
-5. Owen clicks Okay. The request appears in Ramp; Owen's manager approves.
-6. Ramp issues a $3,900 card locked to Xometry. Owen clicks "place"; the extension checks every field and places the order.
+5. Owen clicks Okay (or argues it out with Burn first). The request appears in Ramp; Owen's manager approves.
+6. Ramp issues a $3,900 card locked to Xometry. Burn alerts Owen and, within seconds, its headless browser checks every field and places the order.
 7. When the charge clears, the receipt, memo and project code fill in. Later, delivery and first use are logged.
 
 ## 1. Scope
@@ -66,7 +81,7 @@ So teams overpay to expedite parts that wouldn't have sped anything up, underpay
 | Custom **CNC-machined** parts on **Xometry** | Other vendors (later adapters); PCB, sheet metal, off-the-shelf parts |
 | Part entry, context retrieval, form fill, CAD upload, tier recommendation | Choosing the vendor; CAD geometry understanding |
 | Ramp request, approval, card, booking and item receipt | Approval logic of our own (Ramp's rules govern) |
-| Verified checkout via the browser extension | Server-side bots driving vendor sites |
+| Quoting and verified checkout via Burn's headless browser on a company Xometry account | Browser extensions; ordering through engineers' personal Xometry accounts |
 | Tracking, slip re-checks, first-use check | Vendor-reliability learning (deferred) |
 | A context-attribute model trained on past Ramp purchases (advisory) | Company-wide scheduling; budget creation; inventing demand from chat |
 
@@ -87,9 +102,9 @@ Each lists what we rejected and why.
 11. **The decision is a decomposition, not an additive urgency score:** eligibility → schedule → basis (dominance → policy → economics) → advisory comparison with the learned habit.
 12. **Ramp owns the money.** Purchase request, approval (the engineer's manager), auto-approval of small orders, card, booking and item receipt are Ramp's. *Rejected:* Burn's own approval settings and a supply-chain purchase queue.
 13. **Supply chain is a context source, not a purchase step.** Every human step must add judgment or own something; with Ramp approving and paying, a supply-chain click only adds delay. Their Slack messages (sibling ETAs, stock, cutoffs, vendor rules) are trusted for those topics.
-14. **Xometry through a browser extension, behind a provider interface.** The extension works in the user's own logged-in session. The interface is upload CAD → quote tiers → place order → status. *Rejected:* a server-side bot (no official support, unverified terms, credentials on our servers). No CNC vendor has a usable buyer API today (§0.4).
+14. **Xometry through Burn's server-side headless browser, behind a provider interface** (Arjun's decision, v9). The headless browser logs into a **company Xometry account** (a Teamspace purchasing user) and does all the vendor work: upload CAD → quote tiers → place order → status. The engineer never touches Xometry and nothing opens on anyone's machine. *Why:* placement must happen the moment Ramp approves. A late approval that waits for someone's laptop can miss the vendor's daily cutoff and lose a business day, which contradicts Burn's own thesis. *Rejected:* a browser extension in the engineer's session (v7–v8), which only works while their browser is running. *Accepted risks, mitigated:* no official vendor support (punchout or a partner API is the production path); unverified terms (open question X1); vendor credentials on our servers (a dedicated company account, stored as a secret, never logged, used only against a verified frozen spec and a capped, Xometry-locked card). No CNC vendor has a usable buyer API today (§0.4).
 15. **One frozen order spec, verified by read-back.** The engineer's Okay freezes every field, the CAD hash, quote ID, tier and price; the Ramp request carries its hash; checkout proceeds only if every field read back from Xometry matches. The engineer never re-checks.
-16. **Burn places the order automatically once Ramp approval and the card are ready** (Owen's decision). It never opens a browser tab without alerting the engineer first. Guarded by spec verification, the Ramp card's exact limit and vendor lock, and idempotency.
+16. **Burn places the order automatically the moment Ramp approval and the card are ready** (Owen's decision; immediate placement via the headless browser, v9). The engineer is alerted when placement starts, and can still cancel before the vendor's final click. Guarded by spec verification, the Ramp card's exact limit and vendor lock, and idempotency.
 17. **Learning is on the synthesized context, not the part.** One example is one Xometry purchase in Ramp at time T; inputs are attributes of the context available before T; the label is the tier chosen (§10). The model is advisory.
 
 ## 0. Detailed flow
@@ -103,9 +118,9 @@ Each lists what we rejected and why.
 - The entry is stored verbatim with its time; it is itself a training input.
 
 ### 0.2 Quote and recommendation
-- The extension opens Xometry in the engineer's browser, uploads the CAD, sets every field, and reads back every tier, price and expiry into a **quote snapshot**.
-- Burn computes each tier's schedule effect and the decision basis (§7) and shows a comparison card (thumbnail, summary, tiers, break-even, assumptions) with the recommended tier preselected.
-- The engineer clicks **Okay**, edits by chat or directly in fields, or argues. Okay freezes the **order spec**.
+- Burn's headless browser opens Xometry on the company account, uploads the CAD, sets every field, and reads back every tier, price and expiry into a **quote snapshot**. The quote is saved in the company Teamspace.
+- Burn computes each tier's schedule effect and the decision basis (§7) and shows a comparison card in Burn (thumbnail, summary, tiers, break-even, assumptions) with the recommended tier preselected.
+- The engineer clicks **Okay**, edits by chat or directly in fields, or talks it through with Burn to settle a disagreement. Supported new context is accepted and Burn re-solves; any edit re-quotes in the headless browser. Okay freezes the **order spec** and sends it for approval.
 
 ### 0.3 Ramp: request, approval, card, booking
 
@@ -117,12 +132,14 @@ Each lists what we rejected and why.
 | Booking | On `transactions.cleared`: `POST /receipts`, `POST /memos/{id}`, `POST /accounting/codings` | Records them | Documented |
 | Delivery | Asks "arrived OK?" | `POST /item-receipts` against the PO | Documented; needs a Ramp PO (Plus or Procurement add-on) |
 
+**Cutoff in the request.** The Ramp request states the vendor's daily cutoff and its effect ("approve by 2:00pm PT to start production today; after that, +1 business day"), so approval speed is priced too.
+
 Demo: Ramp sandbox (demo.ramp.com; ⌘J simulates transactions). Access is requested through a form; apply early.
 
 ### 0.4 Placement
-- When approval and the card are ready, **Burn places the order automatically** (Owen's decision). **The engineer is alerted before the extension opens Xometry**; a browser tab never opens without that alert.
-- The extension reopens the **same Xometry quote** (company Teamspace, so the configuration is held by Xometry) or re-fills from the spec, **reads back every field**, and compares it with the frozen spec.
-- All match → the extension enters the Ramp card and clicks Place order. Any mismatch → nothing is placed:
+- The Ramp approval webhook triggers placement **immediately**. Burn alerts the engineer ("placing your Xometry order now") with a short cancel window.
+- Burn's headless browser reopens the **same Xometry quote** in the company Teamspace (the configuration is held by Xometry) or re-fills from the spec, **reads back every field**, and compares it with the frozen spec.
+- All match → it enters the Ramp card and clicks Place order. Any mismatch → nothing is placed:
 
 | Mismatch | Handling |
 |---|---|
@@ -142,12 +159,12 @@ Demo: Ramp sandbox (demo.ramp.com; ⌘J simulates transactions). Access is reque
 
 ## 3. Actors
 
-- **Engineer:** enters the part, confirms context, clicks Okay and "place".
+- **Engineer:** enters the part, confirms context, clicks Okay (after talking it through with Burn if needed).
 - **Manager:** approves in Ramp; sets the auto-approval rules in Ramp.
 - **Milestone owner:** sets the value-of-time policy for a milestone, once.
 - **Supply chain:** context source (ETAs, stock, cutoffs, vendor rules); sees orders; handles tracking and exceptions.
 
-Engineer steps: part entry, Okay, place. Occasionally one tap or one sentence to answer a question.
+Engineer steps: part entry, Okay. Occasionally one tap or one sentence to answer a question.
 
 ## 4. Runtime and lifecycle
 
@@ -301,8 +318,8 @@ label:    the tier chosen, from the matching Xometry order (Ramp's amount alone 
 
 ## 11. Surfaces
 
-- **Burn purchasing interface (engineer):** part entry, questions, the comparison card, Okay / edit / argue, the alert before automatic placement, order status.
-- **Browser extension:** fills Xometry, reads back tiers, verifies and places.
+- **Burn purchasing interface (engineer):** part entry, questions, the comparison card, Okay / edit / talk it through, the placement alert, order status.
+- **Headless browser (Burn's server):** fills Xometry on the company account, reads back tiers, verifies and places. Not a user-facing surface.
 - **Ramp:** request, approval, card, booking, item receipt (Ramp's own UI).
 - **Slack:** questions to the person who knows; slip alerts; supply-chain visibility.
 - **Web (evidence and audit):** evidence per claim (access-scoped), the decisive dependency path, assembly readiness and slack, milestone value-policy settings, order history and audit.
@@ -341,7 +358,7 @@ The current `fixtures/` (14 Slack messages about Rev C electronics, one calendar
 
 1. **Decision core:** demand, quote snapshot, milestone policy, time semantics, same-world comparison, dominance, break-even. Cases A–C.
 2. **Context:** part entry, retrieval, typed claims, acceptance, staleness, gaps and the question loop. Cases D–E.
-3. **Ordering:** Xometry extension (fill, read back, verify, place), frozen spec, Ramp request / approval / card / booking.
+3. **Ordering:** headless Xometry provider (fill, read back, verify, place), frozen spec, Ramp request / approval / card / booking.
 4. **After placement:** tracking, slip re-check, delivery and first-use taps, Ramp item receipt.
 5. **Learning and synthetic data:** world-script generator, backfill, context-attribute model, link-rate reporting.
 
@@ -356,7 +373,7 @@ The current `fixtures/` (14 Slack messages about Rev C electronics, one calendar
 | Requests (`server/store.js`) | Lifecycle, revisions, audit | Order states (§4), frozen spec, Ramp links | Draft POs are superseded by Ramp |
 | UI (`/request`, `/approvals`, `/graph`) | Graph visual, evidence panel, run events | `/request` becomes part entry + comparison card; `/approvals` is replaced by Ramp | "Idle engineering $" tile implies cash savings |
 | Agent (`server/agent`) | Tool loop, offline fallback | Extractor and explainer behind the orchestrator | — |
-| New | — | Browser extension (Xometry provider); Ramp client (sandbox); world-script generator | — |
+| New | — | Headless Xometry provider (server-side browser, company account); Ramp client (sandbox); world-script generator | — |
 
 ## 15. History
 
@@ -367,6 +384,8 @@ The current `fixtures/` (14 Slack messages about Rev C electronics, one calendar
 | v6 | The engineer's manager is the approver | Owen |
 | v7 | Burn runs the order: extension fills the vendor page, frozen spec verified by read-back, Burn places the order | Owen |
 | v8 | Xometry only; part entry kicks off every order; Ramp owns approval, card and booking; supply chain is a context source; learning on context attributes with a time-band heat map; synthetic world script | Owen |
+| v8 | Automatic placement on approval, with an alert first | Owen |
+| v9 | All Xometry work (quoting and placement) moves to Burn's server-side headless browser on a company Xometry account, so placement is immediate on approval; the browser extension is dropped; the Ramp request states the vendor cutoff | Arjun |
 
 Superseded and removed in v8: the quote-page-only entry; Slack approval cards; Burn's own auto-approval settings; supply chain as approver or placer; vendor-reliability learning as phase 1; the BOM. Settled joint positions that remain: valuation order and no gating fraction; scenarios before probabilities; authority-based claim acceptance; one question at a time; working-day worked example; no per-project agents; habit is advisory; outcome signals are diagnostics.
 

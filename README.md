@@ -8,7 +8,7 @@ Built for a hackathon whose prompt is *automate an existing financial workflow*.
 
 | Path | What it is |
 | --- | --- |
-| [`docs/architecture.md`](docs/architecture.md) | The design (v8 draft): flow, decisions, decision maths, learning, demo data |
+| [`docs/architecture.md`](docs/architecture.md) | The design (v9 draft): flow, decisions, decision maths, learning, demo data |
 | [`docs/open-questions.md`](docs/open-questions.md) | Every open question in one list, with owner and status |
 | [`docs/research/`](docs/research/) | Research notes, e.g. [`ramp-integration.md`](docs/research/ramp-integration.md) (Ramp API path, mock plan, demo script) |
 | `collaboration/` | Claude–Codex protocol and recorded decisions |
@@ -16,7 +16,7 @@ Built for a hackathon whose prompt is *automate an existing financial workflow*.
 
 ## Status
 
-The **design** is v8. The **code** is the earlier prototype: a Digi-Key sensor purchase with a local approval queue and draft purchase orders. It does not yet implement the v8 flow (part entry, Xometry extension, Ramp). [`docs/architecture.md` §14](docs/architecture.md) maps what to keep and change, and [`docs/research/ramp-integration.md` §3](docs/research/ramp-integration.md) has the hackathon build plan.
+The **design** is v9. The **code** is the earlier prototype: a Digi-Key sensor purchase with a local approval queue and draft purchase orders. It does not yet implement the v9 flow (part entry, the headless Xometry provider, Ramp). [`docs/architecture.md` §14](docs/architecture.md) maps what to keep and change, and [`docs/research/ramp-integration.md` §3](docs/research/ramp-integration.md) has the hackathon build plan.
 
 ## Current prototype (pre-v8)
 

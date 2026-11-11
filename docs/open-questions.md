@@ -31,7 +31,9 @@ Owners: **A+O** = Arjun and Owen (product); **Build** = whoever is building it; 
 
 | # | Question | Status |
 |---|---|---|
-| X1 | Do Xometry's terms allow extension-driven quoting and checkout? | Unknown (terms page could not be fetched) |
+| X1 | Do Xometry's terms allow automated (headless) quoting and checkout? | Unknown (terms page could not be fetched); blocks any real use |
+| X5 | Can we set up a company Xometry account (Teamspace purchasing user) for Burn's headless browser, and does it need 2FA or a CAPTCHA at login? | Unknown; needed before the headless provider works |
+| X6 | Does Xometry show bot detection to a headless browser (quote upload and checkout)? | Unknown; test early, fall back to a recorded run in the demo |
 | X2 | Does Teamspace quote sharing work for every quote type, so placement reuses the engineer's quote? | Unknown |
 | X3 | How long is a Xometry quote valid? | Unknown (Protolabs and SendCutSend: 30 days) |
 | X4 | Is there a buyer API or partner arrangement on request? | Ask Xometry; punchout exists for enterprise |
@@ -44,7 +46,8 @@ Owners: **A+O** = Arjun and Owen (product); **Build** = whoever is building it; 
 | B2 | Which meeting recorder and Jira data can we read, and what are the channel access rules? | Open; synthetic for the demo |
 | B3 | What is the first-use signal: an engineer tap, or something already recorded (Jira, an assembly log)? | Engineer tap for v1 |
 | B4 | Demo Slack workspace: who sets it up and seeds it? | Open |
-| B5 | Who owns which build pieces (extension, Ramp client/mock, decision core, generator)? Agree with Codex | Open |
+| B5 | Who owns which build pieces (headless Xometry provider, Ramp client/mock, decision core, generator)? | Open |
+| B7 | Headless runtime: local Playwright on the demo laptop, or a hosted browser (e.g. Browserbase) for always-on placement? | Local for the demo; hosted for real use |
 | B6 | `scripts/collab.mjs` fails on Node 14 (`randomUUID`); the README requires Node 24.2+ | Use Node 24 locally |
 
 ## Answered
@@ -55,6 +58,7 @@ Owners: **A+O** = Arjun and Owen (product); **Build** = whoever is building it; 
 | Who approves? | The engineer's manager, in Ramp | architecture §2.12 |
 | Is supply chain in the purchase? | No; a context source and tracking | architecture §2.13 |
 | Engineer click or automatic placement? | Automatic on approval; the engineer is alerted before any browser tab opens | architecture §0.4, §2.16 |
-| Which vendor first? | Xometry only, via the browser extension | architecture §2.14 |
+| Which vendor first? | Xometry only | architecture §2.14 |
+| Extension in the engineer's browser, or server-side? | Server-side headless browser on a company Xometry account, for both quoting and placement, so placement is immediate on approval | architecture §2.14, §0.2, §0.4 |
 | Does Xometry have a test mode or buyer API? | No; demo stops at a dummy checkout page | architecture §0.4 |
 | Ramp MCP / Agent Cards instead of REST? | No; REST with app credentials; MCP is a stretch check | research/ramp-integration.md §2 |
