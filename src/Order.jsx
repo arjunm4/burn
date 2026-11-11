@@ -3,6 +3,8 @@ import {api, subscribe, readFileAsBase64} from './api.js';
 import {C, Page, StateBadge, Button, Field, Section, Fold, Chip, Rows, Eyebrow, input, money, day, clock, relTime} from './ui.jsx';
 import BrowserPanel from './BrowserPanel.jsx';
 import {DemoLiveChanges} from './Demo.jsx';
+import DependencyGraph from './timevalue/DependencyGraph.jsx';
+import tvCards from '../fixtures/timevalue/demo-cards.json';
 
 // One order, told as a story in the order it happens: what Burn did (live), the decision, the
 // purchase as it moves through Ramp and the vendor. The spec and sources sit to the side.
@@ -190,6 +192,8 @@ function Decision({order, act, busy}) {
       {recOpt && <div style={{fontSize: 30, letterSpacing: '-.02em', marginTop: 6}}>{recOpt.tier} · {money(priceOf(recOpt.tier))}</div>}
       <div style={{fontSize: 16, lineHeight: 1.5, marginTop: 8, color: C.ink}}>{d.text}</div>
     </div>
+    {(() => { const cs = tvCards.cards || tvCards; const pick = cs[(rec || tent) === 'rush' ? 4 : (rec || tent) === 'standard' ? 1 : 0]; const card = pick?.card || pick;
+      return card ? <div><Eyebrow>What the bracket is waiting on</Eyebrow><DependencyGraph card={card} C={C} sourceLabel={s => String(s).startsWith('slack:') ? 'Slack #actuators' : String(s)}/></div> : null; })()}
     <div style={{border: `1px solid ${C.line}`, borderRadius: 12, overflow: 'hidden', background: '#fff'}}>
       <div style={{display: 'grid', gridTemplateColumns: GRID, gap: 12, padding: '8px 16px', borderBottom: `1px solid ${C.line}`}}>
         {['Lead time', 'Price', 'Part arrives', `${milestone} done`, ''].map((h, i) => <Eyebrow key={i} style={{letterSpacing: '.08em'}}>{h}</Eyebrow>)}

@@ -140,8 +140,9 @@ function Recommendation({card, changed = {}}) {
       </div>)}
     </div>}
 
-    <div style={{padding: 16, display: 'flex', flexDirection: 'column', gap: 8, borderTop: `1px solid ${C.hair}`}}>
-      <span style={eyebrow}>Checks</span>
+    <details style={{borderTop: `1px solid ${C.hair}`}}>
+    <summary style={{padding: '12px 16px', cursor: 'pointer', color: C.muted, fontSize: 12}}>Show the {card.checks?.length || 0} checks behind this</summary>
+    <div style={{padding: 16, display: 'flex', flexDirection: 'column', gap: 8}}>
       {(card.checks || []).map(k => { const s = STATUS[k.status] || STATUS.info; return <div key={k.n} style={{display: 'grid', gridTemplateColumns: '18px minmax(0,1fr)', gap: 8}}>
         <span aria-label={k.status} style={{color: s.color, textAlign: 'center'}}>{s.mark}</span>
         <span style={{display: 'flex', flexDirection: 'column', gap: 1}}>
@@ -160,6 +161,7 @@ function Recommendation({card, changed = {}}) {
       </div>; })}
       {card.guards?.filter(g => !g.ok).map(g => <div key={g.rule} role="alert" style={{fontSize: 12, color: C.critical}}>Guard failed: {g.rule}</div>)}
     </div>
+    </details>
 
   </article>;
 }
