@@ -3,7 +3,10 @@ import React from 'react';
 export const C = {ink: '#1C1B17', paper: '#F4F2F0', muted: '#7A766F', faint: '#C9C5BE', line: '#E2DFDA', hair: '#EFECE8', accent: '#E4F222', critical: '#D03B3B', ok: '#2E7D32'};
 export const money = c => (c == null ? '—' : '$' + Math.round(c / 100).toLocaleString('en-US'));
 export const day = iso => (iso ? new Date(iso.length === 10 ? iso + 'T00:00:00Z' : iso).toLocaleDateString('en-US', {month: 'short', day: 'numeric', timeZone: 'UTC'}) : 'unknown');
-export const relTime = iso => { const m = Math.round((Date.now() - Date.parse(iso)) / 60000); return m < 1 ? 'just now' : m < 60 ? `${m}m ago` : m < 1440 ? `${Math.round(m / 60)}h ago` : `${Math.round(m / 1440)}d ago`; };
+// Relative times follow the server's clock (a demo may run on another day): the Header syncs it from /api/system.
+let clockOffset = 0;
+export const syncClock = serverIso => { if (serverIso) clockOffset = Date.parse(serverIso) - Date.now(); };
+export const relTime = iso => { const m = Math.round((Date.now() + clockOffset - Date.parse(iso)) / 60000); return m < 1 ? 'just now' : m < 60 ? `${m}m ago` : m < 1440 ? `${Math.round(m / 60)}h ago` : `${Math.round(m / 1440)}d ago`; };
 
 export const STATE_LABEL = {
   entered: 'Entered', resolving: 'Working…', needs_answer: 'Needs your answer', recommended: 'Options ready', specified: 'Okayed',
@@ -19,6 +22,7 @@ export function StateBadge({state}) {
 }
 
 export function Header({crumb, system}) {
+  React.useEffect(() => { syncClock(system?.now); }, [system?.now]);
   return <header style={{display: 'flex', alignItems: 'center', gap: 18, padding: '14px 24px', borderBottom: `1px solid ${C.line}`}}>
     <a href="/orders" style={{fontSize: 16, letterSpacing: '.04em', color: C.ink, textDecoration: 'none'}}>burn</a>
     <span style={{color: C.muted}}>Purchasing</span><span style={{color: C.faint}}>/</span><span>{crumb}</span>
@@ -26,6 +30,8 @@ export function Header({crumb, system}) {
       {system && <span title="Backends in use">{system.vendor.vendor} · {system.vendor.mode} / Ramp · {system.ramp.mode}</span>}
       <a href="/orders" style={{color: C.muted}}>Orders</a>
       <a href="/graph" style={{color: C.muted}}>Dependencies</a>
+      <a href="/inbox" style={{color: C.muted}}>Inbox</a>
+      <a href="/ramp" style={{color: C.muted}}>Ramp</a>
     </span>
   </header>;
 }
