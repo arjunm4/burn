@@ -101,9 +101,9 @@ export default function NetworkGraph() {
       g.d3Force('charge').strength(-28);
       g.d3Force('link').distance(l => ((l.target.kind || '') === 'milestone' ? 70 : 34));
       fg.current = g;
-      setTimeout(() => { if (!alive) return; const m = model.nodes.find(n => n.id === 'test-hip-spin');
-        st.sel = 'test-hip-spin'; st.focus = new Set([...model.reach('test-hip-spin', model.up), ...model.reach('test-hip-spin', model.down)]);
-        setSel('test-hip-spin'); if (m) { g.centerAt(m.x, m.y, 1600); g.zoom(2.6, 1600); } }, 3500);
+      setTimeout(() => { if (!alive) return; const m = model.nodes.find(n => n.id === 'pt-hip-bracket');
+        st.sel = 'pt-hip-bracket'; st.focus = new Set([...model.reach('pt-hip-bracket', model.up), ...model.reach('pt-hip-bracket', model.down)]);
+        setSel('pt-hip-bracket'); if (m) { g.centerAt(m.x, m.y, 1600); g.zoom(2.6, 1600); } }, 3500);
       const onResize = () => g.width(box.current.clientWidth).height(box.current.clientHeight);
       window.addEventListener('resize', onResize);
     });
@@ -126,7 +126,7 @@ export default function NetworkGraph() {
     const isOpen = open.has(id);
     const lit = sel && state.current.focus.has(id);
     return <div>
-      <div style={{display: 'flex', alignItems: 'center', gap: 6, padding: '3px 6px', paddingLeft: 6 + depth * 14, borderRadius: 6, cursor: 'pointer', background: id === sel ? 'rgba(228,242,34,.16)' : 'transparent', color: lit || !sel ? INK : MUTED}}
+      <div role="button" data-demo={n.name} style={{display: 'flex', alignItems: 'center', gap: 6, padding: '3px 6px', paddingLeft: 6 + depth * 14, borderRadius: 6, cursor: 'pointer', background: id === sel ? 'rgba(228,242,34,.16)' : 'transparent', color: lit || !sel ? INK : MUTED}}
         onClick={() => focusId(id)}>
         <span onClick={e => { e.stopPropagation(); setOpen(o => { const x = new Set(o); x.has(id) ? x.delete(id) : x.add(id); return x; }); }}
           style={{width: 12, color: MUTED, visibility: kids.length ? 'visible' : 'hidden'}}>{isOpen ? '▾' : '▸'}</span>
