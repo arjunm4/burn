@@ -149,3 +149,15 @@ Reads `fixtures/world/{world,answers}.json` plus our outputs; writes `fixtures/t
 ## Done means
 
 `npm test` green; `node scripts/timevalue/train.mjs` and `grade.mjs` run in < 30 s on the dev sources; `/api/timevalue/demo?change=0|1|2` returns cases A, B and D; the card renders without a model call.
+
+## Rerun when the final world and context land
+
+All seven modules are built and tested on hand-made fixtures (`npm test`: 193 pass). With the final `fixtures/world/` and `fixtures/flintlock/` in this branch:
+
+1. `node scripts/timevalue/export-settings.mjs` → `settings.json`; prints doc counts, the Ramp↔Xometry link rate and the usable-order count (expect about 154).
+2. `node scripts/timevalue/read-jobs.mjs` → job files; Claude agents fill them per `read-job-instructions.md`; `node scripts/timevalue/read-jobs.mjs --collect`.
+3. `node scripts/timevalue/train.mjs` → `habit-model.json`, `heatmaps.json`.
+4. `node scripts/timevalue/grade.mjs` → `grading.json`.
+5. `node scripts/timevalue/demo-cards.mjs --sources fixtures/flintlock` → `demo-cards.json`; serve with `TIMEVALUE_SOURCES=fixtures/flintlock`.
+
+**The final world must render** Arjun's Slack message (Sat 11/07) that the DVT hip motor's ETA is 11/20, and a message that the spin test takes 3 days; otherwise case A reads "ask Arjun" on the real data.
