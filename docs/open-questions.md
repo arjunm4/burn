@@ -39,6 +39,6 @@ Not needed for the demo: every external service is mocked (architecture §2.18).
 | Real Ramp sandbox or mocks? | Mock everything: Ramp, Xometry, Slack, Jira, meetings, calendar | architecture §2.18 |
 | Example company for the demo data? | Flintlock Robotics, a fictional humanoid robotics startup | architecture §12 |
 | Who builds what (so far)? | Owen: world script and its generator. Arjun: the other mock services (Ramp, Xometry, Slack, Jira, meetings, calendar). Cost of delay: Owen and Arjun together. Rest: unassigned (B5) | — |
-| Which vendor first? | Xometry only, via the browser extension | architecture §2.14 |
+| Which vendor first? | Xometry only, through a provider interface (mocked); no browser extension | architecture §2.14 |
 | Does Xometry have a test mode or buyer API? | No; demo stops at a dummy checkout page | architecture §0.4 |
 | Ramp MCP / Agent Cards instead of REST? | No; REST with app credentials; MCP is a stretch check | research/ramp-integration.md §2 |
