@@ -12,7 +12,7 @@ Owner: Owen, with Fable agents. Deadline: 2026-11-10, 11:59pm PT. Spec: [`../arc
 
 - **The world model is the ground truth and the single source of it.** Code decides facts, IDs and timestamps. Models write seed content and text.
 - **The context is generated from the truth and is deliberately imperfect:** stale facts, wrong dates, contradictions between sources, things nobody wrote down. The truth itself is complete and consistent.
-- **Model: Fable** for most work, including the text.
+- **Models (Owen's decision, to cut cost):** Opus for most work: schema, seed, generator code, checks, and the text tied to orders. Fable only for the simulator, the one intricate piece. Sonnet for background text. Effort is medium unless a phase says otherwise.
 - **Read the style research first:** [`../research/data-realism.md`](../research/data-realism.md) (formats, Flintlock volumes, style numbers, fake-looking patterns) and, for orders, [`../research/startup-purchasing.md`](../research/startup-purchasing.md). Every agent's prompt points at the sections for its source, and its output must follow them.
 - **The app never reads `fixtures/world/`.** Burn sees only the rendered sources (`fixtures/slack/`, `fixtures/jira/`, …). The world model and answer key are for the generator and for grading.
 - **One file per agent.** Agents working in parallel each own distinct files and run no git commands.
@@ -83,7 +83,7 @@ All in `fixtures/world/knobs.json`, with defaults set in phase 0 and tuned by Ow
 - the link-quality mix (clean id, alias only, never discussed)
 - rates of stale facts, wrong dates later corrected, errors never corrected, and contradictions between sources
 - off-topic and background shares per source
-- the volume scale
+- how many recent weeks of context to write (default 13)
 
 ## Volume targets
 
@@ -99,7 +99,7 @@ From the Flintlock numbers in `data-realism.md`.
 | Recorded meetings | 450–700, plus 2–3 gate reviews |
 | Calendar | Milestones, bookings, out-of-office, recurring meetings |
 
-The truth is generated at full volume, because code produces it for free. The written context is the expensive part: at full volume it is roughly 2.5–3 million tokens of model output. It is written in priority order (below) at whatever scale the time and usage allow.
+The truth is generated for the full nine months, because code produces it for free. The written context is the expensive part: at full volume it is roughly 2.5–3 million tokens of model output. So it is written **newest first, at full density**: the first pass covers the most recent 13 weeks (2026-08-11 to 2026-11-10, about a third of the full text, including one build burst). Older months are written only if time and usage allow. Full density keeps the data looking like a 60-person company wherever a judge scrolls.
 
 ## How the context generator works
 
@@ -109,7 +109,7 @@ Three steps, so code owns the facts and agents own the wording. Code lives in `s
 2. **`write`** (Fable agents). Each agent fills in the text of one job. Jobs are independent, so they run in parallel.
 3. **`assemble`** (code). Merges the text into the final files in each source's real format, then runs the checks.
 
-`--scale 0.1` plans a tenth of the volume, so the whole path can be run and checked in minutes before the full run.
+`--weeks N` plans only the most recent N weeks. `--weeks 1` is the smoke test: the whole path runs and can be checked in minutes. `--weeks 13` is the first real pass.
 
 No API credential is set up on this machine (no key in the environment, no `.env`), so step 2 is done by Claude Code agents on the plan's usage. With an API key, a script could fill the same jobs.
 
@@ -117,15 +117,17 @@ No API credential is set up on this machine (no key in the environment, no `.env
 
 Phase 2 runs alongside phase 1: both code against the schema, not against the data.
 
-| Phase | What | Agents | Effort | Time |
+| Phase | What | Agents | Model, effort | Time |
 |---|---|---|---|---|
-| 0. Schema | Field reference, canonical ids (teams, assemblies, test rigs, milestones, channels, Jira projects), a tiny valid example world, the validator, default knobs. Merged at once so the mock services can code against it | 1 | High | 25 min |
-| 1a. Seed | People and org · program (assemblies, parts catalog, rigs, tests, milestones, deliverables, demo block) · storylines, channels, meeting series · vendors and finance | 4 in parallel | Medium | 40 min |
-| 1b. Simulator | Schedule and slips, tickets, orders with decisions and hidden reasons, deliveries, events with their imperfections, other-vendor orders, the answer key | 1–2 | High | 60 min |
-| 2. Generator code | `plan` and `assemble` · Slack · Jira · meetings and calendar · Xometry, Ramp and other-vendor orders | 5 in parallel | Medium | 60 min |
-| 3. First run | Run the simulation, validate, run `--scale 0.1` end to end, fix what breaks, hand the small world to Arjun | 1 | High | 30 min |
-| 4. Text fill | Fable agents over the job files, in the priority order below | Many, in the background | Low for Slack and tickets; medium for meetings | Until 10:30pm |
-| 5. Checks and provenance | Consistency, realism and answer-key checks; the provenance index | 2–3 | Medium | 30 min |
+| 0. Schema | Field reference, canonical ids (teams, assemblies, test rigs, milestones, channels, Jira projects), a tiny valid example world, the validator, default knobs. Merged at once so the mock services can code against it | 1 | Opus, medium | 25 min |
+| 1a. Seed | People, org, channels, meeting series, vendors and finance · program (assemblies, parts catalog, rigs, tests, milestones, deliverables, storylines, demo block) | 2 in parallel | Opus, medium | 40 min |
+| 1b. Simulator | Schedule and slips, tickets, orders with decisions and hidden reasons, deliveries, events with their imperfections, other-vendor orders, the answer key | 1 | Fable, high | 55 min |
+| 2. Generator code | `plan`, `assemble`, Slack and Jira · meetings, calendar, Xometry, Ramp and other-vendor orders | 2 in parallel | Opus, medium | 55 min |
+| 3. First run | Run the simulation, validate, run `--weeks 1` end to end, fix what breaks, hand the small world to Arjun | 1 | Opus, high | 30 min |
+| 4. Text fill | Agents over the job files for the most recent 13 weeks, in the order below | Several at a time, in the background | Opus low for order-related text; Sonnet low for background; medium for meetings | Until 10:00pm |
+| 5. Checks and provenance | Consistency, realism and answer-key checks; the provenance index | 1 | Opus, medium | 30 min |
+
+Seven agents before the text fill. Each agent re-reads the plan, the schema and the style research, so fewer, larger agents cost less than many small ones.
 
 **Checks:**
 - **Consistency:** every crumb appears in at least one source; IDs, names and dates match across sources; nothing is dated after the order it informs.
@@ -139,21 +141,21 @@ Phase 2 runs alongside phase 1: both code against the schema, not against the da
 So that something complete exists at every point:
 
 1. The demo order and its 30 days of context.
-2. The Xometry CNC orders and their crumbs. This is the training set.
-3. Background volume up to the full targets: off-topic Slack, meetings unrelated to orders, tickets with no order behind them.
+2. The most recent 13 weeks, newest week first. Within each week: the Xometry orders' crumbs (the training set), then the background (off-topic Slack, meetings unrelated to orders, tickets with no order behind them).
+3. Older months, newest first, only if time and usage allow.
 
-The text fill stops at 10:30pm, whatever volume it has reached. The checks report the volume actually generated.
+The text fill stops at 10:00pm, whatever it has reached. The checks report the weeks and volume actually written.
 
 ## Tonight
 
 | By | Done |
 |---|---|
-| 6:35pm | Schema merged; mock services start against it |
-| 7:45pm | Seed, simulator and generator code done |
-| 8:15pm | World generated and validated; small run passes end to end; small world handed to Arjun |
-| 8:15–10:30pm | Text fill in the background; cost of delay with Arjun in parallel |
-| 10:30pm | Text fill stops; assemble, checks, provenance |
-| 11:00pm | Final fixtures merged |
+| 6:40pm | Schema merged; mock services start against it |
+| 7:40pm | Seed, simulator and generator code done |
+| 8:10pm | World generated and validated; `--weeks 1` passes end to end; small world handed to Arjun |
+| 8:10–10:00pm | Text fill for the most recent 13 weeks, in the background; cost of delay with Arjun in parallel |
+| 10:00pm | Text fill stops; assemble, checks, provenance |
+| 10:45pm | Final fixtures merged |
 | 11:30pm | Submit |
 
 ## Hand-offs
