@@ -6,7 +6,11 @@ Owner: Owen. Spec: [`../architecture.md`](../architecture.md) §12; realism rule
 
 **Principle:** the world script is the single source of truth. Code decides facts and timestamps; LLMs only write text.
 
-## Phase 0: schema (one agent, Opus/Fable, ~15 min, first)
+**Rules for every agent (Owen's decisions):**
+- **Model: Fable** for most work (schema, world, orders, stories, renderers, checks), including the text the generator writes.
+- **Read the style research first:** [`../research/data-realism.md`](../research/data-realism.md) (formats, style numbers, fake-looking patterns) and, for orders, [`../research/startup-purchasing.md`](../research/startup-purchasing.md). Every agent's prompt points at the sections for its source, and its output must follow them.
+
+## Phase 0: schema (one agent, ~15 min, first)
 Writes the structure of `fixtures/world/world.json` and `fixtures/world/answers.json` with one small filled example:
 - `company`; `people[]` (id, name, role, assembly, Slack id, chattiness)
 - `assemblies[]` (hip, knee, ankle, hand, torso, …); `milestones[]`; `tests[]`; `resources[]` (spin chamber, CMM, …)
@@ -33,7 +37,7 @@ One agent per source; each writes a module in `scripts/generate-world/` that rea
 | Xometry | `fixtures/xometry/` | JSON: quotes, tiers, order status |
 | Ramp | `fixtures/ramp/` | Ramp transaction JSON with messy descriptors |
 
-Text renderers (Slack, Jira, Meetings) call Sonnet for wording; the rest is plain code.
+Text renderers (Slack, Jira, Meetings) call Fable for wording, following the style rules for their source in data-realism.md; the rest is plain code.
 
 ## Phase 3: checks (parallel, ~30 min)
 - **Consistency:** every crumb appears in at least one source; IDs, names, dates match; nothing dated after the order it informs.
