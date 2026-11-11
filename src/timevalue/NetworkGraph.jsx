@@ -1,6 +1,7 @@
 import React from 'react';
 import ForceGraphLib from 'force-graph';
 import data from '../../fixtures/timevalue/company-graph.json';
+import WhoBlocked from './WhoBlocked.jsx';
 
 // Demo-only: Burn's company dependency graph as a live force-directed network (force-graph, bundled).
 const BG = '#0B0B0A', ACCENT = '#E4F222', RED = '#FF4D4A', INK = '#F4F2F0', MUTED = '#8E8A82';
@@ -161,7 +162,8 @@ export default function NetworkGraph() {
     {node && <aside style={{position: 'absolute', right: 22, bottom: 22, width: 360, maxHeight: '55vh', overflow: 'auto', background: 'rgba(27,26,24,0.92)', border: '1px solid #3A3833', borderRadius: 14, padding: 16, fontSize: 13, backdropFilter: 'blur(6px)'}}>
       <div style={{fontSize: 11, letterSpacing: '.1em', textTransform: 'uppercase', color: MUTED}}>{node.kind} · {label(node.assembly)}</div>
       <div style={{fontSize: 17, fontWeight: 600, margin: '4px 0 10px'}}>{node.name}</div>
-      {links.slice(0, 8).map((e, i) => <div key={i} style={{borderTop: '1px solid #2A2925', padding: '8px 0'}}>
+      <div style={{marginBottom: 10}}><WhoBlocked id={sel} C={{}} dark max={5}/></div>
+      {links.filter(e => e.to === sel).slice(0, 2).map((e, i) => <div key={i} style={{borderTop: '1px solid #2A2925', padding: '8px 0'}}>
         <div>{e.from === sel ? <>needed by <b>{name(e.to)}</b></> : <>needs <b>{name(e.from)}</b></>}{e.status !== 'accepted' && <span style={{color: RED, fontSize: 11}}> · {e.status}</span>}</div>
         {e.evidence.filter(v => v.text).slice(0, 1).map((v, j) => <div key={j} style={{color: MUTED, marginTop: 4, fontSize: 12}}>“{v.text}” — {v.by || 'unknown'}</div>)}
       </div>)}

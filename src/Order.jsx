@@ -4,6 +4,7 @@ import {C, Page, StateBadge, Button, Field, Section, Fold, Chip, Rows, Eyebrow, 
 import BrowserPanel from './BrowserPanel.jsx';
 import {DemoLiveChanges} from './Demo.jsx';
 import DependencyGraph from './timevalue/DependencyGraph.jsx';
+import WhoBlocked from './timevalue/WhoBlocked.jsx';
 import tvCards from '../fixtures/timevalue/demo-cards.json';
 
 // One order, told as a story in the order it happens: what Burn did (live), the decision, the
@@ -193,7 +194,7 @@ function Decision({order, act, busy}) {
       <div style={{fontSize: 16, lineHeight: 1.5, marginTop: 8, color: C.ink}}>{d.text}</div>
     </div>
     {(() => { const cs = tvCards.cards || tvCards; const pick = cs[(rec || tent) === 'rush' ? 4 : (rec || tent) === 'standard' ? 1 : 0]; const card = pick?.card || pick;
-      return card ? <div><Eyebrow>What the bracket is waiting on</Eyebrow><DependencyGraph card={card} C={C} sourceLabel={s => String(s).startsWith('slack:') ? 'Slack #actuators' : String(s)}/></div> : null; })()}
+      return card ? <div><Eyebrow>What the bracket is waiting on</Eyebrow><DependencyGraph card={card} C={C} sourceLabel={s => String(s).startsWith('slack:') ? 'Slack #actuators' : String(s)}/><div style={{marginTop: 12}}><WhoBlocked id="pt-hip-bracket" C={C}/></div></div> : null; })()}
     <div style={{border: `1px solid ${C.line}`, borderRadius: 12, overflow: 'hidden', background: '#fff'}}>
       <div style={{display: 'grid', gridTemplateColumns: GRID, gap: 12, padding: '8px 16px', borderBottom: `1px solid ${C.line}`}}>
         {['Lead time', 'Price', 'Part arrives', `${milestone} done`, ''].map((h, i) => <Eyebrow key={i} style={{letterSpacing: '.08em'}}>{h}</Eyebrow>)}

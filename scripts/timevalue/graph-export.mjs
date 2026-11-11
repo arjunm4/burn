@@ -18,6 +18,11 @@ const edges = view.edges.filter((e) => e.kind !== 'ordered_as').map((e) => {
     const d = docs.get(v.doc_id); return { by: d?.author?.name ?? v.by ?? null, at: v.at, text: (d?.text || '').slice(0, 140) };
   }) };
 });
-const nodes = view.nodes.filter((n) => used.has(n.id)).map((n) => ({ id: n.id, kind: n.kind, name: n.name, assembly: asm.get(n.id) ?? null }));
+const people = new Map(settings.people.map((p) => [p.id, p.name]));
+const owner = new Map();
+for (const x of [...settings.tests, ...settings.milestones, ...settings.deliverables]) if (x.owner) owner.set(x.id, people.get(x.owner) || x.owner);
+// Work items have no configured owner: use the person who said they were waiting.
+for (const e of edges) if (!owner.has(e.to) && e.evidence[0]?.by) owner.set(e.to, e.evidence[0].by);
+const nodes = view.nodes.filter((n) => used.has(n.id)).map((n) => ({ id: n.id, kind: n.kind, name: n.name, assembly: asm.get(n.id) ?? null, owner: owner.get(n.id) ?? null }));
 writeFileSync('fixtures/timevalue/company-graph.json', JSON.stringify({ now: settings.demo_now, nodes, edges }));
 console.log(`company graph: ${nodes.length} nodes, ${edges.length} links`);

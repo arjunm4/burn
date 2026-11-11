@@ -1,6 +1,7 @@
 import React from 'react';
 import precomputed from '../../fixtures/timevalue/demo-cards.json';
 import DependencyGraph from './DependencyGraph.jsx';
+import WhoBlocked from './WhoBlocked.jsx';
 
 // Time Value: the recommendation card for the demo order.
 // Reads /api/timevalue/demo?change=N; falls back to fixtures/timevalue/demo-cards.json. No model call.
@@ -114,7 +115,7 @@ function Recommendation({card, changed = {}}) {
       {(card.detail || []).map((d, i) => <div key={i} style={{lineHeight: 1.5, color: d.startsWith('Ask ') ? C.ink : C.muted, ...(d.startsWith('Ask ') ? {padding: '8px 10px', borderLeft: `2px solid ${C.ink}`, background: C.paper, borderRadius: 4} : {})}}>{d}</div>)}
     </div>
 
-    <DependencyGraph card={card} C={C} sourceLabel={sourceLabel}/><a href="/dependencies" style={{fontSize: 13, color: C.ink, textDecoration: 'underline'}}>See the whole company dependency graph →</a>
+    <DependencyGraph card={card} C={C} sourceLabel={sourceLabel}/><div style={{padding: '0 16px 12px'}}><WhoBlocked id="pt-hip-bracket" C={C}/></div><a href="/dependencies" style={{fontSize: 13, color: C.ink, textDecoration: 'underline'}}>See the whole company dependency graph →</a>
 
     {card.dominated?.length > 0 && <div role="alert" style={{margin: '12px 16px 0', padding: '8px 10px', borderLeft: `3px solid ${C.critical}`, background: '#FBEDED', color: C.critical, borderRadius: 4, lineHeight: 1.45}}>
       {card.dominated.map((d, i) => <div key={i}>{d}</div>)}
