@@ -12,7 +12,7 @@ Related: [`../architecture.md`](../architecture.md), [`../open-questions.md`](..
 |---|---|---|---|
 | Are tiers and prices public? | Tier structures are documented; **premiums appear only inside quotes** | High | Capture the full quote; there is no price list to look up |
 | Do quotes expire? | 30 days at Protolabs and SendCutSend; a CAD change needs a new quote | High | Expiry and revalidation in the order flow |
-| Are expedited dates reliable? | No audited data. Fictiv claims 95.4% on time (self-reported); Xometry publishes none | Low | Don't promise vendor-reliability learning early |
+| Are expedited dates reliable? | No audited data. Fictiv claims 95.4% on time (self-reported); Xometry publishes no rate, overall or for Expedite (re-checked 2026-11-10); one unverified buyer anecdote says ~95% | Low | Don't promise vendor-reliability learning early |
 | Who approves expedites? | **No direct evidence.** Engineers buy on a card at seed stage; a dedicated buyer appears around Series A | Low | Approval is a product decision (manager, in Ramp) |
 | Are BOMs current, and do they include fixtures? | Spreadsheets and lightweight tools, often stale; fixtures and jigs are usually outside the BOM | Medium | Dropped the BOM; the demand is the anchor |
 | Do requests say what a part is for? | Requests carry *when*, not *for what* | Low–medium | Ask for a one-line summary in the part entry |
@@ -34,7 +34,9 @@ Related: [`../architecture.md`](../architecture.md), [`../open-questions.md`](..
 ## 2. Reliability of expedited lead times
 
 - Fictiv: 95.4% on time and in full, self-reported. [Fictiv](https://www.fictiv.com/cnc-machining-service)
-- Xometry: no published on-time rate; mixed Trustpilot reviews, including "late and out of conformance." [Trustpilot](https://www.trustpilot.com/review/xometry.com?page=5)
+- Xometry (re-checked 2026-11-10): **no published on-time rate, overall or for Expedite**, in Xometry's FAQs, help center or blog. Mixed Trustpilot reviews: one CNC order on time and a few days early, another "late and out of conformance." [Trustpilot](https://www.trustpilot.com/review/xometry.com?page=5)
+- Xometry's own terms: Expedite is the fastest production and delivery option, with a fee; for some configurations it cannot beat Standard; Expedite assumes 1-day shipping vs 2-day for Standard and Economy; expedited CNC listed at 3–4 days. A separate Rush option ships qualifying CNC parts in as little as 1 business day. [Help center](https://support.xometry.com/hc/en-us/articles/360023734134-Learn-more-about-lead-time-and-delivery-options) · [FAQ](https://www.xometry.com/resources/blog/answers-to-most-frequently-asked-questions/)
+- Anecdote only (unverified, site's affiliation with Xometry unclear): a buyer's blog says "about 95%" on time with 1 late order in ~40, and that Xometry pays for expedited shipping when it misses the promised date; the author says they have no hard data. Not confirmed against Xometry's terms. [xometryus.com blog](https://www.xometryus.com/blog/why-i-always-pay-for-rush-delivery-and-you-should-too-13.html)
 - **Vendor opinion on slip causes:** design revisions restart the clock; quoted lead times often exclude first-article inspection and outside finishing. [bearingsdirect](https://bearingsdirect.com/blog/lead-time-custom-parts-turnaround-speed-up-order/) · [precisionam](https://precisionam.com/articles/aerospace/aerospace-cnc-machining-lead-times/)
 - No data found on receiving or incoming-inspection delays at startups.
 
@@ -68,7 +70,7 @@ Related: [`../architecture.md`](../architecture.md), [`../open-questions.md`](..
 
 ## 6. Existing tools and frameworks
 
-- **Cost of delay (Reinertsen):** the logic for what to pay to hold schedule; about 85% of product managers don't know their cost of delay, and estimates vary 50:1. Supports showing the break-even rather than inventing a value. [Wikipedia](https://en.wikipedia.org/wiki/Cost_of_delay) · [Softhouse](https://www.softhouse.se/en/cost-of-delay-don-reinertsen/)
+- **Cost of delay:** see [`cost-of-delay.md`](cost-of-delay.md).
 - **Lead-time prediction (all enterprise or marketplace):** Xometry enterprise lead-time model (March 2026, trained on its supplier network); Cin7 ForesightAI; GAINS; Oracle Lead-Time Insights; Mandel AI (YC) chases suppliers for updates. [Xometry](https://www.digitalengineering247.com/article/xometry-enhances-ai-native-marketplace-with-enterprise-lead-time-intelligence) · [Cin7](https://help.foresightai.cin7.com/hc/en-us/articles/13547758250511-Lead-times) · [Mandel](https://www.ycombinator.com/launches/LXP-mandel-ai-never-chase-suppliers-for-updates-again)
 - **Procurement tools:** Cofactr (electronics sourcing and lead-time checks), Silkline ("where is my part" tracking). [Silkline](https://silkline.ai/blog/procurement-management-software-was-never-built-for-parts-how-silkline-differs-from-coupa-and-ariba)
 - **None found** that recommends expedite vs standard per part based on what the part feeds or whether it was used.
