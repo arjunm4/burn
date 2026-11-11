@@ -48,7 +48,7 @@ Not needed for the demo: every external service is mocked (architecture §2.18).
 |---|---|---|
 | B1 | What fraction of past Ramp charges can be linked confidently to Slack context and a Xometry order? | Measure on synthetic data first; report the link rate |
 | B3 | What is the first-use signal: an engineer tap, or something already recorded (Jira, an assembly log)? | Engineer tap for v1 |
-| B5 | Who builds the remaining pieces: part-entry screen and recommendation card, automatic placement and bookkeeping, training and heat map? | Open (see Answered for what's assigned) |
+| B5 | Who builds the training and heat map (learning), delivery tracking and first use? | Open; everything else in the flow is built (README “Status”) |
 | B7 | Headless runtime: local Playwright on the demo laptop, or a hosted browser (e.g. Browserbase) for always-on placement? | Recommended: local Playwright with a saved Chrome profile plus video/trace for the demo; Browserbase for production (persistent contexts, 30-day replays, live view, identifies the agent); Kernel runner-up. Plain Playwright for exact steps, Stagehand only for reading prices; never let an LLM place the order ([research](research/xometry-automation.md)) |
 | B6 | `scripts/collab.mjs` fails on Node 14 (`randomUUID`); the README requires Node 24.2+ | Use Node 24 locally |
 
@@ -63,7 +63,7 @@ Not needed for the demo: every external service is mocked (architecture §2.18).
 | Use the Claude–Codex collaboration workflow? | No; dropped | CLAUDE.md |
 | Real Ramp sandbox or mocks? | Mock everything: Ramp, Xometry, Slack, Jira, meetings, calendar | architecture §2.18 |
 | Example company for the demo data? | Flintlock Robotics, a fictional humanoid robotics startup | architecture §12 |
-| Who builds what (so far)? | Owen: world script and its generator. Arjun: the other mock services (Ramp, Xometry, Slack, Jira, meetings, calendar). Cost of delay: Owen and Arjun together. Rest: unassigned (B5) | — |
+| Who builds what (so far)? | Owen: world script and its generator. Arjun (with Claude): the flow, the decision core, the connectors and extractor, the Ramp mock and Ramp-side view, the simulated Xometry site and headless provider, notifications, demo controls. Cost of delay: Owen and Arjun together. Rest: unassigned (B5) | README “Status” and code map |
 | Which vendor first? | Xometry only | architecture §2.14 |
 | Extension in the engineer's browser, or server-side? | Server-side headless browser on a company Xometry account, for both quoting and placement, so placement is immediate on approval | architecture §2.14, §0.2, §0.4 |
 | Does Xometry have a test mode or buyer API? | No; demo stops at a dummy checkout page | architecture §0.4 |

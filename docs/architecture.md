@@ -231,12 +231,14 @@ DecisionRevision(snapshot hash, options, outcomes, basis, what Burn displayed, p
 
 ## 6. Pipeline
 
-1. **Ingest** document revisions from Slack, meetings, Jira and calendar (live Slack and calendar connectors exist; others are file imports).
+1. **Ingest** document revisions from Slack, meetings, Jira and calendar. Connectors (`server/connectors/`) are read-only and replay recorded exports in the same shape when no credentials are set: Slack Web API JSON, iCalendar, Jira REST search responses, meeting notes as exported Markdown (one document per attributed line, so a statement keeps its speaker and time). `BURN_WORLD` names the recorded folder.
 2. **Retrieve** the documents related to a part entry: the entry text is the query; links by part name, file name, Xometry quote/order number, people and test names.
-3. **Extract** typed claims with spans. Model text is untrusted data.
+3. **Extract** typed claims with spans. Model text is untrusted data. Without a model the rule extractor (`server/graph/extract.js`) reads how hardware teams talk: waiting/blocked/stuck-behind, "needs X by 11/20 for the spin test", "still showing fri 11/20", "new ETA 11/30", "between 11/19 and 11/30" (a range), "the spin test is 3 days, working days", "has to be done by tues the 24th", "every day past that is ~$600" (a value hint, never authority). Entities are typed by their head noun (a motor arrives, a fit check is done) and merged across mentions by word containment; a short name ("the bracket") only attaches to something already discussed in the same channel. Every dated fact keeps who said it and when.
 4. **Resolve** mentions against declared parts, tests, assemblies and milestones. A failed resolution stays unresolved.
 5. **Accept** claims: a later assertion supersedes an earlier one only when authorized and applicable. Conflicts stay unresolved and become gaps.
 6. **Decide.** The orchestrator owns scheduling and the question loop; the model extracts and explains, and cannot invent costs, redefine demand or approve.
+
+**Working days.** Lead times, test durations and lateness are counted in working days (Mon–Fri minus the company's holidays, `company.holidays` in the config): an input ready on day R is usable from the next working day, a 3-day test whose last input lands Friday finishes Wednesday, and a booked rig is where the work happens, so work may start on the booking's first day.
 
 **Staleness.** Each claim kind has a re-confirmation horizon. A stale fact stays in the plan but becomes a gap that can trigger a question if it could flip the decision. The card shows the age of every assumption it relies on. Age changes what Burn asks and shows, never how much a fact counts.
 

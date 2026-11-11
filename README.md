@@ -39,7 +39,20 @@ The engineer types the part name and a short note about what it's for, and attac
 
 ## Status
 
-The **design** is v9 ([`docs/hld.md`](docs/hld.md), [`docs/architecture.md`](docs/architecture.md)). The **v9 flow is built as scaffolding** on this branch: part entry → context → spec gate → Xometry quote → decision → Okay → Ramp request → approval → card → verified placement → charge → booking, against a fake Xometry and a Ramp mock. It runs the same orchestration and decision core a real deployment would; only the adapters are simulated. Every external service is mocked for the demo (architecture §2.18); the mocks sit behind the same interfaces a real deployment would use. The demo data is the Flintlock Robotics world in `fixtures/flintlock/` (rendered Slack, Jira, meetings, calendar, Xometry and Ramp records generated from `fixtures/world/`). The earlier Digi-Key prototype is still in the tree at `/request` and `/approvals` until the new flow replaces it.
+The **design** is v9 ([`docs/hld.md`](docs/hld.md), [`docs/architecture.md`](docs/architecture.md)). The **whole flow is built and runs end to end** on simulated services: part entry → context from Slack, Jira, meeting notes and the calendar → spec gate → Xometry quote through Burn's headless browser → recommendation → Okay → Ramp purchase request → manager approval → Xometry-locked card → field-by-field verified placement → charge → receipt, memo and project code. Every external service is simulated behind the interface a real one would implement (architecture §2.18): a Ramp mock with Ramp's field names, a simulated Xometry site that the real Playwright provider drives, recorded Slack/Jira/meeting/calendar exports read by the real connectors. The demo world is Owen's Flintlock Robotics data in `fixtures/flintlock/`; demo-only pieces (`demo/`, `scripts/demo.mjs`, `/api/demo`) are kept apart from the product code. The earlier Digi-Key prototype is still in the tree at `/request` and `/approvals`.
+
+### The demo in one command
+
+```bash
+npm install
+npm run demo         # http://localhost:5173/orders
+```
+
+This starts Burn as Flintlock Robotics at 10:30 AM PT on Nov 10, 2026 (`BURN_NOW`), with the company config generated from the world's value-of-time policies (`demo/flintlock.config.json`), the headless browser pointed at the simulated Xometry site served by the same process (`/xometry-sim`), and everything stored under `data/demo-*` (`npm run demo -- --reset` wipes it). Then:
+
+1. `/orders` → **Enter it as Owen**: 4× hip actuator bracket rev C for the hip actuator DVT spin test. Burn links it to the spin test and its Nov 24 milestone from #actuators, the test-lab booking and Arjun's $600/day policy; the browser uploads the CAD on the simulated Xometry site and reads back the recorded quote (Standard $3,000 ready Nov 24, Expedite $3,900 ready Nov 17). The card says: *Expedite gets the spin test done 2 working days sooner for +$900: worth it if a day is worth more than $450* — with the assumptions it rests on and their age.
+2. **Live changes** (demo box under the card): post *"vendor slipped the dvt hip frameless motor again. new ETA 11/30"* and the recommendation flips to Standard (paying more buys no time: the motor gates the test). Post *"somewhere between 11/19 and 11/30"* and nothing is preselected; Burn asks the one person who knows, and says which answer flips it.
+3. **Okay** → `/ramp` shows Ingrid's inbox with the justification and the 2:00 PM PT cutoff → **Approve** → Burn's browser reopens the quote, reads every field back against the frozen spec, pays with the Ramp card •••• 4242 and places the order (watch it in "Burn's browser" on the order page) → `/ramp` Cards and Transactions, then the simulated ⌘J charge books the receipt, memo and project code → `/inbox?as=Owen Halloran` and `/inbox?as=Ingrid Solberg` show each side's messages.
 
 ## The v9 flow
 
@@ -48,24 +61,35 @@ The **design** is v9 ([`docs/hld.md`](docs/hld.md), [`docs/architecture.md`](doc
 ```bash
 npm install
 npm run dev          # http://localhost:5173/orders
-npm test             # 84 tests: decision cases A–E, vendor verification, store and Ramp mock adversarial cases, end-to-end flow
+npm test             # 190 tests: decision cases, extractor and connectors, vendor verification (fake, simulated site, headless), store and Ramp mock adversarial cases, end-to-end flows, notifications
 ```
 
 Environment (all optional; defaults are the simulated backends):
 
 | Variable | Default | Meaning |
 | --- | --- | --- |
-| `VENDOR_MODE` | `fake` | `fake` = in-process fake Xometry; `headless` = Playwright on xometry.com (disabled until open questions X1/X5/X6 are resolved; reports itself unavailable) |
+| `VENDOR_MODE` | `fake` | `fake` = in-process fake Xometry; `headless` = Playwright (`playwright-core` driving the installed Google Chrome) against a Xometry-shaped site, by default the simulated one below. Pointing it at xometry.com waits on open questions X1/X5/X6 |
+| `XOMETRY_HEADLESS_ENABLED` | unset | `1` enables the headless provider; otherwise it reports itself unavailable and never clicks anything |
+| `XOMETRY_BASE_URL` | `http://127.0.0.1:5175` | Where the headless provider browses: the simulated site started with `node server/vendors/site/serve.js`, or the mounted copy at `http://localhost:5173/xometry-sim` |
+| `XOMETRY_SIM_PORT` / `XOMETRY_SIM_DB` | `5175` / `data/xometry-sim.sqlite` | Port and record store of the simulated Xometry site (quotes and orders survive restarts) |
+| `XOMETRY_RECORDINGS_DIR` | `data/recordings` | Screenshots and `steps.json` per order/quote/attempt written by the headless provider; served at `/recordings/<key>/<file>` |
 | `RAMP_MODE` | `mock` | `mock` = persistent Ramp mock with Ramp's field names, signed replayable events; `sandbox` = Ramp sandbox (typed-unavailable until credentials are verified) |
 | `RAMP_WEBHOOK_SECRET` | unset | Required to accept `POST /api/ramp/webhook` (verified on the raw body; fails closed) |
 | `ORDERS_DB` | `data/orders.sqlite` | Order store and Ramp mock state |
-| `BURN_CONFIG` | `burn.config.json` if present | Company config: spec fields and authorized defaults, milestone value-of-time policies, declared slip scenarios |
+| `BURN_WORLD` | `fixtures/flintlock` | Folder of recorded exports read when no live credentials are set: `slack/` (Slack API JSON), `calendar.ics`, `jira/` (REST search responses), `meetings/` (Markdown notes); each present folder becomes a source. Live equivalents: `SLACK_BOT_TOKEN`+`SLACK_CHANNEL_IDS`, `CALENDAR_ICS_URL`, `JIRA_BASE_URL`+`JIRA_EMAIL`+`JIRA_API_TOKEN`+`JIRA_PROJECTS`, `MEETING_NOTES_DIR` |
+| `BURN_NOW` | real time | Anchors the server clock at an instant (the demo day) and lets it run from there; vendor cutoffs, quote validity and "today" follow it |
+| `INGEST_WINDOW_DAYS` | `45` | How far back the connectors read |
+| `BURN_CONFIG` | `burn.config.json` if present | Company config: spec fields and authorized defaults, milestone value-of-time policies (`milestones`), company holidays (working-day maths), the approving manager, declared slip scenarios |
 
 ### Screens
 
 - `/orders`: part entry (name, what it's for, CAD file, optional technical fields) and the order list with states.
 - `/orders/:id`: live progress (SSE), the question panel (missing spec fields, CAD, what the part is for, or the one fact that would flip the decision), the spec with provenance chips, related context with the age of each fact, the comparison card (price, part ready, milestone date, days gained, break-even, basis; dominated tiers marked "buys no time"), Okay/Choose, a typed argue box, and the approval and purchase panel. In mock mode a dashed "Ramp (simulated)" box stands in for approving in Ramp and for its ⌘J test charge.
 - `/graph`: the dependency timeline (unchanged).
+- `/xometry-sim`: the simulated Xometry site (also standalone on port 5175): landing → upload CAD → configurator with the four lead times, cutoff and validity → checkout read-back and payment → confirmation and `/xometry-sim/account/orders`. Labelled "Xometry (simulated)"; `?__fault=drift|drop-option|timeout|reject` on the checkout URL mirrors the fake vendor's faults.
+- "Burn's browser" (on `/orders/:id`, headless mode): the step-by-step recording of what the provider did on the vendor site, with a screenshot and a note per step ("Read back material: 6061-T6 — matches"), refreshed every 3 s while the order is being worked on. Data: `GET /api/orders/:id/recording`.
+- `/ramp`: the approver's side, labelled "Ramp (simulated)": Inbox (pending purchase requests with Burn's justification, the cutoff and the frozen spec; Approve / Reject; decided history), Cards (one Xometry-only virtual card per approved order: last 4, limit, spent, lock date) and Transactions (the charge with the booked memo, receipt and coding, or "awaiting booking"). Live over SSE. Mock mode only.
+- `/inbox?as=<person>`: the Slack-DM-style messages one person gets from Burn (quote and recommendation, questions, approval needed with "Open in Ramp", approved, placing, placed, stopped-before-buying, charged, booked), newest at the bottom, live; a switcher between the engineer and the manager.
 
 ### API
 
@@ -81,6 +105,10 @@ Environment (all optional; defaults are the simulated backends):
 | POST | `/api/orders/:id/reconcile` | From `placement_unknown`: look for the order in vendor records |
 | POST | `/api/ramp/webhook` | Ramp events (signature required) |
 | POST | `/api/ramp/simulate/{approve,reject,charge}` | Mock only |
+| GET | `/api/ramp/{requests,cards,transactions}` | Mock only: the Ramp side (purchase requests, virtual cards, transactions with bookings), each joined to its order without credential or CAD |
+| GET | `/api/ramp/stream` | Mock only: SSE `ramp.changed` whenever a Ramp-side event fires |
+| GET | `/api/notifications?to=&limit=` | One person's notifications (oldest first) and the list of recipients |
+| GET | `/api/notifications/stream?to=` | SSE `notification` events for one person |
 
 Mutations take `expectedRevision` and return 409 on conflict. The API never returns the card credential or CAD bytes.
 
@@ -89,6 +117,12 @@ Mutations take `expectedRevision` and return 409 on conflict. The API never retu
 | Path | What it is | Owner |
 | --- | --- | --- |
 | `server/contracts.js` | Shared shapes: OrderSpec, QuoteSnapshot, Order and its states, PlacementAttempt, OrderStore, RampClient, VendorProvider, DecisionResult | shared |
+| `server/connectors/` | Read-only connectors with fixture replay: Slack (Web API), iCalendar, Jira (REST), meeting notes (exported Markdown) | Claude |
+| `server/graph/extract.js`, `src/graph/engine.js`, `src/graph/calendar.js` | Statement extraction (rules or Claude structured output; entities typed by head noun and merged across mentions, dates, durations, bookings, cited evidence), the working-day scheduler and company calendar | Claude |
+| `server/clock.js`, `server/config.js` | Shared clock (`BURN_NOW`) and company config | Claude |
+| `server/vendors/site/`, `server/vendors/headless.js`, `server/vendors/recorded.js` | The simulated Xometry site, the Playwright provider that drives it (or xometry.com later), recorded quotes from the world | Claude |
+| `server/notify/`, `server/api/ramp.js`, `server/api/notifications.js`, `src/Ramp.jsx`, `src/Inbox.jsx` | The people's side: notifications per person, the Ramp-side views | Claude |
+| `server/api/demo.js`, `src/Demo.jsx`, `scripts/demo.mjs`, `demo/` | Demo-only controls and config; nothing else depends on them | Claude |
 | `src/decision/core.js` | The decision core: admissibility (incl. hard deadlines), same-world outcomes per declared scenario, dominance, owner-policy economics, break-even, switching condition, the flip question; nothing preselected while that question is open | Claude |
 | `server/flow/context.js` | Context retrieval anchored on the part entry; links the part only through documents that name it; declared slip scenarios; assumptions with ages | Claude |
 | `server/flow/orchestrator.js` | The order flow: spec gate, quote, decide, answer/argue, Okay → Ramp, authoritative event handling (atomic `processEvent`), pre-placement revalidation, durable placement with `placement_unknown` and reconciliation, booking retried separately | Claude |
@@ -98,7 +132,7 @@ Mutations take `expectedRevision` and return 409 on conflict. The API never retu
 | `server/api/orders.js` | HTTP API and SSE | Claude |
 | `src/Orders.jsx`, `src/Order.jsx`, `src/ui.jsx` | Screens | Claude |
 
-Not built: the learning model (a labelled slide), delivery tracking and first-use checks, the real headless Xometry provider, the Ramp sandbox backend.
+Not built: the learning model (a labelled slide), delivery tracking and first-use checks, driving the real xometry.com (the provider's selectors target the simulated site; open questions X1/X5/X6), the Ramp sandbox backend.
 
 ## Working in this repo
 
