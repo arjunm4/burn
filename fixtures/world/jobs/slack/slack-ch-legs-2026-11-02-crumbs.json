@@ -38,21 +38,40 @@
       }
     },
     {
-      "id": "p-diego",
-      "name": "Diego Salcedo",
-      "display_name": "diego",
-      "slack_id": "U07FLK0DIEG",
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
       "title": "Mechanical Engineer",
       "style": {
-        "case": "mixed",
+        "case": "lower",
         "punctuation": "light",
-        "typos": "rare",
-        "emoji": "lots",
+        "typos": "lots",
+        "emoji": "some",
         "length": "medium",
         "hedging": "low",
         "quirks": [
-          "reacts with 🙏 and 😬",
-          "ends messages with an emoji"
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
         ]
       }
     },
@@ -76,19 +95,22 @@
       }
     },
     {
-      "id": "p-ingrid",
-      "name": "Ingrid Solberg",
-      "display_name": "ingrid.s",
-      "slack_id": "U07FLK0INGR",
-      "title": "VP Hardware",
+      "id": "p-leilani",
+      "name": "Leilani Kahale",
+      "display_name": "leilani.k",
+      "slack_id": "U07FLK0LEIL",
+      "title": "Locomotion Engineer",
       "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "rare",
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
         "length": "medium",
         "hedging": "low",
-        "quirks": []
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
       }
     },
     {
@@ -125,6 +147,82 @@
           "double-sends instead of editing"
         ]
       }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
     }
   ],
   "context": [
@@ -139,31 +237,84 @@
   ],
   "messages": [
     {
-      "ts": "1793758029.833546",
+      "ts": "1793670708.617811",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-003295"
+      ],
+      "brief": "FL-TST-2145: need 3 by 2026-11-16",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-11-16"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2145",
+        "11/16"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "need 3 of FL-TST-2145 by 11/16!! can't slip again"
+    },
+    {
+      "ts": "1793675429.271318",
+      "user": "p-beth",
+      "thread_ts": "1793670708.617811",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Is that realistic though? Nobody has confirmed a ship date with the vendor yet."
+    },
+    {
+      "ts": "1793725737.818261",
+      "user": "p-callum",
+      "thread_ts": "1793670708.617811",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "yeah agree w beth, id check first"
+    },
+    {
+      "ts": "1793730043.714241",
+      "user": "p-zoe",
+      "thread_ts": "1793670708.617811",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "talia can you ping them today? she has the contact"
+    },
+    {
+      "ts": "1793758029.758199",
       "user": "p-luis",
       "thread_ts": null,
       "events": [
-        "ev-002198"
+        "ev-002383"
       ],
-      "brief": "shank adapter arrived",
+      "brief": "shank adapter arrived (10)",
       "claim": {
         "kind": "stock",
-        "value": 9
+        "value": 10
       },
       "must_mention": [
         "shank adapter",
-        "9"
+        "10"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "shank adapter showed up, 9 pcs in the bin"
+      "text": "shank adapter arrived (10) bagged them on the cart"
     },
     {
-      "ts": "1793814094.155804",
+      "ts": "1793814094.673213",
       "user": "p-helena",
       "thread_ts": null,
       "events": [
-        "ev-003200"
+        "ev-003505"
       ],
       "brief": "thigh cover: still quoting rev A",
       "claim": {
@@ -174,44 +325,84 @@
         "thigh cover"
       ],
       "length": "short",
-      "text": "Is the thigh cover still quoting at rev A?"
+      "text": "thigh cover: still quoting rev A"
     },
     {
-      "ts": "1793829891.893909",
-      "user": "p-diego",
-      "thread_ts": null,
-      "events": [
-        "ev-003166"
-      ],
-      "brief": "side link arrived",
-      "claim": {
-        "kind": "stock",
-        "value": 8
-      },
-      "must_mention": [
-        "side link",
-        "8"
-      ],
-      "pressure": "high",
-      "length": "medium",
-      "text": "side link is here, 8 of them. checking bores now 🔍"
-    },
-    {
-      "ts": "1793834098.587590",
-      "user": "p-ingrid",
-      "thread_ts": "1793829891.893909",
+      "ts": "1793816345.178028",
+      "user": "p-leilani",
+      "thread_ts": "1793814094.673213",
       "events": [],
       "brief": "reply (agrees) in the thread about: the message above",
       "must_mention": [],
-      "length": "short",
-      "text": "Good, thanks."
+      "length": "one_word",
+      "text": "ugh same 😬"
     },
     {
-      "ts": "1793924280.197211",
+      "ts": "1793816620.706142",
+      "user": "p-talia",
+      "thread_ts": "1793814094.673213",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "on it, will chase 🙏"
+    },
+    {
+      "ts": "1793818436.345751",
+      "user": "p-mei",
+      "thread_ts": "1793814094.673213",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Vendor also hasn't confirmed the finish."
+    },
+    {
+      "ts": "1793889839.656885",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-003511"
+      ],
+      "brief": "Encoder kit for leg: still quoting 2026-10-27",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-10-27"
+      },
+      "must_mention": [
+        "Encoder kit for leg (left, hip to foot) (hip pitch bracket)",
+        "10/27"
+      ],
+      "length": "short",
+      "text": "Encoder kit for leg (left, hip to foot) (hip pitch bracket): still quoting 10/27 on the tracker, not sure that's right anymore."
+    },
+    {
+      "ts": "1793920980.519656",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-002281"
+      ],
+      "brief": "pivot pin in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-11-05"
+      },
+      "must_mention": [
+        "pivot pin",
+        "the build",
+        "11/5"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "pivot pin in use, the build needs it done by 11/5"
+    },
+    {
+      "ts": "1793924280.938186",
       "user": "p-lin",
       "thread_ts": null,
       "events": [
-        "ev-001947"
+        "ev-002117"
       ],
       "brief": "dummy mass in use",
       "claim": {
@@ -224,47 +415,7 @@
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "The dummy mass has been on the rig since 11/4."
-    },
-    {
-      "ts": "1793989154.992586",
-      "user": "p-luis",
-      "thread_ts": null,
-      "events": [
-        "ev-002172"
-      ],
-      "brief": "shank adapter arrived",
-      "claim": {
-        "kind": "stock",
-        "value": 6
-      },
-      "must_mention": [
-        "shank adapter",
-        "6"
-      ],
-      "pressure": "low",
-      "length": "medium",
-      "text": "more shank adapter came in, 6 pcs this tme"
-    },
-    {
-      "ts": "1793994109.365968",
-      "user": "p-diego",
-      "thread_ts": "1793989154.992586",
-      "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "we're gonna have shank adapters for days 😂"
-    },
-    {
-      "ts": "1793995356.923235",
-      "user": "p-beth",
-      "thread_ts": "1793989154.992586",
-      "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "I'm not sure that's a problem we have yet, let's hold off on the jokes until the count matches the BOM."
+      "text": "dummy mass in use. Needs to be done 11/4."
     }
   ]
 }

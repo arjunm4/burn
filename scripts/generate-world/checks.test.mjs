@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { runChecks } from './checks.mjs';
+import { runChecks, dateTextViolations } from './checks.mjs';
 import { buildProvenance } from './provenance.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -98,4 +98,14 @@ test('text window start equals plan.mjs makeCtx for weeks 1 and 13', async () =>
   for (const weeks of [1, 13]) assert.equal(textStartFor(world, weeks), makeCtx(world, { seed: 1, weeks, knobs: {} }).textStart);
   assert.equal(textStartFor(world, 13), '2026-08-17T00:00:00-07:00');
   assert.equal(textStartFor(world, 1), '2026-11-09T00:00:00-08:00');
+});
+
+test('date check: weekday must match the date, relative days point forward', () => {
+  const at = '2026-11-10T10:00:00-08:00'; // Tuesday
+  assert.deepEqual(dateTextViolations('see you wed the 18th', at), []);
+  assert.equal(dateTextViolations('see you tue the 18th', at).length, 1);
+  assert.deepEqual(dateTextViolations('Mon, Nov 23 works', at), []);
+  assert.equal(dateTextViolations('Fri 11/23 works', at).length, 1);
+  assert.equal(dateTextViolations('tomorrow thu', at).length, 1);
+  assert.deepEqual(dateTextViolations('tomorrow wed', at), []);
 });

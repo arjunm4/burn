@@ -19,6 +19,25 @@
   },
   "people": [
     {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
       "id": "p-idris",
       "name": "Idris Bello",
       "display_name": "idris",
@@ -38,6 +57,22 @@
       }
     },
     {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
       "id": "p-kwame",
       "name": "Kwame Asante",
       "display_name": "kwame",
@@ -51,6 +86,43 @@
         "length": "medium",
         "hedging": "low",
         "quirks": []
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
       }
     },
     {
@@ -89,11 +161,11 @@
   ],
   "messages": [
     {
-      "ts": "1788368641.940550",
+      "ts": "1788368641.117510",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-003419"
+        "ev-003599"
       ],
       "brief": "Motor sample lot for battery enclosure: still quoting 2026-09-02",
       "claim": {
@@ -102,17 +174,37 @@
       },
       "must_mention": [
         "Motor sample lot for battery enclosure (clevis)",
-        "wed 9/2"
+        "9/2"
       ],
       "length": "short",
-      "text": "Motor sample lot for battery enclosure (clevis) still quoting as of wed 9/2"
+      "text": "Motor sample lot for battery enclosure (clevis) still quoting 9/2, will update if that changes"
     },
     {
-      "ts": "1788380328.470133",
+      "ts": "1788369587.165780",
+      "user": "p-carlos",
+      "thread_ts": "1788368641.117510",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Yep."
+    },
+    {
+      "ts": "1788374420.640756",
+      "user": "p-talia",
+      "thread_ts": "1788368641.117510",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "same here 🙏"
+    },
+    {
+      "ts": "1788380328.763621",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-001506"
+        "ev-001630"
       ],
       "brief": "FL-TST-2272: need 2 by 2026-09-24 for Rig setup for Leg DVT build: Leg fixture hook, shank end",
       "claim": {
@@ -129,14 +221,14 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "FL-TST-2272 x2 for Rig setup for Leg DVT build: Leg fixture hook, shank end, need 9/24"
+      "text": "FL-TST-2272 needed 9/24, Rig setup for Leg DVT build: Leg fixture hook, shank end"
     },
     {
-      "ts": "1788458878.282870",
+      "ts": "1788458878.618337",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-001507"
+        "ev-001631"
       ],
       "brief": "2272: need 2 by 2026-09-24 for Rig setup for Leg DVT build: Leg fixture hook, shank end",
       "claim": {
@@ -149,20 +241,50 @@
       "must_mention": [
         "2272",
         "Rig setup for Leg DVT build: Leg fixture hook, shank end",
-        "9/24"
+        "thurs 9/24"
       ],
       "pressure": "elevated",
-      "length": "medium",
-      "text": "2272 still open, the Rig setup for Leg DVT build: Leg fixture hook, shank end needs both by 9/24 or the rig sits"
+      "length": "short",
+      "text": "2272 Rig setup for Leg DVT build: Leg fixture hook, shank end, thurs 9/24, bumping this"
     },
     {
-      "ts": "1788475562.602480",
+      "ts": "1788458970.860952",
+      "user": "p-carlos",
+      "thread_ts": "1788458878.618337",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Got it, thanks Zoe. Is the shank end the one with the long thread or the short one?"
+    },
+    {
+      "ts": "1788463464.571310",
+      "user": "p-idris",
+      "thread_ts": "1788458878.618337",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "at this rate the hook will have its own org chart"
+    },
+    {
+      "ts": "1788467687.351276",
+      "user": "p-kwame",
+      "thread_ts": "1788458878.618337",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Talia, can you take a look at this when you get a chance?"
+    },
+    {
+      "ts": "1788475562.914573",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-001670"
+        "ev-001814"
       ],
-      "brief": "cage fixture: need 2 by 2026-10-05 for Battery enclosure thermal runaway containment",
+      "brief": "FL-TST-2869: need 2 by 2026-10-05 for Battery enclosure thermal runaway containment",
       "claim": {
         "kind": "needs",
         "value": {
@@ -171,20 +293,50 @@
         }
       },
       "must_mention": [
-        "cage fixture",
+        "FL-TST-2869",
         "Battery enclosure thermal runaway containment",
-        "mon 10/5"
+        "10/5"
       ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "cage fixture need 2 by mon 10/5 for Battery enclosure thermal runaway containment"
+      "pressure": "low",
+      "length": "medium",
+      "text": "FL-TST-2869 is for Battery enclosure thermal runaway containment, we need it by 10/5, got the pack layout locked so should be ok on my side"
     },
     {
-      "ts": "1788570076.728277",
+      "ts": "1788476224.771250",
+      "user": "p-ingrid",
+      "thread_ts": "1788475562.914573",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Thanks, Idris."
+    },
+    {
+      "ts": "1788481345.050057",
+      "user": "p-idris",
+      "thread_ts": "1788475562.914573",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "np"
+    },
+    {
+      "ts": "1788482945.853938",
+      "user": "p-omar",
+      "thread_ts": "1788475562.914573",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "ok i think that works"
+    },
+    {
+      "ts": "1788570076.437171",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-001508"
+        "ev-001632"
       ],
       "brief": "lower hook: need 2 by 2026-09-24",
       "claim": {
@@ -196,21 +348,11 @@
       },
       "must_mention": [
         "lower hook",
-        "thurs 9/24"
+        "9/24"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "lower hook, need 2 by thurs 9/24. thats the same deadline as the rig"
-    },
-    {
-      "ts": "1788573380.725329",
-      "user": "p-kwame",
-      "thread_ts": "1788570076.728277",
-      "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "Not sure we need both."
+      "length": "short",
+      "text": "lower hook 9/24 still, forgot to put it in the thread above"
     }
   ]
 }

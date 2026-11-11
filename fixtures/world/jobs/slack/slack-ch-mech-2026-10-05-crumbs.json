@@ -19,11 +19,65 @@
   },
   "people": [
     {
-      "id": "p-arjun",
-      "name": "Arjun Venkatesan",
-      "display_name": "arjun",
-      "slack_id": "U07FLK0ARJN",
-      "title": "Actuators Lead",
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
       "style": {
         "case": "lower",
         "punctuation": "light",
@@ -38,11 +92,27 @@
       }
     },
     {
-      "id": "p-bao",
-      "name": "Bao Nguyen",
-      "display_name": "bao.n",
-      "slack_id": "U07FLK0BAO0",
-      "title": "Electrical Engineer, motor drives",
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
       "style": {
         "case": "lower",
         "punctuation": "none",
@@ -110,11 +180,29 @@
   ],
   "messages": [
     {
-      "ts": "1791240381.380384",
+      "ts": "1791232297.498288",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-003541"
+      ],
+      "brief": "heater clamp: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "heater clamp"
+      ],
+      "length": "short",
+      "text": "heater clamp still quoting rev A"
+    },
+    {
+      "ts": "1791240381.550770",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-002898"
+        "ev-003086"
       ],
       "brief": "FL-LEG-1348 rev D released: tolerance relaxed after DFM feedback",
       "claim": {
@@ -124,15 +212,25 @@
       "must_mention": [
         "FL-LEG-1348"
       ],
-      "length": "short",
-      "text": "FL-LEG-1348 rev D is released. Tolerance relaxed per the DFM feedback."
+      "length": "medium",
+      "text": "FL-LEG-1348 rev D released. After the DFM feedback we relaxed the tolerance, so it should be much easier for the vendor to hold."
     },
     {
-      "ts": "1791264555.051851",
+      "ts": "1791244135.406660",
+      "user": "p-lin",
+      "thread_ts": "1791240381.550770",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Good. Did the feedback say which feature was the issue, or was it the general tolerance across the whole part?"
+    },
+    {
+      "ts": "1791264555.178657",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-002779"
+        "ev-002967"
       ],
       "brief": "FL-TST-2274 rev C released: added hole for safety pin",
       "claim": {
@@ -143,14 +241,34 @@
         "FL-TST-2274"
       ],
       "length": "short",
-      "text": "FL-TST-2274 rev C out, added the safety pin hole"
+      "text": "FL-TST-2274 rev C released, added a hole for the safety pin"
     },
     {
-      "ts": "1791317422.267374",
+      "ts": "1791304867.869326",
+      "user": "p-diego",
+      "thread_ts": "1791264555.178657",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "will pull it up after the meeting 🙏"
+    },
+    {
+      "ts": "1791306540.208561",
+      "user": "p-farah",
+      "thread_ts": "1791264555.178657",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Agreed, the pin hole makes sense."
+    },
+    {
+      "ts": "1791317422.644429",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-003362"
+        "ev-003458"
       ],
       "brief": "dummy pelvis: still quoting rev B",
       "claim": {
@@ -161,37 +279,35 @@
         "dummy pelvis"
       ],
       "length": "short",
-      "text": "dummy pelvis still quoting off rev B fyi"
+      "text": "dummy pelvis still quoting rev B"
     },
     {
-      "ts": "1791321993.510893",
-      "user": "p-arjun",
-      "thread_ts": "1791317422.267374",
+      "ts": "1791322677.984499",
+      "user": "p-gwen",
+      "thread_ts": "1791317422.644429",
       "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "yeah thats expected"
-    },
-    {
-      "ts": "1791326134.441478",
-      "user": "p-bao",
-      "thread_ts": "1791317422.267374",
-      "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "fine by me"
-    },
-    {
-      "ts": "1791331491.628213",
-      "user": "p-zoe",
-      "thread_ts": "1791317422.267374",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "brief": "reply (shares a related experience) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "ok, should i push them to requote on the new rev?"
+      "text": "We had a similar issue with a bracket last quarter. The quote system picked up an older file."
+    },
+    {
+      "ts": "1791391327.457062",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-003487"
+      ],
+      "brief": "dummy pelvis: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "dummy pelvis"
+      ],
+      "length": "short",
+      "text": "dummy pelvis still quoting rev B"
     }
   ]
 }

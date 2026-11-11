@@ -8,8 +8,10 @@
 
 ## Overview
 
-We need 2103 by 9/28.
+We need FL-TST-2145 by 9/28. We need dyno coupling by 10/1. We need knee dyno coupling by 10/5.
 
 ## Discussion
 
-- Dmitri: We need 2103 by 9/28.
+- Dmitri: We need FL-TST-2145 by 9/28.
+- Dmitri: We need dyno coupling by 10/1.
+- Dmitri: We need knee dyno coupling by 10/5.

@@ -8,9 +8,9 @@
 
 ## Overview
 
-We need FL-ANK-1283 by 9/24. We need the part by 9/22.
+We need FL-ANK-1283 by 9/25. We need the part by 9/22.
 
 ## Discussion
 
-- Dmitri: We need FL-ANK-1283 by 9/24.
+- Dmitri: We need FL-ANK-1283 by 9/25.
 - Dmitri: We need the part by 9/22.

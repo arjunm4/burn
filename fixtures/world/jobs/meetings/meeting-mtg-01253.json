@@ -1,0 +1,336 @@
+{
+  "job_id": "meeting-mtg-01253",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 19,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-01253",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-09-11T08:45:00-07:00",
+    "actual_min": 11,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-andre",
+      "p-lin",
+      "p-carlos",
+      "p-jade",
+      "p-destiny",
+      "p-nora"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-001839",
+      "speaker": "p-dmitri",
+      "at_min": [
+        1,
+        7
+      ],
+      "brief": "FL-LEG-1383: need 12 by 2026-10-08 for the test",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-leg-shank-link",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-08"
+        }
+      },
+      "must_mention": [
+        "FL-LEG-1383",
+        "the test",
+        "10/8"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-nora",
+      "text": "Morning. Quick one today, I have a hard stop. Who's first?"
+    },
+    {
+      "start_s": 9,
+      "speaker": "p-dmitri",
+      "text": "I'll go. Need 12 FL-LEG-1383 by 10/8 for the test, that's the one I flagged last week!!"
+    },
+    {
+      "start_s": 24,
+      "speaker": "p-nora",
+      "text": "Understood. Is that 12 total, or 12 more than what's on the shelf?"
+    },
+    {
+      "start_s": 34,
+      "speaker": "p-dmitri",
+      "text": "12 total. We have none that pass inspection right now."
+    },
+    {
+      "start_s": 45,
+      "speaker": "p-carlos",
+      "text": "Right, the last ones I saw were all out of spec on the bore. Bin is empty!!"
+    },
+    {
+      "start_s": 58,
+      "speaker": "p-zoe",
+      "text": "on my side the knee fixture is still on the bench, i need to swap one of the pins. should be done by eod i think"
+    },
+    {
+      "start_s": 78,
+      "speaker": "p-andre",
+      "text": "dyno ran overnite, no faults. 3 runs at the lower torque then it stoped itself at the temp limit"
+    },
+    {
+      "start_s": 96,
+      "speaker": "p-andre",
+      "text": "*stopped"
+    },
+    {
+      "start_s": 104,
+      "speaker": "p-lin",
+      "text": "Life test is at the same cycle count as Friday, no changes. One sample was making a clicking sound this morning, I'm going to check it after this."
+    },
+    {
+      "start_s": 130,
+      "speaker": "p-dmitri",
+      "text": "Clicking like the bearing or clicking like the encoder?"
+    },
+    {
+      "start_s": 140,
+      "speaker": "p-lin",
+      "text": "Honestly not sure. I'll record audio."
+    },
+    {
+      "start_s": 152,
+      "speaker": "p-jade",
+      "text": "got a box from the vendor yesterday, checking it in now, not sure if its yours"
+    },
+    {
+      "start_s": 168,
+      "speaker": "p-carlos",
+      "text": "Hold it, I'll look at the label."
+    },
+    {
+      "start_s": 178,
+      "speaker": "p-destiny",
+      "text": "I have the harness build ready for the afternoon if the fixture is free 🙏 😬"
+    },
+    {
+      "start_s": 196,
+      "speaker": "p-zoe",
+      "text": "should be free after lunch"
+    },
+    {
+      "start_s": 207,
+      "speaker": "p-nora",
+      "text": "Okay. So fixture by afternoon, clicking sample gets looked at, and Dmitri's parts are on my list. Anything else?"
+    },
+    {
+      "start_s": 225,
+      "speaker": "p-andre",
+      "text": "no"
+    },
+    {
+      "start_s": 230,
+      "speaker": "p-jade",
+      "text": "no"
+    },
+    {
+      "start_s": 236,
+      "speaker": "p-dmitri",
+      "text": "Nothing. Thanks!!"
+    },
+    {
+      "start_s": 244,
+      "speaker": "p-nora",
+      "text": "Great, thanks all."
+    }
+  ],
+  "summary": {
+    "overview": "Short test lab + build standup. Dmitri flagged his parts need for the test, fixture and dyno updates, life test sample making a clicking noise.",
+    "shorthand_bullet": [
+      "Dmitri: need 12 FL-LEG-1383 by 10/8 for the test, 12 total, none passing inspection now",
+      "Zoe: knee fixture pin swap, free after lunch",
+      "Andre: dyno ran overnight, stopped at temp limit",
+      "Lin: life test unchanged, one sample clicking (bearing or encoder?), recording audio",
+      "Jade: vendor box received, checking label",
+      "Destiny: harness build ready in the afternoon"
+    ],
+    "action_items": [
+      "Nora - add Dmitri's parts to her list",
+      "Lin - record audio of the clicking sample",
+      "Carlos - check label on the vendor box",
+      "fixture hand-off to Destiny after lunch"
+    ],
+    "keywords": [
+      "standup",
+      "FL-LEG-1383",
+      "dyno",
+      "life test",
+      "fixture"
+    ]
+  }
+}

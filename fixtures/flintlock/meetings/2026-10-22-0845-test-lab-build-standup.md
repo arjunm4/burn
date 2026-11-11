@@ -7,8 +7,8 @@
 
 ## Overview
 
-We need the bushing by 11/18 (the build).
+We need the bushing by 11/16 (the build).
 
 ## Discussion
 
-- Andre: We need the bushing by 11/18 (the build).
+- Andre: We need the bushing by 11/16 (the build).

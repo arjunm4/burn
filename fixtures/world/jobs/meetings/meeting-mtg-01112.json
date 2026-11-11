@@ -1,0 +1,328 @@
+{
+  "job_id": "meeting-mtg-01112",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 25,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-01112",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-08-18T08:45:00-07:00",
+    "actual_min": 17,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-andre",
+      "p-lin",
+      "p-jade",
+      "p-luis",
+      "p-destiny"
+    ],
+    "late_joiners": [
+      "p-destiny"
+    ]
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-001555",
+      "speaker": "p-dmitri",
+      "at_min": [
+        5,
+        11
+      ],
+      "brief": "the part: need 6 by 2026-10-07",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-build-leg-stand",
+        "value": {
+          "qty": 6,
+          "by": "2026-10-07"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "10/7"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-dmitri",
+      "text": "Okay, we're a little short today, Destiny's not on yet. Starting."
+    },
+    {
+      "start_s": 8,
+      "speaker": "p-lin",
+      "text": "Life test is running. No faults over the weekend."
+    },
+    {
+      "start_s": 20,
+      "speaker": "p-andre",
+      "text": "dyno had a hiccup yesterday, the controler tripped on overcurrent. i reset it and it ran fine after"
+    },
+    {
+      "start_s": 40,
+      "speaker": "p-dmitri",
+      "text": "Same trip as before or different?"
+    },
+    {
+      "start_s": 48,
+      "speaker": "p-andre",
+      "text": "same i think, ill pull the log"
+    },
+    {
+      "start_s": 58,
+      "speaker": "p-zoe",
+      "text": "fixture is almost done, one more day. i also have to recalibrate the load cell"
+    },
+    {
+      "start_s": 78,
+      "speaker": "p-luis",
+      "text": "i have the bench units, 2 left. need to do wiring on both"
+    },
+    {
+      "start_s": 94,
+      "speaker": "p-jade",
+      "text": "i got a pallet this morning, checking in the contents"
+    },
+    {
+      "start_s": 108,
+      "speaker": "p-dmitri",
+      "text": "Do you see anything for us in it?"
+    },
+    {
+      "start_s": 116,
+      "speaker": "p-jade",
+      "text": "not yet, still sorting"
+    },
+    {
+      "start_s": 126,
+      "speaker": "p-dmitri",
+      "text": "Okay. Parts. Need 6 of the part by 10/7, I'll write the number in the tracker today!!"
+    },
+    {
+      "start_s": 148,
+      "speaker": "p-zoe",
+      "text": "ok. is that the same one as before or a different one"
+    },
+    {
+      "start_s": 158,
+      "speaker": "p-dmitri",
+      "text": "Same one, just a new quantity."
+    },
+    {
+      "start_s": 168,
+      "speaker": "p-lin",
+      "text": "Do we know yet whether the lead time is tight on that one?"
+    },
+    {
+      "start_s": 180,
+      "speaker": "p-dmitri",
+      "text": "No idea, I have to ask."
+    },
+    {
+      "start_s": 188,
+      "speaker": "p-andre",
+      "text": "i can ask purchasing if you want"
+    },
+    {
+      "start_s": 196,
+      "speaker": "p-dmitri",
+      "text": "Sure, that helps."
+    },
+    {
+      "start_s": 204,
+      "speaker": "p-destiny",
+      "text": "Sorry I'm late!! 😬 🙏 what did I miss"
+    },
+    {
+      "start_s": 216,
+      "speaker": "p-luis",
+      "text": "just parts"
+    },
+    {
+      "start_s": 222,
+      "speaker": "p-destiny",
+      "text": "OK. Assembly is on track, I'm waiting on the harness only 🙏"
+    },
+    {
+      "start_s": 240,
+      "speaker": "p-zoe",
+      "text": "should have it nxt wk, i think"
+    },
+    {
+      "start_s": 250,
+      "speaker": "p-dmitri",
+      "text": "Okay, any other business? No? Thanks all."
+    }
+  ],
+  "summary": {
+    "overview": "Tuesday standup, 17 min. Routine lab status, dyno controller overcurrent trip again, fixture nearly done. Dmitri put in a parts need.",
+    "shorthand_bullet": [
+      "Life test running, no weekend faults",
+      "Dyno controller tripped overcurrent, reset ok, Andre pulling log",
+      "Zoe: fixture ~1 day, load cell recal",
+      "Luis: 2 bench units left, wiring",
+      "Jade: pallet being checked in",
+      "Dmitri: need 6 of the part by 10/7",
+      "Destiny (late): waiting on harness only"
+    ],
+    "action_items": [
+      "Andre - ask purchasing about lead time, pull log",
+      "Dmitri - number into tracker",
+      "Zoe - finish fixture, load cell recal",
+      "Jade - report if anything for lab in the pallet"
+    ],
+    "keywords": [
+      "standup",
+      "dyno",
+      "overcurrent",
+      "fixture",
+      "load cell"
+    ]
+  }
+}

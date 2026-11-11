@@ -83,6 +83,13 @@ export function plan(world, ctx0 = {}) {
       for (const b of rig.bookings || []) {
         let { start, end } = b;
         const t = b.test ? tests.get(b.test) : null;
+        // When the booking became known: the planned-date entry that put the test on this date,
+        // else the earliest entry; ad hoc bookings are known when they start. Never after "now".
+        const hist = (t?.planned_date || []).filter((h) => h.known_at);
+        const origStart = dateOf(start);
+        const made = hist.find((h) => h.value === origStart) || hist[0];
+        const knownMs = Math.min(toMs(made ? made.known_at : start), toMs(start), nowMs);
+        const knownStamp = new Date(knownMs).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
         if (t && toMs(start) > nowMs) {
           const bel = beliefAt(t.planned_date, nowMs);
           if (bel?.value && bel.value !== dateOf(start)) {
@@ -107,7 +114,7 @@ export function plan(world, ctx0 = {}) {
             `DESCRIPTION:${esc(desc.join('\n'))}`, `LOCATION:${esc(rig.location)}`,
             `STATUS:${b.status === 'cancelled' ? 'CANCELLED' : b.status === 'tentative' ? 'TENTATIVE' : 'CONFIRMED'}`,
             `ORGANIZER;CN=${esc(by?.name || '')}:mailto:${by?.email || ''}`,
-            'CATEGORIES:BOOKING',
+            `CREATED:${knownStamp}`, `LAST-MODIFIED:${knownStamp}`, 'CATEGORIES:BOOKING',
           ],
         });
       }

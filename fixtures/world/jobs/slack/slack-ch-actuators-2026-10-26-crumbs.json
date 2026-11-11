@@ -57,20 +57,21 @@
       }
     },
     {
-      "id": "p-bao",
-      "name": "Bao Nguyen",
-      "display_name": "bao.n",
-      "slack_id": "U07FLK0BAO0",
-      "title": "Electrical Engineer, motor drives",
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
       "style": {
-        "case": "lower",
-        "punctuation": "none",
-        "typos": "some",
-        "emoji": "rare",
-        "length": "terse",
-        "hedging": "low",
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
         "quirks": [
-          "no capitals or end punctuation ever"
+          "numbered lists in status updates",
+          "restates the question before answering"
         ]
       }
     },
@@ -143,25 +144,6 @@
         "hedging": "low",
         "quirks": [
           "one-word acks: ok, ty, yep"
-        ]
-      }
-    },
-    {
-      "id": "p-nadia",
-      "name": "Nadia Haddad",
-      "display_name": "nadia",
-      "slack_id": "U07FLK0NADI",
-      "title": "Mechanical Engineer",
-      "style": {
-        "case": "lower",
-        "punctuation": "light",
-        "typos": "lots",
-        "emoji": "some",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": [
-          "fixes typos with *word",
-          "double-sends instead of editing"
         ]
       }
     },
@@ -270,11 +252,41 @@
   ],
   "messages": [
     {
-      "ts": "1793051040.761477",
+      "ts": "1793047862.323910",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-003866"
+      ],
+      "brief": "Fit check: Hip to pelvis interface plate blocked on Thermal chamber",
+      "claim": {
+        "kind": "blocked",
+        "value": "res-thermal-chamber"
+      },
+      "must_mention": [
+        "Fit check: Hip to pelvis interface plate",
+        "Thermal chamber"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Fit check: Hip to pelvis interface plate is blocked on Thermal chamber, can't run it until that frees up"
+    },
+    {
+      "ts": "1793048617.415060",
+      "user": "p-andre",
+      "thread_ts": "1793047862.323910",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "can look at the chamber schedule later, think zoe has the sign up sheet"
+    },
+    {
+      "ts": "1793051040.714091",
       "user": "p-owen",
       "thread_ts": null,
       "events": [
-        "ev-002162"
+        "ev-002347"
       ],
       "brief": "grip pucks: need 12 by 2026-11-12",
       "claim": {
@@ -290,40 +302,7 @@
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "need 12 grip pucks by 11/12 for the dyno"
-    },
-    {
-      "ts": "1793052472.418679",
-      "user": "p-carlos",
-      "thread_ts": "1793051040.761477",
-      "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "Got it 👍"
-    },
-    {
-      "ts": "1793053597.181822",
-      "user": "p-talia",
-      "thread_ts": null,
-      "events": [
-        "ev-003092"
-      ],
-      "brief": "grip pucks: need 12 by 2026-11-12",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 12,
-          "by": "2026-11-12"
-        }
-      },
-      "must_mention": [
-        "grip pucks",
-        "11/12"
-      ],
-      "pressure": "low",
-      "length": "short",
-      "text": "Adding grip pucks to the list, 12 by 11/12 🙏"
+      "text": "grip pucks need 12 by 11/12"
     },
     {
       "ts": "1793054946.534034",
@@ -342,34 +321,14 @@
         "10/30"
       ],
       "length": "medium",
-      "text": "Firmware build for knee actuator (thigh flange) moved again, now saying 10/30. will confirm"
+      "text": "Firmware build for knee actuator (thigh flange) moved again, now 10/30. third time i think"
     },
     {
-      "ts": "1793056293.192772",
-      "user": "p-bao",
-      "thread_ts": "1793051040.761477",
-      "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "ty"
-    },
-    {
-      "ts": "1793058466.481682",
-      "user": "p-ingrid",
-      "thread_ts": "1793051040.761477",
-      "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "I'd hold off on the old ones."
-    },
-    {
-      "ts": "1793077729.404480",
+      "ts": "1793077729.648797",
       "user": "p-ingrid",
       "thread_ts": null,
       "events": [
-        "ev-003341"
+        "ev-003470"
       ],
       "brief": "Wire harness for hip actuator: still quoting 2026-10-21",
       "claim": {
@@ -377,36 +336,36 @@
         "value": "2026-10-21"
       },
       "must_mention": [
-        "Wire harness for hip actuator (pelvis plate)",
+        "Wire harness for hip actuator (hip pelvis plate)",
         "10/21"
       ],
       "length": "short",
-      "text": "Wire harness for hip actuator (pelvis plate) is still quoting, same as 10/21. Who owns the chase?"
+      "text": "Wire harness for hip actuator (hip pelvis plate) 10/21 is what the tracker still says. Can someone update it?"
     },
     {
-      "ts": "1793120785.731280",
+      "ts": "1793120785.675805",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-003259"
+        "ev-003554"
       ],
-      "brief": "pelvis plate: still quoting rev D",
+      "brief": "hip pelvis plate: still quoting rev D",
       "claim": {
         "kind": "substitute",
         "value": "rev D"
       },
       "must_mention": [
-        "pelvis plate"
+        "hip pelvis plate"
       ],
-      "length": "short",
-      "text": "pelvis plate still quoting at rev D"
+      "length": "medium",
+      "text": "hip pelvis plate still quoting rev D, need to confirm w/ vendor"
     },
     {
-      "ts": "1793131485.104143",
+      "ts": "1793131485.222764",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002635"
+        "ev-002823"
       ],
       "brief": "Instrumentation fit-up: Dyno mounting plate, hip actuator waits on Driver PCBA respin for hip actuator (hip dyno plate)",
       "claim": {
@@ -418,15 +377,25 @@
         "Instrumentation fit-up: Dyno mounting plate, hip actuator"
       ],
       "pressure": "high",
-      "length": "short",
-      "text": "Instrumentation fit-up: Dyno mounting plate, hip actuator is blocked on Driver PCBA respin for hip actuator (hip dyno plate)"
+      "length": "medium",
+      "text": "Instrumentation fit-up: Dyno mounting plate, hip actuator is waiting on Driver PCBA respin for hip actuator (hip dyno plate)"
     },
     {
-      "ts": "1793139655.202288",
+      "ts": "1793134269.596833",
+      "user": "p-carlos",
+      "thread_ts": "1793131485.222764",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "respin number whatever, we've lost count!!"
+    },
+    {
+      "ts": "1793139655.760951",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-002628"
+        "ev-002816"
       ],
       "brief": "Rig setup: Dyno shaft spacer waits on Wire harness for hip actuator (dyno spacers)",
       "claim": {
@@ -439,75 +408,34 @@
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "Rig setup: Dyno shaft spacer probably waits on Wire harness for hip actuator (dyno spacers), i think"
+      "text": "Rig setup: Dyno shaft spacer waits on Wire harness for hip actuator (dyno spacers)"
     },
     {
-      "ts": "1793207498.639694",
-      "user": "p-arjun",
-      "thread_ts": null,
-      "events": [
-        "ev-003165"
-      ],
-      "brief": "delrin blocks: need 12 by 2026-11-11",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 12,
-          "by": "2026-11-11"
-        }
-      },
-      "must_mention": [
-        "delrin blocks",
-        "11/11"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "also delrin blocks, 12 by 11/11 pls"
-    },
-    {
-      "ts": "1793208050.400557",
-      "user": "p-arjun",
-      "thread_ts": null,
-      "events": [
-        "ev-003242"
-      ],
-      "brief": "pelvis plate: still quoting rev D",
-      "claim": {
-        "kind": "substitute",
-        "value": "rev D"
-      },
-      "must_mention": [
-        "pelvis plate"
-      ],
-      "length": "short",
-      "text": "pelvis plate - still quoting rev D, nothing new"
-    },
-    {
-      "ts": "1793208264.157708",
-      "user": "p-arjun",
-      "thread_ts": "1793208050.400557",
+      "ts": "1793141044.721881",
+      "user": "p-samir",
+      "thread_ts": "1793139655.760951",
       "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "brief": "reply (pushes back) in the thread about: the message above",
       "must_mention": [],
-      "length": "one_word",
-      "text": "same thing happened w the housing last build"
+      "length": "short",
+      "text": "dont think the harness is the real holdup tho"
     },
     {
-      "ts": "1793209836.901216",
-      "user": "p-nadia",
-      "thread_ts": "1793208050.400557",
+      "ts": "1793143505.283396",
+      "user": "p-arjun",
+      "thread_ts": "1793139655.760951",
       "events": [],
       "brief": "reply (jokes) in the thread about: the message above",
       "must_mention": [],
       "length": "one_word",
-      "text": "pelvis plate quote is the real long term project lol"
+      "text": "everything waits on a harness eventually"
     },
     {
-      "ts": "1793233315.076379",
+      "ts": "1793233315.612419",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-003316"
+        "ev-003449"
       ],
       "brief": "Firmware build for knee actuator: still quoting 2026-10-29",
       "claim": {
@@ -516,17 +444,60 @@
       },
       "must_mention": [
         "Firmware build for knee actuator (thigh flange)",
-        "thurs 10/29"
+        "thurs the 29th"
       ],
       "length": "short",
-      "text": "Firmware build for knee actuator (thigh flange) still quoting, i think thurs 10/29"
+      "text": "Firmware build for knee actuator (thigh flange) still quoting thurs the 29th, prob wont hold"
     },
     {
-      "ts": "1793308045.697132",
+      "ts": "1793298294.180346",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-003387"
+      ],
+      "brief": "FL-KNE-1120: need 12 by 2026-11-17",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-11-17"
+        }
+      },
+      "must_mention": [
+        "FL-KNE-1120",
+        "tues the 17th"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "FL-KNE-1120 need 12 by tues the 17th, we are tight on this one"
+    },
+    {
+      "ts": "1793301371.701646",
+      "user": "p-jonas",
+      "thread_ts": "1793298294.180346",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "tight is my favorite word this month"
+    },
+    {
+      "ts": "1793303849.627748",
+      "user": "p-ingrid",
+      "thread_ts": "1793298294.180346",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "knee parts and optimism"
+    },
+    {
+      "ts": "1793308045.006587",
       "user": "p-destiny",
       "thread_ts": null,
       "events": [
-        "ev-002161"
+        "ev-002346"
       ],
       "brief": "hip adapter plate arrived (4)",
       "claim": {
@@ -539,14 +510,14 @@
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "hip adapter plate is here, all 4 😊"
+      "text": "hip adapter plate arrived (4) 😬"
     },
     {
-      "ts": "1793309470.318011",
+      "ts": "1793309470.170816",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002671"
+        "ev-002859"
       ],
       "brief": "Hip actuator DVT spin test waits on Hip actuator bracket",
       "claim": {
@@ -558,45 +529,35 @@
         "Hip actuator DVT spin test"
       ],
       "pressure": "high",
-      "length": "short",
-      "text": "Hip actuator DVT spin test is waiting on the Hip actuator bracket"
-    },
-    {
-      "ts": "1793309532.092747",
-      "user": "p-jonas",
-      "thread_ts": "1793308045.697132",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "anodized or raw"
-    },
-    {
-      "ts": "1793310839.127180",
-      "user": "p-andre",
-      "thread_ts": "1793308045.697132",
-      "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
-      "must_mention": [],
       "length": "medium",
-      "text": "ty destiny!! i'll grab one for the dyno mount later"
+      "text": "Hip actuator DVT spin test waits on Hip actuator bracket"
     },
     {
-      "ts": "1793312490.605408",
-      "user": "p-jonas",
-      "thread_ts": "1793309470.318011",
+      "ts": "1793310850.632905",
+      "user": "p-wei",
+      "thread_ts": "1793309470.170816",
       "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
+      "brief": "reply (tags someone else) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "bracket first then motor"
+      "text": "@owen where are we on the bracket drawing?"
     },
     {
-      "ts": "1793312715.087879",
+      "ts": "1793311252.967341",
+      "user": "p-carlos",
+      "thread_ts": "1793309470.170816",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "can't be just the bracket!!"
+    },
+    {
+      "ts": "1793312715.260217",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002642"
+        "ev-002830"
       ],
       "brief": "Install and torque: Hip holding-brake bracket waits on Bearing set for hip actuator (brake bracket)",
       "claim": {
@@ -608,38 +569,88 @@
         "Install and torque: Hip holding-brake bracket"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "and Install and torque: Hip holding-brake bracket waits on Bearing set for hip actuator (brake bracket). so that ones stuck too"
+      "length": "short",
+      "text": "Install and torque: Hip holding-brake bracket waits on Bearing set for hip actuator (brake bracket)"
     },
     {
-      "ts": "1793317567.127787",
+      "ts": "1793316500.989241",
       "user": "p-wei",
-      "thread_ts": "1793309470.318011",
-      "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "I don't think the bracket is the only blocker here."
+      "thread_ts": null,
+      "events": [
+        "ev-003868"
+      ],
+      "brief": "Instrumentation fit-up: Dyno thermocouple clamp done",
+      "claim": {
+        "kind": "done",
+        "value": "2026-10-29"
+      },
+      "must_mention": [
+        "Instrumentation fit-up: Dyno thermocouple clamp",
+        "10/29"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Instrumentation fit-up: Dyno thermocouple clamp done 10/29"
     },
     {
-      "ts": "1793335680.051675",
+      "ts": "1793318080.426983",
+      "user": "p-beth",
+      "thread_ts": "1793316500.989241",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Thanks Wei. I will update the plan this afternoon."
+    },
+    {
+      "ts": "1793335680.277605",
       "user": "p-owen",
       "thread_ts": null,
       "events": [
-        "ev-002645"
+        "ev-002833"
       ],
-      "brief": "Instrumentation fit-up: Dyno mounting plate, hip actuator waits on Driver PCBA respin for knee actuator (hip dyno plate)",
+      "brief": "Instrumentation fit-up: Dyno mounting plate, hip actuator (2) waits on Driver PCBA respin for knee actuator (hip dyno plate)",
       "claim": {
         "kind": "blocked",
         "value": "dl-gen-0121"
       },
       "must_mention": [
         "Driver PCBA respin for knee actuator (hip dyno plate)",
-        "Instrumentation fit-up: Dyno mounting plate, hip actuator"
+        "Instrumentation fit-up: Dyno mounting plate, hip actuator (2)"
       ],
       "pressure": "elevated",
+      "length": "short",
+      "text": "Instrumentation fit-up: Dyno mounting plate, hip actuator (2) waits on Driver PCBA respin for knee actuator (hip dyno plate)"
+    },
+    {
+      "ts": "1793383000.926068",
+      "user": "p-tomas",
+      "thread_ts": "1793335680.277605",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "we saw something similar on the first knee board, took two spins"
+    },
+    {
+      "ts": "1793384970.111858",
+      "user": "p-beth",
+      "thread_ts": "1793335680.277605",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
       "length": "medium",
-      "text": "Instrumentation fit-up: Dyno mounting plate, hip actuator also on Driver PCBA respin for knee actuator (hip dyno plate) not just the hip one"
+      "text": "I am not sure that is right. The respin should be the same board for both. Can someone confirm which one is actually late?"
+    },
+    {
+      "ts": "1793389453.647413",
+      "user": "p-beth",
+      "thread_ts": "1793335680.277605",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "also the spin test needs both, so worth knowing before friday"
     }
   ]
 }

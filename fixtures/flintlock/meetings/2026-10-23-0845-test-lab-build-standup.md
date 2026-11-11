@@ -7,9 +7,9 @@
 
 ## Overview
 
-We need guide bushing by 11/11 (the build). We need that order by 11/6.
+We need guide bushing by 11/16 (the build). We need that order by 11/9.
 
 ## Discussion
 
-- Dmitri: We need guide bushing by 11/11 (the build).
-- Dmitri: We need that order by 11/6.
+- Dmitri: We need guide bushing by 11/16 (the build).
+- Dmitri: We need that order by 11/9.

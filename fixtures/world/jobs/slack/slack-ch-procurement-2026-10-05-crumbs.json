@@ -56,11 +56,11 @@
       }
     },
     {
-      "id": "p-dmitri",
-      "name": "Dmitri Sokolov",
-      "display_name": "dmitri",
-      "slack_id": "U07FLK0DMIT",
-      "title": "Test and Reliability Lead",
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
       "style": {
         "case": "mixed",
         "punctuation": "full",
@@ -75,20 +75,40 @@
       }
     },
     {
-      "id": "p-hana",
-      "name": "Hana Kimura",
-      "display_name": "hana",
-      "slack_id": "U07FLK0HANA",
-      "title": "Mechanical Engineer",
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
       "style": {
-        "case": "mixed",
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
         "punctuation": "light",
-        "typos": "rare",
+        "typos": "some",
         "emoji": "rare",
         "length": "medium",
-        "hedging": "high",
+        "hedging": "medium",
         "quirks": [
-          "\"i think\", \"probably\", \"not 100% sure but\""
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
         ]
       }
     },
@@ -108,6 +128,40 @@
         "quirks": [
           "one-word acks: ok, ty, yep"
         ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-kwame",
+      "name": "Kwame Asante",
+      "display_name": "kwame",
+      "slack_id": "U07FLK0KWAM",
+      "title": "Senior Electrical Engineer, power",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
       }
     },
     {
@@ -165,34 +219,11 @@
   ],
   "messages": [
     {
-      "ts": "1791224114.849927",
-      "user": "p-dmitri",
-      "thread_ts": null,
-      "events": [
-        "ev-003158"
-      ],
-      "brief": "spin adapter: need 8 by 2026-10-23",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 8,
-          "by": "2026-10-23"
-        }
-      },
-      "must_mention": [
-        "spin adapter",
-        "fri 10/23"
-      ],
-      "pressure": "elevated",
-      "length": "medium",
-      "text": "Need 8x spin adapter by fri 10/23!! Who's ordering?"
-    },
-    {
-      "ts": "1791301354.356451",
+      "ts": "1791301354.751693",
       "user": "p-talia",
       "thread_ts": null,
       "events": [
-        "ev-001868"
+        "ev-002028"
       ],
       "brief": "Quote Q-2600172-1 for FL-HND-1414: standard $1036.57, 10 BD",
       "claim": {
@@ -208,18 +239,38 @@
       "must_mention": [
         "Q-2600172-1",
         "FL-HND-1414",
-        "fri 10/23"
+        "10/23"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "Q-2600172-1 back for FL-HND-1414, $1036.57 standard, 10 BD. qty 20 for fri 10/23 ✅"
+      "text": "Quote Q-2600172-1 for FL-HND-1414 is in: $1036.57 standard, 10 BD. Need 20 by 10/23 😬"
     },
     {
-      "ts": "1791317489.078686",
+      "ts": "1791302844.136286",
+      "user": "p-kwame",
+      "thread_ts": "1791301354.751693",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Thanks Talia."
+    },
+    {
+      "ts": "1791306123.580704",
+      "user": "p-farah",
+      "thread_ts": "1791301354.751693",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Before we approve this: is 20 really needed, or can the first build run on fewer? I would rather not tie up budget on a count we might revise."
+    },
+    {
+      "ts": "1791317489.948297",
       "user": "p-talia",
       "thread_ts": null,
       "events": [
-        "ev-001888"
+        "ev-002053"
       ],
       "brief": "Quote Q-2600665-1 for FL-BAT-1679: standard $197.87, 10 BD",
       "claim": {
@@ -235,55 +286,69 @@
       "must_mention": [
         "Q-2600665-1",
         "FL-BAT-1679",
-        "mon 10/26"
+        "10/26"
       ],
       "pressure": "low",
       "length": "medium",
-      "text": "Q-2600665-1 for FL-BAT-1679: 10 pcs, $197.87, 10 BD standard. Lines up with mon 10/26 👍"
+      "text": "Q-2600665-1 for FL-BAT-1679 came back, $197.87 standard and 10 BD. need 10 by 10/26 🙏"
     },
     {
-      "ts": "1791318510.641859",
-      "user": "p-beth",
-      "thread_ts": "1791317489.078686",
+      "ts": "1791319196.470587",
+      "user": "p-carlos",
+      "thread_ts": "1791317489.948297",
       "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "These go with the cage test parts, so please keep them on one PR if possible."
-    },
-    {
-      "ts": "1791320257.788863",
-      "user": "p-hana",
-      "thread_ts": "1791317489.078686",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "agreed"
-    },
-    {
-      "ts": "1791321223.216352",
-      "user": "p-jonas",
-      "thread_ts": "1791317489.078686",
-      "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
+      "brief": "reply (thanks) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "ok"
+      "text": "Thanks!"
     },
     {
-      "ts": "1791484421.232306",
+      "ts": "1791478487.815320",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-002356"
+      ],
+      "brief": "FL-LEG-1372: need 5 by 2026-11-11 for the fit check",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 5,
+          "by": "2026-11-11"
+        }
+      },
+      "must_mention": [
+        "FL-LEG-1372",
+        "the fit check",
+        "wed the 11th"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "FL-LEG-1372 need 5 by wed the 11th for the fit check, can someone start the po"
+    },
+    {
+      "ts": "1791480503.521721",
+      "user": "p-beth",
+      "thread_ts": "1791478487.815320",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "is 5 firm?"
+    },
+    {
+      "ts": "1791484421.245522",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-002018"
+        "ev-002190"
       ],
-      "brief": "FL-HND-1419: need 6 by 2026-11-06 for the fit check",
+      "brief": "FL-HND-1419: need 6 by 2026-11-03 for the fit check",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 6,
-          "by": "2026-11-06"
+          "by": "2026-11-03"
         }
       },
       "must_mention": [
@@ -292,20 +357,84 @@
         "FL-HND-1490",
         "FL-HND-1440",
         "FL-HND-1458",
-        "11/6"
+        "tues 11/3"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "Need 6 of FL-HND-1419 for the fit check by 11/6, I think along with FL-HND-1490, FL-HND-1440 and FL-HND-1458"
+      "length": "short",
+      "text": "FL-HND-1419 need 6 by tues 11/3 for the fit check. i think FL-HND-1490, FL-HND-1440 and FL-HND-1458 are probably still ok from stock but not 100% sure"
     },
     {
-      "ts": "1791575195.463824",
+      "ts": "1791484849.713184",
+      "user": "p-jonas",
+      "thread_ts": "1791478487.815320",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@talia might know"
+    },
+    {
+      "ts": "1791486864.994575",
+      "user": "p-idris",
+      "thread_ts": "1791484421.245522",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "i'll look at the stock count later today"
+    },
+    {
+      "ts": "1791489808.233519",
+      "user": "p-zoe",
+      "thread_ts": "1791478487.815320",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "yes 5"
+    },
+    {
+      "ts": "1791490187.994750",
+      "user": "p-kenji",
+      "thread_ts": "1791484421.245522",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "stock shows some on the shelf"
+    },
+    {
+      "ts": "1791575195.003644",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-001937"
+        "ev-002107"
       ],
-      "brief": "torso imu: need 12 by 2026-11-20 for the fit check",
+      "brief": "torso imu: need 12 by 2026-11-17 for the fit check",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-11-17"
+        }
+      },
+      "must_mention": [
+        "torso imu",
+        "the fit check",
+        "tues the 17th"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "torso imu, need 12 by tues the 17th for the fit check. quote pls"
+    },
+    {
+      "ts": "1791576695.201951",
+      "user": "p-zoe",
+      "thread_ts": "1791575195.003644",
+      "events": [
+        "ev-003273"
+      ],
+      "brief": "Correction: torso imu: need 12 by 2026-11-20 for the fit check",
       "claim": {
         "kind": "needs",
         "value": {
@@ -319,8 +448,8 @@
         "11/20"
       ],
       "pressure": "low",
-      "length": "short",
-      "text": "torso imu x12 for the fit check, need them by 11/20"
+      "length": "medium",
+      "text": "correction: torso imu need 12 by 11/20 for the fit check"
     }
   ]
 }

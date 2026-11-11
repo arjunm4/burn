@@ -1,0 +1,92 @@
+{
+  "job_id": "jira-HIP-2026-09-28-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 13,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HIP",
+    "name": "Actuators (hip and knee)"
+  },
+  "week": {
+    "start": "2026-09-28",
+    "end": "2026-10-04"
+  },
+  "people": [
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HIP-456",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-zoe",
+      "assignee": "p-zoe",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-09-29T17:35:02-07:00",
+      "due_date": "2026-10-13",
+      "events": [
+        "ev-002059"
+      ],
+      "brief": "Order 2x Hip to pelvis interface plate / interface plate: need 2 by 2026-10-13",
+      "must_mention": [
+        "interface plate",
+        "10/13"
+      ],
+      "description_length": "short",
+      "summary": "Order 2x Hip to pelvis interface plate",
+      "description": "need 2 interface plate by 10/13",
+      "comments": [
+        {
+          "id": "HIP-456-c1",
+          "by": "p-zoe",
+          "at": "2026-10-02T10:18:38-07:00",
+          "events": [
+            "ev-002060"
+          ],
+          "brief": "Order XO-5529420 placed, promised 2026-10-08",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-10-08"
+          },
+          "must_mention": [
+            "XO-5529420",
+            "hip pelvis plate",
+            "thurs the 8th"
+          ],
+          "body": "Order XO-5529420 placed for hip pelvis plate, promised thurs the 8th"
+        }
+      ]
+    }
+  ]
+}

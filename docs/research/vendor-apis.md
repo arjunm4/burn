@@ -12,7 +12,7 @@ Related: [`../architecture.md`](../architecture.md) §0.4 and §2.14, [`ramp-int
 - **Only one self-serve CNC buyer API exists: AFN**, and it doesn't fit v1 (no sandbox, merchant of record, shipping options rather than production tiers, unproven).
 - **Real buyer APIs exist for PCB and 3D printing** (PCBWay, JLC, partner-only; Shapeways, Sculpteo).
 - **Almost every vendor supports team accounts with quote sharing.** This is what makes the extension approach work: the engineer's quote is the same quote checked out at placement.
-- **Decision:** Xometry through the browser extension, behind a provider interface shaped like AFN's API. Xometry has **no test mode**, so the demo stops at a dummy checkout page.
+- **Decision (updated):** Xometry behind a provider interface shaped like AFN's API, mocked for the demo; no browser extension (architecture §2.14). Xometry has **no test mode**, so the demo stops at a dummy checkout page.
 
 ## CNC and sheet-metal vendors
 

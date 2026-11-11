@@ -89,25 +89,6 @@
       }
     },
     {
-      "id": "p-priya",
-      "name": "Priya Raman",
-      "display_name": "priya",
-      "slack_id": "U07FLK0PRIY",
-      "title": "Legs Lead",
-      "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "none",
-        "length": "long",
-        "hedging": "medium",
-        "quirks": [
-          "numbered lists in status updates",
-          "restates the question before answering"
-        ]
-      }
-    },
-    {
       "id": "p-renee",
       "name": "Renee Dubois",
       "display_name": "renee",
@@ -143,6 +124,25 @@
       }
     },
     {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
       "id": "p-wei",
       "name": "Wei Huang",
       "display_name": "wei",
@@ -167,7 +167,78 @@
   ],
   "tickets": [
     {
-      "key": "SCM-321",
+      "key": "SCM-318",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-wei",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-09-28T08:18:15-07:00",
+      "due_date": "2026-10-14",
+      "events": [
+        "ev-002015"
+      ],
+      "brief": "Order 3x Knee to thigh flange, 6x Knee motor mount plate, 4x Knee rear cover, 24x Knee winding thermistor clip / FL-KNE-1190: need 3 by 2026-10-14 for Tolerance stack check: Knee to thigh flange",
+      "must_mention": [
+        "FL-KNE-1190",
+        "Tolerance stack check: Knee to thigh flange",
+        "FL-KNE-1153",
+        "FL-KNE-1146",
+        "FL-KNE-1113",
+        "wed 10/14"
+      ],
+      "description_length": "short",
+      "summary": "Knee flange + plates order FL-KNE-1190",
+      "description": "need 3 flanges wed 10/14 for Tolerance stack check: Knee to thigh flange. plates FL-KNE-1153, covers FL-KNE-1146, clips FL-KNE-1113",
+      "comments": [
+        {
+          "id": "SCM-318-c1",
+          "by": "p-arjun",
+          "at": "2026-09-30T10:02:06-07:00",
+          "events": [
+            "ev-002018"
+          ],
+          "brief": "knee flange: need 3 by 2026-10-14 for the build",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 3,
+              "by": "2026-10-14"
+            }
+          },
+          "must_mention": [
+            "knee flange",
+            "the build",
+            "10/14"
+          ],
+          "body": "knee flange: need 3 by 10/14 for the build"
+        },
+        {
+          "id": "SCM-318-c2",
+          "by": "p-wei",
+          "at": "2026-11-05T04:00:00-08:00",
+          "events": [
+            "ev-002021"
+          ],
+          "brief": "knee flange in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-11-03"
+          },
+          "must_mention": [
+            "knee flange",
+            "the build",
+            "11/3"
+          ],
+          "body": "knee flange in use for the build, 11/3 checks done"
+        }
+      ]
+    },
+    {
+      "key": "SCM-320",
       "type": "Task",
       "status": "Done",
       "reporter": "p-ingrid",
@@ -179,23 +250,46 @@
       "created": "2026-09-28T14:28:24-07:00",
       "due_date": "2026-10-07",
       "events": [
-        "ev-001904"
+        "ev-002071"
       ],
       "brief": "Order 9x Chamber cable feedthrough plate, 2x Cell heater clamp plate / 2716: need 9 by 2026-10-07",
       "must_mention": [
         "2716",
-        "wed the 7th"
+        "wed 10/7"
       ],
-      "description_length": "short",
-      "summary": "chamber feedthrough plates 2716",
-      "description": "9x 2716 by wed the 7th, heater clamps too",
+      "description_length": "one_line",
+      "summary": "feedthrough plates + heater clamp 2716",
+      "description": "need 9 wed 10/7",
       "comments": [
         {
-          "id": "SCM-321-c1",
+          "id": "SCM-320-c1",
+          "by": "p-renee",
+          "at": "2026-09-29T09:23:00-07:00",
+          "events": [
+            "ev-003330"
+          ],
+          "brief": "FL-TST-2716: need 9 by 2026-10-06 for the fit check",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 9,
+              "by": "2026-10-06"
+            }
+          },
+          "must_mention": [
+            "FL-TST-2716",
+            "the fit check",
+            "FL-TST-2789",
+            "10/6"
+          ],
+          "body": "FL-TST-2716 need 9 by 10/6 for the fit check, same lot as FL-TST-2789 if possible"
+        },
+        {
+          "id": "SCM-320-c2",
           "by": "p-renee",
           "at": "2026-09-29T14:08:08-07:00",
           "events": [
-            "ev-001906"
+            "ev-002073"
           ],
           "brief": "FL-TST-2716: need 9 by 2026-10-07",
           "claim": {
@@ -209,12 +303,39 @@
             "FL-TST-2716",
             "10/7"
           ],
-          "body": "FL-TST-2716 confirmed 10/7"
+          "body": "FL-TST-2716 back to 10/7 for the 9"
+        },
+        {
+          "id": "SCM-320-c3",
+          "by": "p-talia",
+          "at": "2026-10-02T16:50:30-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "any update??"
+        },
+        {
+          "id": "SCM-320-c4",
+          "by": "p-renee",
+          "at": "2026-10-12T10:14:31-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": "Waiting on vendor to confirm."
+        },
+        {
+          "id": "SCM-320-c5",
+          "by": "p-samir",
+          "at": "2026-10-12T15:37:42-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "any update on this?"
         }
       ]
     },
     {
-      "key": "SCM-322",
+      "key": "SCM-321",
       "type": "Task",
       "status": "Done",
       "reporter": "p-kenji",
@@ -226,27 +347,27 @@
       "created": "2026-09-28T16:47:20-07:00",
       "due_date": null,
       "events": [
-        "ev-001842"
+        "ev-001997"
       ],
-      "brief": "Order 1x Wrist to arm adapter, 24x Knuckle pin / 1488: need 1 by 2026-10-15 for Design iteration bench trial: Wrist to arm adapter",
+      "brief": "Order 1x Wrist to arm adapter, 24x Knuckle pin / 1488: need 1 by 2026-10-15 for the build",
       "must_mention": [
         "1488",
-        "Design iteration bench trial: Wrist to arm adapter",
+        "the build",
         "1490",
         "10/15"
       ],
       "description_length": "short",
-      "summary": "wrist-arm adapter 1488 + knuckle pins 1490",
-      "description": "1488 x1 for Design iteration bench trial: Wrist to arm adapter by 10/15. 1490 pins with it",
+      "summary": "wrist adapter + knuckle pins 1488",
+      "description": "1 adapter for the build, thurs the 15th (10/15) was the ask. pins are 1490",
       "comments": [
         {
-          "id": "SCM-322-c1",
-          "by": "p-priya",
-          "at": "2026-09-29T11:20:37-07:00",
+          "id": "SCM-321-c1",
+          "by": "p-kenji",
+          "at": "2026-09-29T11:34:21-07:00",
           "events": [
-            "ev-001844"
+            "ev-002000"
           ],
-          "brief": "wrist adapter: need 1 by 2026-10-15 for Design iteration bench trial: Wrist to arm adapter",
+          "brief": "1488: need 1 by 2026-10-15",
           "claim": {
             "kind": "needs",
             "value": {
@@ -255,18 +376,17 @@
             }
           },
           "must_mention": [
-            "wrist adapter",
-            "Design iteration bench trial: Wrist to arm adapter",
-            "10/15"
+            "1488",
+            "thurs the 15th"
           ],
-          "body": "Restating: wrist adapter needed 10/15 for Design iteration bench trial: Wrist to arm adapter."
+          "body": "1488 need 1, thurs the 15th"
         },
         {
-          "id": "SCM-322-c2",
+          "id": "SCM-321-c2",
           "by": "p-kenji",
           "at": "2026-10-23T12:56:00-07:00",
           "events": [
-            "ev-001848"
+            "ev-002003"
           ],
           "brief": "1488 in use",
           "claim": {
@@ -276,77 +396,14 @@
           "must_mention": [
             "1488",
             "the build",
-            "fri 10/23"
+            "10/23"
           ],
-          "body": "1488 on the build fri 10/23"
+          "body": "1488 in use for the build 10/23"
         }
       ]
     },
     {
-      "key": "SCM-327",
-      "type": "Task",
-      "status": "Done",
-      "reporter": "p-wei",
-      "assignee": "p-samir",
-      "labels": [
-        "procurement"
-      ],
-      "priority": "High",
-      "created": "2026-09-30T10:02:06-07:00",
-      "due_date": null,
-      "events": [
-        "ev-001862"
-      ],
-      "brief": "Order 3x Knee to thigh flange, 6x Knee motor mount plate, 4x Knee rear cover, 24x Knee winding thermistor clip / thigh flange: need 3 by 2026-10-19; asks whether expediting is worth it",
-      "must_mention": [
-        "thigh flange",
-        "mon 10/19"
-      ],
-      "description_length": "short",
-      "summary": "Knee thigh flange + motor mounts, covers, clips",
-      "description": "thigh flange x3 needed mon 10/19. worth expediting??",
-      "comments": [
-        {
-          "id": "SCM-327-c1",
-          "by": "p-wei",
-          "at": "2026-10-08T14:32:20-07:00",
-          "events": [
-            "ev-001863"
-          ],
-          "brief": "knee flange arrived (3)",
-          "claim": {
-            "kind": "stock",
-            "value": 3
-          },
-          "must_mention": [
-            "knee flange",
-            "3"
-          ],
-          "body": "knee flange in, 3 pcs"
-        },
-        {
-          "id": "SCM-327-c2",
-          "by": "p-wei",
-          "at": "2026-11-03T10:13:00-08:00",
-          "events": [
-            "ev-001864"
-          ],
-          "brief": "knee flange in use",
-          "claim": {
-            "kind": "done",
-            "value": "2026-11-03"
-          },
-          "must_mention": [
-            "knee flange",
-            "the build",
-            "tues the 3rd"
-          ],
-          "body": "knee flange on the build tues the 3rd"
-        }
-      ]
-    },
-    {
-      "key": "SCM-332",
+      "key": "SCM-330",
       "type": "Task",
       "status": "Done",
       "reporter": "p-arjun",
@@ -358,16 +415,16 @@
       "created": "2026-10-02T08:21:14-07:00",
       "due_date": "2026-10-07",
       "events": [
-        "ev-001911"
+        "ev-002078"
       ],
       "brief": "Order 6x Spin-test shaft coupling, 6x Dyno absorber motor adapter / the part: need 6 by 2026-10-07",
       "must_mention": [
         "the part",
-        "10/7"
+        "wed 10/7"
       ],
       "description_length": "one_line",
-      "summary": "spin test couplings + absorber adapters",
-      "description": "the part needed 10/7",
+      "summary": "spin test coupling + dyno adapter - the part",
+      "description": "need 6 of the part wed 10/7",
       "comments": []
     }
   ]

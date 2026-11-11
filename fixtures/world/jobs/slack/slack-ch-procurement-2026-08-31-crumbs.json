@@ -19,6 +19,44 @@
   },
   "people": [
     {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
       "id": "p-talia",
       "name": "Talia Rosen",
       "display_name": "talia",
@@ -76,61 +114,13 @@
   ],
   "messages": [
     {
-      "ts": "1788203063.499454",
+      "ts": "1788203063.688158",
       "user": "p-talia",
       "thread_ts": null,
       "events": [
-        "ev-001481"
+        "ev-001597"
       ],
-      "brief": "1414: need 10 by 2026-09-18 for Build sub-assembly: Finger proximal link",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 10,
-          "by": "2026-09-18"
-        }
-      },
-      "must_mention": [
-        "1414",
-        "Build sub-assembly: Finger proximal link",
-        "9/18"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "1414 for Build sub-assembly: Finger proximal link, 10 needed by 9/18 ⏳"
-    },
-    {
-      "ts": "1788223180.685727",
-      "user": "p-zoe",
-      "thread_ts": null,
-      "events": [
-        "ev-001579"
-      ],
-      "brief": "FL-ANK-1291: need 24 by 2026-09-28 for Prototype fit-up for Leg DVT build: Ankle rod-end spacer",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 24,
-          "by": "2026-09-28"
-        }
-      },
-      "must_mention": [
-        "FL-ANK-1291",
-        "Prototype fit-up for Leg DVT build: Ankle rod-end spacer",
-        "9/28"
-      ],
-      "pressure": "low",
-      "length": "medium",
-      "text": "FL-ANK-1291 x24 for Prototype fit-up for Leg DVT build: Ankle rod-end spacer, need by 9/28"
-    },
-    {
-      "ts": "1788318923.066888",
-      "user": "p-talia",
-      "thread_ts": "1788203063.499454",
-      "events": [
-        "ev-002957"
-      ],
-      "brief": "Correction: 1414: need 10 by 2026-09-22 for Build sub-assembly: Finger proximal link",
+      "brief": "1414: need 10 by 2026-09-22 for Build sub-assembly: Finger proximal link",
       "claim": {
         "kind": "needs",
         "value": {
@@ -141,11 +131,129 @@
       "must_mention": [
         "1414",
         "Build sub-assembly: Finger proximal link",
-        "9/22"
+        "tues the 22nd"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "correction on 1414 for Build sub-assembly: Finger proximal link, it's 9/22 not the 18th 🙏"
+      "text": "1414 needs to land tues the 22nd, Build sub-assembly: Finger proximal link is waiting on it 🙏"
+    },
+    {
+      "ts": "1788223180.248318",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-001707"
+      ],
+      "brief": "FL-ANK-1291: need 24 by 2026-09-24 for Prototype fit-up for Leg DVT build: Ankle rod-end spacer",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-09-24"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1291",
+        "Prototype fit-up for Leg DVT build: Ankle rod-end spacer",
+        "thurs the 24th"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "FL-ANK-1291 thurs the 24th pls, Prototype fit-up for Leg DVT build: Ankle rod-end spacer"
+    },
+    {
+      "ts": "1788294002.814079",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [
+        "ev-001610"
+      ],
+      "brief": "2556: need 4 by 2026-09-09 for Ankle heel-strike impact test",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 4,
+          "by": "2026-09-09"
+        }
+      },
+      "must_mention": [
+        "2556",
+        "Ankle heel-strike impact test",
+        "the clevis",
+        "9/9"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "2556 for the Ankle heel-strike impact test, the clevis, 9/9"
+    },
+    {
+      "ts": "1788313960.773359",
+      "user": "p-zoe",
+      "thread_ts": "1788223180.248318",
+      "events": [
+        "ev-003237"
+      ],
+      "brief": "Correction: FL-ANK-1291: need 24 by 2026-09-28 for Prototype fit-up for Leg DVT build: Ankle rod-end spacer",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-09-28"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1291",
+        "Prototype fit-up for Leg DVT build: Ankle rod-end spacer",
+        "mon the 28th"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "sorry FL-ANK-1291 mon the 28th not thurs, Prototype fit-up for Leg DVT build: Ankle rod-end spacer is slipping"
+    },
+    {
+      "ts": "1788418862.974543",
+      "user": "p-callum",
+      "thread_ts": "1788294002.814079",
+      "events": [
+        "ev-003175"
+      ],
+      "brief": "Correction: 2556: need 4 by 2026-09-11 for Ankle heel-strike impact test",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 4,
+          "by": "2026-09-11"
+        }
+      },
+      "must_mention": [
+        "2556",
+        "Ankle heel-strike impact test",
+        "the clevis",
+        "9/11"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "2556 for Ankle heel-strike impact test the clevis is 9/11 not 9/9"
+    },
+    {
+      "ts": "1788453332.009511",
+      "user": "p-carlos",
+      "thread_ts": "1788294002.814079",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I'll check the cage tmrw."
+    },
+    {
+      "ts": "1788453403.144627",
+      "user": "p-callum",
+      "thread_ts": "1788294002.814079",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "hmm not sure thats the right shelf tbh"
     }
   ]
 }

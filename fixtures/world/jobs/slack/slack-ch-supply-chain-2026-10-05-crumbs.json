@@ -37,6 +37,25 @@
       }
     },
     {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
       "id": "p-callum",
       "name": "Callum Fraser",
       "display_name": "callum",
@@ -53,6 +72,22 @@
           "fixes typos with *word",
           "double-sends instead of editing"
         ]
+      }
+    },
+    {
+      "id": "p-claire",
+      "name": "Claire Donnelly",
+      "display_name": "claire",
+      "slack_id": "U07FLK0CLAI",
+      "title": "Finance and Operations Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
       }
     },
     {
@@ -90,6 +125,22 @@
         "quirks": [
           "\"i think\", \"probably\", \"not 100% sure but\""
         ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
       }
     },
     {
@@ -163,25 +214,6 @@
           "\"i think\", \"probably\", \"not 100% sure but\""
         ]
       }
-    },
-    {
-      "id": "p-zoe",
-      "name": "Zoe Castellanos",
-      "display_name": "zoe.c",
-      "slack_id": "U07FLK0ZOE0",
-      "title": "Test Engineer, fixtures owner",
-      "style": {
-        "case": "lower",
-        "punctuation": "light",
-        "typos": "some",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "medium",
-        "quirks": [
-          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
-          "corrects own dates"
-        ]
-      }
     }
   ],
   "context": [
@@ -197,11 +229,11 @@
   ],
   "messages": [
     {
-      "ts": "1791313080.613149",
+      "ts": "1791313080.488118",
       "user": "p-callum",
       "thread_ts": null,
       "events": [
-        "ev-001779"
+        "ev-001930"
       ],
       "brief": "calibration block in use",
       "claim": {
@@ -211,32 +243,32 @@
       "must_mention": [
         "calibration block",
         "the build",
-        "tues the 6th"
+        "10/6"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "calibration block is in use on the build since tues the 6th, so dont pull it for anything else pls"
+      "length": "short",
+      "text": "calibration block in use for the build, done 10/6"
     },
     {
-      "ts": "1791393420.615723",
+      "ts": "1791419040.808372",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-001554"
+        "ev-001504"
       ],
-      "brief": "stator mount in use",
+      "brief": "hip bracket in use",
       "claim": {
         "kind": "done",
-        "value": "2026-10-07"
+        "value": "2026-10-06"
       },
       "must_mention": [
-        "stator mount",
+        "hip bracket",
         "the build",
-        "10/7"
+        "10/6"
       ],
-      "pressure": "elevated",
-      "length": "medium",
-      "text": "fyi the stator mount went onto the build 10/7, i think that one's spoken for now"
+      "pressure": "low",
+      "length": "short",
+      "text": "hip bracket is in use for the build. done 10/6 I think"
     },
     {
       "ts": "1791421500.119315",
@@ -255,14 +287,14 @@
         "10/8"
       ],
       "length": "short",
-      "text": "Driver PCBA respin for ankle and foot (roll link) is now 10/8, not Wednesday."
+      "text": "Driver PCBA respin for ankle and foot (roll link) slid a day, now 10/8."
     },
     {
-      "ts": "1791424020.188344",
+      "ts": "1791424020.578838",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-001537"
+        "ev-001661"
       ],
       "brief": "clamp in use",
       "claim": {
@@ -272,18 +304,28 @@
       "must_mention": [
         "clamp",
         "the build",
-        "10/6"
+        "tues the 6th"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "The clamp has been on the build since 10/6."
+      "text": "Update on the clamp: it is in use for the build, done tues the 6th."
     },
     {
-      "ts": "1791438060.416603",
+      "ts": "1791425483.978592",
+      "user": "p-beth",
+      "thread_ts": "1791424020.578838",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Thanks Priya, noted."
+    },
+    {
+      "ts": "1791438060.734763",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-001803"
+        "ev-001956"
       ],
       "brief": "ankle yoke in use",
       "claim": {
@@ -297,14 +339,14 @@
       ],
       "pressure": "high",
       "length": "short",
-      "text": "ankle yoke is in the build as of 10/7 😬"
+      "text": "ankle yoke in use for the build, done 10/7 🙏"
     },
     {
-      "ts": "1791471300.450701",
+      "ts": "1791471300.786842",
       "user": "p-nadia",
       "thread_ts": null,
       "events": [
-        "ev-001374"
+        "ev-001482"
       ],
       "brief": "TC clamp in use",
       "claim": {
@@ -317,35 +359,35 @@
         "10/7"
       ],
       "pressure": "elevated",
-      "length": "medium",
-      "text": "TC clamp got used on the build 10/7, if anyone was counting on it for the dyno ask first"
-    },
-    {
-      "ts": "1791491772.496494",
-      "user": "p-zoe",
-      "thread_ts": null,
-      "events": [
-        "ev-001895"
-      ],
-      "brief": "pelvis plate arrived (2)",
-      "claim": {
-        "kind": "stock",
-        "value": 2
-      },
-      "must_mention": [
-        "pelvis plate",
-        "2"
-      ],
-      "pressure": "high",
       "length": "short",
-      "text": "pelvis plate came in, 2 of them on the receiving shelf"
+      "text": "TC clamp in use for the build, done 10/7 😬"
     },
     {
-      "ts": "1791493917.598443",
+      "ts": "1791482236.305399",
+      "user": "p-ingrid",
+      "thread_ts": "1791424020.578838",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Looping in Claire on this since it touches the open orders. Priya, can you confirm what the rest of the team needs from the clamp?"
+    },
+    {
+      "ts": "1791482842.611321",
+      "user": "p-claire",
+      "thread_ts": "1791438060.734763",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "ack"
+    },
+    {
+      "ts": "1791493917.316798",
       "user": "p-hana",
       "thread_ts": null,
       "events": [
-        "ev-001684"
+        "ev-001830"
       ],
       "brief": "1348 arrived (10)",
       "claim": {
@@ -358,14 +400,14 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "1348 arrived, all 10 here"
+      "text": "1348 arrived, 10 of them. not 100% sure that's the full count"
     },
     {
-      "ts": "1791615300.427579",
+      "ts": "1791615300.642450",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-001544"
+        "ev-001668"
       ],
       "brief": "distal link in use",
       "claim": {
@@ -375,11 +417,11 @@
       "must_mention": [
         "distal link",
         "the build",
-        "thurs 10/8"
+        "10/8"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "distal link has been in the build since thurs 10/8, probably not coming back out before the build is done"
+      "length": "medium",
+      "text": "distal link in use for the build, done 10/8. i think"
     }
   ]
 }

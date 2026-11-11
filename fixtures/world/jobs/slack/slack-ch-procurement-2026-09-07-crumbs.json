@@ -19,6 +19,25 @@
   },
   "people": [
     {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
       "id": "p-callum",
       "name": "Callum Fraser",
       "display_name": "callum",
@@ -38,30 +57,29 @@
       }
     },
     {
-      "id": "p-diego",
-      "name": "Diego Salcedo",
-      "display_name": "diego",
-      "slack_id": "U07FLK0DIEG",
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
       "title": "Mechanical Engineer",
       "style": {
-        "case": "mixed",
-        "punctuation": "light",
-        "typos": "rare",
-        "emoji": "lots",
-        "length": "medium",
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
         "hedging": "low",
         "quirks": [
-          "reacts with 🙏 and 😬",
-          "ends messages with an emoji"
+          "no capitals or end punctuation ever"
         ]
       }
     },
     {
-      "id": "p-hana",
-      "name": "Hana Kimura",
-      "display_name": "hana",
-      "slack_id": "U07FLK0HANA",
-      "title": "Mechanical Engineer",
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
       "style": {
         "case": "mixed",
         "punctuation": "light",
@@ -75,11 +93,11 @@
       }
     },
     {
-      "id": "p-kenji",
-      "name": "Kenji Morimoto",
-      "display_name": "kenji.m",
-      "slack_id": "U07FLK0KENJ",
-      "title": "Mechanical Engineer",
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
       "style": {
         "case": "lower",
         "punctuation": "none",
@@ -127,25 +145,6 @@
         "quirks": [
           "numbered lists in status updates",
           "restates the question before answering"
-        ]
-      }
-    },
-    {
-      "id": "p-samir",
-      "name": "Samir Khoury",
-      "display_name": "samir.k",
-      "slack_id": "U07FLK0SAMI",
-      "title": "Senior NPI Buyer",
-      "style": {
-        "case": "lower",
-        "punctuation": "light",
-        "typos": "some",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "medium",
-        "quirks": [
-          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
-          "corrects own dates"
         ]
       }
     },
@@ -206,36 +205,36 @@
   ],
   "messages": [
     {
-      "ts": "1788884113.292394",
+      "ts": "1788884113.928951",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-001531"
+        "ev-001655"
       ],
-      "brief": "FL-TST-2322: need 6 by 2026-09-24 for Test stand rework for Leg DVT build: Gait boom clamp",
+      "brief": "FL-TST-2322: need 6 by 2026-09-23 for Test stand rework for Leg DVT build: Gait boom clamp",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 6,
-          "by": "2026-09-24"
+          "by": "2026-09-23"
         }
       },
       "must_mention": [
         "FL-TST-2322",
         "Test stand rework for Leg DVT build: Gait boom clamp",
         "FL-TST-2281",
-        "thurs the 24th"
+        "wed 9/23"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Request: FL-TST-2322, 6 pieces needed by thurs the 24th for Test stand rework for Leg DVT build: Gait boom clamp. It mates with FL-TST-2281."
+      "text": "FL-TST-2322 for Test stand rework for Leg DVT build: Gait boom clamp, need 6 by wed 9/23. FL-TST-2281 is the same rework if you're batching"
     },
     {
-      "ts": "1788893801.015790",
+      "ts": "1788893801.810482",
       "user": "p-callum",
       "thread_ts": null,
       "events": [
-        "ev-001546"
+        "ev-001672"
       ],
       "brief": "the part: need 2 by 2026-09-25 for the build",
       "claim": {
@@ -248,18 +247,18 @@
       "must_mention": [
         "the part",
         "the build",
-        "9/25"
+        "fri 9/25"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "need 2 of the part by 9/25 for the build, its holding things up"
+      "text": "the part, need 2 for the build by fri 9/25. can someone raise the request"
     },
     {
-      "ts": "1788895333.224054",
+      "ts": "1788895333.811336",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-001535"
+        "ev-001659"
       ],
       "brief": "Quote Q-2562153-1 for FL-TST-2322: standard $1780.36, 7 BD",
       "claim": {
@@ -275,48 +274,58 @@
       "must_mention": [
         "Q-2562153-1",
         "FL-TST-2322",
-        "thurs the 24th"
+        "9/24"
       ],
       "pressure": "low",
       "length": "medium",
-      "text": "Quote Q-2562153-1 is back for FL-TST-2322, standard is $1780.36 at 7 business days. Still makes thurs the 24th if we place it this week."
+      "text": "Quote Q-2562153-1 for FL-TST-2322 is in, 1780.36 standard, 7 BD, need it here 9/24. ok to approve?"
     },
     {
-      "ts": "1788896174.324196",
-      "user": "p-diego",
-      "thread_ts": "1788893801.015790",
+      "ts": "1788897283.432851",
+      "user": "p-rachel",
+      "thread_ts": "1788895333.811336",
       "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "brief": "reply (ack) in the thread about: the message above",
       "must_mention": [],
       "length": "one_word",
-      "text": "Last time we waited on one of these the whole rig sat for days 😬"
+      "text": "Seen."
     },
     {
-      "ts": "1788897905.798522",
-      "user": "p-samir",
-      "thread_ts": "1788893801.015790",
+      "ts": "1788898491.273976",
+      "user": "p-rachel",
+      "thread_ts": "1788895333.811336",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I will look at the approval after I finish the card reconciliation for last month."
+    },
+    {
+      "ts": "1788898596.457005",
+      "user": "p-arjun",
+      "thread_ts": "1788893801.810482",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "ask talia, she has the vendor contact"
+    },
+    {
+      "ts": "1788898738.783783",
+      "user": "p-omar",
+      "thread_ts": "1788893801.810482",
       "events": [],
       "brief": "reply (agrees) in the thread about: the message above",
       "must_mention": [],
-      "length": "short",
-      "text": "yep agree, lets get it in"
-    },
-    {
-      "ts": "1788900198.372424",
-      "user": "p-rachel",
-      "thread_ts": "1788893801.015790",
-      "events": [],
-      "brief": "reply (tags someone else) in the thread about: the message above",
-      "must_mention": [],
       "length": "one_word",
-      "text": "Looping in Samir to confirm the approver."
+      "text": "yeah"
     },
     {
-      "ts": "1788900562.721967",
+      "ts": "1788900562.697386",
       "user": "p-talia",
       "thread_ts": null,
       "events": [
-        "ev-001509"
+        "ev-001633"
       ],
       "brief": "Quote Q-2562899-1 for FL-TST-2272: standard $270.74, 8 BD",
       "claim": {
@@ -332,20 +341,30 @@
       "must_mention": [
         "Q-2562899-1",
         "FL-TST-2272",
-        "thurs the 24th"
+        "thurs 9/24"
       ],
       "pressure": "low",
       "length": "medium",
-      "text": "Q-2562899-1 for FL-TST-2272 came back, $270.74 standard, 8 BD, should land before thurs the 24th 🙏"
+      "text": "Q-2562899-1 for FL-TST-2272 landed, 270.74 and 8 BD, needed thurs 9/24 🙏"
     },
     {
-      "ts": "1788997681.772137",
+      "ts": "1788901315.313172",
+      "user": "p-callum",
+      "thread_ts": "1788895333.811336",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "+1"
+    },
+    {
+      "ts": "1788997681.609342",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-001552"
+        "ev-001678"
       ],
-      "brief": "1033: need 8 by 2026-09-28 for Design iteration bench trial: Hip stator mount plate",
+      "brief": "FL-HIP-1033: need 8 by 2026-09-28",
       "claim": {
         "kind": "needs",
         "value": {
@@ -354,50 +373,53 @@
         }
       },
       "must_mention": [
-        "1033",
-        "Design iteration bench trial: Hip stator mount plate",
+        "FL-HIP-1033",
         "mon the 28th"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "FL-HIP-1033, need 8 by mon the 28th. i think thats still reachable but not 100% sure"
+    },
+    {
+      "ts": "1789147880.199710",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-001692"
+      ],
+      "brief": "FL-TST-2103: need 24 by 2026-10-08 for the fit check",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-10-08"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2103",
+        "the fit check",
+        "thurs the 8th"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "1033, need 8 for Design iteration bench trial: Hip stator mount plate by mon the 28th. i think that's the real date"
+      "text": "FL-TST-2103 need 24 for the fit check, thurs the 8th"
     },
     {
-      "ts": "1789000853.191024",
-      "user": "p-kenji",
-      "thread_ts": "1788997681.772137",
+      "ts": "1789151389.133808",
+      "user": "p-arjun",
+      "thread_ts": "1789147880.199710",
       "events": [],
-      "brief": "reply (will check later) in the thread about: the message above",
+      "brief": "reply (pushes back) in the thread about: the message above",
       "must_mention": [],
-      "length": "one_word",
-      "text": "will look tmrw"
+      "length": "medium",
+      "text": "24 seems like a lot for a fit check, are we sure"
     },
     {
-      "ts": "1789002298.642654",
-      "user": "p-hana",
-      "thread_ts": "1788997681.772137",
-      "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "the last mount plates came in with burrs on the bore"
-    },
-    {
-      "ts": "1789003118.322694",
-      "user": "p-talia",
-      "thread_ts": "1788997681.772137",
-      "events": [],
-      "brief": "reply (will check later) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "checking 👀"
-    },
-    {
-      "ts": "1789162657.215319",
+      "ts": "1789162657.040856",
       "user": "p-kenji",
       "thread_ts": null,
       "events": [
-        "ev-001649"
+        "ev-001791"
       ],
       "brief": "the part: need 24 by 2026-09-28",
       "claim": {
@@ -409,11 +431,11 @@
       },
       "must_mention": [
         "the part",
-        "mon 9/28"
+        "9/28"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "need 24 of the part by mon 9/28"
+      "text": "the part need 24 by 9/28"
     }
   ]
 }

@@ -19,11 +19,48 @@
   },
   "people": [
     {
+      "id": "p-aisha",
+      "name": "Aisha Rahman",
+      "display_name": "aisha",
+      "slack_id": "U07FLK0AISH",
+      "title": "ML Engineer, perception",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
       "id": "p-amara",
       "name": "Amara Nwosu",
       "display_name": "amara",
       "slack_id": "U07FLK0AMAR",
       "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
       "style": {
         "case": "mixed",
         "punctuation": "light",
@@ -54,6 +91,22 @@
           "restates the question before answering"
         ]
       }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
     }
   ],
   "context": [
@@ -69,13 +122,54 @@
   ],
   "messages": [
     {
-      "ts": "1789488830.199725",
+      "ts": "1789488830.474477",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-001638"
+        "ev-001780"
       ],
-      "brief": "the frame: need 9 by 2026-09-22",
+      "brief": "the frame: need 9 by 2026-09-25",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 9,
+          "by": "2026-09-25"
+        }
+      },
+      "must_mention": [
+        "the frame",
+        "fri 9/25"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "the frame: need 9 by fri 9/25."
+    },
+    {
+      "ts": "1789492917.121401",
+      "user": "p-amara",
+      "thread_ts": null,
+      "events": [
+        "ev-003622"
+      ],
+      "brief": "motor pack plate: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "motor pack plate"
+      ],
+      "length": "medium",
+      "text": "motor pack plate still quoting rev B, i think. not 100% sure but that's what the last mail said"
+    },
+    {
+      "ts": "1789579850.422304",
+      "user": "p-priya",
+      "thread_ts": "1789488830.474477",
+      "events": [
+        "ev-003286"
+      ],
+      "brief": "Correction: the frame: need 9 by 2026-09-22",
       "claim": {
         "kind": "needs",
         "value": {
@@ -88,26 +182,38 @@
         "tues 9/22"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "We need 9 of the frame by tues 9/22. Please flag if that's a problem."
+      "length": "medium",
+      "text": "Correction, the frame: we need 9 by tues 9/22, not the 25th."
     },
     {
-      "ts": "1789492917.756746",
-      "user": "p-amara",
-      "thread_ts": null,
-      "events": [
-        "ev-003368"
-      ],
-      "brief": "motor pack plate: still quoting rev B",
-      "claim": {
-        "kind": "substitute",
-        "value": "rev B"
-      },
-      "must_mention": [
-        "motor pack plate"
-      ],
-      "length": "medium",
-      "text": "motor pack plate is still quoting, rev B. I think they're just slow this week"
+      "ts": "1789580266.088706",
+      "user": "p-omar",
+      "thread_ts": "1789488830.474477",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@sofia.l can you confirm who is picking these up?"
+    },
+    {
+      "ts": "1789581939.910634",
+      "user": "p-sofia",
+      "thread_ts": "1789488830.474477",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Agreed, that works for the arm team."
+    },
+    {
+      "ts": "1789584965.283498",
+      "user": "p-aisha",
+      "thread_ts": "1789488830.474477",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "ok noted"
     }
   ]
 }

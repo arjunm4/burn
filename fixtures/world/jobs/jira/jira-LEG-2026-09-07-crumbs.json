@@ -1,0 +1,131 @@
+{
+  "job_id": "jira-LEG-2026-09-07-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 19,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "LEG",
+    "name": "Legs and ankle"
+  },
+  "week": {
+    "start": "2026-09-07",
+    "end": "2026-09-13"
+  },
+  "people": [
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "LEG-281",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-lin",
+      "assignee": "p-lin",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-10T13:07:27-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001838"
+      ],
+      "brief": "Order 12x Shank link / FL-LEG-1383: need 12 by 2026-10-08",
+      "must_mention": [
+        "FL-LEG-1383",
+        "thurs the 8th"
+      ],
+      "description_length": "one_line",
+      "summary": "Order 12x Shank link",
+      "description": "Need FL-LEG-1383 by thurs the 8th.",
+      "comments": [
+        {
+          "id": "LEG-281-c1",
+          "by": "p-lin",
+          "at": "2026-09-15T16:43:35-07:00",
+          "events": [
+            "ev-001841"
+          ],
+          "brief": "that order: need 12 by 2026-10-09",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-10-09"
+            }
+          },
+          "must_mention": [
+            "that order",
+            "fri the 9th"
+          ],
+          "body": "For that order, needed fri the 9th."
+        },
+        {
+          "id": "LEG-281-c2",
+          "by": "p-lin",
+          "at": "2026-09-16T21:10:14-07:00",
+          "events": [
+            "ev-001842"
+          ],
+          "brief": "the link: need 12 by 2026-10-08",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-10-08"
+            }
+          },
+          "must_mention": [
+            "the link",
+            "thurs 10/8"
+          ],
+          "body": "Now the link is needed thurs 10/8."
+        },
+        {
+          "id": "LEG-281-c3",
+          "by": "p-lin",
+          "at": "2026-10-14T03:37:00-07:00",
+          "events": [
+            "ev-001846"
+          ],
+          "brief": "tibia in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-10-12"
+          },
+          "must_mention": [
+            "tibia",
+            "the test",
+            "10/12"
+          ],
+          "body": "Swapped in the tibia for the test, in use as of 10/12."
+        }
+      ]
+    }
+  ]
+}

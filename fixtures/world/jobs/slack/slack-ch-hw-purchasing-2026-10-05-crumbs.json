@@ -38,75 +38,21 @@
       }
     },
     {
-      "id": "p-dmitri",
-      "name": "Dmitri Sokolov",
-      "display_name": "dmitri",
-      "slack_id": "U07FLK0DMIT",
-      "title": "Test and Reliability Lead",
-      "style": {
-        "case": "mixed",
-        "punctuation": "full",
-        "typos": "some",
-        "emoji": "some",
-        "length": "terse",
-        "hedging": "low",
-        "quirks": [
-          "ALL CAPS for part numbers and deadlines",
-          "uses !!"
-        ]
-      }
-    },
-    {
-      "id": "p-idris",
-      "name": "Idris Bello",
-      "display_name": "idris",
-      "slack_id": "U07FLK0IDRI",
-      "title": "Mechanical Engineer, battery enclosure",
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
       "style": {
         "case": "lower",
         "punctuation": "light",
-        "typos": "some",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "medium",
-        "quirks": [
-          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
-          "corrects own dates"
-        ]
-      }
-    },
-    {
-      "id": "p-lin",
-      "name": "Lin Zhao",
-      "display_name": "lin.z",
-      "slack_id": "U07FLK0LIN0",
-      "title": "Test Engineer, life test",
-      "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "rare",
+        "typos": "lots",
+        "emoji": "some",
         "length": "medium",
         "hedging": "low",
-        "quirks": []
-      }
-    },
-    {
-      "id": "p-nora",
-      "name": "Nora Fitzgerald",
-      "display_name": "nora.f",
-      "slack_id": "U07FLK0NORA",
-      "title": "Manufacturing/NPI Lead",
-      "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "none",
-        "length": "long",
-        "hedging": "medium",
         "quirks": [
-          "numbered lists in status updates",
-          "restates the question before answering"
+          "fixes typos with *word",
+          "double-sends instead of editing"
         ]
       }
     },
@@ -135,24 +81,6 @@
       "display_name": "tomas",
       "slack_id": "U07FLK0TOMA",
       "title": "Mechanical Engineer, gear stages",
-      "style": {
-        "case": "mixed",
-        "punctuation": "light",
-        "typos": "rare",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "high",
-        "quirks": [
-          "\"i think\", \"probably\", \"not 100% sure but\""
-        ]
-      }
-    },
-    {
-      "id": "p-valeria",
-      "name": "Valeria Ortiz",
-      "display_name": "valeria.o",
-      "slack_id": "U07FLK0VALE",
-      "title": "Electrical Engineer, battery systems",
       "style": {
         "case": "mixed",
         "punctuation": "light",
@@ -201,11 +129,11 @@
   ],
   "messages": [
     {
-      "ts": "1791215731.853404",
+      "ts": "1791215731.446166",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-001970"
+        "ev-002140"
       ],
       "brief": "spin adapter: need 8 by 2026-10-26",
       "claim": {
@@ -220,59 +148,15 @@
         "10/26"
       ],
       "pressure": "elevated",
-      "length": "medium",
-      "text": "need 8 spin adapter for the actuator rig by 10/26, can someone get a quote going? the current ones are getting chewed up"
-    },
-    {
-      "ts": "1791220507.463822",
-      "user": "p-lin",
-      "thread_ts": "1791215731.853404",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
       "length": "short",
-      "text": "Agreed, ours are worn too."
+      "text": "spin adapter need 8 by 10/26"
     },
     {
-      "ts": "1791382806.059738",
+      "ts": "1791396859.944027",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-002170"
-      ],
-      "brief": "1372: need 5 by 2026-11-11 for the fit check",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 5,
-          "by": "2026-11-11"
-        }
-      },
-      "must_mention": [
-        "1372",
-        "the fit check",
-        "wed 11/11"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "1372 x5 for the fit check, need by wed 11/11"
-    },
-    {
-      "ts": "1791385489.256393",
-      "user": "p-nora",
-      "thread_ts": "1791382806.059738",
-      "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "Same rev as last time."
-    },
-    {
-      "ts": "1791396859.550513",
-      "user": "p-zoe",
-      "thread_ts": null,
-      "events": [
-        "ev-001989"
+        "ev-002158"
       ],
       "brief": "FL-TST-2272: need 2 by 2026-10-21 for next week",
       "claim": {
@@ -285,38 +169,48 @@
       "must_mention": [
         "FL-TST-2272",
         "next week",
-        "10/21"
+        "wed the 21st"
       ],
       "pressure": "high",
-      "length": "short",
-      "text": "FL-TST-2272 x2, need by 10/21 so we can run next week"
+      "length": "medium",
+      "text": "FL-TST-2272 need 2 by wed the 21st, for next week"
     },
     {
-      "ts": "1791398814.366024",
-      "user": "p-dmitri",
-      "thread_ts": "1791396859.550513",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "Which rev?"
-    },
-    {
-      "ts": "1791400046.133920",
+      "ts": "1791399373.269107",
       "user": "p-arjun",
-      "thread_ts": "1791396859.550513",
+      "thread_ts": "1791396859.944027",
       "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
+      "brief": "reply (will check later) in the thread about: the message above",
       "must_mention": [],
-      "length": "one_word",
-      "text": "+1"
+      "length": "medium",
+      "text": "i can check with the shop tmrw, not sure if they have stock or if its a make"
     },
     {
-      "ts": "1791500476.785709",
+      "ts": "1791401570.579231",
+      "user": "p-arjun",
+      "thread_ts": "1791396859.944027",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "2 of anything is a lot of paperwork"
+    },
+    {
+      "ts": "1791406218.013647",
+      "user": "p-talia",
+      "thread_ts": "1791396859.944027",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@tomas can you confirm the drawing rev? 🙏"
+    },
+    {
+      "ts": "1791500476.140668",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-001964"
+        "ev-002134"
       ],
       "brief": "dyno spacers: need 12 by 2026-10-27",
       "claim": {
@@ -328,41 +222,21 @@
       },
       "must_mention": [
         "dyno spacers",
-        "tues the 27th"
+        "tues 10/27"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "I think we need 12 dyno spacers by tues the 27th, probably for the stator swap"
+      "length": "medium",
+      "text": "dyno spacers, need 12 by tues 10/27. not 100% sure of the lead time on those"
     },
     {
-      "ts": "1791505078.730646",
-      "user": "p-talia",
-      "thread_ts": "1791500476.785709",
+      "ts": "1791503148.782439",
+      "user": "p-nadia",
+      "thread_ts": "1791500476.140668",
       "events": [],
       "brief": "reply (adds a detail) in the thread about: the message above",
       "must_mention": [],
-      "length": "short",
-      "text": "those are cheap, can bundle w the other dyno stuff 👍"
-    },
-    {
-      "ts": "1791509919.886058",
-      "user": "p-valeria",
-      "thread_ts": "1791500476.785709",
-      "events": [],
-      "brief": "reply (tags someone else) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "@arjun ^"
-    },
-    {
-      "ts": "1791512387.984362",
-      "user": "p-idris",
-      "thread_ts": "1791500476.785709",
-      "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "not sure we need all 12, maybe start w half?"
+      "length": "medium",
+      "text": "mcmaster usually has the plain ones in stock, might be worth a look first"
     }
   ]
 }

@@ -291,7 +291,7 @@
   ],
   "background": [
     {
-      "event": "ev-004340",
+      "event": "ev-004738",
       "speaker": "p-beth",
       "brief": "Hardware program review: round of updates"
     }
@@ -303,262 +303,199 @@
   ],
   "transcript": [
     {
-      "start_s": 5,
+      "start_s": 0,
       "speaker": "p-beth",
-      "text": "Okay, I think most people are on. Lukas said he'd be a few minutes late, so we'll do legs and arms first and pick structures up when he joins."
+      "text": "Okay, I think we have most people. Let's get started, and Lukas can catch up when he joins. I'll go around by subsystem, same order as last week."
     },
     {
-      "start_s": 17,
+      "start_s": 22,
+      "speaker": "p-omar",
+      "text": "Can I just say, uh, I think the shared tracker is out of date for a few of these, so if something looks wrong in the rows, say so."
+    },
+    {
+      "start_s": 40,
       "speaker": "p-ingrid",
-      "text": "Sounds good. Let's keep it tight today, I have a hard stop."
+      "text": "Understood. Start with actuators, Arjun."
     },
     {
-      "start_s": 24,
-      "speaker": "p-beth",
-      "text": "Understood. So, first, legs. Priya, where are we?"
-    },
-    {
-      "start_s": 29,
-      "speaker": "p-priya",
-      "text": "Where are we on legs. So, um, three things. One, the knee joint life test is still running clean, Dmitri can speak to the details. Two, we found a clearance issue between the shin cover and the harness at full flexion. Three, the foot sole bonding is giving us some voids, which we're looking at with the techs."
-    },
-    {
-      "start_s": 58,
-      "speaker": "p-ingrid",
-      "text": "How bad is the clearance issue?"
-    },
-    {
-      "start_s": 62,
-      "speaker": "p-priya",
-      "text": "It's rubbing, not pinching. I'd rather fix it now than find it as a chafed wire in a month. It's a cover change, not a structural one."
-    },
-    {
-      "start_s": 77,
-      "speaker": "p-dmitri",
-      "text": "Life test is fine. Rig one had encoder drift, Lin reseated the connector, it's back up."
-    },
-    {
-      "start_s": 86,
-      "speaker": "p-jonas",
-      "text": "was that the drift that tripped the fault log"
-    },
-    {
-      "start_s": 90,
-      "speaker": "p-dmitri",
-      "text": "Yes."
-    },
-    {
-      "start_s": 92,
-      "speaker": "p-jonas",
-      "text": "ok"
+      "start_s": 48,
+      "speaker": "p-arjun",
+      "text": "ok so knee actuator, the new batch of housings passed the leak check, no weeps. the encoder cal is still the long pole, we redo it per unit and its slow. i think we can get it down if jonas gives us the batch script"
     },
     {
       "start_s": 96,
-      "speaker": "p-beth",
-      "text": "Okay. Sofia, arms and hands."
-    },
-    {
-      "start_s": 100,
-      "speaker": "p-sofia",
-      "text": "Finger tendon routing rev is done and the first hand is reassembled. Grip force is better but the pinky still lags the others. I think it's friction in the sheath, not the motor."
-    },
-    {
-      "start_s": 119,
-      "speaker": "p-farah",
-      "text": "Is that the same motor driver as the index finger?"
-    },
-    {
-      "start_s": 123,
-      "speaker": "p-sofia",
-      "text": "Same driver, same firmware. That's why I'm blaming the sheath."
-    },
-    {
-      "start_s": 131,
       "speaker": "p-jonas",
-      "text": "i can pull current traces if you want to rule it out"
+      "text": "script is mostly done, ill push it today"
     },
     {
-      "start_s": 136,
+      "start_s": 104,
+      "speaker": "p-arjun",
+      "text": "great ty. and the hip one, dmitri has more on that"
+    },
+    {
+      "start_s": 120,
+      "speaker": "p-dmitri",
+      "text": "Right. Dyno is booked solid through the week. We saw the housing temp climb faster than the model on the long holds. I don't want to call it until I've seen two more runs!!"
+    },
+    {
+      "start_s": 160,
+      "speaker": "p-ingrid",
+      "text": "Is that a cooling problem or a controls problem? I don't want to chase the wrong one."
+    },
+    {
+      "start_s": 176,
+      "speaker": "p-dmitri",
+      "text": "Don't know yet. Could be the thermal pad contact. Could be the current limit on the drive being looser than we assumed."
+    },
+    {
+      "start_s": 205,
+      "speaker": "p-priya",
+      "text": "To answer Ingrid's question from the legs side: 1. The leg structure hasn't changed, so cooling is not coming from us. 2. We did change the pad thickness on the last revision. 3. I'd want that checked before anyone blames the drive."
+    },
+    {
+      "start_s": 250,
+      "speaker": "p-farah",
+      "text": "On the electrical side, I can confirm the drive current limit is set where we said. 1. Limit verified on the bench. 2. Logging is a bit noisy. 3. I'd like a fresh capture on the dyno."
+    },
+    {
+      "start_s": 300,
+      "speaker": "p-dmitri",
+      "text": "Fine, Farah, send me what you want logged and I'll add it."
+    },
+    {
+      "start_s": 318,
       "speaker": "p-sofia",
-      "text": "Yes please, that would help."
+      "text": "Hands update. Finger tendon routing is stable after the last rework. We're still seeing a creak on the wrist joint at the end of travel, and Lukas's team may need to look at the housing."
     },
     {
-      "start_s": 402,
+      "start_s": 365,
       "speaker": "p-lukas",
-      "text": "hey sorry, back to back"
+      "text": "sorry late. yep ok"
     },
     {
-      "start_s": 406,
-      "speaker": "p-beth",
-      "text": "No problem, you're right on time actually. Structures."
+      "start_s": 372,
+      "speaker": "p-ingrid",
+      "text": "Lukas, anything from structures before we get to schedule?"
     },
     {
-      "start_s": 410,
+      "start_s": 382,
       "speaker": "p-lukas",
-      "text": "pelvis casting review done, two comments on draft angle, nothing blocking"
+      "text": "wrist housing is on the cmm, results tmrw. torso brackets ok"
     },
     {
       "start_s": 420,
-      "speaker": "p-ingrid",
-      "text": "Did the vendor push back on the wall thickness?"
-    },
-    {
-      "start_s": 424,
-      "speaker": "p-lukas",
-      "text": "no they took it"
-    },
-    {
-      "start_s": 428,
-      "speaker": "p-beth",
-      "text": "Great. Farah, electrical."
-    },
-    {
-      "start_s": 432,
-      "speaker": "p-farah",
-      "text": "Electrical. So, one, the battery management board rev is back and bring-up is mostly done; two, we had one brownout on the hip axis during a fast squat, which I think is a harness drop more than the supply; three, I'd like to get the harness team and Priya together about the shin routing because that's the same bundle."
-    },
-    {
-      "start_s": 466,
-      "speaker": "p-priya",
-      "text": "Yes, let's do that this week."
-    },
-    {
-      "start_s": 471,
-      "speaker": "p-arjun",
-      "text": "the brownout, was that with the new current limits or the old ones"
-    },
-    {
-      "start_s": 477,
-      "speaker": "p-farah",
-      "text": "New ones. Jonas pushed them last week."
-    },
-    {
-      "start_s": 481,
-      "speaker": "p-jonas",
-      "text": "yep"
-    },
-    {
-      "start_s": 905,
-      "speaker": "p-omar",
-      "text": "Quick one on test capacity, I think we're probably going to be short on dyno time if the actuator work and the life test both need it the same week. Not 100% sure, I need to look at the schedule again."
-    },
-    {
-      "start_s": 922,
-      "speaker": "p-dmitri",
-      "text": "We will be short. Plan for it."
-    },
-    {
-      "start_s": 928,
-      "speaker": "p-omar",
-      "text": "Okay, I'll put together a dyno calendar and send it around."
-    },
-    {
-      "start_s": 1470,
       "speaker": "p-nora",
-      "text": "On manufacturing, you're asking where the builds stand. So, one, kitting for the next leg build is mostly complete, we're short a handful of fasteners that are on order; two, the assembly travelers are updated; three, I'd like one more dry run of the knee subassembly before the real build."
+      "text": "From manufacturing, to restate the question, are we confident the parts for the next builds are showing up on time. Honestly, 1. most of it is. 2. a couple of fasteners are still short. 3. I'd like Gwen to confirm."
     },
     {
-      "start_s": 1502,
+      "start_s": 480,
       "speaker": "p-gwen",
-      "text": "Fasteners should be fine, they're stock items. The longer lead stuff is what I'm watching."
+      "text": "Fasteners are being expedited. I'll post the status in the channel after this, I don't have it in front of me."
     },
     {
-      "start_s": 1512,
-      "speaker": "p-ingrid",
-      "text": "Let's do the dry run. Cheap insurance."
-    },
-    {
-      "start_s": 2105,
-      "speaker": "p-beth",
-      "text": "Okay, schedule. I'll go through the changes since last week. First, the Leg DVT build has moved. It's now 11/4. The kitting and the dry run Nora mentioned feed into that."
-    },
-    {
-      "start_s": 2128,
-      "speaker": "p-ingrid",
-      "text": "Okay. Anything downstream I should worry about?"
-    },
-    {
-      "start_s": 2133,
-      "speaker": "p-beth",
-      "text": "Anything downstream? I'm checking that now, I'll have it by the next review."
-    },
-    {
-      "start_s": 2142,
-      "speaker": "p-priya",
-      "text": "Honestly the slack helps us with the shin cover change."
-    },
-    {
-      "start_s": 2400,
-      "speaker": "p-arjun",
-      "text": "on actuators, the dyno runs on the new rotor are going ok, back emf matches the model within noise. still chasing a little cogging at low speed"
-    },
-    {
-      "start_s": 2421,
-      "speaker": "p-jonas",
-      "text": "is that cogging or the encoder interpolation"
-    },
-    {
-      "start_s": 2426,
-      "speaker": "p-arjun",
-      "text": "probably encoder honestly, i want to swap it and rerun thurs. well, fri more likely"
-    },
-    {
-      "start_s": 2810,
-      "speaker": "p-beth",
-      "text": "Second schedule change. Hip actuator thermal derate at continuous torque has moved to 10/12."
-    },
-    {
-      "start_s": 2822,
-      "speaker": "p-arjun",
-      "text": "ok. we'll need the dyno for that one"
-    },
-    {
-      "start_s": 2828,
+      "start_s": 520,
       "speaker": "p-omar",
-      "text": "Right, I'll make sure it's on the calendar I think."
+      "text": "Hm, sorry, can you repeat that? Audio cut out. Is it the fasteners or the washers?"
     },
     {
-      "start_s": 2836,
-      "speaker": "p-beth",
-      "text": "Okay. Last thing, I'll send the updated milestone list out after this, please flag anything I've got wrong."
+      "start_s": 532,
+      "speaker": "p-gwen",
+      "text": "Both, but the fasteners matter more."
     },
     {
-      "start_s": 3150,
+      "start_s": 560,
       "speaker": "p-ingrid",
-      "text": "Thanks everyone. I've got to jump."
+      "text": "Okay. Beth, let's get the schedule updates."
+    },
+    {
+      "start_s": 1990,
+      "speaker": "p-beth",
+      "text": "So, schedule, and just to restate, the question is what moved this week. The Leg DVT build slid to 11/4, and the reason is the parts we just talked about. Everything downstream shifts by the same amount."
+    },
+    {
+      "start_s": 2060,
+      "speaker": "p-priya",
+      "text": "That works for legs. 1. We can use the extra time on the hip bracket fit. 2. I'd rather not lose the gain from fixing the pad. 3. We'll need the dyno data before that."
+    },
+    {
+      "start_s": 2120,
+      "speaker": "p-ingrid",
+      "text": "Is anyone worried about the test lab being the bottleneck in that window?"
+    },
+    {
+      "start_s": 2145,
+      "speaker": "p-dmitri",
+      "text": "We'll make it work. Just give me the build list early!!"
+    },
+    {
+      "start_s": 2200,
+      "speaker": "p-omar",
+      "text": "I think, probably, it will be fine, not 100% sure about the cal fixtures though"
+    },
+    {
+      "start_s": 2290,
+      "speaker": "p-beth",
+      "text": "Noted. I'll put that on the risk list."
+    },
+    {
+      "start_s": 2720,
+      "speaker": "p-beth",
+      "text": "Last item on my list. The Hip actuator thermal derate at continuous torque test is now 10/12, previous date has passed. Arjun, that's consistent with what you said earlier?"
+    },
+    {
+      "start_s": 2770,
+      "speaker": "p-arjun",
+      "text": "yeah thats what i have, oh wait, i said thurs earlier but its the following mon, 10/12, sorry"
+    },
+    {
+      "start_s": 2830,
+      "speaker": "p-ingrid",
+      "text": "Fine. Any other schedule risks anyone's sitting on?"
+    },
+    {
+      "start_s": 2900,
+      "speaker": "p-jonas",
+      "text": "no"
+    },
+    {
+      "start_s": 2915,
+      "speaker": "p-lukas",
+      "text": "no"
+    },
+    {
+      "start_s": 3000,
+      "speaker": "p-beth",
+      "text": "Then I'll send the notes. Thanks everyone."
     }
   ],
   "summary": {
-    "overview": "Weekly hardware program review covering legs, arms and hands, structures, electrical, manufacturing, actuators and schedule. Lukas joined late. Two schedule changes were noted: the Leg DVT build is now 11/4 and Hip actuator thermal derate at continuous torque is now 10/12.",
+    "overview": "Weekly hardware program review, 54 min. Subsystem round of updates: knee actuator housings passed leak check, encoder cal still slow, hip actuator housing temps running ahead of the model on long holds with cooling vs drive limit still open. Schedule changes covered at the end.",
     "shorthand_bullet": [
-      "Legs: knee life test running; shin cover rubs harness at full flexion, cover change only; sole bonding voids",
-      "Arms/hands: tendon routing rev done, pinky lags, suspect sheath friction",
-      "Structures: pelvis casting review done, minor draft angle comments",
-      "Electrical: BMS board bring-up mostly done; one hip brownout on fast squat, likely harness drop",
-      "Dyno capacity likely short when actuator work overlaps life test",
-      "Manufacturing: kitting mostly complete, travelers updated, one more knee dry run",
-      "Actuators: back EMF matches model, low-speed cogging maybe encoder",
-      "Leg DVT build moved to 11/4",
-      "Hip actuator thermal derate at continuous torque moved to 10/12"
+      "knee act: housings pass leak check, encoder cal is long pole, Jonas pushing batch script",
+      "hip act: housing temp climbing faster than model; pad contact vs current limit unresolved, need 2 more dyno runs",
+      "legs: pad thickness changed on last rev, check before blaming drive",
+      "electrical: drive limit verified on bench, wants fresh dyno capture",
+      "hands: tendon routing stable, wrist creak at end of travel, housing on CMM",
+      "fasteners short, being expedited (Gwen to post status)",
+      "Leg DVT build now 11/4, downstream shifts same amount",
+      "Hip actuator thermal derate at continuous torque now 10/12",
+      "risk: cal fixtures for test window"
     ],
     "action_items": [
-      "Jonas to pull finger motor current traces for Sofia",
-      "Farah and Priya to meet with harness team on shin routing",
-      "Omar to build and circulate a dyno calendar",
-      "Nora to schedule knee subassembly dry run",
-      "Beth to check downstream impact of Leg DVT build change",
-      "Beth to send updated milestone list",
-      "Arjun to swap encoder and rerun dyno"
+      "Jonas: push encoder batch script",
+      "Dmitri: extra dyno runs, add Farah's logging",
+      "Farah: send list of channels to log",
+      "Gwen: post fastener status",
+      "Beth: add cal fixtures to risk list, send notes",
+      "someone to check pad contact"
     ],
     "keywords": [
-      "Leg DVT build",
-      "dyno",
-      "life test",
-      "harness",
-      "tendon",
-      "brownout",
-      "cogging",
-      "schedule"
+      "program review",
+      "hip actuator",
+      "Leg DVT",
+      "thermal derate",
+      "fasteners",
+      "dyno"
     ]
   }
 }
