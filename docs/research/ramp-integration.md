@@ -55,7 +55,7 @@ Ramp's procurement agents (launched April 29, 2026; co-built with Browserbase) h
 
 ## 3. Hackathon build plan
 
-**Note (later decision):** there is no browser extension; Xometry is a mocked provider (architecture §2.14). The extension rows below are superseded.
+> **Update (v9):** there is no browser extension. Xometry sits behind a provider interface (architecture §2.14): mocked (a simulated Xometry site) for the demo, Burn's server-side headless browser on a company Xometry account for production. Read "extension" below as that provider.
 
 **What exists in the repo:** Vite/React, Node and SQLite; the `/request` conversation and `/approvals` queue with streamed tool events; Slack and ICS connectors; the DAG engine; an agent with an offline fallback. All of it is built around the old Digi-Key sensor example. There is no extension, no Ramp client, no part entry and no Xometry quote model.
 

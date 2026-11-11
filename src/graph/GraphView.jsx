@@ -5,7 +5,7 @@ import {toIso} from './engine.js';
 // Kind is carried by shape (part dot, work bar, milestone diamond), never by color.
 // Ink marks the critical path; the reserved critical red marks slips, always with a label.
 export const G = {ink: '#1C1B17', muted: '#7A766F', faint: '#C9C5BE', line: '#E2DFDA', hair: '#EFECE8', paper: '#F4F2F0', bar: '#D9D5CF', critical: '#D03B3B', accent: '#E4F222'};
-const day = d => new Date(d * 86400000).toLocaleDateString('en-US', {month: 'short', day: 'numeric', timeZone: 'UTC'});
+const day = d => d == null ? 'unknown' : new Date(d * 86400000).toLocaleDateString('en-US', {month: 'short', day: 'numeric', timeZone: 'UTC'});
 const initials = label => label.split(/\s+/).map(w => w[0]).join('').slice(0, 2).toUpperCase();
 const MOVE = 'transform .55s cubic-bezier(.2,.7,.2,1), width .55s cubic-bezier(.2,.7,.2,1)';
 
@@ -70,14 +70,23 @@ export default function GraphView({graph, analysis, today, selected, onSelect, c
             <circle cx={0} cy={y} r={compact ? 4.5 : 6} fill={hot ? G.ink : '#fff'} stroke={G.ink} strokeWidth={2}/>
             {!compact && <text x={10} y={y + 4} fontSize={11} fill={G.muted}>{s.end != null ? `booked ${day(s.start)}–${day(s.end - 1)}` : `arrives ${day(s.finish)}`}</text>}
           </g>}
-          {node.kind === 'work' && <g style={{transform: `translateX(${geo.x(s.start)}px)`, transition: MOVE}}>
+          {node.kind === 'work' && s.finish == null && s.start != null && <g style={{transform: `translateX(${geo.x(s.start)}px)`}}>
+            {/* No stated duration: an open-ended outline, never a guessed bar. */}
+            <rect x={0} y={y - bh / 2} height={bh} rx={4} width={Math.max(24, 3 * geo.pxPerDay)} fill="none" stroke={G.muted} strokeDasharray="3 2"/>
+            {!compact && <text x={Math.max(24, 3 * geo.pxPerDay) + 6} y={y + 4} fontSize={11} fill={G.muted}>duration not stated</text>}
+          </g>}
+          {node.kind === 'work' && s.finish != null && <g style={{transform: `translateX(${geo.x(s.start)}px)`, transition: MOVE}}>
             <rect x={0} y={y - bh / 2} height={bh} rx={4} width={Math.max(6, (s.finish - s.start) * geo.pxPerDay - 2)}
               fill={hot ? G.ink : G.bar} style={{transition: MOVE}}/>
             {!compact && <text x={Math.max(6, (s.finish - s.start) * geo.pxPerDay) + 6} y={y + 4} fontSize={11} fill={G.muted}>
               {assignees(id).map(initials).join(' · ')}
             </text>}
           </g>}
-          {node.kind === 'milestone' && <g>
+          {node.kind === 'milestone' && s.finish == null && s.planned != null && <g style={{transform: `translate(${geo.x(s.planned)}px, ${y}px)`}}>
+            <rect x={-6} y={-6} width={12} height={12} transform="rotate(45)" fill="#fff" stroke={G.muted} strokeWidth={2} strokeDasharray="2 2"/>
+            {!compact && <text x={12} y={4} fontSize={11} fill={G.muted}>{day(s.planned)} · actual unknown</text>}
+          </g>}
+          {node.kind === 'milestone' && s.finish != null && <g>
             {s.slip > 0 && <line x1={geo.x(s.planned)} x2={geo.x(s.finish)} y1={y} y2={y} stroke={G.critical} strokeWidth={2} style={{transition: 'all .55s'}}/>}
             <g style={{transform: `translate(${geo.x(s.planned)}px, ${y}px)`}}>
               <rect x={-6} y={-6} width={12} height={12} transform="rotate(45)" fill="#fff" stroke={s.slip > 0 ? G.critical : G.ink} strokeWidth={2}/>
@@ -98,12 +107,12 @@ export default function GraphView({graph, analysis, today, selected, onSelect, c
 function Tooltip({row, at, geo, people, conflict}) {
   const s = at[row.id]; const n = row.node;
   const lines = n.kind === 'milestone'
-    ? [`Planned ${day(s.planned)}`, s.slip ? `Now ${day(s.finish)} · slips ${s.slip} days` : 'On time']
+    ? [`Planned ${day(s.planned)}`, s.finish == null ? 'Actual date unknown: an input has no stated duration' : s.slip ? `Now ${day(s.finish)} · slips ${s.slip} days` : 'On time']
     : n.kind === 'part'
       ? [s.end != null ? `Booked ${day(s.start)} – ${day(s.end - 1)}` : `Arrives ${day(s.finish)}`]
-      : [`${day(s.start)} → ${day(s.finish)} · ${s.finish - s.start}d`, people.length ? people.join(', ') : 'Nobody assigned'];
+      : [s.finish == null ? `Starts ${day(s.start)} · duration not stated` : `${day(s.start)} → ${day(s.finish)} · ${s.finish - s.start}d`, people.length ? people.join(', ') : 'Nobody assigned'];
   if (conflict) lines.push(conflict.kind === 'booking_missed' ? `Booking ends ${day(Date.parse(conflict.bookingEnd) / 86400000 - 1)}, work can't start until ${day(Date.parse(conflict.workStart) / 86400000)}` : conflict.kind);
-  const left = Math.min(geo.width - 240, Math.max(0, (n.kind === 'work' ? geo.x(s.start) : geo.x(s.finish)) - 20));
+  const left = Math.min(geo.width - 240, Math.max(0, geo.x(s.start ?? s.finish ?? s.planned ?? 0) - 20));
   return <div role="tooltip" style={{position: 'absolute', left, top: row.y + geo.rowHeight / 2 + 2, pointerEvents: 'none', background: '#fff', border: `1px solid ${G.line}`, borderRadius: 8, padding: '8px 10px', fontSize: 12, lineHeight: 1.45, boxShadow: '0 4px 14px rgba(28,27,23,.08)', zIndex: 2, minWidth: 180}}>
     <div style={{color: G.ink, fontWeight: 500}}>{n.label}</div>
     {lines.map((l, i) => <div key={i} style={{color: /slips|Booking ends/.test(l) ? G.critical : G.muted}}>{l}</div>)}

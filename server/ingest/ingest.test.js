@@ -5,10 +5,12 @@ import {fetchSlack, slackApi, plainText} from '../connectors/slack.js';
 import {parseCalendar} from '../connectors/ics.js';
 import {fixtureDocuments} from '../graph/fixture-docs.test-helper.js';
 
+// The Rev C sample world is dated around its order date; sync windows are measured from there.
+const REV_C_NOW = () => new Date('2026-11-09T18:00:00Z');
 const offline = docs => import('../graph/extract.js').then(m => m.buildGraph(docs, {offline: true}));
 
 test('fixture sync ingests Slack + calendar and builds a cited graph', async () => {
-  const ingest = createIngest({filename: ':memory:', sources: sourcesFromEnv({}), build: offline});
+  const ingest = createIngest({filename: ':memory:', sources: sourcesFromEnv({BURN_WORLD: 'fixtures'}), build: offline, now: REV_C_NOW});
   try {
     const {results, graph} = await ingest.sync();
     assert.deepEqual(results.map(r => r.id), ['slack', 'calendar']);
@@ -26,7 +28,7 @@ test('fixture sync ingests Slack + calendar and builds a cited graph', async () 
 });
 
 test('the connector graph matches the hand-converted fixture graph', async () => {
-  const ingest = createIngest({filename: ':memory:', sources: sourcesFromEnv({}), build: offline});
+  const ingest = createIngest({filename: ':memory:', sources: sourcesFromEnv({BURN_WORLD: 'fixtures'}), build: offline, now: REV_C_NOW});
   try {
     const {graph} = await ingest.sync();
     const reference = await offline(fixtureDocuments());
@@ -36,9 +38,9 @@ test('the connector graph matches the hand-converted fixture graph', async () =>
 });
 
 test('a failing source is reported without losing the other', async () => {
-  const sources = sourcesFromEnv({});
+  const sources = sourcesFromEnv({BURN_WORLD: 'fixtures'});
   sources[1] = {...sources[1], mode: 'live', file: null, url: 'https://calendar.invalid/secret-token.ics'};
-  const ingest = createIngest({filename: ':memory:', sources, build: offline});
+  const ingest = createIngest({filename: ':memory:', sources, build: offline, now: REV_C_NOW});
   try {
     const {results} = await ingest.sync();
     assert.ok(results.find(r => r.id === 'calendar').error);
@@ -86,7 +88,7 @@ test('HTTP: /api/graph builds on first visit; /api/sync rebuilds; documents are 
   const {createStore} = await import('../store.js');
   const {Readable} = await import('node:stream');
   const store = createStore(':memory:');
-  const ingest = createIngest({filename: ':memory:', sources: sourcesFromEnv({}), build: offline});
+  const ingest = createIngest({filename: ':memory:', sources: sourcesFromEnv({BURN_WORLD: 'fixtures'}), build: offline, now: REV_C_NOW});
   const app = server(null, store, undefined, ingest);
   const call = (url, method = 'GET') => new Promise(resolve => {
     const req = Object.assign(Readable.from([]), {url, method, headers: {}}); const chunks = [];
@@ -136,7 +138,9 @@ test('review fixes: long-running series, same-day OOO, OOO-driven critical path,
   const a = analyzeGraph(g, {orderDate: '2026-11-14'});
   assert.equal(a.at['work:firmware-validation'].start, '2026-11-15');
   assert.ok(a.critical.nodes.includes('person:lee-tan') || a.critical.nodes.length >= 0, 'critical path walk does not crash on an OOO-driven start');
-  const ms = {nodes: [...g.nodes, {id: 'milestone:m', kind: 'milestone', label: 'M', attrs: {date: '2026-11-14'}}], edges: [...g.edges, {id: 'd', from: 'work:firmware-validation', to: 'milestone:m', kind: 'due', evidence: ['s1']}]};
+  // Durations are never defaulted any more, so state one for the work this check routes through.
+  const nodes = g.nodes.map(n => (n.id === 'work:firmware-validation' ? {...n, attrs: {...n.attrs, durationDays: 3}} : n));
+  const ms = {nodes: [...nodes, {id: 'milestone:m', kind: 'milestone', label: 'M', attrs: {date: '2026-11-14'}}], edges: [...g.edges, {id: 'd', from: 'work:firmware-validation', to: 'milestone:m', kind: 'due', evidence: ['s1']}]};
   assert.ok(analyzeGraph(ms, {orderDate: '2026-11-14'}).critical.nodes.includes('person:lee-tan'));
   const client = {messages: {create: async () => ({stop_reason: 'end_turn', content: [{type: 'text', text: JSON.stringify({
     work: [{label: 'Firmware validation', durationDays: 300, evidence: ['s1']}, {label: 'Injected', durationDays: 5, evidence: ['fake']}],
