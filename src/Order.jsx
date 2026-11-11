@@ -11,7 +11,7 @@ const FEED = {
   'agent.fallback': e => `Agent unavailable at ${e.stage} (${e.reason}); using rules`,
   'order.entered': 'Order entered', 'resolve.started': 'Reading the request', 'context.built': e => `Found ${e.context?.related?.length ?? 0} related message${e.context?.related?.length === 1 ? '' : 's'}${e.context?.milestoneLabel ? ` · feeds ${e.context.milestoneLabel}` : ''}`,
   'question': e => `Needs an answer: ${e.question?.text || ''}`, 'quote.started': 'Quoting on Xometry', 'quote.captured': e => `Quote captured · ${e.quote?.options?.length} tiers`,
-  'recommended': 'Recommendation ready', 'answer.received': 'Answer received, re-solving', 'exchange.added': e => `You: “${e.statement?.text}”`, 'order.frozen': 'Order frozen',
+  'recommended': 'Recommendation ready', 'answer.received': 'Answer received, re-solving', 'exchange.added': e => (e.statement?.text ? `You: “${e.statement.text}”` : 'Discussion'), 'order.frozen': 'Order frozen',
   'ramp.requested': 'Sent to Ramp for approval', 'ramp.request.failed': 'Ramp request failed', 'ramp.approved': 'Approved in Ramp', 'ramp.rejected': 'Rejected in Ramp', 'approval.stale': 'Approval was for an older version',
   'card.issued': 'Ramp card issued (Xometry only, exact amount)', 'card.failed': 'Card could not be issued', 'placement.notice': e => e.text, 'placement.begun': 'Verifying every field on Xometry…',
   'placement.succeeded': 'Order placed', 'placement.blocked': e => `Not placed: ${e.result?.mismatches?.map(m => m.field).join(', ')} changed`, 'placement.failed': e => `Placement failed: ${e.result?.reason}`,
@@ -95,6 +95,10 @@ export default function Order({id}) {
           </div>
         </Section>
         <Section title="Context" right={ctx.milestoneLabel || null}>
+          {ctx.agent && <div style={{fontSize: 12, padding: '8px 10px', borderLeft: `2px solid ${C.accent}`, background: '#fff', borderRadius: 4}}>
+            <div style={{lineHeight: 1.45}}>{ctx.agent.summary}</div>
+            <div style={{color: C.muted, fontSize: 11, marginTop: 4}}>Burn ({ctx.agent.model}) read {ctx.agent.trace?.length || 0} searches: {ctx.agent.trace?.map(t => `“${t.query}”`).join(', ')}</div>
+          </div>}
           {ctx.assumptions?.length ? <ul style={{margin: 0, paddingLeft: 16, color: C.muted, display: 'flex', flexDirection: 'column', gap: 4}}>{ctx.assumptions.map((a, i) => <li key={i}>{a.text}{a.ageDays != null && <span style={{color: C.faint}}> · {a.ageDays === 0 ? 'today' : `${a.ageDays}d ago`}</span>}</li>)}</ul> : <span style={{color: C.muted}}>No related context found yet.</span>}
           {ctx.related?.slice(0, 6).map(r => <blockquote key={r.id} style={{margin: 0, padding: '6px 10px', borderLeft: `2px solid ${C.ink}`, background: C.paper, borderRadius: 4, fontSize: 12}}>
             <div style={{lineHeight: 1.4}}>{r.text.length > 220 ? r.text.slice(0, 220) + '…' : r.text}</div>
