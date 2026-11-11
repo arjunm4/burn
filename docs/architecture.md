@@ -477,16 +477,16 @@ Design: [`build/world-script-plan.md`](build/world-script-plan.md), [`build/simu
 
 ## 15. History
 
-| Version | Change | Decided by |
-|---|---|---|
-| v1–v5 | Joint Claude + Codex design: decision core, evidence layer, questions, learning limits, quote-page entry, disagreement, assembly readiness | Claude + Codex; approved |
-| v6 | Dropped the BOM; the demand anchors the decision | Owen |
-| v6 | The engineer's manager is the approver | Owen |
-| v7 | Burn runs the order: extension fills the vendor page, frozen spec verified by read-back, Burn places the order | Owen |
-| v8 | Xometry only; part entry kicks off every order; Ramp owns approval, card and booking; supply chain is a context source; learning on context attributes with a time-band heat map; synthetic world script | Owen |
-| v8 | Automatic placement on approval, with an alert first | Owen |
-| v9 | All Xometry work (quoting and placement) moves to Burn's server-side headless browser on a company Xometry account, so placement is immediate on approval; the browser extension is dropped; the Ramp request states the vendor cutoff | Arjun |
-| v8 | No browser extension: Xometry is reached through a provider interface, mocked for the demo | Owen |
+| Version | Change |
+|---|---|
+| v1–v5 | Initial design: decision core, evidence layer, questions, learning limits, quote-page entry, disagreement, assembly readiness |
+| v6 | Dropped the BOM; the demand anchors the decision |
+| v6 | The engineer's manager is the approver |
+| v7 | Burn runs the order: extension fills the vendor page, frozen spec verified by read-back, Burn places the order |
+| v8 | Xometry only; part entry kicks off every order; Ramp owns approval, card and booking; supply chain is a context source; learning on context attributes with a time-band heat map; synthetic world script |
+| v8 | Automatic placement on approval, with an alert first |
+| v9 | All Xometry work (quoting and placement) moves to Burn's server-side headless browser on a company Xometry account, so placement is immediate on approval; the browser extension is dropped; the Ramp request states the vendor cutoff |
+| v8 | No browser extension: Xometry is reached through a provider interface, mocked for the demo |
 
 Superseded and removed in v8: the quote-page-only entry; Slack approval cards; Burn's own auto-approval settings; supply chain as approver or placer; vendor-reliability learning as phase 1; the BOM. Settled joint positions that remain: valuation order and no gating fraction; scenarios before probabilities; authority-based claim acceptance; one question at a time; working-day worked example; no per-project agents; habit is advisory; outcome signals are diagnostics.
 

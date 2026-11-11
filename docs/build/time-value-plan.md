@@ -63,13 +63,13 @@ Graph recall by reveal type, vibe agreement and track 1 rank are reported if tim
 
 ## Tonight
 
-| By | What | Who |
-|---|---|---|
-| 8:00 | 1 maths core and rubric; 2 settings export | Claude |
-| 8:30 | 3 graph (code version); 8 grading on the maths core | Agents 1, 2 |
-| 8:30 | 4 read: prompt, prefilter, cache, batch runner, tested on 1 week | Agent 3 |
-| 9:30 | 5 heat map and 6 habit (code versions) end to end on the 13 weeks written so far; 7 card | Claude + agent 4 |
-| 10:30 | LLM read over the final text; rebuild graph, heat maps, habit; grading report | Agents |
+| By | What |
+|---|---|
+| 8:00 | 1 maths core and rubric; 2 settings export |
+| 8:30 | 3 graph (code version); 8 grading on the maths core |
+| 8:30 | 4 read: prompt, prefilter, cache, batch runner, tested on 1 week |
+| 9:30 | 5 heat map and 6 habit (code versions) end to end on the 13 weeks written so far; 7 card |
+| 10:30 | LLM read over the final text; rebuild graph, heat maps, habit; grading report |
 | 11:15 | Run-through, fixes, merge (Owen's OK) | Owen + Claude |
 
 **Always shippable:** after 9:30 the code-only versions are complete and committed; everything later only improves the numbers.

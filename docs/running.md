@@ -74,25 +74,25 @@ Mutations take `expectedRevision` and return 409 on conflict. The API never retu
 
 ### Code map
 
-| Path | What it is | Owner |
-| --- | --- | --- |
-| `server/contracts.js` | Shared shapes: OrderSpec, QuoteSnapshot, Order and its states, PlacementAttempt, OrderStore, RampClient, VendorProvider, DecisionResult | shared |
-| `server/connectors/` | Read-only connectors with fixture replay: Slack (Web API), iCalendar, Jira (REST), meeting notes (exported Markdown) | Claude |
-| `server/graph/extract.js`, `src/graph/engine.js`, `src/graph/calendar.js` | Statement extraction (rules or Claude structured output; entities typed by head noun and merged across mentions, dates, durations, bookings, cited evidence), the working-day scheduler and company calendar | Claude |
-| `server/clock.js`, `server/config.js` | Shared clock (`BURN_NOW`) and company config | Claude |
-| `server/vendors/site/`, `server/vendors/headless.js`, `server/vendors/recorded.js` | The simulated Xometry site, the Playwright provider that drives it (or xometry.com later), recorded quotes from the world | Claude |
-| `server/notify/`, `server/api/ramp.js`, `server/api/notifications.js`, `src/Ramp.jsx`, `src/Inbox.jsx` | The people's side: notifications per person, the Ramp-side views | Claude |
-| `server/api/demo.js`, `src/Demo.jsx`, `scripts/demo.mjs`, `demo/` | Demo-only controls and config; nothing else depends on them | Claude |
-| `src/decision/core.js` | The decision core: admissibility (incl. hard deadlines), same-world outcomes per declared scenario, dominance, owner-policy economics, break-even, switching condition, the flip question; nothing preselected while that question is open | Claude |
-| `server/flow/context.js` | Context retrieval anchored on the part entry; links the part only through documents that name it; declared slip scenarios; assumptions with ages | Claude |
-| `server/flow/orchestrator.js` | The order flow: spec gate, quote, decide, answer/argue, Okay → Ramp, authoritative event handling (atomic `processEvent`), pre-placement revalidation, durable placement with `placement_unknown` and reconciliation, booking retried separately | Claude |
-| `server/orders/store.js` | SQLite order store: transactional mutations with revisions, protected frozen fields, serialized placement attempts, interrupted placements recovered as `placement_unknown`, audit log with secrets scrubbed | Codex |
-| `server/ramp/index.js` | Ramp client: persistent mock with Ramp's field names, signed/replayable events, idempotent requests and cards, card limit and merchant enforcement; sandbox as typed-unavailable | Codex |
-| `server/vendors/` | VendorProvider: fake Xometry (tiers, cutoff, 30-day validity, field-by-field verification, drift/dropped-tier/timeout faults, order lookup for reconciliation) and the disabled headless stub | Claude |
-| `server/api/orders.js` | HTTP API and SSE | Claude |
-| `src/Orders.jsx`, `src/Order.jsx`, `src/ui.jsx` | Screens | Claude |
-| `src/timevalue/`, `server/timevalue/`, `scripts/timevalue/` | Time Value: maths and rubric, sources, LLM read, company dependency graph, grading, demo cards | Owen |
-| `scripts/generate-world/`, `fixtures/world/`, `fixtures/flintlock/` | The Flintlock world: seed, simulator, text jobs, rendered sources, answer key | Owen |
+| Path | What it is |
+| --- | --- |
+| `server/contracts.js` | Shared shapes: OrderSpec, QuoteSnapshot, Order and its states, PlacementAttempt, OrderStore, RampClient, VendorProvider, DecisionResult |
+| `server/connectors/` | Read-only connectors with fixture replay: Slack (Web API), iCalendar, Jira (REST), meeting notes (exported Markdown) |
+| `server/graph/extract.js`, `src/graph/engine.js`, `src/graph/calendar.js` | Statement extraction (rules or Claude structured output; entities typed by head noun and merged across mentions, dates, durations, bookings, cited evidence), the working-day scheduler and company calendar |
+| `server/clock.js`, `server/config.js` | Shared clock (`BURN_NOW`) and company config |
+| `server/vendors/site/`, `server/vendors/headless.js`, `server/vendors/recorded.js` | The simulated Xometry site, the Playwright provider that drives it (or xometry.com later), recorded quotes from the world |
+| `server/notify/`, `server/api/ramp.js`, `server/api/notifications.js`, `src/Ramp.jsx`, `src/Inbox.jsx` | The people's side: notifications per person, the Ramp-side views |
+| `server/api/demo.js`, `src/Demo.jsx`, `scripts/demo.mjs`, `demo/` | Demo-only controls and config; nothing else depends on them |
+| `src/decision/core.js` | The decision core: admissibility (incl. hard deadlines), same-world outcomes per declared scenario, dominance, owner-policy economics, break-even, switching condition, the flip question; nothing preselected while that question is open |
+| `server/flow/context.js` | Context retrieval anchored on the part entry; links the part only through documents that name it; declared slip scenarios; assumptions with ages |
+| `server/flow/orchestrator.js` | The order flow: spec gate, quote, decide, answer/argue, Okay → Ramp, authoritative event handling (atomic `processEvent`), pre-placement revalidation, durable placement with `placement_unknown` and reconciliation, booking retried separately |
+| `server/orders/store.js` | SQLite order store: transactional mutations with revisions, protected frozen fields, serialized placement attempts, interrupted placements recovered as `placement_unknown`, audit log with secrets scrubbed |
+| `server/ramp/index.js` | Ramp client: persistent mock with Ramp's field names, signed/replayable events, idempotent requests and cards, card limit and merchant enforcement; sandbox as typed-unavailable |
+| `server/vendors/` | VendorProvider: fake Xometry (tiers, cutoff, 30-day validity, field-by-field verification, drift/dropped-tier/timeout faults, order lookup for reconciliation) and the disabled headless stub |
+| `server/api/orders.js` | HTTP API and SSE |
+| `src/Orders.jsx`, `src/Order.jsx`, `src/ui.jsx` | Screens |
+| `src/timevalue/`, `server/timevalue/`, `scripts/timevalue/` | Time Value: maths and rubric, sources, LLM read, company dependency graph, grading, demo cards |
+| `scripts/generate-world/`, `fixtures/world/`, `fixtures/flintlock/` | The Flintlock world: seed, simulator, text jobs, rendered sources, answer key |
 
 Not built: the learning model (built, then paused; see above), delivery tracking and first-use checks, driving the real xometry.com (the provider's selectors target the simulated site; open questions X1/X5/X6), the Ramp sandbox backend.
 
