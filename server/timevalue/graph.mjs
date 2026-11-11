@@ -15,12 +15,12 @@
 // A link nobody stated is not in the graph (unknown, never inferred).
 
 import { makeResolver, parseBooking } from './refs.mjs';
-import { extractClaims, authorId, localDay } from './claims.mjs';
+import { extractClaims, authorId } from './claims.mjs';
+import { localDay, toPacificIso, instantMs as ms } from './sources.mjs';
 
-const ms = (iso) => (iso == null ? -Infinity : Date.parse(iso.length === 10 ? iso + 'T00:00:00-08:00' : iso));
 const byAt = (a, b) => ms(a.at) - ms(b.at) || String(a.doc_id).localeCompare(String(b.doc_id));
 
-export function makeGraphResolver(settings, sources) {
+function makeGraphResolver(settings, sources) {
   return makeResolver(settings, { xometry: sources.xometry, calendar: sources.calendar });
 }
 
@@ -38,6 +38,8 @@ export function extractAllClaims({ settings, sources }, resolve = makeGraphResol
 }
 
 export function buildGraph({ settings, sources, claims }) {
+  if (!settings) throw new TypeError('buildGraph: settings is required');
+  sources = sources || {};
   const resolve = makeGraphResolver(settings, sources);
   // Code claims are always extracted from the sources (they need thread context); claims passed in (e.g. LLM reads)
   // are added when they say something the code did not (same doc, kind and subject = duplicate).
@@ -100,7 +102,7 @@ export function buildGraph({ settings, sources, claims }) {
   for (const ev of sources.calendar || []) {
     const cats = (ev.categories || []).map((c) => String(c).toUpperCase());
     const docId = `cal:${ev.uid}`;
-    const calDoc = (sources.docs || []).find((d) => d.id === docId);
+    const calDoc = docById.get(docId);
     const at = calDoc?.at ?? null;
     const by = calDoc ? authorId(calDoc.author, settings.people) : null;
     const b = parseBooking(ev.summary);
@@ -214,6 +216,7 @@ function withStatuses(g) {
 
 export function graphAt(graph, T) {
   const t = ms(T);
+  if (!Number.isFinite(t)) throw new RangeError(`graphAt: T ${JSON.stringify(T)} is not a time`);
   const seen = (x) => x.at == null || ms(x.at) <= t;
   const edges = graph.edges.map((e) => ({ ...e, evidence: e.evidence.filter(seen) })).filter((e) => e.evidence.length);
   const facts = graph.facts.filter(seen);
@@ -230,6 +233,8 @@ const accepted = (view, subject, kind) => {
 };
 
 export function demoInputs(view, partId) {
+  if (!view?.nodes || !view.edges) throw new TypeError('demoInputs: expected a graph view from graphAt()');
+  const cfg = view.meta?.settings || {};
   const kindOf = (id) => view.nodes.find((n) => n.id === id)?.kind;
   const gaps = [];
   // Tests this part feeds (directly, or through a work item that feeds a test).
@@ -239,7 +244,7 @@ export function demoInputs(view, partId) {
   // Prefer accepted links, then the test with the latest evidence.
   tests.sort((a, b) => (a.status === 'accepted' ? 0 : 1) - (b.status === 'accepted' ? 0 : 1) || ms(b.evidence.at(-1).at) - ms(a.evidence.at(-1).at));
   const testId = tests[0].to;
-  const testCfg = view.meta.settings.tests.find((t) => t.id === testId) || { id: testId };
+  const testCfg = (cfg.tests || []).find((t) => t.id === testId) || { id: testId };
   const gate = view.edges.find((e) => e.from === testId && kindOf(e.to) === 'milestone');
   const milestone = gate ? gate.to : null;
   const ev0 = (e) => e.evidence[e.evidence.length - 1];
@@ -249,7 +254,7 @@ export function demoInputs(view, partId) {
   for (const e of view.edges.filter((x) => x.to === testId && x.kind !== 'gates')) {
     const k = kindOf(e.from);
     if (k === 'rig') {
-      const r = view.meta.settings.rigs.find((x) => x.id === e.from) || {};
+      const r = (cfg.rigs || []).find((x) => x.id === e.from) || {};
       rig = { id: e.from, name: r.name ?? null, slot_days: r.slot_days ?? null, owner: r.owner ?? null,
         bookings: view.bookings.filter((b) => b.rig === e.from).map(({ test, start, end, status, doc_id }) => ({ test, start, end, status, doc_id })), doc_id: ev0(e).doc_id };
       continue;
@@ -287,17 +292,17 @@ export function demoInputs(view, partId) {
 
 /** A demo/live-changes.json entry as a Slack doc, `offset_minutes` after `prevAt`. */
 export function liveChangeDoc(change, prevAt, people = []) {
-  const m = change.message;
-  const at = new Date(Date.parse(prevAt) + (change.offset_minutes || 0) * 60e3);
-  const p = people.find((x) => x.slack_id === m.user);
-  const off = prevAt.slice(-6);
-  const local = new Date(at.getTime() + (off[0] === '-' ? -1 : 1) * (+off.slice(1, 3) * 60 + +off.slice(4, 6)) * 60e3).toISOString().slice(0, 19) + off;
-  const ts = `${Math.floor(at.getTime() / 1000)}.${String(change.order).padStart(6, '0')}`;
+  const m = change?.message;
+  if (!m?.channel) throw new TypeError('liveChangeDoc: change.message.channel is required');
+  const atMs = Date.parse(prevAt) + (change.offset_minutes || 0) * 60e3;
+  if (!Number.isFinite(atMs)) throw new RangeError(`liveChangeDoc: prevAt ${JSON.stringify(prevAt)} is not a time`);
+  const p = (people || []).find((x) => x.slack_id === m.user);
+  const ts = `${Math.floor(atMs / 1000)}.${String(change.order).padStart(6, '0')}`;
   return { id: `slack:${m.channel}:${ts}`, source: 'slack', container: m.channel, thread: ts,
-    author: { name: p?.name ?? m.user_name ?? null, email: p?.email ?? null, slack_id: m.user }, at: local, text: m.text };
+    author: { name: p?.name ?? m.user_name ?? null, email: p?.email ?? null, slack_id: m.user }, at: toPacificIso(atMs), text: m.text ?? '' };
 }
 
 export function appendDocs(sources, newDocs) {
-  const docs = [...(sources.docs || []), ...newDocs].sort((a, b) => ms(a.at) - ms(b.at) || a.id.localeCompare(b.id));
+  const docs = [...(sources?.docs || []), ...(newDocs || [])].sort((a, b) => ms(a.at) - ms(b.at) || a.id.localeCompare(b.id));
   return { ...sources, docs };
 }

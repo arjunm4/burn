@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { cpSync, mkdtempSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { prefilter, planJobs, jobId, validateJob, demoFocus, generate, collect } from './read-jobs.mjs';
+import { prefilter, planJobs, jobId, validateJob, demoFocus, generate, collect, parseArgs } from './read-jobs.mjs';
 
 const SAMPLE = new URL('../../fixtures/timevalue/read-sample/', import.meta.url).pathname;
 
@@ -102,4 +102,47 @@ test('loop on the hand-made sample: generate → fill → collect → regenerate
   assert.equal(g2.open, g1.open - 1); // its docs are not re-queued
   const g3 = await generate({ sources: dir, out: dir, size: 8, now: null });
   assert.equal(g3.written, 0); // idempotent
+});
+
+test('hardening: bad flags, missing inputs, broken job files, empty collect keeps the cache', async () => {
+  assert.throws(() => parseArgs(['--size', '0']), /positive whole number/);
+  assert.throws(() => parseArgs(['--out']), /--out needs a value/);
+  assert.throws(() => parseArgs(['--bogus']), /unknown argument/);
+  assert.throws(() => parseArgs(['--now', 'soon']), /not a date/);
+  assert.equal(parseArgs(['--collect', '--size', '8']).size, 8);
+
+  const empty = mkdtempSync(join(tmpdir(), 'readjobs-empty-'));
+  await assert.rejects(generate({ sources: empty, out: empty, size: 8, now: null }), /settings\.json.*export-settings/);
+  assert.throws(() => collect(empty), /no .*read-jobs/);
+
+  const dir = mkdtempSync(join(tmpdir(), 'readjobs-hard-'));
+  cpSync(join(SAMPLE, 'settings.json'), join(dir, 'settings.json'));
+  await assert.rejects(generate({ sources: join(dir, 'nope'), out: dir, size: 8, now: null }), /sources dir .* not found/);
+  cpSync(join(SAMPLE, 'docs.json'), join(dir, 'docs.json'));
+  const g1 = await generate({ sources: dir, out: dir, size: 8, now: null });
+  const jobs = join(dir, 'read-jobs');
+  const [first, second] = readdirSync(jobs).filter((f) => f.startsWith('rj-')).sort();
+
+  // a started job (filled_by set, no results yet) is never removed, even when no longer planned
+  const started = join(jobs, 'rj-0000000001.json');
+  writeFileSync(started, JSON.stringify({ job_id: 'rj-0000000001', docs: [], filled_by: 'agent', results: null }));
+  await generate({ sources: dir, out: dir, size: 8, now: null });
+  assert.ok(readdirSync(jobs).includes('rj-0000000001.json'));
+
+  // a half-saved job file stops the run and nothing is touched
+  const before = readdirSync(jobs).sort();
+  writeFileSync(join(jobs, first), '{"results": [');
+  await assert.rejects(generate({ sources: dir, out: dir, size: 8, now: null }), /not valid JSON/);
+  assert.deepEqual(readdirSync(jobs).sort(), before);
+  assert.ok(collect(dir).errors.some((e) => e.includes(first)));
+
+  // a cache with reads is not replaced by an empty one
+  writeFileSync(join(dir, 'read-cache.json'), JSON.stringify({ n: 1, reads: [{ doc_id: 'x' }] }));
+  const bad = JSON.parse(readFileSync(join(jobs, second), 'utf8'));
+  bad.results = [{ doc_id: 'not-a-doc', pressure: 0 }];
+  writeFileSync(join(jobs, second), JSON.stringify(bad));
+  const c = collect(dir);
+  assert.equal(c.written, false);
+  assert.equal(JSON.parse(readFileSync(join(dir, 'read-cache.json'), 'utf8')).n, 1);
+  assert.ok(g1.open >= 2);
 });

@@ -240,3 +240,35 @@ test('check 7b: a conflict warns; on the limiter it blocks a confident card', ()
   assert.equal(check7(side).items[0].blocks, false);
   assert.equal(side.blocked, false);
 });
+
+test('bad input: blocked or null with a reason, never a guessed date', () => {
+  const blocked = (args) => compare({ ...base, inputs: [motor('2026-11-20')], ...args });
+  // Quote shape.
+  assert.equal(blocked({ quote: [] }).reason, 'no quote tiers');
+  assert.equal(blocked({ quote: undefined }).outcome, 'blocked');
+  assert.match(blocked({ quote: [{ tier: 'Standard', ready: '2026-11-24' }] }).reason, /Standard has no total/);
+  // A one-tier quote has nothing faster to buy.
+  const one = blocked({ quote: [quote[0]] });
+  assert.equal(one.outcome, 'cheapest');
+  assert.equal(one.recommended, 'Standard');
+  // Malformed dates: no rollover of Feb 31, no free-text dates.
+  assert.match(blocked({ quote: [{ ...quote[0], ready: '2026-02-31' }, quote[1]] }).reason, /not a date/);
+  assert.match(blocked({ inputs: [motor('next tues')] }).reason, /not a date/);
+  assert.match(blocked({ inputs: [motor({ min: '2026-11-30', max: '2026-11-19' })] }).reason, /range/);
+  assert.match(blocked({ test: { ...spinTest, planned_start: 'soon' } }).reason, /planned start "soon"/);
+  assert.equal(solve({ holidays, test: { ...spinTest, bookings: [{ start: 'x' }] }, inputs: [motor('2026-11-20')] }).limiter.unknown, true);
+  assert.equal(blocked({ test: undefined }).outcome, 'blocked');
+  // Calendar helpers refuse what they cannot read instead of looping or rolling over.
+  assert.throws(() => makeCalendar(holidays).wdBetween('2026-11-10', 'garbage'), RangeError);
+  assert.throws(() => addDays('2026-02-31', 1), RangeError);
+  // Two ranged inputs: depends without a single switching date, and the rubric still reads.
+  const two = compare({ ...base, inputs: [motor({ min: '2026-11-19', max: '2026-11-30' }), { id: 'gearbox', ready: { min: '2026-11-10', max: '2026-11-12' } }] });
+  assert.equal(two.outcome, 'depends');
+  assert.equal(two.switching, null);
+  assert.match(rubric(two, { quoteValidUntil: quoteJson.expires_on, now: NOW, facts }).checks.at(-1).text, /Depends on when/);
+  // A quote expiry that is not a date is an open gap, not a pass.
+  const r = rubric(compare({ ...base, inputs: [motor('2026-11-20')] }), { quoteValidUntil: 'soon', now: NOW, facts });
+  assert.equal(r.checks[0].status, 'unknown');
+  assert.equal(r.blocked, true);
+  assert.throws(() => rubric(null), TypeError);
+});

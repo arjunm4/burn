@@ -7,15 +7,17 @@
 //     in docs/build/read-job-instructions.md); `--collect` writes
 //     fixtures/timevalue/read-cache.json. loadReadCache() lays those over code reads.
 //
-// The heat map (§10) scores vibe relative to the team's baseline: teamBaseline()
-// gives the mean pressure per team (author's team, or the channel when the author
-// is unknown), shrunk toward the global mean when a team has few reads.
+// The card's conversation check (rubric check 7) reads pressure relative to the team's
+// baseline: teamBaseline() gives the mean pressure per team (author's team, or the
+// channel when the author is unknown), shrunk toward the global mean when a team has few reads.
 //
-// Pure functions; no Date.now, no randomness. C's modules are passed in through ctx
-// (makeReadContext) or loaded with loadReadContext().
+// Pure functions; no Date.now, no randomness. The resolver and claim extractor are passed
+// in through ctx (makeReadContext), or loadReadContext() wires up refs.mjs and claims.mjs.
 
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
+import { makeResolver } from './refs.mjs';
+import { extractClaims as codeClaims } from './claims.mjs';
 
 // ---------------------------------------------------------------- pressure lexicon
 //
@@ -104,59 +106,14 @@ export function makeReadContext(settings, { resolve, extractClaims } = {}) {
 }
 
 /**
- * Load C's modules (refs.mjs, claims.mjs) and build the context. Each missing module
- * falls back on its own: fallbackResolver (names, aliases, part numbers) or no claims,
- * so the job loop still runs; `ctx.c_modules` says which was used.
+ * The context with the code resolver (refs.mjs) and claim extractor (claims.mjs).
+ * Slack channels that settings tie to one assembly scope numeric aliases to it.
  */
 export async function loadReadContext(settings, { xometry, calendar } = {}) {
-  const tryImport = async (path) => {
-    try { return await import(path); } catch (e) { if (e?.code === 'ERR_MODULE_NOT_FOUND' && String(e.message).includes(path.slice(2))) return null; throw e; }
-  };
-  const refs = await tryImport('./refs.mjs');
-  const claims = await tryImport('./claims.mjs');
   const channelAssemblies = {};
   for (const c of settings?.channels || []) if (c.assembly) channelAssemblies[c.slack_id] = [c.assembly];
-  const resolve = refs ? refs.makeResolver(settings, { xometry, calendar, channelAssemblies }) : fallbackResolver(settings);
-  const ctx = makeReadContext(settings, { resolve, extractClaims: claims?.extractClaims });
-  return { ...ctx, c_modules: `refs:${refs ? 'real' : 'fallback'} claims:${claims ? 'real' : 'none'}` };
-}
-
-/**
- * Minimal stand-in for C's resolver, used only when refs.mjs is absent: part numbers → "id";
- * names and aliases (whole words, case-insensitive) → "alias", every candidate flagged
- * `ambiguous` when a token names more than one entity. No "vague" matching.
- */
-export function fallbackResolver(settings) {
-  const entries = [];
-  const add = (id, kind, token, mode) => token && entries.push({ id, kind, token: String(token).toLowerCase(), mode });
-  for (const p of settings?.parts || []) {
-    add(p.id, 'part', p.part_number, 'id');
-    add(p.id, 'part', p.name, 'alias');
-    for (const a of p.aliases || []) if (!/^the /i.test(a)) add(p.id, 'part', a, 'alias');
-  }
-  for (const d of settings?.deliverables || []) { add(d.id, 'deliverable', d.name, 'alias'); for (const a of d.aliases || []) add(d.id, 'deliverable', a, 'alias'); }
-  for (const t of settings?.tests || []) add(t.id, 'test', t.name, 'alias');
-  for (const m of settings?.milestones || []) add(m.id, 'milestone', m.name, 'alias');
-  for (const r of settings?.rigs || []) add(r.id, 'rig', r.name, 'alias');
-  const byToken = new Map();
-  for (const e of entries) {
-    if (!byToken.has(e.token)) byToken.set(e.token, []);
-    if (!byToken.get(e.token).some((x) => x.id === e.id)) byToken.get(e.token).push(e);
-  }
-  const tokens = [...byToken.keys()].sort((a, b) => b.length - a.length);
-  const esc = (t) => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const res = tokens.map((t) => [t, new RegExp(`(^|[^a-z0-9-])${esc(t)}($|[^a-z0-9-])`, 'i')]);
-  return (text) => {
-    let rest = String(text || '').toLowerCase();
-    const out = new Map();
-    for (const [t, re] of res) {
-      if (!re.test(rest)) continue;
-      rest = rest.replace(re, '$1 $2'); // longest token wins; don't re-match its pieces
-      const cands = byToken.get(t);
-      for (const c of cands) if (!out.has(c.id)) out.set(c.id, { id: c.id, kind: c.kind, mode: c.mode, token: t, ...(cands.length > 1 ? { ambiguous: true } : {}) });
-    }
-    return [...out.values()];
-  };
+  const resolve = makeResolver(settings || {}, { xometry, calendar, channelAssemblies });
+  return { ...makeReadContext(settings, { resolve, extractClaims: codeClaims }), c_modules: 'refs:real claims:real' };
 }
 
 // ---------------------------------------------------------------- the code read
@@ -165,7 +122,7 @@ const DONE_RE = /\b(done|finished|complete(d)?|arrived|received|delivered|landed
 const NOT_DONE_RE = /\b(not (yet )?(done|finished|complete|arrived|received|delivered|in)|isn'?t (done|here)|until .* (done|arrives?)|once .* (done|arrives?)|when .* (done|arrives?)|if .* (done|arrives?))\b|\?\s*$/i;
 
 /** Team key for baselines: the author's team, else the channel's team, else the container. */
-export function teamKeyOf(doc, ctx) {
+function teamKeyOf(doc, ctx) {
   const person = ctx.personOf(doc.author);
   if (person?.team) return person.team;
   if (ctx.channelTeam.has(doc.container)) return ctx.channelTeam.get(doc.container);
@@ -179,6 +136,8 @@ export function teamKeyOf(doc, ctx) {
  * @returns {doc_id, refs, claims, pressure, done, via: "code", cues, team, author_id, container, thread, at}
  */
 export function readDoc(doc, ctx) {
+  if (!doc?.id) throw new TypeError('readDoc: expected a doc with an id');
+  if (typeof ctx?.resolve !== 'function') throw new TypeError('readDoc: expected a context from makeReadContext()');
   const text = doc.text || '';
   const refs = ctx.resolve(text, doc) || [];
   const claims = ctx.extractClaims(doc, ctx.resolve) || [];
@@ -219,7 +178,7 @@ export function readDoc(doc, ctx) {
 
 /** Code reads for many docs, in doc order. */
 export function readDocs(docs, ctx) {
-  return docs.map((d) => readDoc(d, ctx));
+  return (docs || []).map((d) => readDoc(d, ctx));
 }
 
 // ---------------------------------------------------------------- cache
@@ -240,7 +199,9 @@ export function mergeReads(codeReads = [], llmReads = []) {
 export function loadReadCache(dir, codeReads = []) {
   const file = join(dir, 'read-cache.json');
   let llm = [];
-  if (existsSync(file)) llm = JSON.parse(readFileSync(file, 'utf8')).reads || [];
+  if (existsSync(file)) {
+    try { llm = JSON.parse(readFileSync(file, 'utf8')).reads || []; } catch (e) { throw new Error(`${file}: ${e.message}`); }
+  }
   return mergeReads(codeReads, llm);
 }
 
@@ -250,11 +211,11 @@ export function loadReadCache(dir, codeReads = []) {
  * Mean pressure per team (or channel when the author is unknown).
  * Small teams are shrunk toward the global mean: mean = (Σp + k·global) / (n + k), k = prior.
  * @param reads     iterable of reads (array or Map values) carrying `team` (code reads do)
- * @param settings  unused today beyond naming; kept so callers can pass team lists later
+ * @param _settings unused; kept so existing callers (demo.mjs) need not change
  * @returns {global, prior, teams: {key: {mean, n}}, of(read) → baseline, relative(read) → pressure − baseline}
  */
-export function teamBaseline(reads, settings, { prior = 5 } = {}) {
-  const list = reads instanceof Map ? [...reads.values()] : [...reads];
+export function teamBaseline(reads, _settings, { prior = 5 } = {}) {
+  const list = reads instanceof Map ? [...reads.values()] : [...(reads || [])];
   const sums = new Map();
   let total = 0;
   for (const r of list) {
@@ -270,13 +231,11 @@ export function teamBaseline(reads, settings, { prior = 5 } = {}) {
   for (const [key, { sum, n }] of [...sums.entries()].sort()) {
     teams[key] = { mean: round3((sum + prior * global) / (n + prior)), n };
   }
-  const known = new Set((settings?.teams || []).map((t) => t.id));
   const of = (r) => teams[r.team || `container:${r.container}`]?.mean ?? round3(global);
   return {
     global: round3(global),
     prior,
     teams,
-    known_teams: [...known].sort(),
     of,
     relative: (r) => round3((r.pressure || 0) - of(r)),
   };

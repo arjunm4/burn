@@ -364,40 +364,6 @@
       }
     ]
   },
-  "habit": {
-    "available": true,
-    "accuracy": 0.556,
-    "n_train": 104,
-    "n_test": 45,
-    "ci95": [
-      0.4118,
-      0.6906
-    ],
-    "lambda": 10,
-    "model_baseline_never_expedite": 0.6,
-    "vs_never_expedite": -0.044,
-    "vs_need_by_rule": -0.2,
-    "baselines": {
-      "test_set": "newest 30% of 149 usable orders (T >= 2026-09-16)",
-      "n_test_set": 45,
-      "never_expedite": {
-        "accuracy": 0.6,
-        "ci95": [
-          0.455,
-          0.73
-        ]
-      },
-      "need_by_rule": {
-        "accuracy": 0.822,
-        "ci95": [
-          0.687,
-          0.907
-        ],
-        "note": "expedite iff Standard est_delivery > need_by_believed"
-      },
-      "need_by_rule_answers_summary": 0.756
-    }
-  },
   "wasted_expedites": {
     "expedited": 133,
     "count": 61,
@@ -1289,6 +1255,5 @@
     "precision": 1,
     "coverage_of_xometry_orders": 1,
     "true_xometry_charges": 482
-  },
-  "runtime_s": 1.38
+  }
 }

@@ -6,7 +6,7 @@ import { tmpdir } from 'node:os';
 import { join, resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { makeCalendar } from '../generate-world/lib/calendar.mjs';
-import { buildEngineCases, gradeEngine, wastedExpedites, wilson, gradeHabit, grade, summarize, parseArgs, gradeGraphRecall } from './grade.mjs';
+import { buildEngineCases, gradeEngine, wastedExpedites, grade, summarize, parseArgs, gradeGraphRecall, ENGINE } from './grade.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const EX = join(ROOT, 'fixtures/world/example');
@@ -147,54 +147,41 @@ test('wasted expedites: count and premium over Standard', () => {
   assert.deepEqual(w.by_reason, { no_gain_other_input_later: 1 });
 });
 
-test('wilson interval', () => {
-  const [lo, hi] = wilson(35, 50);
-  assert.ok(lo > 0.55 && lo < 0.57 && hi > 0.8 && hi < 0.82, `${lo} ${hi}`);
-  assert.equal(wilson(0, 0), null);
-});
-
-test('habit: baselines without a model; with a stub model', () => {
-  const { world, answers } = miniWorld();
-  const none = gradeHabit(world, answers, null);
-  assert.equal(none.available, false);
-  assert.equal(none.baselines.n_test_set, 1); // newest 30% of 3 usable orders
-  const m = gradeHabit(world, answers, { accuracy: 0.75, n_test: 46, n_train: 108, test_orders: ['ord-x-00002', 'ord-x-00003'] });
-  assert.equal(m.available, true);
-  assert.equal(m.baselines.n_test_set, 2);
-  assert.equal(m.baselines.never_expedite.accuracy, 0.5);
-  assert.equal(m.baselines.need_by_rule.accuracy, 1); // 00002: Std 11-19 > need 11-18 -> expedite (right); 00003: no need-by -> standard (right)
-  assert.ok(m.ci95[0] < 0.75 && m.ci95[1] > 0.75);
-});
-
-test('grade() runs end to end on the example world and summarizes', async () => {
+test('grade() runs end to end on the example world and summarizes', () => {
   const out = mkdtempSync(join(tmpdir(), 'grade-'));
-  const g = await grade({ ...parseArgs([]), world: EX, out });
-  assert.ok(g.runtime_s < 30);
-  assert.ok(g.engine);
+  const g = grade({ ...parseArgs([]), world: EX, out });
+  assert.equal(g.engine.available, true);
+  assert.ok(!('habit' in g) && !('runtime_s' in g));
+  assert.equal(g.graph_recall.available, false); // no settings.json in out
+  assert.match(g.graph_recall.reason, /settings\.json not found/);
   assert.match(summarize(g), /Wasted expedites: \d+/);
 });
 
-test('grade() on a mini world with a habit model present', async () => {
+test('grade() on a mini world without sources or settings', () => {
   const dir = mkdtempSync(join(tmpdir(), 'grade-mini-'));
   const { world, answers } = miniWorld();
   mkdirSync(join(dir, 'world')); mkdirSync(join(dir, 'out'));
   writeFileSync(join(dir, 'world/world.json'), JSON.stringify(world));
   writeFileSync(join(dir, 'world/answers.json'), JSON.stringify(answers));
-  writeFileSync(join(dir, 'out/habit-model.json'), JSON.stringify({ accuracy: 0.8, n_test: 2 }));
-  const g = await grade({ ...parseArgs([]), world: join(dir, 'world'), out: join(dir, 'out'), sources: join(dir, 'none') });
-  assert.equal(g.habit.available, true);
+  const g = grade({ ...parseArgs([]), world: join(dir, 'world'), out: join(dir, 'out'), sources: join(dir, 'none') });
   assert.equal(g.wasted_expedites.count, 1);
+  assert.equal(g.engine.all.exact_share, 1);
+  assert.match(summarize(g), /Graph recall: not available/);
 });
 
-test("A's engine on the example and mini worlds (skips until src/timevalue lands)", async (t) => {
-  const { loadEngine } = await import('./grade.mjs');
-  const { engine } = await loadEngine();
-  if (!engine) return t.skip('src/timevalue not available yet');
-  const ex = gradeEngine(built(exWorld, exAnswers), engine);
+test('grade() names the missing world file; parseArgs rejects a flag without a path', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'grade-empty-'));
+  assert.throws(() => grade({ ...parseArgs([]), world: dir }), /missing .*world\.json/);
+  assert.throws(() => parseArgs(['--out']), /--out needs a path/);
+  assert.throws(() => parseArgs(['--world', '--out', 'x']), /--world needs a path/);
+});
+
+test("the real engine on the example and mini worlds", () => {
+  const ex = gradeEngine(built(exWorld, exAnswers), ENGINE);
   assert.deepEqual(ex.mismatches, []);
   const { world, answers } = miniWorld();
   // owner_out is [] when grading against the simulator, so p-tess's outage (12-01..12-02) moves nothing
-  const g = gradeEngine(built(world, answers), engine);
+  const g = gradeEngine(built(world, answers), ENGINE);
   assert.deepEqual(g.mismatches, []);
   assert.equal(g.all.exact_share, 1);
 });

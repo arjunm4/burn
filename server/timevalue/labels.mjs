@@ -21,7 +21,7 @@ export const tierKey = (s) => (s == null ? null : String(s).trim().toLowerCase()
 const isXometry = (t) => /xometry/i.test(`${t.merchant_name ?? ''} ${t.merchant_descriptor ?? ''}`);
 const cmp = (a, b) => (a < b ? -1 : a > b ? 1 : 0);
 
-export function linkRampToXometry({ ramp, xometry }) {
+export function linkRampToXometry({ ramp, xometry } = {}) {
   const charges = (ramp?.transactions || []).filter(
     (t) => isXometry(t) && t.state !== 'DECLINED' && Number(t.amount) > 0 && !t.original_transaction_id,
   );
@@ -107,5 +107,6 @@ export function linkRampToXometry({ ramp, xometry }) {
 // Usable for training/testing: linked, and T at or after `from` (text start + 30 days).
 export function usableLinks(links, from = '2026-09-10T00:00:00-07:00') {
   const f = Date.parse(from);
-  return links.filter((l) => Date.parse(l.T) >= f);
+  if (!Number.isFinite(f)) throw new RangeError(`usableLinks: from ${JSON.stringify(from)} is not a time`);
+  return (links || []).filter((l) => Date.parse(l.T) >= f);
 }

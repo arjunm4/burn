@@ -10,9 +10,9 @@
 
 import { makeResolver } from './refs.mjs';
 import { extractClaims } from './claims.mjs';
+import { instantMs as ms } from './sources.mjs';
 
 const DONE = /^(done|closed|resolved|complete[d]?)$/i;
-const ms = (iso) => Date.parse(iso.length === 10 ? iso + 'T00:00:00-08:00' : iso);
 
 function statusChange(doc) {
   if (doc.field === 'status' && doc.to != null) return String(doc.to).trim();
@@ -23,12 +23,15 @@ function statusChange(doc) {
 }
 
 export function progressRank({ settings, sources, claims }, weekStart) {
-  const end = ms(weekStart) + 7 * 864e5;
+  if (!settings) throw new TypeError('progressRank: settings is required');
+  const start = ms(weekStart);
+  if (!Number.isFinite(start)) throw new RangeError(`progressRank: weekStart ${JSON.stringify(weekStart)} is not a date`);
+  const end = start + 7 * 864e5;
+  sources = sources || {};
   const docs = (sources.docs || []).filter((d) => ms(d.at) < end);
   const resolve = makeResolver(settings, { xometry: sources.xometry, calendar: sources.calendar });
   const asmById = new Map((settings.assemblies || []).map((a) => [a.id, a]));
-  const items = resolve.items;
-  const asmOfItem = (id) => { const x = items.get(id); return x ? x.assemblies?.length ? x.assemblies : x.assembly ? [x.assembly] : [] : []; };
+  const asmOfItem = resolve.assembliesOf;
 
   // Tickets: created (desc doc) and last status before the week end.
   const tickets = new Map();

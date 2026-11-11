@@ -1,7 +1,9 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
-import { buildSettings } from './export-settings.mjs';
+import { existsSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { buildSettings, validateSettings, exportSettings, parseArgs } from './export-settings.mjs';
 
 // Hand-made world: only the fields buildSettings reads (format as fixtures/world/SCHEMA.md).
 const h = (value, known_at, by, where) => ({ value, effective: null, known_at, by, where });
@@ -73,6 +75,7 @@ test('settings follow the contract and hide what Burn must find', () => {
     { id: 'rig-dyno', name: 'Dyno', slot_days: [2, 5], owner: 'p-andre', kind: 'rig' },
   ]);
   assert.equal(s.usable_from, '2026-09-10');
+  assert.deepEqual(validateSettings(s), []);
 });
 
 test('the example world exports', () => {
@@ -81,4 +84,32 @@ test('the example world exports', () => {
   assert.equal(s.tests.length, ex.tests.length);
   assert.equal(s.rigs.length, ex.test_rigs.length + ex.resources.length);
   assert.ok(!JSON.stringify(s).includes('"where"'));
+  assert.deepEqual(validateSettings(s), []);
+});
+
+test('validation: broken references and duplicate ids stop the write', () => {
+  const s = buildSettings(world);
+  s.tests[0].rig = 'rig-gone';
+  s.parts.push({ ...s.parts[0] });
+  const errs = validateSettings(s);
+  assert.ok(errs.some((e) => e.includes('duplicate id pt-dyno-plate')), errs.join('\n'));
+  assert.deepEqual(validateSettings({ ...buildSettings(world), tests: [{ ...s.tests[0], rig: 'rig-gone' }] }), ['test test-hip-spin names unknown rigs rig-gone']);
+
+  const dir = mkdtempSync(join(tmpdir(), 'export-settings-'));
+  assert.throws(() => exportSettings({ world: join(dir, 'world.json'), out: dir }), /missing world/);
+  const bad = structuredClone(world);
+  bad.tests[0].milestone = 'm-gone';
+  writeFileSync(join(dir, 'world.json'), JSON.stringify(bad));
+  assert.throws(() => exportSettings({ world: join(dir, 'world.json'), out: dir }), /settings not written.*m-gone/s);
+  assert.ok(!existsSync(join(dir, 'settings.json')));
+  writeFileSync(join(dir, 'world.json'), JSON.stringify(world));
+  const r = exportSettings({ world: join(dir, 'world.json'), out: dir });
+  assert.equal(JSON.parse(readFileSync(r.file, 'utf8')).tests.length, 1);
+});
+
+test('parseArgs: defaults, flags, and clear errors', () => {
+  assert.equal(parseArgs([]).world, 'fixtures/world/world.json');
+  assert.equal(parseArgs(['--out', 'x']).out, 'x');
+  assert.throws(() => parseArgs(['--out']), /--out needs a path/);
+  assert.throws(() => parseArgs(['--wrold', 'x']), /unknown argument --wrold/);
 });

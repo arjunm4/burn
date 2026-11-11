@@ -21,12 +21,14 @@ const STOP_VAGUE = new Set(['same', 'one', 'other', 'thing', 'way', 'week', 'day
   'issue', 'thread', 'ticket', 'channel', 'doc', 'list', 'number', 'numbers', 'first', 'last', 'next', 'moment', 'quote', 'shop', 'lab', 'build',
   'part', 'order', 'stuff', 'update', 'eta', 'schedule', 'slot', 'fit check', 'actuator']);
 
-export function slug(s) { return String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+function slug(s) { return String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
 export function workId(name) { return 'wk:' + slug(name); }
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const norm = (s) => String(s).toLowerCase().replace(/\s+/g, ' ').trim();
 
 export function makeResolver(settings, opts = {}) {
+  settings = settings || {};
+  opts = opts || {};
   const entries = new Map(); // token(lower) -> [{id, kind, mode, order?}]
   const items = new Map();   // id -> {id, kind, name, assembly, assemblies}
   const add = (token, e) => {
@@ -138,6 +140,8 @@ export function makeResolver(settings, opts = {}) {
   }
 
   function resolve(text, ctx = {}) {
+    text = text == null ? '' : String(text);
+    ctx = ctx || {};
     const out = [];
     const taken = [];
     const ctxAsm = new Set(containerAssemblies(ctx.container));
@@ -172,7 +176,7 @@ export function makeResolver(settings, opts = {}) {
     }
     // Vague phrases.
     const coAsm = new Set(out.filter((r) => !r.ambiguous).flatMap((r) => (r.assembly ? [r.assembly] : asmOf(r.id))));
-    const inAsm = (x, set) => (x.assemblies && x.assemblies.length ? x.assemblies : x.assembly ? [x.assembly] : []).some((a) => set.has(a));
+    const inAsm = (x, set) => asmOf(x.id).some((a) => set.has(a));
     const candidatesFor = (phrase, head) => {
       if (vagueAliases.has(phrase)) return vagueAliases.get(phrase).map((id) => items.get(id));
       const last = head.split(' ').pop();
@@ -203,8 +207,7 @@ export function makeResolver(settings, opts = {}) {
   }
   resolve.items = items;
   resolve.people = settings.people || [];
-  resolve.containerAssemblies = containerAssemblies;
-  resolve.byName = (name) => { const l = entries.get(norm(name)); return l ? l.filter((x) => x.mode === 'alias') : []; };
+  resolve.assembliesOf = asmOf;
   return resolve;
 }
 

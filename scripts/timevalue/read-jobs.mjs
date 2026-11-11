@@ -15,11 +15,13 @@
 //
 // Idempotent: a job's id is a hash of its doc ids. Existing jobs with the same id are
 // left alone; filled jobs are never overwritten and their docs are not re-queued;
-// unfilled jobs no longer in the plan are removed.
+// untouched jobs (no results, no filled_by) no longer in the plan are removed. A job file
+// that is not valid JSON stops the run (it may be a half-saved fill), so nothing is lost.
+// --collect never replaces read-cache.json with an empty one.
 // Agents fill jobs by following docs/build/read-job-instructions.md.
 
 import { createHash } from 'node:crypto';
-import { existsSync, mkdirSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'node:fs';
 import { join, resolve as resolvePath } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { readDocs } from '../../server/timevalue/read.mjs';
@@ -159,6 +161,8 @@ export function catalogOf(settings) {
 /** The job file a Claude agent fills. */
 export function buildJobFile(job, { docsById, settings, readsById, now, personOf }) {
   const docs = job.doc_ids.map((id) => docsById.get(id));
+  const lost = job.doc_ids.filter((id, i) => !docs[i]);
+  if (lost.length) throw new Error(`job ${job.job_id}: unknown doc ids ${lost.join(', ')}`);
   const chName = new Map((settings.channels || []).map((c) => [c.slack_id, c.name]));
   return {
     job_id: job.job_id,
@@ -249,6 +253,11 @@ export function isFilled(job) {
   return Array.isArray(job?.results) && job.results.length > 0;
 }
 
+/** An agent has started on this job: never delete it. */
+export function isTouched(job) {
+  return isFilled(job) || job?.filled_by != null;
+}
+
 // ---------------------------------------------------------------- IO
 
 function byAtId(a, b) {
@@ -260,29 +269,52 @@ function weekStart(ms) {
   const dow = (d.getUTCDay() + 6) % 7;
   return Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate() - dow);
 }
-function parseArgs(argv) {
+export function parseArgs(argv) {
   const a = { sources: 'fixtures/flintlock', out: 'fixtures/timevalue', size: 40, collect: false, now: null };
+  const value = (i) => {
+    const v = argv[i + 1];
+    if (v == null || v.startsWith('--')) throw new Error(`${argv[i]} needs a value`);
+    return v;
+  };
   for (let i = 0; i < argv.length; i++) {
-    if (argv[i] === '--collect') a.collect = true;
-    else if (argv[i] === '--sources') a.sources = argv[++i];
-    else if (argv[i] === '--out') a.out = argv[++i];
-    else if (argv[i] === '--size') a.size = Number(argv[++i]);
-    else if (argv[i] === '--now') a.now = argv[++i];
+    const f = argv[i];
+    if (f === '--collect') a.collect = true;
+    else if (f === '--sources' || f === '--out' || f === '--now') a[f.slice(2)] = value(i++);
+    else if (f === '--size') a.size = Number(value(i++));
+    else throw new Error(`unknown argument ${f} (use --sources, --out, --size, --now, --collect)`);
   }
+  if (!(Number.isInteger(a.size) && a.size > 0)) throw new Error(`--size must be a positive whole number, got ${a.size}`);
+  if (a.now != null && Number.isNaN(Date.parse(a.now))) throw new Error(`--now is not a date: ${a.now}`);
   return a;
 }
+/** Job files in jobsDir. → [{file, job}] plus [{file, error}] for files that are not valid JSON. */
 function readJobs(jobsDir) {
-  if (!existsSync(jobsDir)) return [];
-  return readdirSync(jobsDir).filter((f) => /^rj-[0-9a-f]+\.json$/.test(f)).sort()
-    .map((f) => ({ file: join(jobsDir, f), job: JSON.parse(readFileSync(join(jobsDir, f), 'utf8')) }));
+  if (!existsSync(jobsDir)) return { jobs: [], broken: [] };
+  const jobs = [];
+  const broken = [];
+  for (const f of readdirSync(jobsDir).filter((x) => /^rj-[0-9a-f]+\.json$/.test(x)).sort()) {
+    const file = join(jobsDir, f);
+    try { jobs.push({ file, job: JSON.parse(readFileSync(file, 'utf8')) }); } catch (e) { broken.push({ file, error: e.message }); }
+  }
+  return { jobs, broken };
 }
-const writeJson = (file, obj) => writeFileSync(file, JSON.stringify(obj, null, 2) + '\n');
+// Write to a temp file, then rename: a crash never leaves a half-written file.
+function writeJson(file, obj) {
+  const tmp = `${file}.tmp-${process.pid}`;
+  writeFileSync(tmp, JSON.stringify(obj, null, 2) + '\n');
+  renameSync(tmp, file);
+}
+const readJsonFile = (file, hint) => {
+  if (!existsSync(file)) throw new Error(`missing ${file}${hint ? ` (${hint})` : ''}`);
+  try { return JSON.parse(readFileSync(file, 'utf8')); } catch (e) { throw new Error(`${file} is not valid JSON: ${e.message}`); }
+};
 
 export function collect(outDir) {
   const jobsDir = join(outDir, 'read-jobs');
-  const all = readJobs(jobsDir);
+  if (!existsSync(jobsDir)) throw new Error(`no ${jobsDir} (run read-jobs.mjs without --collect first)`);
+  const { jobs: all, broken } = readJobs(jobsDir);
   const reads = new Map();
-  const errors = [];
+  const errors = broken.map((b) => `${b.file}: not valid JSON (${b.error})`);
   let filled = 0, missing = 0;
   for (const { job } of all) {
     if (!isFilled(job)) continue;
@@ -293,25 +325,32 @@ export function collect(outDir) {
     for (const r of v.reads) reads.set(r.doc_id, r);
   }
   const sorted = [...reads.values()].sort((a, b) => (a.doc_id < b.doc_id ? -1 : 1));
-  writeJson(join(outDir, 'read-cache.json'), {
-    generated_by: 'scripts/timevalue/read-jobs.mjs --collect',
-    jobs_total: all.length, jobs_filled: filled, n: sorted.length, errors, reads: sorted,
-  });
-  return { jobs_total: all.length, jobs_filled: filled, reads: sorted.length, missing, errors };
+  const cacheFile = join(outDir, 'read-cache.json');
+  // Never replace a cache that has reads with an empty one (e.g. every job failed validation).
+  const written = sorted.length > 0 || !existsSync(cacheFile);
+  if (written) {
+    writeJson(cacheFile, {
+      generated_by: 'scripts/timevalue/read-jobs.mjs --collect',
+      jobs_total: all.length, jobs_filled: filled, n: sorted.length, errors, reads: sorted,
+    });
+  }
+  return { jobs_total: all.length, jobs_filled: filled, reads: sorted.length, missing, errors, written };
 }
 
 /** B's loadSources, or a hand-made sample: a dir holding docs.json = {docs, demo} (used to test the loop). */
 export async function loadSourcesOrSample(dir) {
+  if (!existsSync(dir)) throw new Error(`sources dir ${dir} not found (pass --sources <dir>)`);
   const sample = join(dir, 'docs.json');
-  if (existsSync(sample)) return JSON.parse(readFileSync(sample, 'utf8'));
-  const { loadSources } = await import('../../server/timevalue/sources.mjs');
-  return loadSources(dir);
+  const src = existsSync(sample) ? readJsonFile(sample) : (await import('../../server/timevalue/sources.mjs')).loadSources(dir);
+  if (!Array.isArray(src?.docs)) throw new Error(`sources in ${dir} have no docs array`);
+  return src;
 }
 
 export async function generate({ sources, out, size, now }) {
   const { loadReadContext } = await import('../../server/timevalue/read.mjs');
-  const settings = JSON.parse(readFileSync(join(out, 'settings.json'), 'utf8'));
+  const settings = readJsonFile(join(out, 'settings.json'), 'run scripts/timevalue/export-settings.mjs first');
   now = now || settings.demo_now;
+  if (!now || Number.isNaN(Date.parse(now))) throw new Error(`no valid "now": pass --now or set demo_now in settings.json (got ${now})`);
   const src = await loadSourcesOrSample(sources);
   const docs = src.docs.filter((d) => Date.parse(d.at) <= Date.parse(now));
   const ctx = await loadReadContext(settings, { xometry: src.xometry, calendar: src.calendar });
@@ -320,26 +359,31 @@ export async function generate({ sources, out, size, now }) {
   const docsById = new Map(docs.map((d) => [d.id, d]));
 
   const jobsDir = join(out, 'read-jobs');
-  mkdirSync(jobsDir, { recursive: true });
-  const existing = readJobs(jobsDir);
+  const { jobs: existing, broken } = readJobs(jobsDir);
+  if (broken.length) {
+    throw new Error(`job files that are not valid JSON (fix or delete them, then rerun):\n${broken.map((b) => `  ${b.file}: ${b.error}`).join('\n')}`);
+  }
   const skip = new Set();
-  for (const { job } of existing) if (isFilled(job)) for (const d of job.docs) skip.add(d.id);
+  for (const { job } of existing) if (isFilled(job)) for (const d of job.docs || []) skip.add(d.id);
 
   const { selected, units } = prefilter(docs, readsById);
   const focus = demoFocus(src.demo || {}, ctx.resolve);
   const plan = planJobs({ units, readsById, focus, now, size, skip });
   const planned = new Set(plan.map((j) => j.job_id));
 
-  let written = 0, kept = 0, removed = 0;
+  // Build every new job file before touching the directory, so a bad plan changes nothing.
+  const fresh = plan
+    .map((j) => ({ file: join(jobsDir, `${j.job_id}.json`), j }))
+    .filter(({ file }) => !existsSync(file))
+    .map(({ file, j }) => ({ file, body: buildJobFile(j, { docsById, settings, readsById, now, personOf: ctx.personOf }) }));
+  mkdirSync(jobsDir, { recursive: true });
+  let removed = 0;
   for (const { file, job } of existing) {
-    if (!isFilled(job) && !planned.has(job.job_id)) { unlinkSync(file); removed++; }
+    if (!isTouched(job) && !planned.has(job.job_id)) { unlinkSync(file); removed++; }
   }
-  for (const j of plan) {
-    const file = join(jobsDir, `${j.job_id}.json`);
-    if (existsSync(file)) { kept++; continue; }
-    writeJson(file, buildJobFile(j, { docsById, settings, readsById, now, personOf: ctx.personOf }));
-    written++;
-  }
+  for (const { file, body } of fresh) writeJson(file, body);
+  const written = fresh.length;
+  const kept = plan.length - written;
   const filledJobs = existing.filter(({ job }) => isFilled(job));
   const index = {
     instructions: INSTRUCTIONS, now, focus, c_modules: ctx.c_modules,
@@ -347,7 +391,7 @@ export async function generate({ sources, out, size, now }) {
     prefilter_ratio: docs.length ? Math.round((selected.length / docs.length) * 1000) / 1000 : 0,
     docs_with_ref: reads.filter((r) => r.refs.length).length,
     jobs: [
-      ...filledJobs.map(({ job }) => ({ job_id: job.job_id, label: job.label, n: job.docs.length, status: 'filled' })),
+      ...filledJobs.map(({ job }) => ({ job_id: job.job_id, label: job.label, n: (job.docs || []).length, status: 'filled' })),
       ...plan.map((j) => ({ job_id: j.job_id, priority: j.priority, label: j.label, n: j.doc_ids.length, status: 'open' })),
     ],
   };
@@ -361,6 +405,7 @@ async function main() {
   if (args.collect) {
     const r = collect(out);
     console.log(`collected ${r.reads} reads from ${r.jobs_filled}/${r.jobs_total} filled jobs; ${r.missing} docs without a result; ${r.errors.length} errors`);
+    if (!r.written) console.log('  no valid reads: read-cache.json left as it was');
     for (const e of r.errors.slice(0, 20)) console.log('  ' + e);
     return;
   }
@@ -371,5 +416,5 @@ async function main() {
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1] || '').href) {
-  main().catch((e) => { console.error(e); process.exit(1); });
+  main().catch((e) => { console.error(`read-jobs: ${e.message}`); process.exit(1); });
 }

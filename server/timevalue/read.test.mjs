@@ -6,8 +6,10 @@ import { join } from 'node:path';
 import {
   scorePressure, makeReadContext, readDoc, readDocs, mergeReads, loadReadCache, teamBaseline, PRESSURE_LEXICON,
 } from './read.mjs';
+import { makeResolver } from './refs.mjs';
+import { extractClaims } from './claims.mjs';
 
-// ---- stub of C's contracts (refs.mjs / claims.mjs) and B's settings: used until C lands.
+// ---- stubs of refs.mjs / claims.mjs and settings, so these tests pin the read logic alone.
 const SETTINGS = {
   people: [
     { id: 'p-owen', name: 'Owen Halloran', email: 'owen@x.com', slack_id: 'U1', team: 't-act', manager: 'p-arjun' },
@@ -32,13 +34,6 @@ const stubClaims = (doc, resolve) => {
   if (m && refs[0]) return [{ kind: 'eta', subject: refs[0].id, value: `2026-${m[1].padStart(2, '0')}-${m[2].padStart(2, '0')}`, doc_id: doc.id, by: null, at: doc.at }];
   return [];
 };
-
-let realC = null;
-try {
-  const { makeResolver } = await import('./refs.mjs');
-  const { extractClaims } = await import('./claims.mjs');
-  realC = { makeResolver, extractClaims };
-} catch { /* C not landed yet: stubs only */ }
 
 const ctx = makeReadContext(SETTINGS, { resolve: stubResolve, extractClaims: stubClaims });
 const doc = (id, text, extra = {}) => ({
@@ -128,10 +123,10 @@ test('teamBaseline: mean per team, shrunk toward global; relative pressure', () 
   assert.equal(teamBaseline(new Map(), SETTINGS).global, 0);
 });
 
-test('real C modules (when landed) plug into readDoc', { skip: !realC && 'refs.mjs / claims.mjs not landed' }, async () => {
+test('real refs.mjs / claims.mjs plug into readDoc', async () => {
   const { readFileSync } = await import('node:fs');
   const settings = JSON.parse(readFileSync(new URL('../../fixtures/timevalue/settings.json', import.meta.url), 'utf8'));
-  const real = makeReadContext(settings, { resolve: realC.makeResolver(settings), extractClaims: realC.extractClaims });
+  const real = makeReadContext(settings, { resolve: makeResolver(settings), extractClaims });
   const r = readDoc({
     id: 'slack:C07FLK0ACTU:1.0', source: 'slack', container: 'C07FLK0ACTU', thread: '1.0', at: '2026-11-10T10:20:00-08:00',
     author: { name: 'Arjun Venkatesan', email: 'arjun@flintlockrobotics.com', slack_id: 'U07FLK0ARJN' },

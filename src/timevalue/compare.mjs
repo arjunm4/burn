@@ -11,25 +11,21 @@
 //                      cost(d) = usd of the largest curve point with days_late <= d (no interpolation: we
 //                      never invent a $ figure between the owner's points)
 //   no policy        : "ask_owner" with the break-even, unless no tier saves time ("cheapest")
-import { makeCalendar, toDate } from './calendar.mjs';
+// A missing or malformed quote, tier total or date gives outcome "blocked" with a reason, never a guess.
+import { makeCalendar, toDate, fmtDay } from './calendar.mjs';
 import { solve } from './solve.mjs';
 
-const CONFIDENT = new Set(['cheapest', 'pay', 'dont_pay']);
-const usd = (n) => `$${Math.round(n).toLocaleString('en-US')}`;
-const MONTH = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-const DOW = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-export const fmtDay = (date) => {
-  const d = new Date(`${date}T00:00:00Z`);
-  return `${DOW[d.getUTCDay()]} ${MONTH[d.getUTCMonth()]} ${d.getUTCDate()}`;
-};
+export const CONFIDENT = new Set(['cheapest', 'pay', 'dont_pay']);
+export const usd = (n) => `$${Math.round(n).toLocaleString('en-US')}`;
+export const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
 
-function curveCost(curve, daysLate) {
+const curveCost = (curve, daysLate) => {
   let cost = 0;
   for (const p of [...curve].sort((a, b) => a.days_late - b.days_late)) if (p.days_late <= daysLate) cost = p.usd;
   return cost;
-}
-
-const hasPolicy = (p) => p && ((p.type === 'per_day' && p.usd_per_day > 0) || (p.type === 'curve' && p.curve?.length));
+};
+const validCurve = (curve) => Array.isArray(curve) && curve.length > 0 && curve.every((p) => Number.isFinite(p?.days_late) && Number.isFinite(p?.usd));
+const hasPolicy = (p) => p && ((p.type === 'per_day' && p.usd_per_day > 0) || (p.type === 'curve' && validCurve(p.curve)));
 
 // One scenario: fixed ready dates for every input.
 function evaluate(cal, { quote, test, inputs, part, milestone }) {
@@ -40,9 +36,10 @@ function evaluate(cal, { quote, test, inputs, part, milestone }) {
     return { tier: q.tier, total: q.total, ...s, days_late: target && s.finish ? Math.max(0, cal.wdBetween(target, s.finish)) : null };
   });
   const cheap = rows[0];
-  if (rows.some((r) => !r.finish)) {
-    const bad = rows.find((r) => !r.finish);
-    return { rows, outcome: 'blocked', best: null, reason: `cannot schedule: ${bad.limiter.kind} ${bad.limiter.id ?? ''} unknown`.trim() };
+  const bad = rows.find((r) => !r.finish);
+  if (bad) {
+    const { kind, id, reason } = bad.limiter;
+    return { rows, outcome: 'blocked', best: null, reason: reason ? `cannot schedule: ${reason}` : `cannot schedule: ${kind} ${id ?? ''} unknown`.trim() };
   }
   for (const r of rows) {
     r.extra = r.total - cheap.total;
@@ -63,44 +60,51 @@ function evaluate(cal, { quote, test, inputs, part, milestone }) {
   return { rows, outcome: best === cheap ? 'dont_pay' : 'pay', best };
 }
 
+// A {min, max} ready with two real dates in order; anything else is passed to solve as is (and reported unknown).
+const isRange = (i) => i.ready && typeof i.ready === 'object' && toDate(i.ready.min) && toDate(i.ready.max) && toDate(i.ready.min) <= toDate(i.ready.max);
+
+// The scenarios to solve: one ('base'), the endpoints of a single ranged input (+ the switching date), or every
+// combination of endpoints when several inputs are ranged.
+function scenariosFor(cal, ranged, run) {
+  if (!ranged.length) return { scenarios: [{ label: 'base', pick: {}, res: run({}) }], switching: null };
+  if (ranged.length > 1) {
+    let picks = [{}];
+    for (const i of ranged) picks = picks.flatMap((p) => [{ ...p, [i.id]: toDate(i.ready.min) }, { ...p, [i.id]: toDate(i.ready.max) }]);
+    return { scenarios: picks.map((pick) => ({ label: ranged.map((i) => `${i.id}=${pick[i.id]}`).join(','), pick, res: run(pick) })), switching: null };
+  }
+  const inp = ranged[0];
+  const lo = toDate(inp.ready.min);
+  const hi = toDate(inp.ready.max);
+  const at = (d, label) => ({ label, pick: { [inp.id]: d }, res: run({ [inp.id]: d }) });
+  const first = at(lo, 'min');
+  const last = at(hi, 'max');
+  if (first.res.outcome === last.res.outcome) return { scenarios: [first, last], switching: null };
+  // Walk the wd between: the last one whose outcome still matches `min` is the switching date.
+  let by = lo;
+  for (let d = cal.nextWd(lo); d < hi; d = cal.nextWd(d)) {
+    if (run({ [inp.id]: d }).outcome !== first.res.outcome) break;
+    by = d;
+  }
+  return { scenarios: by === lo ? [first, last] : [first, at(by, 'switch'), last], switching: { input: inp.id, by_date: by } };
+}
+
+function blockedEarly(reason, value) {
+  return { tiers: [], outcome: 'blocked', recommended: null, limiter: { kind: 'quote', id: null, unknown: true }, switching: null, question: null, value, reason, scenarios: [] };
+}
+
 export function compare({ holidays = [], quote, test, inputs = [], milestone = null, now, part = 'quoted_part', quoteValidUntil = null }) {
-  const cal = makeCalendar(holidays);
-  const tiers = [...quote].sort((a, b) => a.total - b.total);
   const policy = hasPolicy(milestone?.policy) ? milestone.policy : null;
   const value = policy ? { type: policy.type, usd_per_day: policy.usd_per_day ?? null, curve: policy.curve ?? null, by: policy.by ?? null } : null;
-  const nowDate = toDate(now);
+  if (!Array.isArray(quote) || !quote.length) return blockedEarly('no quote tiers', value);
+  const noTotal = quote.find((q) => !Number.isFinite(q?.total));
+  if (noTotal) return blockedEarly(`quote tier ${noTotal?.tier ?? '(unnamed)'} has no total`, value);
 
-  const ranged = inputs.filter((i) => i.ready && typeof i.ready === 'object');
-  const fixed = inputs.filter((i) => !ranged.includes(i));
+  const cal = makeCalendar(holidays);
+  const tiers = [...quote].sort((a, b) => a.total - b.total);
+  const ranged = (inputs || []).filter(isRange);
+  const fixed = (inputs || []).filter((i) => !ranged.includes(i));
   const run = (pick) => evaluate(cal, { quote: tiers, test, part, milestone, inputs: [...fixed, ...ranged.map((i) => ({ id: i.id, ready: pick[i.id] }))] });
-
-  // Scenarios: one ('base'), or the endpoints of every ranged input (+ the switching date when exactly one).
-  let scenarios;
-  let switching = null;
-  if (!ranged.length) scenarios = [{ label: 'base', pick: {}, res: run({}) }];
-  else if (ranged.length === 1) {
-    const inp = ranged[0];
-    const lo = toDate(inp.ready.min);
-    const hi = toDate(inp.ready.max);
-    const at = (d) => ({ label: d, pick: { [inp.id]: d }, res: run({ [inp.id]: d }) });
-    const first = { ...at(lo), label: 'min' };
-    const last = { ...at(hi), label: 'max' };
-    scenarios = [first];
-    if (first.res.outcome !== last.res.outcome) {
-      let by = lo;
-      for (let d = cal.nextWd(lo); d < hi; d = cal.nextWd(d)) {
-        if (run({ [inp.id]: d }).outcome !== first.res.outcome) break;
-        by = d;
-      }
-      switching = { input: inp.id, by_date: by };
-      if (by !== lo) scenarios.push({ ...at(by), label: 'switch' });
-    }
-    scenarios.push(last);
-  } else {
-    scenarios = [{}];
-    for (const i of ranged) scenarios = scenarios.flatMap((p) => [{ ...p, [i.id]: toDate(i.ready.min) }, { ...p, [i.id]: toDate(i.ready.max) }]);
-    scenarios = scenarios.map((pick) => ({ label: ranged.map((i) => `${i.id}=${pick[i.id]}`).join(','), pick, res: run(pick) }));
-  }
+  const { scenarios, switching } = scenariosFor(cal, ranged, run);
 
   const single = scenarios.length === 1;
   const outTiers = tiers.map((q, k) => {
@@ -122,6 +126,7 @@ export function compare({ holidays = [], quote, test, inputs = [], milestone = n
   let outcome = outcomes.size === 1 ? scenarios[0].res.outcome : 'depends';
   if (outcomes.has('blocked')) outcome = 'blocked';
   let reason = scenarios.find((s) => s.res.reason)?.res.reason ?? null;
+  const nowDate = toDate(now);
   if (quoteValidUntil && nowDate && nowDate > toDate(quoteValidUntil)) { outcome = 'blocked'; reason = `quote expired ${quoteValidUntil}`; }
 
   const best = outcome === 'blocked' || outcome === 'depends' ? null : scenarios[0].res.best;
@@ -132,15 +137,14 @@ export function compare({ holidays = [], quote, test, inputs = [], milestone = n
   let question = null;
   if (outcome === 'depends' && switching) {
     const inp = ranged.find((i) => i.id === switching.input);
-    const win = scenarios[0].res.best;
     question = {
       to: inp.owner ?? inp.said_by ?? null,
-      text: `Will ${inp.name ?? inp.id} be ready by ${fmtDay(switching.by_date)}? If yes, ${win.tier} is worth it; if later, ${tiers[0].tier} is as good.`,
+      text: `Will ${inp.name ?? inp.id} be ready by ${fmtDay(switching.by_date)}? If yes, ${scenarios[0].res.best.tier} is worth it; if later, ${tiers[0].tier} is as good.`,
     };
   } else if (outcome === 'ask_owner') {
     question = {
       to: milestone?.owner ?? null,
-      text: `Is a day on ${milestone?.name ?? 'this milestone'} worth more than ${usd(best.break_even)}? ${best.tier} saves ${best.days_saved} working day${best.days_saved === 1 ? '' : 's'} for ${usd(best.extra)} more.`,
+      text: `Is a day on ${milestone?.name ?? 'this milestone'} worth more than ${usd(best.break_even)}? ${best.tier} saves ${plural(best.days_saved, 'working day')} for ${usd(best.extra)} more.`,
     };
   }
 

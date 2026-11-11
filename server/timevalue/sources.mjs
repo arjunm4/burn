@@ -6,7 +6,8 @@
 //                         demo: {partEntry, quote, policy, liveChanges}, people }
 //   docsBefore(docs, T, days) -> docs with T - days <= at < T (days null/undefined: everything before T)
 //
-// Every missing file or directory yields empty data, never a throw.
+// Every missing file or directory yields empty data, never a throw. A doc whose time is missing or does not parse
+// is left out (never given a made-up time) and listed in `skipped: [{id, reason}]`.
 // doc = { id, source, container, thread, author: {name, email, slack_id}, at, text, ...extras }
 //   slack    slack:<channel>:<ts>          container channel id, thread thread_ts || ts
 //   jira     jira:<key>:desc | :c<id> | :h<historyId>   container/thread = ticket key; :h = field changes
@@ -17,21 +18,25 @@
 // All `at` are ISO 8601 with the Pacific offset of that instant (Jira keeps its own offset), sorted by (instant, id).
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
+import { ymd, MONTHS } from '../../src/timevalue/calendar.mjs';
 
-// ---------- Pacific time ----------
+// ---------- Pacific time (shared by claims, graph and progress) ----------
 // US rule: PDT from the 2nd Sunday of March 02:00 PST (10:00Z) to the 1st Sunday of November 02:00 PDT (09:00Z).
 function nthSunday(year, month /* 0-based */, n) {
   const first = new Date(Date.UTC(year, month, 1)).getUTCDay();
   return 1 + ((7 - first) % 7) + 7 * (n - 1);
 }
-export function pacificOffsetMinutesAt(ms) {
+function pacificOffsetMinutesAt(ms) {
   const y = new Date(ms).getUTCFullYear();
   const start = Date.UTC(y, 2, nthSunday(y, 2, 2), 10);
   const end = Date.UTC(y, 10, nthSunday(y, 10, 1), 9);
   return ms >= start && ms < end ? -420 : -480;
 }
+const inRange = (n, lo, hi) => Number.isInteger(n) && n >= lo && n <= hi;
 // local wall-clock (Pacific) -> epoch ms. Ambiguous/missing hours resolve like the standard rule.
+// null when the day or time does not exist (no rolling Feb 31 over into March).
 export function pacificLocalToMs(y, mo, d, h = 0, mi = 0, s = 0) {
+  if (!ymd(y, mo, d) || !inRange(h, 0, 23) || !inRange(mi, 0, 59) || !inRange(s, 0, 59)) return null;
   const naive = Date.UTC(y, mo - 1, d, h, mi, s);
   let ms = naive + 480 * 60e3; // assume PST
   if (pacificOffsetMinutesAt(ms) === -420) {
@@ -40,14 +45,16 @@ export function pacificLocalToMs(y, mo, d, h = 0, mi = 0, s = 0) {
   }
   return ms;
 }
-const p2 = (n) => String(n).padStart(2, '0');
+/** Epoch ms -> "YYYY-MM-DDTHH:MM:SS-07:00|-08:00" (Pacific wall clock); null for a missing or invalid instant. */
 export function toPacificIso(ms) {
+  if (ms == null || !Number.isFinite(ms)) return null;
   const off = pacificOffsetMinutesAt(ms);
-  const t = new Date(ms + off * 60e3);
-  const sign = off < 0 ? '-' : '+';
-  const a = Math.abs(off);
-  return `${t.getUTCFullYear()}-${p2(t.getUTCMonth() + 1)}-${p2(t.getUTCDate())}T${p2(t.getUTCHours())}:${p2(t.getUTCMinutes())}:${p2(t.getUTCSeconds())}${sign}${p2(Math.floor(a / 60))}:${p2(a % 60)}`;
+  return new Date(ms + off * 60e3).toISOString().slice(0, 19) + (off === -420 ? '-07:00' : '-08:00');
 }
+/** Pacific calendar day of an ISO time; null when it does not parse. */
+export const localDay = (iso) => toPacificIso(Date.parse(iso))?.slice(0, 10) ?? null;
+/** Sort key for an `at`: ISO time -> epoch ms; a bare date counts from midnight -08:00; null -> -Infinity (always known). */
+export const instantMs = (iso) => (iso == null ? -Infinity : Date.parse(String(iso).length === 10 ? `${iso}T00:00:00-08:00` : iso));
 
 // ---------- io ----------
 function readJson(path) {
@@ -183,6 +190,7 @@ function loadJira(dir, people) {
     if (!/^[A-Z][A-Z0-9]*\.json$/.test(f)) continue;
     const data = readJson(join(jdir, f));
     for (const issue of data?.issues || []) {
+      if (!issue?.key) continue;
       const key = issue.key;
       const fl = issue.fields || {};
       const base = { source: 'jira', container: key, thread: key, project: fl.project?.key ?? f.slice(0, -5), summary: fl.summary ?? '' };
@@ -227,7 +235,7 @@ function loadJira(dir, people) {
 }
 
 // ---------- meetings ----------
-const MONTHS = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12 };
+const monthNum = (s) => MONTHS.findIndex((m) => m.toLowerCase() === s.toLowerCase()) + 1; // "Oct" -> 10, unknown -> 0
 export function parseMeeting(text, file, people) {
   const name = file.replace(/\.md$/, '');
   const lines = text.split(/\r?\n/);
@@ -242,10 +250,10 @@ export function parseMeeting(text, file, people) {
     if (h) header[h[1].toLowerCase()] = h[2].trim();
   }
   const dm = /(\w{3})\w*\s+(\d{1,2}),\s+(\d{4})\D+?(\d{1,2}):(\d{2})\s*([AP]M)/i.exec(header.date || '');
-  if (dm && MONTHS[dm[1].toLowerCase()]) {
+  if (dm && monthNum(dm[1])) {
     let hr = Number(dm[4]) % 12;
     if (dm[6].toUpperCase() === 'PM') hr += 12;
-    startMs = pacificLocalToMs(Number(dm[3]), MONTHS[dm[1].toLowerCase()], Number(dm[2]), hr, Number(dm[5]));
+    startMs = pacificLocalToMs(Number(dm[3]), monthNum(dm[1]), Number(dm[2]), hr, Number(dm[5]));
   } else {
     const fm = /^(\d{4})-(\d{2})-(\d{2})-(\d{2})(\d{2})/.exec(name);
     if (fm) startMs = pacificLocalToMs(+fm[1], +fm[2], +fm[3], +fm[4], +fm[5]);
@@ -310,19 +318,21 @@ function loadMeetings(dir, people) {
 function icsUnescape(s) {
   return s.replace(/\\n/gi, '\n').replace(/\\([,;\\])/g, '$1');
 }
+// DATE or DATE-TIME value -> {iso, ms, allDay, date?}; iso and ms are null when missing or not a real day/time.
 function icsTime(value, params) {
-  if (!value) return { iso: null, ms: null, allDay: false };
+  const none = { iso: null, ms: null, allDay: false };
+  if (!value) return none;
   let m = /^(\d{4})(\d{2})(\d{2})$/.exec(value);
   if (m || params.VALUE === 'DATE') {
     m = m || /^(\d{4})(\d{2})(\d{2})/.exec(value);
-    const ms = pacificLocalToMs(+m[1], +m[2], +m[3]);
-    return { iso: toPacificIso(ms), ms, allDay: true, date: `${m[1]}-${m[2]}-${m[3]}` };
+    const ms = m ? pacificLocalToMs(+m[1], +m[2], +m[3]) : null;
+    return ms == null ? { ...none, allDay: true } : { iso: toPacificIso(ms), ms, allDay: true, date: `${m[1]}-${m[2]}-${m[3]}` };
   }
   m = /^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})(Z?)$/.exec(value);
-  if (!m) return { iso: null, ms: null, allDay: false };
-  const ms = m[7] === 'Z'
-    ? Date.UTC(+m[1], +m[2] - 1, +m[3], +m[4], +m[5], +m[6])
-    : pacificLocalToMs(+m[1], +m[2], +m[3], +m[4], +m[5], +m[6]); // TZID America/Los_Angeles or floating
+  const [y, mo, d, h, mi, s] = m ? m.slice(1, 7).map(Number) : [];
+  const local = m ? pacificLocalToMs(y, mo, d, h, mi, s) : null; // TZID America/Los_Angeles or floating
+  if (local == null) return none;
+  const ms = m[7] === 'Z' ? Date.UTC(y, mo - 1, d, h, mi, s) : local;
   return { iso: toPacificIso(ms), ms, allDay: false };
 }
 export function parseIcs(text) {
@@ -409,7 +419,10 @@ export function loadSources(dir = 'fixtures/flintlock') {
   const jira = loadJira(dir, people);
   const meetings = loadMeetings(dir, people);
   const cal = loadCalendar(dir, people);
-  const docs = [...slack, ...jira.docs, ...meetings.docs, ...cal.docs];
+  const all = [...slack, ...jira.docs, ...meetings.docs, ...cal.docs];
+  const timed = (d) => d.at && Number.isFinite(d._ms);
+  const skipped = all.filter((d) => !timed(d)).map((d) => ({ id: d.id, reason: `time ${JSON.stringify(d.at ?? null)} does not parse` }));
+  const docs = all.filter(timed);
   docs.sort((a, b) => a._ms - b._ms || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
   for (const d of docs) Object.defineProperty(d, '_ms', { value: d._ms, enumerable: false });
   const x = (f) => readJson(join(dir, 'xometry', f));
@@ -430,6 +443,7 @@ export function loadSources(dir = 'fixtures/flintlock') {
     people: people.people,
     tickets: jira.tickets,
     meetings: meetings.meetings,
+    skipped,
   };
 }
 
@@ -439,7 +453,10 @@ const docMs = (d) => d._ms ?? Date.parse(d.at);
 
 // docs with at in [T - days, T); docs must be sorted by time (as loadSources returns them)
 export function docsBefore(docs, T, days) {
+  docs = docs || [];
   const end = msOf(T);
+  if (!Number.isFinite(end)) throw new RangeError(`docsBefore: T ${JSON.stringify(T)} is not a time`);
+  if (days != null && !(days >= 0)) throw new RangeError(`docsBefore: days ${JSON.stringify(days)} is not a number >= 0`);
   const start = days == null ? -Infinity : end - days * DAY;
   let lo = 0, hi = docs.length;
   while (lo < hi) { const mid = (lo + hi) >> 1; if (docMs(docs[mid]) < start) lo = mid + 1; else hi = mid; }

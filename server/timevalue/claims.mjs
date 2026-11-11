@@ -13,8 +13,8 @@
 // Relative dates ("tues the 24th", "thurs", "EOW", "next week", "11/30", "the twentieth") resolve against doc.at
 // in Pacific time.
 
-import { addDays, dow } from '../../scripts/generate-world/lib/calendar.mjs';
-import { toPacificIso } from '../../scripts/generate-world/schema.mjs';
+import { addDays, dow, ymd, isDate } from '../../src/timevalue/calendar.mjs';
+import { localDay } from './sources.mjs';
 
 const WD = { sun: 0, sunday: 0, mon: 1, monday: 1, tue: 2, tues: 2, tuesday: 2, wed: 3, weds: 3, wednesday: 3, thu: 4, thur: 4, thurs: 4, thursday: 4, fri: 5, friday: 5, sat: 6, saturday: 6 };
 const MON = { jan: 1, january: 1, feb: 2, february: 2, mar: 3, march: 3, apr: 4, april: 4, may: 5, jun: 6, june: 6, jul: 7, july: 7, aug: 8, august: 8, sep: 9, sept: 9, september: 9, oct: 10, october: 10, nov: 11, november: 11, dec: 12, december: 12 };
@@ -36,13 +36,9 @@ const DATE_SRC = [
   '(?:end\\s+of\\s+(?:the\\s+)?(?:next\\s+)?week|eow|eod|eom|end\\s+of\\s+(?:the\\s+)?month|end\\s+of\\s+day|tomorrow|today|tonight|next\\s+week|this\\s+week|early\\s+next\\s+week|late\\s+next\\s+week|mid\\s*-?\\s*next\\s+week)',
   `(?:next\\s+|this\\s+|on\\s+)?${WDRE}\\b`,
 ].join('|');
-export const DATE_RE = new RegExp(`(?<![\\w/])(?:${DATE_SRC})(?![\\w/])`, 'i');
+const DATE_RE = new RegExp(`(?<![\\w/])(?:${DATE_SRC})(?![\\w/])`, 'i');
 const DATE_RE_G = new RegExp(DATE_RE.source, 'gi');
 
-/** Pacific local date of an ISO time. */
-export function localDay(iso) { return toPacificIso(Date.parse(iso)).slice(0, 10); }
-const ymd = (y, m, d) => `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
-const valid = (y, m, d) => m >= 1 && m <= 12 && d >= 1 && d <= new Date(Date.UTC(y, m, 0)).getUTCDate();
 const absDays = (a, b) => Math.abs(Date.parse(a) - Date.parse(b)) / 864e5;
 
 /**
@@ -51,6 +47,7 @@ const absDays = (a, b) => Math.abs(Date.parse(a) - Date.parse(b)) / 864e5;
  * Returns "YYYY-MM-DD" | {min, max} | null.
  */
 export function parseDate(expr, refDay, dir = 'future') {
+  if (!isDate(refDay) || expr == null) return null;
   let s = String(expr).toLowerCase().replace(/\s+/g, ' ').trim();
   const y0 = +refDay.slice(0, 4), m0 = +refDay.slice(5, 7);
   let m;
@@ -60,13 +57,13 @@ export function parseDate(expr, refDay, dir = 'future') {
   // m/d(/yy)
   if ((m = s.match(/^(\d{1,2})\/(\d{1,2})(?:\/(\d{2,4}))?$/))) {
     const mo = +m[1], d = +m[2];
-    if (m[3]) { const y = m[3].length === 2 ? 2000 + +m[3] : +m[3]; return valid(y, mo, d) ? ymd(y, mo, d) : null; }
-    const cands = [y0 - 1, y0, y0 + 1].filter((y) => valid(y, mo, d)).map((y) => ymd(y, mo, d));
+    if (m[3]) { const y = m[3].length === 2 ? 2000 + +m[3] : +m[3]; return ymd(y, mo, d); }
+    const cands = [y0 - 1, y0, y0 + 1].map((y) => ymd(y, mo, d)).filter(Boolean);
     return closest(cands, refDay, dir, 120);
   }
   if ((m = s.match(new RegExp(`^(${MONRE})\\.? (\\d{1,2})(?:st|nd|rd|th)?$`)))) {
     const mo = MON[m[1]] || MON[m[1].slice(0, 3)], d = +m[2];
-    return closest([y0 - 1, y0, y0 + 1].filter((y) => valid(y, mo, d)).map((y) => ymd(y, mo, d)), refDay, dir, 120);
+    return closest([y0 - 1, y0, y0 + 1].map((y) => ymd(y, mo, d)).filter(Boolean), refDay, dir, 120);
   }
   const dayOfMonth = (str) => {
     let q;
@@ -77,12 +74,12 @@ export function parseDate(expr, refDay, dir = 'future') {
   const dm = dayOfMonth(s);
   if (dm) {
     const cands = [];
-    for (let k = -1; k <= 1; k++) { let y = y0, mo = m0 + k; if (mo < 1) { mo = 12; y--; } if (mo > 12) { mo = 1; y++; } if (valid(y, mo, dm)) cands.push(ymd(y, mo, dm)); }
+    for (let k = -1; k <= 1; k++) { let y = y0, mo = m0 + k; if (mo < 1) { mo = 12; y--; } if (mo > 12) { mo = 1; y++; } const c = ymd(y, mo, dm); if (c) cands.push(c); }
     const withWd = wd == null ? cands : cands.filter((c) => dow(c) === wd);
     return closest(withWd.length ? withWd : cands, refDay, dir, 45, 1);
   }
   if ((m = s.match(/^(?:the )?week of (?:the )?(.+)$/))) {
-    const start = parseDate(m[1].replace(/^(\d)/, '$1'), refDay, 'future') || parseDate('the ' + m[1], refDay, 'future');
+    const start = parseDate(m[1], refDay, 'future') || parseDate('the ' + m[1], refDay, 'future');
     return typeof start === 'string' ? { min: start, max: addDays(start, 4) } : null;
   }
   const mondayOf = (d) => addDays(d, -((dow(d) + 6) % 7));
@@ -120,7 +117,7 @@ function closest(cands, refDay, dir, horizon, slackDays = 7) {
 }
 
 /** Every date expression in a string with its span. */
-export function findDates(text, refDay, dir) {
+function findDates(text, refDay, dir) {
   const out = [];
   for (const m of text.matchAll(DATE_RE_G)) {
     // "on mon" etc. alone are weak; a bare weekday word like "may" (month) is excluded by the regex.
@@ -148,9 +145,11 @@ function splitClauses(text) {
 }
 
 export function extractClaims(doc, resolve, opts = {}) { // opts: {people, recent: [ids named shortly before in the thread/channel]}
-  const text = doc.text || '';
+  if (typeof resolve !== 'function') throw new TypeError('extractClaims: resolve must be a resolver from makeResolver()');
+  const text = doc?.text || '';
   if (!text.trim()) return [];
   const refDay = localDay(doc.at);
+  if (!refDay) return []; // no reference day: relative dates cannot be resolved, so nothing is claimed
   const by = authorId(doc.author, opts.people || resolve.people);
   const refsAll = resolve(text, { container: doc.container, at: doc.at, recent: opts.recent }).filter((r) => !r.ambiguous || opts.keepAmbiguous);
   const out = [];
@@ -228,21 +227,8 @@ export function extractClaims(doc, resolve, opts = {}) { // opts: {people, recen
     if (etaM) {
       const subj = refs.find((r) => r.kind === 'deliverable') || refs.find((r) => r.kind === 'part') || refs.find((r) => r.kind === 'test' || r.kind === 'milestone' || r.kind === 'work');
       if (!subj) continue; // only rigs or unknown kinds named: no ETA subject
-      const tail = s.slice(Math.max(0, Math.min(etaM.index, subj.end)));
-      let value = null;
-      const rng = tail.match(new RegExp(`(?:between|from)\\s+(${DATE_SRC})\\s+(?:and|to|-|–)\\s+(${DATE_SRC})|(${DATE_SRC})\\s*(?:-|–|to)\\s*(${DATE_SRC})`, 'i'));
-      if (rng) {
-        const a = parseDate((rng[1] || rng[3]).trim(), refDay, 'future'), b = parseDate((rng[2] || rng[4]).trim(), refDay, 'future');
-        if (typeof a === 'string' && typeof b === 'string') value = a <= b ? { min: a, max: b } : { min: b, max: a };
-      }
-      if (!value) {
-        // "moved from X to Y" / "11/18 -> 11/24": the last date is the new one
-        const ds = findDates(tail, refDay, 'future');
-        const arrow = tail.search(/->|→|\bto\s+(?=\S*\d)/);
-        const afterArrow = arrow >= 0 ? ds.find((d) => d.start > arrow) : null;
-        if (ds.length) value = (afterArrow || (/\bfrom\b/.test(tail) ? ds[ds.length - 1] : ds[0])).value;
-      }
-      if (value && subj) {
+      const value = etaValue(s.slice(Math.max(0, Math.min(etaM.index, subj.end))), refDay);
+      if (value) {
         // A later clause "spin test moves to the week of the 23rd" with a test subject is a planned start.
         push({ kind: 'eta', subject: subj.id, value }, subj);
         if (!/\b(?:takes?|will take|should take)\b/.test(low)) continue;
@@ -264,17 +250,35 @@ export function extractClaims(doc, resolve, opts = {}) { // opts: {people, recen
       push({ kind: 'done', subject: subj.id, value: d && typeof d.value === 'string' ? d.value : refDay }, subj);
     }
   }
-  // Parts listed with a need elsewhere in the doc ("Same kit touches FL-ANK-1268 and FL-ANK-1253", "FL-KNE-1176 goes with
-  // it") are for the same use, when the doc's needs name exactly one use.
-  const needs = out.filter((c) => c.kind === 'needs' && c.for_use);
-  const useSet = new Set(needs.map((c) => c.for_use));
-  if (useSet.size === 1) {
-    const have = new Set(out.filter((c) => c.kind === 'needs').map((c) => c.subject));
-    for (const r of refsAll) {
-      if (r.kind !== 'part' || r.ambiguous || have.has(r.id)) continue;
-      have.add(r.id);
-      out.push({ kind: 'needs', subject: r.id, value: needs[0].value, qty: null, for_use: needs[0].for_use, ...base, token: r.token, mode: r.mode, co_listed: true });
-    }
-  }
+  addCoListed(out, refsAll, base);
   return out;
+}
+
+// ETA value in the text after the ETA word: a range ("between 11/19 and 11/30", "11/19-11/30") as {min, max}, else
+// the new date of a move ("moved from X to Y", "11/18 -> 11/24": the last date), else the first date; null if none.
+const RANGE_RE = new RegExp(`(?:between|from)\\s+(${DATE_SRC})\\s+(?:and|to|-|–)\\s+(${DATE_SRC})|(${DATE_SRC})\\s*(?:-|–|to)\\s*(${DATE_SRC})`, 'i');
+function etaValue(tail, refDay) {
+  const rng = tail.match(RANGE_RE);
+  if (rng) {
+    const a = parseDate((rng[1] || rng[3]).trim(), refDay, 'future'), b = parseDate((rng[2] || rng[4]).trim(), refDay, 'future');
+    if (typeof a === 'string' && typeof b === 'string') return a <= b ? { min: a, max: b } : { min: b, max: a };
+  }
+  const ds = findDates(tail, refDay, 'future');
+  if (!ds.length) return null;
+  const arrow = tail.search(/->|→|\bto\s+(?=\S*\d)/);
+  const afterArrow = arrow >= 0 ? ds.find((d) => d.start > arrow) : null;
+  return (afterArrow || (/\bfrom\b/.test(tail) ? ds[ds.length - 1] : ds[0])).value;
+}
+
+// Parts listed with a need elsewhere in the doc ("Same kit touches FL-ANK-1268 and FL-ANK-1253", "FL-KNE-1176 goes with
+// it") are for the same use, when the doc's needs name exactly one use.
+function addCoListed(out, refsAll, base) {
+  const needs = out.filter((c) => c.kind === 'needs' && c.for_use);
+  if (new Set(needs.map((c) => c.for_use)).size !== 1) return;
+  const have = new Set(out.filter((c) => c.kind === 'needs').map((c) => c.subject));
+  for (const r of refsAll) {
+    if (r.kind !== 'part' || r.ambiguous || have.has(r.id)) continue;
+    have.add(r.id);
+    out.push({ kind: 'needs', subject: r.id, value: needs[0].value, qty: null, for_use: needs[0].for_use, ...base, token: r.token, mode: r.mode, co_listed: true });
+  }
 }

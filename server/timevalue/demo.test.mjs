@@ -1,6 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { demoCard, FIXTURE_SOURCES, tsToIso, wastedExpedites, WASTED_FALLBACK } from './demo.mjs';
+import { mkdtempSync, cpSync, readFileSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
+import { demoCard, FIXTURE_SOURCES, wastedExpedites, WASTED_FALLBACK } from './demo.mjs';
 import { timevalueRoutes } from './routes.mjs';
 
 // The demo fixture carries the pinned dates of simulation-spec.md S14: cases A, B and D.
@@ -34,17 +37,33 @@ test('change 2 is case D: depends, ask Arjun about Fri 11/20', async () => {
   assert.match(c.detail.join(' '), /Ask Arjun/);
 });
 
-test('slack ts → Pacific ISO', () => {
-  assert.equal(tsToIso('1794075120.000000'), '2026-11-07T10:12:00-08:00');
-  assert.equal(tsToIso('1792514500.000000'), '2026-10-20T09:41:40-07:00');
+test('a missing demo source is a clear error, not a crash', async () => {
+  await assert.rejects(demoCard({ sourcesDir: '/nonexistent-tv-sources' }), /part-entry\.json.*quote\.json/);
+});
+
+test('a one-tier quote still renders a card', async () => {
+  const dir = mkdtempSync(path.join(tmpdir(), 'tv-one-tier-'));
+  cpSync(FIXTURE_SOURCES, dir, { recursive: true });
+  const file = path.join(dir, 'demo/quote.json');
+  const q = JSON.parse(readFileSync(file, 'utf8'));
+  q.lead_time_options = q.lead_time_options.slice(0, 1);
+  writeFileSync(file, JSON.stringify(q));
+  const c = (await demoCard({ sourcesDir: dir })).card;
+  assert.equal(c.tiers.length, 1);
+  assert.equal(c.dominated.length, 0);
+  assert.ok(c.headline);
 });
 
 test('routes reject a bad change and unknown paths', async () => {
   const out = [];
   const json = (v, s = 200) => out.push([s, v]);
   await timevalueRoutes({ method: 'GET', url: '/api/timevalue/demo?change=7' }, null, '/api/timevalue/demo', json);
+  await timevalueRoutes({ method: 'GET', url: '/api/timevalue/demo?change=1.5' }, null, '/api/timevalue/demo', json);
+  await timevalueRoutes({ method: 'GET', url: '/api/timevalue/demo?change=abc' }, null, '/api/timevalue/demo', json);
   await timevalueRoutes({ method: 'GET', url: '/api/timevalue/nope' }, null, '/api/timevalue/nope', json);
-  assert.deepEqual(out.map((o) => o[0]), [400, 404]);
+  await timevalueRoutes({ method: 'GET', url: '/api/timevalue/habit' }, null, '/api/timevalue/habit', json);
+  await timevalueRoutes({ method: 'POST', url: '/api/timevalue/demo' }, null, '/api/timevalue/demo', json);
+  assert.deepEqual(out.map((o) => o[0]), [400, 400, 400, 404, 404, 405]);
   assert.equal(await timevalueRoutes({ method: 'GET', url: '/api/x' }, null, '/api/x', json), false);
 });
 

@@ -1,11 +1,7 @@
 import React from 'react';
-import HeatMap from './HeatMap.jsx';
-
-// The habit model is tabled (Owen, 2026-11-10): the card shows the schedule decision only.
-const SHOW_HABIT = false;
 import precomputed from '../../fixtures/timevalue/demo-cards.json';
 
-// Time Value: the recommendation card for the demo order, plus the habit model's weights.
+// Time Value: the recommendation card for the demo order.
 // Reads /api/timevalue/demo?change=N; falls back to fixtures/timevalue/demo-cards.json. No model call.
 const C = {ink: '#1C1B17', paper: '#F4F2F0', muted: '#7A766F', line: '#E2DFDA', hair: '#EFECE8', faint: '#C9C5BE', accent: '#E4F222', critical: '#D03B3B'};
 const eyebrow = {fontSize: 11, letterSpacing: '.1em', textTransform: 'uppercase', color: C.muted};
@@ -48,23 +44,20 @@ function sourceLabel(id) {
 export default function TimeValue() {
   const [change, setChange] = React.useState(() => Number(new URLSearchParams(location.search).get('change')) || 0);
   const [data, setData] = React.useState(null);
-  const [habit, setHabit] = React.useState(null);
   const [offline, setOffline] = React.useState(false);
   const prevRef = React.useRef(null);
   const [prev, setPrev] = React.useState(null);
 
   React.useEffect(() => {
     let live = true;
+    const show = (d, isOffline) => { if (!live) return; setPrev(prevRef.current); prevRef.current = d?.card || null; setData(d); setOffline(isOffline); };
     fetch(`/api/timevalue/demo?change=${change}`).then(r => (r.ok ? r.json() : Promise.reject(new Error(r.status))))
-      .then(d => { if (live) { setPrev(prevRef.current); prevRef.current = d?.card || null; setData(d); setOffline(false); } })
-      .catch(() => { if (live) { const d = precomputed.cards?.[change] || null; setPrev(prevRef.current); prevRef.current = d?.card || null; setData(d); setOffline(true); } });
+      .then(d => (d?.card ? show(d, false) : Promise.reject(new Error('no card'))))
+      .catch(() => show(precomputed.cards?.[change] || null, true));
     const url = new URL(location.href); if (change) url.searchParams.set('change', change); else url.searchParams.delete('change');
     history.replaceState(null, '', url);
     return () => { live = false; };
   }, [change]);
-  React.useEffect(() => {
-    fetch('/api/timevalue/habit').then(r => (r.ok ? r.json() : Promise.reject())).then(h => setHabit(h?.weights ? h : precomputed.habit)).catch(() => setHabit(precomputed.habit));
-  }, []);
 
   const card = data?.card;
   const wasted = card?.wasted || precomputed.cards?.[0]?.card?.wasted || WASTED;
@@ -92,17 +85,8 @@ export default function TimeValue() {
         </div>
       </div>
 
-      {!card && <span style={{color: C.muted}}>Loading card…</span>}
-      {card && <div style={{display: 'grid', gridTemplateColumns: SHOW_HABIT ? 'minmax(0, 1.25fr) minmax(0, 1fr)' : 'minmax(0, 1fr)', gap: 20, alignItems: 'start'}} data-graph-grid>
-        <Recommendation key={card.change?.n ?? 0} card={card} changed={changed}/>
-        {SHOW_HABIT && <section style={{background: '#fff', border: `1px solid ${C.line}`, borderRadius: 12, padding: 16, display: 'flex', flexDirection: 'column', gap: 12}}>
-          <div style={{display: 'flex', flexDirection: 'column', gap: 2}}>
-            <span style={eyebrow}>Habit model · advisory</span>
-            <span style={{color: C.muted, lineHeight: 1.45}}>What in the 30 days of conversation before an order made this team expedite. It never sets the tier.</span>
-          </div>
-          <HeatMap habit={habit} top={card.habit?.top || []}/>
-        </section>}
-      </div>}
+      {!card && <span style={{color: C.muted}}>{offline ? 'No card available: the server is down and there is no precomputed card for this change.' : 'Loading card…'}</span>}
+      {card && <Recommendation key={card.change?.n ?? 0} card={card} changed={changed}/>}
     </main>
   </div>;
 }
@@ -116,7 +100,7 @@ function Recommendation({card, changed = {}}) {
     </div>}
 
     <div style={{padding: 16, display: 'flex', flexDirection: 'column', gap: 4, borderBottom: `1px solid ${C.hair}`}}>
-      <span style={eyebrow}>Part entry · {card.part.requester}</span>
+      <span style={eyebrow}>Part entry · {card.part.requester || 'unknown requester'}</span>
       <span style={{fontSize: 17}}>{card.part.quantity}× {card.part.name} <span style={{color: C.muted}}>{card.part.number} rev {card.part.revision}</span></span>
       <span style={{color: C.muted, lineHeight: 1.45}}>“{card.part.summary}” · {[card.part.material, card.part.process, card.part.finish].filter(Boolean).join(' · ')} · {card.part.cad_file}</span>
       {card.test?.name && <span style={{color: C.muted}}>For the {card.test.name} ({card.test.duration_days ?? '?'} working days, owner {card.test.owner || 'unknown'}) → {card.milestone?.name}{card.milestone?.target ? `, target ${day(card.milestone.target)}` : ''}</span>}
@@ -125,7 +109,7 @@ function Recommendation({card, changed = {}}) {
     <div style={{padding: 16, display: 'flex', flexDirection: 'column', gap: 8, borderBottom: `1px solid ${C.hair}`}}>
       <span style={{alignSelf: 'flex-start', display: 'flex', alignItems: 'center'}}><span style={{fontSize: 11, letterSpacing: '.06em', textTransform: 'uppercase', padding: '2px 8px', borderRadius: 10, background: ask ? '#fff' : C.accent, border: `1px solid ${ask ? C.ink : C.accent}`}} className={changed.tier ? 'tv-changed' : undefined}>{card.outcome_tag}</span>{changed.tier && <Changed on/>}</span>
       <div style={{fontSize: 18, letterSpacing: '-.01em', lineHeight: 1.35, textWrap: 'pretty'}}>{card.headline}</div>
-      {card.detail.map((d, i) => <div key={i} style={{lineHeight: 1.5, color: d.startsWith('Ask ') ? C.ink : C.muted, ...(d.startsWith('Ask ') ? {padding: '8px 10px', borderLeft: `2px solid ${C.ink}`, background: C.paper, borderRadius: 4} : {})}}>{d}</div>)}
+      {(card.detail || []).map((d, i) => <div key={i} style={{lineHeight: 1.5, color: d.startsWith('Ask ') ? C.ink : C.muted, ...(d.startsWith('Ask ') ? {padding: '8px 10px', borderLeft: `2px solid ${C.ink}`, background: C.paper, borderRadius: 4} : {})}}>{d}</div>)}
     </div>
 
     {card.dominated?.length > 0 && <div role="alert" style={{margin: '12px 16px 0', padding: '8px 10px', borderLeft: `3px solid ${C.critical}`, background: '#FBEDED', color: C.critical, borderRadius: 4, lineHeight: 1.45}}>
@@ -133,7 +117,7 @@ function Recommendation({card, changed = {}}) {
     </div>}
     <table style={{width: '100%', borderCollapse: 'collapse', fontSize: 13}}>
       <thead><tr style={eyebrow}>{['Tier', 'Price', 'Part ready', 'Test done', 'Days saved', 'Break-even'].map(h => <th key={h} style={{fontWeight: 400, textAlign: 'left', padding: '10px 16px 6px'}}>{h}</th>)}</tr></thead>
-      <tbody>{card.tiers.map(t => <tr key={t.tier} style={{background: t.recommended ? C.paper : '#fff'}}>
+      <tbody>{(card.tiers || []).map(t => <tr key={t.tier} style={{background: t.recommended ? C.paper : '#fff'}}>
         <td style={{padding: '9px 16px', borderTop: `1px solid ${C.hair}`}}>{t.label}{t.recommended && <span className={changed.tier ? 'tv-changed' : undefined} style={{marginLeft: 8, fontSize: 10, letterSpacing: '.06em', textTransform: 'uppercase', color: C.muted}}>preselected</span>}
           {t.no_faster_than && <span style={{marginLeft: 8, fontSize: 10, letterSpacing: '.06em', textTransform: 'uppercase', color: C.critical}}>no faster than {t.no_faster_than}</span>}</td>
         <td style={{padding: '9px 16px', borderTop: `1px solid ${C.hair}`, fontVariantNumeric: 'tabular-nums'}}>{money(t.total)}</td>
@@ -144,7 +128,7 @@ function Recommendation({card, changed = {}}) {
       </tr>)}</tbody>
     </table>
 
-    {card.inputs.length > 0 && <div style={{padding: 16, display: 'flex', flexDirection: 'column', gap: 6, borderTop: `1px solid ${C.hair}`}}>
+    {card.inputs?.length > 0 && <div style={{padding: 16, display: 'flex', flexDirection: 'column', gap: 6, borderTop: `1px solid ${C.hair}`}}>
       <span style={eyebrow}>The test also waits on</span>
       {card.inputs.map(i => <div key={i.id} style={{display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'baseline'}}>
         <span>{i.name}</span><span className={changed.motor ? 'tv-changed' : undefined} style={{color: C.muted, padding: '0 2px'}}>ready {i.ready_text}</span>{changed.motor && <Changed on/>}
@@ -154,7 +138,7 @@ function Recommendation({card, changed = {}}) {
 
     <div style={{padding: 16, display: 'flex', flexDirection: 'column', gap: 8, borderTop: `1px solid ${C.hair}`}}>
       <span style={eyebrow}>Checks</span>
-      {card.checks.map(k => { const s = STATUS[k.status] || STATUS.info; return <div key={k.n} style={{display: 'grid', gridTemplateColumns: '18px minmax(0,1fr)', gap: 8}}>
+      {(card.checks || []).map(k => { const s = STATUS[k.status] || STATUS.info; return <div key={k.n} style={{display: 'grid', gridTemplateColumns: '18px minmax(0,1fr)', gap: 8}}>
         <span aria-label={k.status} style={{color: s.color, textAlign: 'center'}}>{s.mark}</span>
         <span style={{display: 'flex', flexDirection: 'column', gap: 1}}>
           {k.items ? <>
@@ -162,20 +146,16 @@ function Recommendation({card, changed = {}}) {
             {k.items.map((i, j) => <span key={j} style={{display: 'flex', flexDirection: 'column', gap: 1, paddingLeft: 8, borderLeft: `2px solid ${i.status === 'fail' ? C.critical : C.hair}`}}>
               <span style={{color: i.status === 'fail' ? C.critical : C.muted}}>{(STATUS[i.status] || STATUS.info).mark} {i.text}</span>
               {i.question && <span>Ask {i.question.to_name || 'the owner'}: "{i.question.text}"</span>}
-              <span style={{fontSize: 11, color: C.muted}}>{[...new Set(i.sources.map(sourceLabel))].join(' · ')}</span>
+              <span style={{fontSize: 11, color: C.muted}}>{[...new Set((i.sources || []).map(sourceLabel))].join(' · ')}</span>
             </span>)}
           </> : <>
           <span><span style={{fontWeight: 500}}>{k.label}.</span> <span style={{color: C.muted}}>{k.text}</span></span>
-          {k.sources.length > 0 && <span style={{fontSize: 11, color: C.muted}}>{[...new Set(k.sources.map(sourceLabel))].join(' · ')}</span>}
+          {k.sources?.length > 0 && <span style={{fontSize: 11, color: C.muted}}>{[...new Set(k.sources.map(sourceLabel))].join(' · ')}</span>}
           </>}
         </span>
       </div>; })}
       {card.guards?.filter(g => !g.ok).map(g => <div key={g.rule} role="alert" style={{fontSize: 12, color: C.critical}}>Guard failed: {g.rule}</div>)}
     </div>
 
-    {SHOW_HABIT && <div style={{padding: '12px 16px', borderTop: `1px solid ${C.hair}`, background: C.paper, color: C.muted, fontSize: 12, lineHeight: 1.5}}>
-      <span style={{...eyebrow, marginRight: 8}}>Habit · advisory</span>
-      {card.habit?.text || (card.habit?.n_train ? `Habit model trained on ${card.habit.n_train} orders; no score for this order yet.` : 'No habit model yet. The recommendation above comes from the schedule alone.')}
-    </div>}
   </article>;
 }

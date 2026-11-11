@@ -10,8 +10,9 @@
 // configure (calendar, org, catalogue, tests, rigs, milestones and their value policies) and nothing
 // Burn has to discover: no edges, ETAs, true dates, demands or answers. Planned test dates and
 // milestone dates keep only the history entries that were said somewhere (`where` non-null).
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
-import { join, resolve } from 'node:path';
+// The settings are checked (unique ids, every reference resolves) before anything is written.
+import { existsSync, readFileSync, writeFileSync, mkdirSync, renameSync } from 'node:fs';
+import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadSources, pacificLocalToMs, toPacificIso } from '../../server/timevalue/sources.mjs';
 import { linkRampToXometry, usableLinks } from '../../server/timevalue/labels.mjs';
@@ -98,26 +99,75 @@ export function buildSettings(world, coverage = null) {
   };
 }
 
-function arg(name, def) {
-  const i = process.argv.indexOf(name);
-  return i > 0 && process.argv[i + 1] ? process.argv[i + 1] : def;
+// Problems that would make Burn misread the settings. → [string] (empty = fine)
+export function validateSettings(s) {
+  const errs = [];
+  if (!s.demo_now || Number.isNaN(Date.parse(s.demo_now))) errs.push(`demo_now is not a date: ${s.demo_now}`);
+  const ids = {};
+  for (const k of ['people', 'teams', 'assemblies', 'parts', 'deliverables', 'tests', 'rigs', 'milestones', 'channels']) {
+    if (!Array.isArray(s[k])) { errs.push(`${k} is not a list`); continue; }
+    ids[k] = new Set();
+    for (const x of s[k]) {
+      if (!x?.id) errs.push(`${k}: entry without an id`);
+      else if (ids[k].has(x.id)) errs.push(`${k}: duplicate id ${x.id}`);
+      else ids[k].add(x.id);
+    }
+  }
+  if (errs.length) return errs;
+  const ref = (where, kind, id) => { if (id != null && !ids[kind].has(id)) errs.push(`${where} names unknown ${kind} ${id}`); };
+  for (const h of s.holidays) if (!/^\d{4}-\d{2}-\d{2}$/.test(h.date)) errs.push(`holiday ${h.name}: bad date ${h.date}`);
+  for (const p of s.people) { ref(`person ${p.id}`, 'teams', p.team); ref(`person ${p.id}`, 'people', p.manager); }
+  for (const t of s.teams) { ref(`team ${t.id}`, 'people', t.lead); for (const m of t.members) ref(`team ${t.id}`, 'people', m); }
+  for (const a of s.assemblies) ref(`assembly ${a.id}`, 'teams', a.team);
+  for (const p of s.parts) ref(`part ${p.id}`, 'assemblies', p.assembly);
+  for (const d of s.deliverables) ref(`deliverable ${d.id}`, 'assemblies', d.assembly);
+  for (const t of s.tests) {
+    ref(`test ${t.id}`, 'assemblies', t.assembly); ref(`test ${t.id}`, 'rigs', t.rig); ref(`test ${t.id}`, 'milestones', t.milestone);
+    for (const r of t.resources) ref(`test ${t.id}`, 'rigs', r);
+    if (!t.planned_date.length) errs.push(`test ${t.id} has no planned date`);
+  }
+  for (const m of s.milestones) for (const a of m.assemblies) ref(`milestone ${m.id}`, 'assemblies', a);
+  return errs;
 }
 
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const worldPath = arg('--world', 'fixtures/world/world.json');
-  const out = arg('--out', 'fixtures/timevalue');
-  const world = JSON.parse(readFileSync(worldPath, 'utf8'));
-  // coverage.json (written by the world's checks) holds the real text start of the written context.
-  let coverage = null;
-  try { coverage = JSON.parse(readFileSync(worldPath.replace(/world\.json$/, 'coverage.json'), 'utf8')); } catch {}
-  const settings = buildSettings(world, coverage);
-  mkdirSync(out, { recursive: true });
-  const text = JSON.stringify(settings, null, 2) + '\n';
-  writeFileSync(join(out, 'settings.json'), text);
-  const counts = Object.entries(settings).filter(([, v]) => Array.isArray(v)).map(([k, v]) => `${k} ${v.length}`).join(', ');
-  console.log(`wrote ${join(out, 'settings.json')} (${text.length} bytes): ${counts}`);
+export function parseArgs(argv) {
+  const a = { world: 'fixtures/world/world.json', out: 'fixtures/timevalue', sources: 'fixtures/flintlock' };
+  for (let i = 0; i < argv.length; i++) {
+    const m = /^--(world|out|sources)$/.exec(argv[i]);
+    if (!m) throw new Error(`unknown argument ${argv[i]} (use --world, --out, --sources)`);
+    if (argv[i + 1] == null || argv[i + 1].startsWith('--')) throw new Error(`${argv[i]} needs a path`);
+    a[m[1]] = argv[++i];
+  }
+  return a;
+}
 
-  const sources = loadSources(arg('--sources', 'fixtures/flintlock'));
+function readJson(file, what) {
+  if (!existsSync(file)) throw new Error(`missing ${what} ${file}`);
+  try { return JSON.parse(readFileSync(file, 'utf8')); } catch (e) { throw new Error(`${what} ${file} is not valid JSON: ${e.message}`); }
+}
+
+// Build, validate, then write <out>/settings.json (atomically). → { file, settings, bytes }
+export function exportSettings({ world: worldPath, out }) {
+  const world = readJson(worldPath, 'world');
+  // coverage.json (written by the world's checks) holds the real text start of the written context; optional.
+  const coveragePath = join(dirname(worldPath), 'coverage.json');
+  const coverage = existsSync(coveragePath) ? readJson(coveragePath, 'coverage') : null;
+  let settings;
+  try { settings = buildSettings(world, coverage); } catch (e) { throw new Error(`${worldPath} is missing fields settings need: ${e.message}`); }
+  const errs = validateSettings(settings);
+  if (errs.length) throw new Error(`settings not written, ${errs.length} problem(s):\n  ${errs.slice(0, 20).join('\n  ')}`);
+  mkdirSync(out, { recursive: true });
+  const file = join(out, 'settings.json');
+  const text = JSON.stringify(settings, null, 2) + '\n';
+  writeFileSync(`${file}.tmp-${process.pid}`, text);
+  renameSync(`${file}.tmp-${process.pid}`, file);
+  return { file, settings, bytes: text.length };
+}
+
+// Smoke summary of the rendered sources: doc counts, Ramp<->Xometry link rate, usable orders.
+function smoke(settings, sourcesDir) {
+  if (!existsSync(sourcesDir)) throw new Error(`sources dir ${sourcesDir} not found (pass --sources <dir>)`);
+  const sources = loadSources(sourcesDir);
   const bySource = {};
   for (const d of sources.docs) bySource[d.source] = (bySource[d.source] || 0) + 1;
   console.log(`sources: ${sources.docs.length} docs ${JSON.stringify(bySource)}; xometry ${sources.xometry.orders.length} orders / ${sources.xometry.quotes.length} quotes; ramp ${sources.ramp.transactions.length} transactions`);
@@ -127,5 +177,18 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
     const [y, m, d] = settings.usable_from.split('-').map(Number);
     const from = toPacificIso(pacificLocalToMs(y, m, d));
     console.log(`usable orders (linked, T >= ${from}): ${usableLinks(links, from).length}`);
+  }
+}
+
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  try {
+    const args = parseArgs(process.argv.slice(2));
+    const { file, settings, bytes } = exportSettings(args);
+    const counts = Object.entries(settings).filter(([, v]) => Array.isArray(v)).map(([k, v]) => `${k} ${v.length}`).join(', ');
+    console.log(`wrote ${file} (${bytes} bytes): ${counts}`);
+    smoke(settings, args.sources);
+  } catch (e) {
+    console.error(`export-settings: ${e.message}`);
+    process.exit(1);
   }
 }

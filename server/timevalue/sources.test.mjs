@@ -115,6 +115,7 @@ test('docsBefore keeps [T - days, T)', () => {
   assert.deepEqual(docsBefore(docs, T, 2).map((d) => d.id), ['x2', 'x3']);
   assert.deepEqual(docsBefore(docs, T).map((d) => d.id), ['x1', 'x2', 'x3']);
   assert.deepEqual(docsBefore(docs, Date.parse(T), 0.5).map((d) => d.id), []);
+  assert.throws(() => docsBefore(docs, 'not a time', 2), RangeError); // an unreadable T must not return every doc
 });
 
 // Format smoke test over whatever is rendered now (not final data; asserts shape only, never counts).
@@ -137,4 +138,23 @@ test('parseIcs unfolds lines and splits categories', () => {
   assert.equal(e.summary, 'xy');
   assert.deepEqual(e.categories, ['A', 'B']);
   assert.equal(e.start, '2026-11-01T01:00:00-08:00');
+});
+
+test('malformed times are skipped with a reason, never given a made-up time', () => {
+  const dir = tmpSources();
+  writeFileSync(join(dir, 'slack', 'C07FLK0ACTU.json'), JSON.stringify({ ok: true, messages: [
+    { type: 'message', user: 'U07FLK0OWEN', text: 'fine', ts: '1793310847.238764' },
+    { type: 'message', user: 'U07FLK0OWEN', text: 'bad ts', ts: 'abc' },
+  ] }));
+  writeFileSync(join(dir, 'meetings', '2026-02-31-0900-impossible.md'), '# Bad\n\n- **Date:** Tue, Feb 31, 2026 · 9:00 AM PST\n\n## Discussion\n\n- Owen: hello\n');
+  const s = loadSources(dir);
+  assert.ok(s.docs.some((d) => d.id === 'slack:C07FLK0ACTU:1793310847.238764'));
+  assert.deepEqual(s.skipped.map((x) => x.id), ['slack:C07FLK0ACTU:abc']);
+  assert.ok(!s.docs.some((d) => d.container === '2026-02-31-0900-impossible'));
+  assert.equal(s.meetings.find((m) => m.file === '2026-02-31-0900-impossible').start, null);
+  assert.equal(pacificLocalToMs(2026, 2, 31), null);
+  assert.equal(toPacificIso(NaN), null);
+  const [e] = parseIcs('BEGIN:VEVENT\r\nUID:a\r\nDTSTART;VALUE=DATE:garbage\r\nDTEND:20261399T250000\r\nEND:VEVENT\r\n');
+  assert.equal(e.start, null);
+  assert.equal(e.end, null);
 });

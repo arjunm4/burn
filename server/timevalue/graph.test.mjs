@@ -10,6 +10,7 @@ import { makeResolver } from './refs.mjs';
 import { extractClaims, parseDate } from './claims.mjs';
 import { buildGraph, graphAt, demoInputs, liveChangeDoc, appendDocs, extractAllClaims } from './graph.mjs';
 import { progressRank } from './progress.mjs';
+import { loadSources } from './sources.mjs';
 import { settings, sources, NOW } from './fixture.test-data.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
@@ -142,6 +143,22 @@ function demoCheck(settingsX, sourcesX) {
   return r;
 }
 
+test('bad input: unknown ids, empty settings and malformed times give gaps, nulls or clear errors', () => {
+  const view = graphAt(buildGraph({ settings, sources }), NOW);
+  assert.deepEqual(demoInputs(view, 'pt-no-such-part').gaps, [{ kind: 'structural', text: 'no known test for pt-no-such-part' }]);
+  const empty = graphAt(buildGraph({ settings: {}, sources: {} }), NOW);
+  assert.equal(demoInputs(empty, 'pt-hip-bracket').test, null);
+  assert.throws(() => buildGraph({ sources }), TypeError);
+  assert.throws(() => graphAt(empty, 'yesterday'), RangeError);
+  assert.throws(() => demoInputs(null, 'pt-hip-bracket'), TypeError);
+  assert.deepEqual(claimsOf('need 4x FL-HIP-1042 by 11/20', { at: 'not a time' }), []); // no reference day, no relative dates
+  assert.equal(parseDate('2/30', '2026-02-10'), null);
+  assert.equal(parseDate('11/20', 'garbage'), null);
+  assert.deepEqual(progressRank({ settings: {}, sources: {} }, '2026-10-05'), []);
+  assert.throws(() => progressRank({ settings, sources }, 'someday'), RangeError);
+  assert.deepEqual(makeResolver(null)(null), []);
+});
+
 test('demo path on the hand-made fixture', () => { demoCheck(settings, sources); });
 
 test('progress: done share per assembly, ranked within each milestone', () => {
@@ -158,17 +175,15 @@ test('progress: done share per assembly, ranked within each milestone', () => {
   assert.deepEqual([h.done, h.total, h.claim_done, h.rank], [2, 3, 1, 1]);
 });
 
-// Rerun on real data (one command) once the loader and settings exist.
+// Rerun on the rendered data when it exists.
 const demoDir = path.join(ROOT, 'fixtures/timevalue/demo-sources');
 const settingsPath = path.join(ROOT, 'fixtures/timevalue/settings.json');
-test('demo path on the rendered demo sources + settings.json', { skip: !(fs.existsSync(demoDir) && fs.existsSync(settingsPath) && fs.existsSync(path.join(ROOT, 'server/timevalue/sources.mjs'))) }, async () => {
-  const { loadSources } = await import('./sources.mjs');
+test('demo path on the rendered demo sources + settings.json', { skip: !(fs.existsSync(demoDir) && fs.existsSync(settingsPath)) }, async () => {
   const realSettings = JSON.parse(fs.readFileSync(settingsPath, 'utf8'));
   demoCheck(realSettings, loadSources(demoDir));
 });
 
-test('full rendered sources: graph builds fast and the demo test is found', { skip: !(fs.existsSync(settingsPath) && fs.existsSync(path.join(ROOT, 'server/timevalue/sources.mjs'))) }, async () => {
-  const { loadSources } = await import('./sources.mjs');
+test('full rendered sources: graph builds fast and the demo test is found', { skip: !(fs.existsSync(settingsPath)) }, async () => {
   const realSettings = JSON.parse(fs.readFileSync(settingsPath, 'utf8'));
   const src = loadSources(path.join(ROOT, 'fixtures/flintlock'));
   const t0 = Date.now();

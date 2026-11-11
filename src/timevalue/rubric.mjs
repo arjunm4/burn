@@ -3,12 +3,8 @@
 //
 // facts: [{text, by, at, doc_id, about?}]; `about` (quote | schedule | limiter | value | decision) attaches a
 // fact to that check as a source.
-import { toDate } from './calendar.mjs';
-import { fmtDay } from './compare.mjs';
-
-const CONFIDENT = new Set(['cheapest', 'pay', 'dont_pay']);
-const usd = (n) => `$${Math.round(n).toLocaleString('en-US')}`;
-const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
+import { toDate, fmtDay } from './calendar.mjs';
+import { CONFIDENT, usd, plural } from './compare.mjs';
 
 function limiterText(l) {
   if (!l) return 'unknown';
@@ -16,22 +12,30 @@ function limiterText(l) {
   if (l.kind === 'planned_start') return 'the planned start date';
   if (l.kind === 'slot') return l.id === 'slot_days' ? "the rig's slot days" : `a rig booking (${l.id})`;
   if (l.kind === 'owner_out') return 'the test owner being out';
+  if (l.kind === 'quote') return 'waiting on a usable quote';
   return l.kind;
 }
 
 export function rubric(c, { quoteValidUntil = null, now, facts = [], conversation = null } = {}) {
+  if (!c || !Array.isArray(c.tiers)) throw new TypeError('rubric: expected the result of compare()');
+  facts = facts || [];
   const src = (about) => facts.filter((f) => f.about === about).map((f) => f.doc_id);
   const nowDate = toDate(now);
   const checks = [];
   const add = (label, status, text, about) => checks.push({ n: checks.length + 1, label, status, text, sources: src(about) });
 
-  const expired = quoteValidUntil && nowDate ? nowDate > toDate(quoteValidUntil) : null;
-  add('Quote is open', expired == null ? 'unknown' : expired ? 'fail' : 'pass',
-    expired == null ? 'No expiry date on the quote.' : expired ? `Quote expired ${quoteValidUntil}.` : `Valid until ${quoteValidUntil}.`, 'quote');
+  const until = toDate(quoteValidUntil);
+  const expired = until && nowDate ? nowDate > until : null;
+  let quoteText = 'No expiry date on the quote.';
+  if (expired != null) quoteText = expired ? `Quote expired ${quoteValidUntil}.` : `Valid until ${quoteValidUntil}.`;
+  else if (quoteValidUntil && !until) quoteText = `Quote expiry ${JSON.stringify(quoteValidUntil)} is not a date.`;
+  else if (quoteValidUntil) quoteText = 'No valid current time to check the expiry against.';
+  add('Quote is open', expired == null ? 'unknown' : expired ? 'fail' : 'pass', quoteText, 'quote');
 
   const finishes = c.tiers.flatMap((t) => Object.values(t.finish_by_scenario));
-  add('Schedule solved', finishes.every(Boolean) ? 'pass' : 'unknown',
-    finishes.every(Boolean)
+  const solved = finishes.length > 0 && finishes.every(Boolean);
+  add('Schedule solved', solved ? 'pass' : 'unknown',
+    solved
       ? c.tiers.map((t) => `${t.tier} done ${Object.values(t.finish_by_scenario).map(fmtDay).join(' / ')}`).join('; ')
       : `Cannot schedule: ${c.reason ?? 'a date or duration is unknown'}.`, 'schedule');
 
@@ -52,7 +56,7 @@ export function rubric(c, { quoteValidUntil = null, now, facts = [], conversatio
   else if (c.outcome === 'cheapest') decision = `${c.recommended}: no faster tier finishes the test sooner.`;
   else if (c.outcome === 'pay') decision = `${c.recommended}: saves ${plural(rec.days_saved, 'working day')}, worth it above ${usd(rec.break_even)}/day.`;
   else if (c.outcome === 'dont_pay') decision = `${c.recommended}: the time saved is worth less than the extra cost.`;
-  else if (c.outcome === 'depends') decision = `Depends on ${c.switching.input} being ready by ${fmtDay(c.switching.by_date)}.`;
+  else if (c.outcome === 'depends') decision = c.switching ? `Depends on ${c.switching.input} being ready by ${fmtDay(c.switching.by_date)}.` : 'Depends on when the uncertain inputs are ready.';
   else decision = c.question?.text ?? 'Ask the owner.';
   add('Decision', 'info', decision, 'decision');
 
@@ -84,7 +88,7 @@ export function rubric(c, { quoteValidUntil = null, now, facts = [], conversatio
 const RANK = { fail: 3, unknown: 2, pass: 1, info: 0 };
 const valueText = (v) => (v && typeof v === 'object' ? `${v.min}–${v.max}` : String(v));
 
-export function conversationCheck(c, conv, { facts = [], decision = '' } = {}) {
+function conversationCheck(c, conv, { facts = [], decision = '' } = {}) {
   const items = [];
   const cited = (it) => it.sources.length > 0 && items.push(it);
 
@@ -94,23 +98,25 @@ export function conversationCheck(c, conv, { facts = [], decision = '' } = {}) {
   const slack = conv.target && cheapFinish && cheapFinish <= conv.target;
   if (slack && conv.earlier_need?.length) {
     cited({ key: 'earlier_need', status: 'unknown', text: `Urgent talk in the last 3 days, but ${cheapest.tier} already finishes by the target.`,
-      question: { to: conv.test_owner ?? null, text: 'Is there an earlier need, e.g. a test slot?' }, sources: conv.earlier_need.map((r) => r.doc_id) });
+      question: { to: conv.test_owner ?? null, text: 'Is there an earlier need, e.g. a test slot?' }, sources: conv.earlier_need.map((r) => r?.doc_id).filter(Boolean) });
   }
 
   // b. Conflicts: different values for the same input from different people or sources.
   const critical = new Set([c.limiter?.kind === 'input' ? c.limiter.id : null, c.switching?.input].filter(Boolean));
-  for (const k of conv.conflicts || []) {
+  for (const k of (conv.conflicts || []).filter(Boolean)) {
+    const values = k.values || [];
     const blocks = critical.has(k.subject);
     cited({ key: 'conflict', status: 'fail', blocks,
-      text: `Sources disagree on ${k.name || k.subject}: ${k.values.map((v) => `${valueText(v.value)} (${v.by ?? 'unknown'})`).join(' vs ')}.${blocks ? ' It sets the decision, so the card is not confident.' : ''}`,
-      question: { to: k.owner ?? null, text: `Which date is right for ${k.name || k.subject}: ${k.values.map((v) => valueText(v.value)).join(' or ')}?` },
-      sources: k.values.map((v) => v.doc_id).filter(Boolean) });
+      text: `Sources disagree on ${k.name || k.subject}: ${values.map((v) => `${valueText(v.value)} (${v.by ?? 'unknown'})`).join(' vs ')}.${blocks ? ' It sets the decision, so the card is not confident.' : ''}`,
+      question: { to: k.owner ?? null, text: `Which date is right for ${k.name || k.subject}: ${values.map((v) => valueText(v.value)).join(' or ')}?` },
+      sources: values.map((v) => v.doc_id).filter(Boolean) });
   }
 
   // c. Pressure read over the last 7 days.
   const p = conv.pressure;
-  if (p) cited({ key: 'pressure', status: 'info', text: `Pressure ${p.level} over the last 7 days (${p.n} linked message${p.n === 1 ? '' : 's'})${p.snippets.length ? `: ${p.snippets.map((x) => `"${x.text}"`).join('; ')}` : ''}.`,
-    sources: p.snippets.map((x) => x.doc_id) });
+  const snippets = p?.snippets || [];
+  if (p) cited({ key: 'pressure', status: 'info', text: `Pressure ${p.level} over the last 7 days (${p.n} linked message${p.n === 1 ? '' : 's'})${snippets.length ? `: ${snippets.map((x) => `"${x.text}"`).join('; ')}` : ''}.`,
+    sources: snippets.map((x) => x?.doc_id).filter(Boolean) });
 
   // e. Plain-English reason from cited facts already on the card (no new numbers).
   const lim = facts.filter((f) => f.about === 'limiter' && f.doc_id);
