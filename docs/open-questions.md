@@ -44,8 +44,7 @@ Owners: **A+O** = Arjun and Owen (product); **Build** = whoever is building it; 
 | B2 | Which meeting recorder and Jira data can we read, and what are the channel access rules? | Open; synthetic for the demo |
 | B3 | What is the first-use signal: an engineer tap, or something already recorded (Jira, an assembly log)? | Engineer tap for v1 |
 | B4 | Demo Slack workspace: who sets it up and seeds it? | Open |
-| B5 | Who owns which build pieces (extension, Ramp client/mock, decision core, generator)? Agree with Codex | Open |
-| B6 | `scripts/collab.mjs` fails on Node 14 (`randomUUID`); the README requires Node 24.2+ | Use Node 24 locally |
+| B5 | Who builds which pieces (extension, Ramp client/mock, decision core, training data)? | Open |
 
 ## Answered
 
@@ -55,6 +54,7 @@ Owners: **A+O** = Arjun and Owen (product); **Build** = whoever is building it; 
 | Who approves? | The engineer's manager, in Ramp | architecture §2.12 |
 | Is supply chain in the purchase? | No; a context source and tracking | architecture §2.13 |
 | Engineer click or automatic placement? | Automatic on approval; the engineer is alerted before any browser tab opens | architecture §0.4, §2.16 |
+| Use the Claude–Codex collaboration workflow? | No; dropped | CLAUDE.md |
 | Which vendor first? | Xometry only, via the browser extension | architecture §2.14 |
 | Does Xometry have a test mode or buyer API? | No; demo stops at a dummy checkout page | architecture §0.4 |
 | Ramp MCP / Agent Cards instead of REST? | No; REST with app credentials; MCP is a stretch check | research/ramp-integration.md §2 |
