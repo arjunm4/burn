@@ -41,10 +41,10 @@ Each agent may write a small stub of a contract it depends on **inside its own t
   deliverables: [{id, name, aliases, owner, assembly, kind}],  // no ETAs: those come from text
   tests: [{id, name, assembly, rig, resources, owner, milestone,
            duration_estimate_days: [min,max],
-           planned_date: [{value, known_at, by}]}],             // only entries said somewhere (where != null)
+           planned_date: [{value, known_at, by}]}],             // the original plan, then only changes said somewhere
   rigs: [{id, name, slot_days, owner}],                        // test_rigs + resources
   milestones: [{id, name, owner, hardness, assemblies,
-                date: [{value, known_at, by}],
+                date: [{value, known_at, by}],                // same rule as planned_date
                 value_policy: [{value, known_at, by}]}] }       // policy: per_day | curve | none
 ```
 No `edges`, ETAs, true dates, demands or answers: those are what Burn must find.
