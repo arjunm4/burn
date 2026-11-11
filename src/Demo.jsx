@@ -5,7 +5,7 @@ import {C, Button, Chip} from './ui.jsx';
 // Demo controls (shown only when the server has a demo world, GET /api/demo): start the scripted
 // part entry, and inject the scripted live changes as if the Slack message had just arrived.
 // Everything they do goes through the ordinary API; they just save typing on stage.
-const box = {border: `1px dashed ${C.line}`, borderRadius: 12, padding: '12px 14px', display: 'flex', flexDirection: 'column', gap: 8, fontSize: 12};
+const box = {border: `1px dashed ${C.line}`, borderRadius: 12, padding: '10px 14px', display: 'flex', flexDirection: 'column', gap: 8, fontSize: 12};
 
 export function useDemo() {
   const [demo, setDemo] = React.useState(null);
@@ -14,7 +14,7 @@ export function useDemo() {
   return [demo, load];
 }
 
-/** On /orders: one click enters the world's scripted part (its CAD file stands in for a real STEP). */
+/** On /orders: one click enters the world's scripted part. */
 export function DemoStart() {
   const [demo] = useDemo();
   const [busy, setBusy] = React.useState(false); const [error, setError] = React.useState(null);
@@ -23,11 +23,12 @@ export function DemoStart() {
     setBusy(true); setError(null);
     try { const {order} = await api('/demo/start', {body: {}}); location.assign(`/orders/${order.id}`); } catch (e) { setError(e.message); setBusy(false); }
   }
-  return <div style={box}>
-    <div style={{display: 'flex', alignItems: 'center', gap: 8}}><Chip>demo</Chip><span style={{color: C.muted}}>{demo.world} · clock {new Date(demo.now).toLocaleString('en-US', {month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZone: 'America/Los_Angeles'})} PT{demo.anchored ? '' : ' (real time)'}</span></div>
-    <div><strong>{demo.entry.engineer}</strong> enters <strong>{demo.entry.name}</strong> ({demo.entry.partNumber} rev {demo.entry.fields.revision}, ×{demo.entry.fields.quantity}): “{demo.entry.note}”</div>
-    {error && <div role="alert" style={{color: C.critical}}>{error}</div>}
-    <div><Button primary onClick={start} disabled={busy}>{busy ? 'Starting…' : 'Enter it as Owen'}</Button></div>
+  const first = demo.entry.engineer.split(' ')[0];
+  return <div style={{...box, flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap'}}>
+    <Chip>demo</Chip>
+    <span style={{color: C.muted, flex: 1}}>{demo.entry.name} ×{demo.entry.fields.quantity} for {first}</span>
+    {error && <span role="alert" style={{color: C.critical}}>{error}</span>}
+    <Button onClick={start} disabled={busy}>{busy ? 'Starting…' : `Enter it as ${first}`}</Button>
   </div>;
 }
 
@@ -41,10 +42,10 @@ export function DemoLiveChanges({order}) {
     try { await api('/demo/live-change', {body: {id}}); await reload(); } catch (e) { setError(e.message); } finally { setBusy(null); }
   }
   return <div style={box}>
-    <div style={{display: 'flex', alignItems: 'center', gap: 8}}><Chip>demo</Chip><span style={{color: C.muted}}>Live changes: a message lands in Slack and Burn re-reads the world.</span></div>
+    <div style={{display: 'flex', alignItems: 'center', gap: 8}}><Chip>demo</Chip><span style={{color: C.muted}}>Post a Slack message</span></div>
     {demo.liveChanges.map(c => <div key={c.id} style={{display: 'grid', gridTemplateColumns: 'minmax(0,1fr) auto', gap: 10, alignItems: 'center'}}>
-      <div><span style={{color: C.muted}}>#{c.channel} · {c.by}:</span> {c.text}</div>
-      <Button onClick={() => inject(c.id)} disabled={!!busy}>{busy === c.id ? 'Posting…' : c.applied ? 'Post again' : 'Post'}</Button>
+      <span style={{whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'}}><span style={{color: C.muted}}>{c.by}: </span>{c.text}</span>
+      <Button onClick={() => inject(c.id)} disabled={!!busy} style={{padding: '5px 10px', fontSize: 12}}>{busy === c.id ? 'Posting…' : c.applied ? 'Again' : 'Post'}</Button>
     </div>)}
     {error && <div role="alert" style={{color: C.critical}}>{error}</div>}
   </div>;
