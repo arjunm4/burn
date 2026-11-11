@@ -1,0 +1,350 @@
+{
+  "job_id": "slack-ch-legs-2026-08-17-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 25,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-legs",
+    "name": "legs",
+    "slack_id": "C07FLK0LEGS",
+    "purpose": "Leg and ankle: design, drop test, gait gantry"
+  },
+  "week": {
+    "start": "2026-08-17",
+    "end": "2026-08-23"
+  },
+  "people": [
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Leg (left, hip to foot).",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators. This week: Mei worries derate will cut torque mid-step and drop the leg.",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Interim: machined strain-relief clamp and service loop; leg rev C routing planned.",
+    "Ongoing: Gait controller tuning for the investor demo on the gait gantry. This week: Dress rehearsal: 2 minutes continuous walking; demo plan locked.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Gwen proposes expedite only with a stated need date; engineers grumble.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1786996167.490125",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-001444"
+      ],
+      "brief": "FL-ANK-1259: need 24 by 2026-09-04 for Install and torque for Leg DVT build: Ankle F/T sensor mount",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-09-04"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1259",
+        "Install and torque for Leg DVT build: Ankle F/T sensor mount",
+        "FL-ANK-1268",
+        "FL-ANK-1253",
+        "FL-ANK-1244",
+        "FL-ANK-1290",
+        "9/4"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "Ankle side for the Leg DVT build, pulling from the tracker: FL-ANK-1259 Install and torque for Leg DVT build: Ankle F/T sensor mount, need 24 by 9/4. Same kit touches FL-ANK-1268, FL-ANK-1253, FL-ANK-1244 and FL-ANK-1290, so please don't let those drift either."
+    },
+    {
+      "ts": "1787002746.465178",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [
+        "ev-001460"
+      ],
+      "brief": "FL-TST-2495: need 2 by 2026-09-11",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-09-11"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2495",
+        "fri the 11th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2495 need 2 by fri the 11th, ok?"
+    },
+    {
+      "ts": "1787069764.193136",
+      "user": "p-mei",
+      "thread_ts": null,
+      "events": [
+        "ev-000014"
+      ],
+      "brief": "Leg first steps on the gait gantry: moved again, now 2026-08-19",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-08-19"
+      },
+      "must_mention": [
+        "Leg first steps on the gait gantry",
+        "wed 8/19"
+      ],
+      "length": "short",
+      "text": "Leg first steps on the gait gantry moved again, now wed 8/19."
+    },
+    {
+      "ts": "1787074200.038247",
+      "user": "p-luis",
+      "thread_ts": "1787069764.193136",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "thanks"
+    },
+    {
+      "ts": "1787074583.911523",
+      "user": "p-zoe",
+      "thread_ts": "1787069764.193136",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@diego fyi in case you planned around the old slot"
+    },
+    {
+      "ts": "1787081460.232552",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-001059"
+      ],
+      "brief": "the yoke in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-08-17"
+      },
+      "must_mention": [
+        "the yoke",
+        "8/17"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "the yoke is on as of 8/17, running with it now 😬"
+    },
+    {
+      "ts": "1787124807.967424",
+      "user": "p-priya",
+      "thread_ts": "1786996167.490125",
+      "events": [
+        "ev-002993"
+      ],
+      "brief": "Correction: FL-ANK-1259: need 24 by 2026-09-10 for Install and torque for Leg DVT build: Ankle F/T sensor mount",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-09-10"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1259",
+        "Install and torque for Leg DVT build: Ankle F/T sensor mount",
+        "FL-ANK-1268",
+        "FL-ANK-1253",
+        "FL-ANK-1244",
+        "FL-ANK-1290",
+        "thurs 9/10"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Correction, I had the date wrong: FL-ANK-1259 Install and torque for Leg DVT build: Ankle F/T sensor mount is thurs 9/10, still 24. FL-ANK-1268, FL-ANK-1253, FL-ANK-1244, FL-ANK-1290 unchanged."
+    },
+    {
+      "ts": "1787166832.136967",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [
+        "ev-001387"
+      ],
+      "brief": "pivot shaft arrived (6)",
+      "claim": {
+        "kind": "stock",
+        "value": 6
+      },
+      "must_mention": [
+        "pivot shaft",
+        "6"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "pivot shaft in 6 pcs on the shelf"
+    },
+    {
+      "ts": "1787357049.640341",
+      "user": "p-luis",
+      "thread_ts": null,
+      "events": [
+        "ev-001351"
+      ],
+      "brief": "that adapter plate arrived (1)",
+      "claim": {
+        "kind": "stock",
+        "value": 1
+      },
+      "must_mention": [
+        "that adapter plate",
+        "1"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "that adapter plate showed up, just 1, its at my bench"
+    }
+  ]
+}

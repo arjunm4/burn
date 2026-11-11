@@ -1,0 +1,356 @@
+{
+  "job_id": "slack-ch-actuators-2026-08-17-background-2026-08-21",
+  "source": "slack",
+  "status": "blank",
+  "priority": 26,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-actuators",
+    "name": "actuators",
+    "slack_id": "C07FLK0ACTU",
+    "purpose": "Hip and knee actuators"
+  },
+  "week": {
+    "start": "2026-08-17",
+    "end": "2026-08-23"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-yusuf",
+      "name": "Yusuf Demir",
+      "display_name": "yusuf",
+      "slack_id": "U07FLK0YUSU",
+      "title": "Firmware Engineer, motor control",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Hip actuator.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators. This week: Mei worries derate will cut torque mid-step and drop the leg.",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind. This week: Dyno shows 0.4 deg backlash on two of three rev B units, twice spec.",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Interim: machined strain-relief clamp and service loop; leg rev C routing planned.",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver. This week: Rev 4 boards arrive; ringing down to 9 V overshoot.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Gwen proposes expedite only with a stated need date; engineers grumble.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1787328775.826399",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about drawing review of the output shaft",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1787332792.833549",
+      "user": "p-jonas",
+      "thread_ts": "1787328775.826399",
+      "events": [],
+      "brief": "reply (ack) in the thread about: drawing review of the output shaft",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787335297.262526",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about this: Carlos finds two broken phase conductors at the knee after the overnight gait run.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787335471.379928",
+      "user": "p-yusuf",
+      "thread_ts": "1787328775.826399",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: drawing review of the output shaft",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787337948.842507",
+      "user": "p-andre",
+      "thread_ts": "1787328775.826399",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: drawing review of the output shaft",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787340942.297054",
+      "user": "p-owen",
+      "thread_ts": "1787328775.826399",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: drawing review of the output shaft",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787345759.159781",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on this: Gate resistor bump slows edges, but switching losses rise 9%.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787355306.547442",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Mei worries derate will cut torque mid-step and drop the leg.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787355418.332417",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about this: Ingrid says no until DVT; run pinch tests on nights instead.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787357175.760620",
+      "user": "p-jonas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Renee: machined plates are 1.4 kg heavier and ~$1.1k each on Xometry.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1787357814.405409",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about setup for the hip actuator dvt spin test",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787358148.995596",
+      "user": "p-ingrid",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on inspection of the eccentric shaft",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787362776.610725",
+      "user": "p-carlos",
+      "thread_ts": "1787357814.405409",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: setup for the hip actuator dvt spin test",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787367166.426266",
+      "user": "p-andre",
+      "thread_ts": "1787357814.405409",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: setup for the hip actuator dvt spin test",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787367490.402209",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on measurement of the stator mount",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    }
+  ]
+}

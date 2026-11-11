@@ -1,0 +1,460 @@
+{
+  "job_id": "slack-ch-mech-2026-09-07-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 19,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-mech",
+    "name": "mech",
+    "slack_id": "C07FLK0MECH",
+    "purpose": "Mechanical engineering: design, DFM, vendors, drawings"
+  },
+  "week": {
+    "start": "2026-09-07",
+    "end": "2026-09-13"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-bao",
+      "name": "Bao Nguyen",
+      "display_name": "bao.n",
+      "slack_id": "U07FLK0BAO0",
+      "title": "Electrical Engineer, motor drives",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators. This week: v2 build slips a week; dyno sweep waits on it.",
+    "Ongoing: Aluminum links gall on 303 pins under side load. This week: Compromise: 17-4 H900 pins and hard anodize on the link bores.",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind. This week: Shimmed unit measures 0.18 deg; Owen worries shims walk under reversing load.",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough. This week: Debate whether to run the dyno outside with a duct into the chamber instead; Tomas rejects, gradients too large.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Rev C release moves the cable inboard; Farah asks for high-flex cable on the next harness.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Omar flags the DVT motor as the long pole; Arjun says it is fine.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Samir reports expedite share down from 34% to 22%; two builds slipped anyway.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting. This week: First static load to 2x: 0.6 mm deflection at the hip mount, within spec."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1788885281.842805",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-002811"
+      ],
+      "brief": "FL-TST-2338 rev B released: dowel holes added for repeatable location",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-TST-2338"
+      ],
+      "length": "medium",
+      "text": "FL-TST-2338 rev B is out, added dowel holes so it locates the same every time"
+    },
+    {
+      "ts": "1788888277.848427",
+      "user": "p-arjun",
+      "thread_ts": "1788885281.842805",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "nice, that should stop the zero drift we kept chasing on the stand"
+    },
+    {
+      "ts": "1788906569.374067",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-002810"
+      ],
+      "brief": "FL-TST-2341 rev B released: material to 4140 after yield at peak torque",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-TST-2341"
+      ],
+      "length": "short",
+      "text": "FL-TST-2341 rev B released, material changed to 4140 after it yielded at peak torque."
+    },
+    {
+      "ts": "1788908933.706824",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [
+        "ev-002816"
+      ],
+      "brief": "FL-TST-2461 rev B released: clearance for harness",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-TST-2461"
+      ],
+      "length": "short",
+      "text": "FL-TST-2461 rev b released harness clearance"
+    },
+    {
+      "ts": "1788909089.327722",
+      "user": "p-bao",
+      "thread_ts": "1788906569.374067",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "yeah the old one was 6061 so not shocked it let go at peak"
+    },
+    {
+      "ts": "1788971426.417799",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-002793"
+      ],
+      "brief": "FL-TST-2146 rev E released: clearance for harness",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev E"
+      },
+      "must_mention": [
+        "FL-TST-2146"
+      ],
+      "length": "short",
+      "text": "FL-TST-2146 rev E released, opened up clearance for the harness"
+    },
+    {
+      "ts": "1788972183.557801",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-003466"
+      ],
+      "brief": "boom clamp: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "boom clamp"
+      ],
+      "length": "short",
+      "text": "The boom clamp is still out for quote at rev A."
+    },
+    {
+      "ts": "1788975135.874061",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-003380"
+      ],
+      "brief": "FT adapter: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "FT adapter"
+      ],
+      "length": "short",
+      "text": "FT adapter still quoting, rev A"
+    },
+    {
+      "ts": "1789078838.345080",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-002911"
+      ],
+      "brief": "FL-TST-2554 rev B released: fit issue found at assembly",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-TST-2554"
+      ],
+      "length": "short",
+      "text": "FL-TST-2554 rev B released, found a fit isue at assembly *issue"
+    },
+    {
+      "ts": "1789139489.007923",
+      "user": "p-sofia",
+      "thread_ts": null,
+      "events": [
+        "ev-003392"
+      ],
+      "brief": "dyno spacers: still quoting rev D",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev D"
+      },
+      "must_mention": [
+        "dyno spacers"
+      ],
+      "length": "short",
+      "text": "The dyno spacers are still quoting, rev D."
+    },
+    {
+      "ts": "1789155963.203380",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-003424"
+      ],
+      "brief": "test objects: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "test objects"
+      ],
+      "length": "short",
+      "text": "The test objects are still out for quote at rev A."
+    },
+    {
+      "ts": "1789163843.120284",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-003376"
+      ],
+      "brief": "pelvis adapter: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "pelvis adapter"
+      ],
+      "length": "short",
+      "text": "pelvis adapter still quoting at rev A, hoping to hear back early nxt wk"
+    },
+    {
+      "ts": "1789167752.985775",
+      "user": "p-arjun",
+      "thread_ts": "1789163843.120284",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "yeah no point pushing until the static load numbers settle"
+    },
+    {
+      "ts": "1789172409.985318",
+      "user": "p-diego",
+      "thread_ts": "1789163843.120284",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "👍"
+    },
+    {
+      "ts": "1789176361.210646",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-003209"
+      ],
+      "brief": "dyno spacers: still quoting rev D",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev D"
+      },
+      "must_mention": [
+        "dyno spacers"
+      ],
+      "length": "short",
+      "text": "dyno spacers still quoting rev d"
+    }
+  ]
+}

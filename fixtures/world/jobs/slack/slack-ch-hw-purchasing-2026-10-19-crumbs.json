@@ -1,0 +1,401 @@
+{
+  "job_id": "slack-ch-hw-purchasing-2026-10-19-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 7,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hw-purchasing",
+    "name": "hw-purchasing",
+    "slack_id": "C07FLK0HWPR",
+    "purpose": "Hardware buys: Xometry quotes, McMaster, Digi-Key, lead times"
+  },
+  "week": {
+    "start": "2026-10-19",
+    "end": "2026-10-25"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-bao",
+      "name": "Bao Nguyen",
+      "display_name": "bao.n",
+      "slack_id": "U07FLK0BAO0",
+      "title": "Electrical Engineer, motor drives",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-kwame",
+      "name": "Kwame Asante",
+      "display_name": "kwame",
+      "slack_id": "U07FLK0KWAM",
+      "title": "Senior Electrical Engineer, power",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Leg DVT build: parts readiness and what to do about late test hardware. This week: Build slips four days; Beth moves the program review item.",
+    "Ongoing: Frameless DVT motor from the vendor keeps slipping; stator stack length change. This week: ETA slips to mid November; Arjun asks if a second source exists, Gwen says 12 weeks.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1792422357.898677",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-002078"
+      ],
+      "brief": "2216: need 7 by 2026-10-23",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 7,
+          "by": "2026-10-23"
+        }
+      },
+      "must_mention": [
+        "2216",
+        "10/23"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "need 7 of 2216 by 10/23, sorry its tight"
+    },
+    {
+      "ts": "1792424407.358042",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002034"
+      ],
+      "brief": "FL-TST-2051: need 2 by 2026-11-04",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-11-04"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2051",
+        "11/4"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "FL-TST-2051 need 2 by 11/4, kinda urgent"
+    },
+    {
+      "ts": "1792457643.611198",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-002112"
+      ],
+      "brief": "FL-TST-2138: need 7 by 2026-11-10",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 7,
+          "by": "2026-11-10"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2138",
+        "tues 11/10"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-TST-2138 need 7 by tues 11/10"
+    },
+    {
+      "ts": "1792469950.507830",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-002041"
+      ],
+      "brief": "FL-HIP-1094: need 2 by 2026-12-17",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-12-17"
+        }
+      },
+      "must_mention": [
+        "FL-HIP-1094",
+        "12/17"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-HIP-1094 x2 by 12/17"
+    },
+    {
+      "ts": "1792471046.539373",
+      "user": "p-kwame",
+      "thread_ts": "1792469950.507830",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Is that drawing actually frozen? I'd hold until the motor dimensions settle."
+    },
+    {
+      "ts": "1792516856.460633",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-002132"
+      ],
+      "brief": "load cell plate: need 3 by 2026-11-09",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-11-09"
+        }
+      },
+      "must_mention": [
+        "load cell plate",
+        "11/9"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "load cell plate need 3 by 11/9"
+    },
+    {
+      "ts": "1792616595.582196",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-002133"
+      ],
+      "brief": "LC plate: need 3 by 2026-11-09",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-11-09"
+        }
+      },
+      "must_mention": [
+        "LC plate",
+        "mon the 9th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "bump on the LC plate still need 3 by mon the 9th"
+    },
+    {
+      "ts": "1792629774.510364",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002200"
+      ],
+      "brief": "guide bushing: need 12 by 2026-11-13 for next week",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-11-13"
+        }
+      },
+      "must_mention": [
+        "guide bushing",
+        "next week",
+        "11/13"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "guide bushing x12 for next week, need them by 11/13"
+    },
+    {
+      "ts": "1792632697.870660",
+      "user": "p-bao",
+      "thread_ts": "1792629774.510364",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "mcmaster has a close one in stock but the od is off"
+    },
+    {
+      "ts": "1792691505.515797",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-002142"
+      ],
+      "brief": "that order: need 3 by 2026-11-02",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-11-02"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "mon 11/2"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "that order need 3 by mon 11/2 or the spin test sits"
+    },
+    {
+      "ts": "1792799023.503690",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-002230"
+      ],
+      "brief": "wave gen hub: need 11 by 2026-11-12 for next week",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 11,
+          "by": "2026-11-12"
+        }
+      },
+      "must_mention": [
+        "wave gen hub",
+        "next week",
+        "11/12"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "wave gen hub - need 11 by 11/12 for next week, the old ones are all cracked at the spline"
+    },
+    {
+      "ts": "1792800054.474730",
+      "user": "p-andre",
+      "thread_ts": "1792799023.503690",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "hmm not sure all 11 are cracked, i only saw it on 2 under the scope"
+    }
+  ]
+}

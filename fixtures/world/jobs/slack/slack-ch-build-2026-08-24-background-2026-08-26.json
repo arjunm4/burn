@@ -1,0 +1,254 @@
+{
+  "job_id": "slack-ch-build-2026-08-24-background-2026-08-26",
+  "source": "slack",
+  "status": "blank",
+  "priority": 24,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-build",
+    "name": "build",
+    "slack_id": "C07FLK0BILD",
+    "purpose": "EVT/DVT build coordination"
+  },
+  "week": {
+    "start": "2026-08-24",
+    "end": "2026-08-30"
+  },
+  "people": [
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators. This week: Compromise: derate ramps over 2 s and publishes a warning to the controller.",
+    "Ongoing: Tendons fray at the proximal pulley after 40k grip cycles. This week: Passes 100k; creep makes the finger lose 4 deg of closure, retension interval set.",
+    "Ongoing: Aluminum links gall on 303 pins under side load. This week: Kenji pulls a finger apart: galling on the knuckle pin bore after pinch tests.",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind. This week: Tomas measures pin diameters: two batches differ by 8 microns; suspects pin supplier mix.",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough. This week: Dmitri: chamber only free Mondays; battery team has it midweek.",
+    "Ongoing: What to show investors when no full humanoid exists. This week: Demo done; Helena asks for a full lower body by Q1.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles",
+    "Ongoing: Gait controller tuning for the investor demo on the gait gantry. This week: Investor demo goes; one stumble recovered by the boom, Helena happy.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Ingrid backs it but exempts the investor demo and DVT builds.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno. This week: Night runs work but nobody watches them; one overnight run lost to a loose clamp.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1787763036.425852",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Tomas measures pin diameters: two batches differ by 8 microns; suspects pin supplier mix.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787788259.355149",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Renee: machined plates are 1.4 kg heavier and ~$1.1k each on Xometry.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787793187.266524",
+      "user": "p-callum",
+      "thread_ts": "1787788259.355149",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Renee: machined plates are 1.4 kg heavier and ~$1.1k each on Xometry.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787797804.847109",
+      "user": "p-luis",
+      "thread_ts": "1787788259.355149",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Renee: machined plates are 1.4 kg heavier and ~$1.1k each on Xometry.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787854755.541011",
+      "user": "p-owen",
+      "thread_ts": "1787788259.355149",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Renee: machined plates are 1.4 kg heavier and ~$1.1k each on Xometry.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787856439.587609",
+      "user": "p-jonas",
+      "thread_ts": "1787788259.355149",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Renee: machined plates are 1.4 kg heavier and ~$1.1k each on Xometry.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787858273.128739",
+      "user": "p-talia",
+      "thread_ts": "1787788259.355149",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Renee: machined plates are 1.4 kg heavier and ~$1.1k each on Xometry.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787861135.892050",
+      "user": "p-lukas",
+      "thread_ts": "1787788259.355149",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Renee: machined plates are 1.4 kg heavier and ~$1.1k each on Xometry.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    }
+  ]
+}

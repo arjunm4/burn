@@ -1,0 +1,391 @@
+{
+  "job_id": "slack-ch-procurement-2026-08-17-background-2026-08-21",
+  "source": "slack",
+  "status": "blank",
+  "priority": 26,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-08-17",
+    "end": "2026-08-23"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-claire",
+      "name": "Claire Donnelly",
+      "display_name": "claire",
+      "slack_id": "U07FLK0CLAI",
+      "title": "Finance and Operations Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-kwame",
+      "name": "Kwame Asante",
+      "display_name": "kwame",
+      "slack_id": "U07FLK0KWAM",
+      "title": "Senior Electrical Engineer, power",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Vent channel sizing debated; burst plate at 0.5 bar vs open slots.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators. This week: Mei worries derate will cut torque mid-step and drop the leg.",
+    "Ongoing: Tendons fray at the proximal pulley after 40k grip cycles",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind. This week: Dyno shows 0.4 deg backlash on two of three rev B units, twice spec.",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Interim: machined strain-relief clamp and service loop; leg rev C routing planned.",
+    "Ongoing: Gait controller tuning for the investor demo on the gait gantry. This week: Dress rehearsal: 2 minutes continuous walking; demo plan locked.",
+    "Ongoing: Gate driver ringing and current sense offset on the motor driver. This week: Rev 4 boards arrive; ringing down to 9 V overshoot.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Gwen proposes expedite only with a stated need date; engineers grumble.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1787325659.678625",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about this: Dress rehearsal: 2 minutes continuous walking; demo plan locked.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787326883.335965",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about off-topic: a movie from the weekend",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787329329.992129",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Farah wants 3 mm and a mica sheet; Lukas says that costs 18 mm of pack length.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787333609.731823",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to this: Bao sees 30 V overshoot on the phase node at 48 V bus; MOSFETs rated 80 V.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787341684.202142",
+      "user": "p-claire",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about this: Mei worries derate will cut torque mid-step and drop the leg.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787341854.235435",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about this: Rev 4 layout tightens the power loop; Farah approves for DVT.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787344240.773731",
+      "user": "p-jonas",
+      "thread_ts": "1787341684.202142",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Mei worries derate will cut torque mid-step and drop the leg.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787348243.397834",
+      "user": "p-claire",
+      "thread_ts": "1787341684.202142",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Mei worries derate will cut torque mid-step and drop the leg.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787351589.537354",
+      "user": "p-zoe",
+      "thread_ts": "1787341684.202142",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Mei worries derate will cut torque mid-step and drop the leg.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787354508.993205",
+      "user": "p-jonas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on this: Pulley groove re-cut with R0.3 edge and Delrin bushing; test restarted.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787355104.898988",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to this: Mei worries derate will cut torque mid-step and drop the leg.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787355911.392420",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on off-topic: running club",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787357814.129992",
+      "user": "p-kwame",
+      "thread_ts": "1787355911.392420",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: off-topic: running club",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787359770.749980",
+      "user": "p-arjun",
+      "thread_ts": "1787355911.392420",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: off-topic: running club",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787362986.338849",
+      "user": "p-zoe",
+      "thread_ts": "1787355911.392420",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: off-topic: running club",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787363077.888355",
+      "user": "p-wei",
+      "thread_ts": "1787355911.392420",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: off-topic: running club",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787363790.863734",
+      "user": "p-jonas",
+      "thread_ts": "1787355911.392420",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: off-topic: running club",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    }
+  ]
+}

@@ -1,0 +1,596 @@
+{
+  "job_id": "slack-ch-supply-chain-2026-08-24-background-2026-08-26",
+  "source": "slack",
+  "status": "blank",
+  "priority": 24,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-supply-chain",
+    "name": "supply-chain",
+    "slack_id": "C07FLK0SUPC",
+    "purpose": "Supply chain team: vendors, POs, deliveries, expedites"
+  },
+  "week": {
+    "start": "2026-08-24",
+    "end": "2026-08-30"
+  },
+  "people": [
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-claire",
+      "name": "Claire Donnelly",
+      "display_name": "claire",
+      "slack_id": "U07FLK0CLAI",
+      "title": "Finance and Operations Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: What to show investors when no full humanoid exists. This week: Demo done; Helena asks for a full lower body by Q1.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Ingrid backs it but exempts the investor demo and DVT builds.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno. This week: Night runs work but nobody watches them; one overnight run lost to a loose clamp.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1787759277.368682",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on this: Dmitri proposes a second grip fixture, ~$4k in machined parts.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787761414.938842",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: Night runs work but nobody watches them; one overnight run lost to a loose clamp.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1787764200.098927",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on this: Ingrid warns the leg drop campaign slipped; demo date is hard.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787764439.618644",
+      "user": "p-ingrid",
+      "thread_ts": "1787759277.368682",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Dmitri proposes a second grip fixture, ~$4k in machined parts.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787767523.332279",
+      "user": "p-talia",
+      "thread_ts": "1787759277.368682",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Dmitri proposes a second grip fixture, ~$4k in machined parts.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787769259.046294",
+      "user": "p-gwen",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about this: Plates released; static load test planned on the drop gantry with a load yoke.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787769298.175363",
+      "user": "p-ingrid",
+      "thread_ts": "1787759277.368682",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Dmitri proposes a second grip fixture, ~$4k in machined parts.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787770019.699127",
+      "user": "p-beth",
+      "thread_ts": "1787759277.368682",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Dmitri proposes a second grip fixture, ~$4k in machined parts.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787771614.234277",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787773151.668608",
+      "user": "p-gwen",
+      "thread_ts": "1787771614.234277",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787774247.441160",
+      "user": "p-beth",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about off-topic: the new espresso grinder",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787775130.309855",
+      "user": "p-beth",
+      "thread_ts": "1787759277.368682",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Dmitri proposes a second grip fixture, ~$4k in machined parts.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787776045.159574",
+      "user": "p-beth",
+      "thread_ts": "1787759277.368682",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Dmitri proposes a second grip fixture, ~$4k in machined parts.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787776915.790941",
+      "user": "p-talia",
+      "thread_ts": "1787771614.234277",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787777347.675855",
+      "user": "p-beth",
+      "thread_ts": "1787771614.234277",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787778518.888936",
+      "user": "p-omar",
+      "thread_ts": "1787771614.234277",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787782397.951394",
+      "user": "p-samir",
+      "thread_ts": "1787771614.234277",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787783094.091396",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: Demo done; Helena asks for a full lower body by Q1.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787784114.681440",
+      "user": "p-samir",
+      "thread_ts": "1787771614.234277",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the ongoing what to show investors when no full humanoid exists",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787785450.691034",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787786002.653523",
+      "user": "p-jade",
+      "thread_ts": "1787783094.091396",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Demo done; Helena asks for a full lower body by Q1.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787787233.972250",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: Ingrid says no until DVT; run pinch tests on nights instead.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787788409.729329",
+      "user": "p-gwen",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Ingrid warns the leg drop campaign slipped; demo date is hard.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787788415.026929",
+      "user": "p-nora",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Dmitri proposes a second grip fixture, ~$4k in machined parts.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787789448.791565",
+      "user": "p-samir",
+      "thread_ts": "1787783094.091396",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Demo done; Helena asks for a full lower body by Q1.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787794285.800436",
+      "user": "p-omar",
+      "thread_ts": "1787783094.091396",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Demo done; Helena asks for a full lower body by Q1.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787797220.813273",
+      "user": "p-beth",
+      "thread_ts": "1787783094.091396",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Demo done; Helena asks for a full lower body by Q1.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787852348.060720",
+      "user": "p-samir",
+      "thread_ts": "1787783094.091396",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Demo done; Helena asks for a full lower body by Q1.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787857746.752203",
+      "user": "p-samir",
+      "thread_ts": "1787783094.091396",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: Demo done; Helena asks for a full lower body by Q1.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787859693.071983",
+      "user": "p-samir",
+      "thread_ts": "1787783094.091396",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Demo done; Helena asks for a full lower body by Q1.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787860050.420519",
+      "user": "p-claire",
+      "thread_ts": "1787783094.091396",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Demo done; Helena asks for a full lower body by Q1.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787861905.164617",
+      "user": "p-talia",
+      "thread_ts": "1787783094.091396",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Demo done; Helena asks for a full lower body by Q1.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787864491.062121",
+      "user": "p-omar",
+      "thread_ts": "1787783094.091396",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Demo done; Helena asks for a full lower body by Q1.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787869369.257604",
+      "user": "p-gwen",
+      "thread_ts": "1787783094.091396",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Demo done; Helena asks for a full lower body by Q1.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787872977.356636",
+      "user": "p-samir",
+      "thread_ts": "1787783094.091396",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Demo done; Helena asks for a full lower body by Q1.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1787877764.038279",
+      "user": "p-samir",
+      "thread_ts": "1787783094.091396",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Demo done; Helena asks for a full lower body by Q1.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787882052.995946",
+      "user": "p-beth",
+      "thread_ts": "1787783094.091396",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: Demo done; Helena asks for a full lower body by Q1.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1787885991.818808",
+      "user": "p-beth",
+      "thread_ts": "1787783094.091396",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Demo done; Helena asks for a full lower body by Q1.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787939926.436284",
+      "user": "p-talia",
+      "thread_ts": "1787783094.091396",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Demo done; Helena asks for a full lower body by Q1.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1787943175.479095",
+      "user": "p-samir",
+      "thread_ts": "1787783094.091396",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Demo done; Helena asks for a full lower body by Q1.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

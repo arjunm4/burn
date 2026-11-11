@@ -1,0 +1,274 @@
+{
+  "job_id": "slack-ch-hw-purchasing-2026-08-31-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 21,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-hw-purchasing",
+    "name": "hw-purchasing",
+    "slack_id": "C07FLK0HWPR",
+    "purpose": "Hardware buys: Xometry quotes, McMaster, Digi-Key, lead times"
+  },
+  "week": {
+    "start": "2026-08-31",
+    "end": "2026-09-06"
+  },
+  "people": [
+    {
+      "id": "p-ishaan",
+      "name": "Ishaan Mehta",
+      "display_name": "ishaan.m",
+      "slack_id": "U07FLK0ISHA",
+      "title": "Electrical Engineer, sensors",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Rev B: larger vent channel, mica sheets, spacing stays 2 mm.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators",
+    "Ongoing: Aluminum links gall on 303 pins under side load. This week: Amara wants bronze bushings; Kenji says no room, wall would be 0.6 mm.",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind. This week: Shim vs re-grind debate; Arjun leans shim for DVT, re-grind the disc profile for PVT.",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough. This week: Andre needs a shaft feedthrough plate machined to run the knee inside the chamber.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1788366781.613941",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-001520"
+      ],
+      "brief": "port plate: need 5 by 2026-09-25",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 5,
+          "by": "2026-09-25"
+        }
+      },
+      "must_mention": [
+        "port plate",
+        "9/25"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "anyone have the port plate quote? need 5 by 9/25 and it's gettng tight"
+    },
+    {
+      "ts": "1788369349.798149",
+      "user": "p-ishaan",
+      "thread_ts": "1788366781.613941",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "the port plate has become a lifestyle at this point 😂"
+    },
+    {
+      "ts": "1788371990.500677",
+      "user": "p-zoe",
+      "thread_ts": "1788366781.613941",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "eh not sure it's that tight, there's slack if the vent rework slips anyway"
+    },
+    {
+      "ts": "1788459877.601929",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [
+        "ev-001528"
+      ],
+      "brief": "load cell plate: need 6 by 2026-10-23 for Fixture install and shakedown: Grip load cell plate",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-10-23"
+        }
+      },
+      "must_mention": [
+        "load cell plate",
+        "Fixture install and shakedown: Grip load cell plate",
+        "10/23"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "load cell plate need 6 by 10/23 for Fixture install and shakedown: Grip load cell plate who has the drawing"
+    },
+    {
+      "ts": "1788484410.207004",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-001585"
+      ],
+      "brief": "FL-STR-1566: need 8 by 2026-09-29 for Design iteration bench trial for Leg DVT build: Spine tube end fitting",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-09-29"
+        }
+      },
+      "must_mention": [
+        "FL-STR-1566",
+        "Design iteration bench trial for Leg DVT build: Spine tube end fitting",
+        "FL-STR-1560",
+        "FL-STR-1507",
+        "FL-STR-1554",
+        "FL-STR-1582",
+        "FL-STR-1514",
+        "tues 9/29"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FL-STR-1566 need 8 by tues 9/29 for Design iteration bench trial for Leg DVT build: Spine tube end fitting. same batch as FL-STR-1560, FL-STR-1507, FL-STR-1554, FL-STR-1582, FL-STR-1514"
+    },
+    {
+      "ts": "1788535167.685531",
+      "user": "p-wei",
+      "thread_ts": null,
+      "events": [
+        "ev-001618"
+      ],
+      "brief": "the part: need 12 by 2026-10-05",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-05"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "10/5"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Need 12 of the part by 10/5."
+    },
+    {
+      "ts": "1788538407.114304",
+      "user": "p-wei",
+      "thread_ts": "1788535167.685531",
+      "events": [
+        "ev-003077"
+      ],
+      "brief": "Correction: the part: need 12 by 2026-10-06",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-06"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "tues 10/6"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Correction: the part is needed by tues 10/6, not the 5th."
+    }
+  ]
+}

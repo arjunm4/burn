@@ -1,0 +1,613 @@
+{
+  "job_id": "slack-ch-build-2026-10-26-background-2026-10-27",
+  "source": "slack",
+  "status": "blank",
+  "priority": 6,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-build",
+    "name": "build",
+    "slack_id": "C07FLK0BILD",
+    "purpose": "EVT/DVT build coordination"
+  },
+  "week": {
+    "start": "2026-10-26",
+    "end": "2026-11-01"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-bao",
+      "name": "Bao Nguyen",
+      "display_name": "bao.n",
+      "slack_id": "U07FLK0BAO0",
+      "title": "Electrical Engineer, motor drives",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Leg DVT build: parts readiness and what to do about late test hardware",
+    "Ongoing: Frameless DVT motor from the vendor keeps slipping; stator stack length change. This week: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Beth asks every owner for real dates on the hip spin test and motor."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1793116896.535447",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about the ongoing frameless dvt motor from the vendor keeps slipping; stator stack length change",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1793123627.154593",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: Leg DVT build at risk from shank links and ankle impact results.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793127018.016017",
+      "user": "p-carlos",
+      "thread_ts": "1793123627.154593",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Leg DVT build at risk from shank links and ankle impact results.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793127433.936910",
+      "user": "p-zoe",
+      "thread_ts": "1793123627.154593",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Leg DVT build at risk from shank links and ankle impact results.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793128085.676039",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: Beth asks every owner for real dates on the hip spin test and motor.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793130586.484671",
+      "user": "p-talia",
+      "thread_ts": "1793128085.676039",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Beth asks every owner for real dates on the hip spin test and motor.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793130921.404919",
+      "user": "p-jade",
+      "thread_ts": "1793123627.154593",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Leg DVT build at risk from shank links and ankle impact results.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793132520.901537",
+      "user": "p-bao",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Vendor stack length went 25 to 28 mm on DVT; Owen realizes bracket bore must move 0.5 mm.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793133722.875135",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793134018.855298",
+      "user": "p-nadia",
+      "thread_ts": "1793133722.875135",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793134808.820239",
+      "user": "p-carlos",
+      "thread_ts": "1793123627.154593",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Leg DVT build at risk from shank links and ankle impact results.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793134993.651458",
+      "user": "p-talia",
+      "thread_ts": "1793128085.676039",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Beth asks every owner for real dates on the hip spin test and motor.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793135576.779170",
+      "user": "p-dmitri",
+      "thread_ts": "1793123627.154593",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Leg DVT build at risk from shank links and ankle impact results.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793137020.954082",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Rev C links in, one fails inspection on a bore; Carlos builds with the good three.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793137396.312986",
+      "user": "p-nora",
+      "thread_ts": "1793132520.901537",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Vendor stack length went 25 to 28 mm on DVT; Owen realizes bracket bore must move 0.5 mm.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793137576.244211",
+      "user": "p-jade",
+      "thread_ts": "1793133722.875135",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793139533.148165",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about this: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793141104.470550",
+      "user": "p-zoe",
+      "thread_ts": "1793133722.875135",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the ongoing integrated dvt plan across actuators and legs and which dates are real",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793142053.619345",
+      "user": "p-farah",
+      "thread_ts": "1793132520.901537",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Vendor stack length went 25 to 28 mm on DVT; Owen realizes bracket bore must move 0.5 mm.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793144898.955026",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-003925"
+      ],
+      "brief": "background: Beth asks every owner for real dates on the hip spin test and motor.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1793145568.287752",
+      "user": "p-sofia",
+      "thread_ts": "1793132520.901537",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Vendor stack length went 25 to 28 mm on DVT; Owen realizes bracket bore must move 0.5 mm.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793147016.130754",
+      "user": "p-zoe",
+      "thread_ts": "1793132520.901537",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Vendor stack length went 25 to 28 mm on DVT; Owen realizes bracket bore must move 0.5 mm.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1793148412.873102",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about this: Beth asks every owner for real dates on the hip spin test and motor.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793148572.810859",
+      "user": "p-nora",
+      "thread_ts": "1793132520.901537",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Vendor stack length went 25 to 28 mm on DVT; Owen realizes bracket bore must move 0.5 mm.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1793150908.543209",
+      "user": "p-luis",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on this: Owen releases bracket rev C; spin test can only start once both bracket and motor are in.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1793152520.561164",
+      "user": "p-owen",
+      "thread_ts": "1793132520.901537",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Vendor stack length went 25 to 28 mm on DVT; Owen realizes bracket bore must move 0.5 mm.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

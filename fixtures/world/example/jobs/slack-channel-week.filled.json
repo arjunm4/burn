@@ -1,0 +1,155 @@
+{
+  "job_id": "slack-ch-test-lab-2026-08-31",
+  "source": "slack",
+  "status": "filled",
+  "priority": 1,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-test-lab",
+    "name": "test-lab",
+    "slack_id": "C07FLK0TLAB",
+    "purpose": "Rigs, bookings, test results"
+  },
+  "week": {
+    "start": "2026-08-31",
+    "end": "2026-09-06"
+  },
+  "people": [
+    {
+      "id": "p-mateo",
+      "name": "Mateo Rinaldi",
+      "display_name": "mateo",
+      "slack_id": "U07FLK0MTEO",
+      "title": "Test Engineer, Fixtures",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low"
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Leg drop test on the gantry is planned for Wed 9/16 and needs two machined lift hooks (FL-TST-2017, called \"lift hook\" or \"the hook\")."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim"
+  ],
+  "messages": [
+    {
+      "ts": "1788282862.104211",
+      "user": "p-mateo",
+      "thread_ts": null,
+      "events": [
+        "ev-000001"
+      ],
+      "brief": "Drop test is booked on the gantry Wed 9/16; we still need two lift hooks machined before then.",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-09-15"
+        }
+      },
+      "must_mention": [
+        "lift hook"
+      ],
+      "length": "short",
+      "text": "need 2x lift hooks for the drop test on wed 9/16 - anyone already have a quote going?"
+    },
+    {
+      "ts": "1788282965.220870",
+      "user": "p-owen",
+      "thread_ts": "1788282862.104211",
+      "events": [],
+      "brief": "ack",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "ty"
+    },
+    {
+      "ts": "1788474665.330512",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-000003"
+      ],
+      "brief": "Owen thinks the drop test moved up to Monday, so the hooks are needed by Fri 9/11.",
+      "claim": {
+        "kind": "need_earlier",
+        "value": {
+          "date": "2026-09-11"
+        }
+      },
+      "must_mention": [
+        "hooks"
+      ],
+      "length": "short",
+      "text": "heads up drop test got pulled in to monday so we need the hooks by fri 9/11"
+    },
+    {
+      "ts": "1788475450.418003",
+      "user": "p-mateo",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who moved the foam bumpers off the gantry",
+      "must_mention": [],
+      "length": "short",
+      "text": "who moved the foam pads off the gantry"
+    },
+    {
+      "ts": "1788538360.512944",
+      "user": "p-mateo",
+      "thread_ts": "1788474665.330512",
+      "events": [
+        "ev-000004"
+      ],
+      "brief": "Correction in thread: test is still Wed the 16th, hooks by Tue is fine.",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-09-15"
+        }
+      },
+      "must_mention": [],
+      "length": "short",
+      "text": "no its still wed the 16th, hooks by tues is fine"
+    },
+    {
+      "ts": "1788538382.601377",
+      "user": "p-owen",
+      "thread_ts": "1788474665.330512",
+      "events": [],
+      "brief": "ack, says he misread the calendar",
+      "must_mention": [],
+      "length": "short",
+      "text": "ah misread the cal, nvm"
+    }
+  ]
+}

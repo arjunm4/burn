@@ -1,0 +1,377 @@
+{
+  "job_id": "jira-LEG-2026-08-31-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 22,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "LEG",
+    "name": "Legs and ankle"
+  },
+  "week": {
+    "start": "2026-08-31",
+    "end": "2026-09-06"
+  },
+  "people": [
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "LEG-263",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-diego",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-08-31T10:00:00-07:00",
+      "due_date": "2026-10-09",
+      "events": [],
+      "brief": "Kit and assemble: Ankle pushrod clevis",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-264",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-callum",
+      "assignee": "p-callum",
+      "labels": [
+        "bench"
+      ],
+      "priority": "Medium",
+      "created": "2026-08-31T19:31:48-07:00",
+      "due_date": "2026-09-28",
+      "events": [],
+      "brief": "Tolerance stack review (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-265",
+      "type": "Sub-task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-priya",
+      "labels": [
+        "cleanup"
+      ],
+      "priority": "High",
+      "created": "2026-09-01T08:52:43-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Firmware flag for bench mode (ankle and foot)",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-266",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-hana",
+      "assignee": "p-hana",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-09-01T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Fit check: Ankle roll link",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-266-c1",
+          "by": "p-callum",
+          "at": "2026-09-21T11:41:54-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-266-c2",
+          "by": "p-hana",
+          "at": "2026-09-23T09:55:53-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-266-c3",
+          "by": "p-priya",
+          "at": "2026-09-28T13:54:46-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-267",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-priya",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-02T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Test stand rework for Leg DVT build: Gait boom clamp",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-268",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-diego",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-02T10:00:00-07:00",
+      "due_date": "2026-10-13",
+      "events": [],
+      "brief": "Tolerance stack check for Leg DVT build: Ankle pivot pin",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-269",
+      "type": "Story",
+      "status": "Blocked",
+      "reporter": "p-diego",
+      "assignee": "p-diego",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-02T17:04:32-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Clean up CAD configs (ankle and foot)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-270",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-callum",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-09-04T09:09:08-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Calibrate instrument (leg (left, hip to foot))",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-270-c1",
+          "by": "p-callum",
+          "at": "2026-09-08T17:01:01-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-271",
+      "type": "Sub-task",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-priya",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-04T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Assemble build unit: Thigh cable guide",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "LEG-272",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-diego",
+      "assignee": "p-diego",
+      "labels": [
+        "fit-check"
+      ],
+      "priority": "Highest",
+      "created": "2026-09-04T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Test stand rework for Leg DVT build: Tilt stand F/T adapter plate",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "LEG-272-c1",
+          "by": "p-diego",
+          "at": "2026-09-07T14:52:28-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-272-c2",
+          "by": "p-priya",
+          "at": "2026-09-14T17:05:11-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "LEG-272-c3",
+          "by": "p-diego",
+          "at": "2026-10-01T11:24:59-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "LEG-273",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-callum",
+      "labels": [
+        "cleanup"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-04T22:25:57-07:00",
+      "due_date": "2026-09-29",
+      "events": [],
+      "brief": "Clean up CAD configs (ankle and foot)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    }
+  ]
+}

@@ -1,0 +1,415 @@
+{
+  "job_id": "meeting-mtg-01270",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 17,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-01270",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-09-15T08:45:00-07:00",
+    "actual_min": 10,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-lin",
+      "p-carlos",
+      "p-jade",
+      "p-luis",
+      "p-nora"
+    ],
+    "late_joiners": [
+      "p-lin",
+      "p-carlos"
+    ]
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-001655",
+      "speaker": "p-dmitri",
+      "at_min": [
+        0,
+        5
+      ],
+      "brief": "Dmitri says: We need FL-ANK-1283 by 9/24.",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-ankle-pivot-pin",
+        "value": {
+          "qty": 24,
+          "by": "2026-09-24"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1283",
+        "9/24"
+      ]
+    },
+    {
+      "event": "ev-001639",
+      "speaker": "p-dmitri",
+      "at_min": [
+        3,
+        9
+      ],
+      "brief": "the part: need 9 by 2026-09-22; asks whether expediting is worth it",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-hand-palm-frame",
+        "value": {
+          "qty": 9,
+          "by": "2026-09-22"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "9/22"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 0,
+      "speaker": "p-dmitri",
+      "text": "Let's go, Carlos and Lin are late. Nora's sitting in today."
+    },
+    {
+      "start_s": 6,
+      "speaker": "p-nora",
+      "text": "Just listening, mostly. I want to hear where the hip rig is before kitting gets further."
+    },
+    {
+      "start_s": 14,
+      "speaker": "p-dmitri",
+      "text": "Fine. First thing. We need FL-ANK-1283 by 9/24. Write it down somewhere people look."
+    },
+    {
+      "start_s": 26,
+      "speaker": "p-zoe",
+      "text": "putting it on the board"
+    },
+    {
+      "start_s": 31,
+      "speaker": "p-dmitri",
+      "text": "Zoe, fixtures, go."
+    },
+    {
+      "start_s": 34,
+      "speaker": "p-zoe",
+      "text": "clamp plate drawing went to the shop yesterday. they said a few days, so maybe end of wk. maybe mon. i'll chase thurs"
+    },
+    {
+      "start_s": 50,
+      "speaker": "p-nora",
+      "text": "So the question for me is whether the hip rig is usable without the new plate. Can we run the first units on the old one?"
+    },
+    {
+      "start_s": 60,
+      "speaker": "p-zoe",
+      "text": "sort of. the old plate works but you have to shim it every time, it adds like ten min per unit"
+    },
+    {
+      "start_s": 72,
+      "speaker": "p-nora",
+      "text": "That's acceptable for the first two. I'd rather not do it for the full build."
+    },
+    {
+      "start_s": 80,
+      "speaker": "p-luis",
+      "text": "i rechecked all the dowels yesterday btw, two more were proud on the hip rig, pressed them back"
+    },
+    {
+      "start_s": 90,
+      "speaker": "p-luis",
+      "text": "the ankle rig ones are all good"
+    },
+    {
+      "start_s": 95,
+      "speaker": "p-dmitri",
+      "text": "Good."
+    },
+    {
+      "start_s": 112,
+      "speaker": "p-carlos",
+      "text": "Morning. Forklift was blocking the side door."
+    },
+    {
+      "start_s": 117,
+      "speaker": "p-dmitri",
+      "text": "Carlos, line, fast."
+    },
+    {
+      "start_s": 119,
+      "speaker": "p-carlos",
+      "text": "First two hip units kitted. Destiny starts pressing bearings today. Short on one housing, we wait."
+    },
+    {
+      "start_s": 133,
+      "speaker": "p-nora",
+      "text": "Two things on that. One, please log the press force on every bearing, not just the first. Two, if anything feels off on the hand turn, set it aside, don't rework it on the line."
+    },
+    {
+      "start_s": 150,
+      "speaker": "p-carlos",
+      "text": "Ok. I'll tell Destiny."
+    },
+    {
+      "start_s": 158,
+      "speaker": "p-jade",
+      "text": "two boxes from the shop came yesterday one is the fixture brackets i think the other has no packing slip"
+    },
+    {
+      "start_s": 168,
+      "speaker": "p-zoe",
+      "text": "the brackets are mine, can you bring them over"
+    },
+    {
+      "start_s": 172,
+      "speaker": "p-jade",
+      "text": "yeah after this"
+    },
+    {
+      "start_s": 178,
+      "speaker": "p-dmitri",
+      "text": "The one with no slip, open it and figure it out. Don't let it sit."
+    },
+    {
+      "start_s": 186,
+      "speaker": "p-jade",
+      "text": "ok"
+    },
+    {
+      "start_s": 214,
+      "speaker": "p-lin",
+      "text": "Sorry. I was waiting for the chamber tech to call back."
+    },
+    {
+      "start_s": 219,
+      "speaker": "p-dmitri",
+      "text": "Is he coming?"
+    },
+    {
+      "start_s": 221,
+      "speaker": "p-lin",
+      "text": "Thursday morning. The chamber will be down about half a day for the calibration. Life test isn't affected, it's on its own rig."
+    },
+    {
+      "start_s": 238,
+      "speaker": "p-dmitri",
+      "text": "Okay. Then parts. We need nine of the part by 9/22. Is it worth expediting? I'd like an answer today, not Friday."
+    },
+    {
+      "start_s": 256,
+      "speaker": "p-carlos",
+      "text": "Depends what it costs. If it's small, just do it."
+    },
+    {
+      "start_s": 262,
+      "speaker": "p-nora",
+      "text": "Is it worth expediting? From the build side, I'd say only if it's on the path for the first units. I'm not sure it is."
+    },
+    {
+      "start_s": 274,
+      "speaker": "p-dmitri",
+      "text": "I'll check with Gwen."
+    },
+    {
+      "start_s": 290,
+      "speaker": "p-luis",
+      "text": "also somebody keeps taking the good calipers from the hip bench"
+    },
+    {
+      "start_s": 296,
+      "speaker": "p-luis",
+      "text": "the digital ones with the big screen"
+    },
+    {
+      "start_s": 299,
+      "speaker": "p-zoe",
+      "text": "oops. that might be me. they're on the fixture bench"
+    },
+    {
+      "start_s": 305,
+      "speaker": "p-luis",
+      "text": "lol ok"
+    },
+    {
+      "start_s": 312,
+      "speaker": "p-dmitri",
+      "text": "Put them back after. Done, everyone go."
+    }
+  ],
+  "summary": {
+    "overview": "Standup with Nora sitting in to check hip rig readiness. New clamp plate at the shop; old plate usable for the first two units with shimming. Dowels rechecked. First hip units kitted, bearing pressing starts today. Chamber cal Thursday. Carlos and Lin late.",
+    "shorthand_bullet": [
+      "FL-ANK-1283 needed by 9/24",
+      "clamp plate at shop, est end of wk/mon",
+      "old plate ok for first 2 units w/ shim (+~10 min/unit)",
+      "2 more proud dowels on hip rig pressed back, ankle rig ok",
+      "2 hip units kitted, short 1 housing",
+      "Nora: log press force every bearing, set aside anything rough",
+      "box w/ no packing slip at receiving",
+      "chamber cal thurs am, ~half day down",
+      "the part x9 by 9/22, expedite? TBD"
+    ],
+    "action_items": [
+      "Zoe chase clamp plate thurs",
+      "Jade bring brackets to fixtures, open unlabeled box",
+      "Carlos brief Destiny on press force logging",
+      "Dmitri ask Gwen about expediting",
+      "calipers back to hip bench"
+    ],
+    "keywords": [
+      "hip rig",
+      "clamp plate",
+      "dowels",
+      "bearing press",
+      "kitting",
+      "chamber cal",
+      "expedite"
+    ]
+  }
+}

@@ -98,7 +98,7 @@ Each lists what we rejected and why.
 7. **Scenarios and switching conditions by default; probabilities only with a source.** *Rejected:* model confidence as probability.
 8. **Questions earn their interruption, one at a time,** and only when the answer could change the action. Trusted evidence is checked first.
 9. **Disagreement is first-class.** The engineer can argue; supported new context is accepted and Burn re-solves; the exchange is kept, typed and access-scoped. An argument never silently becomes a fact or a training label.
-10. **Assembly readiness, not "who is blocked".** The question is whether faster delivery improves the assembly's readiness and its milestone. "Behind schedule" alone never justifies spend.
+10. **Two dependency tracks** (Owen's decision). (1) A **progress ranking**: each assembly or module working toward the same calendar milestone is ranked by progress relative to the others, measured from tickets done plus progress implied in the conversation; this gives general urgency without a full graph. (2) A **dependency graph that may be incomplete**: part → work or test → milestone, built from the context; missing links stay unknown. Where the graph is good enough it drives the cost-of-delay maths (§7); the ranking supplies urgency everywhere. *Replaces (v5):* "no league table of assemblies".
 11. **The decision is a decomposition, not an additive urgency score:** eligibility → schedule → basis (dominance → policy → economics) → advisory comparison with the learned habit.
 12. **Ramp owns the money.** Purchase request, approval (the engineer's manager), auto-approval of small orders, card, booking and item receipt are Ramp's. *Rejected:* Burn's own approval settings and a supply-chain purchase queue.
 13. **Supply chain is a context source, not a purchase step.** Every human step must add judgment or own something; with Ramp approving and paying, a supply-chain click only adds delay. Their Slack messages (sibling ETAs, stock, cutoffs, vendor rules) are trusted for those topics.
@@ -106,6 +106,7 @@ Each lists what we rejected and why.
 15. **One frozen order spec, verified by read-back.** The engineer's Okay freezes every field, the CAD hash, quote ID, tier and price; the Ramp request carries its hash; checkout proceeds only if every field read back from Xometry matches. The engineer never re-checks.
 16. **Burn places the order automatically the moment Ramp approval and the card are ready** (Owen's decision; immediate placement via the headless browser, v9). The engineer is alerted when placement starts, and can still cancel before the vendor's final click. Guarded by spec verification, the Ramp card's exact limit and vendor lock, and idempotency.
 17. **Learning is on the synthesized context, not the part.** One example is one Xometry purchase in Ramp at time T; inputs are attributes of the context available before T; the label is the tier chosen (§10). The model is advisory.
+18. **Every external service is mocked for the demo** (Owen's decision): Ramp, Xometry, Slack, Jira, meeting notes and calendar. Mocks are labelled and shaped like the real services.
 
 ## 0. Detailed flow
 
@@ -135,7 +136,7 @@ Each lists what we rejected and why.
 
 **Cutoff in the request.** The Ramp request states the vendor's daily cutoff and its effect ("approve by 2:00pm PT to start production today; after that, +1 business day"), so approval speed is priced too.
 
-Demo: Ramp sandbox (demo.ramp.com; ⌘J simulates transactions). Access is requested through a form; apply early.
+Demo: Ramp is mocked (§2.18). The mock mirrors the calls and fields above, so the real sandbox can replace it later.
 
 ### 0.4 Placement
 - The Ramp approval event triggers placement **immediately**. Events are authenticated, deduplicated and reconciled against Ramp's authoritative state (approvals can arrive late, twice, or out of order; a card can fail to provision).
@@ -247,7 +248,9 @@ DecisionRevision(snapshot hash, options, outcomes, basis, what Burn displayed, p
 
 **Schedule.** Precedence over the dependency graph on working calendars; `requires-all` waits for all inputs. Unknown durations stay unknown; a cycle or contradiction blocks or qualifies the result.
 
-**Assembly readiness.** For the affected assembly: forecast readiness, need-by, remaining work, **slack in days** (negative shown), and each option's effect. Never the fraction of parts received. An optional buffer view appears only with an accepted baseline.
+**Progress ranking (track 1).** For each milestone, rank the assemblies or modules working toward it by progress: the share of their tickets done, adjusted by progress implied in the conversation (an LLM reads the related threads and meetings, e.g. "bore is done, waiting on anodize"). Lower progress relative to the others means higher general urgency.
+
+**Dependency graph (track 2).** For the affected assembly, where the graph supports it: forecast readiness, need-by, remaining work, **slack in days** (negative shown), and each option's effect. Missing links and durations stay unknown.
 
 **Comparison.**
 - Milestone effect ΔT_m(a, s) = T_m(cheapest admissible, s) − T_m(a, s).
@@ -305,6 +308,8 @@ label:    the tier chosen, from the matching Xometry order (Ramp's amount alone 
 **Attributes:**
 - Timing: days to the next need-by, test or milestone; how late in the run-up the order came.
 - Pressure: urgency language; message rate and its trend; reply speed.
+- **Pressure read** (LLM): an LLM reads the part's threads, tickets and meetings in each time band and rates schedule pressure (e.g. low / elevated / high), citing the messages behind the rating: repeated "any update?", deadline talk, frustration, escalation to the manager.
+- Progress rank: the assembly's position in the progress ranking (§7) for its milestone at time T.
 - Dependencies: who or what is waiting; whether a sibling part lands later.
 - People: manager or supply chain involved; number of participants.
 - Change: slips, conflicting dates, revisions.
@@ -358,14 +363,62 @@ label:    the tier chosen, from the matching Xometry order (Ramp's amount alone 
 20. Placement succeeds, the receipt upload fails, then the charge webhook repeats: only the attachment is retried; one purchase, one accounting association.
 
 **Synthetic data for the demo and training.** All context except Slack and the live Ramp order is generated:
-- **One world script first:** the hip-actuator program, people and roles, milestones and tests, and ~100–150 past Xometry orders over ~9 months, each with its need-by, blockers, sibling ETAs, urgency, the chosen tier and the hidden reason.
+- **Example company:** **Flintlock Robotics**, a fictional humanoid robotics startup of **~60 people** in **California** (Pacific time), ordering from **Xometry's US site** (Owen's decisions). It is at a stage of its robot generation where custom CNC parts dominate (actuator housings, brackets, shafts, fixtures), since Burn handles only custom CNC parts on Xometry. The hip actuator, spin test and EVT/DVT builds are part of its humanoid program. The order history covers all of Flintlock's purchasing across vendors (fasteners, electronics, PCBs, motors, tools, raw stock, other custom parts) so the context is realistic; Burn acts only on the custom CNC orders on Xometry, and the demo uses those.
+- **Test hardware and dependency chains** (Owen's decision): Flintlock does not have a complete humanoid. Only parts of it work (e.g. a leg, a hip actuator, a hand), and much of the work is testing those pieces on their own. So a large share of the custom CNC parts are **test infrastructure** rather than robot parts: fixture hooks and lift hooks that hold a leg in the air, test stands, jigs, dyno and spin-test adapters, mounting plates. This is where dependency chains come from: *before the leg drop test can run, the machined hook that suspends the leg must arrive*; the test also needs the leg itself, the stand and a booked bench.
+- **One world script first:** Flintlock's hip-actuator program, people and roles, milestones and tests, and the past orders over ~9 months (all vendors, with Xometry CNC orders the ones Burn acts on; volumes in research/data-realism.md), each with its need-by, blockers, sibling ETAs, urgency, the chosen tier and the hidden reason.
 - **Rendered into each source** with consistent names and timestamps: Slack messages, Jira tickets, meeting notes, calendar, Xometry order history and Ramp-shaped charges. An LLM writes the text from each scripted event; facts and times come from the script.
 - **Noise:** off-topic chatter, corrected dates, undiscussed orders, panic expedites that bought nothing.
-- **Real in the demo:** a demo Slack workspace seeded by the generator (so the channel can be scrolled live) and the Ramp sandbox for the live order.
+- **Meetings** (Owen's decision): many meetings across the 9 months, each realistic to its topic:
+  - supply chain (internal)
+  - supply chain with mechanical engineering
+  - project management / program reviews
+  - others, e.g. design reviews, standups, build-readiness and gate reviews, vendor calls, all-hands
+
+  Most of each meeting is genuine engineering discussion (trade-offs, test results, design debates) unrelated to purchasing. The purchasing-relevant facts (a need-by date, a slipped sibling part, a test moved, a material switch) appear only as **sparse crumbs** inside that discussion. Burn's job is to find them. Formats and messiness follow [`research/data-realism.md`](research/data-realism.md).
+- **Everything is mocked in the demo** (§2.18): Ramp, Xometry, Slack, Jira, meeting notes and calendar, each as a labelled mock shaped like the real service.
 - The hidden reasons are ground truth for evaluation only, never training inputs.
 - Results are reported as "in this simulator, under these assumptions"; no real-world accuracy or ROI claims.
 
-The current `fixtures/` (14 Slack messages about Rev C electronics, one calendar) will be replaced by the generator's output.
+**Where the data lives:**
+
+| What | Where | In Git? |
+|---|---|---|
+| World script | `fixtures/world/world.json` | Yes |
+| Generator | `scripts/generate-world/` | Yes |
+| Generated sources | `fixtures/flintlock/`: `slack/`, `jira/`, `meetings/`, `calendar.ics`, `xometry/`, `ramp/` | Yes; generated once and committed so every run is the same |
+| Answer key (hidden reasons) | `fixtures/world/answers.json` | Yes; read only by evaluation |
+| App database (mock Ramp and Xometry state, orders) | `data/` (SQLite) | No; rebuilt from the fixtures |
+
+Slack is mock data shaped like Slack API responses, read by the existing connector in fixture mode; no real workspace. The prototype's `fixtures/slack/` and `fixtures/calendar.ics` (14 Slack messages about Rev C electronics, one calendar) stay until the app switches to the generated data, so its tests keep passing.
+
+### How the demo data was built (2026-11-10)
+
+**What it is for.** Every external service is mocked, so Burn needs a company to read about. The data gives it one: Flintlock Robotics, a fictional 60-person humanoid startup in California, over nine months (2026-02-10 to 2026-11-10). It serves three purposes:
+1. **The live demo:** the hip-actuator bracket order and its last 30 days of context (motor ETA, the 3-day spin test, Arjun's $600/day, the bracket need), plus the scripted "motor slips" message that flips the recommendation (cases A, B and D of §7).
+2. **Training and grading:** 482 past Xometry orders with the tier chosen; 149 have a full 30 days of written context before them (104 train, 45 test). A held-back answer key says why each tier was chosen and whether expediting helped.
+3. **Showing judges it is realistic:** every record traces back to the event that produced it (`fixtures/world/provenance.json`), and every source uses the real service's format.
+
+**How it was made.** Code owns the facts; models write only the words.
+1. **Seeds** (written by agents): people and org (`fixtures/world/seed/org.json`), and the program: 170 parts (47% test hardware), 16 tests, 18 deliverables, 10 milestones, 35 engineering storylines (`seed/program.json`). Canonical ids in `seed/canon.json`.
+2. **Simulation** (`scripts/generate-world/simulate.mjs`, seeded and deterministic): plays the seeds forward into `fixtures/world/world.json` (the ground truth) and `answers.json` (the answer key): schedules and slips, tickets, 482 Xometry and 2,160 other orders with decisions and hidden reasons, deliveries (1 in 40 late), and events. Events carry planned imperfections: 8% stale, 5% wrong then corrected, 2% wrong and never corrected, 3% contradicting another source.
+3. **Plan** (`plan.mjs`): turns the truth into every record with ids, authors and times fixed and the text blank, plus writing jobs.
+4. **Write** (Opus agents, `job-tool.mjs` and `WRITER.md`): agents fill only the text, following [`research/data-realism.md`](research/data-realism.md). The tool rejects text that drops a required fact or adds dates, part numbers or amounts to background chatter.
+5. **Assemble, check, trace** (`assemble.mjs`, `checks.mjs`, `provenance.mjs`): emit each source in its real format under `fixtures/flintlock/`, enforce the invariants in [`build/simulation-spec.md`](build/simulation-spec.md) §4, and map events to records.
+
+Design: [`build/world-script-plan.md`](build/world-script-plan.md), [`build/simulation-spec.md`](build/simulation-spec.md), `fixtures/world/SCHEMA.md`. An independent audit and what it found: [`build/verification-findings.md`](build/verification-findings.md).
+
+**What Burn can read** (`fixtures/flintlock/`; never `fixtures/world/`):
+| Source | Format | Content |
+|---|---|---|
+| `slack/` | Slack API message JSON, one file per channel | 14 channels and 7 DMs; purchasing threads written for the last 13 weeks |
+| `jira/` | Jira REST issue JSON with changelog and comments | 8 projects; purchasing tickets written |
+| `meetings/` | Note-taker Markdown (overview, transcript, action items) | Supply chain, supply chain + mech, program review, design review, standups |
+| `calendar.ics` | iCalendar | Milestones with moves, rig bookings, recurring meetings, out-of-office; all nine months |
+| `xometry/` | JSON | Every quote with all tiers; orders with status as of 2026-11-10; all nine months |
+| `ramp/` | Ramp transaction and bill JSON | Card charges and bills for every vendor, with descriptors and merchant codes; all nine months |
+| `demo/` | JSON | The bracket quote, the engineer's part entry, the live-change messages, the $/day policies |
+
+**Known limits.** Only text carrying purchasing facts is written (background chatter, routine meetings and tickets are not yet), so channels look sparse. Some messages are stiff where long formal part names were required. Need-by dates are only partly derived from the test schedule (56% of orders feed a real test or build). `checks` still reports six statistical misses (top order totals, three hidden-reason bands, two probe sub-measures). All model results are "in this simulator"; no real-world accuracy claims.
 
 ## 13. Phased plan (design phases, not build tickets)
 
@@ -386,7 +439,7 @@ The current `fixtures/` (14 Slack messages about Rev C electronics, one calendar
 | Requests (`server/store.js`) | Lifecycle, revisions, audit | Order states (§4), frozen spec, Ramp links | Draft POs are superseded by Ramp |
 | UI (`/request`, `/approvals`, `/graph`) | Graph visual, evidence panel, run events | `/request` becomes part entry + comparison card; `/approvals` is replaced by Ramp | "Idle engineering $" tile implies cash savings |
 | Agent (`server/agent`) | Tool loop, offline fallback | Extractor and explainer behind the orchestrator | — |
-| New | — | Headless Xometry provider (server-side browser, company account); Ramp client (sandbox); world-script generator | — |
+| New | — | Headless Xometry provider (server-side browser, company account; a fake Xometry stands in for the demo); Ramp client (mock for the demo, sandbox later); world-script generator | — |
 
 ## 15. History
 

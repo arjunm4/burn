@@ -1,0 +1,647 @@
+{
+  "job_id": "slack-ch-test-lab-2026-08-31-background-2026-09-01",
+  "source": "slack",
+  "status": "blank",
+  "priority": 22,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-test-lab",
+    "name": "test-lab",
+    "slack_id": "C07FLK0TLAB",
+    "purpose": "Test lab: rigs, bookings, results, fixtures"
+  },
+  "week": {
+    "start": "2026-08-31",
+    "end": "2026-09-06"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Rev B: larger vent channel, mica sheets, spacing stays 2 mm.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators",
+    "Ongoing: Aluminum links gall on 303 pins under side load. This week: Amara wants bronze bushings; Kenji says no room, wall would be 0.6 mm.",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind. This week: Shim vs re-grind debate; Arjun leans shim for DVT, re-grind the disc profile for PVT.",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough. This week: Andre needs a shaft feedthrough plate machined to run the knee inside the chamber.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1788287514.715027",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about the ongoing running the knee at 40 c ambient for dvt; chamber access and feedthrough",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788289023.555267",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on this: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788290081.403145",
+      "user": "p-mei",
+      "thread_ts": "1788287514.715027",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the ongoing running the knee at 40 c ambient for dvt; chamber access and feedthrough",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788293563.565583",
+      "user": "p-zoe",
+      "thread_ts": "1788287514.715027",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the ongoing running the knee at 40 c ambient for dvt; chamber access and feedthrough",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788293601.315113",
+      "user": "p-nora",
+      "thread_ts": "1788289023.555267",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1788294927.777372",
+      "user": "p-andre",
+      "thread_ts": "1788287514.715027",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the ongoing running the knee at 40 c ambient for dvt; chamber access and feedthrough",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788295055.010151",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on this: Rev B: larger vent channel, mica sheets, spacing stays 2 mm.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788296872.284065",
+      "user": "p-hana",
+      "thread_ts": "1788289023.555267",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788299014.732171",
+      "user": "p-lukas",
+      "thread_ts": "1788289023.555267",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788299163.458488",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks who knows about the ongoing whether to machine pelvis plates from 7075 or wait for a casting",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788300045.901402",
+      "user": "p-mei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on this: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788300119.230940",
+      "user": "p-beth",
+      "thread_ts": "1788287514.715027",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the ongoing running the knee at 40 c ambient for dvt; chamber access and feedthrough",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788303182.888042",
+      "user": "p-beth",
+      "thread_ts": "1788300045.901402",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788304123.536639",
+      "user": "p-carlos",
+      "thread_ts": "1788289023.555267",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788308086.235357",
+      "user": "p-hana",
+      "thread_ts": "1788300045.901402",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788308655.461189",
+      "user": "p-owen",
+      "thread_ts": "1788289023.555267",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788309843.397643",
+      "user": "p-lin",
+      "thread_ts": "1788289023.555267",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788324110.423679",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: shares a photo related to this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788364455.690357",
+      "user": "p-lin",
+      "thread_ts": "1788324110.423679",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788368495.333100",
+      "user": "p-priya",
+      "thread_ts": "1788324110.423679",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1788369958.034726",
+      "user": "p-beth",
+      "thread_ts": "1788324110.423679",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788371173.699272",
+      "user": "p-kenji",
+      "thread_ts": "1788324110.423679",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788375661.759375",
+      "user": "p-lukas",
+      "thread_ts": "1788324110.423679",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1788377240.354530",
+      "user": "p-priya",
+      "thread_ts": "1788324110.423679",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788381297.326262",
+      "user": "p-beth",
+      "thread_ts": "1788324110.423679",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788383159.245931",
+      "user": "p-hana",
+      "thread_ts": "1788324110.423679",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788388528.967447",
+      "user": "p-jade",
+      "thread_ts": "1788324110.423679",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788391687.186469",
+      "user": "p-andre",
+      "thread_ts": "1788324110.423679",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788395408.947771",
+      "user": "p-kenji",
+      "thread_ts": "1788324110.423679",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1788395937.146446",
+      "user": "p-priya",
+      "thread_ts": "1788324110.423679",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1788397300.683514",
+      "user": "p-nora",
+      "thread_ts": "1788324110.423679",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788402425.571192",
+      "user": "p-mei",
+      "thread_ts": "1788324110.423679",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788448994.923797",
+      "user": "p-beth",
+      "thread_ts": "1788324110.423679",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    }
+  ]
+}

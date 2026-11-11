@@ -1,0 +1,151 @@
+{
+  "job_id": "slack-ch-procurement-2026-08-31-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 21,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-08-31",
+    "end": "2026-09-06"
+  },
+  "people": [
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Rev B: larger vent channel, mica sheets, spacing stays 2 mm.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators",
+    "Ongoing: Aluminum links gall on 303 pins under side load. This week: Amara wants bronze bushings; Kenji says no room, wall would be 0.6 mm.",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind. This week: Shim vs re-grind debate; Arjun leans shim for DVT, re-grind the disc profile for PVT.",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough. This week: Andre needs a shaft feedthrough plate machined to run the knee inside the chamber.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1788203063.499454",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-001481"
+      ],
+      "brief": "1414: need 10 by 2026-09-18 for Build sub-assembly: Finger proximal link",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-09-18"
+        }
+      },
+      "must_mention": [
+        "1414",
+        "Build sub-assembly: Finger proximal link",
+        "9/18"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "1414 for Build sub-assembly: Finger proximal link, 10 needed by 9/18 ⏳"
+    },
+    {
+      "ts": "1788223180.685727",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-001579"
+      ],
+      "brief": "FL-ANK-1291: need 24 by 2026-09-28 for Prototype fit-up for Leg DVT build: Ankle rod-end spacer",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 24,
+          "by": "2026-09-28"
+        }
+      },
+      "must_mention": [
+        "FL-ANK-1291",
+        "Prototype fit-up for Leg DVT build: Ankle rod-end spacer",
+        "9/28"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "FL-ANK-1291 x24 for Prototype fit-up for Leg DVT build: Ankle rod-end spacer, need by 9/28"
+    },
+    {
+      "ts": "1788318923.066888",
+      "user": "p-talia",
+      "thread_ts": "1788203063.499454",
+      "events": [
+        "ev-002957"
+      ],
+      "brief": "Correction: 1414: need 10 by 2026-09-22 for Build sub-assembly: Finger proximal link",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-09-22"
+        }
+      },
+      "must_mention": [
+        "1414",
+        "Build sub-assembly: Finger proximal link",
+        "9/22"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "correction on 1414 for Build sub-assembly: Finger proximal link, it's 9/22 not the 18th 🙏"
+    }
+  ]
+}

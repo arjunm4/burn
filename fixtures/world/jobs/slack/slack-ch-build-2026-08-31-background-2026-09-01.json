@@ -1,0 +1,222 @@
+{
+  "job_id": "slack-ch-build-2026-08-31-background-2026-09-01",
+  "source": "slack",
+  "status": "blank",
+  "priority": 22,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-build",
+    "name": "build",
+    "slack_id": "C07FLK0BILD",
+    "purpose": "EVT/DVT build coordination"
+  },
+  "week": {
+    "start": "2026-08-31",
+    "end": "2026-09-06"
+  },
+  "people": [
+    {
+      "id": "p-bao",
+      "name": "Bao Nguyen",
+      "display_name": "bao.n",
+      "slack_id": "U07FLK0BAO0",
+      "title": "Electrical Engineer, motor drives",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Rev B: larger vent channel, mica sheets, spacing stays 2 mm.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators",
+    "Ongoing: Aluminum links gall on 303 pins under side load. This week: Amara wants bronze bushings; Kenji says no room, wall would be 0.6 mm.",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind. This week: Shim vs re-grind debate; Arjun leans shim for DVT, re-grind the disc profile for PVT.",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough. This week: Andre needs a shaft feedthrough plate machined to run the knee inside the chamber.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1788283802.066621",
+      "user": "p-omar",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: Tomas measures pin diameters: two batches differ by 8 microns; suspects pin supplier mix.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788291715.138237",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788294275.296226",
+      "user": "p-luis",
+      "thread_ts": "1788291715.138237",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788294309.586207",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with the ongoing backlash in the rev b cycloidal reducer and whether to shim or re-grind",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788294990.586333",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Nora: casting tooling quote is $38k and 9 weeks; Lukas wants machined plates for DVT.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788299217.502927",
+      "user": "p-kenji",
+      "thread_ts": "1788291715.138237",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1788316097.370616",
+      "user": "p-bao",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on this: Interim: machined strain-relief clamp and service loop; leg rev C routing planned.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    }
+  ]
+}

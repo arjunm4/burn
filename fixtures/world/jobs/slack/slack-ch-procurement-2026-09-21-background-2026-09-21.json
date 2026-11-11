@@ -1,0 +1,641 @@
+{
+  "job_id": "slack-ch-procurement-2026-09-21-background-2026-09-21",
+  "source": "slack",
+  "status": "blank",
+  "priority": 16,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-09-21",
+    "end": "2026-09-27"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "display_name": "gwen",
+      "slack_id": "U07FLK0GWEN",
+      "title": "Head of Supply Chain",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-rachel",
+      "name": "Rachel Goldberg",
+      "display_name": "rachel",
+      "slack_id": "U07FLK0RACH",
+      "title": "Accounting and Finance Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Dmitri books the battery cage for the containment test; heater trigger fixture still on order.",
+    "Ongoing: BMS PCBA rev 1 balancing current and cell-tap fusing. This week: BMS boards in; balancing current measures 48 mA instead of 100 mA.",
+    "Ongoing: Aluminum links gall on 303 pins under side load. This week: Rev B finger links and pins released with the tactile board change.",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind. This week: Life check after 50k reversals: backlash up to 0.22 deg, accepted for DVT with a note.",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough. This week: Feedthrough plate arrives; first soak shows grease migration at 40 C after 3 h.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Actuator build slips; gate review held anyway with partial data.",
+    "Ongoing: Leg drop gantry shared by leg drop, torso static load and ankle impact. This week: Lukas wants a full week for torso static load; Priya needs it for the DVT leg drop."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1790008693.213044",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on this: Amara wants bronze bushings; Kenji says no room, wall would be 0.6 mm.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1790010311.104401",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about off-topic: mechanical keyboards",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790011991.900651",
+      "user": "p-carlos",
+      "thread_ts": "1790010311.104401",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: off-topic: mechanical keyboards",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790013693.671134",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with the ongoing leg drop gantry shared by leg drop, torso static load and ankle impact",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790016260.329389",
+      "user": "p-diego",
+      "thread_ts": "1790010311.104401",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: off-topic: mechanical keyboards",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790017279.542160",
+      "user": "p-callum",
+      "thread_ts": "1790013693.671134",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the ongoing leg drop gantry shared by leg drop, torso static load and ankle impact",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790019276.538943",
+      "user": "p-talia",
+      "thread_ts": "1790013693.671134",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the ongoing leg drop gantry shared by leg drop, torso static load and ankle impact",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790022113.582587",
+      "user": "p-carlos",
+      "thread_ts": "1790013693.671134",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the ongoing leg drop gantry shared by leg drop, torso static load and ankle impact",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790023783.664964",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about off-topic: the wifi in the high bay",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1790025103.822076",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: complains mildly about this: Idris: 2 mm cell spacing gives ~40 s before neighbor reaches 130 C in sims.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1790031504.122172",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks about this: Dmitri books the battery cage for the containment test; heater trigger fixture still on order.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790043269.535882",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with off-topic: a movie from the weekend",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790046815.389091",
+      "user": "p-wei",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: thinking out loud about this: Dmitri books the battery cage for the containment test; heater trigger fixture still on order.",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1790047349.728220",
+      "user": "p-samir",
+      "thread_ts": "1790043269.535882",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: off-topic: a movie from the weekend",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790048722.657617",
+      "user": "p-talia",
+      "thread_ts": "1790046815.389091",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Dmitri books the battery cage for the containment test; heater trigger fixture still on order.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790049334.466924",
+      "user": "p-owen",
+      "thread_ts": "1790043269.535882",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: off-topic: a movie from the weekend",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790050889.206256",
+      "user": "p-rachel",
+      "thread_ts": "1790046815.389091",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Dmitri books the battery cage for the containment test; heater trigger fixture still on order.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1790052904.194773",
+      "user": "p-talia",
+      "thread_ts": "1790046815.389091",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Dmitri books the battery cage for the containment test; heater trigger fixture still on order.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790055198.340914",
+      "user": "p-callum",
+      "thread_ts": "1790046815.389091",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Dmitri books the battery cage for the containment test; heater trigger fixture still on order.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790093722.484102",
+      "user": "p-hana",
+      "thread_ts": "1790046815.389091",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Dmitri books the battery cage for the containment test; heater trigger fixture still on order.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790096526.393146",
+      "user": "p-kenji",
+      "thread_ts": "1790046815.389091",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Dmitri books the battery cage for the containment test; heater trigger fixture still on order.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790098042.657052",
+      "user": "p-nadia",
+      "thread_ts": "1790046815.389091",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: this: Dmitri books the battery cage for the containment test; heater trigger fixture still on order.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790099016.724212",
+      "user": "p-idris",
+      "thread_ts": "1790046815.389091",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: this: Dmitri books the battery cage for the containment test; heater trigger fixture still on order.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790103983.276800",
+      "user": "p-gwen",
+      "thread_ts": "1790046815.389091",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: this: Dmitri books the battery cage for the containment test; heater trigger fixture still on order.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790108995.324018",
+      "user": "p-gwen",
+      "thread_ts": "1790046815.389091",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Dmitri books the battery cage for the containment test; heater trigger fixture still on order.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1790110320.820317",
+      "user": "p-carlos",
+      "thread_ts": "1790046815.389091",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Dmitri books the battery cage for the containment test; heater trigger fixture still on order.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790113121.970799",
+      "user": "p-hana",
+      "thread_ts": "1790046815.389091",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Dmitri books the battery cage for the containment test; heater trigger fixture still on order.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1790115358.325681",
+      "user": "p-talia",
+      "thread_ts": "1790046815.389091",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: this: Dmitri books the battery cage for the containment test; heater trigger fixture still on order.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1790115688.584649",
+      "user": "p-idris",
+      "thread_ts": "1790046815.389091",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Dmitri books the battery cage for the containment test; heater trigger fixture still on order.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790120040.867334",
+      "user": "p-wei",
+      "thread_ts": "1790046815.389091",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Dmitri books the battery cage for the containment test; heater trigger fixture still on order.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790123381.889472",
+      "user": "p-andre",
+      "thread_ts": "1790046815.389091",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: this: Dmitri books the battery cage for the containment test; heater trigger fixture still on order.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

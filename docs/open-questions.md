@@ -15,7 +15,11 @@ Owners: **A+O** = Arjun and Owen (product); **Build** = whoever is building it; 
 | P6 | How many past orders before the habit model is shown at all? | Avoid showing a model trained on too little | Open |
 | P7 | Do expedited parts actually sit unused at real startups? | Core pitch claim; no public data found | Open; ask users |
 
-## Ramp (verify)
+## Ramp and Xometry
+
+Not needed for the demo: every external service is mocked (architecture §2.18). The verification questions (sandbox access, early access, Vault cards, Xometry terms and Teamspace) apply only if the real services are connected later; see `research/ramp-integration.md` and `research/vendor-apis.md`. The findings so far are kept below.
+
+### If the real services are connected later
 
 | # | Question | Status |
 |---|---|---|
@@ -43,10 +47,8 @@ Owners: **A+O** = Arjun and Owen (product); **Build** = whoever is building it; 
 | # | Question | Status |
 |---|---|---|
 | B1 | What fraction of past Ramp charges can be linked confidently to Slack context and a Xometry order? | Measure on synthetic data first; report the link rate |
-| B2 | Which meeting recorder and Jira data can we read, and what are the channel access rules? | Open; synthetic for the demo |
 | B3 | What is the first-use signal: an engineer tap, or something already recorded (Jira, an assembly log)? | Engineer tap for v1 |
-| B4 | Demo Slack workspace: who sets it up and seeds it? | Open |
-| B5 | Who owns which build pieces (headless Xometry provider, Ramp client/mock, decision core, generator)? | Open |
+| B5 | Who builds the remaining pieces: part-entry screen and recommendation card, automatic placement and bookkeeping, training and heat map? | Open (see Answered for what's assigned) |
 | B7 | Headless runtime: local Playwright on the demo laptop, or a hosted browser (e.g. Browserbase) for always-on placement? | Recommended: local Playwright with a saved Chrome profile plus video/trace for the demo; Browserbase for production (persistent contexts, 30-day replays, live view, identifies the agent); Kernel runner-up. Plain Playwright for exact steps, Stagehand only for reading prices; never let an LLM place the order ([research](research/xometry-automation.md)) |
 | B6 | `scripts/collab.mjs` fails on Node 14 (`randomUUID`); the README requires Node 24.2+ | Use Node 24 locally |
 
@@ -58,6 +60,10 @@ Owners: **A+O** = Arjun and Owen (product); **Build** = whoever is building it; 
 | Who approves? | The engineer's manager, in Ramp | architecture §2.12 |
 | Is supply chain in the purchase? | No; a context source and tracking | architecture §2.13 |
 | Engineer click or automatic placement? | Automatic on approval; the engineer is alerted before any browser tab opens | architecture §0.4, §2.16 |
+| Use the Claude–Codex collaboration workflow? | No; dropped | CLAUDE.md |
+| Real Ramp sandbox or mocks? | Mock everything: Ramp, Xometry, Slack, Jira, meetings, calendar | architecture §2.18 |
+| Example company for the demo data? | Flintlock Robotics, a fictional humanoid robotics startup | architecture §12 |
+| Who builds what (so far)? | Owen: world script and its generator. Arjun: the other mock services (Ramp, Xometry, Slack, Jira, meetings, calendar). Cost of delay: Owen and Arjun together. Rest: unassigned (B5) | — |
 | Which vendor first? | Xometry only | architecture §2.14 |
 | Extension in the engineer's browser, or server-side? | Server-side headless browser on a company Xometry account, for both quoting and placement, so placement is immediate on approval | architecture §2.14, §0.2, §0.4 |
 | Does Xometry have a test mode or buyer API? | No; demo stops at a dummy checkout page | architecture §0.4 |

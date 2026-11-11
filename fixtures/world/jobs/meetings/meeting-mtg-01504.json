@@ -1,0 +1,332 @@
+{
+  "job_id": "meeting-mtg-01504",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 7,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-01504",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-10-23T08:45:00-07:00",
+    "actual_min": 8,
+    "present": [
+      "p-dmitri",
+      "p-carlos",
+      "p-jade",
+      "p-luis"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-002203",
+      "speaker": "p-dmitri",
+      "at_min": [
+        0,
+        6
+      ],
+      "brief": "Dmitri says: We need guide bushing by 11/11 (the build).",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-hand-tendon-guide-bushing",
+        "value": {
+          "qty": 12,
+          "by": "2026-11-11"
+        }
+      },
+      "must_mention": [
+        "guide bushing",
+        "the build",
+        "11/11"
+      ]
+    },
+    {
+      "event": "ev-002227",
+      "speaker": "p-dmitri",
+      "at_min": [
+        4,
+        8
+      ],
+      "brief": "Dmitri says: We need that order by 11/6.",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-battery-lid",
+        "value": {
+          "qty": 10,
+          "by": "2026-11-06"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "11/6"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 3,
+      "speaker": "p-dmitri",
+      "text": "Okay, small group today. Let's be quick. Carlos."
+    },
+    {
+      "start_s": 8,
+      "speaker": "p-carlos",
+      "text": "Yeah. Dyno two is back up, we swapped the coupler, ran it warm for an hour, no noise. Rig three still has that encoder dropout, I think it's the cable. Gonna re-terminate it this morning."
+    },
+    {
+      "start_s": 29,
+      "speaker": "p-dmitri",
+      "text": "Is it the cable or the connector?"
+    },
+    {
+      "start_s": 32,
+      "speaker": "p-carlos",
+      "text": "Connector end, probably. The strain relief's chewed up."
+    },
+    {
+      "start_s": 38,
+      "speaker": "p-dmitri",
+      "text": "Fine. Do it before we put anything back on three."
+    },
+    {
+      "start_s": 44,
+      "speaker": "p-dmitri",
+      "text": "And, uh, for the bushing stuff, we need guide bushing by 11/11, the build. Twelve of them. Not the eleventh-ish, the eleventh."
+    },
+    {
+      "start_s": 58,
+      "speaker": "p-luis",
+      "text": "the guide bushing for the, uh, the slide on the leg fixture?"
+    },
+    {
+      "start_s": 63,
+      "speaker": "p-dmitri",
+      "text": "Yes."
+    },
+    {
+      "start_s": 65,
+      "speaker": "p-luis",
+      "text": "ok. I was gonna say the ones we have are kinda galled, so, yeah."
+    },
+    {
+      "start_s": 72,
+      "speaker": "p-jade",
+      "text": "nothing came in for that yet"
+    },
+    {
+      "start_s": 76,
+      "speaker": "p-dmitri",
+      "text": "I know. Jade, receiving otherwise?"
+    },
+    {
+      "start_s": 80,
+      "speaker": "p-jade",
+      "text": "two boxes yesterday both fasteners put them in the bins. one box was missing the packing slip, i emailed"
+    },
+    {
+      "start_s": 95,
+      "speaker": "p-carlos",
+      "text": "Was that the M3 stuff? I need those."
+    },
+    {
+      "start_s": 98,
+      "speaker": "p-jade",
+      "text": "yeah top shelf"
+    },
+    {
+      "start_s": 101,
+      "speaker": "p-carlos",
+      "text": "Thanks."
+    },
+    {
+      "start_s": 104,
+      "speaker": "p-dmitri",
+      "text": "Luis."
+    },
+    {
+      "start_s": 106,
+      "speaker": "p-luis",
+      "text": "so I finished the harness on the knee unit, uh, the second one, and I started teardown on the one that came off life test. the output bearing looks, um, kinda rough. I took pics, I'll post them."
+    },
+    {
+      "start_s": 131,
+      "speaker": "p-dmitri",
+      "text": "Rough how? Pitting?"
+    },
+    {
+      "start_s": 134,
+      "speaker": "p-luis",
+      "text": "some, like, brinelling maybe? I dunno, I'm not the bearing guy. I'll put it under the scope."
+    },
+    {
+      "start_s": 145,
+      "speaker": "p-dmitri",
+      "text": "Do that. Don't clean it first."
+    },
+    {
+      "start_s": 149,
+      "speaker": "p-luis",
+      "text": "yeah yeah"
+    },
+    {
+      "start_s": 152,
+      "speaker": "p-carlos",
+      "text": "Did anyone move the torque wrench from the cal cabinet? It's not there."
+    },
+    {
+      "start_s": 158,
+      "speaker": "p-luis",
+      "text": "oh. that's me, sorry, it's on my bench"
+    },
+    {
+      "start_s": 162,
+      "speaker": "p-carlos",
+      "text": "Put it back after!!"
+    },
+    {
+      "start_s": 166,
+      "speaker": "p-luis",
+      "text": "I will, I will"
+    },
+    {
+      "start_s": 250,
+      "speaker": "p-dmitri",
+      "text": "One more. The one we talked about Wednesday. We need that order by 11/6. Ten. If it's going to be later I need to know now, not on the sixth."
+    },
+    {
+      "start_s": 266,
+      "speaker": "p-jade",
+      "text": "ok ill watch for it"
+    },
+    {
+      "start_s": 270,
+      "speaker": "p-carlos",
+      "text": "Who's chasing it, you?"
+    },
+    {
+      "start_s": 273,
+      "speaker": "p-dmitri",
+      "text": "I'll ping purchasing. Okay. That's it. Go."
+    },
+    {
+      "start_s": 281,
+      "speaker": "p-luis",
+      "text": "thx"
+    }
+  ],
+  "summary": {
+    "overview": "Short standup, four people. Rig fixes, receiving, teardown of the life-test knee unit. Two need-by dates from Dmitri.",
+    "shorthand_bullet": [
+      "dyno 2 back up after coupler swap",
+      "rig 3 encoder dropout, prob connector strain relief, Carlos re-terminating",
+      "guide bushing x12 needed by 11/11 for the build, existing ones galled",
+      "receiving: 2 fastener boxes binned, one missing packing slip",
+      "Luis: harness done on 2nd knee unit, teardown on life test unit, output bearing looks rough",
+      "that order x10 needed by 11/6",
+      "torque wrench back to cal cabinet"
+    ],
+    "action_items": [
+      "Carlos re-terminate rig 3 cable before reuse",
+      "Luis scope the output bearing, don't clean first, post pics",
+      "Dmitri ping purchasing on that order",
+      "watch for guide bushings",
+      "torque wrench back to cabinet"
+    ],
+    "keywords": [
+      "guide bushing",
+      "encoder dropout",
+      "output bearing",
+      "life test",
+      "receiving"
+    ]
+  }
+}

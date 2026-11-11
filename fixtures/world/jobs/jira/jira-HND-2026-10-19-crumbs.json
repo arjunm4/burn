@@ -1,0 +1,178 @@
+{
+  "job_id": "jira-HND-2026-10-19-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 7,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HND",
+    "name": "Hands and arms"
+  },
+  "week": {
+    "start": "2026-10-19",
+    "end": "2026-10-25"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HND-257",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-kenji",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-10-20T09:26:00-07:00",
+      "due_date": "2026-11-09",
+      "events": [
+        "ev-002131"
+      ],
+      "brief": "Order 3x Grip load cell plate, 12x Grip fixture camera arm, 3x Tendon tension jig, 9x Grip-cycle test mandrel, 2x Pinch force anvil / LC plate: need 3 by 2026-11-09",
+      "must_mention": [
+        "LC plate",
+        "11/9"
+      ],
+      "description_length": "short",
+      "summary": "grip test fixture parts - LC plate, camera arms, jigs, mandrels",
+      "description": "3 LC plate needed by 11/9\nrest of the fixture stuff on same order",
+      "comments": [
+        {
+          "id": "HND-257-c1",
+          "by": "p-samir",
+          "at": "2026-10-22T20:25:37-07:00",
+          "events": [
+            "ev-002134"
+          ],
+          "brief": "Order XO-5563073 placed, promised 2026-11-06",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-11-06"
+          },
+          "must_mention": [
+            "XO-5563073",
+            "2443",
+            "fri the 6th"
+          ],
+          "body": "XO-5563073 placed, covers 2443. promised fri the 6th"
+        }
+      ]
+    },
+    {
+      "key": "HND-271",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-andre",
+      "assignee": "p-andre",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-10-23T13:06:16-07:00",
+      "due_date": "2026-11-16",
+      "events": [
+        "ev-002204"
+      ],
+      "brief": "Order 12x Tendon guide bushing, 12x Knuckle pin / that order: need 12 by 2026-11-16 for Prototype fit-up: Tendon guide bushing",
+      "must_mention": [
+        "that order",
+        "Prototype fit-up: Tendon guide bushing",
+        "11/16"
+      ],
+      "description_length": "medium",
+      "summary": "Tendon guide bushings + knuckle pins x12",
+      "description": "need that order in by 11/16 for Prototype fit-up: Tendon guide bushing. 12 bushings and 12 knuckle pins. bushing ID is the critical one, pls check thr *the drawing before it goes out",
+      "comments": [
+        {
+          "id": "HND-271-c1",
+          "by": "p-andre",
+          "at": "2026-10-26T12:02:47-07:00",
+          "events": [
+            "ev-003098"
+          ],
+          "brief": "guide bushing: need 12 by 2026-11-16 for next week",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 12,
+              "by": "2026-11-16"
+            }
+          },
+          "must_mention": [
+            "guide bushing",
+            "next week",
+            "mon the 16th"
+          ],
+          "body": "guide bushing still 12 by mon the 16th, fit-up is next week"
+        }
+      ]
+    }
+  ]
+}

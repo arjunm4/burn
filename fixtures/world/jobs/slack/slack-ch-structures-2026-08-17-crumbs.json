@@ -1,0 +1,116 @@
+{
+  "job_id": "slack-ch-structures-2026-08-17-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 25,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-structures",
+    "name": "structures-battery",
+    "slack_id": "C07FLK0STRC",
+    "purpose": "Torso, pelvis and battery enclosure"
+  },
+  "week": {
+    "start": "2026-08-17",
+    "end": "2026-08-23"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Torso and pelvis structure.",
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Vent channel sizing debated; burst plate at 0.5 bar vs open slots.",
+    "Ongoing: What to show investors when no full humanoid exists",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles. This week: Interim: machined strain-relief clamp and service loop; leg rev C routing planned.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites. This week: Gwen proposes expedite only with a stated need date; engineers grumble.",
+    "Ongoing: Too many life tests for one grip fixture and one dyno",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1787245737.257264",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-003230"
+      ],
+      "brief": "Motor sample lot for battery enclosure: still quoting 2026-09-01",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-09-01"
+      },
+      "must_mention": [
+        "Motor sample lot for battery enclosure (clevis)",
+        "9/1"
+      ],
+      "length": "short",
+      "text": "Motor sample lot for battery enclosure (clevis) still quoting, looking like 9/1"
+    },
+    {
+      "ts": "1787269763.796681",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002517"
+      ],
+      "brief": "Assemble build unit for Leg DVT build: Battery clevis 10 waits on Motor sample lot for battery enclosure (clevis)",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-gen-0067"
+      },
+      "must_mention": [
+        "Motor sample lot for battery enclosure (clevis)",
+        "Assemble build unit for Leg DVT build: Battery clevis 10"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Assemble build unit for Leg DVT build: Battery clevis 10 is blocked on Motor sample lot for battery enclosure (clevis) fyi"
+    }
+  ]
+}

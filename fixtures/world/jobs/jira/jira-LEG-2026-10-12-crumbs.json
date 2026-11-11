@@ -1,0 +1,174 @@
+{
+  "job_id": "jira-LEG-2026-10-12-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 9,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "LEG",
+    "name": "Legs and ankle"
+  },
+  "week": {
+    "start": "2026-10-12",
+    "end": "2026-10-18"
+  },
+  "people": [
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "LEG-365",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-10-15T08:19:39-07:00",
+      "due_date": "2026-10-23",
+      "events": [
+        "ev-002044"
+      ],
+      "brief": "Order 6x Ankle pivot bushing / FL-ANK-1290: need 6 by 2026-10-23 for Kit and assemble: Ankle pivot bushing",
+      "must_mention": [
+        "FL-ANK-1290",
+        "Kit and assemble: Ankle pivot bushing",
+        "10/23"
+      ],
+      "description_length": "one_line",
+      "summary": "FL-ANK-1290 ankle pivot bushings x6",
+      "description": "for Kit and assemble: Ankle pivot bushing, need by 10/23",
+      "comments": [
+        {
+          "id": "LEG-365-c1",
+          "by": "p-priya",
+          "at": "2026-10-15T14:54:57-07:00",
+          "events": [
+            "ev-002046"
+          ],
+          "brief": "FL-ANK-1290: need 6 by 2026-10-23 for the build",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 6,
+              "by": "2026-10-23"
+            }
+          },
+          "must_mention": [
+            "FL-ANK-1290",
+            "the build",
+            "fri the 23rd"
+          ],
+          "body": "Confirming FL-ANK-1290 qty 6 is needed for the build by fri the 23rd."
+        },
+        {
+          "id": "LEG-365-c2",
+          "by": "p-diego",
+          "at": "2026-10-15T16:57:30-07:00",
+          "events": [
+            "ev-002048"
+          ],
+          "brief": "1290: need 6 by 2026-10-23",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 6,
+              "by": "2026-10-23"
+            }
+          },
+          "must_mention": [
+            "1290",
+            "fri the 23rd"
+          ],
+          "body": "1290 still need all 6 by fri the 23rd"
+        },
+        {
+          "id": "LEG-365-c3",
+          "by": "p-diego",
+          "at": "2026-11-06T16:03:00-08:00",
+          "events": [
+            "ev-002053"
+          ],
+          "brief": "ankle bushing in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-11-05"
+          },
+          "must_mention": [
+            "ankle bushing",
+            "the build",
+            "11/5"
+          ],
+          "body": "ankle bushing installed 11/5, went into the build"
+        }
+      ]
+    }
+  ]
+}

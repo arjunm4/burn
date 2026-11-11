@@ -1,0 +1,102 @@
+{
+  "job_id": "jira-HND-2026-11-02-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 4,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HND",
+    "name": "Hands and arms"
+  },
+  "week": {
+    "start": "2026-11-02",
+    "end": "2026-11-08"
+  },
+  "people": [
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "HND-288",
+      "type": "Story",
+      "status": "To Do",
+      "reporter": "p-kenji",
+      "assignee": "p-kenji",
+      "labels": [
+        "fit-check"
+      ],
+      "priority": "High",
+      "created": "2026-11-03T10:00:00-08:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Rig setup: Grip fixture base plate",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HND-289",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-sofia",
+      "assignee": "p-kenji",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-11-04T10:58:45-08:00",
+      "due_date": "2026-11-18",
+      "events": [],
+      "brief": "Investigate noise on bench unit (hand and wrist)",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": []
+    }
+  ]
+}

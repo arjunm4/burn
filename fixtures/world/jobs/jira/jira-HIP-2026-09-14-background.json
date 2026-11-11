@@ -1,0 +1,1211 @@
+{
+  "job_id": "jira-HIP-2026-09-14-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 18,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HIP",
+    "name": "Actuators (hip and knee)"
+  },
+  "week": {
+    "start": "2026-09-14",
+    "end": "2026-09-20"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "HIP-390",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-arjun",
+      "assignee": "p-tomas",
+      "labels": [
+        "dfm"
+      ],
+      "priority": "Highest",
+      "created": "2026-09-14T09:03:54-07:00",
+      "due_date": "2026-10-09",
+      "events": [],
+      "brief": "Clean up CAD configs (hip actuator)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-390-c1",
+          "by": "p-tomas",
+          "at": "2026-09-18T01:41:54-07:00",
+          "events": [],
+          "brief": "background: short note on why the due date moved (no date)",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-390-c2",
+          "by": "p-tomas",
+          "at": "2026-09-21T09:24:10-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-390-c3",
+          "by": "p-nadia",
+          "at": "2026-09-24T14:59:22-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-391",
+      "type": "Story",
+      "status": "In Progress",
+      "reporter": "p-wei",
+      "assignee": null,
+      "labels": [
+        "fit-check"
+      ],
+      "priority": "Low",
+      "created": "2026-09-14T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Design iteration bench trial: Hip holding-brake bracket",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-391-c1",
+          "by": "p-wei",
+          "at": "2026-09-18T10:57:32-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-391-c2",
+          "by": "p-wei",
+          "at": "2026-09-22T10:39:46-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-391-c3",
+          "by": "p-wei",
+          "at": "2026-09-24T10:34:45-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-391-c4",
+          "by": "p-wei",
+          "at": "2026-10-07T10:43:01-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-391-c5",
+          "by": "p-nadia",
+          "at": "2026-10-12T14:27:21-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-392",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": "p-tomas",
+      "labels": [],
+      "priority": "Highest",
+      "created": "2026-09-14T10:47:10-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Label and bin received parts (hip actuator)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-392-c1",
+          "by": "p-tomas",
+          "at": "2026-09-21T11:53:28-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-392-c2",
+          "by": "p-tomas",
+          "at": "2026-09-21T12:52:18-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-393",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-wei",
+      "assignee": "p-arjun",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-09-14T13:17:16-07:00",
+      "due_date": "2026-10-19",
+      "events": [],
+      "brief": "Harness routing cleanup (knee actuator)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-393-c1",
+          "by": "p-arjun",
+          "at": "2026-09-19T18:36:16-07:00",
+          "events": [],
+          "brief": "background: short note on why the due date moved (no date)",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-393-c2",
+          "by": "p-arjun",
+          "at": "2026-09-21T14:56:13-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-394",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-arjun",
+      "assignee": "p-owen",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-14T13:24:57-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Rework fixture clamp (hip actuator)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-394-c1",
+          "by": "p-owen",
+          "at": "2026-09-17T14:00:22-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-395",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": "p-arjun",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-14T14:26:02-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Rework fixture clamp (knee actuator)",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-395-c1",
+          "by": "p-arjun",
+          "at": "2026-09-21T17:00:33-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-395-c2",
+          "by": "p-arjun",
+          "at": "2026-09-21T18:19:21-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-396",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-nadia",
+      "assignee": "p-tomas",
+      "labels": [
+        "bench"
+      ],
+      "priority": "Low",
+      "created": "2026-09-14T17:38:14-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Clean up CAD configs (hip actuator)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-396-c1",
+          "by": "p-tomas",
+          "at": "2026-09-17T17:23:02-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-397",
+      "type": "Sub-task",
+      "status": "Done",
+      "reporter": "p-nadia",
+      "assignee": "p-nadia",
+      "labels": [],
+      "priority": "Highest",
+      "created": "2026-09-15T10:00:00-07:00",
+      "due_date": "2026-09-25",
+      "events": [],
+      "brief": "Hip actuator thermal model update",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HIP-398",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": "p-wei",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-15T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Install and torque: Knee flexspline clamp ring",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-398-c1",
+          "by": "p-wei",
+          "at": "2026-09-22T12:30:35-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-398-c2",
+          "by": "p-wei",
+          "at": "2026-09-28T15:12:52-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-398-c3",
+          "by": "p-wei",
+          "at": "2026-09-30T13:17:53-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-398-c4",
+          "by": "p-tomas",
+          "at": "2026-10-02T10:03:36-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-398-c5",
+          "by": "p-wei",
+          "at": "2026-10-05T15:14:49-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-399",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-zoe",
+      "assignee": null,
+      "labels": [
+        "evt"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-15T10:00:00-07:00",
+      "due_date": "2026-10-23",
+      "events": [],
+      "brief": "Tolerance stack check: Knee rear cover",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HIP-400",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": "p-tomas",
+      "labels": [],
+      "priority": "Highest",
+      "created": "2026-09-15T10:00:00-07:00",
+      "due_date": "2026-10-27",
+      "events": [],
+      "brief": "Fit check: Hip to pelvis interface plate",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-400-c1",
+          "by": "p-tomas",
+          "at": "2026-09-22T11:54:42-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-400-c2",
+          "by": "p-arjun",
+          "at": "2026-09-22T14:57:21-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-400-c3",
+          "by": "p-owen",
+          "at": "2026-10-07T10:02:46-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-400-c4",
+          "by": "p-tomas",
+          "at": "2026-11-02T11:31:03-08:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-401",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-wei",
+      "assignee": "p-wei",
+      "labels": [
+        "evt"
+      ],
+      "priority": "High",
+      "created": "2026-09-15T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Build sub-assembly: Knee cross-roller retainer",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-401-c1",
+          "by": "p-wei",
+          "at": "2026-09-22T16:53:18-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-401-c2",
+          "by": "p-arjun",
+          "at": "2026-10-01T10:47:48-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-401-c3",
+          "by": "p-wei",
+          "at": "2026-10-05T15:34:04-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-402",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": "p-wei",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-15T11:02:58-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Harness routing cleanup (hip actuator)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HIP-403",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-nadia",
+      "assignee": "p-arjun",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-15T11:06:48-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Document test procedure (knee actuator)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-403-c1",
+          "by": "p-arjun",
+          "at": "2026-09-21T12:06:57-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-403-c2",
+          "by": "p-arjun",
+          "at": "2026-09-21T16:39:23-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-403-c3",
+          "by": "p-arjun",
+          "at": "2026-09-24T16:20:00-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-404",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-wei",
+      "assignee": "p-wei",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-09-15T14:39:04-07:00",
+      "due_date": "2026-09-28",
+      "events": [],
+      "brief": "Follow up vendor question (hip actuator)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-404-c1",
+          "by": "p-arjun",
+          "at": "2026-09-16T09:08:23-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-404-c2",
+          "by": "p-nadia",
+          "at": "2026-09-21T17:06:02-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-404-c3",
+          "by": "p-wei",
+          "at": "2026-09-28T10:07:04-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-405",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-arjun",
+      "assignee": "p-nadia",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-15T14:56:07-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Tolerance stack review (knee actuator)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-405-c1",
+          "by": "p-nadia",
+          "at": "2026-09-25T09:29:45-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-405-c2",
+          "by": "p-nadia",
+          "at": "2026-09-29T15:05:49-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-406",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": "p-tomas",
+      "labels": [
+        "evt"
+      ],
+      "priority": "High",
+      "created": "2026-09-16T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Kit and assemble: Knee output encoder bracket",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HIP-407",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-arjun",
+      "assignee": "p-arjun",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-16T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Instrumentation fit-up: Spin-test adapter, knee actuator",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-407-c1",
+          "by": "p-arjun",
+          "at": "2026-10-05T14:24:04-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-407-c2",
+          "by": "p-arjun",
+          "at": "2026-10-12T09:02:06-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-407-c3",
+          "by": "p-arjun",
+          "at": "2026-10-19T16:18:41-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-407-c4",
+          "by": "p-arjun",
+          "at": "2026-10-29T16:11:50-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-410",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-wei",
+      "assignee": "p-tomas",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-16T11:19:30-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Tolerance stack review (hip actuator)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-410-c1",
+          "by": "p-tomas",
+          "at": "2026-09-28T16:37:09-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-411",
+      "type": "Story",
+      "status": "To Do",
+      "reporter": "p-tomas",
+      "assignee": "p-nadia",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-09-16T11:34:36-07:00",
+      "due_date": "2026-09-21",
+      "events": [],
+      "brief": "Calibrate instrument (knee actuator)",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-411-c1",
+          "by": "p-owen",
+          "at": "2026-10-15T14:03:17-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-411-c2",
+          "by": "p-nadia",
+          "at": "2026-10-16T09:08:01-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-412",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-nadia",
+      "assignee": "p-nadia",
+      "labels": [
+        "docs"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-16T12:48:41-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Update assembly work instructions (knee actuator)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HIP-413",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-tomas",
+      "assignee": "p-nadia",
+      "labels": [],
+      "priority": "Highest",
+      "created": "2026-09-16T17:03:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Investigate noise on bench unit (hip actuator)",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-413-c1",
+          "by": "p-nadia",
+          "at": "2026-09-21T14:14:16-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-413-c2",
+          "by": "p-tomas",
+          "at": "2026-09-25T11:28:49-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-413-c3",
+          "by": "p-nadia",
+          "at": "2026-10-08T15:17:37-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-413-c4",
+          "by": "p-wei",
+          "at": "2026-10-14T15:41:32-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-414",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-tomas",
+      "assignee": "p-wei",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-17T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Tolerance stack check: Knee to thigh flange",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-414-c1",
+          "by": "p-wei",
+          "at": "2026-09-22T10:18:51-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-414-c2",
+          "by": "p-wei",
+          "at": "2026-09-28T16:43:07-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-414-c3",
+          "by": "p-arjun",
+          "at": "2026-10-12T10:12:54-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-414-c4",
+          "by": "p-wei",
+          "at": "2026-10-12T17:16:06-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-415",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-arjun",
+      "assignee": "p-arjun",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-09-17T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Test stand rework: Spin-test shaft coupling",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-415-c1",
+          "by": "p-arjun",
+          "at": "2026-10-14T11:49:43-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-417",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-owen",
+      "assignee": null,
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-18T08:32:59-07:00",
+      "due_date": "2026-09-28",
+      "events": [],
+      "brief": "Capture lessons learned (knee actuator)",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-417-c1",
+          "by": "p-tomas",
+          "at": "2026-09-28T12:34:56-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-417-c2",
+          "by": "p-owen",
+          "at": "2026-09-30T12:51:36-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-418",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-nadia",
+      "assignee": "p-owen",
+      "labels": [
+        "bench"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-18T08:57:19-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Rework fixture clamp (hip actuator)",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HIP-419",
+      "type": "Sub-task",
+      "status": "To Do",
+      "reporter": "p-owen",
+      "assignee": "p-owen",
+      "labels": [],
+      "priority": "Low",
+      "created": "2026-09-18T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Fit check: Hip holding-brake bracket",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "HIP-420",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-tomas",
+      "assignee": null,
+      "labels": [],
+      "priority": "High",
+      "created": "2026-09-18T10:00:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Build sub-assembly: Hip cycloid ring-pin housing",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HIP-420-c1",
+          "by": "p-tomas",
+          "at": "2026-09-21T11:09:40-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-420-c2",
+          "by": "p-arjun",
+          "at": "2026-09-21T16:46:19-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "HIP-420-c3",
+          "by": "p-tomas",
+          "at": "2026-09-21T17:22:46-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "HIP-421",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-owen",
+      "assignee": null,
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-18T13:16:14-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Capture lessons learned (knee actuator)",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": []
+    }
+  ]
+}

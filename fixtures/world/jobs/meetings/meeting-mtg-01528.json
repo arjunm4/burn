@@ -1,0 +1,358 @@
+{
+  "job_id": "meeting-mtg-01528",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 5,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-01528",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-10-28T08:45:00-07:00",
+    "actual_min": 13,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-andre",
+      "p-lin",
+      "p-carlos",
+      "p-luis",
+      "p-destiny"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-002220",
+      "speaker": "p-dmitri",
+      "at_min": [
+        2,
+        8
+      ],
+      "brief": "abs encoder bracket: need 12 by 2026-11-17 for the fit check",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-knee-abs-encoder-bracket",
+        "value": {
+          "qty": 12,
+          "by": "2026-11-17"
+        }
+      },
+      "must_mention": [
+        "abs encoder bracket",
+        "the fit check",
+        "11/17"
+      ]
+    },
+    {
+      "event": "ev-002250",
+      "speaker": "p-carlos",
+      "at_min": [
+        7,
+        13
+      ],
+      "brief": "FL-TST-2145: need 3 by 2026-11-16",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-dyno-chamber-feedthrough",
+        "value": {
+          "qty": 3,
+          "by": "2026-11-16"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2145",
+        "11/16"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 4,
+      "speaker": "p-dmitri",
+      "text": "Morning. Lin."
+    },
+    {
+      "start_s": 7,
+      "speaker": "p-lin",
+      "text": "Thermal cycle setup is half done. I'm missing one thermocouple channel, the DAQ shows it open. Probably the connector."
+    },
+    {
+      "start_s": 24,
+      "speaker": "p-luis",
+      "text": "i can repin it after this"
+    },
+    {
+      "start_s": 30,
+      "speaker": "p-andre",
+      "text": "coupling swap done. ripple went down, not all the way. so maybe partly coupling partly something else. rerunning at a lower speed"
+    },
+    {
+      "start_s": 49,
+      "speaker": "p-andre",
+      "text": "also the spare was in the drawer, ty luis"
+    },
+    {
+      "start_s": 55,
+      "speaker": "p-luis",
+      "text": "👍"
+    },
+    {
+      "start_s": 150,
+      "speaker": "p-dmitri",
+      "text": "Encoder side. We need ABS ENCODER BRACKET, 12 of them, by 11/17. That's for the fit check. Zoe?"
+    },
+    {
+      "start_s": 166,
+      "speaker": "p-zoe",
+      "text": "i have the drawing, it's done. i don't think anyone ordered it yet. i can send it to Nora today, uh, or tmrw morning latest"
+    },
+    {
+      "start_s": 180,
+      "speaker": "p-dmitri",
+      "text": "Today."
+    },
+    {
+      "start_s": 182,
+      "speaker": "p-zoe",
+      "text": "ok today"
+    },
+    {
+      "start_s": 190,
+      "speaker": "p-destiny",
+      "text": "For the fit check, do you want me to build up the test housings first or wait for the brackets? 🤔"
+    },
+    {
+      "start_s": 200,
+      "speaker": "p-dmitri",
+      "text": "Build them first. We bolt on after."
+    },
+    {
+      "start_s": 205,
+      "speaker": "p-destiny",
+      "text": "Got it 👍"
+    },
+    {
+      "start_s": 281,
+      "speaker": "p-zoe",
+      "text": "ankle fixture, the clamp plates did come early actually. so it's assembled, i just need to indicate it"
+    },
+    {
+      "start_s": 300,
+      "speaker": "p-lin",
+      "text": "Can I get time on it once it's indicated? I want to check the ankle seal under load."
+    },
+    {
+      "start_s": 309,
+      "speaker": "p-zoe",
+      "text": "yeah probably fri"
+    },
+    {
+      "start_s": 430,
+      "speaker": "p-carlos",
+      "text": "Shop. We got the last of the hardware from the kitting list. And FL-TST-2145, we need 3 by 11/16. Not ordered!!"
+    },
+    {
+      "start_s": 447,
+      "speaker": "p-dmitri",
+      "text": "Who owns it?"
+    },
+    {
+      "start_s": 450,
+      "speaker": "p-carlos",
+      "text": "Me, I guess. I'll get it in."
+    },
+    {
+      "start_s": 560,
+      "speaker": "p-destiny",
+      "text": "Also the label printer is out of tape again 😬"
+    },
+    {
+      "start_s": 566,
+      "speaker": "p-luis",
+      "text": "theres tape in the cabnet by the door"
+    },
+    {
+      "start_s": 570,
+      "speaker": "p-luis",
+      "text": "*cabinet"
+    },
+    {
+      "start_s": 640,
+      "speaker": "p-dmitri",
+      "text": "Fine. Done. Go."
+    }
+  ],
+  "summary": {
+    "overview": "Wednesday standup. Two orders flagged as not placed yet: the encoder bracket for the fit check and FL-TST-2145. Coupling swap helped ripple only partly. Ankle fixture assembled.",
+    "shorthand_bullet": [
+      "Lin: thermal cycle setup half done, one TC channel open, likely connector",
+      "Andre: coupling swap reduced ripple partly, rerun lower speed",
+      "abs encoder bracket: 12 by 11/17 for the fit check. Drawing done, not ordered",
+      "Destiny build test housings first, brackets after",
+      "Ankle fixture assembled, clamp plates came early, needs indicating",
+      "Kitting hardware complete",
+      "FL-TST-2145: 3 by 11/16, not ordered, Carlos owns",
+      "label printer out of tape"
+    ],
+    "action_items": [
+      "Luis repin TC connector",
+      "Zoe send encoder bracket drawing to Nora today",
+      "Carlos get FL-TST-2145 ordered",
+      "Zoe indicate ankle fixture, Lin gets time on it after",
+      "Andre rerun sweep at lower speed"
+    ],
+    "keywords": [
+      "fit check",
+      "encoder bracket",
+      "thermal cycle",
+      "thermocouple",
+      "dyno",
+      "torque ripple",
+      "ankle fixture"
+    ]
+  }
+}

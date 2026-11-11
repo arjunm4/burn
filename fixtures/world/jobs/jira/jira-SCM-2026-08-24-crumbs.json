@@ -1,0 +1,175 @@
+{
+  "job_id": "jira-SCM-2026-08-24-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 23,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "SCM",
+    "name": "Supply chain and procurement"
+  },
+  "week": {
+    "start": "2026-08-24",
+    "end": "2026-08-30"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "SCM-252",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-zoe",
+      "assignee": "p-zoe",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-08-24T11:54:53-07:00",
+      "due_date": null,
+      "events": [
+        "ev-001567"
+      ],
+      "brief": "Order 3x Drop release clevis, 24x Dyno bellows coupling hub / FL-TST-2259: need 3 by 2026-09-29",
+      "must_mention": [
+        "FL-TST-2259",
+        "9/29"
+      ],
+      "description_length": "short",
+      "summary": "drop clevis + bellows hubs FL-TST-2259",
+      "description": "FL-TST-2259 by 9/29, hubs whenever",
+      "comments": []
+    },
+    {
+      "key": "SCM-255",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-talia",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-08-26T18:08:33-07:00",
+      "due_date": "2026-09-25",
+      "events": [
+        "ev-001517"
+      ],
+      "brief": "Order 5x Chamber cable feedthrough plate, 1x Tilt stand F/T adapter plate, 8x Gait mocap camera mount / 2716: need 5 by 2026-09-25",
+      "must_mention": [
+        "2716",
+        "9/25"
+      ],
+      "description_length": "short",
+      "summary": "Chamber feedthrough plates, F/T adapter, mocap mounts",
+      "description": "2716 needed by 9/25 ✅",
+      "comments": []
+    },
+    {
+      "key": "SCM-257",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-andre",
+      "assignee": "p-andre",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-08-27T17:15:54-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Order 6x Dyno coupling, hip actuator, 7x Dyno mounting plate, hip actuator",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": "dyno coupling + mount plate, hip",
+      "description": "replacing the hip dyno coupling and mount plates, current set has visible fretting on the hub and we keep chasing alignment every time the actuator comes off\n\nnotes:\n- same bore and keyway as the old coupling, dont change it\n- mount plate flatness matters more than finish, we shim off it\n- break edges everywere *everywhere, last ones cut gloves\n- if the shop pushes back on the bolt pattern ask me before they change anything\n\nwill swap once they land, need about half a day on the stand",
+      "comments": [
+        {
+          "id": "SCM-257-c1",
+          "by": "p-andre",
+          "at": "2026-09-16T14:59:00-07:00",
+          "events": [
+            "ev-001473"
+          ],
+          "brief": "dyno coupling in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-09-15"
+          },
+          "must_mention": [
+            "dyno coupling",
+            "the test",
+            "tues the 15th"
+          ],
+          "body": "dyno coupling went in for the test tues the 15th, runs clean so far"
+        }
+      ]
+    }
+  ]
+}

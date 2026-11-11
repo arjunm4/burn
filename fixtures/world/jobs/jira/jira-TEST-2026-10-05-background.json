@@ -1,0 +1,135 @@
+{
+  "job_id": "jira-TEST-2026-10-05-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 12,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "TEST",
+    "name": "Test, rigs and fixtures"
+  },
+  "week": {
+    "start": "2026-10-05",
+    "end": "2026-10-11"
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "TEST-219",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-dmitri",
+      "assignee": "p-dmitri",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-10-05T13:47:11-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Harness routing cleanup",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "TEST-219-c1",
+          "by": "p-dmitri",
+          "at": "2026-10-07T12:13:23-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "TEST-220",
+      "type": "Bug",
+      "status": "To Do",
+      "reporter": "p-nadia",
+      "assignee": "p-nadia",
+      "labels": [
+        "test-failure"
+      ],
+      "priority": "High",
+      "created": "2026-10-07T18:13:00-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Hip actuator thermal derate at continuous torque: failed, root cause open",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "TEST-220-c1",
+          "by": "p-dmitri",
+          "at": "2026-10-12T11:09:16-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-220-c2",
+          "by": "p-nadia",
+          "at": "2026-11-04T14:15:40-08:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    }
+  ]
+}

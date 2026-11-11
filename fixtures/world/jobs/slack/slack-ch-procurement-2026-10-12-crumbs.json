@@ -1,0 +1,988 @@
+{
+  "job_id": "slack-ch-procurement-2026-10-12-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 9,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-10-12",
+    "end": "2026-10-18"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-jonas",
+      "name": "Jonas Pedersen",
+      "display_name": "jonas",
+      "slack_id": "U07FLK0JONA",
+      "title": "Firmware Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: BMS PCBA rev 1 balancing current and cell-tap fusing. This week: Fuses added as bodge wires; Farah says rev 2 before any pack goes into the robot.",
+    "Ongoing: Leg DVT build: parts readiness and what to do about late test hardware. This week: Rev C links in, one fails inspection on a bore; Carlos builds with the good three.",
+    "Ongoing: Frameless DVT motor from the vendor keeps slipping; stator stack length change. This week: Vendor stack length went 25 to 28 mm on DVT; Owen realizes bracket bore must move 0.5 mm.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real",
+    "Ongoing: Leg drop gantry shared by leg drop, torso static load and ankle impact. This week: Carlos trains a second tech; Wednesday added from November."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1791826845.436925",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-001990"
+      ],
+      "brief": "FL-TST-2272: need 2 by 2026-10-21",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-10-21"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2272",
+        "10/21"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Need 2x FL-TST-2272 by 10/21."
+    },
+    {
+      "ts": "1791907407.518879",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-001945"
+      ],
+      "brief": "2274: need 2 by 2026-10-19",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-10-19"
+        }
+      },
+      "must_mention": [
+        "2274",
+        "mon 10/19"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "2274, need 2 by mon 10/19. THAT DATE IS FIRM!!"
+    },
+    {
+      "ts": "1791908030.153459",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-001959"
+      ],
+      "brief": "Quote Q-2603790-1 for FL-TST-2535: standard $377.30, 8 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-10-20",
+          "quote_id": "Q-2603790-1",
+          "price_usd": 377.3,
+          "lead_days": 8
+        }
+      },
+      "must_mention": [
+        "Q-2603790-1",
+        "FL-TST-2535",
+        "10/20"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Q-2603790-1 is back for FL-TST-2535. Need 2 by 10/20!!"
+    },
+    {
+      "ts": "1791908431.369185",
+      "user": "p-callum",
+      "thread_ts": "1791907407.518879",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "i think the old ones are still on the shelf by the dyno, can grab them if it helps"
+    },
+    {
+      "ts": "1791908826.995081",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-001946"
+      ],
+      "brief": "2274: need 2 by 2026-10-14; asks whether expediting is worth it",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-10-14"
+        }
+      },
+      "must_mention": [
+        "2274",
+        "10/14"
+      ],
+      "pressure": "elevated",
+      "asks_expedite": true,
+      "length": "short",
+      "text": "2274 need 2 by 10/14, is it worth expediting or do we eat the wait"
+    },
+    {
+      "ts": "1791909118.594176",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-001991"
+      ],
+      "brief": "the part: need 2 by 2026-10-21 for the fit check",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-10-21"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "the fit check",
+        "wed 10/21"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "need 2 of the part for the fit check by wed 10/21, sorry for the short notice"
+    },
+    {
+      "ts": "1791910142.467097",
+      "user": "p-carlos",
+      "thread_ts": "1791907407.518879",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Ok. I'll set space on the bench for them."
+    },
+    {
+      "ts": "1791912170.142193",
+      "user": "p-talia",
+      "thread_ts": "1791908030.153459",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "at this point our shelf is mostly Q numbers and hope 😅"
+    },
+    {
+      "ts": "1791912811.477129",
+      "user": "p-talia",
+      "thread_ts": "1791909118.594176",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "not this week 😬"
+    },
+    {
+      "ts": "1791931563.985624",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-002019"
+      ],
+      "brief": "the link: need 6 by 2026-11-03",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-11-03"
+        }
+      },
+      "must_mention": [
+        "the link",
+        "tues the 3rd"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "We'll need six of the link by tues the 3rd. Can someone confirm that's on order?"
+    },
+    {
+      "ts": "1791992947.332582",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-001969"
+      ],
+      "brief": "Quote Q-2607149-1 for FL-ANK-1247: standard $2633.36, 10 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 20,
+          "by": "2026-10-27",
+          "quote_id": "Q-2607149-1",
+          "price_usd": 2633.36,
+          "lead_days": 10
+        }
+      },
+      "must_mention": [
+        "Q-2607149-1",
+        "FL-ANK-1247",
+        "10/27"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Q-2607149-1 in for FL-ANK-1247, need 20 by 10/27, approval pls"
+    },
+    {
+      "ts": "1792006146.850483",
+      "user": "p-nadia",
+      "thread_ts": null,
+      "events": [
+        "ev-001984"
+      ],
+      "brief": "Quote Q-2608412-1 for FL-HIP-1028: standard $1904.46, 9 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-12-01",
+          "quote_id": "Q-2608412-1",
+          "price_usd": 1904.46,
+          "lead_days": 9
+        }
+      },
+      "must_mention": [
+        "Q-2608412-1",
+        "FL-HIP-1028",
+        "tues the 1st"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Q-2608412-1 for FL-HIP-1028 came back, need 10 by tues the 1st"
+    },
+    {
+      "ts": "1792006221.395414",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-001992"
+      ],
+      "brief": "Quote Q-2608740-1 for FL-TST-2272: standard $280.47, 8 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-10-21",
+          "quote_id": "Q-2608740-1",
+          "price_usd": 280.47,
+          "lead_days": 8
+        }
+      },
+      "must_mention": [
+        "Q-2608740-1",
+        "FL-TST-2272",
+        "10/21"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Q-2608740-1 back for FL-TST-2272, need 2 by 10/21 or the rig sits idle"
+    },
+    {
+      "ts": "1792007302.861859",
+      "user": "p-carlos",
+      "thread_ts": "1792006221.395414",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Not sure we need both, Zoe. One might cover it."
+    },
+    {
+      "ts": "1792007718.555583",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-001975"
+      ],
+      "brief": "2159: need 12 by 2026-10-19; asks whether expediting is worth it",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-19"
+        }
+      },
+      "must_mention": [
+        "2159",
+        "mon 10/19"
+      ],
+      "pressure": "high",
+      "asks_expedite": true,
+      "length": "medium",
+      "text": "2159 need 12 by mon 10/19, is expediting worth it here? leaning yes but not sure"
+    },
+    {
+      "ts": "1792008428.881783",
+      "user": "p-idris",
+      "thread_ts": "1792006146.850483",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "heads up those go on the hip side, not the knee"
+    },
+    {
+      "ts": "1792011759.158074",
+      "user": "p-samir",
+      "thread_ts": "1792006146.850483",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "@talia"
+    },
+    {
+      "ts": "1792012002.440391",
+      "user": "p-lin",
+      "thread_ts": "1792007718.555583",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "The dyno run needs them first, so the order matters."
+    },
+    {
+      "ts": "1792013241.871678",
+      "user": "p-kenji",
+      "thread_ts": "1792006146.850483",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "hip parts always arrive last its tradition"
+    },
+    {
+      "ts": "1792016079.096414",
+      "user": "p-jade",
+      "thread_ts": "1792007718.555583",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "lol same as always"
+    },
+    {
+      "ts": "1792024240.078520",
+      "user": "p-kenji",
+      "thread_ts": null,
+      "events": [
+        "ev-002082"
+      ],
+      "brief": "that order: need 6 by 2026-10-27",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-10-27"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "tues the 27th"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "that order we need 6 by tues the 27th cant slip"
+    },
+    {
+      "ts": "1792026885.992628",
+      "user": "p-beth",
+      "thread_ts": "1792024240.078520",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "It's on the integrated plan too, so it will come up at the program review."
+    },
+    {
+      "ts": "1792028226.360061",
+      "user": "p-nadia",
+      "thread_ts": "1792024240.078520",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "hmm not sure all 6 are needed that fast, cuold we split it? *could"
+    },
+    {
+      "ts": "1792078839.536883",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-001987"
+      ],
+      "brief": "1244: need 21 by 2026-10-27 for the fit check",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 21,
+          "by": "2026-10-27"
+        }
+      },
+      "must_mention": [
+        "1244",
+        "the fit check",
+        "tues the 27th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "For the fit check we need 21 of 1244 by tues the 27th. Can purchasing confirm?"
+    },
+    {
+      "ts": "1792080306.176090",
+      "user": "p-lin",
+      "thread_ts": "1791908826.995081",
+      "events": [
+        "ev-002994"
+      ],
+      "brief": "Correction: 2274: need 2 by 2026-10-19",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-10-19"
+        }
+      },
+      "must_mention": [
+        "2274",
+        "10/19"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Correction: 2274 is needed by 10/19, not earlier. Still two pieces."
+    },
+    {
+      "ts": "1792081011.162081",
+      "user": "p-jonas",
+      "thread_ts": "1791908826.995081",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "not sure that changes much"
+    },
+    {
+      "ts": "1792081468.536627",
+      "user": "p-zoe",
+      "thread_ts": "1791908826.995081",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "ok that gives us the weekend at least"
+    },
+    {
+      "ts": "1792081695.397171",
+      "user": "p-kenji",
+      "thread_ts": "1791908826.995081",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "fixture is ready either way"
+    },
+    {
+      "ts": "1792087895.348019",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-002030"
+      ],
+      "brief": "FL-TST-2567: need 2 by 2026-10-26 for the build; asks whether expediting is worth it",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-10-26"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2567",
+        "the build",
+        "10/26"
+      ],
+      "pressure": "high",
+      "asks_expedite": true,
+      "length": "short",
+      "text": "FL-TST-2567 need 2 for the build by 10/26. worth expediting? 🤔"
+    },
+    {
+      "ts": "1792089068.936700",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-002016"
+      ],
+      "brief": "Quote Q-2610775-1 for FL-TST-2789: standard $1344.72, 9 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-10-23",
+          "quote_id": "Q-2610775-1",
+          "price_usd": 1344.72,
+          "lead_days": 9
+        }
+      },
+      "must_mention": [
+        "Q-2610775-1",
+        "FL-TST-2789",
+        "10/23"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Q-2610775-1 for FL-TST-2789 is in, need 1 by 10/23 🙏"
+    },
+    {
+      "ts": "1792092838.872645",
+      "user": "p-wei",
+      "thread_ts": "1792087895.348019",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I would hold off on expediting. The build has other blockers first."
+    },
+    {
+      "ts": "1792099132.145848",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-002007"
+      ],
+      "brief": "Quote Q-2613107-1 for FL-TST-2149: standard $1717.05, 10 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-23",
+          "quote_id": "Q-2613107-1",
+          "price_usd": 1717.05,
+          "lead_days": 10
+        }
+      },
+      "must_mention": [
+        "Q-2613107-1",
+        "FL-TST-2149",
+        "fri the 23rd"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Q-2613107-1 back for FL-TST-2149, need 12 by fri the 23rd, can someone approve"
+    },
+    {
+      "ts": "1792102395.154327",
+      "user": "p-callum",
+      "thread_ts": "1792099132.145848",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "+1"
+    },
+    {
+      "ts": "1792107263.748441",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-002047"
+      ],
+      "brief": "the part: need 6 by 2026-10-23",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-10-23"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "10/23"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "need 6 of the part by 10/23 pls 😬"
+    },
+    {
+      "ts": "1792107817.068709",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-002171"
+      ],
+      "brief": "1372: need 5 by 2026-11-11",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 5,
+          "by": "2026-11-11"
+        }
+      },
+      "must_mention": [
+        "1372",
+        "wed the 11th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "need 5 of 1372 by wed the 11th"
+    },
+    {
+      "ts": "1792115040.846445",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-002106"
+      ],
+      "brief": "2103: need 10 by 2026-11-04",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-11-04"
+        }
+      },
+      "must_mention": [
+        "2103",
+        "wed the 4th"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "2103 need 10 by wed the 4th, high priority"
+    }
+  ]
+}

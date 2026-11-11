@@ -1,0 +1,351 @@
+{
+  "job_id": "slack-ch-mech-2026-08-31-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 21,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-mech",
+    "name": "mech",
+    "slack_id": "C07FLK0MECH",
+    "purpose": "Mechanical engineering: design, DFM, vendors, drawings"
+  },
+  "week": {
+    "start": "2026-08-31",
+    "end": "2026-09-06"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-bao",
+      "name": "Bao Nguyen",
+      "display_name": "bao.n",
+      "slack_id": "U07FLK0BAO0",
+      "title": "Electrical Engineer, motor drives",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-farah",
+      "name": "Farah Qureshi",
+      "display_name": "farah.q",
+      "slack_id": "U07FLK0FARA",
+      "title": "Electrical Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Rev B: larger vent channel, mica sheets, spacing stays 2 mm.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators",
+    "Ongoing: Aluminum links gall on 303 pins under side load. This week: Amara wants bronze bushings; Kenji says no room, wall would be 0.6 mm.",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind. This week: Shim vs re-grind debate; Arjun leans shim for DVT, re-grind the disc profile for PVT.",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough. This week: Andre needs a shaft feedthrough plate machined to run the knee inside the chamber.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1788205336.638909",
+      "user": "p-farah",
+      "thread_ts": null,
+      "events": [
+        "ev-003271"
+      ],
+      "brief": "hip dyno plate: still quoting rev C",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev C"
+      },
+      "must_mention": [
+        "hip dyno plate"
+      ],
+      "length": "short",
+      "text": "The hip dyno plate is still out for quote at rev C."
+    },
+    {
+      "ts": "1788281349.213454",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-002819"
+      ],
+      "brief": "FL-TST-2462 rev B released: added gusset after it yielded in proof load",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-TST-2462"
+      ],
+      "length": "medium",
+      "text": "FL-TST-2462 rev B released. Added a gusset, the old one yielded in proof load."
+    },
+    {
+      "ts": "1788318287.211799",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [
+        "ev-003270"
+      ],
+      "brief": "shank hook: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "shank hook"
+      ],
+      "length": "short",
+      "text": "shank hook still quoting rev b"
+    },
+    {
+      "ts": "1788369613.353678",
+      "user": "p-beth",
+      "thread_ts": "1788318287.211799",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Agreed, let's not chase it until the quote is back."
+    },
+    {
+      "ts": "1788372573.684673",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [
+        "ev-002910"
+      ],
+      "brief": "FL-TST-2556 rev B released: tolerance relaxed after DFM feedback",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-TST-2556"
+      ],
+      "length": "short",
+      "text": "FL-TST-2556 rev B is out, relaxed the tol after the DFM feedbak"
+    },
+    {
+      "ts": "1788374762.850676",
+      "user": "p-lukas",
+      "thread_ts": "1788372573.684673",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "same thing on the last fixture, they always push back on that bore"
+    },
+    {
+      "ts": "1788467817.485290",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [
+        "ev-003264"
+      ],
+      "brief": "foot clamp: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "foot clamp"
+      ],
+      "length": "short",
+      "text": "foot clamp still quoting, rev A"
+    },
+    {
+      "ts": "1788468183.441723",
+      "user": "p-bao",
+      "thread_ts": null,
+      "events": [
+        "ev-003306"
+      ],
+      "brief": "knee coupling: still quoting rev F",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev F"
+      },
+      "must_mention": [
+        "knee coupling"
+      ],
+      "length": "short",
+      "text": "knee coupling still quoting rev f"
+    },
+    {
+      "ts": "1788554230.882434",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-003237"
+      ],
+      "brief": "tension jig: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "tension jig"
+      ],
+      "length": "short",
+      "text": "The tension jig is still quoting at rev A."
+    },
+    {
+      "ts": "1788571245.828961",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-002861"
+      ],
+      "brief": "FL-HIP-1033 rev F released: clearance for harness",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev F"
+      },
+      "must_mention": [
+        "FL-HIP-1033"
+      ],
+      "length": "short",
+      "text": "FL-HIP-1033 rev F out, more clearance for the harness"
+    }
+  ]
+}

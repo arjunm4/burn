@@ -1,0 +1,462 @@
+{
+  "job_id": "meeting-mtg-01462",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 9,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-01462",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-10-16T08:45:00-07:00",
+    "actual_min": 16,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-andre",
+      "p-lin",
+      "p-carlos",
+      "p-jade",
+      "p-luis",
+      "p-nora"
+    ],
+    "late_joiners": [
+      "p-jade"
+    ]
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-002069",
+      "speaker": "p-zoe",
+      "at_min": [
+        1,
+        7
+      ],
+      "brief": "the bracket: need 12 by 2026-10-29",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-hip-brake-bracket",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-29"
+        }
+      },
+      "must_mention": [
+        "the bracket",
+        "10/29"
+      ]
+    },
+    {
+      "event": "ev-003191",
+      "speaker": "p-dmitri",
+      "at_min": [
+        6,
+        12
+      ],
+      "brief": "hip dyno plate: need 7 by 2026-10-30 for the build",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-dyno-adapter-hip",
+        "value": {
+          "qty": 7,
+          "by": "2026-10-30"
+        }
+      },
+      "must_mention": [
+        "hip dyno plate",
+        "the build",
+        "10/30"
+      ]
+    },
+    {
+      "event": "ev-002120",
+      "speaker": "p-dmitri",
+      "at_min": [
+        11,
+        16
+      ],
+      "brief": "ankle crank: need 8 by 2026-11-02",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-ankle-crank",
+        "value": {
+          "qty": 8,
+          "by": "2026-11-02"
+        }
+      },
+      "must_mention": [
+        "ankle crank",
+        "11/2"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 5,
+      "speaker": "p-dmitri",
+      "text": "Friday. Andre's back. Jade's on her way. Zoe, you start."
+    },
+    {
+      "start_s": 11,
+      "speaker": "p-zoe",
+      "text": "ok so, couple things. uh, purchasing still no date on the coupling, I asked again this morning. and then the bracket, we need twelve of the bracket by 10/29. I'll put it in today. that's, thurs the twenty ninth? yeah. thursday."
+    },
+    {
+      "start_s": 43,
+      "speaker": "p-dmitri",
+      "text": "Today, not Monday."
+    },
+    {
+      "start_s": 45,
+      "speaker": "p-zoe",
+      "text": "today today, yes"
+    },
+    {
+      "start_s": 48,
+      "speaker": "p-nora",
+      "text": "Zoe, sorry, is that the same drawing you showed me, or the revised one?"
+    },
+    {
+      "start_s": 53,
+      "speaker": "p-zoe",
+      "text": "the revised one. I moved the slot"
+    },
+    {
+      "start_s": 57,
+      "speaker": "p-nora",
+      "text": "Great, thanks."
+    },
+    {
+      "start_s": 60,
+      "speaker": "p-dmitri",
+      "text": "Andre."
+    },
+    {
+      "start_s": 62,
+      "speaker": "p-andre",
+      "text": "ok so I read lins notes and dmitris msg. I looked at the dyno this morning, the coolant flow on the motor side is low, like the pump sounds sad. I think that's the hot readings. gonna flush it and rerun one hip unit over the weekend"
+    },
+    {
+      "start_s": 90,
+      "speaker": "p-andre",
+      "text": "rerun* one unit, not both"
+    },
+    {
+      "start_s": 95,
+      "speaker": "p-lin",
+      "text": "That would explain it. Check the filter too, last time it was the filter."
+    },
+    {
+      "start_s": 101,
+      "speaker": "p-andre",
+      "text": "yep good call"
+    },
+    {
+      "start_s": 104,
+      "speaker": "p-dmitri",
+      "text": "Lin, anything?"
+    },
+    {
+      "start_s": 106,
+      "speaker": "p-lin",
+      "text": "Both stations clean. I looked at Luis's pictures. I agree it's brinelling, and I think it's from shipping or handling, not from the test. I'd like to talk to Nora about how those units get packed."
+    },
+    {
+      "start_s": 128,
+      "speaker": "p-nora",
+      "text": "Happy to. Let's grab fifteen minutes after this, if that works."
+    },
+    {
+      "start_s": 134,
+      "speaker": "p-lin",
+      "text": "Works."
+    },
+    {
+      "start_s": 137,
+      "speaker": "p-luis",
+      "text": "so I'm writing it up with that then. also the knee can go on the dyno nxt week when andre's done"
+    },
+    {
+      "start_s": 152,
+      "speaker": "p-jade",
+      "text": "sorry here"
+    },
+    {
+      "start_s": 155,
+      "speaker": "p-dmitri",
+      "text": "Receiving?"
+    },
+    {
+      "start_s": 157,
+      "speaker": "p-jade",
+      "text": "one box for arms, nothing for us"
+    },
+    {
+      "start_s": 161,
+      "speaker": "p-carlos",
+      "text": "Rig two's fine now. I'm doing the monthly torque wrench check today, so if yours is missing, that's why."
+    },
+    {
+      "start_s": 172,
+      "speaker": "p-luis",
+      "text": "lol not me this time"
+    },
+    {
+      "start_s": 420,
+      "speaker": "p-dmitri",
+      "text": "Okay. For the hip dyno. We need the hip dyno plate, seven, by 10/30 for the build. Seven. The thirtieth."
+    },
+    {
+      "start_s": 438,
+      "speaker": "p-andre",
+      "text": "seven? ok that's more than I had in my head but sure"
+    },
+    {
+      "start_s": 444,
+      "speaker": "p-nora",
+      "text": "Sorry, just to confirm, the hip dyno plate by the thirtieth, and that's for the build specifically?"
+    },
+    {
+      "start_s": 450,
+      "speaker": "p-dmitri",
+      "text": "Yes. For the build."
+    },
+    {
+      "start_s": 454,
+      "speaker": "p-nora",
+      "text": "Okay. I'll make a note on my side."
+    },
+    {
+      "start_s": 470,
+      "speaker": "p-carlos",
+      "text": "Can somebody fix the radio in here, it's been on the same station for a month."
+    },
+    {
+      "start_s": 476,
+      "speaker": "p-lin",
+      "text": "No."
+    },
+    {
+      "start_s": 700,
+      "speaker": "p-dmitri",
+      "text": "Last one. Ankle crank. Eight, by 11/2. Eight. Second of November."
+    },
+    {
+      "start_s": 712,
+      "speaker": "p-zoe",
+      "text": "ankle crank, eight, eleven two. got it. I'll add it to my list with the bracket"
+    },
+    {
+      "start_s": 722,
+      "speaker": "p-luis",
+      "text": "is that the ankle crank for the, the test rig or the leg"
+    },
+    {
+      "start_s": 727,
+      "speaker": "p-dmitri",
+      "text": "Ask Zoe after. Okay. Have a good weekend. Don't come in Sunday unless something's on fire."
+    },
+    {
+      "start_s": 736,
+      "speaker": "p-andre",
+      "text": "I'm coming in sunday 😅"
+    },
+    {
+      "start_s": 739,
+      "speaker": "p-dmitri",
+      "text": "I know. Go."
+    }
+  ],
+  "summary": {
+    "overview": "Friday standup. Dyno hot readings likely low coolant flow, Andre flushing. Bearing marks look like handling damage, Lin and Nora to talk packing. Several need-by dates: the bracket, hip dyno plate, ankle crank.",
+    "shorthand_bullet": [
+      "the bracket: 12 by 10/29, Zoe putting it in today (revised slot)",
+      "coupling: still no date from purchasing",
+      "dyno coolant flow low on motor side, flush + check filter, rerun 1 hip unit over wknd",
+      "life test clean",
+      "bearing brinelling: Lin thinks shipping/handling, not test",
+      "knee to dyno next wk",
+      "receiving: 1 box for arms",
+      "Carlos monthly torque wrench check today",
+      "hip dyno plate x7 by 10/30 for the build",
+      "ankle crank x8 by 11/2"
+    ],
+    "action_items": [
+      "Zoe enter the bracket today",
+      "Andre flush dyno coolant, check filter, rerun",
+      "Lin + Nora talk packing after standup",
+      "Luis write up teardown report",
+      "ankle crank, Zoe to clarify which one w/ Luis",
+      "radio??"
+    ],
+    "keywords": [
+      "the bracket",
+      "hip dyno plate",
+      "ankle crank",
+      "coolant",
+      "brinelling",
+      "packing"
+    ]
+  }
+}

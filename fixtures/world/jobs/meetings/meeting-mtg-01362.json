@@ -1,0 +1,390 @@
+{
+  "job_id": "meeting-mtg-01362",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 13,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-01362",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-09-30T08:45:00-07:00",
+    "actual_min": 19,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-andre",
+      "p-lin",
+      "p-carlos",
+      "p-jade",
+      "p-luis",
+      "p-destiny"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-001921",
+      "speaker": "p-dmitri",
+      "at_min": [
+        0,
+        6
+      ],
+      "brief": "hip bracket: need 3 by 2026-10-22 for Tolerance stack check: Hip pitch mounting bracket",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-leg-hip-pitch-bracket",
+        "value": {
+          "qty": 3,
+          "by": "2026-10-22"
+        }
+      },
+      "must_mention": [
+        "hip bracket",
+        "Tolerance stack check: Hip pitch mounting bracket",
+        "10/22"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 3,
+      "speaker": "p-dmitri",
+      "text": "Okay. One thing first. Hip bracket. We need three by 10/22."
+    },
+    {
+      "start_s": 11,
+      "speaker": "p-dmitri",
+      "text": "They're for the tolerance stack check. The one on the tracker, Tolerance stack check: Hip pitch mounting bracket."
+    },
+    {
+      "start_s": 22,
+      "speaker": "p-zoe",
+      "text": "three, ok. do we measure all three or just the first article"
+    },
+    {
+      "start_s": 28,
+      "speaker": "p-dmitri",
+      "text": "All three."
+    },
+    {
+      "start_s": 31,
+      "speaker": "p-zoe",
+      "text": "ok noted"
+    },
+    {
+      "start_s": 35,
+      "speaker": "p-dmitri",
+      "text": "Go around. Jade."
+    },
+    {
+      "start_s": 37,
+      "speaker": "p-jade",
+      "text": "nothing came in yesterday. ups guy said he'd come back today"
+    },
+    {
+      "start_s": 44,
+      "speaker": "p-dmitri",
+      "text": "Andre."
+    },
+    {
+      "start_s": 46,
+      "speaker": "p-andre",
+      "text": "torque ripple runs done, sent the data to arjun last night. the low speed stuff looks weird, theres like a periodic bump that lines up with the encoder not the poles"
+    },
+    {
+      "start_s": 66,
+      "speaker": "p-andre",
+      "text": "so probly encoder. *probably"
+    },
+    {
+      "start_s": 71,
+      "speaker": "p-lin",
+      "text": "Is that the same encoder type as the life test rig?"
+    },
+    {
+      "start_s": 75,
+      "speaker": "p-andre",
+      "text": "different one i think, ill check"
+    },
+    {
+      "start_s": 80,
+      "speaker": "p-dmitri",
+      "text": "Check. Lin."
+    },
+    {
+      "start_s": 83,
+      "speaker": "p-lin",
+      "text": "Life test is fine. I'm pulling the second grease sample tomorrow and sending both out for analysis. Also the chamber logged a humidity spike overnight, I think someone left the door cracked."
+    },
+    {
+      "start_s": 102,
+      "speaker": "p-luis",
+      "text": "that might of been me, i was getting the fixture plate out of there"
+    },
+    {
+      "start_s": 108,
+      "speaker": "p-luis",
+      "text": "sorry"
+    },
+    {
+      "start_s": 110,
+      "speaker": "p-lin",
+      "text": "It's fine, just latch it fully. It doesn't seal on the first click."
+    },
+    {
+      "start_s": 118,
+      "speaker": "p-dmitri",
+      "text": "Carlos."
+    },
+    {
+      "start_s": 120,
+      "speaker": "p-carlos",
+      "text": "All torque drivers back from cal. Bench is ready. Waiting on kits."
+    },
+    {
+      "start_s": 128,
+      "speaker": "p-destiny",
+      "text": "I did the knee routing on the spare leg with the long ties like Carlos said, way better, doesn't pull at full flex anymore"
+    },
+    {
+      "start_s": 141,
+      "speaker": "p-carlos",
+      "text": "Good."
+    },
+    {
+      "start_s": 145,
+      "speaker": "p-dmitri",
+      "text": "Luis, besides the door."
+    },
+    {
+      "start_s": 149,
+      "speaker": "p-luis",
+      "text": "knee fixture base is roughed, need to finish the top face. the mill was down yesterday afternoon so i lost some time"
+    },
+    {
+      "start_s": 162,
+      "speaker": "p-carlos",
+      "text": "Way oil was empty. Filled it."
+    },
+    {
+      "start_s": 166,
+      "speaker": "p-luis",
+      "text": "oh. ok that explains the alarm lol"
+    },
+    {
+      "start_s": 172,
+      "speaker": "p-dmitri",
+      "text": "Zoe."
+    },
+    {
+      "start_s": 174,
+      "speaker": "p-zoe",
+      "text": "cmm fixture, i talked to quality about datums, we agreed on the bore and the two mounting faces. finishing the model today, maybe tmrw"
+    },
+    {
+      "start_s": 190,
+      "speaker": "p-dmitri",
+      "text": "Today."
+    },
+    {
+      "start_s": 192,
+      "speaker": "p-zoe",
+      "text": "ok, today. probably"
+    },
+    {
+      "start_s": 197,
+      "speaker": "p-dmitri",
+      "text": "Done. Thanks."
+    }
+  ],
+  "summary": {
+    "overview": "Wednesday test lab + build standup.",
+    "shorthand_bullet": [
+      "hip bracket x3 by 10/22 for Tolerance stack check: Hip pitch mounting bracket, measure all three",
+      "Jade: nothing received yesterday",
+      "Andre: torque ripple data to Arjun, low speed bump tracks encoder not poles",
+      "Lin: life test ok, 2nd grease sample tmrw, both out for analysis; chamber humidity spike, door not latched",
+      "Carlos: drivers back from cal, bench ready, waiting on kits",
+      "Destiny: long ties fixed knee routing on spare leg",
+      "Luis: knee fixture base roughed, mill down (way oil)",
+      "Zoe: CMM datums agreed w/ quality, model today"
+    ],
+    "action_items": [
+      "Andre check encoder type vs life test rig",
+      "latch chamber door fully",
+      "Zoe finish CMM fixture model",
+      "Luis finish top face on knee fixture base"
+    ],
+    "keywords": [
+      "hip bracket",
+      "tolerance stack",
+      "torque ripple",
+      "encoder",
+      "life test",
+      "CMM fixture",
+      "chamber"
+    ]
+  }
+}

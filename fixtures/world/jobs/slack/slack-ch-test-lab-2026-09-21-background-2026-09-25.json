@@ -1,0 +1,760 @@
+{
+  "job_id": "slack-ch-test-lab-2026-09-21-background-2026-09-25",
+  "source": "slack",
+  "status": "blank",
+  "priority": 16,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-test-lab",
+    "name": "test-lab",
+    "slack_id": "C07FLK0TLAB",
+    "purpose": "Test lab: rigs, bookings, results, fixtures"
+  },
+  "week": {
+    "start": "2026-09-21",
+    "end": "2026-09-27"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-leilani",
+      "name": "Leilani Kahale",
+      "display_name": "leilani.k",
+      "slack_id": "U07FLK0LEIL",
+      "title": "Locomotion Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Dmitri books the battery cage for the containment test; heater trigger fixture still on order.",
+    "Ongoing: BMS PCBA rev 1 balancing current and cell-tap fusing. This week: BMS boards in; balancing current measures 48 mA instead of 100 mA.",
+    "Ongoing: Gait policy trained in sim overshoots on hardware; friction and backlash modelling. This week: Mei wants hip backlash fixed in hardware first; Ravi wants to randomize it.",
+    "Ongoing: Aluminum links gall on 303 pins under side load. This week: Rev B finger links and pins released with the tactile board change.",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind. This week: Life check after 50k reversals: backlash up to 0.22 deg, accepted for DVT with a note.",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough. This week: Feedthrough plate arrives; first soak shows grease migration at 40 C after 3 h.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Actuator build slips; gate review held anyway with partial data.",
+    "Ongoing: Leg drop gantry shared by leg drop, torso static load and ankle impact. This week: Lukas wants a full week for torso static load; Priya needs it for the DVT leg drop."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1790350285.433391",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: flags a small issue with this: Debate whether to run the dyno outside with a duct into the chamber instead; Tomas rejects, gradients too large.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790354706.305118",
+      "user": "p-lukas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: asks for a second opinion on this: Zoe: drop gantry only runs Tue/Thu because rigging needs two techs.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1790354811.350390",
+      "user": "p-lukas",
+      "thread_ts": null,
+      "events": [
+        "ev-003991"
+      ],
+      "brief": "background: Lukas wants a full week for torso static load; Priya needs it for the DVT leg drop.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790354980.254765",
+      "user": "p-carlos",
+      "thread_ts": "1790354811.350390",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: Lukas wants a full week for torso static load; Priya needs it for the DVT leg drop.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790355433.604363",
+      "user": "p-andre",
+      "thread_ts": "1790350285.433391",
+      "events": [],
+      "brief": "reply (answers) in the thread about: this: Debate whether to run the dyno outside with a duct into the chamber instead; Tomas rejects, gradients too large.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790357467.190196",
+      "user": "p-nora",
+      "thread_ts": "1790354811.350390",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: Lukas wants a full week for torso static load; Priya needs it for the DVT leg drop.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790359227.275902",
+      "user": "p-owen",
+      "thread_ts": "1790354706.305118",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Zoe: drop gantry only runs Tue/Thu because rigging needs two techs.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790360554.910625",
+      "user": "p-lukas",
+      "thread_ts": "1790350285.433391",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Debate whether to run the dyno outside with a duct into the chamber instead; Tomas rejects, gradients too large.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790360683.750105",
+      "user": "p-beth",
+      "thread_ts": "1790354811.350390",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: Lukas wants a full week for torso static load; Priya needs it for the DVT leg drop.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790360918.499937",
+      "user": "p-beth",
+      "thread_ts": "1790354706.305118",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: this: Zoe: drop gantry only runs Tue/Thu because rigging needs two techs.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790364225.935715",
+      "user": "p-owen",
+      "thread_ts": "1790350285.433391",
+      "events": [],
+      "brief": "reply (ack) in the thread about: this: Debate whether to run the dyno outside with a duct into the chamber instead; Tomas rejects, gradients too large.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1790365155.442464",
+      "user": "p-lukas",
+      "thread_ts": "1790354706.305118",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: this: Zoe: drop gantry only runs Tue/Thu because rigging needs two techs.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790366813.106815",
+      "user": "p-lukas",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Vent channel sizing debated; burst plate at 0.5 bar vs open slots.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790367206.982508",
+      "user": "p-leilani",
+      "thread_ts": "1790350285.433391",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: this: Debate whether to run the dyno outside with a duct into the chamber instead; Tomas rejects, gradients too large.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790367760.006767",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-003992"
+      ],
+      "brief": "background: Lukas wants a full week for torso static load; Priya needs it for the DVT leg drop.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790368015.393287",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: jokes about this: Debate whether to run the dyno outside with a duct into the chamber instead; Tomas rejects, gradients too large.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1790368226.831067",
+      "user": "p-sofia",
+      "thread_ts": "1790350285.433391",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Debate whether to run the dyno outside with a duct into the chamber instead; Tomas rejects, gradients too large.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790368764.528461",
+      "user": "p-hana",
+      "thread_ts": "1790367760.006767",
+      "events": [],
+      "brief": "reply (ack) in the thread about: Lukas wants a full week for torso static load; Priya needs it for the DVT leg drop.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790369821.765395",
+      "user": "p-leilani",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: question on fit-up of the gait gantry and treadmill",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790370099.434207",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on off-topic: snacks restock",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790370293.028679",
+      "user": "p-arjun",
+      "thread_ts": "1790354706.305118",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: this: Zoe: drop gantry only runs Tue/Thu because rigging needs two techs.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790370420.531430",
+      "user": "p-luis",
+      "thread_ts": "1790367760.006767",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: Lukas wants a full week for torso static load; Priya needs it for the DVT leg drop.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790370853.268489",
+      "user": "p-mei",
+      "thread_ts": "1790370099.434207",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: off-topic: snacks restock",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790371027.738032",
+      "user": "p-zoe",
+      "thread_ts": "1790367760.006767",
+      "events": [],
+      "brief": "reply (answers) in the thread about: Lukas wants a full week for torso static load; Priya needs it for the DVT leg drop.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790372465.769190",
+      "user": "p-mei",
+      "thread_ts": "1790370099.434207",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: off-topic: snacks restock",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790373034.176698",
+      "user": "p-diego",
+      "thread_ts": "1790354706.305118",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: this: Zoe: drop gantry only runs Tue/Thu because rigging needs two techs.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790375397.393373",
+      "user": "p-jade",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: quick update on the ongoing vent path sizing and cell spacing to contain a single-cell runaway",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1790376863.217141",
+      "user": "p-mei",
+      "thread_ts": "1790375397.393373",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the ongoing vent path sizing and cell spacing to contain a single-cell runaway",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790377356.528318",
+      "user": "p-jade",
+      "thread_ts": "1790370099.434207",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: off-topic: snacks restock",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790380744.362797",
+      "user": "p-mei",
+      "thread_ts": "1790375397.393373",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the ongoing vent path sizing and cell spacing to contain a single-cell runaway",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790381251.872505",
+      "user": "p-priya",
+      "thread_ts": "1790370099.434207",
+      "events": [],
+      "brief": "reply (answers) in the thread about: off-topic: snacks restock",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790383239.210366",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about the ongoing leg drop gantry shared by leg drop, torso static load and ankle impact",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1790384160.457510",
+      "user": "p-zoe",
+      "thread_ts": "1790383239.210366",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the ongoing leg drop gantry shared by leg drop, torso static load and ankle impact",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1790384477.127787",
+      "user": "p-sofia",
+      "thread_ts": "1790370099.434207",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: off-topic: snacks restock",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790385520.194444",
+      "user": "p-carlos",
+      "thread_ts": "1790375397.393373",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the ongoing vent path sizing and cell spacing to contain a single-cell runaway",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1790386133.347976",
+      "user": "p-zoe",
+      "thread_ts": "1790370099.434207",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: off-topic: snacks restock",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790388420.059971",
+      "user": "p-priya",
+      "thread_ts": "1790383239.210366",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the ongoing leg drop gantry shared by leg drop, torso static load and ankle impact",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790389726.186123",
+      "user": "p-idris",
+      "thread_ts": "1790375397.393373",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the ongoing vent path sizing and cell spacing to contain a single-cell runaway",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790391035.525251",
+      "user": "p-arjun",
+      "thread_ts": "1790383239.210366",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the ongoing leg drop gantry shared by leg drop, torso static load and ankle impact",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1790391462.696037",
+      "user": "p-arjun",
+      "thread_ts": "1790383239.210366",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the ongoing leg drop gantry shared by leg drop, torso static load and ankle impact",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    }
+  ]
+}

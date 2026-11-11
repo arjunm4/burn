@@ -1,0 +1,732 @@
+{
+  "job_id": "slack-ch-procurement-2026-09-21-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 15,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-09-21",
+    "end": "2026-09-27"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Dmitri books the battery cage for the containment test; heater trigger fixture still on order.",
+    "Ongoing: BMS PCBA rev 1 balancing current and cell-tap fusing. This week: BMS boards in; balancing current measures 48 mA instead of 100 mA.",
+    "Ongoing: Aluminum links gall on 303 pins under side load. This week: Rev B finger links and pins released with the tactile board change.",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind. This week: Life check after 50k reversals: backlash up to 0.22 deg, accepted for DVT with a note.",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough. This week: Feedthrough plate arrives; first soak shows grease migration at 40 C after 3 h.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Actuator build slips; gate review held anyway with partial data.",
+    "Ongoing: Leg drop gantry shared by leg drop, torso static load and ankle impact. This week: Lukas wants a full week for torso static load; Priya needs it for the DVT leg drop."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1790025263.410092",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-001829"
+      ],
+      "brief": "cable clamp: need 9 by 2026-10-14 for next week",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 9,
+          "by": "2026-10-14"
+        }
+      },
+      "must_mention": [
+        "cable clamp",
+        "next week",
+        "hip housing",
+        "wed 10/14"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "Need 9 of the cable clamp for the hip housing, next week. Hard date wed 10/14!!"
+    },
+    {
+      "ts": "1790108556.612039",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-001707"
+      ],
+      "brief": "Quote Q-2580280-1 for FL-TST-2270: standard $237.05, 8 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-08",
+          "quote_id": "Q-2580280-1",
+          "price_usd": 237.05,
+          "lead_days": 8
+        }
+      },
+      "must_mention": [
+        "Q-2580280-1",
+        "FL-TST-2270",
+        "10/8"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "got Q-2580280-1 back for FL-TST-2270 need it in by 10/8"
+    },
+    {
+      "ts": "1790118497.419063",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-001746"
+      ],
+      "brief": "knee cover: need 12 by 2026-10-02",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-02"
+        }
+      },
+      "must_mention": [
+        "knee cover",
+        "10/2"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "need 12 knee cover by 10/2"
+    },
+    {
+      "ts": "1790119816.714169",
+      "user": "p-carlos",
+      "thread_ts": "1790118497.419063",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "@samir.k"
+    },
+    {
+      "ts": "1790125249.061998",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-001792"
+      ],
+      "brief": "1056: need 3 by 2026-10-05 for Build sub-assembly: Hip cycloid ring-pin housing",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-10-05"
+        }
+      },
+      "must_mention": [
+        "1056",
+        "Build sub-assembly: Hip cycloid ring-pin housing",
+        "strain relief clamp",
+        "thermal plate",
+        "end cover",
+        "mon 10/5"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "1056 x3 for Build sub-assembly: Hip cycloid ring-pin housing, I think it goes with the strain relief clamp, thermal plate and end cover. By mon 10/5 probably."
+    },
+    {
+      "ts": "1790186730.281372",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-001884"
+      ],
+      "brief": "FL-BAT-1679: need 10 by 2026-10-28 for Install and torque: Pack latch block",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-10-28"
+        }
+      },
+      "must_mention": [
+        "FL-BAT-1679",
+        "Install and torque: Pack latch block",
+        "10/28"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "FL-BAT-1679 x10 for Install and torque: Pack latch block, by 10/28"
+    },
+    {
+      "ts": "1790187845.080972",
+      "user": "p-samir",
+      "thread_ts": null,
+      "events": [
+        "ev-001729"
+      ],
+      "brief": "Quote Q-2581725-1 for FL-TST-2338: standard $711.24, 9 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 7,
+          "by": "2026-10-08",
+          "quote_id": "Q-2581725-1",
+          "price_usd": 711.24,
+          "lead_days": 9
+        }
+      },
+      "must_mention": [
+        "Q-2581725-1",
+        "FL-TST-2338",
+        "thurs 10/8"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Q-2581725-1 in for FL-TST-2338, need by thurs 10/8"
+    },
+    {
+      "ts": "1790191945.267901",
+      "user": "p-owen",
+      "thread_ts": null,
+      "events": [
+        "ev-001742"
+      ],
+      "brief": "Quote Q-2582660-1 for FL-TST-2136: standard $214.41, 7 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-09-30",
+          "quote_id": "Q-2582660-1",
+          "price_usd": 214.41,
+          "lead_days": 7
+        }
+      },
+      "must_mention": [
+        "Q-2582660-1",
+        "FL-TST-2136",
+        "wed 9/30"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Q-2582660-1 for FL-TST-2136 need by wed 9/30"
+    },
+    {
+      "ts": "1790194038.267177",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-001759"
+      ],
+      "brief": "the part: need 12 by 2026-10-01",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-01"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "thurs 10/1"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Who has the part? need 12 by thurs 10/1 😬"
+    },
+    {
+      "ts": "1790194571.401479",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-001747"
+      ],
+      "brief": "Quote Q-2583310-1 for FL-KNE-1146: standard $1228.37, 9 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-02",
+          "quote_id": "Q-2583310-1",
+          "price_usd": 1228.37,
+          "lead_days": 9
+        }
+      },
+      "must_mention": [
+        "Q-2583310-1",
+        "FL-KNE-1146",
+        "fri the 2nd"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Q-2583310-1 for FL-KNE-1146 just came in. need by fri the 2nd"
+    },
+    {
+      "ts": "1790195946.564462",
+      "user": "p-lin",
+      "thread_ts": "1790194038.267177",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@tomas, is this one yours?"
+    },
+    {
+      "ts": "1790197714.577520",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-001798"
+      ],
+      "brief": "the yoke: need 7 by 2026-10-02 for the build",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 7,
+          "by": "2026-10-02"
+        }
+      },
+      "must_mention": [
+        "the yoke",
+        "the build",
+        "10/2"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "We need seven of the yoke for the build, by 10/2."
+    },
+    {
+      "ts": "1790202992.136485",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-001794"
+      ],
+      "brief": "the housing: need 3 by 2026-10-05",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-10-05"
+        }
+      },
+      "must_mention": [
+        "the housing",
+        "10/5"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "I think the housing needs to land by 10/5."
+    },
+    {
+      "ts": "1790268030.275737",
+      "user": "p-zoe",
+      "thread_ts": "1790186730.281372",
+      "events": [
+        "ev-002924"
+      ],
+      "brief": "Correction: FL-BAT-1679: need 10 by 2026-10-26 for Install and torque: Pack latch block",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-10-26"
+        }
+      },
+      "must_mention": [
+        "FL-BAT-1679",
+        "Install and torque: Pack latch block",
+        "10/26"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "correction on FL-BAT-1679 for Install and torque: Pack latch block, it's 10/26 not 10/28"
+    },
+    {
+      "ts": "1790288832.603850",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [
+        "ev-001777"
+      ],
+      "brief": "Quote Q-2586614-1 for FL-TST-2567: standard $231.33, 8 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-10-02",
+          "quote_id": "Q-2586614-1",
+          "price_usd": 231.33,
+          "lead_days": 8
+        }
+      },
+      "must_mention": [
+        "Q-2586614-1",
+        "FL-TST-2567",
+        "fri 10/2"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Q-2586614-1 for FL-TST-2567 in, need by fri 10/2"
+    },
+    {
+      "ts": "1790350259.228337",
+      "user": "p-ingrid",
+      "thread_ts": null,
+      "events": [
+        "ev-001872"
+      ],
+      "brief": "the part: need 1 by 2026-10-14",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-10-14"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "wed the 14th"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "I need one of the part by wed the 14th."
+    },
+    {
+      "ts": "1790351725.532252",
+      "user": "p-callum",
+      "thread_ts": "1790350259.228337",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "hm thats tight"
+    },
+    {
+      "ts": "1790355010.641719",
+      "user": "p-samir",
+      "thread_ts": "1790350259.228337",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "might be tough"
+    },
+    {
+      "ts": "1790355139.253048",
+      "user": "p-carlos",
+      "thread_ts": "1790350259.228337",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Agree, we'll make it work."
+    },
+    {
+      "ts": "1790357898.871771",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-001802"
+      ],
+      "brief": "Quote Q-2586889-1 for FL-ANK-1244: standard $1557.57, 10 BD",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 7,
+          "by": "2026-10-02",
+          "quote_id": "Q-2586889-1",
+          "price_usd": 1557.57,
+          "lead_days": 10
+        }
+      },
+      "must_mention": [
+        "Q-2586889-1",
+        "FL-ANK-1244",
+        "fri the 2nd"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Q-2586889-1 for FL-ANK-1244 is in, need by fri the 2nd 🙏"
+    },
+    {
+      "ts": "1790370677.892298",
+      "user": "p-wei",
+      "thread_ts": null,
+      "events": [
+        "ev-001883"
+      ],
+      "brief": "1141: need 12 by 2026-10-13 for Build sub-assembly: Knee cross-roller retainer",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-13"
+        }
+      },
+      "must_mention": [
+        "1141",
+        "Build sub-assembly: Knee cross-roller retainer",
+        "tues 10/13"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "Twelve of 1141 for Build sub-assembly: Knee cross-roller retainer, needed by tues 10/13."
+    },
+    {
+      "ts": "1790371637.200991",
+      "user": "p-wei",
+      "thread_ts": "1790370677.892298",
+      "events": [
+        "ev-002975"
+      ],
+      "brief": "Correction: 1141: need 12 by 2026-10-08 for Build sub-assembly: Knee cross-roller retainer",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-08"
+        }
+      },
+      "must_mention": [
+        "1141",
+        "Build sub-assembly: Knee cross-roller retainer",
+        "10/8"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "Correction: 1141 for Build sub-assembly: Knee cross-roller retainer is needed by 10/8, not later."
+    }
+  ]
+}

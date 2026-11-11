@@ -124,6 +124,21 @@ Ramp's procurement agents (launched April 29, 2026; co-built with Browserbase) h
 4. Set up the demo Slack workspace and seed it.
 5. At the hackathon, spend 15 minutes checking whether the hosted Ramp MCP or CLI exposes request or card tools in the sandbox.
 
+## 8. Sandbox access timeline (researched 2026-11-10)
+
+- **Stated:** Ramp's support article says the sandbox "should be ready in about one minute" after the sandbox access form, followed by an account access email. [support article](https://support.ramp.com/hc/en-us/articles/46681939909907-Accessing-the-Developer-API) · [form link](https://docs.ramp.com/developer-api/v1/sandbox-access)
+- **Conflict:** one search summary claimed a support page calls the sandbox "not self-serve" and points to a support ticket; that wording was not found on the fetched pages.
+- **Requirements:** creating a developer app needs Admin access; sandbox credentials come from a separate app created inside demo.ramp.com. The getting-started guide is written for "a Ramp customer with admin access." Whether non-customers can use the form is **UNVERIFIED** (its fields could not be read).
+- **Early-access features** (purchase requests via the API, Custom API workflow): no timeline found. A changelog says the API supports the full procurement-request lifecycle. [releases.sh](https://releases.sh/ramp/overview.md)
+- **Production access:** a separate application with no stated timeline; publishing an app for other businesses needs a partner application too.
+- **Free plan:** no official source says the free plan can create developer apps; one third-party claim says basic API access comes with any account (**UNVERIFIED**).
+- **Hackathons:** Ramp ran "Builders Cup 2026" (NYC, students); no evidence of hackathon-issued API credentials. [listing](https://luma.com/nrletiv9)
+- **Ramp MCP** signs in as your Ramp account; it is not a sandbox shortcut.
+
+**Fastest path:** submit the sandbox form today (minutes, if it works as documented) → create the sandbox developer app with client credentials → in parallel, ask Ramp support to enable purchase requests on the sandbox business.
+
+**If access is not granted:** the mock backend in §3 (`RAMP_MODE=mock`), which mirrors Ramp's real request, card, transaction and booking fields and is labelled as simulated. Switching to the sandbox later is one setting.
+
 ## Sources
 
 - Ramp OpenAPI spec and guides (downloaded locally): docs.ramp.com/openapi/developer-api.json, docs.ramp.com/llms.txt and the guides for sandbox, authorization, procurement, procurement-intake, virtual-cards, webhooks, agent-payments and rate-limiting

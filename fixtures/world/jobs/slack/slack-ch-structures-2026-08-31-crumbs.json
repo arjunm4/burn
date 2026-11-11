@@ -1,0 +1,216 @@
+{
+  "job_id": "slack-ch-structures-2026-08-31-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 21,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-structures",
+    "name": "structures-battery",
+    "slack_id": "C07FLK0STRC",
+    "purpose": "Torso, pelvis and battery enclosure"
+  },
+  "week": {
+    "start": "2026-08-31",
+    "end": "2026-09-06"
+  },
+  "people": [
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-kwame",
+      "name": "Kwame Asante",
+      "display_name": "kwame",
+      "slack_id": "U07FLK0KWAM",
+      "title": "Senior Electrical Engineer, power",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Torso and pelvis structure.",
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway. This week: Rev B: larger vent channel, mica sheets, spacing stays 2 mm.",
+    "Ongoing: Harness conductors breaking at the knee after ~15k flex cycles",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real. This week: Beth publishes the DVT plan: actuator build 9/29, gate 10/13, leg build 10/27.",
+    "Ongoing: Spend running ahead of plan; push to stop default expedites",
+    "Ongoing: Whether to machine pelvis plates from 7075 or wait for a casting"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1788368641.940550",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-003419"
+      ],
+      "brief": "Motor sample lot for battery enclosure: still quoting 2026-09-02",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-09-02"
+      },
+      "must_mention": [
+        "Motor sample lot for battery enclosure (clevis)",
+        "wed 9/2"
+      ],
+      "length": "short",
+      "text": "Motor sample lot for battery enclosure (clevis) still quoting as of wed 9/2"
+    },
+    {
+      "ts": "1788380328.470133",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-001506"
+      ],
+      "brief": "FL-TST-2272: need 2 by 2026-09-24 for Rig setup for Leg DVT build: Leg fixture hook, shank end",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-09-24"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2272",
+        "Rig setup for Leg DVT build: Leg fixture hook, shank end",
+        "9/24"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "FL-TST-2272 x2 for Rig setup for Leg DVT build: Leg fixture hook, shank end, need 9/24"
+    },
+    {
+      "ts": "1788458878.282870",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-001507"
+      ],
+      "brief": "2272: need 2 by 2026-09-24 for Rig setup for Leg DVT build: Leg fixture hook, shank end",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-09-24"
+        }
+      },
+      "must_mention": [
+        "2272",
+        "Rig setup for Leg DVT build: Leg fixture hook, shank end",
+        "9/24"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "2272 still open, the Rig setup for Leg DVT build: Leg fixture hook, shank end needs both by 9/24 or the rig sits"
+    },
+    {
+      "ts": "1788475562.602480",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-001670"
+      ],
+      "brief": "cage fixture: need 2 by 2026-10-05 for Battery enclosure thermal runaway containment",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-10-05"
+        }
+      },
+      "must_mention": [
+        "cage fixture",
+        "Battery enclosure thermal runaway containment",
+        "mon 10/5"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "cage fixture need 2 by mon 10/5 for Battery enclosure thermal runaway containment"
+    },
+    {
+      "ts": "1788570076.728277",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-001508"
+      ],
+      "brief": "lower hook: need 2 by 2026-09-24",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-09-24"
+        }
+      },
+      "must_mention": [
+        "lower hook",
+        "thurs 9/24"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "lower hook, need 2 by thurs 9/24. thats the same deadline as the rig"
+    },
+    {
+      "ts": "1788573380.725329",
+      "user": "p-kwame",
+      "thread_ts": "1788570076.728277",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Not sure we need both."
+    }
+  ]
+}

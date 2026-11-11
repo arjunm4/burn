@@ -1,0 +1,430 @@
+{
+  "job_id": "jira-TEST-2026-09-21-background",
+  "source": "jira",
+  "status": "blank",
+  "priority": 16,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "TEST",
+    "name": "Test, rigs and fixtures"
+  },
+  "week": {
+    "start": "2026-09-21",
+    "end": "2026-09-27"
+  },
+  "people": [
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "part numbers, quote ids, order numbers, Jira keys other than those in this job",
+    "dollar amounts of $50 or more",
+    "explicit dates"
+  ],
+  "tickets": [
+    {
+      "key": "TEST-196",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-zoe",
+      "assignee": "p-lin",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-21T13:17:01-07:00",
+      "due_date": "2026-10-16",
+      "events": [],
+      "brief": "Torque spec audit",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "TEST-196-c1",
+          "by": "p-andre",
+          "at": "2026-10-21T09:26:24-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "TEST-197",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-andre",
+      "assignee": "p-zoe",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-21T14:17:11-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Firmware flag for bench mode",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": []
+    },
+    {
+      "key": "TEST-198",
+      "type": "Task",
+      "status": "To Do",
+      "reporter": "p-andre",
+      "assignee": "p-lin",
+      "labels": [],
+      "priority": "Highest",
+      "created": "2026-09-22T10:51:53-07:00",
+      "due_date": "2026-10-13",
+      "events": [],
+      "brief": "Torque spec audit",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "TEST-198-c1",
+          "by": "p-lin",
+          "at": "2026-09-23T00:38:53-07:00",
+          "events": [],
+          "brief": "background: short note on why the due date moved (no date)",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-198-c2",
+          "by": "p-lin",
+          "at": "2026-09-28T09:04:39-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-198-c3",
+          "by": "p-lin",
+          "at": "2026-09-29T13:10:40-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-198-c4",
+          "by": "p-lin",
+          "at": "2026-10-08T14:54:05-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-198-c5",
+          "by": "p-lin",
+          "at": "2026-10-16T11:57:24-07:00",
+          "events": [],
+          "brief": "background: question to the assignee",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-198-c6",
+          "by": "p-lin",
+          "at": "2026-10-19T16:30:52-07:00",
+          "events": [],
+          "brief": "background: status fragment, e.g. waiting on vendor or on a review",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "TEST-199",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-dmitri",
+      "assignee": "p-zoe",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-23T12:23:45-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Update assembly work instructions",
+      "must_mention": [],
+      "description_length": "medium",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "TEST-199-c1",
+          "by": "p-dmitri",
+          "at": "2026-10-05T11:26:31-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "TEST-200",
+      "type": "Task",
+      "status": "In Progress",
+      "reporter": "p-lin",
+      "assignee": "p-lin",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-23T16:01:09-07:00",
+      "due_date": "2026-10-27",
+      "events": [],
+      "brief": "Harness routing cleanup",
+      "must_mention": [],
+      "description_length": "long",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "TEST-200-c1",
+          "by": "p-lin",
+          "at": "2026-09-29T05:01:09-07:00",
+          "events": [],
+          "brief": "background: short note on why the due date moved (no date)",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "TEST-201",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-andre",
+      "assignee": "p-dmitri",
+      "labels": [
+        "tech-debt"
+      ],
+      "priority": "Highest",
+      "created": "2026-09-23T20:31:37-07:00",
+      "due_date": "2026-10-05",
+      "events": [],
+      "brief": "Update drawing and BOM",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "TEST-201-c1",
+          "by": "p-dmitri",
+          "at": "2026-10-05T13:23:56-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-201-c2",
+          "by": "p-dmitri",
+          "at": "2026-10-08T15:14:18-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "TEST-202",
+      "type": "Bug",
+      "status": "In Progress",
+      "reporter": "p-dmitri",
+      "assignee": "p-zoe",
+      "labels": [],
+      "priority": "Medium",
+      "created": "2026-09-23T21:55:01-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Update drawing and BOM",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "TEST-202-c1",
+          "by": "p-dmitri",
+          "at": "2026-09-29T11:14:01-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-202-c2",
+          "by": "p-dmitri",
+          "at": "2026-10-05T14:18:12-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-202-c3",
+          "by": "p-zoe",
+          "at": "2026-10-14T11:05:44-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "TEST-203",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-zoe",
+      "assignee": "p-dmitri",
+      "labels": [],
+      "priority": "High",
+      "created": "2026-09-24T08:05:48-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Investigate noise on bench unit",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "TEST-203-c1",
+          "by": "p-zoe",
+          "at": "2026-10-05T11:10:45-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "key": "TEST-204",
+      "type": "Story",
+      "status": "Done",
+      "reporter": "p-lin",
+      "assignee": "p-andre",
+      "labels": [
+        "tech-debt"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-24T12:23:32-07:00",
+      "due_date": "2026-10-21",
+      "events": [],
+      "brief": "Calibrate instrument",
+      "must_mention": [],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "TEST-204-c1",
+          "by": "p-andre",
+          "at": "2026-09-28T17:28:30-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": null
+        },
+        {
+          "id": "TEST-204-c2",
+          "by": "p-andre",
+          "at": "2026-10-02T13:39:36-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": null
+        }
+      ]
+    }
+  ]
+}

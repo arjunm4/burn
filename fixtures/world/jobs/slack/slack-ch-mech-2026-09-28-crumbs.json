@@ -1,0 +1,301 @@
+{
+  "job_id": "slack-ch-mech-2026-09-28-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 13,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-mech",
+    "name": "mech",
+    "slack_id": "C07FLK0MECH",
+    "purpose": "Mechanical engineering: design, DFM, vendors, drawings"
+  },
+  "week": {
+    "start": "2026-09-28",
+    "end": "2026-10-04"
+  },
+  "people": [
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway",
+    "Ongoing: BMS PCBA rev 1 balancing current and cell-tap fusing. This week: Bao: wrong bleed resistor value on the BOM, 68 ohm populated instead of 33.",
+    "Ongoing: Leg DVT build: parts readiness and what to do about late test hardware. This week: Nora posts build readiness: 82% of leg DVT parts in, shank links still at the vendor.",
+    "Ongoing: Frameless DVT motor from the vendor keeps slipping; stator stack length change. This week: Samir: vendor confirms PO for DVT stators, ETA late October.",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough. This week: Switch to higher-viscosity grease; soak passes.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real",
+    "Ongoing: Leg drop gantry shared by leg drop, torso static load and ankle impact. This week: Dmitri splits: torso Tue, leg Thu; nobody happy."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1790715716.831683",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-002907"
+      ],
+      "brief": "FL-TST-2074 rev B released: clearance for harness",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-TST-2074"
+      ],
+      "length": "medium",
+      "text": "FL-TST-2074 rev B is released, opened up clearance for the harness. if you have the old one printed pls toss it"
+    },
+    {
+      "ts": "1790718687.990732",
+      "user": "p-callum",
+      "thread_ts": "1790715716.831683",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "is the clearance enough tho, the connector boot is fat"
+    },
+    {
+      "ts": "1790722641.829476",
+      "user": "p-diego",
+      "thread_ts": "1790715716.831683",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Got it, updating my copy 👍"
+    },
+    {
+      "ts": "1790788449.650276",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-002856"
+      ],
+      "brief": "FL-HIP-1064 rev D released: tolerance relaxed after DFM feedback",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev D"
+      },
+      "must_mention": [
+        "FL-HIP-1064"
+      ],
+      "length": "medium",
+      "text": "FL-HIP-1064 rev D out, relaxed the tolerance after dfm feedback from the shop"
+    },
+    {
+      "ts": "1790982938.121190",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-002899"
+      ],
+      "brief": "FL-LEG-1348 rev E released: hole pattern moved",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev E"
+      },
+      "must_mention": [
+        "FL-LEG-1348"
+      ],
+      "length": "short",
+      "text": "FL-LEG-1348 rev E is released; the hole pattern moved."
+    },
+    {
+      "ts": "1790983477.460932",
+      "user": "p-omar",
+      "thread_ts": null,
+      "events": [
+        "ev-003358"
+      ],
+      "brief": "knee spin adapter: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "knee spin adapter"
+      ],
+      "length": "short",
+      "text": "knee spin adapter is still quoting I think"
+    },
+    {
+      "ts": "1790986044.664526",
+      "user": "p-arjun",
+      "thread_ts": "1790982938.121190",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "moving holes this late feels risky"
+    },
+    {
+      "ts": "1790990468.160035",
+      "user": "p-diego",
+      "thread_ts": "1790982938.121190",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Mating part needs a look too then 😬"
+    },
+    {
+      "ts": "1790991360.307853",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-002770"
+      ],
+      "brief": "FL-TST-2789 rev B released: added gusset after it yielded in proof load",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-TST-2789"
+      ],
+      "length": "medium",
+      "text": "FL-TST-2789 rev B released, added a gusset since it yielded in proof load. pls use the new one"
+    }
+  ]
+}

@@ -1,0 +1,380 @@
+{
+  "job_id": "meeting-mtg-01468",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 7,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-01468",
+    "title": "Test lab + build standup",
+    "type": "standup",
+    "note_taker": "manual_doc",
+    "start": "2026-10-19T08:45:00-07:00",
+    "actual_min": 8,
+    "present": [
+      "p-dmitri",
+      "p-zoe",
+      "p-andre",
+      "p-carlos",
+      "p-jade",
+      "p-luis",
+      "p-nora"
+    ],
+    "late_joiners": [
+      "p-andre"
+    ]
+  },
+  "people": [
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-002033",
+      "speaker": "p-andre",
+      "at_min": [
+        2,
+        8
+      ],
+      "brief": "Andre says: We need FL-TST-2051 by 11/3.",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-spin-hip-cradle",
+        "value": {
+          "qty": 2,
+          "by": "2026-11-03"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2051",
+        "11/3"
+      ]
+    },
+    {
+      "event": "ev-002073",
+      "speaker": "p-zoe",
+      "at_min": [
+        2,
+        8
+      ],
+      "brief": "Zoe says: We need the bracket by 10/28.",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-hip-brake-bracket",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-28"
+        }
+      },
+      "must_mention": [
+        "the bracket",
+        "10/28"
+      ]
+    },
+    {
+      "event": "ev-002074",
+      "speaker": "p-dmitri",
+      "at_min": [
+        4,
+        8
+      ],
+      "brief": "Dmitri says: We need that order by 10/30 (the fit check).",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-hip-brake-bracket",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-30"
+        }
+      },
+      "must_mention": [
+        "that order",
+        "the fit check",
+        "10/30"
+      ]
+    }
+  ],
+  "background": [],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 3,
+      "speaker": "p-dmitri",
+      "text": "Morning. Andre's not here yet. Carlos, go."
+    },
+    {
+      "start_s": 7,
+      "speaker": "p-carlos",
+      "text": "Shop's fine. Mill is down for a tool change this morning, back after lunch."
+    },
+    {
+      "start_s": 19,
+      "speaker": "p-jade",
+      "text": "nothing in friday nothing today yet"
+    },
+    {
+      "start_s": 27,
+      "speaker": "p-luis",
+      "text": "i finished the cable tray on the knee rig. its ugly but it works"
+    },
+    {
+      "start_s": 36,
+      "speaker": "p-dmitri",
+      "text": "Ugly is fine. Nora?"
+    },
+    {
+      "start_s": 39,
+      "speaker": "p-nora",
+      "text": "The question is what's new on the build side. Not much. One, the carts are coming this week. Two, I'm still working through the kitting list."
+    },
+    {
+      "start_s": 128,
+      "speaker": "p-zoe",
+      "text": "ok uh. fixtures. the ankle base drawing is out for review. and for the knee rig, we need the bracket by 10/28, otherwise i can't mount the load cell"
+    },
+    {
+      "start_s": 146,
+      "speaker": "p-nora",
+      "text": "The question is whether that's the same bracket from last week's list. I think it is. I'll check that it's moving."
+    },
+    {
+      "start_s": 156,
+      "speaker": "p-zoe",
+      "text": "yeah same one. i think"
+    },
+    {
+      "start_s": 170,
+      "speaker": "p-andre",
+      "text": "hey sorry, parking. did i miss anything"
+    },
+    {
+      "start_s": 174,
+      "speaker": "p-dmitri",
+      "text": "No. Go."
+    },
+    {
+      "start_s": 177,
+      "speaker": "p-andre",
+      "text": "ok. we need FL-TST-2051 by 11/3. hip run is set up otherwise"
+    },
+    {
+      "start_s": 188,
+      "speaker": "p-andre",
+      "text": "11/3 not later i mean"
+    },
+    {
+      "start_s": 193,
+      "speaker": "p-dmitri",
+      "text": "Noted."
+    },
+    {
+      "start_s": 262,
+      "speaker": "p-dmitri",
+      "text": "And we need that order by 10/30. The fit check. Nora, that's real. Don't let it slide."
+    },
+    {
+      "start_s": 275,
+      "speaker": "p-nora",
+      "text": "Understood. The question is whether the vendor can hit it, and I'll find out today."
+    },
+    {
+      "start_s": 288,
+      "speaker": "p-luis",
+      "text": "is the fit check still on the small bench or are we moving it"
+    },
+    {
+      "start_s": 294,
+      "speaker": "p-dmitri",
+      "text": "Small bench."
+    },
+    {
+      "start_s": 297,
+      "speaker": "p-luis",
+      "text": "ok i'll clear it off"
+    },
+    {
+      "start_s": 340,
+      "speaker": "p-carlos",
+      "text": "Who left the air line on all weekend?? Compressor was running Saturday!!"
+    },
+    {
+      "start_s": 348,
+      "speaker": "p-luis",
+      "text": "wasnt me. i think"
+    },
+    {
+      "start_s": 360,
+      "speaker": "p-jade",
+      "text": "wasnt me"
+    },
+    {
+      "start_s": 420,
+      "speaker": "p-dmitri",
+      "text": "Fine. Turn it off. Done, go."
+    }
+  ],
+  "summary": {
+    "overview": "Short Monday standup, Andre joined late. Three date asks came up: a fixture bracket, a dyno test part, and the order for the fit check. Mill down for a tool change.",
+    "shorthand_bullet": [
+      "Mill down for tool change this AM",
+      "Luis: knee rig cable tray done",
+      "Zoe: ankle base drawing in review; need the bracket by 10/28 to mount the load cell",
+      "Andre (late): FL-TST-2051 by 11/3",
+      "Dmitri: that order by 10/30 for the fit check",
+      "Fit check stays on the small bench",
+      "Air line left on over the weekend"
+    ],
+    "action_items": [
+      "Nora check bracket is moving",
+      "Nora ask vendor about 10/30",
+      "Luis clear small bench",
+      "someone turn off the air line Fridays"
+    ],
+    "keywords": [
+      "fit check",
+      "bracket",
+      "dyno",
+      "load cell",
+      "mill",
+      "compressor"
+    ]
+  }
+}

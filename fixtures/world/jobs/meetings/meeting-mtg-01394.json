@@ -1,0 +1,413 @@
+{
+  "job_id": "meeting-mtg-01394",
+  "source": "meeting",
+  "status": "filled",
+  "priority": 11,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-01394",
+    "title": "Test fixture design review",
+    "type": "design_review",
+    "note_taker": "fireflies",
+    "start": "2026-10-05T14:00:00-07:00",
+    "actual_min": 52,
+    "present": [
+      "p-zoe",
+      "p-dmitri",
+      "p-carlos",
+      "p-luis",
+      "p-diego",
+      "p-kenji"
+    ],
+    "late_joiners": []
+  },
+  "people": [
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    }
+  ],
+  "storylines": [],
+  "crumbs": [
+    {
+      "event": "ev-000005",
+      "speaker": "p-zoe",
+      "at_min": [
+        37,
+        43
+      ],
+      "brief": "Battery enclosure thermal runaway containment: moved from 2026-10-07 to 2026-11-04",
+      "claim": {
+        "kind": "eta",
+        "subject": "test-battery-thermal",
+        "value": "2026-11-04"
+      },
+      "must_mention": [
+        "Battery enclosure thermal runaway containment",
+        "11/4"
+      ]
+    }
+  ],
+  "background": [
+    {
+      "event": "ev-004336",
+      "speaker": "p-diego",
+      "brief": "Test fixture design review: round of updates"
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": [
+    {
+      "start_s": 4,
+      "speaker": "p-zoe",
+      "text": "ok i think we're recording. kenji are you on? i see your name but no video"
+    },
+    {
+      "start_s": 11,
+      "speaker": "p-kenji",
+      "text": "yeah here camera's dead"
+    },
+    {
+      "start_s": 16,
+      "speaker": "p-zoe",
+      "text": "cool. so um, agenda is the knee fixture rev, the clamp plate thing luis flagged, and then i wanna just walk the open list"
+    },
+    {
+      "start_s": 31,
+      "speaker": "p-dmitri",
+      "text": "Start with the clamp plate. That's the one that bit us."
+    },
+    {
+      "start_s": 38,
+      "speaker": "p-luis",
+      "text": "yeah so on friday when we swapped the specimen the plate was walking, like you torque the four screws and it shifts toward the cable side"
+    },
+    {
+      "start_s": 52,
+      "speaker": "p-luis",
+      "text": "not a lot but you can see it on the dial indicator"
+    },
+    {
+      "start_s": 58,
+      "speaker": "p-kenji",
+      "text": "is that the slotted holes or the dowel"
+    },
+    {
+      "start_s": 62,
+      "speaker": "p-luis",
+      "text": "slots. there's no dowel on that side, there's only the one dowel"
+    },
+    {
+      "start_s": 69,
+      "speaker": "p-diego",
+      "text": "Yeah that's on me, I left the second dowel off because I was worried about over-constraining with the base plate flatness. Probably the wrong call."
+    },
+    {
+      "start_s": 84,
+      "speaker": "p-dmitri",
+      "text": "It's the wrong call. One round, one diamond pin. Done."
+    },
+    {
+      "start_s": 90,
+      "speaker": "p-diego",
+      "text": "Diamond pin works. I can do that in the next rev, it's a quick change in the model."
+    },
+    {
+      "start_s": 101,
+      "speaker": "p-carlos",
+      "text": "Can we ream it in-house or does it go back out?"
+    },
+    {
+      "start_s": 106,
+      "speaker": "p-diego",
+      "text": "I think we can ream it here if the hole location's close enough, I'd rather not send it back out for one hole"
+    },
+    {
+      "start_s": 118,
+      "speaker": "p-carlos",
+      "text": "We can do it. Need the drawing marked up though, not a slack message."
+    },
+    {
+      "start_s": 124,
+      "speaker": "p-diego",
+      "text": "Fair. I'll redline it."
+    },
+    {
+      "start_s": 402,
+      "speaker": "p-zoe",
+      "text": "ok knee fixture. so the load cell alignment, kenji you had the uh the side load numbers from last week"
+    },
+    {
+      "start_s": 413,
+      "speaker": "p-kenji",
+      "text": "yeah side load is still higher than i'd like on the flexion sweep, it's the rod end. there's slop in it"
+    },
+    {
+      "start_s": 425,
+      "speaker": "p-dmitri",
+      "text": "How much?"
+    },
+    {
+      "start_s": 428,
+      "speaker": "p-kenji",
+      "text": "enough that the off-axis channel shows it at the end of travel. middle of the sweep is fine"
+    },
+    {
+      "start_s": 439,
+      "speaker": "p-zoe",
+      "text": "so i was thinking, maybe a spherical bearing instead of the rod end, but that's a bigger change to the clevis so"
+    },
+    {
+      "start_s": 452,
+      "speaker": "p-diego",
+      "text": "It's not that bad actually. The clevis has the meat for it. I'd have to open the bore and add a retaining ring groove."
+    },
+    {
+      "start_s": 466,
+      "speaker": "p-dmitri",
+      "text": "Do it. I don't want to argue about side load in every life test report."
+    },
+    {
+      "start_s": 475,
+      "speaker": "p-luis",
+      "text": "wait which clevis, the top one or the one on the acutator side. *actuator"
+    },
+    {
+      "start_s": 483,
+      "speaker": "p-diego",
+      "text": "Top one, the one at the load cell."
+    },
+    {
+      "start_s": 905,
+      "speaker": "p-carlos",
+      "text": "Separate thing. The fixture cart. Someone keeps leaving the knee fixture on it with the casters unlocked."
+    },
+    {
+      "start_s": 914,
+      "speaker": "p-luis",
+      "text": "not me lol"
+    },
+    {
+      "start_s": 918,
+      "speaker": "p-carlos",
+      "text": "Not accusing. Just lock them!!"
+    },
+    {
+      "start_s": 1460,
+      "speaker": "p-zoe",
+      "text": "ok the hip side load frame. i don't think we have anything new there right, it's still waiting on the gusset change"
+    },
+    {
+      "start_s": 1471,
+      "speaker": "p-diego",
+      "text": "Gusset change is in the model, I just haven't released it. I wanted to run FEA one more time with the heavier load case."
+    },
+    {
+      "start_s": 1488,
+      "speaker": "p-kenji",
+      "text": "what mesh are you using on the weld fillets"
+    },
+    {
+      "start_s": 1494,
+      "speaker": "p-diego",
+      "text": "Default, which, yeah, I know. I'll refine it there."
+    },
+    {
+      "start_s": 1510,
+      "speaker": "p-dmitri",
+      "text": "Release it this week. Refine later if the strain gauges disagree."
+    },
+    {
+      "start_s": 2290,
+      "speaker": "p-zoe",
+      "text": "ok the open list. couple of dates moved so i just want to read them out so nobody's surprised"
+    },
+    {
+      "start_s": 2301,
+      "speaker": "p-zoe",
+      "text": "Battery enclosure thermal runaway containment, that one slid, it's 11/4 now. it was supposed to be early this month, um, thurs? no, wed. anyway it's 11/4"
+    },
+    {
+      "start_s": 2322,
+      "speaker": "p-dmitri",
+      "text": "Noted."
+    },
+    {
+      "start_s": 2326,
+      "speaker": "p-zoe",
+      "text": "rest of the list is basically where it was last week, i'll update the tracker after this"
+    },
+    {
+      "start_s": 2338,
+      "speaker": "p-luis",
+      "text": "can we talk about the torque wrench cal sticker too, two of them are expired"
+    },
+    {
+      "start_s": 2346,
+      "speaker": "p-carlos",
+      "text": "Already pulled them. They're in the cal bin."
+    },
+    {
+      "start_s": 2352,
+      "speaker": "p-luis",
+      "text": "oh ok nvm"
+    },
+    {
+      "start_s": 3010,
+      "speaker": "p-zoe",
+      "text": "ok i think that's it. diego redline and dowel, kenji send me the side load plots. thanks all"
+    },
+    {
+      "start_s": 3021,
+      "speaker": "p-diego",
+      "text": "On it."
+    }
+  ],
+  "summary": {
+    "overview": "Design review of current test fixtures. Clamp plate shift traced to a single dowel; team agreed on round plus diamond pin. Knee fixture side load at end of flexion travel blamed on rod end slop, moving to a spherical bearing at the top clevis. Hip load frame gusset change still unreleased pending FEA rerun. Open list read out, one date moved.",
+    "shorthand_bullet": [
+      "clamp plate walks on torque-down, slotted holes, only one dowel",
+      "fix: round pin + diamond pin, ream in-house, Carlos wants a marked-up drawing",
+      "knee fixture: off-axis load at end of sweep, rod end slop",
+      "swap to spherical bearing at top clevis (load cell side), needs bore + ring groove",
+      "hip load frame gusset change in model, not released, FEA rerun w/ heavier load case, refine fillet mesh",
+      "fixture cart casters left unlocked",
+      "Battery enclosure thermal runaway containment now 11/4",
+      "two torque wrenches past cal, pulled"
+    ],
+    "action_items": [
+      "Diego: redline clamp plate drawing w/ second dowel",
+      "Diego: spherical bearing change on top clevis",
+      "Kenji to send side load plots to Zoe",
+      "release gusset change this week",
+      "update tracker w/ new dates",
+      "lock the casters"
+    ],
+    "keywords": [
+      "clamp plate",
+      "dowel pin",
+      "knee fixture",
+      "side load",
+      "rod end",
+      "spherical bearing",
+      "FEA",
+      "fixture cart"
+    ]
+  }
+}

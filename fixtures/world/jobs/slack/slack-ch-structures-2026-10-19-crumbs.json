@@ -1,0 +1,467 @@
+{
+  "job_id": "slack-ch-structures-2026-10-19-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 7,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-structures",
+    "name": "structures-battery",
+    "slack_id": "C07FLK0STRC",
+    "purpose": "Torso, pelvis and battery enclosure"
+  },
+  "week": {
+    "start": "2026-10-19",
+    "end": "2026-10-25"
+  },
+  "people": [
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-kwame",
+      "name": "Kwame Asante",
+      "display_name": "kwame",
+      "slack_id": "U07FLK0KWAM",
+      "title": "Senior Electrical Engineer, power",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Channel for Torso and pelvis structure.",
+    "Ongoing: Leg DVT build: parts readiness and what to do about late test hardware. This week: Build slips four days; Beth moves the program review item.",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real"
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1792400120.263104",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-002076"
+      ],
+      "brief": "FL-TST-2216: need 7 by 2026-10-23 for the build",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 7,
+          "by": "2026-10-23"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2216",
+        "the build",
+        "fri the 23rd"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Need 7 FL-TST-2216 for the build by fri the 23rd."
+    },
+    {
+      "ts": "1792407681.091414",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-002077"
+      ],
+      "brief": "FL-TST-2216: need 7 by 2026-10-23",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 7,
+          "by": "2026-10-23"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2216",
+        "fri 10/23"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Reminder: FL-TST-2216, 7 pcs, need by fri 10/23!!"
+    },
+    {
+      "ts": "1792429518.887218",
+      "user": "p-idris",
+      "thread_ts": "1792400120.263104",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "sent at 4am, respect"
+    },
+    {
+      "ts": "1792513829.023876",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-002658"
+      ],
+      "brief": "Battery enclosure thermal runaway containment waits on Battery test cage",
+      "claim": {
+        "kind": "blocked",
+        "value": "res-battery-cage"
+      },
+      "must_mention": [
+        "Battery test cage",
+        "Battery enclosure thermal runaway containment"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Battery enclosure thermal runaway containment is stuck on the Battery test cage, can't start without it"
+    },
+    {
+      "ts": "1792519309.856330",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-002707"
+      ],
+      "brief": "Battery test pack build (2 packs) waits on 21700 cells for test packs",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-battery-cells"
+      },
+      "must_mention": [
+        "21700 cells for test packs",
+        "the packs)"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "pack build is waiting on the 21700 cells for test packs (both of the packs) so nothing to do there yet"
+    },
+    {
+      "ts": "1792522662.970895",
+      "user": "p-lukas",
+      "thread_ts": null,
+      "events": [
+        "ev-003206"
+      ],
+      "brief": "busbar clamp: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "busbar clamp"
+      ],
+      "length": "short",
+      "text": "busbar clamp still quoting"
+    },
+    {
+      "ts": "1792528732.241727",
+      "user": "p-luis",
+      "thread_ts": null,
+      "events": [
+        "ev-001931"
+      ],
+      "brief": "latch block arrived (5)",
+      "claim": {
+        "kind": "stock",
+        "value": 5
+      },
+      "must_mention": [
+        "latch block",
+        "5"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "latch block in, 5 of them. on the cart by the mill"
+    },
+    {
+      "ts": "1792545688.466410",
+      "user": "p-lukas",
+      "thread_ts": null,
+      "events": [
+        "ev-002918"
+      ],
+      "brief": "FL-STR-1554 rev B released: fit issue found at assembly",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-STR-1554"
+      ],
+      "length": "short",
+      "text": "FL-STR-1554 rev B released fit issue at assembly"
+    },
+    {
+      "ts": "1792601341.803616",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-002657"
+      ],
+      "brief": "Battery enclosure thermal runaway containment waits on Battery test pack build (2 packs)",
+      "claim": {
+        "kind": "blocked",
+        "value": "wi-90011"
+      },
+      "must_mention": [
+        "Battery test pack build (2 packs)",
+        "Battery enclosure thermal runaway containment"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "Battery enclosure thermal runaway containment also needs the Battery test pack build (2 packs) done first, so its stacked"
+    },
+    {
+      "ts": "1792604078.380456",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-002596"
+      ],
+      "brief": "Battery enclosure thermal runaway containment waits on Cell heater clamp plate",
+      "claim": {
+        "kind": "blocked",
+        "value": "pt-cage-heater-clamp"
+      },
+      "must_mention": [
+        "Cell heater clamp plate",
+        "Battery enclosure thermal runaway containment"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "and Battery enclosure thermal runaway containment waits on the Cell heater clamp plate too"
+    },
+    {
+      "ts": "1792681581.752013",
+      "user": "p-lukas",
+      "thread_ts": null,
+      "events": [
+        "ev-003265"
+      ],
+      "brief": "spine clamp: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "spine clamp"
+      ],
+      "length": "medium",
+      "text": "spine clamp still quoting on the old rev, chasing"
+    },
+    {
+      "ts": "1792699112.514630",
+      "user": "p-dmitri",
+      "thread_ts": null,
+      "events": [
+        "ev-002225"
+      ],
+      "brief": "the lid: need 10 by 2026-11-06 for Fit check: Battery enclosure lid",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-11-06"
+        }
+      },
+      "must_mention": [
+        "the lid",
+        "Fit check: Battery enclosure lid",
+        "11/6"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "Need 10 of the lid by 11/6 for Fit check: Battery enclosure lid. Please!!"
+    },
+    {
+      "ts": "1792728133.648400",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-002659"
+      ],
+      "brief": "Battery enclosure thermal runaway containment waits on Thermal chamber",
+      "claim": {
+        "kind": "blocked",
+        "value": "res-thermal-chamber"
+      },
+      "must_mention": [
+        "Thermal chamber",
+        "the containment"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Thermal chamber is the other thing holding up the containment test"
+    },
+    {
+      "ts": "1792771478.127440",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-003196"
+      ],
+      "brief": "connector plate: still quoting rev A",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev A"
+      },
+      "must_mention": [
+        "connector plate"
+      ],
+      "length": "short",
+      "text": "connector plate still quoting. Again."
+    },
+    {
+      "ts": "1792772151.921063",
+      "user": "p-kwame",
+      "thread_ts": "1792771478.127440",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I'll check with the shop later today."
+    },
+    {
+      "ts": "1792779392.833258",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-002637"
+      ],
+      "brief": "Instrumentation fit-up: Leg fixture hook, shank end waits on Wire harness for torso and pelvis structure (shank hook)",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-gen-0116"
+      },
+      "must_mention": [
+        "Wire harness for torso and pelvis structure (shank hook)",
+        "Instrumentation fit-up: Leg fixture hook, shank end"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Instrumentation fit-up: Leg fixture hook, shank end is waiting on Wire harness for torso and pelvis structure (shank hook)"
+    }
+  ]
+}

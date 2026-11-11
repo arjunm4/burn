@@ -1,0 +1,212 @@
+{
+  "job_id": "slack-ch-test-lab-2026-09-14-background-2026-09-17",
+  "source": "slack",
+  "status": "blank",
+  "priority": 18,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-test-lab",
+    "name": "test-lab",
+    "slack_id": "C07FLK0TLAB",
+    "purpose": "Test lab: rigs, bookings, results, fixtures"
+  },
+  "week": {
+    "start": "2026-09-14",
+    "end": "2026-09-20"
+  },
+  "people": [
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-diego",
+      "name": "Diego Salcedo",
+      "display_name": "diego",
+      "slack_id": "U07FLK0DIEG",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-lukas",
+      "name": "Lukas Becker",
+      "display_name": "lukas",
+      "slack_id": "U07FLK0LUKA",
+      "title": "Structures Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "one-word acks: ok, ty, yep"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Vent path sizing and cell spacing to contain a single-cell runaway",
+    "Ongoing: Gait policy trained in sim overshoots on hardware; friction and backlash modelling. This week: Elena adds joint friction and 0.2 deg backlash to the sim; chatter reproduces.",
+    "Ongoing: FOC rewrite with a thermal model and derating for DVT actuators. This week: v2 released; hip efficiency sweep scheduled.",
+    "Ongoing: Aluminum links gall on 303 pins under side load",
+    "Ongoing: Backlash in the rev B cycloidal reducer and whether to shim or re-grind",
+    "Ongoing: Running the knee at 40 C ambient for DVT; chamber access and feedthrough",
+    "Ongoing: Integrated DVT plan across actuators and legs and which dates are real",
+    "Ongoing: Leg drop gantry shared by leg drop, torso static load and ankle impact. This week: Zoe: drop gantry only runs Tue/Thu because rigging needs two techs."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "part numbers, quote ids, order numbers or Jira keys",
+    "dollar amounts of $50 or more",
+    "explicit dates (relative time like \"last week\" is fine)"
+  ],
+  "messages": [
+    {
+      "ts": "1789665893.891643",
+      "user": "p-destiny",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: heads up about this: Jonas starts FOC v2: 20 kHz current loop, thermal model from Nadia.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1789676472.507780",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [],
+      "brief": "background: notes progress on off-topic: the wifi in the high bay",
+      "must_mention": [],
+      "length": "long",
+      "text": null
+    },
+    {
+      "ts": "1789685152.669693",
+      "user": "p-lukas",
+      "thread_ts": null,
+      "events": [
+        "ev-003988"
+      ],
+      "brief": "background: Zoe: drop gantry only runs Tue/Thu because rigging needs two techs.",
+      "must_mention": [],
+      "length": "medium",
+      "text": null
+    },
+    {
+      "ts": "1789688144.903980",
+      "user": "p-diego",
+      "thread_ts": "1789685152.669693",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: Zoe: drop gantry only runs Tue/Thu because rigging needs two techs.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    },
+    {
+      "ts": "1789690246.461356",
+      "user": "p-idris",
+      "thread_ts": "1789685152.669693",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: Zoe: drop gantry only runs Tue/Thu because rigging needs two techs.",
+      "must_mention": [],
+      "length": "short",
+      "text": null
+    },
+    {
+      "ts": "1789693485.084155",
+      "user": "p-lin",
+      "thread_ts": "1789685152.669693",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: Zoe: drop gantry only runs Tue/Thu because rigging needs two techs.",
+      "must_mention": [],
+      "length": "one_word",
+      "text": null
+    }
+  ]
+}

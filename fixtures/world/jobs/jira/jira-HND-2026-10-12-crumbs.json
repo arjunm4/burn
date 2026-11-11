@@ -1,0 +1,267 @@
+{
+  "job_id": "jira-HND-2026-10-12-crumbs",
+  "source": "jira",
+  "status": "filled",
+  "priority": 9,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HND",
+    "name": "Hands and arms"
+  },
+  "week": {
+    "start": "2026-10-12",
+    "end": "2026-10-18"
+  },
+  "people": [
+    {
+      "id": "p-amara",
+      "name": "Amara Nwosu",
+      "display_name": "amara",
+      "slack_id": "U07FLK0AMAR",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-destiny",
+      "name": "Destiny Brooks",
+      "display_name": "destiny",
+      "slack_id": "U07FLK0DEST",
+      "title": "Assembly Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-jade",
+      "name": "Jade Thompson",
+      "display_name": "jade.t",
+      "slack_id": "U07FLK0JADE",
+      "title": "Technician, receiving",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HND-246",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-priya",
+      "assignee": "p-amara",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-10-14T09:45:51-07:00",
+      "due_date": "2026-11-03",
+      "events": [
+        "ev-002020"
+      ],
+      "brief": "Order 6x Finger distal link, 12x Knuckle pin, 10x Forearm motor pack plate, 21x Finger middle link / distal link: need 6 by 2026-11-03 for the fit check",
+      "must_mention": [
+        "distal link",
+        "the fit check",
+        "tues 11/3"
+      ],
+      "description_length": "short",
+      "summary": "Order distal link + knuckle pins, forearm plates, mid links",
+      "description": "Need 6 distal link pcs in hand by tues 11/3 for the fit check. Rest can trail.",
+      "comments": [
+        {
+          "id": "HND-246-c1",
+          "by": "p-amara",
+          "at": "2026-10-15T19:10:33-07:00",
+          "events": [
+            "ev-002021"
+          ],
+          "brief": "Order XO-5543050 placed, promised 2026-11-02",
+          "claim": {
+            "kind": "eta",
+            "value": "2026-11-02"
+          },
+          "must_mention": [
+            "XO-5543050",
+            "1419",
+            "mon 11/2"
+          ],
+          "body": "XO-5543050 placed for 1419, i think vendor promised mon 11/2 but probably tight"
+        },
+        {
+          "id": "HND-246-c2",
+          "by": "p-priya",
+          "at": "2026-10-19T16:52:57-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "Vendor says it may slip slightly. No new date yet."
+        },
+        {
+          "id": "HND-246-c3",
+          "by": "p-sofia",
+          "at": "2026-10-22T14:03:57-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "Heard the same, they're running a little behind."
+        },
+        {
+          "id": "HND-246-c4",
+          "by": "p-destiny",
+          "at": "2026-11-02T12:32:20-08:00",
+          "events": [
+            "ev-002022"
+          ],
+          "brief": "1419 arrived (6)",
+          "claim": {
+            "kind": "stock",
+            "value": 6
+          },
+          "must_mention": [
+            "1419",
+            "6"
+          ],
+          "body": "1419 in, qty 6 counted 🙏"
+        },
+        {
+          "id": "HND-246-c5",
+          "by": "p-sofia",
+          "at": "2026-11-04T09:27:03-08:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "Any update on the rest?"
+        }
+      ]
+    },
+    {
+      "key": "HND-251",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-talia",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-10-15T16:54:04-07:00",
+      "due_date": null,
+      "events": [],
+      "brief": "Order 8x Spin-test stand adapter plate",
+      "must_mention": [],
+      "description_length": "empty",
+      "summary": "spin-test stand adapter plates",
+      "description": "",
+      "comments": [
+        {
+          "id": "HND-251-c1",
+          "by": "p-jade",
+          "at": "2026-10-23T13:51:00-07:00",
+          "events": [
+            "ev-001972"
+          ],
+          "brief": "spin adapter arrived (8)",
+          "claim": {
+            "kind": "stock",
+            "value": 8
+          },
+          "must_mention": [
+            "spin adapter",
+            "8"
+          ],
+          "body": "spin adapter recvd qty 8 on shelf b"
+        }
+      ]
+    }
+  ]
+}

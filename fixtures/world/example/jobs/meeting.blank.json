@@ -1,0 +1,116 @@
+{
+  "job_id": "meeting-mtg-00001",
+  "source": "meeting",
+  "status": "blank",
+  "priority": 1,
+  "style_rules": [
+    "docs/research/data-realism.md#meeting-notes-and-transcripts",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "meeting": {
+    "id": "mtg-00001",
+    "title": "Supply chain + mech sync",
+    "type": "supply_chain_mech",
+    "note_taker": "granola",
+    "start": "2026-10-22T10:30:00-07:00",
+    "actual_min": 37,
+    "present": [
+      "p-dana",
+      "p-arjun",
+      "p-owen"
+    ],
+    "late_joiners": [
+      "p-owen"
+    ]
+  },
+  "people": [
+    {
+      "id": "p-dana",
+      "name": "Dana Whitcomb",
+      "display_name": "dana.w",
+      "slack_id": "U07FLK0DANA",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low"
+      }
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "medium",
+        "hedging": "medium"
+      }
+    },
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "slack_id": "U07FLK0OWEN",
+      "title": "Mechanical Engineer, Actuators",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word"
+        ]
+      }
+    }
+  ],
+  "storylines": [
+    {
+      "id": "sl-hip-backlash",
+      "topic": "Backlash in the rev B cycloidal reducer and whether to shim or re-grind",
+      "beat": "Shim vs re-grind debate; Arjun leans shim for DVT, re-grind for PVT."
+    }
+  ],
+  "crumbs": [
+    {
+      "event": "ev-000010",
+      "speaker": "p-arjun",
+      "at_min": [
+        8,
+        14
+      ],
+      "brief": "Talked to the motor vendor, realistic date is the 20th; spin test moves to the week of the 23rd.",
+      "claim": {
+        "kind": "eta",
+        "subject": "dl-hip-motor-dvt",
+        "value": "2026-11-20"
+      },
+      "must_mention": [
+        "11/20"
+      ]
+    }
+  ],
+  "background": [
+    {
+      "event": "ev-000011",
+      "speaker": "p-owen",
+      "brief": "Shim vs re-grind for reducer backlash; the bracket rev C changes the bore anyway."
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "dates or facts not in crumbs or the storyline beat",
+    "attendees who were not present"
+  ],
+  "transcript": null,
+  "summary": null
+}
