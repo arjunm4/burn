@@ -11,7 +11,7 @@ const transitions = {
   approved: [], placed: ['delivered'], delivered: ['in_use'], in_use: [],
 };
 const exits = ['cancelled', 'unresolved', 'superseded', 'invalidated'];
-const editable = ['entry', 'spec', 'quote', 'decision', 'decisionRevision'];
+const editable = ['entry', 'spec', 'quote', 'decision', 'decisionRevision', 'context'];
 const clone = value => structuredClone(value);
 const fail = (message, status = 409) => { throw new AppError(message, status); };
 const nonempty = value => typeof value === 'string' && value.trim().length > 0;
@@ -58,14 +58,14 @@ export function createOrderStore({filename = 'data/orders.sqlite'} = {}) {
     const at = new Date().toISOString();
     return tx(() => save({id: randomUUID(), revision: 0, state: 'entered', paymentState: 'none', bookingState: 'pending',
       entry: {...clone(entry), name: entry.name.trim(), note: entry.note || '', engineer: entry.engineer || '', cadHash: entry.cadHash || null, cadFileName: entry.cadFileName || null, enteredAt: at},
-      spec: [], quote: null, decision: null, decisionRevision: null, frozen: null, specHash: null,
+      spec: [], quote: null, decision: null, decisionRevision: null, frozen: null, specHash: null, context: {}, question: null, exchange: [],
       ramp: {requestId: null, approvalStatus: null, cardId: null, transactionIds: [], receiptId: null},
       vendorOrder: {vendorOrderId: null, promisedOn: null}, createdAt: at, updatedAt: at}, 'order.created'));
   }
   function update(id, revision, patch, event = 'order.updated') {
     return tx(() => {
       const order = checked(id, revision);
-      if (!patch || Object.keys(patch).some(key => ![...editable, 'state'].includes(key))) fail('Protected or unknown order field', 400);
+      if (!patch || Object.keys(patch).some(key => ![...editable, 'state', 'question', 'exchange'].includes(key))) fail('Protected or unknown order field', 400);
       if (order.frozen && editable.some(key => key in patch)) fail('Frozen specification and decision cannot be edited');
       if (!(order.state in transitions)) fail('Order is terminal or requires a dedicated transition');
       if (patch.state && patch.state !== order.state) {
@@ -135,8 +135,8 @@ export function createOrderStore({filename = 'data/orders.sqlite'} = {}) {
   function recordRamp(id, revision, patch, event = 'ramp.updated') {
     return tx(() => {
       const order = checked(id, revision);
-      const {paymentState, bookingState, ...ramp} = patch;
-      if (Object.keys(ramp).some(key => !['requestId', 'approvalStatus', 'cardId', 'transactionIds', 'receiptId'].includes(key))) fail('Unknown Ramp field', 400);
+      const {paymentState, bookingState, state, ...ramp} = patch;
+      if (Object.keys(ramp).some(key => !['requestId', 'approvalStatus', 'cardId', 'transactionIds', 'receiptId', 'cardLast4', 'credentialRef'].includes(key))) fail('Unknown Ramp field', 400);
       if (paymentState && !PAYMENT_STATES.includes(paymentState) || bookingState && !BOOKING_STATES.includes(bookingState)) fail('Invalid accounting state', 400);
       if (ramp.approvalStatus && !['PENDING', 'APPROVED', 'REJECTED', 'CANCELLED'].includes(ramp.approvalStatus)) fail('Invalid approval status', 400);
       if (ramp.approvalStatus === 'APPROVED' && !['requested', 'approved'].includes(order.state)) fail('Cannot approve superseded or inactive order');
@@ -147,7 +147,8 @@ export function createOrderStore({filename = 'data/orders.sqlite'} = {}) {
       if (order.ramp.cardId && ramp.cardId && order.ramp.cardId !== ramp.cardId) fail('Card identity cannot change');
       if (ramp.transactionIds && (!Array.isArray(ramp.transactionIds) || !ramp.transactionIds.every(nonempty))) fail('Invalid transaction IDs', 400);
       ramp.transactionIds = [...new Set([...order.ramp.transactionIds, ...(ramp.transactionIds || [])])];
-      return change(order, {ramp: {...order.ramp, ...ramp}, ...(paymentState ? {paymentState} : {}), ...(bookingState ? {bookingState} : {})}, event);
+      const changed = change(order, {ramp: {...order.ramp, ...ramp}, ...(paymentState ? {paymentState} : {}), ...(bookingState ? {bookingState} : {})}, event);
+      return state && state !== changed.state ? update(id, changed.revision, {state}, event + '.transition') : changed;
     });
   }
   const seenEvent = (source, id) => !!db.prepare('SELECT 1 FROM inbound_events WHERE source=? AND external_id=?').get(source, id);
