@@ -47,7 +47,7 @@ Each layer needs the one before.
 | 5 | Orders | All vendors (~1,900–3,100); the 400–550 Xometry CNC orders in full | Simulation |
 | 6 | Events | The timeline everything is rendered from: **crumbs** tied to orders, and far more **background** (engineering trade-offs, test results, off-topic) | Simulation |
 
-**Time layout:** month 0–1 is lead-in (context only); months 1–7 are training orders; months 7–9 are held back for grading; the demo order sits on 2026-11-10 with its own last 30 days of context.
+**Time layout:** the truth covers all nine months. Training and grading use only the Xometry orders that have a full 30 days of written context before them: with 13 weeks written, that is roughly the last nine weeks of orders. The newest 30% of those are held back for grading. The demo order sits on 2026-11-10 with its own 30 days of context.
 
 ### Schema checklist
 
