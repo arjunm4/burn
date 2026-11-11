@@ -24,7 +24,7 @@ const hist = (list, { saidOnly }) =>
     .filter((e, i) => !saidOnly || i === 0 || e.where != null)
     .map((e) => ({ value: e.value, known_at: e.known_at, by: e.by ?? null }));
 
-export function buildSettings(world) {
+export function buildSettings(world, coverage = null) {
   const channelSlack = new Map(world.channels.map((c) => [c.id, c.slack_id]));
   const assemblyIds = new Set(world.assemblies.map((a) => a.id));
   const rigs = [
@@ -37,8 +37,8 @@ export function buildSettings(world) {
     demo_now: world.meta.demo_now,
     time_zone: world.meta.time_zone || 'America/Los_Angeles',
     // extras (not in the contract): first day of written text, and the first T usable for training (+30 days)
-    text_start: world.meta.context_first_pass?.start ?? null,
-    usable_from: world.meta.context_first_pass?.start ? addDays(world.meta.context_first_pass.start, 30) : null,
+    text_start: coverage?.text_start?.slice(0, 10) ?? world.meta.context_first_pass?.start ?? null,
+    usable_from: coverage?.usable_from ?? (world.meta.context_first_pass?.start ? addDays(world.meta.context_first_pass.start, 30) : null),
     holidays: world.meta.holidays
       .map((h) => ({ date: h.date, name: h.name, observance: h.observance }))
       .sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0)),
@@ -107,7 +107,10 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
   const worldPath = arg('--world', 'fixtures/world/world.json');
   const out = arg('--out', 'fixtures/timevalue');
   const world = JSON.parse(readFileSync(worldPath, 'utf8'));
-  const settings = buildSettings(world);
+  // coverage.json (written by the world's checks) holds the real text start of the written context.
+  let coverage = null;
+  try { coverage = JSON.parse(readFileSync(worldPath.replace(/world\.json$/, 'coverage.json'), 'utf8')); } catch {}
+  const settings = buildSettings(world, coverage);
   mkdirSync(out, { recursive: true });
   const text = JSON.stringify(settings, null, 2) + '\n';
   writeFileSync(join(out, 'settings.json'), text);

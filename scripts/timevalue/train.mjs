@@ -33,7 +33,7 @@ function parseArgs(argv) {
     const a = argv[i];
     if (a === '--sources') out.sources = argv[++i];
     else if (a === '--out') out.out = argv[++i];
-    else if (a === '--usable-from') out.usableFrom = argv[++i];
+    else if (a === '--usable-from') { out.usableFrom = argv[++i]; out.usableFromSet = true; }
     else if (a === '--split') out.split = Number(argv[++i]);
   }
   return out;
@@ -80,6 +80,7 @@ export function run(opts = {}) {
   const o = { ...parseArgs([]), ...opts };
   const t0 = performance.now();
   const settings = JSON.parse(readFileSync(join(o.out, 'settings.json'), 'utf8'));
+  if (!o.usableFromSet && settings.usable_from) o.usableFrom = settings.usable_from; // the real text start + 30 days
   const sources = loadSources(o.sources);
   const resolve = makeResolver(settings);
   const rctx = makeReadContext(settings, { resolve, extractClaims });
