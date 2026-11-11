@@ -23,11 +23,11 @@ export function createOrchestrator({store, vendor, ramp, ingest = null, config, 
   }
 
   /** Step 1: part entry. Returns at once; resolution continues in the background. */
-  function enter({name, note = '', cad = null, engineer = 'engineer', fields = {}}) {
+  function enter({name, note = '', partNumber = null, cad = null, engineer = 'engineer', fields = {}}) {
     if (!name?.trim()) throw new AppError('Part name is required');
     const cadHash = cad?.bytes ? createHash('sha256').update(cad.bytes).digest('hex') : null;
     // `__fault` is a test/demo knob for the fake vendor (drift, drop-option, timeout, reject); it is never a spec field.
-    let order = store.create({name: name.trim(), note: note.trim(), cadHash, cadFileName: cad?.fileName || null, engineer, fault: fields.__fault || null});
+    let order = store.create({name: name.trim(), note: note.trim(), partNumber: partNumber?.trim() || null, cadHash, cadFileName: cad?.fileName || null, engineer, fault: fields.__fault || null});
     const given = Object.entries(fields).filter(([k, v]) => k !== '__fault' && v != null && v !== '').map(([key, value]) => ({key, value, provenance: 'engineer', sourceRef: 'part entry'}));
     order = store.update(order.id, order.revision, {spec: given, context: {cad: cad ? {fileName: cad.fileName, bytes: cad.bytes.toString('base64')} : null, overrides: {}}, exchange: []}, 'order.entered');
     publish(order, 'order.entered');
@@ -43,7 +43,7 @@ export function createOrchestrator({store, vendor, ramp, ingest = null, config, 
     const ctx = buildContext({order, ingest, config, now: iso()});
     const spec = resolveSpec(order, ctx);
     const gaps = spec.filter(f => f.provenance == null).map(f => f.key);
-    const contextPublic = {related: ctx.related, work: ctx.work, milestoneId: ctx.milestoneId, milestoneLabel: ctx.milestoneLabel, policy: ctx.policy, assumptions: ctx.assumptions, uncertain: ctx.uncertain, query: ctx.query};
+    const contextPublic = {related: ctx.related, work: ctx.work, milestoneId: ctx.milestoneId, milestoneLabel: ctx.milestoneLabel, policy: ctx.policy, assumptions: ctx.assumptions, uncertain: ctx.uncertain, query: ctx.query, absorbed: ctx.absorbed, calendar: ctx.calendar};
     publish(order, 'context.built', {context: contextPublic});
 
     // Spec gate: ask for missing technical fields, the CAD, or the demand (what is it for?).
@@ -61,12 +61,12 @@ export function createOrchestrator({store, vendor, ramp, ingest = null, config, 
     const fields = Object.fromEntries(spec.map(f => [f.key, f.value]));
     if (order.entry.fault) fields.__fault = order.entry.fault;
     publish(order, 'quote.started');
-    const quote = await vendor.quote({fields, cad: {fileName: order.entry.cadFileName, bytes: Buffer.from(order.context.cad.bytes, 'base64'), hash: order.entry.cadHash}});
+    const quote = await vendor.quote({fields, partNumber: order.entry.partNumber || null, cad: {fileName: order.entry.cadFileName, bytes: Buffer.from(order.context.cad.bytes, 'base64'), hash: order.entry.cadHash}});
     publish(order, 'quote.captured', {quote});
 
     // Decide, in the same world for every option.
     const decision = decide({options: quote.options, quote: {validUntil: quote.validUntil, cutoff: quote.cutoff}, graph: ctx.graph, partNodeId: ctx.partNodeId,
-      milestoneId: ctx.milestoneId, orderDate: today(), now: iso(), policy: ctx.policy, uncertain: ctx.uncertain, assumptions: ctx.assumptions});
+      milestoneId: ctx.milestoneId, orderDate: today(), now: iso(), policy: ctx.policy, uncertain: ctx.uncertain, assumptions: ctx.assumptions, calendar: ctx.calendar});
     decision.text = explain(decision, {milestoneLabel: ctx.milestoneLabel || 'the milestone'});
     const ask = decision.question && decision.question.flips ? {kind: 'fact', nodeId: decision.question.nodeId, owner: decision.question.owner, text: decision.question.text} : null;
     order = store.get(id);
@@ -199,7 +199,7 @@ export function createOrchestrator({store, vendor, ramp, ingest = null, config, 
     // Material-change rule: re-decide on today's context; a frozen tier that is no longer valid, or a
     // changed recommendation, needs the engineer and approver to look again.
     const ctx = buildContext({order, ingest, config, now: iso()});
-    const fresh = decide({options: order.quote.options, quote: {validUntil: order.quote.validUntil, cutoff: order.quote.cutoff}, graph: ctx.graph, partNodeId: ctx.partNodeId, milestoneId: ctx.milestoneId || order.context?.milestoneId, orderDate: today(), now: iso(), policy: ctx.policy, uncertain: ctx.uncertain, assumptions: ctx.assumptions});
+    const fresh = decide({options: order.quote.options, quote: {validUntil: order.quote.validUntil, cutoff: order.quote.cutoff}, graph: ctx.graph, partNodeId: ctx.partNodeId, milestoneId: ctx.milestoneId || order.context?.milestoneId, orderDate: today(), now: iso(), policy: ctx.policy, uncertain: ctx.uncertain, assumptions: ctx.assumptions, calendar: ctx.calendar});
     const frozenNow = fresh.options.find(o => o.tier === order.frozen.tier);
     if (!frozenNow?.admissible) problems.push(`${order.frozen.tier} is no longer a valid option (${frozenNow?.why || 'unknown'})`);
     else if (fresh.recommended && order.decision.recommended && fresh.recommended.tier !== order.decision.recommended.tier) problems.push(`the recommendation changed to ${fresh.recommended.tier} since approval`);
@@ -252,5 +252,12 @@ export function createOrchestrator({store, vendor, ramp, ingest = null, config, 
   }
 
   ramp.onEvent(handleRampEvent);
-  return {enter, resolve, answer, argue, okay, handleRampEvent, placeNow, reconcile, book, bus, get: store.get, list: store.list, events: store.events};
+  /** New context arrived (a sync, a live message): every order still deciding is re-solved against it. */
+  async function refresh() {
+    const open = store.list().filter(o => ['recommended', 'needs_answer'].includes(o.state) && o.question?.kind !== 'cad' && o.question?.kind !== 'spec');
+    const out = [];
+    for (const o of open) { try { out.push(await resolve(o.id)); } catch (e) { log('refresh failed', e); } }
+    return out;
+  }
+  return {enter, resolve, answer, argue, okay, handleRampEvent, placeNow, reconcile, book, refresh, bus, get: store.get, list: store.list, events: store.events};
 }

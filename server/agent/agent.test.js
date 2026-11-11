@@ -66,7 +66,7 @@ test('with an active ingest, tools read ingested Slack and the graph', async () 
   const {createIngest, sourcesFromEnv} = await import('../ingest/index.js');
   const {setActiveIngest} = await import('../ingest/active.js');
   const {buildGraph} = await import('../graph/extract.js');
-  const ingest = createIngest({filename: ':memory:', sources: sourcesFromEnv({}), build: docs => buildGraph(docs, {offline: true})});
+  const ingest = createIngest({filename: ':memory:', sources: sourcesFromEnv({BURN_WORLD: 'fixtures'}), build: docs => buildGraph(docs, {offline: true}), now: () => new Date('2026-11-09T18:00:00Z')});
   await ingest.sync(); setActiveIngest(ingest);
   try {
     const events = [];

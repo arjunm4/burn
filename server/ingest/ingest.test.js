@@ -5,10 +5,12 @@ import {fetchSlack, slackApi, plainText} from '../connectors/slack.js';
 import {parseCalendar} from '../connectors/ics.js';
 import {fixtureDocuments} from '../graph/fixture-docs.test-helper.js';
 
+// The Rev C sample world is dated around its order date; sync windows are measured from there.
+const REV_C_NOW = () => new Date('2026-11-09T18:00:00Z');
 const offline = docs => import('../graph/extract.js').then(m => m.buildGraph(docs, {offline: true}));
 
 test('fixture sync ingests Slack + calendar and builds a cited graph', async () => {
-  const ingest = createIngest({filename: ':memory:', sources: sourcesFromEnv({}), build: offline});
+  const ingest = createIngest({filename: ':memory:', sources: sourcesFromEnv({BURN_WORLD: 'fixtures'}), build: offline, now: REV_C_NOW});
   try {
     const {results, graph} = await ingest.sync();
     assert.deepEqual(results.map(r => r.id), ['slack', 'calendar']);
@@ -26,7 +28,7 @@ test('fixture sync ingests Slack + calendar and builds a cited graph', async () 
 });
 
 test('the connector graph matches the hand-converted fixture graph', async () => {
-  const ingest = createIngest({filename: ':memory:', sources: sourcesFromEnv({}), build: offline});
+  const ingest = createIngest({filename: ':memory:', sources: sourcesFromEnv({BURN_WORLD: 'fixtures'}), build: offline, now: REV_C_NOW});
   try {
     const {graph} = await ingest.sync();
     const reference = await offline(fixtureDocuments());
@@ -36,9 +38,9 @@ test('the connector graph matches the hand-converted fixture graph', async () =>
 });
 
 test('a failing source is reported without losing the other', async () => {
-  const sources = sourcesFromEnv({});
+  const sources = sourcesFromEnv({BURN_WORLD: 'fixtures'});
   sources[1] = {...sources[1], mode: 'live', file: null, url: 'https://calendar.invalid/secret-token.ics'};
-  const ingest = createIngest({filename: ':memory:', sources, build: offline});
+  const ingest = createIngest({filename: ':memory:', sources, build: offline, now: REV_C_NOW});
   try {
     const {results} = await ingest.sync();
     assert.ok(results.find(r => r.id === 'calendar').error);
@@ -86,7 +88,7 @@ test('HTTP: /api/graph builds on first visit; /api/sync rebuilds; documents are 
   const {createStore} = await import('../store.js');
   const {Readable} = await import('node:stream');
   const store = createStore(':memory:');
-  const ingest = createIngest({filename: ':memory:', sources: sourcesFromEnv({}), build: offline});
+  const ingest = createIngest({filename: ':memory:', sources: sourcesFromEnv({BURN_WORLD: 'fixtures'}), build: offline, now: REV_C_NOW});
   const app = server(null, store, undefined, ingest);
   const call = (url, method = 'GET') => new Promise(resolve => {
     const req = Object.assign(Readable.from([]), {url, method, headers: {}}); const chunks = [];
