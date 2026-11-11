@@ -26,9 +26,11 @@ The three LLM passes run as **one read per chunk** (thread, ticket or meeting) r
 
 - 490 Xometry orders (139 Expedite, 276 Standard, 75 Economy); 2,160 other-vendor orders; 1,239 true links.
 - **64 of 139 expedites bought no time: $45,659 of premiums.** This is the headline Burn should catch.
-- Usable for training (13 weeks of text, 30 days of context before T): about 167 orders, ~117 train and ~50 test.
+- **Usable for training: 154 orders** (Owen's number: 13 weeks of text, 30 days of context before T). Split by time: ~108 train, ~46 test.
 - Baselines already in `answers.json`: always Standard 44.9%; "expedite if need-by is inside Standard's lead" 69.5%.
 - Link quality: 216 clean id, 163 nickname only, 111 never discussed.
+
+Implementation contracts and owners: [`time-value-impl.md`](time-value-impl.md).
 
 ## Steps
 
@@ -45,7 +47,7 @@ The three LLM passes run as **one read per chunk** (thread, ticket or meeting) r
 
 **The demo's live change** (motor slips) is one of two scripted messages: the code parser reads it, updates the cached graph, and the maths core re-solves. No model call.
 
-**Habit is Expedite vs not** (not three tiers): about 117 training orders is too few for three classes; the card says "teams like yours expedite this X% of the time (n = …)".
+**Habit is Expedite vs not** (not three tiers): about 108 training orders is too few for three classes; the card says "teams like yours expedite this X% of the time (n = …)".
 
 ## Grading: three headline numbers
 
