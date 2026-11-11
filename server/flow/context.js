@@ -41,8 +41,6 @@ export function buildContext({order, ingest, config, now, graph: given = null, e
     return {d, score, nameHits: names ? hits : 0};
   }).filter(x => x.score > 0).sort((a, b) => b.score - a.score || b.d.at.localeCompare(a.d.at)).slice(0, 12)
     .map(({d, score, nameHits}) => ({id: d.id, source: d.source, channel: d.channel, author: d.author, at: d.at, text: d.text, score, nameHits}));
-  // Only documents that name the part itself can link it to work; note-only matches are context, not links.
-  const linkingText = related.filter(r => r.nameHits > 0).map(r => r.text.toLowerCase()).join('\n');
   const noteText = `${order.entry.name} ${order.entry.note}`.toLowerCase();
   const noteTokens = tokens(order.entry.note);
 
@@ -54,10 +52,12 @@ export function buildContext({order, ingest, config, now, graph: given = null, e
   const nameToks = tokens(order.entry.name), nameHead = headOf(nameToks);
   const partNumber = (order.entry.partNumber || '').toUpperCase() || null;
   const samePart = n => {
-    if (n.kind !== 'part' || n.attrs?.booking || n.attrs?.catalogId) return false;
+    if (!['part', 'work'].includes(n.kind) || n.attrs?.booking || n.attrs?.catalogId) return false;
     if (partNumber && (n.attrs?.partNumber === partNumber || n.label.toUpperCase() === partNumber)) return true;
     const lt = tokens(n.label);
-    return lt.length > 0 && headOf(lt) === nameHead && (lt.every(t => nameToks.includes(t)) || nameToks.every(t => lt.includes(t)));
+    if (!lt.length || headOf(lt) !== nameHead) return false;
+    // A part node may be a shorter alias ("hip bracket"); a work node only when it is the same name exactly (a mis-typed mention).
+    return n.kind === 'part' ? (lt.every(t => nameToks.includes(t)) || nameToks.every(t => lt.includes(t))) : (lt.every(t => nameToks.includes(t)) && nameToks.every(t => lt.includes(t)));
   };
   const absorbed = base.nodes.filter(samePart);
   const absorbedIds = new Set(absorbed.map(n => n.id));
@@ -65,9 +65,9 @@ export function buildContext({order, ingest, config, now, graph: given = null, e
 
   // 3. Which work and milestones does this part feed? Edges the conversation stated, or names in the entry
   //    or in a document that names the part.
-  const mentioned = n => { const l = n.label.toLowerCase(); const lt = tokens(l); return noteText.includes(l) || linkingText.includes(l) || (lt.length > 0 && lt.every(t => noteTokens.includes(t))); };
+  const mentioned = n => { const l = n.label.toLowerCase(); const lt = tokens(l); return noteText.includes(l) || (lt.length > 0 && lt.every(t => noteTokens.includes(t))); };
   const fed = new Set(base.edges.filter(e => absorbedIds.has(e.from) && (e.kind === 'blocks' || e.kind === 'due')).map(e => e.to));
-  const work = base.nodes.filter(n => n.kind === 'work' && (fed.has(n.id) || mentioned(n)));
+  const work = base.nodes.filter(n => n.kind === 'work' && !absorbedIds.has(n.id) && (fed.has(n.id) || mentioned(n)));
   const milestonesNamed = base.nodes.filter(n => n.kind === 'milestone' && (fed.has(n.id) || mentioned(n)));
 
   // 4. Augmented graph: the order's part feeds that work (or the milestone directly), same rules as any part.
@@ -83,7 +83,12 @@ export function buildContext({order, ingest, config, now, graph: given = null, e
   }
   for (const w of work) if (!edges.some(e => e.from === partNodeId && e.to === w.id)) edges.push({id: `order-${order.id}->${w.id}`, from: partNodeId, to: w.id, kind: 'blocks', evidence: related.map(r => r.id), via: 'entry'});
   if (!work.length) for (const m of milestonesNamed) if (!edges.some(e => e.from === partNodeId && e.to === m.id)) edges.push({id: `order-${order.id}->${m.id}`, from: partNodeId, to: m.id, kind: 'due', evidence: related.map(r => r.id), via: 'entry'});
-  const graph = {nodes, edges};
+  // The milestone's date, for this decision, follows the part's own path: other work that also feeds the
+  // milestone is not this order's concern and must not make its date unknown. Everything downstream of the
+  // part keeps all of its own inputs (that is where siblings come from).
+  const reach = new Set(downstream({nodes, edges}, partNodeId));
+  const pruned = edges.filter(e => !(e.kind === 'due' || e.kind === 'blocks') || !nodes.find(n => n.id === e.to && n.kind === 'milestone') || e.from === partNodeId || reach.has(e.from));
+  const graph = {nodes, edges: pruned};
   const calendar = {holidays: config.company?.holidays || []};
 
   // 5. The valued outcome: the earliest dated milestone downstream of the part, and its owner's policy.

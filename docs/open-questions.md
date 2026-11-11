@@ -48,7 +48,7 @@ Not needed for the demo: every external service is mocked (architecture §2.18).
 |---|---|---|
 | B1 | What fraction of past Ramp charges can be linked confidently to Slack context and a Xometry order? | Measure on synthetic data first; report the link rate |
 | B3 | What is the first-use signal: an engineer tap, or something already recorded (Jira, an assembly log)? | Engineer tap for v1 |
-| B5 | Who builds the training and heat map (learning), delivery tracking and first use? | Open; everything else in the flow is built (README “Status”) |
+| B5 | Who builds the remaining pieces: the company dependency graph (tonight), part-entry screen and recommendation card, automatic placement and bookkeeping, training and heat map? | Open (see Answered for what's assigned) |
 | B7 | Headless runtime: local Playwright on the demo laptop, or a hosted browser (e.g. Browserbase) for always-on placement? | Recommended: local Playwright with a saved Chrome profile plus video/trace for the demo; Browserbase for production (persistent contexts, 30-day replays, live view, identifies the agent); Kernel runner-up. Plain Playwright for exact steps, Stagehand only for reading prices; never let an LLM place the order ([research](research/xometry-automation.md)) |
 | B6 | `scripts/collab.mjs` fails on Node 14 (`randomUUID`); the README requires Node 24.2+ | Use Node 24 locally |
 
@@ -56,6 +56,9 @@ Not needed for the demo: every external service is mocked (architecture §2.18).
 
 | Question | Answer | Where |
 |---|---|---|
+| Keep the habit model in the demo? | No: removed. The card shows the schedule decision only; the code was deleted (in git history). On world v2 it scored 56% vs 60% for never-expedite (n = 45); recoverable from git history | docs/build/time-value-plan.md |
+| What does the habit model learn from? | Only the context heat map (context linked to the part, per time band before T, plus the requester's expedite rate and the extra cost of the fastest tier); never the dependency graph. Label from the Ramp receipt | architecture §10 |
+| Per-order search, or a persistent graph? | One company-wide dependency graph, built continuously from every source; orders navigate it. Built tonight | architecture §2.1, §6.1 |
 | Do we need a BOM? | No; the demand anchors the decision | architecture §2.3 |
 | Who approves? | The engineer's manager, in Ramp | architecture §2.12 |
 | Is supply chain in the purchase? | No; a context source and tracking | architecture §2.13 |
@@ -64,7 +67,7 @@ Not needed for the demo: every external service is mocked (architecture §2.18).
 | Real Ramp sandbox or mocks? | Mock everything: Ramp, Xometry, Slack, Jira, meetings, calendar | architecture §2.18 |
 | Example company for the demo data? | Flintlock Robotics, a fictional humanoid robotics startup | architecture §12 |
 | Who builds what (so far)? | Owen: world script and its generator. Arjun (with Claude): the flow, the decision core, the connectors and extractor, the Ramp mock and Ramp-side view, the simulated Xometry site and headless provider, notifications, demo controls. Cost of delay: Owen and Arjun together. Rest: unassigned (B5) | README “Status” and code map |
-| Which vendor first? | Xometry only | architecture §2.14 |
+| Which vendor first? | Xometry only, through a provider interface; no browser extension. Demo: the simulated Xometry site; production: Burn's server-side headless browser on a company account | architecture §2.14 |
 | Extension in the engineer's browser, or server-side? | Server-side headless browser on a company Xometry account, for both quoting and placement, so placement is immediate on approval | architecture §2.14, §0.2, §0.4 |
 | Does Xometry have a test mode or buyer API? | No; demo stops at a dummy checkout page | architecture §0.4 |
 | Ramp MCP / Agent Cards instead of REST? | No; REST with app credentials; MCP is a stretch check | research/ramp-integration.md §2 |

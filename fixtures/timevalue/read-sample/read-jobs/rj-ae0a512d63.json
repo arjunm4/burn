@@ -1,0 +1,314 @@
+{
+  "job_id": "rj-ae0a512d63",
+  "priority": 2,
+  "label": "demo context",
+  "now": "2026-11-10T10:30:00-08:00",
+  "instructions": "docs/build/read-job-instructions.md",
+  "output": "Fill \"results\" with one entry per doc (see instructions), set \"filled_by\", then save this file.",
+  "catalog": [
+    {
+      "id": "dl-hip-motor-dvt",
+      "kind": "deliverable",
+      "name": "DVT hip frameless motor",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "m-hip-spin-test",
+      "kind": "milestone",
+      "name": "Hip spin test",
+      "assemblies": [
+        "a-hip-actuator"
+      ]
+    },
+    {
+      "id": "pt-hip-bracket",
+      "kind": "part",
+      "name": "Hip actuator bracket",
+      "part_number": "FL-HIP-1042",
+      "aliases": [
+        "hip bracket",
+        "the bracket",
+        "1042",
+        "motor bracket"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "pt-pelvis-plate",
+      "kind": "part",
+      "name": "Hip to pelvis interface plate",
+      "part_number": "FL-HIP-1021",
+      "aliases": [
+        "pelvis plate",
+        "1021"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "rig-spin-test-stand",
+      "kind": "rig",
+      "name": "Spin test stand"
+    },
+    {
+      "id": "test-hip-spin",
+      "kind": "test",
+      "name": "Hip actuator DVT spin test",
+      "assembly": "a-hip-actuator",
+      "rig": "rig-spin-test-stand",
+      "milestone": "m-hip-spin-test"
+    }
+  ],
+  "docs": [
+    {
+      "id": "meeting:2026-11-05-0930-supply-chain-mech-sync:14",
+      "source": "meeting",
+      "where": "2026-11-05-0930-supply-chain-mech-sync",
+      "thread": "2026-11-05-0930-supply-chain-mech-sync",
+      "author": "Gwen Albright",
+      "author_id": "p-gwen",
+      "at": "2026-11-05T09:41:12-08:00",
+      "text": "On the motor, uh, I talked to the vendor yesterday. Realistic date is the twentieth."
+    },
+    {
+      "id": "meeting:2026-11-05-0930-supply-chain-mech-sync:15",
+      "source": "meeting",
+      "where": "2026-11-05-0930-supply-chain-mech-sync",
+      "thread": "2026-11-05-0930-supply-chain-mech-sync",
+      "author": "Arjun Venkatesan",
+      "author_id": "p-arjun",
+      "at": "2026-11-05T09:41:40-08:00",
+      "text": "So spin test moves to the week of the twenty third. Takes about three days on the stand."
+    },
+    {
+      "id": "meeting:2026-11-05-0930-supply-chain-mech-sync:16",
+      "source": "meeting",
+      "where": "2026-11-05-0930-supply-chain-mech-sync",
+      "thread": "2026-11-05-0930-supply-chain-mech-sync",
+      "author": "Owen Halloran",
+      "author_id": "p-owen",
+      "at": "2026-11-05T09:42:05-08:00",
+      "text": "Rev C of the hip bracket moves the bore anyway so I'd just shim for DVT."
+    },
+    {
+      "id": "meeting:2026-11-05-0930-supply-chain-mech-sync:17",
+      "source": "meeting",
+      "where": "2026-11-05-0930-supply-chain-mech-sync",
+      "thread": "2026-11-05-0930-supply-chain-mech-sync",
+      "author": "Zoe Castellanos",
+      "author_id": "p-zoe",
+      "at": "2026-11-05T09:42:20-08:00",
+      "text": "Okay. Noted."
+    },
+    {
+      "id": "slack:C07FLK0ACTU:1793830800.000100",
+      "source": "slack",
+      "where": "#actuators",
+      "thread": "1793830800.000100",
+      "author": "Arjun Venkatesan",
+      "author_id": "p-arjun",
+      "at": "2026-11-04T14:20:00-08:00",
+      "text": "dvt hip frameless motor: vendor says 11/20 now, slipped again 😬"
+    },
+    {
+      "id": "slack:C07FLK0ACTU:1793831460.000100",
+      "source": "slack",
+      "where": "#actuators",
+      "thread": "1793830800.000100",
+      "author": "Owen Halloran",
+      "author_id": "p-owen",
+      "at": "2026-11-04T14:31:00-08:00",
+      "text": "ugh. that pushes the spin test regardless"
+    },
+    {
+      "id": "jira:HIP-412:desc",
+      "source": "jira",
+      "where": "HIP-412",
+      "thread": "HIP-412",
+      "author": "Owen Halloran",
+      "author_id": "p-owen",
+      "at": "2026-11-03T09:20:00-08:00",
+      "text": "Order hip bracket rev C x4 (Xometry)\n7075, type III black. need before spin test"
+    },
+    {
+      "id": "jira:HIP-412:c41201",
+      "source": "jira",
+      "where": "HIP-412",
+      "thread": "HIP-412",
+      "author": "Zoe Castellanos",
+      "author_id": "p-zoe",
+      "at": "2026-11-03T13:02:00-08:00",
+      "text": "quote approved, lead time 8 BD"
+    }
+  ],
+  "filled_by": "agent-D (Claude, by hand per read-job-instructions.md)",
+  "results": [
+    {
+      "doc_id": "meeting:2026-11-05-0930-supply-chain-mech-sync:14",
+      "refs": [
+        {
+          "id": "dl-hip-motor-dvt",
+          "mode": "vague",
+          "token": "the motor"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "eta",
+          "subject": "dl-hip-motor-dvt",
+          "value": "2026-11-20"
+        }
+      ],
+      "pressure": 0.2,
+      "done": [],
+      "cues": [
+        "realistic date is the twentieth"
+      ]
+    },
+    {
+      "doc_id": "meeting:2026-11-05-0930-supply-chain-mech-sync:15",
+      "refs": [
+        {
+          "id": "test-hip-spin",
+          "mode": "alias",
+          "token": "spin test"
+        },
+        {
+          "id": "rig-spin-test-stand",
+          "mode": "vague",
+          "token": "the stand"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "eta",
+          "subject": "test-hip-spin",
+          "value": {
+            "min": "2026-11-23",
+            "max": "2026-11-27"
+          }
+        },
+        {
+          "kind": "duration",
+          "subject": "test-hip-spin",
+          "value": 3
+        }
+      ],
+      "pressure": 0.3,
+      "done": [],
+      "cues": [
+        "spin test moves"
+      ]
+    },
+    {
+      "doc_id": "meeting:2026-11-05-0930-supply-chain-mech-sync:16",
+      "refs": [
+        {
+          "id": "pt-hip-bracket",
+          "mode": "alias",
+          "token": "hip bracket"
+        }
+      ],
+      "claims": [],
+      "pressure": 0,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "meeting:2026-11-05-0930-supply-chain-mech-sync:17",
+      "refs": [],
+      "claims": [],
+      "pressure": 0,
+      "done": [],
+      "cues": []
+    },
+    {
+      "doc_id": "slack:C07FLK0ACTU:1793830800.000100",
+      "refs": [
+        {
+          "id": "dl-hip-motor-dvt",
+          "mode": "alias",
+          "token": "dvt hip frameless motor"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "eta",
+          "subject": "dl-hip-motor-dvt",
+          "value": "2026-11-20"
+        }
+      ],
+      "pressure": 0.55,
+      "done": [],
+      "cues": [
+        "slipped again",
+        "😬"
+      ]
+    },
+    {
+      "doc_id": "slack:C07FLK0ACTU:1793831460.000100",
+      "refs": [
+        {
+          "id": "test-hip-spin",
+          "mode": "alias",
+          "token": "spin test"
+        },
+        {
+          "id": "dl-hip-motor-dvt",
+          "mode": "vague",
+          "token": "that"
+        }
+      ],
+      "claims": [],
+      "pressure": 0.55,
+      "done": [],
+      "cues": [
+        "ugh",
+        "pushes the spin test"
+      ]
+    },
+    {
+      "doc_id": "jira:HIP-412:desc",
+      "refs": [
+        {
+          "id": "pt-hip-bracket",
+          "mode": "alias",
+          "token": "hip bracket"
+        },
+        {
+          "id": "test-hip-spin",
+          "mode": "alias",
+          "token": "spin test"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "needs",
+          "subject": "pt-hip-bracket",
+          "value": null,
+          "qty": 4,
+          "for": "test-hip-spin"
+        }
+      ],
+      "pressure": 0.15,
+      "done": [],
+      "cues": [
+        "need before spin test"
+      ]
+    },
+    {
+      "doc_id": "jira:HIP-412:c41201",
+      "refs": [
+        {
+          "id": "pt-hip-bracket",
+          "mode": "vague",
+          "token": "quote"
+        }
+      ],
+      "claims": [],
+      "pressure": 0,
+      "done": [],
+      "cues": []
+    }
+  ]
+}

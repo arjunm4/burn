@@ -7,10 +7,10 @@
 
 ## Overview
 
-We need flexspline clamp by 11/12. We need that order by 11/6. We need hip dyno plate by 11/10.
+We need flexspline clamp by 11/9. We need that order by 11/6. We need hip dyno plate by 11/10.
 
 ## Discussion
 
-- Dmitri: We need flexspline clamp by 11/12.
+- Dmitri: We need flexspline clamp by 11/9.
 - Dmitri: We need that order by 11/6.
 - Dmitri: We need hip dyno plate by 11/10.

@@ -17,25 +17,6 @@
   },
   "people": [
     {
-      "id": "p-andre",
-      "name": "Andre Baptiste",
-      "display_name": "andre",
-      "slack_id": "U07FLK0ANDR",
-      "title": "Test Engineer, dyno",
-      "style": {
-        "case": "lower",
-        "punctuation": "light",
-        "typos": "lots",
-        "emoji": "some",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": [
-          "fixes typos with *word",
-          "double-sends instead of editing"
-        ]
-      }
-    },
-    {
       "id": "p-diego",
       "name": "Diego Salcedo",
       "display_name": "diego",
@@ -82,7 +63,73 @@
   ],
   "tickets": [
     {
-      "key": "LEG-318",
+      "key": "LEG-313",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-diego",
+      "assignee": "p-diego",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "High",
+      "created": "2026-09-21T13:54:01-07:00",
+      "due_date": "2026-10-06",
+      "events": [
+        "ev-001990"
+      ],
+      "brief": "Order 5x Knee belt pulley / that order: need 5 by 2026-10-06 for the build",
+      "must_mention": [
+        "that order",
+        "the build",
+        "tues the 6th"
+      ],
+      "description_length": "one_line",
+      "summary": "Knee belt pulleys x5",
+      "description": "that order, 5 by tues the 6th for the build 😬",
+      "comments": [
+        {
+          "id": "LEG-313-c1",
+          "by": "p-diego",
+          "at": "2026-09-25T13:57:19-07:00",
+          "events": [
+            "ev-001992"
+          ],
+          "brief": "that order: need 5 by 2026-10-06",
+          "claim": {
+            "kind": "needs",
+            "value": {
+              "qty": 5,
+              "by": "2026-10-06"
+            }
+          },
+          "must_mention": [
+            "that order",
+            "tues 10/6"
+          ],
+          "body": "that order need 5 by tues 10/6 🙏"
+        },
+        {
+          "id": "LEG-313-c2",
+          "by": "p-diego",
+          "at": "2026-10-20T14:14:36-07:00",
+          "events": [
+            "ev-001993"
+          ],
+          "brief": "knee pulley arrived (5)",
+          "claim": {
+            "kind": "stock",
+            "value": 5
+          },
+          "must_mention": [
+            "knee pulley",
+            "5"
+          ],
+          "body": "knee pulley arrived, 5 in 🎉"
+        }
+      ]
+    },
+    {
+      "key": "LEG-323",
       "type": "Task",
       "status": "Done",
       "reporter": "p-diego",
@@ -94,7 +141,7 @@
       "created": "2026-09-24T14:55:19-07:00",
       "due_date": null,
       "events": [
-        "ev-001916"
+        "ev-002083"
       ],
       "brief": "Order 3x Hip pitch mounting bracket / FL-LEG-1358: need 3 by 2026-10-22 for Tolerance stack check: Hip pitch mounting bracket",
       "must_mention": [
@@ -103,15 +150,15 @@
         "thurs 10/22"
       ],
       "description_length": "one_line",
-      "summary": "FL-LEG-1358 hip pitch bracket x3",
-      "description": "Tolerance stack check: Hip pitch mounting bracket - need by thurs 10/22",
+      "summary": "hip pitch brackets FL-LEG-1358",
+      "description": "3 by thurs 10/22 for Tolerance stack check: Hip pitch mounting bracket 🙏",
       "comments": [
         {
-          "id": "LEG-318-c1",
+          "id": "LEG-323-c1",
           "by": "p-samir",
           "at": "2026-10-01T10:07:39-07:00",
           "events": [
-            "ev-001922"
+            "ev-002089"
           ],
           "brief": "1358: need 3 by 2026-10-22",
           "claim": {
@@ -123,55 +170,9 @@
           },
           "must_mention": [
             "1358",
-            "10/22"
+            "thurs the 22nd"
           ],
-          "body": "1358 still 3 pcs, 10/22 is fine"
-        }
-      ]
-    },
-    {
-      "key": "LEG-321",
-      "type": "Task",
-      "status": "Done",
-      "reporter": "p-andre",
-      "assignee": "p-andre",
-      "labels": [
-        "procurement"
-      ],
-      "priority": "High",
-      "created": "2026-09-25T07:01:51-07:00",
-      "due_date": "2026-10-06",
-      "events": [
-        "ev-001873"
-      ],
-      "brief": "Order 5x Knee belt pulley / pulley: need 5 by 2026-10-06 for Assemble build unit: Knee belt pulley",
-      "must_mention": [
-        "pulley",
-        "Assemble build unit: Knee belt pulley",
-        "tues the 6th"
-      ],
-      "description_length": "one_line",
-      "summary": "knee belt pulley qty 5",
-      "description": "pulley for Assemble build unit: Knee belt pulley, need by tues the 6th",
-      "comments": [
-        {
-          "id": "LEG-321-c1",
-          "by": "p-andre",
-          "at": "2026-10-29T08:09:00-07:00",
-          "events": [
-            "ev-001880"
-          ],
-          "brief": "pulley in use",
-          "claim": {
-            "kind": "done",
-            "value": "2026-10-28"
-          },
-          "must_mention": [
-            "pulley",
-            "the build",
-            "wed the 28th"
-          ],
-          "body": "pulley went into the build wed the 28th"
+          "body": "1358 need 3 by thurs the 22nd"
         }
       ]
     }

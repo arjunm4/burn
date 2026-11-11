@@ -37,30 +37,30 @@
       }
     },
     {
-      "id": "p-andre",
-      "name": "Andre Baptiste",
-      "display_name": "andre",
-      "slack_id": "U07FLK0ANDR",
-      "title": "Test Engineer, dyno",
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
       "style": {
-        "case": "lower",
-        "punctuation": "light",
-        "typos": "lots",
-        "emoji": "some",
-        "length": "medium",
-        "hedging": "low",
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
         "quirks": [
-          "fixes typos with *word",
-          "double-sends instead of editing"
+          "numbered lists in status updates",
+          "restates the question before answering"
         ]
       }
     },
     {
-      "id": "p-hana",
-      "name": "Hana Kimura",
-      "display_name": "hana",
-      "slack_id": "U07FLK0HANA",
-      "title": "Mechanical Engineer",
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
       "style": {
         "case": "mixed",
         "punctuation": "light",
@@ -70,6 +70,25 @@
         "hedging": "high",
         "quirks": [
           "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
         ]
       }
     },
@@ -133,38 +152,13 @@
   ],
   "messages": [
     {
-      "ts": "1787596448.481116",
+      "ts": "1787596448.398066",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-001474"
+        "ev-001590"
       ],
-      "brief": "FL-TST-2111: need 6 by 2026-09-23 for Rig setup: Dyno coupling, hip actuator",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 6,
-          "by": "2026-09-23"
-        }
-      },
-      "must_mention": [
-        "FL-TST-2111",
-        "Rig setup: Dyno coupling, hip actuator",
-        "FL-TST-2103",
-        "wed the 23rd"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "Need 6 of FL-TST-2111 (Rig setup: Dyno coupling, hip actuator) by wed the 23rd, mates to FL-TST-2103"
-    },
-    {
-      "ts": "1787645888.704470",
-      "user": "p-tomas",
-      "thread_ts": "1787596448.481116",
-      "events": [
-        "ev-002922"
-      ],
-      "brief": "Correction: FL-TST-2111: need 6 by 2026-09-18 for Rig setup: Dyno coupling, hip actuator",
+      "brief": "FL-TST-2111: need 6 by 2026-09-18 for Rig setup: Dyno coupling, hip actuator",
       "claim": {
         "kind": "needs",
         "value": {
@@ -176,18 +170,18 @@
         "FL-TST-2111",
         "Rig setup: Dyno coupling, hip actuator",
         "FL-TST-2103",
-        "9/18"
+        "fri the 18th"
       ],
       "pressure": "elevated",
-      "length": "medium",
-      "text": "Correction on FL-TST-2111, I think we actually need them by 9/18 not the 23rd. Rig setup: Dyno coupling, hip actuator has to be done before the FL-TST-2103 fit check, sorry"
+      "length": "short",
+      "text": "Need 6 of FL-TST-2111 by fri the 18th for Rig setup: Dyno coupling, hip actuator. Same lot as FL-TST-2103 if that helps."
     },
     {
-      "ts": "1787771118.266490",
+      "ts": "1787771118.713156",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-001465"
+        "ev-001581"
       ],
       "brief": "Quote Q-2555699-1 for FL-TST-2424: standard $1818.97, 8 BD",
       "claim": {
@@ -203,51 +197,48 @@
       "must_mention": [
         "Q-2555699-1",
         "FL-TST-2424",
-        "wed the 21st"
+        "10/21"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Q-2555699-1 back for FL-TST-2424, need it by wed the 21st, probably fine"
+      "text": "Quote Q-2555699-1 for FL-TST-2424 is in, 8 BD standard at $1818.97. Needs qty 1 by 10/21 i think"
     },
     {
-      "ts": "1787804396.111164",
-      "user": "p-andre",
-      "thread_ts": null,
-      "events": [
-        "ev-003125"
-      ],
-      "brief": "dyno coupling: need 6 by 2026-08-31",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 6,
-          "by": "2026-08-31"
-        }
-      },
-      "must_mention": [
-        "dyno coupling",
-        "mon 8/31"
-      ],
-      "pressure": "high",
-      "length": "medium",
-      "text": "dyno coupling still need 6 by mon 8/31 or the hip runs slip agian, *again. who's got this"
-    },
-    {
-      "ts": "1787847144.278422",
-      "user": "p-hana",
-      "thread_ts": "1787804396.111164",
+      "ts": "1787776208.743413",
+      "user": "p-omar",
+      "thread_ts": "1787771118.713156",
       "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "brief": "reply (thanks) in the thread about: the message above",
       "must_mention": [],
-      "length": "short",
-      "text": "is that the same coupling Tomas posted or a different rev?"
+      "length": "medium",
+      "text": "thanks for posting that, will look when I get a chance"
     },
     {
-      "ts": "1787945897.714012",
+      "ts": "1787776333.173320",
+      "user": "p-priya",
+      "thread_ts": "1787771118.713156",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "I'd hold off. Not sure that price is right."
+    },
+    {
+      "ts": "1787779640.835304",
+      "user": "p-beth",
+      "thread_ts": "1787771118.713156",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Thanks."
+    },
+    {
+      "ts": "1787945897.790449",
       "user": "p-samir",
       "thread_ts": null,
       "events": [
-        "ev-001477"
+        "ev-001593"
       ],
       "brief": "Quote Q-2557869-1 for FL-TST-2111: standard $957.43, 9 BD",
       "claim": {
@@ -263,11 +254,11 @@
       "must_mention": [
         "Q-2557869-1",
         "FL-TST-2111",
-        "fri the 18th"
+        "9/18"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "Q-2557869-1 in for FL-TST-2111, covers fri the 18th"
+      "length": "medium",
+      "text": "Quote Q-2557869-1 for FL-TST-2111 back, standard $957.43 and 9 BD, needs 6 by 9/18. posting here so we can approve"
     }
   ]
 }

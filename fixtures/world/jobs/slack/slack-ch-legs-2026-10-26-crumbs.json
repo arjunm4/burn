@@ -19,6 +19,25 @@
   },
   "people": [
     {
+      "id": "p-andre",
+      "name": "Andre Baptiste",
+      "display_name": "andre",
+      "slack_id": "U07FLK0ANDR",
+      "title": "Test Engineer, dyno",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
       "id": "p-callum",
       "name": "Callum Fraser",
       "display_name": "callum",
@@ -130,25 +149,6 @@
       }
     },
     {
-      "id": "p-leilani",
-      "name": "Leilani Kahale",
-      "display_name": "leilani.k",
-      "slack_id": "U07FLK0LEIL",
-      "title": "Locomotion Engineer",
-      "style": {
-        "case": "mixed",
-        "punctuation": "light",
-        "typos": "rare",
-        "emoji": "lots",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": [
-          "reacts with 🙏 and 😬",
-          "ends messages with an emoji"
-        ]
-      }
-    },
-    {
       "id": "p-lin",
       "name": "Lin Zhao",
       "display_name": "lin.z",
@@ -180,6 +180,25 @@
         "quirks": [
           "fixes typos with *word",
           "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
         ]
       }
     },
@@ -254,11 +273,11 @@
   ],
   "messages": [
     {
-      "ts": "1793034750.284694",
+      "ts": "1793034750.855137",
       "user": "p-carlos",
       "thread_ts": null,
       "events": [
-        "ev-002247"
+        "ev-002435"
       ],
       "brief": "FL-TST-2145: need 3 by 2026-11-16",
       "claim": {
@@ -270,41 +289,41 @@
       },
       "must_mention": [
         "FL-TST-2145",
-        "11/16"
+        "mon the 16th"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "need 3 FL-TST-2145 by 11/16"
+      "length": "medium",
+      "text": "FL-TST-2145 need 3 by mon the 16th, anyone have spares on the shelf before we reorder??"
     },
     {
-      "ts": "1793040637.784704",
+      "ts": "1793040637.708109",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-002233"
+        "ev-002418"
       ],
-      "brief": "that order: need 24 by 2026-11-10",
+      "brief": "that order: need 24 by 2026-11-11",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 24,
-          "by": "2026-11-10"
+          "by": "2026-11-11"
         }
       },
       "must_mention": [
         "that order",
-        "11/10"
+        "wed the 11th"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "Need 24 on that order by 11/10 🙏"
+      "length": "medium",
+      "text": "that order is getting tight, we need 24 by wed the 11th or the fit-ups slip 🙏"
     },
     {
-      "ts": "1793063253.882320",
+      "ts": "1793063253.027130",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-002186"
+        "ev-002371"
       ],
       "brief": "side link: need 6 by 2026-11-17",
       "claim": {
@@ -316,18 +335,71 @@
       },
       "must_mention": [
         "side link",
-        "11/17"
+        "tues the 17th"
       ],
       "pressure": "elevated",
-      "length": "medium",
-      "text": "Need 6 side link by 11/17 for the leg, can someone check stock 😬"
+      "length": "short",
+      "text": "side link, need 6 by tues the 17th 😬"
     },
     {
-      "ts": "1793131775.704898",
+      "ts": "1793066612.683931",
+      "user": "p-zoe",
+      "thread_ts": "1793063253.027130",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "same rev as last time right"
+    },
+    {
+      "ts": "1793067985.808950",
+      "user": "p-mei",
+      "thread_ts": "1793063253.027130",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I'll look at it later tonight."
+    },
+    {
+      "ts": "1793068471.322049",
+      "user": "p-hana",
+      "thread_ts": "1793063253.027130",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@priya maybe you know more on this one"
+    },
+    {
+      "ts": "1793075640.057858",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-002100"
+        "ev-003278"
+      ],
+      "brief": "Correction: ankle adapter: need 10 by 2026-11-16",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 10,
+          "by": "2026-11-16"
+        }
+      },
+      "must_mention": [
+        "ankle adapter",
+        "mon 11/16"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "Correction: ankle adapter, need 10 by mon 11/16 not the other day 🙏"
+    },
+    {
+      "ts": "1793131775.338823",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-002285"
       ],
       "brief": "2281 arrived (3)",
       "claim": {
@@ -339,15 +411,25 @@
         "3"
       ],
       "pressure": "high",
-      "length": "short",
-      "text": "2281 arrived, 3 pcs 🙏"
+      "length": "medium",
+      "text": "2281 arrived (3), sitting at receiving, someone grab them 🙏"
     },
     {
-      "ts": "1793140539.475218",
+      "ts": "1793131835.288498",
+      "user": "p-zoe",
+      "thread_ts": "1793131775.338823",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "@jade.t did those get tagged"
+    },
+    {
+      "ts": "1793140539.904295",
       "user": "p-luis",
       "thread_ts": null,
       "events": [
-        "ev-002037"
+        "ev-002216"
       ],
       "brief": "the cradle arrived (2)",
       "claim": {
@@ -360,47 +442,57 @@
       ],
       "pressure": "high",
       "length": "short",
-      "text": "the cradle arrived, 2 of them"
+      "text": "the cradle arrived (2) in the box by bench 4"
     },
     {
-      "ts": "1793141594.199549",
-      "user": "p-leilani",
-      "thread_ts": "1793140539.475218",
+      "ts": "1793144261.121039",
+      "user": "p-priya",
+      "thread_ts": "1793140539.904295",
       "events": [],
-      "brief": "reply (will check later) in the thread about: the message above",
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Only 2? I thought we ordered more than that."
+    },
+    {
+      "ts": "1793144758.908758",
+      "user": "p-mei",
+      "thread_ts": "1793140539.904295",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "will check fit later today"
+      "text": "Which PO was that on? Can you check the packing slip against what we asked for."
     },
     {
-      "ts": "1793149535.228938",
+      "ts": "1793149535.415359",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-002235"
+        "ev-002420"
       ],
-      "brief": "the bushing: need 24 by 2026-11-12",
+      "brief": "the bushing: need 24 by 2026-11-11",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 24,
-          "by": "2026-11-12"
+          "by": "2026-11-11"
         }
       },
       "must_mention": [
         "the bushing",
-        "11/12"
+        "wed 11/11"
       ],
       "pressure": "elevated",
-      "length": "medium",
-      "text": "Need 24 of the bushing by 11/12, pls 🙏"
+      "length": "short",
+      "text": "the bushing, need 24 by wed 11/11 🙏"
     },
     {
-      "ts": "1793152073.710247",
+      "ts": "1793152073.463033",
       "user": "p-jade",
       "thread_ts": null,
       "events": [
-        "ev-002032"
+        "ev-002204"
       ],
       "brief": "angle block arrived (2)",
       "claim": {
@@ -412,38 +504,15 @@
         "2"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "angle block arrived qty 2 on rcv shelf"
-    },
-    {
-      "ts": "1793203895.308466",
-      "user": "p-diego",
-      "thread_ts": "1793149535.228938",
-      "events": [
-        "ev-003012"
-      ],
-      "brief": "Correction: the bushing: need 24 by 2026-11-11",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 24,
-          "by": "2026-11-11"
-        }
-      },
-      "must_mention": [
-        "the bushing",
-        "wed the 11th"
-      ],
-      "pressure": "elevated",
       "length": "short",
-      "text": "Correction, the bushing is wed the 11th not 12th 😬"
+      "text": "angle block arrived (2)"
     },
     {
-      "ts": "1793220992.838407",
+      "ts": "1793220992.518545",
       "user": "p-hana",
       "thread_ts": null,
       "events": [
-        "ev-002634"
+        "ev-002822"
       ],
       "brief": "Kit and assemble: Heel bumper mount waits on Encoder kit for ankle and foot (heel mount)",
       "claim": {
@@ -455,15 +524,15 @@
         "Kit and assemble: Heel bumper mount"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "Kit and assemble: Heel bumper mount is waiting on Encoder kit for ankle and foot (heel mount)."
+      "length": "short",
+      "text": "Kit and assemble: Heel bumper mount waits on Encoder kit for ankle and foot (heel mount) i think"
     },
     {
-      "ts": "1793254380.065747",
+      "ts": "1793254380.415134",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-001822"
+        "ev-001975"
       ],
       "brief": "1339 in use",
       "claim": {
@@ -473,64 +542,89 @@
       "must_mention": [
         "1339",
         "the build",
-        "tues the 27th"
+        "10/27"
       ],
       "pressure": "high",
       "length": "short",
-      "text": "1339 is in use on the build since tues the 27th"
+      "text": "1339 in use, the build took it 10/27"
     },
     {
-      "ts": "1793298758.415303",
-      "user": "p-diego",
+      "ts": "1793319767.603939",
+      "user": "p-hana",
       "thread_ts": null,
       "events": [
-        "ev-003190"
+        "ev-003869"
       ],
-      "brief": "1290: need 24 by 2026-11-11",
+      "brief": "Test stand rework: Tilt stand angle calibration block done",
       "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 24,
-          "by": "2026-11-11"
-        }
+        "kind": "done",
+        "value": "2026-10-29"
       },
       "must_mention": [
-        "1290",
-        "11/11"
+        "Test stand rework: Tilt stand angle calibration block",
+        "10/29"
       ],
       "pressure": "low",
       "length": "short",
-      "text": "1290 need 24 by 11/11 🙏"
+      "text": "Test stand rework: Tilt stand angle calibration block done 10/29"
     },
     {
-      "ts": "1793304785.081885",
-      "user": "p-priya",
+      "ts": "1793322863.491110",
+      "user": "p-zoe",
+      "thread_ts": "1793319767.603939",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "finally"
+    },
+    {
+      "ts": "1793326560.384901",
+      "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-003143"
+        "ev-002041"
       ],
-      "brief": "1290: need 24 by 2026-11-11",
+      "brief": "knee pulley in use",
       "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 24,
-          "by": "2026-11-11"
-        }
+        "kind": "done",
+        "value": "2026-10-28"
       },
       "must_mention": [
-        "1290",
-        "wed 11/11"
+        "knee pulley",
+        "the build",
+        "wed 10/28"
       ],
-      "pressure": "elevated",
+      "pressure": "high",
       "length": "short",
-      "text": "Confirming 1290: we need 24 by wed 11/11."
+      "text": "knee pulley in use, the build grabbed it wed 10/28"
     },
     {
-      "ts": "1793336730.658998",
+      "ts": "1793327037.520249",
+      "user": "p-talia",
+      "thread_ts": "1793319767.603939",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "nice, thanks for closing that out 🙏"
+    },
+    {
+      "ts": "1793330421.439318",
+      "user": "p-callum",
+      "thread_ts": "1793319767.603939",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ok cool"
+    },
+    {
+      "ts": "1793336730.857505",
       "user": "p-jun",
       "thread_ts": null,
       "events": [
-        "ev-003291"
+        "ev-003600"
       ],
       "brief": "ankle adapter: still quoting rev B",
       "claim": {
@@ -540,15 +634,15 @@
       "must_mention": [
         "ankle adapter"
       ],
-      "length": "medium",
-      "text": "ankle adapter is still quoting on rev B"
+      "length": "short",
+      "text": "ankle adapter still quoting rev B"
     },
     {
-      "ts": "1793362980.308179",
+      "ts": "1793362980.116246",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-001915"
+        "ev-002082"
       ],
       "brief": "pulley in use",
       "claim": {
@@ -558,18 +652,18 @@
       "must_mention": [
         "pulley",
         "the build",
-        "10/29"
+        "thurs 10/29"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "pulley in use on the build, done 10/29 ✅"
+      "length": "medium",
+      "text": "pulley in use on the build since thurs 10/29, still waiting to see if we need a spare set 😬"
     },
     {
-      "ts": "1793375614.840858",
+      "ts": "1793375614.279807",
       "user": "p-lin",
       "thread_ts": null,
       "events": [
-        "ev-002630"
+        "ev-002818"
       ],
       "brief": "Fixture install and shakedown: Pelvis dummy mass block waits on Bearing set for leg (left, hip to foot) (dummy pelvis)",
       "claim": {
@@ -582,44 +676,14 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Fixture install and shakedown: Pelvis dummy mass block is waiting on Bearing set for leg (left, hip to foot) (dummy pelvis)."
+      "text": "Fixture install and shakedown: Pelvis dummy mass block waits on Bearing set for leg (left, hip to foot) (dummy pelvis)"
     },
     {
-      "ts": "1793376964.844522",
-      "user": "p-leilani",
-      "thread_ts": "1793375614.840858",
-      "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "dummy pelvis waiting on bearings, classic"
-    },
-    {
-      "ts": "1793381709.901413",
-      "user": "p-talia",
-      "thread_ts": "1793375614.840858",
-      "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Thanks for flagging 🙏"
-    },
-    {
-      "ts": "1793385582.868847",
-      "user": "p-luis",
-      "thread_ts": "1793375614.840858",
-      "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "meh"
-    },
-    {
-      "ts": "1793404640.714322",
+      "ts": "1793404640.837410",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-002647"
+        "ev-002835"
       ],
       "brief": "Assemble build unit: Ankle drive crank waits on Bearing set for ankle and foot (crank)",
       "claim": {
@@ -632,24 +696,14 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Assemble build unit: Ankle drive crank is waiting on Bearing set for ankle and foot (crank)."
+      "text": "Assemble build unit: Ankle drive crank waits on Bearing set for ankle and foot (crank)"
     },
     {
-      "ts": "1793406223.863607",
-      "user": "p-priya",
-      "thread_ts": "1793404640.714322",
-      "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Thanks all."
-    },
-    {
-      "ts": "1793418731.712519",
+      "ts": "1793418731.407994",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-002649"
+        "ev-002837"
       ],
       "brief": "Tolerance stack check: Shank to ankle adapter waits on Driver PCBA respin for leg (left, hip to foot) (ankle adapter)",
       "claim": {
@@ -661,15 +715,15 @@
         "Tolerance stack check: Shank to ankle adapter"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "Tolerance stack check: Shank to ankle adapter waits on Driver PCBA respin for leg (left, hip to foot) (ankle adapter), so thats parked"
+      "length": "short",
+      "text": "Tolerance stack check: Shank to ankle adapter waits on Driver PCBA respin for leg (left, hip to foot) (ankle adapter)"
     },
     {
-      "ts": "1793422782.624465",
+      "ts": "1793422782.218365",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-002636"
+        "ev-002824"
       ],
       "brief": "Design iteration bench trial: Ankle yoke waits on Battery test cage",
       "claim": {
@@ -681,35 +735,15 @@
         "the yoke"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "Bench trial on the yoke is stuck behind the Battery test cage 😬"
-    },
-    {
-      "ts": "1793422866.529299",
-      "user": "p-diego",
-      "thread_ts": "1793422782.624465",
-      "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "Actually not sure we need the cage for that 🤔"
-    },
-    {
-      "ts": "1793423045.451570",
-      "user": "p-callum",
-      "thread_ts": "1793422782.624465",
-      "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
-      "must_mention": [],
       "length": "short",
-      "text": "we ran the old yoke without one and it was fine"
+      "text": "the yoke is stuck behind Battery test cage again 😬"
     },
     {
-      "ts": "1793425114.965367",
+      "ts": "1793425114.203107",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-002643"
+        "ev-002831"
       ],
       "brief": "Design iteration bench trial: Ankle pivot pin waits on Leg drop-test gantry",
       "claim": {
@@ -722,14 +756,14 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "Bench trial for the pin is waiting on the Leg drop-test gantry."
+      "text": "the pin trial is blocked, Leg drop-test gantry is still not free."
     },
     {
-      "ts": "1793450700.014954",
+      "ts": "1793450700.443360",
       "user": "p-hana",
       "thread_ts": null,
       "events": [
-        "ev-001636"
+        "ev-001778"
       ],
       "brief": "1343 in use",
       "claim": {
@@ -743,7 +777,7 @@
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "1343 in use on the build since 10/30"
+      "text": "1343 in use, the build has it since 10/30"
     }
   ]
 }

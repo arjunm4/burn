@@ -61,7 +61,7 @@ export function datesIn(text, refIso) {
     let date = null;
     if (m[1]) { const yy = m[3] ? (m[3].length === 2 ? 2000 + Number(m[3]) : Number(m[3])) : y; date = iso(yy, Number(m[1]), Number(m[2])); if (date && !m[3] && Date.parse(date) < ref.getTime() - 183 * 86400000) date = iso(yy + 1, Number(m[1]), Number(m[2])); }
     else if (m[4]) { date = iso(y, MONTHS[m[4].toLowerCase()], Number(m[5])); if (date && Date.parse(date) < ref.getTime() - 183 * 86400000) date = iso(y + 1, MONTHS[m[4].toLowerCase()], Number(m[5])); }
-    else if (m[6]) { const dd = Number(m[6]); date = dd >= d0 - 7 ? iso(y, m0 + 1, dd) : iso(y, m0 + 2, dd); }
+    else if (m[6]) { const dd = Number(m[6]); const nextMonth = /\b(?:next|nxt) month\b/i.test(text.slice(m.index, m.index + 40)); date = nextMonth ? iso(y, m0 + 2, dd) : dd >= d0 - 7 ? iso(y, m0 + 1, dd) : iso(y, m0 + 2, dd); }
     if (date) out.push({date, index: m.index, text: m[0]});
   }
   return out;
@@ -236,8 +236,11 @@ function rules(b, docs, people, ents) {
       // Blocked / waiting / stuck behind: X waits on Y.
       if ((m = s.match(/^(?<w>.+?) (?:on [\w ]+? )?(?:is|are)? ?(?:still )?blocked (?:until|on|by) (?:the )?(?<x>.+?)(?: (?:land|arrive|ship|show up)s?)?\b(?:$|,| so\b| fyi)/i))) {
         subject = resolve(m.groups.w, d, {asWork: true}); b.edge(pronoun(m.groups.x) || input(m.groups.x), subject, 'blocks', ev, .8, 'rule');
-      } else if ((m = s.match(/^(?<w>.+?) (?:is |are )?(?:still )?(?:waiting on|waiting for|stuck (?:behind|on|waiting on)) (?:\d+ )?(?:the )?(?<y>.+?)(?:,| so\b| fyi| i think|$)/i)) && !/^(?:still|also|just|we|i|im|i'm|were|we're|they|now|and)$/i.test(m.groups.w.trim()) && !/[,']|\bon the\b/.test(m.groups.w)) {
-        subject = resolve(m.groups.w, d, {asWork: true}); b.edge(pronoun(m.groups.y) || input(m.groups.y), subject, 'blocks', ev, .7, 'rule');
+      } else if ((m = s.match(/^(?<w>.+?) (?:is |are )?(?:still )?(?:waiting on|waiting for|waits? on|waits? for|depends? on|gated (?:by|on)|stuck (?:behind|on|waiting on)) (?:\d+ )?(?:the )?(?<y>.+?)(?:,| so\b| fyi| i think|$)/i)) && !/^(?:still|also|just|we|i|im|i'm|were|we're|they|now|and|it|that|this)$/i.test(m.groups.w.trim()) && !/[,']|\bon the\b/.test(m.groups.w)) {
+        // A milestone that waits on work is a due edge from that work; anything else waits on an input.
+        const ms = milestoneIn(m.groups.w);
+        if (ms) { const w = resolve(m.groups.y, d, {asWork: true}); if (w) { b.edge(w, ms.id, 'due', ev, .8, 'rule'); subject = w; } }
+        else { subject = resolve(m.groups.w, d, {asWork: true}); b.edge(pronoun(m.groups.y) || input(m.groups.y), subject, 'blocks', ev, .7, 'rule'); }
       }
       // "..., and the rig needs the load cells before it can start" (a trailing clause)
       if ((m = s.match(/,\s*and (?:the )?(?<w>[\w&\- ]+?) needs (?:the )?(?<x>.+?)(?: before it can start| before|$)/i))) {
@@ -258,8 +261,8 @@ function rules(b, docs, people, ents) {
         const ds = datesIn(s, d.at).map(x => x.date);
         if (ds.length >= 2) dated(lastPart, ds[0], d, {dateRange: [ds[0], ds[ds.length - 1]]});
       }
-      // Due dates: "spin test has to be done by tues the 24th" -> the milestone on that date (or a new one).
-      if ((m = s.match(/^(?<w>.+?) (?:has|have|needs|need) to (?:be )?(?:done|finish|finished|complete|completed|wrap(?:ped)?(?: up)?) by\b/i)) && when) {
+      // Due dates: "spin test has to be done by tues the 24th", "need the spin test complete by 11/24" -> the milestone on that date (or a new one).
+      if (((m = s.match(/^(?<w>.+?) (?:has|have|needs|need) to (?:be )?(?:done|finish|finished|complete|completed|wrap(?:ped)?(?: up)?) by\b/i)) || (m = s.match(/^(?:we |i )?need (?:the )?(?<w>.+?) (?:done|finished|complete|completed|wrapped(?: up)?) by\b/i))) && when) {
         const w = resolve(m.groups.w, d, {asWork: true});
         if (w) { subject = w; const ms = milestoneOn(when) || b.node(`milestone:${slug(b.nodes.get(w).label)}-done`, 'milestone', `${b.nodes.get(w).label} done`, {date: when, evidence: d.id, tokens: tokensOf(b.nodes.get(w).label)}); b.edge(w, ms.id, 'due', ev, .8, 'rule'); }
       }
@@ -267,7 +270,7 @@ function rules(b, docs, people, ents) {
         const ms = milestoneIn(m.groups.m) || (when ? milestoneOn(when) : null); if (ms) b.edge(resolve(m.groups.w, d, {asWork: true}), ms.id, 'due', ev, .8, 'rule');
       }
       // "every working day past that is ~600 a day": a stated value of time for the milestone just named.
-      if ((m = s.match(/(?:every|each) (?:working |business )?day (?:past|after|late|beyond|over)\b.*?(?:is|costs?|runs|~)\s*~?\$?(?<n>\d[\d,]*)(?<k>k)?\s*(?:a|per|\/)\s*day/i))) {
+      if ((m = s.match(/(?:every|each) (?:working |business )?day (?:past|after|late|beyond|over)\b.*?(?:is|costs?(?: us)?|runs|~)\s*(?:about |roughly |like )?~?\$?(?<n>\d[\d,]*)(?<k>k)?\s*(?:a|per|\/)\s*day/i))) {
         const ms = lastMilestone || (subject ? milestones().find(x => b.edges.has(`due:${subject}->${x.id}`)) : null);
         if (ms) Object.assign(ms.attrs, {valueHintCentsPerDay: Number(m.groups.n.replace(/,/g, '')) * (m.groups.k ? 1000 : 1) * 100, valueHintEvidence: d.id, valueHintBy: d.author});
       }

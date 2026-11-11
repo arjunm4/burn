@@ -57,21 +57,21 @@
       }
     },
     {
-      "id": "p-diego",
-      "name": "Diego Salcedo",
-      "display_name": "diego",
-      "slack_id": "U07FLK0DIEG",
-      "title": "Mechanical Engineer",
+      "id": "p-dmitri",
+      "name": "Dmitri Sokolov",
+      "display_name": "dmitri",
+      "slack_id": "U07FLK0DMIT",
+      "title": "Test and Reliability Lead",
       "style": {
         "case": "mixed",
-        "punctuation": "light",
-        "typos": "rare",
-        "emoji": "lots",
-        "length": "medium",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
         "hedging": "low",
         "quirks": [
-          "reacts with 🙏 and 😬",
-          "ends messages with an emoji"
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
         ]
       }
     },
@@ -95,20 +95,21 @@
       }
     },
     {
-      "id": "p-omar",
-      "name": "Omar Farouk",
-      "display_name": "omar.f",
-      "slack_id": "U07FLK0OMAR",
-      "title": "Technical Program Manager",
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
       "style": {
-        "case": "mixed",
+        "case": "lower",
         "punctuation": "light",
-        "typos": "rare",
-        "emoji": "rare",
+        "typos": "lots",
+        "emoji": "some",
         "length": "medium",
-        "hedging": "high",
+        "hedging": "low",
         "quirks": [
-          "\"i think\", \"probably\", \"not 100% sure but\""
+          "fixes typos with *word",
+          "double-sends instead of editing"
         ]
       }
     },
@@ -168,85 +169,11 @@
   ],
   "messages": [
     {
-      "ts": "1790715716.831683",
+      "ts": "1790644490.925746",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-002907"
-      ],
-      "brief": "FL-TST-2074 rev B released: clearance for harness",
-      "claim": {
-        "kind": "substitute",
-        "value": "rev B"
-      },
-      "must_mention": [
-        "FL-TST-2074"
-      ],
-      "length": "medium",
-      "text": "FL-TST-2074 rev B is released, opened up clearance for the harness. if you have the old one printed pls toss it"
-    },
-    {
-      "ts": "1790718687.990732",
-      "user": "p-callum",
-      "thread_ts": "1790715716.831683",
-      "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "is the clearance enough tho, the connector boot is fat"
-    },
-    {
-      "ts": "1790722641.829476",
-      "user": "p-diego",
-      "thread_ts": "1790715716.831683",
-      "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "Got it, updating my copy 👍"
-    },
-    {
-      "ts": "1790788449.650276",
-      "user": "p-arjun",
-      "thread_ts": null,
-      "events": [
-        "ev-002856"
-      ],
-      "brief": "FL-HIP-1064 rev D released: tolerance relaxed after DFM feedback",
-      "claim": {
-        "kind": "substitute",
-        "value": "rev D"
-      },
-      "must_mention": [
-        "FL-HIP-1064"
-      ],
-      "length": "medium",
-      "text": "FL-HIP-1064 rev D out, relaxed the tolerance after dfm feedback from the shop"
-    },
-    {
-      "ts": "1790982938.121190",
-      "user": "p-priya",
-      "thread_ts": null,
-      "events": [
-        "ev-002899"
-      ],
-      "brief": "FL-LEG-1348 rev E released: hole pattern moved",
-      "claim": {
-        "kind": "substitute",
-        "value": "rev E"
-      },
-      "must_mention": [
-        "FL-LEG-1348"
-      ],
-      "length": "short",
-      "text": "FL-LEG-1348 rev E is released; the hole pattern moved."
-    },
-    {
-      "ts": "1790983477.460932",
-      "user": "p-omar",
-      "thread_ts": null,
-      "events": [
-        "ev-003358"
+        "ev-003579"
       ],
       "brief": "knee spin adapter: still quoting rev A",
       "claim": {
@@ -256,35 +183,123 @@
       "must_mention": [
         "knee spin adapter"
       ],
-      "length": "short",
-      "text": "knee spin adapter is still quoting I think"
+      "length": "medium",
+      "text": "knee spin adapter, still quoting rev A on the sheet. someone want to check which one is on the drawing"
     },
     {
-      "ts": "1790986044.664526",
+      "ts": "1790715716.708086",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-003095"
+      ],
+      "brief": "FL-TST-2074 rev B released: clearance for harness",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "FL-TST-2074"
+      ],
+      "length": "short",
+      "text": "FL-TST-2074 rev B released, gave the harness more clearance"
+    },
+    {
+      "ts": "1790788449.195803",
       "user": "p-arjun",
-      "thread_ts": "1790982938.121190",
-      "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "moving holes this late feels risky"
+      "thread_ts": null,
+      "events": [
+        "ev-003044"
+      ],
+      "brief": "FL-HIP-1064 rev D released: tolerance relaxed after DFM feedback",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev D"
+      },
+      "must_mention": [
+        "FL-HIP-1064"
+      ],
+      "length": "short",
+      "text": "FL-HIP-1064 rev D is out, tol relaxed after the DFM feedback"
     },
     {
-      "ts": "1790990468.160035",
-      "user": "p-diego",
-      "thread_ts": "1790982938.121190",
+      "ts": "1790793343.595181",
+      "user": "p-callum",
+      "thread_ts": "1790788449.195803",
       "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
+      "brief": "reply (disagrees politely) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "Mating part needs a look too then 😬"
+      "text": "finally. they were going to scrap half of the last lot"
     },
     {
-      "ts": "1790991360.307853",
+      "ts": "1790795172.641601",
+      "user": "p-zoe",
+      "thread_ts": "1790788449.195803",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "nice thx"
+    },
+    {
+      "ts": "1790876074.137104",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-003389"
+      ],
+      "brief": "FL-TST-2139: need 12 by 2026-10-23 for Rig setup: Dyno shaft spacer",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-23"
+        }
+      },
+      "must_mention": [
+        "FL-TST-2139",
+        "Rig setup: Dyno shaft spacer",
+        "fri the 23rd"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "FL-TST-2139 x12 for Rig setup: Dyno shaft spacer, need by fri the 23rd"
+    },
+    {
+      "ts": "1790879419.186347",
+      "user": "p-luis",
+      "thread_ts": "1790876074.137104",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "yep we need that for the dyno shaft anyway, ill tell machining to expect it"
+    },
+    {
+      "ts": "1790982938.834495",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-003087"
+      ],
+      "brief": "FL-LEG-1348 rev E released: hole pattern moved",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev E"
+      },
+      "must_mention": [
+        "FL-LEG-1348"
+      ],
+      "length": "medium",
+      "text": "FL-LEG-1348 rev E is released. The hole pattern moved, so please make sure nobody is still working from rev D drawings, especially anyone who already sent cut files out."
+    },
+    {
+      "ts": "1790991360.302697",
       "user": "p-idris",
       "thread_ts": null,
       "events": [
-        "ev-002770"
+        "ev-002958"
       ],
       "brief": "FL-TST-2789 rev B released: added gusset after it yielded in proof load",
       "claim": {
@@ -295,7 +310,17 @@
         "FL-TST-2789"
       ],
       "length": "medium",
-      "text": "FL-TST-2789 rev B released, added a gusset since it yielded in proof load. pls use the new one"
+      "text": "FL-TST-2789 rev B released, added a gusset after the first one yielded in proof load. took a while to find the cause tbh"
+    },
+    {
+      "ts": "1790992610.057551",
+      "user": "p-dmitri",
+      "thread_ts": "1790991360.302697",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Yielded?! Yielding is for traffic."
     }
   ]
 }

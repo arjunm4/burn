@@ -36,6 +36,25 @@
       }
     },
     {
+      "id": "p-nadia",
+      "name": "Nadia Haddad",
+      "display_name": "nadia",
+      "slack_id": "U07FLK0NADI",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
       "id": "p-owen",
       "name": "Owen Halloran",
       "display_name": "owen",
@@ -71,6 +90,24 @@
           "ends messages with an emoji"
         ]
       }
+    },
+    {
+      "id": "p-tomas",
+      "name": "Tomas Ferreira",
+      "display_name": "tomas",
+      "slack_id": "U07FLK0TOMA",
+      "title": "Mechanical Engineer, gear stages",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
+        ]
+      }
     }
   ],
   "forbidden": [
@@ -81,7 +118,7 @@
   ],
   "tickets": [
     {
-      "key": "HIP-378",
+      "key": "HIP-381",
       "type": "Task",
       "status": "Done",
       "reporter": "p-owen",
@@ -93,23 +130,23 @@
       "created": "2026-09-08T19:16:40-07:00",
       "due_date": null,
       "events": [
-        "ev-001511"
+        "ev-001635"
       ],
       "brief": "Order 12x Dyno bellows coupling hub, 1x Actuator bearing press jig, 6x Drop load cell bracket / FL-TST-2146: need 12 by 2026-09-29",
       "must_mention": [
         "FL-TST-2146",
-        "9/29"
+        "tues 9/29"
       ],
-      "description_length": "medium",
-      "summary": "dyno hub + press jig + drop LC bracket order FL-TST-2146",
-      "description": "FL-TST-2146 is the coupling hub, need 12 by 9/29\nrest of the lines can trail a bit if the shop needs\nbracket drawing is the one from last month",
+      "description_length": "one_line",
+      "summary": "order dyno bellows coupling hub x12, bearing press jig, drop load cell bracket x6",
+      "description": "FL-TST-2146 hubs needed tues 9/29",
       "comments": [
         {
-          "id": "HIP-378-c1",
+          "id": "HIP-381-c1",
           "by": "p-owen",
           "at": "2026-09-10T09:03:49-07:00",
           "events": [
-            "ev-001514"
+            "ev-001638"
           ],
           "brief": "the part: need 12 by 2026-09-29",
           "claim": {
@@ -123,14 +160,14 @@
             "the part",
             "tues 9/29"
           ],
-          "body": "the part needs to be here tues 9/29 no slack on that"
+          "body": "the part, need by tues 9/29"
         },
         {
-          "id": "HIP-378-c2",
+          "id": "HIP-381-c2",
           "by": "p-owen",
           "at": "2026-09-10T14:29:23-07:00",
           "events": [
-            "ev-001515"
+            "ev-001639"
           ],
           "brief": "the part: need 12 by 2026-09-29",
           "claim": {
@@ -142,14 +179,14 @@
           },
           "must_mention": [
             "the part",
-            "9/29"
+            "tues the 29th"
           ],
-          "body": "still 9/29 for the part"
+          "body": "the part tues the 29th"
         }
       ]
     },
     {
-      "key": "HIP-380",
+      "key": "HIP-383",
       "type": "Task",
       "status": "Done",
       "reporter": "p-talia",
@@ -161,23 +198,32 @@
       "created": "2026-09-09T09:44:08-07:00",
       "due_date": null,
       "events": [
-        "ev-001607"
+        "ev-001737"
       ],
-      "brief": "Order 24x Hip holding-brake bracket, 12x Hip eccentric input shaft, 9x Hip cable exit clamp, 2x Hip cycloidal carrier, 2x Hip to pelvis interface plate / brake bracket: need 24 by 2026-10-01",
+      "brief": "Order 24x Hip holding-brake bracket, 12x Hip eccentric input shaft, 9x Hip cable exit clamp, 2x Hip cycloidal carrier, 2x Hip to pelvis interface plate / brake bracket: need 24 by 2026-09-28",
       "must_mention": [
         "brake bracket",
-        "thurs the 1st"
+        "9/28"
       ],
       "description_length": "one_line",
-      "summary": "Hip brake bracket + carrier lot order - urgent",
-      "description": "24 brake bracket needed by thurs the 1st, rest same PO pls 🙏",
+      "summary": "Order hip brake brkt x24 + other hip bits",
+      "description": "Need the brake bracket by 9/28, rest of the list can tag along 🙏",
       "comments": [
         {
-          "id": "HIP-380-c1",
+          "id": "HIP-383-c1",
+          "by": "p-tomas",
+          "at": "2026-09-24T11:05:24-07:00",
+          "events": [],
+          "brief": "background: any update?",
+          "must_mention": [],
+          "body": "any word on this? not sure it shipped"
+        },
+        {
+          "id": "HIP-383-c2",
           "by": "p-carlos",
           "at": "2026-10-05T14:43:52-07:00",
           "events": [
-            "ev-001608"
+            "ev-001738"
           ],
           "brief": "1050 arrived (24)",
           "claim": {
@@ -188,9 +234,34 @@
             "1050",
             "24"
           ],
-          "body": "1050 ARRIVED, qty 24. Boxes on the bench by receiving!"
+          "body": "1050 arrived, 24 PCS!!"
         }
       ]
+    },
+    {
+      "key": "HIP-386",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-nadia",
+      "assignee": "p-talia",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-09-10T06:57:04-07:00",
+      "due_date": "2026-10-01",
+      "events": [
+        "ev-001669"
+      ],
+      "brief": "Order 1x Grip fixture base plate, 1x Tilt stand F/T adapter plate, 3x Grip-cycle test mandrel / grip fixture base plate: need 1 by 2026-10-01",
+      "must_mention": [
+        "grip fixture base plate",
+        "10/1"
+      ],
+      "description_length": "one_line",
+      "summary": "order grip fixture base plate, tilt stand F/T adapter plate, mandrel for grip-cycle",
+      "description": "grip fixture base plate needed 10/1",
+      "comments": []
     }
   ]
 }

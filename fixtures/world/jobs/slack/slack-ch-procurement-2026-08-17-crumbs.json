@@ -38,20 +38,21 @@
       }
     },
     {
-      "id": "p-kenji",
-      "name": "Kenji Morimoto",
-      "display_name": "kenji.m",
-      "slack_id": "U07FLK0KENJ",
-      "title": "Mechanical Engineer",
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
       "style": {
-        "case": "lower",
-        "punctuation": "none",
+        "case": "mixed",
+        "punctuation": "full",
         "typos": "some",
-        "emoji": "rare",
+        "emoji": "some",
         "length": "terse",
         "hedging": "low",
         "quirks": [
-          "no capitals or end punctuation ever"
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
         ]
       }
     },
@@ -61,25 +62,6 @@
       "display_name": "priya",
       "slack_id": "U07FLK0PRIY",
       "title": "Legs Lead",
-      "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "none",
-        "length": "long",
-        "hedging": "medium",
-        "quirks": [
-          "numbered lists in status updates",
-          "restates the question before answering"
-        ]
-      }
-    },
-    {
-      "id": "p-rachel",
-      "name": "Rachel Goldberg",
-      "display_name": "rachel",
-      "slack_id": "U07FLK0RACH",
-      "title": "Accounting and Finance Manager",
       "style": {
         "case": "proper",
         "punctuation": "full",
@@ -113,25 +95,6 @@
       }
     },
     {
-      "id": "p-talia",
-      "name": "Talia Rosen",
-      "display_name": "talia",
-      "slack_id": "U07FLK0TALI",
-      "title": "Buyer/Planner",
-      "style": {
-        "case": "mixed",
-        "punctuation": "light",
-        "typos": "rare",
-        "emoji": "lots",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": [
-          "reacts with 🙏 and 😬",
-          "ends messages with an emoji"
-        ]
-      }
-    },
-    {
       "id": "p-tomas",
       "name": "Tomas Ferreira",
       "display_name": "tomas",
@@ -147,22 +110,6 @@
         "quirks": [
           "\"i think\", \"probably\", \"not 100% sure but\""
         ]
-      }
-    },
-    {
-      "id": "p-wei",
-      "name": "Wei Huang",
-      "display_name": "wei",
-      "slack_id": "U07FLK0WEI0",
-      "title": "Mechanical Engineer, housings and shafts",
-      "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": []
       }
     }
   ],
@@ -187,11 +134,11 @@
   ],
   "messages": [
     {
-      "ts": "1787007957.519202",
+      "ts": "1787007957.850503",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-001421"
+        "ev-001529"
       ],
       "brief": "the carrier: need 2 by 2026-09-04",
       "claim": {
@@ -203,18 +150,18 @@
       },
       "must_mention": [
         "the carrier",
-        "fri 9/4"
+        "fri the 4th"
       ],
       "pressure": "high",
       "length": "short",
-      "text": "the carrier, need 2 by fri 9/4. i think that's firm"
+      "text": "need 2 of the carrier by fri the 4th, can someone put the request in?"
     },
     {
-      "ts": "1787072422.847543",
+      "ts": "1787072422.209667",
       "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-001432"
+        "ev-001540"
       ],
       "brief": "Quote Q-2552354-1 for FL-TST-2146: standard $1095.90, 10 BD",
       "claim": {
@@ -230,18 +177,18 @@
       "must_mention": [
         "Q-2552354-1",
         "FL-TST-2146",
-        "thurs the 3rd"
+        "thurs 9/3"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "Q-2552354-1 back for FL-TST-2146, standard $1095.90, 10 BD. need 12 by thurs the 3rd"
+      "text": "quote Q-2552354-1 for FL-TST-2146 is back, standard 10 BD, need it by thurs 9/3"
     },
     {
-      "ts": "1787072613.577892",
+      "ts": "1787072613.228525",
       "user": "p-samir",
       "thread_ts": null,
       "events": [
-        "ev-001422"
+        "ev-001530"
       ],
       "brief": "Quote Q-2551880-1 for FL-HIP-1094: standard $1581.70, 10 BD",
       "claim": {
@@ -260,60 +207,17 @@
         "fri 9/4"
       ],
       "pressure": "high",
-      "length": "short",
-      "text": "Q-2551880-1 for FL-HIP-1094 came in, standard $1581.70 10 BD. need 2 by fri 9/4"
+      "length": "medium",
+      "text": "Q-2551880-1 for FL-HIP-1094 is back, standard price and 10 BD, need by fri 9/4. approve pls"
     },
     {
-      "ts": "1787073173.895994",
-      "user": "p-wei",
-      "thread_ts": "1787072422.847543",
-      "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "Bold of the dyno to need things."
-    },
-    {
-      "ts": "1787074843.513034",
-      "user": "p-rachel",
-      "thread_ts": "1787072422.847543",
-      "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "I'd hold a day before approving."
-    },
-    {
-      "ts": "1787080127.496347",
+      "ts": "1787080127.733252",
       "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-001446"
+        "ev-001560"
       ],
-      "brief": "FT mount: need 24 by 2026-09-15",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 24,
-          "by": "2026-09-15"
-        }
-      },
-      "must_mention": [
-        "FT mount",
-        "9/15"
-      ],
-      "pressure": "high",
-      "length": "short",
-      "text": "FT mount: need 24 by 9/15, please."
-    },
-    {
-      "ts": "1787120567.225022",
-      "user": "p-priya",
-      "thread_ts": "1787080127.496347",
-      "events": [
-        "ev-002951"
-      ],
-      "brief": "Correction: FT mount: need 24 by 2026-09-10",
+      "brief": "FT mount: need 24 by 2026-09-10",
       "claim": {
         "kind": "needs",
         "value": {
@@ -323,40 +227,40 @@
       },
       "must_mention": [
         "FT mount",
-        "9/10"
+        "thurs the 10th"
       ],
       "pressure": "high",
-      "length": "short",
-      "text": "Correction to the above: FT mount is 9/10, not 9/15. Same 24."
+      "length": "medium",
+      "text": "Requesting 24 of the FT mount. To restate, this is the one the leg team needs by thurs the 10th, and it is on the critical path."
     },
     {
-      "ts": "1787157431.579235",
-      "user": "p-talia",
-      "thread_ts": "1787080127.496347",
-      "events": [],
-      "brief": "reply (tags someone else) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "@samir.k this one's yours I think 🙏"
-    },
-    {
-      "ts": "1787160616.926927",
-      "user": "p-kenji",
-      "thread_ts": "1787080127.496347",
+      "ts": "1787082620.848239",
+      "user": "p-carlos",
+      "thread_ts": "1787080127.733252",
       "events": [],
       "brief": "reply (jokes) in the thread about: the message above",
       "must_mention": [],
-      "length": "medium",
-      "text": "priya posting at 11pm means the date is real this time"
+      "length": "short",
+      "text": "24 FT mounts, someone is building a wall of them"
     },
     {
-      "ts": "1787344153.758591",
+      "ts": "1787085432.383202",
+      "user": "p-samir",
+      "thread_ts": "1787080127.733252",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "not sure that qty is right tbh"
+    },
+    {
+      "ts": "1787425945.721546",
       "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-001453"
+        "ev-001569"
       ],
-      "brief": "2732: need 2 by 2026-09-10",
+      "brief": "thermal cradle: need 2 by 2026-09-10",
       "claim": {
         "kind": "needs",
         "value": {
@@ -365,12 +269,12 @@
         }
       },
       "must_mention": [
-        "2732",
-        "thurs the 10th"
+        "thermal cradle",
+        "9/10"
       ],
       "pressure": "high",
-      "length": "short",
-      "text": "2732 need 2 by thurs the 10th, line stops w/o them"
+      "length": "medium",
+      "text": "thermal cradle needs to be ordered, need 2 by 9/10, sorry for the weekend msg"
     }
   ]
 }

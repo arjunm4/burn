@@ -1,0 +1,217 @@
+{
+  "generated_by": "scripts/timevalue/read-jobs.mjs --collect",
+  "jobs_total": 3,
+  "jobs_filled": 1,
+  "n": 8,
+  "errors": [],
+  "reads": [
+    {
+      "doc_id": "jira:HIP-412:c41201",
+      "refs": [
+        {
+          "id": "pt-hip-bracket",
+          "kind": "part",
+          "mode": "vague",
+          "token": "quote"
+        }
+      ],
+      "claims": [],
+      "pressure": 0,
+      "done": [],
+      "cues": [],
+      "via": "llm",
+      "job_id": "rj-ae0a512d63"
+    },
+    {
+      "doc_id": "jira:HIP-412:desc",
+      "refs": [
+        {
+          "id": "pt-hip-bracket",
+          "kind": "part",
+          "mode": "alias",
+          "token": "hip bracket"
+        },
+        {
+          "id": "test-hip-spin",
+          "kind": "test",
+          "mode": "alias",
+          "token": "spin test"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "needs",
+          "subject": "pt-hip-bracket",
+          "value": null,
+          "qty": 4,
+          "for": "test-hip-spin",
+          "doc_id": "jira:HIP-412:desc",
+          "by": "p-owen",
+          "at": "2026-11-03T09:20:00-08:00"
+        }
+      ],
+      "pressure": 0.15,
+      "done": [],
+      "cues": [
+        "need before spin test"
+      ],
+      "via": "llm",
+      "job_id": "rj-ae0a512d63"
+    },
+    {
+      "doc_id": "meeting:2026-11-05-0930-supply-chain-mech-sync:14",
+      "refs": [
+        {
+          "id": "dl-hip-motor-dvt",
+          "kind": "deliverable",
+          "mode": "vague",
+          "token": "the motor"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "eta",
+          "subject": "dl-hip-motor-dvt",
+          "value": "2026-11-20",
+          "doc_id": "meeting:2026-11-05-0930-supply-chain-mech-sync:14",
+          "by": "p-gwen",
+          "at": "2026-11-05T09:41:12-08:00"
+        }
+      ],
+      "pressure": 0.2,
+      "done": [],
+      "cues": [
+        "realistic date is the twentieth"
+      ],
+      "via": "llm",
+      "job_id": "rj-ae0a512d63"
+    },
+    {
+      "doc_id": "meeting:2026-11-05-0930-supply-chain-mech-sync:15",
+      "refs": [
+        {
+          "id": "test-hip-spin",
+          "kind": "test",
+          "mode": "alias",
+          "token": "spin test"
+        },
+        {
+          "id": "rig-spin-test-stand",
+          "kind": "rig",
+          "mode": "vague",
+          "token": "the stand"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "eta",
+          "subject": "test-hip-spin",
+          "value": {
+            "min": "2026-11-23",
+            "max": "2026-11-27"
+          },
+          "doc_id": "meeting:2026-11-05-0930-supply-chain-mech-sync:15",
+          "by": "p-arjun",
+          "at": "2026-11-05T09:41:40-08:00"
+        },
+        {
+          "kind": "duration",
+          "subject": "test-hip-spin",
+          "value": 3,
+          "doc_id": "meeting:2026-11-05-0930-supply-chain-mech-sync:15",
+          "by": "p-arjun",
+          "at": "2026-11-05T09:41:40-08:00"
+        }
+      ],
+      "pressure": 0.3,
+      "done": [],
+      "cues": [
+        "spin test moves"
+      ],
+      "via": "llm",
+      "job_id": "rj-ae0a512d63"
+    },
+    {
+      "doc_id": "meeting:2026-11-05-0930-supply-chain-mech-sync:16",
+      "refs": [
+        {
+          "id": "pt-hip-bracket",
+          "kind": "part",
+          "mode": "alias",
+          "token": "hip bracket"
+        }
+      ],
+      "claims": [],
+      "pressure": 0,
+      "done": [],
+      "cues": [],
+      "via": "llm",
+      "job_id": "rj-ae0a512d63"
+    },
+    {
+      "doc_id": "meeting:2026-11-05-0930-supply-chain-mech-sync:17",
+      "refs": [],
+      "claims": [],
+      "pressure": 0,
+      "done": [],
+      "cues": [],
+      "via": "llm",
+      "job_id": "rj-ae0a512d63"
+    },
+    {
+      "doc_id": "slack:C07FLK0ACTU:1793830800.000100",
+      "refs": [
+        {
+          "id": "dl-hip-motor-dvt",
+          "kind": "deliverable",
+          "mode": "alias",
+          "token": "dvt hip frameless motor"
+        }
+      ],
+      "claims": [
+        {
+          "kind": "eta",
+          "subject": "dl-hip-motor-dvt",
+          "value": "2026-11-20",
+          "doc_id": "slack:C07FLK0ACTU:1793830800.000100",
+          "by": "p-arjun",
+          "at": "2026-11-04T14:20:00-08:00"
+        }
+      ],
+      "pressure": 0.55,
+      "done": [],
+      "cues": [
+        "slipped again",
+        "😬"
+      ],
+      "via": "llm",
+      "job_id": "rj-ae0a512d63"
+    },
+    {
+      "doc_id": "slack:C07FLK0ACTU:1793831460.000100",
+      "refs": [
+        {
+          "id": "test-hip-spin",
+          "kind": "test",
+          "mode": "alias",
+          "token": "spin test"
+        },
+        {
+          "id": "dl-hip-motor-dvt",
+          "kind": "deliverable",
+          "mode": "vague",
+          "token": "that"
+        }
+      ],
+      "claims": [],
+      "pressure": 0.55,
+      "done": [],
+      "cues": [
+        "ugh",
+        "pushes the spin test"
+      ],
+      "via": "llm",
+      "job_id": "rj-ae0a512d63"
+    }
+  ]
+}

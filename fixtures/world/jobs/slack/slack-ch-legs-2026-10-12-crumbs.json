@@ -89,6 +89,101 @@
         "hedging": "low",
         "quirks": []
       }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-priya",
+      "name": "Priya Raman",
+      "display_name": "priya",
+      "slack_id": "U07FLK0PRIY",
+      "title": "Legs Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
+      }
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "display_name": "zoe.c",
+      "slack_id": "U07FLK0ZOE0",
+      "title": "Test Engineer, fixtures owner",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
     }
   ],
   "context": [
@@ -106,11 +201,11 @@
   ],
   "messages": [
     {
-      "ts": "1791832367.908190",
+      "ts": "1791832367.926642",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-002097"
+        "ev-002282"
       ],
       "brief": "FL-TST-2281: need 3 by 2026-10-26",
       "claim": {
@@ -126,34 +221,34 @@
       ],
       "pressure": "high",
       "length": "short",
-      "text": "FL-TST-2281 need 3 by 10/26, it's tight 😬"
+      "text": "need 3 FL-TST-2281 by 10/26 😬"
     },
     {
-      "ts": "1791841305.602374",
+      "ts": "1791841305.379016",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-002608"
+        "ev-002796"
       ],
-      "brief": "Fit check for Leg DVT build: Ankle rod-end spacer waits on Motor sample lot for ankle and foot (rod end spacer)",
+      "brief": "Fit check for Leg DVT build: Ankle rod-end spacer (2) waits on Motor sample lot for ankle and foot (rod end spacer)",
       "claim": {
         "kind": "blocked",
         "value": "dl-gen-0096"
       },
       "must_mention": [
         "Motor sample lot for ankle and foot (rod end spacer)",
-        "the spacer"
+        "the (2)"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "the spacer fit check is stuck on Motor sample lot for ankle and foot (rod end spacer) 🙃"
+      "length": "medium",
+      "text": "Fit check for Leg DVT build: Ankle rod-end spacer (2) is sitting on the Motor sample lot for ankle and foot (rod end spacer), and the (2) are the only ones we have lined up 😬"
     },
     {
-      "ts": "1791842979.758691",
+      "ts": "1791842979.378608",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-001985"
+        "ev-002154"
       ],
       "brief": "FL-ANK-1244: need 21 by 2026-10-27 for Design iteration bench trial: Ankle yoke",
       "claim": {
@@ -166,18 +261,39 @@
       "must_mention": [
         "FL-ANK-1244",
         "Design iteration bench trial: Ankle yoke",
-        "tues the 27th"
+        "10/27"
       ],
       "pressure": "elevated",
-      "length": "medium",
-      "text": "FL-ANK-1244 we need 21 by tues the 27th for Design iteration bench trial: Ankle yoke, anyone know if that's placed yet? 🙏"
+      "length": "short",
+      "text": "FL-ANK-1244 need 21 by 10/27 for Design iteration bench trial: Ankle yoke 🙏"
     },
     {
-      "ts": "1791847399.259991",
+      "ts": "1791843360.398797",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-001883"
+      ],
+      "brief": "FT adapter in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-10-12"
+      },
+      "must_mention": [
+        "FT adapter",
+        "the build",
+        "10/12"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "FT adapter in use for the build, done as of 10/12 ✅"
+    },
+    {
+      "ts": "1791847399.027024",
       "user": "p-hana",
       "thread_ts": null,
       "events": [
-        "ev-002746"
+        "ev-002934"
       ],
       "brief": "FL-ANK-1225 rev B released: material change",
       "claim": {
@@ -187,15 +303,45 @@
       "must_mention": [
         "FL-ANK-1225"
       ],
-      "length": "short",
-      "text": "FL-ANK-1225 rev B is out, material change. i think the old stock is probably still fine for bench stuff"
+      "length": "medium",
+      "text": "FL-ANK-1225 rev B is released. The material changed, so please check which stock the shop pulls before they cut anything. Not 100% sure the old drawing gets retired automatically."
     },
     {
-      "ts": "1791863668.863946",
+      "ts": "1791847902.527898",
+      "user": "p-zoe",
+      "thread_ts": "1791842979.378608",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "we had a bench trial slip like that on the dyno, parts showed up and the fixture wasnt ready"
+    },
+    {
+      "ts": "1791852791.929233",
+      "user": "p-beth",
+      "thread_ts": "1791842979.378608",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I will also note the gantry is booked solid on the days around that, so the trial would need to be scheduled around the drop tests."
+    },
+    {
+      "ts": "1791858144.987911",
+      "user": "p-priya",
+      "thread_ts": "1791842979.378608",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Is that the full quantity, or are some of the 21 already in hand for the other bench?"
+    },
+    {
+      "ts": "1791863668.535483",
       "user": "p-lin",
       "thread_ts": null,
       "events": [
-        "ev-001943"
+        "ev-002113"
       ],
       "brief": "that order: need 2 by 2026-10-19",
       "claim": {
@@ -210,15 +356,15 @@
         "mon the 19th"
       ],
       "pressure": "high",
-      "length": "short",
-      "text": "I need two from that order by mon the 19th or the drop test slides."
+      "length": "medium",
+      "text": "Need that order by mon the 19th, please. Two pieces, and the drop test is waiting on them."
     },
     {
-      "ts": "1791899897.836228",
+      "ts": "1791899897.429773",
       "user": "p-lin",
       "thread_ts": null,
       "events": [
-        "ev-001944"
+        "ev-002114"
       ],
       "brief": "mass block: need 2 by 2026-10-19",
       "claim": {
@@ -233,36 +379,35 @@
         "10/19"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "Following up: two of the mass block are needed by 10/19. Without them the drop rig can't be loaded to spec."
-    },
-    {
-      "ts": "1791908340.803235",
-      "user": "p-diego",
-      "thread_ts": null,
-      "events": [
-        "ev-001732"
-      ],
-      "brief": "that adapter plate in use",
-      "claim": {
-        "kind": "done",
-        "value": "2026-10-12"
-      },
-      "must_mention": [
-        "that adapter plate",
-        "the build",
-        "mon the 12th"
-      ],
-      "pressure": "high",
       "length": "short",
-      "text": "that adapter plate went into the build mon the 12th, all good 👍"
+      "text": "Need 2 mass block by 10/19. Whoever is buying, please tell me if that is not realistic."
     },
     {
-      "ts": "1791908463.744446",
+      "ts": "1791904755.307279",
+      "user": "p-diego",
+      "thread_ts": "1791899897.429773",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "will look at it after lunch"
+    },
+    {
+      "ts": "1791907810.152284",
+      "user": "p-diego",
+      "thread_ts": "1791899897.429773",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "the old pair is bent from the last drop so they are no use"
+    },
+    {
+      "ts": "1791908463.472517",
       "user": "p-lin",
       "thread_ts": null,
       "events": [
-        "ev-001968"
+        "ev-002138"
       ],
       "brief": "that order: need 20 by 2026-10-27 for the fit check",
       "claim": {
@@ -275,18 +420,18 @@
       "must_mention": [
         "that order",
         "the fit check",
-        "tues the 27th"
+        "10/27"
       ],
       "pressure": "high",
       "length": "short",
-      "text": "Need 20 from that order for the fit check, tues the 27th at the latest."
+      "text": "Need 20 of that order for the fit check, by 10/27."
     },
     {
-      "ts": "1791918698.387235",
+      "ts": "1791918698.352924",
       "user": "p-hana",
       "thread_ts": null,
       "events": [
-        "ev-002623"
+        "ev-002811"
       ],
       "brief": "Fixture install and shakedown: Tilt stand load arm waits on Gait gantry and treadmill",
       "claim": {
@@ -299,34 +444,14 @@
       ],
       "pressure": "low",
       "length": "medium",
-      "text": "Fixture install and shakedown: Tilt stand load arm is waiting on Gait gantry and treadmill. not 100% sure but i think that's the only blocker"
+      "text": "Fixture install and shakedown: Tilt stand load arm is waiting on Gait gantry and treadmill, i think. not 100% sure that is the only blocker"
     },
     {
-      "ts": "1791923619.876980",
-      "user": "p-diego",
-      "thread_ts": "1791918698.387235",
-      "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "yeah that's the only one, Carlos confirmed 👍"
-    },
-    {
-      "ts": "1791926710.327524",
-      "user": "p-beth",
-      "thread_ts": "1791918698.387235",
-      "events": [],
-      "brief": "reply (asks a follow-up) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "Thanks. Does the Wednesday gantry slot help here, or is that already taken by drop?"
-    },
-    {
-      "ts": "1791964800.367039",
+      "ts": "1791964800.518012",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-001379"
+        "ev-001487"
       ],
       "brief": "1276 in use",
       "claim": {
@@ -340,14 +465,14 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "1276 is in the build since mon 10/12 ✅"
+      "text": "1276 in use for the build, done mon 10/12 ✅"
     },
     {
-      "ts": "1791996561.107343",
+      "ts": "1791996561.738704",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-002054"
+        "ev-002233"
       ],
       "brief": "FL-ANK-1295: need 3 by 2026-10-26 for the build",
       "claim": {
@@ -360,38 +485,87 @@
       "must_mention": [
         "FL-ANK-1295",
         "the build",
-        "10/26"
+        "mon 10/26"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "FL-ANK-1295 need 3 by 10/26 for the build 🙏"
+      "text": "FL-ANK-1295 need 3 for the build by mon 10/26 🙏"
     },
     {
-      "ts": "1792010076.921217",
+      "ts": "1792003230.812584",
       "user": "p-hana",
       "thread_ts": null,
       "events": [
-        "ev-002587"
+        "ev-003462"
       ],
-      "brief": "Build sub-assembly for Leg DVT build: Thigh cover plate waits on Encoder kit for leg (left, hip to foot) (thigh cover)",
+      "brief": "Driver PCBA respin for ankle and foot: still quoting 2026-10-08",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-10-08"
+      },
+      "must_mention": [
+        "Driver PCBA respin for ankle and foot (roll link)",
+        "10/8"
+      ],
+      "length": "medium",
+      "text": "Driver PCBA respin for ankle and foot (roll link) still quoting 10/8, probably stale by now"
+    },
+    {
+      "ts": "1792004087.397877",
+      "user": "p-priya",
+      "thread_ts": "1792003230.812584",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Do you know whether the vendor has acknowledged the respin, or is that just the last date we were given?"
+    },
+    {
+      "ts": "1792007976.599725",
+      "user": "p-diego",
+      "thread_ts": "1792003230.812584",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "last email from them was a while back, i would not count on it 😬"
+    },
+    {
+      "ts": "1792010076.388515",
+      "user": "p-hana",
+      "thread_ts": null,
+      "events": [
+        "ev-002775"
+      ],
+      "brief": "Build sub-assembly for Leg DVT build: Thigh cover plate (2) waits on Encoder kit for leg (left, hip to foot) (thigh cover)",
       "claim": {
         "kind": "blocked",
         "value": "dl-gen-0090"
       },
       "must_mention": [
         "Encoder kit for leg (left, hip to foot) (thigh cover)",
-        "Build sub-assembly for Leg DVT build: Thigh cover plate"
+        "Build sub-assembly for Leg DVT build: Thigh cover plate (2)"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "Build sub-assembly for Leg DVT build: Thigh cover plate is held up by Encoder kit for leg (left, hip to foot) (thigh cover). probably not urgent yet but flagging"
+      "length": "short",
+      "text": "Build sub-assembly for Leg DVT build: Thigh cover plate (2) is waiting on Encoder kit for leg (left, hip to foot) (thigh cover)"
     },
     {
-      "ts": "1792012827.193755",
+      "ts": "1792011597.257129",
+      "user": "p-luis",
+      "thread_ts": "1792010076.388515",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "@carlos did you see this"
+    },
+    {
+      "ts": "1792012827.503608",
       "user": "p-hana",
       "thread_ts": null,
       "events": [
-        "ev-002570"
+        "ev-002758"
       ],
       "brief": "Fit check: Ankle roll link waits on Driver PCBA respin for ankle and foot (roll link)",
       "claim": {
@@ -404,14 +578,24 @@
       ],
       "pressure": "elevated",
       "length": "medium",
-      "text": "Fit check: Ankle roll link waiting on Driver PCBA respin for ankle and foot (roll link). i think that's on Farah's side?"
+      "text": "Fit check: Ankle roll link is waiting on Driver PCBA respin for ankle and foot (roll link), so that one is stuck too"
     },
     {
-      "ts": "1792018953.045148",
+      "ts": "1792015115.260633",
+      "user": "p-talia",
+      "thread_ts": "1792010076.388515",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Hmm, I'd hold off on calling it waiting until we hear from them 😬"
+    },
+    {
+      "ts": "1792018953.952686",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-002029"
+        "ev-002201"
       ],
       "brief": "that order: need 2 by 2026-10-26",
       "claim": {
@@ -427,14 +611,64 @@
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "need 2 off that order by mon the 26th 😬"
+      "text": "need 2 of that order by mon the 26th"
     },
     {
-      "ts": "1792034545.254619",
+      "ts": "1792020753.335972",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-001986"
+        "ev-003860"
+      ],
+      "brief": "Fixture install and shakedown for Leg DVT build: Tilt stand F/T adapter plate (2) done",
+      "claim": {
+        "kind": "done",
+        "value": "2026-10-14"
+      },
+      "must_mention": [
+        "Fixture install and shakedown for Leg DVT build: Tilt stand F/T adapter plate (2)",
+        "wed 10/14"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Fixture install and shakedown for Leg DVT build: Tilt stand F/T adapter plate (2) done, wed 10/14 🙏"
+    },
+    {
+      "ts": "1792022837.634677",
+      "user": "p-mei",
+      "thread_ts": "1792018953.952686",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "I'll check whether the controller side needs anything for that and report back tomorrow."
+    },
+    {
+      "ts": "1792023236.686609",
+      "user": "p-diego",
+      "thread_ts": "1792020753.335972",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@luis.n can you grab those"
+    },
+    {
+      "ts": "1792024020.188916",
+      "user": "p-luis",
+      "thread_ts": "1792020753.335972",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "@carlos has them i think"
+    },
+    {
+      "ts": "1792034545.726985",
+      "user": "p-diego",
+      "thread_ts": null,
+      "events": [
+        "ev-002155"
       ],
       "brief": "FL-ANK-1244: need 21 by 2026-10-27",
       "claim": {
@@ -449,15 +683,15 @@
         "tues 10/27"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "reminder FL-ANK-1244 still need all 21 by tues 10/27, no partials pls 🙏"
+      "length": "short",
+      "text": "FL-ANK-1244 need 21 by tues 10/27 🙏"
     },
     {
-      "ts": "1792087093.004313",
+      "ts": "1792087093.875537",
       "user": "p-hana",
       "thread_ts": null,
       "events": [
-        "ev-002738"
+        "ev-002926"
       ],
       "brief": "FL-ANK-1268 rev C released: wall thickened after test",
       "claim": {
@@ -467,47 +701,108 @@
       "must_mention": [
         "FL-ANK-1268"
       ],
-      "length": "short",
-      "text": "FL-ANK-1268 rev C released, wall thickened after test"
+      "length": "medium",
+      "text": "FL-ANK-1268 rev C released. wall thickened after the test, so the old ones wont be good for the next drop"
     },
     {
-      "ts": "1792119305.092740",
+      "ts": "1792090583.745923",
+      "user": "p-mei",
+      "thread_ts": "1792087093.875537",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Thanks. Did the thickening change the mounting face, or only the wall?"
+    },
+    {
+      "ts": "1792092830.832853",
+      "user": "p-diego",
+      "thread_ts": "1792087093.875537",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "I'm not sure it needed that much, honestly 🙂 the failure was local, so I'd have gone for a smaller change"
+    },
+    {
+      "ts": "1792095972.143267",
+      "user": "p-zoe",
+      "thread_ts": "1792087093.875537",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "thanks hana"
+    },
+    {
+      "ts": "1792119305.897553",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-002031"
+        "ev-002203"
       ],
-      "brief": "Order XO-5543732 placed, promised 2026-10-27",
+      "brief": "Order XO-5543732 placed, promised 2026-10-22",
       "claim": {
         "kind": "eta",
-        "value": "2026-10-27"
+        "value": "2026-10-22"
       },
       "must_mention": [
         "XO-5543732",
         "angle block",
-        "10/27"
+        "thurs the 22nd"
+      ],
+      "pressure": "high",
+      "length": "medium",
+      "text": "Order XO-5543732 placed for the angle block, promised thurs the 22nd 🙏"
+    },
+    {
+      "ts": "1792191550.294771",
+      "user": "p-priya",
+      "thread_ts": null,
+      "events": [
+        "ev-002278"
+      ],
+      "brief": "1283: need 12 by 2026-11-04 for Design iteration bench trial: Ankle pivot pin",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-11-04"
+        }
+      },
+      "must_mention": [
+        "1283",
+        "Design iteration bench trial: Ankle pivot pin",
+        "the yoke",
+        "heel mount",
+        "11/4"
       ],
       "pressure": "high",
       "length": "short",
-      "text": "XO-5543732 placed for the angle block, promised 10/27 🤞"
+      "text": "1283: we need 12 for Design iteration bench trial: Ankle pivot pin, by 11/4. This goes with the yoke and the heel mount, so all three need to be lined up together."
     },
     {
-      "ts": "1792196199.525334",
-      "user": "p-beth",
+      "ts": "1792196400.961645",
+      "user": "p-priya",
       "thread_ts": null,
       "events": [
-        "ev-003464"
+        "ev-003218"
       ],
-      "brief": "foot plate: still quoting rev B",
+      "brief": "Correction: ankle crank: need 8 by 2026-11-02",
       "claim": {
-        "kind": "substitute",
-        "value": "rev B"
+        "kind": "needs",
+        "value": {
+          "qty": 8,
+          "by": "2026-11-02"
+        }
       },
       "must_mention": [
-        "foot plate"
+        "ankle crank",
+        "mon the 2nd"
       ],
+      "pressure": "elevated",
       "length": "short",
-      "text": "The foot plate is still being quoted at rev B."
+      "text": "Correction: ankle crank is needed mon the 2nd, qty 8."
     }
   ]
 }

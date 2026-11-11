@@ -7,8 +7,9 @@
 
 ## Overview
 
-We need hip bracket by 10/22 (Tolerance stack check: Hip pitch mounting bracket).
+We need hip bracket by 10/22 (Tolerance stack check: Hip pitch mounting bracket). We need knee pulley by 10/6.
 
 ## Discussion
 
 - Dmitri: We need hip bracket by 10/22 (Tolerance stack check: Hip pitch mounting bracket).
+- Andre: We need knee pulley by 10/6.

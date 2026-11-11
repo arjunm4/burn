@@ -1,0 +1,188 @@
+{
+  "generated_from": "hand-made sample for the read-job loop (not world data)",
+  "demo_now": "2026-11-10T10:30:00-08:00",
+  "time_zone": "America/Los_Angeles",
+  "holidays": [],
+  "people": [
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "email": "owen@flintlockrobotics.com",
+      "slack_id": "U07FLK0OWEN",
+      "team": "t-mech-actuators",
+      "title": "Mechanical Engineer, Actuators",
+      "manager": "p-arjun"
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "email": "arjun@flintlockrobotics.com",
+      "slack_id": "U07FLK0ARJN",
+      "team": "t-mech-actuators",
+      "title": "Lead, Actuators",
+      "manager": null
+    },
+    {
+      "id": "p-gwen",
+      "name": "Gwen Albright",
+      "email": "gwen@flintlockrobotics.com",
+      "slack_id": "U07FLK0GWEN",
+      "team": "t-supply",
+      "title": "Head of Supply Chain",
+      "manager": null
+    },
+    {
+      "id": "p-zoe",
+      "name": "Zoe Castellanos",
+      "email": "zoe@flintlockrobotics.com",
+      "slack_id": "U07FLK0ZOE0",
+      "team": "t-supply",
+      "title": "Buyer/Planner",
+      "manager": "p-gwen"
+    }
+  ],
+  "teams": [
+    {
+      "id": "t-mech-actuators",
+      "name": "Mechanical, actuators",
+      "lead": "p-arjun",
+      "members": [
+        "p-arjun",
+        "p-owen"
+      ],
+      "channels": [
+        "C07FLK0ACTU"
+      ],
+      "jira_project": "HIP"
+    },
+    {
+      "id": "t-supply",
+      "name": "Supply chain",
+      "lead": "p-gwen",
+      "members": [
+        "p-gwen",
+        "p-zoe"
+      ],
+      "channels": [
+        "C07FLK0SUPC"
+      ],
+      "jira_project": "SCM"
+    }
+  ],
+  "assemblies": [
+    {
+      "id": "a-hip-actuator",
+      "name": "Hip actuator",
+      "jira_project": "HIP",
+      "slack_channel": "C07FLK0ACTU",
+      "team": "t-mech-actuators"
+    }
+  ],
+  "parts": [
+    {
+      "id": "pt-hip-bracket",
+      "part_number": "FL-HIP-1042",
+      "name": "Hip actuator bracket",
+      "aliases": [
+        "hip bracket",
+        "the bracket",
+        "1042",
+        "motor bracket"
+      ],
+      "assembly": "a-hip-actuator",
+      "kind": "robot_part"
+    },
+    {
+      "id": "pt-pelvis-plate",
+      "part_number": "FL-HIP-1021",
+      "name": "Hip to pelvis interface plate",
+      "aliases": [
+        "pelvis plate",
+        "1021"
+      ],
+      "assembly": "a-hip-actuator",
+      "kind": "robot_part"
+    },
+    {
+      "id": "pt-knee-spacer",
+      "part_number": "FL-KNE-1110",
+      "name": "Knee spacer set",
+      "aliases": [
+        "spacer set"
+      ],
+      "assembly": "a-knee-actuator",
+      "kind": "robot_part"
+    }
+  ],
+  "deliverables": [
+    {
+      "id": "dl-hip-motor-dvt",
+      "name": "DVT hip frameless motor",
+      "aliases": [],
+      "owner": "p-arjun",
+      "assembly": "a-hip-actuator",
+      "kind": "motor"
+    }
+  ],
+  "tests": [
+    {
+      "id": "test-hip-spin",
+      "name": "Hip actuator DVT spin test",
+      "assembly": "a-hip-actuator",
+      "rig": "rig-spin-test-stand",
+      "resources": [],
+      "owner": "p-arjun",
+      "milestone": "m-hip-spin-test",
+      "duration_estimate_days": [
+        2,
+        3
+      ],
+      "planned_date": []
+    }
+  ],
+  "rigs": [
+    {
+      "id": "rig-spin-test-stand",
+      "name": "Spin test stand",
+      "slot_days": null,
+      "owner": "p-arjun",
+      "kind": "rig"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m-hip-spin-test",
+      "name": "Hip spin test",
+      "owner": "p-arjun",
+      "hardness": "soft",
+      "assemblies": [
+        "a-hip-actuator"
+      ],
+      "date": [],
+      "value_policy": []
+    }
+  ],
+  "channels": [
+    {
+      "id": "ch-actuators",
+      "slack_id": "C07FLK0ACTU",
+      "name": "actuators",
+      "type": "public",
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "ch-supply-chain",
+      "slack_id": "C07FLK0SUPC",
+      "name": "supply-chain",
+      "type": "public",
+      "assembly": null
+    },
+    {
+      "id": "ch-random",
+      "slack_id": "C07FLK0RAND",
+      "name": "random",
+      "type": "public",
+      "assembly": null
+    }
+  ]
+}

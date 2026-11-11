@@ -1,0 +1,977 @@
+{
+  "sources_dir": "fixtures/flintlock",
+  "cards": {
+    "0": {
+      "card": {
+        "change": null,
+        "now": "2026-11-10T10:30:00-08:00",
+        "part": {
+          "name": "Hip actuator bracket",
+          "number": "FL-HIP-1042",
+          "revision": "C",
+          "quantity": 4,
+          "cad_file": "FL-HIP-1042_hip-bracket_revC.step",
+          "summary": "4x hip bracket rev C for the hip actuator dvt spin test",
+          "requester": "Owen Halloran",
+          "material": "Aluminum 7075-T651",
+          "process": "CNC Milling (5-axis)",
+          "finish": "Type III hard anodize, black",
+          "catalogue_id": "pt-hip-bracket"
+        },
+        "quote": {
+          "id": "Q-2617750-1",
+          "expires_on": "2026-12-10"
+        },
+        "test": {
+          "id": "test-hip-spin",
+          "name": "Hip actuator DVT spin test",
+          "owner": "Arjun Venkatesan",
+          "duration_days": 3,
+          "planned_start": "2026-11-23"
+        },
+        "milestone": {
+          "id": "m-hip-spin-test",
+          "name": "Hip actuator DVT spin test complete",
+          "target": "2026-11-24",
+          "policy": {
+            "type": "per_day",
+            "usd_per_day": 600,
+            "curve": null,
+            "owner": "Arjun Venkatesan",
+            "set_at": "2026-10-05T09:15:00-07:00"
+          }
+        },
+        "inputs": [
+          {
+            "id": "dl-hip-motor-dvt",
+            "name": "DVT hip frameless motor",
+            "ready": "2026-11-20",
+            "ready_text": "Fri 11/20",
+            "owner": "Arjun Venkatesan",
+            "said_by": "Arjun Venkatesan",
+            "said_at": "2026-11-09T09:40:00-08:00",
+            "said_ago": "yesterday",
+            "doc_id": "slack:C07FLK0ACTU:1794246000.565944"
+          }
+        ],
+        "tiers": [
+          {
+            "tier": "standard",
+            "label": "Standard",
+            "total": 3000,
+            "ready": "2026-11-24",
+            "lead_days": 10,
+            "finish": "2026-12-01",
+            "days_saved": 0,
+            "break_even": null,
+            "recommended": false
+          },
+          {
+            "tier": "expedite",
+            "label": "Expedite",
+            "total": 3900,
+            "ready": "2026-11-17",
+            "lead_days": 5,
+            "finish": "2026-11-25",
+            "days_saved": 2,
+            "break_even": 450,
+            "recommended": true
+          },
+          {
+            "tier": "rush",
+            "label": "Rush",
+            "total": 6900,
+            "ready": "2026-11-12",
+            "lead_days": 2,
+            "finish": "2026-11-25",
+            "days_saved": 2,
+            "break_even": 1950,
+            "recommended": false,
+            "no_faster_than": "Expedite"
+          }
+        ],
+        "outcome": "pay",
+        "outcome_tag": "Pay for Expedite",
+        "recommended": "expedite",
+        "headline": "Expedite: +$300 under the spin-test policy ($600/day, owner Arjun).",
+        "detail": [
+          "Finishes the spin test 2 working days sooner for +$900. Worth it while a day is worth more than $450.",
+          "Assumes the motor is ready by Fri 11/20 (Arjun, yesterday). If it slips to Tue 11/24 or later, Standard is as fast."
+        ],
+        "dominated": [
+          "Rush ($6,900) finishes no sooner than Expedite: +$3,000 for nothing."
+        ],
+        "question": null,
+        "switching": null,
+        "checks": [
+          {
+            "n": 1,
+            "label": "Quote is open",
+            "status": "pass",
+            "text": "Valid until 2026-12-10.",
+            "sources": [
+              "demo/quote.json"
+            ]
+          },
+          {
+            "n": 2,
+            "label": "Schedule solved",
+            "status": "pass",
+            "text": "standard done Tue Dec 1; expedite done Wed Nov 25; rush done Wed Nov 25",
+            "sources": [
+              "cal:cal-bk-00001",
+              "slack:C07FLK0SUPC:1793991900.864420"
+            ]
+          },
+          {
+            "n": 3,
+            "label": "What sets the date",
+            "status": "info",
+            "text": "The test is the planned start date.",
+            "sources": [
+              "slack:C07FLK0ACTU:1794246000.565944"
+            ]
+          },
+          {
+            "n": 4,
+            "label": "Value of a day",
+            "status": "pass",
+            "text": "$600/day.",
+            "sources": [
+              "demo/policy.json"
+            ]
+          },
+          {
+            "n": 5,
+            "label": "Decision",
+            "status": "info",
+            "text": "expedite: saves 2 working days, worth it above $450/day.",
+            "sources": []
+          },
+          {
+            "n": 6,
+            "label": "What the conversation says · from the LLM read",
+            "status": "info",
+            "advisory": true,
+            "items": [
+              {
+                "key": "pressure",
+                "status": "info",
+                "text": "Pressure high over the last 7 days (13 linked messages): \"costs us about 600 a day\"; \"asking again\"; \"waits on\".",
+                "sources": [
+                  "slack:C07FLK0ACTU:1793747100.602740",
+                  "slack:C07FLK0ACTU:1793773570.410123",
+                  "slack:C07FLK0ACTU:1793758718.594384"
+                ],
+                "question": null
+              },
+              {
+                "key": "reason",
+                "status": "info",
+                "text": "DVT hip frameless motor ready Fri 11/20, so expedite: saves 2 working days, worth it above $450/day.",
+                "sources": [
+                  "slack:C07FLK0ACTU:1794246000.565944"
+                ],
+                "question": null
+              }
+            ],
+            "text": "Pressure high over the last 7 days (13 linked messages): \"costs us about 600 a day\"; \"asking again\"; \"waits on\". DVT hip frameless motor ready Fri 11/20, so expedite: saves 2 working days, worth it above $450/day.",
+            "sources": [
+              "slack:C07FLK0ACTU:1793747100.602740",
+              "slack:C07FLK0ACTU:1793773570.410123",
+              "slack:C07FLK0ACTU:1793758718.594384",
+              "slack:C07FLK0ACTU:1794246000.565944"
+            ]
+          }
+        ],
+        "guards": [
+          {
+            "rule": "no invented $/day",
+            "ok": true
+          },
+          {
+            "rule": "no fact after now",
+            "ok": true
+          },
+          {
+            "rule": "every fact has a source",
+            "ok": true
+          },
+          {
+            "rule": "no confident card with an open gap",
+            "ok": true
+          }
+        ],
+        "blocked": false,
+        "wasted": {
+          "count": 61,
+          "expedited": 133,
+          "premium_usd": 31159
+        }
+      },
+      "sources": [
+        "cal:cal-bk-00001",
+        "demo/part-entry.json",
+        "demo/policy.json",
+        "demo/quote.json",
+        "slack:C07FLK0ACTU:1793747100.602740",
+        "slack:C07FLK0ACTU:1793758718.594384",
+        "slack:C07FLK0ACTU:1793773570.410123",
+        "slack:C07FLK0ACTU:1794246000.565944",
+        "slack:C07FLK0SUPC:1793991900.864420"
+      ],
+      "engine": {
+        "settings": "settings.json",
+        "sources": "sources.mjs",
+        "graph": "graph.mjs",
+        "maths": "src/timevalue",
+        "conversation": "read-cache + graph",
+        "rubric": "src/timevalue"
+      }
+    },
+    "1": {
+      "card": {
+        "change": {
+          "n": 1,
+          "label": "Change 1",
+          "text": "heads up, vendor slipped the dvt hip frameless motor again. new ETA 11/30",
+          "by": "Arjun Venkatesan",
+          "at": "2026-11-10T10:45:00-08:00",
+          "doc_id": "slack:C07FLK0ACTU:1794336300.000000"
+        },
+        "now": "2026-11-10T10:45:00-08:00",
+        "part": {
+          "name": "Hip actuator bracket",
+          "number": "FL-HIP-1042",
+          "revision": "C",
+          "quantity": 4,
+          "cad_file": "FL-HIP-1042_hip-bracket_revC.step",
+          "summary": "4x hip bracket rev C for the hip actuator dvt spin test",
+          "requester": "Owen Halloran",
+          "material": "Aluminum 7075-T651",
+          "process": "CNC Milling (5-axis)",
+          "finish": "Type III hard anodize, black",
+          "catalogue_id": "pt-hip-bracket"
+        },
+        "quote": {
+          "id": "Q-2617750-1",
+          "expires_on": "2026-12-10"
+        },
+        "test": {
+          "id": "test-hip-spin",
+          "name": "Hip actuator DVT spin test",
+          "owner": "Arjun Venkatesan",
+          "duration_days": 3,
+          "planned_start": "2026-11-23"
+        },
+        "milestone": {
+          "id": "m-hip-spin-test",
+          "name": "Hip actuator DVT spin test complete",
+          "target": "2026-11-24",
+          "policy": {
+            "type": "per_day",
+            "usd_per_day": 600,
+            "curve": null,
+            "owner": "Arjun Venkatesan",
+            "set_at": "2026-10-05T09:15:00-07:00"
+          }
+        },
+        "inputs": [
+          {
+            "id": "dl-hip-motor-dvt",
+            "name": "DVT hip frameless motor",
+            "ready": "2026-11-30",
+            "ready_text": "Mon 11/30",
+            "owner": "Arjun Venkatesan",
+            "said_by": "Arjun Venkatesan",
+            "said_at": "2026-11-10T10:45:00-08:00",
+            "said_ago": "today",
+            "doc_id": "slack:C07FLK0ACTU:1794336300.000000"
+          }
+        ],
+        "tiers": [
+          {
+            "tier": "standard",
+            "label": "Standard",
+            "total": 3000,
+            "ready": "2026-11-24",
+            "lead_days": 10,
+            "finish": "2026-12-03",
+            "days_saved": 0,
+            "break_even": null,
+            "recommended": true
+          },
+          {
+            "tier": "expedite",
+            "label": "Expedite",
+            "total": 3900,
+            "ready": "2026-11-17",
+            "lead_days": 5,
+            "finish": "2026-12-03",
+            "days_saved": 0,
+            "break_even": null,
+            "recommended": false
+          },
+          {
+            "tier": "rush",
+            "label": "Rush",
+            "total": 6900,
+            "ready": "2026-11-12",
+            "lead_days": 2,
+            "finish": "2026-12-03",
+            "days_saved": 0,
+            "break_even": null,
+            "recommended": false,
+            "no_faster_than": "Expedite"
+          }
+        ],
+        "outcome": "cheapest",
+        "outcome_tag": "Standard",
+        "recommended": "standard",
+        "headline": "Standard: Expedite buys no time. Save $900.",
+        "detail": [
+          "The motor (ready Mon 11/30, Arjun, today) sets the start; both tiers finish the spin test Thu 12/3."
+        ],
+        "dominated": [
+          "Rush ($6,900) finishes no sooner than Expedite: +$3,000 for nothing."
+        ],
+        "question": null,
+        "switching": null,
+        "checks": [
+          {
+            "n": 1,
+            "label": "Quote is open",
+            "status": "pass",
+            "text": "Valid until 2026-12-10.",
+            "sources": [
+              "demo/quote.json"
+            ]
+          },
+          {
+            "n": 2,
+            "label": "Schedule solved",
+            "status": "pass",
+            "text": "standard done Thu Dec 3; expedite done Thu Dec 3; rush done Thu Dec 3",
+            "sources": [
+              "cal:cal-bk-00001",
+              "slack:C07FLK0SUPC:1793991900.864420"
+            ]
+          },
+          {
+            "n": 3,
+            "label": "What sets the date",
+            "status": "info",
+            "text": "The test is waiting on the DVT hip frameless motor.",
+            "sources": [
+              "slack:C07FLK0ACTU:1794336300.000000"
+            ]
+          },
+          {
+            "n": 4,
+            "label": "Value of a day",
+            "status": "pass",
+            "text": "$600/day.",
+            "sources": [
+              "demo/policy.json"
+            ]
+          },
+          {
+            "n": 5,
+            "label": "Decision",
+            "status": "info",
+            "text": "standard: no faster tier finishes the test sooner.",
+            "sources": []
+          },
+          {
+            "n": 6,
+            "label": "What the conversation says · from the LLM read",
+            "status": "info",
+            "advisory": true,
+            "items": [
+              {
+                "key": "pressure",
+                "status": "info",
+                "text": "Pressure high over the last 7 days (14 linked messages): \"costs us about 600 a day\"; \"asking again\"; \"waits on\".",
+                "sources": [
+                  "slack:C07FLK0ACTU:1793747100.602740",
+                  "slack:C07FLK0ACTU:1793773570.410123",
+                  "slack:C07FLK0ACTU:1793758718.594384"
+                ],
+                "question": null
+              },
+              {
+                "key": "reason",
+                "status": "info",
+                "text": "DVT hip frameless motor ready Mon 11/30, so standard: no faster tier finishes the test sooner.",
+                "sources": [
+                  "slack:C07FLK0ACTU:1794336300.000000"
+                ],
+                "question": null
+              }
+            ],
+            "text": "Pressure high over the last 7 days (14 linked messages): \"costs us about 600 a day\"; \"asking again\"; \"waits on\". DVT hip frameless motor ready Mon 11/30, so standard: no faster tier finishes the test sooner.",
+            "sources": [
+              "slack:C07FLK0ACTU:1793747100.602740",
+              "slack:C07FLK0ACTU:1793773570.410123",
+              "slack:C07FLK0ACTU:1793758718.594384",
+              "slack:C07FLK0ACTU:1794336300.000000"
+            ]
+          }
+        ],
+        "guards": [
+          {
+            "rule": "no invented $/day",
+            "ok": true
+          },
+          {
+            "rule": "no fact after now",
+            "ok": true
+          },
+          {
+            "rule": "every fact has a source",
+            "ok": true
+          },
+          {
+            "rule": "no confident card with an open gap",
+            "ok": true
+          }
+        ],
+        "blocked": false,
+        "wasted": {
+          "count": 61,
+          "expedited": 133,
+          "premium_usd": 31159
+        }
+      },
+      "sources": [
+        "cal:cal-bk-00001",
+        "demo/part-entry.json",
+        "demo/policy.json",
+        "demo/quote.json",
+        "slack:C07FLK0ACTU:1793747100.602740",
+        "slack:C07FLK0ACTU:1793758718.594384",
+        "slack:C07FLK0ACTU:1793773570.410123",
+        "slack:C07FLK0ACTU:1794336300.000000",
+        "slack:C07FLK0SUPC:1793991900.864420"
+      ],
+      "engine": {
+        "settings": "settings.json",
+        "sources": "sources.mjs",
+        "graph": "graph.mjs",
+        "maths": "src/timevalue",
+        "conversation": "read-cache + graph",
+        "rubric": "src/timevalue"
+      }
+    },
+    "2": {
+      "card": {
+        "change": {
+          "n": 2,
+          "label": "Change 2",
+          "text": "dvt hip frameless motor: vendor won't commit to a date. somewhere between 11/19 and 11/30",
+          "by": "Arjun Venkatesan",
+          "at": "2026-11-10T11:00:00-08:00",
+          "doc_id": "slack:C07FLK0ACTU:1794337200.000000"
+        },
+        "now": "2026-11-10T11:00:00-08:00",
+        "part": {
+          "name": "Hip actuator bracket",
+          "number": "FL-HIP-1042",
+          "revision": "C",
+          "quantity": 4,
+          "cad_file": "FL-HIP-1042_hip-bracket_revC.step",
+          "summary": "4x hip bracket rev C for the hip actuator dvt spin test",
+          "requester": "Owen Halloran",
+          "material": "Aluminum 7075-T651",
+          "process": "CNC Milling (5-axis)",
+          "finish": "Type III hard anodize, black",
+          "catalogue_id": "pt-hip-bracket"
+        },
+        "quote": {
+          "id": "Q-2617750-1",
+          "expires_on": "2026-12-10"
+        },
+        "test": {
+          "id": "test-hip-spin",
+          "name": "Hip actuator DVT spin test",
+          "owner": "Arjun Venkatesan",
+          "duration_days": 3,
+          "planned_start": "2026-11-23"
+        },
+        "milestone": {
+          "id": "m-hip-spin-test",
+          "name": "Hip actuator DVT spin test complete",
+          "target": "2026-11-24",
+          "policy": {
+            "type": "per_day",
+            "usd_per_day": 600,
+            "curve": null,
+            "owner": "Arjun Venkatesan",
+            "set_at": "2026-10-05T09:15:00-07:00"
+          }
+        },
+        "inputs": [
+          {
+            "id": "dl-hip-motor-dvt",
+            "name": "DVT hip frameless motor",
+            "ready": {
+              "min": "2026-11-19",
+              "max": "2026-11-30"
+            },
+            "ready_text": "between Thu 11/19 and Mon 11/30",
+            "owner": "Arjun Venkatesan",
+            "said_by": "Arjun Venkatesan",
+            "said_at": "2026-11-10T11:00:00-08:00",
+            "said_ago": "today",
+            "doc_id": "slack:C07FLK0ACTU:1794337200.000000"
+          }
+        ],
+        "tiers": [
+          {
+            "tier": "standard",
+            "label": "Standard",
+            "total": 3000,
+            "ready": "2026-11-24",
+            "lead_days": 10,
+            "finish": {
+              "min": "2026-12-01",
+              "max": "2026-12-03"
+            },
+            "days_saved": null,
+            "break_even": null,
+            "recommended": false
+          },
+          {
+            "tier": "expedite",
+            "label": "Expedite",
+            "total": 3900,
+            "ready": "2026-11-17",
+            "lead_days": 5,
+            "finish": {
+              "min": "2026-11-25",
+              "max": "2026-12-03"
+            },
+            "days_saved": null,
+            "break_even": null,
+            "recommended": false
+          },
+          {
+            "tier": "rush",
+            "label": "Rush",
+            "total": 6900,
+            "ready": "2026-11-12",
+            "lead_days": 2,
+            "finish": {
+              "min": "2026-11-25",
+              "max": "2026-12-03"
+            },
+            "days_saved": null,
+            "break_even": null,
+            "recommended": false,
+            "no_faster_than": "Expedite"
+          }
+        ],
+        "outcome": "depends",
+        "outcome_tag": "Ask first",
+        "recommended": null,
+        "headline": "Depends on the motor. Expedite pays only if it is ready by Fri 11/20.",
+        "detail": [
+          "Arjun said between Thu 11/19 and Mon 11/30 (today). Nothing preselected until Arjun answers.",
+          "Ask Arjun: \"Will DVT hip frameless motor be ready by Fri Nov 20? If yes, expedite is worth it; if later, standard is as good.\""
+        ],
+        "dominated": [
+          "Rush ($6,900) finishes no sooner than Expedite: +$3,000 for nothing."
+        ],
+        "question": {
+          "to": "p-arjun",
+          "text": "Will DVT hip frameless motor be ready by Fri Nov 20? If yes, expedite is worth it; if later, standard is as good."
+        },
+        "switching": {
+          "input": "dl-hip-motor-dvt",
+          "by_date": "2026-11-20"
+        },
+        "checks": [
+          {
+            "n": 1,
+            "label": "Quote is open",
+            "status": "pass",
+            "text": "Valid until 2026-12-10.",
+            "sources": [
+              "demo/quote.json"
+            ]
+          },
+          {
+            "n": 2,
+            "label": "Schedule solved",
+            "status": "pass",
+            "text": "standard done Tue Dec 1 / Tue Dec 1 / Thu Dec 3; expedite done Wed Nov 25 / Wed Nov 25 / Thu Dec 3; rush done Wed Nov 25 / Wed Nov 25 / Thu Dec 3",
+            "sources": [
+              "cal:cal-bk-00001",
+              "slack:C07FLK0SUPC:1793991900.864420"
+            ]
+          },
+          {
+            "n": 3,
+            "label": "What sets the date",
+            "status": "info",
+            "text": "The test is waiting on the DVT hip frameless motor.",
+            "sources": [
+              "slack:C07FLK0ACTU:1794337200.000000"
+            ]
+          },
+          {
+            "n": 4,
+            "label": "Value of a day",
+            "status": "pass",
+            "text": "$600/day.",
+            "sources": [
+              "demo/policy.json"
+            ]
+          },
+          {
+            "n": 5,
+            "label": "Decision",
+            "status": "info",
+            "text": "Depends on the DVT hip frameless motor being ready by Fri Nov 20.",
+            "sources": []
+          },
+          {
+            "n": 6,
+            "label": "What the conversation says · from the LLM read",
+            "status": "info",
+            "advisory": true,
+            "items": [
+              {
+                "key": "pressure",
+                "status": "info",
+                "text": "Pressure high over the last 7 days (14 linked messages): \"costs us about 600 a day\"; \"asking again\"; \"waits on\".",
+                "sources": [
+                  "slack:C07FLK0ACTU:1793747100.602740",
+                  "slack:C07FLK0ACTU:1793773570.410123",
+                  "slack:C07FLK0ACTU:1793758718.594384"
+                ],
+                "question": null
+              },
+              {
+                "key": "reason",
+                "status": "info",
+                "text": "DVT hip frameless motor ready between Thu 11/19 and Mon 11/30, so depends on the DVT hip frameless motor being ready by Fri Nov 20.",
+                "sources": [
+                  "slack:C07FLK0ACTU:1794337200.000000"
+                ],
+                "question": null
+              }
+            ],
+            "text": "Pressure high over the last 7 days (14 linked messages): \"costs us about 600 a day\"; \"asking again\"; \"waits on\". DVT hip frameless motor ready between Thu 11/19 and Mon 11/30, so depends on the DVT hip frameless motor being ready by Fri Nov 20.",
+            "sources": [
+              "slack:C07FLK0ACTU:1793747100.602740",
+              "slack:C07FLK0ACTU:1793773570.410123",
+              "slack:C07FLK0ACTU:1793758718.594384",
+              "slack:C07FLK0ACTU:1794337200.000000"
+            ]
+          }
+        ],
+        "guards": [
+          {
+            "rule": "no invented $/day",
+            "ok": true
+          },
+          {
+            "rule": "no fact after now",
+            "ok": true
+          },
+          {
+            "rule": "every fact has a source",
+            "ok": true
+          },
+          {
+            "rule": "no confident card with an open gap",
+            "ok": true
+          }
+        ],
+        "blocked": false,
+        "wasted": {
+          "count": 61,
+          "expedited": 133,
+          "premium_usd": 31159
+        }
+      },
+      "sources": [
+        "cal:cal-bk-00001",
+        "demo/part-entry.json",
+        "demo/policy.json",
+        "demo/quote.json",
+        "slack:C07FLK0ACTU:1793747100.602740",
+        "slack:C07FLK0ACTU:1793758718.594384",
+        "slack:C07FLK0ACTU:1793773570.410123",
+        "slack:C07FLK0ACTU:1794337200.000000",
+        "slack:C07FLK0SUPC:1793991900.864420"
+      ],
+      "engine": {
+        "settings": "settings.json",
+        "sources": "sources.mjs",
+        "graph": "graph.mjs",
+        "maths": "src/timevalue",
+        "conversation": "read-cache + graph",
+        "rubric": "src/timevalue"
+      }
+    },
+    "3": {
+      "card": {
+        "change": {
+          "n": 3,
+          "label": "Change 3",
+          "text": "per vendor the dvt hip motor is now 11/27, not 11/20",
+          "by": "Samir Khoury",
+          "at": "2026-11-10T11:15:00-08:00",
+          "doc_id": "slack:C07FLK0ACTU:1794338100.000000"
+        },
+        "now": "2026-11-10T11:15:00-08:00",
+        "part": {
+          "name": "Hip actuator bracket",
+          "number": "FL-HIP-1042",
+          "revision": "C",
+          "quantity": 4,
+          "cad_file": "FL-HIP-1042_hip-bracket_revC.step",
+          "summary": "4x hip bracket rev C for the hip actuator dvt spin test",
+          "requester": "Owen Halloran",
+          "material": "Aluminum 7075-T651",
+          "process": "CNC Milling (5-axis)",
+          "finish": "Type III hard anodize, black",
+          "catalogue_id": "pt-hip-bracket"
+        },
+        "quote": {
+          "id": "Q-2617750-1",
+          "expires_on": "2026-12-10"
+        },
+        "test": {
+          "id": "test-hip-spin",
+          "name": "Hip actuator DVT spin test",
+          "owner": "Arjun Venkatesan",
+          "duration_days": 3,
+          "planned_start": "2026-11-23"
+        },
+        "milestone": {
+          "id": "m-hip-spin-test",
+          "name": "Hip actuator DVT spin test complete",
+          "target": "2026-11-24",
+          "policy": {
+            "type": "per_day",
+            "usd_per_day": 600,
+            "curve": null,
+            "owner": "Arjun Venkatesan",
+            "set_at": "2026-10-05T09:15:00-07:00"
+          }
+        },
+        "inputs": [
+          {
+            "id": "dl-hip-motor-dvt",
+            "name": "DVT hip frameless motor",
+            "ready": "2026-11-27",
+            "ready_text": "Fri 11/27",
+            "owner": "Arjun Venkatesan",
+            "said_by": "Samir Khoury",
+            "said_at": "2026-11-10T11:15:00-08:00",
+            "said_ago": "today",
+            "doc_id": "slack:C07FLK0ACTU:1794338100.000000"
+          }
+        ],
+        "tiers": [
+          {
+            "tier": "standard",
+            "label": "Standard",
+            "total": 3000,
+            "ready": "2026-11-24",
+            "lead_days": 10,
+            "finish": "2026-12-02",
+            "days_saved": 0,
+            "break_even": null,
+            "recommended": false
+          },
+          {
+            "tier": "expedite",
+            "label": "Expedite",
+            "total": 3900,
+            "ready": "2026-11-17",
+            "lead_days": 5,
+            "finish": "2026-12-02",
+            "days_saved": 0,
+            "break_even": null,
+            "recommended": false
+          },
+          {
+            "tier": "rush",
+            "label": "Rush",
+            "total": 6900,
+            "ready": "2026-11-12",
+            "lead_days": 2,
+            "finish": "2026-12-02",
+            "days_saved": 0,
+            "break_even": null,
+            "recommended": false,
+            "no_faster_than": "Expedite"
+          }
+        ],
+        "outcome": "ask_owner",
+        "outcome_tag": "Ask first",
+        "recommended": null,
+        "headline": "Sources disagree on the motor: Arjun says Fri 11/20, Samir says Fri 11/27. Ask before paying.",
+        "detail": [
+          "If Fri 11/20: Expedite saves 2 working days.",
+          "If Fri 11/27: Expedite buys no time, Standard is as fast.",
+          "Nothing preselected until Arjun answers.",
+          "Ask Arjun: \"Which is right for the motor: Fri 11/20 (Arjun) or Fri 11/27 (Samir)?\""
+        ],
+        "dominated": [
+          "Rush ($6,900) finishes no sooner than Expedite: +$3,000 for nothing."
+        ],
+        "question": {
+          "to": "p-arjun",
+          "text": "Which is right for the motor: Fri 11/20 (Arjun) or Fri 11/27 (Samir)?"
+        },
+        "switching": null,
+        "checks": [
+          {
+            "n": 1,
+            "label": "Quote is open",
+            "status": "pass",
+            "text": "Valid until 2026-12-10.",
+            "sources": [
+              "demo/quote.json"
+            ]
+          },
+          {
+            "n": 2,
+            "label": "Schedule solved",
+            "status": "pass",
+            "text": "standard done Wed Dec 2; expedite done Wed Dec 2; rush done Wed Dec 2",
+            "sources": [
+              "cal:cal-bk-00001",
+              "slack:C07FLK0SUPC:1793991900.864420"
+            ]
+          },
+          {
+            "n": 3,
+            "label": "What sets the date",
+            "status": "info",
+            "text": "The test is waiting on the DVT hip frameless motor.",
+            "sources": [
+              "slack:C07FLK0ACTU:1794338100.000000"
+            ]
+          },
+          {
+            "n": 4,
+            "label": "Value of a day",
+            "status": "pass",
+            "text": "$600/day.",
+            "sources": [
+              "demo/policy.json"
+            ]
+          },
+          {
+            "n": 5,
+            "label": "Decision",
+            "status": "info",
+            "text": "Which is right for the motor: Fri 11/20 (Arjun) or Fri 11/27 (Samir)?",
+            "sources": []
+          },
+          {
+            "n": 6,
+            "label": "What the conversation says · from the LLM read",
+            "status": "fail",
+            "advisory": true,
+            "items": [
+              {
+                "key": "conflict",
+                "status": "fail",
+                "blocks": true,
+                "text": "Sources disagree on DVT hip frameless motor: 2026-11-20 (Arjun Venkatesan) vs 2026-11-27 (Samir Khoury). It sets the decision, so the card is not confident.",
+                "question": {
+                  "to": "p-arjun",
+                  "text": "Which date is right for DVT hip frameless motor: 2026-11-20 or 2026-11-27?",
+                  "to_name": "Arjun Venkatesan"
+                },
+                "sources": [
+                  "slack:C07FLK0ACTU:1794246000.565944",
+                  "slack:C07FLK0ACTU:1794338100.000000"
+                ]
+              },
+              {
+                "key": "pressure",
+                "status": "info",
+                "text": "Pressure high over the last 7 days (14 linked messages): \"costs us about 600 a day\"; \"asking again\"; \"waits on\".",
+                "sources": [
+                  "slack:C07FLK0ACTU:1793747100.602740",
+                  "slack:C07FLK0ACTU:1793773570.410123",
+                  "slack:C07FLK0ACTU:1793758718.594384"
+                ],
+                "question": null
+              },
+              {
+                "key": "reason",
+                "status": "info",
+                "text": "DVT hip frameless motor ready Fri 11/27, so which is right for the motor: Fri 11/20 (Arjun) or Fri 11/27 (Samir)?",
+                "sources": [
+                  "slack:C07FLK0ACTU:1794338100.000000"
+                ],
+                "question": null
+              }
+            ],
+            "text": "Sources disagree on DVT hip frameless motor: 2026-11-20 (Arjun Venkatesan) vs 2026-11-27 (Samir Khoury). It sets the decision, so the card is not confident. Pressure high over the last 7 days (14 linked messages): \"costs us about 600 a day\"; \"asking again\"; \"waits on\". DVT hip frameless motor ready Fri 11/27, so which is right for the motor: Fri 11/20 (Arjun) or Fri 11/27 (Samir)?",
+            "sources": [
+              "slack:C07FLK0ACTU:1794246000.565944",
+              "slack:C07FLK0ACTU:1794338100.000000",
+              "slack:C07FLK0ACTU:1793747100.602740",
+              "slack:C07FLK0ACTU:1793773570.410123",
+              "slack:C07FLK0ACTU:1793758718.594384"
+            ]
+          }
+        ],
+        "guards": [
+          {
+            "rule": "no invented $/day",
+            "ok": true
+          },
+          {
+            "rule": "no fact after now",
+            "ok": true
+          },
+          {
+            "rule": "every fact has a source",
+            "ok": true
+          },
+          {
+            "rule": "no confident card with an open gap",
+            "ok": true
+          }
+        ],
+        "blocked": false,
+        "wasted": {
+          "count": 61,
+          "expedited": 133,
+          "premium_usd": 31159
+        }
+      },
+      "sources": [
+        "cal:cal-bk-00001",
+        "demo/part-entry.json",
+        "demo/policy.json",
+        "demo/quote.json",
+        "slack:C07FLK0ACTU:1793747100.602740",
+        "slack:C07FLK0ACTU:1793758718.594384",
+        "slack:C07FLK0ACTU:1793773570.410123",
+        "slack:C07FLK0ACTU:1794246000.565944",
+        "slack:C07FLK0ACTU:1794338100.000000",
+        "slack:C07FLK0SUPC:1793991900.864420"
+      ],
+      "engine": {
+        "settings": "settings.json",
+        "sources": "sources.mjs",
+        "graph": "graph.mjs",
+        "maths": "src/timevalue",
+        "conversation": "read-cache + graph",
+        "rubric": "src/timevalue"
+      }
+    }
+  }
+}

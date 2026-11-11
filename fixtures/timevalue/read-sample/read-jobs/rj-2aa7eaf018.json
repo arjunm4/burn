@@ -1,0 +1,86 @@
+{
+  "job_id": "rj-2aa7eaf018",
+  "priority": 3,
+  "label": "weeks of 2026-09-21..2026-09-21",
+  "now": "2026-11-10T10:30:00-08:00",
+  "instructions": "docs/build/read-job-instructions.md",
+  "output": "Fill \"results\" with one entry per doc (see instructions), set \"filled_by\", then save this file.",
+  "catalog": [
+    {
+      "id": "dl-hip-motor-dvt",
+      "kind": "deliverable",
+      "name": "DVT hip frameless motor",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "m-hip-spin-test",
+      "kind": "milestone",
+      "name": "Hip spin test",
+      "assemblies": [
+        "a-hip-actuator"
+      ]
+    },
+    {
+      "id": "pt-hip-bracket",
+      "kind": "part",
+      "name": "Hip actuator bracket",
+      "part_number": "FL-HIP-1042",
+      "aliases": [
+        "hip bracket",
+        "the bracket",
+        "1042",
+        "motor bracket"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "pt-pelvis-plate",
+      "kind": "part",
+      "name": "Hip to pelvis interface plate",
+      "part_number": "FL-HIP-1021",
+      "aliases": [
+        "pelvis plate",
+        "1021"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "rig-spin-test-stand",
+      "kind": "rig",
+      "name": "Spin test stand"
+    },
+    {
+      "id": "test-hip-spin",
+      "kind": "test",
+      "name": "Hip actuator DVT spin test",
+      "assembly": "a-hip-actuator",
+      "rig": "rig-spin-test-stand",
+      "milestone": "m-hip-spin-test"
+    }
+  ],
+  "docs": [
+    {
+      "id": "jira:HIP-360:desc",
+      "source": "jira",
+      "where": "HIP-360",
+      "thread": "HIP-360",
+      "author": "Owen Halloran",
+      "author_id": "p-owen",
+      "at": "2026-08-17T13:24:09-07:00",
+      "text": "need 2x pelvis plate by 9/22 (fit check)"
+    },
+    {
+      "id": "jira:HIP-360:h307203",
+      "source": "jira",
+      "where": "HIP-360",
+      "thread": "HIP-360",
+      "author": "Owen Halloran",
+      "author_id": "p-owen",
+      "at": "2026-09-21T10:02:00-07:00",
+      "text": "status: In Progress -> Done"
+    }
+  ],
+  "filled_by": null,
+  "results": null
+}

@@ -7,10 +7,10 @@
 
 ## Overview
 
-We need that order by 9/25. We need load cell plate by 10/23 (Fixture install and shakedown: Grip load cell plate) (camera arm) (2461). We need LC plate by 10/23.
+We need that order by 9/25. We need load cell plate by 10/23 (Fixture install and shakedown: Grip load cell plate) (camera arm) (2461). We need LC plate by 10/28.
 
 ## Discussion
 
 - Dmitri: We need that order by 9/25.
-- Dmitri: We need LC plate by 10/23.
+- Dmitri: We need LC plate by 10/28.
 - Jade: We need load cell plate by 10/23 (Fixture install and shakedown: Grip load cell plate) (camera arm) (2461).

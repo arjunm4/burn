@@ -19,21 +19,21 @@
   },
   "people": [
     {
-      "id": "p-carlos",
-      "name": "Carlos Mendoza",
-      "display_name": "carlos",
-      "slack_id": "U07FLK0CARL",
-      "title": "Lead Technician",
+      "id": "p-callum",
+      "name": "Callum Fraser",
+      "display_name": "callum",
+      "slack_id": "U07FLK0CALL",
+      "title": "Mechanical Engineer",
       "style": {
-        "case": "mixed",
-        "punctuation": "full",
-        "typos": "some",
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
         "emoji": "some",
-        "length": "terse",
+        "length": "medium",
         "hedging": "low",
         "quirks": [
-          "ALL CAPS for part numbers and deadlines",
-          "uses !!"
+          "fixes typos with *word",
+          "double-sends instead of editing"
         ]
       }
     },
@@ -51,6 +51,25 @@
         "length": "medium",
         "hedging": "low",
         "quirks": []
+      }
+    },
+    {
+      "id": "p-ishaan",
+      "name": "Ishaan Mehta",
+      "display_name": "ishaan.m",
+      "slack_id": "U07FLK0ISHA",
+      "title": "Electrical Engineer, sensors",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "lots",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
+        ]
       }
     },
     {
@@ -87,6 +106,22 @@
         "quirks": [
           "no capitals or end punctuation ever"
         ]
+      }
+    },
+    {
+      "id": "p-lin",
+      "name": "Lin Zhao",
+      "display_name": "lin.z",
+      "slack_id": "U07FLK0LIN0",
+      "title": "Test Engineer, life test",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
       }
     },
     {
@@ -127,39 +162,56 @@
       }
     },
     {
-      "id": "p-priya",
-      "name": "Priya Raman",
-      "display_name": "priya",
-      "slack_id": "U07FLK0PRIY",
-      "title": "Legs Lead",
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
       "style": {
-        "case": "proper",
-        "punctuation": "full",
-        "typos": "none",
-        "emoji": "none",
-        "length": "long",
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
         "hedging": "medium",
         "quirks": [
-          "numbered lists in status updates",
-          "restates the question before answering"
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
         ]
       }
     },
     {
-      "id": "p-valeria",
-      "name": "Valeria Ortiz",
-      "display_name": "valeria.o",
-      "slack_id": "U07FLK0VALE",
-      "title": "Electrical Engineer, battery systems",
+      "id": "p-sofia",
+      "name": "Sofia Lindqvist",
+      "display_name": "sofia.l",
+      "slack_id": "U07FLK0SOFI",
+      "title": "Arms and Hands Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
+      "id": "p-talia",
+      "name": "Talia Rosen",
+      "display_name": "talia",
+      "slack_id": "U07FLK0TALI",
+      "title": "Buyer/Planner",
       "style": {
         "case": "mixed",
         "punctuation": "light",
         "typos": "rare",
-        "emoji": "rare",
+        "emoji": "lots",
         "length": "medium",
-        "hedging": "high",
+        "hedging": "low",
         "quirks": [
-          "\"i think\", \"probably\", \"not 100% sure but\""
+          "reacts with 🙏 and 😬",
+          "ends messages with an emoji"
         ]
       }
     },
@@ -200,64 +252,107 @@
   ],
   "messages": [
     {
-      "ts": "1789517555.051430",
-      "user": "p-nadia",
+      "ts": "1789408845.716522",
+      "user": "p-samir",
       "thread_ts": null,
       "events": [
-        "ev-001604"
+        "ev-001741"
       ],
-      "brief": "feedthrough: need 6 by 2026-10-01",
+      "brief": "the part: need 6 by 2026-10-06",
       "claim": {
         "kind": "needs",
         "value": {
           "qty": 6,
-          "by": "2026-10-01"
+          "by": "2026-10-06"
         }
       },
       "must_mention": [
-        "feedthrough",
-        "thurs the 1st"
+        "the part",
+        "10/6"
       ],
-      "pressure": "high",
-      "length": "short",
-      "text": "need 6 feedthrough by thurs the 1st for the chamber"
+      "pressure": "low",
+      "length": "medium",
+      "text": "the part, need 6 by 10/6 - can anyone get a quote on that this week"
     },
     {
-      "ts": "1789518228.366020",
-      "user": "p-priya",
-      "thread_ts": "1789517555.051430",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Agreed. The chamber can't run the knee without them."
-    },
-    {
-      "ts": "1789518933.780860",
-      "user": "p-carlos",
-      "thread_ts": "1789517555.051430",
-      "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Yep, makes sense."
-    },
-    {
-      "ts": "1789522960.009349",
-      "user": "p-jade",
-      "thread_ts": "1789517555.051430",
+      "ts": "1789413564.341578",
+      "user": "p-kenji",
+      "thread_ts": "1789408845.716522",
       "events": [],
       "brief": "reply (pushes back) in the thread about: the message above",
       "must_mention": [],
       "length": "one_word",
-      "text": "6 seems low"
+      "text": "cant see that happening"
     },
     {
-      "ts": "1789570333.302831",
+      "ts": "1789417381.217191",
+      "user": "p-callum",
+      "thread_ts": "1789408845.716522",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@talia can u look at this one, i dont have the vendor contact"
+    },
+    {
+      "ts": "1789417542.918189",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-001742"
+      ],
+      "brief": "1343: need 6 by 2026-10-06",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 6,
+          "by": "2026-10-06"
+        }
+      },
+      "must_mention": [
+        "1343",
+        "tues the 6th"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "1343 need 6 by tues the 6th"
+    },
+    {
+      "ts": "1789422044.536764",
+      "user": "p-sofia",
+      "thread_ts": "1789417542.918189",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "I can pull the drawing for it if that helps."
+    },
+    {
+      "ts": "1789424232.686202",
+      "user": "p-kenji",
+      "thread_ts": "1789417542.918189",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ok"
+    },
+    {
+      "ts": "1789426363.161444",
+      "user": "p-kenji",
+      "thread_ts": "1789417542.918189",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "which rev"
+    },
+    {
+      "ts": "1789570333.164093",
       "user": "p-nadia",
       "thread_ts": null,
       "events": [
-        "ev-001721"
+        "ev-001872"
       ],
       "brief": "1028: need 10 by 2026-10-01 for Hip actuator thermal derate at continuous torque",
       "claim": {
@@ -270,18 +365,65 @@
       "must_mention": [
         "1028",
         "Hip actuator thermal derate at continuous torque",
-        "thurs 10/1"
+        "10/1"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "need 10x 1028 by thurs 10/1 for Hip actuator thermal derate at continuous torque. can someone kick off the quote"
+      "length": "short",
+      "text": "1028 need 10 by 10/1 for Hip actuator thermal derate at continuous torque"
     },
     {
-      "ts": "1789670729.254440",
+      "ts": "1789574587.555665",
+      "user": "p-ingrid",
+      "thread_ts": null,
+      "events": [
+        "ev-001819"
+      ],
+      "brief": "the plate: need 2 by 2026-10-05",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-10-05"
+        }
+      },
+      "must_mention": [
+        "the plate",
+        "10/5"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "the plate: we need 2 by 10/5. Please put it on the list."
+    },
+    {
+      "ts": "1789588817.613499",
+      "user": "p-talia",
+      "thread_ts": null,
+      "events": [
+        "ev-001749"
+      ],
+      "brief": "output flange: need 1 by 2026-09-24; asks whether expediting is worth it",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 1,
+          "by": "2026-09-24"
+        }
+      },
+      "must_mention": [
+        "output flange",
+        "9/24"
+      ],
+      "pressure": "high",
+      "asks_expedite": true,
+      "length": "medium",
+      "text": "output flange needed by 9/24, is it worth expediting? 😬"
+    },
+    {
+      "ts": "1789670729.324882",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-001696"
+        "ev-001847"
       ],
       "brief": "connector panel: need 3 by 2026-10-29",
       "claim": {
@@ -293,18 +435,61 @@
       },
       "must_mention": [
         "connector panel",
-        "thurs 10/29"
+        "10/29"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "need 3 connector panel by thurs 10/29, no rush yet"
+      "length": "short",
+      "text": "connector panel need 3 by 10/29"
     },
     {
-      "ts": "1789750506.259796",
+      "ts": "1789672305.948204",
+      "user": "p-kenji",
+      "thread_ts": "1789670729.324882",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "3 panels, big spender"
+    },
+    {
+      "ts": "1789676672.589837",
+      "user": "p-samir",
+      "thread_ts": "1789670729.324882",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "ty"
+    },
+    {
+      "ts": "1789694871.856980",
+      "user": "p-lin",
+      "thread_ts": null,
+      "events": [
+        "ev-001844"
+      ],
+      "brief": "shin link: need 12 by 2026-10-08",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 12,
+          "by": "2026-10-08"
+        }
+      },
+      "must_mention": [
+        "shin link",
+        "10/8"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "shin link: need 12 by 10/8."
+    },
+    {
+      "ts": "1789750506.298399",
       "user": "p-owen",
       "thread_ts": null,
       "events": [
-        "ev-001711"
+        "ev-001862"
       ],
       "brief": "that order: need 12 by 2026-11-17",
       "claim": {
@@ -323,11 +508,41 @@
       "text": "that order need 12 by 11/17"
     },
     {
-      "ts": "1789763261.414125",
+      "ts": "1789751446.247700",
+      "user": "p-samir",
+      "thread_ts": "1789750506.298399",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "ok. the vendor usually wants a few days on a rush of that size, ill check"
+    },
+    {
+      "ts": "1789752547.947486",
+      "user": "p-nadia",
+      "thread_ts": "1789750506.298399",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "agreed, can we just do it all in one order"
+    },
+    {
+      "ts": "1789755214.996420",
+      "user": "p-jade",
+      "thread_ts": "1789750506.298399",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "we got a similar batch in last month, receiving was a mess"
+    },
+    {
+      "ts": "1789763261.677951",
       "user": "p-ingrid",
       "thread_ts": null,
       "events": [
-        "ev-001754"
+        "ev-001905"
       ],
       "brief": "FL-STR-1591: need 5 by 2026-10-13",
       "claim": {
@@ -339,41 +554,21 @@
       },
       "must_mention": [
         "FL-STR-1591",
-        "tues 10/13"
+        "10/13"
       ],
       "pressure": "elevated",
       "length": "medium",
-      "text": "We need 5 of FL-STR-1591 by tues 10/13. Please get it quoted today."
+      "text": "FL-STR-1591: need 5 by 10/13."
     },
     {
-      "ts": "1789766780.768669",
-      "user": "p-kenji",
-      "thread_ts": "1789763261.414125",
+      "ts": "1789768517.865662",
+      "user": "p-ishaan",
+      "thread_ts": "1789763261.677951",
       "events": [],
-      "brief": "reply (disagrees politely) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "might want to hold til the vent sizing settles"
-    },
-    {
-      "ts": "1789768632.865634",
-      "user": "p-owen",
-      "thread_ts": "1789763261.414125",
-      "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
+      "brief": "reply (thanks) in the thread about: the message above",
       "must_mention": [],
       "length": "one_word",
-      "text": "bold of us to assume quotes come back same day"
-    },
-    {
-      "ts": "1789772913.293343",
-      "user": "p-valeria",
-      "thread_ts": "1789763261.414125",
-      "events": [],
-      "brief": "reply (tags someone else) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "<@kenji.m> probably your call on the vent side?"
+      "text": "Thanks! 🙏"
     }
   ]
 }

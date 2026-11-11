@@ -8,10 +8,9 @@
 
 ## Overview
 
-We need the bracket by 10/29. We need hip dyno plate by 10/30 (the build). We need ankle crank by 11/2.
+We need the bracket by 10/27. We need ankle crank by 11/3.
 
 ## Discussion
 
-- Zoe: We need the bracket by 10/29.
-- Dmitri: We need hip dyno plate by 10/30 (the build).
-- Dmitri: We need ankle crank by 11/2.
+- Zoe: We need the bracket by 10/27.
+- Dmitri: We need ankle crank by 11/3.

@@ -56,6 +56,25 @@
       }
     },
     {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "slack_id": "U07FLK0ARJN",
+      "title": "Actuators Lead",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
       "id": "p-farah",
       "name": "Farah Qureshi",
       "display_name": "farah.q",
@@ -75,20 +94,20 @@
       }
     },
     {
-      "id": "p-jade",
-      "name": "Jade Thompson",
-      "display_name": "jade.t",
-      "slack_id": "U07FLK0JADE",
-      "title": "Technician, receiving",
+      "id": "p-hana",
+      "name": "Hana Kimura",
+      "display_name": "hana",
+      "slack_id": "U07FLK0HANA",
+      "title": "Mechanical Engineer",
       "style": {
-        "case": "lower",
-        "punctuation": "none",
-        "typos": "some",
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
         "emoji": "rare",
-        "length": "terse",
-        "hedging": "low",
+        "length": "medium",
+        "hedging": "high",
         "quirks": [
-          "no capitals or end punctuation ever"
+          "\"i think\", \"probably\", \"not 100% sure but\""
         ]
       }
     },
@@ -124,24 +143,6 @@
         "length": "medium",
         "hedging": "low",
         "quirks": []
-      }
-    },
-    {
-      "id": "p-omar",
-      "name": "Omar Farouk",
-      "display_name": "omar.f",
-      "slack_id": "U07FLK0OMAR",
-      "title": "Technical Program Manager",
-      "style": {
-        "case": "mixed",
-        "punctuation": "light",
-        "typos": "rare",
-        "emoji": "rare",
-        "length": "medium",
-        "hedging": "high",
-        "quirks": [
-          "\"i think\", \"probably\", \"not 100% sure but\""
-        ]
       }
     },
     {
@@ -195,49 +196,11 @@
   ],
   "messages": [
     {
-      "ts": "1791831774.275848",
-      "user": "p-omar",
-      "thread_ts": null,
-      "events": [
-        "ev-003320"
-      ],
-      "brief": "heater clamp: still quoting rev A",
-      "claim": {
-        "kind": "substitute",
-        "value": "rev A"
-      },
-      "must_mention": [
-        "heater clamp"
-      ],
-      "length": "short",
-      "text": "heater clamp is still quoting at rev A i think, probably back this week"
-    },
-    {
-      "ts": "1791834301.348476",
-      "user": "p-andre",
-      "thread_ts": "1791831774.275848",
-      "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "ok thx"
-    },
-    {
-      "ts": "1791834653.271220",
-      "user": "p-zoe",
-      "thread_ts": "1791831774.275848",
-      "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "fwiw the current fixture works without it for now"
-    },
-    {
-      "ts": "1791842696.900273",
+      "ts": "1791842696.974099",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-002830"
+        "ev-003018"
       ],
       "brief": "FL-HND-1487 rev C released: added relief for connector backshell",
       "claim": {
@@ -247,15 +210,69 @@
       "must_mention": [
         "FL-HND-1487"
       ],
-      "length": "short",
-      "text": "FL-HND-1487 rev C is released, added relief for the connector backshell"
+      "length": "medium",
+      "text": "FL-HND-1487 rev C is released. added a relief for the connector backshell, it was rubbing on the first article."
     },
     {
-      "ts": "1791992819.821878",
-      "user": "p-lin",
+      "ts": "1791844409.245989",
+      "user": "p-sofia",
+      "thread_ts": "1791842696.974099",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "nice, that was bugging me"
+    },
+    {
+      "ts": "1791846981.579203",
+      "user": "p-farah",
+      "thread_ts": "1791842696.974099",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Good."
+    },
+    {
+      "ts": "1791851857.713335",
+      "user": "p-andre",
+      "thread_ts": "1791842696.974099",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "same backshell fouled on the dyno harness last month, took a dremel to it"
+    },
+    {
+      "ts": "1791995778.043911",
+      "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-003374"
+        "ev-003347"
+      ],
+      "brief": "the part: need 2 by 2026-10-20 for the fit check",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-10-20"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "the fit check",
+        "tues 10/20"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "need 2 of the part for the fit check, tues 10/20 if possible"
+    },
+    {
+      "ts": "1791997739.712456",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-003632"
       ],
       "brief": "gantry adapter: still quoting rev B",
       "claim": {
@@ -265,25 +282,25 @@
       "must_mention": [
         "gantry adapter"
       ],
-      "length": "short",
-      "text": "The gantry adapter is still out for quote at rev B."
-    },
-    {
-      "ts": "1791995499.659342",
-      "user": "p-farah",
-      "thread_ts": "1791992819.821878",
-      "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
-      "must_mention": [],
       "length": "medium",
-      "text": "For the gantry adapter, keep in mind the cable routing on the drop rig changed, so whoever quotes it should see the latest harness clearance."
+      "text": "gantry adapter still quoting rev B, i think. checking whether the shop has the newer drawing"
     },
     {
-      "ts": "1792005639.446823",
+      "ts": "1791997839.448501",
+      "user": "p-lin",
+      "thread_ts": "1791995778.043911",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "Not sure I agree, the old one may still fit that check."
+    },
+    {
+      "ts": "1792005639.392428",
       "user": "p-sofia",
       "thread_ts": null,
       "events": [
-        "ev-002824"
+        "ev-003012"
       ],
       "brief": "sofia.l says FL-HND-1490: substitute rev C",
       "claim": {
@@ -294,14 +311,14 @@
         "FL-HND-1490"
       ],
       "length": "medium",
-      "text": "For FL-HND-1490 we're going to substitute rev C. Please pull rev B from any open kits."
+      "text": "FL-HND-1490: please substitute rev C on the next order, rev B is out of the BOM now."
     },
     {
-      "ts": "1792099075.420505",
+      "ts": "1792099075.831675",
       "user": "p-kenji",
       "thread_ts": null,
       "events": [
-        "ev-002815"
+        "ev-003003"
       ],
       "brief": "FL-TST-2399 rev C released: hole pattern moved",
       "claim": {
@@ -312,17 +329,17 @@
         "FL-TST-2399"
       ],
       "length": "short",
-      "text": "FL-TST-2399 rev C released hole pattern moved"
+      "text": "FL-TST-2399 rev C released, hole pattern moved"
     },
     {
-      "ts": "1792102919.437813",
-      "user": "p-jade",
-      "thread_ts": "1792099075.420505",
+      "ts": "1792104096.363870",
+      "user": "p-hana",
+      "thread_ts": "1792099075.831675",
       "events": [],
-      "brief": "reply (will check later) in the thread about: the message above",
+      "brief": "reply (jokes) in the thread about: the message above",
       "must_mention": [],
-      "length": "short",
-      "text": "ok ill check the bin later"
+      "length": "one_word",
+      "text": "moved again? the holes are getting more mobile than the robot"
     }
   ]
 }

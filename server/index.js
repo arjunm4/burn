@@ -7,6 +7,7 @@ import {createStore,AppError} from './store.js';
 import {createIngest} from './ingest/index.js';
 import {ingestRoutes} from './ingest/routes.js';
 import {setActiveIngest, activeIngest} from './ingest/active.js';
+import {timevalueRoutes} from './timevalue/routes.mjs';
 import {ordersRoutes} from './api/orders.js';
 import {recordingsRoutes} from './api/recordings.js';import {sharedXometrySite} from './vendors/site/index.js';
 import {createOrchestrator} from './flow/orchestrator.js';
@@ -36,6 +37,8 @@ export function server(vite,store=createStore(),analyzeRequest=analyze,ingest=nu
   const json=(value,status=200)=>{res.writeHead(status,{'Content-Type':'application/json','Cache-Control':'no-store'});res.end(JSON.stringify(value));};
   try {
     if(pathname==='/api/requests'&&req.method==='GET')return json(store.snapshot());
+    // Time Value demo card (read-only, no model call).
+    if(pathname.startsWith('/api/timevalue/')&&await timevalueRoutes(req,res,pathname,json))return;
     if(req.method==='POST'&&req.headers.origin&&req.headers.origin!==`http://${req.headers.host}`)throw new AppError('Origin not allowed',403);
     if(pathname==='/api/requests'&&req.method==='POST')return json({request:store.create(await body(req))},201);
     // Ingestion and graph routes (Slack, calendar, dependency graph); created on first use.

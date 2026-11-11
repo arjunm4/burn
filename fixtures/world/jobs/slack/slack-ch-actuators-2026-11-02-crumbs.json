@@ -76,25 +76,6 @@
       }
     },
     {
-      "id": "p-carlos",
-      "name": "Carlos Mendoza",
-      "display_name": "carlos",
-      "slack_id": "U07FLK0CARL",
-      "title": "Lead Technician",
-      "style": {
-        "case": "mixed",
-        "punctuation": "full",
-        "typos": "some",
-        "emoji": "some",
-        "length": "terse",
-        "hedging": "low",
-        "quirks": [
-          "ALL CAPS for part numbers and deadlines",
-          "uses !!"
-        ]
-      }
-    },
-    {
       "id": "p-ingrid",
       "name": "Ingrid Solberg",
       "display_name": "ingrid.s",
@@ -217,24 +198,6 @@
         "hedging": "low",
         "quirks": []
       }
-    },
-    {
-      "id": "p-yusuf",
-      "name": "Yusuf Demir",
-      "display_name": "yusuf",
-      "slack_id": "U07FLK0YUSU",
-      "title": "Firmware Engineer, motor control",
-      "style": {
-        "case": "lower",
-        "punctuation": "none",
-        "typos": "some",
-        "emoji": "rare",
-        "length": "terse",
-        "hedging": "low",
-        "quirks": [
-          "no capitals or end punctuation ever"
-        ]
-      }
     }
   ],
   "context": [
@@ -250,31 +213,11 @@
   ],
   "messages": [
     {
-      "ts": "1793644712.045803",
-      "user": "p-carlos",
-      "thread_ts": null,
-      "events": [
-        "ev-002177"
-      ],
-      "brief": "LC bracket arrived (6)",
-      "claim": {
-        "kind": "stock",
-        "value": 6
-      },
-      "must_mention": [
-        "LC bracket",
-        "6"
-      ],
-      "pressure": "high",
-      "length": "medium",
-      "text": "LC bracket is in, all 6. Shelf B by the cage!!"
-    },
-    {
-      "ts": "1793648364.591649",
+      "ts": "1793648364.420873",
       "user": "p-ingrid",
       "thread_ts": null,
       "events": [
-        "ev-003279"
+        "ev-003691"
       ],
       "brief": "hip bracket: still quoting rev B",
       "claim": {
@@ -284,85 +227,114 @@
       "must_mention": [
         "hip bracket"
       ],
-      "length": "medium",
-      "text": "Still waiting on the hip bracket quote, they're quoting rev B. I'll push them today."
+      "length": "short",
+      "text": "hip bracket still quoting rev B?"
     },
     {
-      "ts": "1793649769.498118",
-      "user": "p-jonas",
-      "thread_ts": "1793644712.045803",
-      "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "two of them still have the protective film on"
-    },
-    {
-      "ts": "1793726371.678482",
+      "ts": "1793726371.201608",
       "user": "p-tomas",
       "thread_ts": null,
       "events": [
-        "ev-002651"
+        "ev-002839"
       ],
-      "brief": "Rig setup: Dyno chamber shaft feedthrough waits on Firmware build for knee actuator (feedthrough)",
+      "brief": "Rig setup: Dyno chamber shaft feedthrough (2) waits on Firmware build for knee actuator (feedthrough)",
       "claim": {
         "kind": "blocked",
         "value": "dl-gen-0130"
       },
       "must_mention": [
         "Firmware build for knee actuator (feedthrough)",
-        "Rig setup: Dyno chamber shaft feedthrough"
+        "Rig setup: Dyno chamber shaft feedthrough (2)"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "Rig setup: Dyno chamber shaft feedthrough is stuck behind Firmware build for knee actuator (feedthrough), i think. not 100% sure that's the only thing though"
+      "length": "short",
+      "text": "Rig setup: Dyno chamber shaft feedthrough (2) waits on Firmware build for knee actuator (feedthrough)"
     },
     {
-      "ts": "1793732505.801348",
+      "ts": "1793730351.242110",
+      "user": "p-jonas",
+      "thread_ts": "1793726371.201608",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "not what i heard"
+    },
+    {
+      "ts": "1793731687.868602",
+      "user": "p-samir",
+      "thread_ts": "1793726371.201608",
+      "events": [],
+      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "same thing bit us on the last rig, took a few tries to get it sealed"
+    },
+    {
+      "ts": "1793732505.035827",
       "user": "p-owen",
       "thread_ts": null,
       "events": [
-        "ev-002633"
+        "ev-002821"
       ],
-      "brief": "Fit check: Hip holding-brake bracket waits on Firmware build for hip actuator (brake bracket)",
+      "brief": "Fit check: Hip holding-brake bracket (2) waits on Firmware build for hip actuator (brake bracket)",
       "claim": {
         "kind": "blocked",
         "value": "dl-gen-0113"
       },
       "must_mention": [
         "Firmware build for hip actuator (brake bracket)",
-        "the bracket"
+        "the (2)"
       ],
       "pressure": "high",
-      "length": "short",
-      "text": "the bracket fit check is blocked on Firmware build for hip actuator (brake bracket)"
+      "length": "medium",
+      "text": "Fit check: Hip holding-brake bracket (2) waits on Firmware build for hip actuator (brake bracket), so the (2) is parked"
     },
     {
-      "ts": "1793740801.939647",
+      "ts": "1793733147.188970",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-003657"
+      ],
+      "brief": "Sensor breakout PCB for knee actuator: still quoting 2026-11-03",
+      "claim": {
+        "kind": "eta",
+        "value": "2026-11-03"
+      },
+      "must_mention": [
+        "Sensor breakout PCB for knee actuator (shim)",
+        "11/3"
+      ],
+      "length": "short",
+      "text": "Sensor breakout PCB for knee actuator (shim) still quoting 11/3, wouldn't bet on it"
+    },
+    {
+      "ts": "1793740801.397035",
       "user": "p-wei",
       "thread_ts": null,
       "events": [
-        "ev-002184"
+        "ev-002369"
       ],
-      "brief": "1166 arrived (7)",
+      "brief": "1166 arrived",
       "claim": {
         "kind": "stock",
-        "value": 7
+        "value": 5
       },
       "must_mention": [
         "1166",
-        "7"
+        "5"
       ],
       "pressure": "high",
-      "length": "short",
-      "text": "1166 arrived, 7 pcs. Putting them in the bin under the dyno bench."
+      "length": "medium",
+      "text": "1166 arrived (5)"
     },
     {
-      "ts": "1793747100.845523",
+      "ts": "1793747100.602740",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002733"
+        "ev-002921"
       ],
       "brief": "Spin test complete by 2026-11-24; every working day it slips costs us about 600 a day",
       "claim": {
@@ -375,18 +347,18 @@
       "must_mention": [
         "spin test",
         "600 a day",
-        "tues the 24th"
+        "11/24"
       ],
       "pressure": "elevated",
-      "length": "short",
-      "text": "spin test has to be done by tues the 24th. every working day past that is ~600 a day for us"
+      "length": "medium",
+      "text": "need the spin test complete by 11/24, every working day past it costs us about 600 a day"
     },
     {
-      "ts": "1793758718.438867",
+      "ts": "1793758718.594384",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002673"
+        "ev-002861"
       ],
       "brief": "Hip actuator DVT spin test waits on Spin-test stand",
       "claim": {
@@ -399,44 +371,62 @@
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "Hip actuator DVT spin test still waiting on the Spin-test stand fyi"
+      "text": "Hip actuator DVT spin test waits on Spin-test stand"
     },
     {
-      "ts": "1793759487.838732",
-      "user": "p-beth",
-      "thread_ts": "1793758718.438867",
+      "ts": "1793762783.138799",
+      "user": "p-jonas",
+      "thread_ts": "1793758718.594384",
       "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
       "must_mention": [],
-      "length": "one_word",
-      "text": "Noted, thanks."
+      "length": "short",
+      "text": "stand is the one with the loose coupling right"
     },
     {
-      "ts": "1793762030.483227",
-      "user": "p-yusuf",
-      "thread_ts": "1793758718.438867",
-      "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "the stand is just vibes rn"
-    },
-    {
-      "ts": "1793764495.788469",
-      "user": "p-tomas",
-      "thread_ts": "1793758718.438867",
-      "events": [],
-      "brief": "reply (will check later) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "will look after standup"
-    },
-    {
-      "ts": "1793820000.055532",
+      "ts": "1793773570.410123",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002731"
+        "ev-003659"
+      ],
+      "brief": "hip bracket: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "hip bracket"
+      ],
+      "length": "short",
+      "text": "hip bracket still quoting rev B, asking again"
+    },
+    {
+      "ts": "1793811442.565603",
+      "user": "p-andre",
+      "thread_ts": "1793758718.594384",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Noted. I will go check the stand wiring before lunch."
+    },
+    {
+      "ts": "1793814802.581825",
+      "user": "p-wei",
+      "thread_ts": "1793758718.594384",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "yeah it's the one in the back bay"
+    },
+    {
+      "ts": "1793820000.376706",
+      "user": "p-arjun",
+      "thread_ts": null,
+      "events": [
+        "ev-002919"
       ],
       "brief": "Spin test cannot start until the hip motor and the rev C brackets are both in",
       "claim": {
@@ -449,14 +439,14 @@
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "reminder spin test doesnt start until hip motor AND rev C brackets are both on the bench"
+      "text": "spin test cannot start until the hip motor and the rev C brackets are both in"
     },
     {
-      "ts": "1793833636.957537",
+      "ts": "1793833636.334820",
       "user": "p-nadia",
       "thread_ts": null,
       "events": [
-        "ev-002631"
+        "ev-002819"
       ],
       "brief": "Kit and assemble: Knee bearing shim waits on Leg drop-test gantry",
       "claim": {
@@ -468,29 +458,18 @@
         "Kit and assemble: Knee bearing shim"
       ],
       "pressure": "low",
-      "length": "short",
-      "text": "Kit and assemble: Knee bearing shim is waiting on the Leg drop-test gantry ugh"
+      "length": "medium",
+      "text": "Kit and assemble: Knee bearing shim waits on Leg drop-test gantry"
     },
     {
-      "ts": "1793873520.830750",
-      "user": "p-tomas",
-      "thread_ts": null,
-      "events": [
-        "ev-001930"
-      ],
-      "brief": "spacer set in use",
-      "claim": {
-        "kind": "done",
-        "value": "2026-11-04"
-      },
-      "must_mention": [
-        "spacer set",
-        "the build",
-        "wed the 4th"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "spacer set went into the build wed the 4th, probably fine"
+      "ts": "1793833865.424682",
+      "user": "p-ingrid",
+      "thread_ts": "1793833636.334820",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "I do not think the gantry is what is holding it. Can we look at the kit status first?"
     },
     {
       "ts": "1793894808.760854",
@@ -509,34 +488,44 @@
         "11/24"
       ],
       "length": "short",
-      "text": "Firmware build for hip actuator (brake bracket) slipped again, now 11/24 :/"
+      "text": "Firmware build for hip actuator (brake bracket) moved again, now 11/24"
     },
     {
-      "ts": "1793904843.300758",
+      "ts": "1793913697.884538",
       "user": "p-owen",
-      "thread_ts": "1793873520.830750",
-      "events": [],
-      "brief": "reply (adds a detail) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "one was a little tight on the shaft had to tap it"
+      "thread_ts": null,
+      "events": [
+        "ev-003865"
+      ],
+      "brief": "Kit and assemble: Knee output shaft blocked on Encoder kit for knee actuator (knee shaft)",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-gen-0101"
+      },
+      "must_mention": [
+        "Kit and assemble: Knee output shaft",
+        "Encoder kit for knee actuator (knee shaft)"
+      ],
+      "pressure": "low",
+      "length": "short",
+      "text": "Kit and assemble: Knee output shaft blocked on Encoder kit for knee actuator (knee shaft)"
     },
     {
-      "ts": "1793906823.727885",
+      "ts": "1793916644.311276",
       "user": "p-samir",
-      "thread_ts": "1793873520.830750",
+      "thread_ts": "1793913697.884538",
       "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
+      "brief": "reply (will check later) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "yeah carlos has the arbor press if it happens again"
+      "text": "will look at the encoder status later"
     },
     {
-      "ts": "1793916720.118118",
+      "ts": "1793916720.178365",
       "user": "p-arjun",
       "thread_ts": null,
       "events": [
-        "ev-002729"
+        "ev-002917"
       ],
       "brief": "Spin test takes 3 working days once it starts",
       "claim": {
@@ -552,24 +541,14 @@
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "once it starts the spin test is 3 days, working days"
+      "text": "spin test takes 3 days once it starts"
     },
     {
-      "ts": "1793917054.546470",
-      "user": "p-beth",
-      "thread_ts": "1793916720.118118",
-      "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
-      "must_mention": [],
-      "length": "medium",
-      "text": "So, if I'm restating correctly: three days of spinning and zero days of us being calm about it."
-    },
-    {
-      "ts": "1793918209.804469",
+      "ts": "1793918209.516263",
       "user": "p-owen",
       "thread_ts": null,
       "events": [
-        "ev-002118"
+        "ev-002303"
       ],
       "brief": "hip shaft arrived (6)",
       "claim": {
@@ -582,34 +561,64 @@
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "hip shaft in, 6 of them"
+      "text": "hip shaft arrived (6)"
     },
     {
-      "ts": "1793921512.807836",
-      "user": "p-andre",
-      "thread_ts": "1793916720.118118",
+      "ts": "1793921686.825574",
+      "user": "p-wei",
+      "thread_ts": "1793918209.516263",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "ok"
+    },
+    {
+      "ts": "1793921888.577062",
+      "user": "p-owen",
+      "thread_ts": "1793916720.178365",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "yeah it's the same encoder as before"
+    },
+    {
+      "ts": "1793923415.416171",
+      "user": "p-wei",
+      "thread_ts": "1793918209.516263",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "all six in one box?"
+    },
+    {
+      "ts": "1793924902.001089",
+      "user": "p-arjun",
+      "thread_ts": "1793916720.178365",
       "events": [],
       "brief": "reply (shares a related experience) in the thread about: the message above",
       "must_mention": [],
-      "length": "one_word",
-      "text": "last time we ran it the thermocouple fell off day two lol"
+      "length": "short",
+      "text": "last project the encoder was the long pole too, we just never wrote it down"
     },
     {
-      "ts": "1793922225.231690",
-      "user": "p-arjun",
-      "thread_ts": "1793916720.118118",
+      "ts": "1793928527.028224",
+      "user": "p-beth",
+      "thread_ts": "1793916720.178365",
       "events": [],
-      "brief": "reply (jokes) in the thread about: the message above",
+      "brief": "reply (adds a detail) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "kapton tape budget doubled"
+      "text": "I will add it to the risk list."
     },
     {
-      "ts": "1793990820.479335",
+      "ts": "1793990820.801855",
       "user": "p-owen",
       "thread_ts": null,
       "events": [
-        "ev-002730"
+        "ev-002918"
       ],
       "brief": "Need 4x FL-HIP-1042 rev C for the spin test",
       "claim": {
@@ -622,30 +631,41 @@
       "must_mention": [
         "FL-HIP-1042",
         "spin test",
-        "11/20"
+        "fri the 20th"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "need 4x FL-HIP-1042 rev C for the spin test by 11/20"
+      "text": "need 4x FL-HIP-1042 rev C for the spin test by fri the 20th"
     },
     {
-      "ts": "1793995347.474675",
-      "user": "p-beth",
-      "thread_ts": null,
-      "events": [
-        "ev-003463"
-      ],
-      "brief": "Sensor breakout PCB for knee actuator: still quoting 2026-11-03",
-      "claim": {
-        "kind": "eta",
-        "value": "2026-11-03"
-      },
-      "must_mention": [
-        "Sensor breakout PCB for knee actuator (shim)",
-        "11/3"
-      ],
+      "ts": "1793995266.608948",
+      "user": "p-arjun",
+      "thread_ts": "1793990820.801855",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "ok"
+    },
+    {
+      "ts": "1793997520.699682",
+      "user": "p-owen",
+      "thread_ts": "1793990820.801855",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "hmm not sure thats enough"
+    },
+    {
+      "ts": "1794000298.467016",
+      "user": "p-nadia",
+      "thread_ts": "1793990820.801855",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
       "length": "medium",
-      "text": "Quick update: Sensor breakout PCB for knee actuator (shim) is still in quoting, same as on 11/3. I'll keep chasing."
+      "text": "the last batch had one that needed a light rework, so worth checking when they land"
     }
   ]
 }

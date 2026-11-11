@@ -37,19 +37,41 @@
       }
     },
     {
-      "id": "p-claire",
-      "name": "Claire Donnelly",
-      "display_name": "claire",
-      "slack_id": "U07FLK0CLAI",
-      "title": "Finance and Operations Lead",
+      "id": "p-beth",
+      "name": "Beth Kowalski",
+      "display_name": "beth",
+      "slack_id": "U07FLK0BETH",
+      "title": "Technical Program Manager",
       "style": {
         "case": "proper",
         "punctuation": "full",
         "typos": "none",
-        "emoji": "rare",
-        "length": "medium",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-carlos",
+      "name": "Carlos Mendoza",
+      "display_name": "carlos",
+      "slack_id": "U07FLK0CARL",
+      "title": "Lead Technician",
+      "style": {
+        "case": "mixed",
+        "punctuation": "full",
+        "typos": "some",
+        "emoji": "some",
+        "length": "terse",
         "hedging": "low",
-        "quirks": []
+        "quirks": [
+          "ALL CAPS for part numbers and deadlines",
+          "uses !!"
+        ]
       }
     },
     {
@@ -88,6 +110,41 @@
       }
     },
     {
+      "id": "p-idris",
+      "name": "Idris Bello",
+      "display_name": "idris",
+      "slack_id": "U07FLK0IDRI",
+      "title": "Mechanical Engineer, battery enclosure",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    },
+    {
+      "id": "p-ingrid",
+      "name": "Ingrid Solberg",
+      "display_name": "ingrid.s",
+      "slack_id": "U07FLK0INGR",
+      "title": "VP Hardware",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    },
+    {
       "id": "p-jade",
       "name": "Jade Thompson",
       "display_name": "jade.t",
@@ -102,6 +159,43 @@
         "hedging": "low",
         "quirks": [
           "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-nora",
+      "name": "Nora Fitzgerald",
+      "display_name": "nora.f",
+      "slack_id": "U07FLK0NORA",
+      "title": "Manufacturing/NPI Lead",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
+        "quirks": [
+          "numbered lists in status updates",
+          "restates the question before answering"
+        ]
+      }
+    },
+    {
+      "id": "p-omar",
+      "name": "Omar Farouk",
+      "display_name": "omar.f",
+      "slack_id": "U07FLK0OMAR",
+      "title": "Technical Program Manager",
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "high",
+        "quirks": [
+          "\"i think\", \"probably\", \"not 100% sure but\""
         ]
       }
     },
@@ -193,11 +287,31 @@
   ],
   "messages": [
     {
-      "ts": "1793673600.722304",
+      "ts": "1793647292.488204",
+      "user": "p-carlos",
+      "thread_ts": null,
+      "events": [
+        "ev-002363"
+      ],
+      "brief": "load cell bracket arrived (6)",
+      "claim": {
+        "kind": "stock",
+        "value": 6
+      },
+      "must_mention": [
+        "load cell bracket",
+        "6"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "load cell bracket landed, got 6 of them. checking them in now!!"
+    },
+    {
+      "ts": "1793673600.796590",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-001889"
+        "ev-002054"
       ],
       "brief": "latch block in use",
       "claim": {
@@ -207,11 +321,41 @@
       "must_mention": [
         "latch block",
         "the build",
-        "mon the 2nd"
+        "11/2"
       ],
       "pressure": "low",
-      "length": "medium",
-      "text": "latch block went into the build mon the 2nd, fixture held up fine on the first few cycles"
+      "length": "short",
+      "text": "fyi latch block is in use on the build as of 11/2, so no spares floating around"
+    },
+    {
+      "ts": "1793674500.998450",
+      "user": "p-samir",
+      "thread_ts": "1793673600.796590",
+      "events": [],
+      "brief": "reply (agrees) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "yeah same here, nothing left on the shelf"
+    },
+    {
+      "ts": "1793726903.388559",
+      "user": "p-beth",
+      "thread_ts": "1793673600.796590",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "@nora.f can you confirm the fixtures list has this one"
+    },
+    {
+      "ts": "1793728729.070854",
+      "user": "p-jade",
+      "thread_ts": "1793673600.796590",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "ok"
     },
     {
       "ts": "1793743758.408304",
@@ -230,7 +374,7 @@
         "thurs 10/29"
       ],
       "length": "short",
-      "text": "Encoder kit for leg (left, hip to foot) (hip pitch bracket) moved again. Records now say thurs 10/29."
+      "text": "Encoder kit for leg (left, hip to foot) (hip pitch bracket) moved again, now showing thurs 10/29 on the vendor page."
     },
     {
       "ts": "1793747531.079450",
@@ -240,14 +384,14 @@
       "brief": "reply (disagrees politely) in the thread about: the message above",
       "must_mention": [],
       "length": "one_word",
-      "text": "Not sure that's current, I'll double check."
+      "text": "Are we sure that's right, Priya? Last update I saw said something different, so I'd double check with the vendor before we plan around it."
     },
     {
-      "ts": "1793758860.247238",
+      "ts": "1793758860.418724",
       "user": "p-amara",
       "thread_ts": null,
       "events": [
-        "ev-001467"
+        "ev-001583"
       ],
       "brief": "2424 in use",
       "claim": {
@@ -261,14 +405,14 @@
       ],
       "pressure": "low",
       "length": "short",
-      "text": "2424 is in the build as of tues the 3rd i think"
+      "text": "2424 is in use on the build, tues the 3rd. i think that's everything we had but not 100% sure"
     },
     {
-      "ts": "1793805840.221650",
+      "ts": "1793805840.593096",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-001994"
+        "ev-002163"
       ],
       "brief": "shank hook in use",
       "claim": {
@@ -278,18 +422,28 @@
       "must_mention": [
         "shank hook",
         "the build",
-        "11/2"
+        "mon 11/2"
       ],
       "pressure": "elevated",
       "length": "medium",
-      "text": "shank hook went into the build 11/2 btw, forgot to post. nobody touch it pls its zeroed"
+      "text": "shank hook went in on the build mon 11/2, one more thing off the list"
     },
     {
-      "ts": "1793823003.792378",
+      "ts": "1793819999.845817",
+      "user": "p-gwen",
+      "thread_ts": "1793805840.593096",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "will check on this later today"
+    },
+    {
+      "ts": "1793823003.797814",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-001941"
+        "ev-002111"
       ],
       "brief": "torso imu arrived (12)",
       "claim": {
@@ -301,45 +455,56 @@
         "12"
       ],
       "pressure": "low",
-      "length": "short",
-      "text": "torso imu came in, 12 of them"
+      "length": "medium",
+      "text": "torso imu showed up, 12 in the box. receiving tag still needs a sticker"
     },
     {
-      "ts": "1793825477.067846",
-      "user": "p-claire",
-      "thread_ts": "1793823003.792378",
+      "ts": "1793823220.700579",
+      "user": "p-nora",
+      "thread_ts": "1793805840.593096",
       "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "Thanks."
-    },
-    {
-      "ts": "1793828038.070947",
-      "user": "p-jade",
-      "thread_ts": "1793823003.792378",
-      "events": [],
-      "brief": "reply (answers) in the thread about: the message above",
+      "brief": "reply (shares a related experience) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "on the shelf by receiving"
+      "text": "we had the same thing happen on the last build, took a day to sort out who actually had them"
     },
     {
-      "ts": "1793831849.756146",
-      "user": "p-samir",
-      "thread_ts": "1793823003.792378",
+      "ts": "1793824260.272461",
+      "user": "p-tomas",
+      "thread_ts": null,
+      "events": [
+        "ev-002100"
+      ],
+      "brief": "2139 in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-11-04"
+      },
+      "must_mention": [
+        "2139",
+        "the build",
+        "wed 11/4"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "2139 in use on the build wed 11/4, probably the last of it"
+    },
+    {
+      "ts": "1793824636.111813",
+      "user": "p-ingrid",
+      "thread_ts": "1793805840.593096",
       "events": [],
-      "brief": "reply (thanks) in the thread about: the message above",
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "ty"
+      "text": "Was that one signed out against the fixtures list or just pulled off the bench?"
     },
     {
-      "ts": "1793839525.276420",
+      "ts": "1793839525.336548",
       "user": "p-jade",
       "thread_ts": null,
       "events": [
-        "ev-002168"
+        "ev-002353"
       ],
       "brief": "2461 arrived (12)",
       "claim": {
@@ -352,24 +517,34 @@
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "2461 here qty 12"
+      "text": "2461 arrived 12 pcs no damage on the boxes"
     },
     {
-      "ts": "1793840571.729046",
-      "user": "p-samir",
-      "thread_ts": "1793839525.276420",
+      "ts": "1793843879.371514",
+      "user": "p-omar",
+      "thread_ts": "1793839525.336548",
       "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
+      "brief": "reply (shares a related experience) in the thread about: the message above",
       "must_mention": [],
-      "length": "one_word",
-      "text": "👍"
+      "length": "short",
+      "text": "i think we hit that last time too, not 100% sure it got resolved"
     },
     {
-      "ts": "1793869140.335972",
+      "ts": "1793844931.703563",
+      "user": "p-gwen",
+      "thread_ts": "1793839525.336548",
+      "events": [],
+      "brief": "reply (tags someone else) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "@samir.k can you take a look when you get a sec"
+    },
+    {
+      "ts": "1793869140.159509",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-001925"
+        "ev-002092"
       ],
       "brief": "hip bracket in use",
       "claim": {
@@ -382,15 +557,15 @@
         "wed the 4th"
       ],
       "pressure": "low",
-      "length": "short",
-      "text": "hip bracket is in the build since wed the 4th 🙌"
+      "length": "medium",
+      "text": "hip bracket is in use on the build wed the 4th, sorry for the late post 🙏"
     },
     {
-      "ts": "1793897280.035160",
+      "ts": "1793897280.214688",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-002160"
+        "ev-002345"
       ],
       "brief": "side link in use",
       "claim": {
@@ -403,15 +578,46 @@
         "11/3"
       ],
       "pressure": "high",
-      "length": "short",
-      "text": "side link went in the build 11/3, finally 😅"
+      "length": "medium",
+      "text": "side link in use on the build 11/3, need a replacement ordered soon 😬"
     },
     {
-      "ts": "1793991900.056003",
+      "ts": "1793931660.430323",
+      "user": "p-idris",
+      "thread_ts": null,
+      "events": [
+        "ev-001817"
+      ],
+      "brief": "2869 in use",
+      "claim": {
+        "kind": "done",
+        "value": "2026-11-04"
+      },
+      "must_mention": [
+        "2869",
+        "the test",
+        "11/4"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "2869 used for the test 11/4, nothing left on my side"
+    },
+    {
+      "ts": "1793936520.654224",
+      "user": "p-beth",
+      "thread_ts": "1793931660.430323",
+      "events": [],
+      "brief": "reply (adds a detail) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "Noted, Idris. Just to restate: that was the last unit we had on hand for that item, so any rerun will need new stock before it can go ahead."
+    },
+    {
+      "ts": "1793991900.864420",
       "user": "p-samir",
       "thread_ts": null,
       "events": [
-        "ev-002728"
+        "ev-002916"
       ],
       "brief": "Motor still lands 2026-11-20; the spin test waits on it",
       "claim": {
@@ -425,54 +631,14 @@
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "hip motor still showing fri 11/20, so the spin test is stuck behind it"
+      "text": "hip motor still lands fri 11/20, the spin test waits on it. will update if vendor moves it again"
     },
     {
-      "ts": "1793996364.153887",
-      "user": "p-gwen",
-      "thread_ts": "1793991900.056003",
-      "events": [],
-      "brief": "reply (pushes back) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "That's not good enough. Can we get an actual ship confirmation?"
-    },
-    {
-      "ts": "1793997934.117104",
-      "user": "p-samir",
-      "thread_ts": "1793991900.056003",
-      "events": [],
-      "brief": "reply (will check later) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "will ask them again this aftn"
-    },
-    {
-      "ts": "1794040140.430459",
-      "user": "p-tomas",
-      "thread_ts": null,
-      "events": [
-        "ev-002178"
-      ],
-      "brief": "LC bracket in use",
-      "claim": {
-        "kind": "done",
-        "value": "2026-11-06"
-      },
-      "must_mention": [
-        "LC bracket",
-        "11/6"
-      ],
-      "pressure": "high",
-      "length": "short",
-      "text": "LC bracket went in 11/6, probably should have posted that earlier"
-    },
-    {
-      "ts": "1794089520.498647",
+      "ts": "1794089520.284304",
       "user": "p-jade",
       "thread_ts": null,
       "events": [
-        "ev-001530"
+        "ev-001654"
       ],
       "brief": "LC plate in use",
       "claim": {
@@ -482,11 +648,11 @@
       "must_mention": [
         "LC plate",
         "the build",
-        "fri 11/6"
+        "11/6"
       ],
       "pressure": "low",
       "length": "medium",
-      "text": "LC plate in the build fri 11/6 fyi"
+      "text": "LC plate in use on the build 11/6 sat shift"
     }
   ]
 }

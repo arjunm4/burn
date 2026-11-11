@@ -1,0 +1,70 @@
+{
+  "job_id": "slack-ch-procurement-2026-11-02-crumbs",
+  "source": "slack",
+  "status": "filled",
+  "priority": 3,
+  "style_rules": [
+    "docs/research/data-realism.md#slack",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "channel": {
+    "id": "ch-procurement",
+    "name": "procurement",
+    "slack_id": "C07FLK0PROC",
+    "purpose": "Purchase requests, approvals and Ramp questions"
+  },
+  "week": {
+    "start": "2026-11-02",
+    "end": "2026-11-08"
+  },
+  "people": [
+    {
+      "id": "p-renee",
+      "name": "Renee Dubois",
+      "display_name": "renee",
+      "slack_id": "U07FLK0RENE",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
+    }
+  ],
+  "context": [
+    "Ongoing: Leg DVT build: parts readiness and what to do about late test hardware. This week: Retro: test hardware ordered late again, Nora asks for a fixtures list per build.",
+    "Ongoing: Frameless DVT motor from the vendor keeps slipping; stator stack length change. This week: Samir: vendor now says the 20th; Arjun is skeptical, asks for ship confirmation."
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "any fact not in a message brief or the context",
+    "dates other than those in the claim",
+    "stating which shipping tier was chosen"
+  ],
+  "messages": [
+    {
+      "ts": "1793751221.641223",
+      "user": "p-renee",
+      "thread_ts": null,
+      "events": [
+        "ev-003331"
+      ],
+      "brief": "2789 arrived",
+      "claim": {
+        "kind": "stock",
+        "value": 2
+      },
+      "must_mention": [
+        "2789",
+        "2"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "2789 arrived, qty 2. someone please grab them from receiving, need them on the bench asap"
+    }
+  ]
+}

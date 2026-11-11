@@ -1,6 +1,6 @@
 # Burn: architecture
 
-Status: **v9 draft.** v9 moves all Xometry work (quoting and placement) to Burn's server-side headless browser on a company Xometry account, so placement happens the moment Ramp approves (Arjun's decision, 2026-11-10). v8 consolidated Owen's decisions of 2026-11-10; the history is in §15. v5 was the last version jointly approved by Claude and Codex. Architecture only; no implementation authorized. Open questions are tracked in [`open-questions.md`](open-questions.md).
+Status: **v9 draft.** v8 consolidated Owen's decisions of 2026-11-10; v9 adds the company-wide dependency graph in place of per-order retrieval (Owen's decision) and moves all Xometry work to Burn's server-side headless browser behind the provider interface, so placement happens the moment Ramp approves (Arjun's decision, 2026-11-10); the history is in §15.  v5 was the last version jointly approved by Claude and Codex. Architecture only; no implementation authorized. Open questions are tracked in [`open-questions.md`](open-questions.md).
 
 ## At a glance
 
@@ -46,7 +46,8 @@ In short: the engineer describes the part and clicks Okay, the manager approves 
 
 ```
  1. Part entry      engineer: part name + short summary + CAD file
- 2. Context         Burn retrieves related Slack, meetings, Jira, calendar → context record
+ 2. Context         Burn finds the part in the company dependency graph and walks to its
+                    tests, milestones and their other inputs, with the evidence for each link
  3. Form            Burn fills the order fields; asks only for gaps
  4. Quote           Burn's headless browser fills Xometry (company account) and
                     reads back every tier; the engineer sees the options in Burn
@@ -79,17 +80,17 @@ In short: the engineer describes the part and clicks Okay, the manager approves 
 | In scope (v1) | Out of scope (v1) |
 |---|---|
 | Custom **CNC-machined** parts on **Xometry** | Other vendors (later adapters); PCB, sheet metal, off-the-shelf parts |
-| Part entry, context retrieval, form fill, CAD upload, tier recommendation | Choosing the vendor; CAD geometry understanding |
+| Part entry, company-wide dependency graph, form fill, CAD upload, tier recommendation | Choosing the vendor; CAD geometry understanding |
 | Ramp request, approval, card, booking and item receipt | Approval logic of our own (Ramp's rules govern) |
 | Quoting and verified checkout via Burn's headless browser on a company Xometry account | Browser extensions; ordering through engineers' personal Xometry accounts |
 | Tracking, slip re-checks, first-use check | Vendor-reliability learning (deferred) |
-| A context-attribute model trained on past Ramp purchases (advisory) | Company-wide scheduling; budget creation; inventing demand from chat |
+| A context-attribute model trained on past Ramp purchases (advisory) | Assigning or rescheduling people's work; budget creation; inventing demand from chat |
 
 ## 2. Settled decisions
 
 Each lists what we rejected and why.
 
-1. **Part-first.** The engineer's part entry starts the work; Burn walks from that part to the work and milestone it feeds. *Rejected:* an agent that ingests everything and decides what to buy.
+1. **Part-first decisions over a company-wide graph** (Owen's decision, v9). Burn continuously maintains one dependency graph of the whole company from every source (§6.1). The engineer's part entry still starts every order: Burn finds the part's node and walks from it to the work, tests and milestones it feeds. *Rejected:* per-order search that builds a throwaway context record (inconsistent between orders, and a slip can't reach the orders it affects); an agent that decides what to buy from what it ingests.
 2. **One shared evidence store and planning model, with bounded jobs.** Records own state; models propose over snapshots and never approve their own output. *Rejected:* one persistent agent per project.
 3. **The demand anchors the decision; no BOM.** The demand is: this part, for this use or test, by this date, owned by this person. It comes from the engineer's entry plus accepted context, confirmed by the engineer. *Rejected:* the BOM as anchor; fixtures, test adapters, prototypes and rush revisions (the parts most often expedited) are usually outside it, and early teams often have no reliable BOM. *Cost:* no product-wide gap detection.
 4. **Evidence and accepted facts are separate layers.** Extracted claims stay assertions until accepted. *Rejected:* latest-claim-wins.
@@ -98,7 +99,7 @@ Each lists what we rejected and why.
 7. **Scenarios and switching conditions by default; probabilities only with a source.** *Rejected:* model confidence as probability.
 8. **Questions earn their interruption, one at a time,** and only when the answer could change the action. Trusted evidence is checked first.
 9. **Disagreement is first-class.** The engineer can argue; supported new context is accepted and Burn re-solves; the exchange is kept, typed and access-scoped. An argument never silently becomes a fact or a training label.
-10. **Two dependency tracks** (Owen's decision). (1) A **progress ranking**: each assembly or module working toward the same calendar milestone is ranked by progress relative to the others, measured from tickets done plus progress implied in the conversation; this gives general urgency without a full graph. (2) A **dependency graph that may be incomplete**: part → work or test → milestone, built from the context; missing links stay unknown. Where the graph is good enough it drives the cost-of-delay maths (§7); the ranking supplies urgency everywhere. *Replaces (v5):* "no league table of assemblies".
+10. **Two dependency tracks** (Owen's decision). (1) A **progress ranking**: each assembly or module working toward the same calendar milestone is ranked by progress relative to the others, measured from tickets done plus progress implied in the conversation; this gives general urgency without a full graph. (2) A **company-wide dependency graph that may be incomplete** (§6.1): part → work or test → milestone, kept up to date from every source; missing links stay unknown. Where the graph is good enough it drives the cost-of-delay maths (§7); the ranking supplies urgency everywhere. *Replaces (v5):* "no league table of assemblies".
 11. **The decision is a decomposition, not an additive urgency score:** eligibility → schedule → basis (dominance → policy → economics) → advisory comparison with the learned habit.
 12. **Ramp owns the money.** Purchase request, approval (the engineer's manager), auto-approval of small orders, card, booking and item receipt are Ramp's. *Rejected:* Burn's own approval settings and a supply-chain purchase queue.
 13. **Supply chain is a context source, not a purchase step.** Every human step must add judgment or own something; with Ramp approving and paying, a supply-chain click only adds delay. Their Slack messages (sibling ETAs, stock, cutoffs, vendor rules) are trusted for those topics.
@@ -114,7 +115,7 @@ Each lists what we rejected and why.
 
 ### 0.1 Part entry and context
 - The engineer enters the **part name and a short summary** in their own words (what it is, what it's for, anything urgent) and attaches the CAD file.
-- The entry is the **retrieval query**: Burn finds related Slack threads, meeting notes, Jira tickets and calendar items and synthesizes the part's **context record** (§5, §6).
+- The entry **resolves to the part's node** in the dependency graph (§6.1) by part number, file name, alias or description. A new part becomes a proposed node the engineer confirms. The node's neighbourhood (its tests, milestones, the other inputs they wait on, and the evidence behind each link) is the part's context.
 - Burn fills the order fields from the entry plus the context and asks only for gaps.
 - **Specification gate.** Required technical fields (material and grade, finish, tolerances, quantity, drawing/CAD revision, inspection, ship-to) must come from explicit engineer input or an applicable, authorized source or default. They are never inferred from nearby chatter. A conflict (two material grades, CAD and drawing revisions that disagree) is asked, not resolved by recency. The Okay view shows each technical field with its provenance alongside price and tier.
 - The entry is stored verbatim with its time; it is itself a training input.
@@ -177,9 +178,9 @@ Engineer steps: part entry, Okay. Occasionally one tap or one sentence to answer
  Slack, meetings, Jira, calendar ──► sync ──► DocumentRevision store (immutable, access-scoped)
                                                  │
                                                  ▼
-                                     extraction ──► Claims ──► acceptance ──► PlanningView
+                                     extraction ──► Claims ──► acceptance ──► Graph ──► PlanningView
                                                                                  │
- part entry ──► context record ──► form ──► QuoteSnapshot ──► decision ◄─ snapshot ┘
+ part entry ──► graph node + path ──► form ──► QuoteSnapshot ──► decision ◄─ snapshot ┘
                                                  │  options × scenarios → outcomes → basis
                                                  │  question loop (one at a time)
                                                  ▼
@@ -202,7 +203,9 @@ Engineer steps: part entry, Okay. Occasionally one tap or one sentence to answer
 
 ```
 PartEntry(name, summary, CAD file + hash, engineer, entered-at)
-ContextRecord(part entry, linked document spans, synthesized summary, built-at)
+GraphNode(kind: part|order|test|resource|work|deliverable|assembly|milestone|person, aliases)
+GraphEdge(from, to, kind, requires-all|alternative, supporting and contradicting claims,
+          status: accepted|proposed|disputed, effective, available-at)
 Demand(part, qty, use/test, assembly, usable-by, owner, source: entry|context|engineer)
 QuoteSnapshot(vendor=Xometry, quote id, configuration, captured-at, completeness,
               qty, currency, valid-until, cutoff, time zone)
@@ -231,12 +234,27 @@ DecisionRevision(snapshot hash, options, outcomes, basis, what Burn displayed, p
 
 ## 6. Pipeline
 
+Steps 1–5 run continuously as documents arrive, not per order.
+
 1. **Ingest** document revisions from Slack, meetings, Jira and calendar. Connectors (`server/connectors/`) are read-only and replay recorded exports in the same shape when no credentials are set: Slack Web API JSON, iCalendar, Jira REST search responses, meeting notes as exported Markdown (one document per attributed line, so a statement keeps its speaker and time). `BURN_WORLD` names the recorded folder.
-2. **Retrieve** the documents related to a part entry: the entry text is the query; links by part name, file name, Xometry quote/order number, people and test names.
-3. **Extract** typed claims with spans. Model text is untrusted data. Without a model the rule extractor (`server/graph/extract.js`) reads how hardware teams talk: waiting/blocked/stuck-behind, "needs X by 11/20 for the spin test", "still showing fri 11/20", "new ETA 11/30", "between 11/19 and 11/30" (a range), "the spin test is 3 days, working days", "has to be done by tues the 24th", "every day past that is ~$600" (a value hint, never authority). Entities are typed by their head noun (a motor arrives, a fit check is done) and merged across mentions by word containment; a short name ("the bracket") only attaches to something already discussed in the same channel. Every dated fact keeps who said it and when.
-4. **Resolve** mentions against declared parts, tests, assemblies and milestones. A failed resolution stays unresolved.
-5. **Accept** claims: a later assertion supersedes an earlier one only when authorized and applicable. Conflicts stay unresolved and become gaps.
-6. **Decide.** The orchestrator owns scheduling and the question loop; the model extracts and explains, and cannot invent costs, redefine demand or approve.
+2. **Extract** typed claims with spans. Model text is untrusted data. With credentials the agent (`server/flow/agent.js`) searches the records with tools and reports grounded claims; without, the rule extractor (`server/graph/extract.js`) reads how hardware teams talk: waiting/blocked/stuck-behind, "needs X by 11/20 for the spin test", "still showing fri 11/20", "new ETA 11/30", "between 11/19 and 11/30" (a range), "the spin test is 3 days, working days", "has to be done by tues the 24th", "every day past that is ~$600" (a value hint, never authority). Entities are typed by their head noun and merged across mentions by word containment; a short name ("the bracket") only attaches to something already discussed in the same channel. Every dated fact keeps who said it and when. *Built so far:* an ingest-wide rules graph plus a per-order agent read; the continuously maintained company graph of §6.1 is the target this converges on.
+3. **Resolve** mentions (part number, file name, alias, Xometry quote or order number, people, test names) to graph nodes. A failed resolution stays unresolved.
+4. **Accept** claims: a later assertion supersedes an earlier one only when authorized and applicable. Conflicts stay unresolved and become gaps.
+5. **Update the graph** (§6.1) from the claims.
+6. **Decide** (per order). The part entry resolves to its node; Burn walks the graph and freezes a snapshot as the PlanningView. The orchestrator owns scheduling and the question loop; the model extracts and explains, and cannot invent costs, redefine demand or approve.
+
+### 6.1 Company dependency graph
+
+One graph for the whole company (Owen's decision, v9), kept up to date by the pipeline above. Burn's context for any order is a walk through it.
+
+- **Nodes:** parts (with aliases and revisions), orders, tests, test rigs and other bookable resources, work items, deliverables (motors, PCBs, firmware), assemblies, milestones, people.
+- **Edges:** requires (requires-all or alternative), gates (test → milestone), blocked-by, owned-by, ordered-as (part → order), booked-on (test → resource slot).
+- **Every edge carries its evidence:** the supporting and contradicting claims, their spans and speakers, authority, both time keys, age, and a status. Only accepted claims make an edge accepted; proposed and disputed edges are shown as such. A link nobody stated is **unknown**, never inferred.
+- **History:** the graph is append-only. It can be read as known at any time T, for decision snapshots, replays and training (a fact available after T never appears).
+- **Navigation:** from a part, down to its tests and milestones and across to the other inputs those wait on and their ETAs; from a milestone, up to everything feeding it and the decisive path. Each step opens its evidence.
+- **Propagation:** when an edge or an ETA changes (the motor slips), every open order whose path includes it is re-solved, and its engineer is alerted only if the right decision changed (§0.5).
+- **Still no invented demand:** the graph can show a test input with no order or ETA as a gap; Burn never orders from that alone.
+- **Graded against the world model:** Burn's edges are compared with the true `edges` in the synthetic world, split by how each link was revealed (stated, hinted, never written down).
 
 **Working days.** Lead times, test durations and lateness are counted in working days (Mon–Fri minus the company's holidays, `company.holidays` in the config): an input ready on day R is usable from the next working day, a 3-day test whose last input lands Friday finishes Wednesday, and a booked rig is where the work happens, so work may start on the booking's first day.
 
@@ -285,6 +303,8 @@ Burn detects **decision-critical gaps against declared tests, assemblies and mil
 | Conflict | Unresolved contradictory claims |
 | Tacit-need shadow | An urgent entry where the schedule shows slack → "Is there an earlier need, e.g. a test slot?" |
 
+**Check 7, "What the conversation says" (Owen, 2026-11-10).** The card's last rubric check, labelled "from the LLM read". Inputs are computed server-side from the cached LLM reads (`fixtures/timevalue/read-cache.json`, laid over code reads) and the graph at `now`; the rubric stays pure. Sub-items, each shown only if it cites doc_ids: (a) *hidden earlier need*: linked messages in the last 3 days with pressure ≥ 0.6 and above the team baseline, or a `need_earlier` claim, while the cheapest tier still finishes by the target → "Is there an earlier need, e.g. a test slot?" to the test owner (the tacit-need shadow above); (b) *conflict*: accepted-or-disputed ETAs for the same input from different people or sources within 7 days with different values → warning and a question to the item's owner; only a conflict on the limiter or switching input blocks a confident card; (c) *pressure*: low / elevated / high over the last 7 days of linked context, with up to 3 cited snippets; (e) *reason*: one sentence from the limiter fact and the decision already on the card, no new numbers. Habit (d) is tabled. Check 7 can only add a question or a warning; it never changes days saved, $/day or the recommended tier.
+
 **Question loop:** order candidates by whether the answer could change the action, whether evidence could answer it, owner and deadline; ask one, re-solve, repeat. Never a confident card while a decision-critical gap is open. When the interruption budget runs out, the order goes to `unresolved`.
 
 ## 9. Proactive ordering
@@ -301,25 +321,35 @@ anchor:   the actual choice time when Xometry order history gives it; else the R
           at time T, with the example marked reconstructed/uncertain
 text:     the engineer's part entry (or, for history, a reconstruction from the
           Xometry order line, file name and nearest messages, marked reconstructed)
-window:   context related to the part, available before T, over ~30 days,
-          bucketed into bands before T: 0–1, 1–3, 3–7, 7–14, 14–30 days (the heat map)
-inputs:   attributes of that context (below)
-label:    the tier chosen, from the matching Xometry order (Ramp's amount alone doesn't give it)
+window:   the context linked to the part (Slack, Jira, meetings, calendar) available
+          before T, over ~30 days, bucketed into bands before T:
+          0–1, 1–3, 3–7, 7–14, 14–30 days (the context heat map)
+inputs:   attributes of that context per band (below), plus two rows from Ramp and the quote
+label:    the tier chosen, from the Ramp receipt matched to its Xometry order
 ```
 
-**Attributes:**
-- Timing: days to the next need-by, test or milestone; how late in the run-up the order came.
+**The context heat map is the habit model's only input** (Owen's decision). It is built from the context linked to the part, never from the dependency graph (§6.1): the graph answers "will paying more help?" for the decision; the heat map answers "what does this team usually do?" for the advice. They meet only on the card, where their disagreement is the point.
+
+**Heat map rules** (Owen's decision):
+- **Per day, not per band:** each cell is divided by its band's length (1 to 16 days), so the long early band doesn't always look busiest.
+- **No context is not calm:** an order with no linked context gets a `no_context` flag instead of an all-zero grid.
+- **Vibe against the team's baseline:** each message's pressure is scored relative to its team or channel, so a loud team doesn't always read as high.
+- **Link confidence:** context matched by quote, order or part number is kept apart from context matched only by a nickname; each cell carries the share matched by id.
+- **Two rows from Ramp and the quote, not from conversation:** the requester's past expedite rate (from earlier Ramp × Xometry orders only) and the extra cost of the fastest tier in dollars.
+
+**Attributes (rows of the heat map):**
+- Deadline talk: need-by, test or milestone dates mentioned in the context.
 - Pressure: urgency language; message rate and its trend; reply speed.
 - **Pressure read** (LLM): an LLM reads the part's threads, tickets and meetings in each time band and rates schedule pressure (e.g. low / elevated / high), citing the messages behind the rating: repeated "any update?", deadline talk, frustration, escalation to the manager.
 - Progress rank: the assembly's position in the progress ranking (§7) for its milestone at time T.
-- Dependencies: who or what is waiting; whether a sibling part lands later.
+- Waiting talk: mentions of who or what is blocked or waiting on the part.
 - People: manager or supply chain involved; number of participants.
 - Change: slips, conflicting dates, revisions.
 - Freshness: age of key facts; distribution across time bands.
 - Meetings: mentions, action items.
 - The entry itself: stated urgency and purpose.
 
-**Model:** small and explainable (e.g. gradient-boosted trees). Explanations are in context terms: "teams expedite when a test is ≤5 days away and the thread got hot in the last 48 hours."
+**Model:** small and explainable: one weight per attribute per band (regularized logistic regression), because a few hundred orders is too few for anything larger. The weights, laid out like the heat map, are the explanation. Explanations are in context terms: "teams expedite when a test is ≤5 days away and the thread got hot in the last 48 hours."
 
 **Backfill:** existing Ramp × Xometry × Slack history can produce a training set before Burn's first live order.
 
@@ -338,7 +368,7 @@ label:    the tier chosen, from the matching Xometry order (Ramp's amount alone 
 - **Headless browser (Burn's server):** fills Xometry on the company account, reads back tiers, verifies and places. Not a user-facing surface.
 - **Ramp:** request, approval, card, booking, item receipt (Ramp's own UI).
 - **Slack:** questions to the person who knows; slip alerts; supply-chain visibility.
-- **Web (evidence and audit):** evidence per claim (access-scoped), the decisive dependency path, assembly readiness and slack, milestone value-policy settings, order history and audit.
+- **Web (evidence and audit):** the navigable company dependency graph, evidence per edge and claim (access-scoped), the decisive dependency path, assembly readiness and slack, milestone value-policy settings, order history and audit.
 
 ## 12. Validation and synthetic data
 
@@ -363,6 +393,8 @@ label:    the tier chosen, from the matching Xometry order (Ramp's amount alone 
 18. The same part name appears with two material grades or revisions: Burn asks rather than picking the newest mention.
 19. Approval arrives after the cutoff, or after a newer request supersedes it: no stale request places the order.
 20. Placement succeeds, the receipt upload fails, then the charge webhook repeats: only the attachment is retried; one purchase, one accounting association.
+21. Graph: a slip in one input re-solves every open order whose path includes it; only orders whose right decision changed raise an alert.
+22. Graph: a link that was never written down stays unknown, and is reported as missed when scored against the world model's true edges.
 
 **Synthetic data for the demo and training.** All context except Slack and the live Ramp order is generated:
 - **Example company:** **Flintlock Robotics**, a fictional humanoid robotics startup of **~60 people** in **California** (Pacific time), ordering from **Xometry's US site** (Owen's decisions). It is at a stage of its robot generation where custom CNC parts dominate (actuator housings, brackets, shafts, fixtures), since Burn handles only custom CNC parts on Xometry. The hip actuator, spin test and EVT/DVT builds are part of its humanoid program. The order history covers all of Flintlock's purchasing across vendors (fasteners, electronics, PCBs, motors, tools, raw stock, other custom parts) so the context is realistic; Burn acts only on the custom CNC orders on Xometry, and the demo uses those.
@@ -435,7 +467,7 @@ Design: [`build/world-script-plan.md`](build/world-script-plan.md), [`build/simu
 | Area | Keep | Change | Known defects |
 |---|---|---|---|
 | Ingestion (`server/connectors`, `server/ingest`) | Slack/ICS connectors, per-channel cursors | Add Jira, meeting-note and Xometry/Ramp history imports; immutable, access-scoped revisions | — |
-| Extraction (`server/graph/extract.js`) | Cited edges, closed key set | Typed claims with both time keys; retrieval anchored on the part entry | Edges go into the plan without acceptance |
+| Extraction (`server/graph/extract.js`) | Cited edges, closed key set | Typed claims with both time keys; a persistent company-wide graph built continuously (§6.1) | Edges go into the plan without acceptance |
 | Engine (`src/graph/engine.js`) | DAG scheduling, OOO windows, bookings, critical path | Calendars; same-world comparison; dominance and break-even | Unknown duration defaults to 1 day; cycles don't block; `idleCost` prices people-days |
 | Money (`src/decisions.js`) | — | Replace hardcoded `blocked`/`slack`/`chain` and the $500 approval policy with owner value policies and Ramp approval | $1,100 × people × days presented as a cost |
 | Requests (`server/store.js`) | Lifecycle, revisions, audit | Order states (§4), frozen spec, Ramp links | Draft POs are superseded by Ramp |
@@ -454,6 +486,7 @@ Design: [`build/world-script-plan.md`](build/world-script-plan.md), [`build/simu
 | v8 | Xometry only; part entry kicks off every order; Ramp owns approval, card and booking; supply chain is a context source; learning on context attributes with a time-band heat map; synthetic world script | Owen |
 | v8 | Automatic placement on approval, with an alert first | Owen |
 | v9 | All Xometry work (quoting and placement) moves to Burn's server-side headless browser on a company Xometry account, so placement is immediate on approval; the browser extension is dropped; the Ramp request states the vendor cutoff | Arjun |
+| v8 | No browser extension: Xometry is reached through a provider interface, mocked for the demo | Owen |
 
 Superseded and removed in v8: the quote-page-only entry; Slack approval cards; Burn's own auto-approval settings; supply chain as approver or placer; vendor-reliability learning as phase 1; the BOM. Settled joint positions that remain: valuation order and no gating fraction; scenarios before probabilities; authority-based claim acceptance; one question at a time; working-day worked example; no per-project agents; habit is advisory; outcome signals are diagnostics.
 

@@ -1,0 +1,149 @@
+{
+  "job_id": "jira-HND-2026-08-10-carried-HND-151",
+  "source": "jira",
+  "status": "blank",
+  "priority": 27,
+  "style_rules": [
+    "docs/research/data-realism.md#tickets-jira",
+    "docs/research/data-realism.md#fake-looking-patterns-to-avoid-all-sources"
+  ],
+  "project": {
+    "id": "HND",
+    "name": "Hands and arms"
+  },
+  "week": {
+    "start": "2026-08-10",
+    "end": "2026-08-16"
+  },
+  "people": [
+    {
+      "id": "p-kenji",
+      "name": "Kenji Morimoto",
+      "display_name": "kenji.m",
+      "slack_id": "U07FLK0KENJ",
+      "title": "Mechanical Engineer",
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "no capitals or end punctuation ever"
+        ]
+      }
+    },
+    {
+      "id": "p-luis",
+      "name": "Luis Navarro",
+      "display_name": "luis.n",
+      "slack_id": "U07FLK0LUIS",
+      "title": "Mechanical Technician",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "lots",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word",
+          "double-sends instead of editing"
+        ]
+      }
+    },
+    {
+      "id": "p-samir",
+      "name": "Samir Khoury",
+      "display_name": "samir.k",
+      "slack_id": "U07FLK0SAMI",
+      "title": "Senior NPI Buyer",
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium",
+        "quirks": [
+          "writes dates as \"thurs\", \"nxt wk\", \"EOW\"",
+          "corrects own dates"
+        ]
+      }
+    }
+  ],
+  "forbidden": [
+    "hidden reasons",
+    "facts not in the briefs",
+    "changing status or due dates (code owns them)",
+    "stating which shipping tier was chosen"
+  ],
+  "tickets": [
+    {
+      "key": "HND-151",
+      "type": "Task",
+      "status": "Done",
+      "reporter": "p-kenji",
+      "assignee": "p-samir",
+      "labels": [
+        "procurement"
+      ],
+      "priority": "Medium",
+      "created": "2026-08-12T11:20:52-07:00",
+      "due_date": "2026-08-31",
+      "events": [
+        "ev-001505"
+      ],
+      "brief": "Order 6x Grip load cell plate, 3x Tendon tension jig / FL-TST-2443: need 6 by 2026-08-31 for Test stand rework: Grip load cell plate",
+      "must_mention": [
+        "FL-TST-2443",
+        "Test stand rework: Grip load cell plate",
+        "FL-TST-2462",
+        "8/31"
+      ],
+      "description_length": "one_line",
+      "summary": null,
+      "description": null,
+      "comments": [
+        {
+          "id": "HND-151-c1",
+          "by": "p-luis",
+          "at": "2026-08-27T16:20:42-07:00",
+          "events": [
+            "ev-001510"
+          ],
+          "brief": "load cell plate arrived (6)",
+          "claim": {
+            "kind": "stock",
+            "value": 6
+          },
+          "must_mention": [
+            "load cell plate",
+            "6"
+          ],
+          "body": null
+        },
+        {
+          "id": "HND-151-c2",
+          "by": "p-kenji",
+          "at": "2026-09-08T11:35:00-07:00",
+          "events": [
+            "ev-001511"
+          ],
+          "brief": "load cell plate in use",
+          "claim": {
+            "kind": "done",
+            "value": "2026-09-08"
+          },
+          "must_mention": [
+            "load cell plate",
+            "the build",
+            "9/8"
+          ],
+          "body": null
+        }
+      ]
+    }
+  ]
+}

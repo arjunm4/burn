@@ -13,7 +13,7 @@ When an engineer orders a custom machined part from a site like Xometry, they ha
 The engineer types the part name and a short note about what it's for, and attaches the design file. Burn does the rest:
 
 1. **Gathers context.** It reads Slack, meeting notes, Jira and the calendar for everything related to the part: which test it's needed for, what else that test is waiting on, and the deadline.
-2. **Gets the quote.** A browser extension fills in the order on Xometry and reads back the price of each speed option.
+2. **Gets the quote.** Burn sends the part to Xometry and gets back the price and lead time of each speed option.
 3. **Recommends a tier.** It works out whether paying for speed gets the work done sooner, and whether that time is worth the money: *"Expedited gets the spin test done 2 days sooner for $900 more; worth it if a day is worth more than $450."* If faster wouldn't help, it picks the cheaper option. If one missing fact would change the answer, it asks the one person who knows.
 4. **Engineer clicks Okay**, or edits, or argues.
 5. **Approval in Ramp.** Burn sends the request with its explanation to Ramp. The engineer's manager approves it there; small orders are approved automatically by the company's Ramp rules.
@@ -137,5 +137,5 @@ Not built: the learning model (a labelled slide), delivery tracking and first-us
 ## Working in this repo
 
 - One short-lived branch per topic, merged into `main` through a pull request.
-- Commit messages follow Conventional Commits, e.g. `feat(extension): read Xometry tiers`, `docs: update open questions`.
+- Commit messages follow Conventional Commits, e.g. `feat(xometry): read quote tiers`, `docs: update open questions`.
 - When a decision is made, update `docs/architecture.md` and move the question to the Answered table in `docs/open-questions.md`.

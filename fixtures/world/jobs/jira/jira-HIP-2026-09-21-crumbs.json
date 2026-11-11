@@ -55,25 +55,6 @@
       }
     },
     {
-      "id": "p-nadia",
-      "name": "Nadia Haddad",
-      "display_name": "nadia",
-      "slack_id": "U07FLK0NADI",
-      "title": "Mechanical Engineer",
-      "style": {
-        "case": "lower",
-        "punctuation": "light",
-        "typos": "lots",
-        "emoji": "some",
-        "length": "medium",
-        "hedging": "low",
-        "quirks": [
-          "fixes typos with *word",
-          "double-sends instead of editing"
-        ]
-      }
-    },
-    {
       "id": "p-owen",
       "name": "Owen Halloran",
       "display_name": "owen",
@@ -108,6 +89,22 @@
           "\"i think\", \"probably\", \"not 100% sure but\""
         ]
       }
+    },
+    {
+      "id": "p-wei",
+      "name": "Wei Huang",
+      "display_name": "wei",
+      "slack_id": "U07FLK0WEI0",
+      "title": "Mechanical Engineer, housings and shafts",
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "low",
+        "quirks": []
+      }
     }
   ],
   "forbidden": [
@@ -118,7 +115,7 @@
   ],
   "tickets": [
     {
-      "key": "HIP-425",
+      "key": "HIP-429",
       "type": "Task",
       "status": "Done",
       "reporter": "p-andre",
@@ -130,7 +127,7 @@
       "created": "2026-09-21T14:41:55-07:00",
       "due_date": null,
       "events": [
-        "ev-001744"
+        "ev-001895"
       ],
       "brief": "Order 12x Knee rear cover, 1x Knee circular spline housing / FL-KNE-1146: need 12 by 2026-10-02 for Design iteration bench trial: Knee rear cover",
       "must_mention": [
@@ -139,13 +136,13 @@
         "FL-KNE-1176",
         "fri 10/2"
       ],
-      "description_length": "short",
-      "summary": "knee rear cover FL-KNE-1146 + housing FL-KNE-1176 for bench trial",
-      "description": "for Design iteration bench trial: Knee rear cover. need the 12 covers in hand by fri 10/2, housing is just 1 off",
+      "description_length": "one_line",
+      "summary": "rear covers x12 FL-KNE-1146",
+      "description": "fri 10/2 for Design iteration bench trial: Knee rear cover. housing is FL-KNE-1176",
       "comments": []
     },
     {
-      "key": "HIP-429",
+      "key": "HIP-433",
       "type": "Task",
       "status": "Done",
       "reporter": "p-tomas",
@@ -157,23 +154,23 @@
       "created": "2026-09-22T15:53:53-07:00",
       "due_date": "2026-09-29",
       "events": [
-        "ev-001764"
+        "ev-001915"
       ],
-      "brief": "Order 3x Dyno mounting plate, knee actuator, 12x Knee output shaft / dyno adapter: need 3 by 2026-09-30",
+      "brief": "Order 3x Dyno mounting plate, knee actuator, 12x Knee output shaft / dyno adapter: need 3 by 2026-09-29",
       "must_mention": [
         "dyno adapter",
-        "9/30"
+        "tues the 29th"
       ],
-      "description_length": "one_line",
-      "summary": "Dyno adapter plates + output shafts",
-      "description": "dyno adapter x3 needed by 9/30",
+      "description_length": "short",
+      "summary": "dyno adapter plate + out shafts",
+      "description": "need the dyno adapter by tues the 29th, 3 of them",
       "comments": [
         {
-          "id": "HIP-429-c1",
+          "id": "HIP-433-c1",
           "by": "p-tomas",
           "at": "2026-09-23T11:25:31-07:00",
           "events": [
-            "ev-001766"
+            "ev-001917"
           ],
           "brief": "2124: need 3 by 2026-09-29",
           "claim": {
@@ -185,37 +182,16 @@
           },
           "must_mention": [
             "2124",
-            "tues the 29th"
+            "9/29"
           ],
-          "body": "2124 - need 3 by tues the 29th actually"
+          "body": "2124 need 3 by 9/29"
         },
         {
-          "id": "HIP-429-c2",
-          "by": "p-tomas",
-          "at": "2026-09-24T05:05:53-07:00",
-          "events": [
-            "ev-003079"
-          ],
-          "brief": "Correction: dyno adapter: need 3 by 2026-09-29",
-          "claim": {
-            "kind": "needs",
-            "value": {
-              "qty": 3,
-              "by": "2026-09-29"
-            }
-          },
-          "must_mention": [
-            "dyno adapter",
-            "tues 9/29"
-          ],
-          "body": "correction, dyno adapter needed tues 9/29 not 30th. I think that's right now"
-        },
-        {
-          "id": "HIP-429-c3",
+          "id": "HIP-433-c2",
           "by": "p-destiny",
           "at": "2026-10-09T11:19:42-07:00",
           "events": [
-            "ev-001768"
+            "ev-001919"
           ],
           "brief": "dyno adapter arrived (3)",
           "claim": {
@@ -226,12 +202,12 @@
             "dyno adapter",
             "3"
           ],
-          "body": "dyno adapter arrived, all 3 here 🙏"
+          "body": "dyno adapter arrived, 3"
         }
       ]
     },
     {
-      "key": "HIP-430",
+      "key": "HIP-434",
       "type": "Task",
       "status": "Done",
       "reporter": "p-owen",
@@ -243,68 +219,49 @@
       "created": "2026-09-22T16:38:12-07:00",
       "due_date": "2026-09-30",
       "events": [
-        "ev-001740"
+        "ev-001891"
       ],
       "brief": "Order 2x Dyno base plate / FL-TST-2136: need 2 by 2026-09-30 for Instrumentation fit-up: Dyno base plate",
       "must_mention": [
         "FL-TST-2136",
         "Instrumentation fit-up: Dyno base plate",
-        "wed 9/30"
+        "9/30"
       ],
-      "description_length": "one_line",
-      "summary": "dyno base plate FL-TST-2136 x2",
-      "description": "Instrumentation fit-up: Dyno base plate, need by wed 9/30",
+      "description_length": "short",
+      "summary": "dyno base plates FL-TST-2136 x2",
+      "description": "need by 9/30 for Instrumentation fit-up: Dyno base plate",
       "comments": [
         {
-          "id": "HIP-430-c1",
+          "id": "HIP-434-c1",
           "by": "p-owen",
-          "at": "2026-09-23T08:33:37-07:00",
-          "events": [
-            "ev-003153"
-          ],
-          "brief": "dyno base: need 2 by 2026-10-01",
-          "claim": {
-            "kind": "needs",
-            "value": {
-              "qty": 2,
-              "by": "2026-10-01"
-            }
-          },
-          "must_mention": [
-            "dyno base",
-            "thurs 10/1"
-          ],
-          "body": "dyno base can slip to thurs 10/1"
+          "at": "2026-09-28T11:58:23-07:00",
+          "events": [],
+          "brief": "background: pushes it a bit, no new date given",
+          "must_mention": [],
+          "body": "slipping a bit, will update"
+        },
+        {
+          "id": "HIP-434-c2",
+          "by": "p-wei",
+          "at": "2026-09-29T12:07:46-07:00",
+          "events": [],
+          "brief": "background: notes photos or a file are in slack",
+          "must_mention": [],
+          "body": "pics in slack"
+        },
+        {
+          "id": "HIP-434-c3",
+          "by": "p-owen",
+          "at": "2026-10-01T18:08:14-07:00",
+          "events": [],
+          "brief": "background: short progress note",
+          "must_mention": [],
+          "body": "checking w/ vendor again"
         }
       ]
     },
     {
-      "key": "HIP-439",
-      "type": "Task",
-      "status": "Done",
-      "reporter": "p-nadia",
-      "assignee": "p-nadia",
-      "labels": [
-        "procurement"
-      ],
-      "priority": "Medium",
-      "created": "2026-09-24T14:35:56-07:00",
-      "due_date": "2026-11-03",
-      "events": [
-        "ev-001824"
-      ],
-      "brief": "Order 12x Knee bearing shim / that order: need 12 by 2026-11-03",
-      "must_mention": [
-        "that order",
-        "tues 11/3"
-      ],
-      "description_length": "one_line",
-      "summary": "knee bearing shims",
-      "description": "same as that order, 12 needed by tues 11/3",
-      "comments": []
-    },
-    {
-      "key": "HIP-440",
+      "key": "HIP-443",
       "type": "Task",
       "status": "Done",
       "reporter": "p-owen",
@@ -316,23 +273,23 @@
       "created": "2026-09-24T15:13:07-07:00",
       "due_date": "2026-10-06",
       "events": [
-        "ev-001808"
+        "ev-001961"
       ],
-      "brief": "Order 8x Knee rear cover, 24x Knee winding thermistor clip / knee cover: need 8 by 2026-10-06",
+      "brief": "Order 8x Knee rear cover, 24x Knee winding thermistor clip / knee cover: need 8 by 2026-10-09",
       "must_mention": [
         "knee cover",
-        "10/6"
+        "10/9"
       ],
       "description_length": "short",
-      "summary": "knee cover + thermistor clips rev B",
-      "description": "8 knee cover and the clips for winding thermistors. need by 10/6\nclips are cheap just grab extra",
+      "summary": "knee cover x8, thermistor clips",
+      "description": "knee cover needed 10/9 now, 8 pcs",
       "comments": [
         {
-          "id": "HIP-440-c1",
+          "id": "HIP-443-c1",
           "by": "p-owen",
           "at": "2026-09-25T17:06:08-07:00",
           "events": [
-            "ev-001809"
+            "ev-001962"
           ],
           "brief": "FL-KNE-1146: need 8 by 2026-10-06",
           "claim": {
@@ -344,16 +301,16 @@
           },
           "must_mention": [
             "FL-KNE-1146",
-            "10/6"
+            "tues 10/6"
           ],
-          "body": "FL-KNE-1146 qty 8 by 10/6"
+          "body": "FL-KNE-1146 need 8 by tues 10/6"
         },
         {
-          "id": "HIP-440-c2",
+          "id": "HIP-443-c2",
           "by": "p-owen",
           "at": "2026-09-25T18:01:06-07:00",
           "events": [
-            "ev-001810"
+            "ev-001963"
           ],
           "brief": "knee cover: need 8 by 2026-10-06 for the fit check; asks whether expediting is worth it",
           "claim": {
@@ -368,16 +325,7 @@
             "the fit check",
             "10/6"
           ],
-          "body": "knee cover needed for the fit check 10/6. worth expediting or no"
-        },
-        {
-          "id": "HIP-440-c3",
-          "by": "p-owen",
-          "at": "2026-09-28T09:12:00-07:00",
-          "events": [],
-          "brief": "background: pushes it a bit, no new date given",
-          "must_mention": [],
-          "body": "probably slides a bit, will update"
+          "body": "knee cover need 8 by 10/6 for the fit check. is expediting worth it??"
         }
       ]
     }

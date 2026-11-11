@@ -1,0 +1,116 @@
+{
+  "job_id": "rj-ee02e249fd",
+  "priority": 1,
+  "label": "demo context",
+  "now": "2026-11-10T10:30:00-08:00",
+  "instructions": "docs/build/read-job-instructions.md",
+  "output": "Fill \"results\" with one entry per doc (see instructions), set \"filled_by\", then save this file.",
+  "catalog": [
+    {
+      "id": "dl-hip-motor-dvt",
+      "kind": "deliverable",
+      "name": "DVT hip frameless motor",
+      "aliases": [],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "m-hip-spin-test",
+      "kind": "milestone",
+      "name": "Hip spin test",
+      "assemblies": [
+        "a-hip-actuator"
+      ]
+    },
+    {
+      "id": "pt-hip-bracket",
+      "kind": "part",
+      "name": "Hip actuator bracket",
+      "part_number": "FL-HIP-1042",
+      "aliases": [
+        "hip bracket",
+        "the bracket",
+        "1042",
+        "motor bracket"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "pt-pelvis-plate",
+      "kind": "part",
+      "name": "Hip to pelvis interface plate",
+      "part_number": "FL-HIP-1021",
+      "aliases": [
+        "pelvis plate",
+        "1021"
+      ],
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "rig-spin-test-stand",
+      "kind": "rig",
+      "name": "Spin test stand"
+    },
+    {
+      "id": "test-hip-spin",
+      "kind": "test",
+      "name": "Hip actuator DVT spin test",
+      "assembly": "a-hip-actuator",
+      "rig": "rig-spin-test-stand",
+      "milestone": "m-hip-spin-test"
+    }
+  ],
+  "docs": [
+    {
+      "id": "slack:C07FLK0ACTU:1793725920.000100",
+      "source": "slack",
+      "where": "#actuators",
+      "thread": "1793725920.000100",
+      "author": "Owen Halloran",
+      "author_id": "p-owen",
+      "at": "2026-11-03T09:12:00-08:00",
+      "text": "need 4x FL-HIP-1042 rev C by tues 11/17 for the spin test"
+    },
+    {
+      "id": "slack:C07FLK0ACTU:1793734800.000100",
+      "source": "slack",
+      "where": "#actuators",
+      "thread": "1793725920.000100",
+      "author": "Gwen Albright",
+      "author_id": "p-gwen",
+      "at": "2026-11-03T11:40:00-08:00",
+      "text": "quote's in, std is 8 BD. want me to place it?"
+    },
+    {
+      "id": "slack:C07FLK0ACTU:1793735520.000100",
+      "source": "slack",
+      "where": "#actuators",
+      "thread": "1793725920.000100",
+      "author": "Owen Halloran",
+      "author_id": "p-owen",
+      "at": "2026-11-03T11:52:00-08:00",
+      "text": "yes pls, standard is fine for now"
+    },
+    {
+      "id": "slack:C07FLK0ACTU:1794009900.000100",
+      "source": "slack",
+      "where": "#actuators",
+      "thread": "1793725920.000100",
+      "author": "Owen Halloran",
+      "author_id": "p-owen",
+      "at": "2026-11-06T16:05:00-08:00",
+      "text": "any update on the hip bracket? spin test is the 23rd now"
+    },
+    {
+      "id": "slack:C07FLK0ACTU:1794245400.000100",
+      "source": "slack",
+      "where": "#actuators",
+      "thread": "1793725920.000100",
+      "author": "Arjun Venkatesan",
+      "author_id": "p-arjun",
+      "at": "2026-11-09T09:30:00-08:00",
+      "text": "bumping this, stand's sitting idle if the brackets aren't in by mon 11/23"
+    }
+  ],
+  "filled_by": null,
+  "results": null
+}

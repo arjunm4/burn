@@ -7,6 +7,7 @@ import Engineer from './Engineer.jsx';
 import Approvals from './Approvals.jsx';
 import Ramp from './Ramp.jsx';
 import Inbox from './Inbox.jsx';
+import TimeValue from './timevalue/Card.jsx';
 import './style.css';
 
 // Routes: /orders (part entry + list), /orders/:id (one order), /graph (dependencies), /ramp (the approver's simulated Ramp), /inbox (one person's messages).
@@ -19,6 +20,7 @@ function route() {
   if (p === '/graph') return <Graph/>;
   if (p === '/ramp') return <Ramp/>;
   if (p === '/inbox') return <Inbox/>;
+  if (p === '/timevalue') return <TimeValue/>; // Owen's Time Value card (precomputed demo cases)
   if (p === '/approvals') return <Approvals/>;
   return <Engineer/>;
 }

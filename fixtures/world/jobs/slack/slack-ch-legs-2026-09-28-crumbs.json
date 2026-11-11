@@ -202,21 +202,21 @@
       }
     },
     {
-      "id": "p-luis",
-      "name": "Luis Navarro",
-      "display_name": "luis.n",
-      "slack_id": "U07FLK0LUIS",
-      "title": "Mechanical Technician",
+      "id": "p-mei",
+      "name": "Mei Okada",
+      "display_name": "mei.o",
+      "slack_id": "U07FLK0MEI0",
+      "title": "Controls Lead",
       "style": {
-        "case": "lower",
-        "punctuation": "light",
-        "typos": "lots",
-        "emoji": "some",
-        "length": "medium",
-        "hedging": "low",
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "none",
+        "length": "long",
+        "hedging": "medium",
         "quirks": [
-          "fixes typos with *word",
-          "double-sends instead of editing"
+          "numbered lists in status updates",
+          "restates the question before answering"
         ]
       }
     },
@@ -312,23 +312,28 @@
   ],
   "messages": [
     {
-      "ts": "1790615269.385442",
-      "user": "p-hana",
+      "ts": "1790609711.202127",
+      "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-003317"
+        "ev-002035"
       ],
-      "brief": "Wire harness for ankle and foot: still quoting 2026-09-22",
+      "brief": "knee pulley: need 5 by 2026-10-06 for the fit check",
       "claim": {
-        "kind": "eta",
-        "value": "2026-09-22"
+        "kind": "needs",
+        "value": {
+          "qty": 5,
+          "by": "2026-10-06"
+        }
       },
       "must_mention": [
-        "Wire harness for ankle and foot (rod end spacer)",
-        "9/22"
+        "knee pulley",
+        "the fit check",
+        "10/6"
       ],
+      "pressure": "high",
       "length": "short",
-      "text": "Wire harness for ankle and foot (rod end spacer) is still quoting 9/22, I think"
+      "text": "need 5 knee pulley for the fit check, tues 10/6 at the latest. can someone chase"
     },
     {
       "ts": "1790616707.636202",
@@ -347,14 +352,14 @@
         "wed the 30th"
       ],
       "length": "short",
-      "text": "Following up: Wire harness for ankle and foot (rod end spacer) has moved again. It is now wed the 30th."
+      "text": "Wire harness for ankle and foot (rod end spacer) slipped again, now wed the 30th."
     },
     {
-      "ts": "1790634307.242630",
+      "ts": "1790617292.851068",
       "user": "p-dmitri",
       "thread_ts": null,
       "events": [
-        "ev-001875"
+        "ev-003382"
       ],
       "brief": "knee pulley: need 5 by 2026-10-06 for Assemble build unit: Knee belt pulley",
       "claim": {
@@ -367,18 +372,42 @@
       "must_mention": [
         "knee pulley",
         "Assemble build unit: Knee belt pulley",
-        "10/6"
+        "tues 10/6"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "knee pulley: need 5 by 10/6 for Assemble build unit: Knee belt pulley."
+      "text": "knee pulley x5 needed for Assemble build unit: Knee belt pulley by tues 10/6"
     },
     {
-      "ts": "1790639978.528295",
+      "ts": "1790634307.922222",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002036"
+      ],
+      "brief": "the part: need 5 by 2026-10-06 for Assemble build unit: Knee belt pulley",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 5,
+          "by": "2026-10-06"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "Assemble build unit: Knee belt pulley",
+        "tues 10/6"
+      ],
+      "pressure": "elevated",
+      "length": "short",
+      "text": "the part x5 for Assemble build unit: Knee belt pulley, tues 10/6. still nothing on my side"
+    },
+    {
+      "ts": "1790639978.411515",
       "user": "p-lin",
       "thread_ts": null,
       "events": [
-        "ev-002721"
+        "ev-002909"
       ],
       "brief": "Leg gait-gantry walking test takes 3-5 working days",
       "claim": {
@@ -392,15 +421,25 @@
         "Leg gait-gantry walking test",
         "3-5 days"
       ],
-      "length": "short",
-      "text": "Leg gait-gantry walking test takes 3-5 days of gantry time."
+      "length": "medium",
+      "text": "FYI Leg gait-gantry walking test is 3-5 days once the leg is on the gantry, so plan around that."
     },
     {
-      "ts": "1790640591.625907",
+      "ts": "1790640536.380044",
+      "user": "p-talia",
+      "thread_ts": "1790639978.411515",
+      "events": [],
+      "brief": "reply (will check later) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "will look at that later this week"
+    },
+    {
+      "ts": "1790640591.879409",
       "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-001897"
+        "ev-002064"
       ],
       "brief": "FL-TST-2556: need 2 by 2026-10-12",
       "claim": {
@@ -412,20 +451,64 @@
       },
       "must_mention": [
         "FL-TST-2556",
-        "mon the 12th"
+        "mon 10/12"
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "need 2 FL-TST-2556 by mon the 12th"
+      "text": "FL-TST-2556 x2 needed mon 10/12"
     },
     {
-      "ts": "1790641044.420897",
+      "ts": "1790641044.471415",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-001919"
+        "ev-002086"
       ],
-      "brief": "the part: need 3 by 2026-10-22 for Tolerance stack check: Hip pitch mounting bracket",
+      "brief": "the part: need 3 by 2026-10-21 for Tolerance stack check: Hip pitch mounting bracket",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 3,
+          "by": "2026-10-21"
+        }
+      },
+      "must_mention": [
+        "the part",
+        "Tolerance stack check: Hip pitch mounting bracket",
+        "wed the 21st"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "the part, need 3 for Tolerance stack check: Hip pitch mounting bracket by wed the 21st"
+    },
+    {
+      "ts": "1790645336.614299",
+      "user": "p-hana",
+      "thread_ts": "1790639978.411515",
+      "events": [],
+      "brief": "reply (jokes) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "3-5 days if nothing trips the e-stop lol"
+    },
+    {
+      "ts": "1790646625.881730",
+      "user": "p-beth",
+      "thread_ts": "1790639978.411515",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "thanks lin"
+    },
+    {
+      "ts": "1790685204.483301",
+      "user": "p-diego",
+      "thread_ts": "1790641044.471415",
+      "events": [
+        "ev-003235"
+      ],
+      "brief": "Correction: the part: need 3 by 2026-10-22 for Tolerance stack check: Hip pitch mounting bracket",
       "claim": {
         "kind": "needs",
         "value": {
@@ -440,14 +523,14 @@
       ],
       "pressure": "elevated",
       "length": "short",
-      "text": "Need 3 of the part by thurs the 22nd for Tolerance stack check: Hip pitch mounting bracket 🙏"
+      "text": "Correction, the part for Tolerance stack check: Hip pitch mounting bracket is thurs the 22nd not wed 🙏"
     },
     {
-      "ts": "1790698628.160389",
+      "ts": "1790698628.505581",
       "user": "p-dmitri",
       "thread_ts": null,
       "events": [
-        "ev-001898"
+        "ev-002065"
       ],
       "brief": "the clamp: need 2 by 2026-10-12",
       "claim": {
@@ -459,131 +542,50 @@
       },
       "must_mention": [
         "the clamp",
-        "mon 10/12"
+        "10/12"
       ],
       "pressure": "high",
       "length": "short",
-      "text": "Need 2 of the clamp by mon 10/12."
+      "text": "Need 2 of the clamp by 10/12!!"
     },
     {
-      "ts": "1790727337.881708",
-      "user": "p-andre",
-      "thread_ts": null,
-      "events": [
-        "ev-001899"
-      ],
-      "brief": "FL-TST-2556: need 2 by 2026-10-09 for Instrumentation fit-up: Tilt stand foot clamp",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 2,
-          "by": "2026-10-09"
-        }
-      },
-      "must_mention": [
-        "FL-TST-2556",
-        "Instrumentation fit-up: Tilt stand foot clamp",
-        "10/9"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "FL-TST-2556 need 2 by 10/9 for Instrumentation fit-up: Tilt stand foot clamp"
-    },
-    {
-      "ts": "1790740260.164688",
-      "user": "p-andre",
-      "thread_ts": null,
-      "events": [
-        "ev-001900"
-      ],
-      "brief": "the clamp: need 2 by 2026-10-12",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 2,
-          "by": "2026-10-12"
-        }
-      },
-      "must_mention": [
-        "the clamp",
-        "mon 10/12"
-      ],
-      "pressure": "high",
+      "ts": "1790701629.564431",
+      "user": "p-diego",
+      "thread_ts": "1790698628.505581",
+      "events": [],
+      "brief": "reply (asks a follow-up) in the thread about: the message above",
+      "must_mention": [],
       "length": "medium",
-      "text": "bumping this, still need 2 of the clamp by mon 10/12 or the tilt stand sits there"
+      "text": "is that the same clamp that cracked on the tilt stand last time or the redesigned one?"
     },
     {
-      "ts": "1790786714.186058",
-      "user": "p-andre",
-      "thread_ts": null,
-      "events": [
-        "ev-001877"
-      ],
-      "brief": "the part: need 5 by 2026-10-06 for Assemble build unit: Knee belt pulley",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 5,
-          "by": "2026-10-06"
-        }
-      },
-      "must_mention": [
-        "the part",
-        "Assemble build unit: Knee belt pulley",
-        "10/6"
-      ],
-      "pressure": "elevated",
-      "length": "short",
-      "text": "need 5 of the part by 10/6 for Assemble build unit: Knee belt pulley"
-    },
-    {
-      "ts": "1790790767.839951",
-      "user": "p-talia",
-      "thread_ts": "1790786714.186058",
+      "ts": "1790703986.407074",
+      "user": "p-zoe",
+      "thread_ts": "1790698628.505581",
       "events": [],
-      "brief": "reply (will check later) in the thread about: the message above",
+      "brief": "reply (thanks) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "Will look at it after lunch 👍"
+      "text": "thx"
     },
     {
-      "ts": "1790803340.632254",
-      "user": "p-callum",
-      "thread_ts": null,
-      "events": [
-        "ev-002576"
-      ],
-      "brief": "Instrumentation fit-up for Leg DVT build: Gait gantry harness hook waits on Driver PCBA respin for leg (left, hip to foot) (harness hook)",
-      "claim": {
-        "kind": "blocked",
-        "value": "dl-gen-0085"
-      },
-      "must_mention": [
-        "Driver PCBA respin for leg (left, hip to foot) (harness hook)",
-        "Instrumentation fit-up for Leg DVT build: Gait gantry harness hook"
-      ],
-      "pressure": "low",
-      "length": "short",
-      "text": "Instrumentation fit-up for Leg DVT build: Gait gantry harness hook is stuck on Driver PCBA respin for leg (left, hip to foot) (harness hook)"
-    },
-    {
-      "ts": "1790805201.983687",
+      "ts": "1790706362.324124",
       "user": "p-priya",
-      "thread_ts": "1790803340.632254",
+      "thread_ts": "1790698628.505581",
       "events": [],
-      "brief": "reply (agrees) in the thread about: the message above",
+      "brief": "reply (shares a related experience) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "Agreed, that is the one to chase."
+      "text": "We had a clamp walk loose on the old drop rig once. Worth a dab of threadlock and a witness mark if it's going on the gantry."
     },
     {
-      "ts": "1790806135.755232",
+      "ts": "1790722178.098146",
       "user": "p-andre",
       "thread_ts": null,
       "events": [
-        "ev-001878"
+        "ev-002037"
       ],
-      "brief": "pulley: need 5 by 2026-10-06 for Assemble build unit: Knee belt pulley; asks whether expediting is worth it",
+      "brief": "pulley: need 5 by 2026-10-06 for Assemble build unit: Knee belt pulley",
       "claim": {
         "kind": "needs",
         "value": {
@@ -594,91 +596,28 @@
       "must_mention": [
         "pulley",
         "Assemble build unit: Knee belt pulley",
-        "tues 10/6"
+        "10/6"
       ],
       "pressure": "high",
-      "asks_expedite": true,
       "length": "short",
-      "text": "pulley need 5 by tues 10/6 for Assemble build unit: Knee belt pulley. worth expediting or no?"
+      "text": "pulley x5 for Assemble build unit: Knee belt pulley, 10/6"
     },
     {
-      "ts": "1790806238.029674",
-      "user": "p-leilani",
-      "thread_ts": "1790803340.632254",
+      "ts": "1790725919.587592",
+      "user": "p-diego",
+      "thread_ts": "1790722178.098146",
       "events": [],
       "brief": "reply (pushes back) in the thread about: the message above",
       "must_mention": [],
       "length": "one_word",
-      "text": "Eh not sure 😬"
+      "text": "again?"
     },
     {
-      "ts": "1790807797.115890",
-      "user": "p-diego",
-      "thread_ts": "1790806135.755232",
-      "events": [],
-      "brief": "reply (will check later) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "Will check 👀"
-    },
-    {
-      "ts": "1790810931.869687",
-      "user": "p-ingrid",
-      "thread_ts": "1790806135.755232",
-      "events": [],
-      "brief": "reply (tags someone else) in the thread about: the message above",
-      "must_mention": [],
-      "length": "one_word",
-      "text": "@samir.k"
-    },
-    {
-      "ts": "1790816779.776995",
-      "user": "p-priya",
-      "thread_ts": null,
-      "events": [
-        "ev-003222"
-      ],
-      "brief": "knee pulley: still quoting rev B",
-      "claim": {
-        "kind": "substitute",
-        "value": "rev B"
-      },
-      "must_mention": [
-        "knee pulley"
-      ],
-      "length": "short",
-      "text": "The knee pulley is still out for quote."
-    },
-    {
-      "ts": "1790846197.476454",
+      "ts": "1790727337.423069",
       "user": "p-andre",
-      "thread_ts": "1790727337.881708",
-      "events": [
-        "ev-002968"
-      ],
-      "brief": "Correction: FL-TST-2556: need 2 by 2026-10-12 for Instrumentation fit-up: Tilt stand foot clamp",
-      "claim": {
-        "kind": "needs",
-        "value": {
-          "qty": 2,
-          "by": "2026-10-12"
-        }
-      },
-      "must_mention": [
-        "FL-TST-2556",
-        "Instrumentation fit-up: Tilt stand foot clamp",
-        "mon the 12th"
-      ],
-      "pressure": "elevated",
-      "length": "medium",
-      "text": "correction FL-TST-2556 is mon the 12th for Instrumentation fit-up: Tilt stand foot clamp not the 9th\nstill 2"
-    },
-    {
-      "ts": "1790874036.207923",
-      "user": "p-dmitri",
       "thread_ts": null,
       "events": [
-        "ev-003138"
+        "ev-002066"
       ],
       "brief": "FL-TST-2556: need 2 by 2026-10-12 for Instrumentation fit-up: Tilt stand foot clamp",
       "claim": {
@@ -691,38 +630,133 @@
       "must_mention": [
         "FL-TST-2556",
         "Instrumentation fit-up: Tilt stand foot clamp",
-        "mon the 12th"
+        "10/12"
+      ],
+      "pressure": "elevated",
+      "length": "medium",
+      "text": "FL-TST-2556 x2 for Instrumentation fit-up: Tilt stand foot clamp, need them 10/12 so we can do the fit up before the gantry slot"
+    },
+    {
+      "ts": "1790740260.378331",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002067"
+      ],
+      "brief": "the clamp: need 2 by 2026-10-12",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 2,
+          "by": "2026-10-12"
+        }
+      },
+      "must_mention": [
+        "the clamp",
+        "10/12"
+      ],
+      "pressure": "high",
+      "length": "short",
+      "text": "the clamp x2 by 10/12 *clamps"
+    },
+    {
+      "ts": "1790786714.589322",
+      "user": "p-andre",
+      "thread_ts": null,
+      "events": [
+        "ev-002038"
+      ],
+      "brief": "1348: need 5 by 2026-10-06 for the fit check",
+      "claim": {
+        "kind": "needs",
+        "value": {
+          "qty": 5,
+          "by": "2026-10-06"
+        }
+      },
+      "must_mention": [
+        "1348",
+        "the fit check",
+        "tues 10/6"
       ],
       "pressure": "high",
       "length": "medium",
-      "text": "FL-TST-2556: 2 needed by mon the 12th for Instrumentation fit-up: Tilt stand foot clamp. Not slipping this one!!"
+      "text": "1348 x5 for the fit check, tues 10/6. who has the latest on it"
     },
     {
-      "ts": "1790875312.077512",
-      "user": "p-priya",
-      "thread_ts": "1790727337.881708",
+      "ts": "1790794318.660823",
+      "user": "p-zoe",
+      "thread_ts": null,
+      "events": [
+        "ev-003426"
+      ],
+      "brief": "knee pulley: still quoting rev B",
+      "claim": {
+        "kind": "substitute",
+        "value": "rev B"
+      },
+      "must_mention": [
+        "knee pulley"
+      ],
+      "length": "short",
+      "text": "knee pulley: still quoting rev B afaik"
+    },
+    {
+      "ts": "1790795918.726387",
+      "user": "p-diego",
+      "thread_ts": "1790794318.660823",
       "events": [],
-      "brief": "reply (ack) in the thread about: the message above",
+      "brief": "reply (answers) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "Noted, thank you."
+      "text": "i thought they moved to rev C already?"
     },
     {
-      "ts": "1790878004.344024",
-      "user": "p-luis",
-      "thread_ts": "1790727337.881708",
+      "ts": "1790798403.332347",
+      "user": "p-talia",
+      "thread_ts": "1790794318.660823",
       "events": [],
-      "brief": "reply (will check later) in the thread about: the message above",
+      "brief": "reply (tags someone else) in the thread about: the message above",
       "must_mention": [],
       "length": "short",
-      "text": "will chekc *check the tilt stand after the leg drop slot"
+      "text": "@samir.k can you confirm with them? 🙏"
     },
     {
-      "ts": "1790880588.743290",
+      "ts": "1790802482.980532",
+      "user": "p-ingrid",
+      "thread_ts": "1790794318.660823",
+      "events": [],
+      "brief": "reply (answers) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "Quote rev should match whatever is released in the PLM. Please check before the PO goes out."
+    },
+    {
+      "ts": "1790803340.136681",
+      "user": "p-callum",
+      "thread_ts": null,
+      "events": [
+        "ev-002764"
+      ],
+      "brief": "Instrumentation fit-up for Leg DVT build: Gait gantry harness hook waits on Driver PCBA respin for leg (left, hip to foot) (harness hook)",
+      "claim": {
+        "kind": "blocked",
+        "value": "dl-gen-0085"
+      },
+      "must_mention": [
+        "Driver PCBA respin for leg (left, hip to foot) (harness hook)",
+        "Instrumentation fit-up for Leg DVT build: Gait gantry harness hook"
+      ],
+      "pressure": "low",
+      "length": "medium",
+      "text": "Instrumentation fit-up for Leg DVT build: Gait gantry harness hook is stuck waiting on Driver PCBA respin for leg (left, hip to foot) (harness hook)"
+    },
+    {
+      "ts": "1790880588.727468",
       "user": "p-hana",
       "thread_ts": null,
       "events": [
-        "ev-002579"
+        "ev-002767"
       ],
       "brief": "Prototype fit-up for Leg DVT build: Ankle rod-end spacer waits on Wire harness for ankle and foot (rod end spacer)",
       "claim": {
@@ -738,11 +772,11 @@
       "text": "Prototype fit-up for Leg DVT build: Ankle rod-end spacer is waiting on Wire harness for ankle and foot (rod end spacer)"
     },
     {
-      "ts": "1790880611.248301",
+      "ts": "1790880611.351141",
       "user": "p-zoe",
       "thread_ts": null,
       "events": [
-        "ev-001819"
+        "ev-001972"
       ],
       "brief": "the spacer: need 12 by 2026-10-07",
       "claim": {
@@ -758,24 +792,34 @@
       ],
       "pressure": "high",
       "length": "short",
-      "text": "need 12 of the spacer by 10/7"
+      "text": "the spacer, need 12 by 10/7"
     },
     {
-      "ts": "1790884829.217426",
-      "user": "p-diego",
-      "thread_ts": "1790880588.743290",
+      "ts": "1790883010.963914",
+      "user": "p-mei",
+      "thread_ts": "1790880611.351141",
       "events": [],
-      "brief": "reply (tags someone else) in the thread about: the message above",
+      "brief": "reply (ack) in the thread about: the message above",
       "must_mention": [],
-      "length": "one_word",
-      "text": "@farah.q 🙏"
+      "length": "short",
+      "text": "noted"
     },
     {
-      "ts": "1790889530.127468",
+      "ts": "1790884931.463882",
+      "user": "p-callum",
+      "thread_ts": "1790880611.351141",
+      "events": [],
+      "brief": "reply (pushes back) in the thread about: the message above",
+      "must_mention": [],
+      "length": "medium",
+      "text": "12 seems like a lot for a fit up? we could do with 6 and not hold anything"
+    },
+    {
+      "ts": "1790889530.306782",
       "user": "p-samir",
       "thread_ts": null,
       "events": [
-        "ev-001923"
+        "ev-002090"
       ],
       "brief": "1358: need 3 by 2026-10-22",
       "claim": {
@@ -790,35 +834,25 @@
         "thurs the 22nd"
       ],
       "pressure": "low",
-      "length": "short",
-      "text": "1358 need 3 by thurs the 22nd"
+      "length": "medium",
+      "text": "1358 x3 needed thurs the 22nd, nothing in yet"
     },
     {
-      "ts": "1790889693.098701",
-      "user": "p-luis",
-      "thread_ts": null,
-      "events": [
-        "ev-001658"
-      ],
-      "brief": "that adapter plate arrived (1)",
-      "claim": {
-        "kind": "stock",
-        "value": 1
-      },
-      "must_mention": [
-        "that adapter plate",
-        "1"
-      ],
-      "pressure": "elevated",
+      "ts": "1790894186.310709",
+      "user": "p-beth",
+      "thread_ts": "1790889530.306782",
+      "events": [],
+      "brief": "reply (thanks) in the thread about: the message above",
+      "must_mention": [],
       "length": "short",
-      "text": "that adapter plate came in, just 1"
+      "text": "Thanks Samir, I'll add it to the readiness list."
     },
     {
-      "ts": "1790972790.797332",
+      "ts": "1790972790.711606",
       "user": "p-leilani",
       "thread_ts": null,
       "events": [
-        "ev-003250"
+        "ev-003465"
       ],
       "brief": "Wire harness for ankle and foot: still quoting 2026-09-28",
       "claim": {
@@ -829,15 +863,15 @@
         "Wire harness for ankle and foot (rod end spacer)",
         "9/28"
       ],
-      "length": "medium",
-      "text": "Wire harness for ankle and foot (rod end spacer) still quoting 9/28 on their end 😬"
+      "length": "short",
+      "text": "Wire harness for ankle and foot (rod end spacer): vendor is still quoting 9/28 🙏"
     },
     {
-      "ts": "1790973139.779224",
+      "ts": "1790973139.761897",
       "user": "p-diego",
       "thread_ts": null,
       "events": [
-        "ev-002023"
+        "ev-002195"
       ],
       "brief": "FL-TST-2567: need 2 by 2026-10-26 for Test stand rework: Tilt stand angle calibration block",
       "claim": {
@@ -853,60 +887,51 @@
         "FL-TST-2527",
         "FL-TST-2556",
         "FL-TST-2502",
-        "10/26"
+        "mon 10/26"
       ],
       "pressure": "high",
-      "length": "medium",
-      "text": "FL-TST-2567 need 2 by 10/26 for Test stand rework: Tilt stand angle calibration block. Same rework touches FL-TST-2527, FL-TST-2556 and FL-TST-2502 🔧"
+      "length": "short",
+      "text": "FL-TST-2567 x2 for Test stand rework: Tilt stand angle calibration block, mon 10/26. same batch as FL-TST-2527, FL-TST-2556 and FL-TST-2502 so they can ship together 😬"
     },
     {
-      "ts": "1790978200.993637",
+      "ts": "1790974907.889336",
       "user": "p-callum",
-      "thread_ts": "1790973139.779224",
+      "thread_ts": "1790972790.711606",
       "events": [],
-      "brief": "reply (shares a related experience) in the thread about: the message above",
+      "brief": "reply (disagrees politely) in the thread about: the message above",
       "must_mention": [],
       "length": "one_word",
-      "text": "last time we reworked that stand the cal block was the thing that held everythign up"
+      "text": "hm that date was already last monday, no?"
     },
     {
-      "ts": "1790979778.186299",
-      "user": "p-beth",
-      "thread_ts": "1790973139.779224",
-      "events": [],
-      "brief": "reply (tags someone else) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "Looping in @zoe.c on this."
-    },
-    {
-      "ts": "1790984175.388753",
-      "user": "p-priya",
-      "thread_ts": "1790973139.779224",
-      "events": [],
-      "brief": "reply (will check later) in the thread about: the message above",
-      "must_mention": [],
-      "length": "short",
-      "text": "I will look at this on Monday."
-    },
-    {
-      "ts": "1790984610.876843",
+      "ts": "1790977471.950534",
       "user": "p-hana",
-      "thread_ts": null,
-      "events": [
-        "ev-003212"
-      ],
-      "brief": "Wire harness for ankle and foot: still quoting 2026-09-28",
-      "claim": {
-        "kind": "eta",
-        "value": "2026-09-28"
-      },
-      "must_mention": [
-        "Wire harness for ankle and foot (rod end spacer)",
-        "9/28"
-      ],
-      "length": "medium",
-      "text": "Wire harness for ankle and foot (rod end spacer) is still showing 9/28, not 100% sure but probably that's the latest"
+      "thread_ts": "1790973139.761897",
+      "events": [],
+      "brief": "reply (ack) in the thread about: the message above",
+      "must_mention": [],
+      "length": "one_word",
+      "text": "ok"
+    },
+    {
+      "ts": "1790977836.883978",
+      "user": "p-hana",
+      "thread_ts": "1790972790.711606",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "I think that date is probably stale, not 100% sure though."
+    },
+    {
+      "ts": "1790981011.032578",
+      "user": "p-zoe",
+      "thread_ts": "1790973139.761897",
+      "events": [],
+      "brief": "reply (disagrees politely) in the thread about: the message above",
+      "must_mention": [],
+      "length": "short",
+      "text": "not sure they are going together tbh"
     }
   ]
 }

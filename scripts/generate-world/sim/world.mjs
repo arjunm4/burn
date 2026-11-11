@@ -86,6 +86,8 @@ export function buildWorld({ canon, org, program, knobs, seed }) {
 
   // ---- seed work items and tests as consumers; planned schedule before CNC orders ----
   const r4 = rng.fork('work');
+  const usedNames = new Set();
+  const uniqueName = (n) => { let m = n; for (let i = 2; usedNames.has(m); i++) m = `${n} (${i})`; usedNames.add(m); return m; };
   for (const w of prog.work_items || []) {
     const ms = S.M.get(w.milestone);
     const feedsTest = world.tests.find((t) => (testInputs.get(t.id) || []).includes(w.id));
@@ -96,7 +98,7 @@ export function buildWorld({ canon, org, program, knobs, seed }) {
     if (earliest < cal.addWd(cal.windowStart, 1)) earliest = cal.addWd(cal.windowStart, 1);
     const owner = S.P.has(w.owner) ? w.owner : world.people[0].id;
     const item = {
-      id: w.id, name: w.name, owner, assembly: S.A.has(w.assembly) ? w.assembly : world.assemblies[0].id, duration_true_days: dur,
+      id: w.id, name: uniqueName(w.name), owner, assembly: S.A.has(w.assembly) ? w.assembly : world.assemblies[0].id, duration_true_days: dur,
       duration_estimate_days: w.duration_estimate_days ?? null, blocked_by: (w.blocked_by || []).filter((x) => S.DL.has(x) || (prog.work_items || []).some((y) => y.id === x)),
       status: [], milestone: ms ? ms.id : null, actual_start: null, actual_done: null,
     };
@@ -207,6 +209,7 @@ export function buildWorld({ canon, org, program, knobs, seed }) {
   }
 
   // ---- S4b tickets, S11 other orders, S12 events ----
+  { const seen = new Set(); for (const w of [...world.work_items].sort((a, b) => (a.id < b.id ? -1 : 1))) { let m = w.name; for (let i = 2; seen.has(m); i++) m = `${w.name} (${i})`; seen.add(m); w.name = m; } }
   runContext(S);
 
   // ---- finalize ----
