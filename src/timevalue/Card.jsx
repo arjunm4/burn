@@ -113,7 +113,7 @@ function Recommendation({card, changed = {}}) {
       {(card.detail || []).map((d, i) => <div key={i} style={{lineHeight: 1.5, color: d.startsWith('Ask ') ? C.ink : C.muted, ...(d.startsWith('Ask ') ? {padding: '8px 10px', borderLeft: `2px solid ${C.ink}`, background: C.paper, borderRadius: 4} : {})}}>{d}</div>)}
     </div>
 
-    <DependencyGraph card={card} C={C} sourceLabel={sourceLabel}/>
+    <DependencyGraph card={card} C={C} sourceLabel={sourceLabel}/><a href="/dependencies" style={{fontSize: 13, color: C.ink, textDecoration: 'underline'}}>See the whole company dependency graph →</a>
 
     {card.dominated?.length > 0 && <div role="alert" style={{margin: '12px 16px 0', padding: '8px 10px', borderLeft: `3px solid ${C.critical}`, background: '#FBEDED', color: C.critical, borderRadius: 4, lineHeight: 1.45}}>
       {card.dominated.map((d, i) => <div key={i}>{d}</div>)}
