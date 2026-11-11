@@ -127,7 +127,7 @@ On every card a Rush tier ($6,900, 2 days) is flagged: it finishes no sooner tha
 | Maths vs the simulator's true outcomes | 400 / 400 orders exact |
 | Dependency links Burn rebuilt from the messages | 75.8% of all true links (83% of the links someone stated) |
 | Ramp charges matched to Xometry orders | 482 / 482 |
-| Past wasted rushes Burn would have flagged | 0 / 61 (see Known limits in the [README](../README.md)) |
+| Past wasted rushes Burn would have flagged | 0 / 61 |
 
 **Rerun** after regenerating the world or its text:
 

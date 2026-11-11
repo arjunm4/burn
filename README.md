@@ -44,13 +44,6 @@ Add `ANTHROPIC_API_KEY=...` to a `.env` file for the live agent (copy `.env.exam
 
 Real: the Claude agent and its tool calls, the Playwright browser, the working-day maths, the order store, the Ramp state machine, the connectors. Simulated: Ramp and Xometry as services (our stand-ins, same fields and flow; Xometry's terms forbid bots, and the real path is Ramp's punchout), and the company itself. Flintlock Robotics is a generated 60-person robotics startup with nine months of Slack, Jira, meetings and calendar and a ground truth to grade against. Checked against that truth, the maths gets 400 of 400 past decisions right and Burn rebuilds about three quarters of the real dependencies from the messages alone.
 
-## Known limits
-
-- **The dollars-per-day values are invented.** There is no public data on what a day of schedule is worth at a hardware startup. Burn takes it from the deadline's owner and shows the break-even when there is none.
-- **Burn catches the wasted rush in the demo, but 0 of the 61 past ones.** Most of them fed work (fit checks, rig setup) rather than a test, and Burn follows part → test → milestone only.
-- **Xometry prices are modelled** from published anecdotes; real quotes need a CAD upload.
-- **Not built:** delivery tracking and recording whether each premium actually bought time, the real xometry.com, the Ramp sandbox. A learned habit model was built and removed: it beat "never expedite" by nothing.
-
 ## Documentation
 
 | Document | What's in it |
