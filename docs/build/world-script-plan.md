@@ -10,6 +10,8 @@ Owner: Owen. Spec: [`../architecture.md`](../architecture.md) §12; realism rule
 - **Model: Fable** for most work (schema, world, orders, stories, renderers, checks), including the text the generator writes.
 - **Read the style research first:** [`../research/data-realism.md`](../research/data-realism.md) (formats, style numbers, fake-looking patterns) and, for orders, [`../research/startup-purchasing.md`](../research/startup-purchasing.md). Every agent's prompt points at the sections for its source, and its output must follow them.
 
+**Test hardware and dependency chains** (Owen's decision): Flintlock does not have a complete humanoid. Only parts of it work (e.g. a leg, a hip actuator, a hand), and much of the work is testing those pieces on their own. So a large share of the custom CNC parts are **test infrastructure** rather than robot parts: fixture hooks and lift hooks that hold a leg in the air, test stands, jigs, dyno and spin-test adapters, mounting plates. This is where dependency chains come from: *before the leg drop test can run, the machined hook that suspends the leg must arrive*; the test also needs the leg itself, the stand and a booked bench.
+
 ## Phase 0: schema (one agent, ~15 min, first)
 Writes the structure of `fixtures/world/world.json` and `fixtures/world/answers.json` with one small filled example:
 - `company`; `people[]` (id, name, role, assembly, Slack id, chattiness)
@@ -21,8 +23,8 @@ Writes the structure of `fixtures/world/world.json` and `fixtures/world/answers.
 ## Phase 1: build the world (sequential, ~45 min)
 | Agent | Builds | Reads |
 |---|---|---|
-| A. Company and program | ~60 people and roles, assemblies, milestones on a 9-month calendar ending on demo day, tests, resources, recurring meetings | schema |
-| B. Order planner | Past custom CNC orders following the researched cadence (bursts before builds), catalog parts, prices and tiers in range, tier chosen and hidden reason; plus the bracket demo order | A, data-realism.md |
+| A. Company and program | ~60 people and roles, assemblies (only partly working: a leg, a hip actuator, a hand…), tests on those pieces and the test hardware each needs, milestones on a 9-month calendar ending on demo day, tests, resources, recurring meetings | schema |
+| B. Order planner | Past custom CNC orders (many are test infrastructure: fixture hooks, lift hooks, stands, jigs, adapters) following the researched cadence (bursts before builds), catalog parts, prices and tiers in range, tier chosen and hidden reason; plus the bracket demo order | A, data-realism.md |
 | C. Story planner | Per order, the crumbs (need-by, sibling slip, test moved, material switch) with time and source; background events (engineering trade-offs, off-topic) outnumber crumbs | A, B |
 
 ## Phase 2: render each source (parallel, ~1.5 h)
