@@ -361,6 +361,35 @@ label:    the tier chosen, from the matching Xometry order (Ramp's amount alone 
 
 Slack is mock data shaped like Slack API responses, read by the existing connector in fixture mode; no real workspace. The prototype's `fixtures/slack/` and `fixtures/calendar.ics` (14 Slack messages about Rev C electronics, one calendar) stay until the app switches to the generated data, so its tests keep passing.
 
+### How the demo data was built (2026-11-10)
+
+**What it is for.** Every external service is mocked, so Burn needs a company to read about. The data gives it one: Flintlock Robotics, a fictional 60-person humanoid startup in California, over nine months (2026-02-10 to 2026-11-10). It serves three purposes:
+1. **The live demo:** the hip-actuator bracket order and its last 30 days of context (motor ETA, the 3-day spin test, Arjun's $600/day, the bracket need), plus the scripted "motor slips" message that flips the recommendation (cases A, B and D of §7).
+2. **Training and grading:** 482 past Xometry orders with the tier chosen; 149 have a full 30 days of written context before them (104 train, 45 test). A held-back answer key says why each tier was chosen and whether expediting helped.
+3. **Showing judges it is realistic:** every record traces back to the event that produced it (`fixtures/world/provenance.json`), and every source uses the real service's format.
+
+**How it was made.** Code owns the facts; models write only the words.
+1. **Seeds** (written by agents): people and org (`fixtures/world/seed/org.json`), and the program: 170 parts (47% test hardware), 16 tests, 18 deliverables, 10 milestones, 35 engineering storylines (`seed/program.json`). Canonical ids in `seed/canon.json`.
+2. **Simulation** (`scripts/generate-world/simulate.mjs`, seeded and deterministic): plays the seeds forward into `fixtures/world/world.json` (the ground truth) and `answers.json` (the answer key): schedules and slips, tickets, 482 Xometry and 2,160 other orders with decisions and hidden reasons, deliveries (1 in 40 late), and events. Events carry planned imperfections: 8% stale, 5% wrong then corrected, 2% wrong and never corrected, 3% contradicting another source.
+3. **Plan** (`plan.mjs`): turns the truth into every record with ids, authors and times fixed and the text blank, plus writing jobs.
+4. **Write** (Opus agents, `job-tool.mjs` and `WRITER.md`): agents fill only the text, following [`research/data-realism.md`](research/data-realism.md). The tool rejects text that drops a required fact or adds dates, part numbers or amounts to background chatter.
+5. **Assemble, check, trace** (`assemble.mjs`, `checks.mjs`, `provenance.mjs`): emit each source in its real format under `fixtures/flintlock/`, enforce the invariants in [`build/simulation-spec.md`](build/simulation-spec.md) §4, and map events to records.
+
+Design: [`build/world-script-plan.md`](build/world-script-plan.md), [`build/simulation-spec.md`](build/simulation-spec.md), `fixtures/world/SCHEMA.md`. An independent audit and what it found: [`build/verification-findings.md`](build/verification-findings.md).
+
+**What Burn can read** (`fixtures/flintlock/`; never `fixtures/world/`):
+| Source | Format | Content |
+|---|---|---|
+| `slack/` | Slack API message JSON, one file per channel | 14 channels and 7 DMs; purchasing threads written for the last 13 weeks |
+| `jira/` | Jira REST issue JSON with changelog and comments | 8 projects; purchasing tickets written |
+| `meetings/` | Note-taker Markdown (overview, transcript, action items) | Supply chain, supply chain + mech, program review, design review, standups |
+| `calendar.ics` | iCalendar | Milestones with moves, rig bookings, recurring meetings, out-of-office; all nine months |
+| `xometry/` | JSON | Every quote with all tiers; orders with status as of 2026-11-10; all nine months |
+| `ramp/` | Ramp transaction and bill JSON | Card charges and bills for every vendor, with descriptors and merchant codes; all nine months |
+| `demo/` | JSON | The bracket quote, the engineer's part entry, the live-change messages, the $/day policies |
+
+**Known limits.** Only text carrying purchasing facts is written (background chatter, routine meetings and tickets are not yet), so channels look sparse. Some messages are stiff where long formal part names were required. Need-by dates are only partly derived from the test schedule (56% of orders feed a real test or build). `checks` still reports six statistical misses (top order totals, three hidden-reason bands, two probe sub-measures). All model results are "in this simulator"; no real-world accuracy claims.
+
 ## 13. Phased plan (design phases, not build tickets)
 
 1. **Decision core:** demand, quote snapshot, milestone policy, time semantics, same-world comparison, dominance, break-even. Cases A–C.
