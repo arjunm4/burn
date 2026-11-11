@@ -83,7 +83,7 @@ Each lists what we rejected and why.
 7. **Scenarios and switching conditions by default; probabilities only with a source.** *Rejected:* model confidence as probability.
 8. **Questions earn their interruption, one at a time,** and only when the answer could change the action. Trusted evidence is checked first.
 9. **Disagreement is first-class.** The engineer can argue; supported new context is accepted and Burn re-solves; the exchange is kept, typed and access-scoped. An argument never silently becomes a fact or a training label.
-10. **Assembly readiness, not "who is blocked".** The question is whether faster delivery improves the assembly's readiness and its milestone. "Behind schedule" alone never justifies spend.
+10. **Two dependency tracks** (Owen's decision). (1) A **progress ranking**: each assembly or module working toward the same calendar milestone is ranked by progress relative to the others, measured from tickets done plus progress implied in the conversation; this gives general urgency without a full graph. (2) A **dependency graph that may be incomplete**: part → work or test → milestone, built from the context; missing links stay unknown. Where the graph is good enough it drives the cost-of-delay maths (§7); the ranking supplies urgency everywhere. *Replaces (v5):* "no league table of assemblies".
 11. **The decision is a decomposition, not an additive urgency score:** eligibility → schedule → basis (dominance → policy → economics) → advisory comparison with the learned habit.
 12. **Ramp owns the money.** Purchase request, approval (the engineer's manager), auto-approval of small orders, card, booking and item receipt are Ramp's. *Rejected:* Burn's own approval settings and a supply-chain purchase queue.
 13. **Supply chain is a context source, not a purchase step.** Every human step must add judgment or own something; with Ramp approving and paying, a supply-chain click only adds delay. Their Slack messages (sibling ETAs, stock, cutoffs, vendor rules) are trusted for those topics.
@@ -224,7 +224,9 @@ DecisionRevision(snapshot hash, options, outcomes, basis, what Burn displayed, p
 
 **Schedule.** Precedence over the dependency graph on working calendars; `requires-all` waits for all inputs. Unknown durations stay unknown; a cycle or contradiction blocks or qualifies the result.
 
-**Assembly readiness.** For the affected assembly: forecast readiness, need-by, remaining work, **slack in days** (negative shown), and each option's effect. Never the fraction of parts received. An optional buffer view appears only with an accepted baseline.
+**Progress ranking (track 1).** For each milestone, rank the assemblies or modules working toward it by progress: the share of their tickets done, adjusted by progress implied in the conversation (an LLM reads the related threads and meetings, e.g. "bore is done, waiting on anodize"). Lower progress relative to the others means higher general urgency.
+
+**Dependency graph (track 2).** For the affected assembly, where the graph supports it: forecast readiness, need-by, remaining work, **slack in days** (negative shown), and each option's effect. Missing links and durations stay unknown.
 
 **Comparison.**
 - Milestone effect ΔT_m(a, s) = T_m(cheapest admissible, s) − T_m(a, s).
@@ -281,6 +283,8 @@ label:    the tier chosen, from the matching Xometry order (Ramp's amount alone 
 **Attributes:**
 - Timing: days to the next need-by, test or milestone; how late in the run-up the order came.
 - Pressure: urgency language; message rate and its trend; reply speed.
+- **Pressure read** (LLM): an LLM reads the part's threads, tickets and meetings in each time band and rates schedule pressure (e.g. low / elevated / high), citing the messages behind the rating: repeated "any update?", deadline talk, frustration, escalation to the manager.
+- Progress rank: the assembly's position in the progress ranking (§7) for its milestone at time T.
 - Dependencies: who or what is waiting; whether a sibling part lands later.
 - People: manager or supply chain involved; number of participants.
 - Change: slips, conflicting dates, revisions.
