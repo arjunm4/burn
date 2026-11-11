@@ -97,4 +97,4 @@ export function server(vite,store=createStore(),analyzeRequest=analyze,ingest=nu
     if(status>=500)console.error('Unhandled error on',req.method,pathname,'\n',error);
     if(!res.headersSent)json({error:status<500?error.message:'Server error'},status);else res.end();}
 }); }
-if (process.argv[1]===fileURLToPath(import.meta.url)) server(undefined,undefined,undefined,startIngest()).listen(5173,'127.0.0.1',()=>console.log('http://localhost:5173/request'));
+if (process.argv[1]===fileURLToPath(import.meta.url)) server(undefined,undefined,undefined,startIngest()).listen(5173,'127.0.0.1',()=>console.log('http://localhost:5173/'));
