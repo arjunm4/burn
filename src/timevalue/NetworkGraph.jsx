@@ -1,5 +1,4 @@
 import React from 'react';
-import ForceGraphLib from 'force-graph';
 import data from '../../fixtures/timevalue/company-graph.json';
 import WhoBlocked from './WhoBlocked.jsx';
 
@@ -11,7 +10,7 @@ const MOTOR = 'dl-hip-motor-dvt';
 const label = a => (a || 'shared').replace(/^a-/, '').replace(/-/g, ' ');
 
 // Bundled with the app (works offline).
-function loadLib() { return Promise.resolve(ForceGraphLib); }
+function loadLib() { return import('force-graph').then(m => m.default || m); }
 
 export default function NetworkGraph() {
   const box = React.useRef(null);
@@ -143,9 +142,9 @@ export default function NetworkGraph() {
   return <div style={{position: 'fixed', inset: 0, background: BG, color: INK, fontFamily: 'Inter, system-ui, sans-serif'}}>
     <div ref={box} style={{position: 'absolute', inset: 0}}/>
     <div style={{position: 'absolute', top: 18, left: 22, pointerEvents: 'none'}}>
-      <div style={{fontSize: 12, letterSpacing: '.14em', textTransform: 'uppercase', color: MUTED}}>Burn · company dependency graph</div>
-      <div style={{fontSize: 26, fontWeight: 600, marginTop: 4}}>Flintlock Robotics, rebuilt from its messages</div>
-      <div style={{fontSize: 13, color: MUTED, marginTop: 4}}>{data.nodes.length} parts, tests and milestones · {data.edges.length} links read from Slack, Jira, meetings and the calendar</div>
+      <div style={{fontSize: 12, letterSpacing: '.14em', textTransform: 'uppercase', color: MUTED}}>Step 1 of 2 · what this part is for</div>
+      <div style={{fontSize: 26, fontWeight: 600, marginTop: 4}}>Owen needs a hip actuator bracket. Who is waiting on it?</div>
+      <div style={{fontSize: 13, color: MUTED, marginTop: 4}}>Burn drew this map of what depends on what from the team's Slack, Jira and meetings. Yellow = the bracket and everything waiting on it.</div>
       <div style={{display: 'flex', flexWrap: 'wrap', gap: 10, marginTop: 10, fontSize: 12}}>
         {model.asm.map(a => <span key={a} style={{display: 'inline-flex', alignItems: 'center', gap: 6, textTransform: 'capitalize'}}><i style={{width: 9, height: 9, borderRadius: 9, background: model.color[a], display: 'inline-block'}}/>{label(a)}</span>)}
         <span style={{color: ACCENT}}>◆ milestone · ● part / test</span>
@@ -153,7 +152,7 @@ export default function NetworkGraph() {
     </div>
     <div style={{position: 'absolute', top: 18, right: 22, display: 'flex', gap: 8}}>
       <button onClick={runSlip} style={{background: slip ? RED : 'transparent', color: slip ? '#fff' : INK, border: `1px solid ${slip ? RED : '#3A3833'}`, borderRadius: 18, padding: '8px 16px', fontSize: 13, cursor: 'pointer'}}>{slip ? 'Reset' : 'What if the motor slips?'}</button>
-      <a href="/timevalue" style={{color: ACCENT, border: '1px solid #3A3833', borderRadius: 18, padding: '8px 16px', fontSize: 13, textDecoration: 'none'}}>The decision →</a>
+      <a href="/orders" style={{color: ACCENT, border: '1px solid #3A3833', borderRadius: 18, padding: '8px 16px', fontSize: 13, textDecoration: 'none'}}>Step 2: order the bracket →</a>
     </div>
     <nav style={{position: 'absolute', left: 22, top: 150, bottom: 345, width: 300, overflow: 'auto', background: 'rgba(27,26,24,0.88)', border: '1px solid #3A3833', borderRadius: 14, padding: '10px 8px', fontSize: 12.5, backdropFilter: 'blur(6px)'}}>
       <div style={{fontSize: 11, letterSpacing: '.12em', textTransform: 'uppercase', color: MUTED, padding: '0 6px 8px'}}>Hierarchy · milestone → what feeds it</div>

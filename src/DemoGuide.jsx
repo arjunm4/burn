@@ -3,8 +3,7 @@ import React from 'react';
 // Demo-only: a floating checklist that highlights what to click next and advances when you click it.
 // Progress lives in localStorage so it survives page changes. Reset with the ↺ button.
 const STEPS = [
-  {page: /^\/(network)?$/, sel: '[data-demo="Hip actuator bracket"]', text: 'Hip actuator bracket', say: 'Burn rebuilt Flintlock from its messages. Owen needs this bracket.'},
-  {page: /^\/(network)?$/, go: '/orders', say: 'It feeds the spin test, which also waits on the motor. Now order it.'},
+  {page: /^\/(network)?$/, sel: '[data-demo="Hip actuator bracket"]', text: 'Hip actuator bracket', then: '/orders', say: 'Burn rebuilt Flintlock from its messages. Owen needs this bracket.'},
   {page: /^\/orders$/, text: 'Enter it as', say: 'Owen enters the bracket and attaches the CAD.'},
   {page: /^\/orders\/[\w-]+$/, text: 'Okay', exact: true, say: 'Burn shows what the bracket waits on and picks the tier. Click Okay.'},
   {page: /^\/orders\/[\w-]+$/, go: '/ramp', say: 'The request goes to the manager in Ramp.'},
@@ -30,7 +29,15 @@ function findTarget(step) {
 
 export default function DemoGuide() {
   // Opening the first page of the demo always starts the guide from step 1.
-  const [i, setI] = React.useState(() => (['/network', '/'].includes(location.pathname) ? (write(0), 0) : read()));
+  // Start at step 1 on the graph; on any other page, jump to the first step for that page.
+  const [i, setI] = React.useState(() => {
+    if (['/network', '/'].includes(location.pathname)) { write(0); return 0; }
+    const cur = read();
+    if (STEPS[cur]?.page.test(location.pathname)) return cur;
+    const n = STEPS.findIndex(s => s.page.test(location.pathname));
+    if (n >= 0) { write(n); return n; }
+    return cur;
+  });
   const [open, setOpen] = React.useState(true);
   const [list, setList] = React.useState(false);
   const step = STEPS[i];
@@ -44,7 +51,7 @@ export default function DemoGuide() {
     };
     tick();
     const id = setInterval(tick, 400);
-    const onClick = e => { if (cur && (e.target === cur || cur.contains(e.target))) go(i + 1); };
+    const onClick = e => { if (cur && (e.target === cur || cur.contains(e.target))) { go(i + 1); if (step?.then) setTimeout(() => { location.href = step.then; }, 1500); } };
     document.addEventListener('click', onClick, true);
     return () => { clearInterval(id); document.removeEventListener('click', onClick, true); cur?.classList.remove('demo-target'); };
   }, [i]);
@@ -65,7 +72,6 @@ export default function DemoGuide() {
     </div>
     {open && <>
       {step ? <div style={{margin: '10px 0', padding: 10, background: 'rgba(228,242,34,.08)', border: '1px solid rgba(228,242,34,.4)', borderRadius: 10}}>
-        <div style={{color: '#C9C5BE', marginBottom: 6}}>{step.say}</div>
         {step.go ? <button onClick={() => goTo(step)} style={{...btn, background: '#E4F222', color: '#111', padding: '6px 12px', fontWeight: 600}}>{step.go === 'back' ? '← Back to the order' : `Open ${step.go}`}</button>
           : <div><b>Click: </b><span style={{color: '#E4F222'}}>{step.text}</span>{!onPage && <span style={{color: '#8E8A82'}}> (on another page)</span>}</div>}
       </div> : <div style={{margin: '10px 0', color: '#E4F222'}}>Done. ↺ to run it again.</div>}
