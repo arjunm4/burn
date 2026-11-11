@@ -24,6 +24,19 @@ function ready(store, approved = true) {
 }
 const conflict = fn => assert.throws(fn,e=>e.status===409);
 
+test('audit history omits CAD bodies and vault credential handles',()=>{
+  const s=createOrderStore({filename:':memory:'});
+  try {
+    let o=s.create({name:'Private part'});
+    o=s.update(o.id,o.revision,{context:{cad:{fileName:'part.step',bytes:'private-cad-body'}}});
+    o=s.recordRamp(o.id,o.revision,{credentialRef:'private-vault-handle',cardLast4:'4242'});
+    const history=JSON.stringify(s.events(o.id));
+    assert.ok(!history.includes('private-cad-body'));assert.ok(!history.includes('private-vault-handle'));
+    assert.ok(history.includes('part.step'));assert.ok(history.includes('4242'));
+    assert.equal(s.get(o.id).ramp.credentialRef,'private-vault-handle');
+  }finally{s.close();}
+});
+
 test('revision checks, immutable freeze, and no generic placement bypass',()=>{
   const s=createOrderStore({filename:':memory:'});
   try {
