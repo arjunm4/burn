@@ -1,6 +1,6 @@
 # Burn: expedite-decision architecture (joint Claude + Codex)
 
-Status: **v7 draft (Claude), pending Codex review.** v7 adds the end-to-end ordering flow (§0): Burn fills the vendor page, the engineer clicks Okay, approval routes per settings, and supply chain's one click places the order automatically against a verified frozen spec. v6 drops the BOM as a required input (Owen's decision; see §2.3) and makes the engineer's manager the approver, with an optional auto-approval setting (Owen's decisions; see §2.14). v5 was jointly reviewed and approved by Claude and Codex. v5 incorporates Arjun and Owen's second conversation (quote-page entry, disagreement, learning, assembly readiness). Architecture only; no implementation authorized. Product inputs only Arjun and Owen can provide stay open questions (§16).
+Status: **v8 draft (Claude), pending Codex review.** v8: Xometry only; the engineer's part entry kicks off every order; Ramp owns approval, payment and accounting; supply chain is a context source, not a purchase step; learning is a context-attribute model anchored on Ramp purchases (§10). v7 adds the end-to-end ordering flow (§0): Burn fills the vendor page, the engineer clicks Okay, approval routes per settings, and supply chain's one click places the order automatically against a verified frozen spec. v6 drops the BOM as a required input (Owen's decision; see §2.3) and makes the engineer's manager the approver, with an optional auto-approval setting (Owen's decisions; see §2.14). v5 was jointly reviewed and approved by Claude and Codex. v5 incorporates Arjun and Owen's second conversation (quote-page entry, disagreement, learning, assembly readiness). Architecture only; no implementation authorized. Product inputs only Arjun and Owen can provide stay open questions (§16).
 Inputs: Arjun + Owen design conversation (`data/design/transcript-arjun-owen.md`, local only); independent positions (`claude-position.md`, `codex-position.md`); critiques and settlement (`claude-critique.md`, `codex-review-r2.md`, `codex-settlement-r3.md`); worked example (`worked-decision-example.md`); conversation 2 (`transcript-2-arjun-owen.md`) and its review (`codex-review-round2.md`).
 
 ## At a glance
@@ -136,6 +136,31 @@ Burn moves from advising at the vendor's quote page to running the order from th
 **Data captured with both time keys (§10):** where each field came from (context, CAD, question) and the age of each context fact; every tier shown and what Burn preselected; the engineer's edits; approval path and time; every verification result and auto-repair; price drift between quote and order; the placed order; then delivery and first use.
 
 **Not yet verified:** Xometry's terms for extension-driven checkout (its terms page could not be fetched); whether Teamspace sharing works for every quote type (otherwise the re-fill path is used); placement when no one's browser is open on the auto-place path; CAD access control (which vendors received which file).
+
+### v8 changes (Owen's decisions; supersede the matching parts of §0 above)
+
+**Xometry only for v1.** Other vendors and vendor-reliability learning are deferred.
+
+**Kickoff: the engineer's part entry.** Every order starts in Burn's purchasing interface, where the engineer enters the **part name and a short summary** in their own words (what it is, what it's for, anything urgent) plus the CAD file. This entry is the anchor for everything after it:
+- it is the **retrieval query**: Burn finds the Slack threads, meeting notes and calendar items related to this part and synthesizes them into the part's **context record**;
+- Burn fills the order form from the summary plus the context, and asks only for gaps (almost always the CAD file);
+- the summary is stored verbatim with its time and is itself a context source for training.
+
+**Purchase without supply chain; Ramp owns the money.**
+
+| Step | Burn | Ramp |
+|---|---|---|
+| Part entry, context, Xometry fill, tier recommendation, frozen spec | ✓ | — |
+| Purchase request with justification and quote PDF | creates it (`/unified-requests`, early access) | shows it as a procurement request |
+| Approval | watches webhooks | manager approves in Ramp; small orders auto-approved by Ramp rules |
+| Payment | requests the card | virtual card: exact limit, Xometry only, lock date (Vault API; production needs Ramp PCI review) |
+| Checkout | verifies every field, places the order with the Ramp card | — |
+| Receipt, memo, project/GL | sends them on `transactions.cleared` | records them |
+| Delivery | asks "arrived OK?" | item receipt against the PO |
+
+The purchase involves two people: the engineer and the manager. When approval comes back, the engineer gets a "ready to place" notice and one click places the order (their browser may have closed during a slow approval). Burn's own approval settings and the supply-chain queue are removed. Demo: Ramp sandbox (demo.ramp.com), ⌘J to simulate charges.
+
+**Supply chain is a context source, not a purchase step.** Their Slack messages (ETAs of sibling parts, stock on hand, shipping cutoffs, vendor rules) are claims with supply-chain authority; they also see orders, handle tracking and exceptions.
 
 ## 1. Problem and scope
 
@@ -396,6 +421,16 @@ For a **confirmed** demand (revision, quantity and usable-by confirmed, existing
 Burn never creates demand from a chat mention. An unreleased or churning revision is a **risk signal** shown on the card, not proof that ordering early is wrong.
 
 ## 10. Learning
+
+**v8 learning plan (governs; the phases below are retained for reference).** Training is on the **attributes of the synthesized context**, not on the part itself and not on vendor reliability.
+- **One example = one Xometry purchase in Ramp at time T.** Inputs are attributes of the context related to that part and *available before T* (available-at key), over a window (e.g. 30 days), bucketed into time bands before T (0–1, 1–3, 3–7, 7–14, 14–30 days): the context heat map.
+- **The anchor text** is the engineer's part name and summary (§0 v8). For historical purchases, which have no Burn entry, it is reconstructed from the Xometry order line, file name and the nearest related messages, and marked as reconstructed.
+- **Attributes:** timing (days to the next need-by, test or milestone; how late in the run-up the order came); pressure (urgency language, message rate and its trend, reply speed); dependencies (who or what is waiting; whether a sibling part lands later); people (manager or supply chain involved, number of participants); change (slips, conflicting dates, revisions); freshness (age of key facts, distribution across bands); meetings (mentions, action items); the engineer's own summary (stated urgency and purpose).
+- **Label:** the tier chosen, from the matching Xometry order in the company account (Ramp's amount alone doesn't give the tier).
+- **Backfill:** existing Ramp × Xometry × Slack history can produce a training set before Burn's first live order.
+- **Model:** small and explainable (e.g. gradient-boosted trees); shown as advisory with its sample size; the schedule and break-even computation remains the decision.
+- **Risks:** linking a charge to the right context (report the clean-link rate before trusting the model); it learns habit, not correctness; small samples; Slack access must follow channel permissions; Burn's own recommendations are logged so its influence is separable.
+
 
 **What gets logged from the first decision (prospectively):**
 - the full quote snapshot, including its completeness
