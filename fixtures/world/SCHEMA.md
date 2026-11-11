@@ -1,8 +1,8 @@
-# World model schema (v1.0)
+# World model schema (v1.1)
 
 The ground truth for Flintlock Robotics. Code decides facts, ids and times; models write only text.
 Machine-readable copy: `scripts/generate-world/schema.mjs` (`SPEC`, `ANSWERS_SPEC`, `ENUMS`). If this file and `schema.mjs` disagree, `schema.mjs` wins; fix this file.
-Canonical ids: `seed/canon.json`. Tiny valid world: `example/`. Validator: `node scripts/generate-world/validate.mjs <world.json> [answers.json]`.
+How the simulator fills these fields: [`docs/build/simulation-spec.md`](../../docs/build/simulation-spec.md). Canonical ids: `seed/canon.json`. Tiny valid world: `example/`. Validator: `node scripts/generate-world/validate.mjs <world.json> [answers.json]`.
 
 **The app never reads `fixtures/world/`.** It reads only rendered sources.
 
@@ -16,7 +16,9 @@ Canonical ids: `seed/canon.json`. Tiny valid world: `example/`. Validator: `node
 | Money | USD numbers, 2 decimals, field names end `_usd` |
 | References | Always by id, never by name |
 | Text | `world.json` holds no rendered text. `brief` fields are one-line internal notes for writers, never rendered verbatim |
-| Working days | Mon–Fri minus `meta.holidays` with observance `full`. Demo "day N" = N working days after 2026-11-10 |
+| Working days | Mon–Fri minus `meta.holidays` with observance `full` (`partial` and `worked` days count as working days; `partial` halves activity). Veterans Day (Wed 2026-11-11) is `worked`; Thanksgiving Thu–Fri 2026-11-26/27 are `full`. Demo "day N" = N working days after 2026-11-10 |
+| Day arithmetic | `addWd(date, n)` = the n-th working day after `date`. Something ready on day R is usable from the next working day: a test of duration D whose last input is ready on R completes on `addWd(R, D)` (subject to `earliest_start` and `slot_days`) |
+| After the window | `time` fields never pass `meta.window.end`; histories and events hold nothing later. Truth beyond the window (to `meta.sim_horizon`) lives only in `ftime`/date truth fields and `answers.json`; renderers show such a field only if it is ≤ `meta.demo_now` |
 
 ### History convention
 
@@ -31,7 +33,7 @@ Every fact that changes is a list ordered by `known_at` (ascending; equal allowe
 | `where` | ref:events | opt | Event that revealed it; null = never written down | `"ev-000007"` |
 | extra | any | opt | Field-specific extras, e.g. `reason` on part revisions | `"reason": "bore moved 0.5 mm"` |
 
-Truth vs belief: histories record what was **stated**; for planned dates (`eta`, milestone `date`) the truth is a separate field (`true_arrival`, actual test times) or lives in `answers.json`. Wrong or stale statements live only in `events` (with `truth`), not in histories, unless someone also edited the record (e.g. a Jira due date set to a wrong date).
+Truth vs belief: histories record what was **stated**; the truth is a separate field (`true_arrival`, test `actual_start`/`actual_end`, work item `actual_done`, milestone `actual_date`) and every change of truth is a `slips` record. Wrong or stale statements live only in `events` (with `truth`), not in histories, unless someone also edited the record (e.g. a Jira due date set to a wrong date).
 
 ## 2. ID formats
 
@@ -55,6 +57,8 @@ Truth vs belief: histories record what was **stated**; for planned dates (`eta`,
 | tests | `test-<slug>` | `test-leg-drop` |
 | deliverables | `dl-<slug>` | `dl-hip-motor-dvt` |
 | work items | `wi-<5 digits>` | `wi-00001` |
+| demands / slips | `dmd-<5 digits>` / `slip-<5 digits>` | `dmd-00001`, `slip-00002` |
+| pressure / budget windows | `pw-<2 digits>` / `bw-<2 digits>` | `pw-01` |
 | milestones | `m-<slug>` (canon) | `m-hip-spin-test` |
 | edges | `e-<5 digits>` | `e-00001` |
 | storylines | `sl-<slug>` | `sl-hip-backlash` |
@@ -116,6 +120,10 @@ Truth vs belief: histories record what was **stated**; for planned dates (`eta`,
 | `ordering_habit` | `none` `over_expedites` `always_standard` `last_minute` `batches_orders` `budget_conscious` |
 | style enums | `style_case`: `lower` `mixed` `proper` · `style_punctuation`: `none` `light` `full` · `style_level` (typos, emoji): `none` `rare` `some` `lots` · `style_length`: `terse` `medium` `long` · `style_hedging`: `low` `medium` `high` |
 | `holiday_observance` | `full` `partial` `worked` |
+| `part_category` | `sensor_bracket` `motor_mount_plate` `housing` `drive_shaft` `adapter_plate` `test_fixture` `spacer_bushing` `arm_link` (the price, lead and premium rows of `data-realism.md`) |
+| `demand_kind` / `demand_cause` | `test_hardware` `build_part` `iteration` `spare` `rig_misc` / `planned` `revision` `remake` `test_failed` `top_up` |
+| `slip_cause` / `slip_venue` | `input_late` `overrun` `test_failed` `resource_conflict` `pulled_in` `scope` `vendor` / `slack` `meeting` `jira` `calendar` `nowhere` |
+| `week_kind` / `split` | `normal` `burst` `quiet` / `lead_in` `train` `test` |
 | `ramp_instrument` / `ramp_kind` / `ramp_state` | `card` `bill` / `charge` `split` `refund` `decline` / `PENDING` `CLEARED` `DECLINED` |
 
 ## 4. Files and top-level layout
@@ -133,9 +141,9 @@ fixtures/world/
   example/             tiny valid world, answers and example jobs
 ```
 
-**world.json** (object): `meta`, `teams`, `people`, `assemblies`, `parts`, `test_rigs`, `resources`, `tests`, `deliverables`, `work_items`, `milestones`, `edges`, `storylines`, `channels`, `jira_projects`, `meeting_series`, `meetings`, `tickets`, `vendors`, `finance`, `orders`, `ramp_transactions`, `events`, `demo`. Every collection is an array of objects with unique `id` (ids are unique across the whole world); `meta`, `finance`, `demo` are objects.
+**world.json** (object): `meta`, `teams`, `people`, `assemblies`, `parts`, `test_rigs`, `resources`, `tests`, `deliverables`, `work_items`, `milestones`, `edges`, `demands`, `slips`, `storylines`, `channels`, `jira_projects`, `meeting_series`, `meetings`, `tickets`, `vendors`, `finance`, `orders`, `ramp_transactions`, `events`, `demo`. Every collection is an array of objects with unique `id` (ids are unique across the whole world); `meta`, `finance`, `demo` are objects.
 
-**answers.json** (object): `schema_version`, `seed`, `orders` (one entry per Xometry order, no more), `assembly_weeks`.
+**answers.json** (object): `schema_version`, `seed`, `orders` (one entry per Xometry order, no more), `assembly_weeks`, `summary` (optional: realized mixes and the learnability probe).
 
 ## 5. Entities
 
@@ -152,6 +160,11 @@ fixtures/world/
 | context_first_pass | {start,end} date | yes | Weeks written in the first text pass (13) | `2026-08-11`–`2026-11-10` |
 | holidays[] | {date, name, observance, in_window} | yes | US holidays (plus Thanksgiving, after the window, for demo day arithmetic) | `{"date":"2026-09-07","name":"Labor Day","observance":"full","in_window":true}` |
 | business_hours | {days, start, end, supplier_email_start, supplier_email_end} | yes | Days 1=Mon; local `HH:MM` | `{"days":[1,2,3,4,5],"start":"09:00","end":"18:30",...}` |
+| sim_horizon | date | yes | The simulation runs to here (demo day + 45 working days) so every order has a true outcome | `"2027-01-14"` |
+| weeks[] | {week_start (Monday), activity, kind enum week_kind} | sim | One per Monday-based week; burst = the `burst_weeks` weeks before a build milestone's believed date | `{"week_start":"2026-09-07","activity":0.8,"kind":"burst"}` |
+| pressure_windows[] | {id, start, end, assemblies, cause} | sim | Exec pushes that raise true pressure (hidden) | `pw-01` |
+| budget_windows[] | {id, start, end, cause} | sim | Spend squeezes (hidden; never written down) | `bw-01` |
+| knobs_hash | str | opt | SHA-256 of `knobs.json` used | |
 
 ### teams
 | Field | Type | Req | Meaning | Example |
@@ -163,6 +176,7 @@ fixtures/world/
 | members | [ref:people] | yes | Each member's `team` must be this team | `["p-dana",...]` |
 | channels | [ref:channels] | yes | Team's home channels | `["ch-supply-chain"]` |
 | jira_project | ref:jira_projects | opt | Main project | `"SCM"` |
+| expressiveness | num | opt (seed-org sets it; default 0) | How loudly the team voices pressure, −0.25…+0.25: expressed = true pressure + this + noise. At least one loud and one stoic team | `0.2` |
 
 ### people
 | Field | Type | Req | Meaning | Example |
@@ -180,7 +194,12 @@ fixtures/world/
 | start_date / end_date | date | yes / opt | Employment | `"2025-06-02"` |
 | ooo[] | {start, end date, reason} | yes | Out-of-office periods | `{"start":"2026-08-24","end":"2026-08-28","reason":"vacation"}` |
 | orders.weight | enum order_weight | yes | Whether and how heavily they place orders | `"heavy"` |
-| orders.habit | enum ordering_habit | yes | Personal ordering habit | `"over_expedites"` |
+| orders.habit | enum ordering_habit | yes | Personal ordering habit. `over_expedites` → Expedite, `always_standard` → Standard, `budget_conscious` → Economy (decision rule 2); `last_minute` triggers late; `batches_orders` places on `batch_days` | `"over_expedites"` |
+| orders.habit_strength | num | opt (default knob `decide.habit_strength`) | Probability the habit decides an order | `0.3` |
+| orders.wtp_per_day_usd | num | opt (simulator draws it) | What a day is worth to this person when no milestone policy is used | `520` |
+| orders.checks_dependencies | num | opt (seed-org sets it, 0.3–0.95) | Probability they look at the other inputs before choosing a tier | `0.45` |
+| orders.queue_delay_days / batch_days | [min,max] / [int] weekdays | opt (buyers) | Buyer's queue delay; days on which a batching buyer places | `[0,2]` / `[2,4]` |
+| delegate | ref:people | opt | Approves when this person is out | `p-lena` |
 | style.case, punctuation, typos, emoji, length, hedging | style enums | yes | Writing style | `"lower"`, `"none"`, `"some"`, `"rare"`, `"terse"`, `"low"` |
 | style.quirks | [str] | opt | Free-form tics | `["fixes typos with *word"]` |
 | chattiness | num | yes | Multiplier on channel base rate (0–3) | `1.4` |
@@ -207,14 +226,15 @@ fixtures/world/
 | id, name | str | yes | Canonical name | `pt-leg-lift-hook`, `"Leg drop-test lift hook"` |
 | part_number | str | yes | | `"FL-TST-2017"` |
 | cad_file | str | yes | Current CAD file name | `"FL-TST-2017_lift-hook_revA.step"` |
-| aliases | [str] | yes | What people actually call it | `["lift hook","the hook","gantry hook"]` |
+| aliases | [str] | yes | What people actually call it. An alias string shared by two parts is an ambiguous alias (derived) | `["lift hook","the hook","gantry hook"]` |
 | belongs_to | ref:any (assembly or rig/resource) | yes | | `rig-leg-drop-gantry` |
 | kind | enum part_kind | yes | Robot part or test hardware | `"test_hardware"` |
+| category | enum part_category | yes | Keys the price, lead-time and expedite-premium ranges | `"test_fixture"` |
 | material / finish / tolerance | str | yes | | `"Steel 4140, pre-hardened"` / `"Black oxide"` / `"+/-0.005 in"` |
 | process | enum process | yes | | `"cnc_milling_3axis"` |
 | typical_qty | int | yes | | `2` |
 | vendor | ref:vendors | yes | Default vendor (`v-xometry` for Burn's parts) | `v-xometry` |
-| revisions | hist str, extra `reason` | yes | Revisions with dates and reasons | `{value:"B", effective:"2026-10-19", reason:"bolt pattern"...}` |
+| revisions | hist str, extra `reason` | yes | Revisions with dates and reasons; `known_at` is the release time (no order for a revision before it) | `{value:"B", effective:"2026-10-19", reason:"bolt pattern"...}` |
 | price_hint_usd | num | opt | Typical Standard price per lot | `350` |
 
 ### test_rigs, resources
@@ -225,6 +245,7 @@ fixtures/world/
 | location | str | yes | | `"High bay"` |
 | owner | ref:people | yes | | `p-mateo` |
 | needs | [ref:any] | yes | Parts/deliverables the rig itself needs | `["pt-leg-lift-hook"]` |
+| slot_days | [int] weekdays (1=Mon) | opt | Days a test may start on it; null = any working day. Source of test-slot cliffs | `[2,5]` |
 | bookings[].id | str | yes | | `bk-00002` |
 | bookings[].start / end | ftime | yes | | `"2026-09-16T09:00:00-07:00"` |
 | bookings[].test | ref:tests | opt | null = ad hoc use | `test-leg-drop` |
@@ -244,8 +265,10 @@ fixtures/world/
 | duration_true_days | num | yes | True working days | `2` |
 | duration_estimate_days | [min,max] num | yes | What people quote | `[1,2]` |
 | planned_date | hist date | yes | Planned start | |
-| actual_start / actual_end | ftime | opt | | |
-| result | enum test_result | opt | | `"pass"` |
+| earliest_start | date | opt | A test never starts before this, however early its inputs are (seed: the first planned date) | `"2026-09-16"` |
+| actual_start / actual_end | ftime | opt | Truth | |
+| result | enum test_result | opt | `partial` = inconclusive, re-run | `"pass"` |
+| rerun_of | ref:tests | opt | Re-run after a failed or partial test | |
 | *inputs* | derived | — | Edges with `to` = this test. Seed lists `inputs`; the simulator turns them into edges | |
 
 ### deliverables (non-CNC inputs)
@@ -257,7 +280,7 @@ fixtures/world/
 | assembly | ref:assemblies | opt | | `a-hip-actuator` |
 | vendor | ref:vendors | opt | If bought | `v-cubemars` |
 | order | ref:orders | opt | Vendor order if bought | `ord-o-00412` |
-| eta | hist date | yes | ETA as stated over time | |
+| eta | hist date | yes | ETA as stated over time (announcements) | |
 | true_arrival | date | opt | Truth (may be after the window) | `"2026-11-20"` |
 
 ### work_items
@@ -270,6 +293,8 @@ fixtures/world/
 | duration_estimate_days | [min,max] | opt | null = unknown | `[2,3]` |
 | blocked_by | [ref:any] | yes | | `["dl-hip-motor-dvt"]` |
 | status | hist enum work_status | yes | | |
+| milestone | ref:milestones | opt | Milestone it counts toward (true progress = done true days ÷ all true days) | |
+| actual_start / actual_done | ftime | opt | Truth; ticket status lags it | |
 
 ### milestones
 | Field | Type | Req | Meaning | Example |
@@ -282,6 +307,7 @@ fixtures/world/
 | date | hist date | yes | Target date over time | |
 | value_policy | hist obj | yes | `{type: per_day, usd_per_day}` · `{type: curve, curve:[{days_late, usd}]}` · `{type: none}`; `by` = who set it | `{value:{type:"per_day",usd_per_day:600}, by:"p-arjun",...}` |
 | burst_weeks | int | opt | Builds: order burst length before the date | `3` |
+| actual_date | date | opt | Truth: when it was (or will be) achieved | `"2026-09-17"` |
 | *feeds* | derived | — | Edges with `to` = this milestone | |
 
 ### edges (true dependency graph)
@@ -294,6 +320,34 @@ fixtures/world/
 | reveal | enum reveal | yes | Whether the sources reveal it | `"hinted"` |
 | revealed_by | [ref:events] | yes | Events that reveal or hint it; empty if `never` | `["ev-000001"]` |
 | note | str | opt | | |
+
+### demands (why an order line exists; hidden)
+| Field | Type | Req | Meaning | Example |
+|---|---|---|---|---|
+| id | str | yes | | `dmd-00001` |
+| kind / cause | enums | yes | What it is for / why it arose | `"test_hardware"` / `"revision"` |
+| part, revision, quantity | ref, str, int | yes | | |
+| assembly | ref:assemblies | opt | | |
+| requester | ref:people | yes | | |
+| feeds | ref:any (test, work item, milestone) | opt | null = feeds nothing (spares, misc) | `test-leg-drop` |
+| need_by_believed | date | opt | Need-by as believed when triggered | |
+| trigger_at | time | yes | When the requester acted | |
+| late_by_choice | bool | yes | The requester sat on it (→ `ordered_late`) | |
+| hidden_earlier_need | date | opt | A true earlier need nobody wrote down | |
+| order | ref:orders | opt | The order whose line carries it | |
+| caused_by | ref:any | opt | Failed test, rejected order or superseded demand | |
+
+### slips (every change of truth; hidden)
+| Field | Type | Req | Meaning | Example |
+|---|---|---|---|---|
+| id | str | yes | | `slip-00001` |
+| entity | ref:any | yes | Test, milestone, deliverable, work item or order | `dl-hip-motor-dvt` |
+| cause | enum slip_cause | yes | | `"vendor"` |
+| delta_days / from / to | num / date / date | yes / opt / opt | Working days moved (negative = pulled in); truth before and after | `5` |
+| occurs_at | ftime | yes | When the truth changed | |
+| discovered_at | ftime | opt | When the owner learned | |
+| announced_at | time | opt | When it was said; null = never (lapsed silently) | |
+| by / venue / event | ref:people / enum slip_venue / ref:events | opt | Who announced, where, and the announcing event (same as the history entry's `where`) | |
 
 ### storylines
 | Field | Type | Req | Meaning | Example |
@@ -405,23 +459,28 @@ fixtures/world/
 | id | str | yes | | `ord-x-00001` |
 | type / vendor | enum / ref | yes | `xometry_cnc` / `v-xometry` | |
 | quote_id / order_number | str | yes | Formats unverified (§2) | `Q-2604417-1` / `XO-5520193` |
-| lines[] | {part, revision, quantity, unit_price_usd} | yes, ≥1 | Part and revision, quantity (1–6 lines, median 2) | |
-| tiers[] | {tier, subtotal_usd, lead_business_days, est_ship, est_delivery} | yes, 2–4 | **Every tier** with price and lead time | |
+| lines[] | {part, revision, quantity, unit_price_usd, demand ref:demands} | yes, ≥1 | Part and revision, quantity (1–6 lines, median 2) | |
+| tiers[] | {tier, subtotal_usd, shipping_usd, tax_usd, total_usd, lead_business_days, est_ship, est_delivery} | yes, 2–4 | **Every tier** with its full price, lead time and promised date (`est_delivery`). Checked: totals add up; economy < standard < expedite on price and the reverse on lead | |
 | chosen_tier | enum tier | yes | Must be one of `tiers` | `"expedite"` |
 | quoted_at / quote_expires | time / date | yes | | |
 | requester / placer / approver | ref:people | yes | | |
-| approved_at | time | yes | | |
+| tier_decided_by | ref:people | yes | Who chose the tier (requester, or the buyer) | |
+| need_identified_at | time | opt | Start of the order's pre-history (first crumb at or after it) | |
+| requested_at | time | yes | When the tier was decided; beliefs are read at this time. `quoted_at ≤ requested_at ≤ approved_at ≤ placed_at` (checked) | |
+| approved_at / auto_approved | time / bool | yes | | |
 | placed_at | time | yes | T, the training anchor | |
-| subtotal_usd, shipping_usd, tax_usd, total_usd | num | yes | total = sum (checked) | |
-| promised_date | date | yes | | |
+| subtotal_usd, shipping_usd, tax_usd, total_usd | num | yes | Of the chosen tier; total = sum (checked) | |
+| promised_date | date | yes | = chosen tier's `est_delivery` (checked) | |
 | status | hist enum xometry_status | yes | Status timeline (`by` null = Xometry) | |
 | delivered_at | ftime | opt | Actual delivery | |
 | carrier, tracking | str | opt | | |
 | inspection | {result, at ftime, by} | opt | | |
+| ready_at | ftime | opt | Ready to use: inspection time, else shortly after delivery | |
 | first_use | {at ftime, recorded bool, evidence ref:events} | opt | May be unrecorded | |
-| feeds_test / feeds_milestone | refs | opt | What this order feeds | |
+| feeds_test / feeds_work_item / feeds_milestone | refs | opt | What this order feeds | |
 | need_by_believed | date | opt | Need-by as believed at T | |
-| link_quality | enum link_quality | yes | | `"alias_only"` |
+| link_quality | enum link_quality | yes | Checked against the crumbs before T (events listing the order in `orders`) | `"alias_only"` |
+| is_revision | bool | yes | A line's revision is not the first revision of that part ever ordered | |
 | cancelled | bool | yes | | |
 | remade_from | ref:orders | opt | Remake of an earlier order | |
 | ramp_transaction_ids | [ref:ramp_transactions] | yes | | |
@@ -444,6 +503,7 @@ fixtures/world/
 | ramp_transaction_ids | [ref] | yes | Splits and refunds are separate transactions | |
 | deliverable / test | refs | opt | Linked deliverable or test | |
 | recurring | bool | opt | SaaS subscription charge | |
+| duplicate_of | ref:orders | opt | Same-day duplicate by a second person | |
 
 ### ramp_transactions
 | Field | Type | Req | Meaning | Example |
@@ -475,14 +535,17 @@ fixtures/world/
 | by | ref:people | yes | Speaker/author | |
 | kind | enum event_kind | yes | Crumb or background | |
 | topic | enum background_topic | opt | For background | `"debate"` |
-| claim | {kind, subject, value, effective, for_use} | crumbs: yes | Typed claim. `value` by kind: needs `{qty, by}` · eta date · done date · blocked ref · owner ref:people · need_earlier `{date, reason}` · substitute ref or str · duration `[min,max]` days · stock int | `{"kind":"eta","subject":"dl-hip-motor-dvt","value":"2026-11-13"}` |
-| refs[] | {id ref:any, mode enum ref_mode} | yes | Entities referred to and how | `{"id":"pt-leg-lift-hook","mode":"alias"}` |
+| claim | {kind, subject, value, true_value, effective, for_use} | crumbs: yes | Typed claim. `value` is what was **stated**; `true_value` is the truth at `known_at` (equal when `truth` is `true`; required otherwise; never given to writers). `value` by kind: needs `{qty, by}` · eta date · done date · blocked ref · owner ref:people · need_earlier `{date, reason}` · substitute ref or str · duration `[min,max]` days · stock int | `{"kind":"eta","subject":"dl-hip-motor-dvt","value":"2026-11-13"}` |
+| refs[] | {id ref:any, mode enum ref_mode, token} | yes | Entities referred to and how; `token` = the exact string to use (part number, alias, vague phrase) | `{"id":"pt-leg-lift-hook","mode":"alias","token":"lift hook"}` |
 | truth | enum truth_status | yes | | `"wrong"` |
 | corrects | ref:events | opt | Earlier event this corrects | |
 | contradicts | [ref:events] | opt | Events from another source it conflicts with | |
 | pressure | enum pressure | opt | Pressure conveyed | |
 | storyline | ref:storylines | opt | | |
-| orders | [ref:orders] | yes | Orders this informs | |
+| orders | [ref:orders] | yes | Orders this informs: `known_at` < the order's `placed_at` (checked) | |
+| orders_after | [ref:orders] | yes | Orders it concerns at or after their T (status, arrival, first use); never training input | |
+| asks_expedite | bool | opt | Someone asks about expediting before T (allowed); the chosen tier is never stated before T | |
+| reports | ref:any | opt | The slip, order or work item whose change this event reports | `slip-00002` |
 | brief | str | yes | What to express (internal) | |
 
 ### demo (the bracket order; follows architecture §7)
@@ -500,21 +563,25 @@ fixtures/world/
 | cases | obj | yes | A–E as in architecture §7 with days and dates | see example |
 | live_changes[] | {id, case, at, source, by, where, claim, brief} | yes | Scripted: `live-b` motor → day 12 (11/30); `live-d` motor 7–12 | |
 
-Working days after 2026-11-10 (Thanksgiving 11/26–27 off): 5 = 11/17, 8 = 11/20, 10 = 11/24, 11 = 11/25, 12 = 11/30, 13 = 12/01, 15 = 12/03.
+Working days after 2026-11-10 (Veterans Day Wed 11/11 is worked; Thanksgiving 11/26–27 off): 5 = 11/17, 7 = 11/19, 8 = 11/20, 10 = 11/24, 11 = 11/25, 12 = 11/30, 13 = 12/01, 15 = 12/03.
 
 ### answers.json
 | Field | Type | Req | Meaning | Example |
 |---|---|---|---|---|
 | orders[].order | ref:orders | yes | Xometry order (exactly one entry each) | |
-| hidden_reason | enum hidden_reason | yes | | `"no_gain_other_input_later"` |
-| true_need_date | date | opt | | |
-| true_links | [ref:edges] | yes | True links | |
-| true_pressure | {time_band: pressure} | yes | True pressure per band before T | `{"0-1":"elevated",...}` |
-| tier_outcomes[] | {tier, ready_date, gated_date?, days_gained} | yes | Outcome of **every** quoted tier; days_gained = working days the fed test/milestone finishes earlier than with the cheapest tier | |
-| expedite_helped | bool | opt | null if not expedited | |
-| crumbs | [ref:events] | yes | Crumbs that exist (where = from the event) | |
+| hidden_reason | enum hidden_reason | yes | Checked against the outcome (e.g. no-gain ⇒ Expedite chosen and `expedite_helped` false) | `"no_gain_other_input_later"` |
+| rule | int | yes | Decision rule that fired (spec S8, 1–7) | `6` |
+| true_need_date | date | opt | Latest ready date that delays nothing (the working day before the consumer could truly start) | |
+| belief | {need_by, inputs {id: believed date}, gain_days {tier: days}, stale, ignored_siblings} | yes | What the decider believed at `requested_at` | |
+| true_links / links_revealed_before_t | [ref:edges] | yes | True links; those revealed before T | |
+| true_pressure / expressed_pressure | {time_band: pressure} | yes | True and expressed pressure per band before T | `{"0-1":"elevated",...}` |
+| tier_outcomes[] | {tier, ready_date, test_start?, gated_date?, days_gained, true_slack_days?} | yes | Outcome of **every** quoted tier on the true graph; `gated_date` = when the fed test or milestone completes (null if it depends on the undecided demo order); days_gained = working days earlier than with the cheapest tier (≥ 0); slack = working days from ready to `true_need_date` | |
+| expedite_helped | bool | opt | Expedite completes earlier than Standard | |
+| break_even_usd_per_day / dominating_input | num / ref:any | opt | Extra cost of Expedite over Standard per day gained; the later input when the gain is 0 | |
+| crumbs / crumbs_after | [ref:events] | yes | Events before T / at or after T (checked) | |
+| split | enum split | yes | By `meta.periods` and T | |
 | never_revealed | [str] | yes | What was never written down | |
-| assembly_weeks[] | {assembly, week_start (Monday), true_progress 0–1, true_pressure} | yes | True progress per assembly per week | |
+| assembly_weeks[] | {assembly, week_start (Monday), milestone, true_progress 0–1, true_rank, pressure_value 0–1, true_pressure} | yes | True progress, rank among assemblies of the milestone (1 = furthest behind) and pressure per assembly per week | |
 
 ## 6. Derived, never stored twice
 
@@ -533,8 +600,8 @@ Working days after 2026-11-10 (Thanksgiving 11/26–27 off): 5 = 11/17, 8 = 11/2
 
 | File | Keys | Owner |
 |---|---|---|
-| `seed/org.json` | `people` (all 60, incl. `p-owen`, `p-arjun` from canon), `teams` (lead, members, channels, jira_project), `channels` (members, bots, rates; plus DMs), `jira_projects` (lead, assemblies), `meeting_series`, `vendors`, `finance` | Seed agent 1 |
-| `seed/program.json` | `assemblies` (owner, description), `parts` (catalog), `test_rigs`, `resources` (no bookings), `tests` (with `inputs: [ids]`), `milestones` (owner, initial date and value policy), `deliverables` (initial eta, true_arrival), `storylines`, `demo` | Seed agent 2 |
+| `seed/org.json` | `people` (all 60, incl. `p-owen`, `p-arjun` from canon; with `orders.checks_dependencies`, buyers' `queue_delay_days`/`batch_days`), `teams` (lead, members, channels, jira_project, `expressiveness`), `channels` (members, bots, rates; plus DMs), `jira_projects` (lead, assemblies), `meeting_series`, `vendors`, `finance` | Seed agent 1 |
+| `seed/program.json` | `assemblies` (owner, description), `parts` (catalog, each with `category`), `test_rigs`, `resources` (no bookings; `slot_days` on at least two), `tests` (with `inputs: [ids]`, `earliest_start`), `milestones` (owner, initial date and value policy), `deliverables` (initial eta; no `true_arrival` except the demo motor: the simulator draws it), `storylines`, `demo` | Seed agent 2 |
 
 Cross-file references (e.g. program owners → people) use ids that agent 1 creates; agent 2 may only reference people listed in `canon.fixed_people` or by role placeholders `@role:<team-id>` (e.g. `@role:t-test`), which the simulator resolves to that team's lead.
 
@@ -544,31 +611,50 @@ CLI: `node scripts/generate-world/simulate.mjs --seed <n>` reads `seed/*.json` a
 
 ### Text jobs (`fixtures/world/jobs/<source>/<job_id>.json`, written by `plan`)
 
-Every job has: `job_id`, `source`, `status` (`blank` → `filled`), `style_rules` (pointers into `docs/research/data-realism.md`), `people` (id, name, display_name, slack_id, title, style), `forbidden` (what the writer must not say). The writer changes **only** the fields listed below and sets `status: "filled"`; everything else (ids, times, users, threads, counts, order) is fixed. Hidden reasons never appear. Every claim must be expressed with its exact value; every `must_mention` string must appear verbatim. Examples: `example/jobs/*.blank.json` and `*.filled.json`.
+Every job has: `job_id`, `source`, `status` (`blank` → `filled`), `priority` (0 = demo context; then newest week first, crumb-bearing jobs before background), `style_rules` (pointers into `docs/research/data-realism.md`), `people` (id, name, display_name, slack_id, title, style), `forbidden` (what the writer must not say). The writer changes **only** the fields listed below and sets `status: "filled"`; everything else (ids, times, users, threads, counts, order) is fixed. Hidden reasons never appear. Every claim must be expressed with its exact value; every `must_mention` string must appear verbatim (for a meeting crumb: in the transcript or the summary). `assemble` reads **only** the writer-filled text fields from a filled job, matched by `ts`, ticket key, comment id or meeting id; every other field comes from `plan`'s own records, so an edited id or time is ignored. Jobs never carry `claim.true_value`, `truth`, or anything from `answers.json`. Examples: `example/jobs/*.blank.json` and `*.filled.json`.
 
 | Job | Unit | Extra fields (fixed) | Writer fills |
 |---|---|---|---|
 | Slack channel-week | one channel, Mon–Sun | `channel`, `week`, `context`, `messages[]{ts, user, thread_ts, events, brief, claim?, must_mention, length}` | `messages[].text` |
 | Jira ticket batch | one project-week of new tickets | `project`, `week`, `tickets[]{key, type, status, reporter, assignee, labels, priority, created, due_date, events, brief, must_mention, description_length, comments[]{id, by, at, events, brief}}` | `tickets[].summary`, `tickets[].description` (may be `""`), `comments[].body` |
-| Meeting | one meeting | `meeting{id, title, type, note_taker, start, actual_min, present, late_joiners}`, `storylines`, `crumbs[]{event, speaker, at_min [from,to], brief, claim}`, `background[]` | `transcript[]{start_s, speaker, text}` (start_s < actual_min×60, speakers ∈ present), `summary{overview, shorthand_bullet, action_items, keywords}` |
+| Meeting | one meeting | `meeting{id, title, type, note_taker, start, actual_min, present, late_joiners}`, `storylines`, `crumbs[]{event, speaker, at_min [from,to], brief, claim, must_mention}`, `background[]` | `transcript[]{start_s, speaker, text}` (start_s < actual_min×60, speakers ∈ present), `summary{overview, shorthand_bullet, action_items, keywords}` |
 
 ## 8. Knobs (`knobs.json`)
+
+One definition per knob; the simulation spec cites them as `k.<group>.<name>` and explains the model each one drives. Groups marked *target* are ranges that `checks` enforces, not inputs.
 
 | Knob | Meaning | Default |
 |---|---|---|
 | `weeks_of_context` | Most recent weeks of text to plan and write | 13 |
-| `hidden_reason_mix` | Share of Xometry orders per hidden reason (sums to 1) | genuine .10, cliff .03, no-gain .05, pressure .04, late .04, insurance .05, habit .06, budget .15, cheap default .48 |
-| `expedite_true_gain_share` | Share of expedites that truly gained time | .45 |
-| `ordering_habit_mix` | Share of ordering people per habit | none .45, over-expedites .15, always-standard .20, last-minute .10, batches .05, budget .05 |
-| `edge_reveal_mix` | Share of graph edges revealed / hinted / never written | .50 / .30 / .20 |
-| `link_quality_mix` | Xometry orders by link quality | clean id .45, alias only .35, never discussed .20 |
-| `imperfection_rates.stale_fact` | Share of crumbs that repeat a superseded fact | .08 |
-| `imperfection_rates.wrong_date_corrected` | Share of crumbs with a wrong date later corrected | .05 |
-| `imperfection_rates.wrong_never_corrected` | Share of crumbs with an error never corrected | .02 |
-| `imperfection_rates.contradiction` | Share of crumbs contradicted by another source | .04 |
-| `background_share` | Share of events that are background, per source | slack .88, jira .75, meeting .92, calendar .85 |
-| `off_topic_share` | Share of messages that are off-topic, per source | slack .20, jira 0, meeting .08, calendar .10 |
+| `orders.per_week`, `burst_mult`, `quiet_mult` | Xometry orders in a normal week; multipliers in burst and quiet weeks | 9, 2.55, 0.4 |
+| `orders.kind_mix`, `lines_mix`, `new_rev_rate` | Demand kinds; lines per order (1–6); chance a re-ordered part is a new revision (on top of the seed revision histories) | see file; .20 |
+| `orders.trigger_mix`, `burst_late_mult`, `last_minute_late_mult` | Early / on time / late by choice; late multipliers in burst weeks and for `last_minute` people | .40/.57/.03; 3.9; 2.5 |
+| `orders.late_release_rate`, `burst_release_mult` | Demands made late by a late design release, not by the requester (they reach rule 6, not rule 4); multiplier in burst weeks | .04; 11.4 |
+| `orders.start_delay_rate` | Work-item consumers whose owner is not free on the written start day (true earliest start 2–8 wd later; never for late demands) | .85 |
+| `orders.slotted_rate` | Work-item consumers that need a resource with `slot_days` (source of test-slot cliffs) | .30 |
+| `orders.sibling_rate`, `late_sibling_rate` | Work-item consumers that also wait on a deliverable; the same for late demands (ETA near the Standard delivery date) | .38; .62 |
+| `orders.hidden_need_rate` | Demands with an unwritten earlier need | .03 |
+| `orders.buyer_placed_share`, `buyer_decides_share` | Orders placed by the two buyers; of those, tier chosen by the buyer | .40, .20 |
+| `quote.*` | Tax rate (.0938 on parts), price scale, quantity exponent, Economy discount range, small-lot premium, Expedite shipping range, cutoff, validity days | see file |
+| `decide.habit_strength`, `habit_scale` | Rule 2: default chance a habit decides; multiplier on every person's `habit_strength` | .30; .6 |
+| `decide.budget_fire`, `budget_tier` | Rule 3 | .50; 0/.35/.65 |
+| `decide.late_tier` | Rule 4 tier split | .80/.20/0 |
+| `decide.pressure_factor`, `pressure_tier`, `burst_pressure_mult` | Rule 5 | .15; .90/.10/0; 5 |
+| `decide.wtp_median_usd`, `wtp_sigma`, `wtp_jitter_sigma`, `burst_wtp_mult` | Rule 6: willingness to pay per day gained | 350, .6, .5, 5 |
+| `decide.noise` | Chance rule 6 is skipped | .05 |
+| `decide.spare_tier`, `default_tier`, `default_economy_if_slack_over_15` | Rules 1 and 7 | see file |
+| `belief.stale_rate`, `stale_age_days`, `checks_dependencies_range` | Missed recent announcements; range for people's `checks_dependencies` | .15, 2, .3–.95 |
+| `pressure.*` | Boosts, noise and level cut-offs for true and expressed pressure; `slack_mean_days`, `slack_sd_days` = spread of an assembly's true slack to its next milestone | see file; 7, 5 |
+| `fulfil.lateness`, `expedite_late_mult` | Delivery against the promise: 1 Xometry order in 40 arrives late (early .15, on time .825, late 1–2 wd .015, 3–6 wd .007, 7–15 wd .003); Expedite late-rate multiplier | see file; 1.0 |
+| `slip.*`, `test.*`, `deliverable.*`, `fulfil.*`, `ticket.*` | Slip announcement, test outcomes, deliverable slips, delivery and inspection, ticket lifecycle | see file |
+| `ordering_habit_mix` | Share of ordering people per habit (seed-org follows it) | none .45, over-expedites .15, always-standard .20, last-minute .10, batches .05, budget .05 |
+| `edge_reveal_mix` | Graph edges revealed / hinted / never written | .55 / .25 / .20 |
+| `link_quality_mix` | Xometry orders by link quality | clean id .45, alias only .33, never discussed .22 |
+| `imperfection_rates` | Crumbs that are stale / wrong then corrected / wrong never corrected / contradicted; ambiguous alias use | .08 / .05 / .02 / .03; .04 |
+| `crumb.*` | Chance of an expedite question before T; reference-style mix | .35 / .08; .25/.50/.25 |
+| `background_share`, `off_topic_share` | Per source | see file |
+| `targets.*` (*target*) | Order count 400–550; tier mix Expedite 20–30%, Standard 50–60%, Economy 15–20% (aim 27/55/18); Expedite 40–50% in burst weeks (aim 13% outside them); hidden-reason bands; expedites that truly gained 45–60%; revision share 30–40%; probe accuracy 66–78%; `late_share` 2–3% of Xometry orders delivered after the promised date (checked in `sim/selfcheck.mjs`) | see file |
 
 ## 9. Validator
 
-`validateWorld(world, answers)` → `{errors, warnings, counts}` (`scripts/generate-world/validate.mjs`). Checks: required fields and types; enums; every id reference resolves; ids unique across the world; times well formed, correct Pacific offset, inside the window (`time`) or after its start (`ftime`); histories non-empty and ordered by `known_at`; Xometry orders have 2–4 tiers, chosen tier among them, totals add up; crumbs have claims; events have the `where` key their source needs; team members point back to the team; every Xometry order has exactly one answers entry and every entry an order. Prints entity counts.
+`validateWorld(world, answers)` → `{errors, warnings, counts}` (`scripts/generate-world/validate.mjs`). Checks: required fields and types; enums; every id reference resolves; ids unique across the world; times well formed, correct Pacific offset, inside the window (`time`) or after its start (`ftime`); histories non-empty and ordered by `known_at`; Xometry orders have 2–4 tiers, chosen tier among them, totals add up; crumbs have claims; events have the `where` key their source needs; team members point back to the team; every Xometry order has exactly one answers entry and every entry an order. Also: per-tier totals add up and the chosen tier matches the order's totals and promised date; economy < standard < expedite on price and the reverse on lead; `quoted_at ≤ requested_at ≤ approved_at ≤ placed_at`; events list an order in `orders` only before its T and in `orders_after` only from T on; stale or wrong claims carry `true_value`; corrections follow their target; link quality agrees with the crumbs before T; `revealed`/`hinted` edges have events and `never` edges none; slip times are ordered; a line's demand points back at its order; answers cover every quoted tier, `days_gained ≥ 0`, crumbs sit on the right side of T, and the hidden reason agrees with the outcome. Prints entity counts.

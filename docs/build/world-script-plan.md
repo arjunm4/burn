@@ -14,7 +14,7 @@ Owner: Owen, with Fable agents. Deadline: 2026-11-10, 11:59pm PT. Spec: [`../arc
 - **The context is generated from the truth and is deliberately imperfect:** stale facts, wrong dates, contradictions between sources, things nobody wrote down. The truth itself is complete and consistent.
 - **Models (Owen's decisions):** Fable plans and verifies; Opus builds. Fable writes the simulation spec, reviews the schema before anything is built on it, builds the simulator, and independently verifies the first run. Opus does the schema, seed, generator code, checks and the text tied to orders. Sonnet writes background text. Effort is medium unless a phase says otherwise.
 - **Read the style research first:** [`../research/data-realism.md`](../research/data-realism.md) (formats, Flintlock volumes, style numbers, fake-looking patterns) and, for orders, [`../research/startup-purchasing.md`](../research/startup-purchasing.md). Every agent's prompt points at the sections for its source, and its output must follow them.
-- **The app never reads `fixtures/world/`.** Burn sees only the rendered sources (`fixtures/slack/`, `fixtures/jira/`, …). The world model and answer key are for the generator and for grading.
+- **The app never reads `fixtures/world/`.** Burn sees only the rendered sources under `fixtures/flintlock/` (`slack/`, `jira/`, `meetings/`, `calendar.ics`, `xometry/`, `ramp/`). The prototype's own `fixtures/slack/` and `fixtures/calendar.ics` stay untouched until the app switches over, so its existing tests keep passing. The world model and answer key are for the generator and for grading.
 - **One file per agent.** Agents working in parallel each own distinct files and run no git commands.
 
 ## Robustness
@@ -91,6 +91,7 @@ All in `fixtures/world/knobs.json`, with defaults set in phase 0 and tuned by Ow
 - the share of graph links that are revealed, only hinted at, or never written down
 - the link-quality mix (clean id, alias only, never discussed)
 - rates of stale facts, wrong dates later corrected, errors never corrected, and contradictions between sources
+- how often a Xometry order arrives after its promised date: **1 in 40** (Owen's number)
 - off-topic and background shares per source
 - how many recent weeks of context to write (default 13)
 
@@ -108,7 +109,7 @@ From the Flintlock numbers in `data-realism.md`.
 | Recorded meetings | 450–700, plus 2–3 gate reviews |
 | Calendar | Milestones, bookings, out-of-office, recurring meetings |
 
-The truth is generated for the full nine months, because code produces it for free. The written context is the expensive part: at full volume it is roughly 2.5–3 million tokens of model output. So it is written **newest first, at full density**: the first pass covers the most recent 13 weeks (2026-08-11 to 2026-11-10, about a third of the full text, including one build burst). Older months are written only if time and usage allow. Full density keeps the data looking like a 60-person company wherever a judge scrolls.
+The truth is generated for the full nine months, because code produces it for free. The written context is the expensive part: at full volume it is roughly 2.5–3 million tokens of model output. So it is written **newest first, at full density**: the first pass covers the most recent 13 calendar weeks (Monday 2026-08-17 to 2026-11-10, about a third of the full text, including two build bursts). Older months are written only if time and usage allow. Full density keeps the data looking like a 60-person company wherever a judge scrolls.
 
 ## How the context generator works
 
@@ -172,4 +173,4 @@ The text fill stops at 10:00pm, whatever it has reached. The checks report the w
 
 - **Arjun (mock services):** the schema and source file formats after phase 0; the small world after phase 3; the final fixtures at 11:00pm.
 - **Cost of delay (Owen and Arjun):** needs milestones with owners and $/day policies, tests, the dependency graph and the Xometry tiers. The seed has them after phase 1a; the full world after phase 3.
-- **Training (unassigned):** reads the rendered sources, `fixtures/ramp/` and `fixtures/xometry/`; graded against `answers.json`.
+- **Training (unassigned):** reads the rendered sources under `fixtures/flintlock/`; graded against `answers.json`.

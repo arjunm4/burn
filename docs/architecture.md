@@ -384,12 +384,12 @@ label:    the tier chosen, from the Ramp receipt matched to its Xometry order
 | What | Where | In Git? |
 |---|---|---|
 | World script | `fixtures/world/world.json` | Yes |
-| Generator | `scripts/generate-world.mjs` | Yes |
-| Generated sources | `fixtures/slack/`, `fixtures/jira/`, `fixtures/meetings/`, `fixtures/calendar.ics`, `fixtures/xometry/`, `fixtures/ramp/` | Yes; generated once and committed so every run is the same |
+| Generator | `scripts/generate-world/` | Yes |
+| Generated sources | `fixtures/flintlock/`: `slack/`, `jira/`, `meetings/`, `calendar.ics`, `xometry/`, `ramp/` | Yes; generated once and committed so every run is the same |
 | Answer key (hidden reasons) | `fixtures/world/answers.json` | Yes; read only by evaluation |
 | App database (mock Ramp and Xometry state, orders) | `data/` (SQLite) | No; rebuilt from the fixtures |
 
-Slack is mock data shaped like Slack API responses, read by the existing connector in fixture mode; no real workspace. The current `fixtures/` (14 Slack messages about Rev C electronics, one calendar) is replaced by the generator's output.
+Slack is mock data shaped like Slack API responses, read by the existing connector in fixture mode; no real workspace. The prototype's `fixtures/slack/` and `fixtures/calendar.ics` (14 Slack messages about Rev C electronics, one calendar) stay until the app switches to the generated data, so its tests keep passing.
 
 ## 13. Phased plan (design phases, not build tickets)
 

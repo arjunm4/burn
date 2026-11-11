@@ -1,620 +1,2500 @@
 {
   "meta": {
-    "schema_version": "1.0",
+    "schema_version": "1.1",
     "seed": 1,
     "company": "Flintlock Robotics",
     "time_zone": "America/Los_Angeles",
-    "window": { "start": "2026-02-10T00:00:00-08:00", "end": "2026-11-10T23:59:59-08:00" },
+    "window": {
+      "start": "2026-02-10T00:00:00-08:00",
+      "end": "2026-11-10T23:59:59-08:00"
+    },
     "demo_now": "2026-11-10T10:30:00-08:00",
     "periods": {
-      "lead_in": { "start": "2026-02-10", "end": "2026-03-09" },
-      "train": { "start": "2026-03-10", "end": "2026-09-09" },
-      "test": { "start": "2026-09-10", "end": "2026-11-09" }
+      "lead_in": {
+        "start": "2026-02-10",
+        "end": "2026-03-09"
+      },
+      "train": {
+        "start": "2026-03-10",
+        "end": "2026-09-09"
+      },
+      "test": {
+        "start": "2026-09-10",
+        "end": "2026-11-09"
+      }
     },
-    "context_first_pass": { "start": "2026-08-11", "end": "2026-11-10" },
+    "context_first_pass": {
+      "start": "2026-08-11",
+      "end": "2026-11-10"
+    },
     "holidays": [
-      { "date": "2026-09-07", "name": "Labor Day", "observance": "full", "in_window": true },
-      { "date": "2026-11-26", "name": "Thanksgiving", "observance": "full", "in_window": false },
-      { "date": "2026-11-27", "name": "Day after Thanksgiving", "observance": "full", "in_window": false }
+      {
+        "date": "2026-09-07",
+        "name": "Labor Day",
+        "observance": "full",
+        "in_window": true
+      },
+      {
+        "date": "2026-11-11",
+        "name": "Veterans Day",
+        "observance": "worked",
+        "in_window": false
+      },
+      {
+        "date": "2026-11-26",
+        "name": "Thanksgiving",
+        "observance": "full",
+        "in_window": false
+      },
+      {
+        "date": "2026-11-27",
+        "name": "Day after Thanksgiving",
+        "observance": "full",
+        "in_window": false
+      }
     ],
-    "business_hours": { "days": [1, 2, 3, 4, 5], "start": "09:00", "end": "18:30", "supplier_email_start": "05:00", "supplier_email_end": "15:00" }
+    "business_hours": {
+      "days": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "start": "09:00",
+      "end": "18:30",
+      "supplier_email_start": "05:00",
+      "supplier_email_end": "15:00"
+    },
+    "sim_horizon": "2027-01-14",
+    "weeks": [
+      {
+        "week_start": "2026-08-31",
+        "activity": 1,
+        "kind": "normal"
+      },
+      {
+        "week_start": "2026-09-07",
+        "activity": 0.8,
+        "kind": "burst"
+      },
+      {
+        "week_start": "2026-10-19",
+        "activity": 1,
+        "kind": "burst"
+      },
+      {
+        "week_start": "2026-10-26",
+        "activity": 0.4,
+        "kind": "quiet"
+      }
+    ],
+    "pressure_windows": [
+      {
+        "id": "pw-01",
+        "start": "2026-09-08",
+        "end": "2026-09-18",
+        "assemblies": [
+          "a-leg"
+        ],
+        "cause": "Board visit: leadership wants the leg drop test done first"
+      }
+    ],
+    "budget_windows": [
+      {
+        "id": "bw-01",
+        "start": "2026-09-28",
+        "end": "2026-09-30",
+        "cause": "Quarter-end spend freeze"
+      }
+    ],
+    "knobs_hash": null
   },
-
   "teams": [
-    { "id": "t-leadership", "name": "Leadership", "department": "Leadership", "headcount": 1, "lead": "p-lena", "members": ["p-lena"], "channels": ["ch-random"], "jira_project": null },
-    { "id": "t-mech-actuators", "name": "Mechanical: Actuators", "department": "Mechanical", "headcount": 2, "lead": "p-arjun", "members": ["p-arjun", "p-owen"], "channels": ["ch-actuators"], "jira_project": "HIP" },
-    { "id": "t-test", "name": "Test and Reliability", "department": "Test", "headcount": 1, "lead": "p-mateo", "members": ["p-mateo"], "channels": ["ch-test-lab"], "jira_project": "TEST" },
-    { "id": "t-supply", "name": "Supply Chain", "department": "Operations", "headcount": 1, "lead": "p-dana", "members": ["p-dana"], "channels": ["ch-supply-chain"], "jira_project": null }
-  ],
-
-  "people": [
     {
-      "id": "p-owen", "name": "Owen Halloran", "display_name": "owen", "title": "Mechanical Engineer, Actuators",
-      "team": "t-mech-actuators", "manager": "p-arjun", "email": "owen@flintlockrobotics.com",
-      "slack_id": "U07FLK0OWEN", "jira_account_id": "5f8a1c2e3b4d5e6f7a8b9c01",
-      "ramp_user_id": "4f8a460e-9f21-4d58-b1cf-af0d9a6d6f2e", "ramp_card_ids": ["d6b26a82-59a8-4cf9-b56c-b95b20b01088"],
-      "start_date": "2025-06-02", "end_date": null,
-      "ooo": [{ "start": "2026-08-24", "end": "2026-08-28", "reason": "vacation" }],
-      "orders": { "weight": "heavy", "habit": "over_expedites" },
-      "style": { "case": "lower", "punctuation": "none", "typos": "some", "emoji": "rare", "length": "terse", "hedging": "low", "quirks": ["fixes typos with *word"] },
-      "chattiness": 1.4, "lurker": false, "authority_on": ["hip bracket", "spin-test adapter", "need-by for hip actuator parts"]
+      "id": "t-leadership",
+      "name": "Leadership",
+      "department": "Leadership",
+      "headcount": 1,
+      "lead": "p-lena",
+      "members": [
+        "p-lena"
+      ],
+      "channels": [
+        "ch-random"
+      ],
+      "jira_project": null,
+      "expressiveness": 0
     },
     {
-      "id": "p-arjun", "name": "Arjun Venkatesan", "display_name": "arjun", "title": "Actuators Lead",
-      "team": "t-mech-actuators", "manager": "p-lena", "email": "arjun@flintlockrobotics.com",
-      "slack_id": "U07FLK0ARJN", "jira_account_id": "5f8a1c2e3b4d5e6f7a8b9c02",
-      "ramp_user_id": "d3de4dcf-96d1-419c-8c47-8d77f28aa36a", "ramp_card_ids": ["d5e35692-1bf5-4617-9861-931c887c7cd6"],
-      "start_date": "2024-11-04", "end_date": null, "ooo": [],
-      "orders": { "weight": "light", "habit": "always_standard" },
-      "style": { "case": "mixed", "punctuation": "light", "typos": "rare", "emoji": "none", "length": "medium", "hedging": "medium" },
-      "chattiness": 1.0, "lurker": false, "authority_on": ["DVT hip motor", "spin-test value policy", "actuator schedule"]
+      "id": "t-mech-actuators",
+      "name": "Mechanical: Actuators",
+      "department": "Mechanical",
+      "headcount": 2,
+      "lead": "p-arjun",
+      "members": [
+        "p-arjun",
+        "p-owen"
+      ],
+      "channels": [
+        "ch-actuators"
+      ],
+      "jira_project": "HIP",
+      "expressiveness": -0.15
     },
     {
-      "id": "p-dana", "name": "Dana Whitcomb", "display_name": "dana.w", "title": "Senior NPI Buyer",
-      "team": "t-supply", "manager": "p-lena", "email": "dana@flintlockrobotics.com",
-      "slack_id": "U07FLK0DANA", "jira_account_id": "5f8a1c2e3b4d5e6f7a8b9c03",
-      "ramp_user_id": "d80b0ed3-9c27-4265-96bd-5210b4283a96", "ramp_card_ids": ["45c5ca9e-439b-46b6-baef-3b75e598c0ab"],
-      "start_date": "2025-01-13", "end_date": null, "ooo": [],
-      "orders": { "weight": "heavy", "habit": "batches_orders" },
-      "style": { "case": "proper", "punctuation": "full", "typos": "none", "emoji": "some", "length": "medium", "hedging": "low" },
-      "chattiness": 1.2, "lurker": false, "authority_on": ["eta", "vendor rules", "Xometry cutoffs"]
+      "id": "t-test",
+      "name": "Test and Reliability",
+      "department": "Test",
+      "headcount": 1,
+      "lead": "p-mateo",
+      "members": [
+        "p-mateo"
+      ],
+      "channels": [
+        "ch-test-lab"
+      ],
+      "jira_project": "TEST",
+      "expressiveness": 0.2
     },
     {
-      "id": "p-mateo", "name": "Mateo Rinaldi", "display_name": "mateo", "title": "Test Engineer, Fixtures",
-      "team": "t-test", "manager": "p-lena", "email": "mateo@flintlockrobotics.com",
-      "slack_id": "U07FLK0MTEO", "jira_account_id": "5f8a1c2e3b4d5e6f7a8b9c04",
-      "ramp_user_id": "ba73d391-c2bc-4d9f-8799-925edc1ca1be", "ramp_card_ids": ["482ba228-da24-4750-aeac-90cf4094bd7c"],
-      "start_date": "2025-03-17", "end_date": null, "ooo": [],
-      "orders": { "weight": "medium", "habit": "last_minute" },
-      "style": { "case": "lower", "punctuation": "light", "typos": "rare", "emoji": "some", "length": "terse", "hedging": "low" },
-      "chattiness": 1.1, "lurker": false, "authority_on": ["leg drop test", "gantry bookings", "lift hooks"]
-    },
-    {
-      "id": "p-lena", "name": "Lena Okafor", "display_name": "lena", "title": "VP Hardware",
-      "team": "t-leadership", "manager": null, "email": "lena@flintlockrobotics.com",
-      "slack_id": "U07FLK0LENA", "jira_account_id": "5f8a1c2e3b4d5e6f7a8b9c05",
-      "ramp_user_id": "c57b3abb-180e-46fe-8900-0262baf74b0a", "ramp_card_ids": ["bbdc50d9-0be2-4a0f-b7ce-0f61cec0b65f"],
-      "start_date": "2024-09-03", "end_date": null, "ooo": [],
-      "orders": { "weight": "none", "habit": "none" },
-      "style": { "case": "proper", "punctuation": "full", "typos": "none", "emoji": "rare", "length": "medium", "hedging": "medium" },
-      "chattiness": 0.4, "lurker": true, "authority_on": ["milestone dates", "investor demo"]
+      "id": "t-supply",
+      "name": "Supply Chain",
+      "department": "Operations",
+      "headcount": 1,
+      "lead": "p-dana",
+      "members": [
+        "p-dana"
+      ],
+      "channels": [
+        "ch-supply-chain"
+      ],
+      "jira_project": null,
+      "expressiveness": 0
     }
   ],
-
+  "people": [
+    {
+      "id": "p-owen",
+      "name": "Owen Halloran",
+      "display_name": "owen",
+      "title": "Mechanical Engineer, Actuators",
+      "team": "t-mech-actuators",
+      "manager": "p-arjun",
+      "email": "owen@flintlockrobotics.com",
+      "slack_id": "U07FLK0OWEN",
+      "jira_account_id": "5f8a1c2e3b4d5e6f7a8b9c01",
+      "ramp_user_id": "4f8a460e-9f21-4d58-b1cf-af0d9a6d6f2e",
+      "ramp_card_ids": [
+        "d6b26a82-59a8-4cf9-b56c-b95b20b01088"
+      ],
+      "start_date": "2025-06-02",
+      "end_date": null,
+      "ooo": [
+        {
+          "start": "2026-08-24",
+          "end": "2026-08-28",
+          "reason": "vacation"
+        }
+      ],
+      "orders": {
+        "weight": "heavy",
+        "habit": "over_expedites",
+        "habit_strength": 0.3,
+        "wtp_per_day_usd": 520,
+        "checks_dependencies": 0.45,
+        "queue_delay_days": null,
+        "batch_days": null
+      },
+      "style": {
+        "case": "lower",
+        "punctuation": "none",
+        "typos": "some",
+        "emoji": "rare",
+        "length": "terse",
+        "hedging": "low",
+        "quirks": [
+          "fixes typos with *word"
+        ]
+      },
+      "chattiness": 1.4,
+      "lurker": false,
+      "authority_on": [
+        "hip bracket",
+        "spin-test adapter",
+        "need-by for hip actuator parts"
+      ],
+      "delegate": null
+    },
+    {
+      "id": "p-arjun",
+      "name": "Arjun Venkatesan",
+      "display_name": "arjun",
+      "title": "Actuators Lead",
+      "team": "t-mech-actuators",
+      "manager": "p-lena",
+      "email": "arjun@flintlockrobotics.com",
+      "slack_id": "U07FLK0ARJN",
+      "jira_account_id": "5f8a1c2e3b4d5e6f7a8b9c02",
+      "ramp_user_id": "d3de4dcf-96d1-419c-8c47-8d77f28aa36a",
+      "ramp_card_ids": [
+        "d5e35692-1bf5-4617-9861-931c887c7cd6"
+      ],
+      "start_date": "2024-11-04",
+      "end_date": null,
+      "ooo": [],
+      "orders": {
+        "weight": "light",
+        "habit": "always_standard",
+        "habit_strength": 0.3,
+        "wtp_per_day_usd": 600,
+        "checks_dependencies": 0.7,
+        "queue_delay_days": null,
+        "batch_days": null
+      },
+      "style": {
+        "case": "mixed",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "none",
+        "length": "medium",
+        "hedging": "medium"
+      },
+      "chattiness": 1,
+      "lurker": false,
+      "authority_on": [
+        "DVT hip motor",
+        "spin-test value policy",
+        "actuator schedule"
+      ],
+      "delegate": "p-lena"
+    },
+    {
+      "id": "p-dana",
+      "name": "Dana Whitcomb",
+      "display_name": "dana.w",
+      "title": "Senior NPI Buyer",
+      "team": "t-supply",
+      "manager": "p-lena",
+      "email": "dana@flintlockrobotics.com",
+      "slack_id": "U07FLK0DANA",
+      "jira_account_id": "5f8a1c2e3b4d5e6f7a8b9c03",
+      "ramp_user_id": "d80b0ed3-9c27-4265-96bd-5210b4283a96",
+      "ramp_card_ids": [
+        "45c5ca9e-439b-46b6-baef-3b75e598c0ab"
+      ],
+      "start_date": "2025-01-13",
+      "end_date": null,
+      "ooo": [],
+      "orders": {
+        "weight": "heavy",
+        "habit": "batches_orders",
+        "habit_strength": 0.3,
+        "wtp_per_day_usd": 240,
+        "checks_dependencies": 0.9,
+        "queue_delay_days": [
+          0,
+          2
+        ],
+        "batch_days": [
+          2,
+          4
+        ]
+      },
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "some",
+        "length": "medium",
+        "hedging": "low"
+      },
+      "chattiness": 1.2,
+      "lurker": false,
+      "authority_on": [
+        "eta",
+        "vendor rules",
+        "Xometry cutoffs"
+      ],
+      "delegate": null
+    },
+    {
+      "id": "p-mateo",
+      "name": "Mateo Rinaldi",
+      "display_name": "mateo",
+      "title": "Test Engineer, Fixtures",
+      "team": "t-test",
+      "manager": "p-lena",
+      "email": "mateo@flintlockrobotics.com",
+      "slack_id": "U07FLK0MTEO",
+      "jira_account_id": "5f8a1c2e3b4d5e6f7a8b9c04",
+      "ramp_user_id": "ba73d391-c2bc-4d9f-8799-925edc1ca1be",
+      "ramp_card_ids": [
+        "482ba228-da24-4750-aeac-90cf4094bd7c"
+      ],
+      "start_date": "2025-03-17",
+      "end_date": null,
+      "ooo": [],
+      "orders": {
+        "weight": "medium",
+        "habit": "last_minute",
+        "habit_strength": 0.3,
+        "wtp_per_day_usd": 410,
+        "checks_dependencies": 0.7,
+        "queue_delay_days": null,
+        "batch_days": null
+      },
+      "style": {
+        "case": "lower",
+        "punctuation": "light",
+        "typos": "rare",
+        "emoji": "some",
+        "length": "terse",
+        "hedging": "low"
+      },
+      "chattiness": 1.1,
+      "lurker": false,
+      "authority_on": [
+        "leg drop test",
+        "gantry bookings",
+        "lift hooks"
+      ],
+      "delegate": null
+    },
+    {
+      "id": "p-lena",
+      "name": "Lena Okafor",
+      "display_name": "lena",
+      "title": "VP Hardware",
+      "team": "t-leadership",
+      "manager": null,
+      "email": "lena@flintlockrobotics.com",
+      "slack_id": "U07FLK0LENA",
+      "jira_account_id": "5f8a1c2e3b4d5e6f7a8b9c05",
+      "ramp_user_id": "c57b3abb-180e-46fe-8900-0262baf74b0a",
+      "ramp_card_ids": [
+        "bbdc50d9-0be2-4a0f-b7ce-0f61cec0b65f"
+      ],
+      "start_date": "2024-09-03",
+      "end_date": null,
+      "ooo": [],
+      "orders": {
+        "weight": "none",
+        "habit": "none",
+        "habit_strength": 0,
+        "wtp_per_day_usd": 300,
+        "checks_dependencies": 0.7,
+        "queue_delay_days": null,
+        "batch_days": null
+      },
+      "style": {
+        "case": "proper",
+        "punctuation": "full",
+        "typos": "none",
+        "emoji": "rare",
+        "length": "medium",
+        "hedging": "medium"
+      },
+      "chattiness": 0.4,
+      "lurker": true,
+      "authority_on": [
+        "milestone dates",
+        "investor demo"
+      ],
+      "delegate": null
+    }
+  ],
   "assemblies": [
     {
-      "id": "a-hip-actuator", "name": "Hip actuator", "owner": "p-arjun", "team": "t-mech-actuators",
+      "id": "a-hip-actuator",
+      "name": "Hip actuator",
+      "owner": "p-arjun",
+      "team": "t-mech-actuators",
       "working_state": [
-        { "value": "build", "effective": "2026-09-14", "known_at": "2026-09-14T09:00:00-07:00", "by": "p-arjun", "where": null },
-        { "value": "partly_working", "effective": "2026-10-09", "known_at": "2026-10-09T17:10:00-07:00", "by": "p-arjun", "where": null }
+        {
+          "value": "build",
+          "effective": "2026-09-14",
+          "known_at": "2026-09-14T09:00:00-07:00",
+          "by": "p-arjun",
+          "where": null
+        },
+        {
+          "value": "partly_working",
+          "effective": "2026-10-09",
+          "known_at": "2026-10-09T17:10:00-07:00",
+          "by": "p-arjun",
+          "where": null
+        }
       ],
       "revision": [
-        { "value": "B", "effective": "2026-07-14", "known_at": "2026-07-14T11:00:00-07:00", "by": "p-owen", "where": null },
-        { "value": "C", "effective": "2026-10-28", "known_at": "2026-10-28T15:30:00-07:00", "by": "p-owen", "where": null }
+        {
+          "value": "B",
+          "effective": "2026-07-14",
+          "known_at": "2026-07-14T11:00:00-07:00",
+          "by": "p-owen",
+          "where": null
+        },
+        {
+          "value": "C",
+          "effective": "2026-10-28",
+          "known_at": "2026-10-28T15:30:00-07:00",
+          "by": "p-owen",
+          "where": null
+        }
       ],
-      "jira_project": "HIP", "channel": "ch-actuators", "project_code": "PRJ-HIP", "parent": null,
+      "jira_project": "HIP",
+      "channel": "ch-actuators",
+      "project_code": "PRJ-HIP",
+      "parent": null,
       "description": "Hip pitch actuator: frameless motor, cycloidal reducer, machined bracket."
     },
     {
-      "id": "a-leg", "name": "Leg (left, hip to foot)", "owner": "p-mateo", "team": "t-test",
+      "id": "a-leg",
+      "name": "Leg (left, hip to foot)",
+      "owner": "p-mateo",
+      "team": "t-test",
       "working_state": [
-        { "value": "partly_working", "effective": "2026-08-31", "known_at": "2026-08-31T10:00:00-07:00", "by": "p-mateo", "where": null }
+        {
+          "value": "partly_working",
+          "effective": "2026-08-31",
+          "known_at": "2026-08-31T10:00:00-07:00",
+          "by": "p-mateo",
+          "where": null
+        }
       ],
       "revision": [
-        { "value": "A", "effective": "2026-06-01", "known_at": "2026-06-01T10:00:00-07:00", "by": "p-mateo", "where": null }
+        {
+          "value": "A",
+          "effective": "2026-06-01",
+          "known_at": "2026-06-01T10:00:00-07:00",
+          "by": "p-mateo",
+          "where": null
+        }
       ],
-      "jira_project": "TEST", "channel": "ch-test-lab", "project_code": "PRJ-LEG", "parent": null
+      "jira_project": "TEST",
+      "channel": "ch-test-lab",
+      "project_code": "PRJ-LEG",
+      "parent": null
     }
   ],
-
   "parts": [
     {
-      "id": "pt-hip-bracket", "name": "Hip actuator bracket", "part_number": "FL-HIP-1042",
-      "cad_file": "FL-HIP-1042_hip-bracket_revC.step", "aliases": ["hip bracket", "the bracket", "1042"],
-      "belongs_to": "a-hip-actuator", "kind": "robot_part", "material": "Aluminum 7075-T651",
-      "finish": "Type III hard anodize, black", "tolerance": "+/-0.001 in on bearing bore, +/-0.005 in elsewhere",
-      "process": "cnc_milling_5axis", "typical_qty": 4, "vendor": "v-xometry", "price_hint_usd": 750,
+      "id": "pt-hip-bracket",
+      "name": "Hip actuator bracket",
+      "part_number": "FL-HIP-1042",
+      "cad_file": "FL-HIP-1042_hip-bracket_revC.step",
+      "aliases": [
+        "hip bracket",
+        "the bracket",
+        "1042"
+      ],
+      "belongs_to": "a-hip-actuator",
+      "kind": "robot_part",
+      "material": "Aluminum 7075-T651",
+      "finish": "Type III hard anodize, black",
+      "tolerance": "+/-0.001 in on bearing bore, +/-0.005 in elsewhere",
+      "process": "cnc_milling_5axis",
+      "typical_qty": 4,
+      "vendor": "v-xometry",
+      "price_hint_usd": 750,
       "revisions": [
-        { "value": "B", "effective": "2026-07-14", "known_at": "2026-07-14T11:00:00-07:00", "by": "p-owen", "where": null, "reason": "thicker flange after FEA" },
-        { "value": "C", "effective": "2026-10-28", "known_at": "2026-10-28T15:30:00-07:00", "by": "p-owen", "where": null, "reason": "bearing bore moved 0.5 mm for DVT motor stator" }
-      ]
+        {
+          "value": "B",
+          "effective": "2026-07-14",
+          "known_at": "2026-07-14T11:00:00-07:00",
+          "by": "p-owen",
+          "where": null,
+          "reason": "thicker flange after FEA"
+        },
+        {
+          "value": "C",
+          "effective": "2026-10-28",
+          "known_at": "2026-10-28T15:30:00-07:00",
+          "by": "p-owen",
+          "where": null,
+          "reason": "bearing bore moved 0.5 mm for DVT motor stator"
+        }
+      ],
+      "category": "motor_mount_plate"
     },
     {
-      "id": "pt-leg-lift-hook", "name": "Leg drop-test lift hook", "part_number": "FL-TST-2017",
-      "cad_file": "FL-TST-2017_lift-hook_revA.step", "aliases": ["lift hook", "the hook", "drop test hook", "gantry hook"],
-      "belongs_to": "rig-leg-drop-gantry", "kind": "test_hardware", "material": "Steel 4140, pre-hardened",
-      "finish": "Black oxide", "tolerance": "+/-0.005 in", "process": "cnc_milling_3axis", "typical_qty": 2,
-      "vendor": "v-xometry", "price_hint_usd": 350,
+      "id": "pt-leg-lift-hook",
+      "name": "Leg drop-test lift hook",
+      "part_number": "FL-TST-2017",
+      "cad_file": "FL-TST-2017_lift-hook_revA.step",
+      "aliases": [
+        "lift hook",
+        "the hook",
+        "drop test hook",
+        "gantry hook"
+      ],
+      "belongs_to": "rig-leg-drop-gantry",
+      "kind": "test_hardware",
+      "material": "Steel 4140, pre-hardened",
+      "finish": "Black oxide",
+      "tolerance": "+/-0.005 in",
+      "process": "cnc_milling_3axis",
+      "typical_qty": 2,
+      "vendor": "v-xometry",
+      "price_hint_usd": 350,
       "revisions": [
-        { "value": "A", "effective": "2026-08-28", "known_at": "2026-08-28T16:20:00-07:00", "by": "p-mateo", "where": null, "reason": "initial release" }
-      ]
+        {
+          "value": "A",
+          "effective": "2026-08-28",
+          "known_at": "2026-08-28T16:20:00-07:00",
+          "by": "p-mateo",
+          "where": null,
+          "reason": "initial release"
+        }
+      ],
+      "category": "test_fixture"
     },
     {
-      "id": "pt-spin-adapter", "name": "Spin-test adapter plate", "part_number": "FL-TST-2031",
-      "cad_file": "FL-TST-2031_spin-adapter_revB.step", "aliases": ["adapter plate", "spin adapter"],
-      "belongs_to": "rig-spin-test-stand", "kind": "test_hardware", "material": "Aluminum 6061-T6",
-      "finish": "Clear anodize", "tolerance": "+/-0.002 in", "process": "cnc_milling_3axis", "typical_qty": 1,
+      "id": "pt-spin-adapter",
+      "name": "Spin-test adapter plate",
+      "part_number": "FL-TST-2031",
+      "cad_file": "FL-TST-2031_spin-adapter_revB.step",
+      "aliases": [
+        "adapter plate",
+        "spin adapter"
+      ],
+      "belongs_to": "rig-spin-test-stand",
+      "kind": "test_hardware",
+      "material": "Aluminum 6061-T6",
+      "finish": "Clear anodize",
+      "tolerance": "+/-0.002 in",
+      "process": "cnc_milling_3axis",
+      "typical_qty": 1,
       "vendor": "v-xometry",
       "revisions": [
-        { "value": "A", "effective": "2026-04-20", "known_at": "2026-04-20T10:00:00-07:00", "by": "p-mateo", "where": null, "reason": "initial release" },
-        { "value": "B", "effective": "2026-10-19", "known_at": "2026-10-19T17:45:00-07:00", "by": "p-owen", "where": null, "reason": "bolt pattern for DVT hip housing" }
-      ]
+        {
+          "value": "A",
+          "effective": "2026-04-20",
+          "known_at": "2026-04-20T10:00:00-07:00",
+          "by": "p-mateo",
+          "where": null,
+          "reason": "initial release"
+        },
+        {
+          "value": "B",
+          "effective": "2026-10-19",
+          "known_at": "2026-10-19T17:45:00-07:00",
+          "by": "p-owen",
+          "where": null,
+          "reason": "bolt pattern for DVT hip housing"
+        }
+      ],
+      "category": "adapter_plate"
     }
   ],
-
   "test_rigs": [
     {
-      "id": "rig-spin-test-stand", "name": "Spin-test stand", "location": "Test lab bay 1", "owner": "p-mateo",
-      "needs": ["pt-spin-adapter"],
+      "id": "rig-spin-test-stand",
+      "name": "Spin-test stand",
+      "location": "Test lab bay 1",
+      "owner": "p-mateo",
+      "needs": [
+        "pt-spin-adapter"
+      ],
       "bookings": [
-        { "id": "bk-00001", "start": "2026-11-23T09:00:00-08:00", "end": "2026-11-25T17:00:00-08:00", "test": "test-hip-spin", "by": "p-arjun", "status": "tentative", "conflict_with": [] }
-      ]
+        {
+          "id": "bk-00001",
+          "start": "2026-11-23T09:00:00-08:00",
+          "end": "2026-11-25T17:00:00-08:00",
+          "test": "test-hip-spin",
+          "by": "p-arjun",
+          "status": "tentative",
+          "conflict_with": []
+        }
+      ],
+      "slot_days": null
     },
     {
-      "id": "rig-leg-drop-gantry", "name": "Leg drop-test gantry", "location": "High bay", "owner": "p-mateo",
-      "needs": ["pt-leg-lift-hook"],
+      "id": "rig-leg-drop-gantry",
+      "name": "Leg drop-test gantry",
+      "location": "High bay",
+      "owner": "p-mateo",
+      "needs": [
+        "pt-leg-lift-hook"
+      ],
       "bookings": [
-        { "id": "bk-00002", "start": "2026-09-16T09:00:00-07:00", "end": "2026-09-17T17:00:00-07:00", "test": "test-leg-drop", "by": "p-mateo", "status": "confirmed", "conflict_with": ["bk-00003"] },
-        { "id": "bk-00003", "start": "2026-09-17T13:00:00-07:00", "end": "2026-09-18T17:00:00-07:00", "test": null, "by": "p-owen", "status": "tentative", "conflict_with": ["bk-00002"] }
-      ]
+        {
+          "id": "bk-00002",
+          "start": "2026-09-16T09:00:00-07:00",
+          "end": "2026-09-17T17:00:00-07:00",
+          "test": "test-leg-drop",
+          "by": "p-mateo",
+          "status": "confirmed",
+          "conflict_with": [
+            "bk-00003"
+          ]
+        },
+        {
+          "id": "bk-00003",
+          "start": "2026-09-17T13:00:00-07:00",
+          "end": "2026-09-18T17:00:00-07:00",
+          "test": null,
+          "by": "p-owen",
+          "status": "tentative",
+          "conflict_with": [
+            "bk-00002"
+          ]
+        }
+      ],
+      "slot_days": null
     }
   ],
   "resources": [],
-
   "tests": [
     {
-      "id": "test-hip-spin", "name": "Hip actuator DVT spin test", "assembly": "a-hip-actuator", "rig": "rig-spin-test-stand",
-      "resources": [], "owner": "p-arjun", "milestone": "m-hip-spin-test", "duration_true_days": 3, "duration_estimate_days": [2, 3],
-      "planned_date": [
-        { "value": "2026-11-16", "effective": null, "known_at": "2026-10-05T09:15:00-07:00", "by": "p-arjun", "where": null },
-        { "value": "2026-11-23", "effective": null, "known_at": "2026-10-22T10:45:00-07:00", "by": "p-arjun", "where": "ev-000010" }
+      "id": "test-hip-spin",
+      "name": "Hip actuator DVT spin test",
+      "assembly": "a-hip-actuator",
+      "rig": "rig-spin-test-stand",
+      "resources": [],
+      "owner": "p-arjun",
+      "milestone": "m-hip-spin-test",
+      "duration_true_days": 3,
+      "duration_estimate_days": [
+        2,
+        3
       ],
-      "result": "not_run"
+      "planned_date": [
+        {
+          "value": "2026-11-16",
+          "effective": null,
+          "known_at": "2026-10-05T09:15:00-07:00",
+          "by": "p-arjun",
+          "where": null
+        },
+        {
+          "value": "2026-11-23",
+          "effective": null,
+          "known_at": "2026-10-22T10:45:00-07:00",
+          "by": "p-arjun",
+          "where": "ev-000010"
+        }
+      ],
+      "result": "not_run",
+      "earliest_start": "2026-11-16",
+      "rerun_of": null
     },
     {
-      "id": "test-leg-drop", "name": "Leg drop test", "assembly": "a-leg", "rig": "rig-leg-drop-gantry",
-      "resources": [], "owner": "p-mateo", "milestone": "m-leg-drop-complete", "duration_true_days": 2, "duration_estimate_days": [1, 2],
-      "planned_date": [
-        { "value": "2026-09-16", "effective": null, "known_at": "2026-09-01T10:14:22-07:00", "by": "p-mateo", "where": "ev-000001" }
+      "id": "test-leg-drop",
+      "name": "Leg drop test",
+      "assembly": "a-leg",
+      "rig": "rig-leg-drop-gantry",
+      "resources": [],
+      "owner": "p-mateo",
+      "milestone": "m-leg-drop-complete",
+      "duration_true_days": 2,
+      "duration_estimate_days": [
+        1,
+        2
       ],
-      "actual_start": "2026-09-16T09:30:00-07:00", "actual_end": "2026-09-17T16:00:00-07:00", "result": "pass"
+      "planned_date": [
+        {
+          "value": "2026-09-16",
+          "effective": null,
+          "known_at": "2026-09-01T10:14:22-07:00",
+          "by": "p-mateo",
+          "where": "ev-000001"
+        }
+      ],
+      "actual_start": "2026-09-16T09:30:00-07:00",
+      "actual_end": "2026-09-17T16:00:00-07:00",
+      "result": "pass",
+      "earliest_start": "2026-09-16",
+      "rerun_of": null
     }
   ],
-
   "deliverables": [
     {
-      "id": "dl-hip-motor-dvt", "name": "DVT hip frameless motor", "kind": "motor", "owner": "p-arjun",
-      "assembly": "a-hip-actuator", "vendor": null, "order": null,
+      "id": "dl-hip-motor-dvt",
+      "name": "DVT hip frameless motor",
+      "kind": "motor",
+      "owner": "p-arjun",
+      "assembly": "a-hip-actuator",
+      "vendor": null,
+      "order": null,
       "eta": [
-        { "value": "2026-10-26", "effective": null, "known_at": "2026-10-01T11:18:00-07:00", "by": "p-arjun", "where": "ev-000006" },
-        { "value": "2026-11-13", "effective": null, "known_at": "2026-10-14T15:02:33-07:00", "by": "p-dana", "where": "ev-000007" },
-        { "value": "2026-11-20", "effective": null, "known_at": "2026-10-22T10:41:00-07:00", "by": "p-arjun", "where": "ev-000010" },
-        { "value": "2026-11-20", "effective": null, "known_at": "2026-11-07T10:12:00-08:00", "by": "p-arjun", "where": null }
+        {
+          "value": "2026-10-26",
+          "effective": null,
+          "known_at": "2026-10-01T11:18:00-07:00",
+          "by": "p-arjun",
+          "where": "ev-000006"
+        },
+        {
+          "value": "2026-11-13",
+          "effective": null,
+          "known_at": "2026-10-14T15:02:33-07:00",
+          "by": "p-dana",
+          "where": "ev-000007"
+        },
+        {
+          "value": "2026-11-20",
+          "effective": null,
+          "known_at": "2026-10-22T10:41:00-07:00",
+          "by": "p-arjun",
+          "where": "ev-000010"
+        },
+        {
+          "value": "2026-11-20",
+          "effective": null,
+          "known_at": "2026-11-07T10:12:00-08:00",
+          "by": "p-arjun",
+          "where": null
+        }
       ],
       "true_arrival": "2026-11-20"
     }
   ],
-
   "work_items": [
     {
-      "id": "wi-00001", "name": "Assemble left leg for drop test", "owner": "p-mateo", "assembly": "a-leg",
-      "duration_true_days": 3, "duration_estimate_days": [2, 3], "blocked_by": [],
+      "id": "wi-00001",
+      "name": "Assemble left leg for drop test",
+      "owner": "p-mateo",
+      "assembly": "a-leg",
+      "duration_true_days": 3,
+      "duration_estimate_days": [
+        2,
+        3
+      ],
+      "blocked_by": [],
       "status": [
-        { "value": "not_started", "effective": "2026-09-01T10:00:00-07:00", "known_at": "2026-09-01T10:00:00-07:00", "by": "p-mateo", "where": null },
-        { "value": "in_progress", "effective": "2026-09-09T09:30:00-07:00", "known_at": "2026-09-09T09:30:00-07:00", "by": "p-mateo", "where": null },
-        { "value": "done", "effective": "2026-09-14T16:00:00-07:00", "known_at": "2026-09-14T16:00:00-07:00", "by": "p-mateo", "where": null }
-      ]
+        {
+          "value": "not_started",
+          "effective": "2026-09-01T10:00:00-07:00",
+          "known_at": "2026-09-01T10:00:00-07:00",
+          "by": "p-mateo",
+          "where": null
+        },
+        {
+          "value": "in_progress",
+          "effective": "2026-09-09T09:30:00-07:00",
+          "known_at": "2026-09-09T09:30:00-07:00",
+          "by": "p-mateo",
+          "where": null
+        },
+        {
+          "value": "done",
+          "effective": "2026-09-14T16:00:00-07:00",
+          "known_at": "2026-09-14T16:00:00-07:00",
+          "by": "p-mateo",
+          "where": null
+        }
+      ],
+      "milestone": "m-leg-drop-complete",
+      "actual_start": "2026-09-09T09:30:00-07:00",
+      "actual_done": "2026-09-14T16:00:00-07:00"
     },
     {
-      "id": "wi-00002", "name": "Hip actuator DVT build-up for spin test", "owner": "p-owen", "assembly": "a-hip-actuator",
-      "duration_true_days": 2, "duration_estimate_days": null, "blocked_by": ["dl-hip-motor-dvt", "pt-hip-bracket"],
+      "id": "wi-00002",
+      "name": "Hip actuator DVT build-up for spin test",
+      "owner": "p-owen",
+      "assembly": "a-hip-actuator",
+      "duration_true_days": 2,
+      "duration_estimate_days": null,
+      "blocked_by": [
+        "dl-hip-motor-dvt",
+        "pt-hip-bracket"
+      ],
       "status": [
-        { "value": "not_started", "effective": "2026-10-05T09:00:00-07:00", "known_at": "2026-10-05T09:00:00-07:00", "by": "p-owen", "where": null },
-        { "value": "blocked", "effective": "2026-10-20T13:00:00-07:00", "known_at": "2026-10-20T13:00:00-07:00", "by": "p-owen", "where": null }
-      ]
+        {
+          "value": "not_started",
+          "effective": "2026-10-05T09:00:00-07:00",
+          "known_at": "2026-10-05T09:00:00-07:00",
+          "by": "p-owen",
+          "where": null
+        },
+        {
+          "value": "blocked",
+          "effective": "2026-10-20T13:00:00-07:00",
+          "known_at": "2026-10-20T13:00:00-07:00",
+          "by": "p-owen",
+          "where": null
+        }
+      ],
+      "milestone": "m-hip-spin-test",
+      "actual_start": null,
+      "actual_done": null
     }
   ],
-
   "milestones": [
     {
-      "id": "m-hip-spin-test", "name": "Hip actuator DVT spin test complete", "owner": "p-arjun", "kind": "test", "hardness": "soft",
-      "assemblies": ["a-hip-actuator"],
+      "id": "m-hip-spin-test",
+      "name": "Hip actuator DVT spin test complete",
+      "owner": "p-arjun",
+      "kind": "test",
+      "hardness": "soft",
+      "assemblies": [
+        "a-hip-actuator"
+      ],
       "date": [
-        { "value": "2026-11-18", "effective": null, "known_at": "2026-10-05T09:15:00-07:00", "by": "p-arjun", "where": null },
-        { "value": "2026-11-24", "effective": null, "known_at": "2026-10-22T10:45:00-07:00", "by": "p-arjun", "where": "ev-000010" }
+        {
+          "value": "2026-11-18",
+          "effective": null,
+          "known_at": "2026-10-05T09:15:00-07:00",
+          "by": "p-arjun",
+          "where": null
+        },
+        {
+          "value": "2026-11-24",
+          "effective": null,
+          "known_at": "2026-10-22T10:45:00-07:00",
+          "by": "p-arjun",
+          "where": "ev-000010"
+        }
       ],
       "value_policy": [
-        { "value": { "type": "per_day", "usd_per_day": 600 }, "effective": "2026-10-05", "known_at": "2026-10-05T09:15:00-07:00", "by": "p-arjun", "where": null }
+        {
+          "value": {
+            "type": "per_day",
+            "usd_per_day": 600
+          },
+          "effective": "2026-10-05",
+          "known_at": "2026-10-05T09:15:00-07:00",
+          "by": "p-arjun",
+          "where": null
+        }
+      ],
+      "actual_date": null
+    },
+    {
+      "id": "m-leg-drop-complete",
+      "name": "Leg drop-test campaign complete",
+      "owner": "p-mateo",
+      "kind": "test",
+      "hardness": "soft",
+      "assemblies": [
+        "a-leg"
+      ],
+      "date": [
+        {
+          "value": "2026-09-18",
+          "effective": null,
+          "known_at": "2026-09-01T10:14:22-07:00",
+          "by": "p-mateo",
+          "where": null
+        }
+      ],
+      "value_policy": [
+        {
+          "value": {
+            "type": "none"
+          },
+          "effective": null,
+          "known_at": "2026-09-01T10:14:22-07:00",
+          "by": "p-mateo",
+          "where": null
+        }
+      ],
+      "actual_date": "2026-09-17"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-00001",
+      "from": "pt-leg-lift-hook",
+      "to": "test-leg-drop",
+      "kind": "requires_all",
+      "reveal": "revealed",
+      "revealed_by": [
+        "ev-000001",
+        "ev-000002"
       ]
     },
     {
-      "id": "m-leg-drop-complete", "name": "Leg drop-test campaign complete", "owner": "p-mateo", "kind": "test", "hardness": "soft",
-      "assemblies": ["a-leg"],
-      "date": [
-        { "value": "2026-09-18", "effective": null, "known_at": "2026-09-01T10:14:22-07:00", "by": "p-mateo", "where": null }
-      ],
-      "value_policy": [
-        { "value": { "type": "none" }, "effective": null, "known_at": "2026-09-01T10:14:22-07:00", "by": "p-mateo", "where": null }
+      "id": "e-00002",
+      "from": "wi-00001",
+      "to": "test-leg-drop",
+      "kind": "requires_all",
+      "reveal": "never",
+      "revealed_by": []
+    },
+    {
+      "id": "e-00003",
+      "from": "rig-leg-drop-gantry",
+      "to": "test-leg-drop",
+      "kind": "requires_all",
+      "reveal": "hinted",
+      "revealed_by": [
+        "ev-000005"
+      ]
+    },
+    {
+      "id": "e-00004",
+      "from": "test-leg-drop",
+      "to": "m-leg-drop-complete",
+      "kind": "requires_all",
+      "reveal": "revealed",
+      "revealed_by": [
+        "ev-000001"
+      ]
+    },
+    {
+      "id": "e-00005",
+      "from": "pt-hip-bracket",
+      "to": "test-hip-spin",
+      "kind": "requires_all",
+      "reveal": "hinted",
+      "revealed_by": [
+        "ev-000011"
+      ]
+    },
+    {
+      "id": "e-00006",
+      "from": "dl-hip-motor-dvt",
+      "to": "test-hip-spin",
+      "kind": "requires_all",
+      "reveal": "revealed",
+      "revealed_by": [
+        "ev-000010"
+      ]
+    },
+    {
+      "id": "e-00007",
+      "from": "pt-spin-adapter",
+      "to": "test-hip-spin",
+      "kind": "requires_all",
+      "reveal": "revealed",
+      "revealed_by": [
+        "ev-000009"
+      ]
+    },
+    {
+      "id": "e-00008",
+      "from": "test-hip-spin",
+      "to": "m-hip-spin-test",
+      "kind": "requires_all",
+      "reveal": "revealed",
+      "revealed_by": [
+        "ev-000010"
       ]
     }
   ],
-
-  "edges": [
-    { "id": "e-00001", "from": "pt-leg-lift-hook", "to": "test-leg-drop", "kind": "requires_all", "reveal": "revealed", "revealed_by": ["ev-000001", "ev-000002"] },
-    { "id": "e-00002", "from": "wi-00001", "to": "test-leg-drop", "kind": "requires_all", "reveal": "never", "revealed_by": [] },
-    { "id": "e-00003", "from": "rig-leg-drop-gantry", "to": "test-leg-drop", "kind": "requires_all", "reveal": "hinted", "revealed_by": ["ev-000005"] },
-    { "id": "e-00004", "from": "test-leg-drop", "to": "m-leg-drop-complete", "kind": "requires_all", "reveal": "revealed", "revealed_by": ["ev-000001"] },
-    { "id": "e-00005", "from": "pt-hip-bracket", "to": "test-hip-spin", "kind": "requires_all", "reveal": "hinted", "revealed_by": ["ev-000011"] },
-    { "id": "e-00006", "from": "dl-hip-motor-dvt", "to": "test-hip-spin", "kind": "requires_all", "reveal": "revealed", "revealed_by": ["ev-000010"] },
-    { "id": "e-00007", "from": "pt-spin-adapter", "to": "test-hip-spin", "kind": "requires_all", "reveal": "revealed", "revealed_by": ["ev-000009"] },
-    { "id": "e-00008", "from": "test-hip-spin", "to": "m-hip-spin-test", "kind": "requires_all", "reveal": "revealed", "revealed_by": ["ev-000010"] }
+  "demands": [
+    {
+      "id": "dmd-00001",
+      "kind": "test_hardware",
+      "cause": "planned",
+      "part": "pt-leg-lift-hook",
+      "revision": "A",
+      "quantity": 2,
+      "assembly": "a-leg",
+      "requester": "p-mateo",
+      "feeds": "test-leg-drop",
+      "need_by_believed": "2026-09-15",
+      "trigger_at": "2026-09-08T10:40:00-07:00",
+      "late_by_choice": false,
+      "hidden_earlier_need": null,
+      "order": "ord-x-00001",
+      "caused_by": null
+    },
+    {
+      "id": "dmd-00002",
+      "kind": "test_hardware",
+      "cause": "revision",
+      "part": "pt-spin-adapter",
+      "revision": "B",
+      "quantity": 1,
+      "assembly": "a-hip-actuator",
+      "requester": "p-owen",
+      "feeds": "test-hip-spin",
+      "need_by_believed": "2026-10-27",
+      "trigger_at": "2026-10-21T15:30:00-07:00",
+      "late_by_choice": false,
+      "hidden_earlier_need": null,
+      "order": "ord-x-00002",
+      "caused_by": null
+    }
   ],
-
+  "slips": [
+    {
+      "id": "slip-00001",
+      "entity": "dl-hip-motor-dvt",
+      "cause": "vendor",
+      "delta_days": 14,
+      "from": "2026-10-26",
+      "to": "2026-11-13",
+      "occurs_at": "2026-10-12T08:00:00-07:00",
+      "discovered_at": "2026-10-14T09:10:00-07:00",
+      "announced_at": "2026-10-14T15:02:33-07:00",
+      "by": "p-dana",
+      "venue": "slack",
+      "event": "ev-000007"
+    },
+    {
+      "id": "slip-00002",
+      "entity": "dl-hip-motor-dvt",
+      "cause": "vendor",
+      "delta_days": 5,
+      "from": "2026-11-13",
+      "to": "2026-11-20",
+      "occurs_at": "2026-10-21T07:30:00-07:00",
+      "discovered_at": "2026-10-21T17:05:00-07:00",
+      "announced_at": "2026-10-22T10:41:00-07:00",
+      "by": "p-arjun",
+      "venue": "meeting",
+      "event": "ev-000010"
+    }
+  ],
   "storylines": [
     {
-      "id": "sl-hip-backlash", "name": "Hip reducer backlash", "team": "t-mech-actuators", "topic": "Backlash in the rev B cycloidal reducer and whether to shim or re-grind",
-      "people": ["p-owen", "p-arjun"], "start": "2026-10-12", "end": "2026-11-06",
+      "id": "sl-hip-backlash",
+      "name": "Hip reducer backlash",
+      "team": "t-mech-actuators",
+      "topic": "Backlash in the rev B cycloidal reducer and whether to shim or re-grind",
+      "people": [
+        "p-owen",
+        "p-arjun"
+      ],
+      "start": "2026-10-12",
+      "end": "2026-11-06",
       "beats": [
-        { "week": "2026-10-12", "summary": "Dyno shows 0.4 deg backlash, twice spec." },
-        { "week": "2026-10-19", "summary": "Shim vs re-grind debate; Arjun leans shim for DVT, re-grind for PVT." }
+        {
+          "week": "2026-10-12",
+          "summary": "Dyno shows 0.4 deg backlash, twice spec."
+        },
+        {
+          "week": "2026-10-19",
+          "summary": "Shim vs re-grind debate; Arjun leans shim for DVT, re-grind for PVT."
+        }
       ]
     },
     {
-      "id": "sl-drop-bumpers", "name": "Drop-test bumpers", "team": "t-test", "topic": "Foam vs rubber bumpers under the gantry",
-      "people": ["p-mateo", "p-owen"], "start": "2026-09-07", "end": "2026-09-18",
+      "id": "sl-drop-bumpers",
+      "name": "Drop-test bumpers",
+      "team": "t-test",
+      "topic": "Foam vs rubber bumpers under the gantry",
+      "people": [
+        "p-mateo",
+        "p-owen"
+      ],
+      "start": "2026-09-07",
+      "end": "2026-09-18",
       "beats": [
-        { "week": "2026-09-07", "summary": "Foam bottoms out in the rehearsal; try 60A rubber." },
-        { "week": "2026-09-14", "summary": "First real drops pass; rubber stays." }
+        {
+          "week": "2026-09-07",
+          "summary": "Foam bottoms out in the rehearsal; try 60A rubber."
+        },
+        {
+          "week": "2026-09-14",
+          "summary": "First real drops pass; rubber stays."
+        }
       ]
     }
   ],
-
   "channels": [
-    { "id": "ch-actuators", "name": "actuators", "slack_id": "C07FLK0ACTU", "purpose": "Hip and knee actuators", "type": "public", "members": ["p-owen", "p-arjun", "p-lena"], "bots": [], "base_rate_per_day": 25, "on_topic_share": 0.85, "purchasing_relevant": true, "assembly": "a-hip-actuator" },
-    { "id": "ch-test-lab", "name": "test-lab", "slack_id": "C07FLK0TLAB", "purpose": "Rigs, bookings, test results", "type": "public", "members": ["p-mateo", "p-owen", "p-arjun"], "bots": ["Google Calendar"], "base_rate_per_day": 20, "on_topic_share": 0.85, "purchasing_relevant": true, "assembly": null },
-    { "id": "ch-supply-chain", "name": "supply-chain", "slack_id": "C07FLK0SUPC", "purpose": "Buyers and leads: ETAs, POs, vendor issues", "type": "private", "members": ["p-dana", "p-arjun", "p-lena"], "bots": [], "base_rate_per_day": 15, "on_topic_share": 0.9, "purchasing_relevant": true, "assembly": null },
-    { "id": "ch-random", "name": "random", "slack_id": "C07FLK0RAND", "purpose": "Anything", "type": "public", "members": ["p-owen", "p-arjun", "p-dana", "p-mateo", "p-lena"], "bots": [], "base_rate_per_day": 10, "on_topic_share": 0.05, "purchasing_relevant": false, "assembly": null }
+    {
+      "id": "ch-actuators",
+      "name": "actuators",
+      "slack_id": "C07FLK0ACTU",
+      "purpose": "Hip and knee actuators",
+      "type": "public",
+      "members": [
+        "p-owen",
+        "p-arjun",
+        "p-lena"
+      ],
+      "bots": [],
+      "base_rate_per_day": 25,
+      "on_topic_share": 0.85,
+      "purchasing_relevant": true,
+      "assembly": "a-hip-actuator"
+    },
+    {
+      "id": "ch-test-lab",
+      "name": "test-lab",
+      "slack_id": "C07FLK0TLAB",
+      "purpose": "Rigs, bookings, test results",
+      "type": "public",
+      "members": [
+        "p-mateo",
+        "p-owen",
+        "p-arjun"
+      ],
+      "bots": [
+        "Google Calendar"
+      ],
+      "base_rate_per_day": 20,
+      "on_topic_share": 0.85,
+      "purchasing_relevant": true,
+      "assembly": null
+    },
+    {
+      "id": "ch-supply-chain",
+      "name": "supply-chain",
+      "slack_id": "C07FLK0SUPC",
+      "purpose": "Buyers and leads: ETAs, POs, vendor issues",
+      "type": "private",
+      "members": [
+        "p-dana",
+        "p-arjun",
+        "p-lena"
+      ],
+      "bots": [],
+      "base_rate_per_day": 15,
+      "on_topic_share": 0.9,
+      "purchasing_relevant": true,
+      "assembly": null
+    },
+    {
+      "id": "ch-random",
+      "name": "random",
+      "slack_id": "C07FLK0RAND",
+      "purpose": "Anything",
+      "type": "public",
+      "members": [
+        "p-owen",
+        "p-arjun",
+        "p-dana",
+        "p-mateo",
+        "p-lena"
+      ],
+      "bots": [],
+      "base_rate_per_day": 10,
+      "on_topic_share": 0.05,
+      "purchasing_relevant": false,
+      "assembly": null
+    }
   ],
-
   "jira_projects": [
-    { "id": "HIP", "name": "Actuators (hip and knee)", "lead": "p-arjun", "team": "t-mech-actuators", "assemblies": ["a-hip-actuator"] },
-    { "id": "TEST", "name": "Test, rigs and fixtures", "lead": "p-mateo", "team": "t-test", "assemblies": ["a-leg"] }
+    {
+      "id": "HIP",
+      "name": "Actuators (hip and knee)",
+      "lead": "p-arjun",
+      "team": "t-mech-actuators",
+      "assemblies": [
+        "a-hip-actuator"
+      ]
+    },
+    {
+      "id": "TEST",
+      "name": "Test, rigs and fixtures",
+      "lead": "p-mateo",
+      "team": "t-test",
+      "assemblies": [
+        "a-leg"
+      ]
+    }
   ],
-
   "meeting_series": [
     {
-      "id": "ms-sc-mech", "name": "Supply chain + mech sync", "type": "supply_chain_mech", "rrule": "FREQ=WEEKLY;BYDAY=TH",
-      "start_local": "10:30", "duration_min": 30, "organizer": "p-dana",
-      "attendees": ["p-dana", "p-arjun", "p-owen", "p-mateo"], "optional_attendees": ["p-lena"],
-      "note_taker": "granola", "recorded": true, "conference": "https://flintlock.zoom.us/j/84120057731"
+      "id": "ms-sc-mech",
+      "name": "Supply chain + mech sync",
+      "type": "supply_chain_mech",
+      "rrule": "FREQ=WEEKLY;BYDAY=TH",
+      "start_local": "10:30",
+      "duration_min": 30,
+      "organizer": "p-dana",
+      "attendees": [
+        "p-dana",
+        "p-arjun",
+        "p-owen",
+        "p-mateo"
+      ],
+      "optional_attendees": [
+        "p-lena"
+      ],
+      "note_taker": "granola",
+      "recorded": true,
+      "conference": "https://flintlock.zoom.us/j/84120057731"
     }
   ],
-
   "meetings": [
     {
-      "id": "mtg-00001", "name": "Supply chain + mech sync", "series": "ms-sc-mech", "type": "supply_chain_mech",
-      "start": "2026-10-22T10:30:00-07:00", "scheduled_min": 30, "actual_min": 37,
-      "invited": ["p-dana", "p-arjun", "p-owen", "p-mateo", "p-lena"], "present": ["p-dana", "p-arjun", "p-owen"],
-      "late_joiners": ["p-owen"], "external": [], "note_taker": "granola", "recorded": true,
-      "storylines": ["sl-hip-backlash"],
-      "rsvp": { "p-dana": "accepted", "p-arjun": "accepted", "p-owen": "tentative", "p-mateo": "declined", "p-lena": "needs_action" }
+      "id": "mtg-00001",
+      "name": "Supply chain + mech sync",
+      "series": "ms-sc-mech",
+      "type": "supply_chain_mech",
+      "start": "2026-10-22T10:30:00-07:00",
+      "scheduled_min": 30,
+      "actual_min": 37,
+      "invited": [
+        "p-dana",
+        "p-arjun",
+        "p-owen",
+        "p-mateo",
+        "p-lena"
+      ],
+      "present": [
+        "p-dana",
+        "p-arjun",
+        "p-owen"
+      ],
+      "late_joiners": [
+        "p-owen"
+      ],
+      "external": [],
+      "note_taker": "granola",
+      "recorded": true,
+      "storylines": [
+        "sl-hip-backlash"
+      ],
+      "rsvp": {
+        "p-dana": "accepted",
+        "p-arjun": "accepted",
+        "p-owen": "tentative",
+        "p-mateo": "declined",
+        "p-lena": "needs_action"
+      }
     }
   ],
-
   "tickets": [
     {
-      "id": "TEST-141", "project": "TEST", "type": "Task", "brief": "Order 2x lift hook FL-TST-2017 for the drop gantry",
-      "assembly": "a-leg", "work_item": null, "order": "ord-x-00001", "test": "test-leg-drop",
-      "reporter": "p-mateo", "assignee": "p-mateo", "labels": ["procurement"], "components": [], "priority": "High", "parent": null,
+      "id": "TEST-141",
+      "project": "TEST",
+      "type": "Task",
+      "brief": "Order 2x lift hook FL-TST-2017 for the drop gantry",
+      "assembly": "a-leg",
+      "work_item": null,
+      "order": "ord-x-00001",
+      "test": "test-leg-drop",
+      "reporter": "p-mateo",
+      "assignee": "p-mateo",
+      "labels": [
+        "procurement"
+      ],
+      "components": [],
+      "priority": "High",
+      "parent": null,
       "created": "2026-09-02T09:47:12-07:00",
       "status": [
-        { "value": "To Do", "effective": "2026-09-02T09:47:12-07:00", "known_at": "2026-09-02T09:47:12-07:00", "by": "p-mateo", "where": "ev-000002" },
-        { "value": "In Progress", "effective": "2026-09-08T14:20:00-07:00", "known_at": "2026-09-08T14:20:00-07:00", "by": "p-dana", "where": null },
-        { "value": "Done", "effective": "2026-09-15T08:55:00-07:00", "known_at": "2026-09-15T08:55:00-07:00", "by": "p-mateo", "where": null }
+        {
+          "value": "To Do",
+          "effective": "2026-09-02T09:47:12-07:00",
+          "known_at": "2026-09-02T09:47:12-07:00",
+          "by": "p-mateo",
+          "where": "ev-000002"
+        },
+        {
+          "value": "In Progress",
+          "effective": "2026-09-08T14:20:00-07:00",
+          "known_at": "2026-09-08T14:20:00-07:00",
+          "by": "p-dana",
+          "where": null
+        },
+        {
+          "value": "Done",
+          "effective": "2026-09-15T08:55:00-07:00",
+          "known_at": "2026-09-15T08:55:00-07:00",
+          "by": "p-mateo",
+          "where": null
+        }
       ],
       "due_date": [
-        { "value": "2026-09-14", "effective": null, "known_at": "2026-09-02T09:47:12-07:00", "by": "p-mateo", "where": "ev-000002" },
-        { "value": "2026-09-11", "effective": null, "known_at": "2026-09-03T15:40:00-07:00", "by": "p-owen", "where": "ev-000003" },
-        { "value": "2026-09-14", "effective": null, "known_at": "2026-09-04T09:20:00-07:00", "by": "p-mateo", "where": "ev-000004" }
+        {
+          "value": "2026-09-14",
+          "effective": null,
+          "known_at": "2026-09-02T09:47:12-07:00",
+          "by": "p-mateo",
+          "where": "ev-000002"
+        },
+        {
+          "value": "2026-09-11",
+          "effective": null,
+          "known_at": "2026-09-03T15:40:00-07:00",
+          "by": "p-owen",
+          "where": "ev-000003"
+        },
+        {
+          "value": "2026-09-14",
+          "effective": null,
+          "known_at": "2026-09-04T09:20:00-07:00",
+          "by": "p-mateo",
+          "where": "ev-000004"
+        }
       ],
       "links": []
     },
     {
-      "id": "HIP-212", "project": "HIP", "type": "Task", "brief": "Order spin-test adapter plate rev B",
-      "assembly": "a-hip-actuator", "work_item": null, "order": "ord-x-00002", "test": "test-hip-spin",
-      "reporter": "p-owen", "assignee": "p-owen", "labels": ["procurement"], "components": [], "priority": "Medium", "parent": null,
+      "id": "HIP-212",
+      "project": "HIP",
+      "type": "Task",
+      "brief": "Order spin-test adapter plate rev B",
+      "assembly": "a-hip-actuator",
+      "work_item": null,
+      "order": "ord-x-00002",
+      "test": "test-hip-spin",
+      "reporter": "p-owen",
+      "assignee": "p-owen",
+      "labels": [
+        "procurement"
+      ],
+      "components": [],
+      "priority": "Medium",
+      "parent": null,
       "created": "2026-10-20T13:05:40-07:00",
       "status": [
-        { "value": "To Do", "effective": "2026-10-20T13:05:40-07:00", "known_at": "2026-10-20T13:05:40-07:00", "by": "p-owen", "where": null },
-        { "value": "In Progress", "effective": "2026-10-21T16:41:00-07:00", "known_at": "2026-10-21T16:41:00-07:00", "by": "p-owen", "where": null },
-        { "value": "Done", "effective": "2026-10-27T16:05:00-07:00", "known_at": "2026-10-27T16:05:00-07:00", "by": "p-owen", "where": null }
+        {
+          "value": "To Do",
+          "effective": "2026-10-20T13:05:40-07:00",
+          "known_at": "2026-10-20T13:05:40-07:00",
+          "by": "p-owen",
+          "where": null
+        },
+        {
+          "value": "In Progress",
+          "effective": "2026-10-21T16:41:00-07:00",
+          "known_at": "2026-10-21T16:41:00-07:00",
+          "by": "p-owen",
+          "where": null
+        },
+        {
+          "value": "Done",
+          "effective": "2026-10-27T16:05:00-07:00",
+          "known_at": "2026-10-27T16:05:00-07:00",
+          "by": "p-owen",
+          "where": null
+        }
       ],
       "due_date": [
-        { "value": "2026-10-27", "effective": null, "known_at": "2026-10-20T13:05:40-07:00", "by": "p-owen", "where": null }
+        {
+          "value": "2026-10-27",
+          "effective": null,
+          "known_at": "2026-10-20T13:05:40-07:00",
+          "by": "p-owen",
+          "where": null
+        }
       ],
-      "links": [{ "type": "relates_to", "key": "HIP-219" }]
+      "links": [
+        {
+          "type": "relates_to",
+          "key": "HIP-219"
+        }
+      ]
     },
     {
-      "id": "HIP-219", "project": "HIP", "type": "Task", "brief": "Track DVT hip motor delivery",
-      "assembly": "a-hip-actuator", "work_item": "wi-00002", "order": null, "test": "test-hip-spin",
-      "reporter": "p-arjun", "assignee": "p-dana", "labels": ["procurement", "dvt"], "components": [], "priority": "High", "parent": null,
+      "id": "HIP-219",
+      "project": "HIP",
+      "type": "Task",
+      "brief": "Track DVT hip motor delivery",
+      "assembly": "a-hip-actuator",
+      "work_item": "wi-00002",
+      "order": null,
+      "test": "test-hip-spin",
+      "reporter": "p-arjun",
+      "assignee": "p-dana",
+      "labels": [
+        "procurement",
+        "dvt"
+      ],
+      "components": [],
+      "priority": "High",
+      "parent": null,
       "created": "2026-10-01T11:18:00-07:00",
       "status": [
-        { "value": "To Do", "effective": "2026-10-01T11:18:00-07:00", "known_at": "2026-10-01T11:18:00-07:00", "by": "p-arjun", "where": "ev-000006" },
-        { "value": "In Progress", "effective": "2026-10-05T10:02:00-07:00", "known_at": "2026-10-05T10:02:00-07:00", "by": "p-dana", "where": null },
-        { "value": "Blocked", "effective": "2026-10-14T15:10:00-07:00", "known_at": "2026-10-14T15:10:00-07:00", "by": "p-dana", "where": null }
+        {
+          "value": "To Do",
+          "effective": "2026-10-01T11:18:00-07:00",
+          "known_at": "2026-10-01T11:18:00-07:00",
+          "by": "p-arjun",
+          "where": "ev-000006"
+        },
+        {
+          "value": "In Progress",
+          "effective": "2026-10-05T10:02:00-07:00",
+          "known_at": "2026-10-05T10:02:00-07:00",
+          "by": "p-dana",
+          "where": null
+        },
+        {
+          "value": "Blocked",
+          "effective": "2026-10-14T15:10:00-07:00",
+          "known_at": "2026-10-14T15:10:00-07:00",
+          "by": "p-dana",
+          "where": null
+        }
       ],
       "due_date": [
-        { "value": "2026-10-26", "effective": null, "known_at": "2026-10-01T11:18:00-07:00", "by": "p-arjun", "where": "ev-000006" },
-        { "value": "2026-11-13", "effective": null, "known_at": "2026-10-14T15:10:00-07:00", "by": "p-dana", "where": "ev-000007" }
+        {
+          "value": "2026-10-26",
+          "effective": null,
+          "known_at": "2026-10-01T11:18:00-07:00",
+          "by": "p-arjun",
+          "where": "ev-000006"
+        },
+        {
+          "value": "2026-11-13",
+          "effective": null,
+          "known_at": "2026-10-14T15:10:00-07:00",
+          "by": "p-dana",
+          "where": "ev-000007"
+        }
       ],
-      "links": [{ "type": "relates_to", "key": "HIP-212" }]
+      "links": [
+        {
+          "type": "relates_to",
+          "key": "HIP-212"
+        }
+      ]
     }
   ],
-
   "vendors": [
     {
-      "id": "v-xometry", "name": "Xometry", "category": "cnc_xometry",
-      "descriptors": ["XOMETRY INC NORTH BETHESDA MD", "XOMETRY.COM DERWOOD MD", "XOMETRY*ORDER"],
-      "payment_method": "card", "terms": null, "mcc": null, "local": false,
-      "shipping": { "carrier": "FedEx", "transit_days": [1, 5], "splits_shipments": false, "cutoff_local": null }
+      "id": "v-xometry",
+      "name": "Xometry",
+      "category": "cnc_xometry",
+      "descriptors": [
+        "XOMETRY INC NORTH BETHESDA MD",
+        "XOMETRY.COM DERWOOD MD",
+        "XOMETRY*ORDER"
+      ],
+      "payment_method": "card",
+      "terms": null,
+      "mcc": null,
+      "local": false,
+      "shipping": {
+        "carrier": "FedEx",
+        "transit_days": [
+          1,
+          5
+        ],
+        "splits_shipments": false,
+        "cutoff_local": null
+      }
     },
     {
-      "id": "v-mcmaster", "name": "McMaster-Carr", "category": "fasteners",
-      "descriptors": ["MCMASTER-CARR", "BILL*McMaster-Carr"],
-      "payment_method": "card", "terms": "net-30 on invoice account", "mcc": null, "local": false,
-      "shipping": { "carrier": "UPS", "transit_days": [1, 1], "splits_shipments": true, "cutoff_local": "16:00" }
+      "id": "v-mcmaster",
+      "name": "McMaster-Carr",
+      "category": "fasteners",
+      "descriptors": [
+        "MCMASTER-CARR",
+        "BILL*McMaster-Carr"
+      ],
+      "payment_method": "card",
+      "terms": "net-30 on invoice account",
+      "mcc": null,
+      "local": false,
+      "shipping": {
+        "carrier": "UPS",
+        "transit_days": [
+          1,
+          1
+        ],
+        "splits_shipments": true,
+        "cutoff_local": "16:00"
+      }
     }
   ],
-
   "finance": {
     "gl_accounts": [
-      { "id": "5110", "name": "Prototype materials and parts" },
-      { "id": "5120", "name": "Test equipment and fixtures" },
-      { "id": "6400", "name": "Software subscriptions" }
+      {
+        "id": "5110",
+        "name": "Prototype materials and parts"
+      },
+      {
+        "id": "5120",
+        "name": "Test equipment and fixtures"
+      },
+      {
+        "id": "6400",
+        "name": "Software subscriptions"
+      }
     ],
     "project_codes": [
-      { "code": "PRJ-HIP", "name": "Hip actuator", "assembly": "a-hip-actuator" },
-      { "code": "PRJ-LEG", "name": "Leg", "assembly": "a-leg" }
+      {
+        "code": "PRJ-HIP",
+        "name": "Hip actuator",
+        "assembly": "a-hip-actuator"
+      },
+      {
+        "code": "PRJ-LEG",
+        "name": "Leg",
+        "assembly": "a-leg"
+      }
     ],
     "ramp_departments": [
-      { "id": "dept-mechanical", "name": "Mechanical", "teams": ["t-mech-actuators"] },
-      { "id": "dept-test", "name": "Test", "teams": ["t-test"] },
-      { "id": "dept-operations", "name": "Operations", "teams": ["t-supply"] },
-      { "id": "dept-leadership", "name": "Leadership", "teams": ["t-leadership"] }
+      {
+        "id": "dept-mechanical",
+        "name": "Mechanical",
+        "teams": [
+          "t-mech-actuators"
+        ]
+      },
+      {
+        "id": "dept-test",
+        "name": "Test",
+        "teams": [
+          "t-test"
+        ]
+      },
+      {
+        "id": "dept-operations",
+        "name": "Operations",
+        "teams": [
+          "t-supply"
+        ]
+      },
+      {
+        "id": "dept-leadership",
+        "name": "Leadership",
+        "teams": [
+          "t-leadership"
+        ]
+      }
     ],
-    "approval": { "rule": "requester's manager approves", "auto_approve_under_usd": 250, "second_approver_over_usd": 5000, "second_approver": "p-lena" }
+    "approval": {
+      "rule": "requester's manager approves",
+      "auto_approve_under_usd": 250,
+      "second_approver_over_usd": 5000,
+      "second_approver": "p-lena"
+    }
   },
-
   "orders": [
     {
-      "id": "ord-x-00001", "type": "xometry_cnc", "vendor": "v-xometry", "quote_id": "Q-2604417-1", "order_number": "XO-5520193",
-      "lines": [{ "part": "pt-leg-lift-hook", "revision": "A", "quantity": 2, "unit_price_usd": 214.5 }],
-      "tiers": [
-        { "tier": "economy", "subtotal_usd": 305.0, "lead_business_days": 12, "est_ship": "2026-09-24", "est_delivery": "2026-09-28" },
-        { "tier": "standard", "subtotal_usd": 349.0, "lead_business_days": 7, "est_ship": "2026-09-17", "est_delivery": "2026-09-18" },
-        { "tier": "expedite", "subtotal_usd": 429.0, "lead_business_days": 3, "est_ship": "2026-09-11", "est_delivery": "2026-09-14" }
+      "id": "ord-x-00001",
+      "type": "xometry_cnc",
+      "vendor": "v-xometry",
+      "quote_id": "Q-2604417-1",
+      "order_number": "XO-5520193",
+      "lines": [
+        {
+          "part": "pt-leg-lift-hook",
+          "revision": "A",
+          "quantity": 2,
+          "unit_price_usd": 214.5,
+          "demand": "dmd-00001"
+        }
       ],
-      "chosen_tier": "expedite", "quoted_at": "2026-09-08T11:03:00-07:00", "quote_expires": "2026-10-08",
-      "requester": "p-mateo", "placer": "p-dana", "approver": "p-lena", "approved_at": "2026-09-08T13:55:00-07:00",
+      "tiers": [
+        {
+          "tier": "economy",
+          "subtotal_usd": 305,
+          "shipping_usd": 0,
+          "tax_usd": 28.61,
+          "total_usd": 333.61,
+          "lead_business_days": 12,
+          "est_ship": "2026-09-24",
+          "est_delivery": "2026-09-28"
+        },
+        {
+          "tier": "standard",
+          "subtotal_usd": 349,
+          "shipping_usd": 0,
+          "tax_usd": 32.74,
+          "total_usd": 381.74,
+          "lead_business_days": 7,
+          "est_ship": "2026-09-17",
+          "est_delivery": "2026-09-18"
+        },
+        {
+          "tier": "expedite",
+          "subtotal_usd": 429,
+          "shipping_usd": 38.4,
+          "tax_usd": 40.24,
+          "total_usd": 507.64,
+          "lead_business_days": 3,
+          "est_ship": "2026-09-11",
+          "est_delivery": "2026-09-14"
+        }
+      ],
+      "chosen_tier": "expedite",
+      "quoted_at": "2026-09-08T11:03:00-07:00",
+      "quote_expires": "2026-10-08",
+      "requester": "p-mateo",
+      "placer": "p-dana",
+      "approver": "p-lena",
+      "tier_decided_by": "p-mateo",
+      "need_identified_at": "2026-09-01T10:14:22-07:00",
+      "requested_at": "2026-09-08T11:31:00-07:00",
+      "approved_at": "2026-09-08T13:55:00-07:00",
+      "auto_approved": false,
       "placed_at": "2026-09-08T14:12:00-07:00",
-      "subtotal_usd": 429.0, "shipping_usd": 38.4, "tax_usd": 40.24, "total_usd": 507.64,
+      "subtotal_usd": 429,
+      "shipping_usd": 38.4,
+      "tax_usd": 40.24,
+      "total_usd": 507.64,
       "promised_date": "2026-09-14",
       "status": [
-        { "value": "order_placed", "effective": "2026-09-08T14:12:00-07:00", "known_at": "2026-09-08T14:12:00-07:00", "by": "p-dana", "where": null },
-        { "value": "in_production", "effective": "2026-09-09T07:10:00-07:00", "known_at": "2026-09-09T07:10:00-07:00", "by": null, "where": null },
-        { "value": "shipped", "effective": "2026-09-11T13:45:00-07:00", "known_at": "2026-09-11T13:45:00-07:00", "by": null, "where": null },
-        { "value": "delivered", "effective": "2026-09-14T11:02:00-07:00", "known_at": "2026-09-14T11:02:00-07:00", "by": null, "where": null }
+        {
+          "value": "order_placed",
+          "effective": "2026-09-08T14:12:00-07:00",
+          "known_at": "2026-09-08T14:12:00-07:00",
+          "by": "p-dana",
+          "where": null
+        },
+        {
+          "value": "in_production",
+          "effective": "2026-09-09T07:10:00-07:00",
+          "known_at": "2026-09-09T07:10:00-07:00",
+          "by": null,
+          "where": null
+        },
+        {
+          "value": "shipped",
+          "effective": "2026-09-11T13:45:00-07:00",
+          "known_at": "2026-09-11T13:45:00-07:00",
+          "by": null,
+          "where": null
+        },
+        {
+          "value": "delivered",
+          "effective": "2026-09-14T11:02:00-07:00",
+          "known_at": "2026-09-14T11:02:00-07:00",
+          "by": null,
+          "where": null
+        }
       ],
-      "delivered_at": "2026-09-14T11:02:00-07:00", "carrier": "FedEx", "tracking": "778122405512",
-      "inspection": { "result": "pass", "at": "2026-09-14T15:30:00-07:00", "by": "p-mateo" },
-      "first_use": { "at": "2026-09-16T09:30:00-07:00", "recorded": true, "evidence": "ev-000014" },
-      "feeds_test": "test-leg-drop", "feeds_milestone": "m-leg-drop-complete", "need_by_believed": "2026-09-15",
-      "link_quality": "clean_id", "cancelled": false, "remade_from": null,
-      "ramp_transaction_ids": ["d6da5f41-2ac4-4142-84a3-9303affce510"], "descriptor": "XOMETRY INC NORTH BETHESDA MD",
-      "memo_present": true, "receipt_present": true, "certifications": ["CoC"]
+      "delivered_at": "2026-09-14T11:02:00-07:00",
+      "carrier": "FedEx",
+      "tracking": "778122405512",
+      "inspection": {
+        "result": "pass",
+        "at": "2026-09-14T15:30:00-07:00",
+        "by": "p-mateo"
+      },
+      "ready_at": "2026-09-14T15:30:00-07:00",
+      "first_use": {
+        "at": "2026-09-16T09:30:00-07:00",
+        "recorded": true,
+        "evidence": "ev-000014"
+      },
+      "feeds_test": "test-leg-drop",
+      "feeds_work_item": null,
+      "feeds_milestone": "m-leg-drop-complete",
+      "need_by_believed": "2026-09-15",
+      "link_quality": "clean_id",
+      "is_revision": false,
+      "cancelled": false,
+      "remade_from": null,
+      "ramp_transaction_ids": [
+        "d6da5f41-2ac4-4142-84a3-9303affce510"
+      ],
+      "descriptor": "XOMETRY INC NORTH BETHESDA MD",
+      "memo_present": true,
+      "receipt_present": true,
+      "certifications": [
+        "CoC"
+      ]
     },
     {
-      "id": "ord-x-00002", "type": "xometry_cnc", "vendor": "v-xometry", "quote_id": "Q-2611873-1", "order_number": "XO-5584710",
-      "lines": [{ "part": "pt-spin-adapter", "revision": "B", "quantity": 1, "unit_price_usd": 412.0 }],
-      "tiers": [
-        { "tier": "standard", "subtotal_usd": 268.0, "lead_business_days": 7, "est_ship": "2026-10-30", "est_delivery": "2026-11-02" },
-        { "tier": "expedite", "subtotal_usd": 412.0, "lead_business_days": 3, "est_ship": "2026-10-26", "est_delivery": "2026-10-27" }
+      "id": "ord-x-00002",
+      "type": "xometry_cnc",
+      "vendor": "v-xometry",
+      "quote_id": "Q-2611873-1",
+      "order_number": "XO-5584710",
+      "lines": [
+        {
+          "part": "pt-spin-adapter",
+          "revision": "B",
+          "quantity": 1,
+          "unit_price_usd": 412,
+          "demand": "dmd-00002"
+        }
       ],
-      "chosen_tier": "expedite", "quoted_at": "2026-10-21T15:58:00-07:00", "quote_expires": "2026-11-20",
-      "requester": "p-owen", "placer": "p-owen", "approver": "p-arjun", "approved_at": "2026-10-21T16:22:00-07:00",
+      "tiers": [
+        {
+          "tier": "standard",
+          "subtotal_usd": 268,
+          "shipping_usd": 0,
+          "tax_usd": 25.14,
+          "total_usd": 293.14,
+          "lead_business_days": 7,
+          "est_ship": "2026-10-30",
+          "est_delivery": "2026-11-02"
+        },
+        {
+          "tier": "expedite",
+          "subtotal_usd": 412,
+          "shipping_usd": 0,
+          "tax_usd": 38.65,
+          "total_usd": 450.65,
+          "lead_business_days": 3,
+          "est_ship": "2026-10-26",
+          "est_delivery": "2026-10-27"
+        }
+      ],
+      "chosen_tier": "expedite",
+      "quoted_at": "2026-10-21T15:58:00-07:00",
+      "quote_expires": "2026-11-20",
+      "requester": "p-owen",
+      "placer": "p-owen",
+      "approver": "p-arjun",
+      "tier_decided_by": "p-owen",
+      "need_identified_at": "2026-10-19T10:05:51-07:00",
+      "requested_at": "2026-10-21T16:04:00-07:00",
+      "approved_at": "2026-10-21T16:22:00-07:00",
+      "auto_approved": false,
       "placed_at": "2026-10-21T16:40:00-07:00",
-      "subtotal_usd": 412.0, "shipping_usd": 0, "tax_usd": 38.65, "total_usd": 450.65,
+      "subtotal_usd": 412,
+      "shipping_usd": 0,
+      "tax_usd": 38.65,
+      "total_usd": 450.65,
       "promised_date": "2026-10-27",
       "status": [
-        { "value": "order_placed", "effective": "2026-10-21T16:40:00-07:00", "known_at": "2026-10-21T16:40:00-07:00", "by": "p-owen", "where": null },
-        { "value": "in_production", "effective": "2026-10-22T08:00:00-07:00", "known_at": "2026-10-22T08:00:00-07:00", "by": null, "where": null },
-        { "value": "shipped", "effective": "2026-10-26T14:10:00-07:00", "known_at": "2026-10-26T14:10:00-07:00", "by": null, "where": null },
-        { "value": "delivered", "effective": "2026-10-27T12:30:00-07:00", "known_at": "2026-10-27T12:30:00-07:00", "by": null, "where": null }
+        {
+          "value": "order_placed",
+          "effective": "2026-10-21T16:40:00-07:00",
+          "known_at": "2026-10-21T16:40:00-07:00",
+          "by": "p-owen",
+          "where": null
+        },
+        {
+          "value": "in_production",
+          "effective": "2026-10-22T08:00:00-07:00",
+          "known_at": "2026-10-22T08:00:00-07:00",
+          "by": null,
+          "where": null
+        },
+        {
+          "value": "shipped",
+          "effective": "2026-10-26T14:10:00-07:00",
+          "known_at": "2026-10-26T14:10:00-07:00",
+          "by": null,
+          "where": null
+        },
+        {
+          "value": "delivered",
+          "effective": "2026-10-27T12:30:00-07:00",
+          "known_at": "2026-10-27T12:30:00-07:00",
+          "by": null,
+          "where": null
+        }
       ],
-      "delivered_at": "2026-10-27T12:30:00-07:00", "carrier": "FedEx", "tracking": "778190331408",
-      "inspection": { "result": "pass", "at": "2026-10-27T16:00:00-07:00", "by": "p-owen" },
+      "delivered_at": "2026-10-27T12:30:00-07:00",
+      "carrier": "FedEx",
+      "tracking": "778190331408",
+      "inspection": {
+        "result": "pass",
+        "at": "2026-10-27T16:00:00-07:00",
+        "by": "p-owen"
+      },
+      "ready_at": "2026-10-27T16:00:00-07:00",
       "first_use": null,
-      "feeds_test": "test-hip-spin", "feeds_milestone": "m-hip-spin-test", "need_by_believed": "2026-10-27",
-      "link_quality": "alias_only", "cancelled": false, "remade_from": null,
-      "ramp_transaction_ids": ["8a4d3de2-07fd-49d1-9be4-f09f03734ea9"], "descriptor": "XOMETRY.COM DERWOOD MD",
-      "memo_present": false, "receipt_present": true
+      "feeds_test": "test-hip-spin",
+      "feeds_work_item": null,
+      "feeds_milestone": "m-hip-spin-test",
+      "need_by_believed": "2026-10-27",
+      "link_quality": "alias_only",
+      "is_revision": true,
+      "cancelled": false,
+      "remade_from": null,
+      "ramp_transaction_ids": [
+        "8a4d3de2-07fd-49d1-9be4-f09f03734ea9"
+      ],
+      "descriptor": "XOMETRY.COM DERWOOD MD",
+      "memo_present": false,
+      "receipt_present": true
     },
     {
-      "id": "ord-o-00001", "type": "other", "vendor": "v-mcmaster", "category": "fasteners",
+      "id": "ord-o-00001",
+      "type": "other",
+      "vendor": "v-mcmaster",
+      "category": "fasteners",
       "description": "Shoulder bolts 1/2 x 1-1/2 in alloy steel (4) and nylon-insert locknuts (10) for gantry hooks",
-      "amount_usd": 61.37, "placed_at": "2026-09-09T16:52:00-07:00", "by": "p-mateo", "payment_method": "card",
-      "status": "delivered", "delivered_at": "2026-09-10T10:15:00-07:00",
-      "ramp_transaction_ids": ["ee184e16-4b85-4a2a-b84c-4c9b2f8ee10a"], "deliverable": null, "test": "test-leg-drop"
+      "amount_usd": 61.37,
+      "placed_at": "2026-09-09T16:52:00-07:00",
+      "by": "p-mateo",
+      "payment_method": "card",
+      "status": "delivered",
+      "delivered_at": "2026-09-10T10:15:00-07:00",
+      "ramp_transaction_ids": [
+        "ee184e16-4b85-4a2a-b84c-4c9b2f8ee10a"
+      ],
+      "deliverable": null,
+      "test": "test-leg-drop",
+      "duplicate_of": null
     }
   ],
-
   "ramp_transactions": [
     {
-      "id": "d6da5f41-2ac4-4142-84a3-9303affce510", "order": "ord-x-00001", "instrument": "card", "kind": "charge", "state": "CLEARED",
-      "amount_usd": 507.64, "user_transaction_time": "2026-09-08T14:12:31-07:00", "settlement_date": "2026-09-10",
-      "card_id": "45c5ca9e-439b-46b6-baef-3b75e598c0ab", "card_holder": "p-dana", "merchant_name": "Xometry",
-      "merchant_descriptor": "XOMETRY INC NORTH BETHESDA MD", "memo_present": true, "receipt_present": true,
-      "original_transaction_id": null, "department": "Operations", "gl_account": "5120", "project_code": "PRJ-LEG"
+      "id": "d6da5f41-2ac4-4142-84a3-9303affce510",
+      "order": "ord-x-00001",
+      "instrument": "card",
+      "kind": "charge",
+      "state": "CLEARED",
+      "amount_usd": 507.64,
+      "user_transaction_time": "2026-09-08T14:12:31-07:00",
+      "settlement_date": "2026-09-10",
+      "card_id": "45c5ca9e-439b-46b6-baef-3b75e598c0ab",
+      "card_holder": "p-dana",
+      "merchant_name": "Xometry",
+      "merchant_descriptor": "XOMETRY INC NORTH BETHESDA MD",
+      "memo_present": true,
+      "receipt_present": true,
+      "original_transaction_id": null,
+      "department": "Operations",
+      "gl_account": "5120",
+      "project_code": "PRJ-LEG"
     },
     {
-      "id": "8a4d3de2-07fd-49d1-9be4-f09f03734ea9", "order": "ord-x-00002", "instrument": "card", "kind": "charge", "state": "CLEARED",
-      "amount_usd": 450.65, "user_transaction_time": "2026-10-21T16:40:12-07:00", "settlement_date": "2026-10-23",
-      "card_id": "d6b26a82-59a8-4cf9-b56c-b95b20b01088", "card_holder": "p-owen", "merchant_name": "Xometry",
-      "merchant_descriptor": "XOMETRY.COM DERWOOD MD", "memo_present": false, "receipt_present": true,
-      "original_transaction_id": null, "department": "Mechanical", "gl_account": "5120", "project_code": "PRJ-HIP"
+      "id": "8a4d3de2-07fd-49d1-9be4-f09f03734ea9",
+      "order": "ord-x-00002",
+      "instrument": "card",
+      "kind": "charge",
+      "state": "CLEARED",
+      "amount_usd": 450.65,
+      "user_transaction_time": "2026-10-21T16:40:12-07:00",
+      "settlement_date": "2026-10-23",
+      "card_id": "d6b26a82-59a8-4cf9-b56c-b95b20b01088",
+      "card_holder": "p-owen",
+      "merchant_name": "Xometry",
+      "merchant_descriptor": "XOMETRY.COM DERWOOD MD",
+      "memo_present": false,
+      "receipt_present": true,
+      "original_transaction_id": null,
+      "department": "Mechanical",
+      "gl_account": "5120",
+      "project_code": "PRJ-HIP"
     },
     {
-      "id": "ee184e16-4b85-4a2a-b84c-4c9b2f8ee10a", "order": "ord-o-00001", "instrument": "card", "kind": "charge", "state": "CLEARED",
-      "amount_usd": 61.37, "user_transaction_time": "2026-09-09T16:52:40-07:00", "settlement_date": "2026-09-11",
-      "card_id": "482ba228-da24-4750-aeac-90cf4094bd7c", "card_holder": "p-mateo", "merchant_name": "McMaster-Carr",
-      "merchant_descriptor": "MCMASTER-CARR", "memo_present": false, "receipt_present": false,
-      "original_transaction_id": null, "department": "Test", "gl_account": "5110", "project_code": null
+      "id": "ee184e16-4b85-4a2a-b84c-4c9b2f8ee10a",
+      "order": "ord-o-00001",
+      "instrument": "card",
+      "kind": "charge",
+      "state": "CLEARED",
+      "amount_usd": 61.37,
+      "user_transaction_time": "2026-09-09T16:52:40-07:00",
+      "settlement_date": "2026-09-11",
+      "card_id": "482ba228-da24-4750-aeac-90cf4094bd7c",
+      "card_holder": "p-mateo",
+      "merchant_name": "McMaster-Carr",
+      "merchant_descriptor": "MCMASTER-CARR",
+      "memo_present": false,
+      "receipt_present": false,
+      "original_transaction_id": null,
+      "department": "Test",
+      "gl_account": "5110",
+      "project_code": null
     }
   ],
-
   "events": [
     {
-      "id": "ev-000001", "known_at": "2026-09-01T10:14:22-07:00", "source": "slack", "where": { "channel": "ch-test-lab", "thread_of": null },
-      "by": "p-mateo", "kind": "crumb",
-      "claim": { "kind": "needs", "subject": "pt-leg-lift-hook", "value": { "qty": 2, "by": "2026-09-15" }, "effective": "2026-09-15", "for_use": "test-leg-drop" },
-      "refs": [{ "id": "pt-leg-lift-hook", "mode": "alias" }, { "id": "test-leg-drop", "mode": "vague" }],
-      "truth": "true", "pressure": "low", "orders": ["ord-x-00001"],
+      "id": "ev-000001",
+      "known_at": "2026-09-01T10:14:22-07:00",
+      "source": "slack",
+      "where": {
+        "channel": "ch-test-lab",
+        "thread_of": null
+      },
+      "by": "p-mateo",
+      "kind": "crumb",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-leg-lift-hook",
+        "value": {
+          "qty": 2,
+          "by": "2026-09-15"
+        },
+        "true_value": {
+          "qty": 2,
+          "by": "2026-09-15"
+        },
+        "effective": "2026-09-15",
+        "for_use": "test-leg-drop"
+      },
+      "refs": [
+        {
+          "id": "pt-leg-lift-hook",
+          "mode": "alias",
+          "token": "lift hook"
+        },
+        {
+          "id": "test-leg-drop",
+          "mode": "vague",
+          "token": "the drop test"
+        }
+      ],
+      "truth": "true",
+      "pressure": "low",
+      "orders": [
+        "ord-x-00001"
+      ],
+      "orders_after": [],
+      "asks_expedite": false,
+      "reports": null,
       "brief": "Drop test is booked on the gantry Wed 9/16; we still need two lift hooks machined before then."
     },
     {
-      "id": "ev-000002", "known_at": "2026-09-02T09:47:12-07:00", "source": "jira", "where": { "ticket": "TEST-141", "ticket_field": "created" },
-      "by": "p-mateo", "kind": "crumb",
-      "claim": { "kind": "needs", "subject": "pt-leg-lift-hook", "value": { "qty": 2, "by": "2026-09-14" }, "effective": "2026-09-14", "for_use": "test-leg-drop" },
-      "refs": [{ "id": "pt-leg-lift-hook", "mode": "part_number" }],
-      "truth": "true", "pressure": "low", "orders": ["ord-x-00001"],
+      "id": "ev-000002",
+      "known_at": "2026-09-02T09:47:12-07:00",
+      "source": "jira",
+      "where": {
+        "ticket": "TEST-141",
+        "ticket_field": "created"
+      },
+      "by": "p-mateo",
+      "kind": "crumb",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-leg-lift-hook",
+        "value": {
+          "qty": 2,
+          "by": "2026-09-14"
+        },
+        "true_value": {
+          "qty": 2,
+          "by": "2026-09-14"
+        },
+        "effective": "2026-09-14",
+        "for_use": "test-leg-drop"
+      },
+      "refs": [
+        {
+          "id": "pt-leg-lift-hook",
+          "mode": "part_number",
+          "token": "FL-TST-2017"
+        }
+      ],
+      "truth": "true",
+      "pressure": "low",
+      "orders": [
+        "ord-x-00001"
+      ],
+      "orders_after": [],
+      "asks_expedite": false,
+      "reports": null,
       "brief": "Ticket to order 2x FL-TST-2017 from Xometry, due 9/14, for the drop test."
     },
     {
-      "id": "ev-000003", "known_at": "2026-09-03T15:31:05-07:00", "source": "slack", "where": { "channel": "ch-test-lab", "thread_of": null },
-      "by": "p-owen", "kind": "crumb",
-      "claim": { "kind": "need_earlier", "subject": "pt-leg-lift-hook", "value": { "date": "2026-09-11", "reason": "drop test moved up to Mon 9/14" }, "effective": "2026-09-11", "for_use": "test-leg-drop" },
-      "refs": [{ "id": "pt-leg-lift-hook", "mode": "alias" }],
-      "truth": "wrong", "pressure": "elevated", "orders": ["ord-x-00001"],
+      "id": "ev-000003",
+      "known_at": "2026-09-03T15:31:05-07:00",
+      "source": "slack",
+      "where": {
+        "channel": "ch-test-lab",
+        "thread_of": null
+      },
+      "by": "p-owen",
+      "kind": "crumb",
+      "claim": {
+        "kind": "need_earlier",
+        "subject": "pt-leg-lift-hook",
+        "value": {
+          "date": "2026-09-11",
+          "reason": "drop test moved up to Mon 9/14"
+        },
+        "true_value": {
+          "date": "2026-09-15",
+          "reason": null
+        },
+        "effective": "2026-09-11",
+        "for_use": "test-leg-drop"
+      },
+      "refs": [
+        {
+          "id": "pt-leg-lift-hook",
+          "mode": "alias"
+        }
+      ],
+      "truth": "wrong",
+      "pressure": "elevated",
+      "orders": [
+        "ord-x-00001"
+      ],
+      "orders_after": [],
+      "asks_expedite": false,
+      "reports": null,
       "brief": "Owen thinks the drop test moved up to Monday, so the hooks are needed by Fri 9/11."
     },
     {
-      "id": "ev-000004", "known_at": "2026-09-04T09:12:40-07:00", "source": "slack", "where": { "channel": "ch-test-lab", "thread_of": "ev-000003" },
-      "by": "p-mateo", "kind": "crumb",
-      "claim": { "kind": "needs", "subject": "pt-leg-lift-hook", "value": { "qty": 2, "by": "2026-09-15" }, "effective": "2026-09-15", "for_use": "test-leg-drop" },
-      "refs": [{ "id": "pt-leg-lift-hook", "mode": "vague" }],
-      "truth": "true", "corrects": "ev-000003", "pressure": "low", "orders": ["ord-x-00001"],
+      "id": "ev-000004",
+      "known_at": "2026-09-04T09:12:40-07:00",
+      "source": "slack",
+      "where": {
+        "channel": "ch-test-lab",
+        "thread_of": "ev-000003"
+      },
+      "by": "p-mateo",
+      "kind": "crumb",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-leg-lift-hook",
+        "value": {
+          "qty": 2,
+          "by": "2026-09-15"
+        },
+        "true_value": {
+          "qty": 2,
+          "by": "2026-09-15"
+        },
+        "effective": "2026-09-15",
+        "for_use": "test-leg-drop"
+      },
+      "refs": [
+        {
+          "id": "pt-leg-lift-hook",
+          "mode": "vague"
+        }
+      ],
+      "truth": "true",
+      "corrects": "ev-000003",
+      "pressure": "low",
+      "orders": [
+        "ord-x-00001"
+      ],
+      "orders_after": [],
+      "asks_expedite": false,
+      "reports": null,
       "brief": "Correction in thread: test is still Wed the 16th, hooks by Tue is fine."
     },
     {
-      "id": "ev-000005", "known_at": "2026-09-08T11:20:00-07:00", "source": "slack", "where": { "channel": "ch-test-lab", "thread_of": null },
-      "by": "p-mateo", "kind": "background", "topic": "debate",
-      "refs": [{ "id": "rig-leg-drop-gantry", "mode": "vague" }],
-      "truth": "true", "storyline": "sl-drop-bumpers", "orders": [],
+      "id": "ev-000005",
+      "known_at": "2026-09-08T11:20:00-07:00",
+      "source": "slack",
+      "where": {
+        "channel": "ch-test-lab",
+        "thread_of": null
+      },
+      "by": "p-mateo",
+      "kind": "background",
+      "topic": "debate",
+      "refs": [
+        {
+          "id": "rig-leg-drop-gantry",
+          "mode": "vague"
+        }
+      ],
+      "truth": "true",
+      "storyline": "sl-drop-bumpers",
+      "orders": [],
+      "orders_after": [],
+      "asks_expedite": false,
+      "reports": null,
       "brief": "Foam bumpers bottomed out in the rehearsal; proposes 60A rubber under the gantry."
     },
     {
-      "id": "ev-000006", "known_at": "2026-10-01T11:18:00-07:00", "source": "jira", "where": { "ticket": "HIP-219", "ticket_field": "created" },
-      "by": "p-arjun", "kind": "crumb",
-      "claim": { "kind": "eta", "subject": "dl-hip-motor-dvt", "value": "2026-10-26", "effective": "2026-10-26" },
-      "refs": [{ "id": "dl-hip-motor-dvt", "mode": "id" }],
-      "truth": "true", "pressure": "low", "orders": [],
+      "id": "ev-000006",
+      "known_at": "2026-10-01T11:18:00-07:00",
+      "source": "jira",
+      "where": {
+        "ticket": "HIP-219",
+        "ticket_field": "created"
+      },
+      "by": "p-arjun",
+      "kind": "crumb",
+      "claim": {
+        "kind": "eta",
+        "subject": "dl-hip-motor-dvt",
+        "value": "2026-10-26",
+        "true_value": "2026-10-26",
+        "effective": "2026-10-26"
+      },
+      "refs": [
+        {
+          "id": "dl-hip-motor-dvt",
+          "mode": "id"
+        }
+      ],
+      "truth": "true",
+      "pressure": "low",
+      "orders": [],
+      "orders_after": [],
+      "asks_expedite": false,
+      "reports": null,
       "brief": "Tracking ticket for the DVT hip motor; vendor ETA 10/26."
     },
     {
-      "id": "ev-000007", "known_at": "2026-10-14T15:02:33-07:00", "source": "slack", "where": { "channel": "ch-supply-chain", "thread_of": null },
-      "by": "p-dana", "kind": "crumb",
-      "claim": { "kind": "eta", "subject": "dl-hip-motor-dvt", "value": "2026-11-13", "effective": "2026-11-13" },
-      "refs": [{ "id": "dl-hip-motor-dvt", "mode": "vague" }],
-      "truth": "true", "pressure": "elevated", "orders": [],
+      "id": "ev-000007",
+      "known_at": "2026-10-14T15:02:33-07:00",
+      "source": "slack",
+      "where": {
+        "channel": "ch-supply-chain",
+        "thread_of": null
+      },
+      "by": "p-dana",
+      "kind": "crumb",
+      "claim": {
+        "kind": "eta",
+        "subject": "dl-hip-motor-dvt",
+        "value": "2026-11-13",
+        "true_value": "2026-11-13",
+        "effective": "2026-11-13"
+      },
+      "refs": [
+        {
+          "id": "dl-hip-motor-dvt",
+          "mode": "vague"
+        }
+      ],
+      "truth": "true",
+      "pressure": "elevated",
+      "orders": [],
+      "orders_after": [],
+      "asks_expedite": false,
+      "reports": "slip-00001",
       "brief": "Motor vendor pushed: hip motors now 11/13, magnets held at customs."
     },
     {
-      "id": "ev-000008", "known_at": "2026-10-19T10:05:51-07:00", "source": "slack", "where": { "channel": "ch-actuators", "thread_of": null },
-      "by": "p-owen", "kind": "crumb",
-      "claim": { "kind": "eta", "subject": "dl-hip-motor-dvt", "value": "2026-10-26", "effective": "2026-10-26" },
-      "refs": [{ "id": "dl-hip-motor-dvt", "mode": "vague" }],
-      "truth": "stale", "pressure": "elevated", "orders": ["ord-x-00002"],
+      "id": "ev-000008",
+      "known_at": "2026-10-19T10:05:51-07:00",
+      "source": "slack",
+      "where": {
+        "channel": "ch-actuators",
+        "thread_of": null
+      },
+      "by": "p-owen",
+      "kind": "crumb",
+      "claim": {
+        "kind": "eta",
+        "subject": "dl-hip-motor-dvt",
+        "value": "2026-10-26",
+        "true_value": "2026-11-13",
+        "effective": "2026-10-26"
+      },
+      "refs": [
+        {
+          "id": "dl-hip-motor-dvt",
+          "mode": "vague"
+        }
+      ],
+      "truth": "stale",
+      "pressure": "elevated",
+      "orders": [
+        "ord-x-00002"
+      ],
+      "orders_after": [],
+      "asks_expedite": false,
+      "reports": null,
       "brief": "Owen repeats the old ETA: motor lands 10/26 so spin test can start right after."
     },
     {
-      "id": "ev-000009", "known_at": "2026-10-20T13:09:10-07:00", "source": "slack", "where": { "channel": "ch-actuators", "thread_of": "ev-000008" },
-      "by": "p-owen", "kind": "crumb",
-      "claim": { "kind": "needs", "subject": "pt-spin-adapter", "value": { "qty": 1, "by": "2026-10-27" }, "effective": "2026-10-27", "for_use": "test-hip-spin" },
-      "refs": [{ "id": "pt-spin-adapter", "mode": "alias" }, { "id": "test-hip-spin", "mode": "vague" }],
-      "truth": "true", "pressure": "elevated", "orders": ["ord-x-00002"],
+      "id": "ev-000009",
+      "known_at": "2026-10-20T13:09:10-07:00",
+      "source": "slack",
+      "where": {
+        "channel": "ch-actuators",
+        "thread_of": "ev-000008"
+      },
+      "by": "p-owen",
+      "kind": "crumb",
+      "claim": {
+        "kind": "needs",
+        "subject": "pt-spin-adapter",
+        "value": {
+          "qty": 1,
+          "by": "2026-10-27"
+        },
+        "true_value": {
+          "qty": 1,
+          "by": "2026-10-27"
+        },
+        "effective": "2026-10-27",
+        "for_use": "test-hip-spin"
+      },
+      "refs": [
+        {
+          "id": "pt-spin-adapter",
+          "mode": "alias",
+          "token": "spin adapter"
+        },
+        {
+          "id": "test-hip-spin",
+          "mode": "vague",
+          "token": "spin test"
+        }
+      ],
+      "truth": "true",
+      "pressure": "elevated",
+      "orders": [
+        "ord-x-00002"
+      ],
+      "orders_after": [],
+      "asks_expedite": false,
+      "reports": null,
       "brief": "Needs the rev B adapter plate on the spin stand by Tue 10/27; will expedite."
     },
     {
-      "id": "ev-000010", "known_at": "2026-10-22T10:41:00-07:00", "source": "meeting", "where": { "meeting": "mtg-00001" },
-      "by": "p-arjun", "kind": "crumb",
-      "claim": { "kind": "eta", "subject": "dl-hip-motor-dvt", "value": "2026-11-20", "effective": "2026-11-20" },
-      "refs": [{ "id": "dl-hip-motor-dvt", "mode": "vague" }, { "id": "test-hip-spin", "mode": "vague" }],
-      "truth": "true", "pressure": "elevated", "orders": [],
+      "id": "ev-000010",
+      "known_at": "2026-10-22T10:41:00-07:00",
+      "source": "meeting",
+      "where": {
+        "meeting": "mtg-00001"
+      },
+      "by": "p-arjun",
+      "kind": "crumb",
+      "claim": {
+        "kind": "eta",
+        "subject": "dl-hip-motor-dvt",
+        "value": "2026-11-20",
+        "true_value": "2026-11-20",
+        "effective": "2026-11-20"
+      },
+      "refs": [
+        {
+          "id": "dl-hip-motor-dvt",
+          "mode": "vague"
+        },
+        {
+          "id": "test-hip-spin",
+          "mode": "vague"
+        }
+      ],
+      "truth": "true",
+      "pressure": "elevated",
+      "orders": [],
+      "orders_after": [],
+      "asks_expedite": false,
+      "reports": "slip-00002",
       "brief": "Arjun: talked to the motor vendor, realistic date is the 20th; spin test moves to the week of the 23rd."
     },
     {
-      "id": "ev-000011", "known_at": "2026-10-22T10:50:00-07:00", "source": "meeting", "where": { "meeting": "mtg-00001" },
-      "by": "p-owen", "kind": "background", "topic": "tradeoff",
-      "refs": [{ "id": "pt-hip-bracket", "mode": "alias" }],
-      "truth": "true", "storyline": "sl-hip-backlash", "orders": [],
+      "id": "ev-000011",
+      "known_at": "2026-10-22T10:50:00-07:00",
+      "source": "meeting",
+      "where": {
+        "meeting": "mtg-00001"
+      },
+      "by": "p-owen",
+      "kind": "background",
+      "topic": "tradeoff",
+      "refs": [
+        {
+          "id": "pt-hip-bracket",
+          "mode": "alias"
+        }
+      ],
+      "truth": "true",
+      "storyline": "sl-hip-backlash",
+      "orders": [],
+      "orders_after": [],
+      "asks_expedite": false,
+      "reports": null,
       "brief": "Shim vs re-grind for reducer backlash; the bracket rev C changes the bore anyway."
     },
     {
-      "id": "ev-000012", "known_at": "2026-10-23T09:30:14-07:00", "source": "jira", "where": { "ticket": "HIP-219", "ticket_field": "comment" },
-      "by": "p-dana", "kind": "crumb",
-      "claim": { "kind": "eta", "subject": "dl-hip-motor-dvt", "value": "2026-11-13", "effective": "2026-11-13" },
-      "refs": [{ "id": "dl-hip-motor-dvt", "mode": "id" }],
-      "truth": "wrong", "contradicts": ["ev-000010"], "pressure": "low", "orders": [],
+      "id": "ev-000012",
+      "known_at": "2026-10-23T09:30:14-07:00",
+      "source": "jira",
+      "where": {
+        "ticket": "HIP-219",
+        "ticket_field": "comment"
+      },
+      "by": "p-dana",
+      "kind": "crumb",
+      "claim": {
+        "kind": "eta",
+        "subject": "dl-hip-motor-dvt",
+        "value": "2026-11-13",
+        "true_value": "2026-11-20",
+        "effective": "2026-11-13"
+      },
+      "refs": [
+        {
+          "id": "dl-hip-motor-dvt",
+          "mode": "id"
+        }
+      ],
+      "truth": "wrong",
+      "contradicts": [
+        "ev-000010"
+      ],
+      "pressure": "low",
+      "orders": [],
+      "orders_after": [],
+      "asks_expedite": false,
+      "reports": null,
       "brief": "Dana's ticket comment: vendor confirms 11/13 (conflicts with the meeting; never corrected)."
     },
     {
-      "id": "ev-000013", "known_at": "2026-10-23T12:02:00-07:00", "source": "slack", "where": { "channel": "ch-random", "thread_of": null },
-      "by": "p-lena", "kind": "background", "topic": "offtopic",
-      "refs": [], "truth": "true", "orders": [],
+      "id": "ev-000013",
+      "known_at": "2026-10-23T12:02:00-07:00",
+      "source": "slack",
+      "where": {
+        "channel": "ch-random",
+        "thread_of": null
+      },
+      "by": "p-lena",
+      "kind": "background",
+      "topic": "offtopic",
+      "refs": [],
+      "truth": "true",
+      "orders": [],
+      "orders_after": [],
+      "asks_expedite": false,
+      "reports": null,
       "brief": "Taco truck is outside, who's in."
     },
     {
-      "id": "ev-000014", "known_at": "2026-09-16T09:41:00-07:00", "source": "slack", "where": { "channel": "ch-test-lab", "thread_of": null },
-      "by": "p-mateo", "kind": "background", "topic": "test_result",
-      "refs": [{ "id": "pt-leg-lift-hook", "mode": "alias" }],
-      "truth": "true", "storyline": "sl-drop-bumpers", "orders": ["ord-x-00001"],
+      "id": "ev-000014",
+      "known_at": "2026-09-16T09:41:00-07:00",
+      "source": "slack",
+      "where": {
+        "channel": "ch-test-lab",
+        "thread_of": null
+      },
+      "by": "p-mateo",
+      "kind": "background",
+      "topic": "test_result",
+      "refs": [
+        {
+          "id": "pt-leg-lift-hook",
+          "mode": "alias"
+        }
+      ],
+      "truth": "true",
+      "storyline": "sl-drop-bumpers",
+      "orders": [],
+      "orders_after": [
+        "ord-x-00001"
+      ],
+      "asks_expedite": false,
+      "reports": null,
       "brief": "First drop done on the gantry, hooks holding fine, rubber bumpers look good."
     }
   ],
-
   "demo": {
-    "part": "pt-hip-bracket", "revision": "C", "quantity": 4, "requester": "p-owen", "placed_at": "2026-11-10T11:30:00-08:00",
+    "part": "pt-hip-bracket",
+    "revision": "C",
+    "quantity": 4,
+    "requester": "p-owen",
+    "placed_at": "2026-11-10T11:30:00-08:00",
     "quote": {
-      "quote_id": "Q-2617750-1", "captured_at": "2026-11-10T10:05:00-08:00", "valid_until": "2026-12-10",
+      "quote_id": "Q-2617750-1",
+      "captured_at": "2026-11-10T10:05:00-08:00",
+      "valid_until": "2026-12-10",
       "tiers": [
-        { "tier": "standard", "price_usd": 3000, "ready_working_day": 10, "ready_date": "2026-11-24" },
-        { "tier": "expedite", "price_usd": 3900, "ready_working_day": 5, "ready_date": "2026-11-17" }
+        {
+          "tier": "standard",
+          "price_usd": 3000,
+          "ready_working_day": 10,
+          "ready_date": "2026-11-24"
+        },
+        {
+          "tier": "expedite",
+          "price_usd": 3900,
+          "ready_working_day": 5,
+          "ready_date": "2026-11-17"
+        }
       ]
     },
-    "test": "test-hip-spin", "test_duration_working_days": 3, "inputs": ["pt-hip-bracket", "dl-hip-motor-dvt"],
+    "test": "test-hip-spin",
+    "test_duration_working_days": 3,
+    "inputs": [
+      "pt-hip-bracket",
+      "dl-hip-motor-dvt"
+    ],
     "motor": {
-      "deliverable": "dl-hip-motor-dvt", "owner": "p-arjun", "ready_working_day": 8, "ready_date": "2026-11-20",
-      "stated_by": "p-arjun", "stated_at": "2026-11-07T10:12:00-08:00", "uncertain_range_days": [7, 12]
+      "deliverable": "dl-hip-motor-dvt",
+      "owner": "p-arjun",
+      "ready_working_day": 8,
+      "ready_date": "2026-11-20",
+      "stated_by": "p-arjun",
+      "stated_at": "2026-11-07T10:12:00-08:00",
+      "uncertain_range_days": [
+        7,
+        12
+      ]
     },
-    "milestone": "m-hip-spin-test", "target_working_day": 10,
-    "policy": { "type": "per_day", "usd_per_day": 600, "set_by": "p-arjun" },
-    "context_window": { "start": "2026-10-11T11:30:00-07:00", "end": "2026-11-10T11:30:00-08:00" },
+    "milestone": "m-hip-spin-test",
+    "target_working_day": 10,
+    "policy": {
+      "type": "per_day",
+      "usd_per_day": 600,
+      "set_by": "p-arjun"
+    },
+    "context_window": {
+      "start": "2026-10-11T11:30:00-07:00",
+      "end": "2026-11-10T11:30:00-08:00"
+    },
     "cases": {
       "day_zero": "2026-11-10",
-      "A": { "motor_day": 8, "done_day": { "standard": 13, "expedite": 11 }, "done_date": { "standard": "2026-12-01", "expedite": "2026-11-25" }, "delta_days": 2, "extra_spend_usd": 900, "break_even_usd_per_day": 450, "decision": "expedite", "net_usd": 300 },
-      "B": { "motor_day": 12, "done_day": { "standard": 15, "expedite": 15 }, "done_date": { "standard": "2026-12-03", "expedite": "2026-12-03" }, "delta_days": 0, "decision": "standard", "dominating_input": "dl-hip-motor-dvt", "live_change": "live-b" },
-      "C": { "motor_day": 8, "target_day": 10, "target_date": "2026-11-24", "days_late": { "standard": 3, "expedite": 1 }, "late_cost_avoided_usd": 1200, "extra_spend_usd": 900, "decision": "expedite" },
-      "D": { "motor_range_days": [7, 12], "expedite_wins_if_motor_day_le": 8, "question": { "to": "p-arjun", "brief": "Will the motor be ready by day 8 (2026-11-20)?" }, "live_change": "live-d" },
-      "E": { "slot_days": [14, 21], "slot_dates": ["2026-12-02", "2026-12-11"], "brief": "Spin-stand slots only on days 14 and 21: one day can save seven or none." }
+      "A": {
+        "motor_day": 8,
+        "done_day": {
+          "standard": 13,
+          "expedite": 11
+        },
+        "done_date": {
+          "standard": "2026-12-01",
+          "expedite": "2026-11-25"
+        },
+        "delta_days": 2,
+        "extra_spend_usd": 900,
+        "break_even_usd_per_day": 450,
+        "decision": "expedite",
+        "net_usd": 300
+      },
+      "B": {
+        "motor_day": 12,
+        "done_day": {
+          "standard": 15,
+          "expedite": 15
+        },
+        "done_date": {
+          "standard": "2026-12-03",
+          "expedite": "2026-12-03"
+        },
+        "delta_days": 0,
+        "decision": "standard",
+        "dominating_input": "dl-hip-motor-dvt",
+        "live_change": "live-b"
+      },
+      "C": {
+        "motor_day": 8,
+        "target_day": 10,
+        "target_date": "2026-11-24",
+        "days_late": {
+          "standard": 3,
+          "expedite": 1
+        },
+        "late_cost_avoided_usd": 1200,
+        "extra_spend_usd": 900,
+        "decision": "expedite"
+      },
+      "D": {
+        "motor_range_days": [
+          7,
+          12
+        ],
+        "expedite_wins_if_motor_day_le": 8,
+        "question": {
+          "to": "p-arjun",
+          "brief": "Will the motor be ready by day 8 (2026-11-20)?"
+        },
+        "live_change": "live-d"
+      },
+      "E": {
+        "slot_days": [
+          14,
+          21
+        ],
+        "slot_dates": [
+          "2026-12-02",
+          "2026-12-11"
+        ],
+        "brief": "Spin-stand slots only on days 14 and 21: one day can save seven or none."
+      }
     },
     "live_changes": [
-      { "id": "live-b", "case": "B", "at": "2026-11-10T10:45:00-08:00", "source": "slack", "by": "p-arjun", "where": "ch-actuators",
-        "claim": { "kind": "eta", "subject": "dl-hip-motor-dvt", "value": "2026-11-30", "working_day": 12 },
-        "brief": "Arjun: motor vendor slipped again, now the 30th." },
-      { "id": "live-d", "case": "D", "at": "2026-11-10T10:45:00-08:00", "source": "slack", "by": "p-arjun", "where": "ch-actuators",
-        "claim": { "kind": "eta", "subject": "dl-hip-motor-dvt", "value": { "min": "2026-11-19", "max": "2026-11-30" }, "working_days": [7, 12] },
-        "brief": "Arjun: vendor won't commit, somewhere between the 19th and the 30th." }
+      {
+        "id": "live-b",
+        "case": "B",
+        "at": "2026-11-10T10:45:00-08:00",
+        "source": "slack",
+        "by": "p-arjun",
+        "where": "ch-actuators",
+        "claim": {
+          "kind": "eta",
+          "subject": "dl-hip-motor-dvt",
+          "value": "2026-11-30",
+          "working_day": 12
+        },
+        "brief": "Arjun: motor vendor slipped again, now the 30th."
+      },
+      {
+        "id": "live-d",
+        "case": "D",
+        "at": "2026-11-10T10:45:00-08:00",
+        "source": "slack",
+        "by": "p-arjun",
+        "where": "ch-actuators",
+        "claim": {
+          "kind": "eta",
+          "subject": "dl-hip-motor-dvt",
+          "value": {
+            "min": "2026-11-19",
+            "max": "2026-11-30"
+          },
+          "working_days": [
+            7,
+            12
+          ]
+        },
+        "brief": "Arjun: vendor won't commit, somewhere between the 19th and the 30th."
+      }
     ]
   }
 }

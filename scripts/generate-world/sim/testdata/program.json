@@ -1,0 +1,770 @@
+{
+ "_note": "Minimal program seed for simulator tests: the pinned demo entities plus two tests, three deliverables and a handful of parts. Everything else (people, vendors, parts catalog, work items) is defaulted by sim/setup.mjs from seed/canon.json.",
+ "parts": [
+  {
+   "id": "pt-hip-bracket",
+   "name": "Hip actuator bracket",
+   "part_number": "FL-HIP-1042",
+   "cad_file": "FL-HIP-1042_hip-bracket_revC.step",
+   "aliases": [
+    "hip bracket",
+    "the bracket",
+    "1042",
+    "motor bracket"
+   ],
+   "belongs_to": "a-hip-actuator",
+   "kind": "robot_part",
+   "category": "motor_mount_plate",
+   "material": "Aluminum 7075-T651",
+   "finish": "Type III hard anodize, black",
+   "tolerance": "+/-0.001 in on bearing bore, +/-0.005 in elsewhere",
+   "process": "cnc_milling_5axis",
+   "typical_qty": 4,
+   "vendor": "v-xometry",
+   "price_hint_usd": 750,
+   "revisions": [
+    {
+     "value": "A",
+     "effective": "2026-02-12",
+     "known_at": "2026-02-12T14:22:00-08:00",
+     "by": "p-owen",
+     "where": null,
+     "reason": "initial release"
+    },
+    {
+     "value": "B",
+     "effective": "2026-07-14",
+     "known_at": "2026-07-14T11:00:00-07:00",
+     "by": "p-owen",
+     "where": null,
+     "reason": "thicker flange after FEA"
+    },
+    {
+     "value": "C",
+     "effective": "2026-10-28",
+     "known_at": "2026-10-28T15:30:00-07:00",
+     "by": "p-owen",
+     "where": null,
+     "reason": "bearing bore moved 0.5 mm for DVT motor stator"
+    }
+   ]
+  },
+  {
+   "id": "pt-leg-lift-hook",
+   "name": "Leg drop-test lift hook",
+   "part_number": "FL-TST-2017",
+   "cad_file": "FL-TST-2017_lift-hook_revB.step",
+   "aliases": [
+    "lift hook",
+    "the hook",
+    "gantry hook",
+    "2017"
+   ],
+   "belongs_to": "rig-leg-drop-gantry",
+   "kind": "test_hardware",
+   "category": "test_fixture",
+   "material": "Steel 4140, pre-hardened",
+   "finish": "Black oxide",
+   "tolerance": "+/-0.005 in",
+   "process": "cnc_milling_3axis",
+   "typical_qty": 2,
+   "vendor": "v-xometry",
+   "price_hint_usd": 386.4,
+   "revisions": [
+    {
+     "value": "A",
+     "effective": "2026-05-13",
+     "known_at": "2026-05-13T16:41:00-07:00",
+     "by": "p-zoe",
+     "where": null,
+     "reason": "initial release"
+    },
+    {
+     "value": "B",
+     "effective": "2026-08-19",
+     "known_at": "2026-08-19T10:07:00-07:00",
+     "by": "p-zoe",
+     "where": null,
+     "reason": "throat opened 6 mm to clear the 3/4 in shackle; proof-load to 2x leg mass"
+    }
+   ]
+  },
+  {
+   "id": "pt-dyno-coupling-knee",
+   "name": "Dyno coupling, knee actuator",
+   "part_number": "FL-TST-2103",
+   "cad_file": "FL-TST-2103_dyno-coupling-knee_revA.step",
+   "aliases": [
+    "knee coupling",
+    "dyno coupling",
+    "2103"
+   ],
+   "belongs_to": "rig-actuator-dyno",
+   "kind": "test_hardware",
+   "category": "drive_shaft",
+   "material": "Stainless 303",
+   "finish": "Black oxide",
+   "tolerance": "+/-0.0005 in on journals",
+   "process": "cnc_turning",
+   "typical_qty": 10,
+   "vendor": "v-xometry",
+   "revisions": [
+    {
+     "value": "A",
+     "effective": "2026-02-27",
+     "known_at": "2026-02-27T17:02:00-08:00",
+     "by": "p-andre",
+     "where": null,
+     "reason": "initial release"
+    }
+   ],
+   "price_hint_usd": 668.43
+  },
+  {
+   "id": "pt-dyno-adapter-knee",
+   "name": "Dyno mounting plate, knee actuator",
+   "part_number": "FL-TST-2124",
+   "cad_file": "FL-TST-2124_dyno-adapter-knee_revA.step",
+   "aliases": [
+    "knee dyno plate",
+    "dyno adapter",
+    "2124"
+   ],
+   "belongs_to": "rig-actuator-dyno",
+   "kind": "test_hardware",
+   "category": "adapter_plate",
+   "material": "Aluminum 6061-T6",
+   "finish": "Bead blast",
+   "tolerance": "+/-0.003 in",
+   "process": "cnc_milling_3axis",
+   "typical_qty": 3,
+   "vendor": "v-xometry",
+   "revisions": [
+    {
+     "value": "A",
+     "effective": "2026-02-26",
+     "known_at": "2026-02-26T15:17:00-08:00",
+     "by": "p-dmitri",
+     "where": null,
+     "reason": "initial release"
+    }
+   ],
+   "price_hint_usd": 107.67
+  },
+  {
+   "id": "pt-dyno-spacer-set",
+   "name": "Dyno shaft spacer",
+   "part_number": "FL-TST-2139",
+   "cad_file": "FL-TST-2139_dyno-spacer-set_revA.step",
+   "aliases": [
+    "dyno spacers",
+    "spacer set",
+    "2139"
+   ],
+   "belongs_to": "rig-actuator-dyno",
+   "kind": "test_hardware",
+   "category": "spacer_bushing",
+   "material": "Stainless 303",
+   "finish": "As machined",
+   "tolerance": "+/-0.002 in",
+   "process": "cnc_turning",
+   "typical_qty": 134,
+   "vendor": "v-xometry",
+   "revisions": [
+    {
+     "value": "A",
+     "effective": "2026-02-23",
+     "known_at": "2026-02-23T13:51:00-08:00",
+     "by": "p-dmitri",
+     "where": null,
+     "reason": "initial release"
+    }
+   ],
+   "price_hint_usd": 82.57
+  },
+  {
+   "id": "pt-leg-gantry-adapter",
+   "name": "Drop gantry carriage adapter plate",
+   "part_number": "FL-TST-2232",
+   "cad_file": "FL-TST-2232_leg-gantry-adapter_revB.step",
+   "aliases": [
+    "gantry adapter",
+    "carriage plate",
+    "that adapter plate",
+    "2232"
+   ],
+   "belongs_to": "rig-leg-drop-gantry",
+   "kind": "test_hardware",
+   "category": "adapter_plate",
+   "material": "Aluminum 7075-T651",
+   "finish": "Bead blast",
+   "tolerance": "+/-0.002 in on dowel holes",
+   "process": "cnc_milling_3axis",
+   "typical_qty": 8,
+   "vendor": "v-xometry",
+   "revisions": [
+    {
+     "value": "A",
+     "effective": "2026-05-15",
+     "known_at": "2026-05-15T12:19:00-07:00",
+     "by": "p-zoe",
+     "where": null,
+     "reason": "initial release"
+    },
+    {
+     "value": "B",
+     "effective": "2026-07-31",
+     "known_at": "2026-07-31T10:58:00-07:00",
+     "by": "p-zoe",
+     "where": null,
+     "reason": "thickness 12 to 15 mm after deflection"
+    }
+   ],
+   "price_hint_usd": 308.97
+  },
+  {
+   "id": "pt-drop-fixture-hook",
+   "name": "Leg fixture hook, hip end",
+   "part_number": "FL-TST-2260",
+   "cad_file": "FL-TST-2260_drop-fixture-hook_revA.step",
+   "aliases": [
+    "fixture hook",
+    "hip hook",
+    "the hook",
+    "2260"
+   ],
+   "belongs_to": "rig-leg-drop-gantry",
+   "kind": "test_hardware",
+   "category": "test_fixture",
+   "material": "Delrin (acetal)",
+   "finish": "As machined",
+   "tolerance": "+/-0.005 in",
+   "process": "cnc_milling_3axis",
+   "typical_qty": 2,
+   "vendor": "v-xometry",
+   "revisions": [
+    {
+     "value": "A",
+     "effective": "2026-05-18",
+     "known_at": "2026-05-18T09:11:00-07:00",
+     "by": "p-zoe",
+     "where": null,
+     "reason": "initial release"
+    }
+   ],
+   "price_hint_usd": 618.71
+  },
+  {
+   "id": "pt-drop-pelvis-dummy",
+   "name": "Pelvis dummy mass block",
+   "part_number": "FL-TST-2274",
+   "cad_file": "FL-TST-2274_drop-pelvis-dummy_revC.step",
+   "aliases": [
+    "dummy pelvis",
+    "mass block",
+    "dummy mass",
+    "2274"
+   ],
+   "belongs_to": "rig-leg-drop-gantry",
+   "kind": "test_hardware",
+   "category": "test_fixture",
+   "material": "Steel 4140, pre-hardened",
+   "finish": "Black oxide",
+   "tolerance": "+/-0.010 in",
+   "process": "cnc_milling_3axis",
+   "typical_qty": 2,
+   "vendor": "v-xometry",
+   "revisions": [
+    {
+     "value": "A",
+     "effective": "2026-05-11",
+     "known_at": "2026-05-11T13:41:00-07:00",
+     "by": "p-zoe",
+     "where": null,
+     "reason": "initial release"
+    },
+    {
+     "value": "B",
+     "effective": "2026-07-20",
+     "known_at": "2026-07-20T12:34:00-07:00",
+     "by": "p-zoe",
+     "where": null,
+     "reason": "added gusset after it yielded in proof load"
+    },
+    {
+     "value": "C",
+     "effective": "2026-10-02",
+     "known_at": "2026-10-02T16:17:00-07:00",
+     "by": "p-zoe",
+     "where": null,
+     "reason": "added hole for safety pin"
+    }
+   ],
+   "price_hint_usd": 845.36
+  }
+ ],
+ "tests": [
+  {
+   "id": "test-hip-spin",
+   "name": "Hip actuator DVT spin test",
+   "assembly": "a-hip-actuator",
+   "rig": "rig-spin-test-stand",
+   "resources": [],
+   "owner": "p-arjun",
+   "milestone": "m-hip-spin-test",
+   "duration_true_days": 3,
+   "duration_estimate_days": [
+    2,
+    3
+   ],
+   "planned_date": [
+    {
+     "value": "2026-11-16",
+     "effective": null,
+     "known_at": "2026-10-05T09:15:00-07:00",
+     "by": "p-arjun",
+     "where": null
+    },
+    {
+     "value": "2026-11-23",
+     "effective": null,
+     "known_at": "2026-10-22T10:45:00-07:00",
+     "by": "p-arjun",
+     "where": null
+    }
+   ],
+   "earliest_start": "2026-11-16",
+   "result": "not_run",
+   "rerun_of": null,
+   "inputs": [
+    "pt-hip-bracket",
+    "dl-hip-motor-dvt"
+   ]
+  },
+  {
+   "id": "test-knee-dyno",
+   "name": "Knee actuator dyno torque test",
+   "assembly": "a-knee-actuator",
+   "rig": "rig-actuator-dyno",
+   "resources": [],
+   "owner": "p-andre",
+   "milestone": "m-actuator-evt-build",
+   "duration_true_days": 2,
+   "duration_estimate_days": [
+    1,
+    2
+   ],
+   "planned_date": "2026-03-10",
+   "earliest_start": "2026-03-10",
+   "result": null,
+   "rerun_of": null,
+   "inputs": [
+    "pt-dyno-coupling-knee",
+    "pt-dyno-adapter-knee",
+    "pt-dyno-spacer-set",
+    "wi-90004"
+   ]
+  },
+  {
+   "id": "test-leg-drop",
+   "name": "Leg drop test",
+   "assembly": "a-leg",
+   "rig": "rig-leg-drop-gantry",
+   "resources": [
+    "res-build-bay"
+   ],
+   "owner": "p-zoe",
+   "milestone": "m-leg-drop-complete",
+   "duration_true_days": 3,
+   "duration_estimate_days": [
+    2,
+    3
+   ],
+   "planned_date": "2026-06-16",
+   "earliest_start": "2026-06-16",
+   "result": null,
+   "rerun_of": null,
+   "inputs": [
+    "pt-leg-lift-hook",
+    "pt-leg-gantry-adapter",
+    "pt-drop-fixture-hook",
+    "pt-drop-pelvis-dummy",
+    "wi-90001",
+    "wi-90002"
+   ]
+  }
+ ],
+ "deliverables": [
+  {
+   "id": "dl-hip-motor-dvt",
+   "name": "DVT hip frameless motor",
+   "kind": "motor",
+   "owner": "p-arjun",
+   "assembly": "a-hip-actuator",
+   "vendor": "v-cubemars",
+   "order": null,
+   "eta": [
+    {
+     "value": "2026-10-26",
+     "effective": null,
+     "known_at": "2026-10-01T11:18:00-07:00",
+     "by": "p-arjun",
+     "where": null
+    },
+    {
+     "value": "2026-11-13",
+     "effective": null,
+     "known_at": "2026-10-14T15:02:33-07:00",
+     "by": "p-samir",
+     "where": null
+    },
+    {
+     "value": "2026-11-20",
+     "effective": null,
+     "known_at": "2026-10-22T10:41:00-07:00",
+     "by": "p-arjun",
+     "where": null
+    },
+    {
+     "value": "2026-11-20",
+     "effective": null,
+     "known_at": "2026-11-07T10:12:00-08:00",
+     "by": "p-arjun",
+     "where": null
+    }
+   ],
+   "true_arrival": "2026-11-20",
+   "order_date": "2026-09-02"
+  }
+ ],
+ "work_items": [
+  {
+   "id": "wi-90001",
+   "name": "Assemble left leg EVT unit",
+   "owner": "p-carlos",
+   "assembly": "a-leg",
+   "duration_true_days": 6,
+   "duration_estimate_days": [
+    3,
+    5
+   ],
+   "blocked_by": [
+    "dl-leg-harness"
+   ],
+   "status": "not_started",
+   "milestone": "m-leg-evt-build"
+  },
+  {
+   "id": "wi-90002",
+   "name": "Leg drop-test procedure and instrumentation check",
+   "owner": "p-zoe",
+   "assembly": "a-leg",
+   "duration_true_days": 3,
+   "duration_estimate_days": [
+    2,
+    2
+   ],
+   "blocked_by": [],
+   "status": "not_started",
+   "milestone": "m-leg-drop-complete"
+  },
+  {
+   "id": "wi-90004",
+   "name": "Assemble knee EVT actuators (x3)",
+   "owner": "p-jade",
+   "assembly": "a-knee-actuator",
+   "duration_true_days": 5,
+   "duration_estimate_days": [
+    3,
+    4
+   ],
+   "blocked_by": [
+    "dl-knee-motor-evt"
+   ],
+   "status": "not_started",
+   "milestone": "m-actuator-evt-build"
+  }
+ ],
+ "milestones": [
+  {
+   "id": "m-hip-spin-test",
+   "name": "Hip actuator DVT spin test complete",
+   "owner": "p-arjun",
+   "kind": "test",
+   "hardness": "soft",
+   "assemblies": [
+    "a-hip-actuator"
+   ],
+   "date": [
+    {
+     "value": "2026-11-18",
+     "effective": null,
+     "known_at": "2026-10-05T09:15:00-07:00",
+     "by": "p-arjun",
+     "where": null
+    },
+    {
+     "value": "2026-11-24",
+     "effective": null,
+     "known_at": "2026-10-22T10:45:00-07:00",
+     "by": "p-arjun",
+     "where": null
+    }
+   ],
+   "value_policy": [
+    {
+     "value": {
+      "type": "per_day",
+      "usd_per_day": 600
+     },
+     "effective": "2026-10-05",
+     "known_at": "2026-10-05T09:15:00-07:00",
+     "by": "p-arjun",
+     "where": null
+    }
+   ],
+   "burst_weeks": null,
+   "actual_date": null
+  }
+ ],
+ "storylines": [
+  {
+   "id": "sl-hip-cyclo-vs-harmonic",
+   "name": "Hip reducer: cycloidal or harmonic",
+   "team": "t-mech-actuators",
+   "topic": "Whether the hip keeps the in-house cycloidal reducer or buys a harmonic drive for DVT",
+   "people": [
+    "p-arjun",
+    "p-tomas",
+    "p-owen",
+    "p-ingrid"
+   ],
+   "start": "2026-02-16",
+   "end": "2026-03-27",
+   "beats": [
+    {
+     "week": "2026-02-16",
+     "summary": "Tomas argues harmonic for the hip too: knee CSF-25 has 0.7 arcmin lost motion vs ~6 arcmin on our cyclo."
+    },
+    {
+     "week": "2026-02-23",
+     "summary": "Arjun pushes back: harmonic flexspline fatigue at hip peak torque (~140 Nm) is marginal, cyclo takes shock loads from drops."
+    },
+    {
+     "week": "2026-03-02",
+     "summary": "Owen prices both: harmonic set ~$1.9k per joint and 10-week lead; cyclo is machined parts plus pins, ~3 weeks."
+    },
+    {
+     "week": "2026-03-16",
+     "summary": "Ingrid asks for a decision memo; Tomas concedes backdrivability favors cyclo for the hip at 50:1."
+    },
+    {
+     "week": "2026-03-23",
+     "summary": "Decision: hip stays cycloidal through DVT, revisit for PVT; knee stays harmonic."
+    }
+   ]
+  },
+  {
+   "id": "sl-hip-overheat-torque",
+   "name": "Hip stator overheating at continuous torque",
+   "team": "t-mech-actuators",
+   "topic": "Hip winding hits 120 C after 4 min at 60 Nm continuous on the dyno",
+   "people": [
+    "p-nadia",
+    "p-arjun",
+    "p-andre",
+    "p-bao"
+   ],
+   "start": "2026-04-13",
+   "end": "2026-06-05",
+   "beats": [
+    {
+     "week": "2026-04-13",
+     "summary": "Andre: EVT hip hits the 120 C winding limit after ~4 min at 60 Nm, spec says 10 min."
+    },
+    {
+     "week": "2026-04-20",
+     "summary": "Nadia suspects poor stator-to-housing contact; thermal pad is 0.5 mm and compresses unevenly."
+    },
+    {
+     "week": "2026-04-20",
+     "summary": "Bao notes current ripple at 20 kHz PWM adds copper loss; asks to try 40 kHz on the driver."
+    },
+    {
+     "week": "2026-05-04",
+     "summary": "Heat spreader plate prototype drops steady-state by 14 C; housing fin redesign debated vs cost."
+    },
+    {
+     "week": "2026-05-18",
+     "summary": "Arjun accepts heat spreader for DVT, fins deferred; firmware derate at 105 C as a backstop."
+    },
+    {
+     "week": "2026-06-01",
+     "summary": "Retest with spreader and 40 kHz: 9.5 min to limit, close enough to sign off for EVT."
+    }
+   ]
+  }
+ ],
+ "demo": {
+  "part": "pt-hip-bracket",
+  "revision": "C",
+  "quantity": 4,
+  "requester": "p-owen",
+  "placed_at": "2026-11-10T11:30:00-08:00",
+  "quote": {
+   "quote_id": "Q-2617750-1",
+   "captured_at": "2026-11-10T10:05:00-08:00",
+   "valid_until": "2026-12-10",
+   "tiers": [
+    {
+     "tier": "standard",
+     "price_usd": 3000,
+     "ready_working_day": 10,
+     "ready_date": "2026-11-24"
+    },
+    {
+     "tier": "expedite",
+     "price_usd": 3900,
+     "ready_working_day": 5,
+     "ready_date": "2026-11-17"
+    }
+   ]
+  },
+  "test": "test-hip-spin",
+  "test_duration_working_days": 3,
+  "inputs": [
+   "pt-hip-bracket",
+   "dl-hip-motor-dvt"
+  ],
+  "motor": {
+   "deliverable": "dl-hip-motor-dvt",
+   "owner": "p-arjun",
+   "ready_working_day": 8,
+   "ready_date": "2026-11-20",
+   "stated_by": "p-arjun",
+   "stated_at": "2026-11-07T10:12:00-08:00",
+   "uncertain_range_days": [
+    7,
+    12
+   ]
+  },
+  "milestone": "m-hip-spin-test",
+  "target_working_day": 10,
+  "policy": {
+   "type": "per_day",
+   "usd_per_day": 600,
+   "set_by": "p-arjun"
+  },
+  "context_window": {
+   "start": "2026-10-11T11:30:00-07:00",
+   "end": "2026-11-10T11:30:00-08:00"
+  },
+  "cases": {
+   "day_zero": "2026-11-10",
+   "A": {
+    "motor_day": 8,
+    "done_day": {
+     "standard": 13,
+     "expedite": 11
+    },
+    "done_date": {
+     "standard": "2026-12-01",
+     "expedite": "2026-11-25"
+    },
+    "delta_days": 2,
+    "extra_spend_usd": 900,
+    "break_even_usd_per_day": 450,
+    "decision": "expedite",
+    "net_usd": 300
+   },
+   "B": {
+    "motor_day": 12,
+    "done_day": {
+     "standard": 15,
+     "expedite": 15
+    },
+    "done_date": {
+     "standard": "2026-12-03",
+     "expedite": "2026-12-03"
+    },
+    "delta_days": 0,
+    "decision": "standard",
+    "dominating_input": "dl-hip-motor-dvt",
+    "live_change": "live-b"
+   },
+   "C": {
+    "motor_day": 8,
+    "target_day": 10,
+    "target_date": "2026-11-24",
+    "days_late": {
+     "standard": 3,
+     "expedite": 1
+    },
+    "late_cost_avoided_usd": 1200,
+    "extra_spend_usd": 900,
+    "decision": "expedite"
+   },
+   "D": {
+    "motor_range_days": [
+     7,
+     12
+    ],
+    "expedite_wins_if_motor_day_le": 8,
+    "question": {
+     "to": "p-arjun",
+     "brief": "Will the motor be ready by day 8 (2026-11-20)?"
+    },
+    "live_change": "live-d"
+   },
+   "E": {
+    "slot_days": [
+     14,
+     21
+    ],
+    "slot_dates": [
+     "2026-12-02",
+     "2026-12-11"
+    ],
+    "brief": "Spin-stand slots only on days 14 and 21: one day can save seven or none."
+   }
+  },
+  "live_changes": [
+   {
+    "id": "live-b",
+    "case": "B",
+    "at": "2026-11-10T10:45:00-08:00",
+    "source": "slack",
+    "by": "p-arjun",
+    "where": "ch-actuators",
+    "claim": {
+     "kind": "eta",
+     "subject": "dl-hip-motor-dvt",
+     "value": "2026-11-30",
+     "working_day": 12
+    },
+    "brief": "Arjun: motor vendor slipped again, now the 30th."
+   },
+   {
+    "id": "live-d",
+    "case": "D",
+    "at": "2026-11-10T10:45:00-08:00",
+    "source": "slack",
+    "by": "p-arjun",
+    "where": "ch-actuators",
+    "claim": {
+     "kind": "eta",
+     "subject": "dl-hip-motor-dvt",
+     "value": {
+      "min": "2026-11-19",
+      "max": "2026-11-30"
+     },
+     "working_days": [
+      7,
+      12
+     ]
+    },
+    "brief": "Arjun: vendor won't commit, somewhere between the 19th and the 30th."
+   }
+  ]
+ }
+}
