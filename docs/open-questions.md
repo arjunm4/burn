@@ -31,6 +31,7 @@ Not needed for the demo: every external service is mocked (architecture §2.18).
 
 | Question | Answer | Where |
 |---|---|---|
+| What does the habit model learn from? | Only the context heat map (context linked to the part, per time band before T, plus the requester's expedite rate and the extra cost of the fastest tier); never the dependency graph. Label from the Ramp receipt | architecture §10 |
 | Per-order search, or a persistent graph? | One company-wide dependency graph, built continuously from every source; orders navigate it. Built tonight | architecture §2.1, §6.1 |
 | Do we need a BOM? | No; the demand anchors the decision | architecture §2.3 |
 | Who approves? | The engineer's manager, in Ramp | architecture §2.12 |

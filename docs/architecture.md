@@ -292,25 +292,35 @@ For a confirmed demand, Burn schedules backwards to a **latest-placement window*
 anchor:   a Xometry charge in Ramp at time T
 text:     the engineer's part entry (or, for history, a reconstruction from the
           Xometry order line, file name and nearest messages, marked reconstructed)
-window:   the part's graph neighbourhood and its evidence as known before T, over ~30 days,
-          bucketed into bands before T: 0–1, 1–3, 3–7, 7–14, 14–30 days (the heat map)
-inputs:   attributes of that context (below)
-label:    the tier chosen, from the matching Xometry order (Ramp's amount alone doesn't give it)
+window:   the context linked to the part (Slack, Jira, meetings, calendar) available
+          before T, over ~30 days, bucketed into bands before T:
+          0–1, 1–3, 3–7, 7–14, 14–30 days (the context heat map)
+inputs:   attributes of that context per band (below), plus two rows from Ramp and the quote
+label:    the tier chosen, from the Ramp receipt matched to its Xometry order
 ```
 
-**Attributes:**
-- Timing: days to the next need-by, test or milestone; how late in the run-up the order came.
+**The context heat map is the habit model's only input** (Owen's decision). It is built from the context linked to the part, never from the dependency graph (§6.1): the graph answers "will paying more help?" for the decision; the heat map answers "what does this team usually do?" for the advice. They meet only on the card, where their disagreement is the point.
+
+**Heat map rules** (Owen's decision):
+- **Per day, not per band:** each cell is divided by its band's length (1 to 16 days), so the long early band doesn't always look busiest.
+- **No context is not calm:** an order with no linked context gets a `no_context` flag instead of an all-zero grid.
+- **Vibe against the team's baseline:** each message's pressure is scored relative to its team or channel, so a loud team doesn't always read as high.
+- **Link confidence:** context matched by quote, order or part number is kept apart from context matched only by a nickname; each cell carries the share matched by id.
+- **Two rows from Ramp and the quote, not from conversation:** the requester's past expedite rate (from earlier Ramp × Xometry orders only) and the extra cost of the fastest tier in dollars.
+
+**Attributes (rows of the heat map):**
+- Deadline talk: need-by, test or milestone dates mentioned in the context.
 - Pressure: urgency language; message rate and its trend; reply speed.
 - **Pressure read** (LLM): an LLM reads the part's threads, tickets and meetings in each time band and rates schedule pressure (e.g. low / elevated / high), citing the messages behind the rating: repeated "any update?", deadline talk, frustration, escalation to the manager.
 - Progress rank: the assembly's position in the progress ranking (§7) for its milestone at time T.
-- Dependencies: who or what is waiting; whether a sibling part lands later.
+- Waiting talk: mentions of who or what is blocked or waiting on the part.
 - People: manager or supply chain involved; number of participants.
 - Change: slips, conflicting dates, revisions.
 - Freshness: age of key facts; distribution across time bands.
 - Meetings: mentions, action items.
 - The entry itself: stated urgency and purpose.
 
-**Model:** small and explainable (e.g. gradient-boosted trees). Explanations are in context terms: "teams expedite when a test is ≤5 days away and the thread got hot in the last 48 hours."
+**Model:** small and explainable: one weight per attribute per band (regularized logistic regression), because a few hundred orders is too few for anything larger. The weights, laid out like the heat map, are the explanation. Explanations are in context terms: "teams expedite when a test is ≤5 days away and the thread got hot in the last 48 hours."
 
 **Backfill:** existing Ramp × Xometry × Slack history can produce a training set before Burn's first live order.
 
