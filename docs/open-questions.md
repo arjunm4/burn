@@ -11,7 +11,6 @@ Owners: **A+O** = Arjun and Owen (product); **Build** = whoever is building it; 
 | P1 | Who owns a milestone's value-of-time policy ($/day), and will they set it? | Without it Burn can only show break-evens, not recommend on economics | Open |
 | P2 | What auto-approval limit will managers set in Ramp, and do large orders need a second approver? | Sets which demo orders skip the manager | Open |
 | P3 | Will engineers reliably type a one-line summary of what the part is for? | The part entry is the retrieval anchor for all context | Open; ask users |
-| P4 | Is one "place" click by the engineer after approval acceptable, or should placement be fully automatic? | Automatic placement needs a browser open at approval time | Open |
 | P5 | Which demo story and cases: the hip-actuator bracket with cases A, B and D? | Drives the seeded data and script | Proposed |
 | P6 | How many past orders before the habit model is shown at all? | Avoid showing a model trained on too little | Open |
 | P7 | Do expedited parts actually sit unused at real startups? | Core pitch claim; no public data found | Open; ask users |
@@ -55,6 +54,7 @@ Owners: **A+O** = Arjun and Owen (product); **Build** = whoever is building it; 
 | Do we need a BOM? | No; the demand anchors the decision | architecture §2.3 |
 | Who approves? | The engineer's manager, in Ramp | architecture §2.12 |
 | Is supply chain in the purchase? | No; a context source and tracking | architecture §2.13 |
+| Engineer click or automatic placement? | Automatic on approval; the engineer is alerted before any browser tab opens | architecture §0.4, §2.16 |
 | Which vendor first? | Xometry only, via the browser extension | architecture §2.14 |
 | Does Xometry have a test mode or buyer API? | No; demo stops at a dummy checkout page | architecture §0.4 |
 | Ramp MCP / Agent Cards instead of REST? | No; REST with app credentials; MCP is a stretch check | research/ramp-integration.md §2 |
