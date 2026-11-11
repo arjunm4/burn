@@ -32,7 +32,12 @@ export function plan(world, ctx) {
   const issues = [];
   const batches = new Map();
 
-  const tickets = world.tickets.filter((t) => Date.parse(t.created) <= now && weeks.has(weekOf(t.created)))
+  // A ticket created before the text window is carried in when a crumb comment on it falls inside the
+  // window, so that crumb is never lost (spec I16). Its job stays keyed by its creation week.
+  const start = Date.parse(ctx.textStart);
+  const carried = new Set(world.events.filter((e) => e.source === 'jira' && e.kind === 'crumb' && e.where.ticket_field === 'comment'
+    && Date.parse(e.known_at) >= start && Date.parse(e.known_at) <= now).map((e) => e.where.ticket));
+  const tickets = world.tickets.filter((t) => Date.parse(t.created) <= now && (weeks.has(weekOf(t.created)) || carried.has(t.id)))
     .sort((a, b) => cmp(a.created, b.created) || cmp(a.id, b.id));
   for (const t of tickets) {
     const r = ctx.rng.fork(t.id);
@@ -92,13 +97,14 @@ export function plan(world, ctx) {
     const due = asOf(t.due_date, now);
     const times = [t.created, ...changelog.map((c) => c.at), ...comments.map((c) => c.at)].sort();
     const week = weekOf(t.created);
-    const part = crumbTicket ? 'crumbs' : 'background';
+    // A carried ticket gets its own job so --weeks 1 jobs stay byte-identical inside --weeks 13.
+    const part = weeks.has(week) ? (crumbTicket ? "crumbs" : "background") : `carried-${t.id}`;
     const jobId = `jira-${t.project}-${week}-${part}`;
     const tok = must[0] || (t.order ? 'order' : t.type.toLowerCase());
     const ownFallback = ownSpecs.map((s) => s.fallback_text).filter(Boolean).join('. ');
     const issue = {
       key: t.id, id: String(10000 * (projIndex.get(t.project) || 0) + num), project: t.project, week, job_id: jobId,
-      kind: crumbTicket ? 'crumb' : 'background', events: own.map((e) => e.id),
+      kind: crumbTicket ? 'crumb' : 'background', events: own.map((e) => e.id), ...(weeks.has(week) ? {} : { carried: true }),
       type: t.type, status: status ? status.value : 'To Do', priority: t.priority,
       reporter: t.reporter, assignee: t.assignee || null, labels: (t.labels || []).slice(), components: (t.components || []).slice(),
       parent: t.parent || null, created: jiraTime(t.created, r.int(0, 999)), updated: jiraTime(times[times.length - 1], r.int(0, 999)),
@@ -160,7 +166,7 @@ export function emit(records, texts, ctx) {
   const automation = { accountId: '557058:automation', displayName: 'Automation for Jira', active: true };
   const kept = [];
   for (const i of records.issues) {
-    if (Date.parse(i.created_iso) < start) continue;
+    if (Date.parse(i.created_iso) < start && !i.carried) continue;
     const t = texts[i.key];
     let summary, description;
     if (t && typeof t.summary === 'string' && t.summary.trim()) { summary = t.summary; description = typeof t.description === 'string' ? t.description : ''; }

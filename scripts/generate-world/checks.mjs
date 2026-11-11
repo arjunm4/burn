@@ -323,7 +323,11 @@ export async function runChecks({ world: worldDir, out: outDir, weeks = null, wr
     const band = (inv, name, v, lo, hi) => { stats[name] = Math.round(v * 1000) / 1000; if (!(v >= lo && v <= hi)) err(inv, `${name} = ${stats[name]} outside ${lo}-${hi}`); };
     const weekKind = new Map((meta.weeks || []).map((w) => [w.week_start, w.kind]));
     const kindOf = (o) => weekKind.get(mondayOf(dateOf(o.placed_at))) || 'normal';
-    band(25, 'xometry_orders', xorders.length, 400, 550);
+    // Targets come from knobs.targets where one exists; the spec's §4 numbers are the fallback.
+    const tg = knobs.targets || {};
+    const T = (v, lo, hi) => (Array.isArray(v) && v.length === 2 ? v : [lo, hi]);
+    const note = (name, v) => { stats[name] = Math.round(v * 1000) / 1000; };
+    band(25, 'xometry_orders', xorders.length, ...T(tg.xometry_orders, 400, 550));
     band(25, 'distinct_requesters', new Set(xorders.map((o) => o.requester)).size, 16, 22);
     band(25, 'buyer_placed_share', share(xorders, (o) => o.placer !== o.requester), 0.33, 0.47);
     const perWeek = new Map((meta.weeks || []).map((w) => [w.week_start, 0]));
@@ -332,11 +336,11 @@ export async function runChecks({ world: worldDir, out: outDir, weeks = null, wr
     band(26, 'median_normal_week', quantile(wk('normal'), 0.5), 8, 14);
     band(26, 'mean_burst_week', wk('burst').reduce((s, x) => s + x, 0) / Math.max(1, wk('burst').length), 20, 30);
     band(26, 'mean_quiet_week', wk('quiet').reduce((s, x) => s + x, 0) / Math.max(1, wk('quiet').length), 3, 5);
-    band(27, 'expedite_share', share(xorders, (o) => o.chosen_tier === 'expedite'), 0.2, 0.3);
-    band(27, 'standard_share', share(xorders, (o) => o.chosen_tier === 'standard'), 0.5, 0.6);
-    band(27, 'economy_share', share(xorders, (o) => o.chosen_tier === 'economy'), 0.15, 0.2);
-    band(27, 'burst_expedite_share', share(xorders.filter((o) => kindOf(o) === 'burst'), (o) => o.chosen_tier === 'expedite'), 0.36, 0.52);
-    band(28, 'revision_share', share(xorders, (o) => o.is_revision), 0.3, 0.4);
+    band(27, 'expedite_share', share(xorders, (o) => o.chosen_tier === 'expedite'), ...T(tg.tier_mix?.expedite, 0.2, 0.3));
+    band(27, 'standard_share', share(xorders, (o) => o.chosen_tier === 'standard'), ...T(tg.tier_mix?.standard, 0.5, 0.6));
+    band(27, 'economy_share', share(xorders, (o) => o.chosen_tier === 'economy'), ...T(tg.tier_mix?.economy, 0.15, 0.2));
+    band(27, 'burst_expedite_share', share(xorders.filter((o) => kindOf(o) === 'burst'), (o) => o.chosen_tier === 'expedite'), ...T(tg.burst_expedite, 0.36, 0.52));
+    band(28, 'revision_share', share(xorders, (o) => o.is_revision), ...T(tg.revision_share, 0.3, 0.4));
     band(28, 'lines_median', quantile(xorders.map((o) => o.lines.length), 0.5), 2, 2);
     band(28, 'lines_max', Math.max(...xorders.map((o) => o.lines.length)), 1, 6);
     const totals = xorders.map((o) => o.total_usd);
@@ -347,8 +351,17 @@ export async function runChecks({ world: worldDir, out: outDir, weeks = null, wr
     for (const k of Object.keys(lq)) band(31, `link_${k}`, share(xorders, (o) => o.link_quality === k), lq[k] - 0.04, lq[k] + 0.04);
     if (weeks === 13) band('31b', 'usable_orders', coverage.usable, 120, 170);
     const delivered = xorders.filter((o) => o.delivered_at);
-    band(33, 'on_time_or_early', share(delivered, (o) => dateOf(o.delivered_at) <= o.promised_date), 0.72, 0.84);
-    band(33, 'late_3wd_plus', share(delivered, (o) => wdBetween(meta, o.promised_date, dateOf(o.delivered_at)) >= 3), 0.05, 0.11);
+    // I33: the owner's late rate (knobs.targets.late_share, 1 order in 40) replaces the spec's lateness bands.
+    band(33, 'late_share', share(delivered, (o) => dateOf(o.delivered_at) > o.promised_date), ...T(tg.late_share, 0.02, 0.03));
+    note('late_3wd_plus', share(delivered, (o) => wdBetween(meta, o.promised_date, dateOf(o.delivered_at)) >= 3));
+    // I30: hidden reasons within their bands +-2 points; expedites that truly gained time.
+    if (answers) {
+      const ans = answers.orders || [];
+      for (const [k, b] of Object.entries(tg.hidden_reason_mix || {})) band(30, `reason_${k}`, share(ans, (a) => a.hidden_reason === k), b[0] - 0.02, b[1] + 0.02);
+      const xById = new Map(xorders.map((o) => [o.id, o]));
+      const exps = ans.filter((a) => xById.get(a.order)?.chosen_tier === 'expedite');
+      band(30, 'expedite_true_gain_share', share(exps, (a) => a.expedite_helped === true), ...T(tg.expedite_true_gain_share, 0.45, 0.6));
+    }
     const other = orders.filter((o) => o.type === 'other');
     band(34, 'other_vendor_orders', other.filter((o) => !o.recurring).length, 1250, 2200);
     band(34, 'saas_charges', other.filter((o) => o.recurring).length, 250, 400);
@@ -365,18 +378,18 @@ export async function runChecks({ world: worldDir, out: outDir, weeks = null, wr
     let same = 0;
     for (let i = 1; i < byT.length; i++) if (leads(byT[i]) === leads(byT[i - 1])) same++;
     band(40, 'consecutive_equal_leads', same / Math.max(1, byT.length - 1), 0, 0.15);
-    if (answers) Object.assign(stats, probe(world, answers, band));
+    if (answers) Object.assign(stats, probe(world, answers, band, T(tg.probe_accuracy, 0.66, 0.78)));
     else warn(41, 'answers.json missing: probe not run');
   } else {
     info.statistics = `skipped (${xorders.length} Xometry orders: not a full world)`;
   }
   info.stats = stats;
-  info.not_implemented = ['I18 Jira quote id and Slack/Jira identity agreement', 'I30', 'I32', 'I35', 'I36', 'I37', 'I38', 'I42'];
+  info.not_implemented = ['I18 Jira quote id and Slack/Jira identity agreement', 'I32', 'I35', 'I36', 'I37', 'I38', 'I42'];
   return { errors, warnings, info, coverage };
 }
 
 // §2 learnability probe on truth-side proxies of the visible attributes.
-export function probe(world, answers, band) {
+export function probe(world, answers, band, accBand = [0.66, 0.78]) {
   const meta = world.meta;
   const ans = new Map(answers.orders.map((a) => [a.order, a]));
   const weekKind = new Map((meta.weeks || []).map((w) => [w.week_start, w.kind]));
@@ -422,7 +435,7 @@ export function probe(world, answers, band) {
   if (!test.length) return out;
   band(41, 'probe_always_standard', acc(test, () => 'standard'), 0.5, 0.6);
   band(41, 'probe_days_to_need_rule', acc(test, (r) => (r.bin === 'lt_std' ? 'expedite' : 'standard')), 0, 0.7);
-  band(41, 'probe_accuracy', acc(test, predict), 0.66, 0.78);
+  band(41, 'probe_accuracy', acc(test, predict), ...accBand);
   const clean = test.filter((r) => r.o.link_quality === 'clean_id');
   const never = test.filter((r) => r.o.link_quality === 'never_discussed');
   if (clean.length >= 10) band(41, 'probe_clean_id', acc(clean, predict), 0.74, 0.85);

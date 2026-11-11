@@ -93,7 +93,10 @@ export function plan(world, ctx0 = {}) {
     evByMeeting.get(m).push(ev);
   }
   const meetings = (world.meetings || [])
-    .filter((m) => m.recorded && !m.cancelled && m.note_taker !== 'none')
+    // Recorded meetings, plus unrecorded ones that carry a crumb: someone typed notes (manual_doc),
+    // so the crumb is never lost (spec I16). Those notes have no transcript.
+    .filter((m) => !m.cancelled && ((m.recorded && m.note_taker !== 'none')
+      || (evByMeeting.get(m.id) || []).some((e) => e.kind === 'crumb')))
     .filter((m) => toMs(m.start) >= startMs && toMs(m.start) <= nowMs)
     .sort((a, b) => cmpTimeId(a.start, a.id, b.start, b.id));
 
@@ -129,7 +132,8 @@ export function plan(world, ctx0 = {}) {
     const priority = isDemo ? 0 : 1 + 2 * weeksBack + (crumbs.length ? 0 : 1);
     const present = m.present.filter((id) => people.has(id));
     const meeting = {
-      id: m.id, title: m.name, type: m.type, note_taker: m.note_taker, start: m.start, actual_min: m.actual_min,
+      id: m.id, title: m.name, type: m.type, note_taker: m.recorded && m.note_taker !== 'none' ? m.note_taker : 'manual_doc',
+      start: m.start, actual_min: m.actual_min,
       present, late_joiners: m.late_joiners || [],
     };
     const file = `meetings/${dateOf(m.start)}-${m.start.slice(11, 16).replace(':', '')}-${slug(m.name)}.md`;
@@ -216,8 +220,14 @@ export function emit(records, texts = {}, ctx = {}) {
     if (actions) L.push(m.note_taker === 'zoom_ai' ? '## Next steps' : '## Action items', '', actions, '');
     const kw = (summary?.keywords || []).map(clean).filter(Boolean);
     if (kw.length) L.push(`**Keywords:** ${kw.join(', ')}`, '');
-    L.push('## Transcript', '');
-    for (const x of transcript) L.push(`[${mmss(x.start_s)}] ${name(x.speaker)}: ${clean(x.text)}`);
+    if (m.note_taker === 'manual_doc') {
+      // Typed notes: no recording, so speaker lines become a notes list without timestamps.
+      L.push('## Discussion', '');
+      for (const x of transcript) L.push(`- ${firstName({ name: name(x.speaker) })}: ${clean(x.text)}`);
+    } else {
+      L.push('## Transcript', '');
+      for (const x of transcript) L.push(`[${mmss(x.start_s)}] ${name(x.speaker)}: ${clean(x.text)}`);
+    }
     L.push('');
     files.push({ path: r.file, content: L.join('\n') });
   }
