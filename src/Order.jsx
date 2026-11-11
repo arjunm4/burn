@@ -11,6 +11,9 @@ const FEED = {
   'placement.succeeded': 'Order placed', 'placement.blocked': e => `Not placed: ${e.result?.mismatches?.map(m => m.field).join(', ')} changed`, 'placement.failed': e => `Placement failed: ${e.result?.reason}`,
   'placement.unknown': 'Vendor response lost; checking their records', 'placement.reconciled': 'Order found in vendor records', 'placement.unresolved': e => e.text, 'placement.invalidated': 'Needs re-approval',
   'booked': 'Receipt, memo and project code attached in Ramp', 'booking.failed': 'Booking failed; will retry',
+  // Store audit event names (history view).
+  'order.created': 'Order created', 'decision.made': 'Decision made', 'spec.gap': 'Missing details asked for', 'ramp.request.created': 'Ramp request created', 'ramp.approval.recorded': 'Approval recorded',
+  'placement.started': 'Placement started', 'charge.cleared': 'Charge cleared in Ramp', 'placement.interrupted': 'Placement interrupted by a restart; reconcile before any retry', 'placement.cancelled': 'Placement cancelled',
 };
 
 export default function Order({id}) {
@@ -85,10 +88,11 @@ export default function Order({id}) {
         </Section>
         <Section title="Context" right={ctx.milestoneLabel || null}>
           {ctx.assumptions?.length ? <ul style={{margin: 0, paddingLeft: 16, color: C.muted, display: 'flex', flexDirection: 'column', gap: 4}}>{ctx.assumptions.map((a, i) => <li key={i}>{a.text}{a.ageDays != null && <span style={{color: C.faint}}> · {a.ageDays === 0 ? 'today' : `${a.ageDays}d ago`}</span>}</li>)}</ul> : <span style={{color: C.muted}}>No related context found yet.</span>}
-          {ctx.related?.map(r => <blockquote key={r.id} style={{margin: 0, padding: '6px 10px', borderLeft: `2px solid ${C.ink}`, background: C.paper, borderRadius: 4, fontSize: 12}}>
+          {ctx.related?.slice(0, 6).map(r => <blockquote key={r.id} style={{margin: 0, padding: '6px 10px', borderLeft: `2px solid ${C.ink}`, background: C.paper, borderRadius: 4, fontSize: 12}}>
             <div style={{lineHeight: 1.4}}>{r.text.length > 220 ? r.text.slice(0, 220) + '…' : r.text}</div>
-            <div style={{color: C.muted, fontSize: 11, marginTop: 3}}>{r.author || r.source} · {r.channel} · {day(r.at)}</div>
+            <div style={{color: C.muted, fontSize: 11, marginTop: 3}}>{r.author || r.source} · {r.channel} · {day(r.at)}{r.nameHits > 0 && ' · names the part'}</div>
           </blockquote>)}
+          {ctx.related?.length > 6 && <span style={{color: C.faint, fontSize: 11}}>+{ctx.related.length - 6} more related messages</span>}
         </Section>
         {!!order.exchange?.length && <Section title="Discussion">
           {order.exchange.map((s, i) => <div key={i} style={{fontSize: 12}}><span style={{color: C.muted}}>{s.by} · {s.type}:</span> {s.text}</div>)}

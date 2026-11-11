@@ -13,11 +13,70 @@ Built for a hackathon whose prompt is *automate an existing financial workflow*.
 | [`docs/open-questions.md`](docs/open-questions.md) | Every open question in one list, with owner and status |
 | [`docs/research/`](docs/research/) | Research notes, e.g. [`ramp-integration.md`](docs/research/ramp-integration.md) (Ramp API path, mock plan, demo script) |
 | `collaboration/` | Claude–Codex protocol and recorded decisions |
-| `src/`, `server/`, `fixtures/` | The current prototype (below) |
+| `src/`, `server/`, `fixtures/` | The v9 flow (see below) and, still present, the earlier prototype |
 
 ## Status
 
-The **design** is v9. The **code** is the earlier prototype: a Digi-Key sensor purchase with a local approval queue and draft purchase orders. It does not yet implement the v9 flow (part entry, the headless Xometry provider, Ramp). [`docs/architecture.md` §14](docs/architecture.md) maps what to keep and change, and [`docs/research/ramp-integration.md` §3](docs/research/ramp-integration.md) has the hackathon build plan.
+The **design** is v9 ([`docs/hld.md`](docs/hld.md), [`docs/architecture.md`](docs/architecture.md)). The **v9 flow is built as scaffolding** on this branch: part entry → context → spec gate → Xometry quote → decision → Okay → Ramp request → approval → card → verified placement → charge → booking, against a fake Xometry and a Ramp mock. It runs the same orchestration and decision core a real deployment would; only the adapters are simulated. The demo world (Owen's) is not in yet, so orders resolve against whatever Slack/calendar data is ingested. The earlier Digi-Key prototype is still in the tree at `/request` and `/approvals` until the new flow replaces it.
+
+## The v9 flow
+
+### Run it
+
+```bash
+npm install
+npm run dev          # http://localhost:5173/orders
+npm test             # 84 tests: decision cases A–E, vendor verification, store and Ramp mock adversarial cases, end-to-end flow
+```
+
+Environment (all optional; defaults are the simulated backends):
+
+| Variable | Default | Meaning |
+| --- | --- | --- |
+| `VENDOR_MODE` | `fake` | `fake` = in-process fake Xometry; `headless` = Playwright on xometry.com (disabled until open questions X1/X5/X6 are resolved; reports itself unavailable) |
+| `RAMP_MODE` | `mock` | `mock` = persistent Ramp mock with Ramp's field names, signed replayable events; `sandbox` = Ramp sandbox (typed-unavailable until credentials are verified) |
+| `RAMP_WEBHOOK_SECRET` | unset | Required to accept `POST /api/ramp/webhook` (verified on the raw body; fails closed) |
+| `ORDERS_DB` | `data/orders.sqlite` | Order store and Ramp mock state |
+| `BURN_CONFIG` | `burn.config.json` if present | Company config: spec fields and authorized defaults, milestone value-of-time policies, declared slip scenarios |
+
+### Screens
+
+- `/orders`: part entry (name, what it's for, CAD file, optional technical fields) and the order list with states.
+- `/orders/:id`: live progress (SSE), the question panel (missing spec fields, CAD, what the part is for, or the one fact that would flip the decision), the spec with provenance chips, related context with the age of each fact, the comparison card (price, part ready, milestone date, days gained, break-even, basis; dominated tiers marked "buys no time"), Okay/Choose, a typed argue box, and the approval and purchase panel. In mock mode a dashed "Ramp (simulated)" box stands in for approving in Ramp and for its ⌘J test charge.
+- `/graph`: the dependency timeline (unchanged).
+
+### API
+
+| Method | Path | Purpose |
+| --- | --- | --- |
+| GET | `/api/system` | Which backends are active and their capabilities; company spec fields |
+| GET/POST | `/api/orders` | List orders; start one `{name, note, engineer, cad:{fileName, base64}, fields}` |
+| GET | `/api/orders/:id` | Order plus sanitized audit events |
+| GET | `/api/orders/:id/stream` | Server-sent events for live progress |
+| POST | `/api/orders/:id/answer` | `{expectedRevision, fields | cad | demand | fact:{nodeId,date}}` |
+| POST | `/api/orders/:id/argue` | `{expectedRevision, text, type, fact?}`: kept with the order; only an asserted fact changes the plan |
+| POST | `/api/orders/:id/okay` | `{expectedRevision, tier}`: freezes the spec, creates the Ramp request |
+| POST | `/api/orders/:id/reconcile` | From `placement_unknown`: look for the order in vendor records |
+| POST | `/api/ramp/webhook` | Ramp events (signature required) |
+| POST | `/api/ramp/simulate/{approve,reject,charge}` | Mock only |
+
+Mutations take `expectedRevision` and return 409 on conflict. The API never returns the card credential or CAD bytes.
+
+### Code map
+
+| Path | What it is | Owner |
+| --- | --- | --- |
+| `server/contracts.js` | Shared shapes: OrderSpec, QuoteSnapshot, Order and its states, PlacementAttempt, OrderStore, RampClient, VendorProvider, DecisionResult | shared |
+| `src/decision/core.js` | The decision core: admissibility (incl. hard deadlines), same-world outcomes per declared scenario, dominance, owner-policy economics, break-even, switching condition, the flip question; nothing preselected while that question is open | Claude |
+| `server/flow/context.js` | Context retrieval anchored on the part entry; links the part only through documents that name it; declared slip scenarios; assumptions with ages | Claude |
+| `server/flow/orchestrator.js` | The order flow: spec gate, quote, decide, answer/argue, Okay → Ramp, authoritative event handling (atomic `processEvent`), pre-placement revalidation, durable placement with `placement_unknown` and reconciliation, booking retried separately | Claude |
+| `server/orders/store.js` | SQLite order store: transactional mutations with revisions, protected frozen fields, serialized placement attempts, interrupted placements recovered as `placement_unknown`, audit log with secrets scrubbed | Codex |
+| `server/ramp/index.js` | Ramp client: persistent mock with Ramp's field names, signed/replayable events, idempotent requests and cards, card limit and merchant enforcement; sandbox as typed-unavailable | Codex |
+| `server/vendors/` | VendorProvider: fake Xometry (tiers, cutoff, 30-day validity, field-by-field verification, drift/dropped-tier/timeout faults, order lookup for reconciliation) and the disabled headless stub | Claude |
+| `server/api/orders.js` | HTTP API and SSE | Claude |
+| `src/Orders.jsx`, `src/Order.jsx`, `src/ui.jsx` | Screens | Claude |
+
+Not built: the learning model (a labelled slide), delivery tracking and first-use checks, the real headless Xometry provider, the Ramp sandbox backend.
 
 ## Current prototype (pre-v8)
 
