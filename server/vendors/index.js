@@ -1,6 +1,7 @@
 // VendorProvider factory (see server/contracts.js). One interface, swappable backends:
 //   fake      in-process fake Xometry (default; the demo never touches xometry.com)
-//   headless  Playwright against xometry.com on a company account (stub until X1/X5/X6 are answered)
+//   headless  Playwright (installed Chrome) against a Xometry-shaped site: the simulated one by default
+//             (XOMETRY_BASE_URL), xometry.com once X1/X5/X6 are answered. Needs XOMETRY_HEADLESS_ENABLED=1.
 import {createFakeVendor} from './fake.js';
 import {createHeadlessVendor} from './headless.js';
 
