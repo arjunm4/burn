@@ -109,7 +109,7 @@ From the Flintlock numbers in `data-realism.md`.
 | Recorded meetings | 450–700, plus 2–3 gate reviews |
 | Calendar | Milestones, bookings, out-of-office, recurring meetings |
 
-The truth is generated for the full nine months, because code produces it for free. The written context is the expensive part: at full volume it is roughly 2.5–3 million tokens of model output. So it is written **newest first, at full density**: the first pass covers the most recent 13 weeks (2026-08-11 to 2026-11-10, about a third of the full text, including one build burst). Older months are written only if time and usage allow. Full density keeps the data looking like a 60-person company wherever a judge scrolls.
+The truth is generated for the full nine months, because code produces it for free. The written context is the expensive part: at full volume it is roughly 2.5–3 million tokens of model output. So it is written **newest first, at full density**: the first pass covers the most recent 13 calendar weeks (Monday 2026-08-17 to 2026-11-10, about a third of the full text, including two build bursts). Older months are written only if time and usage allow. Full density keeps the data looking like a 60-person company wherever a judge scrolls.
 
 ## How the context generator works
 
