@@ -1,6 +1,6 @@
 # Burn: architecture
 
-Status: **v8 draft (Claude), pending Codex review.** This version consolidates Owen's decisions of 2026-11-10 into one consistent document and removes superseded material; the history is in §15. v5 was the last version jointly approved by Claude and Codex. Architecture only; no implementation authorized. Open questions are tracked in [`open-questions.md`](open-questions.md).
+Status: **v8 draft.** This version consolidates Owen's decisions of 2026-11-10 into one consistent document and removes superseded material; the history is in §15. v5 was the last version jointly approved by Claude and Codex. Architecture only; no implementation authorized. Open questions are tracked in [`open-questions.md`](open-questions.md).
 
 ## At a glance
 

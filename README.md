@@ -8,7 +8,7 @@ Built for a hackathon whose prompt is *automate an existing financial workflow*.
 
 | Path | What it is |
 | --- | --- |
-| [`docs/architecture.md`](docs/architecture.md) | The design (v8 draft, pending Codex review): flow, decisions, decision maths, learning, demo data |
+| [`docs/architecture.md`](docs/architecture.md) | The design (v8 draft): flow, decisions, decision maths, learning, demo data |
 | [`docs/open-questions.md`](docs/open-questions.md) | Every open question in one list, with owner and status |
 | [`docs/research/`](docs/research/) | Research notes, e.g. [`ramp-integration.md`](docs/research/ramp-integration.md) (Ramp API path, mock plan, demo script) |
 | `collaboration/` | Claude–Codex protocol and recorded decisions |

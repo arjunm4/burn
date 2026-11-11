@@ -1,3 +1,5 @@
-# Project collaboration
+# Project rules for Claude
 
-Read collaboration/PROTOCOL.md at the start of work. Use scripts/collab.mjs as claude to publish status, inspect the codex status, and read your inbox. Reply to Codex's handshake with your current task, owned files and blockers. The user authorizes bounded messenger/reviewer subagents for coordination on this project. Respect file ownership and existing permissions; do not bypass permission prompts. This mailbox is shared with the Codex app even when that app has no cmux surface.
+- **Do not use the Codex collaboration system.** Don't read or write `collaboration/` messages or status, don't run `scripts/collab.mjs`, and don't wait for or request Codex reviews. Owen's decisions are final; the files stay only because other tools may still use them.
+- **Docs:** each fact lives in one place. Design in `docs/architecture.md`, open questions in `docs/open-questions.md`, research in `docs/research/`. Save research findings to a file in the same turn they arrive. When Owen decides something, update the architecture, remove the question from `open-questions.md`, and add it to the Answered table in the same commit.
+- **Git:** one short-lived branch per topic (`claude/<topic>`), Conventional Commits, push the branch after committing. Never push to or merge into `main` without asking.
