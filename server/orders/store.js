@@ -24,7 +24,8 @@ function auditDetail(value) {
   return value;
 }
 
-export function createOrderStore({filename = 'data/orders.sqlite'} = {}) {
+export function createOrderStore({filename = 'data/orders.sqlite', now = () => new Date()} = {}) {
+  const stamp = () => now().toISOString();
   if (filename !== ':memory:') mkdirSync(path.dirname(filename), {recursive: true});
   const db = new DatabaseSync(filename);
   db.exec(`PRAGMA journal_mode=WAL; PRAGMA busy_timeout=5000;
@@ -47,7 +48,7 @@ export function createOrderStore({filename = 'data/orders.sqlite'} = {}) {
   };
   const list = () => db.prepare('SELECT body FROM orders ORDER BY rowid').all().map(row => JSON.parse(row.body));
   function save(order, event, detail = {}) {
-    order.updatedAt = new Date().toISOString();
+    order.updatedAt = stamp();
     db.prepare('INSERT INTO orders VALUES(?,?,?) ON CONFLICT(id) DO UPDATE SET state=excluded.state,body=excluded.body').run(order.id, order.state, JSON.stringify(order));
     db.prepare('INSERT INTO order_events(order_id,body) VALUES(?,?)').run(order.id, JSON.stringify({at: order.updatedAt, event, revision: order.revision, detail: auditDetail(detail)}));
     return clone(order);
@@ -63,7 +64,7 @@ export function createOrderStore({filename = 'data/orders.sqlite'} = {}) {
   }
   function create(entry = {}) {
     if (!nonempty(entry.name)) fail('Part name is required', 400);
-    const at = new Date().toISOString();
+    const at = stamp();
     return tx(() => save({id: randomUUID(), revision: 0, state: 'entered', paymentState: 'none', bookingState: 'pending',
       entry: {...clone(entry), name: entry.name.trim(), note: entry.note || '', engineer: entry.engineer || '', cadHash: entry.cadHash || null, cadFileName: entry.cadFileName || null, enteredAt: at},
       spec: [], quote: null, decision: null, decisionRevision: null, frozen: null, specHash: null, context: {}, question: null, exchange: [],
@@ -113,8 +114,8 @@ export function createOrderStore({filename = 'data/orders.sqlite'} = {}) {
       const order = checked(id, revision);
       if (order.state !== 'approved' || !order.frozen || order.specHash !== specHash(order.frozen) || order.ramp.approvalStatus !== 'APPROVED' || order.paymentState !== 'issued' || !order.ramp.cardId) fail('Order is not authorized and funded for placement');
       if (attempts(id).some(a => a.outcome === null || a.outcome === 'unknown' || a.outcome === 'succeeded')) fail('Order has an unresolved or successful placement');
-      for (const value of [order.quote?.validUntil, order.quote?.cutoff]) if (value && (!Number.isFinite(Date.parse(value)) || Date.parse(value) <= Date.now())) fail('Quote or cutoff is stale');
-      const attempt = {id: randomUUID(), orderId: id, n: attempts(id).length + 1, specHash: order.specHash, decisionRevision: order.decisionRevision, startedAt: new Date().toISOString(), outcome: null, vendorOrderId: null, reason: null, finishedAt: null};
+      for (const value of [order.quote?.validUntil, order.quote?.cutoff]) if (value && (!Number.isFinite(Date.parse(value)) || Date.parse(value) <= now().getTime())) fail('Quote or cutoff is stale');
+      const attempt = {id: randomUUID(), orderId: id, n: attempts(id).length + 1, specHash: order.specHash, decisionRevision: order.decisionRevision, startedAt: stamp(), outcome: null, vendorOrderId: null, reason: null, finishedAt: null};
       saveAttempt(attempt); change(order, {state: 'placing'}, 'placement.started'); return clone(attempt);
     });
   }
@@ -126,7 +127,7 @@ export function createOrderStore({filename = 'data/orders.sqlite'} = {}) {
       if (attempt.outcome !== null || order.state !== 'placing') fail('Attempt already resolved or requires reconciliation');
       if (!['succeeded', 'failed', 'blocked', 'unknown'].includes(outcome)) fail('Invalid placement outcome', 400);
       if (outcome === 'succeeded' && !nonempty(detail.vendorOrderId)) fail('Vendor confirmation required', 400);
-      Object.assign(attempt, {outcome, vendorOrderId: detail.vendorOrderId || null, reason: detail.reason || null, finishedAt: new Date().toISOString()}); saveAttempt(attempt);
+      Object.assign(attempt, {outcome, vendorOrderId: detail.vendorOrderId || null, reason: detail.reason || null, finishedAt: stamp()}); saveAttempt(attempt);
       return change(order, {state: outcome === 'succeeded' ? 'placed' : outcome === 'unknown' ? 'placement_unknown' : 'approved', ...(outcome === 'succeeded' ? {vendorOrder: {vendorOrderId: detail.vendorOrderId, promisedOn: detail.promisedOn || null}} : {})}, `placement.${outcome}`);
     });
   }
@@ -136,7 +137,7 @@ export function createOrderStore({filename = 'data/orders.sqlite'} = {}) {
       if (order.state !== 'placement_unknown') fail('Order does not need reconciliation');
       if (!nonempty(resolution?.vendorOrderId) && !(resolution?.cancelled === true && nonempty(resolution.reason))) fail('Confirmation or explicit cancellation evidence required', 400);
       const attempt = attempts(id).at(-1);
-      Object.assign(attempt, {outcome: resolution.cancelled ? 'blocked' : 'succeeded', reason: resolution.reason || 'Vendor confirmation reconciled', vendorOrderId: resolution.vendorOrderId || null, finishedAt: new Date().toISOString()}); saveAttempt(attempt);
+      Object.assign(attempt, {outcome: resolution.cancelled ? 'blocked' : 'succeeded', reason: resolution.reason || 'Vendor confirmation reconciled', vendorOrderId: resolution.vendorOrderId || null, finishedAt: stamp()}); saveAttempt(attempt);
       return change(order, {state: resolution.cancelled ? 'cancelled' : 'placed', vendorOrder: {vendorOrderId: resolution.vendorOrderId || null, promisedOn: resolution.promisedOn || null}}, 'placement.reconciled');
     });
   }

@@ -12,7 +12,7 @@ const no = (reason, capability) => ({ok: false, reason, ...(capability ? {capabi
 const text = value => typeof value === 'string' && value.trim().length > 0;
 const capabilities = enabled => ({purchaseRequests: enabled, vaultCards: enabled, itemReceipts: false, webhooks: enabled});
 
-export function createRampClient({mode = 'mock', filename = 'data/orders.sqlite', webhookUrl, webhookSecret = process.env.RAMP_WEBHOOK_SECRET, fetchImpl = fetch} = {}) {
+export function createRampClient({mode = 'mock', filename = 'data/orders.sqlite', webhookUrl, webhookSecret = process.env.RAMP_WEBHOOK_SECRET, fetchImpl = fetch, now = () => new Date()} = {}) {
   if (!['mock', 'sandbox'].includes(mode)) throw Error('Unknown Ramp mode');
   if (mode === 'sandbox') {
     // Explicitly unavailable until individual operations are verified in the target business.
@@ -30,12 +30,13 @@ export function createRampClient({mode = 'mock', filename = 'data/orders.sqlite'
     CREATE TABLE IF NOT EXISTS ramp_mock_events(id TEXT PRIMARY KEY, body TEXT NOT NULL, delivered INTEGER NOT NULL DEFAULT 0);`);
   let handler;
   const get = (kind,id) => { const row=db.prepare('SELECT body FROM ramp_mock_records WHERE kind=? AND id=?').get(kind,id);return row ? JSON.parse(row.body) : null; };
+  const list = kind => db.prepare('SELECT body FROM ramp_mock_records WHERE kind=? ORDER BY rowid').all(kind).map(row=>JSON.parse(row.body)); // read-only, for the simulated Ramp screens
   const put = (kind,id,body) => db.prepare('INSERT INTO ramp_mock_records VALUES(?,?,?) ON CONFLICT(kind,id) DO UPDATE SET body=excluded.body').run(kind,id,JSON.stringify(body));
   const keyId = (kind,key) => key ? db.prepare('SELECT id FROM ramp_mock_keys WHERE kind=? AND key=?').get(kind,key)?.id : null;
   const keySave = (kind,key,id) => {if(key)db.prepare('INSERT INTO ramp_mock_keys VALUES(?,?,?)').run(kind,key,id);};
   function tx(fn) {db.exec('BEGIN IMMEDIATE');try{const value=fn();db.exec('COMMIT');return value;}catch(error){db.exec('ROLLBACK');throw error;}}
   function emit(type,payload) {
-    const event={id:randomUUID(),type,payload,created_at:new Date().toISOString()};
+    const event={id:randomUUID(),type,payload,created_at:now().toISOString()};
     db.prepare('INSERT INTO ramp_mock_events(id,body) VALUES(?,?)').run(event.id,JSON.stringify(event));return event;
   }
   async function deliver(event) {
@@ -57,7 +58,7 @@ export function createRampClient({mode = 'mock', filename = 'data/orders.sqlite'
       const existing=keyId('request',key);
       if(existing){const old=get('request',existing);if(old.specHash!==req.specHash||old.decisionRevision!==req.decisionRevision)return no('Idempotency key belongs to a different decision');return {ok:true,requestId:existing,status:old.status};}
       const id=randomUUID();
-      put('request',id,{...structuredClone(req),attachments:(req.attachments||[]).map(a=>({name:a.name,mime:a.mime,bytes:Buffer.from(a.bytes).toString('base64')})),id,status:'PENDING',created_at:new Date().toISOString()});keySave('request',key,id);
+      put('request',id,{...structuredClone(req),attachments:(req.attachments||[]).map(a=>({name:a.name,mime:a.mime,bytes:Buffer.from(a.bytes).toString('base64')})),id,status:'PENDING',created_at:now().toISOString()});keySave('request',key,id);
       return {ok:true,requestId:id,status:'PENDING'};
     });
   }
@@ -65,7 +66,7 @@ export function createRampClient({mode = 'mock', filename = 'data/orders.sqlite'
     const req=get('request',id);return req ? {status:req.status,specHash:req.specHash,decisionRevision:req.decisionRevision,approvedAt:req.approvedAt,requestId:id} : no('Request not found');
   }
   async function issueCard(card={}) {
-    if(!text(card.orderId)||!text(card.user_id)||!Number.isSafeInteger(card.limitCents)||card.limitCents<=0||!Array.isArray(card.allowed_vendors)||!card.allowed_vendors.length||!card.allowed_vendors.every(text)||!Number.isFinite(Date.parse(card.lock_date))||Date.parse(card.lock_date)<=Date.now())return no('Invalid or expired card restrictions','vaultCards');
+    if(!text(card.orderId)||!text(card.user_id)||!Number.isSafeInteger(card.limitCents)||card.limitCents<=0||!Array.isArray(card.allowed_vendors)||!card.allowed_vendors.length||!card.allowed_vendors.every(text)||!Number.isFinite(Date.parse(card.lock_date))||Date.parse(card.lock_date)<=now().getTime())return no('Invalid or expired card restrictions','vaultCards');
     return tx(()=>{
       const existing=keyId('card',card.orderId);
       if(existing){const old=get('card',existing);if(old.spending_restrictions.limit!==card.limitCents||JSON.stringify(old.allowed_vendors)!==JSON.stringify(card.allowed_vendors)||old.lock_date!==card.lock_date)return no('Order already has different card restrictions','vaultCards');return {ok:true,cardId:existing,last4:old.last4,credentialRef:old.credentialRef};}
@@ -89,7 +90,7 @@ export function createRampClient({mode = 'mock', filename = 'data/orders.sqlite'
       const req=get('request',id);if(!req)return no('Request not found');
       if(req.status===status)return {ok:true,event:null};
       if(req.status!=='PENDING')return no('Request already has a terminal decision');
-      req.status=status;if(status==='APPROVED')req.approvedAt=new Date().toISOString();put('request',id,req);
+      req.status=status;if(status==='APPROVED')req.approvedAt=now().toISOString();put('request',id,req);
       return {ok:true,event:emit('unified_requests.'+status.toLowerCase(),{id,requestId:id,status,specHash:req.specHash,decisionRevision:req.decisionRevision})};
     });
     if(result.event&&deliverEvent)result.delivery=await deliver(result.event);
@@ -102,9 +103,9 @@ export function createRampClient({mode = 'mock', filename = 'data/orders.sqlite'
       const card=get('card',cardId);
       if(!card)return no('Card not found');
       if(!Number.isSafeInteger(amountCents)||amountCents<=0||amountCents+card.spentCents>card.spending_restrictions.limit)return no('Card amount limit exceeded');
-      if(Date.parse(card.lock_date)<=Date.now()||!card.allowed_vendors.some(v=>v.toLowerCase()===vendor.toLowerCase()))return no('Card expired or vendor not allowed');
+      if(Date.parse(card.lock_date)<=now().getTime()||!card.allowed_vendors.some(v=>v.toLowerCase()===vendor.toLowerCase()))return no('Card expired or vendor not allowed');
       const id=randomUUID();card.spentCents+=amountCents;put('card',cardId,card);
-      put('transaction',id,{id,card_id:cardId,amount:amountCents,merchant_name:vendor,orderId:card.orderId,status:'CLEARED'});keySave('charge',idempotencyKey,id);
+      put('transaction',id,{id,card_id:cardId,amount:amountCents,merchant_name:vendor,orderId:card.orderId,status:'CLEARED',created_at:now().toISOString()});keySave('charge',idempotencyKey,id);
       return {ok:true,transactionId:id,event:emit('transactions.cleared',{id,transactionId:id,cardId,card_id:cardId,amount:amountCents,orderId:card.orderId})};
     });
     if(result.event&&deliverEvent)await deliver(result.event);
@@ -115,5 +116,5 @@ export function createRampClient({mode = 'mock', filename = 'data/orders.sqlite'
     simulate:async()=>({approve:(id,options)=>statusChange(id,'APPROVED',options),reject:(id,options)=>statusChange(id,'REJECTED',options),
       cancel:(id,options)=>statusChange(id,'CANCELLED',options),charge,
       events:allEvents,replay:async ids=>Promise.all(ids.map(id=>{const event=allEvents().find(e=>e.id===id);return event?deliver(event):no('Event not found');})),
-      inspect:(kind,id)=>get(kind,id)})};
+      inspect:(kind,id)=>get(kind,id),list})};
 }

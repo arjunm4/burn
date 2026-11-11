@@ -5,6 +5,7 @@
 // It never invents a dollar value, never turns unknown dates into estimates, and never
 // prices people's time. Runs in Node and the browser.
 import {analyzeGraph, toDay, toIso} from '../graph/engine.js';
+import {makeCalendar} from '../graph/calendar.js';
 import {createHash} from '../hash.js';
 
 const DAY = 86400000;
@@ -26,8 +27,12 @@ const daysBetween = (a, b) => Math.round((Date.parse(b) - Date.parse(a)) / DAY);
  * @param {{revisionOk?: boolean, quantityOk?: boolean, authority?: boolean}} [input.constraints]
  */
 export function decide(input) {
-  const {options, quote = {}, graph, partNodeId, milestoneId, orderDate, now, policy = {}, uncertain = [], assumptions = [], constraints = {}} = input;
-  const snapshotHash = createHash(JSON.stringify({options, quote, graph, partNodeId, milestoneId, orderDate, policy, uncertain, constraints}));
+  const {options, quote = {}, graph, partNodeId, milestoneId, orderDate, now, policy = {}, uncertain = [], assumptions = [], constraints = {}, calendar = null} = input;
+  const snapshotHash = createHash(JSON.stringify({options, quote, graph, partNodeId, milestoneId, orderDate, policy, uncertain, constraints, calendar}));
+  // With a company calendar, days gained and days late are working days (how the team counts them).
+  const cal = calendar ? makeCalendar(calendar) : null;
+  const gained = (later, earlier) => (cal ? cal.workingDaysBetween(toDay(earlier), toDay(later)) : daysBetween(earlier, later));
+  const lateBy = (finishIso, refDay) => Math.max(0, cal ? cal.workingDaysBetween(refDay, toDay(finishIso)) : toDay(finishIso) - refDay);
 
   // 1. Admissibility: a valid quote, right revision and quantity, authority, not past the cutoff.
   const quoteExpired = quote.validUntil && Date.parse(quote.validUntil) < Date.parse(now);
@@ -47,7 +52,7 @@ export function decide(input) {
     outcomes[o.tier] = {};
     for (const s of scenarios) {
       // A later arrival from the part never improves a sibling: scenario arrivals override only their own node.
-      const a = analyzeGraph(graph, {orderDate, arrivals: {...s.arrivals, [partNodeId]: o.readyOn}});
+      const a = analyzeGraph(graph, {orderDate, arrivals: {...s.arrivals, [partNodeId]: o.readyOn}, calendar});
       const m = a.at[milestoneId];
       outcomes[o.tier][s.id] = {finishOn: m?.finish ?? null, unknowns: a.unknown, blocked: a.blocked, drivenBy: m?.drivenBy ?? null};
     }
@@ -67,7 +72,7 @@ export function decide(input) {
     const why = whyFor(o); const adm = !why;
     const f = finish(o.tier, base);
     const f0 = cheapest ? finish(cheapest.tier, base) : null;
-    const deltaDays = adm && f && f0 ? daysBetween(f, f0) : null;
+    const deltaDays = adm && f && f0 ? gained(f0, f) : null;
     const extraCents = cheapest ? o.priceCents - cheapest.priceCents : 0;
     return {tier: o.tier, admissible: adm, ...(adm ? {} : {why}), readyOn: o.readyOn, finishOn: f, deltaDays, extraCents,
       breakEvenCentsPerDay: deltaDays && deltaDays > 0 && extraCents > 0 ? Math.round(extraCents / deltaDays) : null};
@@ -101,8 +106,7 @@ export function decide(input) {
     const winner = sid => {
       const ref = policy.targetOn ? toDay(policy.targetOn) : Math.min(...undominated.map(o => toDay(finish(o.tier, sid))));
       return undominated.reduce((best, o) => {
-        const late = Math.max(0, toDay(finish(o.tier, sid)) - ref);
-        const loss = o.priceCents + late * policy.valuePerDayCents;
+        const loss = o.priceCents + lateBy(finish(o.tier, sid), ref) * policy.valuePerDayCents;
         return !best || loss < best.loss ? {o, loss} : best;
       }, null).o;
     };
@@ -133,7 +137,7 @@ export function decide(input) {
     if (und.length === 1) return {tier: und[0].tier};
     if (und.length > 1 && policy.valuePerDayCents) {
       const ref = policy.targetOn ? toDay(policy.targetOn) : Math.min(...und.map(o => toDay(finish(o.tier, sid) || orderDate)));
-      return und.reduce((best, o) => { const f = finish(o.tier, sid); if (!f) return best; const loss = o.priceCents + Math.max(0, toDay(f) - ref) * policy.valuePerDayCents; return !best || loss < best.loss ? {o, loss, tier: o.tier} : best; }, null);
+      return und.reduce((best, o) => { const f = finish(o.tier, sid); if (!f) return best; const loss = o.priceCents + lateBy(f, ref) * policy.valuePerDayCents; return !best || loss < best.loss ? {o, loss, tier: o.tier} : best; }, null);
     }
     return null;
   }
@@ -148,7 +152,7 @@ export function decide(input) {
   else stated.push('No value-of-time policy set for this milestone; showing break-even only');
   if (pastCutoff) stated.push('The vendor cutoff has passed; production starts next business day');
 
-  return {snapshotHash, options: summary, recommended, tentative, assumptions: stated, switching, question,
+  return {snapshotHash, options: summary, recommended, tentative, assumptions: stated, switching, question, workingDays: !!cal,
     unknowns: unknownBase, dominated: [...dominated], scenarios: scenarios.map(s => ({id: s.id, label: s.label})), outcomes};
 }
 
@@ -174,8 +178,8 @@ export function explain(result, {milestoneLabel = 'the milestone'} = {}) {
     }
     return `${rec.tier} is better on both price and time than the alternatives.`;
   }
-  const days = rec.deltaDays, be = rec.breakEvenCentsPerDay;
-  return `${rec.tier} gets ${milestoneLabel} done ${days} day${days === 1 ? '' : 's'} sooner for +$${(rec.extraCents / 100).toLocaleString('en-US')}: worth it if a day is worth more than $${Math.round(be / 100)}.${result.switching ? ` ${result.switching}.` : ''}`;
+  const days = rec.deltaDays, be = rec.breakEvenCentsPerDay, unit = result.workingDays ? 'working day' : 'day';
+  return `${rec.tier} gets ${milestoneLabel} done ${days} ${unit}${days === 1 ? '' : 's'} sooner for +$${(rec.extraCents / 100).toLocaleString('en-US')}: worth it if a day is worth more than $${Math.round(be / 100)}.${result.switching ? ` ${result.switching}.` : ''}`;
 }
 
 export {toIso};

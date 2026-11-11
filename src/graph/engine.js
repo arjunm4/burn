@@ -8,9 +8,8 @@
 // that waits on an unknown finish is unknown too. Nodes on or after a dependency cycle are
 // blocked, not scheduled. The engine never prices time; valuation lives elsewhere.
 
-const DAY = 86400000;
-export const toDay = iso => Math.round(Date.parse(iso.slice(0, 10) + 'T00:00:00Z') / DAY);
-export const toIso = day => new Date(day * DAY).toISOString().slice(0, 10);
+import {makeCalendar, toDay, toIso} from './calendar.js';
+export {toDay, toIso};
 const flowKinds = new Set(['blocks', 'due']);
 
 function index(graph) {
@@ -53,11 +52,14 @@ function available(start, assignees) {
 }
 
 /**
- * analyzeGraph(graph, {orderDate, arrivals}) -> schedule
+ * analyzeGraph(graph, {orderDate, arrivals, calendar}) -> schedule
  * arrivals: {partNodeId: ISO date} for parts whose delivery depends on a shipping choice.
+ * calendar: {holidays} switches work to working days: an input ready on day R is usable from
+ * the next working day, and work of D days finishes on the D-th working day after R.
  */
-export function analyzeGraph(graph, {orderDate, arrivals = {}} = {}) {
+export function analyzeGraph(graph, {orderDate, arrivals = {}, calendar = null} = {}) {
   const ix = index(graph);
+  const cal = calendar ? makeCalendar(calendar) : null;
   const {sorted, cyclic} = order(graph, ix);
   const origin = toDay(orderDate || new Date().toISOString());
   const at = {};
@@ -78,16 +80,21 @@ export function analyzeGraph(graph, {orderDate, arrivals = {}} = {}) {
     if (n.kind === 'part') {
       const date = arrivals[id] || n.attrs?.date;
       const day = date ? toDay(date) : origin;
-      at[id] = {start: day, finish: day, end: n.attrs?.end ? toDay(n.attrs.end) : null, drivenBy: null};
+      // A booking (a window with an end) is where the work happens, so under a working-day calendar the
+      // work may start on its first day; a delivered input is usable from the working day after it lands.
+      const booking = n.attrs?.end != null;
+      at[id] = {start: day, finish: booking && cal ? day - 1 : day, end: booking ? toDay(n.attrs.end) : null, drivenBy: null};
     } else if (n.kind === 'milestone') {
       const planned = n.attrs?.date ? toDay(n.attrs.date) : ready;
       const actual = Math.max(planned, ready);
       at[id] = {start: actual, finish: actual, planned, slip: actual - planned, drivenBy: actual > planned ? latest?.from : null};
     } else if (n.kind === 'work') {
       const assignees = ix.people.get(id);
-      const {day, by} = available(Math.max(origin, ready), assignees);
       const duration = Number.isFinite(n.attrs?.durationDays) && n.attrs.durationDays > 0 ? n.attrs.durationDays : null;
-      at[id] = {start: day, finish: duration == null ? null : day + duration, ...(duration == null ? {unknown: true} : {}), drivenBy: by && day > ready ? by : latest?.from || null, people: assignees.map(p => p.id)};
+      // Working days: start the next working day after the last input is ready; calendar days: start that day.
+      const {day, by} = available(cal ? cal.addWorkingDays(Math.max(origin, ready), 1) : Math.max(origin, ready), assignees);
+      const finish = duration == null ? null : cal ? cal.addWorkingDays(day, duration - 1) : day + duration;
+      at[id] = {start: day, finish, ...(duration == null ? {unknown: true} : {}), drivenBy: by && day > ready ? by : latest?.from || null, people: assignees.map(p => p.id)};
       if (duration == null) unknown.push(id);
       // A time-boxed booking (e.g. a test chamber) is useless if the work starts after it ends.
       for (const e of incoming) {

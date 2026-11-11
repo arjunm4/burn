@@ -4,7 +4,8 @@
 import {readFileSync, existsSync} from 'node:fs';
 
 const DEFAULTS = {
-  company: {name: 'Your company', currency: 'USD', timeZone: 'America/Los_Angeles'},
+  // holidays: full closures (ISO dates) that working-day lead times and lateness skip; manager: who approves in Ramp.
+  company: {name: 'Your company', currency: 'USD', timeZone: 'America/Los_Angeles', holidays: [], manager: null},
   // Spec fields every order must resolve before quoting. `default` is an authorized company default
   // (provenance 'default'); fields without one are gaps the engineer must answer.
   specFields: [
@@ -30,5 +31,5 @@ export function loadConfig() {
   const path = process.env.BURN_CONFIG || (existsSync('burn.config.json') ? 'burn.config.json' : null);
   if (!path) return structuredClone(DEFAULTS);
   const file = JSON.parse(readFileSync(path, 'utf8'));
-  return {...structuredClone(DEFAULTS), ...file, specFields: file.specFields || DEFAULTS.specFields, milestones: {...DEFAULTS.milestones, ...(file.milestones || {})}, ramp: {...DEFAULTS.ramp, ...(file.ramp || {})}};
+  return {...structuredClone(DEFAULTS), ...file, company: {...DEFAULTS.company, ...(file.company || {})}, specFields: file.specFields || DEFAULTS.specFields, milestones: {...DEFAULTS.milestones, ...(file.milestones || {})}, ramp: {...DEFAULTS.ramp, ...(file.ramp || {})}};
 }
