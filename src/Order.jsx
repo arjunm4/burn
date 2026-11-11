@@ -86,6 +86,7 @@ export default function Order({id}) {
 
     <aside style={{display: 'flex', flexDirection: 'column', gap: 24, minWidth: 0}}>
       <Section title="Context" right={ctx.milestoneLabel}>
+        {ctx.agent?.summary && <div style={{fontSize: 12, lineHeight: 1.45, paddingLeft: 10, borderLeft: `2px solid ${C.accent}`}}>{ctx.agent.summary}</div>}
         {ctx.assumptions?.length
           ? <ul style={{margin: 0, paddingLeft: 16, display: 'flex', flexDirection: 'column', gap: 5, lineHeight: 1.4}}>{ctx.assumptions.map((a, i) => <li key={i}>{a.text}{a.ageDays > 0 && <span style={{color: C.faint}}> · {a.ageDays}d ago</span>}</li>)}</ul>
           : <span style={{color: C.muted}}>{working ? 'Reading…' : 'Nothing related found.'}</span>}
