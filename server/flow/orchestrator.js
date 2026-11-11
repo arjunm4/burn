@@ -228,7 +228,9 @@ export function createOrchestrator({store, vendor, ramp, ingest = null, config, 
     if (!chosen || chosen.priceCents !== order.frozen.priceCents) problems.push('the quoted price changed');
     // Material-change rule: re-decide on today's context; a frozen tier that is no longer valid, or a
     // changed recommendation, needs the engineer and approver to look again.
-    const ctx = buildContext({order, ingest, config, now: iso()});
+    // Revalidate on the same reading the decision was made on (the agent's graph when it was used), with any engineer-asserted dates.
+    const prior = order.context?.agentRead;
+    const ctx = buildContext({order, ingest, config, now: iso(), ...(prior ? {graph: prior.graph, evidence: prior.evidence} : {})});
     const fresh = decide({options: order.quote.options, quote: {validUntil: order.quote.validUntil, cutoff: order.quote.cutoff}, graph: ctx.graph, partNodeId: ctx.partNodeId, milestoneId: ctx.milestoneId || order.context?.milestoneId, orderDate: today(), now: iso(), policy: ctx.policy, uncertain: ctx.uncertain, assumptions: ctx.assumptions, calendar: ctx.calendar});
     const frozenNow = fresh.options.find(o => o.tier === order.frozen.tier);
     if (!frozenNow?.admissible) problems.push(`${order.frozen.tier} is no longer a valid option (${frozenNow?.why || 'unknown'})`);
