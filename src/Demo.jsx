@@ -41,12 +41,15 @@ export function DemoLiveChanges({order}) {
     setBusy(id); setError(null);
     try { await api('/demo/live-change', {body: {id}}); await reload(); } catch (e) { setError(e.message); } finally { setBusy(null); }
   }
+  const [first, ...rest] = demo.liveChanges;
+  const row = c => <div key={c.id} style={{display: 'grid', gridTemplateColumns: 'minmax(0,1fr) auto', gap: 10, alignItems: 'center'}}>
+    <span><span style={{color: C.muted}}>#{c.channel} · {c.by}:</span> {c.text}</span>
+    <Button onClick={() => inject(c.id)} disabled={!!busy} style={{padding: '5px 10px', fontSize: 12}}>{busy === c.id ? 'Posting…' : c.applied ? 'Post again' : 'Post'}</Button>
+  </div>;
   return <div style={box}>
-    <div style={{display: 'flex', alignItems: 'center', gap: 8}}><Chip>demo</Chip><span style={{color: C.muted}}>Post a Slack message</span></div>
-    {demo.liveChanges.map(c => <div key={c.id} style={{display: 'grid', gridTemplateColumns: 'minmax(0,1fr) auto', gap: 10, alignItems: 'center'}}>
-      <span style={{whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'}}><span style={{color: C.muted}}>{c.by}: </span>{c.text}</span>
-      <Button onClick={() => inject(c.id)} disabled={!!busy} style={{padding: '5px 10px', fontSize: 12}}>{busy === c.id ? 'Posting…' : c.applied ? 'Again' : 'Post'}</Button>
-    </div>)}
+    <div style={{display: 'flex', alignItems: 'center', gap: 8}}><Chip>demo</Chip><span style={{color: C.muted}}>Meanwhile, in Slack… (Burn is listening)</span></div>
+    {row(first)}
+    {rest.length > 0 && <details><summary style={{cursor: 'pointer', color: C.muted, fontSize: 11}}>{rest.length} other messages</summary><div style={{display: 'flex', flexDirection: 'column', gap: 8, marginTop: 8}}>{rest.map(row)}</div></details>}
     {error && <div role="alert" style={{color: C.critical}}>{error}</div>}
   </div>;
 }

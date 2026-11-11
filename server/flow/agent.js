@@ -67,7 +67,7 @@ Finish by calling report exactly once.`;
 const CARD = {
   type: 'object', additionalProperties: false, required: ['card', 'question', 'justification'],
   properties: {
-    card: {type: 'string', description: 'One or two plain sentences for the engineer, in the voice of a sharp colleague. Name the recommended tier, the days gained, the extra cost and the break-even when there is a real trade-off; say why when one option dominates; when nothing is recommended, say what it hinges on and who knows.'},
+    card: {type: 'string', description: 'At most two short sentences (under 40 words) for the engineer, in the voice of a sharp colleague. Name the recommended tier, the days gained, the extra cost and the break-even when there is a real trade-off; say why when one option dominates; when nothing is recommended, say what it hinges on and who knows.'},
     question: {type: ['string', 'null'], description: 'When a question is open: the question for its owner, one sentence, naming the work waiting on the answer and the two answers that matter.'},
     justification: {type: 'string', description: 'Three to five sentences for the approver in Ramp: what is being bought and for what, the recommendation and its reasoning with the numbers, what it rests on, and the vendor cutoff.'},
   },

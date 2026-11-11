@@ -85,40 +85,38 @@ export default function Order({id}) {
   const ctx = order.context || {};
   const d = order.decision;
 
-  return <Page system={system} width={1240} data-q-main style={{display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 300px', gap: 44}}>
-    <div style={{display: 'flex', flexDirection: 'column', gap: 28, minWidth: 0}}>
+  return <Page system={system} width={1140} data-q-main style={{display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 260px', gap: 48}}>
+    <div style={{display: 'flex', flexDirection: 'column', gap: 32, minWidth: 0}}>
       <header>
         <div style={{display: 'flex', gap: 12, alignItems: 'baseline', flexWrap: 'wrap'}}>
           <span style={{fontSize: 26, letterSpacing: '-.02em'}}>{order.entry.name}</span>
           <StateBadge state={order.state}/>
-          <span style={{color: C.muted}}>{order.entry.engineer} · {relTime(order.createdAt)}{order.entry.partNumber ? ` · ${order.entry.partNumber}` : ''}</span>
+          <span style={{color: C.muted}}>{order.entry.engineer} · {relTime(order.createdAt)}</span>
         </div>
         {order.entry.note && <div style={{color: C.muted, marginTop: 4, fontSize: 14}}>“{order.entry.note}”</div>}
       </header>
       {error && <div role="alert" style={{color: C.critical}}>{error}</div>}
 
-      <Activity lines={story} working={working}/>
-
+      {working ? <Activity lines={story} working/> : null}
       {order.state === 'needs_answer' && order.question && <QuestionPanel order={order} act={act} busy={busy}/>}
       {d && order.quote && <Decision order={order} act={act} busy={busy}/>}
       {order.frozen && <Purchase order={order} events={events} act={act} busy={busy} mock={system?.ramp?.mode === 'mock'} refresh={refresh}/>}
+      {!working && story.length > 0 && <Fold title={`What Burn did · ${story.length} steps`}><Activity lines={story} working={false} all/></Fold>}
       <DemoLiveChanges order={order}/>
     </div>
 
-    <aside style={{display: 'flex', flexDirection: 'column', gap: 24, minWidth: 0}}>
-      <Section title="Spec" right={order.entry.cadFileName}>
+    <aside style={{display: 'flex', flexDirection: 'column', gap: 22, minWidth: 0, fontSize: 12}}>
+      <Section title="Spec" right={order.entry.partNumber}>
         {order.spec?.length
-          ? <Rows gap={4} rows={order.spec.map(f => [f.key, <span>{f.value ?? <span style={{color: C.critical}}>missing</span>}{f.provenance === 'default' && <span style={{color: C.faint}}> · default</span>}</span>])}/>
+          ? <Rows gap={3} rows={order.spec.filter(f => f.provenance !== 'default').map(f => [f.key, f.value ?? <span style={{color: C.critical}}>missing</span>])}/>
           : <span style={{color: C.muted}}>Not resolved yet.</span>}
+        {order.entry.cadFileName && <div style={{color: C.faint, marginTop: 6}}>{order.entry.cadFileName}</div>}
       </Section>
-      {ctx.related?.length > 0 && <Section title={`Sources · ${ctx.related.length}`}>
-        <div style={{display: 'flex', flexDirection: 'column', gap: 8}}>
-          {ctx.related.slice(0, 5).map(r => <Quote key={r.id} r={r}/>)}
-          {ctx.related.length > 5 && <Fold title={`${ctx.related.length - 5} more`}><div style={{display: 'flex', flexDirection: 'column', gap: 8}}>{ctx.related.slice(5).map(r => <Quote key={r.id} r={r}/>)}</div></Fold>}
-        </div>
-      </Section>}
+      {ctx.related?.length > 0 && <Fold title={`Sources · ${ctx.related.length}`}>
+        <div style={{display: 'flex', flexDirection: 'column', gap: 8}}>{ctx.related.map(r => <Quote key={r.id} r={r}/>)}</div>
+      </Fold>}
       {!!order.exchange?.length && <Section title="Discussion">
-        {order.exchange.map((s, i) => <div key={i} style={{fontSize: 12, lineHeight: 1.45, ...(s.by === 'Burn' ? {paddingLeft: 10, borderLeft: `2px solid ${C.accent}`} : {})}}><span style={{color: C.muted}}>{s.by}: </span>{s.text}</div>)}
+        {order.exchange.map((s, i) => <div key={i} style={{lineHeight: 1.45, ...(s.by === 'Burn' ? {paddingLeft: 10, borderLeft: `2px solid ${C.accent}`} : {})}}><span style={{color: C.muted}}>{s.by}: </span>{s.text}</div>)}
       </Section>}
     </aside>
   </Page>;
@@ -130,15 +128,14 @@ const Quote = ({r}) => <blockquote style={{margin: 0, padding: '4px 10px', borde
 </blockquote>;
 
 /** What Burn did, as it happens. */
-function Activity({lines, working}) {
+function Activity({lines, working, all = false}) {
   const ref = React.useRef(null);
   React.useEffect(() => { if (working && ref.current) ref.current.scrollTop = ref.current.scrollHeight; }, [lines.length, working]);
   if (!lines.length && !working) return null;
-  const shown = working ? lines : lines.slice(-6);
+  const shown = all ? lines : lines.slice(-5);
   return <section>
-    <Eyebrow>What Burn did</Eyebrow>
-    <div ref={ref} style={{marginTop: 8, display: 'flex', flexDirection: 'column', gap: 6, maxHeight: working ? 320 : 'none', overflowY: 'auto', paddingRight: 4}}>
-      {lines.length > 6 && !working && <span style={{color: C.faint, fontSize: 12}}>… {lines.length - 6} earlier steps</span>}
+    {working && <Eyebrow>Burn is working</Eyebrow>}
+    <div ref={ref} style={{marginTop: working ? 8 : 0, display: 'flex', flexDirection: 'column', gap: 6}}>
       {shown.map((l, i) => {
         const last = i === shown.length - 1, bad = BAD.test(l.text);
         return <div key={l.key} style={{display: 'grid', gridTemplateColumns: '14px 52px minmax(0,1fr)', gap: 8, alignItems: 'baseline', fontSize: l.strong ? 14 : 13, lineHeight: 1.45, color: bad ? C.critical : l.strong ? C.ink : last && working ? C.ink : C.muted}}>
@@ -177,7 +174,6 @@ function QuestionPanel({order, act, busy}) {
   </form>;
 }
 
-const COLS = 'minmax(0,1.3fr) 1fr 1fr 1.1fr .8fr 1fr auto';
 function Decision({order, act, busy}) {
   const d = order.decision, q = order.quote, ctx = order.context || {};
   const rec = d.recommended?.tier, tent = d.tentative?.tier;
@@ -185,53 +181,49 @@ function Decision({order, act, busy}) {
   const [editing, setEditing] = React.useState(null); const [date, setDate] = React.useState('');
   const canOkay = order.state === 'recommended';
   const open = ['recommended', 'needs_answer'].includes(order.state);
-  const cell = {fontVariantNumeric: 'tabular-nums'};
   const inputs = ctx.inputs || [];
-  return <section style={{display: 'flex', flexDirection: 'column', gap: 14}}>
-    <Eyebrow>{order.frozen ? 'The decision' : rec ? 'Burn recommends' : 'Burn cannot decide yet'}</Eyebrow>
-    <div style={{fontSize: 20, lineHeight: 1.4, letterSpacing: '-.01em'}}>{d.text}</div>
-    {d.switching && !rec && <div style={{color: C.muted}}>Switching condition: {d.switching}.</div>}
+  // Short name for the table: the last two words of the milestone ("Hip actuator DVT spin test complete" → "spin test").
+  const milestone = ctx.milestoneLabel ? ctx.milestoneLabel.replace(/ complete$/i, '').split(' ').slice(-2).join(' ') : 'milestone';
+  const recOpt = d.options.find(o => o.tier === (order.frozen?.tier || rec));
+  const priceOf = t => q.options.find(x => x.tier === t)?.priceCents;
+  return <section style={{display: 'flex', flexDirection: 'column', gap: 16}}>
+    <div>
+      <Eyebrow>{order.frozen ? 'Okayed' : rec ? 'Burn recommends' : tent ? 'Burn is leaning' : 'Burn cannot decide yet'}</Eyebrow>
+      {recOpt && <div style={{fontSize: 30, letterSpacing: '-.02em', marginTop: 6}}>{recOpt.tier} · {money(priceOf(recOpt.tier))}</div>}
+      <div style={{fontSize: 16, lineHeight: 1.5, marginTop: 8, color: C.ink}}>{d.text}</div>
+    </div>
     <div style={{border: `1px solid ${C.line}`, borderRadius: 12, overflow: 'hidden', background: '#fff'}}>
-      <div style={{display: 'grid', gridTemplateColumns: COLS, gap: 8, padding: '8px 14px', borderBottom: `1px solid ${C.line}`}}>
-        {['Lead time', 'Price', 'Part ready', ctx.milestoneLabel ? `${ctx.milestoneLabel.replace(/ complete$/i, '')} done` : 'Milestone', d.workingDays ? 'Days gained' : 'Gained', 'Break-even', ''].map((h, i) => <Eyebrow key={i} style={{letterSpacing: '.08em'}}>{h}</Eyebrow>)}
-      </div>
-      {d.options.map(o => {
-        const qo = q.options.find(x => x.tier === o.tier) || {};
+      {d.options.map((o, i) => {
         const isRec = o.tier === rec, isTent = o.tier === tent, chosen = order.frozen?.tier === o.tier, dominated = d.dominated?.includes(o.tier);
-        return <div key={o.tier} style={{display: 'grid', gridTemplateColumns: COLS, gap: 8, padding: '12px 14px', alignItems: 'center', borderTop: `1px solid ${C.hair}`, background: isRec || chosen ? C.paper : '#fff', opacity: o.admissible ? 1 : .5}}>
-          <span style={{display: 'flex', gap: 6, alignItems: 'baseline', flexWrap: 'wrap'}}>{o.tier}{chosen ? <Chip tone="ink">okayed</Chip> : isRec ? <Chip tone="ink">recommended</Chip> : isTent ? <Chip>leaning</Chip> : dominated ? <Chip>buys no time</Chip> : null}{!o.admissible && <Chip tone="critical">{o.why}</Chip>}</span>
-          <span style={cell}>{money(qo.priceCents)}{o.extraCents > 0 && <span style={{color: C.muted}}> +{money(o.extraCents)}</span>}</span>
-          <span style={cell}>{day(qo.readyOn)}</span>
-          <span style={{...cell, color: o.finishOn ? C.ink : C.muted}}>{o.finishOn ? day(o.finishOn) : 'unknown'}{o.orderBy && <span style={{color: C.faint, fontSize: 11}}> · order by {day(o.orderBy)}</span>}</span>
-          <span style={{...cell, color: dominated ? C.muted : C.ink}}>{o.deltaDays == null ? '—' : o.deltaDays > 0 ? `+${o.deltaDays}` : '0'}</span>
-          <span style={{...cell, color: C.muted}}>{o.breakEvenCentsPerDay ? `${money(o.breakEvenCentsPerDay)}/day` : '—'}</span>
+        const sub = !o.admissible ? o.why : dominated ? `+${money(o.extraCents)} buys no time${o.gatedBy ? `: ${o.gatedBy} gates the test` : ''}` : o.extraCents > 0 && o.deltaDays > 0 ? `+${money(o.extraCents)} for ${o.deltaDays} ${d.workingDays ? 'working ' : ''}day${o.deltaDays === 1 ? '' : 's'} sooner · break-even ${money(o.breakEvenCentsPerDay)}/day` : o.extraCents === 0 ? 'cheapest' : '';
+        return <div key={o.tier} style={{display: 'grid', gridTemplateColumns: 'minmax(0,1.6fr) 1fr 1.2fr auto', gap: 12, padding: '14px 16px', alignItems: 'center', borderTop: i ? `1px solid ${C.hair}` : 0, background: isRec || chosen ? C.paper : '#fff', opacity: o.admissible ? 1 : .5}}>
+          <span style={{minWidth: 0}}>
+            <div style={{fontSize: 15, display: 'flex', gap: 8, alignItems: 'baseline'}}>{o.tier}{chosen ? <Chip tone="ink">okayed</Chip> : isRec ? <Chip tone="ink">recommended</Chip> : isTent ? <Chip>leaning</Chip> : null}</div>
+            {sub && <div style={{color: C.muted, fontSize: 12, marginTop: 2}}>{sub}</div>}
+          </span>
+          <span style={{fontSize: 15, fontVariantNumeric: 'tabular-nums'}}>{money(priceOf(o.tier))}</span>
+          <span style={{fontSize: 13, color: o.finishOn ? C.ink : C.muted}}>{milestone} done <strong style={{fontWeight: 500}}>{o.finishOn ? day(o.finishOn) : '?'}</strong></span>
           <span>{canOkay && o.admissible && <Button primary={isRec} disabled={busy} onClick={() => act(`/orders/${order.id}/okay`, {tier: o.tier})}>{isRec ? 'Okay' : 'Choose'}</Button>}</span>
         </div>;
       })}
     </div>
-    <div style={{display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)', gap: 24}}>
-      <div>
-        <Eyebrow>Rests on</Eyebrow>
-        <div style={{marginTop: 6, display: 'flex', flexDirection: 'column', gap: 5, fontSize: 12, lineHeight: 1.4}}>
-          {(ctx.assumptions || []).map((a, i) => <div key={i}>{a.text}{a.ageDays > 0 && <span style={{color: C.faint}}> · {a.ageDays}d ago</span>}</div>)}
-          {ctx.policy?.valuePerDayCents ? <div style={{color: C.muted}}>A day of {ctx.milestoneLabel} is worth {money(ctx.policy.valuePerDayCents)}{ctx.policy.owner ? ` (${ctx.policy.owner}'s policy)` : ''}.</div> : <div style={{color: C.muted}}>No value-of-time policy for this milestone; break-even only.</div>}
-          {(q.cutoff || q.validUntil) && <div style={{color: C.muted}}>{[q.cutoff && `Vendor cutoff ${clock(q.cutoff)} today`, q.validUntil && `quote valid until ${day(q.validUntil)}`].filter(Boolean).join(' · ')}</div>}
-        </div>
-      </div>
-      {open && inputs.length > 0 && <div>
-        <Eyebrow>Know better? Correct a date</Eyebrow>
-        <div style={{marginTop: 6, display: 'flex', flexDirection: 'column', gap: 6, fontSize: 12}}>
-          {inputs.map(n => <div key={n.nodeId} style={{display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap'}}>
-            <span style={{minWidth: 0}}>{n.label} · <span style={{color: C.muted}}>{n.range ? `${day(n.range[0])}–${day(n.range[1])}` : day(n.date)}{n.by ? ` (${n.by})` : ''}</span></span>
+    <Fold title="Why">
+      <div style={{display: 'flex', flexDirection: 'column', gap: 6, fontSize: 13, lineHeight: 1.45}}>
+        {(ctx.assumptions || []).map((a, i) => <div key={i}>{a.text}{a.ageDays > 0 && <span style={{color: C.faint}}> · {a.ageDays}d ago</span>}</div>)}
+        <div style={{color: C.muted}}>{ctx.policy?.valuePerDayCents ? `A day of ${milestone} is worth ${money(ctx.policy.valuePerDayCents)}${ctx.policy.owner ? ` (${ctx.policy.owner}'s policy)` : ''}.` : 'No value-of-time policy for this milestone; break-even only.'}{q.cutoff ? ` Vendor cutoff ${clock(q.cutoff)} today.` : ''}</div>
+        {open && inputs.length > 0 && <div style={{marginTop: 6, display: 'flex', flexDirection: 'column', gap: 6}}>
+          <Eyebrow>Know better? Correct a date</Eyebrow>
+          {inputs.map(n => <div key={n.nodeId} style={{display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap', fontSize: 12}}>
+            <span>{n.label} · <span style={{color: C.muted}}>{n.range ? `${day(n.range[0])}–${day(n.range[1])}` : day(n.date)}</span></span>
             {editing === n.nodeId
-              ? <><input type="date" value={date} onChange={e => setDate(e.target.value)} style={{...input, width: 'auto', padding: '4px 8px'}}/><Button disabled={busy || !date} style={{padding: '5px 10px'}} onClick={() => { act(`/orders/${order.id}/answer`, {fact: {nodeId: n.nodeId, date}}); setEditing(null); }}>Re-run</Button></>
+              ? <><input type="date" value={date} onChange={e => setDate(e.target.value)} style={{...input, width: 'auto', padding: '4px 8px'}}/><Button disabled={busy || !date || date === n.date} style={{padding: '5px 10px'}} onClick={() => { act(`/orders/${order.id}/answer`, {fact: {nodeId: n.nodeId, date}}); setEditing(null); }}>Re-run</Button></>
               : <button onClick={() => { setEditing(n.nodeId); setDate(n.date || ''); }} style={{background: 'transparent', border: 0, color: C.muted, cursor: 'pointer', padding: 0, textDecoration: 'underline', textUnderlineOffset: 3, fontSize: 12}}>correct</button>}
           </div>)}
-        </div>
-      </div>}
-    </div>
+        </div>}
+      </div>
+    </Fold>
     {open && <form onSubmit={e => { e.preventDefault(); act(`/orders/${order.id}/argue`, {text: argument}); setArgument(''); }} style={{display: 'flex', gap: 8}}>
-      <input value={argument} onChange={e => setArgument(e.target.value)} placeholder="Or tell Burn why you disagree" style={input}/>
+      <input value={argument} onChange={e => setArgument(e.target.value)} placeholder="Something changed? Tell Burn" style={input}/>
       <Button disabled={busy || !argument.trim()}>Send</Button>
     </form>}
   </section>;

@@ -144,18 +144,8 @@ function RequestCard({r, busy, onDecide}) {
           {o ? <StateBadge state={o.state}/> : <Chip tone="ink">Pending</Chip>}
         </span>
       </div>
-      <div style={{color: C.muted, fontSize: 12}}>Purchase request · {r.name || o?.entry?.name}</div>
+      <div style={{color: C.muted, fontSize: 13}}>{o?.entry?.name || r.name}{qty != null ? ` × ${qty}` : ''}{(ms.label) ? ` · for ${ms.label}${ms.date ? `, ${day(ms.date)}` : ''}` : ''}{f?.readyOn ? ` · ready ${day(f.readyOn)}` : ''}</div>
     </div>
-
-    {/* what they're buying */}
-    <Block title="What they're buying">
-      <div style={{display: 'flex', gap: 8, alignItems: 'baseline', flexWrap: 'wrap', fontSize: 15}}>
-        <a href={`/orders/${r.orderId}`} style={{color: C.ink}}>{o?.entry?.name || r.name}</a>
-        {qty != null && <span style={{color: C.muted}}>× {qty}</span>}
-        {f?.readyOn && <span style={{color: C.muted}}>· ready {day(f.readyOn)}</span>}
-      </div>
-      {(ms.label || ms.date) && <div style={{color: C.muted, fontSize: 13, marginTop: 4}}>for <span style={{color: C.ink}}>{ms.label || 'the milestone'}</span>{ms.date ? `, ${day(ms.date)}` : ''}</div>}
-    </Block>
 
     {/* the two lines */}
     <Block>
@@ -171,12 +161,14 @@ function RequestCard({r, busy, onDecide}) {
       {!v && r.justification && <div style={{marginTop: 10, fontSize: 13, lineHeight: 1.5}}>{r.justification.split(/\n\n(?=Assumptions:)/)[0]}</div>}
     </Block>
 
-    {/* rests on */}
-    {!!assumptions.length && <Block title="Rests on">
-      <ul style={{margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 4, color: C.muted, fontSize: 12, lineHeight: 1.5}}>
+    {/* rests on (folded) */}
+    {!!assumptions.length && <details style={{padding: '10px 22px', borderTop: `1px solid ${C.hair}`}}>
+      <summary style={{cursor: 'pointer', color: C.muted, fontSize: 12}}>What this rests on · {assumptions.length}</summary>
+      <ul style={{margin: '8px 0 0', padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 4, color: C.muted, fontSize: 12, lineHeight: 1.5}}>
         {assumptions.map((a, i) => <li key={i} style={{display: 'grid', gridTemplateColumns: '10px minmax(0,1fr)', gap: 6}}><span style={{color: C.faint}}>·</span><span>{a}</span></li>)}
       </ul>
-    </Block>}
+      <div style={{marginTop: 8, color: C.faint, fontSize: 11}}>Verified on purchase · spec {shortHash(r.specHash || v?.specHash)}{r.decisionRevision != null ? ` · decision rev ${r.decisionRevision}` : ''}{v?.policy?.hash ? ` · policy ${shortHash(v.policy.hash)}` : ''}</div>
+    </details>}
 
     {/* cutoff + actions */}
     <div style={{padding: '14px 22px 18px', display: 'flex', flexDirection: 'column', gap: 14}}>
@@ -187,9 +179,6 @@ function RequestCard({r, busy, onDecide}) {
       <div style={{display: 'flex', gap: 8, alignItems: 'center'}}>
         <Button primary disabled={busy} onClick={() => onDecide('approve')} style={{padding: '10px 18px', fontSize: 14}}>{busy ? 'Working…' : 'Approve'}</Button>
         <Button disabled={busy} onClick={() => onDecide('reject')} style={{padding: '10px 16px', fontSize: 14}}>Reject</Button>
-        <span style={{marginLeft: 'auto', color: C.faint, fontSize: 11, fontVariantNumeric: 'tabular-nums'}}>
-          Verified on purchase · spec {shortHash(r.specHash || v?.specHash)}{r.decisionRevision != null ? ` · decision rev ${r.decisionRevision}` : ''}{v?.policy?.hash ? ` · policy ${shortHash(v.policy.hash)}` : ''}
-        </span>
       </div>
     </div>
   </article>;
