@@ -1,6 +1,6 @@
 import React from 'react';
 import {api} from './api.js';
-import {C, Page, Chip, Eyebrow, clock} from './ui.jsx';
+import {C, Page, Chip, Eyebrow, clock, syncClock} from './ui.jsx';
 
 /**
  * /inbox?as=<person>: the Slack-DM-style messages one person gets from Burn as orders move.
@@ -17,7 +17,7 @@ export default function Inbox() {
   // Who can be looked at: engineers on recent orders and the configured manager (plus anyone who was ever notified).
   React.useEffect(() => { (async () => {
     try {
-      const [s, o, n] = await Promise.all([api('/system'), api('/orders'), api('/notifications?limit=1')]);
+      const [s, o, n] = await Promise.all([api('/system'), api('/orders'), api('/notifications?limit=1')]); syncClock(s.now);
       setSystem(s);
       const manager = s.company?.manager || 'manager';
       const engineers = [...new Set(o.orders.slice().reverse().map(x => x.entry.engineer).filter(Boolean))];

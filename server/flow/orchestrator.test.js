@@ -86,6 +86,11 @@ test('Okay → Ramp request → approval → card → verified placement → cha
   const req = sim.inspect('request', order.ramp.requestId);
   assert.equal(req.specHash, order.specHash);
   assert.match(req.field_answers.justification, /worth it if a day|paying more buys no time|better on both/);
+  // HLD step 7: the decision travels as fields and the premium as its own line; the total is the frozen price.
+  assert.deepEqual(Object.keys(req.field_answers), ['justification', 'burn_order_id', 'spec_hash', 'decision_revision', 'chosen_tier', 'recommended_tier', 'verdict', 'days_gained', 'break_even_cents_per_day', 'cheapest_tier',
+    'dominating_input', 'milestone', 'value_per_day_cents', 'policy_owner', 'policy_version', 'policy_hash', 'cutoff', 'assumptions', 'risk_note']);
+  assert.equal(req.field_answers.verdict, 'worth_it'); assert.equal(req.field_answers.policy_version, 1); assert.match(req.field_answers.policy_hash, /^[0-9a-f]{12}$/);
+  assert.deepEqual(req.line_items.map(l => l.kind), ['base', 'premium']); assert.equal(req.line_items.reduce((s, l) => s + l.amount.amount, 0), order.frozen.priceCents);
   await sim.approve(order.ramp.requestId);
   order = o.get(order.id);
   assert.equal(order.state, 'placed', JSON.stringify(store.events(order.id).map(e => e.event)));

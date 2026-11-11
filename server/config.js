@@ -2,6 +2,7 @@
 // Loaded from BURN_CONFIG (JSON) if present, else from burn.config.json in the working
 // directory, else these defaults. Everything here is visible in the UI's assumptions.
 import {readFileSync, existsSync} from 'node:fs';
+import {createHash} from 'node:crypto';
 
 const DEFAULTS = {
   // holidays: full closures (ISO dates) that working-day lead times and lateness skip; manager: who approves in Ramp.
@@ -18,6 +19,7 @@ const DEFAULTS = {
     {key: 'shipTo', label: 'Ship to', default: null},
   ],
   // Value-of-time policy per milestone, set by its owner. Cents per day; null = break-even only.
+  // Each entry may carry `version` (default 1) and `effectiveOn`; policyHash() binds an approval to the policy it was decided under.
   milestones: {},
   // Declared scenarios for uncertain sibling dates: "as stated" plus these slips, in days.
   scenarios: {slipDays: [3, 7]},
@@ -26,6 +28,12 @@ const DEFAULTS = {
   ramp: {spendProgramId: process.env.RAMP_SPEND_PROGRAM_ID || 'spend_program_default', requestOwnerId: process.env.RAMP_REQUEST_OWNER_ID || null},
   vendor: {name: 'xometry', allowedVendors: ['Xometry']},
 };
+
+/** Stable id of one milestone's policy (first 12 hex of sha256 over its canonical JSON), recorded on every Ramp request decided under it. */
+export function policyHash(label, p = {}) {
+  const canon = {label, valuePerDayCents: p.valuePerDayCents ?? null, targetOn: p.targetOn ?? null, hard: !!p.hard, owner: p.owner ?? null, version: p.version ?? 1, effectiveOn: p.effectiveOn ?? null};
+  return createHash('sha256').update(JSON.stringify(canon)).digest('hex').slice(0, 12);
+}
 
 export function loadConfig() {
   const path = process.env.BURN_CONFIG || (existsSync('burn.config.json') ? 'burn.config.json' : null);

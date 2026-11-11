@@ -13,7 +13,7 @@ const day = iso => (iso ? new Date(iso.length === 10 ? iso + 'T00:00:00Z' : iso)
 const clock = (iso, tz) => new Date(iso).toLocaleTimeString('en-US', {hour: 'numeric', minute: '2-digit', timeZone: tz, timeZoneName: 'short'});
 
 /** Which messages an event produces: [{to, kind, text}] or nothing. `extra` is the bus payload beyond the order. */
-export function messagesFor(e, {manager = 'manager', timeZone = 'America/Los_Angeles'} = {}) {
+export function messagesFor(e, {manager = 'manager', timeZone = 'America/Los_Angeles', milestones = {}} = {}) {
   const o = e.order; if (!o) return [];
   const eng = o.entry?.engineer || 'engineer';
   const name = o.entry?.name || 'part';
@@ -32,8 +32,15 @@ export function messagesFor(e, {manager = 'manager', timeZone = 'America/Los_Ang
       return [{to, kind: 'question', text: `${name}: ${question.text}${to !== eng ? ` (asked for ${eng}'s order; one fact decides the tier)` : ''}`}];
     }
     case 'ramp.requested': {
-      const cutoff = o.quote?.cutoff ? ` Approve by ${clock(o.quote.cutoff, timeZone)} to start production today.` : '';
-      return [{to: manager, kind: 'approval', text: `Approval needed: ${eng}'s Xometry order ${price} (${name}, ${o.frozen?.tier}). ${o.decision?.text || ''}${cutoff}`.trim()},
+      // The approver reads a decision, not prose: base + premium, days gained, break-even against the policy and its version.
+      const cutoff = o.quote?.cutoff ? ` Approve by ${clock(o.quote.cutoff, timeZone).replace(/\b([A-Z])[SD]T$/, '$1T')}.` : '';
+      const ch = o.decision?.options?.find(t => t.tier === o.frozen?.tier), premium = ch?.extraCents || 0, base = money((o.frozen?.priceCents ?? 0) - premium);
+      const pol = o.context?.policy, cfg = milestones[o.context?.milestoneId] || milestones[o.context?.milestoneLabel];
+      const who = pol?.owner ? `, ${pol.owner} v${cfg?.version ?? 1}` : '';
+      const vs = pol?.valuePerDayCents ? ` vs policy ${money(pol.valuePerDayCents)}/day${who}` : ', no policy set';
+      const detail = premium > 0 ? `${base} base + ${money(premium)} expedite premium (${ch.deltaDays} ${o.decision?.workingDays ? 'working ' : ''}day${ch.deltaDays === 1 ? '' : 's'} sooner, break-even ${money(ch.breakEvenCentsPerDay)}/day${vs})`
+        : `${base} base, no expedite premium (${o.frozen?.tier} is the cheapest valid lead time${who})`;
+      return [{to: manager, kind: 'approval', text: `Approval needed: ${eng}'s Xometry order — ${detail}.${cutoff}`},
         {to: eng, kind: 'status', text: `Sent to Ramp for approval: ${name}, ${o.frozen?.tier} ${price}.`}];
     }
     case 'ramp.request.failed': return [{to: eng, kind: 'problem', text: `${name}: ${q?.text || 'the Ramp request failed'}.`}];
@@ -66,7 +73,7 @@ export function createNotifier({bus, filename = process.env.ORDERS_DB || 'data/o
     CREATE TABLE IF NOT EXISTS notifications(id TEXT PRIMARY KEY, at TEXT NOT NULL, to_person TEXT NOT NULL, kind TEXT NOT NULL, text TEXT NOT NULL, order_id TEXT, event_type TEXT NOT NULL);`);
   const insert = db.prepare('INSERT OR IGNORE INTO notifications VALUES(?,?,?,?,?,?,?)');
   const subscribers = new Set();
-  const opts = {manager: config.company?.manager || 'manager', timeZone: config.company?.timeZone || 'America/Los_Angeles'};
+  const opts = {manager: config.company?.manager || 'manager', timeZone: config.company?.timeZone || 'America/Los_Angeles', milestones: config.milestones || {}};
   const row = r => ({id: r.id, at: r.at, to: r.to_person, kind: r.kind, text: r.text, orderId: r.order_id, eventType: r.event_type});
 
   function onEvent(e) {

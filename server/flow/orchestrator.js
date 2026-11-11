@@ -5,8 +5,10 @@
 import {EventEmitter} from 'node:events';
 import {createHash} from 'node:crypto';
 import {decide, explain} from '../../src/decision/core.js';
+import {analyzeGraph} from '../../src/graph/engine.js';
 import {buildContext} from './context.js';
 import {AppError} from '../contracts.js';
+import {policyHash} from '../config.js';
 
 export function createOrchestrator({store, vendor, ramp, ingest = null, config, agent = null, now = () => new Date().toISOString(), log = () => {}}) {
   const bus = new EventEmitter();
@@ -55,7 +57,7 @@ export function createOrchestrator({store, vendor, ramp, ingest = null, config, 
     const agentRead = read ? {graph: read.graph, evidence: read.evidence, trace: read.trace, summary: read.summary, dropped: read.dropped} : null;
     const spec = resolveSpec(order, ctx);
     const gaps = spec.filter(f => f.provenance == null).map(f => f.key);
-    const contextPublic = {related: ctx.related, work: ctx.work, milestoneId: ctx.milestoneId, milestoneLabel: ctx.milestoneLabel, policy: ctx.policy, assumptions: ctx.assumptions, uncertain: ctx.uncertain, query: ctx.query, absorbed: ctx.absorbed, calendar: ctx.calendar, agent: read ? {model: agent.model, summary: read.summary, trace: read.trace, dropped: read.dropped} : null};
+    const contextPublic = {related: ctx.related, work: ctx.work, milestoneId: ctx.milestoneId, milestoneLabel: ctx.milestoneLabel, policy: ctx.policy, assumptions: ctx.assumptions, uncertain: ctx.uncertain, query: ctx.query, absorbed: ctx.absorbed, calendar: ctx.calendar, inputs: ctx.inputs, agent: read ? {model: agent.model, summary: read.summary, trace: read.trace, dropped: read.dropped} : null};
     publish(order, 'context.built', {context: contextPublic});
 
     // Spec gate: ask for missing technical fields, the CAD, or the demand (what is it for?).
@@ -138,7 +140,24 @@ export function createOrchestrator({store, vendor, ramp, ingest = null, config, 
     return order;
   }
 
-  /** Okay: freeze the order and send it to Ramp for approval. */
+  /**
+   * The other input that gates the milestone when this part is ready on `readyOn`: walk back from the
+   * milestone through whatever drove each start. Null when this part itself sets the date.
+   */
+  function gatingInput(order, readyOn) {
+    const {graph, partNodeId, milestoneId, calendar} = order.context || {};
+    if (!graph || !milestoneId) return null;
+    const {at} = analyzeGraph(graph, {orderDate: today(), arrivals: {[partNodeId]: readyOn}, calendar});
+    let id = milestoneId;
+    for (let i = 0; id && i < 20; i++) {
+      const n = graph.nodes.find(x => x.id === id); if (!n) return null;
+      if (n.kind === 'part') return id === partNodeId ? null : n.label;
+      id = at[id]?.drivenBy || graph.edges.filter(e => e.to === id && at[e.from]?.finish).sort((a, b) => at[b.from].finish.localeCompare(at[a.from].finish))[0]?.from || null;
+    }
+    return null;
+  }
+
+  /** Okay: freeze the order and send it to Ramp for approval, the decision as fields and the premium as its own line (HLD step 7). */
   async function okay(id, expectedRevision, {tier}) {
     let order = store.get(id);
     if (!order.quote || !order.decision) throw new AppError('No quote to approve yet', 409);
@@ -153,10 +172,23 @@ export function createOrchestrator({store, vendor, ramp, ingest = null, config, 
     order = store.freeze(id, expectedRevision, frozen);
     publish(order, 'order.frozen');
 
-    const justification = `${order.decision.justification || order.decision.text}\n\nAssumptions:\n${order.decision.assumptions.map(a => '- ' + a).join('\n')}${order.quote.cutoff ? `\n\nVendor cutoff: approve by ${order.quote.cutoff} to start production today; after that, +1 business day.` : ''}`;
+    const dec = order.decision, rec = dec.recommended, policy = order.context?.policy || {};
+    const justification = `${dec.justification || dec.text}\n\nAssumptions:\n${dec.assumptions.map(a => '- ' + a).join('\n')}${order.quote.cutoff ? `\n\nVendor cutoff: approve by ${order.quote.cutoff} to start production today; after that, +1 business day.` : ''}`;
+    // Two lines: the cheapest valid lead time, and the premium the chosen tier adds for the days it gains. Total unchanged.
+    const cheapest = dec.options.filter(o => o.admissible).reduce((a, b) => (!a || b.extraCents < a.extraCents ? b : a), null);
+    const cheapestCents = order.quote.options.find(o => o.tier === cheapest.tier).priceCents, premium = option.priceCents - cheapestCents;
+    const money = c => ({amount: c, currency_code: frozen.currency});
+    const line_items = [{description: `${order.entry.name}, ${cheapest.tier} (cheapest valid lead time)`, amount: money(cheapestCents), quantity: 1, kind: 'base'}];
+    if (premium > 0) line_items.push({description: `Expedite premium: ${tier} over ${cheapest.tier}, ${chosen.deltaDays ?? 0} ${dec.workingDays ? 'working ' : ''}day${chosen.deltaDays === 1 ? '' : 's'} sooner`, amount: money(premium), quantity: 1, kind: 'premium'});
+    // The verdict Ramp's rules route on, and the policy version the decision was made under.
+    const verdict = !rec ? 'open_question' : rec.tier !== tier ? 'overridden' : rec.basis === 'dominance' ? 'dominated' : 'worth_it';
+    const label = [order.context?.milestoneId, order.context?.milestoneLabel].find(k => k && config.milestones?.[k]) || null, pol = label ? config.milestones[label] : null;
+    const field_answers = {justification, burn_order_id: id, spec_hash: order.specHash, decision_revision: order.decisionRevision, chosen_tier: tier, recommended_tier: rec?.tier || null,
+      verdict, days_gained: chosen.deltaDays ?? null, break_even_cents_per_day: chosen.breakEvenCentsPerDay ?? null, cheapest_tier: cheapest.tier, dominating_input: gatingInput(order, option.readyOn),
+      milestone: order.context?.milestoneLabel || null, value_per_day_cents: policy.valuePerDayCents ?? null, policy_owner: policy.owner ?? null, policy_version: pol ? pol.version ?? 1 : null, policy_hash: pol ? policyHash(label, pol) : null,
+      cutoff: order.quote.cutoff || null, assumptions: dec.assumptions, risk_note: null};
     const req = await ramp.createRequest({request_owner_id: config.ramp.requestOwnerId || order.entry.engineer, spend_program_id: config.ramp.spendProgramId, currency: frozen.currency,
-      name: `${order.entry.name} (${tier}) from Xometry`, line_items: [{description: `${order.entry.name}, ${tier}`, amount: {amount: option.priceCents, currency_code: frozen.currency}, quantity: 1}],
-      field_answers: {justification, burn_order_id: id, spec_hash: order.specHash, decision_revision: order.decisionRevision, chosen_tier: tier, recommended_tier: order.decision.recommended?.tier || null},
+      name: `${order.entry.name} (${tier}) from Xometry`, line_items, field_answers,
       specHash: order.specHash, decisionRevision: order.decisionRevision, orderId: id, attachments: [{name: 'justification.txt', mime: 'text/plain', bytes: Buffer.from(justification)}]});
     if (!req.ok) { order = store.update(id, order.revision, {state: 'unresolved', question: {kind: 'ramp', text: `Ramp request failed: ${req.reason}`}}, 'ramp.request.failed'); publish(order, 'ramp.request.failed'); return order; }
     order = store.recordRamp(id, order.revision, {requestId: req.requestId, approvalStatus: req.status}, 'ramp.request.created');

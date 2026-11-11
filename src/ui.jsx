@@ -7,6 +7,7 @@ export const clock = iso => new Date(iso).toLocaleTimeString('en-US', {hour: 'nu
 // Relative times follow the server's clock (a demo may run on another day): the Header syncs it from /api/system.
 let clockOffset = 0;
 export const syncClock = serverIso => { if (serverIso) clockOffset = Date.parse(serverIso) - Date.now(); };
+export const serverNow = () => new Date(Date.now() + clockOffset);
 export const relTime = iso => { const m = Math.round((Date.now() + clockOffset - Date.parse(iso)) / 60000); return m < 1 ? 'just now' : m < 60 ? `${m}m ago` : m < 1440 ? `${Math.round(m / 60)}h ago` : `${Math.round(m / 1440)}d ago`; };
 
 export const STATE_LABEL = {
@@ -22,7 +23,7 @@ export function StateBadge({state}) {
   return <span style={{fontSize: 11, letterSpacing: '.04em', border: `1px solid ${tone === 'accent' ? C.ink : color}`, background: tone === 'accent' ? C.accent : 'transparent', color: tone === 'accent' ? C.ink : color, borderRadius: 10, padding: '2px 8px', whiteSpace: 'nowrap', alignSelf: 'center'}}>{STATE_LABEL[state] || state}</span>;
 }
 
-const NAV = [['/orders', 'Orders'], ['/ramp', 'Ramp'], ['/inbox', 'Inbox'], ['/graph', 'Graph']];
+const NAV = [['/orders', 'Orders'], ['/ramp', 'Ramp'], ['/inbox', 'Inbox']];
 export function Header({system}) {
   React.useEffect(() => { syncClock(system?.now); }, [system?.now]);
   const here = location.pathname;

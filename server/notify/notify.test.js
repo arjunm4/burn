@@ -6,9 +6,10 @@ import {createNotifier, messagesFor} from './index.js';
 // A frozen order the way the orchestrator publishes it: real numbers, nothing invented here.
 const order = (over = {}) => ({id: 'o1', revision: 7, state: 'requested', entry: {name: 'Hip actuator bracket', note: 'for the spin test', engineer: 'Owen'},
   quote: {cutoff: '2026-11-17T22:00:00.000Z', options: [{tier: 'Standard', priceCents: 300000, readyOn: '2026-11-24'}, {tier: 'Expedited', priceCents: 390000, readyOn: '2026-11-17'}]},
-  decision: {recommended: {tier: 'Expedited', basis: 'policy'}, text: 'Expedited gets Spin test done 2 days sooner for +$900: worth it if a day is worth more than $450.',
-    options: [{tier: 'Standard', admissible: true}, {tier: 'Expedited', admissible: true}]},
-  frozen: {tier: 'Expedited', priceCents: 390000}, ramp: {cardLast4: '4242'}, vendorOrder: {vendorOrderId: 'XO-1', promisedOn: '2026-11-17'}, context: {milestoneLabel: 'Spin test'}, question: null, ...over});
+  decision: {recommended: {tier: 'Expedited', basis: 'economics'}, text: 'Expedited gets Spin test done 2 days sooner for +$900: worth it if a day is worth more than $450.', workingDays: true,
+    options: [{tier: 'Standard', admissible: true, deltaDays: 0, extraCents: 0, breakEvenCentsPerDay: null}, {tier: 'Expedited', admissible: true, deltaDays: 2, extraCents: 90000, breakEvenCentsPerDay: 45000}]},
+  frozen: {tier: 'Expedited', priceCents: 390000}, ramp: {cardLast4: '4242'}, vendorOrder: {vendorOrderId: 'XO-1', promisedOn: '2026-11-17'},
+  context: {milestoneId: 'milestone:spin', milestoneLabel: 'Spin test', policy: {valuePerDayCents: 60000, owner: 'Arjun'}}, question: null, ...over});
 const boot = (config = {}) => { const bus = new EventEmitter(); const n = createNotifier({bus, filename: ':memory:', config}); return {bus, n}; };
 
 test('a recommendation becomes one quote message to the engineer, with the real tiers and the break-even', () => {
@@ -20,8 +21,8 @@ test('a recommendation becomes one quote message to the engineer, with the real 
   assert.equal(n.list({to: 'manager'}).length, 0);
 });
 
-test('approval goes to the manager with the cutoff; approval and booking come back to the engineer', () => {
-  const {bus, n} = boot({company: {manager: 'Ingrid', timeZone: 'America/Los_Angeles'}});
+test('approval goes to the manager as a decision (base + premium, days, break-even vs policy and its version) with the cutoff; approval and booking come back to the engineer', () => {
+  const {bus, n} = boot({company: {manager: 'Ingrid', timeZone: 'America/Los_Angeles'}, milestones: {'milestone:spin': {valuePerDayCents: 60000, owner: 'Arjun', version: 3}}});
   const o = order();
   bus.emit('order', {type: 'ramp.requested', orderId: 'o1', order: o});
   bus.emit('order', {type: 'ramp.approved', orderId: 'o1', order: {...o, revision: 8, state: 'approved'}});
@@ -31,7 +32,10 @@ test('approval goes to the manager with the cutoff; approval and booking come ba
   bus.emit('order', {type: 'booked', orderId: 'o1', order: {...o, revision: 11}});
   const manager = n.list({to: 'Ingrid'});
   assert.equal(manager[0].kind, 'approval');
-  assert.match(manager[0].text, /^Approval needed: Owen's Xometry order \$3,900 \(Hip actuator bracket, Expedited\)\. Expedited gets .* Approve by 2:00 PM PST to start production today\.$/);
+  assert.equal(manager[0].text, "Approval needed: Owen's Xometry order — $3,000 base + $900 expedite premium (2 working days sooner, break-even $450/day vs policy $600/day, Arjun v3). Approve by 2:00 PM PT.");
+  // The cheapest tier has no premium line to explain; without a policy version in config the owner's policy is v1.
+  const [cheap] = messagesFor({type: 'ramp.requested', orderId: 'o1', order: order({frozen: {tier: 'Standard', priceCents: 300000}})}, {manager: 'Ingrid'});
+  assert.equal(cheap.text, "Approval needed: Owen's Xometry order — $3,000 base, no expedite premium (Standard is the cheapest valid lead time, Arjun v1). Approve by 2:00 PM PT.");
   const owen = n.list({to: 'Owen'}).map(m => m.text);
   assert.match(owen[1], /^Ingrid approved your Xometry order \(Hip actuator bracket, \$3,900\)\. Placing now\.$/);
   assert.equal(owen[2], 'Placing your Xometry order now (Expedited, $3,900).');

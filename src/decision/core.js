@@ -67,7 +67,8 @@ export function decide(input) {
   const base = scenarios[0].id;
   const unknownBase = cheapest ? outcomes[cheapest.tier][base].unknowns : [];
 
-  // 4. Per-option summary in the base scenario: days gained vs the cheapest admissible option, break-even.
+  // 4. Per-option summary in the base scenario: days gained vs the cheapest admissible option, break-even,
+  //    and the latest placement date that still makes the owner's target.
   const summary = options.map(o => {
     const why = whyFor(o); const adm = !why;
     const f = finish(o.tier, base);
@@ -75,8 +76,30 @@ export function decide(input) {
     const deltaDays = adm && f && f0 ? gained(f0, f) : null;
     const extraCents = cheapest ? o.priceCents - cheapest.priceCents : 0;
     return {tier: o.tier, admissible: adm, ...(adm ? {} : {why}), readyOn: o.readyOn, finishOn: f, deltaDays, extraCents,
-      breakEvenCentsPerDay: deltaDays && deltaDays > 0 && extraCents > 0 ? Math.round(extraCents / deltaDays) : null};
+      breakEvenCentsPerDay: deltaDays && deltaDays > 0 && extraCents > 0 ? Math.round(extraCents / deltaDays) : null, ...latestOrder(o)};
   });
+
+  // Latest placement: the last order day D >= orderDate on which the part, re-derived from the quote's
+  // production and shipping days exactly as the vendor derives it (Mon–Fri shop, ordered before the cutoff
+  // on D: D + mfgDays business days + shipDays calendar days), still lets the milestone make the owner's
+  // target in the base scenario. Only known for options that carry mfgDays/shipDays and when a target is set.
+  function latestOrder(o) {
+    const none = {orderBy: null, slackDays: null};
+    if (!policy.targetOn || !Number.isFinite(o.mfgDays) || !Number.isFinite(o.shipDays)) return none;
+    const shop = makeCalendar({}); // the vendor's business days: weekdays, no company holidays
+    const readyFrom = d => toIso(shop.addWorkingDays(d, o.mfgDays) + o.shipDays);
+    const orderDay = toDay(orderDate);
+    let last = null, first = true;
+    for (let d = orderDay; d <= orderDay + 90; d++) {
+      if (cal && !cal.isWorking(d)) continue; // an order placed on a closed day is the next working day's order
+      const a = analyzeGraph(graph, {orderDate, arrivals: {...scenarios[0].arrivals, [partNodeId]: readyFrom(d)}, calendar});
+      const m = a.at[milestoneId]?.finish ?? null;
+      if (m == null) return none; // unknown finish: nothing can be promised
+      if (m > policy.targetOn) { if (first) return {...none, missesTarget: true}; break; } // a later order never finishes earlier
+      last = d; first = false;
+    }
+    return {orderBy: toIso(last), slackDays: cal ? cal.workingDaysBetween(orderDay, last) : last - orderDay};
+  }
 
   // 5. Dominance across every declared scenario: A dominates B if A is no dearer and finishes no later
   //    in every scenario, and is strictly better on price or time somewhere. Unknown finishes never dominate.
@@ -171,15 +194,19 @@ export function explain(result, {milestoneLabel = 'the milestone'} = {}) {
     if (result.unknowns?.length) return `Nothing to recommend yet: ${milestoneLabel}'s date is unknown because an input has no stated duration.${be ? ` Break-even: ${be}.` : ''}`;
     return `Real trade-off, and no value-of-time policy is set for ${milestoneLabel}, so pick by break-even: ${be || 'none'}.`;
   }
+  // The recommended tier's placement window, when the order can wait past the day of the decision.
+  const wait = rec.orderBy && rec.slackDays > 0 ? `, and it can wait until ${monthDay(rec.orderBy)} to be placed` : '';
   if (result.recommended.basis === 'dominance') {
     if (rec.tier === cheapest.tier) {
       const faster = result.options.filter(o => o.admissible && o.tier !== rec.tier && o.extraCents > 0);
-      return faster.length ? `${rec.tier}: paying more buys no time for ${milestoneLabel}. ${faster.map(o => o.tier).join(' and ')} finish${faster.length === 1 ? 'es' : ''} it on the same day because another input gates it.` : `${rec.tier} is the only valid option.`;
+      return faster.length ? `${rec.tier}: paying more buys no time for ${milestoneLabel}${wait}. ${faster.map(o => o.tier).join(' and ')} finish${faster.length === 1 ? 'es' : ''} it on the same day because another input gates it.` : `${rec.tier} is the only valid option${wait}.`;
     }
-    return `${rec.tier} is better on both price and time than the alternatives.`;
+    return `${rec.tier} is better on both price and time than the alternatives${wait}.`;
   }
   const days = rec.deltaDays, be = rec.breakEvenCentsPerDay, unit = result.workingDays ? 'working day' : 'day';
-  return `${rec.tier} gets ${milestoneLabel} done ${days} ${unit}${days === 1 ? '' : 's'} sooner for +$${(rec.extraCents / 100).toLocaleString('en-US')}: worth it if a day is worth more than $${Math.round(be / 100)}.${result.switching ? ` ${result.switching}.` : ''}`;
+  return `${rec.tier} gets ${milestoneLabel} done ${days} ${unit}${days === 1 ? '' : 's'} sooner for +$${(rec.extraCents / 100).toLocaleString('en-US')}: worth it if a day is worth more than $${Math.round(be / 100)}${wait}.${result.switching ? ` ${result.switching}.` : ''}`;
 }
+
+const monthDay = iso => new Date(iso + 'T00:00:00Z').toLocaleDateString('en-US', {month: 'short', day: 'numeric', timeZone: 'UTC'});
 
 export {toIso};

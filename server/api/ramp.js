@@ -30,10 +30,15 @@ export function rampRoutes({ramp, orchestrator}) {
     if (pathname === '/api/ramp/requests') {
       const s = await mockOnly();
       return json({requests: s.list('request').map(r => {
-        const order = orderView(orchestrator, r.orderId);
-        return {id: r.id, orderId: r.orderId, status: r.status, amountCents: r.line_items?.[0]?.amount?.amount ?? null, currency: r.currency, name: r.name,
-          vendor: order?.frozen?.vendor || 'xometry', requester: r.request_owner_id, justification: r.field_answers?.justification || '', cutoff: order?.cutoff || null,
-          chosenTier: r.field_answers?.chosen_tier || null, recommendedTier: r.field_answers?.recommended_tier || null,
+        const order = orderView(orchestrator, r.orderId), li = r.line_items || [], f = r.field_answers || {};
+        // The decision as Ramp holds it: base + premium lines, and the fields its rules route on (verdict, policy version).
+        return {id: r.id, orderId: r.orderId, status: r.status, amountCents: li.length ? li.reduce((sum, l) => sum + (l.amount?.amount ?? 0), 0) : null, currency: r.currency, name: r.name,
+          vendor: order?.frozen?.vendor || 'xometry', requester: r.request_owner_id, justification: f.justification || '', cutoff: order?.cutoff || null,
+          chosenTier: f.chosen_tier || null, recommendedTier: f.recommended_tier || null,
+          lineItems: li.map(l => ({description: l.description, amountCents: l.amount?.amount ?? null, kind: l.kind || 'base'})),
+          verdict: {verdict: f.verdict ?? null, daysGained: f.days_gained ?? null, breakEvenCentsPerDay: f.break_even_cents_per_day ?? null, cheapestTier: f.cheapest_tier ?? null, chosenTier: f.chosen_tier ?? null, recommendedTier: f.recommended_tier ?? null,
+            dominatingInput: f.dominating_input ?? null, milestone: f.milestone ?? null, policy: {valuePerDayCents: f.value_per_day_cents ?? null, owner: f.policy_owner ?? null, version: f.policy_version ?? null, hash: f.policy_hash ?? null},
+            cutoff: f.cutoff ?? null, assumptions: f.assumptions || []},
           specHash: r.specHash, decisionRevision: r.decisionRevision, createdAt: r.created_at, approvedAt: r.approvedAt || null, order};
       })}), true;
     }

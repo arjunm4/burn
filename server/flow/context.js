@@ -127,5 +127,8 @@ export function buildContext({order, ingest, config, now, graph: given = null, e
   const specSuggestions = Object.fromEntries(config.specFields.filter(f => f.default != null).map(f => [f.key, {value: f.default, provenance: 'default', sourceRef: 'company default'}]));
 
   return {query, related, graph, partNodeId, work: work.map(w => ({id: w.id, label: w.label})), milestoneId: milestone?.id || null, milestoneLabel: milestone?.label || null,
-    policy, uncertain, assumptions, specSuggestions, calendar, absorbed: absorbed.map(n => n.label), gaps: milestone ? [] : ['Which test, build or milestone is this part for?']};
+    policy, uncertain, assumptions, specSuggestions, calendar, absorbed: absorbed.map(n => n.label),
+    // Dated things the engineer may correct from the card: the other inputs and the milestone, by node id.
+    inputs: [...inputs.map(s => ({nodeId: s.id, label: s.label, date: s.attrs.date, range: s.attrs.dateRange || null, by: authorOf(s), ageDays: ageOf(s), kind: 'input'})), ...(milestone ? [{nodeId: milestone.id, label: milestone.label, date: milestone.attrs.date, by: milestone.attrs.owner || null, ageDays: ageOf(milestone), kind: 'milestone'}] : [])],
+    gaps: milestone ? [] : ['Which test, build or milestone is this part for?']};
 }
