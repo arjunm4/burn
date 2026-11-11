@@ -65,6 +65,31 @@ test('claims: hardware phrasing', () => {
   assert.deepEqual(claimsOf('lunch at noon?'), []);
 });
 
+test('graph recall phrasing: work items mid-sentence, dependency wording, co-listed parts, short deliverable names', () => {
+  // a work item named anywhere in a sentence, with the use in its name
+  const w = resolve('Actuator DVT build also waits on Fit check for Actuator DVT build: Knee to thigh flange.', { container: 'C07FLK0ACTU' });
+  assert.deepEqual(w.map((x) => [x.id, x.kind]), [['m-actuator-dvt-build', 'milestone'], ['wk:fit-check-for-actuator-dvt-build-knee-to-thigh-flange', 'work']]);
+  // dependency wording: direction from the kinds (work item -> milestone, deliverable -> work item, work item -> test)
+  const blk = (t) => claimsOf(t).filter((c) => c.kind === 'blocked').map((c) => [c.value, c.subject]);
+  assert.deepEqual(blk('Fit check: Knee to thigh flange also gating Actuator DVT build'), [['wk:fit-check-knee-to-thigh-flange', 'm-actuator-dvt-build']]);
+  assert.deepEqual(blk("Fit check: Knee to thigh flange can't finish until Actuator firmware v2 is in"), [['dl-fw-actuator-v2', 'wk:fit-check-knee-to-thigh-flange']]);
+  assert.deepEqual(blk('Hip actuator dyno torque test cant start til Fit check: Knee to thigh flange is done'), [['wk:fit-check-knee-to-thigh-flange', 'test-hip-dyno']]);
+  assert.deepEqual(blk('the bracket and the coupling are both waiting'), []); // two parts: no link
+  // a part listed with a need, in the same or a later sentence, is for the same use; "<part> xN for <work item>" is a need
+  const co = claimsOf('FL-KNE-1120 need 4 by 11/20 for Fit check: Knee to thigh flange. Same kit touches FL-HIP-1042.').filter((c) => c.kind === 'needs');
+  assert.deepEqual(co.map((c) => [c.subject, c.for_use]), [['pt-knee-flange', 'wk:fit-check-knee-to-thigh-flange'], ['pt-hip-bracket', 'wk:fit-check-knee-to-thigh-flange']]);
+  assert.deepEqual(claimsOf('FL-ANK-1290 x10 for Fit check: Knee to thigh flange, by 11/28').map((c) => [c.kind, c.subject, c.value]), [['needs', 'pt-ankle-bushing', '2026-11-28']]);
+  // short deliverable names; between build phases the one still being worked toward wins
+  const s2 = { ...settings,
+    deliverables: [...settings.deliverables.map((d) => ({ ...d, aliases: [] })), { id: 'dl-hip-motor-evt', name: 'EVT hip frameless motor (qty 3)', aliases: [], owner: 'p-arjun', assembly: 'a-hip-actuator', kind: 'motor' }],
+    milestones: [...settings.milestones, { id: 'm-actuator-evt-build', name: 'Actuator EVT build', assemblies: ['a-hip-actuator'], date: [{ value: '2026-03-24', known_at: '2026-02-10T09:00:00-08:00' }] }] };
+  const r2 = makeResolver(s2);
+  assert.deepEqual(r2('vendor says hip motor fri the 20th now', { container: 'C07FLK0ACTU', at: '2026-11-09T09:40:00-08:00' }).map((x) => [x.id, !!x.ambiguous]), [['dl-hip-motor-dvt', false]]);
+  assert.deepEqual(r2('hip motor eta 3/12', { container: 'C07FLK0ACTU', at: '2026-02-20T09:00:00-08:00' }).map((x) => x.id), ['dl-hip-motor-evt']);
+  const eta = extractClaims(doc('hip motor ETA slipped again, now fri 11/20', { at: '2026-10-22T10:41:00-07:00' }), r2, { people: settings.people });
+  assert.deepEqual(eta.map((c) => [c.kind, c.subject, c.value]), [['eta', 'dl-hip-motor-dvt', '2026-11-20']]);
+});
+
 test('graph: structure, evidence, acceptance, history', () => {
   const g = buildGraph({ settings, sources });
   const e = (f, t) => g.edges.find((x) => x.from === f && x.to === t);

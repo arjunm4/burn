@@ -130,7 +130,8 @@ export function findDates(text, refDay, dir) {
   return out;
 }
 
-const RANK = { part: 0, deliverable: 0, rig: 0, work: 1, test: 1, milestone: 2 };
+// Parts, deliverables and rigs feed work items, work items feed tests, tests feed milestones.
+const RANK = { part: 0, deliverable: 0, rig: 0, work: 1, test: 2, milestone: 3 };
 
 /** Resolve the doc's author to a settings person id (or the author's name). */
 export function authorId(author, people) {
@@ -178,8 +179,19 @@ export function extractClaims(doc, resolve, opts = {}) { // opts: {people, recen
       continue;
     }
     // needs: "need 4x FL-HIP-1042 by tues the 24th (Rig setup: ...)"
-    const needM = low.match(/\b(?:we |i |they |still )?(?:need|needs|needed|gonna need|going to need|waiting for|want)\b\s*(?:(\d+|one|two|three|four|five|six|seven|eight|nine|ten)\s*(?:x|pcs|units|of)?\s+)?/);
-    if (needM && items.length) {
+    let needM = low.match(/\b(?:we |i |they |still )?(?:need|needs|needed|gonna need|going to need|waiting for|want)\b\s*(?:(\d+|one|two|three|four|five|six|seven|eight|nine|ten)\s*(?:x|pcs|units|of)?\s+)?/);
+    // No need verb, but a part or a quantity "for <work item>": "FL-BAT-1679 x10 for Install and torque: Pack latch block",
+    // "5 pcs for Fit check: Pelvis side plate, right".
+    const forWork = uses.find((u) => u.kind === 'work' && /\bfor\s+(?:the\s+)?$/i.test(s.slice(0, Math.max(0, u.start))));
+    if (!needM && forWork && (items.some((r) => r.start < forWork.start) || /\b\d+\s*(?:x|pcs|pieces|units|of)\b|\bx\s?\d+\b/i.test(s.slice(0, forWork.start)))) needM = Object.assign([''], { index: 0 });
+    // A need "for <work item>" that names no part we can resolve ("need 6 distal link by 10/27 for Build sub-assembly:
+    // Finger distal link"): the part is the one the work item is named after.
+    if (needM && !items.length) {
+      const w = forWork && forWork.object && ['part', 'deliverable'].includes(resolve.items?.get(forWork.object)?.kind) ? forWork : null;
+      const pos = needM.index + needM[0].length;
+      if (w) items.push({ id: w.object, kind: resolve.items.get(w.object).kind, mode: 'object', token: null, start: pos, end: pos });
+    }
+    if (needM && items.length && !(uses.length === 0 && refs.some((r) => r.kind === 'milestone'))) {
       const after = needM.index + needM[0].length - 1;
       const subj = firstOf(items, after - 1);
       const dates = findDates(s.slice(subj.end), refDay, 'future').filter((d) => /\bby\b|\bfor\b|\bbefore\b|\bon\b/.test(s.slice(subj.end, subj.end + d.start + 1).slice(-12)) || /^\s*by\b/i.test(s.slice(subj.end)));
@@ -188,28 +200,28 @@ export function extractClaims(doc, resolve, opts = {}) { // opts: {people, recen
       if (!need && byM) need = findDates(s.slice(subj.end + byM.index), refDay, 'future')[0];
       const q = needM[1] ? (NUM_WORDS[needM[1]] ?? +needM[1]) : null;
       const use = uses.find((u) => u.id !== subj.id);
-      for (const it of items.filter((r) => r === subj || (r.start > subj.end && /^\s*\(|^\)\s*\(/.test(s.slice(r.start - 2, r.start)) && r.kind === 'part'))) {
+      // Every other part in the clause is for the same use ("..., plus FL-TST-2480", "goes with 1091 and the cyclo carrier").
+      for (const it of items.filter((r) => r === subj || (r.kind === 'part' && r.id !== subj.id))) {
         push({ kind: 'needs', subject: it.id, value: need ? need.value : null, qty: it === subj ? q : null, for_use: use?.id ?? null, ...(it.order ? { order: it.order } : {}) }, it);
       }
       continue;
     }
-    // blocked / waiting on
-    const blk = low.match(/\b(?:blocked|waits? on|waiting on|waiting for|held up (?:by|on)|stuck on|gated by|gates|can'?t start (?:until|without)|depends on|needs? .* before)\b/);
+    // blocked / waiting on / gating: "X waits on Y", "Y is gating X", "X can't start til Y is done", "Also blocking X: Y",
+    // "X also needs Y", "Y is next on the X list". Direction comes from the kinds (parts, deliverables and rigs feed
+    // work items, which feed tests, which feed milestones); two things of the same kind give no link.
+    const blk = low.match(/\b(?:blocked|blocking|blocker|waits?|waiting|held up|holding(?: up)?|holds? up|stuck|gated|gating|gates|can'?t (?:start|finish|close|run|go|begin|do it|move)|cant (?:start|finish|close|run|go|begin|do it|move)|depends on|dependent on|needs?|needed|requires?|required|before|until|till?|without|w\/o|open on|on the [\w ]*list|next in line|is next|last thing|last one|pile|stack(?:ed|ing)|long pole|holding)\b/);
     if (blk && refs.length >= 2) {
-      const cands = refs.filter((r) => r.kind !== 'milestone' || true);
-      const before = cands.filter((r) => r.end <= blk.index), afterR = cands.filter((r) => r.start >= blk.index + blk[0].length);
-      let waiter, on;
-      const explicit = /blocked (?:on|by)|wait|held up|stuck on|gated by|can'?t start|depends on/.test(blk[0] + low.slice(blk.index + blk[0].length, blk.index + blk[0].length + 4));
-      if (blk[0] === 'gates' && before.length && afterR.length) { on = before[before.length - 1]; waiter = afterR[0]; }
-      else if (explicit && before.length && afterR.length) { waiter = before[before.length - 1]; on = afterR[0]; }
-      else {
-        // "X blocked (Y)": order by kind (parts/deliverables/rigs feed work/tests, which feed milestones); same rank: Y waits on X
-        const a = before.length ? before[before.length - 1] : cands[0], b = afterR.length ? afterR[0] : cands.find((r) => r !== a);
-        if (!a || !b) continue;
-        if (RANK[a.kind] > RANK[b.kind]) { waiter = a; on = b; } else { waiter = b; on = a; }
+      const ranks = refs.map((r) => RANK[r.kind]);
+      const top = Math.max(...ranks);
+      let n = 0;
+      // Each lower-ranked ref feeds the nearest ref of the next rank up the clause names (part -> work item, not -> milestone).
+      for (const r of refs) {
+        if (RANK[r.kind] === top) continue;
+        const next = Math.min(...ranks.filter((k) => k > RANK[r.kind]));
+        const t = refs.filter((x) => RANK[x.kind] === next).reduce((a, b) => (Math.abs(b.start - r.start) < Math.abs(a.start - r.start) ? b : a));
+        if (t.id !== r.id) { push({ kind: 'blocked', subject: t.id, value: r.id }, t); n++; }
       }
-      if (waiter && on && waiter.id !== on.id && RANK[waiter.kind] >= RANK[on.kind]) push({ kind: 'blocked', subject: waiter.id, value: on.id }, waiter);
-      continue;
+      if (n) continue;
     }
     // ETA / slip: "new ETA 11/30", "is now expected 9/14", "realistic date is the twentieth", "somewhere between 11/19 and 11/30"
     const etaM = low.match(/\b(?:new eta|eta|on track for|on track|now expected|expected|now|realistic date|arriv\w*|ship(?:s|ping)?|land(?:s|ing)?|slipp?(?:ed|ing)?|pushed|moved|moves|delivery|deliver\w*|promised|commit\w*|between|due|should be (?:here|in)|starting|starts?|start(?:s|ing)? on|scheduled(?: for)?|kicks? off|booked)\b/);
@@ -249,6 +261,18 @@ export function extractClaims(doc, resolve, opts = {}) { // opts: {people, recen
       const subj = uses[0] || refs.find((r) => r.kind === 'milestone') || refs[0];
       const d = findDates(s.slice(doneM.index), refDay, 'past')[0];
       push({ kind: 'done', subject: subj.id, value: d && typeof d.value === 'string' ? d.value : refDay }, subj);
+    }
+  }
+  // Parts listed with a need elsewhere in the doc ("Same kit touches FL-ANK-1268 and FL-ANK-1253", "FL-KNE-1176 goes with
+  // it") are for the same use, when the doc's needs name exactly one use.
+  const needs = out.filter((c) => c.kind === 'needs' && c.for_use);
+  const useSet = new Set(needs.map((c) => c.for_use));
+  if (useSet.size === 1) {
+    const have = new Set(out.filter((c) => c.kind === 'needs').map((c) => c.subject));
+    for (const r of refsAll) {
+      if (r.kind !== 'part' || r.ambiguous || have.has(r.id)) continue;
+      have.add(r.id);
+      out.push({ kind: 'needs', subject: r.id, value: needs[0].value, qty: null, for_use: needs[0].for_use, ...base, token: r.token, mode: r.mode, co_listed: true });
     }
   }
   return out;

@@ -6,7 +6,7 @@ import { tmpdir } from 'node:os';
 import { join, resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { makeCalendar } from '../generate-world/lib/calendar.mjs';
-import { buildEngineCases, gradeEngine, wastedExpedites, wilson, gradeHabit, grade, summarize, parseArgs } from './grade.mjs';
+import { buildEngineCases, gradeEngine, wastedExpedites, wilson, gradeHabit, grade, summarize, parseArgs, gradeGraphRecall } from './grade.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const EX = join(ROOT, 'fixtures/world/example');
@@ -197,4 +197,26 @@ test("A's engine on the example and mini worlds (skips until src/timevalue lands
   const g = gradeEngine(built(world, answers), engine);
   assert.deepEqual(g.mismatches, []);
   assert.equal(g.all.exact_share, 1);
+});
+
+test('graph recall matches world work items by their written name; in-text split from provenance', () => {
+  const world = {
+    meta: { demo_now: '2026-11-10T10:30:00-08:00' },
+    work_items: [{ id: 'wi-00001', name: 'Fit check for Leg DVT build: Battery clevis 10' }],
+    edges: [
+      { from: 'pt-clevis', to: 'wi-00001', reveal: 'revealed', revealed_by: ['ev-1'] },
+      { from: 'wi-00001', to: 'm-leg-dvt-build', reveal: 'revealed', revealed_by: ['ev-2'] },
+      { from: 'pt-other', to: 'wi-00001', reveal: 'never', revealed_by: [] },
+    ],
+  };
+  const graph = { edges: [
+    { from: 'pt-clevis', to: 'wk:fit-check-for-leg-dvt-build-battery-clevis-10', kind: 'requires_all', status: 'accepted' },
+    { from: 'pt-clevis', to: 'order:XO-1', kind: 'ordered_as', status: 'accepted' },
+    { from: 'pt-x', to: 'test-y', kind: 'requires_all', status: 'proposed' },
+  ] };
+  const r = gradeGraphRecall(world, { graph, graphMod: { graphAt: (g) => g } }, { events: { 'ev-1': [{}] } });
+  assert.equal(r.by_reveal.revealed.found, 1);
+  assert.equal(r.by_reveal.revealed.n_in_text, 1);
+  assert.equal(r.by_reveal.revealed.recall_in_text, 1);
+  assert.equal(r.precision, 0.5); // ordered_as edges are not compared
 });

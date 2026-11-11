@@ -59,6 +59,19 @@ export function makeResolver(settings, opts = {}) {
     for (let k = 1; k <= w.length - 2; k++) { const sh = norm(w.slice(k).join(' ')); shorts.push([sh, t.id]); shortCount.set(sh, (shortCount.get(sh) || 0) + 1); }
   }
   for (const [sh, id] of shorts) if (shortCount.get(sh) === 1 && !entries.has(sh) && /\btest$/.test(sh) && sh.split(' ').length >= 2) add(sh, { id, kind: 'test', mode: 'alias' });
+  // Deliverables are written short: "DVT hip frameless motor" -> "hip motor", "dvt motor", "frameless motor".
+  // "<one word of the name> <its head word>" when the head is a deliverable kind word; several deliverables can share
+  // one ("hip motor": the EVT and the DVT motor), which phaseOf() settles by date below.
+  const HEADS = new Set([...KIND_WORDS.deliverable, 'motors', 'boards', 'sensors', 'drivers']);
+  const SKIP = new Set(['for', 'and', 'the', 'of', 'a', 'an', 'to', 'with', 'qty', 'set', 'kit', 'lot', 'sample', 'build']);
+  const shortDl = new Map();
+  for (const d of settings.deliverables || []) {
+    const main = String(d.name || '').replace(/\s*\([^)]*\)/g, '').trim().toLowerCase();
+    const w = main.split(/\s+/), head = w[w.length - 1];
+    if (w.length < 3 || !HEADS.has(head)) continue;
+    for (const x of w.slice(0, -1)) if (!SKIP.has(x) && !/^\d/.test(x)) { const k = `${x} ${head}`; shortDl.set(k, [...new Set([...(shortDl.get(k) || []), d.id])]); }
+  }
+  for (const [k, ids] of shortDl) if (!entries.has(k)) for (const id of ids) add(k, { id, kind: 'deliverable', mode: 'alias', short: true });
   const pnToPart = new Map((settings.parts || []).map((p) => [p.part_number, p.id]));
   const xo = opts.xometry || {};
   for (const o of [...(xo.quotes || []), ...(xo.orders || [])]) {
@@ -70,6 +83,17 @@ export function makeResolver(settings, opts = {}) {
   // Longest token first so "Hip actuator DVT spin test complete" beats "Hip actuator DVT spin test".
   const tokens = [...entries.keys()].sort((a, b) => b.length - a.length);
   const big = tokens.length ? new RegExp(`(?<![\\w-])(?:${tokens.map(esc).join('|')})(?![\\w-]|/\\d)`, 'gi') : null;
+  // Work-item names: a sentence-case activity, optionally "for <test or milestone>", then ": <object name>".
+  const objList = [...(settings.parts || []), ...(settings.deliverables || []), ...(settings.rigs || [])].filter((x) => x.name);
+  const useList = [...(settings.tests || []), ...(settings.milestones || [])].filter((x) => x.name);
+  const objByName = new Map(objList.map((x) => [norm(x.name), x.id]));
+  const useByName = new Map(useList.map((x) => [norm(x.name), x.id]));
+  // Names as written (case-sensitive, so the sentence-case activity test means something); first letter either case.
+  const alt = (list) => [...new Set(list.map((x) => x.name.trim()))].sort((a, b) => b.length - a.length)
+    .map((n) => `[${n[0].toUpperCase()}${n[0].toLowerCase()}]` + esc(n.slice(1)).replace(/ +/g, '\\s+')).join('|');
+  const LEAD = '(?!(?:Then|Also|And|So|Plus|Next|Still|Need|Needs|Re|Fyi|For|The|Same|Correction|Bumping|Reposting|Scratch|Note|Update|Status|Date|Ok|Okay|Yes|No|Just)\\b)';
+  const ACT = `${LEAD}[A-Z][a-z]+(?:[-/][a-z]+)?(?: [a-z]+(?:[-/][a-z]+)?){0,4}`;
+  const workRe = objByName.size ? new RegExp(`(?<![\\w-])(${ACT})(?: for (${alt(useList)}))?: (${alt(objList)})(?![\\w-])`, 'g') : null;
 
   // Assemblies per container: explicit map, Jira project, or settings channel ids.
   const projAsm = new Map();
@@ -92,6 +116,27 @@ export function makeResolver(settings, opts = {}) {
   }
   const asmOf = (id) => { const x = items.get(id); return x ? (x.assemblies && x.assemblies.length ? x.assemblies : x.assembly ? [x.assembly] : []) : []; };
 
+  // Items that differ only by build phase (EVT / DVT / PVT): the phase still being worked toward at `at` (its last
+  // milestone for the item's assembly is not past yet), else the latest phase. Unsettled -> all candidates (ambiguous).
+  const PHASES = ['proto', 'evt', 'dvt', 'pvt'];
+  const phaseOf = (id) => { const n = String(items.get(id)?.name || '').toLowerCase(); return PHASES.find((p) => new RegExp(`\\b${p}\\b`).test(n)) || null; };
+  const phaseEnd = (phase, asm) => {
+    let end = null;
+    for (const m of settings.milestones || []) {
+      if (!new RegExp(`\\b${phase}\\b`, 'i').test(m.name) || (asm && m.assemblies && !m.assemblies.includes(asm))) continue;
+      const v = (m.date || []).at(-1)?.value; if (v && (!end || v > end)) end = v;
+    }
+    return end;
+  };
+  function pickPhase(cands, at) {
+    const ph = cands.map((c) => phaseOf(c.id));
+    if (ph.some((p) => !p) || new Set(ph).size !== ph.length) return cands;
+    const day = at ? String(at).slice(0, 10) : null;
+    const order = cands.map((c, i) => ({ c, rank: PHASES.indexOf(ph[i]), end: phaseEnd(ph[i], items.get(c.id)?.assembly) })).sort((a, b) => a.rank - b.rank);
+    const open = day ? order.find((x) => x.end && x.end >= day) : null;
+    return [(open || order[order.length - 1]).c];
+  }
+
   function resolve(text, ctx = {}) {
     const out = [];
     const taken = [];
@@ -103,25 +148,27 @@ export function makeResolver(settings, opts = {}) {
         // Bare numbers ("1042") only count as part aliases when not a quantity, date or money.
         if (/^\d+$/.test(m[0]) && (/[$#/]$/.test(text.slice(0, s)) || /^(?:x\b|\s*x\s|\s*(?:days?|pcs|units|mm|in|%))/i.test(text.slice(e)) || /\d\/$/.test(text.slice(0, s)))) continue;
         let cands = entries.get(norm(m[0]));
+        if (cands.length > 1 && cands.every((c) => c.short)) cands = pickPhase(cands, ctx.at);
         // Purely numeric aliases ("1290") count only in a container owned by that part's assembly.
         if (/^\d+$/.test(m[0])) { cands = cands.filter((c) => c.mode === 'id' || asmOf(c.id).some((a) => ctxAsm.has(a))); if (!cands.length) continue; }
         taken.push([s, e]);
         for (const c of cands) out.push({ ...c, token: m[0], start: s, end: e, ...(cands.length > 1 ? { ambiguous: true } : {}) });
       }
     }
-    // Work items: "<Activity>: <known part / deliverable name>".
-    for (const m of (text || '').matchAll(/(?:^|[(\n]|\.\s)\s*([A-Z][A-Za-z0-9/+&'-]*(?: [A-Za-z0-9/+&'(),-]+?){0,6}): ([^():\n]+?)(?=\)|$|\n|\.(?:\s|$))/g)) {
-      const obj = norm(m[2]);
-      const target = (entries.get(obj) || []).find((x) => x.mode === 'alias' && items.get(x.id) && norm(items.get(x.id).name) === obj && (x.kind === 'part' || x.kind === 'deliverable'));
-      if (!target) continue;
-      const name = `${m[1]}: ${m[2]}`;
-      const s = m.index + m[0].indexOf(m[1]), e = s + name.length;
+    // Work items: "<Activity>[ for <test / milestone name>]: <part / deliverable / rig name>", anywhere in a sentence
+    // ("need 3 by 11/10 for Rig setup for Hip actuator dyno efficiency sweep: Dyno shaft spacer, plus ...").
+    for (const m of (text && workRe ? text.matchAll(workRe) : [])) {
+      const target = { id: objByName.get(norm(m[3])) };
+      if (!target.id) continue;
+      const name = m[0].replace(/\s+/g, ' ');
+      const s = m.index, e = s + m[0].length;
       // the object name inside is the work item's object, not a separate mention
       for (let i = out.length - 1; i >= 0; i--) if (out[i].start >= s && out[i].end <= e) out.splice(i, 1);
       for (let i = taken.length - 1; i >= 0; i--) if (taken[i][0] >= s && taken[i][1] <= e) taken.splice(i, 1);
       taken.push([s, e]);
       const asm = items.get(target.id)?.assembly || null;
-      out.push({ id: workId(name), kind: 'work', mode: 'alias', token: name, start: s, end: e, name, object: target.id, assembly: asm });
+      const use = m[2] ? useByName.get(norm(m[2])) || null : null;
+      out.push({ id: workId(name), kind: 'work', mode: 'alias', token: name, start: s, end: e, name, object: target.id, use, assembly: asm });
     }
     // Vague phrases.
     const coAsm = new Set(out.filter((r) => !r.ambiguous).flatMap((r) => (r.assembly ? [r.assembly] : asmOf(r.id))));

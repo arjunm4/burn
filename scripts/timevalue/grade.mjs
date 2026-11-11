@@ -426,7 +426,7 @@ export async function burnCatches(ctx, world, wasted) {
       const s = (res.tiers || []).find((t) => t.tier === 'standard');
       const saved = (t) => (typeof t?.days_saved === 'number' ? t.days_saved : t?.days_saved && typeof t.days_saved === 'object' ? Math.max(...Object.values(t.days_saved)) : null);
       const noGain = res.outcome === 'cheapest' || (e && s && saved(e) != null && saved(e) === saved(s));
-      row = { ...row, result: noGain ? 'caught' : 'missed', outcome: res.outcome, expedite_days_saved: saved(e) };
+      row = { ...row, result: noGain ? 'caught' : 'missed', outcome: res.outcome, reason: res.reason ?? undefined, test: di.test?.id ?? di.test, expedite_days_saved: saved(e) };
       if (noGain) { caught++; caughtUsd += w.premium_usd; }
     } catch (err) { errors++; row.result = 'error'; row.error = errText(err); }
     rows.push(row);
@@ -457,26 +457,43 @@ export async function buildBurnGraph(args) {
   } catch (e) { return { ...base, graph: null, reason: `buildGraph failed: ${errText(e)}` }; }
 }
 
-export function gradeGraphRecall(world, ctx) {
+// Burn never sees world work-item ids (wi-NNNNN); it names a work item by the name written in the text,
+// as `wk:<slug of the name>`. Match a true edge through that name. World names are not unique (two work items can
+// share a name), so one Burn node can stand for several true work items; that is the most the text allows.
+const slugName = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+export function workNodeIds(world) { return new Map((world.work_items || []).map((w) => [w.id, `wk:${slugName(w.name)}`])); }
+
+// rendered: edges with at least one revealing event that reached the text (provenance.events); `null` when unknown.
+export function gradeGraphRecall(world, ctx, provenance = null) {
   if (!ctx.graph) return { available: false, reason: ctx.reason };
   let view = ctx.graph;
   try { view = ctx.graphMod.graphAt(ctx.graph, world.meta.demo_now) || ctx.graph; } catch { /* full graph */ }
+  const wk = workNodeIds(world);
+  const id = (x) => wk.get(x) || x;
+  const k = (e) => `${id(e.from)}|${id(e.to)}`;
   const have = new Set((view.edges || []).map((e) => `${e.from}|${e.to}`));
   const accepted = new Set((view.edges || []).filter((e) => !e.status || e.status === 'accepted').map((e) => `${e.from}|${e.to}`));
+  const shown = (e) => (provenance?.events ? (e.revealed_by || []).some((ev) => provenance.events[ev]) : null);
   const by = {};
   for (const e of world.edges) {
-    const r = (by[e.reveal] ||= { n: 0, found: 0, accepted: 0 });
+    const r = (by[e.reveal] ||= { n: 0, found: 0, accepted: 0, ...(provenance ? { n_in_text: 0, found_in_text: 0 } : {}) });
     r.n++;
-    if (have.has(`${e.from}|${e.to}`)) r.found++;
-    if (accepted.has(`${e.from}|${e.to}`)) r.accepted++;
+    const f = have.has(k(e));
+    if (f) r.found++;
+    if (accepted.has(k(e))) r.accepted++;
+    if (shown(e)) { r.n_in_text++; if (f) r.found_in_text++; }
   }
-  for (const r of Object.values(by)) { r.recall = round(r.found / r.n); r.recall_accepted = round(r.accepted / r.n); }
-  const truth = new Set(world.edges.map((e) => `${e.from}|${e.to}`));
+  for (const r of Object.values(by)) {
+    r.recall = round(r.found / r.n); r.recall_accepted = round(r.accepted / r.n);
+    if (r.n_in_text != null) r.recall_in_text = r.n_in_text ? round(r.found_in_text / r.n_in_text) : null;
+  }
+  const truth = new Set(world.edges.map(k));
   const n = world.edges.length;
   const found = Object.values(by).reduce((s, r) => s + r.found, 0);
-  const graphEdges = view.edges?.length || 0;
-  const tp = (view.edges || []).filter((e) => truth.has(`${e.from}|${e.to}`)).length;
-  return { available: true, recall: round(found / n), by_reveal: by, precision: graphEdges ? round(tp / graphEdges) : null, graph_edges: graphEdges, true_edges: n };
+  // Precision over the edge kinds the world models (ordered_as part -> order edges are not in world.edges).
+  const comparable = (view.edges || []).filter((e) => e.kind !== 'ordered_as');
+  const tp = comparable.filter((e) => truth.has(`${e.from}|${e.to}`)).length;
+  return { available: true, recall: round(found / n), by_reveal: by, precision: comparable.length ? round(tp / comparable.length) : null, graph_edges: view.edges?.length || 0, compared_edges: comparable.length, true_edges: n };
 }
 
 export async function gradeLinks(world, args, ctx) {
@@ -526,7 +543,8 @@ export async function grade(args) {
   const wasted = wastedExpedites(world, answers);
   const ctx = await buildBurnGraph(args);
   out.wasted_expedites = { ...wasted, burn: await burnCatches({ ...ctx, compare: engine?.compare }, world, wasted) };
-  out.graph_recall = gradeGraphRecall(world, ctx);
+  const provPath = join(args.world, 'provenance.json');
+  out.graph_recall = gradeGraphRecall(world, ctx, existsSync(provPath) ? readJson(provPath) : null);
   out.links = await gradeLinks(world, args, ctx);
   out.runtime_s = round((performance.now() - t0) / 1000, 2);
   return out;
@@ -548,7 +566,7 @@ export function summarize(g) {
   L.push(`Habit: ${h.available ? `accuracy ${pct(h.accuracy)}${ci(h.ci95)} on n=${h.n_test}` : `not available yet (${h.reason})`}; never-expedite ${pct(b.never_expedite.accuracy)}, need-by rule ${pct(b.need_by_rule.accuracy)} on ${b.n_test_set} (answers.summary: ${pct(b.need_by_rule_answers_summary)})`);
   const w = g.wasted_expedites;
   L.push(`Wasted expedites: ${w.count} of ${w.expedited} expedites bought no time, $${w.premium_usd.toLocaleString('en-US')} premium over Standard; Burn caught: ${w.burn.available ? `${w.burn.caught}/${w.burn.of} ($${w.burn.caught_premium_usd.toLocaleString('en-US')})` : `not available yet (${w.burn.reason})`}`);
-  L.push(`Graph recall: ${g.graph_recall.available ? `${pct(g.graph_recall.recall)} (${Object.entries(g.graph_recall.by_reveal).map(([k, v]) => `${k} ${pct(v.recall)}`).join(', ')})` : `not available yet (${g.graph_recall.reason})`}`);
+  L.push(`Graph recall: ${g.graph_recall.available ? `${pct(g.graph_recall.recall)} (${Object.entries(g.graph_recall.by_reveal).map(([k, v]) => `${k} ${pct(v.recall)}${v.recall_in_text != null ? ` [${pct(v.recall_in_text)} of ${v.n_in_text} in text]` : ''}`).join(', ')})` : `not available yet (${g.graph_recall.reason})`}`);
   L.push(`Ramp-Xometry link rate: ${g.links.available ? `${pct(g.links.link_rate)} (${g.links.linked} linked, ${g.links.unlinked} unlinked, precision ${pct(g.links.precision)})` : `not available yet (${g.links.reason})`}`);
   L.push(`(${g.runtime_s}s)`);
   return L.join('\n');
