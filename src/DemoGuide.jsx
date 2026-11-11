@@ -29,7 +29,8 @@ function findTarget(step) {
 }
 
 export default function DemoGuide() {
-  const [i, setI] = React.useState(read);
+  // Opening the first page of the demo always starts the guide from step 1.
+  const [i, setI] = React.useState(() => (location.pathname === '/network' ? (write(0), 0) : read()));
   const [open, setOpen] = React.useState(true);
   const [list, setList] = React.useState(false);
   const step = STEPS[i];
